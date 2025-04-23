@@ -1,0 +1,25 @@
+# Node modules (si tu en utilises un jour)
+node_modules/
+
+# VS Code
+.vscode/
+
+# MacOS/Linux/Windows system files
+.DS_Store
+Thumbs.db
+
+# Logs / temporaires
+*.log
+*.tmp
+
+# Données locales ou sensibles
+.env
+*.env
+
+# Build/temp output
+dist/
+build/
+
+# Fichiers à usage temporaire
+*.bak
+*.swp
