@@ -27,4 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-  
+  function signInWithProvider(provider) {
+    supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: "https://nice-island-0a49c7f03.6.azurestaticapps.net/home.html"
+      }
+    });
+  }
+  window.signInWithProvider = signInWithProvider;
