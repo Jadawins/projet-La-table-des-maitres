@@ -1,0 +1,348 @@
+/* 🎨 UI.CSS – Styles regroupés pour l'application Le Conseil du Lampion */
+
+/* ------------------------------------------------------------------- */
+/* 🎭 Boutons */
+
+.btn-style,
+.btn-accueil-bottom {
+  background-color: #3b0a52;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-family: 'Georgia', serif;
+  border: 1px solid #865dff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(134, 93, 255, 0.6);
+}
+
+.btn-style:hover,
+.btn-accueil-bottom:hover {
+  background-color: #501266;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.btn-danger:hover {
+  background-color: #e74c3c;
+}
+
+/* ------------------------------------------------------------------- */
+/* 📝 Champs de saisie */
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Georgia', serif;
+  font-size: 1em;
+  background-color: #1e1e1e;
+  color: #f0e6d2;
+  box-shadow: 0 0 5px rgba(134, 93, 255, 0.3);
+  max-width: 300px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+body[data-theme='light'] input[type="text"],
+body[data-theme='light'] input[type="number"],
+body[data-theme='light'] textarea {
+  background-color: #f7f3ff;
+  color: #3b0a52;
+  box-shadow: 0 0 5px rgba(100, 50, 150, 0.2);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  background-color: #2b2b2b;
+  box-shadow: 0 0 12px rgba(134, 93, 255, 0.4);
+  outline: none;
+}
+
+body[data-theme='light'] input[type="text"]:focus,
+body[data-theme='light'] input[type="number"]:focus,
+body[data-theme='light'] textarea:focus {
+  background-color: #ede2ff;
+}
+
+/* ------------------------------------------------------------------- */
+/* ✨ Icônes, tables et autres éléments */
+
+.log-row td {
+  background-color: #1f1f1f;
+  font-style: italic;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  border-top: 1px solid #333;
+}
+
+.log-row[style*="display: table-row"] td {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.journal-combat-list {
+  padding-left: 1.5rem;
+  margin: 0;
+  list-style: none;
+}
+
+.journal-combat-list li {
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+  font-style: italic;
+}
+
+/* Couleurs par type d’action dans les journaux */
+.log-soin { color: #34d399; font-weight: bold; }
+.log-attaque { color: #60a5fa; font-weight: bold; }
+.log-mort { color: #f87171; font-weight: bold; }
+.log-sortie { color: #fbbf24; }
+.log-victoire { color: #e9d8a6; font-weight: bold; }
+.log-inconnu { color: #9ca3af; font-style: italic; }
+.log-pass { color: #cbd5e1; font-style: italic;}
+
+/* Liste déroulante sessions */
+select.input-style {
+  background-color: #1a1a1a;
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+select.input-style:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color);
+}
+/* 🔧 Boutons icônes transparents (modifier / supprimer) */
+.btn-icon {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-icon:hover {
+  transform: scale(1.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a2e;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+  z-index: 1000;
+  max-width: 90%;
+  color: white;
+}
+.modal .btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.btn-bottom-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+/* Centrer le conteneur principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centrer la table de l’historique */
+#combat-historique-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Centrer la liste déroulante */
+.label-select, #session-select {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#lanterne-icon {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 150, 0.5));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#lanterne-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 200, 0.8));
+}
+.combat-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 1rem;
+  font-family: 'Cinzel', serif;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+}
+
+.combat-table th,
+.combat-table td {
+  padding: 0.6rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.combat-table thead {
+  background-color: rgba(255, 215, 0, 0.15);
+  color: #ffe66d;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.combat-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+/* 🔧 Clean override: enlever fond sombre de la section journal */
+section.journal-combat {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ✅ Liste spécifique du journal */
+.journal-combat-list {
+  padding-left: 1.5rem;
+  margin: 0;
+  list-style: none;
+}
+.journal-combat-list .log-soin     { color: #34d399 !important; font-weight: bold; }
+.journal-combat-list .log-attaque  { color: #60a5fa !important; font-weight: bold; }
+.journal-combat-list .log-mort     { color: #f87171 !important; font-weight: bold; }
+.journal-combat-list .log-sortie   { color: #fbbf24 !important; }
+.journal-combat-list .log-victoire { color: #e9d8a6 !important; font-weight: bold; }
+.journal-combat-list .log-inconnu  { color: #9ca3af !important; font-style: italic; }
+.journal-combat-list .log-pass     { color: #cbd5e1 !important; font-style: italic; }
+
+.combat-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  gap: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.combat-entry:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.combat-entry span {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.combat-id {
+  font-weight: bold;
+  flex: 0 0 100px;
+}
+
+.combat-resultat {
+  font-weight: bold;
+  color: #facc15; /* doré */
+}
+
+.combat-date {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.combat-stats {
+  font-style: italic;
+  color: #ccc;
+}
+.accordeon-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.accordeon-content.open {
+  max-height: 1000px; /* assez grand pour tout contenir */
+  opacity: 1;
+}
+
+.journal-combat-list li {
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: fadeInLeft 0.4s forwards;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

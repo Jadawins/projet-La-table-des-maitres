@@ -1,0 +1,93 @@
+/* =============================================================
+   🌙 THÈME SOMBRE : Styles spécifiques au mode sombre
+   ============================================================= */
+
+   body[data-theme="dark"] {
+    background: url("../assets/img/fond-bibliotheque-sombre.png") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #141414;
+    color: #f9f9f9;
+    font-family: 'Georgia', serif;
+    padding: 2em;
+  }
+  
+  body[data-theme="dark"] h1,
+  body[data-theme="dark"] h2,
+  body[data-theme="dark"] p,
+  body[data-theme="dark"] span,
+  body[data-theme="dark"] label {
+    color: #FFD700;
+    text-shadow: 0 0 5px #f5e960;
+  }
+  
+  /* =============================================================
+     ☀️ THÈME CLAIR : Styles spécifiques au mode clair
+     ============================================================= */
+  
+  body[data-theme="light"] {
+    background: url("../assets/img/fond-bibliotheque-clair.png") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #ffffff;
+    color: #2b0040;
+    font-family: 'Georgia', serif;
+    padding: 2em;
+  }
+  
+  body[data-theme="light"] h1,
+  body[data-theme="light"] h2,
+  body[data-theme="light"] p,
+  body[data-theme="light"] span,
+  body[data-theme="light"] label {
+    color: #2b0040;
+    text-shadow: 0 0 3px #ffffff;
+  }
+  
+  body[data-theme="light"] input::placeholder {
+    color: #4b2c6a;
+    text-shadow: 0 0 2px #ffffff;
+  }
+  
+  /* =============================================================
+     ✨ TRANSITIONS FLUIDES ENTRE THÈMES
+     ============================================================= */
+  
+  body {
+    transition: background-color 0.6s ease, color 0.6s ease, background-image 0.6s ease;
+  }
+  
+  h1, h2, p, span, label {
+    transition: color 0.6s ease, text-shadow 0.6s ease;
+  }
+  
+  /* =============================================================
+     🌗 TOGGLE CLAIR/SOMBRE : Bouton lanterne
+     ============================================================= */
+  
+     .theme-toggle-container {
+        margin-top: auto;
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+    
+}
+  
+  .lanterne-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem;
+    transition: transform 0.2s ease;
+  }
+  
+  #lanterne-icon {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 150, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  #lanterne-icon:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 200, 0.8));
+  }
+  

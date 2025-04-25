@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Créer un compte | La Table du Maître</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/ui.css" />
+  <script defer src="js/theme.js"></script>
+  
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .illustration {
+      flex: 1;
+      padding: 2rem;
+    }
+    .illustration img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .signup-box {
+      flex: 1;
+      background: var(--background);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+    .signup-box h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .or-divider {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+    }
+    .or-divider::before,
+    .or-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #ccc;
+    }
+    .or-divider span {
+      padding: 0 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .provider-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: var(--background);
+      color: var(--text);
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .provider-btn img {
+      height: 20px;
+    }
+    .discord-icon img {
+      height: 64px;
+      width: 64px;
+      
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .login-link a {
+      color: var(--text);
+      text-decoration: underline;
+    }
+    .theme-toggle-container {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+    }
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .theme-toggle img {
+      height: 24px;
+      filter: drop-shadow(0 0 3px var(--text));
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">    
+    <div class="signup-box">
+      <h2>Créer un compte</h2>
+      <form id="signup-form" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%;">
+        <input type="text" name="username" placeholder="Nom d'utilisateur" class="input-style" />
+        <input type="email" name="email" placeholder="Adresse e-mail" class="input-style" />
+        <input type="password" name="password" placeholder="Mot de passe" class="input-style" />
+        <button type="submit" class="btn-style">Continuer</button>
+      </form>
+      <div class="login-link">Vous avez déjà un compte ? <a href="login.html">Connexion</a></div>
+      <div class="or-divider"><span>ou</span></div>
+
+      <button class="provider-btn" onclick="signInWithProvider('google')">
+        <img src="assets/icone/google-icon.png" alt="Google" /> Continuer avec Google
+      </button>
+
+      <button class="provider-btn" onclick="signInWithProvider('discord')">
+        <img src="assets/icone/discord-icon.png" alt="Discord" class="discord-icon" /> Continuer avec Discord
+      </button>
+    </div>
+  </div>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    const supabase = supabase.createClient(
+      'https://gdjkaxiyztxkmymlzedg.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdkamtheGl5enR4a215bWx6ZWRnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NTU4NTE1OCwiZXhwIjoyMDYxMTYxMTU4fQ.JEcFdVyA069zCjeccv4U87EyRxTAXjQI8iiFjde2RSM'
+    );
+
+    function signInWithProvider(provider) {
+      supabase.auth.signInWithOAuth({ provider });
+    }
+  </script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="dark">
+  <!-- 🌗 Appliquer le thème dès le chargement -->
+  <script>
+    if (localStorage.getItem("theme") === "light") {
+      document.body.setAttribute("data-theme", "light");
+    } else {
+      document.body.setAttribute("data-theme", "dark");
+    }
+  </script>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">Projets</div>
+      <ul>
+        <li class="active" data-icon="🏠">Page d'accueil site</li>
+        <li data-icon="🧙">Gestion MJ</li>
+        <li data-icon="🎮">Sessions Joueurs</li>
+      </ul>
+    </nav>
+    <div class="theme-toggle-container">
+      <button id="theme-toggle" class="lanterne-btn">
+        <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+      </button>
+    </div>
+    
+  </aside>
+  
+
+  <!-- CONTENU PRINCIPAL -->
+  <main>
+    <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+      <img src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+    </button>
+    <h1>Bienvenue sur La Table du Maître</h1>
+    <p>Le site est en construction... 🛠️</p>
+  </main>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("collapsed");
+    }
+  </script>
+  <script src="js/theme.js"></script>
+
+
+</body>
+</html>
