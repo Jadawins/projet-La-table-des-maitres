@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Fonction pour connexion Google/Discord\async function signInWithProvider(provider) {
+// Fonction pour connexion Google/Discord
+async function signInWithProvider(provider) {
   if (!supabase) {
     await initSupabase();
   }
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       redirectTo: "https://nice-island-0a49c7f03.6.azurestaticapps.net/home.html"
     }
   });
+}
 
-
+// Rendre accessible au HTML
 window.signInWithProvider = signInWithProvider;
