@@ -1,4 +1,4 @@
-const { key, url } = await fetch("/api/NOM_DE_TA_FONCTION")
+const { key, url } = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey")
   .then(res => res.json());
 
 const supabase = createClient(url, key);
