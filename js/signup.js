@@ -1,3 +1,5 @@
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
 const { key, url } = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey")
   .then(res => res.json());
 
