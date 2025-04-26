@@ -1,9 +1,7 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+const { key, url } = await fetch("/api/NOM_DE_TA_FONCTION")
+  .then(res => res.json());
 
-const supabase = createClient(
-  'https://gdjkaxiyztxkmymlzedg.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdkamtheGl5enR4a215bWx6ZWRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU1ODUxNTgsImV4cCI6MjA2MTE2MTE1OH0.HiGSgug1FAARinC2R8-Obtj1myx2s4ab1KO2Td171SY'
-);
+const supabase = createClient(url, key);
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('signup-form');
