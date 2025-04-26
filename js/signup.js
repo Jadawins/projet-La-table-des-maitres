@@ -2,6 +2,15 @@ const { key, url } = await fetch("https://lampion-api.azurewebsites.net/api/GetS
   .then(res => res.json());
 
 const supabase = createClient(url, key);
+function signInWithProvider(provider) {
+  supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo: "https://nice-island-0a49c7f03.6.azurestaticapps.net/home.html"
+    }
+  });
+}
+window.signInWithProvider = signInWithProvider;
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('signup-form');
@@ -32,12 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-  function signInWithProvider(provider) {
-    supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: "https://nice-island-0a49c7f03.6.azurestaticapps.net/home.html"
-      }
-    });
-  }
-  window.signInWithProvider = signInWithProvider;
+ 
