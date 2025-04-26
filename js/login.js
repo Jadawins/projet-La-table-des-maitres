@@ -1,27 +1,51 @@
-document.getElementById("login-form").addEventListener("submit", async function (e) {
-    e.preventDefault();
-  
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-  
-    const response = await fetch("https://lampion-api.azurewebsites.net/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ email, password })
+// login.js
+
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+let supabase;
+
+async function initSupabase() {
+  const response = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey");
+  const result = await response.json();
+  supabase = createClient(result.url, result.key);
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await initSupabase();
+
+  const loginForm = document.getElementById('login-form');
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = loginForm.querySelector('input[name="email"]').value;
+      const password = loginForm.querySelector('input[name="password"]').value;
+
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        alert("Erreur : " + error.message);
+      } else {
+        window.location.href = "home.html";
+      }
     });
-  
-    const result = await response.json();
-  
-    const messageBox = document.getElementById("login-message");
-    if (response.ok) {
-      messageBox.textContent = "✅ Connexion réussie";
-      localStorage.setItem("userId", result.userId); // Stock l’ID pour la session
-      // Rediriger vers une autre page ? Exemple :
-      // window.location.href = "choix-personnage.html";
-    } else {
-      messageBox.textContent = "❌ " + (result.error || "Échec de la connexion");
+  }
+});
+
+// Fonction pour connexion Google/Discord\async function signInWithProvider(provider) {
+  if (!supabase) {
+    await initSupabase();
+  }
+  await supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo: "https://nice-island-0a49c7f03.6.azurestaticapps.net/home.html"
     }
   });
-  
+
+
+window.signInWithProvider = signInWithProvider;
