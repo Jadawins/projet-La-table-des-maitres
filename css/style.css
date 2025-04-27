@@ -104,6 +104,16 @@ body {
   font-size: 18px;
 }
 
+.sidebar-content {
+  padding: 1rem;
+}
+
+.sidebar-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
 /* Bouton de toggle placé dans la sidebar en haut à gauche */
 .toggle-glow {
   position: absolute;
@@ -157,4 +167,17 @@ p {
 }
 .toggle-glow img.icon-book {
   position: relative;
+}
+#closed-book-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+#closed-book-button.hidden {
+  display: none;
 }

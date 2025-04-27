@@ -8,24 +8,30 @@
   <link rel="stylesheet" href="css/ui.css">
   <link rel="stylesheet" href="css/signup-login.css">
   <link rel="stylesheet" href="css/profil.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="page-container">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
-          <img src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+          <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
         </button>
       </div>
-      <ul class="sidebar-menu">
-        <li><a href="home.html">Accueil</a></li>
-        <li><a href="#">Aventures</a></li>
-        <li><a href="#">Personnages</a></li>
-        <li><a href="#">Monstres</a></li>
-      </ul>
+      <div class="sidebar-content">
+        <h2>Projets</h2>
+        <ul class="sidebar-menu">
+          <li><a href="home.html">Page d'accueil site</a></li>
+          <li><a href="#">Gestion MJ</a></li>
+          <li><a href="#">Sessions Joueurs</a></li>
+        </ul>
+      </div>
     </aside>
 
     <main>
+      <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+        <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+      </button>      
       <div id="user-section">
         <button id="avatar-button" aria-label="Profil">
           <img id="avatar-img" src="assets/img/default-avatar.png" alt="Avatar" />
@@ -46,5 +52,9 @@
 
   <script src="js/theme.js"></script>
   <script type="module" src="js/userMenu.js"></script>
+  <script type="module">
+    import { toggleSidebar } from './js/sidebar.js';
+    window.toggleSidebar = toggleSidebar;
+  </script>
 </body>
 </html>
