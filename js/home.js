@@ -14,9 +14,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   const { data: { session } } = await supabase.auth.getSession();
 
   if (!session) {
-    // Si pas connecté ➔ redirection vers login
     window.location.href = "login.html";
   } else {
-    console.log("Connecté !"); // Pour test
+    // 1. Charger l'avatar
+    const user = session.user;
+    const avatarUrl = user.user_metadata?.avatar_url || 'assets/img/default-avatar.png';
+    document.getElementById('avatar-img').src = avatarUrl;
   }
+
+  // 2. Ouvrir/fermer le menu
+  document.getElementById('avatar-button').addEventListener('click', () => {
+    document.getElementById('user-menu').classList.toggle('hidden');
+  });
+
+  // 3. Déconnexion
+  document.getElementById('logout-button').addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    window.location.href = "login.html";
+  });
 });

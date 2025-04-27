@@ -6,6 +6,8 @@
   <title>La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/profil.css" />
+  <link rel="stylesheet" href="css/ui.css" />
 </head>
 <body data-theme="dark">
   <!-- 🌗 Appliquer le thème dès le chargement -->
@@ -16,7 +18,7 @@
       document.body.setAttribute("data-theme", "dark");
     }
   </script>
-
+  
   <!-- SIDEBAR -->
   <aside id="sidebar">
     <div class="sidebar-header">
@@ -43,9 +45,18 @@
 
   <!-- CONTENU PRINCIPAL -->
   <main>
-    <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
-      <img src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
-    </button>
+    <div id="user-section">
+      <button id="avatar-button" aria-label="Profil">
+        <img id="avatar-img" src="assets/img/default-avatar.png" alt="Avatar" />
+      </button>
+      <div id="user-menu" class="hidden">
+        <ul>
+          <li id="profile-button">Profil</li>
+          <li id="logout-button">Déconnexion</li>
+        </ul>
+      </div>
+    </div>
+  
     <h1>Bienvenue sur La Table du Maître</h1>
     <p>Le site est en construction... 🛠️</p>
   </main>
@@ -58,7 +69,19 @@
     }
   </script>
   <script src="js/theme.js"></script>
+<script type="module">
+  import { checkSession } from './js/authGuard.js';
 
-<script type="module" src="home.js"></script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const supabase = await checkSession();
+    
+    // Ensuite tu peux utiliser supabase normalement ici
+    // Exemple : afficher l'avatar de l'utilisateur
+    const user = (await supabase.auth.getSession()).data.session.user;
+    const avatarUrl = user.user_metadata?.avatar_url || 'assets/img/default-avatar.png';
+    document.getElementById('avatar-img').src = avatarUrl;
+  });
+</script>
+
 </body>
 </html>
