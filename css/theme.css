@@ -64,12 +64,11 @@
      ============================================================= */
   
      .theme-toggle-container {
-        margin-top: auto;
-        padding: 1rem;
-        width: 100%;
-        display: flex;
-    
-}
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 2000; /* PLUS grand que la sidebar qui est sûrement z-index: 999 */
+    }
   
   .lanterne-btn {
     background: transparent;

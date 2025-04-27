@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="css/signup-login.css">
   <link rel="stylesheet" href="css/userMenu.css">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
 </head>
 <body>
   <div class="page-container">
@@ -47,14 +51,18 @@
       <p>Le site est en construction... 🚰</p>
     </main>
   </div>
-
-  <button id="theme-toggle" aria-label="Changer le thème"></button>
-
-  <script src="js/theme.js"></script>
+  
   <script type="module" src="js/userMenu.js"></script>
   <script type="module">
     import { toggleSidebar } from './js/sidebar.js';
     window.toggleSidebar = toggleSidebar;
   </script>
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+  <script src="js/theme.js"></script>
+  
 </body>
 </html>
