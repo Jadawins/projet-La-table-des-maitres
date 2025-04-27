@@ -1,0 +1,56 @@
+#user-section {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+}
+
+#avatar-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#avatar-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #865dff;
+  background: #1e1e1e;
+}
+
+#user-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 180px;
+  background-color: #242424;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+#user-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#user-menu li {
+  padding: 12px 20px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+}
+
+#user-menu li:hover {
+  background-color: #333;
+}
+
+.hidden {
+  display: none;
+}

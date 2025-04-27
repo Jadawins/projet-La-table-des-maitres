@@ -181,3 +181,6 @@ p {
 #closed-book-button.hidden {
   display: none;
 }
+.hidden {
+  display: none !important;
+}

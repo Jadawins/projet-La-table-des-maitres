@@ -1,35 +1,14 @@
-// js/userMenu.js
-
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { checkSession } from './authGuard.js';
-
-document.addEventListener('DOMContentLoaded', async () => {
-  const supabase = await checkSession();
-
-  // Charger l'avatar utilisateur
-  const user = (await supabase.auth.getSession()).data.session.user;
-  const avatarUrl = user.user_metadata?.avatar_url || 'assets/img/default-avatar.png';
-  const avatarImg = document.getElementById('avatar-img');
-  if (avatarImg) {
-    avatarImg.src = avatarUrl;
-  }
-
-  // Ouvrir/fermer le menu utilisateur
+document.addEventListener('DOMContentLoaded', () => {
   const avatarButton = document.getElementById('avatar-button');
   const userMenu = document.getElementById('user-menu');
 
   if (avatarButton && userMenu) {
+    console.log("avatarButton et userMenu trouvés !");
     avatarButton.addEventListener('click', () => {
+      console.log("Clic sur avatarButton : toggle menu !");
       userMenu.classList.toggle('hidden');
     });
-  }
-
-  // Gestion du bouton déconnexion
-  const logoutButton = document.getElementById('logout-button');
-  if (logoutButton) {
-    logoutButton.addEventListener('click', async () => {
-      await supabase.auth.signOut();
-      window.location.href = "login.html";
-    });
+  } else {
+    console.error("Erreur : avatarButton ou userMenu non trouvés !");
   }
 });
