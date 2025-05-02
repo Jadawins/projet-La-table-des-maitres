@@ -17,15 +17,15 @@ async function initSupabase() {
 
 async function loadUserInfo() {
   const { data: { session } } = await supabase.auth.getSession();
-  const usernameInput = document.getElementById('username');
-  const emailDisplay = document.getElementById('email-display');
+  const usernameInput = document.getElementById('pseudo');
+  const emailDisplay = document.getElementById('email');
   const profileAvatar = document.getElementById('profile-avatar');
 
   if (session && session.user) {
     const { user_metadata, email } = session.user;
 
     usernameInput.value = user_metadata.username || "";
-    emailDisplay.textContent = `Email : ${email}`;
+    emailDisplay.value = email;
 
     if (user_metadata.avatar_url) {
       profileAvatar.src = user_metadata.avatar_url;
@@ -34,7 +34,7 @@ async function loadUserInfo() {
 }
 
 async function saveUsername() {
-  const usernameInput = document.getElementById('username');
+  const usernameInput = document.getElementById('pseudo');
   const newUsername = usernameInput.value.trim();
 
   if (newUsername.length === 0) {
@@ -63,12 +63,56 @@ async function logout() {
 }
 
 function setupButtons() {
-  document.getElementById('save-button').addEventListener('click', saveUsername);
+  document.getElementById('save-pseudo').addEventListener('click', saveUsername);
   document.getElementById('logout-button').addEventListener('click', logout);
   document.getElementById('back-button').addEventListener('click', () => {
     window.location.href = 'home.html';
   });
 }
+
+
+
+// upload-avatar.js 
+
+async function uploadAvatar() {
+  const fileInput = document.getElementById("avatar-upload");
+  const file = fileInput.files[0];
+
+  if (!file) return alert("Veuillez sélectionner une image.");
+  if (!file.type.startsWith("image/")) return alert("Format d'image invalide.");
+  if (file.size > 500 * 1024) return alert("Image trop lourde (max 500 Ko).");
+
+  const { data: { user } } = await supabase.auth.getUser();
+  const filePath = `avatars/${user.id}/avatar-${Date.now()}.png`;
+
+  const { error: uploadError } = await supabase.storage
+    .from("avatars")
+    .upload(filePath, file, { upsert: true });
+
+  if (uploadError) {
+    console.error(uploadError);
+    return alert("Échec de l'envoi de l'image.");
+  }
+
+  const { data } = supabase.storage.from("avatars").getPublicUrl(filePath);
+  const publicUrl = data.publicUrl;
+
+  const { error: updateError } = await supabase.auth.updateUser({
+    data: { avatar_url: publicUrl }
+  });
+
+  if (updateError) {
+    console.error(updateError);
+    return alert("Échec de la mise à jour du profil.");
+  }
+
+  // MAJ de l'image sur la page
+  document.getElementById("profile-avatar").src = publicUrl;
+  alert("Avatar mis à jour avec succès !");
+}
+
+
+document.getElementById("upload-avatar-btn")?.addEventListener("click", uploadAvatar);
 
 // Initialisation
 

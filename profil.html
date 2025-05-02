@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nom de ta page</title>
+  <title>Profil</title>
 
   <!-- Gestion immédiate du thème (clair/sombre) -->
   <script>
@@ -51,9 +51,13 @@
   <!-- Contenu principal -->
   <main>
     <div class="profil-container">
-      <img id="avatar-img" src="assets/img/default-avatar.png" alt="Avatar" class="avatar-profile" />
+      <img id="profile-avatar" src="assets/img/default-avatar.png" alt="Avatar" class="avatar-profile" />
       <h1 class="profil-title">Mon Profil</h1>
-
+      <div class="form-group">
+        <label for="avatar-upload">Changer d’avatar :</label>
+        <input type="file" id="avatar-upload" accept="image/png, image/jpeg" class="input-style">
+        <button id="upload-avatar-btn" class="btn-style">Mettre à jour l’avatar</button>
+      </div>
       <div class="form-group">
         <label for="pseudo">Pseudo :</label>
         <div class="input-button-group">
