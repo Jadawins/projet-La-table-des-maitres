@@ -17,10 +17,13 @@
 <body>
   <div class="page-container">
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
+      <div class="sidebar-header sidebar-header-flex">
         <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
           <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
         </button>
+        <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">
+          ⚙️
+        </a>
       </div>
       <div class="sidebar-content">
         <h2>Projets</h2>
@@ -36,17 +39,6 @@
       <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
         <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
       </button>      
-      <div id="user-section">
-        <button id="avatar-button" aria-label="Profil">
-          <img id="avatar-img" src="assets/img/default-avatar.png" alt="Avatar" />
-        </button>
-        <div id="user-menu">
-          <ul>
-            <li id="profile-button">Profil</li>
-            <li id="logout-button">Déconnexion</li>
-          </ul>
-        </div>
-      </div>
       <h1>Bienvenue sur La Table du Maître</h1>
       <p>Le site est en construction... 🚰</p>
     </main>

@@ -42,25 +42,13 @@
   <!-- Contenu principal -->
   <main>
     <!-- Avatar + Menu utilisateur -->
-  <div id="user-section">
-    <button id="avatar-button" aria-label="Profil">
-      <img id="avatar-img" src="assets/img/default-avatar.png" alt="Avatar" />
-    </button>
-    <div id="user-menu" class="hidden">
-      <ul>
-        <li id="profile-button">Profil</li>
-        <li id="logout-button">Déconnexion</li>
-      </ul>
-    </div>
-  </div>
-     <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
+    <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
      <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
     <div class="profil-container">
       <div class="tab-buttons">
         <button class="tab-btn active" data-tab="infos">Informations Perso</button>
-        <button class="tab-btn" data-tab="avatar">Avatar</button>
         <button class="tab-btn" data-tab="password">Mot de passe</button>
       </div>
 
@@ -79,17 +67,6 @@
         <button class="btn-style" id="save-pseudo">Enregistrer</button>
       </div>
       
-      <div class="tab-content" id="avatar" style="display: none;">
-        <h1 class="profil-title">Changer d'avatar</h1>
-        <div class="avatar-wrapper">
-          <img id="avatar-img" src="assets/img/default-avatar.png" alt="Avatar" class="avatar-profile" />
-          <label for="avatar-input" class="file-label">Choisir une image</label>
-          <p class="file-hint">Formats autorisés : JPG, PNG, GIF — Max 2 Mo</p>
-          <input type="file" id="avatar-input" accept="image/*" class="hidden" />
-          <button class="btn-style" id="upload-avatar">Mettre à jour</button>
-        </div>
-      </div>
-
       <div class="tab-content" id="password" style="display: none;">
         <h1 class="profil-title">Changer le mot de passe</h1>
         <div class="form-group">

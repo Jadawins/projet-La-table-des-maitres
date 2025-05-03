@@ -346,3 +346,18 @@ section.journal-combat {
     transform: translateX(0);
   }
 }
+.sidebar-header {
+  position: relative;
+}
+
+.sidebar-settings-button {
+  position: absolute;
+  right: 16px; /* ajuste si nécessaire */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
