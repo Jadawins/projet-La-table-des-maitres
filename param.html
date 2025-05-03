@@ -81,10 +81,10 @@
       
       <div class="tab-content" id="avatar" style="display: none;">
         <h1 class="profil-title">Changer d'avatar</h1>
-        <img id="avatar-img-profil" src="assets/img/default-avatar.png" alt="Avatar" class="avatar-profile" />
-        <div class="form-group">
-          <label for="avatar-input">Choisir un avatar :</label>
-          <input type="file" id="avatar-input">
+        <div class="avatar-wrapper">
+          <img id="avatar-img" src="assets/img/default-avatar.png" alt="Avatar" class="avatar-profile" />
+          <label for="avatar-input" class="file-label">Choisir une image</label>
+          <input type="file" id="avatar-input" accept="image/*" class="hidden" />
           <button class="btn-style" id="upload-avatar">Mettre à jour</button>
         </div>
       </div>
