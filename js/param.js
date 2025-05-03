@@ -75,7 +75,7 @@ async function enregistrerPseudoEtDiscord() {
     if (!user) return;
   
     const fileExt = file.name.split('.').pop();
-    const filePath = `avatars/${user.id}.${fileExt}`;
+    const filePath = `${user.id}.${fileExt}`; // sans "avatars/"
   
     // Upload dans Supabase Storage
     const { error: uploadError } = await supabase.storage
