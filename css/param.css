@@ -71,16 +71,22 @@
   }
   
   .file-label {
-    background-color: var(--accent-color);
-    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    background-color: var(--accent-color, #865dff);
     color: white;
-    border-radius: 1rem;
+    border-radius: 20px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 0 10px rgba(134, 93, 255, 0.5);
+    font-size: 1rem;
   }
   
   .file-label:hover {
-    background-color: var(--accent-color-hover);
+    background-color: #a586ff;
+    transform: scale(1.05);
   }
   
   input[type="file"].hidden {
