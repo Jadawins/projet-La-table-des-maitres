@@ -1,0 +1,56 @@
+/* Conteneur des onglets */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(134, 93, 255, 0.15);
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 0 6px rgba(134, 93, 255, 0.3);
+  }
+  
+  .tab-btn:hover {
+    background-color: rgba(134, 93, 255, 0.25);
+    transform: scale(1.03);
+  }
+  
+  .tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  
+  /* Contenu d'onglet */
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Animation douce */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Centrage général */
+  .profil-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  

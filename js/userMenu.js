@@ -34,7 +34,7 @@ function setupUserMenu() {
 
   if (profileButton) {
     profileButton.addEventListener('click', () => {
-      window.location.href = "profil.html";
+      window.location.href = "param.html";
     });
   }
 

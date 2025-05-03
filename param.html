@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nom de ta page</title>
+  <title>Parametres</title>
 
   <!-- Gestion du theme clair/sombre directement au chargement -->
   <script>
@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/profil.css">
   <link rel="stylesheet" href="css/userMenu.css">
+  <link rel="stylesheet" href="css/param.css">
 </head>
 
 <body>
@@ -56,7 +57,63 @@
      <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
+    <div class="profil-container">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="infos">Informations Perso</button>
+        <button class="tab-btn" data-tab="avatar">Avatar</button>
+        <button class="tab-btn" data-tab="password">Mot de passe</button>
+      </div>
 
+      <div class="tab-content" id="infos" style="display: block;">
+        <h1 class="profil-title">Mon Profil</h1>
+        <div class="form-group">
+          <label for="pseudo">Pseudo :</label>
+          <input type="text" id="pseudo" placeholder="Votre pseudo">
+          <button class="btn-style" id="save-pseudo">Enregistrer</button>
+        </div>
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input type="text" id="email" readonly>
+        </div>
+        <div class="form-group">
+          <label for="discord">Pseudo Discord :</label>
+          <input type="text" id="discord" placeholder="Votre pseudo Discord">
+          <button class="btn-style" id="save-discord">Enregistrer</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="avatar" style="display: none;">
+        <h1 class="profil-title">Changer d'avatar</h1>
+        <img id="avatar-img-profil" src="assets/img/default-avatar.png" alt="Avatar" class="avatar-profile" />
+        <div class="form-group">
+          <label for="avatar-input">Choisir un avatar :</label>
+          <input type="file" id="avatar-input">
+          <button class="btn-style" id="upload-avatar">Mettre à jour</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="password" style="display: none;">
+        <h1 class="profil-title">Changer le mot de passe</h1>
+        <div class="form-group">
+          <label for="old-password">Mot de passe actuel :</label>
+          <input type="password" id="old-password">
+        </div>
+        <div class="form-group">
+          <label for="new-password">Nouveau mot de passe :</label>
+          <input type="password" id="new-password">
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirmer :</label>
+          <input type="password" id="confirm-password">
+          <button class="btn-style" id="change-password">Changer</button>
+        </div>
+      </div>
+
+      <div class="profil-buttons">
+        <button id="back-button" class="btn-style">Retour</button>
+        <button id="logout-button" class="btn-style btn-red">Déconnexion</button>
+      </div>
+    </div>
     
   </main>
 
@@ -72,6 +129,7 @@
   <script type="module" src="js/userMenu.js"></script>
   <script src="js/theme.js"></script>
   <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
+  <script type="module" src="js/param.js"></script>
 
   <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
   <script type="module">
