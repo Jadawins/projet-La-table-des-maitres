@@ -17,6 +17,7 @@ window.signInWithProvider = signInWithProvider;
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('signup-form');
+    console.log("Form:", form);
   
     if (form) {
       form.addEventListener('submit', async (e) => {
