@@ -415,3 +415,22 @@ section.journal-combat {
   display: block;
   margin: 0.3rem auto 0 auto;
 }
+.param-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: auto;
+  gap: 1rem;
+}
+
+.param-section label {
+  width: 100%;
+}
+
+.param-section input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
