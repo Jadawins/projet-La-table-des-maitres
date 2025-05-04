@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réinitialisation du mot de passe</title>
+
+  <!-- Gestion du theme clair/sombre directement au chargement -->
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+
+  <!-- Chargement des CSS globaux -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/signup-login.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profil.css">
+  <link rel="stylesheet" href="css/userMenu.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Réinitialiser le mot de passe</h1>
+    <p>Entrez votre nouveau mot de passe ci-dessous :</p>
+
+    <input type="password" id="new-password" placeholder="Nouveau mot de passe" class="input-style" style="margin-bottom: 1rem;" />
+    <input type="password" id="confirm-password" placeholder="Confirmer le mot de passe" class="input-style" style="margin-bottom: 1.5rem;" />
+    <button id="update-password" class="btn-style" style="margin-top: 0.5rem;">Valider</button>
+  </div>
+
+  <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+    const res = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey");
+    const { url, key } = await res.json();
+    const supabase = createClient(url, key);
+
+    document.getElementById("update-password").addEventListener("click", async () => {
+      const newPassword = document.getElementById("new-password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+
+      if (newPassword.length < 6) {
+        alert("Le mot de passe doit contenir au moins 6 caractères.");
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        alert("Les mots de passe ne correspondent pas.");
+        return;
+      }
+
+      const { error } = await supabase.auth.updateUser({
+        password: newPassword
+      });
+
+      if (error) {
+        alert("Erreur lors de la mise à jour du mot de passe : " + error.message);
+      } else {
+        alert("Mot de passe mis à jour avec succès ! Vous allez être redirigé vers la page de connexion.");
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+
+  <!-- Bouton de changement de thème (lanterne) -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <!-- Chargement des JS globaux -->
+  <script type="module" src="js/sidebar.js"></script>
+  <script type="module" src="js/userMenu.js"></script>
+  <script src="js/theme.js"></script>
+  <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
+
+  <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
+  <script type="module">
+    import { toggleSidebar } from './js/sidebar.js';
+    window.toggleSidebar = toggleSidebar;
+  </script>
+
+  <!-- Ton JS spécifique si besoin (ex: profil.js, etc) -->
+  <!--<script type="module" src="js/TONFICHIERSPECIFIQUE.js"></script>-->
+</body>
+</html>

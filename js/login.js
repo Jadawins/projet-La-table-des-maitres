@@ -49,5 +49,23 @@ async function signInWithProvider(provider) {
   });
 }
 
+document.getElementById("reset-password-link").addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  const email = prompt("Entrez votre adresse email pour réinitialiser votre mot de passe :");
+
+  if (email) {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: "https://ton-site.web.app/reset.html" // ou ton URL Azure de redirection
+    });
+
+    if (error) {
+      alert("Erreur : " + error.message);
+    } else {
+      alert("Un lien de réinitialisation vous a été envoyé par email.");
+    }
+  }
+});
+
 // Rendre accessible au HTML
 window.signInWithProvider = signInWithProvider;
