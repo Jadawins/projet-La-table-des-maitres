@@ -385,3 +385,29 @@ section.journal-combat {
   background-color: #555;
   color: white;
 }
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  width: 100%;
+  display: block;
+  color: var(--text-color);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
