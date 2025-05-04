@@ -8,6 +8,23 @@ async function initSupabase() {
   supabase = createClient(url, key);
 }
 
+function setupTabSwitching() {
+  const btnInfos = document.getElementById('btn-infos');
+  const btnPassword = document.getElementById('btn-password');
+  const tabInfos = document.getElementById('tab-infos');
+  const tabPassword = document.getElementById('tab-password');
+
+  btnInfos.addEventListener('click', () => {
+    tabInfos.style.display = 'flex';
+    tabPassword.style.display = 'none';
+  });
+
+  btnPassword.addEventListener('click', () => {
+    tabInfos.style.display = 'none';
+    tabPassword.style.display = 'flex';
+  });
+}
+
 // Fonction appelée après chargement DOM
 document.addEventListener("DOMContentLoaded", async () => {
   await initSupabase();
