@@ -411,3 +411,7 @@ section.journal-combat {
   margin-top: 0.3rem;
   font-size: 1rem;
 }
+.form-group input[type="password"] {
+  display: block;
+  margin: 0.3rem auto 0 auto;
+}
