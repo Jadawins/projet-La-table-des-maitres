@@ -9,19 +9,21 @@ async function initSupabase() {
 }
 
 function setupTabSwitching() {
-  const btnInfos = document.getElementById('btn-infos');
-  const btnPassword = document.getElementById('btn-password');
-  const tabInfos = document.getElementById('tab-infos');
-  const tabPassword = document.getElementById('tab-password');
+  const tabs = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
 
-  btnInfos.addEventListener('click', () => {
-    tabInfos.style.display = 'flex';
-    tabPassword.style.display = 'none';
-  });
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Activer le bouton cliqué
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
 
-  btnPassword.addEventListener('click', () => {
-    tabInfos.style.display = 'none';
-    tabPassword.style.display = 'flex';
+      // Afficher le contenu correspondant
+      const target = tab.getAttribute("data-tab");
+      contents.forEach((section) => {
+        section.style.display = section.id === target ? "block" : "none";
+      });
+    });
   });
 }
 
