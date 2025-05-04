@@ -1,8 +1,10 @@
 console.log("signup.js chargé");
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
+console.log("Requête envoyée...");
 const { key, url } = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey")
   .then(res => res.json());
+  console.log("Résultat de l’API :", result);
 
 const supabase = createClient(url, key);
 function signInWithProvider(provider) {
