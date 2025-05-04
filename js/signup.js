@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (error) {
         alert("Erreur : " + error.message);
       } else {
-        alert("Inscription réussie ! Vérifie ton email pour confirmer ton compte.");
+        window.location.href = "check-email.html";
       }
     });
   }

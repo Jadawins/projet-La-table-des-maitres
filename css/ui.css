@@ -360,4 +360,28 @@ section.journal-combat {
   text-decoration: none;
   transition: transform 0.2s ease;
 }
+.confirmation-message {
+  text-align: center;
+  margin-top: 4rem;
+}
 
+.confirmation-message h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.confirmation-message {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.btn-group {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-secondary {
+  background-color: #555;
+  color: white;
+}

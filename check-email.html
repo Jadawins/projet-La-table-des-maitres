@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check email</title>
+
+  <!-- Gestion du theme clair/sombre directement au chargement -->
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+
+  <!-- Chargement des CSS globaux -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/signup-login.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profil.css">
+  <link rel="stylesheet" href="css/userMenu.css">
+</head>
+
+<body>
+
+   
+
+  <!-- Contenu principal -->
+  <main>
+    <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+    </button>
+  
+    <!-- Message de confirmation d'inscription -->
+    <section class="confirmation-message">
+      <h1>📨 Merci pour ton inscription</h1>
+      <p>Un email de confirmation vient d’être envoyé. Clique sur le lien pour activer ton compte.</p>
+      <a href="login.html" class="btn-style">Se connecter</a>
+      <a href="index.html" class="btn-style btn-secondary">Retour à l’accueil</a>
+    </section>
+  </main>
+
+  <!-- Bouton de changement de thème (lanterne) -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <!-- Chargement des JS globaux -->
+  <script type="module" src="js/sidebar.js"></script>
+  <script type="module" src="js/userMenu.js"></script>
+  <script src="js/theme.js"></script>
+  <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
+
+  <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
+  <script type="module">
+    import { toggleSidebar } from './js/sidebar.js';
+    window.toggleSidebar = toggleSidebar;
+  </script>
+
+  <!-- Ton JS spécifique si besoin (ex: profil.js, etc) -->
+  <!--<script type="module" src="js/TONFICHIERSPECIFIQUE.js"></script>-->
+</body>
+</html>
