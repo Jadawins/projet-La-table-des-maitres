@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parametres</title>
+  <title>Mes personnages</title>
 
   <!-- Gestion du theme clair/sombre directement au chargement -->
   <script>
@@ -18,11 +18,11 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/profil.css">
   <link rel="stylesheet" href="css/userMenu.css">
-  <link rel="stylesheet" href="css/param.css">
 </head>
 
 <body>
 
+  <!-- Sidebar -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header sidebar-header-flex">
       <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
@@ -46,54 +46,19 @@
 
   <!-- Contenu principal -->
   <main>
-    <!-- Avatar + Menu utilisateur -->
-    <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
+    <header class="header-centered">
+      <h1><img src="assets/img/d20.png" class="title-icon" /> Mes personnages</h1>
+      <button onclick="window.location.href='creer-personnage.html'" class="btn-style">
+        ➕ Créer un personnage
+      </button>
+    </header>
+      <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
      <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
-    <div class="profil-container">
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="infos">Informations Perso</button>
-        <button class="tab-btn" data-tab="password">Mot de passe</button>
-      </div>
-
-      <div class="tab-content" id="infos" style="display: block;">
-        <h1 class="profil-title">Mon Profil</h1>
-        <div class="form-group">
-          <label for="pseudo">Pseudo : <input type="text" id="pseudo" placeholder="Votre pseudo"></label>
-        </div>
-        <div class="form-group">
-          <label for="email">Email : <input type="text" id="email" readonly></label>
-          
-        </div>
-        <div class="form-group">
-          <label for="discord">Discord : <input type="text" id="discord" placeholder="Votre pseudo Discord"></label>
-        </div>
-        <button class="btn-style" id="save-pseudo">Enregistrer</button>
-      </div>
-      
-      <div class="tab-content" id="password" style="display: none;">
-        <h1 class="profil-title">Changer le mot de passe</h1>
-        <div class="form-group">
-          <label for="old-password">Mot de passe actuel :</label>
-          <input type="password" id="old-password">
-        </div>
-        <div class="form-group">
-          <label for="new-password">Nouveau mot de passe :</label>
-          <input type="password" id="new-password">
-        </div>
-        <div class="form-group">
-          <label for="confirm-password">Confirmer :</label>
-          <input type="password" id="confirm-password">
-        </div>
-        <button class="btn-style" id="change-password">Changer</button>
-      </div>
-
-      <div class="profil-buttons">
-        <button id="back-button" class="btn-style">Retour</button>
-        <button id="logout-button" class="btn-style btn-danger">Déconnexion</button>
-      </div>
-    </div>
+    <section id="character-list" class="character-grid">
+      <!-- Les cartes de personnages apparaîtront ici -->
+    </section>
     
   </main>
 
@@ -109,7 +74,6 @@
   <script type="module" src="js/userMenu.js"></script>
   <script src="js/theme.js"></script>
   <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
-  <script type="module" src="js/param.js"></script>
 
   <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
   <script type="module">
