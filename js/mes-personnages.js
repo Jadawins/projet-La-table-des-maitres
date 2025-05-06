@@ -1,40 +1,39 @@
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-const supabase = createClient(
-  "https://<TON-PROJET>.supabase.co",
-  "<PUBLIC-ANON-KEY>"
-);
-
-async function chargerPersonnages() {
-  const { data: { user } } = await supabase.auth.getUser();
-
-  if (!user) {
-    alert("Veuillez vous connecter.");
-    return;
-  }
-
-  const res = await fetch(`/api/characters?userId=${user.id}`);
-  const personnages = await res.json();
-
-  const container = document.getElementById("character-list");
-  container.innerHTML = "";
-
-  if (!personnages.length) {
-    container.innerHTML = "<p>Aucun personnage pour l'instant.</p>";
-    return;
-  }
-
-  personnages.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "character-card";
-    card.innerHTML = `
-      <h3>${p.name || "Sans nom"}</h3>
-      <p>Race : ${p.race || "-"}</p>
-      <p>Classe : ${p.class || "-"}</p>
-      <p>Niveau : ${p.level || "-"}</p>
-    `;
-    container.appendChild(card);
+document.addEventListener("DOMContentLoaded", async () => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      alert("Utilisateur non identifié.");
+      return;
+    }
+  
+    try {
+      const res = await fetch(`/api/characters?userId=${userId}`);
+      const personnages = await res.json();
+  
+      const tbody = document.getElementById("character-list");
+      tbody.innerHTML = "";
+  
+      if (personnages.length === 0) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td colspan="5">Aucun personnage pour l'instant.</td>`;
+        tbody.appendChild(row);
+        return;
+      }
+  
+      personnages.forEach(p => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${p.name || "-"}</td>
+          <td>${p.race || "-"}</td>
+          <td>${p.class || "-"}</td>
+          <td>${p.level || "-"}</td>
+          <td>
+            <button onclick="window.location.href='fiche-personnage.html?id=${p._id}'">👁 Voir</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    } catch (err) {
+      console.error("Erreur chargement personnages :", err);
+    }
   });
-}
-
-chargerPersonnages();
+  

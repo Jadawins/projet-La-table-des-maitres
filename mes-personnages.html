@@ -56,9 +56,20 @@
      <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
-    <section id="character-list" class="character-grid">
-      <!-- Les cartes de personnages apparaîtront ici -->
-    </section>
+    <table class="character-table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Race</th>
+          <th>Classe</th>
+          <th>Niveau</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="character-list">
+        <!-- Lignes dynamiques ici -->
+      </tbody>
+    </table>
     
   </main>
 

@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (error) {
         alert("Erreur : " + error.message);
       } else {
+        const user = data.user;
+        if (user) {
+          localStorage.setItem("userId", user.id); // 🔐 Sauvegarde l'UID du joueur
+        }
         window.location.href = "home.html";
       }
     });
