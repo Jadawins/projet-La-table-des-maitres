@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   
     try {
-      const res = await fetch(`/api/characters?userId=${userId}`);
+      const res = await fetch(`https://lampion-api.azurewebsites.net/api/GetCharacters?userId=${userId}`);
       const personnages = await res.json();
   
       const tbody = document.getElementById("character-list");
