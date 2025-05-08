@@ -1,0 +1,162 @@
+.top-buttons {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn-outline,
+  .btn-filled {
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #865dff;
+    background: transparent;
+    color: #865dff;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-filled {
+    background: #865dff;
+    color: white;
+  }
+
+  .btn-filled:hover,
+  .btn-outline:hover {
+    background: #a586ff;
+    color: white;
+  }
+  .input-style {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--input-background);
+    color: var(--text-color);
+  }
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Georgia', serif;
+  font-size: 1em;
+  background-color: #1e1e1e;
+  color: #f0e6d2;
+  box-shadow: 0 0 5px rgba(134, 93, 255, 0.3);
+  max-width: 300px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+body[data-theme='light'] input[type="text"],
+body[data-theme='light'] input[type="number"],
+body[data-theme='light'] textarea {
+  background-color: #f7f3ff;
+  color: #3b0a52;
+  box-shadow: 0 0 5px rgba(100, 50, 150, 0.2);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  background-color: #2b2b2b;
+  box-shadow: 0 0 12px rgba(134, 93, 255, 0.4);
+  outline: none;
+}
+
+body[data-theme='light'] input[type="text"]:focus,
+body[data-theme='light'] input[type="number"]:focus,
+body[data-theme='light'] textarea:focus {
+  background-color: #ede2ff;
+}
+/* 🎭 Boutons */
+
+.btn-style,
+.btn-accueil-bottom {
+  background-color: #3b0a52;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-family: 'Georgia', serif;
+  border: 1px solid #865dff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(134, 93, 255, 0.6);
+}
+
+.btn-style:hover,
+.btn-accueil-bottom:hover {
+  background-color: #501266;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.btn-danger:hover {
+  background-color: #e74c3c;
+}
+.provider-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: var(--background);
+    color: var(--text);
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .provider-btn img {
+    height: 20px;
+  }
+  .discord-icon img {
+    height: 64px;
+    width: 64px;
+    
+  }
+  .btn-icon {
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .btn-icon:hover {
+    transform: scale(1.2);
+  }
+  .header-centered .title-icon {
+    width: 64px;
+    height: 64px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }

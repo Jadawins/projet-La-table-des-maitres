@@ -1,0 +1,123 @@
+/* ------------------ SIDEBAR ------------------ */
+#sidebar {
+    width: 260px;
+    background-color: #1e1e2e;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  #sidebar.collapsed {
+    width: 64px;
+  }
+  
+  .sidebar-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    position: relative;
+  }
+  
+  .sidebar-title {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    margin: 0;
+    text-shadow: 0 0 6px #865dff;
+  }
+  
+  .sidebar-nav {
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .nav-section {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #bbb;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-nav li {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #f0f0f0;
+  }
+  
+  .sidebar-nav li:hover {
+    background-color: #292944;
+  }
+  
+  .sidebar-nav li.active {
+    background-color: #865dff;
+    color: white;
+    font-weight: bold;
+  }  
+  .sidebar-content {
+    padding: 1rem;
+  }
+  
+  .sidebar-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  
+  /* Bouton de toggle placé dans la sidebar en haut à gauche */
+  .toggle-glow {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .toggle-glow img.icon-book {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 6px #865dff);
+    transition: filter 0.3s ease, transform 0.2s ease;
+  }
+  
+  .toggle-glow:hover img.icon-book {
+    filter: drop-shadow(0 0 12px #a586ff);
+    transform: scale(1.1);
+  }
+  .sidebar-header {
+    position: relative;
+  }
+  
+  .sidebar-settings-button {
+    position: absolute;
+    right: 16px; /* ajuste si nécessaire */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .hidden {
+    display: none !important;
+  }

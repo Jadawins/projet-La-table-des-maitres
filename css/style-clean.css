@@ -1,0 +1,138 @@
+.page-title {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  .page-title h1 {
+    font-size: 2.8rem;
+    text-shadow: 0 0 6px rgba(255, 255, 200, 0.4);
+  }
+
+  .page-title h1 span {
+    color: #ffd700;
+  }
+
+  .page-title p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: #ddd;
+  }
+  .signup-box {
+    flex: 1;
+    background: var(--background);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  .signup-box h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  /* Centrer le conteneur principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .or-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    width: 100%
+  }
+  .or-divider::before,
+  .or-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+  }
+  .or-divider span {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: margin-left 0.3s ease;
+    margin-left: 260px;
+  }
+
+  main.container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  #sidebar.collapsed ~ main {
+    margin-left: 64px;
+  }
+  .character-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background: rgba(20, 20, 30, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    color: #f0f0f0;
+    font-size: 1rem;
+  }
+  
+  .character-table th,
+  .character-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #444;
+    text-align: left;
+  }
+  
+  .character-table th {
+    background-color: #865dff;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .character-table tr:hover {
+    background-color: rgba(120, 90, 200, 0.2);
+  }
+  
+  .character-table button {
+    background: #865dff;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .character-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .header-centered h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+  }
+  .header-centered .btn-style {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .title-icon {
+    width: 40px;
+    height: 40px;
+  }

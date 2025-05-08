@@ -99,3 +99,36 @@
     text-align: center;
     font-style: italic;
   }
+  .profil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 100px;
+  }
+  .profil-title {
+    font-size: 2.5rem;
+    color: var(--text-title);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 300px;
+  }
+  .input-style {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--input-background);
+    color: var(--text-color);
+  }
+  
+  .profil-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }

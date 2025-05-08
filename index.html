@@ -10,77 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Table du Maître - Accueil</title>
   <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: url("assets/img/fond-bibliotheque-sombre.png") no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .top-buttons {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 1000;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .btn-outline,
-    .btn-filled {
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      cursor: pointer;
-      border: 2px solid #865dff;
-      background: transparent;
-      color: #865dff;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .btn-filled {
-      background: #865dff;
-      color: white;
-    }
-
-    .btn-filled:hover,
-    .btn-outline:hover {
-      background: #a586ff;
-      color: white;
-    }
-
-    .welcome-container {
-      text-align: center;
-      max-width: 700px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 2rem;
-      border-radius: 12px;
-    }
-
-    .welcome-container h1 {
-      font-size: 2.8rem;
-      color: #fceea3;
-      text-shadow: 0 0 6px rgba(255, 255, 200, 0.4);
-    }
-
-    .welcome-container h1 span {
-      color: #ffd700;
-    }
-
-    .welcome-container p {
-      font-size: 1.1rem;
-      margin-top: 1rem;
-      color: #ddd;
-    }
+  <link rel="stylesheet" href="css/style-clean.css" />
+  <link rel="stylesheet" href="css/ui-clean.css" />
   </style>
 </head>
 <body>
@@ -89,7 +20,7 @@
     <button class="btn-filled" onclick="location.href='signup.html'">S'inscrire</button>
   </div>
 
-  <div class="welcome-container">
+  <div class="page-title">
     <h1><span class="accent">⚔️ La Table du Maître</span></h1>
     <p>Organisez, suivez et vivez vos campagnes de JDR comme jamais auparavant.</p>
   </div>

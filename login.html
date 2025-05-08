@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion - La Table du Maître</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/ui.css">  
-  <link rel="stylesheet" href="css/signup-login.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/style-clean.css">  
 </head>
 <body>
-  
-  <div class="container">
-      <h1 class="page-title">Connexion</h1>
-      <form id="login-form">
-        <input type="email" name="email" placeholder="Adresse e-mail" required class="text-input">
-        <input type="password" name="password" placeholder="Mot de passe" required class="text-input">
+ <div class="container">
+   <div class="signup-box">
+      <h2>Connexion</h2>      
+       <form id="login-form" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%;">
+        <input type="email" name="email" placeholder="Adresse e-mail" required class="input-style">
+        <input type="password" name="password" placeholder="Mot de passe" required class="input-style">
         <button type="submit" class="btn-style">Se connecter </button>
-      </form>
-      <p class="reset-link">
+       
+       <p class="reset-link">
         <a href="#" id="reset-password-link">Mot de passe oublié ?</a>
-      </p>
-      <div class="or-divider"><span>OU</span></div>
-      <div class="provider-buttons">
+       </p>
+       </form>
+       <div class="or-divider"><span>OU</span></div>
+       <div class="provider-buttons">
         <button class="provider-btn" onclick="signInWithProvider('google')">
           <img src="assets/icone/google-icon.png" alt="Google" class="provider-logo">
           Continuer avec Google
@@ -32,7 +32,7 @@
         <img src="assets/icone/discord-icon.png" alt="Discord" class="provider-logo">
         Continuer avec Discord
         </button>
-      </div>
+    </div>
   </div>
 
   <div class="theme-toggle-container">
