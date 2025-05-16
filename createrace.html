@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Création de races</title>
+
+  <!-- Gestion du theme clair/sombre directement au chargement -->
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+
+  <!-- Chargement des CSS globaux -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/style-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/formulaire.css">
+  </head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">
+        ⚙️
+      </a>
+    </div>
+    <div class="sidebar-content">
+      <h2>Menu MJ</h2>
+      <ul class="sidebar-menu">
+        <li><a href="CreateRace.html">Créationd de nouvelles races</a></li>  
+        <li><a href="#">Sessions Joueurs</a></li>
+      </ul>
+      <h2>Menu Joueurs</h2>
+      <ul class="sidebar-menu">
+        <li><a href="mes-personnages.html">Mes Personnages</a></li>
+        <li><a href="#">Sessions Joueurs</a></li>
+      </ul>
+      <li><a href="home.html">Page d'accueil site</a></li>
+    </div>
+  </aside>
+
+  
+
+  <!-- Contenu principal -->
+  <main>
+      <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
+     <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+    </button>
+
+    <div class="tabs">
+  <button class="tab-button active" data-target="fr">Français</button>
+  <button class="tab-button" data-target="en">English</button>
+</div> 
+<div id="fr" class="tab-content active"></div>
+ <section class="form-section" style="color: #d5d1a9;">
+      <h1>Créer une nouvelle Race</h1>
+      <label for="version">Version SRD :</label>
+      <select id="version" name="version">
+        <option value="2014">SRD 2014</option>
+        <option value="2024">SRD 2024</option>
+        <option value="Homebrew">Homebrew</option>
+      </select>
+        <label for="name_fr">Nom :</label><br />
+        <input id="name_fr" name="name_fr" type="text" required /><br />
+
+        <label for="speed_fr">Vitesse (métres) :</label><br />
+        <input id="speed_fr" name="speed_fr" type="number" required /><br />
+
+        <label for="alignement">Alignement :</label><br />
+        <textarea id="alignement" name="alignement"></textarea><br />
+
+        <label for="age_fr">Age :</label><br />
+        <textarea id="age_fr" name="age_fr"></textarea><br />
+
+        <label for="taille_description">Description taille :</label><br />
+        <textarea id="taille_description" name="taille_description"></textarea><br />
+
+        <label><input type="checkbox" class="trait-checkbox" id="darkvision_fr" checked /> Vision dans le noir</label>
+        <label><input type="checkbox" class="trait-checkbox" id="ability_score_fr" checked /> Bonus de caratéristiques</label>
+        <label for="ability_score_fr">Caractéristique :</label>
+          <select id="ability_score_fr" name="ability_score_fr">
+          <option value="FOR">FOR</option>
+          <option value="DEX">DEX</option>
+          <option value="CON">CON</option>
+          <option value="INT">INT</option>
+          <option value="SAG">SAG</option>
+          <option value="CHA">CHA</option>
+          </select>
+          
+        <label for="bonus_fr">Augmentation de caratéristiques :</label><br />
+        <input id="bonus_fr" name="bonus_fr" type="number" required /><br />
+
+
+</div>
+<div id="en" class="tab-content">
+        <label for="name">Name :</label><br />
+        <input id="name" name="name" type="text" required /><br />
+
+        <label for="speed">Speed (feet) :</label><br />
+        <input id="speed" name="speed" type="number" required /><br />
+
+        <label for="alignment">Alignement :</label><br />
+        <textarea id="alignment" name="alignment"></textarea><br />
+
+        <label for="age">Age :</label><br />
+        <textarea id="age" name="age"></textarea><br />
+
+        <label for="size_description">Description taille :</label><br />
+        <textarea id="size_description" name="size_description"></textarea><br />
+
+        <label><input type="checkbox" id="lang-en" checked /> Darkvision</label>
+
+        <label><input type="checkbox" id="lang-en" checked /> Ability score bonus</label>
+        
+        <label id="lang-en" for="ability-score">Ability score :</label>
+          <select id="ability-score" name="Ability score">
+          <option value="STR">STR</option>
+          <option value="DEX">DEX</option>
+          <option value="CON">CON</option>
+          <option value="INT">INT</option>
+          <option value="WIS">WIS</option>
+          <option value="CHA">CHA</option>
+          </select>
+
+        <label for="bonus">Ability score improuvement :</label><br />
+        <input id="bonus" name="bonus" type="number" required /><br />
+
+</div>
+        <!-- Tu peux ajouter d'autres champs ici selon tes besoins -->
+
+        <button type="submit">Créer la race</button>
+      </form>
+    </section>
+    
+  </main>
+
+  <!-- Bouton de changement de thème (lanterne) -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <!-- Chargement des JS globaux -->
+  <script type="module" src="js/sidebar.js"></script>
+  <script src="js/theme.js"></script>
+  <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
+  <script type="module" src="js/createrace.js"></script>
+  <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
+  <script type="module">
+    import { toggleSidebar } from './js/sidebar.js';
+    window.toggleSidebar = toggleSidebar;
+  </script>
+
+  <!-- Ton JS spécifique si besoin (ex: profil.js, etc) -->
+  <!--<script type="module" src="js/TONFICHIERSPECIFIQUE.js"></script>-->
+</body>
+</html>

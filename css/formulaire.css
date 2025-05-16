@@ -1,0 +1,120 @@
+/* Conteneur principal du formulaire */
+.form-section {
+  background-color: rgba(20, 20, 20, 0.85);
+  padding: 1.5em 2em;
+  border-radius: 8px;
+  max-width: 700px;
+  width: 90%; 
+  margin: auto;
+  color: #2b2b2b; /* jaune vif */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Titres */
+.form-section h1,
+.form-section h3 {
+  margin-bottom: 1em;
+  font-weight: 700;
+  color: #d5d1a9;
+}
+
+/* Champs texte et textarea */
+.form-section input[type="text"],
+.form-section input[type="number"],
+.form-section select,
+.form-section textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.4em 0.6em;
+  margin-bottom: 1em;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #2e0601;
+  color: #d5d1a9;
+  font-size: 1em;
+
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.form-section input[type="text"]:focus,
+.form-section input[type="number"]:focus,
+.form-section select:focus,
+.form-section textarea:focus {
+  border-color: #d5d1a9;
+  outline: none;
+}
+
+/* Labels */
+.form-section label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+/* Sections multilingues */
+.lang-section {
+  border: 1px solid #444;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  background: #111;
+  border-radius: 6px;
+}
+
+/* Conteneur des sélections en haut */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5em;
+  flex-wrap: wrap;
+  color: #1f0138;
+}
+
+.top-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Bouton soumission */
+.form-section button[type="submit"] {
+  background-color: #3b0a52;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-family: 'Georgia', serif;
+  border: 1px solid #865dff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(134, 93, 255, 0.6);
+}
+
+.form-section button[type="submit"]:hover {
+  background-color: #340a57;
+}
+
+/* Checkbox & radio */
+.form-section input[type="checkbox"],
+.form-section input[type="radio"] {
+  margin-right: 0.4em;
+  cursor: pointer;
+}
+
+/* Messages d'erreur (à intégrer plus tard) */
+.error-message {
+  color: #e74c3c;
+  font-weight: 600;
+  margin-top: -0.8em;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.tab-button.active { font-weight: bold; }
