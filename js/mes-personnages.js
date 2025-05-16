@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   
     try {
-      const res = await fetch(`https://lampion-api.azurewebsites.net/api/GetCharacters?userId=${userId}`);
+      const res = await fetch(`https://myrpgtable.fr/api/GetCharacters?userId=${userId}`);
       const personnages = await res.json();
       console.log("✅ Personnages récupérés :", personnages);
   

@@ -5,7 +5,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 let supabase;
 
 async function initSupabase() {
-  const response = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey");
+  const response = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
   const result = await response.json();
   supabase = createClient(result.url, result.key);
 }
@@ -48,7 +48,7 @@ async function signInWithProvider(provider) {
   await supabase.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: "https://nice-island-0a49c7f03.6.azurestaticapps.net/home.html"
+      redirectTo: "https://myrpgtable.fr/home.html"
     }
   });
 }
@@ -60,7 +60,7 @@ document.getElementById("reset-password-link").addEventListener("click", async (
 
   if (email) {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: "https://ton-site.web.app/reset.html" // ou ton URL Azure de redirection
+      redirectTo: "https://myrpgtable.fr/reset.html" // ou ton URL Azure de redirection
     });
 
     if (error) {

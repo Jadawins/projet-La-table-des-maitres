@@ -3,7 +3,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 let supabase;
 
 async function initSupabase() {
-  const res = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey");
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
   const { url, key } = await res.json();
   supabase = createClient(url, key);
 }

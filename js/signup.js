@@ -4,7 +4,7 @@ let supabase;
 
 async function init() {
   console.log("Requête envoyée...");
-  const { key, url } = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey")
+  const { key, url } = await fetch("https://myrpgtable.fr/api/GetSupabaseKey")
     .then(res => res.json());
   console.log("Résultat de l’API :", { url, key });
 
@@ -15,7 +15,7 @@ function signInWithProvider(provider) {
   supabase.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: "https://nice-island-0a49c7f03.6.azurestaticapps.net/home.html"
+      redirectTo: "https://myrpgtable.fr/home.html"
     }
   });
 }
