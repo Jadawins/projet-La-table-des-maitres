@@ -1,12 +1,12 @@
 /* Conteneur principal du formulaire */
 .form-section {
-  background-color: rgba(20, 20, 20, 0.85);
+  max-width: 700px;  /* Largeur max du formulaire */
+  width: 190%;        /* Prend 90% de la largeur dispo de la fenêtre */
+  margin: 2em auto;  /* Centrer horizontalement avec marge verticale */
   padding: 1.5em 2em;
+  background-color: rgba(20, 20, 20, 0.85);
   border-radius: 8px;
-  max-width: 700px;
-  width: 90%; 
-  margin: auto;
-  color: #2b2b2b; /* jaune vif */
+  color: #ffeb3b;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -118,3 +118,37 @@
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 .tab-button.active { font-weight: bold; }
+
+/* Centre le formulaire et les onglets */
+#raceForm {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centre les onglets */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+/* Centre le contenu des onglets */
+.tab-content {
+  width: 100%;
+}
+
+.inline-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.inline-field input[type="number"] {
+  width: 80px;
+}

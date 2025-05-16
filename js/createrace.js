@@ -12,3 +12,15 @@ tabs.forEach(tab => {
     });
   });
 });
+const bonusCheckboxFr = document.getElementById('ability_score_fr');
+const bonusDetailsFr = document.getElementById('bonus_details_fr');
+
+// Cacher au chargement si la case est décochée
+if (!bonusCheckboxFr.checked) {
+  bonusDetailsFr.style.display = 'none';
+}
+
+// Réagir aux changements
+bonusCheckboxFr.addEventListener('change', () => {
+  bonusDetailsFr.style.display = bonusCheckboxFr.checked ? 'block' : 'none';
+});

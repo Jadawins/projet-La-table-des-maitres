@@ -54,16 +54,16 @@
      <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
-
+<form id="raceForm">
     <div class="tabs">
   <button class="tab-button active" data-target="fr">Français</button>
   <button class="tab-button" data-target="en">English</button>
 </div> 
 <div id="fr" class="tab-content active">
- <section class="form-section" style="color: #d5d1a9;">
+   <section class="form-section" style="color: #d5d1a9;">
       <h1>Créer une nouvelle Race</h1>
-      <label for="version">Version SRD :</label>
-      <select id="version" name="version">
+      <label for="version_fr">Version SRD :</label>
+      <select id="version_fr" name="version_fr">
         <option value="2014">SRD 2014</option>
         <option value="2024">SRD 2024</option>
         <option value="Homebrew">Homebrew</option>
@@ -71,65 +71,72 @@
         <label for="name_fr">Nom :</label><br />
         <input id="name_fr" name="name_fr" type="text" required /><br />
 
-        <label for="speed_fr">Vitesse (métres) :</label><br />
-        <input id="speed_fr" name="speed_fr" type="number" required /><br />
+        <div class="inline-field">
+          <label for="speed_fr">Vitesse (métres) :</label><br />
+          <input id="speed_fr" name="speed_fr" type="number" placeholder="ex : 9.5" required /><br />
+        </div>
 
-        <label for="alignement">Alignement :</label><br />
-        <textarea id="alignement" name="alignement"></textarea><br />
+        <label for="alignment_fr">Alignement :</label><br />
+        <textarea id="alignment_fr" name="alignment_fr" placeholder="Description sur l'alignement"></textarea><br />
 
         <label for="age_fr">Age :</label><br />
-        <textarea id="age_fr" name="age_fr"></textarea><br />
+        <textarea id="age_fr" name="age_fr" placeholder="Description sur l'age"></textarea><br />
 
-        <label for="taille_description">Description taille :</label><br />
-        <textarea id="taille_description" name="taille_description"></textarea><br />
+        <label for="size_description_fr">Description taille :</label><br />
+        <textarea id="size_description_fr" name="size_description_fr" placeholder="Description sur la taille"></textarea><br />
 
         <label><input type="checkbox" class="trait-checkbox" id="darkvision_fr" checked /> Vision dans le noir</label>
         <label><input type="checkbox" class="trait-checkbox" id="ability_score_fr" checked /> Bonus de caratéristiques</label>
-        <label for="ability_score_fr">Caractéristique :</label>
-          <select id="ability_score_fr" name="ability_score_fr">
-          <option value="FOR">FOR</option>
-          <option value="DEX">DEX</option>
-          <option value="CON">CON</option>
-          <option value="INT">INT</option>
-          <option value="SAG">SAG</option>
-          <option value="CHA">CHA</option>
-          </select>
-          
-        <label for="bonus_fr">Augmentation de caratéristiques :</label><br />
-        <input id="bonus_fr" name="bonus_fr" type="number" required /><br />
+        <div id="bonus_details_fr">
+          <label for="ability_score_fr">Caractéristique :</label>
+            <select id="ability_score_fr" name="ability_score_fr">
+            <option value="FOR">FOR</option>
+            <option value="DEX">DEX</option>
+            <option value="CON">CON</option>
+            <option value="INT">INT</option>
+            <option value="SAG">SAG</option>
+            <option value="CHA">CHA</option>
+            </select>
+          <div class="inline-field">
+            <label for="bonus_fr">Augmentation de caratéristiques :</label><br />
+            <input id="bonus_fr" name="bonus_fr" type="number" required /><br />
+          </div> 
+        </div>   
  </section>        
 
 </div>
-  <div id="en" class="tab-content">
+<div id="en" class="tab-content">
+  
     <section class="form-section" style="color: #d5d1a9;">
       <h1>Créer une nouvelle Race</h1>
-      <label for="version">Version SRD :</label>
-      <select id="version" name="version">
+      <label for="version_en">Version SRD :</label>
+      <select id="version_en" name="version_en">
         <option value="2014">SRD 2014</option>
         <option value="2024">SRD 2024</option>
         <option value="Homebrew">Homebrew</option>
       </select>
-        <label for="name">Name :</label><br />
-        <input id="name" name="name" type="text" required /><br />
+        <label for="name_en">Name :</label><br />
+        <input id="name_en" name="name_en" type="text" required /><br />
 
-        <label for="speed">Speed (feet) :</label><br />
-        <input id="speed" name="speed" type="number" required /><br />
+        <div class="inline-field">
+          <label for="speed_en">Speed (feet) :</label><br />
+          <input id="speed_en" name="speed_en" type="number" required /><br />
+        </div>
 
-        <label for="alignment">Alignement :</label><br />
-        <textarea id="alignment" name="alignment"></textarea><br />
+        <label for="alignment_en">Alignement :</label><br />
+        <textarea id="alignment_en" name="alignment_en"></textarea><br />
 
-        <label for="age">Age :</label><br />
-        <textarea id="age" name="age"></textarea><br />
+        <label for="age_en">Age :</label><br />
+        <textarea id="age_en" name="age_en"></textarea><br />
 
-        <label for="size_description">Description taille :</label><br />
-        <textarea id="size_description" name="size_description"></textarea><br />
+        <label for="size_description_en">Description taille :</label><br />
+        <textarea id="size_description_en" name="size_description_en"></textarea><br />
 
-        <label><input type="checkbox" id="lang-en" checked /> Darkvision</label>
-
-        <label><input type="checkbox" id="lang-en" checked /> AbilitSy score bonus</label>
+        <label><input type="checkbox" id="darkvision_en" checked /> Darkvision</label>
+        <label><input type="checkbox" id="ability_score_en" checked /> AbilitSy score bonus</label>
         
-        <label id="lang-en" for="ability-score">Ability score :</label>
-          <select id="ability-score" name="Ability score">
+        <label id="lang-en" for="ability_score_en">Ability score :</label>
+          <select id="ability_score_en" name="ability_score_en">
           <option value="STR">STR</option>
           <option value="DEX">DEX</option>
           <option value="CON">CON</option>
@@ -137,17 +144,19 @@
           <option value="WIS">WIS</option>
           <option value="CHA">CHA</option>
           </select>
-
-        <label for="bonus">Ability score improuvement :</label><br />
-        <input id="bonus" name="bonus" type="number" required /><br />
-    </section>      
+        <div class="inline-field">
+          <label for="bonus_en">Ability score improuvement :</label><br />
+          <input id="bonus_en" name="bonus_en" type="number" required /><br />
+        </div>
+    </section>  
+        
 </div>
         <!-- Tu peux ajouter d'autres champs ici selon tes besoins -->
 
         <button type="submit">Créer la race</button>
-      </form>
-    </section>
+     
     
+</form>  
   </main>
 
   <!-- Bouton de changement de thème (lanterne) -->
