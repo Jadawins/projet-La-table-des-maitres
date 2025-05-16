@@ -97,10 +97,18 @@
           
         <label for="bonus_fr">Augmentation de caratéristiques :</label><br />
         <input id="bonus_fr" name="bonus_fr" type="number" required /><br />
-
+ </section>        
 
 </div>
-<div id="en" class="tab-content">
+  <div id="en" class="tab-content">
+    <section class="form-section" style="color: #d5d1a9;">
+      <h1>Créer une nouvelle Race</h1>
+      <label for="version">Version SRD :</label>
+      <select id="version" name="version">
+        <option value="2014">SRD 2014</option>
+        <option value="2024">SRD 2024</option>
+        <option value="Homebrew">Homebrew</option>
+      </select>
         <label for="name">Name :</label><br />
         <input id="name" name="name" type="text" required /><br />
 
@@ -118,7 +126,7 @@
 
         <label><input type="checkbox" id="lang-en" checked /> Darkvision</label>
 
-        <label><input type="checkbox" id="lang-en" checked /> Ability score bonus</label>
+        <label><input type="checkbox" id="lang-en" checked /> AbilitSy score bonus</label>
         
         <label id="lang-en" for="ability-score">Ability score :</label>
           <select id="ability-score" name="Ability score">
@@ -132,7 +140,7 @@
 
         <label for="bonus">Ability score improuvement :</label><br />
         <input id="bonus" name="bonus" type="number" required /><br />
-
+    </section>      
 </div>
         <!-- Tu peux ajouter d'autres champs ici selon tes besoins -->
 
