@@ -6,8 +6,7 @@
   <title>Accueil</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
-  <link rel="stylesheet" href="css/signup-login.css">
-  <link rel="stylesheet" href="css/style-clean.css">
+   <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -46,7 +45,7 @@
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
   
-    const res = await fetch("https://lampion-api.azurewebsites.net/api/GetSupabaseKey");
+    const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
     const { url, key } = await res.json();
     const supabase = createClient(url, key);
   
