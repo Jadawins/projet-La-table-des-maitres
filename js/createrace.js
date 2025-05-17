@@ -12,15 +12,34 @@ tabs.forEach(tab => {
     });
   });
 });
-const bonusCheckboxFr = document.getElementById('ability_score_fr');
-const bonusDetailsFr = document.getElementById('bonus_details_fr');
 
-// Cacher au chargement si la case est décochée
-if (!bonusCheckboxFr.checked) {
-  bonusDetailsFr.style.display = 'none';
+function toggleSection(checkboxId, sectionId) {
+  const checkbox = document.getElementById(checkboxId);
+  const section = document.getElementById(sectionId);
+
+  // Initial state
+  section.style.display = checkbox.checked ? 'block' : 'none';
+
+  // On change
+  checkbox.addEventListener('change', () => {
+    section.style.display = checkbox.checked ? 'block' : 'none';
+  });
 }
 
-// Réagir aux changements
-bonusCheckboxFr.addEventListener('change', () => {
-  bonusDetailsFr.style.display = bonusCheckboxFr.checked ? 'block' : 'none';
+// Appliquer pour chaque couple
+toggleSection('ability_score_fr', 'bonus_details_fr');
+toggleSection('darkvision_fr', 'darkvision_details_fr');
+toggleSection('show_weapon_section_fr', 'weapon_section_fr');
+toggleSection('ability_score_en', 'bonus_details_en');
+toggleSection('darkvision_en', 'darkvision_details_en');
+
+document.getElementById('add_weapon').addEventListener('click', () => {
+  const weaponName = document.getElementById('weapon_name').value.trim();
+  if (weaponName) {
+    const weaponList = document.getElementById('weapon_list');
+    const item = document.createElement('div');
+    item.textContent = weaponName;
+    weaponList.appendChild(item);
+    document.getElementById('weapon_name').value = '';
+  }
 });

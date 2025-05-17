@@ -85,8 +85,23 @@
         <label for="size_description_fr">Description taille :</label><br />
         <textarea id="size_description_fr" name="size_description_fr" placeholder="Description sur la taille"></textarea><br />
 
-        <label><input type="checkbox" class="trait-checkbox" id="darkvision_fr" checked /> Vision dans le noir</label>
-        <label><input type="checkbox" class="trait-checkbox" id="ability_score_fr" checked /> Bonus de caratéristiques</label>
+        
+          <label>
+            <input type="checkbox" class="trait-checkbox" id="darkvision_fr" /> 
+              Vision dans le noir 
+              <span class="tooltip" title="Est ce que la Race voit dans le noir (18m) ?">❔</span>
+          </label>
+          <div id="darkvision_details_fr">
+            <div class="inline-field">
+              <label for="darkvision_distance_fr">Distance (m) :</label><br />
+              <input id="darkvision_distance_fr" name="darkvision_distance_fr" placeholder="18 m" type="number" required /><br />
+            </div>           
+          </div> 
+          <label>   
+            <input type="checkbox" class="trait-checkbox" id="ability_score_fr" />
+              Bonus de caratéristiques
+              <span class="tooltip" title="Est ce que la Race a un bonus de caractéristique ?">❔</span>
+          </label>
         <div id="bonus_details_fr">
           <label for="ability_score_fr">Caractéristique :</label>
             <select id="ability_score_fr" name="ability_score_fr">
@@ -102,14 +117,27 @@
             <input id="bonus_fr" name="bonus_fr" type="number" required /><br />
           </div> 
         </div>   
+        <label>
+          <input type="checkbox" class="trait-checkbox" id="show_weapon_section_fr" />
+            Maîtrise d'armes :
+          <span class="tooltip" title="Est ce que la race à des maîtrises d'armes?">❔</span>
+        </label>
+          <div id="weapon_section_fr">
+          <label for="weapon_name">Nom :</label><br />
+          <input id="weapon_name" name="weapon_name" type="text" placeholder="Nom du trait"></textarea><br />
+          <button type="button" id="add_weapon">➕</button>
+          <div id="weapon_list" style="margin-top: 10px;"></div>
+        </div>
+        
+      
  </section>        
 
 </div>
 <div id="en" class="tab-content">
   
     <section class="form-section" style="color: #d5d1a9;">
-      <h1>Créer une nouvelle Race</h1>
-      <label for="version_en">Version SRD :</label>
+      <h1>Create a new Race</h1>
+      <label for="version_en">SRD version :</label>
       <select id="version_en" name="version_en">
         <option value="2014">SRD 2014</option>
         <option value="2024">SRD 2024</option>
@@ -132,9 +160,23 @@
         <label for="size_description_en">Description taille :</label><br />
         <textarea id="size_description_en" name="size_description_en"></textarea><br />
 
-        <label><input type="checkbox" id="darkvision_en" checked /> Darkvision</label>
-        <label><input type="checkbox" id="ability_score_en" checked /> AbilitSy score bonus</label>
-        
+        <label>
+            <input type="checkbox" class="trait-checkbox" id="darkvision_en" /> 
+              Darkvision
+              <span class="tooltip" title="Does the Race see in the dark ?">❔</span>
+        </label>
+        <div id="darkvision_details_en">
+          <div class="inline-field">
+            <label for="darkvision_distance_en">Distance (f) :</label><br />
+             <input id="darkvision_distance_en" name="darkvision_distance_en" placeholder="60 f" type="number" required /><br />
+          </div>           
+        </div> 
+        <label>
+          <input type="checkbox" class="trait-checkbox" id="ability_score_en" />
+            Ability score bonus
+          <span class="tooltip" title="Does Race have a characteristic bonus?">❔</span>
+        </label>
+        <div id="bonus_details_en">   
         <label id="lang-en" for="ability_score_en">Ability score :</label>
           <select id="ability_score_en" name="ability_score_en">
           <option value="STR">STR</option>
@@ -145,10 +187,12 @@
           <option value="CHA">CHA</option>
           </select>
         <div class="inline-field">
-          <label for="bonus_en">Ability score improuvement :</label><br />
+          <label for="bonus_en">Ability score increase :</label><br />
           <input id="bonus_en" name="bonus_en" type="number" required /><br />
         </div>
+      </div> 
     </section>  
+    
         
 </div>
         <!-- Tu peux ajouter d'autres champs ici selon tes besoins -->
