@@ -16,23 +16,28 @@
 <body>
   <div class="page-container">
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header sidebar-header-flex">
-        <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
-          <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
-        </button>
-        <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">
-          ⚙️
-        </a>
-      </div>
-      <div class="sidebar-content">
-        <h2>Menu Joueurs</h2>
-        <ul class="sidebar-menu">
-          <li><a href="mes-personnages.html">Mes Personnages</a></li>
-          <li><a href="#">Sessions Joueurs</a></li>
-        </ul>
-        <li><a href="home.html">Page d'accueil site</a></li>
-      </div>
-    </aside>
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">
+        ⚙️
+      </a>
+    </div>
+    <div class="sidebar-content">
+      <h2>Menu MJ</h2>
+      <ul class="sidebar-menu">
+        <li><a href="CreateRace.html">Créationd de nouvelles races</a></li>  
+        <li><a href="#">Sessions Joueurs</a></li>
+      </ul>
+      <h2>Menu Joueurs</h2>
+      <ul class="sidebar-menu">
+        <li><a href="mes-personnages.html">Mes Personnages</a></li>
+        <li><a href="#">Sessions Joueurs</a></li>
+      </ul>
+      <li><a href="home.html">Page d'accueil site</a></li>
+    </div>
+  </aside>
 
     <main>
       <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
