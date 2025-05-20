@@ -79,16 +79,15 @@ async function chargerArmesDepuisAPI() {
     console.error('Erreur lors du chargement des armes :', err);
   }
 }
-function genererMenuDeroulant() {
+window.genererMenuDeroulant = function genererMenuDeroulant() {
   const container = document.getElementById('weapon_dropdown_container');
   container.innerHTML = ''; // Vide le conteneur au cas où
 
-  // Récupère la liste unique des noms d'armes
   const nomsArmes = toutesLesArmes.map(a => a.nom).sort();
 
   const select = document.createElement('select');
   select.id = 'weapon_select';
-  select.classList.add('dropdown-style'); // Ajoute une classe pour du style si tu veux
+  select.classList.add('dropdown-style');
 
   nomsArmes.forEach(nom => {
     const option = document.createElement('option');
@@ -151,5 +150,5 @@ function getArmesSelectionnees() {
 
   return { categories, armes };
 }
-window.genererMenuDeroulant = genererMenuDeroulant;
+
 window.toutesLesArmes = toutesLesArmes;
