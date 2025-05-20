@@ -1,7 +1,7 @@
 /* Conteneur principal du formulaire */
 .form-section {
-  max-width: 800px;  /* Largeur max du formulaire */
-  width: 190%;        /* Prend 90% de la largeur dispo de la fenêtre */
+  max-width: 700px;  /* Largeur max du formulaire */
+  width: 100%;        /* Prend 90% de la largeur dispo de la fenêtre */
   margin: 2em auto;  /* Centrer horizontalement avec marge verticale */
   padding: 1.5em 2em;
   background-color: rgba(20, 20, 20, 0.85);
@@ -23,7 +23,7 @@
 .form-section input[type="number"],
 .form-section select,
 .form-section textarea {
-  width: 100%;
+  width: 90%;
   max-width: 100%;
   padding: 0.4em 0.6em;
   margin-bottom: 1em;
@@ -150,6 +150,12 @@
 }
 
 .inline-field input[type="number"] {
-  width: 80px;
+  width: fit-content;
 }
 
+.form-section .inline-field input#speed_fr[type="number"] {
+  width: auto !important; 
+  min-width: 60px !important;
+  max-width: 150px !important;
+  flex: 0 1 auto !important;
+}
