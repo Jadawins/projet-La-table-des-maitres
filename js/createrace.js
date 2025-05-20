@@ -94,6 +94,7 @@ window.genererMenuDeroulant = function genererMenuDeroulant() {
   const select = document.createElement('select');
   select.id = 'weapon_select';
   select.classList.add('dropdown-style');
+  select.style.width = 'auto';
 
   nomsArmes.forEach(nom => {
     const option = document.createElement('option');
