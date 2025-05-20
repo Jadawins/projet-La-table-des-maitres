@@ -30,6 +30,7 @@ function toggleSection(checkboxId, sectionId) {
 toggleSection('ability_score_fr', 'bonus_details_fr');
 toggleSection('darkvision_fr', 'darkvision_details_fr');
 toggleSection('show_weapon_section_fr', 'weapon_section_fr');
+toggleSection('show_armor_section_fr', 'armor_section_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
 
@@ -67,6 +68,8 @@ document.getElementById('add_weapon').addEventListener('click', () => {
 });
 
 let toutesLesArmes = [];
+let toutesLesArmures = [];
+const bonusArmures = [];
 
 async function chargerArmesDepuisAPI() {
   try {
@@ -105,25 +108,76 @@ window.genererMenuDeroulant = function genererMenuDeroulant() {
 
   container.appendChild(select);
 }
-document.addEventListener("DOMContentLoaded", async function () {
- await chargerArmesDepuisAPI();
-  genererMenuDeroulant();
-  // Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
-  document.getElementById('show_weapon_select').addEventListener('click', () => {
-  genererMenuDeroulant();
-  });
- 
-  });
- /**
- * Remplace les virgules par des points dans un champ input
- * Utile pour les champs numériques comme la vitesse
- */
-  function convertirVirguleEnPoint(id) {
-  const input = document.getElementById(id);
-  if (input && input.value.includes(',')) {
-    input.value = input.value.replace(',', '.');
+async function chargerArmuresDepuisAPI() {
+  try {
+    const response = await fetch('/api/GetCategories/');
+    if (!response.ok) throw new Error('Erreur API armures');
+
+    const data = await response.json();
+    const armures = data.find(d => d.index === "armor")?.equipment || [];
+
+    toutesLesArmures = armures.map(a => ({
+      nom: a.name?.fr || a.name?.en || a.index
+    }));
+
+    console.log('✅ Armures chargées :', toutesLesArmures);
+  } catch (err) {
+    console.error('❌ Erreur chargement armures :', err);
   }
 }
+function genererMenuDeroulantArmures() {
+  const container = document.getElementById('armor_dropdown_container');
+  container.innerHTML = '';
+
+  const nomsArmures = toutesLesArmures.map(a => a.nom).sort();
+
+  const select = document.createElement('select');
+  select.id = 'armor_select';
+  select.classList.add('dropdown-style');
+  select.style.width = 'auto';
+
+  nomsArmures.forEach(nom => {
+    const option = document.createElement('option');
+    option.value = nom;
+    option.textContent = nom;
+    select.appendChild(option);
+  });
+
+  container.appendChild(select);
+}
+document.addEventListener("DOMContentLoaded", async function () {
+  // Chargement dynamique
+  await chargerArmesDepuisAPI();
+  await chargerArmuresDepuisAPI();
+  await chargerCaracteristiques();
+
+  // Menu déroulant armes
+  genererMenuDeroulant();
+  document.getElementById('show_weapon_select').addEventListener('click', () => {
+    genererMenuDeroulant();
+  });
+
+  // Menu déroulant armures
+  document.getElementById('show_armor_select').addEventListener('click', () => {
+    genererMenuDeroulantArmures();
+  });
+
+  // Cacher le menu déroulant de caractéristiques si "Appliquer à toutes" est coché
+  const applyCheckbox = document.getElementById('apply_to_all_stats');
+  const selectStat = document.getElementById('select_stat_group');
+  applyCheckbox.addEventListener('change', () => {
+    selectStat.style.display = applyCheckbox.checked ? 'none' : 'block';
+  });
+});
+
+document.getElementById('add_armor').addEventListener('click', () => {
+  const select = document.getElementById('armor_select');
+  if (select) {
+    const nom = select.value;
+    if (nom) ajouterArmure(nom);
+  }
+});
+
 // Gestion du formulaire : correction de la virgule dans les champs vitesse
 document.getElementById('raceForm').addEventListener('submit', function (e) {
   e.preventDefault(); // empêche la soumission par défaut
@@ -150,6 +204,29 @@ function getArmesSelectionnees() {
     .map(div => div.dataset.weapon);
 
   return { categories, armes };
+}
+function ajouterArmure(nom) {
+  const armorList = document.getElementById('armor_list');
+
+  const exists = Array.from(armorList.children).some(
+    item => item.dataset.armor === nom
+  );
+  if (exists) return;
+
+  const item = document.createElement('div');
+  item.classList.add('weapon-item');
+  item.dataset.armor = nom;
+  item.textContent = nom;
+
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = '❌';
+  removeBtn.classList.add('remove-weapon-btn');
+  removeBtn.addEventListener('click', () => item.remove());
+
+  item.appendChild(removeBtn);
+  armorList.appendChild(item);
+
+  bonusArmures.push(nom);
 }
 // Stocke les bonus ajoutés
 const bonusStats = [];
@@ -224,20 +301,3 @@ document.getElementById('add_stat_bonus').addEventListener('click', async () => 
   }
 });
 
-// Charger automatiquement les caractéristiques au chargement de la page
-document.addEventListener("DOMContentLoaded", async function () {
-  await chargerCaracteristiques();
-});
-document.addEventListener("DOMContentLoaded", async function () {
-  await chargerCaracteristiques();
-
-  // 👇 Cacher/afficher le select selon état de la checkbox
-  const applyCheckbox = document.getElementById('apply_to_all_stats');
-  const selectStat = document.getElementById('select_stat_group');
-
-  applyCheckbox.addEventListener('change', () => {
-    selectStat.style.display = applyCheckbox.checked ? 'none' : 'block';
-  });
-});
-
-window.toutesLesArmes = toutesLesArmes;

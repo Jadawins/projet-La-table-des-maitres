@@ -134,7 +134,8 @@
             Maîtrise d'armes :
           <span class="tooltip" title="Est ce que la race à des maîtrises d'armes?">❔</span>
         </label>
-          <div id="weapon_section_fr">
+
+        <div id="weapon_section_fr">
           <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;"> 
           <label for="weapon_name"style="white-space: nowrap;">Nom :</label>
           <input id="weapon_name" style="width: auto;" name="weapon_name" type="text" placeholder="Nom du trait" />
@@ -154,8 +155,34 @@
           <button type="button" id="add_weapon">+ Ajouter l'arme sélectionnée</button>
           <!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
           <div id="weapon_list" class="weapon-list"></div>
-
+      </div>
+      <label>
+          <input type="checkbox" class="trait-checkbox" id="show_armor_section_fr" />
+            Maîtrise d'armures :
+          <span class="tooltip" title="Est ce que la race à des maîtrises des armures?">❔</span>
+       </label>
+      <div id="armor_section_fr">
+        <!-- Ligne pour le nom du trait -->
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+        <label for="armor_name" style="white-space: nowrap;">Nom :</label>
+        <input id="armor_name" style="width: auto;" name="armor_name" type="text" placeholder="Nom du trait" />
         </div>
+
+        <!-- Filtres par catégorie d'armure -->
+        <form id="filtre-armures">
+        <label><input type="checkbox" name="catégorie_armure" value="light"> Armures légères</label><br>
+        <label><input type="checkbox" name="catégorie_armure" value="medium"> Armures intermédiaires</label><br>
+        <label><input type="checkbox" name="catégorie_armure" value="heavy"> Armures lourdes</label><br>
+        <label><input type="checkbox" name="catégorie_armure" value="shield"> Boucliers</label>
+        </form>
+
+        <!-- Liste déroulante et boutons -->
+        <div id="liste-armures"></div>
+        <button type="button" id="show_armor_select">🛡️ Choisir une armure</button>
+        <div id="armor_dropdown_container" style="margin-top: 10px;"></div>
+        <button type="button" id="add_armor">+ Ajouter l’armure sélectionnée</button>
+        <div id="armor_list" class="weapon-list"></div>
+      </div>
         
       
  </section>        
