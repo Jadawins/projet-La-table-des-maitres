@@ -102,6 +102,10 @@ function genererMenuDeroulant() {
 document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmesDepuisAPI();
   genererMenuDeroulant();
+  // Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
+  document.getElementById('show_weapon_select').addEventListener('click', () => {
+  genererMenuDeroulant();
+  });
  
   });
  /**
@@ -113,10 +117,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (input && input.value.includes(',')) {
     input.value = input.value.replace(',', '.');
   }
-  // Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
-  document.getElementById('show_weapon_select').addEventListener('click', () => {
-  genererMenuDeroulant();
-  });
 }
 // Gestion du formulaire : correction de la virgule dans les champs vitesse
 document.getElementById('raceForm').addEventListener('submit', function (e) {
