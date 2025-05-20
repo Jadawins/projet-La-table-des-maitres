@@ -94,17 +94,6 @@ function genererMenuDeroulant() {
 
   container.appendChild(select);
 }
-document.getElementById('add_weapon').addEventListener('click', () => {
-  const select = document.getElementById('weapon_select');
-  const weaponName = select ? select.value : '';
-
-  if (weaponName) {
-    const weaponList = document.getElementById('weapon_list');
-    const item = document.createElement('div');
-    item.textContent = weaponName;
-    weaponList.appendChild(item);
-  }
-});
 
 document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmesDepuisAPI();
