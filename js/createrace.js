@@ -151,3 +151,5 @@ function getArmesSelectionnees() {
 
   return { categories, armes };
 }
+window.genererMenuDeroulant = genererMenuDeroulant;
+window.toutesLesArmes = toutesLesArmes;
