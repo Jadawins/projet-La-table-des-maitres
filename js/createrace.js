@@ -99,6 +99,10 @@ function genererMenuDeroulant() {
 
   container.appendChild(select);
 }
+// Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
+document.getElementById('show_weapon_select').addEventListener('click', () => {
+  genererMenuDeroulant();
+});
 
 document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmesDepuisAPI();

@@ -132,10 +132,16 @@
             <label><input type="checkbox" name="catégorie" value="martial-ranged"> Armes de guerre (distance)</label><br>
           </form>
           <div id="liste-armes"></div>
-          <div id="weapon_dropdown_container"></div>
-          <button id="add_weapon">+ Ajouter une arme</button>
+          <!-- Bouton pour afficher la liste déroulante -->
+          <button type="button" id="show_weapon_select">🎯 Choisir une arme</button>
 
-<!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
+          <!-- Liste déroulante générée dynamiquement -->
+          <div id="weapon_dropdown_container" style="margin-top: 10px;"></div>
+
+          <!-- Bouton pour ajouter l'arme sélectionnée -->
+          <button type="button" id="add_weapon">+ Ajouter l'arme sélectionnée</button>
+
+          <!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
           <div id="weapon_list" class="weapon-list"></div>
 
         </div>
