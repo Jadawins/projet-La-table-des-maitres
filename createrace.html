@@ -73,7 +73,7 @@
 
         <div class="inline-field">
           <label for="speed_fr">Vitesse (métres) :</label><br />
-          <input id="speed_fr" name="speed_fr" type="number" placeholder="ex : 9.5" required /><br />
+          <input id="speed_fr" name="speed_fr" type="number" step="any" placeholder="ex : 9.5m" required />
         </div>
 
         <label for="alignment_fr">Alignement :</label><br />
@@ -125,8 +125,19 @@
           <div id="weapon_section_fr">
           <label for="weapon_name">Nom :</label><br />
           <input id="weapon_name" name="weapon_name" type="text" placeholder="Nom du trait"></textarea><br />
-          <button type="button" id="add_weapon">➕</button>
-          <div id="weapon_list" style="margin-top: 10px;"></div>
+          <form id="filtre-armes">
+            <label><input type="checkbox" name="catégorie" value="simple-melee"> Armes simples (mêlée)</label><br>
+            <label><input type="checkbox" name="catégorie" value="simple-ranged"> Armes simples (distance)</label><br>
+            <label><input type="checkbox" name="catégorie" value="martial-melee"> Armes de guerre (mêlée)</label><br>
+            <label><input type="checkbox" name="catégorie" value="martial-ranged"> Armes de guerre (distance)</label><br>
+          </form>
+          <div id="liste-armes"></div>
+          <div id="weapon_dropdown_container"></div>
+          <button id="add_weapon">+ Ajouter une arme</button>
+
+<!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
+          <div id="weapon_list" class="weapon-list"></div>
+          
         </div>
         
       
