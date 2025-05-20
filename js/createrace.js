@@ -73,10 +73,16 @@ async function chargerArmesDepuisAPI() {
     const response = await fetch('/api/GetCategories/');
     if (!response.ok) throw new Error('Erreur API');
 
-    toutesLesArmes = await response.json();
-    console.log('Armes chargées depuis la BDD :', toutesLesArmes);
+    const data = await response.json();
+    const armes = data.find(d => d.index === "weapon")?.equipment || [];
+
+    toutesLesArmes = armes.map(a => ({
+      nom: a.name?.fr || a.name?.en || a.index
+    }));
+
+    console.log('✅ Armes chargées depuis la BDD :', toutesLesArmes);
   } catch (err) {
-    console.error('Erreur lors du chargement des armes :', err);
+    console.error('❌ Erreur lors du chargement des armes :', err);
   }
 }
 window.genererMenuDeroulant = function genererMenuDeroulant() {
@@ -99,16 +105,10 @@ window.genererMenuDeroulant = function genererMenuDeroulant() {
   container.appendChild(select);
 }
 document.addEventListener("DOMContentLoaded", async function () {
-  // await chargerArmesDepuisAPI();
+ await chargerArmesDepuisAPI();
   genererMenuDeroulant();
   // Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
   document.getElementById('show_weapon_select').addEventListener('click', () => {
-  toutesLesArmes = [
-    { nom: "Hachette" },
-    { nom: "Marteau léger" },
-    { nom: "Épée courte" },
-    { nom: "Arc court" }
-  ];
   genererMenuDeroulant();
   });
  
