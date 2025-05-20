@@ -100,10 +100,16 @@ function genererMenuDeroulant() {
   container.appendChild(select);
 }
 document.addEventListener("DOMContentLoaded", async function () {
-  await chargerArmesDepuisAPI();
+  // await chargerArmesDepuisAPI();
   genererMenuDeroulant();
   // Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
   document.getElementById('show_weapon_select').addEventListener('click', () => {
+  toutesLesArmes = [
+    { nom: "Hachette" },
+    { nom: "Marteau léger" },
+    { nom: "Épée courte" },
+    { nom: "Arc court" }
+  ];
   genererMenuDeroulant();
   });
  
