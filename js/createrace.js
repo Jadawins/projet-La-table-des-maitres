@@ -35,8 +35,13 @@ toggleSection('darkvision_en', 'darkvision_details_en');
 
 document.getElementById('add_weapon').addEventListener('click', () => {
   const select = document.getElementById('weapon_select');
-  const weaponName = select ? select.value : '';
+  if (!select) {
+    // Si le menu n'existe pas encore, on le génère
+    genererMenuDeroulant();
+    return;
+  }
 
+  const weaponName = select.value;
   if (weaponName) {
     const weaponList = document.getElementById('weapon_list');
 
