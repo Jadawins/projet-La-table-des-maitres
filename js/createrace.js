@@ -99,25 +99,24 @@ function genererMenuDeroulant() {
 
   container.appendChild(select);
 }
-// Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
-document.getElementById('show_weapon_select').addEventListener('click', () => {
-  genererMenuDeroulant();
-});
-
 document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmesDepuisAPI();
   genererMenuDeroulant();
  
-});
+  });
  /**
  * Remplace les virgules par des points dans un champ input
  * Utile pour les champs numériques comme la vitesse
  */
-function convertirVirguleEnPoint(id) {
+  function convertirVirguleEnPoint(id) {
   const input = document.getElementById(id);
   if (input && input.value.includes(',')) {
     input.value = input.value.replace(',', '.');
   }
+  // Affiche ou régénère le menu déroulant d'armes quand on clique sur le bouton
+  document.getElementById('show_weapon_select').addEventListener('click', () => {
+  genererMenuDeroulant();
+  });
 }
 // Gestion du formulaire : correction de la virgule dans les champs vitesse
 document.getElementById('raceForm').addEventListener('submit', function (e) {
