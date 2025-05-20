@@ -63,7 +63,7 @@
    <section class="form-section" style="color: #d5d1a9;">
       <h1>Créer une nouvelle Race</h1>
       <label for="version_fr">Version SRD :</label>
-      <select id="version_fr" name="version_fr">
+      <select id="version_fr" name="version_fr" style="width: auto;">
         <option value="2014">SRD 2014</option>
         <option value="2024">SRD 2024</option>
         <option value="Homebrew">Homebrew</option>
@@ -73,7 +73,7 @@
 
         <div class="inline-field">
           <label for="speed_fr">Vitesse (métres) :</label><br />
-          <input id="speed_fr" name="speed_fr" type="number" step="any" placeholder="ex : 9.5m" required />
+          <input id="speed_fr" name="speed_fr" type="number" step="any" placeholder="ex : 9.5m" required style="width: auto;" />
         </div>
 
         <label for="alignment_fr">Alignement :</label><br />
@@ -94,7 +94,7 @@
           <div id="darkvision_details_fr">
             <div class="inline-field">
               <label for="darkvision_distance_fr">Distance (m) :</label><br />
-              <input id="darkvision_distance_fr" name="darkvision_distance_fr" placeholder="18 m" type="number" required /><br />
+              <input id="darkvision_distance_fr" style="width: auto;" name="darkvision_distance_fr" placeholder="18 m" type="number" required /><br />
             </div>           
           </div> 
           <label>   
@@ -111,7 +111,7 @@
             </label>
             <div id="select_stat_group" style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
             <label for="select_stat" style="white-space: nowrap;">Caractéristique :</label>
-            <select id="select_stat" class="dropdown-style"></select>
+            <select id="select_stat" class="dropdown-style" style="width: auto;"></select>
             </div>
            <div class="inline-field">
               <label for="stat_bonus_value">Augmentation de caractéristique :</label>
@@ -132,7 +132,7 @@
           <div id="weapon_section_fr">
           <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;"> 
           <label for="weapon_name"style="white-space: nowrap;">Nom :</label>
-          <input id="weapon_name" name="weapon_name" type="text" placeholder="Nom du trait" />
+          <input id="weapon_name" style="width: auto;" name="weapon_name" type="text" placeholder="Nom du trait" />
           </div> 
           <form id="filtre-armes">
             <label><input type="checkbox" name="catégorie" value="simple-melee"> Armes simples (mêlée)</label><br>
@@ -144,7 +144,7 @@
           <!-- Bouton pour afficher la liste déroulante -->
           <button type="button" id="show_weapon_select">🎯 Choisir une arme</button>
           <!-- Liste déroulante générée dynamiquement -->
-          <div id="weapon_dropdown_container" style="margin-top: 10px;"></div>
+          <div id="weapon_dropdown_container" style="width: auto;" style="margin-top: 10px;"></div>
           <!-- Bouton pour ajouter l'arme sélectionnée -->
           <button type="button" id="add_weapon">+ Ajouter l'arme sélectionnée</button>
           <!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
