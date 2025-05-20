@@ -1,6 +1,6 @@
 /* Conteneur principal du formulaire */
 .form-section {
-  max-width: 700px;  /* Largeur max du formulaire */
+  max-width: 800px;  /* Largeur max du formulaire */
   width: 190%;        /* Prend 90% de la largeur dispo de la fenêtre */
   margin: 2em auto;  /* Centrer horizontalement avec marge verticale */
   padding: 1.5em 2em;

@@ -150,5 +150,93 @@ function getArmesSelectionnees() {
 
   return { categories, armes };
 }
+// Stocke les bonus ajoutés
+const bonusStats = [];
+
+async function chargerCaracteristiques() {
+  try {
+    const res = await fetch('/api/GetStats');
+    if (!res.ok) throw new Error('Erreur API GetStats');
+    const stats = await res.json();
+
+    const select = document.getElementById('select_stat');
+    select.innerHTML = ''; // Vide d’abord
+
+    stats.forEach(stat => {
+      const option = document.createElement('option');
+      option.value = stat.index;
+      option.textContent = stat.name.toUpperCase();
+      select.appendChild(option);
+    });
+  } catch (err) {
+    console.error('Erreur chargement caractéristiques:', err);
+  }
+}
+
+function ajouterBonusStat(index, name, value) {
+  // Empêche les doublons
+  const alreadyExists = bonusStats.some(item => item.index === index);
+  if (alreadyExists) return;
+
+  const statList = document.getElementById('stat_bonus_list');
+
+  const div = document.createElement('div');
+  div.className = 'stat-item';
+  div.dataset.stat = index;
+
+  const span = document.createElement('span');
+  span.textContent = `${name.toUpperCase()} +${value}`;
+
+  const btn = document.createElement('button');
+  btn.textContent = '❌';
+  btn.className = 'remove-stat-btn';
+  btn.onclick = () => {
+    div.remove();
+    const i = bonusStats.findIndex(s => s.index === index);
+    if (i !== -1) bonusStats.splice(i, 1);
+  };
+
+  div.appendChild(span);
+  div.appendChild(btn);
+  statList.appendChild(div);
+
+  bonusStats.push({ index, value });
+}
+
+document.getElementById('add_stat_bonus').addEventListener('click', async () => {
+  const value = parseInt(document.getElementById('stat_bonus_value').value);
+  if (isNaN(value) || value < 1) return;
+
+  const applyToAll = document.getElementById('apply_to_all_stats').checked;
+
+  const select = document.getElementById('select_stat');
+  const selectedIndex = select.value;
+  const selectedText = select.options[select.selectedIndex].text;
+
+  if (applyToAll) {
+    const allOptions = Array.from(select.options);
+    allOptions.forEach(opt => {
+      ajouterBonusStat(opt.value, opt.textContent, value);
+    });
+  } else {
+    ajouterBonusStat(selectedIndex, selectedText, value);
+  }
+});
+
+// Charger automatiquement les caractéristiques au chargement de la page
+document.addEventListener("DOMContentLoaded", async function () {
+  await chargerCaracteristiques();
+});
+document.addEventListener("DOMContentLoaded", async function () {
+  await chargerCaracteristiques();
+
+  // 👇 Cacher/afficher le select selon état de la checkbox
+  const applyCheckbox = document.getElementById('apply_to_all_stats');
+  const selectStat = document.getElementById('select_stat_group');
+
+  applyCheckbox.addEventListener('change', () => {
+    selectStat.style.display = applyCheckbox.checked ? 'none' : 'block';
+  });
+});
 
 window.toutesLesArmes = toutesLesArmes;

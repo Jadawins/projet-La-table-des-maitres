@@ -103,19 +103,25 @@
               <span class="tooltip" title="Est ce que la Race a un bonus de caractéristique ?">❔</span>
           </label>
         <div id="bonus_details_fr">
-          <label for="ability_score_fr">Caractéristique :</label>
-            <select id="ability_score_fr" name="ability_score_fr">
-            <option value="FOR">FOR</option>
-            <option value="DEX">DEX</option>
-            <option value="CON">CON</option>
-            <option value="INT">INT</option>
-            <option value="SAG">SAG</option>
-            <option value="CHA">CHA</option>
-            </select>
-          <div class="inline-field">
-            <label for="bonus_fr">Augmentation de caratéristiques :</label><br />
-            <input id="bonus_fr" name="bonus_fr" type="number" required /><br />
-          </div> 
+          <div style="margin-top: 5px; margin-left: 20px;">
+            <label>
+            <input type="checkbox" id="apply_to_all_stats" />
+            Appliquer à toutes les caractéristiques
+            </label>
+            <div id="select_stat_group" style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+            <label for="select_stat" style="white-space: nowrap;">Caractéristique :</label>
+            <select id="select_stat" class="dropdown-style"></select>
+            </div>
+           <div class="inline-field">
+              <label for="stat_bonus_value">Augmentation de caractéristique :</label>
+              <input id="stat_bonus_value" type="number" min="1" max="5" value="1" />
+            </div>
+          </div>
+          <div sty le="margin-top: 5px;">
+            </div>
+              <button type="button" id="add_stat_bonus">+ Ajouter l'augmentation</button>
+              <!-- Liste des bonus ajoutés -->
+              <div id="stat_bonus_list" style="margin-top: 10px;"></div>
         </div>   
         <label>
           <input type="checkbox" class="trait-checkbox" id="show_weapon_section_fr" />
@@ -123,8 +129,10 @@
           <span class="tooltip" title="Est ce que la race à des maîtrises d'armes?">❔</span>
         </label>
           <div id="weapon_section_fr">
-          <label for="weapon_name">Nom :</label><br />
-          <input id="weapon_name" name="weapon_name" type="text" placeholder="Nom du trait" /><br />
+          <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;"> 
+          <label for="weapon_name"style="white-space: nowrap;">Nom :</label>
+          <input id="weapon_name" name="weapon_name" type="text" placeholder="Nom du trait" />
+          </div> 
           <form id="filtre-armes">
             <label><input type="checkbox" name="catégorie" value="simple-melee"> Armes simples (mêlée)</label><br>
             <label><input type="checkbox" name="catégorie" value="simple-ranged"> Armes simples (distance)</label><br>
@@ -134,13 +142,10 @@
           <div id="liste-armes"></div>
           <!-- Bouton pour afficher la liste déroulante -->
           <button type="button" id="show_weapon_select">🎯 Choisir une arme</button>
-
           <!-- Liste déroulante générée dynamiquement -->
           <div id="weapon_dropdown_container" style="margin-top: 10px;"></div>
-
           <!-- Bouton pour ajouter l'arme sélectionnée -->
           <button type="button" id="add_weapon">+ Ajouter l'arme sélectionnée</button>
-
           <!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
           <div id="weapon_list" class="weapon-list"></div>
 
