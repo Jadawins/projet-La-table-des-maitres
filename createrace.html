@@ -188,7 +188,7 @@
       </div>
       <label>
         <input type="checkbox" class="trait-checkbox" id="show_tools_section_fr" />
-        Maîtrise d'outils
+        Maîtrise d'outils et instruments
         <span class="tooltip" title="Est-ce que la race maîtrise certains outils ?">❔</span>
       </label>
       <div style="margin-top: 5px; margin-left: 20px;">
@@ -215,17 +215,38 @@
           <label for="damage_type_select" style="white-space: nowrap;">Type de dégât :</label>
           <select id="damage_type_select" class="dropdown-style" style="width: auto;"></select>
         </div>
-
         <div class="inline-field" style="gap: 1em; margin-top: 0.5em;">
           <label><input type="checkbox" id="resistance_check"> Résistance (½ dégâts)</label>
           <label><input type="checkbox" id="immunity_check"> Immunité (0 dégâts)</label>
           <label><input type="checkbox" id="advantage_check"> Avantage au jet de sauvegarde</label>
-        </div>
-      
+        </div>      
         <button type="button" id="add_damage_trait" style="margin-top: 0.5em;">+ Ajouter</button>
       </div>
+      <div id="damage_trait_list" class="weapon-list" ></div>
+      <label>
+        <input type="checkbox" class="trait-checkbox" id="show_languages_section_fr" />
+        Langues connues
+        <span class="tooltip" title="Langues que cette race sait parler.">❔</span>
+      </label>
+      <div id="languages_section_fr" style="margin-left: 20px;">
+        <div id="languages_dropdown_container" style="margin-top: 10px;"></div>
+        <button type="button" id="add_language">+ Ajouter la langue</button>
+        <div id="languages_list" class="weapon-list"></div>
+      </div>
+      <label>
+        <input type="checkbox" class="trait-checkbox" id="show_skills_section_fr" />
+        Compétences maîtrisées
+        <span class="tooltip" title="Compétences accordées à cette race (comme Perception, Acrobaties, etc.)">❔</span>
+      </label>
+      <div id="skills_section_fr" style="margin-left: 20px;">
+        <div id="skills_dropdown_container" style="margin-top: 10px;"></div>
+        <button type="button" id="add_skill">+ Ajouter la compétence</button>
+        <div id="skills_list" class="weapon-list"></div>
+      </div>
 
-  <div id="damage_trait_list" class="weapon-list" style="margin-top: 1em;"></div>
+
+
+
 </div>
         
       

@@ -33,6 +33,8 @@ toggleSection('show_weapon_section_fr', 'weapon_section_fr');
 toggleSection('show_armor_section_fr', 'armor_section_fr');
 toggleSection('show_damage_type_select_fr', 'damage_type_section_fr');
 toggleSection('show_tools_section_fr', 'tools_section_fr');
+toggleSection('show_languages_section_fr', 'languages_section_fr');
+toggleSection('show_skills_section_fr', 'skills_section_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
 
@@ -75,6 +77,67 @@ const bonusArmures = [];
 let allDamageTypes = [];
 const damageTraits = [];
 let tousLesOutils = [];
+let toutesLesLangues = [];
+let toutesLesCompetences = [];
+
+async function chargerLanguesDepuisAPI() {
+  try {
+    const response = await fetch('/api/GetLanguages');
+    if (!response.ok) throw new Error('Erreur API langues');
+    toutesLesLangues = await response.json();
+    console.log('✅ Langues chargées :', toutesLesLangues);
+  } catch (err) {
+    console.error('❌ Erreur chargement langues :', err);
+  }
+}
+
+async function chargerCompetencesDepuisAPI() {
+  try {
+    const response = await fetch('/api/GetSkills');
+    if (!response.ok) throw new Error('Erreur API compétences');
+    toutesLesCompetences = await response.json();
+    console.log('✅ Compétences chargées :', toutesLesCompetences);
+  } catch (err) {
+    console.error('❌ Erreur chargement compétences :', err);
+  }
+}
+
+function genererMenuLangues() {
+  const container = document.getElementById('languages_dropdown_container');
+  container.innerHTML = '';
+
+  const select = document.createElement('select');
+  select.id = 'languages_select';
+  select.classList.add('dropdown-style');
+
+  toutesLesLangues.map(l => l.name.fr || l.name.en).sort().forEach(nom => {
+    const option = document.createElement('option');
+    option.value = nom;
+    option.textContent = nom;
+    select.appendChild(option);
+  });
+
+  container.appendChild(select);
+}
+
+function genererMenuCompetences() {
+  const container = document.getElementById('skills_dropdown_container');
+  container.innerHTML = '';
+
+  const select = document.createElement('select');
+  select.id = 'skills_select';
+  select.classList.add('dropdown-style');
+
+  toutesLesCompetences.map(c => c.name.fr || c.name.en).sort().forEach(nom => {
+    const option = document.createElement('option');
+    option.value = nom;
+    option.textContent = nom;
+    select.appendChild(option);
+  });
+
+  container.appendChild(select);
+}
+
 
 async function chargerOutilsDepuisAPI() {
   try {
@@ -367,3 +430,49 @@ function genererMenuDeroulantOutils() {
 
   container.appendChild(select);
 }
+
+document.getElementById('add_language').addEventListener('click', () => {
+  const select = document.getElementById('languages_select');
+  const nom = select?.value;
+  if (!nom) return;
+
+  const list = document.getElementById('languages_list');
+  const exists = Array.from(list.children).some(item => item.dataset.langue === nom);
+  if (exists) return;
+
+  const item = document.createElement('div');
+  item.classList.add('weapon-item');
+  item.dataset.langue = nom;
+  item.textContent = nom;
+
+  const btn = document.createElement('button');
+  btn.textContent = '❌';
+  btn.classList.add('remove-weapon-btn');
+  btn.addEventListener('click', () => item.remove());
+
+  item.appendChild(btn);
+  list.appendChild(item);
+});
+
+document.getElementById('add_skill').addEventListener('click', () => {
+  const select = document.getElementById('skills_select');
+  const nom = select?.value;
+  if (!nom) return;
+
+  const list = document.getElementById('skills_list');
+  const exists = Array.from(list.children).some(item => item.dataset.skill === nom);
+  if (exists) return;
+
+  const item = document.createElement('div');
+  item.classList.add('weapon-item');
+  item.dataset.skill = nom;
+  item.textContent = nom;
+
+  const btn = document.createElement('button');
+  btn.textContent = '❌';
+  btn.classList.add('remove-weapon-btn');
+  btn.addEventListener('click', () => item.remove());
+
+  item.appendChild(btn);
+  list.appendChild(item);
+});
