@@ -188,24 +188,28 @@
       </div>
       <label>
           <input type="checkbox" class="trait-checkbox" id="draconic_ancestry_fr" />
-            Cette race possède une ascendance draconique ? 
+            Ascendance draconique
           <span class="tooltip" title="A la création d'un personnage, si cette race est choisis une menu de couleur seras ajouté.">❔</span>
        </label>
-       <div id="damage_trait_section_fr" style="margin-top: 20px;">
-      <h4>Résistances / Immunités / Avantage (dégâts)</h4>
+       <label>
+          <input type="checkbox" class="trait-checkbox" id="show_damage_type_select_fr" />
+            Résistance à un type de dégats
+          <span class="tooltip" title="Est ce que la race résiste à un type de dégats">❔</span>
+       </label>
+      <div id="damage_type_section_fr">
+        <div class="inline-field">
+          <label for="damage_type_select" style="white-space: nowrap;">Type de dégât :</label>
+          <select id="damage_type_select" class="dropdown-style" style="width: auto;"></select>
+        </div>
 
-      <div class="inline-field">
-    <label for="damage_type_select" style="white-space: nowrap;">Type de dégât :</label>
-    <select id="damage_type_select" class="dropdown-style" style="width: auto;"></select>
+        <div class="inline-field" style="gap: 1em; margin-top: 0.5em;">
+          <label><input type="checkbox" id="resistance_check"> Résistance (½ dégâts)</label>
+          <label><input type="checkbox" id="immunity_check"> Immunité (0 dégâts)</label>
+          <label><input type="checkbox" id="advantage_check"> Avantage au jet de sauvegarde</label>
+        </div>
+      
+        <button type="button" id="add_damage_trait" style="margin-top: 0.5em;">+ Ajouter</button>
       </div>
-
-  <div class="inline-field" style="gap: 1em; margin-top: 0.5em;">
-    <label><input type="checkbox" id="resistance_check"> Résistance (½ dégâts)</label>
-    <label><input type="checkbox" id="immunity_check"> Immunité (0 dégâts)</label>
-    <label><input type="checkbox" id="advantage_check"> Avantage au jet de sauvegarde</label>
-  </div>
-
-  <button type="button" id="add_damage_trait" style="margin-top: 0.5em;">+ Ajouter</button>
 
   <div id="damage_trait_list" class="weapon-list" style="margin-top: 1em;"></div>
 </div>
