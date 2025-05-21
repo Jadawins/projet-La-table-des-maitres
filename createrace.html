@@ -62,15 +62,18 @@
 <div id="fr" class="tab-content active">
    <section class="form-section" style="color: #d5d1a9;">
       <h1>Créer une nouvelle Race</h1>
-      <label for="version_fr">Version SRD :</label>
-      <select id="version_fr" name="version_fr" style="width: auto;">
-        <option value="2014">SRD 2014</option>
-        <option value="2024">SRD 2024</option>
-        <option value="Homebrew">Homebrew</option>
-      </select>
-        <label for="name_fr">Nom :</label><br />
-        <input id="name_fr" name="name_fr" type="text" required /><br />
-
+        <div class="inline-field">
+          <label for="version_fr">Version SRD :</label>
+          <select id="version_fr" name="version_fr" style="width: auto;">
+           <option value="2014">SRD 2014</option>
+            <option value="2024">SRD 2024</option>
+            <option value="Homebrew">Homebrew</option>
+          </select>
+        </div>
+        <div class="inline-field">
+          <label for="name_fr" style="white-space: nowrap;">Nom :</label><br />
+          <input id="name_fr" name="name_fr" type="text" required /><br />
+        </div>
         <div class="inline-field">
           <label for="speed_fr" style="white-space: nowrap;">Vitesse (mètres) :</label>
           <input id="speed_fr"
@@ -96,12 +99,14 @@
               Vision dans le noir 
               <span class="tooltip" title="Est ce que la Race voit dans le noir (18m) ?">❔</span>
           </label>
-          <div id="darkvision_details_fr">
-            <div class="inline-field">
-              <label for="darkvision_distance_fr">Distance (m) :</label><br />
-              <input id="darkvision_distance_fr" style="width: auto;" name="darkvision_distance_fr" placeholder="18 m" type="number" required /><br />
-            </div>           
-          </div> 
+          <div style="margin-top: 5px; margin-left: 20px;">
+            <div id="darkvision_details_fr">
+              <div class="inline-field">
+                <label for="darkvision_distance_fr">Distance (m) :</label><br />
+                <input id="darkvision_distance_fr" style="width: auto;" name="darkvision_distance_fr" placeholder="18 m" type="number" required /><br />
+              </div>           
+            </div> 
+          </div>
           <label>   
             <input type="checkbox" class="trait-checkbox" id="ability_score_fr" />
               Bonus de caratéristiques
@@ -131,58 +136,61 @@
         </div>   
         <label>
           <input type="checkbox" class="trait-checkbox" id="show_weapon_section_fr" />
-            Maîtrise d'armes :
+            Maîtrise d'armes 
           <span class="tooltip" title="Est ce que la race à des maîtrises d'armes?">❔</span>
         </label>
-
-        <div id="weapon_section_fr">
-          <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;"> 
-          <label for="weapon_name"style="white-space: nowrap;">Nom :</label>
-          <input id="weapon_name" style="width: auto;" name="weapon_name" type="text" placeholder="Nom du trait" />
-          </div> 
-          <form id="filtre-armes">
-            <label><input type="checkbox" name="catégorie" value="simple-melee"> Armes simples (mêlée)</label><br>
-            <label><input type="checkbox" name="catégorie" value="simple-ranged"> Armes simples (distance)</label><br>
-            <label><input type="checkbox" name="catégorie" value="martial-melee"> Armes de guerre (mêlée)</label><br>
-            <label><input type="checkbox" name="catégorie" value="martial-ranged"> Armes de guerre (distance)</label><br>
-          </form>
-          <div id="liste-armes"></div>
-          <!-- Bouton pour afficher la liste déroulante -->
-          <button type="button" id="show_weapon_select">🎯 Choisir une arme</button>
-          <!-- Liste déroulante générée dynamiquement -->
-          <div id="weapon_dropdown_container" style="margin-top: 10px;"></div>
-          <!-- Bouton pour ajouter l'arme sélectionnée -->
-          <button type="button" id="add_weapon">+ Ajouter l'arme sélectionnée</button>
-          <!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
-          <div id="weapon_list" class="weapon-list"></div>
+        <div style="margin-top: 5px; margin-left: 20px;">
+          <div id="weapon_section_fr">
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;"> 
+            <label for="weapon_name"style="white-space: nowrap;">Nom :</label>
+            <input id="weapon_name" style="width: auto;" name="weapon_name" type="text" placeholder="Nom du trait" />
+            </div> 
+            <form id="filtre-armes">
+              <label><input type="checkbox" name="catégorie" value="simple-melee"> Armes simples (mêlée)</label><br>
+              <label><input type="checkbox" name="catégorie" value="simple-ranged"> Armes simples (distance)</label><br>
+              <label><input type="checkbox" name="catégorie" value="martial-melee"> Armes de guerre (mêlée)</label><br>
+              <label><input type="checkbox" name="catégorie" value="martial-ranged"> Armes de guerre (distance)</label><br>
+            </form>
+            <div id="liste-armes"></div>
+            <!-- Liste déroulante générée dynamiquement -->
+            <div id="weapon_dropdown_container" style="margin-top: 10px;"></div>
+            <!-- Bouton pour ajouter l'arme sélectionnée -->
+            <button type="button" id="add_weapon">+ Ajouter l'arme sélectionnée</button>
+            <!-- ✅ Nouveau conteneur pour afficher les armes ajoutées -->
+            <div id="weapon_list" class="weapon-list"></div>
+        </div>  
       </div>
       <label>
           <input type="checkbox" class="trait-checkbox" id="show_armor_section_fr" />
-            Maîtrise d'armures :
+            Maîtrise d'armures 
           <span class="tooltip" title="Est ce que la race à des maîtrises des armures?">❔</span>
        </label>
-      <div id="armor_section_fr">
-        <!-- Ligne pour le nom du trait -->
-        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-        <label for="armor_name" style="white-space: nowrap;">Nom :</label>
-        <input id="armor_name" style="width: auto;" name="armor_name" type="text" placeholder="Nom du trait" />
+      <div style="margin-top: 5px; margin-left: 20px;">
+        <div id="armor_section_fr">
+          <!-- Ligne pour le nom du trait -->
+          <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+          <label for="armor_name" style="white-space: nowrap;">Nom :</label>
+          <input id="armor_name" style="width: auto;" name="armor_name" type="text" placeholder="Nom du trait" />
+          </div>
+          <!-- Filtres par catégorie d'armure -->
+          <form id="filtre-armures">
+          <label><input type="checkbox" name="catégorie_armure" value="light"> Armures légères</label><br>
+          <label><input type="checkbox" name="catégorie_armure" value="medium"> Armures intermédiaires</label><br>
+          <label><input type="checkbox" name="catégorie_armure" value="heavy"> Armures lourdes</label><br>
+          <label><input type="checkbox" name="catégorie_armure" value="shield"> Boucliers</label>
+          </form>
+          <!-- Liste déroulante et boutons -->
+          <div id="liste-armures"></div>
+          <div id="armor_dropdown_container" style="margin-top: 10px;"></div>
+          <button type="button" id="add_armor">+ Ajouter l’armure sélectionnée</button>
+          <div id="armor_list" class="weapon-list"></div>
         </div>
-
-        <!-- Filtres par catégorie d'armure -->
-        <form id="filtre-armures">
-        <label><input type="checkbox" name="catégorie_armure" value="light"> Armures légères</label><br>
-        <label><input type="checkbox" name="catégorie_armure" value="medium"> Armures intermédiaires</label><br>
-        <label><input type="checkbox" name="catégorie_armure" value="heavy"> Armures lourdes</label><br>
-        <label><input type="checkbox" name="catégorie_armure" value="shield"> Boucliers</label>
-        </form>
-
-        <!-- Liste déroulante et boutons -->
-        <div id="liste-armures"></div>
-        <button type="button" id="show_armor_select">🛡️ Choisir une armure</button>
-        <div id="armor_dropdown_container" style="margin-top: 10px;"></div>
-        <button type="button" id="add_armor">+ Ajouter l’armure sélectionnée</button>
-        <div id="armor_list" class="weapon-list"></div>
       </div>
+      <label>
+          <input type="checkbox" class="trait-checkbox" id="draconic_ancestry_fr" />
+            Cette race possède une ascendance draconique ? 
+          <span class="tooltip" title="A la création d'un personnage, si cette race est choisis une menu de couleur seras ajouté.">❔</span>
+       </label>
         
       
  </section>        

@@ -151,17 +151,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmuresDepuisAPI();
   await chargerCaracteristiques();
 
-  // Menu déroulant armes
-  genererMenuDeroulant();
-  document.getElementById('show_weapon_select').addEventListener('click', () => {
-    genererMenuDeroulant();
-  });
-
-  // Menu déroulant armures
-  document.getElementById('show_armor_select').addEventListener('click', () => {
-    genererMenuDeroulantArmures();
-  });
-
   // Cacher le menu déroulant de caractéristiques si "Appliquer à toutes" est coché
   const applyCheckbox = document.getElementById('apply_to_all_stats');
   const selectStat = document.getElementById('select_stat_group');
