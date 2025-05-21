@@ -151,6 +151,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmuresDepuisAPI();
   await chargerCaracteristiques();
 
+  // Forcer affichage des menus au chargement
+  genererMenuDeroulant();
+  genererMenuDeroulantArmures();
+
   // Cacher le menu déroulant de caractéristiques si "Appliquer à toutes" est coché
   const applyCheckbox = document.getElementById('apply_to_all_stats');
   const selectStat = document.getElementById('select_stat_group');
