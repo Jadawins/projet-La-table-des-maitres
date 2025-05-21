@@ -76,7 +76,7 @@ const damageTraits = [];
 
 async function chargerTypesDegatsDepuisAPI() {
   try {
-    const response = await fetch('/api/GetDamageTypes');
+    const response = await fetch('/api/GetDamageTypes/');
     if (!response.ok) throw new Error("Erreur lors du chargement des types de dégâts");
     allDamageTypes = await response.json();
 
