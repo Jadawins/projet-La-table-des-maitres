@@ -74,6 +74,25 @@ let toutesLesArmures = [];
 const bonusArmures = [];
 let allDamageTypes = [];
 const damageTraits = [];
+let tousLesOutils = [];
+
+async function chargerOutilsDepuisAPI() {
+  try {
+    const response = await fetch('/api/GetCategories/');
+    if (!response.ok) throw new Error('Erreur API outils');
+
+    const data = await response.json();
+    const outils = data.find(d => d.index === "tools")?.equipment || [];
+
+    tousLesOutils = outils.map(o => ({
+      nom: o.name?.fr || o.name?.en || o.index
+    }));
+
+    console.log('✅ Outils chargés :', tousLesOutils);
+  } catch (err) {
+    console.error('❌ Erreur lors du chargement des outils :', err);
+  }
+}
 
 async function chargerTypesDegatsDepuisAPI() {
   try {
@@ -182,10 +201,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmuresDepuisAPI();
   await chargerCaracteristiques();
   await chargerTypesDegatsDepuisAPI();
+  await chargerOutilsDepuisAPI();
 
   // Forcer affichage des menus au chargement
   genererMenuDeroulant();
   genererMenuDeroulantArmures();
+  genererMenuDeroulantOutils();
 
   // Cacher le menu déroulant de caractéristiques si "Appliquer à toutes" est coché
   const applyCheckbox = document.getElementById('apply_to_all_stats');
@@ -326,3 +347,23 @@ document.getElementById('add_stat_bonus').addEventListener('click', async () => 
   }
 });
 
+function genererMenuDeroulantOutils() {
+  const container = document.getElementById('tools_dropdown_container');
+  container.innerHTML = '';
+
+  const nomsOutils = tousLesOutils.map(o => o.nom).sort();
+
+  const select = document.createElement('select');
+  select.id = 'tools_select';
+  select.classList.add('dropdown-style');
+  select.style.width = 'auto';
+
+  nomsOutils.forEach(nom => {
+    const option = document.createElement('option');
+    option.value = nom;
+    option.textContent = nom;
+    select.appendChild(option);
+  });
+
+  container.appendChild(select);
+}
