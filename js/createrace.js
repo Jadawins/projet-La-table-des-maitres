@@ -32,6 +32,7 @@ toggleSection('darkvision_fr', 'darkvision_details_fr');
 toggleSection('show_weapon_section_fr', 'weapon_section_fr');
 toggleSection('show_armor_section_fr', 'armor_section_fr');
 toggleSection('show_damage_type_select_fr', 'damage_type_section_fr');
+toggleSection('show_tools_section_fr', 'tools_section_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
 

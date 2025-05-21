@@ -187,6 +187,20 @@
         </div>
       </div>
       <label>
+        <input type="checkbox" class="trait-checkbox" id="show_tools_section_fr" />
+        Maîtrise d'outils
+        <span class="tooltip" title="Est-ce que la race maîtrise certains outils ?">❔</span>
+      </label>
+      <div style="margin-top: 5px; margin-left: 20px;">
+        <div id="tools_section_fr">
+        <label for="tools_name" style="white-space: nowrap;">Nom :</label>
+        <input id="tools_name" style="width: auto;" name="tools_name" type="text" placeholder="Nom du trait" />
+        <div id="tools_dropdown_container" style="margin-top: 10px;"></div>
+        <button type="button" id="add_tool">+ Ajouter l’outil sélectionné</button>
+        <div id="tools_list" class="weapon-list"></div>
+        </div>
+      </div>
+      <label>
           <input type="checkbox" class="trait-checkbox" id="draconic_ancestry_fr" />
             Ascendance draconique
           <span class="tooltip" title="A la création d'un personnage, si cette race est choisis une menu de couleur seras ajouté.">❔</span>
