@@ -70,6 +70,35 @@ document.getElementById('add_weapon').addEventListener('click', () => {
 let toutesLesArmes = [];
 let toutesLesArmures = [];
 const bonusArmures = [];
+let allDamageTypes = [];
+const damageTraits = [];
+
+async function chargerTypesDegatsDepuisAPI() {
+  try {
+    const response = await fetch('/api/GetDamageTypes');
+    if (!response.ok) throw new Error("Erreur lors du chargement des types de dégâts");
+    allDamageTypes = await response.json();
+
+    console.log("✅ Types de dégâts chargés :", allDamageTypes);
+    genererMenuDegats();
+  } catch (err) {
+    console.error("❌ Impossible de charger les types de dégâts :", err);
+  }
+}
+
+function genererMenuDegats() {
+  const select = document.getElementById('damage_type_select');
+  select.innerHTML = '';
+
+  allDamageTypes.forEach(type => {
+    const option = document.createElement('option');
+    option.value = type.index;
+    option.textContent = type.nom;
+    select.appendChild(option);
+  });
+}
+
+
 
 async function chargerArmesDepuisAPI() {
   try {
@@ -150,6 +179,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerArmesDepuisAPI();
   await chargerArmuresDepuisAPI();
   await chargerCaracteristiques();
+  await chargerTypesDegatsDepuisAPI();
 
   // Forcer affichage des menus au chargement
   genererMenuDeroulant();
