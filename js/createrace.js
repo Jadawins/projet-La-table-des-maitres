@@ -265,6 +265,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerCaracteristiques();
   await chargerTypesDegatsDepuisAPI();
   await chargerOutilsDepuisAPI();
+  await chargerLanguesDepuisAPI();
+  await chargerCompetencesDepuisAPI();
 
   // Forcer affichage des menus au chargement
   genererMenuDeroulant();
