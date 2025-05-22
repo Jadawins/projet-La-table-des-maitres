@@ -177,7 +177,7 @@ function genererMenuDegats() {
   allDamageTypes.forEach(type => {
     const option = document.createElement('option');
     option.value = type.index;
-    option.textContent = type.nom;
+    option.textContent = type.name?.fr || type.name?.en || type.index;
     select.appendChild(option);
   });
 }
