@@ -86,6 +86,7 @@ async function chargerLanguesDepuisAPI() {
     if (!response.ok) throw new Error('Erreur API langues');
     toutesLesLangues = await response.json();
     console.log('✅ Langues chargées :', toutesLesLangues);
+    genererMenuLangues(); // 🟢 même logique que types de dégâts
   } catch (err) {
     console.error('❌ Erreur chargement langues :', err);
   }
@@ -97,7 +98,7 @@ async function chargerCompetencesDepuisAPI() {
     if (!response.ok) throw new Error('Erreur API compétences');
     toutesLesCompetences = await response.json();
     console.log('✅ Compétences chargées :', toutesLesCompetences);
-    genererMenuCompetences(); // ← 🟢 ajoute cette ligne
+    genererMenuCompetences(); // 🟢 ici aussi
   } catch (err) {
     console.error('❌ Erreur chargement compétences :', err);
   }
@@ -107,18 +108,21 @@ function genererMenuLangues() {
   const select = document.getElementById('languages_select');
   select.innerHTML = '';
 
-  toutesLesLangues.map(l => l.name.fr || l.name.en).sort().forEach(nom => {
-    const option = document.createElement('option');
-    option.value = nom;
-    option.textContent = nom;
-    select.appendChild(option);
-  });
+  toutesLesLangues
+    .map(l => l.name.fr || l.name.en)
+    .sort()
+    .forEach(nom => {
+      const option = document.createElement('option');
+      option.value = nom;
+      option.textContent = nom;
+      select.appendChild(option);
+    });
 }
 
 
 function genererMenuCompetences() {
   const select = document.getElementById('skills_select');
-  select.innerHTML = ''; // Vide les anciennes options
+  select.innerHTML = '';
 
   toutesLesCompetences
     .map(c => c.name.fr || c.name.en)
