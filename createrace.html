@@ -243,6 +243,23 @@
         <button type="button" id="add_skill">+ Ajouter la compétence</button>
         <div id="skills_list" class="weapon-list"></div>
       </div>
+      <label>
+      <input type="checkbox" class="trait-checkbox" id="show_condition_mastery_fr" />
+      Maîtrise d’état
+      <span class="tooltip" title="Cette race bénéficie d’une forme de résistance ou d’immunité à une ou plusieurs conditions.">❔</span>
+      </label>
+      <div id="condition_mastery_section_fr" style="margin-left: 20px; display: none;">
+        <label for="condition_select_fr">Condition :</label>
+        <select id="condition_select_fr" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
+        <label for="condition_type_fr">Type :</label>
+        <select id="condition_type_fr" class="dropdown-style">
+          <option value="advantage">Avantage au jet de sauvegarde</option>
+          <option value="resistance">Résistance</option>
+          <option value="immunity">Immunité</option>
+        </select>
+        <button type="button" id="add_condition_mastery">+ Ajouter la maîtrise</button>
+        <div id="condition_mastery_list" class="weapon-list"></div>
+      </div>
 
 
 

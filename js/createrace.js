@@ -37,6 +37,7 @@ toggleSection('show_languages_section_fr', 'languages_section_fr');
 toggleSection('show_skills_section_fr', 'skills_section_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
+toggleSection('show_condition_mastery_fr', 'condition_mastery_section_fr');
 
 document.getElementById('add_weapon').addEventListener('click', () => {
   const select = document.getElementById('weapon_select');
@@ -79,6 +80,7 @@ const damageTraits = [];
 let tousLesOutils = [];
 let toutesLesLangues = [];
 let toutesLesCompetences = [];
+let toutesLesConditions = [];
 
 async function chargerLanguesDepuisAPI() {
   try {
@@ -179,6 +181,32 @@ function genererMenuDegats() {
   });
 }
 
+async function chargerConditionsDepuisAPI() {
+  try {
+    const response = await fetch('/api/GetConditions');
+    if (!response.ok) throw new Error('Erreur API conditions');
+    toutesLesConditions = await response.json();
+    console.log('✅ Conditions chargées :', toutesLesConditions);
+    genererMenuConditions(); // 🟢 comme les dégâts
+  } catch (err) {
+    console.error('❌ Erreur chargement conditions :', err);
+  }
+}
+
+function genererMenuConditions() {
+  const select = document.getElementById('condition_select_fr');
+  select.innerHTML = '';
+
+  toutesLesConditions
+    .map(c => c.name.fr || c.name.en)
+    .sort()
+    .forEach(nom => {
+      const option = document.createElement('option');
+      option.value = nom;
+      option.textContent = nom;
+      select.appendChild(option);
+    });
+}
 
 
 async function chargerArmesDepuisAPI() {
@@ -264,6 +292,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerOutilsDepuisAPI();
   await chargerLanguesDepuisAPI();
   await chargerCompetencesDepuisAPI();
+  await chargerConditionsDepuisAPI();
 
   // Forcer affichage des menus au chargement
   genererMenuDeroulant();
@@ -271,6 +300,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   genererMenuDeroulantOutils();
   genererMenuLangues();
   genererMenuCompetences();
+  genererMenuConditions();
 
 
   // Cacher le menu déroulant de caractéristiques si "Appliquer à toutes" est coché
@@ -391,6 +421,45 @@ function ajouterBonusStat(index, name, value) {
 
   bonusStats.push({ index, value });
 }
+
+document.getElementById('add_condition_mastery').addEventListener('click', () => {
+  const condition = document.getElementById('condition_select_fr').value;
+  const type = document.getElementById('condition_type_fr').value;
+  const list = document.getElementById('condition_mastery_list');
+
+  if (!condition || !type) return;
+
+  // Empêche les doublons exacts
+  const exists = Array.from(list.children).some(item =>
+    item.dataset.condition === condition && item.dataset.type === type
+  );
+  if (exists) return;
+
+  const item = document.createElement('div');
+  item.classList.add('weapon-item');
+  item.dataset.condition = condition;
+  item.dataset.type = type;
+
+  item.textContent = `${condition} – ${labelConditionTypeFr(type)}`;
+
+  const btn = document.createElement('button');
+  btn.textContent = '❌';
+  btn.classList.add('remove-weapon-btn');
+  btn.addEventListener('click', () => item.remove());
+
+  item.appendChild(btn);
+  list.appendChild(item);
+});
+
+function labelConditionTypeFr(type) {
+  switch (type) {
+    case 'advantage': return 'Avantage au jet';
+    case 'resistance': return 'Résistance';
+    case 'immunity': return 'Immunité';
+    default: return type;
+  }
+}
+
 
 document.getElementById('add_stat_bonus').addEventListener('click', async () => {
   const value = parseInt(document.getElementById('stat_bonus_value').value);
