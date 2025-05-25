@@ -109,6 +109,8 @@ function genererMenuLangues() {
   const select = document.createElement('select');
   select.id = 'languages_select';
   select.classList.add('dropdown-style');
+  select.style.width = "auto";
+  select.style.minWidth = "150px";
 
   toutesLesLangues.map(l => l.name.fr || l.name.en).sort().forEach(nom => {
     const option = document.createElement('option');
@@ -127,6 +129,9 @@ function genererMenuCompetences() {
   const select = document.createElement('select');
   select.id = 'skills_select';
   select.classList.add('dropdown-style');
+  select.classList.add('dropdown-style');
+  select.style.width = "auto";
+  select.style.minWidth = "150px";
 
   toutesLesCompetences.map(c => c.name.fr || c.name.en).sort().forEach(nom => {
     const option = document.createElement('option');
