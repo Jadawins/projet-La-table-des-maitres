@@ -102,17 +102,18 @@ async function chargerCompetencesDepuisAPI() {
   }
 }
 
-function genererMenuCompetences() {
-  const select = document.getElementById('skills_select');
+function genererMenuLangues() {
+  const select = document.getElementById('languages_select');
   select.innerHTML = '';
 
-  toutesLesCompetences.map(c => c.name.fr || c.name.en).sort().forEach(nom => {
+  toutesLesLangues.map(l => l.name.fr || l.name.en).sort().forEach(nom => {
     const option = document.createElement('option');
     option.value = nom;
     option.textContent = nom;
     select.appendChild(option);
   });
 }
+
 
 function genererMenuCompetences() {
   const select = document.getElementById('skills_select');
