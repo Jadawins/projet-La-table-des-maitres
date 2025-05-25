@@ -183,7 +183,7 @@ function genererMenuDegats() {
 
 async function chargerConditionsDepuisAPI() {
   try {
-    const response = await fetch('/api/GetConditions');
+    const response = await fetch('/api/GetConditions2014');
     if (!response.ok) throw new Error('Erreur API conditions');
     toutesLesConditions = await response.json();
     console.log('✅ Conditions chargées :', toutesLesConditions);
