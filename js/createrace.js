@@ -97,6 +97,7 @@ async function chargerCompetencesDepuisAPI() {
     if (!response.ok) throw new Error('Erreur API compétences');
     toutesLesCompetences = await response.json();
     console.log('✅ Compétences chargées :', toutesLesCompetences);
+    genererMenuCompetences(); // ← 🟢 ajoute cette ligne
   } catch (err) {
     console.error('❌ Erreur chargement compétences :', err);
   }
