@@ -102,36 +102,9 @@ async function chargerCompetencesDepuisAPI() {
   }
 }
 
-function genererMenuLangues() {
-  const container = document.getElementById('languages_dropdown_container');
-  container.innerHTML = '';
-
-  const select = document.createElement('select');
-  select.id = 'languages_select';
-  select.classList.add('dropdown-style');
-  select.style.width = "auto";
-  select.style.minWidth = "150px";
-
-  toutesLesLangues.map(l => l.name.fr || l.name.en).sort().forEach(nom => {
-    const option = document.createElement('option');
-    option.value = nom;
-    option.textContent = nom;
-    select.appendChild(option);
-  });
-
-  container.appendChild(select);
-}
-
 function genererMenuCompetences() {
-  const container = document.getElementById('skills_dropdown_container');
-  container.innerHTML = '';
-
-  const select = document.createElement('select');
-  select.id = 'skills_select';
-  select.classList.add('dropdown-style');
-  select.classList.add('dropdown-style');
-  select.style.width = "auto";
-  select.style.minWidth = "150px";
+  const select = document.getElementById('skills_select');
+  select.innerHTML = '';
 
   toutesLesCompetences.map(c => c.name.fr || c.name.en).sort().forEach(nom => {
     const option = document.createElement('option');
@@ -139,8 +112,21 @@ function genererMenuCompetences() {
     option.textContent = nom;
     select.appendChild(option);
   });
+}
 
-  container.appendChild(select);
+function genererMenuCompetences() {
+  const select = document.getElementById('skills_select');
+  select.innerHTML = ''; // Vide les anciennes options
+
+  toutesLesCompetences
+    .map(c => c.name.fr || c.name.en)
+    .sort()
+    .forEach(nom => {
+      const option = document.createElement('option');
+      option.value = nom;
+      option.textContent = nom;
+      select.appendChild(option);
+    });
 }
 
 
