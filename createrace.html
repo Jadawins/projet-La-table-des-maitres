@@ -249,7 +249,16 @@
           </label>
         </div>
       </div>
-
+      <label>
+        <input type="checkbox" class="trait-checkbox" id="show_skills_section_fr" />
+        Compétences maîtrisées
+        <span class="tooltip" title="Compétences accordées à cette race (comme Perception, Acrobaties, etc.)">❔</span>
+      </label>
+      <div id="skills_section_fr" style="margin-left: 20px;">
+        <select id="skills_select" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
+        <button type="button" id="add_skill">+ Ajouter la compétence</button>
+        <div id="skills_list" class="weapon-list"></div>
+      </div>
       <label>
       <input type="checkbox" class="trait-checkbox" id="show_condition_mastery_fr" />
       Maîtrise d’état
