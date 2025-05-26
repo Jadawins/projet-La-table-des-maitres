@@ -233,21 +233,23 @@
         Langues connues
         <span class="tooltip" title="Langues que cette race sait parler.">❔</span>
       </label>
+
       <div id="languages_section_fr" style="margin-left: 20px;">
         <select id="languages_select" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
         <button type="button" id="add_language">+ Ajouter la langue</button>
         <div id="languages_list" class="weapon-list"></div>
+        <label>
+          <input type="checkbox" id="allow_language_choice_fr" />
+          Le joueur peut choisir des langues supplémentaires
+          <span class="tooltip" title="Permet au joueur de choisir des langues supplémentaires à la création de personnage.">❔</span>
+        </label>
+        <div id="language_choice_count_container_fr" style="margin-left: 20px; display: none;">
+          <label for="language_choice_count_fr">Nombre de langues au choix :
+          <input type="number" id="language_choice_count_fr" style="width: auto;" value="1" min="1" />
+          </label>
+        </div>
       </div>
-      <label>
-        <input type="checkbox" class="trait-checkbox" id="show_skills_section_fr" />
-        Compétences maîtrisées
-        <span class="tooltip" title="Compétences accordées à cette race (comme Perception, Acrobaties, etc.)">❔</span>
-      </label>
-      <div id="skills_section_fr" style="margin-left: 20px;">
-        <select id="skills_select" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
-        <button type="button" id="add_skill">+ Ajouter la compétence</button>
-        <div id="skills_list" class="weapon-list"></div>
-      </div>
+
       <label>
       <input type="checkbox" class="trait-checkbox" id="show_condition_mastery_fr" />
       Maîtrise d’état

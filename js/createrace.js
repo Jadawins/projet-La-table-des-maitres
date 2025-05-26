@@ -17,13 +17,17 @@ function toggleSection(checkboxId, sectionId) {
   const checkbox = document.getElementById(checkboxId);
   const section = document.getElementById(sectionId);
 
-  // Initial state
-  section.style.display = checkbox.checked ? 'block' : 'none';
+  if (!checkbox || !section) return;
 
-  // On change
-  checkbox.addEventListener('change', () => {
+  // Applique l'état correct au chargement
+  const appliquerToggle = () => {
     section.style.display = checkbox.checked ? 'block' : 'none';
-  });
+  };
+
+  appliquerToggle(); // dès le chargement
+
+  // Mets à jour dynamiquement quand l'utilisateur coche/décoche
+  checkbox.addEventListener('change', appliquerToggle);
 }
 
 // Appliquer pour chaque couple
@@ -37,8 +41,11 @@ toggleSection('show_languages_section_fr', 'languages_section_fr');
 toggleSection('show_skills_section_fr', 'skills_section_fr');
 toggleSection('show_rp_traits_fr', 'rp_traits_section_fr');
 toggleSection('show_condition_mastery_fr', 'condition_mastery_section_fr');
+toggleSection('allow_language_choice_fr', 'language_choice_count_container_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
+
+
 
 document.getElementById('add_rp_trait_fr').addEventListener('click', () => {
   const name = document.getElementById('rp_trait_name_fr').value.trim();
@@ -329,7 +336,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   genererMenuCompetences();
   genererMenuConditions();
 
-
+  
   // Cacher le menu déroulant de caractéristiques si "Appliquer à toutes" est coché
   const applyCheckbox = document.getElementById('apply_to_all_stats');
   const selectStat = document.getElementById('select_stat_group');
@@ -574,3 +581,4 @@ document.getElementById('add_skill').addEventListener('click', () => {
   item.appendChild(btn);
   list.appendChild(item);
 });
+
