@@ -89,9 +89,14 @@
 
         <label for="age_fr">Age :</label><br />
         <textarea id="age_fr" name="age_fr" placeholder="Description sur l'age"></textarea><br />
-
-        <label for="size_description_fr">Taille :</label><br />
-        <textarea id="size_description_fr" name="size_description_fr" placeholder="Description sur la taille"></textarea><br />
+        <div class="inline-field">
+          <label for="size_code_fr">Taille :</label>
+          <select id="size_code_fr" name="size_code_fr" style="width: auto;">
+          <option value="P">P (Petite)</option>
+          <option value="M">M (Moyenne)</option>
+          </select>
+        </div>
+          <textarea id="size_description_fr" name="size_description_fr" placeholder="Description sur la taille"></textarea><br />
 
         
           <label>
@@ -265,6 +270,28 @@
         Transe (repos long en 4h)
         <span class="tooltip" title="Cette race entre dans une transe de 4h au lieu de dormir, tout en restant consciente.">❔</span>
       </label>
+      <label>
+        <input type="checkbox" id="halfling_lucky_fr" class="trait-checkbox" />
+        Chance (Lucky)
+        <span class="tooltip" title="Relance un jet d20 si le résultat est un 1 naturel (attaque, sauvegarde, test).">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" class="trait-checkbox" id="show_rp_traits_fr" />
+        Traits RP ou de déplacement
+        <span class="tooltip" title="Ajouter des traits sans effet direct en jeu (ex : agilité halfeline, instincts, etc.)">❔</span>
+      </label>
+
+      <div id="rp_traits_section_fr" style="margin-left: 20px; display: none;">
+        <label for="rp_trait_name_fr">Nom du trait :</label>
+        <input type="text" id="rp_trait_name_fr" style="width: auto; min-width: 150px;" />
+
+        <label for="rp_trait_desc_fr">Description :</label>
+        <textarea id="rp_trait_desc_fr" rows="3" placeholder="Décrivez le trait..."></textarea>
+
+        <button type="button" id="add_rp_trait_fr">+ Ajouter le trait</button>
+        <div id="rp_traits_list_fr" class="weapon-list"></div>
+      </div>
+
 
 
 

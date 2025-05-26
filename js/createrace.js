@@ -35,9 +35,36 @@ toggleSection('show_damage_type_select_fr', 'damage_type_section_fr');
 toggleSection('show_tools_section_fr', 'tools_section_fr');
 toggleSection('show_languages_section_fr', 'languages_section_fr');
 toggleSection('show_skills_section_fr', 'skills_section_fr');
+toggleSection('show_rp_traits_fr', 'rp_traits_section_fr');
+toggleSection('show_condition_mastery_fr', 'condition_mastery_section_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
-toggleSection('show_condition_mastery_fr', 'condition_mastery_section_fr');
+
+document.getElementById('add_rp_trait_fr').addEventListener('click', () => {
+  const name = document.getElementById('rp_trait_name_fr').value.trim();
+  const desc = document.getElementById('rp_trait_desc_fr').value.trim();
+  const list = document.getElementById('rp_traits_list_fr');
+
+  if (!name || !desc) return;
+
+  const item = document.createElement('div');
+  item.classList.add('weapon-item');
+  item.dataset.traitName = name;
+  item.dataset.traitDesc = desc;
+  item.textContent = `${name} : ${desc}`;
+
+  const btn = document.createElement('button');
+  btn.textContent = '❌';
+  btn.classList.add('remove-weapon-btn');
+  btn.addEventListener('click', () => item.remove());
+
+  item.appendChild(btn);
+  list.appendChild(item);
+
+  // reset les champs
+  document.getElementById('rp_trait_name_fr').value = '';
+  document.getElementById('rp_trait_desc_fr').value = '';
+});
 
 document.getElementById('add_weapon').addEventListener('click', () => {
   const select = document.getElementById('weapon_select');
