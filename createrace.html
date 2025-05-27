@@ -258,11 +258,21 @@
         <select id="skills_select" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
         <button type="button" id="add_skill">+ Ajouter la compétence</button>
         <div id="skills_list" class="weapon-list"></div>
-      </div>
+        <label>
+          <input type="checkbox" id="allow_skill_choice_fr" />
+          Le joueur peut choisir des compétences supplémentaires
+          <span class="tooltip" title="Permet au joueur de choisir des compétences à la création du personnage.">❔</span>
+        </label>
+
+        <div id="skill_choice_count_container_fr" class="inline-field" style="margin-left: 20px; display: none;">
+          <label for="skill_choice_count_fr" style="white-space: nowrap;">Nombre de compétences au choix :</label>
+          <input type="number" id="skill_choice_count_fr" value="2" min="1" />
+        </div>
+      </div>      
       <label>
-      <input type="checkbox" class="trait-checkbox" id="show_condition_mastery_fr" />
-      Maîtrise d’état
-      <span class="tooltip" title="Cette race bénéficie d’une forme de résistance ou d’immunité à une ou plusieurs conditions.">❔</span>
+        <input type="checkbox" class="trait-checkbox" id="show_condition_mastery_fr" />
+        Maîtrise d’état
+        <span class="tooltip" title="Cette race bénéficie d’une forme de résistance ou d’immunité à une ou plusieurs conditions.">❔</span>
       </label>
       <div id="condition_mastery_section_fr" style="margin-left: 20px; display: none;">
         <label for="condition_select_fr">Condition :</label>
@@ -285,6 +295,11 @@
         <input type="checkbox" id="halfling_lucky_fr" class="trait-checkbox" />
         Chance (Lucky)
         <span class="tooltip" title="Relance un jet d20 si le résultat est un 1 naturel (attaque, sauvegarde, test).">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="relentless_endurance_fr" class="trait-checkbox" />
+        Ténacité implacable (Relentless Endurance)
+        <span class="tooltip" title="1 fois par jour, quand vous tombez à 0 PV, vous restez à 1 PV à la place.">❔</span>
       </label>
       <label>
         <input type="checkbox" class="trait-checkbox" id="show_rp_traits_fr" />

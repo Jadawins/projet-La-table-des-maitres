@@ -42,6 +42,7 @@ toggleSection('show_skills_section_fr', 'skills_section_fr');
 toggleSection('show_rp_traits_fr', 'rp_traits_section_fr');
 toggleSection('show_condition_mastery_fr', 'condition_mastery_section_fr');
 toggleSection('allow_language_choice_fr', 'language_choice_count_container_fr');
+toggleSection('allow_skill_choice_fr', 'skill_choice_count_container_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
 
