@@ -210,24 +210,6 @@
             Ascendance draconique
           <span class="tooltip" title="A la création d'un personnage, si cette race est choisis une menu de couleur seras ajouté.">❔</span>
        </label>
-       <label>
-          <input type="checkbox" class="trait-checkbox" id="show_damage_type_select_fr" />
-            Résistance à un type de dégats
-          <span class="tooltip" title="Est ce que la race résiste à un type de dégats">❔</span>
-       </label>
-      <div id="damage_type_section_fr">
-        <div class="inline-field">
-          <label for="damage_type_select" style="white-space: nowrap;">Type de dégât :</label>
-          <select id="damage_type_select" class="dropdown-style" style="width: auto;"></select>
-        </div>
-        <div class="inline-field" style="gap: 1em; margin-top: 0.5em;">
-          <label><input type="checkbox" id="resistance_check"> Résistance (½ dégâts)</label>
-          <label><input type="checkbox" id="immunity_check"> Immunité (0 dégâts)</label>
-          <label><input type="checkbox" id="advantage_check"> Avantage au jet de sauvegarde</label>
-        </div>      
-        <button type="button" id="add_damage_trait" style="margin-top: 0.5em;">+ Ajouter</button>
-      </div>
-      <div id="damage_trait_list" class="weapon-list" ></div>
       <label>
         <input type="checkbox" class="trait-checkbox" id="show_languages_section_fr" />
         Langues connues
@@ -286,6 +268,38 @@
         <button type="button" id="add_condition_mastery">+ Ajouter la maîtrise</button>
         <div id="condition_mastery_list" class="weapon-list"></div>
       </div>
+      <label>
+        <input type="checkbox" id="show_save_adv_magic_fr" class="trait-checkbox" />
+        Avantage aux jets de sauvegarde contre la magie
+        <span class="tooltip" title="Cette race bénéficie d'un avantage aux JS contre des effets magiques.">❔</span>
+      </label>
+
+      <div id="save_adv_magic_section_fr" style="margin-left: 20px; display: none; display: flex; flex-wrap: wrap; gap: 20px;">
+  <label><input type="checkbox" id="save_adv_str_fr" /> Force</label>
+  <label><input type="checkbox" id="save_adv_dex_fr" /> Dextérité</label>
+  <label><input type="checkbox" id="save_adv_con_fr" /> Constitution</label>
+  <label><input type="checkbox" id="save_adv_int_fr" /> Intelligence</label>
+  <label><input type="checkbox" id="save_adv_wis_fr" /> Sagesse</label>
+  <label><input type="checkbox" id="save_adv_cha_fr" /> Charisme</label>
+</div>
+      <label>
+          <input type="checkbox" class="trait-checkbox" id="show_damage_type_select_fr" />
+            Résistance à un type de dégats
+          <span class="tooltip" title="Est ce que la race résiste à un type de dégats">❔</span>
+       </label>
+      <div id="damage_type_section_fr">
+        <div class="inline-field">
+          <label for="damage_type_select" style="white-space: nowrap;">Type de dégât :</label>
+          <select id="damage_type_select" class="dropdown-style" style="width: auto;"></select>
+        </div>
+        <div class="inline-field" style="gap: 1em; margin-top: 0.5em;">
+          <label><input type="checkbox" id="resistance_check"> Résistance (½ dégâts)</label>
+          <label><input type="checkbox" id="immunity_check"> Immunité (0 dégâts)</label>
+          <label><input type="checkbox" id="advantage_check"> Avantage au jet de sauvegarde</label>
+        </div>      
+        <button type="button" id="add_damage_trait" style="margin-top: 0.5em;">+ Ajouter</button>
+      </div>
+      <div id="damage_trait_list" class="weapon-list" ></div>
       <label>
         <input type="checkbox" id="trance_trait_fr" class="trait-checkbox" />
         Transe (repos long en 4h)
