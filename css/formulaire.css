@@ -159,3 +159,12 @@
   max-width: 150px !important;
   flex: 0 1 auto !important;
 }
+
+.input-style {
+  background-color: #2e0601;
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: inherit;
+}
