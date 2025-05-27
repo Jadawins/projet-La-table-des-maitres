@@ -44,6 +44,7 @@ toggleSection('show_condition_mastery_fr', 'condition_mastery_section_fr');
 toggleSection('allow_language_choice_fr', 'language_choice_count_container_fr');
 toggleSection('allow_skill_choice_fr', 'skill_choice_count_container_fr');
 toggleSection('show_save_adv_magic_fr', 'save_adv_magic_section_fr');
+toggleSection('show_racial_spells_fr', 'racial_spells_section_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
 
@@ -117,6 +118,34 @@ let tousLesOutils = [];
 let toutesLesLangues = [];
 let toutesLesCompetences = [];
 let toutesLesConditions = [];
+
+async function chargerSortsRaciauxDepuisAPI() {
+  try {
+    const response = await fetch('/api/GetSpells2014');
+    if (!response.ok) throw new Error('Erreur lors du chargement des sorts raciaux');
+
+    const sorts = await response.json();
+    chargerSortsPourSortsRaciaux(sorts);
+  } catch (err) {
+    console.error('❌ Erreur API sorts raciaux :', err);
+  }
+}
+
+function chargerSortsPourSortsRaciaux(sorts) {
+  const datalist = document.getElementById('racial_spell_list_fr');
+  datalist.innerHTML = '';
+
+  const noms = sorts
+    .map(s => s.name?.fr || s.name?.en)
+    .filter(Boolean)
+    .sort();
+
+  noms.forEach(nom => {
+    const option = document.createElement('option');
+    option.value = nom;
+    datalist.appendChild(option);
+  });
+}
 
 async function chargerLanguesDepuisAPI() {
   try {
@@ -329,6 +358,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerLanguesDepuisAPI();
   await chargerCompetencesDepuisAPI();
   await chargerConditionsDepuisAPI();
+  await chargerSortsRaciauxDepuisAPI();
 
   // Forcer affichage des menus au chargement
   genererMenuDeroulant();

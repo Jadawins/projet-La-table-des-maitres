@@ -206,6 +206,37 @@
         </div>
       </div>
       <label>
+        <input type="checkbox" id="show_racial_spells_fr" class="trait-checkbox" />
+        Cette race accède à des sorts raciaux
+        <span class="tooltip" title="Permet d’ajouter des sorts que cette race peut lancer en fonction du niveau.">❔</span>
+      </label>
+
+      <div id="racial_spells_section_fr" style="margin-left: 20px; display: none;">
+        <div class="inline-field">
+        <label for="racial_spell_input_fr">Sort :</label>
+        <input list="racial_spell_list_fr" id="racial_spell_input_fr" style="min-width: 200px;" />
+        <datalist id="racial_spell_list_fr"></datalist>
+      </div>
+
+      <div class="inline-field" style="margin-top: 10px;">
+        <label for="racial_spell_level_fr">À partir du niveau :</label>
+        <input type="number" id="racial_spell_level_fr" min="1" value="1" style="width: 60px;" />
+      </div>
+
+      <div class="inline-field" style="margin-top: 10px;">
+        <label for="racial_spell_frequency_fr">Fréquence :</label>
+        <select id="racial_spell_frequency_fr" style="width: auto;">
+          <option value="at_will">À volonté</option>
+          <option value="1_jour">1 / jour</option>
+          <option value="1_repos">1 / repos long</option>
+        </select>
+      </div>
+
+  <button type="button" id="add_racial_spell_fr" style="margin-top: 10px;">+ Ajouter le sort</button>
+
+  <div id="racial_spells_list_fr" class="weapon-list" style="margin-top: 10px;"></div>
+</div>
+      <label>
           <input type="checkbox" class="trait-checkbox" id="draconic_ancestry_fr" />
             Ascendance draconique
           <span class="tooltip" title="A la création d'un personnage, si cette race est choisis une menu de couleur seras ajouté.">❔</span>
@@ -275,13 +306,13 @@
       </label>
 
       <div id="save_adv_magic_section_fr" style="margin-left: 20px; display: none; display: flex; flex-wrap: wrap; gap: 20px;">
-  <label><input type="checkbox" id="save_adv_str_fr" /> Force</label>
-  <label><input type="checkbox" id="save_adv_dex_fr" /> Dextérité</label>
-  <label><input type="checkbox" id="save_adv_con_fr" /> Constitution</label>
-  <label><input type="checkbox" id="save_adv_int_fr" /> Intelligence</label>
-  <label><input type="checkbox" id="save_adv_wis_fr" /> Sagesse</label>
-  <label><input type="checkbox" id="save_adv_cha_fr" /> Charisme</label>
-</div>
+        <label><input type="checkbox" id="save_adv_str_fr" /> Force</label>
+        <label><input type="checkbox" id="save_adv_dex_fr" /> Dextérité</label>
+        <label><input type="checkbox" id="save_adv_con_fr" /> Constitution</label>
+        <label><input type="checkbox" id="save_adv_int_fr" /> Intelligence</label>
+        <label><input type="checkbox" id="save_adv_wis_fr" /> Sagesse</label>
+        <label><input type="checkbox" id="save_adv_cha_fr" /> Charisme</label>
+      </div>
       <label>
           <input type="checkbox" class="trait-checkbox" id="show_damage_type_select_fr" />
             Résistance à un type de dégats
