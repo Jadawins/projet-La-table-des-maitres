@@ -39,12 +39,15 @@ toggleSection('show_damage_type_select_fr', 'damage_type_section_fr');
 toggleSection('show_tools_section_fr', 'tools_section_fr');
 toggleSection('show_languages_section_fr', 'languages_section_fr');
 toggleSection('show_skills_section_fr', 'skills_section_fr');
+toggleSection('fixed_skills_fr', 'fixed_skills_block_fr');
+toggleSection('restrict_skill_choice_fr', 'restricted_skills_config_fr');
 toggleSection('show_rp_traits_fr', 'rp_traits_section_fr');
 toggleSection('show_condition_mastery_fr', 'condition_mastery_section_fr');
 toggleSection('allow_language_choice_fr', 'language_choice_count_container_fr');
 toggleSection('allow_skill_choice_fr', 'skill_choice_count_container_fr');
 toggleSection('show_save_adv_magic_fr', 'save_adv_magic_section_fr');
 toggleSection('show_racial_spells_fr', 'racial_spells_section_fr');
+toggleSection('show_custom_traits_fr', 'custom_traits_section_fr');
 toggleSection('ability_score_en', 'bonus_details_en');
 toggleSection('darkvision_en', 'darkvision_details_en');
 
@@ -188,18 +191,21 @@ function genererMenuLangues() {
 
 
 function genererMenuCompetences() {
-  const select = document.getElementById('skills_select');
-  select.innerHTML = '';
+  const noms = toutesLesCompetences.map(c => c.name.fr || c.name.en).sort();
 
-  toutesLesCompetences
-    .map(c => c.name.fr || c.name.en)
-    .sort()
-    .forEach(nom => {
+  const menus = ['skills_select', 'fixed_skills_select_fr', 'restricted_skills_select_fr'];
+  menus.forEach(id => {
+    const select = document.getElementById(id);
+    if (!select) return;
+
+    select.innerHTML = '';
+    noms.forEach(nom => {
       const option = document.createElement('option');
       option.value = nom;
       option.textContent = nom;
       select.appendChild(option);
     });
+  });
 }
 
 
@@ -614,3 +620,48 @@ document.getElementById('add_skill').addEventListener('click', () => {
   list.appendChild(item);
 });
 
+document.getElementById('add_fixed_skill_fr').addEventListener('click', () => {
+  const select = document.getElementById('fixed_skills_select_fr');
+  const nom = select?.value;
+  if (!nom) return;
+
+  const list = document.getElementById('fixed_skills_list_fr');
+  const exists = Array.from(list.children).some(item => item.dataset.skill === nom);
+  if (exists) return;
+
+  const item = document.createElement('div');
+  item.classList.add('weapon-item');
+  item.dataset.skill = nom;
+  item.textContent = nom;
+
+  const btn = document.createElement('button');
+  btn.textContent = '❌';
+  btn.classList.add('remove-weapon-btn');
+  btn.addEventListener('click', () => item.remove());
+
+  item.appendChild(btn);
+  list.appendChild(item);
+});
+
+document.getElementById('add_restricted_skill_fr').addEventListener('click', () => {
+  const select = document.getElementById('restricted_skills_select_fr');
+  const nom = select?.value;
+  if (!nom) return;
+
+  const list = document.getElementById('restricted_skills_list_fr');
+  const exists = Array.from(list.children).some(item => item.dataset.skill === nom);
+  if (exists) return;
+
+  const item = document.createElement('div');
+  item.classList.add('weapon-item');
+  item.dataset.skill = nom;
+  item.textContent = nom;
+
+  const btn = document.createElement('button');
+  btn.textContent = '❌';
+  btn.classList.add('remove-weapon-btn');
+  btn.addEventListener('click', () => item.remove());
+
+  item.appendChild(btn);
+  list.appendChild(item);
+});

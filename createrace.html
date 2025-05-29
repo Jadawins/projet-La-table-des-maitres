@@ -94,6 +94,7 @@
           <select id="size_code_fr" name="size_code_fr" style="width: auto;">
           <option value="P">P (Petite)</option>
           <option value="M">M (Moyenne)</option>
+          <option value="M">Petite ou Moyenne (au choix du joueur)</option>
           </select>
         </div>
           <textarea id="size_description_fr" name="size_description_fr" placeholder="Description sur la taille"></textarea><br />
@@ -112,6 +113,11 @@
               </div>           
             </div> 
           </div>
+          <label>      
+            <input type="checkbox" class="trait-checkbox" id="draconic_ancestry_fr" />
+            Bonus de maîtrise aux jets d’initiative
+            <span class="tooltip" title="Ajout du bonus de maîtrise aux jets d’initiative.">❔</span>
+          </label>
           <label>   
             <input type="checkbox" class="trait-checkbox" id="ability_score_fr" />
               Bonus de caratéristiques
@@ -216,31 +222,34 @@
         <label for="racial_spell_input_fr">Sort :</label>
         <input list="racial_spell_list_fr" id="racial_spell_input_fr" class="input-style" style="min-width: 200px;" />
         <datalist id="racial_spell_list_fr"></datalist>
-      </div>
+        </div>
 
-      <div class="inline-field" style="margin-top: 10px;">
-        <label for="racial_spell_level_fr">À partir du niveau :</label>
-        <input type="number" id="racial_spell_level_fr" min="1" value="1" style="width: 60px;" />
-      </div>
+        <div class="inline-field" style="margin-top: 10px;">
+          <label for="racial_spell_level_fr">À partir du niveau :</label>
+          <input type="number" id="racial_spell_level_fr" min="1" value="1" style="width: 60px;" />
+        </div>
 
-      <div class="inline-field" style="margin-top: 10px;">
+        <div class="inline-field" style="margin-top: 10px;">
         <label for="racial_spell_frequency_fr">Fréquence :</label>
         <select id="racial_spell_frequency_fr" style="width: auto;">
           <option value="at_will">À volonté</option>
           <option value="1_jour">1 / jour</option>
           <option value="1_repos">1 / repos long</option>
         </select>
+        </div>
+        <button type="button" id="add_racial_spell_fr" style="margin-top: 10px;">+ Ajouter le sort</button>
+        <div id="racial_spells_list_fr" class="weapon-list" style="margin-top: 10px;"></div>
       </div>
-
-  <button type="button" id="add_racial_spell_fr" style="margin-top: 10px;">+ Ajouter le sort</button>
-
-  <div id="racial_spells_list_fr" class="weapon-list" style="margin-top: 10px;"></div>
-</div>
       <label>
           <input type="checkbox" class="trait-checkbox" id="draconic_ancestry_fr" />
             Ascendance draconique
           <span class="tooltip" title="A la création d'un personnage, si cette race est choisis une menu de couleur seras ajouté.">❔</span>
-       </label>
+      </label>
+      <label>
+        <input type="checkbox" id="divine_manifestation_fr" />
+        Manifestation divine
+        <span class="tooltip" title="Permet de choisir un type d'ascendance divine (Protecteur, Déchu, Fléau) à la création de personnage.">❔</span>
+      </label>
       <label>
         <input type="checkbox" class="trait-checkbox" id="show_languages_section_fr" />
         Langues connues
@@ -268,18 +277,40 @@
         <span class="tooltip" title="Compétences accordées à cette race (comme Perception, Acrobaties, etc.)">❔</span>
       </label>
       <div id="skills_section_fr" style="margin-left: 20px;">
-        <select id="skills_select" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
-        <button type="button" id="add_skill">+ Ajouter la compétence</button>
-        <div id="skills_list" class="weapon-list"></div>
+        <label>
+          <input type="checkbox" id="fixed_skills_fr" />
+          Le personnage maîtrise ces compétences
+          <span class="tooltip" title="Ajoute des compétences directement maîtrisées par la race.">❔</span>
+        </label>
+        <div id="fixed_skills_block_fr" style="margin-left: 20px; display: none;">
+          <select id="fixed_skills_select_fr" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
+          <button type="button" id="add_fixed_skill_fr">+ Ajouter</button>
+          <div id="fixed_skills_list_fr" class="weapon-list" style="margin-top: 10px;"></div>
+        </div>
         <label>
           <input type="checkbox" id="allow_skill_choice_fr" />
           Le joueur peut choisir des compétences supplémentaires
           <span class="tooltip" title="Permet au joueur de choisir des compétences à la création du personnage.">❔</span>
         </label>
-
         <div id="skill_choice_count_container_fr" class="inline-field" style="margin-left: 20px; display: none;">
           <label for="skill_choice_count_fr" style="white-space: nowrap;">Nombre de compétences au choix :</label>
           <input type="number" id="skill_choice_count_fr" value="2" min="1" />
+        </div>
+        <label>
+          <input type="checkbox" id="restrict_skill_choice_fr" />
+          Le joueur doit choisir parmi un sous-ensemble de compétences
+          <span class="tooltip" title="Permet de limiter le choix à une liste définie de compétences.">❔</span>
+        </label>
+
+        <div id="restricted_skills_config_fr" style="margin-left: 20px; display: none;">
+          <label for="restricted_skills_select_fr">Ajouter une compétence à la liste :</label>
+          <select id="restricted_skills_select_fr" class="dropdown-style" style="width: auto; min-width: 150px;"></select>
+          <button type="button" id="add_restricted_skill_fr">+ Ajouter</button>
+          <div id="restricted_skills_list_fr" class="weapon-list" style="margin-top: 10px;"></div>
+          <label for="restricted_skill_choice_count_fr" style="margin-top: 10px; display: block;">
+            Nombre de compétences à choisir dans cette liste :
+          </label>
+          <input type="number" id="restricted_skill_choice_count_fr" value="1" min="1" />
         </div>
       </div>      
       <label>
@@ -332,25 +363,62 @@
       </div>
       <div id="damage_trait_list" class="weapon-list" ></div>
       <label>
-        <input type="checkbox" id="trance_trait_fr" class="trait-checkbox" />
-        Transe (repos long en 4h)
-        <span class="tooltip" title="Cette race entre dans une transe de 4h au lieu de dormir, tout en restant consciente.">❔</span>
+        <input type="checkbox" id="show_custom_traits_fr" class="trait-checkbox" />
+        Traits raciaux personnalisés
+        <span class="tooltip" title="Afficher les traits raciaux spéciaux déjà définis (Transe, Chance, etc.)">❔</span>
       </label>
-      <label>
-        <input type="checkbox" id="halfling_lucky_fr" class="trait-checkbox" />
-        Chance
-        <span class="tooltip" title="Relance un jet d20 si le résultat est un 1 naturel (attaque, sauvegarde, test).">❔</span>
-      </label>
-      <label>
-        <input type="checkbox" id="relentless_endurance_fr" class="trait-checkbox" />
-        Ténacité implacable
-        <span class="tooltip" title="1 fois par jour, quand vous tombez à 0 PV, vous restez à 1 PV à la place.">❔</span>
-      </label>
-      <label>
-        <input type="checkbox" id="savage_attacks_fr" class="trait-checkbox" />
-        Attaques sauvages
-        <span class="tooltip" title="Ajoute un dé de dégâts lors d’un coup critique avec une arme de mêlée.">❔</span>
-      </label>
+      <div id="custom_traits_section_fr" style="margin-left: 20px; display: none;">
+        <label>
+          <input type="checkbox" id="trance_trait_fr" class="trait-checkbox" />
+          Transe (repos long en 4h)
+          <span class="tooltip" title="Cette race entre dans une transe de 4h au lieu de dormir, tout en restant consciente.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="halfling_lucky_fr" class="trait-checkbox" />
+          Chance
+          <span class="tooltip" title="Relance un jet d20 si le résultat est un 1 naturel (attaque, sauvegarde, test).">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="relentless_endurance_fr" class="trait-checkbox" />
+          Ténacité implacable
+          <span class="tooltip" title="1 fois par jour, quand vous tombez à 0 PV, vous restez à 1 PV à la place.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="savage_attacks_fr" class="trait-checkbox" />
+          Attaques sauvages
+          <span class="tooltip" title="Ajoute un dé de dégâts lors d’un coup critique avec une arme de mêlée.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="lucky_footwork_fr" />
+          Pattes agiles
+          <span class="tooltip" title="Quand vous ratez un jet de sauvegarde de Dextérité, utilisez une réaction pour lancer 1d4 et l’ajouter. Si à terre ou vitesse = à 0 inutilisable.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="can_fly_naturally_fr" />
+          Vol naturel (ailes)
+          <span class="tooltip" title="Cette race peut voler avec une vitesse égale à sa vitesse de déplacement, mais ne peut pas le faire si elle porte une armure intermédiaire ou lourde.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="talons_trait_fr" />
+          Serres naturelles
+          <span class="tooltip" title="Vos attaques à mains nues infligent 1d6 dégâts tranchants au lieu de 1.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="healing_hands_fr" />
+          Soins célestes
+          <span class="tooltip" title="Au prix d'une action, vous pouvez toucher une créature et lancer un nombre de d4 égal à votre bonus de maîtrise. La cible regagne un nombre de points de vie égal au total obtenu. Utilisable une fois, récupéré après un repos long.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="hooves_attack_fr" />
+          Attaque de sabots
+          <span class="tooltip" title="Vous possédez une attaque naturelle de sabots : 1d6 dégâts contondants + Force.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="equine_charge_fr" />
+          Charge équine
+          <span class="tooltip" title="Lorsque vous attaquez au corps à corps, vous pouvez faire une attaque de sabots en action bonus.">❔</span>
+        </label>
+      </div>
       <label>
         <input type="checkbox" class="trait-checkbox" id="show_rp_traits_fr" />
         Traits RP ou de déplacement
