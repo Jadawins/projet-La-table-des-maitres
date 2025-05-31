@@ -34,7 +34,7 @@
     <div class="sidebar-content">
       <h2>Menu MJ</h2>
       <ul class="sidebar-menu">
-        <li><a href="CreateRace.html">Créationd de nouvelles races</a></li>  
+        <li><a href="CreateRace.html">Création de nouvelles races</a></li>  
         <li><a href="#">Sessions Joueurs</a></li>
       </ul>
       <h2>Menu Joueurs</h2>
@@ -478,13 +478,128 @@
             Frappe surprise
           <span class="tooltip" title="Lors de votre premier tour au combat, si vous touchez une créature qui n’a pas encore joué, vous infligez 2d6 dégâts supplémentaires.">❔</span>
         </label>
-      </div>      
+        <label>
+          <input type="checkbox" id="stones_endurance_fr" />
+          Ténacité implacable
+          <span class="tooltip" title="Réaction : réduisez les dégâts subis de 1d12 + votre modificateur de CON, un nombre de fois égal à votre bonus de maîtrise par repos long.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="fey_gift_fr" />
+          Cadeau féerique
+          <span class="tooltip" title="Utilisez l'action Aider comme action bonus un nombre de fois égal à votre bonus de maîtrise par repos long. À partir du niveau 3, choisissez une option supplémentaire : Hospitalité, Passage ou Rancune.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="fortune_from_the_many_fr" />
+          Fortune des nombreux
+          <span class="tooltip" title="Lorsque vous ratez un jet d'attaque, un test de caractéristique ou un jet de sauvegarde, ajoutez un bonus égal au nombre d'alliés visibles à 9 m ou moins (max +3). Utilisable un nombre de fois égal à votre bonus de maîtrise par repos long.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="kenku_recall_fr" />
+          Souvenir kenku
+          <span class="tooltip" title="Vous avez la maîtrise de deux compétences de votre choix. De plus, un nombre de fois égal à votre bonus de maîtrise par repos long, vous pouvez vous accorder l'avantage sur un test de compétence dans lequel vous êtes compétent.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="expert_duplication_fr" />
+          Duplication experte
+          <span class="tooltip" title="Lorsque vous copiez un écrit ou un ouvrage artisanal, vous avez l'avantage sur les tests pour produire une duplication exacte.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="mimicry_fr" />
+          Mimétisme
+          <span class="tooltip" title="Vous pouvez imiter parfaitement les sons que vous avez entendus, y compris les voix. Une créature peut déterminer qu'il s'agit d'une imitation avec un test de Sagesse (Perspicacité) contre un DD de 8 + votre bonus de maîtrise + votre modificateur de Charisme.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="draconic_cry_fr" />
+          Cri draconique
+          <span class="tooltip" title="En tant qu'action bonus, vous pouvez pousser un cri draconique. Les ennemis de votre choix situés à 3 mètres ou moins de vous et qui peuvent vous entendre ont désavantage sur leurs jets d'attaque jusqu'au début de votre prochain tour. Utilisable un nombre de fois égal à votre bonus de maîtrise par repos long.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="kobold_legacy_fr" />
+          Héritage kobold
+          <span class="tooltip" title="Choisissez l'une des options suivantes : Habileté (maîtrise d'une compétence), Défiance (avantage contre l'état effrayé), ou Sorcellerie draconique (un sort mineur de sorcier).">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="goring_rush_fr" />
+          Ruée cornue
+          <span class="tooltip" title="Après avoir utilisé l'action Foncer et déplacé au moins 6 mètres, vous pouvez effectuer une attaque de mêlée avec vos cornes en tant qu'action bonus.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="hammering_horns_fr" />
+          Cornes martelantes
+          <span class="tooltip" title="Après avoir touché une créature avec une attaque de mêlée, vous pouvez utiliser une action bonus pour tenter de la repousser de 3 mètres, à moins qu'elle ne réussisse un jet de sauvegarde de Force (DD = 8 + bonus de maîtrise + modificateur de Force).">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="labyrinthine_recall_fr" />
+          Souvenir labyrinthique
+          <span class="tooltip" title="Vous savez toujours quelle direction est le nord et avez l'avantage sur les tests de Sagesse (Survie) pour naviguer ou suivre une piste.">❔</span>
+        </label>
+        <label>
+          <input type="checkbox" id="adrenaline_rush_fr" />
+          Ruée d'adrénaline
+          <span class="tooltip" title="Vous pouvez utiliser l'action Foncer comme action bonus. Lorsque vous le faites, vous gagnez des points de vie temporaires égaux à votre bonus de maîtrise. Utilisable un nombre de fois égal à votre bonus de maîtrise par repos long.">❔</span>
+        </label>
+        <label>
+        <input type="checkbox" id="lizardfolk_bite_fr" />
+        Morsure
+        <span class="tooltip" title="Vous possédez une attaque naturelle de morsure qui inflige 1d6 + votre modificateur de Force en dégâts tranchants.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="hungry_jaws_fr" />
+        Furie vorace
+        <span class="tooltip" title="En action bonus, vous pouvez faire une attaque spéciale avec votre morsure. En cas de succès, vous gagnez des points de vie temporaires égaux à votre bonus de maîtrise. Utilisable un nombre de fois égal à votre bonus de maîtrise par repos long.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="hold_breath_fr" />
+        Apnée 15 min
+        <span class="tooltip" title="Vous pouvez retenir votre souffle pendant 15 minutes.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="hold_breath_fr" />
+        Apnée 1h
+        <span class="tooltip" title="Vous pouvez retenir votre souffle pendant 1 heures.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="natural_armor_fr" />
+        Armure naturelle
+        <span class="tooltip" title="Si vous ne portez pas d'armure, votre CA est égale à 13 + votre modificateur de Dextérité. Vous pouvez utiliser un bouclier avec cette CA.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="trance_srd_fr" />
+        Transe (repos long en 4h)
+        <span class="tooltip" title="Le personnage n’a pas besoin de dormir. Il médite pendant 4 heures pour bénéficier d’un repos long.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="trance_motm_fr" />
+        Transe – Maîtrises temporaires
+        <span class="tooltip" title="Après un repos long de 4h, vous gagnez temporairement deux maîtrises (armes ou outils) de votre choix parmi ceux du Manuel des Joueurs, jusqu’au prochain repos long.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="shell_defense_fr" />
+        Défense de la carapace
+        <span class="tooltip" title="En action, vous pouvez vous retirer dans votre carapace. Jusqu’à en sortir (action bonus), vous gagnez +4 CA, avantage aux jets de sauvegarde de Force et de Constitution, désavantage aux jets de Dextérité, vous êtes à terre, votre vitesse est de 0, vous ne pouvez pas réagir.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="tortle_natural_armor_fr" />
+        Armure naturelle (Tortle)
+        <span class="tooltip" title="Votre CA de base est de 17 (votre modificateur de Dextérité ne s'applique pas). Vous ne pouvez pas porter d'armure, mais vous pouvez utiliser un bouclier.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="fearless_fr" />
+        Intrépide
+        <span class="tooltip" title="Vous avez avantage aux jets de sauvegarde contre l’état effrayé. Si vous échouez, vous pouvez choisir de réussir à la place. Utilisable une fois par repos long.">❔</span>
+      </label>
+      <label>
+        <input type="checkbox" id="kender_taunt_fr" />
+        Provocation
+        <span class="tooltip" title="En action bonus, vous pouvez provoquer une créature à 18 m. Elle doit réussir un jet de sauvegarde de Sagesse (DD = 8 + bonus de maîtrise + votre modificateur de INT/SAG/CHA), ou elle a désavantage pour attaquer toute cible autre que vous jusqu’à votre prochain tour. Utilisable un nombre de fois égal à votre bonus de maîtrise par repos long.">❔</span>
+      </label>
+      </div>     
+
       <label>
         <input type="checkbox" class="trait-checkbox" id="show_rp_traits_fr" />
         Traits RP ou de déplacement
         <span class="tooltip" title="Ajouter des traits sans effet direct en jeu (ex : agilité halfeline, instincts, etc.)">❔</span>
       </label>
-
       <div id="rp_traits_section_fr" style="margin-left: 20px; display: none;">
         <label for="rp_trait_name_fr">Nom du trait :</label>
         <input type="text" id="rp_trait_name_fr" style="width: auto; min-width: 150px;" />
