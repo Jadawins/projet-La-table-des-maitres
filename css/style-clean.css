@@ -136,3 +136,37 @@
     width: 40px;
     height: 40px;
   }
+
+  .page-title h2 {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-title p, .page-title li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.page-title ul {
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+
+.page-title ul li::before {
+  content: "• ";
+  color: var(--accent);
+  margin-right: 0.4em;
+}
+
+.page-title ul {
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.page-title h2 {
+  margin-top: 2rem;
+}
