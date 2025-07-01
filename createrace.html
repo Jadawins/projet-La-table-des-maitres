@@ -70,6 +70,30 @@
             <option value="Homebrew">Homebrew</option>
           </select>
         </div>
+        <label for="typeSelect">
+          Type de créature :
+          <select id="typeSelect" name="typeCreature" style="width: auto;">
+            <option value="">-- Sélectionnez un type --</option>
+            <option value="Humanoïde">Humanoïde</option>
+            <option value="Fée">Fée</option>
+            <option value="Élémentaire">Élémentaire</option>
+            <option value="Mort-vivant">Mort-vivant</option>
+            <option value="Démon">Démon</option>
+            <option value="Celeste">Céleste</option>
+            <option value="Construct">Construct</option>
+            <option value="Monstruosité">Monstruosité</option>
+            <option value="Limon">Limon</option>
+            <option value="Dragon">Dragon</option>
+          </select>
+          </label>
+          <label>
+            <input type="checkbox" id="hasFamilleCheckbox">
+            Cette race fait-elle partie d’une famille raciale ?
+          </label>
+          <div id="familleContainer" style="display: none;">
+            <label for="familleInput">Famille raciale :</label>
+            <input type="text" id="familleInput" placeholder="ex : Elfe, Gobelinoïde, etc.">
+          </div>
         <div class="inline-field">
           <label for="name_fr" style="white-space: nowrap;">Nom :</label><br />
           <input id="name_fr" name="name_fr" type="text" required /><br />
