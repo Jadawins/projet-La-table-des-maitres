@@ -48,8 +48,7 @@ toggleSection('allow_skill_choice_fr', 'skill_choice_count_container_fr');
 toggleSection('show_save_adv_magic_fr', 'save_adv_magic_section_fr');
 toggleSection('show_racial_spells_fr', 'racial_spells_section_fr');
 toggleSection('show_custom_traits_fr', 'custom_traits_section_fr');
-toggleSection('ability_score_en', 'bonus_details_en');
-toggleSection('darkvision_en', 'darkvision_details_en');
+
 
 
 

@@ -55,11 +55,7 @@
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
 <form id="raceForm">
-    <div class="tabs">
-  <button class="tab-button active" data-target="fr">Français</button>
-  <button class="tab-button" data-target="en">English</button>
-</div> 
-<div id="fr" class="tab-content active">
+  <div class="form-content">
    <section class="form-section" style="color: #d5d1a9;">
       <h1>Créer une nouvelle Race</h1>
         <div class="inline-field">
@@ -634,78 +630,8 @@
         <button type="button" id="add_rp_trait_fr">+ Ajouter le trait</button>
         <div id="rp_traits_list_fr" class="weapon-list"></div>
       </div>
-
-
-
-
 </div>
-        
-      
- </section>        
 
-</div>
-<div id="en" class="tab-content">
-  
-    <section class="form-section" style="color: #d5d1a9;">
-      <h1>Create a new Race</h1>
-      <label for="version_en">SRD version :</label>
-      <select id="version_en" name="version_en">
-        <option value="2014">SRD 2014</option>
-        <option value="2024">SRD 2024</option>
-        <option value="Homebrew">Homebrew</option>
-      </select>
-        <label for="name_en">Name :</label><br />
-        <input id="name_en" name="name_en" type="text" required /><br />
-
-        <div class="inline-field">
-          <label for="speed_en">Speed (feet) :</label><br />
-          <input id="speed_en" name="speed_en" type="number" required /><br />
-        </div>
-
-        <label for="alignment_en">Alignement :</label><br />
-        <textarea id="alignment_en" name="alignment_en"></textarea><br />
-
-        <label for="age_en">Age :</label><br />
-        <textarea id="age_en" name="age_en"></textarea><br />
-
-        <label for="size_description_en">Description taille :</label><br />
-        <textarea id="size_description_en" name="size_description_en"></textarea><br />
-
-        <label>
-            <input type="checkbox" class="trait-checkbox" id="darkvision_en" /> 
-              Darkvision
-              <span class="tooltip" title="Does the Race see in the dark ?">❔</span>
-        </label>
-        <div id="darkvision_details_en">
-          <div class="inline-field">
-            <label for="darkvision_distance_en">Distance (f) :</label><br />
-             <input id="darkvision_distance_en" name="darkvision_distance_en" placeholder="60 f" type="number" required /><br />
-          </div>           
-        </div> 
-        <label>
-          <input type="checkbox" class="trait-checkbox" id="ability_score_en" />
-            Ability score bonus
-          <span class="tooltip" title="Does Race have a characteristic bonus?">❔</span>
-        </label>
-        <div id="bonus_details_en">   
-        <label id="lang-en" for="ability_score_en">Ability score :</label>
-          <select id="ability_score_en" name="ability_score_en">
-          <option value="STR">STR</option>
-          <option value="DEX">DEX</option>
-          <option value="CON">CON</option>
-          <option value="INT">INT</option>
-          <option value="WIS">WIS</option>
-          <option value="CHA">CHA</option>
-          </select>
-        <div class="inline-field">
-          <label for="bonus_en">Ability score increase :</label><br />
-          <input id="bonus_en" name="bonus_en" type="number" required /><br />
-        </div>
-      </div> 
-    </section>  
-    
-        
-</div>
         <!-- Tu peux ajouter d'autres champs ici selon tes besoins -->
 
         <button type="submit">Créer la race</button>
