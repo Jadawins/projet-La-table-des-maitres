@@ -1,4 +1,32 @@
 /* =============================================================
+   🎨 VARIABLES CSS GLOBALES (thème sombre par défaut)
+   ============================================================= */
+
+:root {
+  --background: rgba(20, 20, 20, 0.85);
+  --text: #d5d1a9;
+  --text-color: #f0e6d2;
+  --border-color: #444;
+  --input-background: #1e1e1e;
+  --primary-color: #865dff;
+  --accent-color: #865dff;
+  --accent: #d5d1a9;
+  --text-title: #d5d1a9;
+}
+
+[data-theme="light"] {
+  --background: rgba(255, 255, 255, 0.85);
+  --text: #2b0040;
+  --text-color: #3b0a52;
+  --border-color: #ccc;
+  --input-background: #f7f3ff;
+  --primary-color: #865dff;
+  --accent-color: #865dff;
+  --accent: #2b0040;
+  --text-title: #2b0040;
+}
+
+/* =============================================================
    🌙 THÈME SOMBRE : Styles spécifiques au mode sombre
    ============================================================= */
 

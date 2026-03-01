@@ -104,10 +104,6 @@
     filter: drop-shadow(0 0 12px #a586ff);
     transform: scale(1.1);
   }
-  .sidebar-header {
-    position: relative;
-  }
-  
   .sidebar-settings-button {
     position: absolute;
     right: 16px; /* ajuste si nécessaire */

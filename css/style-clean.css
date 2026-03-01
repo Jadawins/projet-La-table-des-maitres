@@ -78,7 +78,7 @@
   }
   .character-table {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 2rem auto;
     border-collapse: collapse;
     background: rgba(20, 20, 30, 0.9);
@@ -87,24 +87,24 @@
     color: #f0f0f0;
     font-size: 1rem;
   }
-  
+
   .character-table th,
   .character-table td {
     padding: 0.75rem 1rem;
     border-bottom: 1px solid #444;
     text-align: left;
   }
-  
+
   .character-table th {
     background-color: #865dff;
     color: #fff;
     font-weight: bold;
   }
-  
+
   .character-table tr:hover {
     background-color: rgba(120, 90, 200, 0.2);
   }
-  
+
   .character-table button {
     background: #865dff;
     color: white;
@@ -112,12 +112,6 @@
     border-radius: 6px;
     border: none;
     cursor: pointer;
-  }
-
-  .character-table {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
   }
 
   .header-centered h1 {
@@ -153,20 +147,13 @@
 .page-title ul {
   padding-left: 1.5rem;
   list-style-type: none;
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .page-title ul li::before {
   content: "• ";
   color: var(--accent);
   margin-right: 0.4em;
-}
-
-.page-title ul {
-  text-align: left;
-  display: inline-block;
-  margin: 0 auto;
-}
-
-.page-title h2 {
-  margin-top: 2rem;
 }
