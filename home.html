@@ -12,6 +12,43 @@
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
   </script>
+  <style>
+    /* Fond semi-transparent sidebar */
+    #sidebar {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="light"] #sidebar {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Fond semi-transparent contenu principal */
+    main h1,
+    main > p {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      display: inline-block;
+    }
+
+    [data-theme="light"] main h1,
+    [data-theme="light"] main > p {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .project-edito {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(134, 93, 255, 0.2);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      margin-top: 1.5rem;
+    }
+
+    [data-theme="light"] .project-edito {
+      background: rgba(255, 255, 255, 0.6);
+      border-color: rgba(134, 93, 255, 0.3);
+    }
+  </style>
 </head>
 <body>
   <div class="page-container">
