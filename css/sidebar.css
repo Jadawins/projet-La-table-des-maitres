@@ -121,3 +121,25 @@
 [data-theme="light"] #sidebar {
   background-color: rgba(255, 255, 255, 0.6);
 }
+
+/* =============================================================
+   📱 RESPONSIVE SIDEBAR
+   ============================================================= */
+
+@media (max-width: 768px) {
+  main {
+    margin-left: 0 !important;
+    padding: 1rem;
+  }
+
+  #sidebar.collapsed ~ main {
+    margin-left: 0 !important;
+  }
+
+  /* Sidebar en overlay sur mobile */
+  #sidebar:not(.hidden) {
+    width: 80vw;
+    max-width: 280px;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+  }
+}

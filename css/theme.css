@@ -117,4 +117,15 @@
     transform: scale(1.2);
     filter: drop-shadow(0 0 10px rgba(255, 255, 200, 0.8));
   }
+
+/* =============================================================
+   📱 RESPONSIVE GLOBAL
+   ============================================================= */
+
+@media (max-width: 768px) {
+  body[data-theme="dark"],
+  body[data-theme="light"] {
+    padding: 0.5em;
+  }
+}
   
