@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
   <script>
-    // Appliquer le thème au chargement
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
   </script>
@@ -12,34 +11,212 @@
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/style-clean.css" />
   <link rel="stylesheet" href="css/ui-clean.css" />
+  <style>
+    .landing-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 4rem 1.5rem 6rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .landing-block {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(134, 93, 255, 0.2);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .landing-block h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .landing-block .subtitle {
+      font-size: 1.15rem;
+      margin-bottom: 1.75rem;
+      opacity: 0.9;
+    }
+
+    .landing-block h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .landing-block p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.85em 2em;
+      background: #865dff;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(134, 93, 255, 0.5);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background: #a586ff;
+      transform: scale(1.04);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+      text-align: left;
+    }
+
+    .feature-item {
+      background: rgba(134, 93, 255, 0.1);
+      border: 1px solid rgba(134, 93, 255, 0.25);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .feature-item span {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      background: rgba(134, 93, 255, 0.1);
+      border: 1px solid rgba(134, 93, 255, 0.25);
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #865dff;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-title {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    .step-arrow {
+      display: none;
+    }
   </style>
 </head>
 <body>
+
   <div class="top-buttons">
     <button class="btn-outline" onclick="location.href='login.html'">Se connecter</button>
     <button class="btn-filled" onclick="location.href='signup.html'">S'inscrire</button>
   </div>
 
-  <div class="page-title">
-    <h1><span class="accent">⚔️ La Table du Maître</span></h1>
-    <p>Organisez, suivez et vivez vos campagnes de JDR comme jamais auparavant.</p>
-  
-    <h2>🧙 Qu'est-ce que La Table du Maître ?</h2>
-    <p>
-      La Table du Maître est une application web conçue pour les passionnés de jeux de rôle.
-      Elle vous permet de créer vos propres races personnalisées, de générer des personnages complets,
-      de gérer vos campagnes et de centraliser toutes vos données de JDR au même endroit.
-    </p>
+  <div class="landing-wrapper">
 
-    <h2>✨ Fonctionnalités à venir</h2>
-    <ul>
-      <li>🧬 Création de races personnalisées (avec options avancées)</li>
-      <li>🧝 Générateur de personnages complet (avec fiche exportable)</li>
-      <li>📚 Gestion de campagnes et univers</li>
-      <li>🌐 Multi-utilisateur, accès partagé à vos tables</li>
-      <li>🧩 Intégration future de modules (magie, équipement, etc.)</li>
-    </ul>
+    <!-- Bloc hero -->
+    <div class="landing-block">
+      <h1><span class="accent">⚔️ La Table du Maître</span></h1>
+      <p class="subtitle">Organisez, suivez et vivez vos campagnes de JDR comme jamais auparavant.</p>
+      <a href="signup.html" class="cta-btn">Commencer l'aventure →</a>
+    </div>
+
+    <!-- Bloc description -->
+    <div class="landing-block">
+      <h2>🧙 Qu'est-ce que La Table du Maître ?</h2>
+      <p>
+        La Table du Maître est une application web conçue pour les passionnés de jeux de rôle.
+        Créez vos races personnalisées, gérez vos personnages, organisez vos campagnes et
+        centralisez toutes vos données de JDR au même endroit.
+      </p>
+    </div>
+
+    <!-- Bloc fonctionnalités -->
+    <div class="landing-block">
+      <h2>✨ Fonctionnalités</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <span>🧬</span>
+          Création de races personnalisées avec options avancées (SRD 2014, 2024 et Homebrew)
+        </div>
+        <div class="feature-item">
+          <span>🧝</span>
+          Générateur de personnages complet avec fiche exportable
+        </div>
+        <div class="feature-item">
+          <span>📚</span>
+          Gestion de campagnes et univers
+        </div>
+        <div class="feature-item">
+          <span>🌐</span>
+          Multi-utilisateur avec accès partagé à vos tables
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloc comment ça marche -->
+    <div class="landing-block">
+      <h2>🗺️ Comment ça marche ?</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <span class="step-title">Créer un compte</span>
+          <span class="step-desc">Inscrivez-vous gratuitement en quelques secondes avec votre email, Google ou Discord.</span>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <span class="step-title">Créer une campagne</span>
+          <span class="step-desc">Configurez votre univers, vos races, vos classes et invitez vos joueurs à rejoindre la table.</span>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <span class="step-title">Jouer</span>
+          <span class="step-desc">Gérez vos sessions en temps réel : initiative, combat, personnages et historique de partie.</span>
+        </div>
+      </div>
+    </div>
+
   </div>
+
   <div class="theme-toggle-container">
     <button id="theme-toggle" class="lanterne-btn">
       <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />

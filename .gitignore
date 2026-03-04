@@ -16,6 +16,14 @@ Thumbs.db
 .env
 *.env
 
+# Clés SSH — ne jamais commiter
+cles
+cles.pub
+*.pem
+*.key
+id_rsa
+id_ed25519
+
 # Build/temp output
 dist/
 build/
