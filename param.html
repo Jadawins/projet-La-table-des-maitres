@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parametres</title>
 
-  <!-- Gestion du theme clair/sombre directement au chargement -->
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
   </script>
 
-  <!-- Chargement des CSS globaux -->
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
   <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/param.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -26,95 +25,91 @@
       <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
         <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
       </button>
-      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">
-        ⚙️
-      </a>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
     </div>
     <div class="sidebar-content">
-      <h2>Menu Joueurs</h2>
-      <ul class="sidebar-menu">
-        <li><a href="mes-personnages.html">Mes Personnages</a></li>
-        <li><a href="#">Sessions Joueurs</a></li>
-      </ul>
-      <li><a href="home.html">Page d'accueil site</a></li>
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de nouvelles races</a></li>
+          <li><a href="#"><i class="fa-solid fa-scroll"></i> Sessions Joueurs</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="#"><i class="fa-solid fa-dice-d20"></i> Sessions Joueurs</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil site</a>
+      </div>
     </div>
   </aside>
 
-  
-
-  <!-- Contenu principal -->
   <main>
-    <!-- Avatar + Menu utilisateur -->
-    <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
-     <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
     <div class="profil-container">
       <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="infos">Informations Perso</button>
         <button class="tab-btn" data-tab="password">Mot de passe</button>
       </div>
 
       <div class="tab-content" id="infos" style="display: block;">
         <h1 class="profil-title">Mon Profil</h1>
         <div class="form-group">
-          <label for="pseudo">Pseudo : <input type="text" id="pseudo" placeholder="Votre pseudo"></label>
+          <label for="pseudo">Pseudo</label>
+          <input type="text" id="pseudo" placeholder="Votre pseudo">
         </div>
         <div class="form-group">
-          <label for="email">Email : <input type="text" id="email" readonly></label>
-          
+          <label for="email">Email</label>
+          <input type="text" id="email" readonly>
         </div>
         <div class="form-group">
-          <label for="discord">Discord : <input type="text" id="discord" placeholder="Votre pseudo Discord"></label>
+          <label for="discord">Discord</label>
+          <input type="text" id="discord" placeholder="Votre pseudo Discord">
         </div>
         <button class="btn-style" id="save-pseudo">Enregistrer</button>
       </div>
-      
+
       <div class="tab-content" id="password" style="display: none;">
         <h1 class="profil-title">Changer le mot de passe</h1>
         <div class="form-group">
-          <label for="old-password">Mot de passe actuel :</label>
+          <label for="old-password">Mot de passe actuel</label>
           <input type="password" id="old-password">
         </div>
         <div class="form-group">
-          <label for="new-password">Nouveau mot de passe :</label>
+          <label for="new-password">Nouveau mot de passe</label>
           <input type="password" id="new-password">
         </div>
         <div class="form-group">
-          <label for="confirm-password">Confirmer :</label>
+          <label for="confirm-password">Confirmer</label>
           <input type="password" id="confirm-password">
         </div>
         <button class="btn-style" id="change-password">Changer</button>
       </div>
 
       <div class="profil-buttons">
-        <button id="back-button" class="btn-style">Retour</button>
+        <button id="back-button" class="btn-style" onclick="history.back()">Retour</button>
         <button id="logout-button" class="btn-style btn-danger">Déconnexion</button>
       </div>
     </div>
-    
   </main>
 
-  <!-- Bouton de changement de thème (lanterne) -->
   <div class="theme-toggle-container">
     <button id="theme-toggle" class="lanterne-btn">
       <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
     </button>
   </div>
 
-  <!-- Chargement des JS globaux -->
   <script type="module" src="js/sidebar.js"></script>
   <script src="js/theme.js"></script>
-  <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
+  <script type="module" src="js/authGuard.js"></script>
   <script type="module" src="js/param.js"></script>
 
-  <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
   <script type="module">
     import { toggleSidebar } from './js/sidebar.js';
     window.toggleSidebar = toggleSidebar;
   </script>
-
-  <!-- Ton JS spécifique si besoin (ex: profil.js, etc) -->
-  <!--<script type="module" src="js/TONFICHIERSPECIFIQUE.js"></script>-->
 </body>
 </html>

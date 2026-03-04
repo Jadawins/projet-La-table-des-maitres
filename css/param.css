@@ -48,14 +48,21 @@
   
   /* Centrage général */
   .profil-container {
-    max-width: 600px;
-    margin: 100px auto 0;
-    padding-top: 2rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem 2rem 1.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(134, 93, 255, 0.2);
+    border-radius: 14px;
+  }
+
+  [data-theme="light"] .profil-container {
+    background: rgba(255, 255, 255, 0.6);
   }
   
   .avatar-wrapper {
@@ -104,9 +111,9 @@
     font-style: italic;
   }
   .profil-title {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
     color: var(--text-title);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     text-align: center;
   }
   

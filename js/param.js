@@ -116,29 +116,39 @@ if (logoutBtn) {
 
 });
 
-// Afficher les infos existantes
+// Afficher les infos existantes depuis public.profiles
 async function afficherInfosPerso() {
-  const { data: { session } } = await supabase.auth.getSession();
-  const user = session?.user;
-
+  const { data: { user } } = await supabase.auth.getUser();
   if (!user) return;
 
   document.getElementById("email").value = user.email;
-  document.getElementById("pseudo").value = user.user_metadata?.pseudo || "";
-  document.getElementById("discord").value = user.user_metadata?.discord || "";
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("username, discord_username")
+    .eq("id", user.id)
+    .single();
+
+  if (profile) {
+    document.getElementById("pseudo").value = profile.username || "";
+    document.getElementById("discord").value = profile.discord_username || "";
+  }
 }
 
-// Sauvegarder le pseudo + discord
+// Sauvegarder le pseudo + discord dans public.profiles
 async function enregistrerPseudoEtDiscord() {
   const pseudo = document.getElementById("pseudo").value;
   const discord = document.getElementById("discord").value;
 
-  const { error } = await supabase.auth.updateUser({
-    data: { pseudo, discord }
-  });
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const { error } = await supabase
+    .from("profiles")
+    .upsert({ id: user.id, username: pseudo, discord_username: discord });
 
   if (error) {
-    alert("Erreur lors de l'enregistrement.");
+    alert("Erreur lors de l'enregistrement : " + error.message);
   } else {
     alert("Informations mises à jour !");
   }
