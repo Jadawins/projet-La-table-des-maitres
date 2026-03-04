@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions légales — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style-clean.css" />
+  <link rel="stylesheet" href="css/ui-clean.css" />
+  <style>
+    .legal-wrapper {
+      max-width: 780px;
+      margin: 4rem auto;
+      padding: 0 1.5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .legal-block {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(134, 93, 255, 0.2);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+    }
+
+    .legal-block h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-block h2 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem;
+      color: #a586ff;
+    }
+
+    .legal-block p, .legal-block li {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .legal-block ul {
+      padding-left: 1.5rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #a586ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <div class="legal-wrapper">
+
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+
+    <div class="legal-block">
+      <h1>⚖️ Mentions légales</h1>
+      <p>Conformément aux dispositions de la loi n°2004-575 du 21 juin 2004 pour la confiance en l'économie numérique (LCEN), les informations suivantes sont portées à la connaissance des utilisateurs du site <strong>myrpgtable.fr</strong>.</p>
+
+      <h2>Éditeur du site</h2>
+      <p>
+        Le site <strong>La Table du Maître</strong> est un projet personnel indépendant, édité à titre non commercial.<br />
+        Responsable de publication : <strong>Wiwi</strong> (contact : via le formulaire de contact du site)<br />
+        Site web : <a href="https://myrpgtable.fr" style="color:#a586ff;">myrpgtable.fr</a>
+      </p>
+
+      <h2>Hébergement</h2>
+      <p>
+        Le site est hébergé sur un serveur privé virtuel (VPS).<br />
+        Hébergeur : <strong>OVH SAS</strong><br />
+        Adresse : 2 rue Kellermann, 59100 Roubaix, France<br />
+        Site : <a href="https://www.ovh.com" style="color:#a586ff;" target="_blank" rel="noopener">www.ovh.com</a>
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble du contenu du site (textes, visuels, code source) est la propriété de l'éditeur, sauf mention contraire.
+        Toute reproduction, représentation ou diffusion, totale ou partielle, est interdite sans autorisation préalable.
+      </p>
+      <p>
+        <strong>Dungeons &amp; Dragons®</strong> est une marque déposée de <strong>Wizards of the Coast / Hasbro</strong>.
+        La Table du Maître est un projet indépendant, non affilié à Wizards of the Coast.
+        Les données issues du System Reference Document (SRD) sont utilisées conformément à la licence OGL ou Creative Commons CC-BY 4.0 selon leur version.
+      </p>
+
+      <h2>Responsabilité</h2>
+      <p>
+        L'éditeur ne peut être tenu responsable des dommages directs ou indirects causés au matériel de l'utilisateur
+        lors de l'accès au site. Les informations présentes sur le site sont fournies à titre indicatif et peuvent être
+        modifiées à tout moment.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Le site utilise le stockage local du navigateur (<em>localStorage</em>) uniquement pour mémoriser les préférences
+        de thème (clair/sombre) de l'utilisateur. Aucun cookie publicitaire ou traceur tiers n'est utilisé.
+      </p>
+
+      <h2>Droit applicable</h2>
+      <p>
+        Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français seront
+        seuls compétents.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style-clean.css" />
+  <link rel="stylesheet" href="css/ui-clean.css" />
+  <style>
+    .about-wrapper {
+      max-width: 780px;
+      margin: 4rem auto;
+      padding: 0 1.5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .about-block {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(134, 93, 255, 0.2);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+    }
+
+    .about-block h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .about-block h2 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem;
+      color: #a586ff;
+    }
+
+    .about-block p, .about-block li {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .about-block ul { padding-left: 1.5rem; }
+
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .roadmap-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(134, 93, 255, 0.08);
+      border: 1px solid rgba(134, 93, 255, 0.2);
+      border-radius: 10px;
+      padding: 0.9rem 1.2rem;
+    }
+
+    .roadmap-status {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .roadmap-label {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .roadmap-label strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .disclaimer-box {
+      background: rgba(255, 200, 50, 0.06);
+      border: 1px solid rgba(255, 200, 50, 0.25);
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      font-style: italic;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #a586ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover { color: #fff; }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75em 1.8em;
+      background: #865dff;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(134, 93, 255, 0.4);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background: #a586ff;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="about-wrapper">
+
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+
+    <!-- Présentation -->
+    <div class="about-block">
+      <h1>🧙 À propos</h1>
+      <p>
+        <strong>La Table du Maître</strong> est une application web conçue par et pour les passionnés de jeux de rôle sur table.
+        L'objectif est simple : centraliser tous les outils dont un Maître du Jeu et ses joueurs ont besoin,
+        dans une interface moderne, accessible et gratuite.
+      </p>
+      <p>
+        Le projet est né de la frustration de jongler entre des dizaines d'onglets, de PDF et de feuilles de
+        personnage papier lors des sessions. La Table du Maître réunit tout au même endroit.
+      </p>
+      <a href="signup.html" class="cta-btn">Rejoindre la Table →</a>
+    </div>
+
+    <!-- L'équipe -->
+    <div class="about-block">
+      <h2>👤 Qui sommes-nous ?</h2>
+      <p>
+        Ce projet est développé par <strong>Wiwi</strong>, développeur passionné de JDR, en dehors de tout cadre commercial.
+        La Table du Maître est un projet indépendant, développé sur le temps libre, avec passion et beaucoup de café.
+      </p>
+      <p>
+        Le code source s'appuie sur des technologies modernes et ouvertes :
+        <strong>HTML/CSS/JS</strong> côté frontend, <strong>Node.js / Express</strong> côté API,
+        <strong>Supabase</strong> pour l'authentification et <strong>MongoDB</strong> pour les données de jeu.
+      </p>
+    </div>
+
+    <!-- Roadmap -->
+    <div class="about-block">
+      <h2>🗺️ État du projet</h2>
+      <div class="roadmap">
+        <div class="roadmap-item">
+          <span class="roadmap-status">✅</span>
+          <div class="roadmap-label">
+            <strong>Authentification</strong>
+            Inscription, connexion email/Google/Discord, gestion du profil.
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-status">🔨</span>
+          <div class="roadmap-label">
+            <strong>Création de races (en cours)</strong>
+            Formulaire avancé SRD 2014 presque terminé. SRD 2024 et Homebrew à venir.
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-status">📋</span>
+          <div class="roadmap-label">
+            <strong>Création de personnages</strong>
+            Fiche complète avec export, en cours de conception.
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-status">📋</span>
+          <div class="roadmap-label">
+            <strong>Gestion de campagnes</strong>
+            Suivi des sessions, notes de MJ, timeline de campagne.
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-status">📋</span>
+          <div class="roadmap-label">
+            <strong>Interface de jeu temps réel</strong>
+            Initiative, combat, gestion des tours pour MJ et joueurs connectés simultanément.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="about-block">
+      <h2>⚠️ Avertissement légal</h2>
+      <div class="disclaimer-box">
+        La Table du Maître est un projet indépendant, non affilié à Wizards of the Coast ni à Hasbro.
+        Dungeons &amp; Dragons® est une marque déposée de Wizards of the Coast / Hasbro.
+        Les données de référence utilisées dans l'application proviennent du System Reference Document (SRD)
+        publiées sous licence OGL ou Creative Commons CC-BY 4.0.
+        Nous vous encourageons vivement à soutenir les créateurs en achetant les ouvrages officiels.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style-clean.css" />
+  <link rel="stylesheet" href="css/ui-clean.css" />
+  <style>
+    .contact-wrapper {
+      max-width: 620px;
+      margin: 4rem auto;
+      padding: 0 1.5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-block {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(134, 93, 255, 0.2);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+    }
+
+    .contact-block h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .contact-block p {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      max-width: 100%;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid rgba(134, 93, 255, 0.3);
+      background: rgba(20, 20, 20, 0.8);
+      color: #f0e6d2;
+      font-family: 'Georgia', serif;
+      font-size: 0.97rem;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #865dff;
+      box-shadow: 0 0 8px rgba(134, 93, 255, 0.35);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: #865dff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 0 15px rgba(134, 93, 255, 0.4);
+    }
+
+    .submit-btn:hover {
+      background: #a586ff;
+      transform: scale(1.02);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #a586ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover { color: #fff; }
+
+    .success-msg {
+      display: none;
+      background: rgba(60, 180, 100, 0.15);
+      border: 1px solid rgba(60, 180, 100, 0.4);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      color: #7dffb0;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-wrapper">
+
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+
+    <div class="contact-block">
+      <h1>✉️ Contact</h1>
+      <p>Une question, une suggestion, un bug à signaler ? Remplissez ce formulaire et nous vous répondrons dans les meilleurs délais.</p>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="nom">Nom ou pseudo</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom ou pseudo" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="sujet">Sujet</label>
+          <select id="sujet" name="sujet">
+            <option value="question">Question générale</option>
+            <option value="bug">Signaler un bug</option>
+            <option value="suggestion">Suggestion / Fonctionnalité</option>
+            <option value="rgpd">Demande RGPD</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer le message</button>
+
+        <div class="success-msg" id="success-msg">
+          ✅ Message envoyé ! Nous vous répondrons dès que possible.
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // TODO : brancher sur l'API pour envoyer le message
+      document.getElementById('success-msg').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>

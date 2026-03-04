@@ -142,6 +142,65 @@
     .step-arrow {
       display: none;
     }
+
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      border-top: 1px solid rgba(134, 93, 255, 0.2);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #a586ff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-discord {
+      margin-bottom: 1rem;
+    }
+
+    .footer-discord a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a586ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    .footer-discord a:hover {
+      color: #fff;
+    }
+
+    .footer-copyright {
+      opacity: 0.6;
+      margin-bottom: 1rem;
+    }
+
+    .footer-disclaimer {
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.45;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -216,6 +275,27 @@
     </div>
 
   </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+    <div class="footer-discord">
+      <a href="#" target="_blank" rel="noopener">
+        <img src="assets/icone/discord-icon.png" alt="Discord" style="width:18px;height:18px;" />
+        Rejoindre le Discord
+      </a>
+    </div>
+    <div class="footer-copyright">© 2026 La Table du Maître</div>
+    <p class="footer-disclaimer">
+      La Table du Maître est un projet indépendant, non affilié à Wizards of the Coast.
+      Dungeons &amp; Dragons® est une marque déposée de Wizards of the Coast / Hasbro.
+      Nous vous encourageons à soutenir les créateurs en achetant les ouvrages officiels.
+    </p>
+  </footer>
 
   <div class="theme-toggle-container">
     <button id="theme-toggle" class="lanterne-btn">

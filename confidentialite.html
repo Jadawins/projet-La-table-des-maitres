@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style-clean.css" />
+  <link rel="stylesheet" href="css/ui-clean.css" />
+  <style>
+    .legal-wrapper {
+      max-width: 780px;
+      margin: 4rem auto;
+      padding: 0 1.5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .legal-block {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(134, 93, 255, 0.2);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+    }
+
+    .legal-block h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .legal-block h2 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem;
+      color: #a586ff;
+    }
+
+    .legal-block p, .legal-block li {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .legal-block ul { padding-left: 1.5rem; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(134, 93, 255, 0.2);
+      border: 1px solid rgba(134, 93, 255, 0.4);
+      border-radius: 6px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.85rem;
+      margin-right: 0.4rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #a586ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <div class="legal-wrapper">
+
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+
+    <div class="legal-block">
+      <h1>🔒 Politique de confidentialité</h1>
+      <p>Dernière mise à jour : <strong>mars 2026</strong></p>
+      <p>
+        Cette politique décrit comment <strong>La Table du Maître</strong> collecte, utilise et protège
+        vos données personnelles, conformément au Règlement Général sur la Protection des Données (RGPD).
+      </p>
+
+      <h2>Responsable du traitement</h2>
+      <p>
+        Wiwi — projet indépendant non commercial.<br />
+        Contact : via le <a href="contact.html" style="color:#a586ff;">formulaire de contact</a>.
+      </p>
+
+      <h2>Données collectées</h2>
+      <p>Lors de votre inscription et utilisation du site, nous collectons :</p>
+      <ul>
+        <li><span class="badge">Compte</span> Adresse e-mail, nom d'utilisateur, mot de passe (chiffré)</li>
+        <li><span class="badge">Profil</span> Pseudo, identifiant Discord (facultatif)</li>
+        <li><span class="badge">JDR</span> Personnages, races créées, données de campagne</li>
+        <li><span class="badge">Technique</span> Préférences de thème (stockage local navigateur uniquement)</li>
+      </ul>
+
+      <h2>Authentification via Supabase</h2>
+      <p>
+        L'authentification est gérée par <strong>Supabase</strong> (supabase.com), un service tiers basé
+        en Europe. Supabase stocke vos identifiants de connexion de manière sécurisée (mots de passe hachés,
+        sessions chiffrées). Consultez la
+        <a href="https://supabase.com/privacy" style="color:#a586ff;" target="_blank" rel="noopener">politique de confidentialité de Supabase</a>.
+      </p>
+
+      <h2>Connexion via Google OAuth</h2>
+      <p>
+        Si vous choisissez de vous connecter avec <strong>Google</strong>, Google transmet à Supabase
+        votre adresse e-mail et votre identifiant Google. Aucun autre accès à votre compte Google
+        n'est demandé. Consultez la
+        <a href="https://policies.google.com/privacy" style="color:#a586ff;" target="_blank" rel="noopener">politique de confidentialité de Google</a>.
+      </p>
+
+      <h2>Connexion via Discord OAuth</h2>
+      <p>
+        Si vous choisissez de vous connecter avec <strong>Discord</strong>, Discord transmet votre adresse
+        e-mail et votre identifiant Discord. Consultez la
+        <a href="https://discord.com/privacy" style="color:#a586ff;" target="_blank" rel="noopener">politique de confidentialité de Discord</a>.
+      </p>
+
+      <h2>Finalité des données</h2>
+      <ul>
+        <li>Gestion de votre compte et authentification</li>
+        <li>Sauvegarde de vos données de jeu (personnages, races, campagnes)</li>
+        <li>Amélioration du service</li>
+      </ul>
+      <p>Vos données ne sont <strong>jamais vendues ni partagées</strong> avec des tiers à des fins commerciales.</p>
+
+      <h2>Durée de conservation</h2>
+      <p>
+        Vos données sont conservées tant que votre compte est actif. En cas de suppression de compte,
+        vos données sont supprimées dans un délai de 30 jours.
+      </p>
+
+      <h2>Vos droits (RGPD)</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Accès</strong> — obtenir une copie de vos données</li>
+        <li><strong>Rectification</strong> — corriger des données inexactes</li>
+        <li><strong>Suppression</strong> — demander la suppression de votre compte</li>
+        <li><strong>Portabilité</strong> — recevoir vos données dans un format lisible</li>
+        <li><strong>Opposition</strong> — vous opposer à un traitement</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, contactez-nous via le
+        <a href="contact.html" style="color:#a586ff;">formulaire de contact</a>.
+      </p>
+
+      <h2>Cookies et stockage local</h2>
+      <p>
+        Le site n'utilise pas de cookies publicitaires. Seul le <em>localStorage</em> du navigateur est utilisé
+        pour mémoriser votre préférence de thème (clair/sombre). Cette donnée reste exclusivement sur votre appareil.
+      </p>
+
+      <h2>Contact CNIL</h2>
+      <p>
+        Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la
+        <a href="https://www.cnil.fr" style="color:#a586ff;" target="_blank" rel="noopener">CNIL</a>.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="lanterne-btn">
+      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+    </button>
+  </div>
+
+  <script src="js/theme.js"></script>
+</body>
+</html>
