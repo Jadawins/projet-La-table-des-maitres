@@ -161,9 +161,9 @@
 .project-edito {
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(134, 93, 255, 0.2);
-  border-radius: 14px;
-  padding: 1.5rem 2rem;
-  margin-top: 1.5rem;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
 }
 
 [data-theme="light"] .project-edito {
