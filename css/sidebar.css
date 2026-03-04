@@ -71,12 +71,62 @@
   }  
   .sidebar-content {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
   }
-  
+
   .sidebar-content h2 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--text);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+    margin: 1rem 0 0.35rem;
+    padding-left: 0.5rem;
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.25rem;
+  }
+
+  .sidebar-menu a,
+  .sidebar-menu a:visited,
+  .sidebar-footer a,
+  .sidebar-footer a:visited {
+    color: #d5d1a9;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .sidebar-menu a:hover,
+  .sidebar-menu a:active,
+  .sidebar-footer a:hover,
+  .sidebar-footer a:active {
+    background: rgba(134, 93, 255, 0.18);
+    color: #c9b8ff;
+  }
+
+  .sidebar-menu i,
+  .sidebar-footer i {
+    width: 16px;
+    text-align: center;
+    opacity: 0.85;
+  }
+
+  .sidebar-footer {
+    border-top: 1px solid rgba(134, 93, 255, 0.25);
+    padding-top: 0.75rem;
   }
   
   /* Bouton de toggle placé dans la sidebar en haut à gauche */

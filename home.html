@@ -6,8 +6,9 @@
   <title>Accueil</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
-   <link rel="stylesheet" href="css/style-clean.css">
+  <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
@@ -48,28 +49,30 @@
 <body>
   <div class="page-container">
     <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header sidebar-header-flex">
-      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
-        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
-      </button>
-      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">
-        ⚙️
-      </a>
-    </div>
-    <div class="sidebar-content">
-      <h2>Menu MJ</h2>
-      <ul class="sidebar-menu">
-        <li><a href="createrace.html">Créationd de nouvelles races</a></li>  
-        <li><a href="#">Sessions Joueurs</a></li>
-      </ul>
-      <h2>Menu Joueurs</h2>
-      <ul class="sidebar-menu">
-        <li><a href="mes-personnages.html">Mes Personnages</a></li>
-        <li><a href="#">Sessions Joueurs</a></li>
-      </ul>
-      <li><a href="home.html">Page d'accueil site</a></li>
-    </div>
-  </aside>
+      <div class="sidebar-header sidebar-header-flex">
+        <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+          <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+        </button>
+        <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+      </div>
+      <div class="sidebar-content">
+        <div class="sidebar-nav-area">
+          <h2>Menu MJ</h2>
+          <ul class="sidebar-menu">
+            <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de nouvelles races</a></li>
+            <li><a href="#"><i class="fa-solid fa-scroll"></i> Sessions Joueurs</a></li>
+          </ul>
+          <h2>Menu Joueurs</h2>
+          <ul class="sidebar-menu">
+            <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+            <li><a href="#"><i class="fa-solid fa-dice-d20"></i> Sessions Joueurs</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-footer">
+          <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil site</a>
+        </div>
+      </div>
+    </aside>
 
     <main>
       <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
