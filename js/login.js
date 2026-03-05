@@ -13,6 +13,12 @@ async function initSupabase() {
 document.addEventListener('DOMContentLoaded', async () => {
   await initSupabase();
 
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session) {
+    window.location.href = "home.html";
+    return;
+  }
+
   const loginForm = document.getElementById('login-form');
 
   if (loginForm) {

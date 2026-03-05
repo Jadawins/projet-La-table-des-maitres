@@ -107,12 +107,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
   const logoutBtn = document.getElementById("logout-button");
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", async () => {
-    await supabase.auth.signOut();
-    window.location.href = "login.html"; // redirection après déconnexion
-  });
-}
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await supabase.auth.signOut();
+      } catch (e) {
+        console.warn("SignOut error:", e);
+      }
+      localStorage.removeItem("userId");
+      window.location.href = "login.html";
+    });
+  }
 
 });
 

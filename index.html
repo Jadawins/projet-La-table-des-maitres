@@ -326,5 +326,13 @@
   </div>
 
   <script src="js/theme.js"></script>
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+    const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+    const { url, key } = await res.json();
+    const supabase = createClient(url, key);
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) window.location.href = "home.html";
+  </script>
 </body>
 </html>
