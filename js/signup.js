@@ -11,13 +11,19 @@ async function init() {
   supabase = createClient(url, key);
 }
 
-function signInWithProvider(provider) {
-  supabase.auth.signInWithOAuth({
-    provider,
-    options: {
-      redirectTo: "https://myrpgtable.fr/home.html"
-    }
-  });
+async function signInWithProvider(provider) {
+  try {
+    if (!supabase) await init();
+    await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: "https://myrpgtable.fr/home.html"
+      }
+    });
+  } catch (err) {
+    console.error("Erreur OAuth :", err);
+    alert("Erreur de connexion : " + err.message);
+  }
 }
 window.signInWithProvider = signInWithProvider;
 

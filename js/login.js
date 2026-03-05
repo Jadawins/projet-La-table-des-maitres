@@ -42,15 +42,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Fonction pour connexion Google/Discord
 async function signInWithProvider(provider) {
-  if (!supabase) {
-    await initSupabase();
+  try {
+    if (!supabase) await initSupabase();
+    await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: "https://myrpgtable.fr/home.html"
+      }
+    });
+  } catch (err) {
+    console.error("Erreur OAuth :", err);
+    alert("Erreur de connexion : " + err.message);
   }
-  await supabase.auth.signInWithOAuth({
-    provider,
-    options: {
-      redirectTo: "https://myrpgtable.fr/home.html"
-    }
-  });
 }
 
 document.getElementById("reset-password-link").addEventListener("click", async (e) => {
