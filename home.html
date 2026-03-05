@@ -102,14 +102,39 @@
   </div>
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-  
+
     const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
     const { url, key } = await res.json();
     const supabase = createClient(url, key);
-  
+
     const { data: { user } } = await supabase.auth.getUser();
     if (user) {
       localStorage.setItem("userId", user.id);
+
+      const provider = user.app_metadata?.provider;
+
+      if (provider === 'google' || provider === 'discord') {
+        const meta = user.user_metadata || {};
+
+        const username = meta.full_name || meta.name || meta.preferred_username || user.email;
+        const avatar_url = meta.avatar_url || null;
+        const discord_username = provider === 'discord'
+          ? (meta.custom_claims?.global_name || meta.preferred_username || meta.user_name || null)
+          : null;
+
+        fetch("https://myrpgtable.fr/api/SyncUser", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            supabase_id: user.id,
+            email: user.email,
+            username,
+            avatar_url,
+            provider,
+            discord_username
+          })
+        }).catch(e => console.warn("SyncUser échoué :", e));
+      }
     }
   </script>
   
