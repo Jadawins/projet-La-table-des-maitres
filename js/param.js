@@ -135,7 +135,7 @@ async function afficherInfosPerso() {
   }
 }
 
-// Sauvegarder le pseudo + discord dans public.profiles
+// Sauvegarder le pseudo + discord dans public.profiles et MongoDB
 async function enregistrerPseudoEtDiscord() {
   const pseudo = document.getElementById("pseudo").value;
   const discord = document.getElementById("discord").value;
@@ -149,7 +149,24 @@ async function enregistrerPseudoEtDiscord() {
 
   if (error) {
     alert("Erreur lors de l'enregistrement : " + error.message);
-  } else {
-    alert("Informations mises à jour !");
+    return;
   }
+
+  // Sync MongoDB
+  const provider = user.app_metadata?.provider || "email";
+  const meta = user.user_metadata || {};
+  await fetch("https://myrpgtable.fr/api/SyncUser", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      supabase_id: user.id,
+      email: user.email,
+      username: pseudo,
+      avatar_url: meta.avatar_url || null,
+      provider,
+      discord_username: discord || null
+    })
+  }).catch(e => console.warn("SyncUser échoué :", e));
+
+  alert("Informations mises à jour !");
 }
