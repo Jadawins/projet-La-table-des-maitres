@@ -1,0 +1,290 @@
+[
+  {
+    "index": "acrobatics",
+    "name": {
+          "en": "acrobatics",
+          "fr": "Acrobaties"
+                },
+    "desc": [
+      "Votre test de Dextérité (Acrobaties) couvre votre tentative de rester sur vos pieds dans une situation délicate, comme lorsque vous essayez de courir sur une plaque de glace, d’équilibrer sur une corde raide, ou de rester debout sur le pont d'un bateau en mouvement. Le MJ peut aussi demander un test de Dextérité (Acrobaties) pour savoir si vous pouvez effectuer des figures acrobatiques, telles que des plongeons, des roulades, des saltos ou des flips."
+    ],
+    "ability_score": {
+      "index": "dex",
+      "name": "DEX",
+      "url": "/api/2014/caractéristiques/dex"
+    },
+    "url": "/api/2014/competences/acrobatics"
+  },
+  {
+    "index": "dressage",
+    "name": {
+          "en": "Animal Handling",
+          "fr": "Dressage"
+                },
+    "desc": [
+      "Lorsque la question se pose de savoir si vous pouvez calmer un animal domestiqué, empêcher une monture de se laisser effrayer ou deviner les intentions d'un animal, le MJ pourrait demander un test de Sagesse (Dressage d'animaux). Vous effectuez également un test de Sagesse (Dressage d'animaux) pour contrôler votre monture lorsque vous tentez une manœuvre risquée."
+    ],
+    "ability_score": {
+      "index": "sag",
+      "name": "SAG",
+      "url": "/api/2014/caractéristiques/sag"
+    },
+    "url": "/api/2014/competences/animal-handling"
+  },
+  {
+    "index": "arcane",
+    "name": {
+          "en": "Arcana",
+          "fr": "Arcane"
+                },
+    "desc": [
+      "Votre test d'Intelligence (Arcanes) mesure votre capacité à vous souvenir des connaissances concernant les sorts, les objets magiques, les symboles étranges, les traditions magiques, les plans d’existence et les habitants de ces plans."
+    ],
+    "ability_score": {
+      "index": "int",
+      "name": "INT",
+      "url": "/api/2014/caractéristiques/int"
+    },
+    "url": "/api/2014/competences/arcana"
+  },
+  {
+    "index": "athlétisme",
+    "name": {
+          "en": "Athletics",
+          "fr": "Athlétisme"
+                },
+    "desc": [
+      "Votre test de Force (Athlétisme) couvre les situations difficiles que vous rencontrez lors de l'escalade, des sauts ou de la nage."
+    ],
+    "ability_score": {
+      "index": "for",
+      "name": "FOR",
+      "url": "/api/2014/caractéristiques/for"
+    },
+    "url": "/api/2014/competences/athletics"
+  },
+  {
+    "index": "tromperie",
+    "name": {
+          "en": "Deception",
+          "fr": "Tromperie"
+                },
+    "desc": [
+      "Votre test de Charisme (Tromperie) détermine si vous pouvez dissimuler la vérité de manière convaincante, soit par la parole, soit par vos actions. Cette tromperie peut aller de la manipulation par ambiguïté à la simple falsification de faits. Les situations typiques incluent essayer de parler rapidement à un garde, escroquer un marchand, gagner de l'argent par les jeux de hasard, se faire passer pour quelqu'un d'autre avec un déguisement, apaiser les soupçons de quelqu'un avec de fausses assurances, ou garder une expression impassible tout en racontant un mensonge évident."
+    ],
+    "ability_score": {
+      "index": "cha",
+      "name": "CHA",
+      "url": "/api/2014/caractéristiques/cha"
+    },
+    "url": "/api/2014/competences/deception"
+  },
+  {
+    "index": "histoire",
+    "name": {
+          "en": "History",
+          "fr": "Histoire"
+                },
+    "desc": [
+      "Votre test d'Intelligence (Histoire) mesure votre capacité à vous souvenir des connaissances concernant les événements historiques, les personnages légendaires, les anciens royaumes, les disputes passées, les guerres récentes et les civilisations perdues."
+    ],
+    "ability_score": {
+      "index": "int",
+      "name": "INT",
+      "url": "/api/2014/caractéristiques/int"
+    },
+    "url": "/api/2014/competences/history"
+  },
+  {
+    "index": "intuition",
+    "name": {
+          "en": "Insight",
+          "fr": "Intuition"
+                },
+    "desc": [
+      "Votre test de Sagesse (Intuition) détermine si vous pouvez saisir les véritables intentions d'une créature, comme lorsque vous cherchez à détecter un mensonge ou prédire le prochain mouvement de quelqu’un. Cela implique de repérer des indices dans le langage corporel, les habitudes de discours et les changements dans les manières."
+    ],
+    "ability_score": {
+      "index": "sag",
+      "name": "SAG",
+      "url": "/api/2014/caractéristiques/sag"
+    },
+    "url": "/api/2014/competences/insight"
+  },
+  {
+    "index": "intimidation",
+    "name": {
+          "en": "Intimidation",
+          "fr": "Intimidation"
+                },
+    "desc": [
+      "Lorsque vous tentez d'influencer quelqu'un par des menaces ouvertes, des actions hostiles ou de la violence physique, le MJ pourrait vous demander de faire un test de Charisme (Intimidation). Des exemples incluent essayer d'extorquer des informations à un prisonnier, convaincre des voyous de la forêt de se retirer d'une confrontation, ou utiliser le tranchant d'une bouteille brisée pour convaincre un vizir dédaigneux de reconsidérer une décision."
+    ],
+    "ability_score": {
+      "index": "cha",
+      "name": "CHA",
+      "url": "/api/2014/caractéristiques/cha"
+    },
+    "url": "/api/2014/competences/intimidation"
+  },
+  {
+    "index": "investigation",
+    "name": {
+          "en": "Investigation",
+          "fr": "Investigation"
+                },
+    "desc": [
+      "Lorsque vous cherchez des indices et faites des déductions basées sur ceux-ci, vous effectuez un test d'Intelligence (Investigation). Vous pourriez déduire l'emplacement d'un objet caché, discerner à partir de l'apparence d'une blessure quel type d'arme l'a causée, ou déterminer le point le plus faible d'un tunnel qui pourrait provoquer son effondrement. Fouiller des parchemins anciens à la recherche d'un fragment de connaissance caché pourrait également nécessiter un test d'Intelligence (Investigation)."
+    ],
+    "ability_score": {
+      "index": "int",
+      "name": "INT",
+      "url": "/api/2014/caractéristiques/int"
+    },
+    "url": "/api/2014/competences/investigation"
+  },
+  {
+    "index": "medicine",
+    "name": {
+          "en": "Medicine",
+          "fr": "Medecine"
+                },
+    "desc": [
+      "Un test de Sagesse (Médecine) vous permet de tenter de stabiliser un compagnon mourant ou de diagnostiquer une maladie."
+    ],
+    "ability_score": {
+      "index": "sag",
+      "name": "SAG",
+      "url": "/api/2014/caractéristiques/sag"
+    },
+    "url": "/api/2014/competences/medicine"
+  },
+  {
+    "index": "nature",
+    "name": {
+          "en": "Nature",
+          "fr": "Nature"
+                },
+    "desc": [
+      "Votre test d'Intelligence (Nature) mesure votre capacité à vous souvenir des connaissances concernant le terrain, les plantes et les animaux, la météo et les cycles naturels."
+    ],
+    "ability_score": {
+      "index": "int",
+      "name": "INT",
+      "url": "/api/2014/caractéristiques/int"
+    },
+    "url": "/api/2014/competences/nature"
+  },
+  {
+    "index": "perception",
+    "name": {
+          "en": "Perception",
+          "fr": "Perception"
+                },
+    "desc": [
+      "Votre test de Sagesse (Perception) vous permet de repérer, entendre ou détecter la présence de quelque chose. Il mesure votre conscience générale de votre environnement et la finesse de vos sens. Par exemple, vous pourriez essayer d’entendre une conversation à travers une porte fermée, écouter sous une fenêtre ouverte, ou entendre des monstres se déplacer discrètement dans la forêt. Vous pourriez aussi tenter de repérer des choses qui sont dissimulées ou faciles à manquer, qu'il s'agisse d'orcs embusqués sur une route, de voyous cachés dans l'ombre d'une ruelle, ou de la lumière d'une bougie sous une porte secrète fermée."
+    ],
+    "ability_score": {
+      "index": "sag",
+      "name": "SAG",
+      "url": "/api/2014/caractéristiques/sag"
+    },
+    "url": "/api/2014/competences/perception"
+  },
+  {
+    "index": "performance",
+    "name": {
+          "en": "Performance",
+          "fr": "Représentation"
+                },
+    "desc": [
+      "Votre test de Charisme (Performance) détermine à quel point vous pouvez divertir un public avec de la musique, de la danse, du théâtre, des récits ou toute autre forme de divertissement."
+    ],
+    "ability_score": {
+      "index": "cha",
+      "name": "CHA",
+      "url": "/api/2014/caractéristiques/cha"
+    },
+    "url": "/api/2014/competences/performance"
+  },
+  {
+    "index": "persuasion",
+    "name": {
+          "en": "Persuasion",
+          "fr": "Persuasion"
+                },
+    "desc": [
+      "Lorsque vous tentez d'influencer quelqu'un ou un groupe de personnes avec tact, bonnes manières ou bienveillance, le MJ pourrait vous demander de faire un test de Charisme (Persuasion). En règle générale, vous utilisez la persuasion lorsque vous agissez de bonne foi, pour favoriser les amitiés, faire des demandes cordiales ou exhiber une étiquette appropriée. Des exemples de persuasion incluent convaincre un chambellan de laisser votre groupe voir le roi, négocier la paix entre des tribus en guerre, ou inspirer une foule de villageois."
+    ],
+    "ability_score": {
+      "index": "cha",
+      "name": "CHA",
+      "url": "/api/2014/caractéristiques/cha"
+    },
+    "url": "/api/2014/competences/persuasion"
+  },
+  {
+    "index": "religion",
+    "name": {
+          "en": "Religion",
+          "fr": "Religion"
+                },
+    "desc": [
+      "Votre test d'Intelligence (Religion) mesure votre capacité à vous souvenir des connaissances concernant les divinités, les rites et prières, les hiérarchies religieuses, les symboles sacrés et les pratiques des cultes secrets."
+    ],
+    "ability_score": {
+      "index": "int",
+      "name": "INT",
+      "url": "/api/2014/caractéristiques/int"
+    },
+    "url": "/api/2014/competences/religion"
+  },
+  {
+    "index": "escamotage",
+    "name": {
+          "en": "Sleight of Hand",
+          "fr": "Escamotage"
+                },
+    "desc": [
+      "Lorsque vous tentez un acte de prestidigitation ou de tromperie manuelle, comme dissimuler quelque chose sur quelqu'un ou cacher un objet sur vous, effectuez un test de Dextérité (Escamotage). Le MJ pourrait également demander un test de Dextérité (Escamotage) pour savoir si vous pouvez voler une bourse à quelqu'un ou glisser un objet hors de la poche d'une autre personne."
+    ],
+    "ability_score": {
+      "index": "dex",
+      "name": "DEX",
+      "url": "/api/2014/caractéristiques/dex"
+    },
+    "url": "/api/2014/competences/sleight-of-hand"
+  },
+  {
+    "index": "discretion",
+    "name": {
+          "en": "Stealth",
+          "fr": "Discretion"
+                },
+    "desc": [
+      "Effectuez un test de Dextérité (Discrétion) lorsque vous tentez de vous dissimuler aux yeux des ennemis, de passer furtivement devant des gardes, de vous éclipser sans être remarqué, ou de vous approcher discrètement de quelqu'un sans être vu ni entendu."
+    ],
+    "ability_score": {
+      "index": "dex",
+      "name": "DEX",
+      "url": "/api/2014/caractéristiques/dex"
+    },
+    "url": "/api/2014/competences/stealth"
+  },
+  {
+    "index": "survie",
+    "name": {
+          "en": "Survival",
+          "fr": "Survie"
+                },
+    "desc": [
+      "Le MJ pourrait vous demander de faire un test de Sagesse (Survie) pour suivre des traces, chasser du gibier sauvage, guider votre groupe à travers des terres gelées, identifier des signes que des ours-hiboux vivent à proximité, prédire la météo, ou éviter les sables mouvants et autres dangers naturels."
+    ],
+    "ability_score": {
+      "index": "sag",
+      "name": "SAG",
+      "url": "/api/2014/caractéristiques/sag"
+    },
+    "url": "/api/2014/competences/survival"
+  }
+]

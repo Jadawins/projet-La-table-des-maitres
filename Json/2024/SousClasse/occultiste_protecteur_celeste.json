@@ -1,0 +1,45 @@
+{
+  "nom": "Protecteur Céleste",
+  "classe_parente": "occultiste",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "sorts_elargis": ["lumière des fées", "soins des blessures", "aide", "rayon ardent"],
+      "capacites": [
+        {
+          "nom": "Flamme guérisseuse",
+          "description": "Quand tu réduis une créature hostile à 0 PV, tu peux octroyer des PV temporaires à toi-même ou à un allié visible à 18 m. PV temporaires = 1d8 + ton modificateur de CHA."
+        },
+        {
+          "nom": "Magie sacrée",
+          "description": "Tu peux utiliser ton focaliseur d'incantation pour les sorts divins. Ajoute soins des blessures et lumière des fées à ta liste de sorts d'Occultiste."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Radiance de l'aube",
+          "description": "Action (1/repos court ou long) : tu projettes une lumière divine. Toutes les créatures hostiles dans un rayon de 9 m doivent réussir un JS de CON ou subir 2d10 + niveau de sorcier dégâts radiants (et moitié en cas de réussite)."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Présence sacrée",
+          "description": "Tu obtiens la résistance aux dégâts nécrotiques et radiants. De plus, tes alliés dans un rayon de 9 m bénéficient d'un bonus de +1 à tous leurs JS."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Étoile consacrée",
+          "description": "1/repos long, quand une créature subit des dégâts de feu ou radiants à cause d'un de tes sorts, tu peux lui infliger le maximum de dégâts possibles pour ce jet. Toutes les créatures dans un rayon de 4,5 m subissent également 1d8 dégâts radiants."
+        }
+      ]
+    }
+  }
+}

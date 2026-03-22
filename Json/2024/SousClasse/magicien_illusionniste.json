@@ -1,0 +1,44 @@
+{
+  "nom": "École d'Illusion",
+  "classe_parente": "magicien",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Spécialisation en Illusion",
+          "description": "Quand tu copies un sort d'Illusion dans ton grimoire, cela coûte moitié moins cher en temps et en matériaux."
+        },
+        {
+          "nom": "Illusion améliorée",
+          "description": "Tu peux créer un sort mineur d'Illusion sans composante verbale. Une fois par tour, tu peux déplacer une illusion que tu maintiens de 9 m."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Illusions trompeuses",
+          "description": "Tu peux rendre une illusion semiréelle : une créature qui interagit avec elle doit réussir un JS d'INT pour identifier que c'est une illusion. Si elle rate, l'illusion peut infliger jusqu'à 1d6 dégâts psychiques."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Corps illusoire",
+          "description": "Quand tu lances un sort d'Illusion, tu peux créer une copie illusoire de toi-même à distance. Tu peux lancer des sorts comme si tu étais à l'emplacement de la copie."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Magie illusoire",
+          "description": "Tu peux transformer n'importe quel sort d'Illusion que tu lances en réalité partielle. Les créatures incapables de voir au travers des illusions traitent ses effets comme réels."
+        }
+      ]
+    }
+  }
+}

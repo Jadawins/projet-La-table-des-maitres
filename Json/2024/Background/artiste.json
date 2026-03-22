@@ -1,0 +1,62 @@
+{
+  "id": "artiste",
+  "nom": "Artiste",
+  "description": "Vous avez grandi parmi des artistes itinérants, apprenant à captiver un public et à vivre de votre talent de musicien ou acrobate.",
+  "competences": [
+    "Acrobaties",
+    "Représentation"
+  ],
+  "outils": [
+    "Instrument de musique (au choix)"
+  ],
+  "langues": [],
+  "don": "Musicien",
+  "equipement": [
+    {
+      "nom": "Instrument de musique (au choix)",
+      "quantite": 1
+    },
+    {
+      "nom": "Costume",
+      "quantite": 2
+    },
+    {
+      "nom": "Miroir",
+      "quantite": 1
+    },
+    {
+      "nom": "Parfum",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 11
+    }
+  ],
+  "aptitude": {
+    "nom": "Musicien",
+    "description": "Vous maîtrisez un instrument supplémentaire et pouvez utiliser la musique pour soutenir vos alliés en combat."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je saisis toute occasion de me produire devant un public.",
+      "Je connais des histoires adaptées à toutes les situations."
+    ],
+    "ideaux": [
+      "Beauté : L'art est le plus grand don que l'on puisse offrir.",
+      "Liberté : Rien ne doit entraver l'expression artistique."
+    ],
+    "liens": [
+      "Ma troupe est ma famille.",
+      "Je cherche à impressionner un mécène influent."
+    ],
+    "defauts": [
+      "Je suis jaloux des artistes plus talentueux.",
+      "Je dépense sans compter dès que j'ai de l'argent."
+    ]
+  }
+}

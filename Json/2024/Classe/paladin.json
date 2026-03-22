@@ -1,0 +1,462 @@
+{
+  "nom": "Paladin",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": ["FOR", "CHA"],
+      "de_vie": {
+        "type": "1d10",
+        "modificateur": "CON"
+      },
+      "sauvegardes_maitrise": ["SAG", "CHA"],
+      "competences_choisies": {
+        "nombre": 2,
+        "options": ["Athlétisme", "Intimidation", "Intuition", "Médecine", "Persuasion", "Religion"]
+      },
+      "maitrises_armes": ["armes_courantes", "armes_de_guerre"],
+      "maitrises_armures": ["armures_legeres", "armures_intermediaires", "armures_lourdes", "boucliers"],
+      "equipement_depart": [
+        {
+          "choix": "A",
+          "contenu": [
+            "Cotte de mailles",
+            "Bouclier",
+            "Épée longue",
+            "6 javelines",
+            "Symbole sacré",
+            "Paquetage d'ecclésiastique",
+            "9 po"
+          ]
+        },
+        {
+          "choix": "B",
+          "contenu": ["150 po"]
+        }
+      ],
+      "incantation": true,
+      "caracteristique_incantation": "CHA",
+      "focaliseur": "symbole_sacre"
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "sorts_prepares": 2,
+      "emplacements_de_sort": { "1": 2 },
+      "capacites": [
+        {
+          "nom": "Propriétés martiales",
+          "description": "Maîtrise de bottes pour 2 armes au choix, modifiables à chaque repos long.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "maitrise_botte",
+              "nombre": 2,
+              "source": ["armes_courantes", "armes_de_guerre"],
+              "modifiable": { "frequence": "repos_long", "nombre_changements": 2 }
+            }
+          ]
+        },
+        {
+          "nom": "Toucher guérisseur",
+          "description": "Pool de soins = 5 × niveau ; action bonus pour soigner ou supprimer l'état Empoisonné (coût 5 PV du pool).",
+          "type": "bonus_action",
+          "effets": [
+            {
+              "type": "soin",
+              "pool": {
+                "formule": "5 * niveau_paladin",
+                "recuperation": [{ "type": "repos_long", "remise_a_max": true }]
+              },
+              "valeur": "libre_jusqu_au_max_pool"
+            },
+            {
+              "type": "supprimer_etat",
+              "etat": "Empoisonné",
+              "cout_pool": 5,
+              "note": "Ne rend pas de PV à la créature."
+            }
+          ]
+        },
+        {
+          "nom": "Sorts",
+          "description": "Incantation par CHA avec symbole sacré ; sorts préparés modifiables au repos long.",
+          "type": "incantation",
+          "caracteristique": "CHA",
+          "focaliseur": "symbole_sacre",
+          "modification_sorts_prepares": "repos_long",
+          "note": "Pas de sorts mineurs par défaut. Sorts préparés choisis dans la liste de Paladin."
+        }
+      ]
+    },
+    "2": {
+      "sorts_prepares": 3,
+      "emplacements_de_sort": { "1": 2 },
+      "capacites": [
+        {
+          "nom": "Châtiment sacré",
+          "description": "Châtiment divin toujours préparé ; peut être lancé gratuitement sans emplacement une fois par repos long.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "sort_toujours_prepare",
+              "sort": "chatiment_divin"
+            },
+            {
+              "type": "lancer_sort_sans_emplacement",
+              "sort": "chatiment_divin",
+              "utilisations": {
+                "initial": 1,
+                "recuperation": [{ "type": "repos_long", "remise_a_max": true }]
+              }
+            }
+          ]
+        },
+        {
+          "nom": "Style de combat",
+          "description": "Don de style de combat ou 2 sorts mineurs de Clerc (par CHA, remplaçables à chaque niveau de Paladin).",
+          "type": "don",
+          "source": "dons_style_de_combat",
+          "option_alternative": {
+            "nom": "Combattant divin",
+            "effets": [
+              {
+                "type": "sorts_mineurs",
+                "source": "liste_clerc",
+                "nombre": 2,
+                "caracteristique": "CHA",
+                "note": "Considérés comme des sorts de Paladin. Remplaçables par un sort mineur de Clerc à chaque niveau de Paladin gagné."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "3": {
+      "sorts_prepares": 4,
+      "emplacements_de_sort": { "1": 3 },
+      "conduit_divin": 2,
+      "dd_sauvegarde": "dd_sorts_classe",
+      "capacites": [
+        {
+          "nom": "Canalisation divine",
+          "description": "Ressource (2 utilisations, recharge partielle au repos court) pour activer Sens divins : perçoit Célestes, Fiélons et Morts-vivants à 18m pendant 10 minutes.",
+          "type": "actif",
+          "utilisations": {
+            "initial": 2,
+            "recuperation": [
+              { "type": "repos_court", "gain": 1 },
+              { "type": "repos_long", "remise_a_max": true }
+            ]
+          },
+          "effets_disponibles": [
+            {
+              "nom": "Sens divins",
+              "type": "bonus_action",
+              "effets": [
+                {
+                  "type": "perception_magique",
+                  "cibles": ["Célestes", "Fiélons", "Morts-vivants"],
+                  "rayon": "18m",
+                  "duree": "10 minutes",
+                  "condition": "non_neutralise",
+                  "informations": ["position", "type_de_creature", "lieux_consacres_profanes"]
+                }
+              ]
+            }
+          ],
+          "note": "D'autres effets de Canalisation divine sont octroyés par la sous-classe."
+        }
+      ],
+      "voie": {
+        "choix": [
+          "Serment des Anciens",
+          "Serment de Dévotion",
+          "Serment de Gloire",
+          "Serment de Vengeance"
+        ]
+      },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "sorts_prepares": 5,
+      "emplacements_de_sort": { "1": 3 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "sorts_prepares": 6,
+      "emplacements_de_sort": { "1": 4, "2": 2 },
+      "capacites": [
+        {
+          "nom": "Attaque supplémentaire",
+          "description": "2 attaques par action Attaquer.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "attaque_sup",
+              "valeur": 1,
+              "total_attaques": 2,
+              "conditions": [{ "type": "action", "valeur": "Attaquer" }]
+            }
+          ]
+        },
+        {
+          "nom": "Monture céleste",
+          "description": "Appel de destrier toujours préparé ; peut être lancé gratuitement sans emplacement une fois par repos long.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "sort_toujours_prepare",
+              "sort": "appel_de_destrier"
+            },
+            {
+              "type": "lancer_sort_sans_emplacement",
+              "sort": "appel_de_destrier",
+              "utilisations": {
+                "initial": 1,
+                "recuperation": [{ "type": "repos_long", "remise_a_max": true }]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "sorts_prepares": 6,
+      "emplacements_de_sort": { "1": 4, "2": 2 },
+      "capacites": [
+        {
+          "nom": "Aura défensive",
+          "description": "Émanation de 3m : le Paladin et ses alliés gagnent un bonus aux JS égal au modificateur de CHA (minimum 1).",
+          "type": "passif",
+          "rayon": "3m",
+          "type_zone": "Émanation",
+          "condition": "non_neutralise",
+          "effets": [
+            {
+              "type": "bonus_jets_sauvegarde",
+              "valeur": "modificateur_CHA",
+              "minimum": 1,
+              "cibles": ["soi", "allies_dans_aura"]
+            }
+          ],
+          "note": "Si un autre Paladin est présent, une créature ne peut bénéficier que d'une seule Aura défensive à la fois."
+        }
+      ]
+    },
+    "7": {
+      "sorts_prepares": 7,
+      "emplacements_de_sort": { "1": 4, "2": 3 },
+      "verifier_sous_classe": true
+    },
+    "8": {
+      "sorts_prepares": 7,
+      "emplacements_de_sort": { "1": 4, "2": 3 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "sorts_prepares": 9,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 2 },
+      "capacites": [
+        {
+          "nom": "Abjuration sacrée",
+          "description": "Action de magie (coût Canalisation divine) : jusqu'à mod CHA créatures visibles à 18m font un JS SAG ou sont Effrayées pendant 1 minute.",
+          "type": "action_magie",
+          "cout": "canalisation_divine",
+          "effets": [
+            {
+              "type": "jet_sauvegarde",
+              "caracteristique": "SAG",
+              "cibles": {
+                "nombre_max": "modificateur_CHA",
+                "minimum": 1,
+                "condition": "visible",
+                "rayon": "18m"
+              },
+              "echec": {
+                "type": "etat",
+                "valeur": "Effrayé",
+                "duree": "1_minute",
+                "restrictions": ["deplacement_uniquement", "une_action_ou_bonus_par_tour"],
+                "fin_si": "subit_des_degats"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "sorts_prepares": 9,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 2 },
+      "capacites": [
+        {
+          "nom": "Aura de bravoure",
+          "description": "Le Paladin et ses alliés dans l'Aura défensive sont immunisés à l'état Effrayé ; les créatures qui y entrent perdent cet état.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "immunite_etat",
+              "valeur": "Effrayé",
+              "cibles": ["soi", "allies_dans_aura_de_protection"]
+            },
+            {
+              "type": "suppression_etat",
+              "valeur": "Effrayé",
+              "declencheur": "entrer_dans_aura_de_protection",
+              "duree": "tant_que_dans_l_aura"
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "sorts_prepares": 10,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3 },
+      "conduit_divin": 3,
+      "capacites": [
+        {
+          "nom": "Attaque sacrée",
+          "description": "Toute attaque de corps à corps ou à mains nues inflige +1d8 dégâts radiants supplémentaires.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "degats_supplementaires",
+              "declencheur": "touche_arme_corps_a_corps_ou_mains_nues",
+              "des": "1d8",
+              "degats_type": "radiant"
+            }
+          ]
+        },
+        {
+          "nom": "Canalisation divine",
+          "description": "Passe à 3 utilisations de Canalisation divine.",
+          "type": "amelioration",
+          "effets": [
+            { "type": "augmentation_utilisations", "nouvelle_valeur": 3 }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "sorts_prepares": 10,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "sorts_prepares": 11,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 1 }
+    },
+    "14": {
+      "sorts_prepares": 11,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "capacites": [
+        {
+          "nom": "Imposition purificatrice",
+          "description": "Le Toucher guérisseur peut désormais aussi supprimer des états (Assourdi, Aveuglé, Charmé, Effrayé, Étourdi, Paralysé) pour 5 PV du pool chacun.",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Toucher guérisseur",
+              "ajout": {
+                "type": "supprimer_etat",
+                "options": ["Assourdi", "Aveuglé", "Charmé", "Effrayé", "Étourdi", "Paralysé"],
+                "cout_pool": 5,
+                "note": "Par état supprimé. Ne rend pas de PV à la créature."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "sorts_prepares": 12,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "verifier_sous_classe": true
+    },
+    "16": {
+      "sorts_prepares": 12,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "sorts_prepares": 14,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 }
+    },
+    "18": {
+      "sorts_prepares": 14,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 },
+      "capacites": [
+        {
+          "nom": "Aura étendue",
+          "description": "Le rayon de l'Aura défensive passe de 3m à 9m.",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Aura défensive",
+              "nouveau_rayon": "9m"
+            }
+          ]
+        }
+      ]
+    },
+    "19": {
+      "sorts_prepares": 15,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "sorts_prepares": 15,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "verifier_sous_classe": true
+    }
+  }
+}

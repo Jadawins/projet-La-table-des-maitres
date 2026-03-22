@@ -1,0 +1,58 @@
+{
+  "id": "criminel",
+  "nom": "Criminel",
+  "description": "Vous avez gagné votre vie dans les ruelles sombres, coupant des bourses ou trafiquant des marchandises illicites, seul ou au sein d'un réseau criminel.",
+  "competences": [
+    "Discrétion",
+    "Escamotage"
+  ],
+  "outils": [
+    "Outils de voleur"
+  ],
+  "langues": [],
+  "don": "Vigilant",
+  "equipement": [
+    {
+      "nom": "Dague",
+      "quantite": 2
+    },
+    {
+      "nom": "Outils de voleur",
+      "quantite": 1
+    },
+    {
+      "nom": "Pied-de-biche",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 16
+    }
+  ],
+  "aptitude": {
+    "nom": "Vigilant",
+    "description": "Vous ne pouvez pas être surpris au combat et ajoutez votre bonus de maîtrise à vos jets d'initiative."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je surveille toujours les sorties d'une pièce.",
+      "Je fais confiance à l'argent plus qu'aux personnes."
+    ],
+    "ideaux": [
+      "Honneur : Je respecte un code strict entre criminels.",
+      "Liberté : Les lois sont faites pour les faibles."
+    ],
+    "liens": [
+      "Je dois de l'argent à quelqu'un de très dangereux.",
+      "Mon équipe m'a sauvé la mise, je leur suis redevable."
+    ],
+    "defauts": [
+      "Quand je vois quelque chose de précieux, mes mains agissent avant mon cerveau.",
+      "Je fuis ma réputation en changeant souvent de ville."
+    ]
+  }
+}

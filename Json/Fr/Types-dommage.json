@@ -1,0 +1,141 @@
+[
+  {
+    "index": "acide",
+    "name": {
+          "en": "Acid",
+          "fr": "Acide"
+                },
+    "desc": [
+  "Le souffle corrosif d’un dragon noir et les enzymes dissolvantes sécrétées par une gelée noire infligent des dégâts d’acide."
+],
+    "url": "/api/2014/types-dommage/acide"
+  },
+  {
+    "index": "contusion",
+    "name": {
+          "en": "Bludgeoning",
+          "fr": "Contusion"
+                },
+    "desc": [
+  "Les massues, les chutes, et d'autres impacts contondants infligent des dégâts de contusion."
+],
+    "url": "/api/2014/types-dommage/contusion"
+  },
+  {
+    "index": "froid",
+    "name": {
+          "en": "Cold",
+          "fr": "Froid"
+                },
+    "desc": [
+  "Le souffle glacial d’un dragon blanc et les sorts tels que *rayon de givre* infligent des dégâts de froid."
+],
+    "url": "/api/2014/types-dommage/froid"
+  },
+  {
+    "index": "feu",
+    "name": {
+          "en": "Fire",
+          "fr": "Feu"
+                },
+    "desc": [
+  "Le souffle enflammé d’un dragon rouge et les sorts comme *boule de feu* infligent des dégâts de feu."
+],
+    "url": "/api/2014/types-dommage/feu"
+  },
+  {
+    "index": "force",
+    "name": {
+          "en": "Force",
+          "fr": "Force"
+                },
+    "desc": [
+  "Les sorts comme *projectile magique* infligent des dégâts de force, une énergie pure qui affecte directement les créatures et les objets."
+],
+    "url": "/api/2014/types-dommage/force"
+  },
+  {
+    "index": "electricite",
+    "name": {
+          "en": "Lightning",
+          "fr": "Electricité"
+                },
+    "desc": [
+  "Le souffle électrique d’un dragon bleu et les sorts tels que *éclair* infligent des dégâts d’électricité."
+],
+    "url": "/api/2014/types-dommage/electricite"
+  },
+  {
+    "index": "necrotique",
+    "name": {
+          "en": "Necrotic",
+          "fr": "Nécrotique"
+                },
+    "desc": [
+  "L'énergie drainante d'un spectre ou les sorts comme *mot de pouvoir douleur* infligent des dégâts nécrotiques, siphonnant la force vitale de leurs victimes."
+],
+    "url": "/api/2014/types-dommage/necrotique"
+  },
+  {
+    "index": "perforants",
+    "name": {
+          "en": "Piercing",
+          "fr": "Perforants"
+                },
+    "desc":[
+  "Les attaques de flèches, de crocs, de piques et d'autres armes perforantes infligent des dégâts perforants."
+],
+    "url": "/api/2014/types-dommage/perforants"
+  },
+  {
+    "index": "poison",
+    "name": {
+          "en": "Poison",
+          "fr": "Poison"
+                },
+    "desc": [
+  "Le souffle empoisonné d’un dragon vert et les attaques venimeuses de nombreuses créatures infligent des dégâts de poison."
+],
+    "url": "/api/2014/types-dommage/poison"
+  },
+  {
+    "index": "psychiques",
+    "name": {
+          "en": "Psychic",
+          "fr": "Psychiques"
+                },
+    "desc": ["Les attaques mentales telles que les pouvoirs d’un flagelleur mental ou les sorts comme *dissonance mentale* infligent des dégâts psychiques."],
+    "url": "/api/2014/types-dommage/psychiques"
+  },
+  {
+    "index": "radiant",
+    "name": {
+          "en": "Radiant",
+          "fr": "Radiant"
+                },
+    "desc": [
+  "La lumière sacrée d’un sort comme *mot sacré* ou les attaques de certaines entités célestes infligent des dégâts radiants."
+],
+    "url": "/api/2014/types-dommage/radiant"
+  },
+  {
+    "index": "tranchants",
+    "name": {
+          "en": "Slashing",
+          "fr": "Tranchants"
+                },
+    "desc": ["Les attaques d'épées, de griffes et d'autres armes tranchantes infligent des dégâts tranchants."],
+    "url": "/api/2014/types-dommage/tranchants"
+  },
+  {
+    "index": "tonerre",
+    "name": {
+          "en": "Thunder",
+          "fr": "Tonerre"
+                },
+    "desc": [
+  "Les effets sonores dévastateurs, comme ceux du sort *vague tonitruante*, infligent des dégâts de tonnerre."
+],
+    "url": "/api/2014/types-dommage/tonerre"
+  }
+]

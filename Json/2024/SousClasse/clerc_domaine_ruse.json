@@ -1,0 +1,57 @@
+{
+  "nom": "Domaine de la Ruse",
+  "classe_parente": "clerc",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 8, 17],
+  "niveaux": {
+    "3": {
+      "sorts_domaine": {
+        "1": ["charme-personne", "déguisement"],
+        "2": ["invisibilité", "passe-sans-trace"]
+      },
+      "capacites": [
+        {
+          "nom": "Maîtrises de l'ombre",
+          "description": "Tu obtiens la maîtrise de la Discrétion et de la Tromperie si tu ne les as pas déjà. Tu obtiens également la maîtrise des rapières."
+        },
+        {
+          "nom": "Faveur des voleurs",
+          "description": "Tu peux utiliser l'action Esquiver ou Se cacher en action bonus."
+        }
+      ]
+    },
+    "6": {
+      "sorts_domaine": {
+        "3": ["déguisement de groupe", "ennemis à foison"]
+      },
+      "capacites": [
+        {
+          "nom": "Canal divin : tromperie",
+          "description": "Tu crées une illusion parfaite de toi-même dans un espace à 9 m. Les ennemis ne peuvent pas te distinguer de ton illusion (concentration, 1 minute)."
+        }
+      ]
+    },
+    "8": {
+      "sorts_domaine": {
+        "4": ["localisation de créature", "porte dimensionnelle"]
+      },
+      "capacites": [
+        {
+          "nom": "Frappe divine",
+          "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts de poison supplémentaires (2d8 au niveau 14)."
+        }
+      ]
+    },
+    "17": {
+      "sorts_domaine": {
+        "5": ["domination de personne", "modification de mémoire"]
+      },
+      "capacites": [
+        {
+          "nom": "Maître de l'ombre",
+          "description": "Tu peux lancer non-détection sur toi-même sans dépenser d'emplacement ni matériaux (toujours actif). De plus, tu peux lancer passage sans trace en action bonus (1/repos long)."
+        }
+      ]
+    }
+  }
+}

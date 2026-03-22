@@ -1,0 +1,42 @@
+{
+  "id": "drakeide",
+  "nom": "Drakeide",
+  "description": "Descendants de dragons ou benis par des dieux draconiques. Leur apparence evoque les dragons : ecailles, yeux de reptile, epines. Leur type de Souffle et leur resistance dependent de leur lignee.",
+  "taille": {
+    "categorie": "M",
+    "details": "entre 1,30 m et 2,15 m"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "ascendance_draconique",
+      "nom": "Ascendance draconique",
+      "description": "Choisissez un dragon ancetre parmi : Airain (feu), Argent (froid), Blanc (froid), Bleu (foudre), Bronze (foudre), Cuivre (acide), Noir (acide), Or (feu), Rouge (feu), Vert (poison). Ce choix determine votre type de Souffle et votre Resistance aux degats."
+    },
+    {
+      "id": "souffle",
+      "nom": "Souffle",
+      "description": "Action Magie : expirez une energie magique. Forme : Ligne 4,50 m x 9 m ou Cone de 4,50 m selon la lignee. Jet de sauvegarde Dexterite DD = 8 + bonus de maitrise + modificateur. Degats : 1d10 (niv 1-4), 2d10 (niv 5-10), 3d10 (niv 11-16), 4d10 (niv 17+). Usage : bonus de maitrise fois par Repos long."
+    },
+    {
+      "id": "resistance_aux_degats",
+      "nom": "Resistance aux degats",
+      "description": "Vous beneficiez de la Resistance au type de degats determine par votre trait Ascendance draconique."
+    },
+    {
+      "id": "vol_draconique",
+      "nom": "Vol draconique",
+      "description": "A partir du niveau 5, vous pouvez deployer des ailes spectrales. Action Bonus : Vitesse de vol egale a votre Vitesse pendant 10 minutes. 1 fois par Repos court ou long."
+    },
+    {
+      "id": "vision_dans_le_noir_drakeide",
+      "nom": "Vision dans le noir",
+      "description": "Vous disposez de la Vision dans le noir sur 18 m."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [
+    "variable_selon_ascendance"
+  ],
+  "sorts_innes": []
+}

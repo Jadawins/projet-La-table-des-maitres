@@ -1,0 +1,198 @@
+[
+  {
+    "nom": "Manteau d'ombres",
+    "prerequis_niveau": null,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance armure du mage sur soi-même sans dépenser d'emplacement de sort."
+  },
+  {
+    "nom": "Absorption vitale",
+    "prerequis_niveau": 9,
+    "prerequis_manifestation": "Lien de la Lame",
+    "repetable": false,
+    "description": "1/tour avec arme de pacte : inflige 1d6 dégâts nécrotiques, psychiques ou radiants supplémentaires. Peut dépenser une vie pour récupérer des PV (niveau + modificateur CON)."
+  },
+  {
+    "nom": "Décharge renforcée",
+    "prerequis_niveau": 2,
+    "prerequis_autre": "sort_mineur_occultiste_infligeant_degats",
+    "repetable": true,
+    "description": "Ajoute le modificateur de CHA aux jets de dégâts du sort mineur choisi."
+  },
+  {
+    "nom": "Décharge répulsive",
+    "prerequis_niveau": 2,
+    "prerequis_autre": "sort_mineur_occultiste_jet_attaque_infligeant_degats",
+    "repetable": true,
+    "description": "Repousse une créature de taille G ou moins de 3 m en ligne droite lors d'une touche avec le sort mineur choisi."
+  },
+  {
+    "nom": "Maîtrise de la chaîne",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": "Lien de la Chaîne",
+    "repetable": false,
+    "description": "Le familier gagne : vol ou nage 12 m, attaque rapide (action bonus), dégâts nécrotiques/psychiques/radiants au choix, DD sauvegarde = DD sorts, Résistance aux dégâts (réaction)."
+  },
+  {
+    "nom": "Sagesse ancestrale",
+    "prerequis_niveau": 2,
+    "prerequis_manifestation": null,
+    "repetable": true,
+    "description": "Reçoit un don d'Origines au choix."
+  },
+  {
+    "nom": "Esprit occulte",
+    "prerequis_niveau": null,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Avantage aux jets de sauvegarde de Constitution pour maintenir la Concentration."
+  },
+  {
+    "nom": "Impact occulte",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": "Lien de la Lame",
+    "repetable": false,
+    "description": "1/tour avec arme de pacte : dépense un emplacement pour infliger 1d8 de force + 1d8 de force par niveau de l'emplacement supplémentaires. La cible (TG ou moins) tombe À terre."
+  },
+  {
+    "nom": "Lame affamée",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": "Lien de la Lame",
+    "repetable": false,
+    "description": "Obtient une attaque supplémentaire avec l'arme de pacte uniquement."
+  },
+  {
+    "nom": "Lame insatiable",
+    "prerequis_niveau": 12,
+    "prerequis_manifestation": "Lame affamée",
+    "repetable": false,
+    "description": "L'attaque supplémentaire de Lame affamée octroie 2 attaques supplémentaires au lieu d'une."
+  },
+  {
+    "nom": "Lance occulte",
+    "prerequis_niveau": 2,
+    "prerequis_autre": "sort_mineur_occultiste_portee_3m_plus_infligeant_degats",
+    "repetable": true,
+    "description": "La portée du sort mineur choisi augmente de 9 m par niveau d'Occultiste."
+  },
+  {
+    "nom": "Maître des formes",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance modification d'apparence sans dépenser d'emplacement de sort."
+  },
+  {
+    "nom": "Maître des ombres",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance invisibilité sur soi-même sans emplacement, uniquement en lumière faible ou ténèbres."
+  },
+  {
+    "nom": "Mille visages",
+    "prerequis_niveau": 2,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance déguisement sans dépenser d'emplacement de sort."
+  },
+  {
+    "nom": "Murmures de la tombe",
+    "prerequis_niveau": 7,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance communication avec les morts sans dépenser d'emplacement de sort."
+  },
+  {
+    "nom": "Lien de la Chaîne",
+    "prerequis_niveau": null,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Apprend appel de familier et peut le lancer via action Magie sans emplacement. Formes spéciales disponibles : diablotin, esprit follet, pseudodragon, quasit, etc."
+  },
+  {
+    "nom": "Lien du Grimoire",
+    "prerequis_niveau": null,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Codex des Ombres : 3 sorts mineurs + 2 sorts rituels niv. 1 de n'importe quelle classe (toujours préparés). Utilisable comme focaliseur d'incantation."
+  },
+  {
+    "nom": "Lien de la Lame",
+    "prerequis_niveau": null,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Invoque une arme de pacte (action bonus). Maîtrise de cette arme ; CHA pour les jets d'attaque et de dégâts. Peut infliger des dégâts nécrotiques, psychiques ou radiants. Le lien prend fin si l'arme est à plus de 1,5 m pendant 1 min ou en cas de mort."
+  },
+  {
+    "nom": "Pas aérien",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance lévitation sur soi-même sans dépenser d'emplacement de sort."
+  },
+  {
+    "nom": "Perception transférée",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Action bonus : perçoit à travers une créature consentante jusqu'à la fin du tour suivant (prolongeable). Lance des sorts comme si on était dans son espace ou le sien (max 18 m)."
+  },
+  {
+    "nom": "Présent des profondeurs",
+    "prerequis_niveau": 5,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Vitesse de nage = vitesse terrestre ; respiration sous-marine. Lance respiration aquatique sans emplacement (1/repos long)."
+  },
+  {
+    "nom": "Faveur des sauveurs",
+    "prerequis_niveau": 9,
+    "prerequis_manifestation": "Lien du Grimoire",
+    "repetable": false,
+    "description": "Nouvelle page du Codex : inscrit jusqu'à modificateur de CHA noms. Une créature inscrite tombant à 0 PV sans coup mortel tombe à 1 PV à la place (1/repos long, réinitialisé par action Magie)."
+  },
+  {
+    "nom": "Œil lointain",
+    "prerequis_niveau": 9,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance œil du mage sans dépenser d'emplacement de sort."
+  },
+  {
+    "nom": "Saut d'outre-monde",
+    "prerequis_niveau": 2,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance saut sans dépenser d'emplacement de sort."
+  },
+  {
+    "nom": "Vitalité obscure",
+    "prerequis_niveau": 2,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance simulacre de vie sans emplacement (le résultat de dé est automatiquement au maximum)."
+  },
+  {
+    "nom": "Perception des ténèbres",
+    "prerequis_niveau": 2,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Vision normale dans la lumière faible et les ténèbres (magiques ou non) sur 36 m."
+  },
+  {
+    "nom": "Vue arcanique",
+    "prerequis_niveau": 15,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Vision lucide sur 9 m."
+  },
+  {
+    "nom": "Visions embrumées",
+    "prerequis_niveau": 2,
+    "prerequis_manifestation": null,
+    "repetable": false,
+    "description": "Lance image silencieuse sans dépenser d'emplacement de sort."
+  }
+]

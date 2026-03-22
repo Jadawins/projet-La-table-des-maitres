@@ -1,0 +1,565 @@
+{
+  "nom": "Moine",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": ["DEX", "SAG"],
+      "de_vie": {
+        "type": "1d8",
+        "modificateur": "CON"
+      },
+      "sauvegardes_maitrise": ["FOR", "DEX"],
+      "competences_choisies": {
+        "nombre": 2,
+        "options": ["Acrobaties", "Athlétisme", "Discrétion", "Histoire", "Intuition", "Religion"]
+      },
+      "maitrises_armes": ["armes_courantes_corps_a_corps", "armes_de_guerre_propriete_legere"],
+      "maitrises_armures": [],
+      "maitrises_outils": {
+        "nombre": 1,
+        "options": ["outils_artisan", "instrument_de_musique"]
+      },
+      "equipement_depart": [
+        {
+          "choix": "A",
+          "contenu": [
+            "Lance",
+            "5 dagues",
+            "Outils d'artisan ou instrument de musique (maîtrise choisie)",
+            "Paquetage d'explorateur",
+            "11 po"
+          ]
+        },
+        {
+          "choix": "B",
+          "contenu": ["50 po"]
+        }
+      ]
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "arts_martiaux_de": "1d6",
+      "capacites": [
+        {
+          "nom": "Arts martiaux",
+          "description": "Sans armure : attaque bonus à mains nues, dé de dégâts amélioré pour mains nues/armes de moine, et DEX au lieu de FOR.",
+          "type": "passif",
+          "condition": "sans_armure_ni_bouclier",
+          "effets": [
+            {
+              "type": "attaque_bonus_action",
+              "valeur": "mains_nues"
+            },
+            {
+              "type": "de_arts_martiaux",
+              "remplace": "degats_normaux",
+              "valeur": "arts_martiaux_de",
+              "cibles": ["mains_nues", "armes_de_moine"]
+            },
+            {
+              "type": "utiliser_DEX_au_lieu_de_FOR",
+              "cibles": ["jets_attaque", "degats", "dd_bousculade_lutte"],
+              "armes": ["mains_nues", "armes_de_moine"]
+            }
+          ]
+        },
+        {
+          "nom": "Défense sans armure",
+          "description": "CA = 10 + DEX + SAG quand on ne porte ni armure ni bouclier.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "classe_armure_base",
+              "formule": "10 + modificateur_DEX + modificateur_SAG",
+              "condition": "sans_armure_ni_bouclier"
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "points_energie": { "formule": "niveau_moine", "note": "0 au niveau 1, égal au niveau de Moine à partir du niveau 2." },
+      "deplacement_sans_armure_bonus": "+3m",
+      "dd_sauvegarde": "8 + modificateur_SAG + bonus_maitrise",
+      "capacites": [
+        {
+          "nom": "Énergie martiale",
+          "description": "Pool de points d'énergie rechargés au repos ; permet Rafale de coups, Vigilance défensive et Élan du vent.",
+          "type": "ressource",
+          "recuperation": ["repos_court", "repos_long"],
+          "aptitudes": [
+            {
+              "nom": "Rafale de coups",
+              "type": "bonus_action",
+              "cout_energie": 1,
+              "effets": [
+                {
+                  "type": "attaques",
+                  "nombre": 2,
+                  "arme": "mains_nues"
+                }
+              ]
+            },
+            {
+              "nom": "Vigilance défensive",
+              "type": "bonus_action",
+              "effets": [
+                {
+                  "type": "action",
+                  "valeur": "Désengagement"
+                },
+                {
+                  "type": "option_cout_energie",
+                  "cout": 1,
+                  "effet_supplementaire": { "type": "action", "valeur": "Esquive" }
+                }
+              ]
+            },
+            {
+              "nom": "Élan du vent",
+              "type": "bonus_action",
+              "effets": [
+                {
+                  "type": "action",
+                  "valeur": "Pointe"
+                },
+                {
+                  "type": "option_cout_energie",
+                  "cout": 1,
+                  "effets_supplementaires": [
+                    { "type": "action", "valeur": "Désengagement" },
+                    { "type": "doubler_distance_saut", "duree": "ce_tour" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nom": "Déplacement sans armure",
+          "description": "Vitesse augmentée sans armure ni bouclier (valeur indiquée dans la table de progression).",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "bonus_vitesse",
+              "valeur": "deplacement_sans_armure_bonus",
+              "condition": "sans_armure_ni_bouclier"
+            }
+          ]
+        },
+        {
+          "nom": "Récupération martiale",
+          "description": "À l'initiative (1/repos long) : récupère toute l'énergie dépensée et se soigne de 1d Arts martiaux + niveau.",
+          "type": "actif",
+          "declencheur": "initiative",
+          "effets": [
+            {
+              "type": "recuperation_energie",
+              "valeur": "tous_points_depenses"
+            },
+            {
+              "type": "soin",
+              "valeur": {
+                "des": "arts_martiaux_de",
+                "ajouter": "niveau_moine"
+              }
+            }
+          ],
+          "utilisations": {
+            "initial": 1,
+            "recuperation": [
+              { "type": "repos_long", "remise_a_max": true }
+            ]
+          }
+        }
+      ]
+    },
+    "3": {
+      "capacites": [
+        {
+          "nom": "Parade réflexe",
+          "description": "Réaction : réduit les dégâts physiques reçus de 1d10 + DEX + niveau ; si réduits à 0, peut dépenser 1 énergie pour dévier l'attaque vers une autre cible.",
+          "type": "reaction",
+          "declencheur": {
+            "type": "attaque_recue_touchante",
+            "degats_type": ["contondants", "perforants", "tranchants"]
+          },
+          "effets": [
+            {
+              "type": "reduction_degats",
+              "valeur": {
+                "des": "1d10",
+                "ajouter": ["modificateur_DEX", "niveau_moine"]
+              }
+            },
+            {
+              "type": "option_si_degats_reduits_a_zero",
+              "cout_energie": 1,
+              "effet": "devier_vers_creature_visible",
+              "portee_corps_a_corps": "1,50m",
+              "portee_distance": { "rayon": "18m", "condition": "pas_abri_total" },
+              "jet_sauvegarde": { "caracteristique": "DEX" },
+              "degats_echec": {
+                "des": "2x_arts_martiaux_de",
+                "ajouter": "modificateur_DEX",
+                "type": "meme_que_attaque_originale"
+              }
+            }
+          ]
+        }
+      ],
+      "voie": {
+        "choix": [
+          "Credo des Éléments",
+          "Credo de la Miséricorde",
+          "Credo de l'Ombre",
+          "Credo de la Paume"
+        ]
+      },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      },
+      "capacites": [
+        {
+          "nom": "Chute ralentie",
+          "description": "Réaction lors d'une chute : réduit les dégâts de chute de 5 × niveau du Moine.",
+          "type": "reaction",
+          "declencheur": "chute",
+          "effets": [
+            {
+              "type": "reduction_degats_chute",
+              "valeur": "5x_niveau_moine"
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "arts_martiaux_de": "1d8",
+      "capacites": [
+        {
+          "nom": "Attaque supplémentaire",
+          "description": "2 attaques par action Attaquer.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "attaque_sup",
+              "valeur": 1,
+              "total_attaques": 2,
+              "conditions": [{ "type": "action", "valeur": "Attaquer" }]
+            }
+          ]
+        },
+        {
+          "nom": "Frappe déstabilisante",
+          "description": "Après une touche (1/tour), dépense 1 énergie : JS CON ou la cible est Étourdie jusqu'au début du prochain tour ; en cas de réussite, vitesse réduite et avantage sur la prochaine attaque.",
+          "type": "actif",
+          "declencheur": {
+            "type": "touche_avec_arme_de_moine_ou_mains_nues",
+            "frequence": "1_par_tour"
+          },
+          "cout_energie": 1,
+          "effets": [
+            {
+              "type": "jet_sauvegarde",
+              "caracteristique": "CON",
+              "echec": {
+                "type": "etat",
+                "valeur": "Étourdi",
+                "duree": "jusqu_debut_prochain_tour"
+              },
+              "reussite": {
+                "effets": [
+                  {
+                    "type": "reduction_vitesse",
+                    "valeur": "moitie",
+                    "duree": "jusqu_debut_prochain_tour"
+                  },
+                  {
+                    "type": "avantage",
+                    "cible": "prochain_jet_attaque_contre_cible",
+                    "duree": "jusqu_debut_prochain_tour"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "deplacement_sans_armure_bonus": "+4,50m",
+      "capacites": [
+        {
+          "nom": "Frappe de force",
+          "description": "Choisit librement entre dégâts de Force ou dégâts normaux pour chaque attaque à mains nues.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "type_degats_au_choix",
+              "cible": "attaques_mains_nues",
+              "options": ["force", "type_normal_attaque"],
+              "choix": "joueur"
+            }
+          ]
+        }
+      ],
+      "verifier_sous_classe": true
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Esquive totale",
+          "description": "JS DEX réussi = aucun dégât (au lieu de la moitié) ; JS raté = moitié des dégâts. Requiert de ne pas être Neutralisé.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "evasion",
+              "declencheur": "jet_sauvegarde_DEX_pour_demi_degats",
+              "reussite": "aucun_degat",
+              "echec": "demi_degats",
+              "condition": "non_neutralise"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "capacites": [
+        {
+          "nom": "Mobilité acrobatique",
+          "description": "Sans armure : peut courir sur les surfaces verticales et les liquides sans tomber.",
+          "type": "passif",
+          "condition": "sans_armure_ni_bouclier",
+          "effets": [
+            {
+              "type": "deplacement_special",
+              "surfaces": ["verticales"],
+              "milieux": ["liquides"],
+              "condition": "sans_tomber"
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "deplacement_sans_armure_bonus": "+6m",
+      "capacites": [
+        {
+          "nom": "Endurance martiale",
+          "description": "Supprime un état (Charmé, Effrayé ou Empoisonné) à chaque fin de tour ; immunité aux niveaux d'Épuisement par manque de nourriture ou d'eau.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "suppression_etat",
+              "frequence": "fin_de_chaque_tour",
+              "options": ["Charmé", "Effrayé", "Empoisonné"],
+              "nombre_au_choix": 1
+            },
+            {
+              "type": "immunite_survie",
+              "valeur": ["nourriture", "eau"],
+              "note": "Ne génère pas de niveaux d'Épuisement pour manque de nourriture ou d'eau."
+            }
+          ]
+        },
+        {
+          "nom": "Énergie renforcée",
+          "description": "Améliore Rafale de coups (3 attaques), Vigilance défensive (PV temporaires) et Élan du vent (emporter une créature).",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Rafale de coups",
+              "nouvelle_valeur": "3 attaques à mains nues au lieu de 2"
+            },
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Vigilance défensive",
+              "ajout_si_cout_energie": {
+                "type": "pv_temporaires",
+                "valeur": "2x_arts_martiaux_de"
+              }
+            },
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Élan du vent",
+              "ajout_si_cout_energie": {
+                "type": "emporter_creature_consentante",
+                "taille_max": "Grande",
+                "rayon": "1,50m",
+                "note": "Le déplacement de la créature ne provoque pas d'attaques d'opportunité."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "arts_martiaux_de": "1d10",
+      "verifier_sous_classe": true
+    },
+    "12": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "capacites": [
+        {
+          "nom": "Parade universelle",
+          "description": "La Parade réflexe fonctionne désormais pour tous les types de dégâts, pas seulement physiques.",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Parade réflexe",
+              "modification": "s_applique_a_tous_types_de_degats"
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "deplacement_sans_armure_bonus": "+7,50m",
+      "capacites": [
+        {
+          "nom": "Résilience martiale",
+          "description": "Maîtrise de tous les jets de sauvegarde ; peut dépenser 1 énergie pour relancer un JS raté (résultat obligatoire).",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "maitrise_tous_jets_sauvegarde"
+            },
+            {
+              "type": "relance_jet_sauvegarde",
+              "cout_energie": 1,
+              "declencheur": "jet_sauvegarde_rate",
+              "note": "Le nouveau jet s'applique obligatoirement."
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Maîtrise de l'énergie",
+          "description": "À l'initiative, si les points d'énergie sont inférieurs à 4 et que Récupération martiale n'a pas été utilisée ce tour, récupère jusqu'à 4 points.",
+          "type": "passif",
+          "declencheur": {
+            "type": "initiative",
+            "conditions": [
+              "Récupération martiale non utilisée ce tour",
+              "points_energie_actuels < 4"
+            ]
+          },
+          "effets": [
+            {
+              "type": "recuperation_energie",
+              "jusqu_a": 4
+            }
+          ]
+        }
+      ]
+    },
+    "16": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "arts_martiaux_de": "1d12",
+      "verifier_sous_classe": true
+    },
+    "18": {
+      "deplacement_sans_armure_bonus": "+9m",
+      "capacites": [
+        {
+          "nom": "Bastion martial",
+          "description": "Dépense 3 points d'énergie en début de tour : résistance à tous les types de dégâts (sauf Force) pendant 1 minute.",
+          "type": "actif",
+          "declencheur": "debut_de_son_tour",
+          "cout_energie": 3,
+          "effets": [
+            {
+              "type": "resistance",
+              "cible": "tous_types_de_degats_sauf_force",
+              "duree": "1_minute",
+              "fin_si": "etat_Neutralise"
+            }
+          ]
+        }
+      ]
+    },
+    "19": {
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "capacites": [
+        {
+          "nom": "Apothéose martiale",
+          "description": "Augmente la DEX et la SAG de 4 chacune (maximum 25).",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "augmentation_caracteristique",
+              "cibles": ["DEX", "SAG"],
+              "valeur": 4,
+              "maximum": 25
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

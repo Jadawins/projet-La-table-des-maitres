@@ -1,0 +1,151 @@
+[
+  {
+    "nom": "Attaque",
+    "type": "action",
+    "effets": [
+      {
+        "type": "attaque",
+        "cible": "arme_ou_mains_nues"
+      }
+    ]
+  },
+  {
+    "nom": "Désengagement",
+    "type": "action",
+    "effets": [
+      {
+        "type": "deplacement",
+        "provoque_attaque_opportunite": false
+      }
+    ]
+  },
+  {
+    "nom": "Esquive",
+    "type": "action",
+    "effets": [
+      {
+        "type": "avantage",
+        "cible": "sauvegarde_DEX"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jet_attaque_contre_utilisateur"
+      }
+    ],
+    "conditions_fin": [
+      {
+        "type": "etat",
+        "valeur": "neutralise"
+      },
+      {
+        "type": "vitesse",
+        "valeur": 0
+      }
+    ],
+    "duree": "jusqu_debut_prochain_tour"
+  },
+  {
+    "nom": "Étude",
+    "type": "action",
+    "effets": [
+      {
+        "type": "test_caracteristique",
+        "caracteristique": "INT",
+        "competences_possibles": ["Arcanes", "Histoire", "Investigation", "Nature", "Religion"]
+      }
+    ]
+  },
+  {
+    "nom": "Furtivité",
+    "type": "action",
+    "effets": [
+      {
+        "type": "test_caracteristique",
+        "caracteristique": "DEX",
+        "competence": "Discrétion"
+      }
+    ]
+  },
+  {
+    "nom": "Influence",
+    "type": "action",
+    "effets": [
+      {
+        "type": "test_caracteristique",
+        "caracteristiques_possibles": ["CHA", "SAG"],
+        "competences_possibles": ["Intimidation", "Persuasion", "Représentation", "Tromperie", "Dressage"]
+      }
+    ]
+  },
+  {
+    "nom": "Intention",
+    "type": "action",
+    "effets": [
+      {
+        "type": "preparation_action",
+        "declencheur_personnalise": true
+      }
+    ]
+  },
+  {
+    "nom": "Magie",
+    "type": "action",
+    "effets": [
+      {
+        "type": "utilisation_magique",
+        "options": ["lancer_sort", "objet_magique", "aptitude_magique"]
+      }
+    ]
+  },
+  {
+    "nom": "Observation",
+    "type": "action",
+    "effets": [
+      {
+        "type": "test_caracteristique",
+        "caracteristique": "SAG",
+        "competences_possibles": ["Intuition", "Médecine", "Perception", "Survie"]
+      }
+    ]
+  },
+  {
+    "nom": "Pointe",
+    "type": "action",
+    "effets": [
+      {
+        "type": "augmentation_vitesse",
+        "valeur": "vitesse_utilisateur"
+      }
+    ],
+    "duree": "jusqu_fin_tour"
+  },
+  {
+    "nom": "Soutien",
+    "type": "action",
+    "effets": [
+      {
+        "type": "assistance",
+        "cible": "jet_attaque_ou_test_caracteristique"
+      },
+      {
+        "type": "soin",
+        "methode": "stabilisation",
+        "condition": {
+          "test": "Médecine",
+          "caracteristique": "SAG",
+          "dd": 10
+        }
+      }
+    ]
+  },
+  {
+    "nom": "Utilisation",
+    "type": "action",
+    "effets": [
+      {
+        "type": "utilisation_objet",
+        "magique": false
+      }
+    ]
+  }
+]

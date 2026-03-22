@@ -1,0 +1,44 @@
+{
+  "nom": "Cercle des Mers",
+  "classe_parente": "druide",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Enfant des mers",
+          "description": "Tu obtiens une vitesse de nage de 12 m et la capacité de respirer sous l'eau. Tu peux lancer vague tonnante et nappe de brouillard sans dépenser d'emplacement de sort (SAG fois/repos long)."
+        },
+        {
+          "nom": "Magie aquatique",
+          "description": "Quand tu lances un sort de soins alors que tu es sous l'eau ou en contact avec l'eau, les dés de guérison sont au maximum."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Promenade des profondeurs",
+          "description": "Tu peux lancer marche sur l'eau et respiration aquatique sans dépenser d'emplacement de sort (1/repos long chacun)."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Colère de l'océan",
+          "description": "1/repos long, tu peux invoquer une tempête marine : les créatures dans une sphère de 9 m centrée sur toi doivent réussir un JS de FOR ou être repoussées de 9 m et subir 4d6 dégâts de tonnerre."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Maître des flots",
+          "description": "Tu es immunisé aux dégâts froids et de tonnerre. Les sorts que tu lances qui infligent des dégâts froids ou de tonnerre ignorent la résistance à ces types de dégâts."
+        }
+      ]
+    }
+  }
+}

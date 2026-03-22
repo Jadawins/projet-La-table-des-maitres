@@ -1,0 +1,693 @@
+[
+  {
+    "nom": "Bâton de combat",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "1d6",
+      "polyvalente": "1d8"
+    },
+    "proprietes": ["polyvalente"],
+    "botte": "renversement",
+    "poids": 2,
+    "prix": {
+      "quantite": 2,
+      "monnaie": "pa"
+    }
+  },
+  {
+    "nom": "Dague",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d4"
+    },
+    "proprietes": [
+      "finesse",
+      "lancer",
+      {
+        "lancer_portee": "6/18"
+      },
+      "legere"
+    ],
+    "botte": "coup_double",
+    "poids": 0.5,
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Gourdin",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "1d4"
+    },
+    "proprietes": ["legere"],
+    "botte": "ralentissement",
+    "poids": 1,
+    "prix": {
+      "quantite": 1,
+      "monnaie": "pa"
+    }
+  },
+  {
+    "nom": "Hachette",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d6"
+    },
+    "proprietes": [
+      "lancer",
+      {
+        "lancer_portee": "6/18"
+      },
+      "legere"
+    ],
+    "botte": "ouverture",
+    "poids": 1,
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Javeline",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d6"
+    },
+    "proprietes": [
+      "lancer",
+      {
+        "lancer_portee": "9/36"
+      }
+    ],
+    "botte": "ralentissement",
+    "poids": 1,
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pa"
+    }
+  },
+  {
+    "nom": "Lance",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d6",
+      "polyvalente": "1d8"
+    },
+    "proprietes": [
+      "lancer",
+      {
+        "lancer_portee": "6/18"
+      },
+      "polyvalente"
+    ],
+    "botte": "sape",
+    "poids": 1.5,
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Marteau léger",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "1d4"
+    },
+    "proprietes": [
+      "lancer",
+      {
+        "lancer_portee": "6/18"
+      },
+      "legere"
+    ],
+    "botte": "coup_double",
+    "poids": 1,
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Masse d'armes",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "1d6"
+    },
+    "proprietes": [],
+    "botte": "sape",
+    "poids": 2,
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Masse",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "1d8"
+    },
+    "proprietes": [
+      "deux_mains"
+    ],
+    "botte": "poussee",
+    "poids": 5,
+    "prix": {
+      "quantite": 2,
+      "monnaie": "pa"
+    }
+  },
+  {
+    "nom": "Serpe",
+    "categorie": "arme_courante_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d4"
+    },
+    "proprietes": [
+      "legere"
+    ],
+    "botte": "coup_double",
+    "poids": 1,
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Arbalète légère",
+    "categorie": "arme_courante_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d8"
+    },
+    "proprietes": [
+      "chargement",
+      "deux_mains",
+      "munitions",
+      { "portee": "24/96", "type": "carreaux" }      
+    ],
+    "botte": "ralentissement",
+    "poids": 2.5,
+    "prix": {
+      "quantite": 25,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Arc court",
+    "categorie": "arme_courante_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d6"
+    },
+    "proprietes": [
+      "deux_mains",
+      "munitions",
+      { "portee": "24/96", "type": "flèches" }
+    ],
+    "botte": "ouverture",
+    "poids": 1,
+    "prix": {
+      "quantite": 25,
+      "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Fléchette",
+    "categorie": "arme_courante_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d4"
+    },
+    "proprietes": [
+      "finesse",
+      "lancer",
+      {
+        "lancer_portee": "6/18"
+      }
+    ],
+    "botte": "ouverture",
+    "poids": 0.1,
+    "prix": {
+      "quantite": 1,
+      "monnaie": "pc"
+    }
+  },
+  {
+    "nom": "Fronde",
+    "categorie": "arme_courante_distance",
+    "degats": {
+      "type": "contondants",
+      "de": "1d4"
+    },
+    "proprietes": [
+      "munitions",
+      { "portee": "9/36", "type": "billes" }
+    ],
+    "botte": "ralentissement",
+    "poids": 0,
+    "prix": {
+    "quantite": 1,
+    "monnaie": "pa"
+    }
+  },
+  {
+    "nom": "Cimeterre",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d6"
+    },
+    "proprietes": [
+      "finesse",
+      "legere"
+    ],
+    "botte": "coup_double",
+    "poids": 1.5,
+    "prix": {
+    "quantite": 25,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Coutille",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d10"
+    },
+    "proprietes": [
+      "allonge",
+      "deux_mains",
+      "lourde"
+    ],
+    "botte": "ecorchure",
+    "poids": 3,
+    "prix": {
+    "quantite": 2,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Épée à deux mains",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "2d6"
+    },
+    "proprietes": [
+      "deux_mains",
+      "lourde"
+    ],
+    "botte": "ecorchure",
+    "poids": 3,
+    "prix": {
+    "quantite": 50,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Épée courte",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d6"
+    },
+    "proprietes": [
+      "finesse",
+      "legere"
+    ],
+    "botte": "ouverture",
+    "poids": 1,
+    "prix": {
+    "quantite": 10,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Épée longue",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d8",
+      "polyvalente": "1d10"
+    },
+    "proprietes": [
+      "polyvalente"
+    ],
+    "botte": "sape",
+    "poids": 1.5,
+    "prix": {
+    "quantite": 15,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Fléau d’armes",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "1d8"
+    },
+    "proprietes": [],
+    "botte": "sape",
+    "poids": 2,
+    "prix": {
+    "quantite": 10,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Fouet",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d4"
+    },
+    "proprietes": [
+      "allonge",
+      "finesse"
+    ],
+    "botte": "ralentissement",
+    "poids": 1.5,
+    "prix": {
+    "quantite": 20,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Hache à deux mains",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d12"
+    },
+    "proprietes": [
+      "deux_mains",
+      "lourde"
+    ],
+    "botte": "enchaînement",
+    "poids": 3.5,
+    "prix": {
+    "quantite": 30,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Hache d’armes",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d8",
+      "polyvalente": "1d10"
+    },
+    "proprietes": [
+      "polyvalente"
+    ],
+    "botte": "Renversement",
+    "poids": 2,
+    "prix": {
+    "quantite": 10,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Hallebarde",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "tranchants",
+      "de": "1d10"
+    },
+    "proprietes": [
+      "allonge",
+      "deux_mains",
+      "lourde"
+    ],
+    "botte": "enchaînement",
+    "poids": 3.5,
+    "prix": {
+    "quantite": 20,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Lance d’arçon",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d10"
+    },
+    "proprietes": [
+      "allonge",
+      "deux_mains (sauf à cheval)",
+      "lourde"
+    ],
+    "botte": "ecorchure",
+    "poids": 3,
+    "prix": {
+    "quantite": 10,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Maillet d’armes",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "2d6"
+    },
+    "proprietes": [
+      "deux_mains",
+      "lourde"
+    ],
+    "botte": "Renversement",
+    "poids": 5,
+    "prix": {
+    "quantite": 10,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Marteau de guerre",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "contondants",
+      "de": "1d8",
+      "polyvalente" : "1d10"
+    },
+    "proprietes": [
+      "polyvalente"
+    ],
+    "botte": "poussée",
+    "poids": 2.5,
+    "prix": {
+    "quantite": 15,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Morgenstern",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d8"
+    },
+    "proprietes": [],
+    "botte": "sape",
+    "poids": 2,
+    "prix": {
+    "quantite": 10,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Pique",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d10"
+    },
+    "proprietes": [
+      "allonge",
+      "deux_mains",
+      "lourde"
+    ],
+    "botte": "poussée",
+    "poids": 4,
+    "prix": {
+    "quantite": 5,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Rapière",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d8"
+    },
+    "proprietes": [
+      "finesse"
+    ],
+    "botte": "Renversement",
+    "poids": 2,
+    "prix": {
+    "quantite": 25,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Trident",
+    "categorie": "arme_de_guerre_corps_a_corps",
+    "degats": {
+      "type": "perforants",
+      "de": "1d6",
+      "polyvalente": "1d10"
+    },
+    "proprietes": [
+        "lancer",
+      {
+        "lancer_portee": "6/18"
+      },
+      "polyvalente"
+    ],
+    "botte": "Renversement",
+    "poids": 2,
+    "prix": {
+    "quantite": 5,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Mousquet",
+    "categorie": "arme_de_guerre_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d12"
+    },
+    "proprietes": [
+      "chargement",
+      "deux_mains",
+      "lourde",
+      "munitions",
+      { "portee": "12/36", "type": "balles" }
+    ],
+    "botte": "ralentissement",
+    "poids": 5,
+    "prix": {
+    "quantite": 500,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Pistolet",
+    "categorie": "arme_de_guerre_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d10"
+    },
+    "proprietes": [
+      "chargement",
+      "munitions",
+      { "portee": "9/27", "type": "balles" }
+    ],
+    "botte": "ouverture",
+    "poids": 1.5,
+    "prix": {
+    "quantite": 250,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Sarbacane",
+    "categorie": "arme_de_guerre_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1"
+    },
+    "proprietes": [
+      "chargement",
+      "munitions",
+      { "portee": "7.5/30", "type": "dards" }
+    ],
+    "botte": "ouverture",
+    "poids": 0.5,
+    "prix": {
+    "quantite": 10,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Arbalète de poing",
+    "categorie": "arme_de_guerre_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d6"
+    },
+    "proprietes": [
+      "chargement",
+      "legere",
+      "munitions",
+      { "portee": "9/36", "type": "carreaux" }
+    ],
+    "botte": "ouverture",
+    "poids": 1.5,
+    "prix": {
+    "quantite": 75,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Arbalète lourde",
+    "categorie": "arme_de_guerre_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d10"
+    },
+    "proprietes": [
+      "chargement",
+      "deux_mains",
+      "lourde",
+      "munitions",
+      { "portee": "30/120", "type": "carreaux" }
+    ],
+    "botte": "poussée",
+    "poids": 9,
+    "prix": {
+    "quantite": 50,
+    "monnaie": "po"
+    }
+  },
+  {
+    "nom": "Arc long",
+    "categorie": "arme_de_guerre_distance",
+    "degats": {
+      "type": "perforants",
+      "de": "1d8"
+    },
+    "proprietes": [
+      "deux_mains",
+      "lourde",
+      "munitions",
+      { "portee": "45/180", "type": "flèches" }
+    ],
+    "botte": "ralentissement",
+    "poids": 1,
+    "prix": {
+    "quantite": 50,
+    "monnaie": "po"
+    }
+  }
+]

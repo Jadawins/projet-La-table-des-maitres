@@ -1,0 +1,1841 @@
+[
+  {
+    "id": "renverse",
+    "nom": "Renversé",
+    "categorie": "etat",
+    "description": "Creature au sol suite a une chute, un effet de sort ou un manoeuvre de combat.",
+    "effets": [
+      {
+        "type": "deplacement_limite",
+        "detail": "Ramper uniquement, ou depenser la moitie de la Vitesse pour se relever"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_attaque"
+      },
+      {
+        "type": "avantage_attaquants",
+        "detail": "Attaquants au corps a corps ont l'Avantage ; attaquants a distance ont le Desavantage"
+      }
+    ],
+    "lire_aussi": [
+      "deplacement",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "saisi",
+    "nom": "Saisi",
+    "categorie": "etat",
+    "description": "Creature maintenue par une autre a la suite d'une manoeuvre de lutte ou d'un effet de sort.",
+    "effets": [
+      {
+        "type": "vitesse_0",
+        "detail": "La Vitesse passe a 0 et ne peut pas etre augmentee"
+      }
+    ],
+    "lire_aussi": [
+      "lutte",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "sourd",
+    "nom": "Sourd",
+    "categorie": "etat",
+    "description": "Creature incapable d'entendre quoi que ce soit.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "Echoue automatiquement a tous les tests de caracteristique qui reposent sur l'ouie"
+      }
+    ],
+    "lire_aussi": []
+  },
+  {
+    "id": "sans_vision",
+    "nom": "Sans vision",
+    "categorie": "etat",
+    "description": "Creature privee de la vue, temporairement ou permanemment.",
+    "effets": [
+      {
+        "type": "desavantage",
+        "cible": "jets_attaque"
+      },
+      {
+        "type": "avantage_attaquants",
+        "detail": "Les attaquants ont l'Avantage sur leurs jets d'attaque contre cette creature"
+      }
+    ],
+    "lire_aussi": [
+      "vision_dans_le_noir",
+      "visibilite_nulle"
+    ]
+  },
+  {
+    "id": "ensorcele",
+    "nom": "Ensorcele",
+    "categorie": "etat",
+    "description": "Creature sous l'emprise magique d'une autre qui la considere comme une alliee.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "Ne peut pas attaquer la source de l'effet ni la cibler avec des sorts ou effets nuisibles"
+      },
+      {
+        "type": "avantage",
+        "detail": "La source de l'effet a l'Avantage aux tests d'interaction sociale avec la creature"
+      }
+    ],
+    "lire_aussi": [
+      "influence",
+      "amical"
+    ]
+  },
+  {
+    "id": "terrorise",
+    "nom": "Terrorise",
+    "categorie": "etat",
+    "description": "Creature paralysee par la peur d'une source visible ou connue.",
+    "effets": [
+      {
+        "type": "desavantage",
+        "cible": "jets_attaque_et_tests_caracteristique",
+        "detail": "Quand la source de la peur est dans le champ de vision"
+      },
+      {
+        "type": "autre",
+        "detail": "Impossible de se rapprocher volontairement de la source de peur"
+      }
+    ],
+    "lire_aussi": [
+      "etat"
+    ]
+  },
+  {
+    "id": "intoxique",
+    "nom": "Intoxique",
+    "categorie": "etat",
+    "description": "Creature affectee par une substance ou un effet toxique.",
+    "effets": [
+      {
+        "type": "desavantage",
+        "cible": "jets_attaque_et_tests_caracteristique"
+      }
+    ],
+    "lire_aussi": [
+      "danger",
+      "resistance"
+    ]
+  },
+  {
+    "id": "immobilise",
+    "nom": "Immobilise",
+    "categorie": "etat",
+    "description": "Creature totalement bloquee dans ses mouvements par un effet magique ou physique.",
+    "effets": [
+      {
+        "type": "vitesse_0",
+        "detail": "La Vitesse passe a 0 et ne peut pas etre augmentee"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_attaque"
+      },
+      {
+        "type": "avantage_attaquants",
+        "detail": "Les attaquants ont l'Avantage sur leurs jets d'attaque"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_sauvegarde_dexterite"
+      }
+    ],
+    "lire_aussi": [
+      "etat"
+    ]
+  },
+  {
+    "id": "epuisement",
+    "nom": "Epuisement",
+    "categorie": "etat",
+    "description": "Etat cumulatif representant la fatigue extreme d'une creature, de niveau 1 a 6.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "Niveau 1 : Desavantage aux tests de caracteristique"
+      },
+      {
+        "type": "autre",
+        "detail": "Niveau 2 : Vitesse reduite de moitie"
+      },
+      {
+        "type": "autre",
+        "detail": "Niveau 3 : Desavantage aux jets d'attaque et de sauvegarde"
+      },
+      {
+        "type": "autre",
+        "detail": "Niveau 4 : Maximum de PV reduit de moitie"
+      },
+      {
+        "type": "vitesse_0",
+        "detail": "Niveau 5 : Vitesse = 0"
+      },
+      {
+        "type": "autre",
+        "detail": "Niveau 6 : Mort"
+      },
+      {
+        "type": "autre",
+        "detail": "Chaque Repos long reduit l'Epuisement de 1 niveau"
+      }
+    ],
+    "lire_aussi": [
+      "repos_long",
+      "malnutrition",
+      "deshydratation"
+    ]
+  },
+  {
+    "id": "sonne",
+    "nom": "Sonne",
+    "categorie": "etat",
+    "description": "Creature desorientee, incapable d'agir normalement. Inclut l'etat Inactif.",
+    "effets": [
+      {
+        "type": "neutralise_inclus",
+        "detail": "Inclut tous les effets de l'etat Inactif"
+      },
+      {
+        "type": "vitesse_0",
+        "detail": "La Vitesse passe a 0"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_sauvegarde_force_et_dexterite"
+      },
+      {
+        "type": "avantage_attaquants",
+        "detail": "Les attaquants ont l'Avantage sur leurs jets d'attaque"
+      }
+    ],
+    "lire_aussi": [
+      "inactif"
+    ]
+  },
+  {
+    "id": "inerte",
+    "nom": "Inerte",
+    "categorie": "etat",
+    "description": "Creature totalement inconsciente et sans defense. Inclut l'etat Inactif.",
+    "effets": [
+      {
+        "type": "neutralise_inclus",
+        "detail": "Inclut tous les effets de l'etat Inactif"
+      },
+      {
+        "type": "vitesse_0",
+        "detail": "La Vitesse passe a 0"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_sauvegarde_force_et_dexterite",
+        "detail": "Automatiquement rates"
+      },
+      {
+        "type": "avantage_attaquants",
+        "detail": "Les attaquants ont l'Avantage sur leurs jets d'attaque"
+      },
+      {
+        "type": "coups_critiques_auto",
+        "detail": "Tout attaquant se trouvant a moins de 1,50 m inflige automatiquement un Coup critique"
+      }
+    ],
+    "lire_aussi": [
+      "inactif",
+      "mort",
+      "jet_de_sauvegarde_contre_la_mort"
+    ]
+  },
+  {
+    "id": "inactif",
+    "nom": "Inactif",
+    "categorie": "etat",
+    "description": "Creature incapable d'entreprendre la moindre action ou reaction.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "Impossible d'entreprendre une action, une action bonus ou une reaction"
+      },
+      {
+        "type": "concentration_brisee",
+        "detail": "La Concentration est immediatement brisee"
+      }
+    ],
+    "lire_aussi": [
+      "concentration",
+      "etat"
+    ]
+  },
+  {
+    "id": "dissimule",
+    "nom": "Dissimule",
+    "categorie": "etat",
+    "description": "Creature totalement imperceptible aux sens ordinaires.",
+    "effets": [
+      {
+        "type": "avantage",
+        "detail": "Avantage aux jets d'attaque contre les creatures qui ne peuvent pas voir l'attaquant"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_attaque_ennemis",
+        "detail": "Les attaques contre une creature dissumulee ont le Desavantage"
+      },
+      {
+        "type": "autre",
+        "detail": "La Perception passive ne detecte pas une creature dissumulee"
+      }
+    ],
+    "lire_aussi": [
+      "furtivite",
+      "visibilite_nulle",
+      "perception_passive"
+    ]
+  },
+  {
+    "id": "fige",
+    "nom": "Fige",
+    "categorie": "etat",
+    "description": "Creature totalement paralysee, incapable du moindre mouvement volontaire. Inclut l'etat Inactif.",
+    "effets": [
+      {
+        "type": "neutralise_inclus",
+        "detail": "Inclut tous les effets de l'etat Inactif"
+      },
+      {
+        "type": "vitesse_0",
+        "detail": "La Vitesse passe a 0"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_sauvegarde_force_et_dexterite",
+        "detail": "Automatiquement rates"
+      },
+      {
+        "type": "avantage_attaquants",
+        "detail": "Les attaquants ont l'Avantage"
+      },
+      {
+        "type": "coups_critiques_auto",
+        "detail": "Coup critique automatique si l'attaquant est a moins de 1,50 m"
+      }
+    ],
+    "lire_aussi": [
+      "inactif"
+    ]
+  },
+  {
+    "id": "mineralise",
+    "nom": "Mineralise",
+    "categorie": "etat",
+    "description": "Creature transformee en substance inanimee (pierre, metal, bois...). Inclut l'etat Inactif.",
+    "effets": [
+      {
+        "type": "neutralise_inclus",
+        "detail": "Inclut tous les effets de l'etat Inactif"
+      },
+      {
+        "type": "vitesse_0",
+        "detail": "La Vitesse passe a 0"
+      },
+      {
+        "type": "desavantage",
+        "cible": "jets_sauvegarde_force_et_dexterite",
+        "detail": "Automatiquement rates"
+      },
+      {
+        "type": "immunite",
+        "detail": "Resistance a tous les degats et immunite au poison et aux maladies"
+      },
+      {
+        "type": "avantage_attaquants",
+        "detail": "Les attaquants ont l'Avantage"
+      }
+    ],
+    "lire_aussi": [
+      "inactif",
+      "resistance",
+      "immunite"
+    ]
+  },
+  {
+    "id": "action",
+    "nom": "Action",
+    "categorie": "action",
+    "description": "Activite principale qu'une creature peut entreprendre pendant son tour. La liste des actions disponibles comprend : Attaque, Desengagement, Esquive, Etude, Furtivite, Influence, Intention, Magie, Observation, Pointe, Soutien, Utilisation. D'autres actions sont definies par des aptitudes ou objets specifiques.",
+    "effets": [],
+    "lire_aussi": [
+      "action_bonus",
+      "reaction"
+    ]
+  },
+  {
+    "id": "action_bonus",
+    "nom": "Action Bonus",
+    "categorie": "action",
+    "description": "Action speciale qu'une creature peut entreprendre en plus de son action principale. Une seule Action Bonus par tour. Seules certaines aptitudes de classe, dons ou autres regles permettent d'entreprendre une Action Bonus. Si rien ne le permet explicitement, aucune Action Bonus n'est disponible.",
+    "effets": [],
+    "lire_aussi": [
+      "action",
+      "reaction"
+    ]
+  },
+  {
+    "id": "reaction",
+    "nom": "Reaction",
+    "categorie": "action",
+    "description": "Action speciale entreprise en reponse a un declencheur specifique defini par la regle ou l'aptitude. Une seule reaction disponible par tour. La reaction se recharge au debut de chaque tour. L'Attaque d'Opportunite est l'exemple le plus commun.",
+    "effets": [],
+    "lire_aussi": [
+      "attaque_d_opportunite",
+      "intention"
+    ]
+  },
+  {
+    "id": "attaque",
+    "nom": "Attaque",
+    "categorie": "action",
+    "description": "Lorsqu'on entreprend l'action Attaque, on effectue une ou plusieurs attaques selon les aptitudes disponibles. S'equiper et se desequiper d'une arme est possible dans le cadre de cette action. Se deplacer entre plusieurs attaques est autorise.",
+    "effets": [],
+    "lire_aussi": [
+      "jet_d_attaque",
+      "attaque_a_mains_nues",
+      "attaque_d_opportunite"
+    ]
+  },
+  {
+    "id": "desengagement",
+    "nom": "Desengagement",
+    "categorie": "action",
+    "description": "En entreprenant l'action Desengagement, le deplacement n'est plus susceptible de provoquer une Attaque d'Opportunite jusqu'a la fin du tour.",
+    "effets": [],
+    "lire_aussi": [
+      "attaque_d_opportunite",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "esquive",
+    "nom": "Esquive",
+    "categorie": "action",
+    "description": "En entreprenant l'action Esquive, jusqu'a la fin du prochain tour : les creatures qui attaquent ont le Desavantage sur leurs jets d'attaque ; les jets de sauvegarde de Dexterite sont effectues avec l'Avantage. Ces benefices sont perdus si la creature subit l'etat Inactif ou si sa Vitesse tombe a 0.",
+    "effets": [],
+    "lire_aussi": [
+      "desavantage",
+      "avantage"
+    ]
+  },
+  {
+    "id": "etude",
+    "nom": "Etude",
+    "categorie": "action",
+    "description": "En entreprenant l'action Etude, on effectue un test d'Intelligence associe a un Domaine de savoir. Arcanes (magie), Histoire (faits historiques), Investigation (indices, enigmes), Nature (faune, flore, terrain), Religion (divinites, rites).",
+    "effets": [],
+    "lire_aussi": [
+      "test_de_caracteristique",
+      "expertise"
+    ]
+  },
+  {
+    "id": "furtivite",
+    "nom": "Furtivite",
+    "categorie": "action",
+    "description": "En entreprenant l'action Furtivite, on effectue un test de Dexterite (Discretion) DD 15 a condition d'etre dans une zone de Visibilite nulle, un Abri total ou un Abri naturel. En cas de reussite, la creature devient Dissumulee pour les autres.",
+    "effets": [],
+    "lire_aussi": [
+      "visibilite_nulle",
+      "abri",
+      "dissimule",
+      "perception_passive"
+    ]
+  },
+  {
+    "id": "influence",
+    "nom": "Influence",
+    "categorie": "action",
+    "description": "En entreprenant l'action Influence, on tente d'interagir avec un monstre pour modifier son attitude. Tests d'influence possibles : Charisme (Intimidation) pour intimider, Charisme (Persuasion) pour convaincre, Charisme (Tromperie) pour tromper, Sagesse (Dressage) pour amadouer une bete ou monstruosite.",
+    "effets": [],
+    "lire_aussi": [
+      "amical",
+      "hostile",
+      "indifferent",
+      "attitude"
+    ]
+  },
+  {
+    "id": "intention",
+    "nom": "Intention",
+    "categorie": "action",
+    "description": "En entreprenant l'action Intention, on se prepare a effectuer une action en reaction a un declencheur. Definir l'action prevue et le declencheur. Quand le declencheur se produit, on peut utiliser sa Reaction pour executer l'action ou l'ignorer. Si concentration requise, elle est maintenue jusqu'au declencheur.",
+    "effets": [],
+    "lire_aussi": [
+      "reaction",
+      "concentration"
+    ]
+  },
+  {
+    "id": "magie",
+    "nom": "Magie",
+    "categorie": "action",
+    "description": "En entreprenant l'action Magie, on lance un sort dont le temps d'incantation est d'une action. Si le temps est superieur a 1 minute, on devra consacrer l'action Magie a chaque tour. Briser la Concentration met fin au sort. Lire aussi : Concentration.",
+    "effets": [],
+    "lire_aussi": [
+      "sort",
+      "concentration",
+      "sort_mineur"
+    ]
+  },
+  {
+    "id": "observation",
+    "nom": "Observation",
+    "categorie": "action",
+    "description": "En entreprenant l'action Observation, on effectue un test de Sagesse (Perception) pour detecter quelque chose qui n'est pas evident. Autres competences selon la cible : Arcanes, Histoire, Investigation, Nature, Religion, Medecine.",
+    "effets": [],
+    "lire_aussi": [
+      "perception_passive",
+      "expertise"
+    ]
+  },
+  {
+    "id": "pointe",
+    "nom": "Pointe",
+    "categorie": "action",
+    "description": "En entreprenant l'action Pointe, on beneficie d'un deplacement supplementaire pour ce tour egal a sa Vitesse (avec eventuels modificateurs). Si on dispose d'une Vitesse de 9 m et que la Vitesse est plafonnee, on peut se deplacer jusqu'a 4,50 m de plus. Possibilite de se teleporter de 9 m a 4,50 m.",
+    "effets": [],
+    "lire_aussi": [
+      "vitesse",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "soutien",
+    "nom": "Soutien",
+    "categorie": "action",
+    "description": "En entreprenant l'action Soutien, on aide une autre creature. Aider un test de caracteristique : la creature choisie a l'Avantage au prochain test de la competence ou l'outil choisi. Aider un jet d'attaque : designe un ennemi dans un rayon de 1,50 m ; la prochaine attaque d'un allie contre cet ennemi a l'Avantage.",
+    "effets": [],
+    "lire_aussi": [
+      "avantage",
+      "jet_d_attaque"
+    ]
+  },
+  {
+    "id": "utilisation",
+    "nom": "Utilisation",
+    "categorie": "action",
+    "description": "En entreprenant l'action Utilisation, on interagit avec un objet qui requiert cette action specifique. Certains objets ou aptitudes de classe definissent des actions Utilisation particulieres.",
+    "effets": [],
+    "lire_aussi": [
+      "objet"
+    ]
+  },
+  {
+    "id": "asphyxie",
+    "nom": "Asphyxie",
+    "categorie": "danger",
+    "description": "Une creature peut retenir sa souffle un nombre de minutes egal a 1 + son modificateur de Constitution (minimum 30 secondes). Lorsqu'elle n'a plus d'air, elle commence a suffoquer. Elle recoit 1 niveau d'Epuisement a la fin de chacun de ses tours suivants. L'Epuisement cesse si la creature retrouve de l'air.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "1 niveau d'Epuisement par tour sans air apres la limite atteinte"
+      }
+    ],
+    "lire_aussi": [
+      "epuisement",
+      "danger"
+    ]
+  },
+  {
+    "id": "chute",
+    "nom": "Chute",
+    "categorie": "danger",
+    "description": "Au terme d'une chute, une creature subit 1d6 degats contondants par tranche de 3 m de chute, jusqu'a un maximum de 20d6. La creature atterrit en position Renversee sauf si elle evite les degats. Une creature en chute peut utiliser sa Reaction pour se preparer a l'atterrissage (test de Force ou Dexterite pour reduire les degats).",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "1d6 degats contondants par tranche de 3 m, max 20d6"
+      },
+      {
+        "type": "autre",
+        "detail": "Atterrissage en position Renversee sauf si degats evites"
+      }
+    ],
+    "lire_aussi": [
+      "renverse",
+      "vitesse_de_vol"
+    ]
+  },
+  {
+    "id": "deshydratation",
+    "nom": "Deshydratation",
+    "categorie": "danger",
+    "description": "Une creature a besoin d'une certaine quantite d'eau par jour selon sa categorie de taille (TP: 1 litre, M: 4 litres, G: 18 litres, TG: 64 litres, Gig: 256 litres). Manquer d'eau necessite pour une journee → jet de Constitution DD 15 ou recevoir 1 niveau d'Epuisement. Ce DD augmente de 5 par journee consecutive sans eau.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "Jet de Constitution DD 15 ou 1 niveau d'Epuisement par jour sans eau suffisante"
+      }
+    ],
+    "lire_aussi": [
+      "epuisement"
+    ]
+  },
+  {
+    "id": "embrasement",
+    "nom": "Embrasement",
+    "categorie": "danger",
+    "description": "Une creature embrasee subit 1d4 degats de feu au debut de chacun de ses tours. Elle ou une creature adjacente peut utiliser son action pour eteindre les flammes. Se rouler sur le sol (action Renversement) eteint egalement les flammes. Etre asperge d'eau eteint aussi les flammes.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "1d4 degats de feu au debut de chaque tour"
+      }
+    ],
+    "lire_aussi": [
+      "types_de_degats"
+    ]
+  },
+  {
+    "id": "malnutrition",
+    "nom": "Malnutrition",
+    "categorie": "danger",
+    "description": "Une creature a besoin d'une certaine quantite de nourriture par jour selon sa categorie de taille (TP: 125g, M: 0,5 kg, G: 2 kg, TG: 4 kg, Gig: 32 kg). Manger insuffisamment → 1 niveau d'Epuisement supplementaire a la fin de la journee. Ce niveau peut etre annule en mangeant suffisamment le lendemain.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "1 niveau d'Epuisement par jour sans nourriture suffisante"
+      }
+    ],
+    "lire_aussi": [
+      "epuisement"
+    ]
+  },
+  {
+    "id": "amical",
+    "nom": "Amical",
+    "categorie": "attitude",
+    "description": "Attitude initiale d'une creature favorable. Une creature Amicale est disposee a aider et cooperer. Peut etre influencee par un voyage commun, une histoire partagee ou une action bienveillante.",
+    "effets": [],
+    "lire_aussi": [
+      "influence",
+      "attitude",
+      "hostile",
+      "indifferent"
+    ]
+  },
+  {
+    "id": "hostile",
+    "nom": "Hostile",
+    "categorie": "attitude",
+    "description": "Une creature Hostile vous considere comme un adversaire potentiel. Elle a le Desavantage aux tests visant a influencer favorablement une creature Amicale envers vous.",
+    "effets": [],
+    "lire_aussi": [
+      "influence",
+      "attitude",
+      "amical"
+    ]
+  },
+  {
+    "id": "indifferent",
+    "nom": "Indifferent",
+    "categorie": "attitude",
+    "description": "L'Indifferent est l'attitude par defaut des monstres envers les inconnus. La creature ne souhaite ni vous aider ni vous nuire. C'est l'attitude de depart de la plupart des monstres.",
+    "effets": [],
+    "lire_aussi": [
+      "influence",
+      "attitude",
+      "amical",
+      "hostile"
+    ]
+  },
+  {
+    "id": "attitude",
+    "nom": "Attitude",
+    "categorie": "attitude",
+    "description": "L'Attitude d'une creature reflete sa disposition generale envers un personnage. Une creature adopte une attitude initiale puis peut en changer selon les interactions. Les trois attitudes sont : Amical, Indifferent, Hostile.",
+    "effets": [],
+    "lire_aussi": [
+      "amical",
+      "indifferent",
+      "hostile",
+      "influence"
+    ]
+  },
+  {
+    "id": "cone",
+    "nom": "Cone",
+    "categorie": "zone_effet",
+    "description": "Zone d'effet s'etendant en ligne droite depuis un point d'origine dans une direction choisie. La largeur du Cone a son extremite est egale a sa longueur (ex: Cone de 4,50 m = 4,50 m de large a son extremite). Le point d'origine d'un Cone est toujours dans sa zone d'effet sauf si son createur en decide autrement.",
+    "effets": [],
+    "lire_aussi": [
+      "zone_d_effet"
+    ]
+  },
+  {
+    "id": "cube",
+    "nom": "Cube",
+    "categorie": "zone_effet",
+    "description": "Zone d'effet s'etendant depuis un point d'origine dans toutes les directions en forme cubique. La taille indique la longueur d'une face du Cube. Le point d'origine se situe dans la zone d'effet si le Cube repose au sol. Sauf indication contraire, le createur peut placer le Cube n'importe ou.",
+    "effets": [],
+    "lire_aussi": [
+      "zone_d_effet"
+    ]
+  },
+  {
+    "id": "cylindre",
+    "nom": "Cylindre",
+    "categorie": "zone_effet",
+    "description": "Zone d'effet s'etendant en ligne droite vers le haut ou le bas depuis un point circulaire. La taille specifie le rayon de la base du Cylindre et sa hauteur. Le point d'origine d'un Cylindre se trouve dans sa zone d'effet.",
+    "effets": [],
+    "lire_aussi": [
+      "zone_d_effet"
+    ]
+  },
+  {
+    "id": "emanation",
+    "nom": "Emanation",
+    "categorie": "zone_effet",
+    "description": "Zone d'effet qui s'etend dans toutes les directions depuis une creature ou un objet. L'Emanation se deplace avec la creature ou l'objet d'origine. L'objet d'origine se trouve toujours a l'interieur de l'Emanation.",
+    "effets": [],
+    "lire_aussi": [
+      "zone_d_effet"
+    ]
+  },
+  {
+    "id": "ligne",
+    "nom": "Ligne",
+    "categorie": "zone_effet",
+    "description": "Zone d'effet s'etendant en ligne droite depuis un point d'origine dans une direction choisie. La taille specifie la longueur et la largeur de la Ligne. Une Ligne n'est pas situee dans la zone d'effet si son createur en decide autrement.",
+    "effets": [],
+    "lire_aussi": [
+      "zone_d_effet"
+    ]
+  },
+  {
+    "id": "sphere",
+    "nom": "Sphere",
+    "categorie": "zone_effet",
+    "description": "Zone d'effet s'etendant en ligne droite depuis un point d'origine dans toutes les directions en trois dimensions. La taille specifie le rayon de la Sphere. Le point d'origine d'une Sphere se trouve dans sa zone d'effet sauf si son createur en decide autrement.",
+    "effets": [],
+    "lire_aussi": [
+      "zone_d_effet"
+    ]
+  },
+  {
+    "id": "zone_d_effet",
+    "nom": "Zone d'effet",
+    "categorie": "zone_effet",
+    "description": "Certains sorts et effets couvrent une zone d'effet. Les formes disponibles sont : Cone, Cube, Cylindre, Emanation, Ligne, Sphere. Chaque forme se deploie a partir d'un point d'origine. Les zones d'effet bloquent leurs propres effets si un obstacle les interrompt, sauf indication contraire.",
+    "effets": [],
+    "lire_aussi": [
+      "cone",
+      "cube",
+      "cylindre",
+      "emanation",
+      "ligne",
+      "sphere"
+    ]
+  },
+  {
+    "id": "abri",
+    "nom": "Abri",
+    "categorie": "combat",
+    "description": "Degre de protection offert a une creature par un obstacle entre elle et ses attaquants. Abri leger : +2 a la CA et aux jets de sauvegarde de Dexterite. Abri superieur : +5 a la CA et aux jets de sauvegarde de Dexterite. Abri total : impossible d'etre cible directement.",
+    "effets": [
+      {
+        "type": "autre",
+        "detail": "Abri leger : +2 CA et +2 JS Dexterite"
+      },
+      {
+        "type": "autre",
+        "detail": "Abri superieur : +5 CA et +5 JS Dexterite"
+      },
+      {
+        "type": "autre",
+        "detail": "Abri total : impossible d'etre cible directement"
+      }
+    ],
+    "lire_aussi": [
+      "jet_d_attaque",
+      "jet_de_sauvegarde"
+    ]
+  },
+  {
+    "id": "attaque_a_mains_nues",
+    "nom": "Attaque a mains nues",
+    "categorie": "combat",
+    "description": "Frappe avec une partie du corps (poing, pied, tete, genou...). Degats = 1 + modificateur de Force. Le DD du jet de sauvegarde est de 8 + bonus de maitrise + modificateur de Force ou de Dexterite. Options lors d'un touche : infliger des degats, imposer l'etat Saisi (lutte) ou repousser la cible de 1,50 m (bourrade).",
+    "effets": [],
+    "lire_aussi": [
+      "lutte",
+      "jet_d_attaque"
+    ]
+  },
+  {
+    "id": "attaque_d_opportunite",
+    "nom": "Attaque d'opportunite",
+    "categorie": "combat",
+    "description": "Lorsqu'une creature quitte la portee d'un ennemi sans utiliser l'action Desengagement, cet ennemi peut utiliser sa Reaction pour effectuer une attaque de corps a corps contre elle. L'attaque survient juste avant que la creature ne quitte la portee.",
+    "effets": [],
+    "lire_aussi": [
+      "reaction",
+      "desengagement",
+      "portee"
+    ]
+  },
+  {
+    "id": "avantage",
+    "nom": "Avantage",
+    "categorie": "combat",
+    "description": "Quand une creature a l'Avantage sur un Test d20, elle lance deux fois le d20 et utilise le resultat le plus eleve. On ne peut pas avoir plus d'un Avantage ou Desavantage a la fois ; ils s'annulent mutuellement si les deux sont presents.",
+    "effets": [],
+    "lire_aussi": [
+      "desavantage",
+      "test_d20"
+    ]
+  },
+  {
+    "id": "desavantage",
+    "nom": "Desavantage",
+    "categorie": "combat",
+    "description": "Quand une creature a le Desavantage sur un Test d20, elle lance deux fois le d20 et utilise le resultat le moins eleve. Le Desavantage annule l'Avantage. On ne peut pas avoir plus d'un Desavantage.",
+    "effets": [],
+    "lire_aussi": [
+      "avantage",
+      "test_d20"
+    ]
+  },
+  {
+    "id": "coup_critique",
+    "nom": "Coup critique",
+    "categorie": "combat",
+    "description": "Obtenir un 20 naturel sur un d20 de jet d'attaque est un Coup critique. L'attaque touche automatiquement quelle que soit la CA. Les des de degats de l'attaque sont lances deux fois, puis tous les modificateurs habituels s'ajoutent normalement (sans etre doubles). Certaines aptitudes etendent les plages de Coup critique.",
+    "effets": [],
+    "lire_aussi": [
+      "jet_d_attaque",
+      "jet_de_degats"
+    ]
+  },
+  {
+    "id": "initiative",
+    "nom": "Initiative",
+    "categorie": "combat",
+    "description": "L'Initiative determine la sequence des tours pendant le combat. Valeur d'initiative = 10 + modificateur de Dexterite. Le MD peut demander aux combattants d'utiliser leur valeur d'Initiative a la place du jet de d20. Si egalite, le MD determine l'ordre. Avantage ou Desavantage a l'initiative affecte cette valeur de ±5.",
+    "effets": [],
+    "lire_aussi": [
+      "surprise",
+      "test_d20"
+    ]
+  },
+  {
+    "id": "lutte",
+    "nom": "Lutte",
+    "categorie": "combat",
+    "description": "Manoeuvre pour agripper une creature. Mettre fin a la lutte : effectuer un test de Force (Athletisme) ou de Dexterite (Acrobaties) en opposition au test de Force (Athletisme) du saississeur. En cas de succes, la cible subit l'etat Saisi. Mettre fin : la cible peut depenser une action pour renouveler le test oppose.",
+    "effets": [],
+    "lire_aussi": [
+      "saisi",
+      "attaque_a_mains_nues",
+      "test_de_caracteristique"
+    ]
+  },
+  {
+    "id": "surprise",
+    "nom": "Surprise",
+    "categorie": "combat",
+    "description": "Si une creature est prise par surprise au debut d'un combat, elle subit le Desavantage a son jet d'Initiative. Ce Desavantage est elimine de sa valeur de 5. Lire aussi : Initiative et Combat.",
+    "effets": [
+      {
+        "type": "desavantage",
+        "cible": "initiative",
+        "detail": "Desavantage au jet d'initiative si pris par surprise"
+      }
+    ],
+    "lire_aussi": [
+      "initiative",
+      "furtivite"
+    ]
+  },
+  {
+    "id": "jet_d_attaque",
+    "nom": "Jet d'attaque",
+    "categorie": "combat",
+    "description": "Test d20 representant une tentative d'attaque. Si le resultat egale ou depasse la CA de la cible, l'attaque touche. Modificateurs : bonus de maitrise (si maitrise de l'arme) + modificateur de caracteristique associee. Un 1 naturel est toujours un echec, un 20 naturel est toujours un touche (Coup critique).",
+    "effets": [],
+    "lire_aussi": [
+      "coup_critique",
+      "classe_armure",
+      "test_d20"
+    ]
+  },
+  {
+    "id": "jet_de_degats",
+    "nom": "Jet de degats",
+    "categorie": "combat",
+    "description": "Jet de des applicable pour determiner le nombre de degats infliges a une cible lors d'une attaque ou d'un effet. Le modificateur de caracteristique associe s'ajoute generalement. En cas de Coup critique, les des sont lances deux fois.",
+    "effets": [],
+    "lire_aussi": [
+      "coup_critique",
+      "degats",
+      "jet_d_attaque"
+    ]
+  },
+  {
+    "id": "vitesse",
+    "nom": "Vitesse",
+    "categorie": "deplacement",
+    "description": "Distance maximale qu'une creature peut parcourir lors de son deplacement en un tour. Une creature peut repartir son deplacement avant, apres ou entre ses actions. Types de Vitesse speciaux : escalade, nage, vol. Alterations de Vitesse (Entravé, Esquive, Pointe...) modifient la Vitesse disponible ce tour.",
+    "effets": [],
+    "lire_aussi": [
+      "vitesse_d_escalade",
+      "vitesse_de_nage",
+      "vitesse_de_vol",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "deplacement",
+    "nom": "Deplacement",
+    "categorie": "deplacement",
+    "description": "Pendant son tour, une creature peut se deplacer d'une distance maximale egale a sa Vitesse. Le deplacement peut etre reparti avant, entre et apres les actions. Le Terrain difficile coute le double du deplacement. La Reptation coute egalement le double.",
+    "effets": [],
+    "lire_aussi": [
+      "vitesse",
+      "terrain_difficile",
+      "reptation"
+    ]
+  },
+  {
+    "id": "vitesse_d_escalade",
+    "nom": "Vitesse d'escalade",
+    "categorie": "deplacement",
+    "description": "Certaines creatures disposent d'une Vitesse d'escalade leur permettant de grimper sans depenser de deplacement supplementaire. Sans Vitesse d'escalade, grimper coute le double du deplacement normal.",
+    "effets": [],
+    "lire_aussi": [
+      "vitesse",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "vitesse_de_nage",
+    "nom": "Vitesse de nage",
+    "categorie": "deplacement",
+    "description": "Certaines creatures disposent d'une Vitesse de nage leur permettant de nager sans depenser de deplacement supplementaire. Sans Vitesse de nage, nager coute le double du deplacement normal.",
+    "effets": [],
+    "lire_aussi": [
+      "vitesse",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "vitesse_de_vol",
+    "nom": "Vitesse de vol",
+    "categorie": "deplacement",
+    "description": "Certaines creatures disposent d'une Vitesse de vol leur permettant de se deplacer en l'air. Lorsqu'une creature perd sa Vitesse de vol alors qu'elle est en l'air, elle commence a tomber. Lire aussi : Chute.",
+    "effets": [],
+    "lire_aussi": [
+      "vol",
+      "chute",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "vol",
+    "nom": "Vol",
+    "categorie": "deplacement",
+    "description": "Le vol offre une liberte de deplacement tridimensionnel. La creature utilise sa Vitesse de vol pour se deplacer dans les airs. Certaines creatures ont besoin de battre des ailes pour se maintenir en l'air. Lire aussi : Vol stationnaire.",
+    "effets": [],
+    "lire_aussi": [
+      "vol_stationnaire",
+      "vitesse_de_vol",
+      "chute"
+    ]
+  },
+  {
+    "id": "vol_stationnaire",
+    "nom": "Vol stationnaire",
+    "categorie": "deplacement",
+    "description": "Certaines creatures peuvent rester en suspension dans les airs sans se deplacer. Le vol stationnaire ne necessite pas de deplacement. Une creature en vol stationnaire peut changer d'altitude sans depenser de Vitesse supplementaire.",
+    "effets": [],
+    "lire_aussi": [
+      "vol"
+    ]
+  },
+  {
+    "id": "reptation",
+    "nom": "Reptation",
+    "categorie": "deplacement",
+    "description": "Deplacement effectue en rampant sur le ventre (etat Renverse). Chaque metre de reptation coute le double du deplacement normal. Si on dispose d'une Vitesse de 9 m, on peut ramper jusqu'a 4,50 m.",
+    "effets": [],
+    "lire_aussi": [
+      "renverse",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "saut",
+    "nom": "Saut",
+    "categorie": "deplacement",
+    "description": "Les sauts utilisent une portion du deplacement. Deux types : Saut en hauteur et Saut en longueur. Le deplacement consomme lors du saut compte dans la distance totale de deplacement du tour.",
+    "effets": [],
+    "lire_aussi": [
+      "saut_en_hauteur",
+      "saut_en_longueur",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "saut_en_hauteur",
+    "nom": "Saut en hauteur",
+    "categorie": "deplacement",
+    "description": "Avec un elan d'au moins 3 m : bond vertical = Force × 0,1 m. Sans elan : moitie de cette valeur. En tendant les bras a la verticale : atteindre une hauteur egale a la hauteur du saut plus une fois et demie sa propre taille. Terrain difficile : test d'Athletisme DD 15 pour reussir.",
+    "effets": [],
+    "lire_aussi": [
+      "saut",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "saut_en_longueur",
+    "nom": "Saut en longueur",
+    "categorie": "deplacement",
+    "description": "Avec un elan d'au moins 3 m : distance = Force × 0,3 m. Sans elan : moitie de la distance. Franchir un obstacle au cours du saut necessite un test de Dexterite (Acrobaties) DD 10. Tomber dans un gouffre : le PV peut subir des degats contondants (MJ decide).",
+    "effets": [],
+    "lire_aussi": [
+      "saut",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "terrain_difficile",
+    "nom": "Terrain difficile",
+    "categorie": "deplacement",
+    "description": "Un espace de Terrain difficile coute 1 m de deplacement supplementaire par metre parcouru (donc double). Exemples : boue, herbe haute, neige profonde, gravier instable, eau peu profonde. Une creature de taille TG ou superieure dans un espace suffisamment vaste n'est pas affectee par le Terrain difficile.",
+    "effets": [],
+    "lire_aussi": [
+      "vitesse",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "teleportation",
+    "nom": "Teleportation",
+    "categorie": "deplacement",
+    "description": "La teleportation permet a une creature de se deplacer magiquement de facon instantanee vers un point de destination. Elle disparait et reapparait ailleurs sans traverser l'espace intermediaire. Ce mode de transport ne provoque pas d'Attaque d'Opportunite. Lire aussi : Attaque d'Opportunite.",
+    "effets": [],
+    "lire_aussi": [
+      "attaque_d_opportunite"
+    ]
+  },
+  {
+    "id": "sort",
+    "nom": "Sort",
+    "categorie": "magie",
+    "description": "Effet magique dont les proprietes sont definies au chapitre des sorts. Un sort a un niveau (0 a 9), une ecole, un temps d'incantation, une portee, des composantes et une duree. Lancer un sort consomme generalement un emplacement de sort du niveau correspondant ou superieur.",
+    "effets": [],
+    "lire_aussi": [
+      "sort_mineur",
+      "concentration",
+      "rituel",
+      "magie"
+    ]
+  },
+  {
+    "id": "sort_mineur",
+    "nom": "Sort mineur",
+    "categorie": "magie",
+    "description": "Sort de niveau 0 qui peut etre lance sans consommer d'emplacement de sort. Disponible a volonte. La plupart des sorts mineurs gagnent en puissance a certains niveaux de personnage. Lancer un sort mineur utilise l'action Magie.",
+    "effets": [],
+    "lire_aussi": [
+      "sort",
+      "magie"
+    ]
+  },
+  {
+    "id": "concentration",
+    "nom": "Concentration",
+    "categorie": "magie",
+    "description": "Certains sorts requierent la Concentration pour maintenir leurs effets. Briser la Concentration : subir des degats (JS Constitution DD = max(10, moitie des degats recus)), etre Neutralise, mourir, ou choisir volontairement d'y mettre fin. Une seule Concentration possible a la fois. Lancer un autre sort a Concentration brise le precedent.",
+    "effets": [
+      {
+        "type": "concentration_brisee",
+        "detail": "JS Constitution DD = max(10, moitie des degats) si degats subis"
+      }
+    ],
+    "lire_aussi": [
+      "sort",
+      "inactif"
+    ]
+  },
+  {
+    "id": "rituel",
+    "nom": "Rituel",
+    "categorie": "magie",
+    "description": "Certains sorts portent la mention Rituel. Lancer ce sort sous forme de rituel ne consomme pas d'emplacement de sort mais prend 10 minutes de plus que le temps d'incantation normal. Certaines classes peuvent lancer des rituels sans les avoir prepares.",
+    "effets": [],
+    "lire_aussi": [
+      "sort",
+      "magie"
+    ]
+  },
+  {
+    "id": "focaliseur_d_incantation",
+    "nom": "Focaliseur d'incantation",
+    "categorie": "magie",
+    "description": "Objet permettant de remplacer les composantes materielles d'un sort (hors composantes ayant un cout). Certaines classes autorisent un focaliseur specifique (baton, orbe, symbole sacre, baguette...). Le focaliseur doit etre tenu en main ou porte sur soi lors du lancer du sort.",
+    "effets": [],
+    "lire_aussi": [
+      "sort"
+    ]
+  },
+  {
+    "id": "harmonisation",
+    "nom": "Harmonisation",
+    "categorie": "magie",
+    "description": "Certains objets magiques requierent une Harmonisation avant d'en utiliser les proprietes. L'harmonisation necessite 1 heure de repos consacrees a l'objet. Un personnage peut etre harmonise avec au maximum 3 objets a la fois. Briser l'harmonisation : posseder l'objet 24 heures a part ou mourir.",
+    "effets": [],
+    "lire_aussi": [
+      "objet"
+    ]
+  },
+  {
+    "id": "effet_magique",
+    "nom": "Effet magique",
+    "categorie": "magie",
+    "description": "Un effet est qualifie de magique s'il est cree par un sort ou produit par un objet magique. Un effet n'est PAS magique s'il est produit par une creature via ses aptitudes naturelles (souffle de dragon, etc.) ou par un objet commun.",
+    "effets": [],
+    "lire_aussi": [
+      "sort",
+      "harmonisation"
+    ]
+  },
+  {
+    "id": "malediction",
+    "nom": "Malediction",
+    "categorie": "magie",
+    "description": "Certains effets magiques conferent une malediction sur un objet ou une creature. L'effet que confere une malediction est defini dans sa description. Une malediction peut generalement etre levee par le sort Desinvocation magique ou par des sorts de Restauration superieure.",
+    "effets": [],
+    "lire_aussi": [
+      "effet_magique"
+    ]
+  },
+  {
+    "id": "illusion",
+    "nom": "Illusion",
+    "categorie": "magie",
+    "description": "Certains sorts et effets creent des illusions. Une illusion est insubstantielle (elle n'a pas de substance physique). L'Intuition (Sagesse) peut reveler sa nature : interaction physique la traverse, examen proche peut reveler l'artifice. Une illusion auditive et une illusion visuelle peuvent se combiner pour etre plus convaincantes.",
+    "effets": [],
+    "lire_aussi": [
+      "vision_lucide",
+      "effet_magique"
+    ]
+  },
+  {
+    "id": "test_d20",
+    "nom": "Test d20",
+    "categorie": "mecanique",
+    "description": "Mechanique centrale du jeu : lancer 1d20, ajouter les modificateurs applicables et comparer le resultat a un Degre de Difficulte (DD) ou a la Classe d'Armure (CA). La notion de Test d20 regroupe les jets d'attaque, les jets de sauvegarde et les tests de caracteristique. Un 1 naturel est toujours un echec, un 20 naturel est toujours un succes.",
+    "effets": [],
+    "lire_aussi": [
+      "avantage",
+      "desavantage",
+      "degre_de_difficulte",
+      "jet_d_attaque",
+      "jet_de_sauvegarde",
+      "test_de_caracteristique"
+    ]
+  },
+  {
+    "id": "test_de_caracteristique",
+    "nom": "Test de caracteristique",
+    "categorie": "mecanique",
+    "description": "Test d20 + modificateur de caracteristique (et bonus de maitrise si competence appropriee maitrisee) compare a un DD fixe par le MD. Reflete la capacite naturelle ou la formation d'une creature. Les six caracteristiques : Force, Dexterite, Constitution, Intelligence, Sagesse, Charisme.",
+    "effets": [],
+    "lire_aussi": [
+      "test_d20",
+      "competence",
+      "maitrise",
+      "degre_de_difficulte"
+    ]
+  },
+  {
+    "id": "jet_de_sauvegarde",
+    "nom": "Jet de sauvegarde",
+    "categorie": "mecanique",
+    "description": "Test d20 + modificateur de caracteristique (et bonus de maitrise si maitrise du jet de sauvegarde) compare a un DD. Represente la tentative instinctive de resister a un sort, un piege ou un autre danger. Souvent declenche par un effet exterieur. En cas d'echec, l'effet s'applique partiellement ou totalement.",
+    "effets": [],
+    "lire_aussi": [
+      "test_d20",
+      "maitrise"
+    ]
+  },
+  {
+    "id": "jet_de_sauvegarde_contre_la_mort",
+    "nom": "Jet de sauvegarde contre la mort",
+    "categorie": "mecanique",
+    "description": "Quand une creature tombe a 0 PV, elle doit effectuer un jet de sauvegarde de Constitution DD 10 au debut de chacun de ses tours. 3 succes → creature Stabilisee. 3 echecs → creature morte. Un 1 naturel compte comme deux echecs. Un 20 naturel → la creature se releve avec 1 PV.",
+    "effets": [],
+    "lire_aussi": [
+      "stabilise",
+      "mort",
+      "points_de_vie"
+    ]
+  },
+  {
+    "id": "degre_de_difficulte",
+    "nom": "Degre de difficulte",
+    "categorie": "mecanique",
+    "description": "Le DD est le nombre cible a atteindre ou depasser lors d'un test de caracteristique ou d'un jet de sauvegarde pour reussir. Difficultes indicatives : DD 5 tres facile, DD 10 facile, DD 15 modere, DD 20 difficile, DD 25 tres difficile, DD 30 presque impossible.",
+    "effets": [],
+    "lire_aussi": [
+      "test_de_caracteristique",
+      "jet_de_sauvegarde"
+    ]
+  },
+  {
+    "id": "classe_armure",
+    "nom": "Classe d'armure",
+    "categorie": "mecanique",
+    "description": "La CA d'une creature est le nombre qu'un jet d'attaque doit egaliser ou depasser pour toucher. Valeur de base sans armure : 10 + modificateur de Dexterite. Porter une armure impose sa propre formule de calcul. Un bouclier ajoute +2 a la CA.",
+    "effets": [],
+    "lire_aussi": [
+      "jet_d_attaque",
+      "abri"
+    ]
+  },
+  {
+    "id": "competence",
+    "nom": "Competence",
+    "categorie": "mecanique",
+    "description": "Domaine de specialisation associe a une caracteristique. La maitrise d'une competence permet d'ajouter le bonus de maitrise aux tests de caracteristique correspondants. Exemples : Athletisme (Force), Discretion (Dexterite), Arcanes (Intelligence), Perception (Sagesse), Persuasion (Charisme).",
+    "effets": [],
+    "lire_aussi": [
+      "maitrise",
+      "expertise",
+      "test_de_caracteristique"
+    ]
+  },
+  {
+    "id": "maitrise",
+    "nom": "Maitrise",
+    "categorie": "mecanique",
+    "description": "La maitrise d'une arme, armure, competence, outil ou jet de sauvegarde permet d'ajouter le bonus de maitrise aux jets correspondants. Le bonus de maitrise commence a +2 au niveau 1 et augmente jusqu'a +6 au niveau 17. On ne peut pas ajouter le bonus de maitrise plus d'une fois a un meme jet.",
+    "effets": [],
+    "lire_aussi": [
+      "expertise",
+      "competence"
+    ]
+  },
+  {
+    "id": "expertise",
+    "nom": "Expertise",
+    "categorie": "mecanique",
+    "description": "L'Expertise est une aptitude qui double le bonus de maitrise pour une competence ou un outil donne. Ainsi, au lieu d'ajouter le bonus de maitrise une fois, on l'ajoute deux fois. L'Expertise n'est applicable qu'aux elements pour lesquels on possede deja la maitrise.",
+    "effets": [],
+    "lire_aussi": [
+      "maitrise",
+      "competence"
+    ]
+  },
+  {
+    "id": "points_de_vie",
+    "nom": "Points de vie",
+    "categorie": "mecanique",
+    "description": "Mesure chiffree de la resistance d'une creature a subir des degats. Les degats reduisent les PV ; les soins les restaurent. Quand les PV tombent a 0, la creature s'effondre et doit effectuer des jets de sauvegarde contre la mort. Le maximum de PV est determine par les Des de vie + modificateur de Constitution.",
+    "effets": [],
+    "lire_aussi": [
+      "points_de_vie_temporaires",
+      "soins",
+      "degats",
+      "jet_de_sauvegarde_contre_la_mort"
+    ]
+  },
+  {
+    "id": "points_de_vie_temporaires",
+    "nom": "Points de vie temporaires",
+    "categorie": "mecanique",
+    "description": "Matelas supplementaire contre les degats. Les degats sont d'abord preleves sur les PV temporaires avant d'affecter les PV reels. Les PV temporaires ne s'accumulent pas ; on garde seulement la valeur la plus elevee. Ils disparaissent apres un Repos long sauf indication contraire.",
+    "effets": [],
+    "lire_aussi": [
+      "points_de_vie",
+      "degats"
+    ]
+  },
+  {
+    "id": "degats",
+    "nom": "Degats",
+    "categorie": "mecanique",
+    "description": "Representation chiffree des prejudices qui font perdre des PV a une creature ou un objet. Types de degats : Acide, Contondant, Feu, Froid, Foudre, Necrotique, Perforant, Poison, Psychique, Radiant, Tonnerre, Tranchant. La Resistance divise les degats par 2 ; la Vulnerabilite les double ; l'Immunite les annule.",
+    "effets": [],
+    "lire_aussi": [
+      "resistance",
+      "vulnerabilite",
+      "immunite",
+      "types_de_degats"
+    ]
+  },
+  {
+    "id": "types_de_degats",
+    "nom": "Types de degats",
+    "categorie": "mecanique",
+    "description": "Chaque source de degats a un type : Acide (liquides corrosifs), Contondant (chocs physiques), Feu (flammes), Froid (glace, souffle glacial), Foudre (electricite), Necrotique (energie drainant la vie), Perforant (pointes, fleches), Poison (gaz toxique), Psychique (attaque mentale), Radiant (energie sacree), Tonnerre (son), Tranchant (lames, griffes).",
+    "effets": [],
+    "lire_aussi": [
+      "degats",
+      "resistance",
+      "vulnerabilite",
+      "immunite"
+    ]
+  },
+  {
+    "id": "resistance",
+    "nom": "Resistance",
+    "categorie": "mecanique",
+    "description": "La Resistance a un type de degats divise les degats recus de ce type par 2 (arrondi inferieur). La Resistance ne s'applique qu'une seule fois, meme si plusieurs sources la conferent. La Resistance et la Vulnerabilite s'annulent mutuellement.",
+    "effets": [],
+    "lire_aussi": [
+      "vulnerabilite",
+      "immunite",
+      "degats"
+    ]
+  },
+  {
+    "id": "vulnerabilite",
+    "nom": "Vulnerabilite",
+    "categorie": "mecanique",
+    "description": "La Vulnerabilite a un type de degats double les degats recus de ce type. La Vulnerabilite ne s'applique qu'une seule fois, meme si plusieurs sources la conferent.",
+    "effets": [],
+    "lire_aussi": [
+      "resistance",
+      "immunite",
+      "degats"
+    ]
+  },
+  {
+    "id": "immunite",
+    "nom": "Immunite",
+    "categorie": "mecanique",
+    "description": "L'Immunite contre un type de degats ou un etat signifie que la creature ne subit aucun degat de ce type ou n'est pas affectee par cet etat. L'Immunite a la priorite sur la Resistance et la Vulnerabilite.",
+    "effets": [
+      {
+        "type": "immunite",
+        "detail": "Aucun degat du type immunise, ou non affecte par l'etat immunise"
+      }
+    ],
+    "lire_aussi": [
+      "resistance",
+      "vulnerabilite"
+    ]
+  },
+  {
+    "id": "soins",
+    "nom": "Soins",
+    "categorie": "mecanique",
+    "description": "Les soins permettent de recuperer des PV. Un sort, une aptitude ou un repos peut octroyer des soins. Une creature ne peut pas depasser son maximum de PV grace aux soins. Une creature morte ne peut pas beneficier de soins ordinaires.",
+    "effets": [],
+    "lire_aussi": [
+      "points_de_vie",
+      "repos_court",
+      "repos_long"
+    ]
+  },
+  {
+    "id": "seuil_de_degats",
+    "nom": "Seuil de degats",
+    "categorie": "mecanique",
+    "description": "Certaines creatures ou objets sont si resistants qu'ils sont immunises contre les degats inferieurs a un certain seuil. Si les degats recus en une seule attaque sont inferieurs au seuil, ils sont ignores. S'ils depassent le seuil, le nombre total de degats s'applique (pas seulement l'exces).",
+    "effets": [],
+    "lire_aussi": [
+      "degats",
+      "immunite"
+    ]
+  },
+  {
+    "id": "des_de_vie",
+    "nom": "Des de vie",
+    "categorie": "mecanique",
+    "description": "Les Des de vie (DV) des monstres representent une estimation des PV et de leur role dans la conception des rencontres. La valeur moyenne des DV est utilisee pour les statistiques officielles. Chaque classe de personnage possede un type de De de vie. Lors d'un Repos court, on peut depenser des DV pour recuperer des PV.",
+    "effets": [],
+    "lire_aussi": [
+      "points_de_vie",
+      "repos_court"
+    ]
+  },
+  {
+    "id": "capacite_de_charge",
+    "nom": "Capacite de charge",
+    "categorie": "mecanique",
+    "description": "La capacite de charge maximale d'une creature est determinee par sa valeur de Force et sa categorie de taille. TP: For × 3,75 kg, M: For × 7,5 kg, G: For × 15 kg, TG: For × 30 kg, Gig: For × 60 kg. Pousser ou tirer : le double de la charge max. Lorsque la charge depasse la capacite, la Vitesse est plafonnee a 1,50 m.",
+    "effets": [],
+    "lire_aussi": [
+      "categorie_de_taille",
+      "vitesse"
+    ]
+  },
+  {
+    "id": "categorie_de_taille",
+    "nom": "Categorie de taille",
+    "categorie": "mecanique",
+    "description": "Chaque creature appartient a une categorie de taille qui determine l'espace qu'elle occupe en combat. Categories : Tres petite (TP), Petite (P), Moyenne (M), Grande (G), Tres grande (TG), Gigantesque (Gig). La taille d'un objet determine ses points de vie et sa robustesse.",
+    "effets": [],
+    "lire_aussi": [
+      "capacite_de_charge"
+    ]
+  },
+  {
+    "id": "perception_passive",
+    "nom": "Perception passive",
+    "categorie": "mecanique",
+    "description": "Valeur representant la vigilance passive d'une creature = 10 + bonus de Sagesse (Perception). Utilisee sans jet de de pour detecter automatiquement quelque chose d'evident. Le MD l'utilise pour determiner si un personnage remarque quelque chose sans qu'il effectue de jet.",
+    "effets": [],
+    "lire_aussi": [
+      "observation",
+      "expertise"
+    ]
+  },
+  {
+    "id": "perception_des_vibrations",
+    "nom": "Perception des vibrations",
+    "categorie": "mecanique",
+    "description": "Capacite a percevoir les creatures environnantes via les vibrations dans un perimetre specifie, a condition que la creature et les cibles soient en contact physique avec la meme surface (sol, eau, etc.). Les creatures en vol ou suspendues dans les airs ne peuvent pas etre detectees par ce sens.",
+    "effets": [],
+    "lire_aussi": [
+      "vision_aveugle"
+    ]
+  },
+  {
+    "id": "vision_aveugle",
+    "nom": "Vision aveugle",
+    "categorie": "mecanique",
+    "description": "Capacite a percevoir l'environnement sans s'appuyer sur la vue physique, dans un rayon specifie. Dans ce rayon : voir les creatures invisibles et les tenebres, sans Desavantage. Les creatures et objets dans ce rayon ne beneficient d'aucun avantage lie a l'invisibilite ou aux tenebres contre celui qui possede ce sens.",
+    "effets": [],
+    "lire_aussi": [
+      "vision_dans_le_noir",
+      "vision_lucide",
+      "dissimule"
+    ]
+  },
+  {
+    "id": "vision_dans_le_noir",
+    "nom": "Vision dans le noir",
+    "categorie": "mecanique",
+    "description": "Capacite a voir dans les conditions de Lumiere faible comme si c'etait de la Lumiere vive, et dans les Tenebres comme si c'etait de la Lumiere faible (mais en nuances de gris dans les tenebres). La Vision dans le noir a un rayon specifique au-dela duquel elle n'est plus efficace.",
+    "effets": [],
+    "lire_aussi": [
+      "vision_aveugle",
+      "lumiere_faible",
+      "tenebres"
+    ]
+  },
+  {
+    "id": "vision_lucide",
+    "nom": "Vision lucide",
+    "categorie": "mecanique",
+    "description": "Vision extraordinaire permettant de s'affranchir de nombreux obstacles visuels. Tenebres : voir comme dans la Lumiere vive. Invisible : voir les creatures et objets. Illusions visuelles : paraissent transparentes, resistance automatique aux jets de sauvegarde associes. Transformations magiques : voir la vraie forme.",
+    "effets": [],
+    "lire_aussi": [
+      "vision_aveugle",
+      "vision_dans_le_noir",
+      "illusion"
+    ]
+  },
+  {
+    "id": "visibilite_nulle",
+    "nom": "Visibilite nulle",
+    "categorie": "mecanique",
+    "description": "Zone totalement plongee dans les Tenebres ou obstruee, rendant toute vision impossible sans capacite speciale. Une creature dans une zone de Visibilite nulle est consideree comme Dissumulee (si les autres ne peuvent pas la percevoir autrement). Lire aussi : Vision aveugle et Ténèbres.",
+    "effets": [],
+    "lire_aussi": [
+      "visibilite_reduite",
+      "tenebres",
+      "dissimule",
+      "vision_aveugle"
+    ]
+  },
+  {
+    "id": "visibilite_reduite",
+    "nom": "Visibilite reduite",
+    "categorie": "mecanique",
+    "description": "Zone partiellement obscurcissant la vision, comme la Lumiere faible, le brouillard ou la precipitation. Dans une zone de Visibilite reduite, les creatures subissent le Desavantage aux jets de Sagesse (Perception) bases sur la vue.",
+    "effets": [
+      {
+        "type": "desavantage",
+        "cible": "perception_visuelle"
+      }
+    ],
+    "lire_aussi": [
+      "lumiere_faible",
+      "visibilite_nulle"
+    ]
+  },
+  {
+    "id": "lumiere_faible",
+    "nom": "Lumiere faible",
+    "categorie": "mecanique",
+    "description": "Zone de Visibilite reduite. Crepuscule, lumiere de bougie a distance, clair de lune... Une creature dans la Lumiere faible subit le Desavantage aux tests de Sagesse (Perception) bases sur la vue. La Vision dans le noir traite la Lumiere faible comme de la Lumiere vive.",
+    "effets": [],
+    "lire_aussi": [
+      "lumiere_vive",
+      "visibilite_reduite",
+      "vision_dans_le_noir"
+    ]
+  },
+  {
+    "id": "lumiere_vive",
+    "nom": "Lumiere vive",
+    "categorie": "mecanique",
+    "description": "Zone de visibilite normale (soleil, torche, sort de lumieres vives). Dans une zone de Lumiere vive, aucune penalite de visibilite ne s'applique.",
+    "effets": [],
+    "lire_aussi": [
+      "lumiere_faible",
+      "tenebres"
+    ]
+  },
+  {
+    "id": "tenebres",
+    "nom": "Tenebres",
+    "categorie": "mecanique",
+    "description": "Zone de Visibilite nulle pour toute creature sans Vision dans le noir ou Vision aveugle. Correspond a l'obscurite totale. Certains sorts creent des Tenebres magiques impenetrables meme par la Vision dans le noir ordinaire.",
+    "effets": [],
+    "lire_aussi": [
+      "visibilite_nulle",
+      "vision_dans_le_noir",
+      "vision_aveugle"
+    ]
+  },
+  {
+    "id": "repos_court",
+    "nom": "Repos court",
+    "categorie": "mecanique",
+    "description": "Periode d'inactivite d'au moins 1 heure, sans effort soutenu. Benefices a la fin : depenser un ou plusieurs Des de vie pour recuperer des PV (lancer le DV + modificateur de Constitution par DV depense). Certaines aptitudes se rechargent sur Repos court. Un Repos court interrompu n'octroie aucun benefice.",
+    "effets": [],
+    "lire_aussi": [
+      "repos_long",
+      "des_de_vie"
+    ]
+  },
+  {
+    "id": "repos_long",
+    "nom": "Repos long",
+    "categorie": "mecanique",
+    "description": "Periode d'inactivite prolongee d'au moins 8 heures avec au minimum 6 heures de sommeil. Benefices : recuperer tous les PV, la moitie des DV depenses (minimum 1), les aptitudes et emplacements de sort. Reduire l'Epuisement de 1. Certaines aptitudes se rechargent sur Repos long uniquement. Un seul Repos long par 24 heures.",
+    "effets": [],
+    "lire_aussi": [
+      "repos_court",
+      "epuisement"
+    ]
+  },
+  {
+    "id": "inspiration_heroique",
+    "nom": "Inspiration heroique",
+    "categorie": "mecanique",
+    "description": "Ressource speciale qu'un personnage joueur peut posseder. L'utiliser permet de relancer un de (d20 ou autre) avant de connaitre le resultat. Le nouveau resultat doit etre conserve. Une creature ne peut posseder qu'une seule Inspiration heroique a la fois. Elle peut etre transmise a un autre joueur.",
+    "effets": [],
+    "lire_aussi": []
+  },
+  {
+    "id": "stabilise",
+    "nom": "Stabilise",
+    "categorie": "mecanique",
+    "description": "Une creature a 0 PV est Stabilisee si elle cesse d'effectuer des jets de sauvegarde contre la mort (3 succes ou soins recus). Une creature Stabilisee reste inconsciente et a 0 PV mais ne risque plus de mourir de ses jets. Elle recupere 1 PV apres 1d4 heures (sauf si elle est soignee avant).",
+    "effets": [],
+    "lire_aussi": [
+      "jet_de_sauvegarde_contre_la_mort",
+      "mort",
+      "points_de_vie"
+    ]
+  },
+  {
+    "id": "mort",
+    "nom": "Mort",
+    "categorie": "mecanique",
+    "description": "Une creature est morte quand ses PV tombent a 0 et qu'elle echoue a trois jets de sauvegarde contre la mort, ou quand elle subit des degats massifs en une seule fois (exces de degats = PV max en negatif). Des sorts et aptitudes peuvent rappeler les creatures a la vie.",
+    "effets": [],
+    "lire_aussi": [
+      "jet_de_sauvegarde_contre_la_mort",
+      "stabilise",
+      "points_de_vie"
+    ]
+  },
+  {
+    "id": "etat",
+    "nom": "Etat",
+    "categorie": "mecanique",
+    "description": "Condition temporaire affectant les capacites d'une creature. Un etat s'applique selon les regles d'un sort, d'une aptitude ou d'un danger, et cesse selon les conditions precisees dans la source. La liste des etats du jeu : Renverse, Saisi, Sourd, Sans vision, Ensorcele, Terrorise, Intoxique, Immobilise, Epuisement, Sonne, Inerte, Inactif, Dissimule, Fige, Mineralise.",
+    "effets": [],
+    "lire_aussi": [
+      "renverse",
+      "saisi",
+      "sourd",
+      "sans_vision",
+      "ensorcele",
+      "terrorise",
+      "intoxique",
+      "immobilise",
+      "epuisement",
+      "sonne",
+      "inerte",
+      "inactif",
+      "dissimule",
+      "fige",
+      "mineralise"
+    ]
+  },
+  {
+    "id": "alignement",
+    "nom": "Alignement",
+    "categorie": "mecanique",
+    "description": "L'alignement reflete les valeurs ethiques et morales generales d'une creature. Deux axes : Loi/Chaos et Bien/Mal. Les neuf alignements possibles incluent Loyal Bon, Neutre Bon, Chaotique Bon, Loyal Neutre, Vrai Neutre, Chaotique Neutre, Loyal Mauvais, Neutre Mauvais, Chaotique Mauvais.",
+    "effets": [],
+    "lire_aussi": []
+  },
+  {
+    "id": "facteur_de_puissance",
+    "nom": "Facteur de puissance",
+    "categorie": "mecanique",
+    "description": "Le FP synthetise la menace que represente un monstre et est utilise pour estimer la difficulte d'une rencontre. Si le FP est inferieur au niveau du groupe, la rencontre est facile. Il est explique plus en detail dans le guide du MD pour preparer les combats.",
+    "effets": [],
+    "lire_aussi": [
+      "rencontre"
+    ]
+  },
+  {
+    "id": "rencontre",
+    "nom": "Rencontre",
+    "categorie": "mecanique",
+    "description": "Une rencontre est une scene au cours d'une aventure qui teste les aptitudes du groupe. Les rencontres incluent les combats, les interactions sociales et certains pieges ou obstacles. Lire aussi : Exploration et Combat.",
+    "effets": [],
+    "lire_aussi": [
+      "aventure"
+    ]
+  },
+  {
+    "id": "aventure",
+    "nom": "Aventure",
+    "categorie": "mecanique",
+    "description": "Une aventure est une succession de rencontres formant une histoire. Elle prend corps parmi les rencontres et les aventures secondaires. Lire aussi : Rencontre.",
+    "effets": [],
+    "lire_aussi": [
+      "rencontre"
+    ]
+  },
+  {
+    "id": "type_de_creature",
+    "nom": "Type de creature",
+    "categorie": "mecanique",
+    "description": "Chaque creature appartient a un type qui definit certaines interactions avec les regles. Types disponibles : Aberration, Artificiel, Bete, Celeste, Dragon, Elementaire, Fee, Fielon, Humanoide, Morte-vivant, Plante, Vase. Certains sorts et aptitudes n'affectent que certains types.",
+    "effets": [],
+    "lire_aussi": []
+  },
+  {
+    "id": "creature",
+    "nom": "Creature",
+    "categorie": "mecanique",
+    "description": "Tout etre vivant ou anime du monde de jeu, y compris les personnages joueurs. Toutes les creatures appartiennent a un type de creature. Lire aussi : Type de creature.",
+    "effets": [],
+    "lire_aussi": [
+      "type_de_creature",
+      "monstre",
+      "personnage_joueur"
+    ]
+  },
+  {
+    "id": "monstre",
+    "nom": "Monstre",
+    "categorie": "mecanique",
+    "description": "Toute creature placee sous le controle du MD est un monstre, meme si elle est bien intentionnee. Lire aussi : Creature et PNJ.",
+    "effets": [],
+    "lire_aussi": [
+      "creature",
+      "personnage_non_joueur"
+    ]
+  },
+  {
+    "id": "personnage_joueur",
+    "nom": "Personnage joueur",
+    "categorie": "mecanique",
+    "description": "Un personnage joueur (PJ) est un personnage controle directement par un joueur a la table (et non par le MD). Voir chapitre 2 pour la creation de personnage.",
+    "effets": [],
+    "lire_aussi": [
+      "personnage_non_joueur"
+    ]
+  },
+  {
+    "id": "personnage_non_joueur",
+    "nom": "Personnage non joueur",
+    "categorie": "mecanique",
+    "description": "Un PNJ est un monstre ou une creature avec un nom et une personnalite distincte. Controlee par le MD. Lire aussi : Monstre.",
+    "effets": [],
+    "lire_aussi": [
+      "monstre"
+    ]
+  },
+  {
+    "id": "objet",
+    "nom": "Objet",
+    "categorie": "mecanique",
+    "description": "Un objet est une chose inanimee qui n'est pas un sort ou un effet. Les objets ont des PV et une CA propres selon leur materiau et leur taille. Un objet tombe a 0 PV quand il est detruit. Lire aussi : Bris des objets.",
+    "effets": [],
+    "lire_aussi": [
+      "bris_des_objets",
+      "capacite_de_charge"
+    ]
+  },
+  {
+    "id": "bris_des_objets",
+    "nom": "Bris des objets",
+    "categorie": "mecanique",
+    "description": "Les objets peuvent etre endommages par les attaques et par certains effets. Les objets tres fragiles (fioles, verre) sont detruits au premier impact. Les objets robustes (mobilier, table) necessite plusieurs impacts. Le MD peut autoriser un personnage a briser un objet avec l'action Attaque.",
+    "effets": [],
+    "lire_aussi": [
+      "objet"
+    ]
+  },
+  {
+    "id": "en_peril",
+    "nom": "En peril",
+    "categorie": "mecanique",
+    "description": "Une creature est En peril quand il lui reste la moitie ou moins de son maximum de PV. Certaines aptitudes de classe ou regles font reference a cet etat pour declencher des effets specifiques.",
+    "effets": [],
+    "lire_aussi": [
+      "points_de_vie"
+    ]
+  },
+  {
+    "id": "ennemi",
+    "nom": "Ennemi",
+    "categorie": "mecanique",
+    "description": "Une creature est l'ennemi d'une autre quand elles s'opposent activement en combat ou que les regles ou le MD les designent comme telles. L'oppose d'un Allie.",
+    "effets": [],
+    "lire_aussi": [
+      "allie"
+    ]
+  },
+  {
+    "id": "allie",
+    "nom": "Allie",
+    "categorie": "mecanique",
+    "description": "Une creature alliee appartient au meme camp qu'une autre dans le cadre du jeu ou d'un combat. Un allie est determine par les regles ou le MD selon le contexte.",
+    "effets": [],
+    "lire_aussi": [
+      "ennemi"
+    ]
+  },
+  {
+    "id": "allonge",
+    "nom": "Allonge",
+    "categorie": "mecanique",
+    "description": "La portee naturelle pour les attaques de corps a corps. Toutes les creatures ont par defaut une allonge de 1,50 m, sauf indication contraire dans leur profil. Certaines armes ou aptitudes etendent l'allonge au-dela de 1,50 m.",
+    "effets": [],
+    "lire_aussi": [
+      "attaque",
+      "attaque_d_opportunite"
+    ]
+  },
+  {
+    "id": "espace_inoccupe",
+    "nom": "Espace inoccupe",
+    "categorie": "mecanique",
+    "description": "Un espace est inoccupe si aucune creature ne s'y trouve et qu'il n'est pas entierement rempli par des objets. Une creature peut traverser l'espace d'une creature alliee mais pas s'y arreter.",
+    "effets": [],
+    "lire_aussi": [
+      "espace_occupe",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "espace_occupe",
+    "nom": "Espace occupe",
+    "categorie": "mecanique",
+    "description": "Un espace est occupe si une creature s'y trouve ou s'il est entierement rempli par des objets. Une creature ne peut generalement pas entrer dans l'espace occupe d'une creature ennemie.",
+    "effets": [],
+    "lire_aussi": [
+      "espace_inoccupe",
+      "deplacement"
+    ]
+  },
+  {
+    "id": "telepathie",
+    "nom": "Telepathie",
+    "categorie": "mecanique",
+    "description": "Faculte magique permettant de communiquer par la pensee avec une creature a distance. Pas besoin de partager une langue. La creature telepathique peut initier ou clore la connexion. Le contact telepathique est generalement limite par une portee et peut etre interrompu si la creature subit l'etat Inactif.",
+    "effets": [],
+    "lire_aussi": []
+  },
+  {
+    "id": "metamorphes",
+    "nom": "Metamorphes",
+    "categorie": "mecanique",
+    "description": "Creatures capables de changer de forme a volonte. Un metamorphe sous forme alternative conserve ses caracteristiques (sauf indication contraire dans la description) mais perd les traits propres a sa forme d'origine. Si un metamorphe meurt, il reprend sa forme naturelle.",
+    "effets": [],
+    "lire_aussi": [
+      "type_de_creature"
+    ]
+  },
+  {
+    "id": "possession",
+    "nom": "Possession",
+    "categorie": "mecanique",
+    "description": "Certains effets permettent a une creature ou entite de prendre le controle du corps d'une autre. Le mode de fonctionnement de la possession (controle des actions, jets de sauvegarde pour resister...) est precise dans la description de l'effet ou du sort qui l'engendre.",
+    "effets": [],
+    "lire_aussi": [
+      "effet_magique"
+    ]
+  },
+  {
+    "id": "formation_aux_armures",
+    "nom": "Formation aux armures",
+    "categorie": "mecanique",
+    "description": "La formation aux armures est necessaire pour utiliser une armure sans penalite. Sans formation : Desavantage a tous les Tests d20 impliquant la Force ou la Dexterite, impossible de lancer des sorts, et impossibilite d'utiliser certaines aptitudes de classe. Lire aussi : Armures.",
+    "effets": [
+      {
+        "type": "desavantage",
+        "cible": "tests_force_et_dexterite",
+        "detail": "Si armure portee sans formation"
+      }
+    ],
+    "lire_aussi": [
+      "maitrise"
+    ]
+  },
+  {
+    "id": "effets_simultanes",
+    "nom": "Effets simultanes",
+    "categorie": "mecanique",
+    "description": "Si plusieurs effets se produisent exactement en meme temps au meme moment du tour, le joueur ou le MD (selon le contexte) determine l'ordre dans lequel ils se produisent.",
+    "effets": [],
+    "lire_aussi": []
+  },
+  {
+    "id": "par_jour",
+    "nom": "Par jour",
+    "categorie": "mecanique",
+    "description": "Certaines regles precisent combien de fois un effet peut se produire par jour. Ce nombre se reinitialise generalement apres un Repos long.",
+    "effets": [],
+    "lire_aussi": [
+      "repos_long"
+    ]
+  },
+  {
+    "id": "paralysie_par_sauvegarde",
+    "nom": "Jet de sauvegarde contre la mort (detail)",
+    "categorie": "mecanique",
+    "description": "Au debut de chaque tour d'une creature a 0 PV, elle lance 1d20. Un 10 ou plus est un succes, un 9 ou moins un echec. Un 1 naturel compte comme 2 echecs. Un 20 naturel : la creature reprend 1 PV. Apres 3 succes : creature Stabilisee. Apres 3 echecs : creature morte.",
+    "effets": [],
+    "lire_aussi": [
+      "jet_de_sauvegarde_contre_la_mort",
+      "stabilise",
+      "mort"
+    ]
+  }
+]

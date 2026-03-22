@@ -1,0 +1,62 @@
+{
+  "id": "fermier",
+  "nom": "Fermier",
+  "description": "Vous avez grandi proche de la terre, cultivant les champs et soignant les animaux. Cette vie vous a forgé physiquement et vous a appris la patience.",
+  "competences": [
+    "Dressage",
+    "Nature"
+  ],
+  "outils": [
+    "Outils de charpentier"
+  ],
+  "langues": [],
+  "don": "Robuste",
+  "equipement": [
+    {
+      "nom": "Serpe",
+      "quantite": 1
+    },
+    {
+      "nom": "Outils de charpentier",
+      "quantite": 1
+    },
+    {
+      "nom": "Trousse de soins",
+      "quantite": 1
+    },
+    {
+      "nom": "Pot en fer",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 30
+    }
+  ],
+  "aptitude": {
+    "nom": "Robuste",
+    "description": "Votre maximum de PV augmente d'un montant égal à votre niveau, et augmente de 1 à chaque nouvelle montée en niveau."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "J'ai confiance dans le travail de mes mains.",
+      "Je me lève tôt et travaille dur toute la journée."
+    ],
+    "ideaux": [
+      "Communauté : On se soutient entre voisins.",
+      "Terre : La terre nourrit, elle doit être respectée."
+    ],
+    "liens": [
+      "Ma ferme familiale est tout ce pour quoi j'ai travaillé.",
+      "Je dois subvenir aux besoins de ma famille restée au village."
+    ],
+    "defauts": [
+      "Je suis méfiant envers ceux qui ne travaillent pas de leurs mains.",
+      "Je me sens perdu loin de la campagne."
+    ]
+  }
+}

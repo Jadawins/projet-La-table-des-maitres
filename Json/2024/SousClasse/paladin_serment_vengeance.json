@@ -1,0 +1,48 @@
+{
+  "nom": "Serment de Vengeance",
+  "classe_parente": "paladin",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 15, 20],
+  "niveaux": {
+    "3": {
+      "sorts_serment": {
+        "1": ["injonction", "châtiment courroucé"],
+        "2": ["immobilisation de personne", "ténèbres"]
+      },
+      "capacites": [
+        {
+          "nom": "Sentence implacable",
+          "description": "Canal divin : désigne une créature à 18 m comme ta cible (1 minute, concentration). Tes attaques contre elle ont avantage. Si elle se déplace, tu peux te déplacer du même nombre de mètres vers elle en réaction."
+        },
+        {
+          "nom": "Expiation forcée",
+          "description": "Canal divin : une créature à 18 m doit réussir un JS de SAG ou être incapable de fuir ou d'appeler au secours pendant 1 minute."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Aura de relentlessness",
+          "description": "Toi et les alliés à 3 m ignorez le terrain difficile non-magique (9 m au niveau 18)."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Âme de vengeance",
+          "description": "Quand tu utilises Sentence implacable, tu peux attaquer ta cible 1 fois en action bonus immédiatement. La Sentence dure maintenant jusqu'à ce que la cible meure ou que tu te reposes."
+        }
+      ]
+    },
+    "20": {
+      "capacites": [
+        {
+          "nom": "Ange de la vengeance",
+          "description": "1/repos long : pendant 1 heure, des ailes spectrales t'apparaissent (vol 18 m). Tu peux lancer flétrissement et ténèbres sans emplacement. Une fois par tour, quand tu frappes ta cible de Sentence, tu peux infliger 1d8 dégâts nécrotiques supplémentaires."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "nom": "Sort accéléré",
+    "cout_sorcellerie": 2,
+    "description": "Action bonus pour lancer un sort avec un temps d'incantation d'une action. Ce sort ne peut pas être un sort de niveau 6 ou supérieur."
+  },
+  {
+    "nom": "Sort ample",
+    "cout_sorcellerie": 1,
+    "description": "Double la portée du sort. Si le sort a une portée de contact, la portée devient 9 mètres."
+  },
+  {
+    "nom": "Sort chercheur",
+    "cout_sorcellerie": 1,
+    "description": "Lorsqu'un jet d'attaque de sort rate, relance le dé. Le résultat du second jet est conservé."
+  },
+  {
+    "nom": "Sort étendu",
+    "cout_sorcellerie": 1,
+    "description": "Double la durée d'un sort dont la durée est comprise entre 1 minute et 24 heures."
+  },
+  {
+    "nom": "Sort intensifié",
+    "cout_sorcellerie": 2,
+    "description": "La cible désavantagée à son jet de sauvegarde contre ce sort."
+  },
+  {
+    "nom": "Sort jumeau",
+    "cout_sorcellerie": 1,
+    "description": "Cible une deuxième créature à portée avec le même sort (si le sort ne peut cibler qu'une seule créature et n'a pas une portée personnelle). Dépense autant de PS que le niveau du sort (min 1)."
+  },
+  {
+    "nom": "Sort prévenant",
+    "cout_sorcellerie": 1,
+    "description": "Les créatures choisies (jusqu'au modificateur de CHA, min 1) dans la zone d'effet du sort ont l'avantage à leurs jets de sauvegarde."
+  },
+  {
+    "nom": "Sort renforcé",
+    "cout_sorcellerie": 1,
+    "description": "Relance jusqu'au modificateur de CHA (min 1) dés de dégâts. Les résultats du second jet sont conservés."
+  },
+  {
+    "nom": "Sort subtil",
+    "cout_sorcellerie": 1,
+    "description": "Lance le sort sans composantes verbales ni somatiques."
+  },
+  {
+    "nom": "Sort transmué",
+    "cout_sorcellerie": 1,
+    "description": "Modifie le type de dégâts du sort parmi : acide, froid, feu, foudre, poison, tonnerre."
+  }
+]

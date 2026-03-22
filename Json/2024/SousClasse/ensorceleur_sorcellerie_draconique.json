@@ -1,0 +1,44 @@
+{
+  "nom": "Lignée draconique",
+  "classe_parente": "ensorceleur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14, 18],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Ancêtre draconique",
+          "description": "Choisis un type de dragon. Tu obtiens la résistance à son type de dégâts. Tu apprends le sort mineur correspondant si tu ne le connais pas déjà."
+        },
+        {
+          "nom": "Vigueur draconique",
+          "description": "Tes PV maximums augmentent de 1 par niveau de sorcier. Quand tu ne portes pas d'armure, ta CA est de 13 + modificateur DEX."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Ailes draconiques",
+          "description": "Action bonus : fais apparaître des ailes draconiques. Tu obtiens une vitesse de vol de 18 m."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Présence draconique",
+          "description": "1/repos long, action : émets une aura de terreur ou d'envoûtement sur 18 m (durée 1 minute, concentration). Les créatures dans la zone doivent réussir un JS de SAG ou être Effrayées ou Charmées (selon le choix à l'activation)."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Forme draconique",
+          "description": "1/repos long, tu peux te transformer en dragon de ton type pendant 1 minute. Tu obtiens les caractéristiques physiques d'un jeune dragon, conserves ta CA/PV mais obtiens le souffle du dragon."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "proprietes_armes": [
+    {
+      "nom": "allonge",
+      "effets": [
+        {
+          "type": "portee_sup",
+          "valeur_metres": 1.5
+        },
+        {
+          "type": "attaque_opportunite_allongee",
+          "valeur_metres": 1.5
+        }
+      ]
+    },
+    {
+      "nom": "chargement",
+      "effets": [
+        {
+          "type": "limite_tir_par_tour",
+          "valeur": 1,
+          "s'applique_sur": ["action", "bonus", "reaction"]
+        }
+      ]
+    },
+    {
+      "nom": "deux_mains",
+      "effets": [
+        {
+          "type": "necessite_deux_mains",
+          "valeur": true
+        }
+      ]
+    },
+    {
+      "nom": "finesse",
+      "effets": [
+        {
+          "type": "caracteristique_jet_attaque_degats",
+          "options": ["FOR", "DEX"],
+          "choix_fixe": true
+        }
+      ]
+    },
+    {
+      "nom": "lancer",
+      "effets": [
+        {
+          "type": "peut_etre_lancee",
+          "valeur": true
+        },
+        {
+          "type": "utilise_carac_corps_a_corps",
+          "valeur": true
+        }
+      ]
+    },
+    {
+      "nom": "legere",
+      "effets": [
+        {
+          "type": "attaque_bonus_possible",
+          "conditions": {
+            "arme_legere_dans_autre_main": true
+          }
+        },
+        {
+          "type": "attaque_bonus_sans_modificateur_degats",
+          "condition": "modificateur < 0"
+        }
+      ]
+    },
+    {
+      "nom": "lourde",
+      "effets": [
+        {
+          "type": "desavantage_si_valeur_carac_insuffisante",
+          "condition": {
+            "arme_corps_a_corps": {
+              "FOR": "< 13"
+            },
+            "arme_distance": {
+              "DEX": "< 13"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nom": "munitions",
+      "effets": [
+        {
+          "type": "attaque_distance_possible",
+          "valeur": true
+        },
+        {
+          "type": "munitions_consommees",
+          "valeur": 1
+        },
+        {
+          "type": "rechargement",
+          "conditions": {
+            "main_libre": true
+          }
+        },
+        {
+          "type": "recuperation_munitions_fin_combat",
+          "valeur": "50_percent_arrondi_inf"
+        }
+      ]
+    },
+    {
+      "nom": "polyvalente",
+      "effets": [
+        {
+          "type": "utilisable_une_ou_deux_mains",
+          "valeur": true
+        },
+        {
+          "type": "degats_differents_si_deux_mains",
+          "valeur": true
+        }
+      ]
+    },
+    {
+      "nom": "portee",
+      "effets": [
+        {
+          "type": "attaque_distance_valide",
+          "portee_normale": "X",
+          "portee_maximale": "Y"
+        },
+        {
+          "type": "desavantage_si_portee_maximale",
+          "valeur": true
+        },
+        {
+          "type": "pas_dattaque_si_hors_portee_maximale",
+          "valeur": true
+        }
+      ]
+    }
+  ]
+}

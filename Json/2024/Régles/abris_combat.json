@@ -1,0 +1,23 @@
+[
+  {
+    "nom": "abri_partiel",
+    "bonus": {
+      "CA": 2,
+      "sauvegarde_DEX": 2
+    },
+    "ciblable": true
+    },
+  {
+    "nom": "abri_superieur",
+    "bonus": {
+      "CA": 5,
+      "sauvegarde_DEX": 5
+    },
+    "ciblable": true
+    },
+  {
+    "nom": "abri_total",
+    "bonus": {},
+    "ciblable": false
+    }
+]

@@ -1,0 +1,756 @@
+[
+  {
+    "id": "boule_de_feu_a_retardement",
+    "nom": "Boule de feu à retardement",
+    "niveau": 7,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une boulette de guano de chauve-souris et de soufre"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 6
+    },
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "12d6"
+      }
+    ],
+    "niveau_superieur": "+1d6 de dégâts de feu par niveau d'emplacement au-dessus du 7.",
+    "description": "Invoquez une sphère enflammée (Vitesse 9 m) sous votre contrôle (action bonus). Toute créature qui entre en contact avec elle : JS de Dextérité, 4d6 feu en cas d'échec, moitié en cas de réussite. Peut exploser (max 20d6 feu, sphère de 6 m, JS DEX) en dépensant les charges accumulées."
+  },
+  {
+    "id": "cage_de_force",
+    "nom": "Cage de force",
+    "niveau": 7,
+    "ecole": "Évocation",
+    "classes": [
+      "Barde",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "30m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "poudre de rubis d'une valeur minimale de 1 500 po, détruite par le sort"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "cube",
+      "taille_m": 6
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Cage ou boîte de force (cube 3 m ou 3 m fermée). Infranchissable et indestructible. Les créatures à l'intérieur ne peuvent sortir, celles à l'extérieur ne peuvent entrer. Aucun sort ne peut traverser les parois."
+  },
+  {
+    "id": "changement_de_plan",
+    "nom": "Changement de plan",
+    "niveau": 7,
+    "ecole": "Invocation",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "1.5m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "badine métallique fourchue d'une valeur minimale de 250 po accordée avec un plan d'existence"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Vous ou une créature consentante touchée êtes transportés vers un autre plan d'existence. Ou ciblez une créature hostile (JS de Charisme) pour la bannir vers un plan de votre choix."
+  },
+  {
+    "id": "dissimulation_supreme",
+    "nom": "Dissimulation suprême",
+    "niveau": 7,
+    "ecole": "Transmutation",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une jaquette de gemme d une valeur minimale de 3 000 po, détruite par le sort"
+    },
+    "duree": "jusqu à la dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Rend une créature ou un objet invisible aux sorts de Divination et à la détection magique. Si la cible est une créature, elle entre en animation suspendue : Inconsciente, sans besoin de nourriture, eau ou air, et sans vieillissement. Une condition de déclenchement peut être définie au lancement. Le sort prend fin si la cible subit des dégâts."
+  },
+  {
+    "id": "doigt_de_mort",
+    "nom": "Doigt de mort",
+    "niveau": 7,
+    "ecole": "Necromancie",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanee",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "necrotique",
+        "valeur": "3d6+30"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Libere des energies necrotiques vers une creature visible a portee : 3d6+30 degats necrotiques (JS CON pour moitie). Tout Humanoide tue par ce sort se releve au debut du prochain tour du lanceur sous forme de zombi obeissant verbalement."
+  },
+  {
+    "id": "embruns_prismatiques",
+    "nom": "Embruns prismatiques",
+    "niveau": 7,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "cone",
+      "rayon_m": 18
+    },
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": {
+      "reference": "embruns_prismatiques_d8",
+      "declencheur": "par_cible_dans_le_cone"
+    },
+    "description": "Huit rayons de couleurs jaillissent en cône de 18 m. Pour chaque créature dans le cône, lancer 1d8 et consulter la table embruns_prismatiques_d8. Feu/acide/foudre/poison/froid infligent des dégâts (DEX pour moitié), indigo entrave/pétrifie, violet aveugle/téléporte, 8 = deux rayons."
+  },
+  {
+    "id": "epee_de_mordenkainen",
+    "nom": "Épée de Mordenkainen",
+    "niveau": 7,
+    "ecole": "Évocation",
+    "classes": [
+      "Barde",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une miniature d'épée en platine d'une valeur minimale de 250 po"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": {
+      "reference_creature": "epee_de_mordenkainen",
+      "fichier": "Creatures/epee_de_mordenkainen.json",
+      "source": "manuel_des_monstres"
+    },
+    "table_effets": null,
+    "description": "Crée une épée spectrale flottante dans un espace inoccupé à portée. À l'incantation et en action bonus lors des tours suivants, dirigez l'épée pour effectuer une attaque de sort au corps à corps contre une créature. Utiliser le profil Épée de Mordenkainen (Manuel des Monstres) pour les dégâts et statistiques."
+  },
+  {
+    "id": "forme_etheree",
+    "nom": "Forme éthérée",
+    "niveau": 7,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "jusqu'à 8 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": "Ciblez jusqu'à 3 créatures consentantes supplémentaires (dans un rayon de 3 m) par niveau d'emplacement au-delà du 7e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Vous pénétrez dans la Frontière éthérée pour la durée. Vous pouvez vous déplacer dans toutes les directions (haut/bas coûte double). Vous percevez le Plan Matériel jusqu'à 18 m. Vous ne pouvez pas affecter les créatures du Plan Matériel ni être affectés par elles. Si le sort prend fin dans l'Éther, vous réapparaissez dans l'espace équivalent sur votre plan (ou le plus proche libre, 2 dégâts de force par tranche de 50 cm traversée)."
+  },
+  {
+    "id": "image_projetee",
+    "nom": "Image projetée",
+    "niveau": 7,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une statuette à votre effigie d'une valeur minimale de 5 po"
+    },
+    "duree": "concentration, jusqu'à 1 jour",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une réplique illusoire de vous-même pouvant apparaître en tout lieu que vous avez visité. Vous voyez et entendez à travers elle. Au prix d'une action Magie, déplacez-la de 18 m, faites-lui parler ou gesticuler. Toute interaction physique révèle l'illusion. Une créature peut percer l'illusion (action Étude, test INT contre DD)."
+  },
+  {
+    "id": "inversion_de_la_gravite",
+    "nom": "Inversion de la gravité",
+    "niveau": 7,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "30m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une magnétite et de la spirale de fer"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "cylindre",
+      "rayon_m": 15
+    },
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Inversez la gravité dans un Cylindre de 15 m de rayon et 60 m de haut centré sur un point à portée. Toutes les créatures et objets non ancrés s'élèvent jusqu'au sommet du cylindre. Une créature peut tenter un JS de DEX pour s'agripper à quelque chose avant. Si le sort prend fin, les objets et créatures retombent."
+  },
+  {
+    "id": "invocation_de_celeste",
+    "nom": "Invocation de céleste",
+    "niveau": 7,
+    "ecole": "Invocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "27m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "cylindre",
+      "rayon_m": 0.5
+    },
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "4d12",
+        "note": "lumière salvatrice (dégâts) ou soins au choix"
+      }
+    ],
+    "niveau_superieur": "+1d12 par niveau d'emplacement au-delà du 7e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Un Cylindre de lumière vive (1 m de large, 12 m de haut) descend sur un point visible à portée. À chaque tour, désignez une créature dans le Cylindre : Lumière salvatrice (4d12 dégâts radiants, JS DEX demi) ou Lumière guérisseuse (4d12 + mod PV récupérés). Vous pouvez déplacer le Cylindre de 9 m par action Magie."
+  },
+  {
+    "id": "manoir_somptueux_de_mordenkainen",
+    "nom": "Manoir somptueux de Mordenkainen",
+    "niveau": 7,
+    "ecole": "Invocation",
+    "classes": [
+      "Barde",
+      "Magicien"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "90m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une porte miniature d'une valeur minimale de 15 po"
+    },
+    "duree": "24 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une porte menant à un espace extradimensionnel somptueux (villa de 9 m × 9 m × 3 m) pour 24 h. Jusqu'à 100 invités peuvent entrer ; les serviteurs spectraux répondent à vos ordres. Les créatures ne peuvent pas attaquer les serviteurs. Quand le sort prend fin, les créatures à l'intérieur sont expulsées."
+  },
+  {
+    "id": "mirage",
+    "nom": "Mirage",
+    "niveau": 7,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "10 jours",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "cube",
+      "rayon_m": 1500
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Modifiez l'apparence d'un terrain d'un mile carré. Vous pouvez faire ressembler une plaine à une forêt, une forêt à une plaine, etc. L'illusion affecte tous les sens. Les créatures peuvent traverser les obstacles illusoires normalement, mais subissent les effets du terrain réel. Une Investigation réussie révèle l'illusion. Le sort prend fin si quelqu'un le dissipe."
+  },
+  {
+    "id": "mot_de_pouvoir_fortifiant",
+    "nom": "Mot de pouvoir fortifiant",
+    "niveau": 7,
+    "ecole": "Enchantement",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Jusqu'à six créatures visibles à portée reçoivent un total de PV temporaires égal à 3 × votre niveau de personnage, répartis librement entre elles."
+  },
+  {
+    "id": "parole_divine",
+    "nom": "Parole divine",
+    "niveau": 7,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "CHA",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": {
+      "colonnes": [
+        "PV de la cible",
+        "Effet"
+      ],
+      "lignes": [
+        {
+          "PV de la cible": "0-20",
+          "Effet": "La cible meurt"
+        },
+        {
+          "PV de la cible": "21-30",
+          "Effet": "Assourdi + Aveuglé + Étourdi pendant 1 heure"
+        },
+        {
+          "PV de la cible": "31-40",
+          "Effet": "Assourdi + Aveuglé pendant 10 minutes"
+        },
+        {
+          "PV de la cible": "41-50",
+          "Effet": "Assourdi pendant 1 minute"
+        }
+      ]
+    },
+    "description": "Prononcez un mot de pouvoir divin. Chaque créature de votre choix à portée effectue un JS de Charisme. En cas d'échec, l'effet dépend de ses PV actuels (voir table). De plus, les créatures non natives du plan actuel qui ratent le JS sont renvoyées sur leur plan d'origine."
+  },
+  {
+    "id": "regeneration",
+    "nom": "Régénération",
+    "niveau": 7,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un moulin à prières en or et de l'eau bénite"
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "La créature touchée récupère 1 PV au début de chacun de ses tours pour la durée. De plus, les membres séparés repoussent en 2 minutes (sauf la tête). Si le membre est toujours présent, il peut être rattaché en appuyant dessus pendant 1 minute."
+  },
+  {
+    "id": "resurrection",
+    "nom": "Résurrection",
+    "niveau": 7,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Barde",
+      "Clerc"
+    ],
+    "temps_incantation": "1 heure",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un diamant d'une valeur minimale de 1 000 po qui se détruit"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Ramenez à la vie une créature morte depuis 100 ans au maximum avec tous ses PV. Ce sort neutralise tous les poisons et referme toutes les blessures mortelles. La créature subit un malus de -4 aux Tests d20, diminuant de 1 à chaque Repos long."
+  },
+  {
+    "id": "simulacre",
+    "nom": "Simulacre",
+    "niveau": 7,
+    "ecole": "Illusion",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "12 heures",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "de la neige ou de la glace + poudre de rubis d'une valeur minimale de 600 po"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une copie illusoire d'une bête ou d'un humanoïde que vous touchez. Elle a la moitié des PV max de l'original et ne possède pas d'emplacements de sort (elle utilise la moitié de ceux de l'original au moment de la création, sans pouvoir les récupérer). Si le simulacre est détruit, il disparaît."
+  },
+  {
+    "id": "symbole",
+    "nom": "Symbole",
+    "niveau": 7,
+    "ecole": "Abjuration",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide",
+      "Magicien"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "mercure, phosphore et poudre de diamant d'une valeur d'au moins 1 000 po"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "variable",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": {
+      "colonnes": [
+        "Symbole",
+        "JS",
+        "Effet"
+      ],
+      "lignes": [
+        {
+          "Symbole": "Mort",
+          "JS": "CON",
+          "Effet": "10d10 dégâts nécrotiques (réussite : moitié)"
+        },
+        {
+          "Symbole": "Discorde",
+          "JS": "CON",
+          "Effet": "Querelle entre alliés pendant 1 minute"
+        },
+        {
+          "Symbole": "Peur",
+          "JS": "SAG",
+          "Effet": "Effrayé et fuit pendant 1 minute"
+        },
+        {
+          "Symbole": "Étourdissement",
+          "JS": "SAG",
+          "Effet": "Étourdi pendant 1 minute"
+        },
+        {
+          "Symbole": "Folie",
+          "JS": "INT",
+          "Effet": "Incapacité à agir rationnellement, 1 minute"
+        },
+        {
+          "Symbole": "Douleur",
+          "JS": "CON",
+          "Effet": "Hors de combat (douleur) pendant 1 minute"
+        },
+        {
+          "Symbole": "Sommeil",
+          "JS": "SAG",
+          "Effet": "Inconscient pendant 10 minutes"
+        },
+        {
+          "Symbole": "Vulnérabilité",
+          "JS": "CON",
+          "Effet": "Vulnérable à un type de dégâts pendant 1 minute"
+        }
+      ]
+    },
+    "description": "Inscrivez un glyphe nuisible sur une surface ou un objet. Il se déclenche lorsqu'une créature le touche ou l'approche. Choisissez un type de symbole parmi la table. Toutes les créatures dans un rayon de 18 m du glyphe lors du déclenchement sont affectées (JS selon le symbole). Une fois déclenché, le symbole disparaît."
+  },
+  {
+    "id": "teleportation",
+    "nom": "Téléportation",
+    "niveau": 7,
+    "ecole": "Invocation",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "3m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": {
+      "colonnes": [
+        "Familiarité",
+        "Résultat"
+      ],
+      "lignes": [
+        {
+          "Familiarité": "Permanent (cercle téléportatoire)",
+          "Résultat": "À destination"
+        },
+        {
+          "Familiarité": "Très familier (fréquemment visité)",
+          "Résultat": "À destination"
+        },
+        {
+          "Familiarité": "Vu (brièvement, ou par scrutation)",
+          "Résultat": "À 1d6 × 3 km aléatoirement"
+        },
+        {
+          "Familiarité": "De description (informations de seconde main)",
+          "Résultat": "À 1d6 × 9 km aléatoirement"
+        },
+        {
+          "Familiarité": "Faux lieu (n'existe pas)",
+          "Résultat": "Mauvaise destination similaire ou erreur aléatoire"
+        }
+      ]
+    },
+    "description": "Téléportez jusqu'à 8 créatures consentantes à portée vers une destination connue sur le même plan. Le résultat dépend de votre familiarité avec la destination (voir table). En cas de mauvaise destination, le MJ détermine si vous arrivez à un lieu similaire ou subissez une erreur aléatoire."
+  },
+  {
+    "id": "tempete_de_feu",
+    "nom": "Tempête de feu",
+    "niveau": 7,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Ensorceleur"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "cube",
+      "rayon_m": 3
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "7d10"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez jusqu'à 10 cubes de 3 m de côté remplis de flammes dans une zone visible à portée. Chaque cube doit être adjacent à un autre. Chaque créature dans la zone : JS DEX ou 7d10 dégâts de feu (réussite : moitié). Les plantes non magiques dans la zone prennent feu automatiquement. Vous pouvez exclure les plantes du sort."
+  }
+]

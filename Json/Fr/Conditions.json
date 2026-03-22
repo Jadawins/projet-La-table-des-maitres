@@ -1,0 +1,318 @@
+[
+  {
+    "index": "blinded",
+    "name": {
+          "en": "Blinded",
+          "fr": "Aveuglé"
+                },
+    "desc": {
+          "en": [
+      "- A blinded creature can't see and automatically fails any ability check that requires sight.",
+      "- Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage."
+    ],
+          "fr": [
+      "- Une créature aveuglée ne voit rien et échoue automatiquement à tout test de caractéristique nécessitant la vue.",
+      "- Les jets d'attaque contre la créature ont l'avantage, et les jets d'attaque de la créature ont le désavantage."
+    ]
+                },
+    "url": "/api/2014/conditions/aveugle"
+  },
+  {
+    "index": "charmed",
+    "name": {
+          "en": "Charmed",
+          "fr": "Charmé"
+                },
+    "desc": {
+          "en": [
+      "- A charmed creature can't attack the charmer or target the charmer with harmful abilities or magical effects.",
+      "- The charmer has advantage on any ability check to interact socially with the creature."
+    ],
+          "fr": [
+      "- Une créature charmée ne peut pas attaquer l'enchanteur ni le cibler avec des capacités nuisibles ou des effets magiques.",
+      "- L'enchanteur a l'avantage à tout test de caractéristique pour interagir socialement avec la créature."
+    ]
+                },
+    "url": "/api/2014/conditions/charmé"
+  },
+  {
+    "index": "deafened",
+    "name": {
+          "en": "Deafened",
+          "fr": "Assourdie"
+                },
+    "desc": [
+  "- Une créature assourdie ne peut pas entendre et échoue automatiquement à tout test de caractéristique basé sur l'ouïe."
+],
+    "url": "/api/2014/conditions/assourdie"
+  },
+  {
+    "index": "frightened",
+    "name": {
+          "en": "Frightened",
+          "fr": "Effrayée"
+                },
+    "desc": {
+          "en": [
+      "- A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.",
+      "- The creature can't willingly move closer to the source of its fear."
+    ],
+          "fr": [
+      "- Une créature effrayée a le désavantage aux tests de caractéristique et aux jets d'attaque tant que la source de sa peur est dans sa ligne de vue.",
+      "- La créature ne peut pas se déplacer volontairement vers la source de sa peur."
+    ]
+                },
+    "url": "/api/2014/conditions/effrayee"
+  },
+  {
+    "index": "grappled",
+    "name": {
+          "en": "Grappled",
+          "fr": "Agrippée"
+                },
+    "desc": {
+          "en": [
+      "- A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed.",
+      "- The condition ends if the grappler is incapacitated (see the condition).",
+      "- The condition also ends if an effect removes the grappled creature from the reach of the grappler or grappling effect, such as when a creature is hurled away by the thunderwave spell."
+    ],
+          "fr": [
+      "- La vitesse d'une créature agrippée devient 0, et elle ne peut pas bénéficier de bonus à sa vitesse.",
+      "- La condition prend fin si l'agrippeur est neutralisé (voir la condition).",
+      "- La condition prend également fin si un effet éloigne la créature agrippée de la portée de l'agrippeur ou de l'effet d'agrippement, par exemple lorsqu'une créature est projetée par le sort *vague tonitruante*."
+    ]
+                },
+    "url": "/api/2014/conditions/agrippee"
+  },
+  {
+    "index": "incapacitated",
+    "name": {
+          "en": "Incapacitated",
+          "fr": "Neutralisée"
+                },
+    "desc": {
+          "en": ["- An incapacitated creature can't take actions or reactions."],
+          "fr": ["- Une créature neutralisée ne peut entreprendre d'actions ni de réactions."]
+                },
+    "url": "/api/2014/conditions/neutralisee"
+  },
+  {
+    "index": "invisible",
+    "name": {
+          "en": "Invisible",
+          "fr": "Invisible"
+                },
+    "desc": {
+          "en": [
+      "- An invisible creature is impossible to see without the aid of magic or a special sense. For the purpose of hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves.",
+      "- Attack rolls against the creature have disadvantage, and the creature's attack rolls have advantage."
+    ],
+          "fr": [
+      "- Une créature invisible est impossible à voir sans l'aide de la magie ou d'un sens spécial. Pour se cacher, la créature est considérée comme fortement obscurcie. Sa position peut être décelée par les bruits qu'elle émet ou les traces qu'elle laisse.",
+      "- Les jets d'attaque contre la créature ont le désavantage, et les jets d'attaque de la créature ont l'avantage."
+    ]
+                },
+    "url": "/api/2014/conditions/invisible"
+  },
+  {
+    "index": "paralysee",
+    "name": {
+          "en": "Paralyzed",
+          "fr": "Paralysée"
+                },
+    "desc": {
+          "en": [
+      "- A paralyzed creature is incapacitated (see the condition) and can't move or speak.",
+      "- The creature automatically fails Strength and Dexterity saving throws.",
+      "- Attack rolls against the creature have advantage.",
+      "- Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
+    ],
+          "fr": [
+      "- Une créature paralysée est neutralisée (voir la condition).",
+      "- Elle ne peut pas se déplacer ni parler.",
+      "- Elle échoue automatiquement à tout jet de sauvegarde de Force et de Dextérité.",
+      "- Les jets d'attaque contre la créature ont l'avantage.",
+      "- Toute attaque qui touche la créature est un coup critique si l'attaquant se trouve à moins de 1,50 mètre d'elle."
+    ]
+                },
+    "url": "/api/2014/conditions/paralysee"
+  },
+  {
+    "index": "petrified",
+    "name": {
+          "en": "Petrified",
+          "fr": "Pétrifiée"
+                },
+    "desc": {
+          "en": [
+      "- A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging.",
+      "- The creature is incapacitated (see the condition), can't move or speak, and is unaware of its surroundings.",
+      "- Attack rolls against the creature have advantage.",
+      "- The creature automatically fails Strength and Dexterity saving throws.",
+      "- The creature has resistance to all damage.",
+      "- The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized."
+    ],
+          "fr": [
+      "- Une créature pétrifiée est transformée, ainsi que tout ce qu'elle porte ou transporte, en une substance solide (généralement de la pierre). Son poids est multiplié par dix et elle cesse de vieillir.",
+      "- Elle est neutralisée (voir la condition), elle est inconsciente et ne peut ni bouger ni parler.",
+      "- Elle est insensible à toutes les formes d'altération des sens.",
+      "- Elle est immunisée contre les poisons et les maladies, bien qu’un poison ou une maladie déjà présent reste suspendu mais non guéri.",
+      "- Elle a une résistance à tous les types de dégâts.",
+      "- Elle échoue automatiquement à tous les jets de sauvegarde de Force et de Dextérité.",
+      "- Les jets d'attaque contre elle ont l'avantage."
+    ]
+                },
+    "url": "/api/2014/conditions/petrifiee"
+  },
+  {
+    "index": "poisoned",
+    "name": {
+          "en": [
+      "- A poisoned creature has disadvantage on attack rolls and ability checks."
+    ],
+          "fr": "Empoisonnée"
+                },
+    "desc": {
+          "en": "Poisoned",
+          "fr": [
+      "- A empoisonnee creature has disadvantage on attack rolls and ability checks."
+    ]
+                },
+    "url": "/api/2014/conditions/empoisonnee"
+  },
+  {
+    "index": "prone",
+    "name": {
+          "en": "Prone",
+          "fr": "A terre"
+                },
+    "desc": {
+          "en": [
+      "- A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition.",
+      "- The creature has disadvantage on attack rolls.",
+      "- An attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the attack roll has disadvantage."
+    ],
+          "fr": [
+  "- Une créature à terre ne peut se déplacer qu’en rampant, sauf si elle se relève.",
+  "- Elle a le désavantage à ses jets d'attaque.",
+  "- Un jet d'attaque effectué contre elle a l'avantage si l'attaquant se trouve à moins de 1,50 mètre. Sinon, le jet d'attaque a le désavantage."
+]
+                },
+    "url": "/api/2014/conditions/a-terre"
+  },
+  {
+    "index": "restrained",
+    "name": {
+          "en": "Restrained",
+          "fr": "Entravée"
+                },
+    "desc": {
+          "en": [
+      "- A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed.",
+      "- Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage.",
+      "- The creature has disadvantage on Dexterity saving throws."
+    ],
+          "fr": [
+  "- La vitesse d’une créature entravée tombe à 0, et elle ne peut pas bénéficier d'un bonus à sa vitesse.",
+  "- Les jets d'attaque contre la créature ont l'avantage, et les jets d'attaque de la créature ont le désavantage.",
+  "- La créature a le désavantage aux jets de sauvegarde de Dextérité."
+]
+                },
+    "url": "/api/2014/conditions/entravee"
+  },
+  {
+    "index": "stunned",
+    "name": {
+          "en": "Stunned",
+          "fr": "Etourdie"
+                },
+    "desc": {
+          "en": [
+      "- A stunned creature is incapacitated (see the condition), can't move, and can speak only falteringly.",
+      "- The creature automatically fails Strength and Dexterity saving throws.",
+      "- Attack rolls against the creature have advantage."
+    ],
+          "fr": [
+  "- Une créature étourdie est neutralisée (voir la condition).",
+  "- Elle ne peut ni se déplacer ni parler de façon cohérente.",
+  "- Elle échoue automatiquement à ses jets de sauvegarde de Force et de Dextérité.",
+  "- Les jets d'attaque contre la créature ont l'avantage."
+]
+                },
+    "url": "/api/2014/conditions/etourdie"
+  },
+  {
+    "index": "unconscious",
+    "name": {
+          "en": "Unconscious",
+          "fr": "Inconsciente"
+                },
+    "desc": {
+          "en": [
+      "- An unconscious creature is incapacitated (see the condition), can't move or speak, and is unaware of its surroundings.",
+      "- The creature drops whatever it's holding and falls prone.",
+      "- The creature automatically fails Strength and Dexterity saving throws.",
+      "- Attack rolls against the creature have advantage.",
+      "- Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
+    ],
+          "fr": [
+      "- Une créature inconsciente est neutralisée (voir la condition), elle est inconsciente et ne peut ni bouger ni parler.",
+      "- Elle est inconsciente de son environnement.",
+      "- Elle lâche tout ce qu'elle tient et tombe à terre.",
+      "- Elle échoue automatiquement à ses jets de sauvegarde de Force et de Dextérité.",
+      "- Les jets d'attaque contre elle ont l'avantage.",
+      "- Toute attaque qui touche la créature est un coup critique si l'attaquant est à moins de 1,50 mètre."
+    ]
+                },
+    "url": "/api/2014/conditions/inconsciente"
+  },
+  {
+    "index": "exhaustion",
+    "name": {
+          "en": "Exhaustion",
+          "fr": "Epuisement"
+                },
+    "desc": {
+          "en": [
+      "Some special abilities and environmental hazards, such as starvation and the long-term effects of freezing or scorching temperatures, can lead to a special condition called exhaustion. Exhaustion is measured in six levels. An effect can give a creature one or more levels of exhaustion, as specified in the effect's description.",
+      "1 - Disadvantage on ability checks",
+      "2 - Speed halved",
+      "3 - Disadvantage on attack rolls and saving throws",
+      "4 - Hit point maximum halved",
+      "5 - Speed reduced to 0",
+      "6 - Death",
+      "If an already exhausted creature suffers another effect that causes exhaustion, its current level of exhaustion increases by the amount specified in the effect's description.",
+      "A creature suffers the effect of its current level of exhaustion as well as all lower levels. For example, a creature suffering level 2 exhaustion has its speed halved and has disadvantage on ability checks.",
+      "An effect that removes exhaustion reduces its level as specified in the effect's description, with all exhaustion effects ending if a creature's exhaustion level is reduced below 1.",
+      "Finishing a long rest reduces a creature's exhaustion level by 1, provided that the creature has also ingested some food and drink."
+    ],
+          "fr": [
+  "- L'épuisement est mesuré en six niveaux. Chaque niveau cumule ses effets avec ceux des niveaux précédents :",
+  "- Niveau 1 : Désavantage aux tests de caractéristique.",
+  "- Niveau 2 : Vitesse réduite de moitié.",
+  "- Niveau 3 : Désavantage aux jets d'attaque et jets de sauvegarde.",
+  "- Niveau 4 : Points de vie maximum réduits de moitié.",
+  "- Niveau 5 : Vitesse réduite à 0.",
+  "- Niveau 6 : Mort.",
+  "- Terminer un repos long réduit l'épuisement d'un niveau si vous mangez et buvez suffisamment."
+]
+                },
+    "url": "/api/2014/conditions/epuisement"
+  },
+  {
+    "index": "sleep-magic",
+    "name": {
+          "en": "Sleep Magic",
+          "fr": "Sommeil Magique"
+                },
+    "desc": {
+          "en": [
+      "A creature with this immunity cannot be affected by spells or magical abilities that cause sleep, such as the Sleep (Sleep) spell."
+      ],
+          "fr": [
+      "Une créature avec cette immunité ne peut pas être affectée par des sorts ou capacités magiques qui provoquent l’endormissement, comme le sort Sommeil (Sleep)."
+      ]
+                },
+    "url": "/api/2014/conditions/etourdie"
+  }
+]

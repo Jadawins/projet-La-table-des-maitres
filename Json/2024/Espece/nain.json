@@ -1,0 +1,37 @@
+{
+  "id": "nain",
+  "nom": "Nain",
+  "description": "Faconnes par une divinite de la forge, les nains sont sortis de terre dans les temps anciens. Affection particuliere pour la pierre, le metal et les fortifications souterraines. Longevite d'environ 350 ans.",
+  "taille": {
+    "categorie": "M",
+    "details": "entre 1,20 m et 1,50 m"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "connaissance_de_la_pierre",
+      "nom": "Connaissance de la pierre",
+      "description": "Action Bonus : vous recevez la Perception des vibrations a 18 m pendant 10 minutes. 1 fois par Repos long."
+    },
+    {
+      "id": "resistance_naine",
+      "nom": "Resistance naine",
+      "description": "Vous beneficiez de la Resistance aux degats de poison. Vous avez de plus l'Avantage aux jets de sauvegarde pour eviter l'etat Empoisonne ou y mettre un terme."
+    },
+    {
+      "id": "tenacite_naine",
+      "nom": "Tenacite naine",
+      "description": "Votre maximum de points de vie augmente de 1, et augmente encore de 1 a chaque fois que vous gagnez un niveau."
+    },
+    {
+      "id": "vision_dans_le_noir_nain",
+      "nom": "Vision dans le noir",
+      "description": "Vous disposez de la Vision dans le noir sur 36 m."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [
+    "poison"
+  ],
+  "sorts_innes": []
+}

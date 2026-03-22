@@ -1,0 +1,52 @@
+{
+  "nom": "Chevalier occulte",
+  "classe_parente": "guerrier",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 10, 15, 18],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Incantation",
+          "description": "Tu lances des sorts de magicien en utilisant INT. Tu connais 3 sorts mineurs et 3 sorts des écoles d'Abjuration ou d'Évocation principalement. Tu as 2 emplacements de sort de niveau 1."
+        },
+        {
+          "nom": "Arme liée",
+          "description": "Tu peux lier jusqu'à 2 armes à toi (rituel de 1 heure). Tu peux invoquer une arme liée dans ta main libre en action bonus. Elle revient si désarmée."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Défense par la guerre",
+          "description": "Réaction : quand toi ou un allié à 9 m est touché par une attaque, dépense un emplacement de sort pour annuler la touche."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Frappe arcanique",
+          "description": "Quand tu frappe avec une arme, tu peux dépenser un emplacement de sort pour lancer un sort avec un temps d'incantation d'une action en action bonus ce tour."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Bouclier arcanique",
+          "description": "Réaction : quand tu es frappé par une attaque, tu peux dépenser un emplacement de sort de niveau 2 ou supérieur pour obtenir un bouclier temporaire de 2d6 PV temporaires par niveau de l'emplacement."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Maître de guerre",
+          "description": "Tu peux lancer des sorts de niveau 1 à 4 via Frappe arcanique. De plus, tes armes liées peuvent stocker des sorts (jusqu'au niveau 3) que tu peux déclencher lors d'une touche."
+        }
+      ]
+    }
+  }
+}

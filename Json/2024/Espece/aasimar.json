@@ -1,0 +1,45 @@
+{
+  "id": "aasimar",
+  "nom": "Aasimar",
+  "description": "Mortels portant une etincelle divine des Plans Superieurs. Leur nature celeste se manifeste progressivement, revelant leur heritage angelique au fil des niveaux.",
+  "taille": {
+    "categorie": "M_ou_P",
+    "details": "M (entre 1,20 m et 2,15 m) ou P (60 cm a 1,20 m) au choix"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "mains_guerisseuses",
+      "nom": "Mains guerisseuses",
+      "description": "Action Magie : touchez une creature pour lui faire recuperer un nombre de PV egal a votre bonus de maitrise + 4. Utilisation : 1 fois. Recupere sur Repos long."
+    },
+    {
+      "id": "porte_lumiere",
+      "nom": "Porte-lumiere",
+      "description": "Vous connaissez le sort mineur lumieres. Caracteristique d'incantation : Charisme."
+    },
+    {
+      "id": "resistance_celeste",
+      "nom": "Resistance celeste",
+      "description": "Vous beneficiez de la Resistance aux degats necrotiques et aux degats de type radiance."
+    },
+    {
+      "id": "vision_dans_la_nuit",
+      "nom": "Vision dans la nuit",
+      "description": "Vous disposez de la Vision dans le noir sur 18 m."
+    },
+    {
+      "id": "revelation_celeste",
+      "nom": "Revelation celeste",
+      "description": "Transformation jusqu'a 1 minute, 1 fois par Repos long. Choisissez une option : Ailes celestes (Vitesse de vol egale a votre Vitesse) ; Linceul necrotique (1d8 + bonus de maitrise degats necrotiques supplementaires au premier touche de chaque tour) ; Radiance interieure (lumiere vive 3 m, lumiere faible 3 m supplementaires ; bonus de maitrise degats radiance a une cible par tour)."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [
+    "necrotique",
+    "radiance"
+  ],
+  "sorts_innes": [
+    "lumieres"
+  ]
+}

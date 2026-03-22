@@ -1,0 +1,35 @@
+{
+  "id": "tieffelin",
+  "nom": "Tieffelin",
+  "description": "Mortels lies aux Plans Inferieurs par un ancetre felon (diable, demon ou autre etre felon). Chaque tieffelin decide s'il venere ou deплore cet heritage. Trois heritages disponibles : Abyssal, Chtonien, Infernal.",
+  "taille": {
+    "categorie": "M_ou_P",
+    "details": "M (entre 1,20 m et 2,15 m) ou P (90 cm a 1,20 m) au choix"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "heritage_felon",
+      "nom": "Heritage felon",
+      "description": "Choisissez un heritage : Abyssal (Resistance poison, bouffee de poison ; niv 3 rayon empoisonne ; niv 5 immobilisation de personne) ; Chtonien (Resistance necrotique, contact glacial ; niv 3 simulacre de vie ; niv 5 rayon affaiblissant) ; Infernal (Resistance feu, trait de feu ; niv 3 represailles infernales ; niv 5 tenebres). A niv 3 et 5 : 1 fois sans emplacement par Repos long, ou avec emplacement."
+    },
+    {
+      "id": "presence_d_outre_monde",
+      "nom": "Presence d'outre-monde",
+      "description": "Vous connaissez le sort mineur thaumaturge. Caracteristique d'incantation : Intelligence, Sagesse ou Charisme au choix (decide a la selection de l'espece)."
+    },
+    {
+      "id": "vision_dans_le_noir_tieffelin",
+      "nom": "Vision dans le noir",
+      "description": "Vous disposez de la Vision dans le noir sur 18 m."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [
+    "variable_selon_heritage"
+  ],
+  "sorts_innes": [
+    "thaumaturge",
+    "variable_selon_heritage"
+  ]
+}

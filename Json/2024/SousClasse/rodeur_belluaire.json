@@ -1,0 +1,44 @@
+{
+  "nom": "Maître des bêtes",
+  "classe_parente": "rodeur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 11, 15],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Compagnon animal",
+          "description": "Tu obtiens un compagnon animal (bête NC 1/4 ou inférieur). Il obéit à tes ordres. Ses PV max = 4 × ton niveau de rôdeur + ton modificateur de SAG + ses propres modificateurs. Il s'améliore avec toi."
+        },
+        {
+          "nom": "Lien du compagnon",
+          "description": "Ton compagnon peut agir à ton initiative. Tu peux utiliser ta réaction pour lui permettre d'effectuer une attaque quand tu utilises l'action Attaquer. En mode inactif, il récupère tous ses PV."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Techniques du compagnon",
+          "description": "Ton compagnon et toi pouvez utiliser l'action Attaquer simultanément (tu utilises ton action pour les deux). Le compagnon gagne également les dons ou amélioration de caractéristique au niveau 7."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Bête bestiale",
+          "description": "Ton compagnon devient plus puissant. Choisis l'une des améliorations suivantes : griffes perçantes (+1d8 dégâts tranchants), vitesse augmentée de 9 m, armure naturelle (CA +1)."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Partage des sens",
+          "description": "Tu peux voir et entendre à travers les sens de ton compagnon (action bonus). Tu peux lancer des sorts comme si tu étais dans son espace pendant cette durée."
+        }
+      ]
+    }
+  }
+}

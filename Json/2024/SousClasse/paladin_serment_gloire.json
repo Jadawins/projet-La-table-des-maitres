@@ -1,0 +1,48 @@
+{
+  "nom": "Serment de Gloire",
+  "classe_parente": "paladin",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 15, 20],
+  "niveaux": {
+    "3": {
+      "sorts_serment": {
+        "1": ["hâte partielle", "grâce"],
+        "2": ["agrandissement et rétrécissement", "passe-sans-trace"]
+      },
+      "capacites": [
+        {
+          "nom": "Inspiration héroïque",
+          "description": "Canal divin : accorde un dé d'inspiration héroïque (1d10) à autant d'alliés que tu le souhaites à 18 m. Ils peuvent l'utiliser sur un jet d'attaque, de compétence ou de sauvegarde."
+        },
+        {
+          "nom": "Foulée de tonnerre",
+          "description": "Canal divin : tu peux effectuer une longue course de 9 m, puis 3 m au lieu de te déplacer normalement ce tour. Chaque ennemi à portée lors de ce mouvement subit 1d8 + CHA dégâts de tonnerre (JS DEX pour moitié)."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Aura d'alachrité",
+          "description": "Toi et les alliés à 3 m gagnez un bonus de vitesse de 3 m (9 m au niveau 18)."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Esprit glorieux",
+          "description": "Tu es immunisé aux conditions Charmé et Effrayé. Quand tu tombes à 0 PV sans mourir sur le coup, tu peux rebondir : tu restes à 1 PV (1/repos long)."
+        }
+      ]
+    },
+    "20": {
+      "capacites": [
+        {
+          "nom": "Légende vivante",
+          "description": "1/repos long : pendant 1 heure, tu émets une aura de gloire. Les alliés à 9 m ont avantage aux jets d'attaque et aux tests de CHA. Tu récupères 10 PV au début de chacun de tes tours."
+        }
+      ]
+    }
+  }
+}

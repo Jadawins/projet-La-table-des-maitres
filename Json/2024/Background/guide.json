@@ -1,0 +1,70 @@
+{
+  "id": "guide",
+  "nom": "Guide",
+  "description": "Vous avez grandi en plein air, loin des villes. Vous maîtrisez la navigation en terrain sauvage et savez tirer parti des ressources naturelles.",
+  "competences": [
+    "Discrétion",
+    "Survie"
+  ],
+  "outils": [
+    "Outils de cartographe"
+  ],
+  "langues": [],
+  "don": "Initié à la magie (Druide)",
+  "equipement": [
+    {
+      "nom": "Arc court",
+      "quantite": 1
+    },
+    {
+      "nom": "Flèches",
+      "quantite": 20
+    },
+    {
+      "nom": "Carquois",
+      "quantite": 1
+    },
+    {
+      "nom": "Outils de cartographe",
+      "quantite": 1
+    },
+    {
+      "nom": "Sac de couchage",
+      "quantite": 1
+    },
+    {
+      "nom": "Tente",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 3
+    }
+  ],
+  "aptitude": {
+    "nom": "Initié à la magie (Druide)",
+    "description": "Obtenez deux sorts mineurs et un sort de niveau 1 de la liste du Druide. Le sort de niveau 1 est lanceable une fois par repos long."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je préfère la compagnie des arbres à celle des gens.",
+      "Je connais les noms de toutes les plantes que je rencontre."
+    ],
+    "ideaux": [
+      "Nature : Le monde naturel est sacré et doit être protégé.",
+      "Liberté : Personne ne devrait être enfermé loin du ciel ouvert."
+    ],
+    "liens": [
+      "Une forêt en particulier est mon foyer et je la protège.",
+      "Un mentor druide m'a tout enseigné — je lui dois beaucoup."
+    ],
+    "defauts": [
+      "Je suis maladroit dans les interactions sociales en ville.",
+      "Je sous-estime les dangers des environnements urbains."
+    ]
+  }
+}

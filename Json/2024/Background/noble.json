@@ -1,0 +1,54 @@
+{
+  "id": "noble",
+  "nom": "Noble",
+  "description": "Vous avez grandi dans une famille aisée ou aristocratique, bénéficiant d'une éducation de qualité et d'une exposition aux intrigues politiques.",
+  "competences": [
+    "Histoire",
+    "Persuasion"
+  ],
+  "outils": [
+    "Boîte de jeux (au choix)"
+  ],
+  "langues": [],
+  "don": "Doué",
+  "equipement": [
+    {
+      "nom": "Boîte de jeux (au choix)",
+      "quantite": 1
+    },
+    {
+      "nom": "Beaux habits",
+      "quantite": 1
+    },
+    {
+      "nom": "Parfum",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 29
+    }
+  ],
+  "aptitude": {
+    "nom": "Doué",
+    "description": "Vous gagnez la maîtrise de trois compétences supplémentaires de votre choix, fruit de votre éducation d'exception."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Ma parole est mon honneur, je ne manque jamais à mes engagements.",
+      "Je suis habitué à ce que les gens fassent ce que je dis."
+    ],
+    "ideaux": [
+      "Noblesse oblige : Mon rang implique des responsabilités.",
+      "Pouvoir : La noblesse doit gouverner, c'est l'ordre naturel."
+    ],
+    "liens": [
+      "Ma maison et mon titre passent avant ma vie.",
+      "Un rival cherche ma ruine — je dois le devancer."
+    ],
+    "defauts": [
+      "Je méprise les gens du peuple.",
+      "Je fuis mes responsabilités dès qu'elles deviennent contraignantes."
+    ]
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "nom": "Barbare",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": "FOR",
+      "de_vie": {
+        "type": "1d12",
+        "modificateur": "CON"
+      },
+      "sauvegardes_maitrise": ["FOR", "CON"],
+      "competences_choisies": {
+        "nombre": 2,
+        "options": [
+          "Athletisme",
+          "Dressage",
+          "Intimidation",
+          "Nature",
+          "Perception",
+          "Survie"
+        ]
+      },
+      "maitrises_armes": ["armes_courantes", "armes_de_guerre"],
+      "maitrises_armures": ["armures_legeres", "armures_intermediaires", "boucliers"],
+      "equipement_depart": [
+        {
+          "choix": "A",
+          "contenu": [
+            "Hache à deux mains",
+            "4 Hachettes",
+            "Paquetage d'explorateur",
+            "15 po"
+          ]
+        },
+        {
+          "choix": "B",
+          "contenu": [
+            "75 po"
+          ]
+        }
+      ]
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "ragesParJour": 2,
+      "bonusDegatsDeRage": 2,
+      "bottes_armes": {
+        "nombre": 2,
+        "modifiable": {
+          "frequence": "repos_long"
+        }
+      },
+      "capacites": [
+        {
+          "nom": "Rage",
+          "description": "Action bonus : pendant 10 minutes, résistance aux dégâts physiques, bonus de dégâts corps à corps (FOR) et avantage aux tests/JS de FOR ; interdit l'incantation.",
+          "type": "bonus_action",
+          "conditions": [
+            {
+              "type": "equipement",
+              "cible": "armure",
+              "exclusion": ["lourde"]
+            }
+          ],
+          "duree": {
+            "max": "10 minutes",
+            "fin": {
+              "automatique": [
+                {
+                  "type": "etat",
+                  "valeur": "neutralise"
+                },
+                {
+                  "type": "equipement",
+                  "cible": "armure",
+                  "type_equipement": "lourde"
+                }
+              ],
+              "fin_de_tour": {
+                "si_aucune_action": [
+                  "attaque_effectuee",
+                  "sauvegarde_effectuee",
+                  "action_bonus_utilisee",
+                  "ennemi_contraint_sauvegarde"
+                ]
+              }
+            }
+          },
+          "effets": [
+            {
+              "type": "resistance",
+              "cible": "degats",
+              "degatsTypes": ["bludgeoning", "slashing", "piercing"],
+              "modificateur": 0.5,
+              "conditions": [
+                { "type": "etat", "valeur": "rage" }
+              ]
+            },
+            {
+              "type": "bonus_degats",
+              "cible": "attaque_arme_corps_a_corps",
+              "source": "bonusDegatsDeRage",
+              "conditions": [
+                { "type": "etat", "valeur": "rage" },
+                { "type": "attaque", "modificateur": "FOR" }
+              ]
+            },
+            {
+              "type": "avantage",
+              "cible": "FOR",
+              "type_action": "test",
+              "conditions": [
+                { "type": "etat", "valeur": "rage" }
+              ]
+            },
+            {
+              "type": "avantage",
+              "cible": "FOR",
+              "type_action": "sauvegarde",
+              "conditions": [
+                { "type": "etat", "valeur": "rage" }
+              ]
+            },
+            {
+              "type": "interdiction",
+              "cible": ["lancer_sort", "concentration"],
+              "conditions": [
+                { "type": "etat", "valeur": "rage" }
+              ]
+            }
+          ],
+          "utilisations": {
+            "initial": 2,
+            "recuperation": [
+              {
+                "type": "repos_court",
+                "gain": 1
+              },
+              {
+                "type": "repos_long",
+                "remise_a_max": true
+              }
+            ]
+          }
+        },
+        {
+          "nom": "Endurance naturelle",
+          "description": "CA = 10 + DEX + CON quand on ne porte pas d'armure (bouclier autorisé).",
+          "type": "passif",
+          "conditions": [
+            {
+              "type": "equipement",
+              "cible": "armure",
+              "valeur": "aucune"
+            }
+          ],
+          "effets": [
+            {
+              "type": "calcul_ca_personnalise",
+              "formule": {
+                "base": 10,
+                "modificateurs": ["DEX", "CON"],
+                "bouclier_autorise": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "capacites": [
+        {
+          "nom": "Instinct primitif",
+          "description": "Avantage aux jets de sauvegarde de DEX tant que le barbare est conscient.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "avantage",
+              "cible": "DEX",
+              "type_action": "sauvegarde",
+              "conditions": [
+                {
+                  "type": "etat",
+                  "valeur": "conscient"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nom": "Témérité",
+          "description": "Peut choisir l'avantage sur la première attaque corps à corps du tour, mais donne aussi l'avantage à tous les adversaires jusqu'au début du prochain tour.",
+          "type": "optionnel",
+          "declencheur": {
+            "type": "attaque",
+            "moment": "premiere_attaque_tour"
+          },
+          "activation": {
+            "type": "choix_utilisateur",
+            "moment": "premiere_attaque_tour",
+            "etat": "temerite_active"
+          },
+          "effets": [
+            {
+              "type": "avantage",
+              "cible": "attaque_arme_corps_a_corps",
+              "conditions": [
+                { "type": "etat", "valeur": "temerite_active" }
+              ]
+            },
+            {
+              "type": "avantage",
+              "cible": "attaques_contre_utilisateur",
+              "applique_aux_adversaires": true,
+              "duree": "jusqu_debut_prochain_tour",
+              "conditions": [
+                { "type": "etat", "valeur": "temerite_active" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "ragesParJour": 3,
+      "capacites": [
+        {
+          "nom": "Connaissance sauvage",
+          "description": "Gagne une maîtrise de compétence supplémentaire ; en Rage, remplace le modificateur habituel par FOR pour certaines compétences.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "maitrise_competence_sup",
+              "options": [
+                "Athletisme",
+                "Dressage",
+                "Intimidation",
+                "Nature",
+                "Perception",
+                "Survie"
+              ]
+            },
+            {
+              "type": "remplacement_carac_competence",
+              "conditions": [
+                { "type": "etat", "valeur": "rage" }
+              ],
+              "competences": [
+                "Acrobaties",
+                "Discrétion",
+                "Intimidation",
+                "Perception",
+                "Survie"
+              ],
+              "remplace_par": "FOR"
+            }
+          ]
+        }
+      ],
+      "voie": {
+        "choix": [
+          "Arbre-Monde",
+          "Berserker",
+          "Cœur Sauvage",
+          "Zélateur"
+        ]
+      },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "bottes_armes": {
+        "nombre": 3,
+        "modifiable": {
+          "frequence": "repos_long"
+        }
+      },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": {
+            "liste": "dons_eligibles"
+          }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "capacites": [
+        {
+          "nom": "Double frappe",
+          "description": "2 attaques par action Attaquer.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "attaque_sup",
+              "valeur": 1,
+              "conditions": [
+                { "type": "action", "valeur": "Attaquer" }
+              ]
+            }
+          ]
+        },
+        {
+          "nom": "Sprint sauvage",
+          "description": "+3m de vitesse sans armure lourde.",
+          "type": "passif",
+          "conditions": [
+            {
+              "type": "equipement",
+              "cible": "armure",
+              "exclusion": ["lourde"]
+            }
+          ],
+          "effets": [
+            {
+              "type": "augmentation_vitesse",
+              "valeur": "3m"
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "ragesParJour": 4,
+      "verifier_sous_classe": true
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Réflexes primitifs",
+          "description": "Avantage aux jets d'initiative tant que le barbare est conscient.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "initiative",
+              "avantage": true,
+              "conditions": [
+                {
+                  "type": "etat",
+                  "valeur": "conscient"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nom": "Bond sauvage",
+          "description": "Quand la Rage est activée, peut se déplacer de moitié de vitesse en action bonus sans provoquer d'attaque d'opportunité.",
+          "type": "bonus_action",
+          "declencheur": {
+            "type": "etat",
+            "valeur": "rage",
+            "moment": "activation"
+          },
+          "effets": [
+            {
+              "type": "deplacement",
+              "valeur": "moitie_vitesse",
+              "conditions": [
+                {
+                  "type": "etat",
+                  "valeur": "rage"
+                }
+              ]
+            }
+          ],
+          "note": "Ce déplacement n'occasionne pas d'attaque d'opportunité."
+        }
+      ]
+    },
+    "8": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": {
+            "liste": "dons_eligibles"
+          }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "bonusDegatsDeRage": 3,
+      "capacites": [
+        {
+          "nom": "Frappe dévastatrice",
+          "description": "Annule l'avantage de Témérité pour infliger +1d10 dégâts supplémentaires et un effet au choix : Coup appuyé (repousse + déplacement gratuit) ou Coup au jarret (réduit vitesse de 4,5m).",
+          "type": "optionnel",
+          "declencheur": {
+            "type": "attaque",
+            "caracteristique": "FOR",
+            "etat": "temerite_active",
+            "moment": "lors_du_tour"
+          },
+          "conditions": [
+            { "type": "avantage_disponible", "valeur": true },
+            { "type": "desavantage_present", "valeur": false }
+          ],
+          "activation": {
+            "type": "choix_utilisateur",
+            "moment": "avant_jet_dattaque",
+            "effet": "annule_avantage"
+          },
+          "effets": [
+            {
+              "type": "degats_sup",
+              "valeur": "1d10",
+              "degats_type": "arme_utilisee",
+              "conditions": [
+                { "type": "attaque_reussie", "valeur": true }
+              ]
+            },
+            {
+              "type": "choix_effet_special",
+              "nom": "Effet de Frappe dévastatrice",
+              "options": [
+                {
+                  "nom": "Coup appuyé",
+                  "effets": [
+                    {
+                      "type": "repoussement",
+                      "distance": "4.5m",
+                      "direction": "ligne_droite"
+                    },
+                    {
+                      "type": "deplacement_gratuit",
+                      "valeur": "moitie_vitesse",
+                      "conditions": [
+                        { "type": "attaque_reussie" }
+                      ],
+                      "provoque_attaques_opportunite": false
+                    }
+                  ]
+                },
+                {
+                  "nom": "Coup au jarret",
+                  "effets": [
+                    {
+                      "type": "reduction_vitesse",
+                      "valeur": "4.5m",
+                      "duree": "jusqu_debut_prochain_tour",
+                      "limitation": "une_seule_fois_par_cible"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "bottes_armes": {
+        "nombre": 4,
+        "modifiable": {
+          "frequence": "repos_long"
+        }
+      },
+      "verifier_sous_classe": true
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Furie indomptable",
+          "description": "En Rage, quand tombe à 0 PV : JS CON (DD 10, +5 par utilisation, réinitialisé au repos) ; réussite = reste à 1 PV.",
+          "type": "passif",
+          "declencheur": {
+            "type": "pv",
+            "valeur": 0,
+            "conditions": [
+              { "type": "etat", "valeur": "rage" }
+            ]
+          },
+          "effets": [
+            {
+              "type": "jet_sauvegarde",
+              "caracteristique": "CON",
+              "dd": {
+                "initial": 10,
+                "incremente_apres_utilisation": 5,
+                "reset_repos": ["court", "long"]
+              },
+              "reussite": {
+                "type": "soin",
+                "valeur": {
+                  "type": "niveau_classe",
+                  "multiplicateur": 2
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "ragesParJour": 5,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": {
+            "liste": "dons_eligibles"
+          }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "capacites": [
+        {
+          "nom": "Frappe dévastatrice améliorée",
+          "description": "Ajoute 2 effets à la Frappe dévastatrice : Coup déchirant (+5 aux jets d'attaque des alliés) et Coup stupéfiant (désavantage aux JS + interdit les attaques d'opportunité).",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "ajout_options_coup_brutal",
+              "options": [
+                {
+                  "nom": "Coup déchirant",
+                  "effet": {
+                    "type": "bonus_jet_attaque_tiers",
+                    "valeur": 5,
+                    "duree": "jusqu_debut_prochain_tour"
+                  },
+                  "restriction": "un seul bonus de Coup déchirant par jet"
+                },
+                {
+                  "nom": "Coup stupéfiant",
+                  "effets": [
+                    {
+                      "type": "desavantage",
+                      "cible": "jet_sauvegarde",
+                      "duree": "jusqu_debut_prochain_tour"
+                    },
+                    {
+                      "type": "interdiction",
+                      "cible": "attaque_opportunite",
+                      "duree": "jusqu_debut_prochain_tour"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "verifier_sous_classe": true
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Furie éternelle",
+          "description": "À l'initiative (1/repos long) : récupère toutes les utilisations de Rage et la maintient automatiquement sans fin de tour forcée.",
+          "type": "passif",
+          "declencheur": {
+            "type": "initiative",
+            "frequence": "1_par_repos_long"
+          },
+          "effets": [
+            {
+              "type": "recuperation_utilisations",
+              "cible": "rage",
+              "valeur": "max"
+            },
+            {
+              "type": "prolongation_rage",
+              "duree_max": "10 minutes",
+              "prolongation_automatique": true,
+              "fin_condition": [
+                {
+                  "type": "etat",
+                  "valeur": "inconscient"
+                },
+                {
+                  "type": "equipement",
+                  "cible": "armure",
+                  "valeur": "lourde"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "16": {
+      "bonusDegatsDeRage": 4,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": {
+            "liste": "dons_eligibles"
+          }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "ragesParJour": 6,
+      "capacites": [
+        {
+          "nom": "Frappe dévastatrice améliorée",
+          "description": "Les dégâts bonus de la Frappe dévastatrice passent à 2d10 et on peut désormais choisir 2 effets par frappe.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "augmentation_degats_coup_brutal",
+              "valeur": "2d10"
+            },
+            {
+              "type": "nombre_effets_coup_brutal",
+              "valeur": 2
+            }
+          ]
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Force brute",
+          "description": "Pour tout test ou JS de FOR, peut remplacer le résultat par la valeur du score de FOR si ce résultat serait inférieur.",
+          "type": "optionnel",
+          "declencheur": {
+            "type": ["test", "sauvegarde"],
+            "caracteristique": "FOR"
+          },
+          "effets": [
+            {
+              "type": "remplacement_resultat",
+              "valeur": "score_de_FOR",
+              "conditions": [
+                {
+                  "type": "comparaison",
+                  "condition": "resultat_inferieur_a_valeur_de_FOR"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "19": {
+      "amelioration": {
+        "type": "don",
+        "choix": {
+          "liste": "dons_eligibles_ou_faveur_epique"
+        }
+      }
+    },
+    "20": {
+      "capacites": [
+        {
+          "nom": "Maître sauvage",
+          "description": "Augmente la FOR et la CON de 4 chacune (maximum 25).",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "augmentation_caracteristique",
+              "cibles": ["FOR", "CON"],
+              "valeur": 4,
+              "maximum": 25
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

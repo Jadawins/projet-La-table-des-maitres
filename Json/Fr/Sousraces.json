@@ -1,0 +1,285 @@
+[
+  {
+    "index": "nain-des-collines",
+    "name": "Nain des Collines",
+    "race": {
+      "index": "nain",
+      "name": "Nain",
+      "url": "/api/2014/races/nain"
+    },
+    "desc": "En tant que nain des collines, vous êtes connu pour votre intuition et votre résistance physique hors du commun.",
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "sag",
+          "name": "SAG",
+          "url": "/api/2014/caracteristique/sag"
+        },
+        "bonus": 1
+      }
+    ],
+    "starting_proficiencies": [],
+    "languages": [],
+    "racial_traits": [
+      {
+        "index": "tenacite-naine",
+        "name": "Ténacité naine",
+        "url": "/api/2014/aptitude/tenacite-naine"
+      }
+    ],
+    "url": "/api/2014/sousraces/nain-des-collines"
+  },
+  {
+    "index": "haut-elfe",
+    "name": "Haut Elfe",
+    "race": {
+      "index": "elfe",
+      "name": "Elfe",
+      "url": "/api/2014/races/elfe"
+    },
+    "desc": "En tant que haut elfe, vous possédez un esprit vif et une affinité naturelle avec la magie. Vous êtes respecté pour votre savoir et votre maîtrise des arts.",
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "int",
+          "name": "INT",
+          "url": "/api/2014/caracteristique/int"
+        },
+        "bonus": 1
+      }
+    ],
+    "starting_proficiencies": [
+      {
+        "index": "epee-longue",
+        "name": "Épées longues",
+        "url": "/api/2014/proficiencies/epee-longue"
+      },
+      {
+        "index": "epee-courte",
+        "name": "Épées courtes",
+        "url": "/api/2014/proficiencies/epee-courte"
+      },
+      {
+        "index": "arc-court",
+        "name": "Arc court",
+        "url": "/api/2014/equipment/arc-court"
+      },
+      {
+        "index": "arc-long",
+        "name": "Arc long",
+        "url": "/api/2014/equipment/arc-long"
+      }
+    ],
+    "languages": [],
+    "language_options": {
+      "choose": 1,
+      "from": {
+        "option_set_type": "options_array",
+        "options": [
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "nain",
+              "name": "Nain",
+              "url": "/api/2014/langues/nain"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "geant",
+              "name": "Géant",
+              "url": "/api/2014/langues/geant"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "gnome",
+              "name": "Gnome",
+              "url": "/api/2014/langues/gnome"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "gobelin",
+              "name": "Gobelin",
+              "url": "/api/2014/langues/gobelin"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "halfelin",
+              "name": "Halfelin",
+              "url": "/api/2014/langues/halfelin"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "orc",
+              "name": "Orc",
+              "url": "/api/2014/langues/orc"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "abyssal",
+              "name": "Abyssal",
+              "url": "/api/2014/langues/abyssal"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "celeste",
+              "name": "Celeste",
+              "url": "/api/2014/langues/celeste"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "draconique",
+              "name": "Draconique",
+              "url": "/api/2014/langues/draconique"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "profond",
+              "name": "Profond",
+              "url": "/api/2014/langues/profond"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "infernal",
+              "name": "Infernal",
+              "url": "/api/2014/langues/infernal"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "primordial",
+              "name": "Primordial",
+              "url": "/api/2014/langues/primordial"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "sylvain",
+              "name": "Sylvain",
+              "url": "/api/2014/langues/sylvain"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "commun-des-profondeurs",
+              "name": "Commun des profondeurs",
+              "url": "/api/2014/langues/commun-des-profondeurs"
+            }
+          }
+        ]
+      },
+      "type": "langue"
+    },
+    "racial_traits": [
+      {
+        "index": "entraînement-aux-armes-elfiques",
+        "name": "Entraînement aux armes elfiques",
+        "url": "/api/2014/aptitude/entraînement-aux-armes-elfiques"
+      },
+      {
+        "index": "haut-elfe-sort-mineur",
+        "name": "Haut Elfe Sort Mineur",
+        "url": "/api/2014/aptitude/haut-elfe-sort-mineur"
+      },
+      {
+        "index": "langue-supplementaire",
+        "name": "Langue supplémentaire",
+        "url": "/api/2014/aptitude/langue-supplementaire"
+      }
+    ],
+    "url": "/api/2014/sousraces/high-elf"
+  },
+  {
+    "index": "halfelinpied-leger",
+    "name": "Halfelin pied-léger",
+    "race": {
+      "index": "halfelin",
+      "name": "Halfelin",
+      "url": "/api/2014/races/halfelin"
+    },
+    "desc": "Les halfelins pieds-légers sont réputés pour leur discrétion et leur sociabilité. Ils aiment voyager et s’adaptent facilement à toutes les communautés.",
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/caracteristique/cha"
+        },
+        "bonus": 1
+      }
+    ],
+    "starting_proficiencies": [],
+    "languages": [],
+    "racial_traits": [
+      {
+        "index": "discretion naturelle",
+        "name": "Discrétion naturelle",
+        "url": "/api/2014/aptitude/discretion naturelle"
+      }
+    ],
+    "url": "/api/2014/sousraces/halfelinpied-leger"
+  },
+  {
+    "index": "gnome-des-roches",
+    "name": "Gnome des roches",
+    "race": {
+      "index": "gnome",
+      "name": "Gnome",
+      "url": "/api/2014/races/gnome"
+    },
+    "desc": "Inventif et robuste, le gnome des roches est connu pour sa créativité mécanique et son esprit curieux.",
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "con",
+          "name": "CON",
+          "url": "/api/2014/caracteristique/con"
+        },
+        "bonus": 1
+      }
+    ],
+    "starting_proficiencies": [
+      {
+        "index": "outil-de-bricoleur",
+        "name": "Outils de bricoleur",
+        "url": "/api/2014/proficiencies/outil-de-bricoleur"
+      }
+    ],
+    "languages": [],
+    "racial_traits": [
+      {
+        "index": "connaissance-en-ingenierie",
+        "name": "Connaissance en ingénierie",
+        "url": "/api/2014/aptitude/connaissance-en-ingenierie"
+      },
+      {
+        "index": "bricoleur",
+        "name": "Bricoleur",
+        "url": "/api/2014/aptitude/bricoleur"
+      }
+    ],
+    "url": "/api/2014/sousraces/gnome-des-roches"
+  }
+]

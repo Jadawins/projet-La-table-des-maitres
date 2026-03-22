@@ -1,0 +1,32 @@
+{
+  "id": "gnome",
+  "nom": "Gnome",
+  "description": "Creatures magiques creees par les dieux de l'invention. Ils compensent leur petite taille par la magie et leur propension a resoudre les problemes par l'ingeniosite. Longevite d'environ 425 ans.",
+  "taille": {
+    "categorie": "P",
+    "details": "entre 80 cm et 1,20 m"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "lignage_gnome",
+      "nom": "Lignage gnome",
+      "description": "Choisissez un lignage : Gnome des forets (illusion mineure ; communication animale sans emplacement 1 fois/Repos long ; niv 3 transmutation du bois ; niv 5 croissance naturelle) ; Gnome des roches (prestidigitation + reparation ; creation d'appareils mecaniques de taille TP, CA 5, 1 PV ; niv 3 sorts selon appareil ; niv 5 animation d'objet)."
+    },
+    {
+      "id": "ruse_gnome",
+      "nom": "Ruse gnome",
+      "description": "Vous avez l'Avantage aux jets de sauvegarde d'Intelligence, de Sagesse et de Charisme contre les effets magiques."
+    },
+    {
+      "id": "vision_dans_le_noir_gnome",
+      "nom": "Vision dans le noir",
+      "description": "Vous disposez de la Vision dans le noir sur 18 m."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [],
+  "sorts_innes": [
+    "variable_selon_lignage"
+  ]
+}

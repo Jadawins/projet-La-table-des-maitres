@@ -1,0 +1,48 @@
+{
+  "nom": "École d'Évocation",
+  "classe_parente": "magicien",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Spécialisation en Évocation",
+          "description": "Quand tu copies un sort d'Évocation dans ton grimoire, cela coûte moitié moins cher en temps et en matériaux."
+        },
+        {
+          "nom": "Sort mineur sculpteur",
+          "description": "Tes sorts mineurs d'Évocation infligeant des dégâts peuvent ignorer un nombre de créatures égal à 1 + le niveau du sort."
+        },
+        {
+          "nom": "Évocation sculptée",
+          "description": "Quand tu lances un sort d'Évocation qui oblige d'autres créatures à effectuer un JS, tu peux choisir jusqu'à (1 + niveau du sort) créatures dans la zone d'effet. Les créatures choisies réussissent automatiquement leur JS et ne subissent pas de dégâts en cas de réussite."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Puissance accrue",
+          "description": "Quand tu lances un sort d'Évocation et que tu obtiens un résultat de 1 ou 2 sur un dé de dégâts, tu peux relancer le dé et utiliser le nouveau résultat."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Évocation maximisée",
+          "description": "Quand tu lances un sort d'Évocation de niveau 1 à 5, tu peux traiter un dé de dégâts comme ayant obtenu sa valeur maximale."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Surcharge destructrice",
+          "description": "Quand tu lances un sort mineur d'Évocation, tu peux dépenser un emplacement de sort pour maximiser ses dégâts + ajouter 1d6 par niveau de l'emplacement."
+        }
+      ]
+    }
+  }
+}

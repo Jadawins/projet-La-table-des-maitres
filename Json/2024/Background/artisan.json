@@ -1,0 +1,54 @@
+{
+  "id": "artisan",
+  "nom": "Artisan",
+  "description": "Vous avez appris un métier dans l'atelier d'un maître artisan. Vous savez créer des objets de qualité et négocier avec une clientèle exigeante.",
+  "competences": [
+    "Investigation",
+    "Persuasion"
+  ],
+  "outils": [
+    "Outils d'artisan (au choix)"
+  ],
+  "langues": [],
+  "don": "Façonneur",
+  "equipement": [
+    {
+      "nom": "Outils d'artisan (au choix)",
+      "quantite": 1
+    },
+    {
+      "nom": "Sachet",
+      "quantite": 2
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 32
+    }
+  ],
+  "aptitude": {
+    "nom": "Façonneur",
+    "description": "Vous fabriquez des objets courants en deux fois moins de temps. Votre réputation vous ouvre des portes dans les milieux commerciaux."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je suis fier du travail bien fait.",
+      "Je trouve toujours un moyen d'améliorer ce que je vois."
+    ],
+    "ideaux": [
+      "Communauté : Mon commerce fait vivre des familles.",
+      "Aspiration : Je veux créer quelque chose de durable."
+    ],
+    "liens": [
+      "L'atelier familial est tout pour moi.",
+      "J'ai une dette envers le maître qui m'a tout appris."
+    ],
+    "defauts": [
+      "Je suis obsédé par la perfection.",
+      "Je suis avare et déteste dépenser inutilement."
+    ]
+  }
+}

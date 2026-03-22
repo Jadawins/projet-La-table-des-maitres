@@ -1,0 +1,138 @@
+[
+  {
+    "nom": "coup_double",
+    "declencheur": {
+      "type": "attaque_supplementaire",
+      "propriete_arme": "legere"
+    },
+    "conditions": [],
+    "effets": [
+      {
+        "type": "remplacer_action_bonus",
+        "valeur": "attaque_supplementaire",
+        "limite": "1_par_tour"
+      }
+    ]
+  },
+  {
+    "nom": "ecorchure",
+    "declencheur": {
+      "type": "attaque_ratee",
+      "mode": "corps_a_corps"
+    },
+    "conditions": [],
+    "effets": [
+      {
+        "type": "infliger_degats",
+        "valeur": "modificateur_caracteristique",
+        "degats_type": "comme_arme"
+      }
+    ]
+  },
+  {
+    "nom": "enchainement",
+    "declencheur": {
+      "type": "attaque_reussie",
+      "mode": "corps_a_corps"
+    },
+    "conditions": [
+      {
+        "type": "cible_a_portee",
+        "distance_max": 1.5
+      },
+      {
+        "type": "attaque_pas_avantage"
+      }
+    ],
+    "effets": [
+      {
+        "type": "effectuer_attaque",
+        "cible": "autre_creature",
+        "limite": "1_par_tour"
+      }
+    ]
+  },
+  {
+    "nom": "ouverture",
+    "declencheur": {
+      "type": "attaque_reussie"
+    },
+    "conditions": [],
+    "effets": [
+      {
+        "type": "donner_avantage",
+        "cible": "prochaine_attaque_contre_cible",
+        "duree": "jusqu_a_fin_tour"
+      }
+    ]
+  },
+  {
+    "nom": "poussee",
+    "declencheur": {
+      "type": "attaque_reussie"
+    },
+    "conditions": [
+      {
+        "type": "taille_max_cible",
+        "valeur": "G"
+      }
+    ],
+    "effets": [
+      {
+        "type": "deplacer_cible",
+        "direction": "ligne_droite",
+        "distance": 1.5
+      }
+    ]
+  },
+  {
+    "nom": "ralentissement",
+    "declencheur": {
+      "type": "attaque_reussie"
+    },
+    "conditions": [],
+    "effets": [
+      {
+        "type": "reduire_vitesse",
+        "valeur": 3,
+        "unite": "m",
+        "duree": "jusqu_a_debut_tour_suivant"
+      }
+    ]
+  },
+  {
+    "nom": "renversement",
+    "declencheur": {
+      "type": "attaque_reussie"
+    },
+    "conditions": [],
+    "effets": [
+      {
+        "type": "sauvegarde",
+        "caracteristique": "CON",
+        "dd_formule": "8 + mod_carac_utilisee + bonus_maitrise",
+        "reussite": {
+          "type": "aucun_effet"
+        },
+        "echec": {
+          "type": "appliquer_etat",
+          "etat": "a_terre"
+        }
+      }
+    ]
+  },
+  {
+    "nom": "sape",
+    "declencheur": {
+      "type": "attaque_reussie"
+    },
+    "conditions": [],
+    "effets": [
+      {
+        "type": "imposer_desavantage",
+        "cible": "prochaine_attaque_cible",
+        "duree": "jusqu_a_debut_tour_suivant"
+      }
+    ]
+  }
+]

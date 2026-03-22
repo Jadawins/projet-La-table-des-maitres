@@ -1,0 +1,48 @@
+{
+  "nom": "Cercle de la Terre",
+  "classe_parente": "druide",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Sort mineur naturel",
+          "description": "Tu apprends un sort mineur supplémentaire de la liste druidique."
+        },
+        {
+          "nom": "Récupération naturelle",
+          "description": "Au cours d'un repos court, tu peux récupérer des emplacements de sort dont le total de niveaux est inférieur ou égal à la moitié de ton niveau de druide (arrondi à l'inférieur). Utilisable 1/repos long."
+        },
+        {
+          "nom": "Sorts de terrain",
+          "description": "Selon le terrain choisi à ce niveau, tu prépares toujours des sorts supplémentaires. Terrains disponibles : Arctique, Côte, Désert, Forêt, Marais, Montagne, Prairie, Sous-terrain."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Foulée de la terre",
+          "description": "Les terrains difficiles d'origine non-magique ne t'affectent pas. Tu peux traverser les plantes non-magiques sans être ralenti ni blessé. Avantage aux JS contre les plantes d'origine magique."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Esprit de la nature",
+          "description": "Tu ne peux pas être Charmé ni Effrayé par des élémentaires ou des fées. Tu es également immunisé aux poisons et à la maladie."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Sanctuaire de la terre",
+          "description": "Les bêtes et les plantes ne t'attaquent pas sauf si contraintes. Quand tu prends un repos court dans un terrain naturel, tu récupères 1d6 + modificateur SAG PV."
+        }
+      ]
+    }
+  }
+}

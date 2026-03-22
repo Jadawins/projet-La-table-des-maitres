@@ -1,0 +1,5 @@
+{
+  "nom": "Insecte géant",
+  "statut": "a_completer",
+  "note": "Stat block scalable selon niveau d'emplacement. CA = 11 + niveau. PV = 10 + 10 par niveau au-delà du 4e. Vitesse 12m, vol 12m (guêpe). Vision dans le noir 18m. Attaques multiples selon niveau. Piqûre toxique (corps à corps, 1d6 perforant + 1d6 poison sur JS CON raté). Variantes: abeille, scarabée, mille-pattes, scorpion, araignée, guêpe."
+}

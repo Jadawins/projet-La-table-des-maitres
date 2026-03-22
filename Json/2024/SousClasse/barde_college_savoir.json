@@ -1,0 +1,36 @@
+{
+  "nom": "Collège du Savoir",
+  "classe_parente": "barde",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Maîtrises supplémentaires",
+          "description": "Tu obtiens la maîtrise de 3 compétences de ton choix parmi toutes les compétences."
+        },
+        {
+          "nom": "Mots acérés",
+          "description": "Réaction : quand une créature à 18 m lance un dé d'attaque, de compétence ou de sauvegarde, dépense une Inspiration bardique pour soustraire le résultat du dé de son jet."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Secrets magiques supplémentaires",
+          "description": "Apprends 2 sorts de n'importe quelle liste de sorts (y compris de classes non-barde). Ces sorts sont considérés comme des sorts de barde pour toi."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Parole sans faille",
+          "description": "Tu peux lancer suggestion de masse sans dépenser d'emplacement de sort (1/repos long). Ta caractéristique d'incantation est CHA."
+        }
+      ]
+    }
+  }
+}

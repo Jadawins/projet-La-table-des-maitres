@@ -1,0 +1,2041 @@
+[
+  {
+    "index": "armure-leger",
+    "type": "Armure",
+    "name": "Armures légeres",
+    "classes": [
+      {
+        "index": "barbare",
+        "name": "Barbare",
+        "url": "/api/2014/classes/barbare"
+      },
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "clerc",
+        "name": "Clerc",
+        "url": "/api/2014/classes/clerc"
+      },
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "rodeur",
+        "name": "Rôdeur",
+        "url": "/api/2014/classes/rodeur"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      },
+      {
+        "index": "occultiste",
+        "name": "Occultiste",
+        "url": "/api/2014/classes/occultiste"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-leger",
+    "reference": {
+      "index": "armure-leger",
+      "name": "Armures légeres",
+      "url": "/api/2014/categories-equipements/armure-leger"
+    }
+  },
+  {
+    "index": "armures-intermediaires",
+    "type": "Armure",
+    "name": "Armures intermédiaires",
+    "classes": [
+      {
+        "index": "barbare",
+        "name": "Barbare",
+        "url": "/api/2014/classes/barbare"
+      },
+      {
+        "index": "clerc",
+        "name": "Clerc",
+        "url": "/api/2014/classes/clerc"
+      },
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "rodeur",
+        "name": "Rôdeur",
+        "url": "/api/2014/classes/rodeur"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/armures-intermediaires",
+    "reference": {
+      "index": "armures-intermediaires",
+      "name": "Armures intermédiaires",
+      "url": "/api/2014/categories-equipements/armures-intermediaires"
+    }
+  },
+  {
+    "index": "armures-lourdes",
+    "type": "Armure",
+    "name": "Armures lourdes",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armures-lourdes",
+    "reference": {
+      "index": "armures-lourdes",
+      "name": "Armures lourdes",
+      "url": "/api/2014/categories-equipements/armures-lourdes"
+    }
+  },
+  {
+    "index": "toutes-les-armures",
+    "type": "Armure",
+    "name": "Toutes les armures",
+    "classes": [
+      {
+        "index": "guerrier",
+        "name": "Guerrier",
+        "url": "/api/2014/classes/guerrier"
+      },
+      {
+        "index": "paladin",
+        "name": "Paladin",
+        "url": "/api/2014/classes/paladin"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/toutes-les-armures",
+    "reference": {
+      "index": "armure",
+      "name": "Armure",
+      "url": "/api/2014/categories-equipements/armure"
+    }
+  },
+  {
+    "index": "armure-matelassee",
+    "type": "Armure",
+    "name": "Armure matelassée",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-matelassee",
+    "reference": {
+      "index": "armure-matelassee",
+      "name": "Armure matelassée",
+      "url": "/api/2014/equipements/armure-matelassee"
+    }
+  },
+  {
+    "index": "armure-de-cuir",
+    "type": "Armure",
+    "name": "Armures de cuir",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-de-cuir",
+    "reference": {
+      "index": "armure-de-cuir",
+      "name": "Armure de cuir",
+      "url": "/api/2014/equipements/armure-de-cuir"
+    }
+  },
+  {
+    "index": "armure-de-cuir-cloutee",
+    "type": "Armure",
+    "name": "Armure de cuir cloutée",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-de-cuir-cloutee",
+    "reference": {
+      "index": "armure-de-cuir-cloutee",
+      "name": "Armure de cuir cloutée",
+      "url": "/api/2014/equipements/armure-de-cuir-cloutee"
+    }
+  },
+  {
+    "index": "armure-de-peau",
+    "type": "Armure",
+    "name": "Armure de peau",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-de-peau",
+    "reference": {
+      "index": "armure-de-peau",
+      "name": "Armure de peau",
+      "url": "/api/2014/equipements/armure-de-peau"
+    }
+  },
+  {
+    "index": "cotte-de-mailles",
+    "type": "Armure",
+    "name": "Cotte de mailles",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/cotte-de-mailles",
+    "reference": {
+      "index": "cotte-de-mailles",
+      "name": "Cotte de mailles",
+      "url": "/api/2014/equipements/cotte-de-mailles"
+    }
+  },
+  {
+    "index": "armure-decailles",
+    "type": "Armure",
+    "name": "Armure d’écailles",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-decailles",
+    "reference": {
+      "index": "armure-decailles",
+      "name": "Armure d’écailles",
+      "url": "/api/2014/equipements/armure-decailles"
+    }
+  },
+  {
+    "index": "plastron",
+    "type": "Armure",
+    "name": "Plastron",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/plastron",
+    "reference": {
+      "index": "plastron",
+      "name": "Plastron",
+      "url": "/api/2014/equipements/plastron"
+    }
+  },
+  {
+    "index": "demi-armure-de-plates",
+    "type": "Armure",
+    "name": "Demi-armure de plates",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/demi-armure-de-plates",
+    "reference": {
+      "index": "demi-armure-de-plates",
+      "name": "Demi-armure de plates",
+      "url": "/api/2014/equipements/demi-armure-de-plates"
+    }
+  },
+  {
+    "index": "armure-a-anneaux",
+    "type": "Armure",
+    "name": "Armure à anneaux",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-a-anneaux",
+    "reference": {
+      "index": "armure-a-anneaux",
+      "name": "Armure à anneaux",
+      "url": "/api/2014/equipements/armure-a-anneaux"
+    }
+  },
+  {
+    "index": "armure-de-mailles",
+    "type": "Armure",
+    "name": "Armure de mailles",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-de-mailles",
+    "reference": {
+      "index": "armure-de-mailles",
+      "name": "Armure de mailles",
+      "url": "/api/2014/equipements/armure-de-mailles"
+    }
+  },
+  {
+    "index": "armure-a-lames",
+    "type": "Armure",
+    "name": "Armure à lames",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-a-lames",
+    "reference": {
+      "index": "armure-a-lames",
+      "name": "Armure à lames",
+      "url": "/api/2014/equipements/armure-a-lames"
+    }
+  },
+  {
+    "index": "armure-de-plates",
+    "type": "Armure",
+    "name": "Armure de plates",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/armure-de-plates",
+    "reference": {
+      "index": "armure-de-plates",
+      "name": "Armure de plates",
+      "url": "/api/2014/equipements/armure-de-plates"
+    }
+  },
+  {
+    "index": "boucliers",
+    "type": "Armure",
+    "name": "Boucliers",
+    "classes": [
+      {
+        "index": "barbare",
+        "name": "Barbare",
+        "url": "/api/2014/classes/barbare"
+      },
+      {
+        "index": "clerc",
+        "name": "Clerc",
+        "url": "/api/2014/classes/clerc"
+      },
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "guerrier",
+        "name": "Guerrier",
+        "url": "/api/2014/classes/guerrier"
+      },
+      {
+        "index": "paladin",
+        "name": "Paladin",
+        "url": "/api/2014/classes/paladin"
+      },
+      {
+        "index": "rodeur",
+        "name": "Rôdeur",
+        "url": "/api/2014/classes/rodeur"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/boucliers",
+    "reference": {
+      "index": "bouclier",
+      "name": "Bouclier",
+      "url": "/api/2014/equipements/bouclier"
+    }
+  },
+  {
+    "index": "armes-simples",
+    "type": "Armes",
+    "name": "Armes Simples",
+    "classes": [
+      {
+        "index": "barbare",
+        "name": "Barbare",
+        "url": "/api/2014/classes/barbare"
+      },
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "clerc",
+        "name": "Clerc",
+        "url": "/api/2014/classes/clerc"
+      },
+      {
+        "index": "guerrier",
+        "name": "Guerrier",
+        "url": "/api/2014/classes/guerrier"
+      },
+      {
+        "index": "moine",
+        "name": "Moine",
+        "url": "/api/2014/classes/moine"
+      },
+      {
+        "index": "paladin",
+        "name": "Paladin",
+        "url": "/api/2014/classes/paladin"
+      },
+      {
+        "index": "rodeur",
+        "name": "Rôdeur",
+        "url": "/api/2014/classes/rodeur"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      },
+      {
+        "index": "occultiste",
+        "name": "Occultiste",
+        "url": "/api/2014/classes/occultiste"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/armes-simples",
+    "reference": {
+      "index": "armes-simples",
+      "name": "Armes Simples",
+      "url": "/api/2014/categories-equipements/armes-simples"
+    }
+  },
+  {
+    "index": "armes-de-guerre",
+    "type": "Armes",
+    "name": "Armes de Guerre",
+    "classes": [
+      {
+        "index": "barbare",
+        "name": "Barbare",
+        "url": "/api/2014/classes/barbare"
+      },
+      {
+        "index": "guerrier",
+        "name": "Guerrier",
+        "url": "/api/2014/classes/guerrier"
+      },
+      {
+        "index": "paladin",
+        "name": "Paladin",
+        "url": "/api/2014/classes/paladin"
+      },
+      {
+        "index": "rodeur",
+        "name": "Rôdeur",
+        "url": "/api/2014/classes/rodeur"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/armes-de-guerre",
+    "reference": {
+      "index": "armes-de-guerre",
+      "name": "Armes de Guerre",
+      "url": "/api/2014/categories-equipements/armes-de-guerre"
+    }
+  },
+  {
+    "index": "gourdins",
+    "type": "Armes",
+    "name": "Gourdins",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/gourdins",
+    "reference": {
+      "index": "gourdin",
+      "name": "Gourdin",
+      "url": "/api/2014/equipements/gourdin"
+    }
+  },
+  {
+    "index": "dague",
+    "type": "Armes",
+    "name": "Dagues",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "ensorceleur",
+        "name": "Ensorceleur",
+        "url": "/api/2014/classes/ensorceleur"
+      },
+      {
+        "index": "magicien",
+        "name": "Magicien",
+        "url": "/api/2014/classes/magicien"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/dague",
+    "reference": {
+      "index": "dague",
+      "name": "Dague",
+      "url": "/api/2014/equipements/dague"
+    }
+  },
+  {
+    "index": "massue-a-deux-mains",
+    "type": "Armes",
+    "name": "Massues à deux mains",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/massue-a-deux-mains",
+    "reference": {
+      "index": "massue-a-deux-mains",
+      "name": "Massue à deux mains",
+      "url": "/api/2014/equipements/massue-a-deux-mains"
+    }
+  },
+  {
+    "index": "hachette",
+    "type": "Armes",
+    "name": "Hachettes",
+    "classes": [],
+    "races": [
+      {
+        "index": "nain",
+        "name": "Nain",
+        "url": "/api/2014/races/nain"
+      }
+    ],
+    "url": "/api/2014/maitrises/hachette",
+    "reference": {
+      "index": "hachette",
+      "name": "Hachette",
+      "url": "/api/2014/equipements/hachette"
+    }
+  },
+  {
+    "index": "javeline",
+    "type": "Armes",
+    "name": "Javelines",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/javeline",
+    "reference": {
+      "index": "javeline",
+      "name": "Javeline",
+      "url": "/api/2014/equipements/javeline"
+    }
+  },
+  {
+    "index": "marteaux-leger",
+    "type": "Armes",
+    "name": "Marteaux légers",
+    "classes": [],
+    "races": [
+      {
+        "index": "nain",
+        "name": "Nain",
+        "url": "/api/2014/races/nain"
+      }
+    ],
+    "url": "/api/2014/maitrises/marteaux-leger",
+    "reference": {
+      "index": "marteaux-leger",
+      "name": "Marteaux léger",
+      "url": "/api/2014/equipements/marteaux-leger"
+    }
+  },
+  {
+    "index": "masse-darme",
+    "type": "Armes",
+    "name": "Masses d’armes",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/masse-darme",
+    "reference": {
+      "index": "masse-darme",
+      "name": "Masse d’arme",
+      "url": "/api/2014/equipements/masse-darme"
+    }
+  },
+  {
+    "index": "baton",
+    "type": "Armes",
+    "name": "Bâtons",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "ensorceleur",
+        "name": "Ensorceleur",
+        "url": "/api/2014/classes/ensorceleur"
+      },
+      {
+        "index": "magicien",
+        "name": "Magicien",
+        "url": "/api/2014/classes/magicien"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/baton",
+    "reference": {
+      "index": "baton",
+      "name": "Bâton",
+      "url": "/api/2014/equipements/baton"
+    }
+  },
+  {
+    "index": "faucille",
+    "type": "Armes",
+    "name": "Faucilles",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/faucille",
+    "reference": {
+      "index": "faucille",
+      "name": "Faucille",
+      "url": "/api/2014/equipements/faucille"
+    }
+  },
+  {
+    "index": "lance",
+    "type": "Armes",
+    "name": "Lances",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/lance",
+    "reference": {
+      "index": "lance",
+      "name": "Lance",
+      "url": "/api/2014/equipements/lance"
+    }
+  },
+  {
+    "index": "arbalete-legere",
+    "type": "Armes",
+    "name": "Arbalètes légères",
+    "classes": [
+      {
+        "index": "ensorceleur",
+        "name": "Ensorceleur",
+        "url": "/api/2014/classes/ensorceleur"
+      },
+      {
+        "index": "magicien",
+        "name": "Magicien",
+        "url": "/api/2014/classes/magicien"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/arbalete-legere",
+    "reference": {
+      "index": "arbalete-legere",
+      "name": "Arbalète légères",
+      "url": "/api/2014/equipements/arbalete-legere"
+    }
+  },
+  {
+    "index": "flechette",
+    "type": "Armes",
+    "name": "Fléchettes",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "ensorceleur",
+        "name": "Ensorceleur",
+        "url": "/api/2014/classes/ensorceleur"
+      },
+      {
+        "index": "magicien",
+        "name": "Magicien",
+        "url": "/api/2014/classes/magicien"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/flechette",
+    "reference": {
+      "index": "flechette",
+      "name": "Fléchette",
+      "url": "/api/2014/equipements/flechette"
+    }
+  },
+  {
+    "index": "arc-court",
+    "type": "Armes",
+    "name": "Arcs courts",
+    "classes": [],
+    "races": [
+      {
+        "index": "haut-elfe",
+        "name": "Haut Elfe",
+        "url": "/api/2014/subraces/haut-elfe"
+      }
+    ],
+    "url": "/api/2014/maitrises/arc-court",
+    "reference": {
+      "index": "arc-court",
+      "name": "Arc court",
+      "url": "/api/2014/equipements/arc-court"
+    }
+  },
+  {
+    "index": "fronde",
+    "type": "Armes",
+    "name": "Frondes",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "ensorceleur",
+        "name": "Ensorceleur",
+        "url": "/api/2014/classes/ensorceleur"
+      },
+      {
+        "index": "magicien",
+        "name": "Magicien",
+        "url": "/api/2014/classes/magicien"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/fronde",
+    "reference": {
+      "index": "fronde",
+      "name": "Fronde",
+      "url": "/api/2014/equipements/fronde"
+    }
+  },
+  {
+    "index": "hache-darme",
+    "type": "Armes",
+    "name": "Haches d’armes",
+    "classes": [],
+    "races": [
+      {
+        "index": "nain",
+        "name": "Nain",
+        "url": "/api/2014/races/nain"
+      }
+    ],
+    "url": "/api/2014/maitrises/hache-darme",
+    "reference": {
+      "index": "hache-darme",
+      "name": "Hache d’arme",
+      "url": "/api/2014/equipements/hache-darme"
+    }
+  },
+  {
+    "index": "fleaux-darme",
+    "type": "Armes",
+    "name": "Fléaux d’armes",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/fleaux-darme",
+    "reference": {
+      "index": "fleaux-darme",
+      "name": "Fléaux d’arme",
+      "url": "/api/2014/equipements/fleaux-darme"
+    }
+  },
+  {
+    "index": "glaive",
+    "type": "Armes",
+    "name": "Glaives",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/glaive",
+    "reference": {
+      "index": "glaive",
+      "name": "Glaive",
+      "url": "/api/2014/equipements/glaive"
+    }
+  },
+  {
+    "index": "hache-a-deux-mains",
+    "type": "Armes",
+    "name": "Haches à deux mains",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/hache-a-deux-mains",
+    "reference": {
+      "index": "hache-a-deux-mains",
+      "name": "Hache à deux mains",
+      "url": "/api/2014/equipements/hache-a-deux-mains"
+    }
+  },
+  {
+    "index": "epee-a-deux-mains",
+    "type": "Armes",
+    "name": "Épées à deux mains",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/epee-a-deux-mains",
+    "reference": {
+      "index": "epee-a-deux-mains",
+      "name": "Épée à deux mains",
+      "url": "/api/2014/equipements/epee-a-deux-mains"
+    }
+  },
+  {
+    "index": "hallebarde",
+    "type": "Armes",
+    "name": "Hallebardes",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/hallebarde",
+    "reference": {
+      "index": "hallebarde",
+      "name": "Hallebarde",
+      "url": "/api/2014/equipements/hallebarde"
+    }
+  },
+  {
+    "index": "lances",
+    "type": "Armes",
+    "name": "Lances",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/lances",
+    "reference": {
+      "index": "lance",
+      "name": "Lance",
+      "url": "/api/2014/equipements/lance"
+    }
+  },
+  {
+    "index": "epee-longue",
+    "type": "Armes",
+    "name": "Épées longues",
+    "classes": [
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      }
+    ],
+    "races": [
+      {
+        "index": "haut-elfe",
+        "name": "Haut Elfe",
+        "url": "/api/2014/subraces/haut-elfe"
+      }
+    ],
+    "url": "/api/2014/maitrises/epee-longue",
+    "reference": {
+      "index": "epee-longue",
+      "name": "Épée longue",
+      "url": "/api/2014/equipements/epee-longue"
+    }
+  },
+  {
+    "index": "mauls",
+    "type": "Armes",
+    "name": "Mauls",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/mauls",
+    "reference": {
+      "index": "maul",
+      "name": "Maul",
+      "url": "/api/2014/equipements/maul"
+    }
+  },
+  {
+    "index": "etoile-du-matin",
+    "type": "Armes",
+    "name": "Étoiles du matin",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/etoile-du-matin",
+    "reference": {
+      "index": "etoile-du-matin",
+      "name": "Étoile du matin",
+      "url": "/api/2014/equipements/etoile-du-matin"
+    }
+  },
+  {
+    "index": "pique",
+    "type": "Armes",
+    "name": "Piques",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/pique",
+    "reference": {
+      "index": "pique",
+      "name": "Pique",
+      "url": "/api/2014/equipements/pique"
+    }
+  },
+  {
+    "index": "rapiere",
+    "type": "Armes",
+    "name": "Rapières",
+    "classes": [
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/rapiere",
+    "reference": {
+      "index": "rapiere",
+      "name": "Rapière",
+      "url": "/api/2014/equipements/rapiere"
+    }
+  },
+  {
+    "index": "cimeterre",
+    "type": "Armes",
+    "name": "Cimeterres",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/cimeterre",
+    "reference": {
+      "index": "cimeterre",
+      "name": "Cimeterre",
+      "url": "/api/2014/equipements/cimeterre"
+    }
+  },
+  {
+    "index": "epee-courte",
+    "type": "Armes",
+    "name": "Épées courtes",
+    "classes": [
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "moine",
+        "name": "Moine",
+        "url": "/api/2014/classes/moine"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      }
+    ],
+    "races": [
+      {
+        "index": "haut-elfe",
+        "name": "Haut Elfe",
+        "url": "/api/2014/subraces/haut-elfe"
+      }
+    ],
+    "url": "/api/2014/maitrises/epee-courte",
+    "reference": {
+      "index": "epee-courte",
+      "name": "Épée courte",
+      "url": "/api/2014/equipements/epee-courte"
+    }
+  },
+  {
+    "index": "trident",
+    "type": "Armes",
+    "name": "Tridents",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/trident",
+    "reference": {
+      "index": "trident",
+      "name": "Trident",
+      "url": "/api/2014/equipements/trident"
+    }
+  },
+  {
+    "index": "pic-de-guerre",
+    "type": "Armes",
+    "name": "Pics de guerre",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/pic-de-guerre",
+    "reference": {
+      "index": "pic-de-guerre",
+      "name": "Pic de guerre",
+      "url": "/api/2014/equipements/pic-de-guerre"
+    }
+  },
+  {
+    "index": "marteau-de-guerre",
+    "type": "Armes",
+    "name": "Marteaux de guerre",
+    "classes": [],
+    "races": [
+      {
+        "index": "nain",
+        "name": "Nain",
+        "url": "/api/2014/races/nain"
+      }
+    ],
+    "url": "/api/2014/maitrises/marteau-de-guerre",
+    "reference": {
+      "index": "marteau-de-guerre",
+      "name": "Marteau de guerre",
+      "url": "/api/2014/equipements/marteau-de-guerre"
+    }
+  },
+  {
+    "index": "fouet",
+    "type": "Armes",
+    "name": "Fouets",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/fouet",
+    "reference": {
+      "index": "fouet",
+      "name": "Fouet",
+      "url": "/api/2014/equipements/fouet"
+    }
+  },
+  {
+    "index": "sarbacane",
+    "type": "Armes",
+    "name": "Sarbacanes",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/sarbacane",
+    "reference": {
+      "index": "sarbacane",
+      "name": "Sarbacane",
+      "url": "/api/2014/equipements/sarbacane"
+    }
+  },
+  {
+    "index": "arbalete-de-poing",
+    "type": "Armes",
+    "name": "Arbalètes de poing",
+    "classes": [
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/arbalete-de-poing",
+    "reference": {
+      "index": "arbalete-de-poing",
+      "name": "Arbalètes de poing",
+      "url": "/api/2014/equipements/arbalete-de-poing"
+    }
+  },
+  {
+    "index": "arbalete-lourde",
+    "type": "Armes",
+    "name": "Arbalètes lourdes",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/arbalete-lourde",
+    "reference": {
+      "index": "arbalete-lourde",
+      "name": "Arbalète lourde",
+      "url": "/api/2014/equipements/arbalete-lourde"
+    }
+  },
+  {
+    "index": "arc-long",
+    "type": "Armes",
+    "name": "Arcs longs",
+    "classes": [],
+    "races": [
+      {
+        "index": "haut-elfe",
+        "name": "Haut Elfe",
+        "url": "/api/2014/subraces/haut-elfe"
+      }
+    ],
+    "url": "/api/2014/maitrises/arc-long",
+    "reference": {
+      "index": "arc-long",
+      "name": "Longbow",
+      "url": "/api/2014/equipements/arc-long"
+    }
+  },
+  {
+    "index": "filet",
+    "type": "Armes",
+    "name": "Filets",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/filet",
+    "reference": {
+      "index": "filet",
+      "name": "Filet",
+      "url": "/api/2014/equipements/filet"
+    }
+  },
+  {
+    "index": "materiel-dalchimiste",
+    "type": "Outils d’artisan",
+    "name": "Matériel d’alchimiste",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/materiel-dalchimiste",
+    "reference": {
+      "index": "materiel-dalchimiste",
+      "name": "Matériel d’alchimiste",
+      "url": "/api/2014/equipements/materiel-dalchimiste"
+    }
+  },
+  {
+    "index": "materiel-de-brasseur",
+    "type": "Outils d’artisan",
+    "name": "Matériel de brasseur",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/materiel-de-brasseur",
+    "reference": {
+      "index": "materiel-de-brasseur",
+      "name": "Matériel de brasseur",
+      "url": "/api/2014/equipements/materiel-de-brasseur"
+    }
+  },
+  {
+    "index": "materiel-de-calligraphe",
+    "type": "Outils d’artisan",
+    "name": "Matériel de calligraphe",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/materiel-de-calligraphe",
+    "reference": {
+      "index": "materiel-de-calligraphe",
+      "name": "Matériel de calligraphe",
+      "url": "/api/2014/equipements/materiel-de-calligraphe"
+    }
+  },
+  {
+    "index": "outils-de-menuisier",
+    "type": "Outils d’artisan",
+    "name": "Outils de menuisier",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-menuisier",
+    "reference": {
+      "index": "outils-de-menuisier",
+      "name": "Outils de menuisier",
+      "url": "/api/2014/equipements/outils-de-menuisier"
+    }
+  },
+  {
+    "index": "outils-de-cartographe",
+    "type": "Outils d’artisan",
+    "name": "Outils de cartographe",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-cartographe",
+    "reference": {
+      "index": "outils-de-cartographe",
+      "name": "Outils de cartographe",
+      "url": "/api/2014/equipements/outils-de-cartographe"
+    }
+  },
+  {
+    "index": "outils-de-cordonnier",
+    "type": "Outils d’artisan",
+    "name": "Outils de cordonnier",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-cordonnier",
+    "reference": {
+      "index": "outils-de-cordonnier",
+      "name": "Outils de cordonnier",
+      "url": "/api/2014/equipements/outils-de-cordonnier"
+    }
+  },
+  {
+    "index": "ustensiles-de-cuisine",
+    "type": "Outils d’artisan",
+    "name": "Ustensiles de cuisine",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/ustensiles-de-cuisine",
+    "reference": {
+      "index": "ustensiles-de-cuisine",
+      "name": "Ustensiles de cuisine",
+      "url": "/api/2014/equipements/ustensiles-de-cuisine"
+    }
+  },
+  {
+    "index": "outils-de-souffleur-de-verre",
+    "type": "Outils d’artisan",
+    "name": "Outils de souffleur de verre",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-souffleur-de-verre",
+    "reference": {
+      "index": "outils-de-souffleur-de-verre",
+      "name": "Outils de souffleur de verre",
+      "url": "/api/2014/equipements/outils-de-souffleur-de-verre"
+    }
+  },
+  {
+    "index": "outils-de-joaillier",
+    "type": "Outils d’artisan",
+    "name": "Outils de joaillier",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-joaillier",
+    "reference": {
+      "index": "outils-de-joaillier",
+      "name": "Outils de joaillier",
+      "url": "/api/2014/equipements/outils-de-joaillier"
+    }
+  },
+  {
+    "index": "outils-de-travail-du-cuir",
+    "type": "Outils d’artisan",
+    "name": "Outils de travail du cuir",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-travail-du-cuir",
+    "reference": {
+      "index": "outils-de-travail-du-cuir",
+      "name": "Outils de travail du cuir",
+      "url": "/api/2014/equipements/outils-de-travail-du-cuir"
+    }
+  },
+  {
+    "index": "outils-de-maçon",
+    "type": "Outils d’artisan",
+    "name": "Outils de maçon",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-maçon",
+    "reference": {
+      "index": "outils-de-maçon",
+      "name": "Outils de maçon",
+      "url": "/api/2014/equipements/outils-de-maçon"
+    }
+  },
+  {
+    "index": "materiel-de-peintre",
+    "type": "Outils d’artisan",
+    "name": "Matériel de peintre",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/materiel-de-peintre",
+    "reference": {
+      "index": "materiel-de-peintre",
+      "name": "Matériel de peintre",
+      "url": "/api/2014/equipements/materiel-de-peintre"
+    }
+  },
+  {
+    "index": "outils-de-potier",
+    "type": "Outils d’artisan",
+    "name": "Outils de potier",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-potier",
+    "reference": {
+      "index": "outils-de-potier",
+      "name": "Outils de potier",
+      "url": "/api/2014/equipements/outils-de-potier"
+    }
+  },
+  {
+    "index": "outils-de-forgeron",
+    "type": "Outils d’artisan",
+    "name": "Outils de forgeron",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-forgeron",
+    "reference": {
+      "index": "outils-de-forgeron",
+      "name": "Outils de forgeron",
+      "url": "/api/2014/equipements/outils-de-forgeron"
+    }
+  },
+  {
+    "index": "outils-de-bricoleur",
+    "type": "Outils d’artisan",
+    "name": "Outils de bricoleur",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-bricoleur",
+    "reference": {
+      "index": "outils-de-bricoleur",
+      "name": "Outils de bricoleur",
+      "url": "/api/2014/equipements/outils-de-bricoleur"
+    }
+  },
+  {
+    "index": "outils-de-tisserand",
+    "type": "Outils d’artisan",
+    "name": "Outils de tisserand",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-tisserand",
+    "reference": {
+      "index": "outils-de-tisserand",
+      "name": "Outils de tisserand",
+      "url": "/api/2014/equipements/outils-de-tisserand"
+    }
+  },
+  {
+    "index": "outils-de-sculpteur-sur-bois",
+    "type": "Outils d’artisan",
+    "name": "Outils de sculpteur sur bois",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-sculpteur-sur-bois",
+    "reference": {
+      "index": "outils-de-sculpteur-sur-bois",
+      "name": "Outils de sculpteur sur bois",
+      "url": "/api/2014/equipements/outils-de-sculpteur-sur-bois"
+    }
+  },
+  {
+    "index": "trousse-de-deguisement",
+    "type": "Outils d’artisan",
+    "name": "Trousse de déguisement",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/trousse-de-deguisement",
+    "reference": {
+      "index": "trousse-de-deguisement",
+      "name": "Trousse de déguisement",
+      "url": "/api/2014/equipements/trousse-de-deguisement"
+    }
+  },
+  {
+    "index": "trousse-de-faussaire",
+    "type": "Outils d’artisan",
+    "name": "Trousse de faussaire",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/trousse-de-faussaire",
+    "reference": {
+      "index": "trousse-de-faussaire",
+      "name": "Trousse de faussaire",
+      "url": "/api/2014/equipements/trousse-de-faussaire"
+    }
+  },
+  {
+    "index": "set-de-des",
+    "type": "Jeux de hasard et de stratégie",
+    "name": "Set de dés",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/set-de-des",
+    "reference": {
+      "index": "set-de-des",
+      "name": "Set de dés",
+      "url": "/api/2014/equipements/set-de-des"
+    }
+  },
+  {
+    "index": "playing-card-set",
+    "type": "Jeux de hasard et de stratégie",
+    "name": "Playing Card Set",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/playing-card-set",
+    "reference": {
+      "index": "playing-card-set",
+      "name": "Playing Card Set",
+      "url": "/api/2014/equipements/playing-card-set"
+    }
+  },
+  {
+    "index": "cornemuse",
+    "type": "Instruments de musique",
+    "name": "Cornemuse",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/cornemuse",
+    "reference": {
+      "index": "cornemuse",
+      "name": "Cornemuse",
+      "url": "/api/2014/equipements/cornemuse"
+    }
+  },
+  {
+    "index": "tambour",
+    "type": "Instruments de musique",
+    "name": "Tambour",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/tambour",
+    "reference": {
+      "index": "tambour",
+      "name": "Tambour",
+      "url": "/api/2014/equipements/tambour"
+    }
+  },
+  {
+    "index": "dulcimer",
+    "type": "Instruments de musique",
+    "name": "Dulcimer",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/dulcimer",
+    "reference": {
+      "index": "dulcimer",
+      "name": "Dulcimer",
+      "url": "/api/2014/equipements/dulcimer"
+    }
+  },
+  {
+    "index": "flute",
+    "type": "Instruments de musique",
+    "name": "Flûte",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/flute",
+    "reference": {
+      "index": "flute",
+      "name": "Flûte",
+      "url": "/api/2014/equipements/flute"
+    }
+  },
+  {
+    "index": "luth",
+    "type": "Instruments de musique",
+    "name": "Luth",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/luth",
+    "reference": {
+      "index": "luth",
+      "name": "Luth",
+      "url": "/api/2014/equipements/luth"
+    }
+  },
+  {
+    "index": "lyre",
+    "type": "Instruments de musique",
+    "name": "Lyre",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/lyre",
+    "reference": {
+      "index": "lyre",
+      "name": "Lyre",
+      "url": "/api/2014/equipements/lyre"
+    }
+  },
+  {
+    "index": "cor",
+    "type": "Instruments de musique",
+    "name": "Cor",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/cor",
+    "reference": {
+      "index": "cor",
+      "name": "Cor",
+      "url": "/api/2014/equipements/cor"
+    }
+  },
+  {
+    "index": "flute-de-Pan",
+    "type": "Instruments de musique",
+    "name": "Flûte de Pan",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/flute-de-Pan",
+    "reference": {
+      "index": "flute-de-Pan",
+      "name": "Flûte de Pan",
+      "url": "/api/2014/equipements/flute-de-Pan"
+    }
+  },
+  {
+    "index": "chalemie",
+    "type": "Instruments de musique",
+    "name": "Chalemie",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/chalemie",
+    "reference": {
+      "index": "chalemie",
+      "name": "Chalemie",
+      "url": "/api/2014/equipements/chalemie"
+    }
+  },
+  {
+    "index": "violon",
+    "type": "Instruments de musique",
+    "name": "Violon",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/violon",
+    "reference": {
+      "index": "violon",
+      "name": "Violon",
+      "url": "/api/2014/equipements/violon"
+    }
+  },
+  {
+    "index": "trousse-dherboriste",
+    "type": "Autre",
+    "name": "Trousse d’herboriste",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/trousse-dherboriste",
+    "reference": {
+      "index": "trousse-dherboriste",
+      "name": "Trousse d’herboriste",
+      "url": "/api/2014/equipements/trousse-dherboriste"
+    }
+  },
+  {
+    "index": "outils-de-navigateur",
+    "type": "Autre",
+    "name": "Outils de navigateur",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-navigateur",
+    "reference": {
+      "index": "outils-de-navigateur",
+      "name": "Outils de navigateur",
+      "url": "/api/2014/equipements/outils-de-navigateur"
+    }
+  },
+  {
+    "index": "trousse-dempoisonneur",
+    "type": "Autre",
+    "name": "Trousse d’empoisonneur",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/trousse-dempoisonneur",
+    "reference": {
+      "index": "trousse-dempoisonneur",
+      "name": "Trousse d’empoisonneur",
+      "url": "/api/2014/equipements/trousse-dempoisonneur"
+    }
+  },
+  {
+    "index": "outils-de-voleur",
+    "type": "Autre",
+    "name": "Outils de voleur",
+    "classes": [
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/outils-de-voleur",
+    "reference": {
+      "index": "outils-de-voleur",
+      "name": "Outils de voleur",
+      "url": "/api/2014/equipements/outils-de-voleur"
+    }
+  },
+  {
+    "index": "vehicules-terrestres",
+    "type": "Véhicules",
+    "name": "Véhicules terrestres",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/vehicules-terrestres",
+    "reference": {
+      "index": "vehicules-terrestres",
+      "name": "Véhicules terrestres",
+      "url": "/api/2014/categories-equipements/vehicules-terrestres"
+    }
+  },
+  {
+    "index": "vehicules-aquatiques",
+    "type": "Véhicules",
+    "name": "Véhicules aquatiques",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/vehicules-aquatiques",
+    "reference": {
+      "index": "waterborne-vehicles",
+      "name": "Waterborne Véhicules",
+      "url": "/api/2014/categories-equipements/waterborne-vehicles"
+    }
+  },
+  {
+    "index": "jet-de-sauvegarde-for",
+    "type": "Jets de sauvegarde",
+    "name": "Jet de sauvegarde: FOR",
+    "classes": [
+      {
+        "index": "barbare",
+        "name": "Barbare",
+        "url": "/api/2014/classes/barbare"
+      },
+      {
+        "index": "guerrier",
+        "name": "Guerrier",
+        "url": "/api/2014/classes/guerrier"
+      },
+      {
+        "index": "moine",
+        "name": "Moine",
+        "url": "/api/2014/classes/moine"
+      },
+      {
+        "index": "rodeur",
+        "name": "Rôdeur",
+        "url": "/api/2014/classes/rodeur"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/jet-de-sauvegarde-for",
+    "reference": {
+      "index": "for",
+      "name": "FOR",
+      "url": "/api/2014/caracteristique/for"
+    }
+  },
+  {
+    "index": "jet-de-sauvegarde-dex",
+    "type": "Jets de sauvegarde",
+    "name": "Jet de sauvegarde: DEX",
+    "classes": [
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "moine",
+        "name": "Moine",
+        "url": "/api/2014/classes/moine"
+      },
+      {
+        "index": "rodeur",
+        "name": "Rôdeur",
+        "url": "/api/2014/classes/rodeur"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/jet-de-sauvegarde-dex",
+    "reference": {
+      "index": "dex",
+      "name": "DEX",
+      "url": "/api/2014/caracteristique/dex"
+    }
+  },
+  {
+    "index": "jet-de-sauvegarde-con",
+    "type": "Jets de sauvegarde",
+    "name": "Jet de sauvegarde: CON",
+    "classes": [
+      {
+        "index": "barbare",
+        "name": "Barbare",
+        "url": "/api/2014/classes/barbare"
+      },
+      {
+        "index": "guerrier",
+        "name": "Guerrier",
+        "url": "/api/2014/classes/guerrier"
+      },
+      {
+        "index": "ensorceleur",
+        "name": "Ensorceleur",
+        "url": "/api/2014/classes/ensorceleur"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/jet-de-sauvegarde-con",
+    "reference": {
+      "index": "con",
+      "name": "CON",
+      "url": "/api/2014/caracteristique/con"
+    }
+  },
+  {
+    "index": "jet-de-sauvegarde-int",
+    "type": "Jets de sauvegarde",
+    "name": "Jet de sauvegarde: INT",
+    "classes": [
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "roublard",
+        "name": "Roublard",
+        "url": "/api/2014/classes/roublard"
+      },
+      {
+        "index": "magicien",
+        "name": "Magicien",
+        "url": "/api/2014/classes/magicien"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/jet-de-sauvegarde-int",
+    "reference": {
+      "index": "int",
+      "name": "INT",
+      "url": "/api/2014/caracteristique/int"
+    }
+  },
+  {
+    "index": "jet-de-sauvegarde-sag",
+    "type": "Jets de sauvegarde",
+    "name": "Jet de sauvegarde: WIS",
+    "classes": [
+      {
+        "index": "clerc",
+        "name": "Clerc",
+        "url": "/api/2014/classes/clerc"
+      },
+      {
+        "index": "druide",
+        "name": "Druide",
+        "url": "/api/2014/classes/druide"
+      },
+      {
+        "index": "paladin",
+        "name": "Paladin",
+        "url": "/api/2014/classes/paladin"
+      },
+      {
+        "index": "occultiste",
+        "name": "Occultiste",
+        "url": "/api/2014/classes/occultiste"
+      },
+      {
+        "index": "magicien",
+        "name": "Magicien",
+        "url": "/api/2014/classes/magicien"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/jet-de-sauvegarde-sag",
+    "reference": {
+      "index": "sag",
+      "name": "WIS",
+      "url": "/api/2014/caracteristique/sag"
+    }
+  },
+  {
+    "index": "jet-de-sauvegarde-cha",
+    "type": "Jets de sauvegarde",
+    "name": "Jet de sauvegarde: CHA",
+    "classes": [
+      {
+        "index": "barde",
+        "name": "Barde",
+        "url": "/api/2014/classes/barde"
+      },
+      {
+        "index": "clerc",
+        "name": "Clerc",
+        "url": "/api/2014/classes/clerc"
+      },
+      {
+        "index": "paladin",
+        "name": "Paladin",
+        "url": "/api/2014/classes/paladin"
+      },
+      {
+        "index": "ensorceleur",
+        "name": "Ensorceleur",
+        "url": "/api/2014/classes/ensorceleur"
+      },
+      {
+        "index": "occultiste",
+        "name": "Occultiste",
+        "url": "/api/2014/classes/occultiste"
+      }
+    ],
+    "races": [],
+    "url": "/api/2014/maitrises/jet-de-sauvegarde-cha",
+    "reference": {
+      "index": "cha",
+      "name": "CHA",
+      "url": "/api/2014/caracteristique/cha"
+    }
+  },
+  {
+    "index": "competence-acrobaties",
+    "type": "Competences",
+    "name": "Competence: Acrobaties",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-acrobaties",
+    "reference": {
+      "index": "acrobaties",
+      "name": "Acrobaties",
+      "url": "/api/2014/compétences/acrobaties"
+    }
+  },
+  {
+    "index": "competence-dressage",
+    "type": "Competences",
+    "name": "Competence: Dressage",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-dressage",
+    "reference": {
+      "index": "dressage",
+      "name": "Dressage",
+      "url": "/api/2014/compétences/dressage"
+    }
+  },
+  {
+    "index": "competence-arcane",
+    "type": "Competences",
+    "name": "Competence: Arcane",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-arcane",
+    "reference": {
+      "index": "arcane",
+      "name": "Arcane",
+      "url": "/api/2014/compétences/arcane"
+    }
+  },
+  {
+    "index": "competence-athlétisme",
+    "type": "Competences",
+    "name": "Competence: Athlétisme",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-athlétisme",
+    "reference": {
+      "index": "athlétisme",
+      "name": "Athlétisme",
+      "url": "/api/2014/compétences/athlétisme"
+    }
+  },
+  {
+    "index": "competence-tromperie",
+    "type": "Competences",
+    "name": "Competence: Tromperie",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-tromperie",
+    "reference": {
+      "index": "tromperie",
+      "name": "Tromperie",
+      "url": "/api/2014/compétences/tromperie"
+    }
+  },
+  {
+    "index": "competence-histoire",
+    "type": "Competences",
+    "name": "Competence: Histoire",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-histoire",
+    "reference": {
+      "index": "histoire",
+      "name": "Histoire",
+      "url": "/api/2014/compétences/histoire"
+    }
+  },
+  {
+    "index": "competence-intuition",
+    "type": "Competences",
+    "name": "Competence: Intuition",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-intuition",
+    "reference": {
+      "index": "intuition",
+      "name": "Intuition",
+      "url": "/api/2014/compétences/intuition"
+    }
+  },
+  {
+    "index": "competence-intimidation",
+    "type": "Competences",
+    "name": "Competence: Intimidation",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-intimidation",
+    "reference": {
+      "index": "intimidation",
+      "name": "Intimidation",
+      "url": "/api/2014/compétences/intimidation"
+    }
+  },
+  {
+    "index": "competence-investigation",
+    "type": "Competences",
+    "name": "Competence: Investigation",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-investigation",
+    "reference": {
+      "index": "investigation",
+      "name": "Investigation",
+      "url": "/api/2014/compétences/investigation"
+    }
+  },
+  {
+    "index": "competence-medecine",
+    "type": "Competences",
+    "name": "Competence: Medecine",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-medecine",
+    "reference": {
+      "index": "medecine",
+      "name": "Medecine",
+      "url": "/api/2014/compétences/medecine"
+    }
+  },
+  {
+    "index": "competence-nature",
+    "type": "Competences",
+    "name": "Competence: Nature",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-nature",
+    "reference": {
+      "index": "nature",
+      "name": "Nature",
+      "url": "/api/2014/compétences/nature"
+    }
+  },
+  {
+    "index": "competence-perception",
+    "type": "Competences",
+    "name": "Competence: Perception",
+    "classes": [],
+    "races": [
+      {
+        "index": "elf",
+        "name": "Elf",
+        "url": "/api/2014/races/elf"
+      }
+    ],
+    "url": "/api/2014/maitrises/competence-perception",
+    "reference": {
+      "index": "perception",
+      "name": "Perception",
+      "url": "/api/2014/compétences/perception"
+    }
+  },
+  {
+    "index": "competence-representation",
+    "type": "Competences",
+    "name": "Competence: Représentation",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-representation",
+    "reference": {
+      "index": "representation",
+      "name": "Représentation",
+      "url": "/api/2014/compétences/representation"
+    }
+  },
+  {
+    "index": "competence-persuasion",
+    "type": "Competences",
+    "name": "Competence: Persuasion",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-persuasion",
+    "reference": {
+      "index": "persuasion",
+      "name": "Persuasion",
+      "url": "/api/2014/compétences/persuasion"
+    }
+  },
+  {
+    "index": "competence-religion",
+    "type": "Competences",
+    "name": "Competence: Religion",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-religion",
+    "reference": {
+      "index": "religion",
+      "name": "Religion",
+      "url": "/api/2014/compétences/religion"
+    }
+  },
+  {
+    "index": "competence-escamotage",
+    "type": "Competences",
+    "name": "Competence: Escamotage",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-escamotage",
+    "reference": {
+      "index": "escamotage",
+      "name": "Escamotage",
+      "url": "/api/2014/compétences/escamotage"
+    }
+  },
+  {
+    "index": "competence-discretion",
+    "type": "Competences",
+    "name": "Competence: Discrétion",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-discretion",
+    "reference": {
+      "index": "discretion",
+      "name": "Discrétion",
+      "url": "/api/2014/compétences/discretion"
+    }
+  },
+  {
+    "index": "competence-survie",
+    "type": "Competences",
+    "name": "Competence: Survie",
+    "classes": [],
+    "races": [],
+    "url": "/api/2014/maitrises/competence-survie",
+    "reference": {
+      "index": "survie",
+      "name": "Survie",
+      "url": "/api/2014/compétences/survie"
+    }
+  }
+]

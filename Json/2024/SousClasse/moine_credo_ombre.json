@@ -1,0 +1,44 @@
+{
+  "nom": "Voie de l'Ombre",
+  "classe_parente": "moine",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 11, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Arts de l'ombre",
+          "description": "Tu peux dépenser des points de ki pour lancer les sorts suivants sans emplacement de sort : ténèbres, silence, immobilisation de personne (2 ki chacun). La caractéristique d'incantation est SAG."
+        },
+        {
+          "nom": "Foulée de l'ombre",
+          "description": "Quand tu te trouves dans de la lumière faible ou des ténèbres, tu peux te téléporter en action bonus vers un espace inoccupé en lumière faible ou ténèbres à 18 m. Si tu te téléportes, tu as avantage à la première attaque de corps à corps ce tour."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Manteau de l'ombre",
+          "description": "Tu peux te cacher quand tu n'es qu'en lumière faible ou dans les ténèbres, même si tu es observé."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Manteau d'âmes",
+          "description": "Dépense 3 points de ki pour devenir invisible pendant 1 minute, sauf si tu attaques ou lances un sort."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Chasseur de l'ombre",
+          "description": "Contre les créatures qui n'ont pas de vision dans les ténèbres ou de vision magique, tu infliges 3d6 dégâts nécrotiques supplémentaires sur une première attaque après avoir utilisé Foulée de l'ombre."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "nom": "Domaine de la Vie",
+  "classe_parente": "clerc",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 8, 17],
+  "niveaux": {
+    "3": {
+      "sorts_domaine": {
+        "1": ["bénédiction", "soin des blessures"],
+        "2": ["aide", "restauration partielle"]
+      },
+      "capacites": [
+        {
+          "nom": "Maîtrise des armures lourdes",
+          "description": "Tu obtiens la maîtrise des armures lourdes."
+        },
+        {
+          "nom": "Disciple de la vie",
+          "description": "Quand tu lances un sort de soin de niveau 1 ou supérieur, le bénéficiaire récupère un nombre de PV supplémentaire égal à 2 + le niveau du sort."
+        }
+      ]
+    },
+    "6": {
+      "sorts_domaine": {
+        "3": ["lumière du jour", "revivification"]
+      },
+      "capacites": [
+        {
+          "nom": "Guérison bénie",
+          "description": "Quand tu lances un sort qui restaure des PV à une autre créature, tu récupères toi-même 2 + le niveau du sort en PV."
+        }
+      ]
+    },
+    "8": {
+      "sorts_domaine": {
+        "4": ["gardien de la foi", "guérison de masse des blessures"]
+      },
+      "capacites": [
+        {
+          "nom": "Frappe divine",
+          "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts radiants supplémentaires (2d8 au niveau 14)."
+        }
+      ]
+    },
+    "17": {
+      "sorts_domaine": {
+        "5": ["régénération", "résurrection"]
+      },
+      "capacites": [
+        {
+          "nom": "Guérison suprême",
+          "description": "Quand tu utilises un sort pour restaurer des PV à une créature à 0 PV, traite tous les dés de guérison comme s'ils avaient obtenu leur valeur maximale."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "nom": "Barde",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": "CHA",
+      "de_vie": { "type": "1d8", "modificateur": "CON" },
+      "sauvegardes_maitrise": ["DEX", "CHA"],
+      "competences_choisies": { "nombre": 3, "options": "toutes" },
+      "maitrises_armes": ["armes_courantes"],
+      "maitrises_armures": ["armures_legeres"],
+      "maitrises_outils": { "type": "instruments_de_musique", "nombre": 3, "choix": "libre" },
+      "equipement_depart": [
+        { "choix": "A", "contenu": ["Armure de cuir", "2 dagues", "Instrument de musique au choix", "Paquetage d'artiste", "19 po"] },
+        { "choix": "B", "contenu": ["90 po"] }
+      ],
+      "incantation": true,
+      "caracteristique_incantation": "CHA",
+      "focaliseur": "instrument_de_musique"
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "de_inspiration": "d6",
+      "sorts_mineurs": 2,
+      "sorts_prepares": 4,
+      "emplacements_de_sort": { "1": 2 },
+      "capacites": [
+        {
+          "nom": "Élan artistique",
+          "description": "Offre un dé d'Inspiration à un allié (action bonus) ; le dé s'ajoute à un test d20.",
+          "type": "bonus_action",
+          "cible": { "type": "creature", "rayon": "18m", "condition": "vous_voit_ou_entend" },
+          "effets": [
+            { "type": "don_de_de", "valeur": "de_inspiration", "maximum_par_creature": 1 },
+            { "type": "utilisation_de", "nom": "de_inspiration", "moment": "test_d20", "effet": "ajouter_au_resultat", "note": "Peut convertir un échec en réussite. Le dé est dépensé à l'utilisation." }
+          ],
+          "utilisations": {
+            "formule": "modificateur_CHA", "minimum": 1,
+            "recuperation": [{ "type": "repos_long", "remise_a_max": true }]
+          }
+        },
+        {
+          "nom": "Sorts",
+          "description": "Incantation par CHA avec instrument de musique comme focaliseur.",
+          "type": "incantation",
+          "caracteristique": "CHA",
+          "focaliseur": "instrument_de_musique",
+          "note": "Sorts mineurs, sorts préparés et emplacements de sort selon la table de progression."
+        }
+      ]
+    },
+    "2": {
+      "sorts_mineurs": 2,
+      "sorts_prepares": 5,
+      "emplacements_de_sort": { "1": 3 },
+      "capacites": [
+        {
+          "nom": "Expertise",
+          "description": "Double le bonus de maîtrise pour 2 compétences au choix.",
+          "type": "passif",
+          "effets": [
+            { "type": "double_bonus_maitrise", "nombre_competences": 2, "choix": "libre", "note": "Persuasion et Représentation recommandées" }
+          ]
+        },
+        {
+          "nom": "Polyvalence",
+          "description": "Ajoute la moitié du bonus de maîtrise aux tests sans maîtrise.",
+          "type": "passif",
+          "effets": [
+            { "type": "bonus_competence_sans_maitrise", "valeur": "moitie_bonus_maitrise", "arrondi": "inferieur", "condition": "aucune_maitrise_appliquee_au_test" }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "sorts_mineurs": 2,
+      "sorts_prepares": 6,
+      "emplacements_de_sort": { "1": 4, "2": 2 },
+      "voie": { "choix": ["Collège de la Danse", "Collège du Savoir", "Collège de la Séduction", "Collège de la Vaillance"] },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 7,
+      "emplacements_de_sort": { "1": 4, "2": 3 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "de_inspiration": "d8",
+      "sorts_mineurs": 3,
+      "sorts_prepares": 9,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 2 },
+      "capacites": [
+        {
+          "nom": "Réserve créatrice",
+          "description": "L'Élan artistique se recharge au repos court ; lancer un sort rend aussi 1 utilisation.",
+          "type": "passif",
+          "effets": [
+            { "type": "modification_recuperation", "cible": "elan_artistique", "nouvelle_recuperation": [{ "type": "repos_court", "remise_a_max": true }, { "type": "repos_long", "remise_a_max": true }] },
+            { "type": "recuperation_bonus", "cible": "elan_artistique", "action": "depenser_emplacement_de_sort", "action_requise": false, "gain": 1 }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 10,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3 },
+      "verifier_sous_classe": true
+    },
+    "7": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 11,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "capacites": [
+        {
+          "nom": "Rempart harmonieux",
+          "description": "Réaction : un allié (ou vous) à 9m relance avec avantage un JS raté contre Charmé ou Effrayé.",
+          "type": "reaction",
+          "declencheur": { "type": "jet_sauvegarde_rate", "etats": ["charme", "effrayé"], "cible": "soi_ou_creature_alliee", "rayon": "9m" },
+          "effets": [{ "type": "relance_jet_sauvegarde", "modificateur": "avantage" }]
+        }
+      ]
+    },
+    "8": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 12,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "sorts_mineurs": 3,
+      "sorts_prepares": 14,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 },
+      "capacites": [
+        {
+          "nom": "Expertise",
+          "description": "Double le bonus de maîtrise pour 2 compétences supplémentaires.",
+          "type": "passif",
+          "effets": [{ "type": "double_bonus_maitrise", "nombre_competences": 2, "choix": "libre" }]
+        }
+      ]
+    },
+    "10": {
+      "de_inspiration": "d10",
+      "sorts_mineurs": 4,
+      "sorts_prepares": 15,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "capacites": [
+        {
+          "nom": "Savoirs étendus",
+          "description": "Peut préparer des sorts issus des listes de Clerc, Druide et Magicien.",
+          "type": "passif",
+          "effets": [
+            { "type": "acces_listes_sorts_externes", "listes": ["barde", "clerc", "druide", "magicien"], "condition": "quand_sorts_prepares_augmente", "note": "Ces sorts sont considérés comme des sorts de Barde. Lors d'un remplacement, on peut remplacer par un sort de l'une de ces listes." }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 16,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 }
+    },
+    "12": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 16,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "sorts_mineurs": 4,
+      "sorts_prepares": 17,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 }
+    },
+    "14": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 17,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "verifier_sous_classe": true
+    },
+    "15": {
+      "de_inspiration": "d12",
+      "sorts_mineurs": 4,
+      "sorts_prepares": 18,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 }
+    },
+    "16": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 18,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "sorts_mineurs": 4,
+      "sorts_prepares": 19,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 }
+    },
+    "18": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 20,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "capacites": [
+        {
+          "nom": "Maîtrise artistique",
+          "description": "À l'initiative, récupère jusqu'à 2 utilisations d'Élan artistique si ≤ 1 restante.",
+          "type": "passif",
+          "declencheur": { "type": "initiative", "condition": "utilisations_elan_artistique_inferieure_ou_egale_a_1" },
+          "effets": [{ "type": "recuperation_utilisations", "cible": "elan_artistique", "jusqu_a": 2 }]
+        }
+      ]
+    },
+    "19": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 21,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 },
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 22,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 },
+      "capacites": [
+        {
+          "nom": "Formule primordiale",
+          "description": "Deux sorts de pouvoir toujours préparés ; chacun peut cibler une créature supplémentaire à 3m.",
+          "type": "passif",
+          "effets": [
+            { "type": "sorts_toujours_prepares", "sorts": ["mot_de_pouvoir_guerisseur", "mot_de_pouvoir_mortel"] },
+            { "type": "cible_supplementaire", "condition": "lors_lancer_sorts_formule_primordiale", "rayon_depuis_cible_principale": "3m" }
+          ]
+        }
+      ]
+    }
+  }
+}

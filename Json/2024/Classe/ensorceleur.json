@@ -1,0 +1,392 @@
+{
+  "nom": "Ensorceleur",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": "CHA",
+      "de_vie": {
+        "type": "1d6",
+        "modificateur": "CON"
+      },
+      "sauvegardes_maitrise": ["CON", "CHA"],
+      "competences_choisies": {
+        "nombre": 2,
+        "options": ["Arcanes", "Intimidation", "Intuition", "Persuasion", "Religion", "Tromperie"]
+      },
+      "maitrises_armes": ["armes_courantes"],
+      "maitrises_armures": [],
+      "equipement_depart": [
+        {
+          "choix": "A",
+          "contenu": [
+            "Lance",
+            "2 dagues",
+            "Focaliseur arcanique (cristal)",
+            "Paquetage d'exploration souterraine",
+            "28 po"
+          ]
+        },
+        {
+          "choix": "B",
+          "contenu": ["50 po"]
+        }
+      ],
+      "incantation": true,
+      "caracteristique_incantation": "CHA",
+      "focaliseur": "focaliseur_arcanique"
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "sorts_mineurs": 4,
+      "sorts_prepares": 2,
+      "emplacements_de_sort": { "1": 2 },
+      "capacites": [
+        {
+          "nom": "Sorts",
+          "description": "Incantation par CHA avec focaliseur arcanique.",
+          "type": "incantation",
+          "caracteristique": "CHA",
+          "focaliseur": "focaliseur_arcanique",
+          "note": "Sorts mineurs, sorts préparés et emplacements selon la table de progression."
+        },
+        {
+          "nom": "Magie innée",
+          "description": "Action bonus : pendant 1 minute, +1 au DD des sorts et avantage aux jets d'attaque de sort.",
+          "type": "bonus_action",
+          "duree": "1 minute",
+          "effets": [
+            {
+              "type": "bonus_dd_sauvegarde_sorts",
+              "valeur": 1,
+              "conditions": [{ "type": "etat", "valeur": "magie_innee_active" }]
+            },
+            {
+              "type": "avantage",
+              "cible": "jet_attaque_sort",
+              "conditions": [{ "type": "etat", "valeur": "magie_innee_active" }]
+            }
+          ],
+          "utilisations": {
+            "initial": 2,
+            "recuperation": [
+              { "type": "repos_long", "remise_a_max": true }
+            ]
+          }
+        }
+      ]
+    },
+    "2": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 4,
+      "emplacements_de_sort": { "1": 3 },
+      "points_de_sorcellerie": 2,
+      "options_alteration_magique": 2,
+      "capacites": [
+        {
+          "nom": "Altération magique",
+          "description": "Dépense des points de sorcellerie pour modifier un sort (temps, portée, durée, cibles, dégâts, discrétion…).",
+          "type": "actif",
+          "cout": "points_de_sorcellerie",
+          "nombre_options_choisies": 2,
+          "note": "Une seule option par sort sauf indication contraire.",
+          "effets": [
+            {
+              "type": "choix",
+              "reference": "metamagies",
+              "nombre_choix": "options_alteration_magique"
+            }
+          ]
+        },
+        {
+          "nom": "Réservoir arcanique",
+          "description": "Pool de points de sorcellerie (PS) convertibles en emplacements et vice versa.",
+          "type": "passif",
+          "points_de_sorcellerie": {
+            "formule": "egal_au_niveau",
+            "minimum_niveau": 2,
+            "maximum": "valeur_table",
+            "recuperation": [{ "type": "repos_long", "remise_a_max": true }]
+          },
+          "conversion_emplacement_vers_points": {
+            "action_requise": false,
+            "gain": "niveau_emplacement_depense"
+          },
+          "creation_emplacement": {
+            "type": "bonus_action",
+            "table": [
+              { "niveau_emplacement": 1, "cout": 2, "niveau_min_ensorceleur": 2 },
+              { "niveau_emplacement": 2, "cout": 3, "niveau_min_ensorceleur": 3 },
+              { "niveau_emplacement": 3, "cout": 5, "niveau_min_ensorceleur": 5 },
+              { "niveau_emplacement": 4, "cout": 6, "niveau_min_ensorceleur": 7 },
+              { "niveau_emplacement": 5, "cout": 7, "niveau_min_ensorceleur": 9 }
+            ],
+            "disparait_au": "repos_long"
+          }
+        }
+      ]
+    },
+    "3": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 6,
+      "emplacements_de_sort": { "1": 4, "2": 2 },
+      "points_de_sorcellerie": 3,
+      "voie": {
+        "choix": [
+          "Sorcellerie aberrante",
+          "Sorcellerie draconique",
+          "Sorcellerie mécanique",
+          "Sorcellerie sauvage"
+        ]
+      },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 7,
+      "emplacements_de_sort": { "1": 4, "2": 3 },
+      "points_de_sorcellerie": 4,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "sorts_mineurs": 5,
+      "sorts_prepares": 9,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 2 },
+      "points_de_sorcellerie": 5,
+      "capacites": [
+        {
+          "nom": "Récupération arcanique",
+          "description": "Au repos court (1/repos long), récupère un nombre de PS égal à la moitié du niveau d'Ensorceleur.",
+          "type": "passif",
+          "declencheur": "repos_court",
+          "effets": [
+            {
+              "type": "recuperation_points",
+              "cible": "points_de_sorcellerie",
+              "valeur": "moitie_niveau_ensorceleur",
+              "arrondi": "inferieur"
+            }
+          ],
+          "utilisations": {
+            "initial": 1,
+            "recuperation": [{ "type": "repos_long", "remise_a_max": true }]
+          }
+        }
+      ]
+    },
+    "6": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 10,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3 },
+      "points_de_sorcellerie": 6,
+      "verifier_sous_classe": true
+    },
+    "7": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 11,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "points_de_sorcellerie": 7,
+      "capacites": [
+        {
+          "nom": "Magie incarnée",
+          "description": "Peut récupérer une utilisation de Magie innée en dépensant 2 PS ; quand Magie innée est active, peut combiner 2 options d'Altération magique.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "recuperation_conditionnelle",
+              "cible": "magie_innee",
+              "condition": "aucune_utilisation_disponible",
+              "cout": { "points_de_sorcellerie": 2 },
+              "action": "bonus_action",
+              "gain": 1
+            },
+            {
+              "type": "autorisation_multi_option",
+              "cible": "alteration_magique",
+              "maximum_par_sort": 2,
+              "condition": "magie_innee_active"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 12,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "points_de_sorcellerie": 8,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "sorts_mineurs": 5,
+      "sorts_prepares": 14,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 },
+      "points_de_sorcellerie": 9
+    },
+    "10": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 15,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "points_de_sorcellerie": 10,
+      "options_alteration_magique": 4,
+      "capacites": [
+        {
+          "nom": "Altération magique",
+          "description": "Gagne 2 options supplémentaires d'Altération magique.",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "options_supplementaires",
+              "nombre": 2,
+              "note": "2 options supplémentaires au choix parmi les options disponibles."
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 16,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "points_de_sorcellerie": 11
+    },
+    "12": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 16,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "points_de_sorcellerie": 12,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "sorts_mineurs": 6,
+      "sorts_prepares": 17,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "points_de_sorcellerie": 13
+    },
+    "14": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 17,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "points_de_sorcellerie": 14,
+      "verifier_sous_classe": true
+    },
+    "15": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 18,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "points_de_sorcellerie": 15
+    },
+    "16": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 18,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "points_de_sorcellerie": 16,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "sorts_mineurs": 6,
+      "sorts_prepares": 19,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "points_de_sorcellerie": 17,
+      "options_alteration_magique": 6,
+      "capacites": [
+        {
+          "nom": "Altération magique",
+          "description": "Gagne 2 options supplémentaires d'Altération magique.",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "options_supplementaires",
+              "nombre": 2,
+              "note": "2 options supplémentaires au choix parmi les options disponibles."
+            }
+          ]
+        }
+      ]
+    },
+    "18": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 20,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "points_de_sorcellerie": 18,
+      "verifier_sous_classe": true
+    },
+    "19": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 21,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 },
+      "points_de_sorcellerie": 19,
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "sorts_mineurs": 6,
+      "sorts_prepares": 22,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 },
+      "points_de_sorcellerie": 20,
+      "capacites": [
+        {
+          "nom": "Transcendance arcanique",
+          "description": "Quand Magie innée est active, peut utiliser une option d'Altération magique gratuitement (sans PS) 1 fois par tour.",
+          "type": "passif",
+          "conditions": [{ "type": "etat", "valeur": "magie_innee_active" }],
+          "effets": [
+            {
+              "type": "alteration_magique_gratuite",
+              "frequence": "1_par_tour",
+              "cout": 0,
+              "note": "Une option d'Altération magique utilisable sans dépenser de points à chaque tour."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

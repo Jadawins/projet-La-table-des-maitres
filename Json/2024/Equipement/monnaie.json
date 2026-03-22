@@ -1,0 +1,38 @@
+{
+  "monnaie": {
+    "pieces": [
+      {
+        "nom": "pièce_de_cuivre",
+        "abbreviation": "pc",
+        "valeur_en_pc": 1
+      },
+      {
+        "nom": "pièce_d'argent",
+        "abbreviation": "pa",
+        "valeur_en_pc": 10
+      },
+      {
+        "nom": "pièce_d'électrum",
+        "abbreviation": "pe",
+        "valeur_en_pc": 50
+      },
+      {
+        "nom": "pièce_d'or",
+        "abbreviation": "po",
+        "valeur_en_pc": 100
+      },
+      {
+        "nom": "pièce_de_platine",
+        "abbreviation": "pp",
+        "valeur_en_pc": 1000
+      }
+    ],
+    "conversion": {
+      "pc_par_pa": 10,
+      "pa_par_pe": 5,
+      "pa_par_po": 10,
+      "po_par_pp": 10
+    },
+    "valeur_reference": "1 po = 100 pc"
+  }
+}

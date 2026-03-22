@@ -1,0 +1,66 @@
+{
+  "id": "soldat",
+  "nom": "Soldat",
+  "description": "Vous avez servi dans une armée régulière ou une milice. Vous connaissez la discipline militaire et les réalités brutales du champ de bataille.",
+  "competences": [
+    "Athlétisme",
+    "Intimidation"
+  ],
+  "outils": [
+    "Véhicule de terre"
+  ],
+  "langues": [],
+  "don": "Sauvagerie martiale",
+  "equipement": [
+    {
+      "nom": "Arc court",
+      "quantite": 1
+    },
+    {
+      "nom": "Flèches",
+      "quantite": 20
+    },
+    {
+      "nom": "Carquois",
+      "quantite": 1
+    },
+    {
+      "nom": "Boîte de jeux (au choix)",
+      "quantite": 1
+    },
+    {
+      "nom": "Trousse de soins",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 14
+    }
+  ],
+  "aptitude": {
+    "nom": "Sauvagerie martiale",
+    "description": "Quand vous réduisez une créature à 0 PV avec une attaque au corps à corps, vous pouvez utiliser votre réaction pour attaquer une créature adjacente."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je suis direct et dis ce que je pense.",
+      "Je respecte la chaîne de commandement."
+    ],
+    "ideaux": [
+      "Honneur : Je vis et meurs par mon code militaire.",
+      "Devoir : Les ordres légitimes doivent être exécutés."
+    ],
+    "liens": [
+      "Je ferais n'importe quoi pour mes camarades d'armes.",
+      "Mon unité a été décimée — je cherche à comprendre pourquoi."
+    ],
+    "defauts": [
+      "Je suis incapable de questionner une autorité légitime.",
+      "Je résous les problèmes par la force en priorité."
+    ]
+  }
+}

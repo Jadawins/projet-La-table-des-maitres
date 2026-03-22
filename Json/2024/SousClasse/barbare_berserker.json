@@ -1,0 +1,40 @@
+{
+  "nom": "Frénétique",
+  "classe_parente": "barbare",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Frénésie",
+          "description": "Pendant ta Rage, tu peux entrer en Frénésie. Tu effectues une attaque à la main ou avec une arme légère en action bonus à chaque tour de ta Rage. À la fin de ta Rage, tu subis un niveau d'Épuisement."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Regard intimidant",
+          "description": "Action bonus : tente d'effrayer une créature à 9 m (JS SAG). Si elle rate, elle est Effrayée de toi jusqu'au début de ton prochain tour."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Représailles instinctives",
+          "description": "Réaction : quand une créature que tu vois te touche, tu peux lui infliger 1d6 + modificateur de FOR dégâts contondants."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Frénésie implacable",
+          "description": "Quand tu tombes à 0 PV sans mourir sur le coup pendant ta Frénésie, tu peux effectuer un jet de sauvegarde de CON DD 10. En cas de réussite, tu restes à 1 PV. Utilisable 1 fois entre deux repos courts ou longs."
+        }
+      ]
+    }
+  }
+}

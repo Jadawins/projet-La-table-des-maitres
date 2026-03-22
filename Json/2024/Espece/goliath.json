@@ -1,0 +1,30 @@
+{
+  "id": "goliath",
+  "nom": "Goliath",
+  "description": "Descendants directs des geants. Chaque goliath possede en lui le sang de ses puissants ancetres geants. Inspires par leur heritage, ils valorisent la bravoure et la force au-dessus de tout.",
+  "taille": {
+    "categorie": "M",
+    "details": "entre 2,15 m et 2,45 m"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "ascendance_geante",
+      "nom": "Ascendance geante",
+      "description": "Choisissez un benefice parmi : Bouliers ignes (geants du feu) - toucher + 1d10 feu, 1 fois/Repos long ; Endurance de la pierre (geants des pierres) - Reaction pour 1d12 + modificateur CON contre degats subis, 1 fois/Repos long ; Froid mordant (geants du givre) - toucher + 1d8 froid + -1 m Vitesse cible, 1 fois/Repos long ; Renversement des coteaux (geants des collines) - touche + degats : cible subit etat A terre, 1 fois/Repos long ; Saut des nues (geants des nuages) - teleportation magique 9 m, Action Bonus, 1 fois/Repos long ; Tonnerre des cieux (geants des tempetes) - Reaction pour 1d8 foudre a une creature dans rayon 18 m qui vous inflige des degats, 1 fois/Repos long."
+    },
+    {
+      "id": "forme_de_geant",
+      "nom": "Forme de geant",
+      "description": "A partir du niveau 5, Action Bonus : devenez de taille G pendant 10 minutes. Avantage aux tests de Force, Vitesse +1,5 m. 1 fois par Repos long."
+    },
+    {
+      "id": "forte_carrure",
+      "nom": "Forte carrure",
+      "description": "Avantage a tous les tests de caracteristique pour maitriser ou eviter l'etat Agrippi. Votre categorie de taille pour la charge est consideree comme un cran superieur a ce qu'elle est reellement."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [],
+  "sorts_innes": []
+}

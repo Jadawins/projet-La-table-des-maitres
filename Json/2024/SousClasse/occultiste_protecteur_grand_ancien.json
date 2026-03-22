@@ -1,0 +1,45 @@
+{
+  "nom": "Protecteur du Grand Ancien",
+  "classe_parente": "occultiste",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "sorts_elargis": ["détection des pensées", "frayeur", "immobilisation de personne", "télépathie"],
+      "capacites": [
+        {
+          "nom": "Éveil du Grand Ancien",
+          "description": "Tu peux communiquer télépathiquement avec toute créature intelligente que tu vois à 18 m, même si elle ne parle pas la même langue. La créature peut ne pas te répondre."
+        },
+        {
+          "nom": "Transfert de douleur",
+          "description": "Quand tu subis des dégâts, tu peux dépenser 1 emplacement de sort (réaction) pour réduire ces dégâts de 1d10 × niveau de l'emplacement et infliger la moitié à une créature à 9 m."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Entropie mentale",
+          "description": "Quand tu touches avec un sort ou une attaque un ennemi ayant déjà raté un JS d'INT, CHA ou SAG ce tour, tu infliges 1d8 dégâts psychiques supplémentaires."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Vue des profondeurs",
+          "description": "Tu peux lancer télékinésie et détection des pensées sans emplacement de sort (1/repos long chacun). Tu obtiens la vision dans le noir jusqu'à 9 m ou, si tu en as déjà, tu l'étends de 9 m."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Avatar de l'indicible",
+          "description": "1/repos long, tu prends la forme d'une terreur du vide pendant 1 minute. Tu obtiens la résistance à tous les dégâts, la vision dans le noir 24 m, et les créatures qui te voient doivent réussir un JS de SAG ou être Effrayées."
+        }
+      ]
+    }
+  }
+}

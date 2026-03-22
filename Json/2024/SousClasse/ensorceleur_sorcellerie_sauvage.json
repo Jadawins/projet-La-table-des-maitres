@@ -1,0 +1,46 @@
+{
+  "nom": "Magie sauvage",
+  "classe_parente": "ensorceleur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14, 18],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Débordement magique",
+          "description": "Après avoir lancé un sort de niveau 1 ou supérieur, le MJ peut te demander de lancer 1d20. Sur un résultat de 1, un effet aléatoire se produit.",
+          "reference": "magie_sauvage_d100"
+        },
+        {
+          "nom": "Chance du trickster",
+          "description": "Quand tu rates un jet d'attaque, tu peux dépenser 1 PS pour relancer et conserver le meilleur résultat. Si le second jet rate, un Débordement magique se produit."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Distorsion de la réalité",
+          "description": "Quand un Débordement magique se produit, tu peux choisir 2 entrées de la table et sélectionner l'une des deux."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Maîtrise du chaos",
+          "description": "1/repos long, tu peux déclencher volontairement un Débordement magique après avoir lancé un sort. De plus, quand un Débordement se produit, tu récupères 1d6 PS."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Incarnation du chaos",
+          "description": "Quand tu lances un sort, tu peux dépenser 5 PS pour choisir n'importe quelle entrée de la table de Magie sauvage au lieu de lancer les dés.",
+          "reference": "magie_sauvage_d100"
+        }
+      ]
+    }
+  }
+}

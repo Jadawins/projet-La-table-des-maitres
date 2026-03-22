@@ -1,0 +1,22 @@
+[
+  {
+    "index": "lutteur",
+    "name": "Lutteur",
+    "prerequisites": [
+      {
+        "ability_score": {
+          "index": "for",
+          "name": "FOR",
+          "url": "/api/2014/carateristique/for"
+        },
+        "minimum_score": 13
+      }
+    ],
+    "desc": [
+  "Vous avez maîtrisé les techniques de lutte. Vous bénéficiez des avantages suivants :",
+  "- Vous avez l'avantage aux jets d'attaque contre une créature que vous agrippez.",
+  "- Vous pouvez utiliser une action pour tenter de maîtriser une créature agrippée. Pour cela, effectuez un nouveau test d'agrippement. Si vous réussissez, vous et la créature êtes tous les deux considérés comme étant à terre jusqu'à ce que l'agrippement prenne fin."
+],
+    "url": "/api/2014/feats/lutteur"
+  }
+]

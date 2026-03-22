@@ -1,0 +1,1076 @@
+[
+  {
+    "index": "nain",
+    "name": "Nain",
+    "speed": 25,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "con",
+          "name": "CON",
+          "url": "/api/2014/caracteristique/con"
+        },
+        "bonus": 2
+      }
+    ],
+    "alignment": "Les nains respectent généralement les lois et l’organisation. Ils estiment qu’une société bien structurée apporte sécurité et prospérité pour tous. Leur sens de la justice les pousse à vouloir que chacun profite équitablement des fruits de l’ordre établi.",
+    "age": "Les nains grandissent comme les humains, mais ne sont véritablement vus comme adultes qu’à partir de 50 ans. Ils mènent une longue existence, vivant en moyenne jusqu’à 350 ans.",
+    "size": "Moyen",
+    "size_description": "Les nains mesurent généralement entre 1,20 mètre et 1,50 mètre, avec une carrure solide avoisinant les 70 kilos. Votre taille est Moyenne.",
+    "starting_proficiencies": [
+      {
+        "index": "hache-de-bataille",
+        "name": "Haches de bataille",
+        "url": "/api/2014/maitrises/hache-de-bataille"
+      },
+      {
+        "index": "hachette",
+        "name": "Hachettes",
+        "url": "/api/2014/maitrises/hachette"
+      },
+      {
+        "index": "marteau-leger",
+        "name": "Marteaux légers",
+        "url": "/api/2014/maitrises/marteau-leger"
+      },
+      {
+        "index": "marteau-de-guerre",
+        "name": "Marteaux de guerre",
+        "url": "/api/2014/maitrises/marteau-de-guerre"
+      }
+    ],
+    "starting_proficiency_options": {
+      "desc": "Vous gagnez la maîtrise d’un ensemble d’outils artisanaux de votre choix : outils de forgeron, fournitures de brasseur ou outils de maçon.",
+      "choose": 1,
+      "type": "maîtrises",
+      "from": {
+        "option_set_type": "options_array",
+        "options": [
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "outil-de-forgeron",
+              "name": "Outils de forgeron",
+              "url": "/api/2014/maitrises/outil-de-forgeron"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "fourniture-de-brasseur",
+              "name": "Fournitures de brasseur",
+              "url": "/api/2014/maitrises/fourniture-de-brasseur"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "outil-de-macon",
+              "name": "Outils de maçon",
+              "url": "/api/2014/maitrises/outil-de-macon"
+            }
+          }
+        ]
+      }
+    },
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "nain",
+        "name": "Nain",
+        "url": "/api/2014/langues/nain"
+      }
+    ],
+    "language_desc": "Vous pouvez parler, lire et écrire le Commun et le Nain. Le nain est une langue rude, marquée par des sons gutturaux et des consonnes dures, des particularités que les nains conservent souvent lorsqu’ils parlent d’autres langues.",
+    "traits": [
+      {
+        "index": "vision-nocturne",
+        "name": "Vision nocturne",
+        "url": "/api/2014/aptitude/vision-nocturne"
+      },
+      {
+        "index": "resilience-naine",
+        "name": "Résilience naine",
+        "url": "/api/2014/aptitude/resilience-naine"
+      },
+      {
+        "index": "affinite-avec-la-pierre",
+        "name": "Affinité avec la pierre",
+        "url": "/api/2014/aptitude/affinite-avec-la-pierre"
+      },
+      {
+        "index": "entraînement-martial-nain",
+        "name": "Entraînement martial nain",
+        "url": "/api/2014/aptitude/entraînement-martial-nain"
+      },
+      {
+        "index": "maitrise-doutil",
+        "name": "Maîtrise d’outils",
+        "url": "/api/2014/aptitude/maitrise-doutil"
+      }
+    ],
+    "subraces": [
+      {
+        "index": "nain-des-collines",
+        "name": "Nain des collines",
+        "url": "/api/2014/subraces/nain-des-collines"
+      }
+    ],
+    "url": "/api/2014/races/nain"
+  },
+  {
+    "index": "elfe",
+    "name": "Elfe",
+    "speed": 30,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "dex",
+          "name": "DEX",
+          "url": "/api/2014/caracteristique/dex"
+        },
+        "bonus": 2
+      }
+    ],
+    "age": "Bien que les elfes atteignent leur maturité physique au même rythme que les humains, ils ne se considèrent pleinement adultes qu'après avoir acquis une certaine expérience du monde. La plupart revendiquent leur statut d’adulte et choisissent leur nom définitif vers l’âge de 100 ans. Leur longévité peut dépasser les 750 ans.",
+    "alignment": "Les elfes chérissent la liberté, la diversité et l’expression personnelle. Ils préfèrent la spontanéité aux règles strictes, tout en respectant la liberté des autres autant que la leur. Ils ont naturellement tendance à faire le bien, même s’ils rejettent l’ordre rigide.",
+    "size": "Moyen",
+    "size_description": "Les elfes mesurent généralement entre 1,50 mètre et 1,80 mètre, avec une silhouette élancée et gracieuse. Votre taille est Moyenne.",
+    "starting_proficiencies": [
+      {
+        "index": "competences-perception",
+        "name": "Compétences: Perception",
+        "url": "/api/2014/maitrises/competences-perception"
+      }
+    ],
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "elfique",
+        "name": "Elfique",
+        "url": "/api/2014/langues/elfique"
+      }
+    ],
+    "language_desc": "Vous pouvez parler, lire et écrire le Commun et l’Elfique. C’est une langue fluide et harmonieuse, aux sonorités subtiles et à la grammaire riche. Les elfes possèdent une tradition littéraire et poétique réputée, que beaucoup de bardes apprennent afin d’enrichir leurs récitals de chants et de ballades elfiques.",
+    "traits": [
+      {
+        "index": "vision-nocturne",
+        "name": "Vision nocturne",
+        "url": "/api/2014/aptitude/vision-nocturne"
+      },
+      {
+        "index": "heritage-feerique",
+        "name": "Héritage féerique",
+        "url": "/api/2014/aptitude/heritage-feerique"
+      },
+      {
+        "index": "transe",
+        "name": "Transe",
+        "url": "/api/2014/aptitude/transe"
+      },
+      {
+        "index": "Sens aiguisés",
+        "name": "Sens aiguisés",
+        "url": "/api/2014/aptitude/Sens aiguisés"
+      }
+    ],
+    "subraces": [
+      {
+        "index": "haut-elfe",
+        "name": "Haut Elfe",
+        "url": "/api/2014/subraces/haut-elfe"
+      }
+    ],
+    "url": "/api/2014/races/elfe"
+  },
+  {
+    "index": "halfelin",
+    "name": "Halfelin",
+    "speed": 25,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "dex",
+          "name": "DEX",
+          "url": "/api/2014/caracteristique/dex"
+        },
+        "bonus": 2
+      }
+    ],
+    "age": "Un halfelin est considéré adulte vers l’âge de 20 ans et peut vivre bien au-delà de 150 ans, atteignant parfois les 200 ans.",
+    "alignment": "Les halfelins sont généralement bienveillants et respectueux des règles. Ils détestent voir les autres souffrir et ne supportent pas l’injustice ou l’oppression. Très attachés à leurs traditions et à la vie communautaire, ils trouvent du réconfort dans les habitudes et les valeurs transmises par les générations passées.",
+    "size": "Petit",
+    "size_description": "Les halfelins mesurent en moyenne environ 90 centimètres et pèsent autour de 18 kilos. Votre taille est Petite.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "halfelin",
+        "name": "Halfelin",
+        "url": "/api/2014/langues/halfelin"
+      }
+    ],
+    "language_desc": "You can speak, read, and write Commun and Halfelin. The Halfelin language isn't secret, but halfelins are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halfelins speak Commun to converse with the people in whose lands they dwell or through which they are traveling.",
+    "traits": [
+      {
+        "index": "brave",
+        "name": "Brave",
+        "url": "/api/2014/aptitude/brave"
+      },
+      {
+        "index": "agilite-halfeline",
+        "name": "Agilité halfeline",
+        "url": "/api/2014/aptitude/agilite-halfeline"
+      },
+      {
+        "index": "chanceux",
+        "name": "Chanceux",
+        "url": "/api/2014/aptitude/chanceux"
+      }
+    ],
+    "subraces": [
+      {
+        "index": "halfelinpied-leger",
+        "name": "Halfelin pied-léger",
+        "url": "/api/2014/subraces/halfelinpied-leger"
+      }
+    ],
+    "url": "/api/2014/races/halfelin"
+  },
+  {
+    "index": "humain",
+    "name": "Humain",
+    "speed": 30,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "for",
+          "name": "FOR",
+          "url": "/api/2014/caracteristique/for"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "dex",
+          "name": "DEX",
+          "url": "/api/2014/caracteristique/dex"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "con",
+          "name": "CON",
+          "url": "/api/2014/caracteristique/con"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "int",
+          "name": "INT",
+          "url": "/api/2014/caracteristique/int"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "sag",
+          "name": "SAG",
+          "url": "/api/2014/caracteristique/sag"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/caracteristique/cha"
+        },
+        "bonus": 1
+      }
+    ],
+    "age": "Les humains atteignent l’âge adulte vers la fin de l’adolescence et vivent généralement moins d’un siècle.",
+    "alignment": "Les humains n’ont pas de tendance particulière en matière d’alignement. On trouve parmi eux aussi bien les individus les plus vertueux que les plus cruels.",
+    "size": "Moyen",
+    "size_description": "Les humains présentent une grande diversité de tailles et de morphologies, allant d’un peu plus d’1,50 mètre à bien au-delà d’1,80 mètre. Quelle que soit votre stature, votre taille est Moyenne.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      }
+    ],
+    "language_options": {
+      "choose": 1,
+      "type": "languages",
+      "from": {
+        "option_set_type": "options_array",
+        "options": [
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "nain",
+              "name": "Nain",
+              "url": "/api/2014/langues/nain"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "elfique",
+              "name": "Elfique",
+              "url": "/api/2014/langues/elfique"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "geant",
+              "name": "Géant",
+              "url": "/api/2014/langues/geant"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "gnome",
+              "name": "Gnome",
+              "url": "/api/2014/langues/gnome"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "gobelin",
+              "name": "Gobelin",
+              "url": "/api/2014/langues/gobelin"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "halfelin",
+              "name": "Halfelin",
+              "url": "/api/2014/langues/halfelin"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "orc",
+              "name": "Orc",
+              "url": "/api/2014/langues/orc"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "abyssal",
+              "name": "Abyssal",
+              "url": "/api/2014/langues/abyssal"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "celeste",
+              "name": "Celeste",
+              "url": "/api/2014/langues/celeste"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "draconique",
+              "name": "Draconique",
+              "url": "/api/2014/langues/draconique"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "profond",
+              "name": "Profond",
+              "url": "/api/2014/langues/profond"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "infernal",
+              "name": "Infernal",
+              "url": "/api/2014/langues/infernal"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "primordial",
+              "name": "Primordial",
+              "url": "/api/2014/langues/primordial"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "sylvain",
+              "name": "Sylvain",
+              "url": "/api/2014/langues/sylvain"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "commun-des-profondeurs",
+              "name": "Commun des profondeurs",
+              "url": "/api/2014/langues/commun-des-profondeurs"
+            }
+          }
+        ]
+      }
+    },
+    "language_desc": "Vous savez parler, lire et écrire le Commun ainsi qu’une langue supplémentaire de votre choix. Les humains sont curieux et adaptables, apprenant souvent les langues des peuples qu’ils côtoient, y compris des dialectes rares. Ils aiment aussi parsemer leur discours de termes empruntés à d’autres cultures, comme des jurons orcs, des tournures poétiques elfiques ou des expressions militaires naines.",
+    "traits": [],
+    "subraces": [],
+    "url": "/api/2014/races/humain"
+  },
+  {
+    "index": "drakeide",
+    "name": "Drakéide",
+    "speed": 30,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "for",
+          "name": "FOR",
+          "url": "/api/2014/caracteristique/for"
+        },
+        "bonus": 2
+      },
+      {
+        "ability_score": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/caracteristique/cha"
+        },
+        "bonus": 1
+      }
+    ],
+    "alignment": "Les drakéides sont connus pour prendre des positions tranchées, choisissant délibérément entre le bien et le mal dans les grands conflits du monde. La plupart sont portés vers le bien, mais ceux qui basculent du côté du mal deviennent souvent des adversaires redoutables et impitoyables.",
+    "age": "Les jeunes drakéides grandissent à une vitesse impressionnante. Ils marchent seulement quelques heures après leur naissance, atteignent la taille d’un enfant humain de 10 ans dès l’âge de 3 ans, et deviennent adultes vers 15 ans. Leur espérance de vie est d’environ 80 ans.",
+    "size": "Moyen",
+    "size_description": "Les drakéides sont plus grands et plus imposants que les humains, mesurant souvent plus d’1,80 mètre et pesant autour de 110 kilos. Votre taille est Moyenne.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "draconique",
+        "name": "Draconique",
+        "url": "/api/2014/langues/draconique"
+      }
+    ],
+    "language_desc": "Vous pouvez parler, lire et écrire le Commun et le Draconique. Considérée comme l’une des plus anciennes langues du monde, elle est fréquemment utilisée dans les recherches magiques. Ses sons rudes et sifflants la rendent souvent difficile à écouter pour les autres peuples.",
+    "traits": [
+      {
+        "index": "heritage-draconique",
+        "name": "Héritage draconique",
+        "url": "/api/2014/aptitude/heritage-draconique"
+      },
+      {
+        "index": "souffle",
+        "name": "Souffle",
+        "url": "/api/2014/aptitude/souffle"
+      },
+      {
+        "index": "resistance-aux-degats",
+        "name": "Résistance aux dégâts",
+        "url": "/api/2014/aptitude/resistance-aux-degats"
+      }
+    ],
+    "subraces": [],
+    "url": "/api/2014/races/drakeide"
+  },
+  {
+    "index": "gnome",
+    "name": "Gnome",
+    "speed": 25,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "int",
+          "name": "INT",
+          "url": "/api/2014/caracteristique/int"
+        },
+        "bonus": 2
+      }
+    ],
+    "alignment": "Les gnomes sont généralement des êtres bienveillants. Ceux qui privilégient l’ordre deviennent souvent des savants, des inventeurs ou des chercheurs. Les plus fantasques, eux, préfèrent la vie d’artistes, de voyageurs ou de farceurs. Même les plus espiègles restent animés par une nature joyeuse et inoffensive.",
+    "age": "Les gnomes atteignent l’âge adulte au même rythme que les humains, mais ils sont généralement considérés comme véritablement établis vers 40 ans. Leur longévité est remarquable, puisqu’ils vivent souvent entre 350 et 500 ans.",
+    "size": "Petit",
+    "size_description": "Les gnomes mesurent entre 90 centimètres et 1,20 mètre, avec une corpulence légère avoisinant les 18 kilos. Votre taille est Petite.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "gnome",
+        "name": "Gnome",
+        "url": "/api/2014/langues/gnome"
+      }
+    ],
+    "language_desc": "Vous savez parler, lire et écrire le Commun et le Gnome. Cette langue, qui utilise l’alphabet nain, est célèbre pour ses traités techniques et ses ouvrages détaillant les merveilles du monde naturel.",
+    "traits": [
+      {
+        "index": "vision-nocturne",
+        "name": "Vision nocturne",
+        "url": "/api/2014/aptitude/vision-nocturne"
+      },
+      {
+        "index": "ruse-gnome",
+        "name": "Ruse gnome",
+        "url": "/api/2014/aptitude/ruse-gnome"
+      }
+    ],
+    "subraces": [
+      {
+        "index": "gnome-des-roches",
+        "name": "Gnome des roches",
+        "url": "/api/2014/subraces/gnome-des-roches"
+      }
+    ],
+    "url": "/api/2014/races/gnome"
+  },
+  {
+    "index": "demi-elfe",
+    "name": "Demi-Elfe",
+    "speed": 30,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/caracteristique/cha"
+        },
+        "bonus": 2
+      }
+    ],
+    "ability_bonus_options": {
+      "choose": 2,
+      "type": "Augmentation de caractéristiques",
+      "from": {
+        "option_set_type": "options_array",
+        "options": [
+          {
+            "option_type": "Augmentation de caractéristiques",
+            "ability_score": {
+              "index": "for",
+              "name": "FOR",
+              "url": "/api/2014/caracteristique/for"
+            },
+            "bonus": 1
+          },
+          {
+            "option_type": "Augmentation de caractéristiques",
+            "ability_score": {
+              "index": "dex",
+              "name": "DEX",
+              "url": "/api/2014/caracteristique/dex"
+            },
+            "bonus": 1
+          },
+          {
+            "option_type": "Augmentation de caractéristiques",
+            "ability_score": {
+              "index": "con",
+              "name": "CON",
+              "url": "/api/2014/caracteristique/con"
+            },
+            "bonus": 1
+          },
+          {
+            "option_type": "Augmentation de caractéristiques",
+            "ability_score": {
+              "index": "int",
+              "name": "INT",
+              "url": "/api/2014/caracteristique/int"
+            },
+            "bonus": 1
+          },
+          {
+            "option_type": "Augmentation de caractéristiques",
+            "ability_score": {
+              "index": "sag",
+              "name": "SAG",
+              "url": "/api/2014/caracteristique/sag"
+            },
+            "bonus": 1
+          }
+        ]
+      }
+    },
+    "alignment": "Les demi-elfes héritent de la nature libre et imprévisible de leurs ancêtres elfes. Ils recherchent avant tout l’expression personnelle et la liberté, rejetant les figures d’autorité et refusant de se soumettre aux attentes des autres. Leur comportement peut sembler instable ou difficile à anticiper, mais il découle d’un profond besoin d’indépendance.",
+    "age": "Les demi-elfes grandissent au même rythme que les humains et atteignent l’âge adulte vers 20 ans. Cependant, leur espérance de vie est bien plus longue, puisqu’ils peuvent vivre jusqu’à 180 ans, voire au-delà.",
+    "size": "Moyen",
+    "size_description": "Les demi-elfes ont une taille similaire à celle des humains, mesurant généralement entre 1,50 mètre et 1,80 mètre. Votre taille est Moyenne.",
+    "starting_proficiencies": [],
+    "starting_proficiency_options": {
+      "choose": 2,
+      "type": "maîtrises",
+      "from": {
+        "option_set_type": "options_array",
+        "options": [
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-acrobaties",
+              "name": "Compétences: Acrobaties",
+              "url": "/api/2014/maitrises/competences-acrobaties"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-dressage",
+              "name": "Compétences: Dressage",
+              "url": "/api/2014/maitrises/competences-dressage"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-arcane",
+              "name": "Compétences: Arcane",
+              "url": "/api/2014/maitrises/competences-arcane"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-athletisme",
+              "name": "Compétences: Athlétisme",
+              "url": "/api/2014/maitrises/competences-athletisme"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-tromperie",
+              "name": "Compétences: Tromperie",
+              "url": "/api/2014/maitrises/competences-tromperie"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-histoire",
+              "name": "Compétences: Histoire",
+              "url": "/api/2014/maitrises/competences-histoire"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-intuition",
+              "name": "Compétences: Intuition",
+              "url": "/api/2014/maitrises/competences-intuition"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-intimidation",
+              "name": "Compétences: Intimidation",
+              "url": "/api/2014/maitrises/competences-intimidation"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-investigation",
+              "name": "Compétences: Investigation",
+              "url": "/api/2014/maitrises/competences-investigation"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-medecine",
+              "name": "Compétences: Médecine",
+              "url": "/api/2014/maitrises/competences-medecine"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-nature",
+              "name": "Compétences: Nature",
+              "url": "/api/2014/maitrises/competences-nature"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-perception",
+              "name": "Compétences: Perception",
+              "url": "/api/2014/maitrises/competences-perception"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-representation",
+              "name": "Compétences: Représentation",
+              "url": "/api/2014/maitrises/competences-representation"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-persuasion",
+              "name": "Compétences: Persuasion",
+              "url": "/api/2014/maitrises/competences-persuasion"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-religion",
+              "name": "Compétences: Religion",
+              "url": "/api/2014/maitrises/competences-religion"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-escamotage",
+              "name": "Compétences: Escamotage",
+              "url": "/api/2014/maitrises/competences-escamotage"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-discrétion",
+              "name": "Compétences: Discrétion",
+              "url": "/api/2014/maitrises/competences-discrétion"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "competences-survie",
+              "name": "Compétences: Survie",
+              "url": "/api/2014/maitrises/competences-survie"
+            }
+          }
+        ]
+      }
+    },
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "elfique",
+        "name": "Elfique",
+        "url": "/api/2014/langues/elfique"
+      }
+    ],
+    "language_options": {
+      "choose": 1,
+      "type": "languages",
+      "from": {
+        "option_set_type": "options_array",
+        "options": [
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "nain",
+              "name": "Nain",
+              "url": "/api/2014/langues/nain"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "geant",
+              "name": "Géant",
+              "url": "/api/2014/langues/geant"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "gnome",
+              "name": "Gnome",
+              "url": "/api/2014/langues/gnome"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "gobelin",
+              "name": "Gobelin",
+              "url": "/api/2014/langues/gobelin"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "halfelin",
+              "name": "Halfelin",
+              "url": "/api/2014/langues/halfelin"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "orc",
+              "name": "Orc",
+              "url": "/api/2014/langues/orc"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "abyssal",
+              "name": "Abyssal",
+              "url": "/api/2014/langues/abyssal"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "celeste",
+              "name": "Celeste",
+              "url": "/api/2014/langues/celeste"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "draconique",
+              "name": "Draconique",
+              "url": "/api/2014/langues/draconique"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "profond",
+              "name": "Profond",
+              "url": "/api/2014/langues/profond"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "infernal",
+              "name": "Infernal",
+              "url": "/api/2014/langues/infernal"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "primordial",
+              "name": "Primordial",
+              "url": "/api/2014/langues/primordial"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "sylvain",
+              "name": "Sylvain",
+              "url": "/api/2014/langues/sylvain"
+            }
+          },
+          {
+            "option_type": "reference",
+            "item": {
+              "index": "commun-des-profondeurs",
+              "name": "Commun des profondeurs",
+              "url": "/api/2014/langues/commun-des-profondeurs"
+            }
+          }
+        ]
+      }
+    },
+    "language_desc": "You can speak, read, and write Commun, Elfique, and one extra language of your choice.",
+    "traits": [
+      {
+        "index": "vision-nocturne",
+        "name": "Vision nocturne",
+        "url": "/api/2014/aptitude/vision-nocturne"
+      },
+      {
+        "index": "heritage-feerique",
+        "name": "Héritage féerique",
+        "url": "/api/2014/aptitude/heritage-feerique"
+      },
+      {
+        "index": "polyvalence",
+        "name": "Polyvalence",
+        "url": "/api/2014/aptitude/polyvalence"
+      }
+    ],
+    "subraces": [],
+    "url": "/api/2014/races/demi-elfe"
+  },
+  {
+    "index": "demi-orc",
+    "name": "Demi-Orc",
+    "speed": 30,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "for",
+          "name": "FOR",
+          "url": "/api/2014/caracteristique/for"
+        },
+        "bonus": 2
+      },
+      {
+        "ability_score": {
+          "index": "con",
+          "name": "CON",
+          "url": "/api/2014/caracteristique/con"
+        },
+        "bonus": 1
+      }
+    ],
+    "alignment": "Les demi-orcs héritent du tempérament sauvage et chaotique de leurs ancêtres orcs, ce qui les pousse rarement vers la bonté. Ceux qui grandissent et vivent parmi les orcs adoptent souvent des valeurs brutales et impitoyables, les menant fréquemment sur la voie du mal.",
+    "age": "Les demi-orcs mûrissent un peu plus vite que les humains et deviennent adultes vers l’âge de 14 ans. Leur vieillissement est accéléré, et ils dépassent rarement les 75 ans.",
+    "size": "Moyen",
+    "size_description": "Les demi-orcs sont plus grands et plus massifs que les humains, mesurant généralement entre 1,60 mètre et 2 mètres. Leur carrure imposante n’enlève rien à leur agilité. Votre taille est Moyenne.",
+    "starting_proficiencies": [
+      {
+        "index": "competences-intimidation",
+        "name": "Compétences: Intimidation",
+        "url": "/api/2014/maitrises/competences-intimidation"
+      }
+    ],
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "orc",
+        "name": "Orc",
+        "url": "/api/2014/langues/orc"
+      }
+    ],
+    "language_desc": "Vous savez parler, lire et écrire le Commun et l’Orc. C’est une langue rude et gutturale, marquée par des sons durs. Bien qu’elle ne possède pas d’alphabet propre, elle est généralement transcrite à l’aide de l’écriture naine.",
+    "traits": [
+      {
+        "index": "vision-nocturne",
+        "name": "Vision nocturne",
+        "url": "/api/2014/aptitude/vision-nocturne"
+      },
+      {
+        "index": "attaques-sauvages",
+        "name": "Attaques sauvages",
+        "url": "/api/2014/aptitude/attaques-sauvages"
+      },
+      {
+        "index": "endurance-implacable",
+        "name": "Endurance implacable",
+        "url": "/api/2014/aptitude/endurance-implacable"
+      },
+      {
+        "index": "menacant",
+        "name": "Menaçant",
+        "url": "/api/2014/aptitude/menacant"
+      }
+    ],
+    "subraces": [],
+    "url": "/api/2014/races/demi-orc"
+  },
+  {
+    "index": "tieffelin",
+    "name": "Tieffelin",
+    "speed": 30,
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "int",
+          "name": "INT",
+          "url": "/api/2014/caracteristique/int"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/caracteristique/cha"
+        },
+        "bonus": 2
+      }
+    ],
+    "alignment": "Les tieffelins ne sont pas fondamentalement maléfiques, mais leur héritage infernal les pousse souvent à suivre des chemins sombres. Qu’ils soient bons ou mauvais, leur nature indépendante les amène généralement à rejeter les règles établies, préférant une vie marquée par le chaos et la liberté.",
+    "age": "Les tieffelins grandissent au même rythme que les humains, atteignant l’âge adulte vers la vingtaine, mais ils vivent généralement un peu plus longtemps, dépassant parfois les 90 à 100 ans.",
+    "size": "Moyen",
+    "size_description": "Les tieffelins ont une taille et une carrure comparables à celles des humains, mesurant en moyenne entre 1,60 mètre et 1,80 mètre. Votre taille est Moyenne.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "commun",
+        "name": "Commun",
+        "url": "/api/2014/langues/commun"
+      },
+      {
+        "index": "infernal",
+        "name": "Infernal",
+        "url": "/api/2014/langues/infernal"
+      }
+    ],
+    "language_desc": "Vous savez parler, lire et écrire le Commun et l’Infernal, la langue rude et formelle des créatures des plans infernaux.",
+    "traits": [
+      {
+        "index": "vision-nocturne",
+        "name": "Vision nocturne",
+        "url": "/api/2014/aptitude/vision-nocturne"
+      },
+      {
+        "index": "resistance-infernale",
+        "name": "Résistance infernale",
+        "url": "/api/2014/aptitude/resistance-infernale"
+      },
+      {
+        "index": "heritage-feerique",
+        "name": "Héritage féerique",
+        "url": "/api/2014/aptitude/heritage-feerique"
+      }
+    ],
+    "subraces": [],
+    "url": "/api/2014/races/tieffelin"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "nom": "Cercle de la Lune",
+  "classe_parente": "druide",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Forme sauvage améliorée",
+          "description": "Tu peux utiliser ta Forme sauvage en action bonus. Tu peux adopter des formes avec un NC allant jusqu'à ton niveau de druide divisé par 3 (arrondi à l'inférieur)."
+        },
+        {
+          "nom": "Formes de combat",
+          "description": "Tu peux utiliser la Forme sauvage pour adopter des formes avec la caractéristique de nage ou de vol dès le niveau 2."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Forme élémentaire",
+          "description": "Tu peux utiliser ta Forme sauvage pour adopter la forme d'un élémentaire (air, eau, feu, terre) au lieu d'une bête."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Transformations multiples",
+          "description": "Tu peux maintenir deux Formes sauvages simultanément. Chaque utilisation consomme une charge."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Maître métamorphe",
+          "description": "Quand tu prends une Forme sauvage, tu récupères des PV égaux à ton modificateur de SAG × 2."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "nom": "Collège de la Vaillance",
+  "classe_parente": "barde",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Maîtrises de combat",
+          "description": "Tu obtiens la maîtrise des armures intermédiaires, des boucliers et des armes de guerre."
+        },
+        {
+          "nom": "Inspiration martiale",
+          "description": "Un allié qui utilise ton Inspiration bardique sur un jet d'attaque peut ajouter le dé et effectuer une attaque supplémentaire."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Attaque supplémentaire",
+          "description": "Tu peux attaquer deux fois au lieu d'une quand tu utilises l'action Attaquer."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Barde de bataille",
+          "description": "Réaction : quand un allié à 18 m rate une attaque ou un jet de sauvegarde, dépense une Inspiration bardique pour lui permettre de relancer le dé et conserver le meilleur résultat."
+        }
+      ]
+    }
+  }
+}

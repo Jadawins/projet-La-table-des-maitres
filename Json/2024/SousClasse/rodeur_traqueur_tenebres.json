@@ -1,0 +1,45 @@
+{
+  "nom": "Traqueur des ténèbres",
+  "classe_parente": "rodeur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 11, 15],
+  "niveaux": {
+    "3": {
+      "sorts_connus_supplementaires": ["détection des sorts", "infiltration illusoire"],
+      "capacites": [
+        {
+          "nom": "Magie des ténèbres",
+          "description": "Tu peux lancer détection de la magie, ténèbres et silence sans dépenser d'emplacement de sort (SAG fois/repos long)."
+        },
+        {
+          "nom": "Vision des ténèbres",
+          "description": "Tu obtiens la vision dans le noir sur 18 m. Si tu l'as déjà, elle est étendue de 18 m. Dans les ténèbres, tu peux te cacher même si tu es observé."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Foulée des ombres",
+          "description": "Lorsque tu es en lumière faible ou dans les ténèbres, tu peux te téléporter jusqu'à 18 m vers un espace similaire en action bonus. Tu peux également ignorer les terrains difficiles générés par les ténèbres magiques."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Ombre destructrice",
+          "description": "Dans les ténèbres, tes attaques à la main ou à distance infligent 3d6 dégâts nécrotiques supplémentaires si la cible est Effrayée ou Aveuglée."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Enveloppe des ombres",
+          "description": "Tu peux te rendre invisible dans les ténèbres (action bonus). Tu restes invisible jusqu'à ce que tu attaques ou lances un sort. Tu obtiens également la résistance aux dégâts nécrotiques."
+        }
+      ]
+    }
+  }
+}

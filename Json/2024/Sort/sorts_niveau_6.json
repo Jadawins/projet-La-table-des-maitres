@@ -1,0 +1,936 @@
+[
+  {
+    "id": "allie_planaire",
+    "nom": "Allié planaire",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "10 minutes",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Invoquez un Céleste, Élémentaire ou Fiélon (FP 6 ou moins). La créature n'est pas contrainte d'obéir. Vous pouvez négocier une tâche en échange d'une récompense. Si l'accord est conclu, elle exécute la tâche puis repart."
+  },
+  {
+    "id": "barriere_de_lames",
+    "nom": "Barrière de lames",
+    "niveau": 6,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "27m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "ligne",
+      "rayon_m": 30
+    },
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "force",
+        "valeur": "6d10"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Mur vertical de lames tourbillonnantes de 30 m de long, 3 m de haut et 1,5 m d'épaisseur. Toute créature qui traverse ou commence son tour dans le mur effectue un JS de Dextérité : 6d10 tranchant en cas d'échec, moitié en cas de réussite."
+  },
+  {
+    "id": "cercle_de_mort",
+    "nom": "Cercle de mort",
+    "niveau": 6,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "Perle noire d'une valeur minimale de 500 po réduite en poudre"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 18
+    },
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "nécrotique",
+        "valeur": "8d8"
+      }
+    ],
+    "niveau_superieur": {
+      "par_niveau": 1,
+      "ajout_degats": "2d8"
+    },
+    "description": "Sphère de 18 m de rayon. Chaque créature dans la zone effectue un JS de Constitution : 8d6 nécrotique en cas d'échec, moitié en cas de réussite. +2d6 par niveau au-delà du 6e."
+  },
+  {
+    "id": "chaine_d_eclairs",
+    "nom": "Chaîne d'éclairs",
+    "niveau": 6,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "Trois broches en argent"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "foudre",
+        "valeur": "10d8"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Déchargez la foudre sur une cible principale (10d8 foudre, JS DEX moitié) qui se propage sur jusqu'à 3 cibles secondaires à 9 m (10d8, JS DEX moitié). +1d8 par niveau au-delà du 6e."
+  },
+  {
+    "id": "chaudron_bouillonnant_de_tasha",
+    "nom": "Chaudron bouillonnant de Tasha",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "Une louche dorée d'une valeur minimale de 500 po"
+    },
+    "duree": "10 minutes",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Cylindre de 1,5 m de rayon et 3 m de haut rempli de liquide acide. Toute créature qui entre ou commence son tour dans la zone effectue un JS de Dextérité : 6d4 acide en cas d'échec, moitié en cas de réussite. +1d4 par niveau au-delà du 6e."
+  },
+  {
+    "id": "contamination",
+    "nom": "Contamination",
+    "niveau": 6,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "nécrotique",
+        "valeur": "14d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Ciblez une créature à portée. JS de Constitution : échec = la cible subit l'état Empoisonné et ses caractéristiques physiques (FOR, DEX, CON) sont réduites de 1d4 par tour. Si une caractéristique tombe à 0, la cible meurt."
+  },
+  {
+    "id": "convocation_de_fielon",
+    "nom": "Convocation de fiélon",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "27m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une fiole de sang et une gemme valant 600 po"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Invoque un esprit fiélon dans un espace inoccupé à portée, utilisant le profil de l'Esprit fiélon. À l'incantation, choisissez entre démon, diable ou yugoloth, ce qui détermine certains traits."
+  },
+  {
+    "id": "convocations_instantanees_de_drawmij",
+    "nom": "Convocations instantanées de Drawmij",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un saphir valant au moins 1 000 po"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": true,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Liez un objet à une gemme (1 000 po). Tant que le sort est actif, vous pouvez invoquer l'objet dans votre main (action bonus) depuis n'importe quel plan. L'objet réapparaît là où il était lorsque vous le congédiez."
+  },
+  {
+    "id": "creation_de_mort_vivant",
+    "nom": "Création de mort-vivant",
+    "niveau": 6,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Clerc",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "3m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un onyx noir d'une valeur minimale de 150 po pour chaque cadavre"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Choisissez jusqu'à trois cadavres d'Humanoïdes de taille M ou P à portée. Chaque cadavre devient une goule sous votre contrôle (profil dans le Manuel des monstres)."
+  },
+  {
+    "id": "danse_irresistible_d_otto",
+    "nom": "Danse irrésistible d'Otto",
+    "niveau": 6,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Ciblez une créature visible. JS de Sagesse : échec = la cible est Neutralisée et danse sur place pour la durée (Désavantage aux JS DEX et jets d'attaque, Avantage accordé aux attaquants). La cible refait le JS à la fin de chacun de ses tours."
+  },
+  {
+    "id": "desintegration",
+    "nom": "Désintégration",
+    "niveau": 6,
+    "ecole": "Transmutation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une magnétite et de la poussière"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "force",
+        "valeur": "10d6+40"
+      }
+    ],
+    "niveau_superieur": {
+      "par_niveau": 1,
+      "ajout_degats": "3d6"
+    },
+    "description": "Attaque de sort à distance. Sur un touché : 10d6+40 dégâts de force. Si les dégâts réduisent la cible à 0 PV, elle est désintégrée (rien ne subsiste sauf équipement). Aussi désintègre un objet de taille G ou inférieure, ou un volume de 3 m cube de matière non magique. +2d6+10 par niveau au-delà du 6e."
+  },
+  {
+    "id": "festin_des_heros",
+    "nom": "Festin des héros",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide"
+    ],
+    "temps_incantation": "10 minutes",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un récipient en gemme d'une valeur minimale de 1 000 po, détruit par le sort"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Invoque un festin pour 12 créatures max. L'ingestion prend 1 heure ; les bénéfices durent 24 heures : immunité au poison et à l'état Empoisonné, immunité à l'état Effrayé, Avantage aux JS de Sagesse, maximum de PV augmenté de 2d10 (et PV actuels du même montant)."
+  },
+  {
+    "id": "glissement_de_terrain",
+    "nom": "Glissement de terrain",
+    "niveau": 6,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une miniature de métal ou d'argile représentant la zone cible"
+    },
+    "duree": "concentration, jusqu'à 2 heures",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "cube",
+      "rayon_m": 12
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Choisissez une zone de terrain dont la longueur et la largeur ne dépassent pas 12 m. Vous pouvez remodeler le terrain naturel dans cette zone (terre, sable, argile, non minéral). Les créatures dans la zone sont poussées autour des changements. Les modifications prennent de 1 à 10 minutes selon leur ampleur."
+  },
+  {
+    "id": "illusion_programmee",
+    "nom": "Illusion programmée",
+    "niveau": 6,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un bout de jade d'une valeur minimale de 25 po"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "cube",
+      "rayon_m": 9
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une illusion dormante (cube 9 m) qui s'active sur déclencheur spécifique (conditions dans 9 m). Lorsqu'elle se déclenche, l'illusion joue un scénario de 5 minutes max, puis redevient dormante. Une créature peut la percer (action Étude, test INT contre DD). Dure jusqu'à dissipation."
+  },
+  {
+    "id": "interdiction",
+    "nom": "Interdiction",
+    "niveau": 6,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "10 minutes ou rituel",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "de la poussière de rubis d'une valeur minimale de 1 000 po, consommée"
+    },
+    "duree": "1 jour",
+    "concentration": false,
+    "rituel": true,
+    "zone": {
+      "forme": "cube",
+      "rayon_m": 40
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "5d10",
+        "note": "ou nécrotique, pour le type de créature choisi entrant"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une barrière magique sur une zone d'environ 1 400 m² (hauteur 9 m) que vous touchez. Pour la durée : aucune téléportation ni voyage planaire dans la zone. Choisissez un type de créature (Céleste, Fée, Fiélon, Mort-vivant, ou Artificiel) : tout exemplaire entrant dans la zone subit 5d10 dégâts (radiant ou nécrotique). Lance en rituel : dure indéfiniment."
+  },
+  {
+    "id": "invocation_de_fee",
+    "nom": "Invocation de fée",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [
+      {
+        "type": "psychique",
+        "valeur": "3d12",
+        "note": "à l'invocation si la cible est touchée"
+      }
+    ],
+    "niveau_superieur": "+1d12 par niveau d'emplacement au-delà du 6e.",
+    "invocation": {
+      "reference_creature": "esprit_ferique",
+      "fichier": "Creatures/esprit_ferique.json",
+      "source": "PHB 2024"
+    },
+    "table_effets": null,
+    "description": "Invoquez un esprit férique dans un espace inoccupé à portée. Lors de l'invocation, effectuez une attaque de sort au corps à corps contre une créature à 1,50 m de l'esprit : si touche, 3d12 dégâts psychiques + état Charmé jusqu'au début de votre prochain tour. L'esprit agit à votre initiative pour la durée."
+  },
+  {
+    "id": "mauvais_oeil",
+    "nom": "Mauvais œil",
+    "niveau": 6,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "CON",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "À chaque tour (action Magie), choisissez une créature visible à 18 m et un effet : Endormir (JS CON ou s'endort jusqu'à fin du sort ou réveil par dégâts) ; Paniqué (JS SAG ou l'état Effrayé, fuit) ; Nauséeux (JS CON ou Désavantage aux jets d'attaque et tests jusqu'au prochain tour). Chaque créature ne peut être affectée qu'une fois."
+  },
+  {
+    "id": "mot_de_retour",
+    "nom": "Mot de retour",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Vous et jusqu'à cinq créatures consentantes à portée vous téléportez instantanément vers un sanctuaire que vous avez désigné au préalable lors d'un rituel dans un lieu lié à votre divinité. Si vous n'avez pas préparé de sanctuaire, le sort échoue."
+  },
+  {
+    "id": "mur_d_epines",
+    "nom": "Mur d'épines",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une poignée d'épines"
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "ligne",
+      "rayon_m": 18
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "perforant",
+        "valeur": "7d8"
+      }
+    ],
+    "niveau_superieur": "+1d8 par niveau d'emplacement au-delà du 6e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez un mur de ronces épineuses de 18 m de long, 3 m de haut et 1,5 m d'épaisseur. Toute créature dans la zone lors de l'apparition du mur subit 7d8 dégâts perforants (JS DEX demi). Traverser le mur coûte 4 m de déplacement par mètre et inflige à nouveau les dégâts."
+  },
+  {
+    "id": "mur_de_glace",
+    "nom": "Mur de glace",
+    "niveau": 6,
+    "ecole": "Évocation",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "30m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un peu de morceaux de quartz"
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "ligne",
+      "rayon_m": 30
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "froid",
+        "valeur": "10d6"
+      }
+    ],
+    "niveau_superieur": "+2d6 par niveau d'emplacement au-delà du 6e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez un mur de glace de 30 cm d'épaisseur sur une surface solide. Les créatures présentes dans la zone font un JS de Dextérité ou subissent 10d6 dégâts de froid (réussite : moitié). Le mur fond progressivement. Ses sections peuvent être brisées (CA 12, PV 30, vulnérabilité feu). Après la fonte, une nappe de brouillard de 6 m de rayon persiste 10 minutes."
+  },
+  {
+    "id": "orientation",
+    "nom": "Orientation",
+    "niveau": 6,
+    "ecole": "Divination",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "accessoires de divination d'une valeur minimale de 100 po (cartes ou runes)"
+    },
+    "duree": "concentration, jusqu'à 1 jour",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Nommez une destination sur le même plan d'existence. Vous connaissez le chemin le plus direct vers ce lieu. Chaque direction que vous empruntez, vous savez immédiatement si elle vous en rapproche ou vous en éloigne."
+  },
+  {
+    "id": "petrification",
+    "nom": "Pétrification",
+    "niveau": 6,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une lime de calcaire"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "CON",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Tentez de transformer une créature visible à portée en pierre. JS de Constitution : sur un échec, elle est Entravée. À la fin de chacun de ses tours, elle refait le JS. Trois échecs : elle devient Pétrifiée indéfiniment jusqu'à dissipation. Trois réussites : l'effet prend fin."
+  },
+  {
+    "id": "portail_arcanique",
+    "nom": "Portail arcanique",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "150m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez deux portails de téléportation liés dans des espaces inoccupés visibles à portée. Tout être passant par l'un émerge de l'autre. Vous pouvez orienter les portails dans la direction de votre choix."
+  },
+  {
+    "id": "possession",
+    "nom": "Possession",
+    "niveau": 6,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une gemme ou un cristal d'une valeur minimale de 500 po"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "CHA",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Votre âme entre dans un réceptacle (gemme). Depuis celui-ci, vous pouvez tenter de posséder une créature dans un rayon de 30 m (JS de Charisme). En cas d'échec, vous contrôlez son corps. Votre propre corps est Incapacité dans le réceptacle. Si le réceptacle est détruit, vous mourez."
+  },
+  {
+    "id": "rayon_de_soleil",
+    "nom": "Rayon de soleil",
+    "niveau": 6,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une loupe"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "ligne",
+      "rayon_m": 9
+    },
+    "sauvegarde": "CON",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "6d8"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Projetez un rayon solaire en ligne de 9 m × 1,5 m. Chaque créature dans la ligne : JS de Constitution ou 6d8 dégâts radiants + Aveuglé jusqu'au début de votre prochain tour (réussite : moitié, pas Aveuglé). Les morts-vivants et vases ont le Désavantage. Action Magie : redirigez le rayon de 60°. Un point de lumière vive reste en flottant en dehors de la ligne."
+  },
+  {
+    "id": "sphere_glacee_d_otiluke",
+    "nom": "Sphère glacée d'Otiluke",
+    "niveau": 6,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "90m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un cristal"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 18
+    },
+    "sauvegarde": "CON",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "froid",
+        "valeur": "10d6"
+      }
+    ],
+    "niveau_superieur": "Chaque emplacement au-dessus du 6e ajoute 2d6 aux dégâts.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Lancez une sphère de glace qui explose en sphère de 18 m de rayon à un point visible. Chaque créature dans la zone : JS CON ou 10d6 dégâts de froid (réussite : moitié). Les créatures qui ratent le JS sont Entravées par de la glace jusqu'au début de votre prochain tour."
+  },
+  {
+    "id": "suggestion_de_groupe",
+    "nom": "Suggestion de groupe",
+    "niveau": 6,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": "une langue de serpent + os de couleuvre taillé en flûte"
+    },
+    "duree": "24 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "SAG",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Formulez une suggestion raisonnable à jusqu'à 12 créatures à portée que vous pouvez voir. Chacune effectue un JS de Sagesse ou suit la suggestion pendant 24 heures. L'activité s'arrête si elle devient dangereuse pour la cible. Fonctionne comme Suggestion mais affecte plusieurs cibles simultanément."
+  },
+  {
+    "id": "vent_divin",
+    "nom": "Vent divin",
+    "niveau": 6,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "8 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Vous et jusqu'à 9 créatures consentantes proches prenez une forme vaporeuse de nuage. Dans cet état : vitesse de vol 27 m, immunité aux dégâts non magiques, incapacité à attaquer ou lancer des sorts. Une action bonus permet de revenir à la forme normale (et d'agir normalement). La durée de 8 heures permet de voyager sur de longues distances."
+  },
+  {
+    "id": "vision_supreme",
+    "nom": "Vision suprême",
+    "niveau": 6,
+    "ecole": "Divination",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "poudre de champignon d'une valeur de 25 po"
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "La créature touchée obtient une vision parfaite sur 36 m : voit dans les ténèbres normales et magiques, détecte les créatures et objets invisibles, perçoit les illusions visuelles et réussit automatiquement les JS contre elles, voit dans le plan éthéré sur 36 m, et discerne la vraie forme des créatures métamorphosées."
+  },
+  {
+    "id": "voie_vegetale",
+    "nom": "Voie végétale",
+    "niveau": 6,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "3m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "1 round",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Entrez dans une plante de taille G ou plus grande à portée et émergez instantanément d'une autre plante de taille G+ à moins de 150 m que vous connaissez. Jusqu'à 8 créatures consentantes peuvent vous accompagner. Les plantes utilisées ne sont pas endommagées."
+  }
+]

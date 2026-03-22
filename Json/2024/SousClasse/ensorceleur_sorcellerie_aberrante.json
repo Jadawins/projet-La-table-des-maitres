@@ -1,0 +1,47 @@
+{
+  "nom": "Esprit abyssal",
+  "classe_parente": "ensorceleur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14, 18],
+  "niveaux": {
+    "3": {
+      "sorts_connus_supplementaires": ["frayeur", "détection des pensées"],
+      "capacites": [
+        {
+          "nom": "Télépathie aberrante",
+          "description": "Tu peux communiquer télépathiquement avec toute créature à 18 m si tu partages une langue avec elle."
+        },
+        {
+          "nom": "Chair déformée",
+          "description": "Quand tu subis des dégâts, tu peux dépenser 1 PS pour réduire ces dégâts de 1d12 + ton niveau de sorcier."
+        }
+      ]
+    },
+    "6": {
+      "sorts_connus_supplementaires": ["dissipation de la magie", "vol"],
+      "capacites": [
+        {
+          "nom": "Membres tentaculaires",
+          "description": "Action bonus : fais apparaître 1d4 appendices tentaculaires. Chacun peut effectuer une attaque de corps à corps (portée 4,5 m) infligeant 1d6 dégâts contondants. Durent 1 minute."
+        }
+      ]
+    },
+    "14": {
+      "sorts_connus_supplementaires": ["télépathie", "domination de monstre"],
+      "capacites": [
+        {
+          "nom": "Forme aberrante",
+          "description": "1/repos long, tu peux te transformer en aberration pendant 1 minute. Tu obtiens la vision aveugle sur 18 m, la résistance aux dégâts psychiques, et ton modificateur de CHA s'ajoute à tes jets de dégâts de sorts."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Présence aliénante",
+          "description": "En permanence, les créatures à 9 m qui te voient doivent réussir un JS de SAG (DD sorts) ou être Effrayées de toi pendant 1 minute. Une fois réussie, la créature est immunisée pendant 24 heures."
+        }
+      ]
+    }
+  }
+}

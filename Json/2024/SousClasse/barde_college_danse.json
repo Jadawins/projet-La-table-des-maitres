@@ -1,0 +1,36 @@
+{
+  "nom": "Collège de la Danse",
+  "classe_parente": "barde",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Danse inspirante",
+          "description": "Quand tu utilises Inspiration bardique, tu peux te déplacer jusqu'à la moitié de ta vitesse en bonus. Si tu touches avec une attaque lors du même tour, ajoute le dé d'Inspiration bardique aux dégâts."
+        },
+        {
+          "nom": "Maîtrise du mouvement",
+          "description": "Tu obtiens la maîtrise des acrobaties et de la performance si tu ne les as pas déjà."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Chorégraphie de combat",
+          "description": "Quand tu utilises ton dé d'Inspiration bardique sur un jet d'attaque ou de dégâts, tous les alliés à 9 m peuvent immédiatement se déplacer jusqu'à 3 m sans provoquer d'attaques d'opportunité."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Ballet d'acier",
+          "description": "Pendant 1 minute (1/repos long), tu entres dans une transe de danse. Tu bénéficies d'un avantage à tous tes jets d'attaque, et les ennemis ont désavantage aux jets d'attaque contre toi."
+        }
+      ]
+    }
+  }
+}

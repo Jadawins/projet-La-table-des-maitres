@@ -1,0 +1,62 @@
+{
+  "id": "acolyte",
+  "nom": "Acolyte",
+  "description": "Vous avez servi dans un temple, accomplissant des rites et offices religieux. Cette expérience vous a initié à la puissance divine et aux hiérarchies religieuses.",
+  "competences": [
+    "Intuition",
+    "Religion"
+  ],
+  "outils": [
+    "Matériel de calligraphe"
+  ],
+  "langues": [],
+  "don": "Initié à la magie (Clerc)",
+  "equipement": [
+    {
+      "nom": "Matériel de calligraphe",
+      "quantite": 1
+    },
+    {
+      "nom": "Livre de prières",
+      "quantite": 1
+    },
+    {
+      "nom": "Symbole sacré",
+      "quantite": 1
+    },
+    {
+      "nom": "Parchemin",
+      "quantite": 10
+    },
+    {
+      "nom": "Robe",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 8
+    }
+  ],
+  "aptitude": {
+    "nom": "Initié à la magie (Clerc)",
+    "description": "Obtenez deux sorts mineurs et un sort de niveau 1 de la liste du Clerc. Le sort de niveau 1 est lanceable une fois par repos long."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je cite les textes sacrés dans toutes les situations.",
+      "La charité envers les nécessiteux est mon devoir premier."
+    ],
+    "ideaux": [
+      "Foi : Je fais confiance à ma divinité pour me guider.",
+      "Tradition : Les rites ancestraux fondent la société."
+    ],
+    "liens": [
+      "Mon temple est ma famille.",
+      "Je dois rembourser ma dette envers mon mentor spirituel."
+    ],
+    "defauts": [
+      "Je suis inflexible sur les questions de morale.",
+      "Je méprise ceux qui ne partagent pas ma foi."
+    ]
+  }
+}

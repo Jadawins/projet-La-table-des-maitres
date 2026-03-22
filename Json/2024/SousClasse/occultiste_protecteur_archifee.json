@@ -1,0 +1,41 @@
+{
+  "nom": "Protecteur de l'Archifée",
+  "classe_parente": "occultiste",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "sorts_elargis": ["sommeil", "charme-personne", "lueur féerique", "image fantastique"],
+      "capacites": [
+        {
+          "nom": "Présence féerique",
+          "description": "Action (1/repos court ou long) : toutes les créatures dans un cube de 3 m à portée doivent réussir un JS de SAG ou être Charmées ou Effrayées de toi jusqu'à la fin de ton prochain tour."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Résistance infernale",
+          "description": "Tu as avantage aux JS contre les effets de Charme. De plus, tu peux utiliser ta réaction pour imposer un désavantage à un jet d'attaque contre toi lorsque l'attaquant peut te voir."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Manteau de la fée",
+          "description": "Tu peux lancer porte dimensionnelle sur toi-même sans dépenser d'emplacement de sort (1/repos court ou long). Tu peux emmener une créature consentante."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Bosquet obscur",
+          "description": "1/repos long, tu peux lancer planète végétale sans emplacement. De plus, tu es immunisé aux conditions Charmé et Effrayé par des fées."
+        }
+      ]
+    }
+  }
+}

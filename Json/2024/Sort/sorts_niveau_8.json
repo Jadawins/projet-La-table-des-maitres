@@ -1,0 +1,513 @@
+[
+  {
+    "id": "alienation",
+    "nom": "Aliénation",
+    "niveau": 8,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "l'anneau seul d'un trousseau de clefs"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "INT",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "psychique",
+        "valeur": "10d12"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Ciblez une créature visible. JS de Charisme : échec = la cible est Paralysée pour la durée. Elle répète le JS à la fin de chacun de ses tours. Si un allié de la cible est visible, elle a l'Avantage au JS."
+  },
+  {
+    "id": "aura_sacree",
+    "nom": "Aura sacrée",
+    "niveau": 8,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un reliquaire d'une valeur minimale de 1 000 po"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "emanation",
+      "rayon_m": 9
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Émanation de 9 m. Les créatures de votre choix dans la zone gagnent +4 à la CA, Avantage aux jets de sauvegarde, et les attaquants au corps à corps doivent réussir un JS de SAG ou être Aveuglés jusqu'à la fin de leur tour."
+  },
+  {
+    "id": "aversion_attirance",
+    "nom": "Aversion/attirance",
+    "niveau": 8,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Magicien"
+    ],
+    "temps_incantation": "1 heure",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un mélange de vinaigre et de miel"
+    },
+    "duree": "10 jours",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Ciblez un objet de taille G ou moins. Définissez un type de créature : elles doivent réussir un JS de SAG ou être repoussées de 18 m (Aversion) ou attirées vers l'objet (Attirance) pour la durée."
+  },
+  {
+    "id": "bagou",
+    "nom": "Bagou",
+    "niveau": 8,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Vous et jusqu'à 5 créatures consentantes gagnez la maîtrise de toutes les compétences et outils pour la durée."
+  },
+  {
+    "id": "champ_antimagie",
+    "nom": "Champ antimagie",
+    "niveau": 8,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "limaille de fer"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "emanation",
+      "rayon_m": 3
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Émanation de 3 m. Dans la zone, les sorts ne peuvent être lancés, les objets magiques perdent leurs propriétés, et les invocations sont supprimées. Les morts-vivants et Artificiels créés par magie cessent de fonctionner dans la zone."
+  },
+  {
+    "id": "clone",
+    "nom": "Clone",
+    "niveau": 8,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "1 heure",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un diamant d'une valeur minimale de 1 000 po (détruit par le sort), un récipient d'une valeur minimale de 2 000 po assez grand pour contenir la créature"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Faites croître un double inerte de vous-même (ou d'une créature consentante) dans un récipient spécial. En 120 jours, il atteint la pleine maturité. Si l'original meurt, son âme y migre et il reprend vie avec les mêmes caractéristiques."
+  },
+  {
+    "id": "controle_du_climat",
+    "nom": "Contrôle du climat",
+    "niveau": 8,
+    "ecole": "Transmutation",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Magicien"
+    ],
+    "temps_incantation": "10 minutes",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "encens qui brûle"
+    },
+    "duree": "concentration, jusqu'à 8 heures",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 7500
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Modifiez les conditions météorologiques dans un rayon de 8 km pendant 8 heures. Changez la précipitation, le vent et la température par paliers (10 minutes par changement de palier). Effets possibles : tempête, brouillard, grêle, etc."
+  },
+  {
+    "id": "dedale",
+    "nom": "Dédale",
+    "niveau": 8,
+    "ecole": "Invocation",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Bannissez une créature visible dans un labyrinthe extradimensionnel. Elle est Neutralisée. Elle peut s'échapper avec un test d'Intelligence DD 20 (action) ou automatiquement après 10 minutes."
+  },
+  {
+    "id": "demi_plan",
+    "nom": "Demi-plan",
+    "niveau": 8,
+    "ecole": "Invocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": false,
+      "S": true,
+      "M": false
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Créez un demi-plan accessible par une porte invisible sur une surface solide à portée. L'intérieur mesure 9 m de large, 9 m de long et 3 m de haut. Vous décidez de son aménagement intérieur."
+  },
+  {
+    "id": "eclair_du_soleil",
+    "nom": "Éclair du soleil",
+    "niveau": 8,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un morceau d'héliaste"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 18
+    },
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "12d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Éclat de lumière solaire dans une sphère de 18 m de rayon. JS de Constitution : échec = 12d6 dégâts radiants + état Aveuglé 1 minute ; réussite = moitié seulement. La créature Aveuglée refait le JS à la fin de chacun de ses tours pour tenter de mettre fin à l'aveuglement. Dissipe tous les effets magiques de ténèbres dans la zone."
+  },
+  {
+    "id": "esprit_impenetrable",
+    "nom": "Esprit impénétrable",
+    "niveau": 8,
+    "ecole": "Abjuration",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "24 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Protège une créature consentante contre la lecture de pensées, la détection d'alignement/émotions, la télépathie et toute Divination. La cible ne peut être ni localisée ni perçue par des moyens magiques, et est immunisée contre les effets de charme et d'effroi."
+  },
+  {
+    "id": "metamorphose_animale",
+    "nom": "Métamorphose animale",
+    "niveau": 8,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "24 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "SAG",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Jusqu'à dix créatures consentantes à portée se transforment en aigles géants (profil fourni par le MJ) pour la durée. Les créatures conservent leurs PV. Elles ne peuvent pas lancer de sorts dans cette forme. Le sort prend fin si une créature se retrouve à 0 PV ; elle reprend alors sa forme originale avec ses PV d'avant."
+  },
+  {
+    "id": "mot_de_pouvoir_etourdissant",
+    "nom": "Mot de pouvoir étourdissant",
+    "niveau": 8,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "CON",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Prononcez un mot de pouvoir contre une créature ayant 150 PV ou moins à portée. Elle est Étourdie. À la fin de chacun de ses tours, elle effectue un JS de Constitution pour mettre fin à l'effet. Si la cible a plus de 150 PV, le sort n'a aucun effet."
+  },
+  {
+    "id": "nuage_incendiaire",
+    "nom": "Nuage incendiaire",
+    "niveau": 8,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 6
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "10d8"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une sphère de fumée ardente de 6 m de rayon. Toute créature dans la zone lors de son apparition ou début de tour subit 10d8 dégâts de feu (JS DEX demi). À chaque tour (action Magie), vous pouvez déplacer le nuage de 9 m dans la direction de votre choix."
+  },
+  {
+    "id": "telepathie",
+    "nom": "Télépathie",
+    "niveau": 8,
+    "ecole": "Divination",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "illimitée",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une paire de bagues jumelles"
+    },
+    "duree": "24 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez un lien télépathique avec une créature consentante sur le même plan. Vous pouvez communiquer télépathiquement à n'importe quelle distance. Vous pouvez aussi sonder ses pensées de surface (comme Détection des pensées, sans JS). La cible peut également vous envoyer ses pensées si elle le souhaite."
+  },
+  {
+    "id": "tremblement_de_terre",
+    "nom": "Tremblement de terre",
+    "niveau": 8,
+    "ecole": "Transmutation",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Ensorceleur"
+    ],
+    "temps_incantation": "action",
+    "portee": "150m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une petite pierre brisée"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 30
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez un séisme dans une zone de 30 m de rayon sur sol solide. La zone devient Terrain difficile. Chaque créature au sol : JS DEX ou À terre. Les structures subissent 50 dégâts contondants par round. Des crevasses de 1d6 m de large s'ouvrent (JS DEX ou tomber dedans). Les sorts de concentration dans la zone nécessitent un JS de Constitution DC 15."
+  },
+  {
+    "id": "tsunami",
+    "nom": "Tsunami",
+    "niveau": 8,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "1500m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 6 rounds",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "mur",
+      "rayon_m": 300
+    },
+    "sauvegarde": "FOR",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "contondant",
+        "valeur": "6d10"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Invoquez une vague gigantesque de 300 m de long, 30 m de haut et 1,5 m d'épaisseur. Toute créature dans la vague lors de son apparition : JS FOR ou 6d10 contondant + emportée avec la vague. Chaque round (action Magie), la vague avance de 15 m. Les dégâts diminuent de 1d10 chaque round. Les créatures emportées sont Entravées par l'eau."
+  }
+]

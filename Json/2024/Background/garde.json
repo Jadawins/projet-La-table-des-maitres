@@ -1,0 +1,66 @@
+{
+  "id": "garde",
+  "nom": "Garde",
+  "description": "Vous avez assuré la sécurité d'une ville ou d'un bâtiment important. Vos années de faction vous ont appris à détecter les menaces et à maintenir l'ordre.",
+  "competences": [
+    "Athlétisme",
+    "Perception"
+  ],
+  "outils": [
+    "Boîte de jeux (au choix)"
+  ],
+  "langues": [],
+  "don": "Vigilant",
+  "equipement": [
+    {
+      "nom": "Arbalète légère",
+      "quantite": 1
+    },
+    {
+      "nom": "Carreaux d'arbalète",
+      "quantite": 20
+    },
+    {
+      "nom": "Carquois",
+      "quantite": 1
+    },
+    {
+      "nom": "Boîte de jeux (au choix)",
+      "quantite": 1
+    },
+    {
+      "nom": "Menottes",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 12
+    }
+  ],
+  "aptitude": {
+    "nom": "Vigilant",
+    "description": "Vous ne pouvez pas être surpris au combat et ajoutez votre bonus de maîtrise à vos jets d'initiative."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je reste calme dans les situations de crise.",
+      "J'observe toujours les gens autour de moi."
+    ],
+    "ideaux": [
+      "Ordre : Les règles protègent tout le monde.",
+      "Protection : Mon devoir est de défendre les innocents."
+    ],
+    "liens": [
+      "Je dois ma carrière à un supérieur qui a cru en moi.",
+      "Un criminel que j'ai laissé s'échapper a causé du tort."
+    ],
+    "defauts": [
+      "Je suis trop prompt à appliquer les règles sans jugement.",
+      "J'ai accepté des pots-de-vin et je vis dans la crainte d'être découvert."
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "nom": "Voie de la Paume ouverte",
+  "classe_parente": "moine",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 11, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Techniques de la paume",
+          "description": "Quand tu touches avec une Rafale de coups (Déluge de coups), tu peux appliquer un effet (1 effet max/tour) : Croc-en-jambe (JS DEX ou À terre), Repoussement (JS FOR ou repoussé de 4,5 m), ou Saisie (incapable d'utiliser des réactions jusqu'au début de ton prochain tour)."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Paix intérieure",
+          "description": "Tu peux dépenser 1 point de ki pour mettre fin à un effet te conférant la condition Charmé ou Effrayé. Tu es également immunisé aux effets de maladie."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Frappe funeste",
+          "description": "Dépense 3 points de ki lors d'une touche : la cible doit réussir un JS de CON ou passer à 0 PV. Si elle réussit, elle subit 10d10 dégâts nécrotiques."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Sérénité de vide",
+          "description": "Quand tu commences ton tour avec au moins 1 PV, tu récupères des PV égaux à ton modificateur de SAG. Tu ne peux pas être surpris et tu es immunisé aux dégâts nécrotiques."
+        }
+      ]
+    }
+  }
+}

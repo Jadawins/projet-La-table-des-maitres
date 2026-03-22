@@ -1,0 +1,62 @@
+{
+  "id": "sage",
+  "nom": "Sage",
+  "description": "Vous avez passé des années à étudier dans une bibliothèque, un monastère ou une université, accumulant des connaissances en arcanes, histoire et sciences.",
+  "competences": [
+    "Arcanes",
+    "Histoire"
+  ],
+  "outils": [
+    "Matériel de calligraphe"
+  ],
+  "langues": [],
+  "don": "Initié à la magie (Magicien)",
+  "equipement": [
+    {
+      "nom": "Bâton de combat",
+      "quantite": 1
+    },
+    {
+      "nom": "Matériel de calligraphe",
+      "quantite": 1
+    },
+    {
+      "nom": "Livre d'histoire",
+      "quantite": 1
+    },
+    {
+      "nom": "Parchemin",
+      "quantite": 8
+    },
+    {
+      "nom": "Robe",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 8
+    }
+  ],
+  "aptitude": {
+    "nom": "Initié à la magie (Magicien)",
+    "description": "Obtenez deux sorts mineurs et un sort de niveau 1 de la liste du Magicien. Le sort de niveau 1 est lanceable une fois par repos long."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je cite des auteurs anciens pour soutenir chacun de mes arguments.",
+      "Je suis fasciné par tout ce que je ne comprends pas encore."
+    ],
+    "ideaux": [
+      "Connaissance : Le savoir est une fin en soi.",
+      "Vérité : La vérité factuelle prime sur les croyances."
+    ],
+    "liens": [
+      "J'ai accès à une bibliothèque rare que je dois protéger.",
+      "Mon mentor m'a confié une recherche inachevée."
+    ],
+    "defauts": [
+      "Je méprise les gens incultes.",
+      "Je m'arrête pour examiner des ruines même en danger."
+    ]
+  }
+}

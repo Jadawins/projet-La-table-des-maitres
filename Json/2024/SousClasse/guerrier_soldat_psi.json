@@ -1,0 +1,52 @@
+{
+  "nom": "Soldat psychique",
+  "classe_parente": "guerrier",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 10, 15, 18],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Amélioration psionique",
+          "description": "Tu obtiens un pool de 2 dés psioniques (d6). En attaquant avec une arme, tu peux dépenser un dé pour ajouter son résultat aux dégâts ou à la valeur d'armure jusqu'au début de ton prochain tour. Le pool se recharge au repos long."
+        },
+        {
+          "nom": "Lame protégée",
+          "description": "Dépense un dé psionique en réaction quand tu es touché : ajoute le résultat à ta CA contre cette attaque."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Frappe psychique",
+          "description": "Après avoir touché avec une arme, dépense un dé psionique : la cible doit réussir un JS d'INT ou être Étourdie jusqu'à la fin de ton prochain tour."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Saut psychique",
+          "description": "Action bonus : dépense un dé psionique pour te téléporter jusqu'à 9 m vers un espace inoccupé visible."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Dés psioniques améliorés",
+          "description": "Tes dés psioniques passent à d8 et tu en possèdes maintenant 4."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Esprit blindé",
+          "description": "Tu es immunisé aux dégâts psychiques et à la condition Charmé. Tes dés psioniques passent à d10 et tu en possèdes 6."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1397 @@
+[
+  {
+    "id": "renverse",
+    "nom_affiche": "Renversé",
+    "nom_officiel": "À terre",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "renverse",
+    "description_courte": "Creature au sol : ramper ou dépenser la moitié de sa Vitesse pour se relever."
+  },
+  {
+    "id": "saisi",
+    "nom_affiche": "Saisi",
+    "nom_officiel": "Agrippé",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "saisi",
+    "description_courte": "Creature maintenue par une autre : Vitesse = 0."
+  },
+  {
+    "id": "sourd",
+    "nom_affiche": "Sourd",
+    "nom_officiel": "Assourdi",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "sourd",
+    "description_courte": "Incapable d'entendre : échoue automatiquement aux tests reposant sur l'ouïe."
+  },
+  {
+    "id": "sans_vision",
+    "nom_affiche": "Sans vision",
+    "nom_officiel": "Aveuglé",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "sans_vision",
+    "description_courte": "Ne voit rien : Désavantage aux attaques, les attaquants ont l'Avantage."
+  },
+  {
+    "id": "ensorcele",
+    "nom_affiche": "Ensorcelé",
+    "nom_officiel": "Charmé",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "ensorcele",
+    "description_courte": "Sous l'emprise magique d'une autre creature : ne peut pas l'attaquer."
+  },
+  {
+    "id": "terrorise",
+    "nom_affiche": "Terrorisé",
+    "nom_officiel": "Effrayé",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "terrorise",
+    "description_courte": "Paralysé par la peur : Désavantage quand la source est visible, ne peut pas s'en approcher."
+  },
+  {
+    "id": "intoxique",
+    "nom_affiche": "Intoxiqué",
+    "nom_officiel": "Empoisonné",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "intoxique",
+    "description_courte": "Affecté par un toxique : Désavantage aux jets d'attaque et tests de caractéristique."
+  },
+  {
+    "id": "immobilise",
+    "nom_affiche": "Immobilisé",
+    "nom_officiel": "Entravé",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "immobilise",
+    "description_courte": "Totalement bloqué : Vitesse 0, Désavantage aux attaques et JS Dex."
+  },
+  {
+    "id": "sonne",
+    "nom_affiche": "Sonné",
+    "nom_officiel": "Étourdi",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "sonne",
+    "description_courte": "Désorienté : inclut Inactif, Vitesse 0, Désavantage JS FOR/DEX."
+  },
+  {
+    "id": "inerte",
+    "nom_affiche": "Inerte",
+    "nom_officiel": "Inconscient",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "inerte",
+    "description_courte": "Totalement inconscient : inclut Inactif, Vitesse 0, coups critiques automatiques à 1,50 m."
+  },
+  {
+    "id": "inactif",
+    "nom_affiche": "Inactif",
+    "nom_officiel": "Neutralisé",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "inactif",
+    "description_courte": "Incapable d'agir : aucune action, action bonus, réaction possible."
+  },
+  {
+    "id": "dissimule",
+    "nom_affiche": "Dissimulé",
+    "nom_officiel": "Invisible",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "dissimule",
+    "description_courte": "Imperceptible : Avantage aux attaques, Désavantage des attaquants contre lui."
+  },
+  {
+    "id": "fige",
+    "nom_affiche": "Figé",
+    "nom_officiel": "Paralysé",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "fige",
+    "description_courte": "Totalement paralysé : inclut Inactif, Vitesse 0, coups critiques automatiques."
+  },
+  {
+    "id": "mineralise",
+    "nom_affiche": "Minéralisé",
+    "nom_officiel": "Pétrifié",
+    "type": "etat",
+    "source": "glossaire",
+    "glossaire_id": "mineralise",
+    "description_courte": "Transformé en substance inanimée : inclut Inactif, Résistance à tous les dégâts."
+  },
+  {
+    "id": "endurance_naturelle",
+    "nom_affiche": "Endurance naturelle",
+    "nom_officiel": "Unarmored Defense",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "CA = 10 + DEX + CON sans armure (bouclier autorisé)."
+  },
+  {
+    "id": "instinct_primitif",
+    "nom_affiche": "Instinct primitif",
+    "nom_officiel": "Danger Sense",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "Avantage aux jets de sauvegarde de DEX tant que conscient."
+  },
+  {
+    "id": "temerite",
+    "nom_affiche": "Témérité",
+    "nom_officiel": "Reckless Attack",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "Avantage sur la première attaque de corps à corps du tour, mais les ennemis ont aussi l'Avantage."
+  },
+  {
+    "id": "connaissance_sauvage",
+    "nom_affiche": "Connaissance sauvage",
+    "nom_officiel": "Primal Knowledge",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "Maîtrise de compétence supplémentaire ; en Rage, remplace le modificateur par FOR."
+  },
+  {
+    "id": "double_frappe",
+    "nom_affiche": "Double frappe",
+    "nom_officiel": "Extra Attack",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "2 attaques par action Attaque."
+  },
+  {
+    "id": "sprint_sauvage",
+    "nom_affiche": "Sprint sauvage",
+    "nom_officiel": "Fast Movement",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "+3 m de Vitesse sans armure lourde."
+  },
+  {
+    "id": "reflexes_primitifs",
+    "nom_affiche": "Réflexes primitifs",
+    "nom_officiel": "Feral Instinct",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "Avantage aux jets d'initiative tant que conscient."
+  },
+  {
+    "id": "bond_sauvage",
+    "nom_affiche": "Bond sauvage",
+    "nom_officiel": "Instinctive Pounce",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "En Rage : déplacement gratuit d'une demi-Vitesse sans déclencher d'attaque d'opportunité."
+  },
+  {
+    "id": "frappe_devastatrice",
+    "nom_affiche": "Frappe dévastatrice",
+    "nom_officiel": "Brutal Strike",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "Annule l'Avantage de Témérité pour infliger +1d10 dégâts et un effet spécial."
+  },
+  {
+    "id": "furie_indomptable",
+    "nom_affiche": "Furie indomptable",
+    "nom_officiel": "Relentless Rage",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "En Rage à 0 PV : JS CON (DD 10+) pour rester à 1 PV."
+  },
+  {
+    "id": "frappe_devastatrice_amelioree",
+    "nom_affiche": "Frappe dévastatrice améliorée",
+    "nom_officiel": "Improved Brutal Strike",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "Ajoute les effets Coup déchirant et Coup stupéfiant à la Frappe dévastatrice."
+  },
+  {
+    "id": "furie_eternelle",
+    "nom_affiche": "Furie éternelle",
+    "nom_officiel": "Persistent Rage",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "À l'initiative (1/repos long) : récupère toutes les utilisations de Rage et la prolonge automatiquement."
+  },
+  {
+    "id": "force_brute",
+    "nom_affiche": "Force brute",
+    "nom_officiel": "Indomitable Might",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "Peut remplacer tout résultat de test/JS de FOR inférieur à la valeur de score de FOR."
+  },
+  {
+    "id": "maitre_sauvage",
+    "nom_affiche": "Maître sauvage",
+    "nom_officiel": "Primal Champion",
+    "type": "capacite_classe",
+    "source": "barbare",
+    "glossaire_id": null,
+    "description_courte": "FOR et CON augmentent de 4 chacune (max 25)."
+  },
+  {
+    "id": "elan_artistique",
+    "nom_affiche": "Élan artistique",
+    "nom_officiel": "Bardic Inspiration",
+    "type": "capacite_classe",
+    "source": "barde",
+    "glossaire_id": null,
+    "description_courte": "Octroie un dé d'Inspiration à un allié (action bonus) qui s'ajoute à un Test d20."
+  },
+  {
+    "id": "polyvalence",
+    "nom_affiche": "Polyvalence",
+    "nom_officiel": "Jack of All Trades",
+    "type": "capacite_classe",
+    "source": "barde",
+    "glossaire_id": null,
+    "description_courte": "Ajoute la moitié du bonus de maîtrise aux tests sans maîtrise."
+  },
+  {
+    "id": "reserve_creatrice",
+    "nom_affiche": "Réserve créatrice",
+    "nom_officiel": "Font of Inspiration",
+    "type": "capacite_classe",
+    "source": "barde",
+    "glossaire_id": null,
+    "description_courte": "L'Élan artistique se recharge au repos court ; lancer un sort rend aussi 1 utilisation."
+  },
+  {
+    "id": "rempart_harmonieux",
+    "nom_affiche": "Rempart harmonieux",
+    "nom_officiel": "Countercharm",
+    "type": "capacite_classe",
+    "source": "barde",
+    "glossaire_id": null,
+    "description_courte": "Réaction : un allié à 9 m relance avec Avantage un JS raté contre Charmé ou Effrayé."
+  },
+  {
+    "id": "savoirs_etendus",
+    "nom_affiche": "Savoirs étendus",
+    "nom_officiel": "Magical Secrets",
+    "type": "capacite_classe",
+    "source": "barde",
+    "glossaire_id": null,
+    "description_courte": "Peut préparer des sorts issus des listes de Clerc, Druide et Magicien."
+  },
+  {
+    "id": "maitrise_artistique",
+    "nom_affiche": "Maîtrise artistique",
+    "nom_officiel": "Superior Inspiration",
+    "type": "capacite_classe",
+    "source": "barde",
+    "glossaire_id": null,
+    "description_courte": "À l'initiative : récupère jusqu'à 2 utilisations d'Élan artistique si ≤ 1 restante."
+  },
+  {
+    "id": "formule_primordiale",
+    "nom_affiche": "Formule primordiale",
+    "nom_officiel": "Words of Creation",
+    "type": "capacite_classe",
+    "source": "barde",
+    "glossaire_id": null,
+    "description_courte": "Deux sorts toujours préparés, chacun peut cibler une creature supplémentaire à 3 m."
+  },
+  {
+    "id": "vocation_divine",
+    "nom_affiche": "Vocation divine",
+    "nom_officiel": "Divine Order",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Choisir entre Protecteur (armures/armes de guerre) ou Thaumaturge (sort mineur + compétence)."
+  },
+  {
+    "id": "canal_divin",
+    "nom_affiche": "Canal divin",
+    "nom_officiel": "Channel Divinity",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Canaliser l'énergie divine pour produire un effet spécial (Éclat sacré ou aptitude de domaine)."
+  },
+  {
+    "id": "eclat_sacre",
+    "nom_affiche": "Éclat sacré",
+    "nom_officiel": "Divine Spark",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Via Canal divin : soigner ou infliger des dégâts radiance/nécrotiques (bonus de maîtrise dés)."
+  },
+  {
+    "id": "bannissement_morts_vivants",
+    "nom_affiche": "Bannissement des morts-vivants",
+    "nom_officiel": "Turn Undead",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Via Canal divin : force les morts-vivants à fuir pendant 1 minute (JS SAG)."
+  },
+  {
+    "id": "destruction_sacree",
+    "nom_affiche": "Destruction sacrée",
+    "nom_officiel": "Destroy Undead",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Les morts-vivants de FP inférieur au seuil sont détruits par Bannissement."
+  },
+  {
+    "id": "frappe_consacree",
+    "nom_affiche": "Frappe consacrée",
+    "nom_officiel": "Blessed Strikes",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Sort mineur ou attaque d'arme : inflige 1d8 radiance supplémentaire 1 fois/tour."
+  },
+  {
+    "id": "grace_divine",
+    "nom_affiche": "Grâce divine",
+    "nom_officiel": "Divine Intervention",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Appeler l'intervention directe de sa divinité 1 fois/repos long."
+  },
+  {
+    "id": "grace_divine_supreme",
+    "nom_affiche": "Grâce divine suprême",
+    "nom_officiel": "Greater Divine Intervention",
+    "type": "capacite_classe",
+    "source": "clerc",
+    "glossaire_id": null,
+    "description_courte": "Version améliorée de Grâce divine avec effets plus puissants."
+  },
+  {
+    "id": "langue_ancestrale",
+    "nom_affiche": "Langue ancestrale",
+    "nom_officiel": "Druidic",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Connaît la langue secrète druidique, incompréhensible pour les autres."
+  },
+  {
+    "id": "vocation_naturelle",
+    "nom_affiche": "Vocation naturelle",
+    "nom_officiel": "Wild Resurgence",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Récupère une utilisation de Forme animale en dépensant un emplacement de sort (et inversement)."
+  },
+  {
+    "id": "familier_naturel",
+    "nom_affiche": "Familier naturel",
+    "nom_officiel": "Wild Companion",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Invoquer un esprit faunique en forme de Familier via un emplacement de sort ou rituel."
+  },
+  {
+    "id": "forme_animale",
+    "nom_affiche": "Forme animale",
+    "nom_officiel": "Wild Shape",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Se transformer en bête dont le FP est ≤ la valeur autorisée (action bonus)."
+  },
+  {
+    "id": "elan_elementaire",
+    "nom_affiche": "Élan élémentaire",
+    "nom_officiel": "Elemental Fury",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Choisir Foudre ou Feu : infliger des dégâts élémentaires supplémentaires 1 fois/tour."
+  },
+  {
+    "id": "magie_animale",
+    "nom_affiche": "Magie animale",
+    "nom_officiel": "Beast Spells",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Peut lancer des sorts en Forme animale (composantes V et S autorisées)."
+  },
+  {
+    "id": "grand_druide",
+    "nom_affiche": "Grand druide",
+    "nom_officiel": "Archdruid",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Forme animale illimitée ; peut ignorer les composantes M sans coût lors des sorts."
+  },
+  {
+    "id": "longevite",
+    "nom_affiche": "Longévité",
+    "nom_officiel": "Timeless Body",
+    "type": "capacite_classe",
+    "source": "druide",
+    "glossaire_id": null,
+    "description_courte": "Vieillit dix fois moins vite et n'a plus besoin de nourriture ni d'eau."
+  },
+  {
+    "id": "magie_innee",
+    "nom_affiche": "Magie innée",
+    "nom_officiel": "Innate Sorcery",
+    "type": "capacite_classe",
+    "source": "ensorceleur",
+    "glossaire_id": null,
+    "description_courte": "Libère la magie intérieure : DD de sort +1, sort mineur offensif supplémentaire."
+  },
+  {
+    "id": "alteration_magique",
+    "nom_affiche": "Altération magique",
+    "nom_officiel": "Metamagic",
+    "type": "capacite_classe",
+    "source": "ensorceleur",
+    "glossaire_id": null,
+    "description_courte": "Modifier les sorts grâce aux points de sorcellerie (allonger portée, dupliquer cibles, etc.)."
+  },
+  {
+    "id": "reservoir_arcanique",
+    "nom_affiche": "Réservoir arcanique",
+    "nom_officiel": "Sorcery Points",
+    "type": "capacite_classe",
+    "source": "ensorceleur",
+    "glossaire_id": null,
+    "description_courte": "Points de sorcellerie convertibles en emplacements de sort ou en Altérations magiques."
+  },
+  {
+    "id": "recuperation_arcanique",
+    "nom_affiche": "Récupération arcanique",
+    "nom_officiel": "Sorcerous Restoration",
+    "type": "capacite_classe",
+    "source": "ensorceleur",
+    "glossaire_id": null,
+    "description_courte": "Récupère 4 points de Réservoir arcanique lors d'un repos court."
+  },
+  {
+    "id": "magie_incarnee",
+    "nom_affiche": "Magie incarnée",
+    "nom_officiel": "Sorcery Incarnate",
+    "type": "capacite_classe",
+    "source": "ensorceleur",
+    "glossaire_id": null,
+    "description_courte": "Pendant la Magie innée : 2 Altérations magiques simultanées et avantage à la Concentration."
+  },
+  {
+    "id": "transcendance_arcanique",
+    "nom_affiche": "Transcendance arcanique",
+    "nom_officiel": "Arcane Apotheosis",
+    "type": "capacite_classe",
+    "source": "ensorceleur",
+    "glossaire_id": null,
+    "description_courte": "Accès permanent à la Magie innée ; peut dépenser 1 point/tour pour une Altération gratuite."
+  },
+  {
+    "id": "techniques_d_arme",
+    "nom_affiche": "Techniques d'arme",
+    "nom_officiel": "Weapon Mastery",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Maîtrise de propriétés spéciales d'armes (Repousser, Hacher, Lier, etc.)."
+  },
+  {
+    "id": "souffle_vital",
+    "nom_affiche": "Souffle vital",
+    "nom_officiel": "Second Wind",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Action bonus : récupère 1d10 + niveau de guerrier PV (2 utilisations/repos court)."
+  },
+  {
+    "id": "elan_guerrier",
+    "nom_affiche": "Élan guerrier",
+    "nom_officiel": "Action Surge",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Prendre une action supplémentaire ce tour (1 fois/repos court)."
+  },
+  {
+    "id": "instinct_tactique",
+    "nom_affiche": "Instinct tactique",
+    "nom_officiel": "Tactical Mind",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Peut dépenser une utilisation de Souffle vital pour ajouter 1d10 à un test de caractéristique raté."
+  },
+  {
+    "id": "manoeuvre_tactique",
+    "nom_affiche": "Manœuvre tactique",
+    "nom_officiel": "Tactical Shift",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Via Élan guerrier : déplacer des alliés ou récupérer des PV temporaires."
+  },
+  {
+    "id": "feinte_tactique",
+    "nom_affiche": "Feinte tactique",
+    "nom_officiel": "Tactical Master",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Techniques d'arme : peut remplacer un effet par Repousser, Hacher ou Lier."
+  },
+  {
+    "id": "tenacite",
+    "nom_affiche": "Ténacité",
+    "nom_officiel": "Indomitable",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Relancer un JS raté (1-3 fois/repos long selon niveau)."
+  },
+  {
+    "id": "analyse_martiale",
+    "nom_affiche": "Analyse martiale",
+    "nom_officiel": "Combat Supremacy",
+    "type": "capacite_classe",
+    "source": "guerrier",
+    "glossaire_id": null,
+    "description_courte": "Les Dés de supériorité ne s'épuisent plus ; regagne 1d6 en bonus d'initiative."
+  },
+  {
+    "id": "pratique_rituelle",
+    "nom_affiche": "Pratique rituelle",
+    "nom_officiel": "Ritual Adept",
+    "type": "capacite_classe",
+    "source": "magicien",
+    "glossaire_id": null,
+    "description_courte": "Peut lancer tout sort du grimoire marqué Rituel sans emplacement de sort."
+  },
+  {
+    "id": "recuperation_magique",
+    "nom_affiche": "Récupération magique",
+    "nom_officiel": "Arcane Recovery",
+    "type": "capacite_classe",
+    "source": "magicien",
+    "glossaire_id": null,
+    "description_courte": "Repos court : récupère des emplacements de sort dont le total de niveaux ≤ moitié du niveau."
+  },
+  {
+    "id": "erudition",
+    "nom_affiche": "Érudition",
+    "nom_officiel": "Scholar",
+    "type": "capacite_classe",
+    "source": "magicien",
+    "glossaire_id": null,
+    "description_courte": "Maîtrise de deux compétences parmi Histoire, Investigation, Médecine, Nature, Perception, Survie."
+  },
+  {
+    "id": "maitrise_arcanique",
+    "nom_affiche": "Maîtrise arcanique",
+    "nom_officiel": "Arcane Mastery",
+    "type": "capacite_classe",
+    "source": "magicien",
+    "glossaire_id": null,
+    "description_courte": "Choisir 4 sorts (niv 6-9) toujours préparés, chacun castable une fois sans emplacement."
+  },
+  {
+    "id": "sorts_signatures",
+    "nom_affiche": "Sorts signatures",
+    "nom_officiel": "Signature Spells",
+    "type": "capacite_classe",
+    "source": "magicien",
+    "glossaire_id": null,
+    "description_courte": "Deux sorts de niveau 3 toujours préparés et castables sans emplacement 1 fois/repos court chacun."
+  },
+  {
+    "id": "defense_sans_armure_moine",
+    "nom_affiche": "Défense sans armure",
+    "nom_officiel": "Unarmored Defense",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "CA = 10 + DEX + SAG sans armure ni bouclier."
+  },
+  {
+    "id": "energie_martiale",
+    "nom_affiche": "Énergie martiale",
+    "nom_officiel": "Discipline Points",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Points dépensés pour activer des techniques martiales spéciales."
+  },
+  {
+    "id": "rafale_de_coups",
+    "nom_affiche": "Rafale de coups",
+    "nom_officiel": "Flurry of Blows",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Action bonus après Attaque : 2 frappes à mains nues supplémentaires (1 point d'Énergie)."
+  },
+  {
+    "id": "vigilance_defensive",
+    "nom_affiche": "Vigilance défensive",
+    "nom_officiel": "Deflect Attacks",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Réaction : réduire les dégâts d'une attaque (1d10 + DEX + niveau). Si réduit à 0 : renvoyer."
+  },
+  {
+    "id": "elan_du_vent",
+    "nom_affiche": "Élan du vent",
+    "nom_officiel": "Step of the Wind",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Action bonus (1 point) : Désengagement ou Pointe ; la distance de saut est doublée."
+  },
+  {
+    "id": "deplacement_sans_armure",
+    "nom_affiche": "Déplacement sans armure",
+    "nom_officiel": "Unarmored Movement",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Vitesse accrue sans armure ; peut se déplacer sur surfaces verticales/eau en dernier lieu."
+  },
+  {
+    "id": "recuperation_martiale",
+    "nom_affiche": "Récupération martiale",
+    "nom_officiel": "Martial Discipline",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Récupère 1 point d'Énergie martiale par utilisation de certaines capacités de moine."
+  },
+  {
+    "id": "parade_reflexe",
+    "nom_affiche": "Parade réflexe",
+    "nom_officiel": "Deflect Missiles",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Réaction : réduire puis renvoyer un projectile avec une frappe à mains nues."
+  },
+  {
+    "id": "chute_ralentie",
+    "nom_affiche": "Chute ralentie",
+    "nom_officiel": "Slow Fall",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Réaction : réduire les dégâts de chute de 5 × niveau du moine."
+  },
+  {
+    "id": "frappe_destabilisante",
+    "nom_affiche": "Frappe déstabilisante",
+    "nom_officiel": "Stunning Strike",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Après un touché : dépenser 1 point pour forcer un JS CON ou infliger l'état Sonné."
+  },
+  {
+    "id": "frappe_de_force",
+    "nom_affiche": "Frappe de force",
+    "nom_officiel": "Empowered Strikes",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Les frappes à mains nues comptent comme magiques ; +1d6 si on dépense un point d'énergie."
+  },
+  {
+    "id": "mobilite_acrobatique",
+    "nom_affiche": "Mobilité acrobatique",
+    "nom_officiel": "Acrobatic Movement",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Peut escalader et courir sur les murs/plafonds pendant son tour."
+  },
+  {
+    "id": "parade_universelle",
+    "nom_affiche": "Parade universelle",
+    "nom_officiel": "Deflect Energy",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "Étend Vigilance défensive à tous les types de dégâts, pas seulement aux attaques d'armes."
+  },
+  {
+    "id": "apothéose_martiale",
+    "nom_affiche": "Apothéose martiale",
+    "nom_officiel": "Body and Mind",
+    "type": "capacite_classe",
+    "source": "moine",
+    "glossaire_id": null,
+    "description_courte": "FOR et DEX ou SAG augmentent de 4 chacune (max 25) à niveau 20."
+  },
+  {
+    "id": "magie_liee",
+    "nom_affiche": "Magie liée",
+    "nom_officiel": "Eldritch Invocations",
+    "type": "capacite_classe",
+    "source": "occultiste",
+    "glossaire_id": null,
+    "description_courte": "Invocations occultes : aptitudes permanentes obtenues en étudiant les secrets du patron."
+  },
+  {
+    "id": "revelations_occultes",
+    "nom_affiche": "Révélations occultes",
+    "nom_officiel": "Pact Boon",
+    "type": "capacite_classe",
+    "source": "occultiste",
+    "glossaire_id": null,
+    "description_courte": "Don du patron : Pacte de la lame, du grimoire ou de la chaîne."
+  },
+  {
+    "id": "astuce_mystique",
+    "nom_affiche": "Astuce mystique",
+    "nom_officiel": "Mystic Arcanum",
+    "type": "capacite_classe",
+    "source": "occultiste",
+    "glossaire_id": null,
+    "description_courte": "Sort de haut niveau (6-9) castable sans emplacement 1 fois/repos long."
+  },
+  {
+    "id": "communion_patron",
+    "nom_affiche": "Communion avec le patron",
+    "nom_officiel": "Contact Patron",
+    "type": "capacite_classe",
+    "source": "occultiste",
+    "glossaire_id": null,
+    "description_courte": "Contacter le patron pour poser des questions ou obtenir des informations (rituel)."
+  },
+  {
+    "id": "maitrise_occulte",
+    "nom_affiche": "Maîtrise occulte",
+    "nom_officiel": "Eldritch Master",
+    "type": "capacite_classe",
+    "source": "occultiste",
+    "glossaire_id": null,
+    "description_courte": "1 fois/repos long : regagner toutes les utilisations d'emplacements de sort en 1 minute."
+  },
+  {
+    "id": "toucher_guerisseur",
+    "nom_affiche": "Toucher guérisseur",
+    "nom_officiel": "Lay on Hands",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Piscine de PV (5 × niveau) à distribuer via une action bonus ou action."
+  },
+  {
+    "id": "chatiment_sacre",
+    "nom_affiche": "Châtiment sacré",
+    "nom_officiel": "Divine Smite",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Après un touché : dépenser un emplacement pour infliger 2d8 + 1d8/niveau supplémentaire (radiance)."
+  },
+  {
+    "id": "sens_divins",
+    "nom_affiche": "Sens divins",
+    "nom_officiel": "Divine Sense",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Détecter célestes, fiélons, morts-vivants à 18 m (1 + CHA utilisations/repos long)."
+  },
+  {
+    "id": "monture_celeste",
+    "nom_affiche": "Monture céleste",
+    "nom_officiel": "Find Steed",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Invoquer une monture céleste magique qui partage les sorts du paladin."
+  },
+  {
+    "id": "aura_defensive",
+    "nom_affiche": "Aura défensive",
+    "nom_officiel": "Aura of Protection",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Alliés à 3 m (puis 9 m) ajoutent le modificateur de CHA à leurs jets de sauvegarde."
+  },
+  {
+    "id": "abjuration_sacree",
+    "nom_affiche": "Abjuration sacrée",
+    "nom_officiel": "Abjure Foes",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Canal divin : jusqu'à CHA créatures JS SAG ou Terrorisées/Sourdes 1 minute."
+  },
+  {
+    "id": "aura_de_bravoure",
+    "nom_affiche": "Aura de bravoure",
+    "nom_officiel": "Aura of Courage",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Les alliés à 3 m ne peuvent pas subir l'état Effrayé (tant que conscient)."
+  },
+  {
+    "id": "imposition_purificatrice",
+    "nom_affiche": "Imposition purificatrice",
+    "nom_officiel": "Cleansing Touch",
+    "type": "capacite_classe",
+    "source": "paladin",
+    "glossaire_id": null,
+    "description_courte": "Mettre fin à un sort actif sur soi ou un allié consentant (CHA fois/repos long)."
+  },
+  {
+    "id": "proie_juree",
+    "nom_affiche": "Proie jurée",
+    "nom_officiel": "Favored Enemy",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Choisir un type d'ennemi : Avantage aux tests d'Intelligence sur ces créatures et les traquer."
+  },
+  {
+    "id": "eclaireur_naturel",
+    "nom_affiche": "Éclaireur naturel",
+    "nom_officiel": "Natural Explorer",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Avantages en terrain naturel choisi (navigation, subsistance, initiative)."
+  },
+  {
+    "id": "foulee_libre",
+    "nom_affiche": "Foulée libre",
+    "nom_officiel": "Land's Stride",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Ne subit pas de coût de déplacement supplémentaire pour les terrains difficiles non magiques."
+  },
+  {
+    "id": "resistance_primitive",
+    "nom_affiche": "Résistance primitive",
+    "nom_officiel": "Primeval Awareness",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Détecter les types de créatures dans un rayon de 1,5 km (terrain sauvage) via un sort."
+  },
+  {
+    "id": "concentration_de_chasseur",
+    "nom_affiche": "Concentration de chasseur",
+    "nom_officiel": "Hunter's Focus",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Action bonus : marquer une proie (Avantage Perception/Survie contre elle, bonus dégâts)."
+  },
+  {
+    "id": "manteau_naturel",
+    "nom_affiche": "Manteau naturel",
+    "nom_officiel": "Nature's Veil",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Action bonus : devenir Dissimulé jusqu'au début du prochain tour (SAG fois/repos long)."
+  },
+  {
+    "id": "frappe_precise",
+    "nom_affiche": "Frappe précise",
+    "nom_officiel": "Precise Hunter",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Avantage aux jets d'attaque contre une créature Dissimulée si sa position est connue."
+  },
+  {
+    "id": "perception_eveillee",
+    "nom_affiche": "Perception éveillée",
+    "nom_officiel": "Feral Senses",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Pas de Désavantage aux attaques contre l'Invisible ; percevoir les créatures à 9 m (Vision aveugle)."
+  },
+  {
+    "id": "predateur_supreme",
+    "nom_affiche": "Prédateur suprême",
+    "nom_officiel": "Foe Slayer",
+    "type": "capacite_classe",
+    "source": "rodeur",
+    "glossaire_id": null,
+    "description_courte": "Une fois/tour : ajouter SAG au jet d'attaque ou de dégâts contre la Proie jurée."
+  },
+  {
+    "id": "jargon_des_voleurs",
+    "nom_affiche": "Jargon des voleurs",
+    "nom_officiel": "Thieves' Cant",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Langue secrète des voleurs, incompréhensible pour les non-initiés."
+  },
+  {
+    "id": "attaque_sournoise",
+    "nom_affiche": "Attaque sournoise",
+    "nom_officiel": "Sneak Attack",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Dégâts supplémentaires si Avantage ou allié adjacent à la cible (xd6 par niveau/2)."
+  },
+  {
+    "id": "ruse",
+    "nom_affiche": "Ruse",
+    "nom_officiel": "Cunning Action",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Action bonus : Désengagement, Pointe ou Furtivité."
+  },
+  {
+    "id": "concentration_de_visee",
+    "nom_affiche": "Concentration de visée",
+    "nom_officiel": "Steady Aim",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Action bonus sans se déplacer : Avantage au prochain jet d'attaque ce tour."
+  },
+  {
+    "id": "reflexe_instinctif",
+    "nom_affiche": "Réflexe instinctif",
+    "nom_officiel": "Uncanny Dodge",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Réaction quand attaqué : diviser par 2 les dégâts de l'attaque."
+  },
+  {
+    "id": "frappe_opportuniste",
+    "nom_affiche": "Frappe opportuniste",
+    "nom_officiel": "Devious Strikes",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Via Attaque sournoise : remplacer 2d6 par un effet spécial (Sonnerie, Renversement, Cécité)."
+  },
+  {
+    "id": "savoir_faire",
+    "nom_affiche": "Savoir-faire",
+    "nom_officiel": "Slippery Mind",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Maîtrise des jets de sauvegarde SAG et CHA."
+  },
+  {
+    "id": "insaisissable",
+    "nom_affiche": "Insaisissable",
+    "nom_officiel": "Elusive",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Aucun ennemi n'a l'Avantage aux jets d'attaque contre vous (si pas Inerte)."
+  },
+  {
+    "id": "coup_de_chance",
+    "nom_affiche": "Coup de chance",
+    "nom_officiel": "Stroke of Luck",
+    "type": "capacite_classe",
+    "source": "roublard",
+    "glossaire_id": null,
+    "description_courte": "Transformer un jet d'attaque raté en touché ou un test de caractéristique raté en 20 (1/repos)."
+  },
+  {
+    "id": "frenesie",
+    "nom_affiche": "Frénésie",
+    "nom_officiel": "Frenzy",
+    "type": "capacite_sous_classe",
+    "source": "barbare_berserker",
+    "glossaire_id": null,
+    "description_courte": "En Rage : attaque supplémentaire en action bonus (1/tour) ; Épuisement à la fin."
+  },
+  {
+    "id": "regard_intimidant",
+    "nom_affiche": "Regard intimidant",
+    "nom_officiel": "Intimidating Presence",
+    "type": "capacite_sous_classe",
+    "source": "barbare_berserker",
+    "glossaire_id": null,
+    "description_courte": "Action : Terrifier une créature à 9 m (JS SAG) pendant 1 minute."
+  },
+  {
+    "id": "represailles_instinctives",
+    "nom_affiche": "Représailles instinctives",
+    "nom_officiel": "Retaliation",
+    "type": "capacite_sous_classe",
+    "source": "barbare_berserker",
+    "glossaire_id": null,
+    "description_courte": "Réaction : attaque de corps à corps quand une créature adjacent vous inflige des dégâts."
+  },
+  {
+    "id": "frenesie_implacable",
+    "nom_affiche": "Frénésie implacable",
+    "nom_officiel": "Mindless Rage",
+    "type": "capacite_sous_classe",
+    "source": "barbare_berserker",
+    "glossaire_id": null,
+    "description_courte": "Ne peut pas être Ensorcele ni Terrorisé en Rage ; fin auto de ces états à l'entrée en Rage."
+  },
+  {
+    "id": "deplacement_cosmique",
+    "nom_affiche": "Déplacement cosmique",
+    "nom_officiel": "Cosmic Tree (Vitality)",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_arbre_monde",
+    "glossaire_id": null,
+    "description_courte": "En Rage : PV temporaires au début du tour (1d10 + niveau)."
+  },
+  {
+    "id": "branches_protectrices",
+    "nom_affiche": "Branches protectrices",
+    "nom_officiel": "Branches of the Tree",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_arbre_monde",
+    "glossaire_id": null,
+    "description_courte": "En Rage : téléporter une créature qui frappe un allié dans un espace adjacent."
+  },
+  {
+    "id": "voyage_dans_les_branches",
+    "nom_affiche": "Voyage dans les branches",
+    "nom_officiel": "Travel Along the Tree",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_arbre_monde",
+    "glossaire_id": null,
+    "description_courte": "En Rage : téléportation à 18 m et attaque en action bonus 1 fois/tour."
+  },
+  {
+    "id": "resonance_des_racines",
+    "nom_affiche": "Résonance des racines",
+    "nom_officiel": "One with the World",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_arbre_monde",
+    "glossaire_id": null,
+    "description_courte": "Résistance à tous les dégâts en Rage ; ignoré Entravé/Renversé."
+  },
+  {
+    "id": "transformation_bestiale",
+    "nom_affiche": "Transformation bestiale",
+    "nom_officiel": "Bestial Soul",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_coeur_sauvage",
+    "glossaire_id": null,
+    "description_courte": "En Rage : choisir une aptitude bestiale (nage, escalade, ou bond 3 m sans coût)."
+  },
+  {
+    "id": "aspect_de_la_bete",
+    "nom_affiche": "Aspect de la bête",
+    "nom_officiel": "Aspect of the Beast",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_coeur_sauvage",
+    "glossaire_id": null,
+    "description_courte": "Avantage permanent en dehors du combat (selon la bête choisie)."
+  },
+  {
+    "id": "cri_de_la_meute",
+    "nom_affiche": "Cri de la meute",
+    "nom_officiel": "Pack Leader",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_coeur_sauvage",
+    "glossaire_id": null,
+    "description_courte": "En Rage : alliés à 9 m ont l'Avantage aux jets d'attaque contre vos cibles."
+  },
+  {
+    "id": "corps_metamorphe",
+    "nom_affiche": "Corps métamorphe",
+    "nom_officiel": "Call the Hunt",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_coeur_sauvage",
+    "glossaire_id": null,
+    "description_courte": "Résistance aux dégâts en Rage partagée à 5 alliés consentants pendant 10 minutes."
+  },
+  {
+    "id": "rage_divine_zelateur",
+    "nom_affiche": "Rage divine",
+    "nom_officiel": "Divine Fury",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_zelateur",
+    "glossaire_id": null,
+    "description_courte": "En Rage : 1d6 + moitié niveau dégâts nécrotiques/radiance supplémentaires 1 fois/tour."
+  },
+  {
+    "id": "armure_des_dieux",
+    "nom_affiche": "Armure des dieux",
+    "nom_officiel": "Warrior of the Gods",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_zelateur",
+    "glossaire_id": null,
+    "description_courte": "Les sorts de résurrection n'ont pas besoin de composantes matérielles pour vous ramener."
+  },
+  {
+    "id": "fanatisme_ardent",
+    "nom_affiche": "Fanatisme ardent",
+    "nom_officiel": "Fanatical Focus",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_zelateur",
+    "glossaire_id": null,
+    "description_courte": "En Rage : relancer un JS raté 1 fois (résultat conservé)."
+  },
+  {
+    "id": "chatiment_du_zelateur",
+    "nom_affiche": "Châtiment du zélateur",
+    "nom_officiel": "Zealous Presence",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_zelateur",
+    "glossaire_id": null,
+    "description_courte": "Action bonus : jusqu'à 10 alliés à 18 m ont l'Avantage en attaque et en JS (1/repos long)."
+  },
+  {
+    "id": "incarnation_divine",
+    "nom_affiche": "Incarnation divine",
+    "nom_officiel": "Rage of the Gods",
+    "type": "capacite_sous_classe",
+    "source": "barbare_voie_zelateur",
+    "glossaire_id": null,
+    "description_courte": "En Rage : vol 18 m, résistance tous dégâts, Aura de peur (JS SAG ou Terrorisé)."
+  },
+  {
+    "id": "mains_guerisseuses",
+    "nom_affiche": "Mains guérisseuses",
+    "nom_officiel": "Healing Hands",
+    "type": "trait_espece",
+    "source": "aasimar",
+    "glossaire_id": null,
+    "description_courte": "Action Magie : toucher une créature pour lui faire récupérer BM + 4 PV (1/repos long)."
+  },
+  {
+    "id": "porte_lumiere",
+    "nom_affiche": "Porte-lumière",
+    "nom_officiel": "Light Bearer",
+    "type": "trait_espece",
+    "source": "aasimar",
+    "glossaire_id": null,
+    "description_courte": "Connaît le sort mineur Lumières (caractéristique : Charisme)."
+  },
+  {
+    "id": "resistance_celeste",
+    "nom_affiche": "Résistance céleste",
+    "nom_officiel": "Celestial Resistance",
+    "type": "trait_espece",
+    "source": "aasimar",
+    "glossaire_id": null,
+    "description_courte": "Résistance aux dégâts nécrotiques et radiance."
+  },
+  {
+    "id": "vision_dans_la_nuit",
+    "nom_affiche": "Vision dans la nuit",
+    "nom_officiel": "Darkvision",
+    "type": "trait_espece",
+    "source": "aasimar",
+    "glossaire_id": null,
+    "description_courte": "Vision dans le noir sur 18 m."
+  },
+  {
+    "id": "revelation_celeste",
+    "nom_affiche": "Révélation céleste",
+    "nom_officiel": "Celestial Revelation",
+    "type": "trait_espece",
+    "source": "aasimar",
+    "glossaire_id": null,
+    "description_courte": "Transformation 1 minute (1/repos long) : Ailes célestes, Linceul nécrotique ou Radiance intérieure."
+  },
+  {
+    "id": "souffle_drakeide",
+    "nom_affiche": "Souffle",
+    "nom_officiel": "Breath Weapon",
+    "type": "trait_espece",
+    "source": "drakeide",
+    "glossaire_id": null,
+    "description_courte": "Action Magie : émettre une Ligne ou un Cône de dégâts (type selon ancêtre). JS DEX."
+  },
+  {
+    "id": "vol_draconique",
+    "nom_affiche": "Vol draconique",
+    "nom_officiel": "Draconic Flight",
+    "type": "trait_espece",
+    "source": "drakeide",
+    "glossaire_id": null,
+    "description_courte": "Niveau 5 : Action bonus pour déployer des ailes, Vitesse de vol = Vitesse (10 min, 1/repos)."
+  },
+  {
+    "id": "sens_aigus",
+    "nom_affiche": "Sens aigus",
+    "nom_officiel": "Keen Senses",
+    "type": "trait_espece",
+    "source": "elfe",
+    "glossaire_id": null,
+    "description_courte": "Maîtrise d'une compétence parmi Intuition, Perception ou Survie."
+  },
+  {
+    "id": "ruse_gnome",
+    "nom_affiche": "Ruse gnome",
+    "nom_officiel": "Gnomish Cunning",
+    "type": "trait_espece",
+    "source": "gnome",
+    "glossaire_id": null,
+    "description_courte": "Avantage aux jets de sauvegarde d'Intelligence, Sagesse et Charisme contre les effets magiques."
+  },
+  {
+    "id": "forme_de_geant",
+    "nom_affiche": "Forme de géant",
+    "nom_officiel": "Giant's Power",
+    "type": "trait_espece",
+    "source": "goliath",
+    "glossaire_id": null,
+    "description_courte": "Niveau 5, Action bonus : taille G pendant 10 minutes (Avantage FOR, Vitesse +1,5 m)."
+  },
+  {
+    "id": "forte_carrure",
+    "nom_affiche": "Forte carrure",
+    "nom_officiel": "Powerful Build",
+    "type": "trait_espece",
+    "source": "goliath",
+    "glossaire_id": null,
+    "description_courte": "Avantage aux tests contre Agrippé ; catégorie de taille pour la charge = un cran supérieur."
+  },
+  {
+    "id": "agilite_halfeline",
+    "nom_affiche": "Agilité halfeline",
+    "nom_officiel": "Halfling Nimbleness",
+    "type": "trait_espece",
+    "source": "halfelin",
+    "glossaire_id": null,
+    "description_courte": "Peut se déplacer dans l'espace d'une creature plus grande, mais pas s'y arrêter."
+  },
+  {
+    "id": "chance_halfelin",
+    "nom_affiche": "Chance",
+    "nom_officiel": "Lucky",
+    "type": "trait_espece",
+    "source": "halfelin",
+    "glossaire_id": null,
+    "description_courte": "Sur un 1 naturel : relancer le dé et utiliser le nouveau résultat."
+  },
+  {
+    "id": "discretion_naturelle",
+    "nom_affiche": "Discrétion naturelle",
+    "nom_officiel": "Naturally Stealthy",
+    "type": "trait_espece",
+    "source": "halfelin",
+    "glossaire_id": null,
+    "description_courte": "Peut se cacher derrière une creature plus grande d'au moins un cran."
+  },
+  {
+    "id": "competent_humain",
+    "nom_affiche": "Compétent",
+    "nom_officiel": "Resourceful",
+    "type": "trait_espece",
+    "source": "humain",
+    "glossaire_id": null,
+    "description_courte": "Maîtrise d'une compétence au choix."
+  },
+  {
+    "id": "ingenieux",
+    "nom_affiche": "Ingénieux",
+    "nom_officiel": "Heroic Inspiration",
+    "type": "trait_espece",
+    "source": "humain",
+    "glossaire_id": null,
+    "description_courte": "Reçoit l'Inspiration héroïque à chaque Repos long."
+  },
+  {
+    "id": "polyvalent",
+    "nom_affiche": "Polyvalent",
+    "nom_officiel": "Versatile",
+    "type": "trait_espece",
+    "source": "humain",
+    "glossaire_id": null,
+    "description_courte": "Reçoit un don d'Origines de son choix."
+  },
+  {
+    "id": "connaissance_de_la_pierre",
+    "nom_affiche": "Connaissance de la pierre",
+    "nom_officiel": "Stonecunning",
+    "type": "trait_espece",
+    "source": "nain",
+    "glossaire_id": null,
+    "description_courte": "Action bonus : Perception des vibrations 18 m pendant 10 min (1/repos long)."
+  },
+  {
+    "id": "resistance_naine",
+    "nom_affiche": "Résistance naine",
+    "nom_officiel": "Dwarven Resilience",
+    "type": "trait_espece",
+    "source": "nain",
+    "glossaire_id": null,
+    "description_courte": "Résistance aux dégâts de poison et Avantage aux JS contre l'état Intoxiqué."
+  },
+  {
+    "id": "tenacite_naine",
+    "nom_affiche": "Ténacité naine",
+    "nom_officiel": "Dwarven Toughness",
+    "type": "trait_espece",
+    "source": "nain",
+    "glossaire_id": null,
+    "description_courte": "Maximum de PV augmenté de 1 + 1 par niveau."
+  },
+  {
+    "id": "poussee_adrenaline",
+    "nom_affiche": "Poussée d'adrénaline",
+    "nom_officiel": "Adrenaline Rush",
+    "type": "trait_espece",
+    "source": "orc",
+    "glossaire_id": null,
+    "description_courte": "Action bonus Pointe : gagne BM PV temporaires à la fin du mouvement."
+  },
+  {
+    "id": "heritage_felon",
+    "nom_affiche": "Héritage félon",
+    "nom_officiel": "Fiendish Legacy",
+    "type": "trait_espece",
+    "source": "tieffelin",
+    "glossaire_id": null,
+    "description_courte": "Choisir un héritage (Abyssal, Chtonien, Infernal) : résistance + sorts innés selon le choix."
+  },
+  {
+    "id": "presence_outre_monde",
+    "nom_affiche": "Présence d'outre-monde",
+    "nom_officiel": "Otherworldly Presence",
+    "type": "trait_espece",
+    "source": "tieffelin",
+    "glossaire_id": null,
+    "description_courte": "Connaît le sort mineur Thaumaturge (caractéristique au choix : INT, SAG ou CHA)."
+  }
+]

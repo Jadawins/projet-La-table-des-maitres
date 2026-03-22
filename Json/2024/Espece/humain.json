@@ -1,0 +1,32 @@
+{
+  "id": "humain",
+  "nom": "Humain",
+  "description": "Espece versatile et ambitieuse, presente dans l'ensemble du multivers. Les humains s'efforcent d'accomplir le maximum au cours de leur vie relativement courte. Taille et apparence tres variees.",
+  "taille": {
+    "categorie": "M_ou_P",
+    "details": "M (entre 1,20 m et 2,15 m) ou P (60 cm a 1,20 m) au choix"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "competent",
+      "nom": "Competent",
+      "description": "Vous recevez la maitrise d'une competence de votre choix."
+    },
+    {
+      "id": "ingenieux",
+      "nom": "Ingenieux",
+      "description": "Vous recevez l'Inspiration heroique chaque fois que vous terminez un Repos long."
+    },
+    {
+      "id": "polyvalent",
+      "nom": "Polyvalent",
+      "description": "Vous recevez le don d'Origines de votre choix (cf. chapitre 5). Dout est recommande."
+    }
+  ],
+  "competences_maitrises": [
+    "au_choix"
+  ],
+  "resistances": [],
+  "sorts_innes": []
+}

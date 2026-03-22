@@ -1,0 +1,44 @@
+{
+  "nom": "Arnaqueur arcanique",
+  "classe_parente": "roublard",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 9, 13, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Incantation",
+          "description": "Tu apprends 3 sorts mineurs (dont mage de main) et 3 sorts de magicien (principalement Enchantement et Illusion). Tu utilises INT comme caractéristique d'incantation. Tu as 2 emplacements de sort de niveau 1."
+        },
+        {
+          "nom": "Main du voleur",
+          "description": "Tu peux lancer mage de main en action bonus. La main peut effectuer les actions Dérobert, Utiliser un objet ou désarmer une créature à 9 m. Invisiblement si tu dépenses un emplacement."
+        }
+      ]
+    },
+    "9": {
+      "capacites": [
+        {
+          "nom": "Attaque magique",
+          "description": "Tu peux utiliser l'action Ruse avec une action Lancer un sort. Tes sorts de niveau 1 et supérieur d'Enchantement et d'Illusion peuvent déclencher ton Attaque sournoise si tu touches la cible."
+        }
+      ]
+    },
+    "13": {
+      "capacites": [
+        {
+          "nom": "Tromperie versatile",
+          "description": "1/repos long, tu peux lancer déguisement sans emplacement ni matériaux. De plus, lorsque tu lances image fantastique, tu peux la maintenir sans concentration pendant 1 minute."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Voleur de sorts",
+          "description": "1/repos long, quand une créature à 9 m lance un sort de niveau 1 à 3, tu peux utiliser ta réaction pour tenter de voler le sort (JS CHA du lanceur vs DD sorts) et le lancer toi-même ce tour."
+        }
+      ]
+    }
+  }
+}

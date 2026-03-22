@@ -1,0 +1,44 @@
+{
+  "nom": "École de Divination",
+  "classe_parente": "magicien",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Spécialisation en Divination",
+          "description": "Quand tu copies un sort de Divination dans ton grimoire, cela coûte moitié moins cher en temps et en matériaux."
+        },
+        {
+          "nom": "Présage",
+          "description": "Après un repos long, lance 2d20 et note les résultats. Avant le prochain repos long, tu peux remplacer le résultat de tout jet d'attaque, test de caractéristique ou JS d'une créature visible par l'un de ces résultats de présage."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Intuition experte",
+          "description": "Quand tu fais un test d'Arcanes ou d'Histoire, tu peux ajouter ton dé de Présage au jet."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Troisième œil",
+          "description": "Action bonus 1/repos court ou long : jusqu'à la fin de ton prochain repos long, tu obtiens l'un des avantages suivants au choix : vision des ténèbres 18 m, lecture des esprits à 9 m, vision d'éther sur 18 m ou compréhension des langues."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Présage supérieur",
+          "description": "Après un repos long, tu lances 3d20 pour ton Présage au lieu de 2d20."
+        }
+      ]
+    }
+  }
+}

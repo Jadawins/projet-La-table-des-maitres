@@ -1,0 +1,45 @@
+{
+  "nom": "Vagabond féerique",
+  "classe_parente": "rodeur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 11, 15],
+  "niveaux": {
+    "3": {
+      "sorts_connus_supplementaires": ["charme-personne", "lueur féerique"],
+      "capacites": [
+        {
+          "nom": "Présence de la fée",
+          "description": "Action bonus (1/repos court ou long) : les créatures à 3 m doivent réussir un JS de SAG ou être Charmées ou Effrayées de toi jusqu'à la fin de ton prochain tour."
+        },
+        {
+          "nom": "Enchantement de l'errant",
+          "description": "Tu peux utiliser CHA à la place de SAG pour les tests de Tromperie et Persuasion. Quand tu charmes une créature, tu peux lui poser une question (non-dangereuse) et elle doit y répondre honnêtement."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Porte des fées",
+          "description": "1/repos court ou long, tu peux lancer porte dimensionnelle sans emplacement de sort."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Charme profond",
+          "description": "Les créatures Charmées par toi ne peuvent pas rompre le Charme pour t'agresser. Tu peux Charmer un nombre de créatures simultanées = modificateur CHA (min 1)."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Bannissement aux royaumes féeriques",
+          "description": "1/repos long, tu peux forcer une créature à 9 m à réussir un JS de CHA ou être bannie dans le Feywild pendant 1 minute. Elle réapparaît à la fin ou si le sort est dissipé."
+        }
+      ]
+    }
+  }
+}

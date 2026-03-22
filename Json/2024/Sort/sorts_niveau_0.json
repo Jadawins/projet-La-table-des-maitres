@@ -1,0 +1,987 @@
+[
+  {
+    "id": "aspersion_acide",
+    "nom": "Aspersion acide",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 1.5
+    },
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "acide",
+        "valeur": "1d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Lancez une boule d'acide vers un point à portée. Chaque créature dans un rayon de 1,5 m effectue un JS de Dextérité : échec = 1d6 acide, réussite = demi-dégâts."
+  },
+  {
+    "id": "assistance",
+    "nom": "Assistance",
+    "niveau": 0,
+    "ecole": "Divination",
+    "classes": [
+      "Clerc",
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Touchez une créature consentante. Une fois avant la fin de la concentration, elle peut ajouter 1d4 au résultat d'un jet d'attaque, de caractéristique ou de sauvegarde de son choix. Le sort prend alors fin."
+  },
+  {
+    "id": "bouffee_de_poison",
+    "nom": "Bouffée de poison",
+    "niveau": 0,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Druide",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "poison",
+        "valeur": "1d12"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Attaque de sort à distance contre une créature à portée. Sur un touché : 1d12 dégâts de poison."
+  },
+  {
+    "id": "contact_glacial",
+    "nom": "Contact glacial",
+    "niveau": 0,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [
+      {
+        "type": "nécrotique",
+        "valeur": "1d10"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Attaque de sort au corps à corps contre une créature à portée de contact. Sur un touché : 1d10 dégâts nécrotiques."
+  },
+  {
+    "id": "coup_au_but",
+    "nom": "Coup au but",
+    "niveau": 0,
+    "ecole": "Divination",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": false,
+      "S": true,
+      "M": "une arme dont vous avez la maîtrise et d'une valeur minimale de 1 pc"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "1d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Attaque de sort au corps à corps avec une arme maîtrisée tenue en main. Sur un touché : dégâts normaux de l'arme + 1d6 dégâts radiants."
+  },
+  {
+    "id": "coup_de_tonnerre",
+    "nom": "Coup de tonnerre",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": false,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "emanation",
+      "rayon_m": 1.5
+    },
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "tonnerre",
+        "valeur": "1d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Émanation de 1,5 m de rayon autour de vous. Chaque créature dans la zone effectue un JS de Constitution : échec = 1d6 dégâts de tonnerre et repoussée de 3 m."
+  },
+  {
+    "id": "crosse_des_druides",
+    "nom": "Crosse des druides",
+    "niveau": 0,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "du gui"
+    },
+    "duree": "1 minute",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [
+      {
+        "type": "force",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Action bonus : enchantez une arme simple ou un bâton tenu en main. Pendant 1 minute, elle inflige 1d8 dégâts de force supplémentaires à la place des dégâts normaux de l'arme."
+  },
+  {
+    "id": "decharge_occulte",
+    "nom": "Décharge occulte",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "force",
+        "valeur": "1d10"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Attaque de sort à distance contre une créature à portée. Sur un touché : 1d10 dégâts de force."
+  },
+  {
+    "id": "druidisme",
+    "nom": "Druidisme",
+    "niveau": 0,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanee",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Produit un des trois effets : Capteur climatique (predit la meteo des 24 prochaines heures sur 1 round) ; Floraison (fait germer une graine ou fleurir un bourgeon instantanement) ; Jeu avec le feu (allume ou eteint une bougie, une torche ou un petit feu de camp)."
+  },
+  {
+    "id": "elementalisme",
+    "nom": "Élémentalisme",
+    "niveau": 0,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Produit l'un des effets suivants : Appel d'air (brise légère dans un cube de 1,5 m) ; Appel d'eau (filet d'eau potable dans un contenant ouvert) ; Appel de feu (allume/éteint une flamme nue ou produit une fumée colorée inoffensive dans un cube de 1,5 m) ; Appel de terre (fine couche de poussière sur des surfaces dans un cube de 1,5 m) ; Façonnage d'éléments (donne grossièrement la forme d'une créature TP à de la terre, sable, feu ou eau pendant 1 heure)."
+  },
+  {
+    "id": "eruption_ensorcelee",
+    "nom": "Éruption ensorcelée",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "variable",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": "+1d8 aux niveaux 5, 11 et 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Attaque de sort à distance. Si touche : 1d8 dégâts d'un type choisi parmi acide, froid, feu, foudre, poison, psychique ou tonnerre. Si le dé affiche 8, relancez-le et ajoutez le résultat (même type ou autre). Résultat 8 sur la relance : recommencer."
+  },
+  {
+    "id": "faux_amis",
+    "nom": "Faux amis",
+    "niveau": 0,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un peu de maquillage"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une créature visible subit l'état Charmé (JS SAG pour résister). La cible résiste automatiquement si elle n'est pas Humanoïde, si elle est attaquée, ou si elle a déjà été ciblée par ce sort dans les 24 h. Le sort prend fin prématurément si la cible subit des dégâts ou si vous la ciblez avec une attaque ou un JS. À la fin, la cible sait qu'elle était Charmée."
+  },
+  {
+    "id": "flamme_sacree",
+    "nom": "Flamme sacrée",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": "+1d8 aux niveaux 5, 11 et 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Lumière sacrée tombe sur une créature visible. JS de Dextérité sans avantage lié à la couverture : échec = 1d8 dégâts radiants."
+  },
+  {
+    "id": "flammes",
+    "nom": "Flammes",
+    "niveau": 0,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "10 minutes",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": "+1d8 aux niveaux 5, 11 et 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Crée une flamme dans la main du lanceur. Action bonus pour créer/éteindre la flamme. En utilisant l'action Magie, on peut projeter la flamme comme attaque de sort à distance (18m) : si touche = 1d8 feu. La flamme éclaire comme une torche (6m vive, 6m faible)."
+  },
+  {
+    "id": "frappe_epineuse",
+    "nom": "Frappe épineuse",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une épine de plante épineuse"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [
+      {
+        "type": "perforant",
+        "valeur": "1d6"
+      }
+    ],
+    "niveau_superieur": "+1d6 aux niveaux 5, 11 et 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Attaque de sort au corps à corps. Si touche : 1d6 dégâts perforants. Si la cible est de taille G ou inférieure, vous pouvez la rapprocher de vous de 3 m."
+  },
+  {
+    "id": "glas",
+    "nom": "Glas",
+    "niveau": 0,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Clerc",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "nécrotique",
+        "valeur": "1d8",
+        "note": "cible à plein PV"
+      },
+      {
+        "type": "nécrotique",
+        "valeur": "1d12",
+        "note": "cible blessée"
+      }
+    ],
+    "niveau_superieur": "+1d8 (ou +1d12 si blessée) aux niveaux 5, 11 et 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une créature visible à portée effectue un JS de Sagesse. En cas d'échec : 1d8 dégâts nécrotiques si la cible est à son maximum de PV, ou 1d12 dégâts nécrotiques si elle a déjà subi des dégâts."
+  },
+  {
+    "id": "lumiere",
+    "nom": "Lumière",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": "une luciole ou de la mousse phosphorescente"
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Touchez un objet de taille G ou inférieure non porté. Il produit une Lumière vive de 6 m et faible de 6 m supplémentaires pour la durée, dans la couleur de votre choix. Recouvrir l'objet d'une surface opaque bloque la lumière. Lance à nouveau = sort prend fin."
+  },
+  {
+    "id": "lumieres_dansantes",
+    "nom": "Lumières dansantes",
+    "niveau": 0,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un peu de phosphore"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez jusqu'à 4 lueurs flottantes (torches, lanternes ou globes) ou une silhouette humanoïde lumineuse à portée. Chaque lueur émet une Lumière faible de 3 m. Action bonus : déplacez les lueurs de 18 m. Chaque lueur doit rester dans un rayon de 6 m d'une autre."
+  },
+  {
+    "id": "main_du_mage",
+    "nom": "Main du mage",
+    "niveau": 0,
+    "ecole": "Invocation",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "1 minute",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une main spectrale flottante apparaît à portée. Action Magie : déplacez-la de 9 m, manipulez un objet, ouvrez une porte/récipient non verrouillé, saisissez ou remettez un objet, ou videz une fiole. Ne peut activer d'objets magiques ni porter plus de 5 kg."
+  },
+  {
+    "id": "message",
+    "nom": "Message",
+    "niveau": 0,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un peu de fil de chanvre"
+    },
+    "duree": "1 round",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Chuchotez un message à une créature visible à portée. Elle l'entend et peut vous répondre dans un murmure que vous seul entendez. Le message ne passe pas à travers les obstacles solides hermétiques."
+  },
+  {
+    "id": "moquerie_cruelle",
+    "nom": "Moquerie cruelle",
+    "niveau": 0,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "SAG",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "psychique",
+        "valeur": "1d4"
+      }
+    ],
+    "niveau_superieur": "2d4 au niveau 5, 3d4 au niveau 11, 4d4 au niveau 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Accablez une créature visible à portée d'insultes cinglantes. Sur un JS de Sagesse raté, elle subit 1d4 dégâts psychiques et a le Désavantage au prochain jet d'attaque effectué avant la fin de son prochain tour."
+  },
+  {
+    "id": "mot_de_radiance",
+    "nom": "Mot de radiance",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": "un symbole en forme de soleil"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 1.5
+    },
+    "sauvegarde": "CON",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "1d6"
+      }
+    ],
+    "niveau_superieur": "2d6 au niveau 5, 3d6 au niveau 11, 4d6 au niveau 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une radiance divine jaillit de vous. Chaque créature de votre choix dans un rayon de 1,5 m doit réussir un JS de Constitution ou subir 1d6 dégâts radiants."
+  },
+  {
+    "id": "poigne_electrique",
+    "nom": "Poigne électrique",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [
+      {
+        "type": "foudre",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": "2d8 au niveau 5, 3d8 au niveau 11, 4d8 au niveau 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "De la foudre jaillit vers une créature que vous tentez de toucher avec une attaque de sort au corps à corps. Sur un touché, 1d8 dégâts de foudre et la cible ne peut pas utiliser sa réaction jusqu'au début de son prochain tour. Avantage si la cible porte une armure métallique."
+  },
+  {
+    "id": "poussiere_d_etoile",
+    "nom": "Poussière d'étoile",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": "2d8 au niveau 5, 3d8 au niveau 11, 4d8 au niveau 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Projetez une pluie de lumière stellaire sur une créature ou un objet à portée. Attaque de sort à distance : sur un touché, 1d8 dégâts radiants et la cible émet une lumière faible jusqu'au début de votre prochain tour, empêchant l'Invisibilité."
+  },
+  {
+    "id": "rayon_de_givre",
+    "nom": "Rayon de givre",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "froid",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": "2d8 au niveau 5, 3d8 au niveau 11, 4d8 au niveau 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Un rayon de froid intense file vers une créature à portée. Attaque de sort à distance : sur un touché, 1d8 dégâts de froid et la Vitesse de la cible diminue de 3 m jusqu'au début de votre prochain tour."
+  },
+  {
+    "id": "reparation",
+    "nom": "Réparation",
+    "niveau": 0,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "deux aimants"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Réparez une déchirure ou une cassure dans un objet, dans la limite de 30 cm de longueur. Ce sort peut réparer un objet magique ou un artificiel, mais n'aura aucun effet sur un objet magique détruit."
+  },
+  {
+    "id": "resistance",
+    "nom": "Résistance",
+    "niveau": 0,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc",
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Touchez une créature consentante. Une fois avant la fin de la durée, elle peut ajouter 1d4 au résultat d'un jet de sauvegarde de son choix. Le sort prend alors fin."
+  },
+  {
+    "id": "stabilisation",
+    "nom": "Stabilisation",
+    "niveau": 0,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Clerc",
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Stabilisez une créature à 0 PV. La créature est Stable et n'effectue plus de jets de sauvegarde contre la mort."
+  },
+  {
+    "id": "thaumaturgie",
+    "nom": "Thaumaturgie",
+    "niveau": 0,
+    "ecole": "Transmutation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "jusqu'à 1 minute",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Manifestez un prodige mineur parmi : Bruit (son inattendu), Flammes (bougies s'allument ou s'éteignent), Tonnerre (voix retentissante), Yeux (luisants), Porte (s'ouvre ou se ferme), ou Symbole (apparaît sur une surface). Chaque effet dure 1 minute et vous pouvez en avoir jusqu'à trois actifs simultanément."
+  },
+  {
+    "id": "trait_de_feu",
+    "nom": "Trait de feu",
+    "niveau": 0,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "1d10"
+      }
+    ],
+    "niveau_superieur": "2d10 au niveau 5, 3d10 au niveau 11, 4d10 au niveau 17.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Projetez un trait de feu vers une créature ou un objet à portée. Attaque de sort à distance : sur un touché, 1d10 dégâts de feu. Tout objet inflammable non porté s'embrase sur un touché."
+  },
+  {
+    "id": "voile_defensif",
+    "nom": "Voile défensif",
+    "niveau": 0,
+    "ecole": "Abjuration",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Enveloppez-vous d'un voile protecteur. Chaque fois qu'une créature effectue un jet d'attaque contre vous avant la fin du sort, elle soustrait 1d4 au résultat du jet."
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "nom": "Domaine de la Lumière",
+  "classe_parente": "clerc",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 8, 17],
+  "niveaux": {
+    "3": {
+      "sorts_domaine": {
+        "1": ["lumière des fées", "mains brûlantes"],
+        "2": ["flambée", "rayon ardent"]
+      },
+      "capacites": [
+        {
+          "nom": "Sort mineur bonus",
+          "description": "Tu connais le sort mineur lumière si tu ne le connais pas déjà."
+        },
+        {
+          "nom": "Flash lumineux",
+          "description": "Réaction : quand une créature à 18 m est touchée par une attaque, dépense un emplacement de sort de niveau 1 ou supérieur pour que l'attaquant soit Aveuglé jusqu'à la fin de son prochain tour."
+        }
+      ]
+    },
+    "6": {
+      "sorts_domaine": {
+        "3": ["boule de feu", "lenteur"]
+      },
+      "capacites": [
+        {
+          "nom": "Aura de lumière solaire",
+          "description": "Action : émet une aura de lumière brillante sur 18 m (lumière faible sur 18 m supplémentaires). Les ténèbres magiques dans cette zone sont dissipées. Dure jusqu'à 1 minute ou jusqu'à ce que tu l'annules (concentration)."
+        }
+      ]
+    },
+    "8": {
+      "sorts_domaine": {
+        "4": ["gardien de la foi", "mur de feu"]
+      },
+      "capacites": [
+        {
+          "nom": "Frappe divine",
+          "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts radiants supplémentaires (2d8 au niveau 14)."
+        }
+      ]
+    },
+    "17": {
+      "sorts_domaine": {
+        "5": ["colonne de flamme", "scrutation"]
+      },
+      "capacites": [
+        {
+          "nom": "Couronne de lumière solaire",
+          "description": "Quand tu lances un sort de clerc du 1er niveau ou supérieur qui inflige des dégâts de feu ou radiants, ajoute ton modificateur de SAG aux dégâts d'un jet de dés."
+        }
+      ]
+    }
+  }
+}

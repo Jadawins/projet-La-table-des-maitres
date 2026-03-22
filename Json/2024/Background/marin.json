@@ -1,0 +1,58 @@
+{
+  "id": "marin",
+  "nom": "Marin",
+  "description": "Vous avez navigué sur les mers, affronté tempêtes et pirates, et fréquenté les ports du monde entier. La mer est votre foyer.",
+  "competences": [
+    "Acrobaties",
+    "Perception"
+  ],
+  "outils": [
+    "Instruments de navigation"
+  ],
+  "langues": [],
+  "don": "Habitué des tavernes",
+  "equipement": [
+    {
+      "nom": "Dague",
+      "quantite": 1
+    },
+    {
+      "nom": "Instruments de navigateur",
+      "quantite": 1
+    },
+    {
+      "nom": "Corde de chanvre (18m)",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 20
+    }
+  ],
+  "aptitude": {
+    "nom": "Habitué des tavernes",
+    "description": "Vous obtenez des informations dans les tavernes et ports grâce à un réseau de contacts parmi les marins, dockers et aubergistes."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "J'ai une histoire pour chaque port que j'ai visité.",
+      "Je suis à l'aise dans les espaces confinés."
+    ],
+    "ideaux": [
+      "Liberté : La mer appartient à tout le monde.",
+      "Solidarité : L'équipage passe avant tout."
+    ],
+    "liens": [
+      "Mon bateau est ma maison, même s'il m'a quitté.",
+      "Je cherche à retrouver un camarade perdu en mer."
+    ],
+    "defauts": [
+      "Je bois trop quand je suis à terre.",
+      "Je ne sais pas gérer mon argent."
+    ]
+  }
+}

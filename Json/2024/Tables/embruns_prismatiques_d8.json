@@ -1,0 +1,10 @@
+{
+  "1": "Rouge - JS DEX : echec = 10d6 degats de feu ; reussite = moitie",
+  "2": "Orange - JS DEX : echec = 10d6 degats d'acide ; reussite = moitie",
+  "3": "Jaune - JS DEX : echec = 10d6 degats de foudre ; reussite = moitie",
+  "4": "Vert - JS DEX : echec = 12d6 degats de poison ; reussite = moitie",
+  "5": "Bleu - JS DEX : echec = 12d6 degats de froid ; reussite = moitie",
+  "6": "Indigo - JS DEX : echec = etat Entrave + JS CON fin de chaque tour (3 reussites = libere, 3 echecs = etat Petrifie jusqu'a restauration supreme)",
+  "7": "Violet - JS DEX : echec = etat Aveugle + JS SAG debut du tour suivant (reussite = libere, echec = teleporte dans autre plan choisi par le MD)",
+  "8": "Special - La cible est frappee par deux rayons ; relancer deux fois en ignorant tout 8"
+}

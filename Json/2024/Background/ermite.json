@@ -1,0 +1,70 @@
+{
+  "id": "ermite",
+  "nom": "Ermite",
+  "description": "Vous avez vécu en reclus loin de la civilisation, méditant et étudiant dans la solitude. Cette retraite vous a apporté sagesse et sérénité.",
+  "competences": [
+    "Médecine",
+    "Religion"
+  ],
+  "outils": [
+    "Matériel d'herboriste"
+  ],
+  "langues": [],
+  "don": "Guérisseur",
+  "equipement": [
+    {
+      "nom": "Bâton de combat",
+      "quantite": 1
+    },
+    {
+      "nom": "Matériel d'herboriste",
+      "quantite": 1
+    },
+    {
+      "nom": "Fiole",
+      "quantite": 3
+    },
+    {
+      "nom": "Lampe",
+      "quantite": 1
+    },
+    {
+      "nom": "Livre",
+      "quantite": 1
+    },
+    {
+      "nom": "Sac de couchage",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 16
+    }
+  ],
+  "aptitude": {
+    "nom": "Guérisseur",
+    "description": "Vous utilisez une trousse de soins pour restaurer des PV supplémentaires et stabiliser les mourants plus efficacement qu'une personne ordinaire."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je me sens mal à l'aise dans les foules.",
+      "Je réfléchis longuement avant de parler."
+    ],
+    "ideaux": [
+      "Introspection : La connaissance de soi surpasse toute autre sagesse.",
+      "Simplicité : Le nécessaire suffit."
+    ],
+    "liens": [
+      "J'ai fait une découverte en réclusion que je dois partager.",
+      "Le lieu de ma retraite est sacré pour moi."
+    ],
+    "defauts": [
+      "Je néglige l'hygiène et les convenances sociales.",
+      "Je suis certain de détenir une vérité que les autres refusent de voir."
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "nom": "Cercle des Astres",
+  "classe_parente": "druide",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Carte stellaire",
+          "description": "Tu as une carte stellaire (objet magique). Elle peut servir de focaliseur druidique, te permet de lancer guidance et étoile filante sans dépenser d'emplacement (modificateur SAG fois/repos long), et d'augmentation des caractéristiques (1/repos long).",
+          "reference_table": "carte_stellaire_d6"
+        },
+        {
+          "nom": "Forme stellaire",
+          "description": "Quand tu utilises Forme sauvage, tu peux prendre une forme constellaire au lieu d'une forme animale : Archer (sort mineur trait de feu en action bonus), Calice (soins bonus 1d8+SAG), ou Dragon (vol 6m et résistance aux dégâts radiants)."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Cosmos brillant",
+          "description": "Pendant ta Forme stellaire, tu émets une lumière brillante sur 3 m (faible sur 3 m supplémentaires). Les ennemis qui te touchent reçoivent 1d8 dégâts radiants."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Œil des astres",
+          "description": "Tu peux lancer clairvoyance et divination sans dépenser d'emplacement de sort (1/repos long chacun)."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Corps de pleine lune",
+          "description": "Tu peux entrer en Forme stellaire un nombre de fois supplémentaires entre repos égal à ton modificateur de SAG. Pendant ta Forme stellaire, tu es immunisé aux dégâts radiants."
+        }
+      ]
+    }
+  }
+}

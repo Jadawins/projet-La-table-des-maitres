@@ -1,0 +1,40 @@
+{
+  "nom": "Voie du Cœur Sauvage",
+  "classe_parente": "barbare",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Transformation bestiale",
+          "description": "Quand tu Rages, tu choisis un aspect animal qui te confère un bonus : Aigle (vitesse de déplacement +9 m), Loup (les alliés ont avantage contre les ennemis adjacents à toi), ou Ours (résistance aux dégâts contondants, perforants et tranchants)."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Aspect de la bête",
+          "description": "Quand tu Rages, tu choisis un bonus supplémentaire : Aigle (déplacement de vol de 9 m), Loup (les ennemis adjacents ont désavantage aux JS de DEX), Ours (tu ignores les terrains difficiles)."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Cri de la meute",
+          "description": "Action bonus pendant ta Rage : les alliés à 9 m qui t'entendent peuvent chacun immédiatement se déplacer de la moitié de leur vitesse sans provoquer d'attaques d'opportunité."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Corps métamorphe",
+          "description": "Ton aspect bestial persiste jusqu'à 10 minutes après la fin de ta Rage. En outre, tu peux activer deux aspects de bête simultanément."
+        }
+      ]
+    }
+  }
+}

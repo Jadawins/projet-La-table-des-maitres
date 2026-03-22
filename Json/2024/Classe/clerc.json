@@ -1,0 +1,308 @@
+{
+  "nom": "Clerc",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": "SAG",
+      "de_vie": { "type": "1d8", "modificateur": "CON" },
+      "sauvegardes_maitrise": ["SAG", "CHA"],
+      "competences_choisies": { "nombre": 2, "options": ["Histoire", "Intuition", "Médecine", "Persuasion", "Religion"] },
+      "maitrises_armes": ["armes_courantes"],
+      "maitrises_armures": ["armures_legeres", "armures_intermediaires", "boucliers"],
+      "equipement_depart": [
+        { "choix": "A", "contenu": ["Chemise de mailles", "Bouclier", "Masse d'armes", "Symbole sacré", "Paquetage d'ecclésiastique", "7 po"] },
+        { "choix": "B", "contenu": ["110 po"] }
+      ],
+      "incantation": true,
+      "caracteristique_incantation": "SAG",
+      "focaliseur": "symbole_sacre"
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "sorts_mineurs": 3,
+      "sorts_prepares": 4,
+      "emplacements_de_sort": { "1": 2 },
+      "capacites": [
+        {
+          "nom": "Sorts",
+          "description": "Incantation par SAG avec symbole sacré comme focaliseur.",
+          "type": "incantation",
+          "caracteristique": "SAG",
+          "focaliseur": "symbole_sacre",
+          "modification_sorts_prepares": "repos_long",
+          "note": "Sorts mineurs, sorts préparés et emplacements de sort selon la table de progression."
+        },
+        {
+          "nom": "Vocation divine",
+          "description": "Protecteur : armes de guerre + armures lourdes. Thaumaturge : sort mineur + bonus SAG à Arcanes/Religion.",
+          "type": "choix_unique",
+          "options": [
+            {
+              "nom": "Protecteur",
+              "effets": [
+                { "type": "ajout_maitrise_armes", "valeur": "armes_de_guerre" },
+                { "type": "ajout_formation_armures", "valeur": "armures_lourdes" }
+              ]
+            },
+            {
+              "nom": "Thaumaturge",
+              "effets": [
+                { "type": "sort_mineur_supplementaire", "source": "liste_clerc", "nombre": 1 },
+                { "type": "bonus_test_competence", "competences": ["Arcanes", "Religion"], "valeur": "modificateur_SAG", "minimum": 1 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 5,
+      "emplacements_de_sort": { "1": 3 },
+      "canal_divin": 2,
+      "etincelle_divine_des": "1d8",
+      "capacites": [
+        {
+          "nom": "Canal divin",
+          "description": "Ressource divine rechargeable (1 au repos court) pour Éclat sacré ou Bannissement.",
+          "type": "actif",
+          "utilisations": {
+            "initial": 2,
+            "recuperation": [
+              { "type": "repos_court", "gain": 1 },
+              { "type": "repos_long", "remise_a_max": true }
+            ]
+          },
+          "dd_sauvegarde": "dd_sorts_classe",
+          "effets_disponibles": [
+            {
+              "nom": "Éclat sacré",
+              "description": "Soigne ou inflige des dégâts radiants/nécrotiques à une créature à 9m (1d8 + mod SAG).",
+              "type": "action_magie",
+              "cible": { "type": "creature", "rayon": "9m", "condition": "visible" },
+              "jet": { "des": "1d8", "ajouter": "modificateur_SAG", "note": "Dés augmentent : 2d8 au niv 7, 3d8 au niv 13, 4d8 au niv 18" },
+              "effets_au_choix": [
+                { "nom": "Soin", "type": "soin", "valeur": "total_jet" },
+                { "nom": "Dégâts", "type": "jet_sauvegarde", "caracteristique": "CON", "degats_type": ["nécrotique", "radiant"], "echec": { "valeur": "total_jet" }, "reussite": { "valeur": "moitie_total_jet" } }
+              ]
+            },
+            {
+              "nom": "Bannissement des morts-vivants",
+              "description": "Effraie et repousse tous les morts-vivants à 9m pendant 1 minute (JS SAG).",
+              "type": "action_magie",
+              "cible": { "type": "mort_vivant", "rayon": "9m", "tous": true },
+              "jet_sauvegarde": { "caracteristique": "SAG" },
+              "effets_sur_echec": [
+                { "type": "etat", "valeur": ["effrayé", "neutralisé"], "duree": "1 minute" },
+                { "type": "deplacement_force", "direction": "loin_de_lanceur", "chaque_tour": true }
+              ],
+              "fin_anticipee": ["subit_des_degats", "lanceur_neutralise", "lanceur_mort"]
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 6,
+      "emplacements_de_sort": { "1": 4, "2": 2 },
+      "voie": { "choix": ["Domaine de la Guerre", "Domaine de la Lumière", "Domaine de la Ruse", "Domaine de la Vie"] },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 7,
+      "emplacements_de_sort": { "1": 4, "2": 3 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "sorts_mineurs": 4,
+      "sorts_prepares": 9,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 2 },
+      "capacites": [
+        {
+          "nom": "Destruction sacrée",
+          "description": "Le Bannissement inflige aussi des dégâts radiants à chaque mort-vivant qui rate son JS.",
+          "type": "passif",
+          "declencheur": { "type": "utilisation", "cible": "bannissement_des_morts_vivants" },
+          "effets": [
+            { "type": "degats_supplementaires", "cible": "mort_vivant_ayant_rate_js", "des": "modificateur_SAG_en_d8", "minimum": "1d8", "degats_type": "radiant", "note": "Ne met pas fin aux effets du bannissement." }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 10,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3 },
+      "canal_divin": 3,
+      "verifier_sous_classe": true
+    },
+    "7": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 11,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "etincelle_divine_des": "2d8",
+      "capacites": [
+        {
+          "nom": "Frappe consacrée",
+          "description": "Frappe sacrée : +1d8 nécrotique/radiant 1/tour. Magie puissante : bonus SAG aux dégâts des sorts mineurs.",
+          "type": "choix_unique",
+          "options": [
+            {
+              "nom": "Frappe sacrée",
+              "description": "Ajoute 1d8 dégâts nécrotiques ou radiants à une attaque d'arme réussie (1 fois par tour).",
+              "type": "passif",
+              "declencheur": { "type": "attaque_arme_reussie", "frequence": "1_par_tour" },
+              "effets": [{ "type": "degats_supplementaires", "des": "1d8", "degats_type": ["nécrotique", "radiant"], "choix_utilisateur": true }]
+            },
+            {
+              "nom": "Magie puissante",
+              "description": "Ajoute le modificateur de SAG aux dégâts des sorts mineurs de Clerc.",
+              "type": "passif",
+              "effets": [{ "type": "bonus_degats", "cible": "sort_mineur_clerc", "valeur": "modificateur_SAG" }]
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 12,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "sorts_mineurs": 4,
+      "sorts_prepares": 14,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 }
+    },
+    "10": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 15,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "capacites": [
+        {
+          "nom": "Grâce divine",
+          "description": "Lance gratuitement un sort de Clerc de niv. ≤ 5 sans réaction ni composante matérielle (1/repos long).",
+          "type": "action_magie",
+          "effets": [
+            { "type": "lancer_sort_gratuit", "source": "liste_clerc", "niveau_max": 5, "restriction": "sans_reaction_requise", "cout_emplacement": false, "composantes_materielles": false }
+          ],
+          "utilisations": { "initial": 1, "recuperation": [{ "type": "repos_long", "remise_a_max": true }] }
+        }
+      ]
+    },
+    "11": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 16,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 }
+    },
+    "12": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 16,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "sorts_mineurs": 5,
+      "sorts_prepares": 17,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "etincelle_divine_des": "3d8"
+    },
+    "14": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 17,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "capacites": [
+        {
+          "nom": "Frappe consacrée améliorée",
+          "description": "Frappe sacrée passe à 2d8 ; Magie puissante octroie aussi des PV temporaires aux proches.",
+          "type": "passif",
+          "effets": [
+            { "type": "amelioration_option", "cible": "frappe_sacree", "nouveau_des": "2d8" },
+            { "type": "amelioration_option", "cible": "magie_puissante", "effet_supplementaire": { "type": "pv_temporaires", "valeur": "double_modificateur_SAG", "cible": "creature_dans_rayon_ou_soi", "rayon": "18m", "declencheur": "degats_infliges_par_sort_mineur_clerc" } }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 18,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 }
+    },
+    "16": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 18,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "sorts_mineurs": 5,
+      "sorts_prepares": 19,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "verifier_sous_classe": true
+    },
+    "18": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 20,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "canal_divin": 4,
+      "etincelle_divine_des": "4d8"
+    },
+    "19": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 21,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 },
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "sorts_mineurs": 5,
+      "sorts_prepares": 22,
+      "emplacements_de_sort": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 },
+      "capacites": [
+        {
+          "nom": "Grâce divine suprême",
+          "description": "Grâce divine peut désormais cibler Souhait (recharge étendue si utilisé).",
+          "type": "passif",
+          "effets": [
+            { "type": "amelioration_grace_divine", "option_supplementaire": "souhait", "contrainte": { "type": "recharge_etendue", "valeur": "2d4_repos_longs", "condition": "si_souhait_utilise" } }
+          ]
+        }
+      ]
+    }
+  }
+}

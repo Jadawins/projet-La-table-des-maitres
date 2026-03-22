@@ -1,0 +1,48 @@
+{
+  "nom": "Champion",
+  "classe_parente": "guerrier",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 10, 15, 18],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Critique amélioré",
+          "description": "Tes attaques avec des armes sont un coup critique sur un résultat naturel de 19 ou 20."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Athlète remarquable",
+          "description": "Tu peux ajouter la moitié de ton bonus de maîtrise à tout jet de FOR, DEX ou CON n'utilisant pas déjà ton bonus de maîtrise. Tu peux également sauter au-delà de ta distance de saut normale."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Style de combat supplémentaire",
+          "description": "Tu choisis un second style de combat parmi ceux disponibles pour le guerrier."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Critique supérieur",
+          "description": "Tes attaques avec des armes sont un coup critique sur un résultat naturel de 18, 19 ou 20."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Survivant",
+          "description": "Au début de chacun de tes tours, tu récupères des PV égaux à 5 + ton modificateur de CON si tu es à la moitié ou moins de tes PV max et si tu as au moins 1 PV."
+        }
+      ]
+    }
+  }
+}

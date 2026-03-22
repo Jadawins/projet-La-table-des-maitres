@@ -1,0 +1,48 @@
+{
+  "nom": "Serment de Dévotion",
+  "classe_parente": "paladin",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 15, 20],
+  "niveaux": {
+    "3": {
+      "sorts_serment": {
+        "1": ["protection contre le bien et le mal", "sanctification"],
+        "2": ["aide", "zone de vérité"]
+      },
+      "capacites": [
+        {
+          "nom": "Frappe sacrée",
+          "description": "Canal divin : la prochaine fois que tu touches avec une arme, tu infliges des dégâts radiants supplémentaires = 2d8 + modificateur de CHA. Les créatures mortes-vivantes et les fiélons subissent le maximum de dégâts."
+        },
+        {
+          "nom": "Sanction sacrée",
+          "description": "Canal divin : tu crées une zone consacrée de 4,5 m de côté autour de toi pendant 1 minute. Les mensonges prononcés dans cette zone sont détectables par toi."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Aura de dévotion",
+          "description": "Toi et les alliés à 3 m êtes immunisés à la condition Charmé (9 m au niveau 18)."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Pureté de l'esprit",
+          "description": "Tu es immunisé aux dégâts nécrotiques et à la condition Effrayé. Tes sorts de soin guérissent les affections magiques (une fois par sort)."
+        }
+      ]
+    },
+    "20": {
+      "capacites": [
+        {
+          "nom": "Avatar de la dévotion",
+          "description": "1/repos long : pendant 1 minute, tu rayonnes d'une lumière divine. Tu es immunisé aux dégâts nécrotiques. Tes attaques infligent 2d8 dégâts radiants supplémentaires. Les alliés à 9 m bénéficient d'un bonus de +4 à leurs jets de sauvegarde."
+        }
+      ]
+    }
+  }
+}

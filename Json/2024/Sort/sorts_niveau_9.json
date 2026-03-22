@@ -1,0 +1,628 @@
+[
+  {
+    "id": "arret_du_temps",
+    "nom": "Arrêt du temps",
+    "niveau": 9,
+    "ecole": "Transmutation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Stoppez le temps pour tous sauf vous pendant 1d4+1 tours. Les autres créatures sont Paralysées et imperceptibles. Le sort prend fin prématurément si vous affectez une autre créature."
+  },
+  {
+    "id": "changement_de_forme",
+    "nom": "Changement de forme",
+    "niveau": 9,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "diadème de jade d'une valeur minimale de 1 500 po"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Prenez la forme de n'importe quelle créature (pas un Artificiel ou un Mort-vivant) dont vous avez vu une représentation. Vous prenez ses statistiques complètes mais conservez votre alignement et votre personnalité."
+  },
+  {
+    "id": "emprisonnement",
+    "nom": "Emprisonnement",
+    "niveau": 9,
+    "ecole": "Abjuration",
+    "classes": [
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une statuette à l'effigie de la cible d'une valeur minimale de 5 000 po"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "JS de Sagesse : réussite = immunisé 24h ; échec = cible emprisonnée sans fin. Emprisonnée : ne respire/mange/boit plus, ne vieillit pas, indétectable par Divination, ne peut se téléporter. Modes au choix : Chaînes (Entravé, immobile) ; Détention miniature (réduite à 2,5 cm dans une gemme indestructible) ; Dormance (globe de force sous terre) ; Léthargie (Inconscient permanent) ; Prison isolée (demi-plan confiné) ; condition narrative. Dissipation de la magie uniquement au 9e niveau contre la prison ou la composante."
+  },
+  {
+    "id": "ennemi_surpuissant",
+    "nom": "Ennemi surpuissant",
+    "niveau": 9,
+    "ecole": "Illusion",
+    "classes": [
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 9
+    },
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "psychique",
+        "valeur": "4d10"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Crée des illusions terrifiantes autour de chaque créature dans la zone (chacune voit son pire ennemi). JS de Sagesse : échec = 4d10 dégâts psychiques + état Effrayé ; réussite = moitié. À la fin de chaque tour, la créature Effrayée refait le JS : échec = 4d10 dégâts supplémentaires ; réussite = le sort prend fin pour elle."
+  },
+  {
+    "id": "flux_de_lune",
+    "nom": "Flux de lune",
+    "niveau": 9,
+    "ecole": "Évocation",
+    "classes": [
+      "Barde",
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 6
+    },
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "radiant",
+        "valeur": "3d6",
+        "note": "bonus aux attaques de corps à corps"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Lumière vive dans un rayon de 6 m, faible sur 6 m supplémentaires. Pour la durée : Résistance aux dégâts radiants ; vos attaques de corps à corps infligent +3d6 dégâts radiants. Réaction après avoir subi des dégâts d'une créature à 18 m ou moins : la créature effectue un JS de Constitution, en cas d'échec elle est Aveuglée jusqu'à la fin de votre prochain tour."
+  },
+  {
+    "id": "guerison_de_groupe",
+    "nom": "Guérison de groupe",
+    "niveau": 9,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une vague d'énergie curative se répand autour de vous. Distribuez jusqu'à 700 points de vie entre les créatures visibles à portée (répartition libre). Chaque créature guérie est également libérée des états Assourdi, Aveuglé et Empoisonné."
+  },
+  {
+    "id": "metamorphose_supreme",
+    "nom": "Métamorphose suprême",
+    "niveau": 9,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une goutte de mercure, de la gomme arabique et de la fumée de soufre"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "SAG",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Transformez une créature ou un objet en une autre créature ou objet. Créature→créature : JS SAG pour résister ; profil remplacé, même limitation que Métamorphose mais sans limite de CR. Créature→objet ou objet→créature : si la concentration tient 1 heure, l'effet devient permanent. La cible conserve son alignement et sa personnalité."
+  },
+  {
+    "id": "mot_de_pouvoir_guerisseur",
+    "nom": "Mot de pouvoir guérisseur",
+    "niveau": 9,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une créature visible à portée récupère tous ses points de vie. Si elle est Effrayée, Charmée, Étourdie ou Paralysée, ces états prennent fin. Si elle est à terre, elle peut se relever par réaction."
+  },
+  {
+    "id": "mot_de_pouvoir_mortel",
+    "nom": "Mot de pouvoir mortel",
+    "niveau": 9,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Prononcez un mot de pouvoir de mort contre une créature visible à portée ayant 100 PV ou moins. La créature meurt instantanément. Si elle a plus de 100 PV, le sort n'a aucun effet."
+  },
+  {
+    "id": "nuee_de_meteores",
+    "nom": "Nuée de météores",
+    "niveau": 9,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "1500m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 12
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "feu + contondant",
+        "valeur": "20d6 + 20d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Quatre boules de feu géantes s'abattent sur quatre points différents que vous choisissez à portée. Chaque boule explose en une sphère de 12 m de rayon : les créatures dans la zone font un JS de Dextérité ou subissent 20d6 dégâts de feu + 20d6 dégâts contondants (réussite : moitié). Une créature dans deux zones est affectée deux fois."
+  },
+  {
+    "id": "portail",
+    "nom": "Portail",
+    "niveau": 9,
+    "ecole": "Invocation",
+    "classes": [
+      "Clerc",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un diamant d'une valeur minimale de 5 000 po qui se détruit"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Ouvrez un portail vers un autre plan d'existence. Vous pouvez nommer une créature spécifique ; elle est attirée vers le portail (JS de Charisme pour résister). Les divinités et souverains planaires peuvent empêcher l'ouverture du portail ou bloquer les noms d'entités sous leur protection."
+  },
+  {
+    "id": "premeditation",
+    "nom": "Préméditation",
+    "niveau": 9,
+    "ecole": "Abjuration",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "10 minutes",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une encre de céphalopode d'une valeur minimale de 1 000 po"
+    },
+    "duree": "10 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Préparez jusqu'à neuf sorts de niveau 5 ou inférieur que vous connaissez. Pour la durée, lorsque vous les lancez, vous pouvez les traiter comme des sorts prémédités (utilisant les emplacements normaux). Vous ne pouvez pas être sous l'effet de deux Préméditations simultanément."
+  },
+  {
+    "id": "premonition",
+    "nom": "Prémonition",
+    "niveau": 9,
+    "ecole": "Divination",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une plume de colibri"
+    },
+    "duree": "8 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "La créature touchée bénéficie pendant 8 heures de : immunité à la Surprise, Avantage à tous ses jets d'attaque/tests/sauvegardes, et les attaquants ont le Désavantage contre elle. Le sort prend fin prématurément si vous le lancez à nouveau."
+  },
+  {
+    "id": "projection_astrale",
+    "nom": "Projection astrale",
+    "niveau": 9,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Clerc",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "1 heure",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "pour chaque créature affectée : une hyacinthe d'une valeur de 1 000 po + un lingot d'argent de 100 po"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Vous et jusqu'à 8 créatures consentantes projetez vos âmes dans le Plan Astral. Des cordons d'argent relient les projections à vos corps physiques. Si le cordon est brisé (rare), la créature meurt. Pour mettre fin au sort, une action suffit — vous retournez dans votre corps avec tous vos PV."
+  },
+  {
+    "id": "resurrection_supreme",
+    "nom": "Résurrection suprême",
+    "niveau": 9,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Barde",
+      "Clerc"
+    ],
+    "temps_incantation": "1 heure",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "des incantations et des composantes valant au moins 25 000 po en diamants, qui se détruisent"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Ramenez à la vie une créature morte (sans limite de temps). Si des restes existent, ils sont restaurés. Sinon, un corps entier est recréé. La créature revient avec tous ses PV, sans blessures ni membres manquants, sans poison ni maladie. Aucun malus post-résurrection ne s'applique."
+  },
+  {
+    "id": "mur_prismatique",
+    "nom": "Mur prismatique",
+    "niveau": 9,
+    "ecole": "Abjuration",
+    "classes": [
+      "Barde",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "10 minutes",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "ligne",
+      "rayon_m": 27
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "variable",
+        "valeur": "variable"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": {
+      "colonnes": [
+        "Couche",
+        "Couleur",
+        "Effet",
+        "Dissipation"
+      ],
+      "lignes": [
+        {
+          "Couche": "1",
+          "Couleur": "Rouge",
+          "Effet": "50 dégâts de feu (JS DEX demi)",
+          "Dissipation": "Eau froide"
+        },
+        {
+          "Couche": "2",
+          "Couleur": "Orange",
+          "Effet": "50 dégâts d'acide (JS DEX demi)",
+          "Dissipation": "Vent fort"
+        },
+        {
+          "Couche": "3",
+          "Couleur": "Jaune",
+          "Effet": "50 dégâts de foudre (JS DEX demi)",
+          "Dissipation": "Petite quantité de métal"
+        },
+        {
+          "Couche": "4",
+          "Couleur": "Vert",
+          "Effet": "50 dégâts de poison (JS CON demi)",
+          "Dissipation": "Lumière de la journée"
+        },
+        {
+          "Couche": "5",
+          "Couleur": "Bleu",
+          "Effet": "50 dégâts de froid (JS CON demi)",
+          "Dissipation": "Feu"
+        },
+        {
+          "Couche": "6",
+          "Couleur": "Indigo",
+          "Effet": "JS CON ou Entravé, puis Pétrifié",
+          "Dissipation": "Lumière vive"
+        },
+        {
+          "Couche": "7",
+          "Couleur": "Violet",
+          "Effet": "JS SAG ou transporté sur un autre plan",
+          "Dissipation": "Antimagie"
+        }
+      ]
+    },
+    "description": "Créez un mur ou une sphère de sept couches colorées. Toute créature autre que vous qui tente de traverser subit les effets de chaque couche. Chaque couche peut être dissipée séparément par un objet ou sort approprié. Les créatures qui vous regardent au travers sont aveuglées 1 minute (JS CON pour ignorer)."
+  },
+  {
+    "id": "souhait",
+    "nom": "Souhait",
+    "niveau": 9,
+    "ecole": "Invocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Sort le plus puissant du monde. Usage simple : dupliquez n'importe quel sort du 8e niveau ou inférieur (sans composantes). Usage alternatif : formulez un souhait, le MJ en détermine l'effet. Après usage non-duplication : 33 % de risque de ne plus jamais pouvoir lancer Souhait ; 1d10 jours de Désavantage aux jets d'attaque, tests et JS ; vitesse réduite de moitié."
+  },
+  {
+    "id": "tempete_vengeresse",
+    "nom": "Tempête vengeresse",
+    "niveau": 9,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "1500m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "variable",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "foudre",
+        "valeur": "6d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": {
+      "colonnes": [
+        "Round",
+        "Effet"
+      ],
+      "lignes": [
+        {
+          "Round": "1",
+          "Effet": "Éclairs : 3 attaques de sorts sur des cibles au choix, 6d6 foudre chacune"
+        },
+        {
+          "Round": "2",
+          "Effet": "Grêle : chaque créature dans la zone, 4d6 contondant (JS DEX demi), Terrain difficile"
+        },
+        {
+          "Round": "3",
+          "Effet": "Pluie acide : chaque créature dans la zone, 2d6 acide (JS DEX demi)"
+        },
+        {
+          "Round": "4+",
+          "Effet": "Vent : chaque créature dans la zone, 2d6 tranchant (JS FOR ou À terre + déplacée 15m)"
+        }
+      ]
+    },
+    "description": "Déchaînez une tempête dévastatrice sur une zone visible. Chaque round (action Magie), la tempête produit un effet différent selon la table. La zone d'effet couvre un rayon de 150 m. Les créatures qui tentent de lancer des sorts de concentration subissent le Désavantage à leur test de Constitution."
+  }
+]

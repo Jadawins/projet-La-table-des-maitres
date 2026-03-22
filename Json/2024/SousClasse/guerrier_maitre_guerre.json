@@ -1,0 +1,52 @@
+{
+  "nom": "Maître de guerre",
+  "classe_parente": "guerrier",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 10, 15, 18],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Manœuvres de combat",
+          "description": "Tu apprends 3 manœuvres de combat parmi une liste. Tu obtiens un pool de 4 dés de supériorité (d8). Le pool se recharge au repos court ou long. DD manœuvre = 8 + STR/DEX + maîtrise."
+        },
+        {
+          "nom": "Maître d'armes",
+          "description": "Tu obtiens la maîtrise des outils d'artisan de ton choix."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Savoir militaire",
+          "description": "Tu apprends 2 manœuvres supplémentaires. Tu peux aussi connaître les forces et faiblesses des créatures que tu affrontes."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Dé de supériorité amélioré",
+          "description": "Tes dés de supériorité passent à d10. Tu apprends 2 manœuvres supplémentaires."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Savoir implacable",
+          "description": "Tu apprends 2 manœuvres supplémentaires. Quand tu lances l'initiative, tu récupères 1 dé de supériorité si tu n'en as plus."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Dé de supériorité suprême",
+          "description": "Tes dés de supériorité passent à d12. Tu apprends 2 manœuvres supplémentaires. Le pool passe à 6 dés."
+        }
+      ]
+    }
+  }
+}

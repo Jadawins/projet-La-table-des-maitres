@@ -1,0 +1,213 @@
+[
+  {
+    "id": "armure_matelassee",
+    "nom": "Armure matelassée",
+    "categorie": "armure_legere",
+    "classe_armure": {
+      "base": 11,
+      "modificateur_dex": true
+    },
+    "force_min": null,
+    "discretion": "desavantage",
+    "poids": 4,
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "armure_de_cuir",
+    "nom": "Armure de cuir",
+    "categorie": "armure_legere",
+    "classe_armure": {
+      "base": 11,
+      "modificateur_dex": true
+    },
+    "force_min": null,
+    "discretion": "aucun",
+    "poids": 5,
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "armure_de_cuir_cloute",
+    "nom": "Armure de cuir clouté",
+    "categorie": "armure_legere",
+    "classe_armure": {
+      "base": 12,
+      "modificateur_dex": true
+    },
+    "force_min": null,
+    "discretion": "aucun",
+    "poids": 6.5,
+    "prix": {
+      "quantite": 45,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "armure_de_peaux",
+    "nom": "Armure de peaux",
+    "categorie": "armure_intermediaire",
+    "classe_armure": {
+      "base": 12,
+      "modificateur_dex": true,
+      "modificateur_dex_max": 2
+    },
+    "force_min": null,
+    "discretion": "aucun",
+    "poids": 6,
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "chemise_de_mailles",
+    "nom": "Chemise de mailles",
+    "categorie": "armure_intermediaire",
+    "classe_armure": {
+      "base": 13,
+      "modificateur_dex": true,
+      "modificateur_dex_max": 2
+    },
+    "force_min": null,
+    "discretion": "aucun",
+    "poids": 10,
+    "prix": {
+      "quantite": 50,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "armure_decailles",
+    "nom": "Armure d'écailles",
+    "categorie": "armure_intermediaire",
+    "classe_armure": {
+      "base": 14,
+      "modificateur_dex": true,
+      "modificateur_dex_max": 2
+    },
+    "force_min": null,
+    "discretion": "desavantage",
+    "poids": 22.5,
+    "prix": {
+      "quantite": 50,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "cuirasse",
+    "nom": "Cuirasse",
+    "categorie": "armure_intermediaire",
+    "classe_armure": {
+      "base": 14,
+      "modificateur_dex": true,
+      "modificateur_dex_max": 2
+    },
+    "force_min": null,
+    "discretion": "aucun",
+    "poids": 10,
+    "prix": {
+      "quantite": 400,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "demi_plaque",
+    "nom": "Demi-plaque",
+    "categorie": "armure_intermediaire",
+    "classe_armure": {
+      "base": 15,
+      "modificateur_dex": true,
+      "modificateur_dex_max": 2
+    },
+    "force_min": null,
+    "discretion": "desavantage",
+    "poids": 20,
+    "prix": {
+      "quantite": 750,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "broigne",
+    "nom": "Broigne",
+    "categorie": "armure_lourde",
+    "classe_armure": {
+      "base": 14,
+      "modificateur_dex": false
+    },
+    "force_min": null,
+    "discretion": "desavantage",
+    "poids": 20,
+    "prix": {
+      "quantite": 30,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "clibanion",
+    "nom": "Clibanion",
+    "categorie": "armure_lourde",
+    "classe_armure": {
+      "base": 16,
+      "modificateur_dex": false
+    },
+    "force_min": 13,
+    "discretion": "desavantage",
+    "poids": 27.5,
+    "prix": {
+      "quantite": 200,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "harnois",
+    "nom": "Harnois",
+    "categorie": "armure_lourde",
+    "classe_armure": {
+      "base": 18,
+      "modificateur_dex": false
+    },
+    "force_min": 15,
+    "discretion": "desavantage",
+    "poids": 32.5,
+    "prix": {
+      "quantite": 1500,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "cotte_de_mailles",
+    "nom": "Cotte de mailles",
+    "categorie": "armure_lourde",
+    "classe_armure": {
+      "base": 16,
+      "modificateur_dex": false
+    },
+    "force_min": 13,
+    "discretion": "desavantage",
+    "poids": 22.5,
+    "prix": {
+      "quantite": 75,
+      "monnaie": "po"
+    }
+  },
+  {
+    "id": "bouclier",
+    "nom": "Bouclier",
+    "categorie": "bouclier",
+    "classe_armure": {
+      "bonus": 2
+    },
+    "discretion": "aucun",
+    "poids": 3,
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    }
+  }
+]

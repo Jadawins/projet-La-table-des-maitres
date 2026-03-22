@@ -1,0 +1,434 @@
+{
+  "nom": "Roublard",
+  "source": "PHB2024",
+  "version": "1.2",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": "DEX",
+      "de_vie": {
+        "type": "1d8",
+        "modificateur": "CON"
+      },
+      "sauvegardes_maitrise": ["DEX", "INT"],
+      "competences_choisies": {
+        "nombre": 4,
+        "options": [
+          "Acrobaties",
+          "Athlétisme",
+          "Discrétion",
+          "Escamotage",
+          "Intimidation",
+          "Intuition",
+          "Investigation",
+          "Perception",
+          "Persuasion",
+          "Tromperie"
+        ]
+      },
+      "maitrises_armes": ["armes_courantes", "armes_de_guerre_finesse_ou_legeres"],
+      "maitrises_armures": ["armures_legeres"],
+      "maitrises_outils": ["outils_de_voleur"],
+      "equipement_depart": [
+        {
+          "choix": "A",
+          "contenu": [
+            "Armure de cuir",
+            "2 dagues",
+            "Épée courte",
+            "Arc court",
+            "20 flèches",
+            "Carquois",
+            "Outils de voleur",
+            "Paquetage de cambrioleur",
+            "8 po"
+          ]
+        },
+        {
+          "choix": "B",
+          "contenu": ["100 po"]
+        }
+      ]
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "attaque_sournoise": "1d6",
+      "capacites": [
+        {
+          "nom": "Jargon des voleurs",
+          "description": "Connaît le jargon des voleurs (langue secrète) et une langue supplémentaire au choix.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "langues",
+              "valeur": ["jargon_des_voleurs", "une_langue_au_choix"]
+            }
+          ]
+        },
+        {
+          "nom": "Attaque sournoise",
+          "description": "Dégâts bonus (valeur en dés croissante) avec une arme de finesse ou distance, si avantage ou allié adjacent non neutralisé — une fois par tour.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "degats_supplementaires",
+              "valeur": "attaque_sournoise",
+              "armes": ["finesse", "distance"],
+              "conditions": [
+                {
+                  "type": "ou",
+                  "options": [
+                    { "type": "avantage_sur_attaque" },
+                    {
+                      "type": "allie_adjacent_cible",
+                      "rayon": "1,50m",
+                      "allie_non_neutralise": true
+                    }
+                  ]
+                }
+              ],
+              "restrictions": ["non_desavantage", "une_fois_par_tour"],
+              "type_degats": "meme_que_arme"
+            }
+          ]
+        },
+        {
+          "nom": "Propriétés martiales",
+          "description": "Maîtrise de bottes pour 2 armes au choix, modifiables à chaque repos long.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "maitrise_botte",
+              "nombre": 2,
+              "source": ["armes_courantes", "armes_de_guerre_finesse_ou_legeres"],
+              "modifiable": { "frequence": "repos_long" }
+            }
+          ]
+        },
+        {
+          "nom": "Expertise",
+          "description": "Double le bonus de maîtrise pour 2 compétences au choix (Escamotage et Discrétion recommandées).",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "double_bonus_maitrise",
+              "nombre_competences": 2,
+              "condition": "doit_avoir_maitrise",
+              "note": "Escamotage et Discrétion sont recommandées."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "attaque_sournoise": "1d6",
+      "capacites": [
+        {
+          "nom": "Ruse",
+          "description": "Action bonus : effectue l'action Désengagement, Furtivité ou Pointe.",
+          "type": "bonus_action",
+          "effets": [
+            {
+              "type": "action_disponible",
+              "options": ["Désengagement", "Furtivité", "Pointe"]
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "attaque_sournoise": "2d6",
+      "voie": {
+        "choix": ["Âme acérée", "Arnaqueur arcanique", "Assassin", "Voleur"]
+      },
+      "verifier_sous_classe": true,
+      "capacites": [
+        {
+          "nom": "Concentration de visée",
+          "description": "Action bonus sans déplacement préalable : avantage sur la prochaine attaque du tour, mais la vitesse tombe à 0 en fin de tour.",
+          "type": "bonus_action",
+          "condition": "sans_deplacement_ce_tour",
+          "effets": [
+            {
+              "type": "avantage",
+              "cible": "prochain_jet_attaque_du_tour"
+            },
+            {
+              "type": "effet_secondaire",
+              "valeur": "vitesse_reduite_a_0_fin_du_tour"
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "attaque_sournoise": "2d6",
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "attaque_sournoise": "3d6",
+      "dd_sauvegarde": "8 + modificateur_DEX + bonus_maitrise",
+      "capacites": [
+        {
+          "nom": "Réflexe instinctif",
+          "description": "Réaction quand touché par un attaquant visible : réduit de moitié les dégâts reçus.",
+          "type": "reaction",
+          "declencheur": {
+            "type": "etre_touche_par_attaque",
+            "condition": "attaquant_visible"
+          },
+          "effets": [
+            {
+              "type": "resistance_degats",
+              "valeur": "moitie",
+              "arrondi": "inferieur"
+            }
+          ]
+        },
+        {
+          "nom": "Frappe opportuniste",
+          "description": "Retire des dés d'Attaque sournoise avant le jet pour appliquer un effet (DD DEX/CON = 8 + DEX + maîtrise) : Croc-en-jambe, Poison ou Repli.",
+          "type": "passif",
+          "declencheur": "degats_attaque_sournoise",
+          "dd_sauvegarde": "8 + modificateur_DEX + bonus_maitrise",
+          "note": "Retire le ou les dés du pool d'Attaque sournoise avant le lancer. L'effet se déclenche après les dégâts. Un seul effet jusqu'au niveau 11.",
+          "effets": [
+            {
+              "type": "choix",
+              "reference": "frappes_malicieuses",
+              "filtre_niveau_requis": 5,
+              "nombre_effets_max": 1
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "attaque_sournoise": "3d6",
+      "capacites": [
+        {
+          "nom": "Expertise",
+          "description": "Double le bonus de maîtrise pour 2 compétences supplémentaires.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "double_bonus_maitrise",
+              "nombre_competences": 2,
+              "condition": "doit_avoir_maitrise"
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "attaque_sournoise": "4d6",
+      "capacites": [
+        {
+          "nom": "Esquive totale",
+          "description": "JS DEX réussi = aucun dégât (au lieu de la moitié) ; JS raté = moitié. Requiert de ne pas être Neutralisé.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "evasion",
+              "declencheur": "jet_sauvegarde_DEX_pour_demi_degats",
+              "reussite": "aucun_degat",
+              "echec": "demi_degats",
+              "condition": "non_neutralise"
+            }
+          ]
+        },
+        {
+          "nom": "Savoir-faire",
+          "description": "Pour tout test de caractéristique avec une compétence ou un outil maîtrisé, le résultat du d20 est au minimum 10.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "minimum_d20",
+              "valeur": 10,
+              "condition": "test_caracteristique_avec_competence_ou_outil_maitrise"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "attaque_sournoise": "4d6",
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "attaque_sournoise": "5d6",
+      "verifier_sous_classe": true
+    },
+    "10": {
+      "attaque_sournoise": "5d6",
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "11": {
+      "attaque_sournoise": "6d6",
+      "capacites": [
+        {
+          "nom": "Frappe opportuniste améliorée",
+          "description": "Peut désormais appliquer jusqu'à deux effets de Frappe opportuniste par Attaque sournoise.",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Frappe opportuniste",
+              "modification": "peut_utiliser_jusqu_a_deux_effets_par_attaque_sournoise"
+            }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "attaque_sournoise": "6d6",
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "attaque_sournoise": "7d6",
+      "verifier_sous_classe": true
+    },
+    "14": {
+      "attaque_sournoise": "7d6",
+      "capacites": [
+        {
+          "nom": "Coups perfides",
+          "description": "Ajoute 3 options puissantes à la Frappe opportuniste : Assommer (6d6, Inconscient), Aveugler (3d6, Aveuglé) et Hébéter (2d6, actions limitées).",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "deblocage_options",
+              "reference": "frappes_malicieuses",
+              "filtre_niveau_requis": 14
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "attaque_sournoise": "8d6",
+      "capacites": [
+        {
+          "nom": "Résistance mentale",
+          "description": "Gagne la maîtrise des jets de sauvegarde de SAG et de CHA.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "maitrise_jets_sauvegarde",
+              "caracteristiques": ["SAG", "CHA"]
+            }
+          ]
+        }
+      ]
+    },
+    "16": {
+      "attaque_sournoise": "8d6",
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "attaque_sournoise": "9d6",
+      "verifier_sous_classe": true
+    },
+    "18": {
+      "attaque_sournoise": "9d6",
+      "capacites": [
+        {
+          "nom": "Insaisissable",
+          "description": "Aucun jet d'attaque n'a l'avantage contre le roublard tant qu'il n'est pas Neutralisé.",
+          "type": "passif",
+          "effets": [
+            {
+              "type": "immunite_avantage_contre_utilisateur",
+              "condition": "non_neutralise"
+            }
+          ]
+        }
+      ]
+    },
+    "19": {
+      "attaque_sournoise": "10d6",
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "attaque_sournoise": "10d6",
+      "capacites": [
+        {
+          "nom": "Coup de chance",
+          "description": "Quand un test d20 échoue (attaque, JS ou test de caractéristique), transforme le résultat en 20 (1/repos court ou long).",
+          "type": "actif",
+          "declencheur": "test_d20_rate",
+          "effets": [
+            {
+              "type": "transformer_resultat_d20",
+              "valeur": 20
+            }
+          ],
+          "utilisations": {
+            "initial": 1,
+            "recuperation": [
+              { "type": "repos_court", "remise_a_max": true },
+              { "type": "repos_long", "remise_a_max": true }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

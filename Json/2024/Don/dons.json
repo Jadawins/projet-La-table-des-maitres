@@ -1,0 +1,1745 @@
+[
+  {
+    "id": "bagarreur_de_tavernes",
+    "nom": "Bagarreur de tavernes",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vos poings et objets improvisés deviennent des armes redoutables.",
+    "effets": [
+      {
+        "type": "bonus_degats",
+        "valeur": "Attaque à mains nues : 1 + mod. FOR, relancer les 1 sur les dés de dégâts"
+      },
+      {
+        "type": "autre",
+        "valeur": "Maîtrise des armes improvisées"
+      },
+      {
+        "type": "autre",
+        "valeur": "Bourrade : après toucher au corps à corps, repousser la cible de 1,5 m (1×/tour)"
+      }
+    ]
+  },
+  {
+    "id": "chanceux",
+    "nom": "Chanceux",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous disposez d'une réserve de chance que vous pouvez dépenser pour influencer les jets de dés.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "3 points de chance par repos long"
+      },
+      {
+        "type": "autre",
+        "valeur": "Avantage : dépensez 1 point quand vous lancez un d20 pour lancer un 2e dé et choisir le meilleur"
+      },
+      {
+        "type": "autre",
+        "valeur": "Désavantage : dépensez 1 point quand une créature vous attaque pour lui imposer Désavantage"
+      }
+    ]
+  },
+  {
+    "id": "doue",
+    "nom": "Doué",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre formation polyvalente vous a donné la maîtrise de trois compétences ou outils supplémentaires.",
+    "effets": [
+      {
+        "type": "competence",
+        "valeur": "Maîtrise de toute combinaison de 3 compétences ou outils au choix"
+      },
+      {
+        "type": "autre",
+        "valeur": "Répétable : sélectionnable plusieurs fois"
+      }
+    ]
+  },
+  {
+    "id": "faconneur",
+    "nom": "Façonneur",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous maîtrisez trois outils d'artisan et pouvez fabriquer rapidement des objets courants.",
+    "effets": [
+      {
+        "type": "competence",
+        "valeur": "Maîtrise de 3 outils d'artisan choisis dans la table Façonnage rapide"
+      },
+      {
+        "type": "autre",
+        "valeur": "Entretien : maintenez gratuitement un objet par repos long"
+      },
+      {
+        "type": "autre",
+        "valeur": "Façonnage rapide : fabriquez un objet lié à vos outils en fin de repos long (valeur max selon outils)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Répétable : sélectionnable plusieurs fois"
+      }
+    ]
+  },
+  {
+    "id": "guerisseur",
+    "nom": "Guérisseur",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous maîtrisez les soins de campagne et pouvez utiliser une trousse de soins pour restaurer des points de vie.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "Trousse de soins : soignez une créature pour 1d8 + bonus de maîtrise + nb de DV de la cible (1×/créature/repos court)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Stabilisation : stabilisez une créature à 0 PV sans dépenser de DV"
+      },
+      {
+        "type": "autre",
+        "valeur": "Retrait des soins : après une action de soins, récupérez 1d6 + bonus de maîtrise PV"
+      }
+    ]
+  },
+  {
+    "id": "initie_a_la_magie",
+    "nom": "Initié à la magie",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous avez étudié les rudiments de la magie d'une liste de classe choisie (Clerc, Druide ou Magicien).",
+    "effets": [
+      {
+        "type": "sort_cantrip",
+        "valeur": "2 tours de magie de la liste choisie (INT, SAG ou CHA selon la liste)"
+      },
+      {
+        "type": "sort_niveau1",
+        "valeur": "1 sort de niveau 1 de la liste choisie, lanceable 1×/repos long"
+      },
+      {
+        "type": "autre",
+        "valeur": "Changement de sort : à chaque montée en niveau, remplacez un sort par un autre de la même liste"
+      },
+      {
+        "type": "autre",
+        "valeur": "Répétable : choisissez une liste différente à chaque prise"
+      }
+    ]
+  },
+  {
+    "id": "musicien",
+    "nom": "Musicien",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre maîtrise musicale vous permet de soutenir vos alliés grâce à votre jeu.",
+    "effets": [
+      {
+        "type": "competence",
+        "valeur": "Maîtrise de 3 instruments de musique au choix"
+      },
+      {
+        "type": "autre",
+        "valeur": "Soutien mélodique : après 1 repos long, jouez un morceau pour accorder Inspiration bardique à un nombre d'alliés égal à votre bonus de maîtrise"
+      }
+    ]
+  },
+  {
+    "id": "robuste",
+    "nom": "Robuste",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre constitution physique exceptionnelle augmente votre réserve de points de vie.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "PV max augmente de votre niveau actuel, puis de 1 par niveau supplémentaire"
+      }
+    ]
+  },
+  {
+    "id": "sauvagerie_martiale",
+    "nom": "Sauvagerie martiale",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre ardeur au combat vous permet de frapper une cible supplémentaire quand vous abattez un ennemi.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "Quand vous réduisez une créature à 0 PV avec une attaque au corps à corps, utilisez votre Réaction pour attaquer une créature adjacente"
+      }
+    ]
+  },
+  {
+    "id": "truand",
+    "nom": "Truand",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous maîtrisez l'art de la contrefaçon et disposez d'une identité secrète préétablie.",
+    "effets": [
+      {
+        "type": "competence",
+        "valeur": "Maîtrise des Outils de contrefaçon"
+      },
+      {
+        "type": "autre",
+        "valeur": "Identité secrète : fausse identité avec papiers, vêtements et contacts"
+      },
+      {
+        "type": "autre",
+        "valeur": "Contrefaçon : fabrication de documents officiels falsifiés"
+      }
+    ]
+  },
+  {
+    "id": "vigilant",
+    "nom": "Vigilant",
+    "categorie": "origine",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre sens du danger aiguisé vous empêche d'être pris par surprise.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "Vous ne pouvez pas être surpris au combat"
+      },
+      {
+        "type": "bonus_attaque",
+        "valeur": "Ajoutez votre bonus de maîtrise à vos jets d'Initiative"
+      }
+    ]
+  },
+  {
+    "id": "adepte_elementaire",
+    "nom": "Adepte élémentaire",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "aptitude Sorts"
+    },
+    "description": "Votre maîtrise d'un type d'énergie élémentaire devient quasi parfaite.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Choisissez un type de dégâts (acide, froid, feu, foudre, tonnerre) : les 1 sur les dés de dégâts de ce type comptent comme des 2"
+      },
+      {
+        "type": "autre",
+        "valeur": "Les sorts de ce type ignorent la Résistance (mais pas l'Immunité)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Répétable : choisissez un type différent à chaque prise"
+      }
+    ]
+  },
+  {
+    "id": "affinite_feerique",
+    "nom": "Affinité féerique",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Une exposition prolongée à la magie féerique vous a octroyé des capacités surnaturelles.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Pas de magie : en zone de Lumière faible ou Ténèbres, devenez Invisible jusqu'à attaque, action Magie ou fin de Réaction"
+      },
+      {
+        "type": "autre",
+        "valeur": "Forme ombreuse : en zone de Lumière faible ou Ténèbres, Résistance aux dégâts psychiques et radiants"
+      }
+    ]
+  },
+  {
+    "id": "affinite_ombreuse",
+    "nom": "Affinité ombreuse",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Une exposition prolongée à la magie des Gloombres vous confère des pouvoirs liés à l'ombre.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Sorts d'Illusion et Nécromancie : DD et modificateur d'attaque augmentent de 1"
+      },
+      {
+        "type": "sort_cantrip",
+        "valeur": "Lancez un sort d'Illusion ou Nécromancie de votre liste de sorts à emplacement sans l'utiliser (1×/repos long)"
+      }
+    ]
+  },
+  {
+    "id": "amelioration_de_caracteristique",
+    "nom": "Amélioration de caractéristique",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Augmentez une ou deux caractéristiques de votre choix.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+2 à une caractéristique (max 20) ou +1 à deux caractéristiques différentes (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Répétable : sélectionnable plusieurs fois"
+      }
+    ]
+  },
+  {
+    "id": "athlete",
+    "nom": "Athlète",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13 ou DEX 13"
+    },
+    "description": "Vos capacités physiques sont exceptionnelles, rendant vos mouvements plus fluides et efficaces.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Vitesse d'escalade égale à votre Vitesse"
+      },
+      {
+        "type": "autre",
+        "valeur": "Rétablissement : se relever coûte seulement 1,5 m de déplacement"
+      },
+      {
+        "type": "autre",
+        "valeur": "Saut sans élan : les sauts en longueur et en hauteur ne nécessitent pas d'élan"
+      }
+    ]
+  },
+  {
+    "id": "broyeur",
+    "nom": "Broyeur",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vos attaques contondantes brisent les défenses et écrasent les ennemis.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou CON (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Critique contondant : infligez des dégâts contondants supplémentaires équivalents au bonus de maîtrise"
+      },
+      {
+        "type": "autre",
+        "valeur": "Quand vous touchez avec une arme contondante, poussez la cible de 1,5 m ou abattez-la (1×/tour)"
+      }
+    ]
+  },
+  {
+    "id": "chef_cuisinier",
+    "nom": "Chef cuisinier",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vos talents culinaires permettent de préparer des repas qui restaurent et revigorent.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à CON ou SAG (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Maîtrise des ustensiles de cuisinier"
+      },
+      {
+        "type": "autre",
+        "valeur": "Repas spécial : après un repos court, préparez un repas accordant 1d8 + bonus de maîtrise PV temporaires à un nb de créatures = bonus de maîtrise"
+      },
+      {
+        "type": "autre",
+        "valeur": "Festin : après un repos long, le repas permet de récupérer des PV supplémentaires"
+      }
+    ]
+  },
+  {
+    "id": "cogneur_lourd",
+    "nom": "Cogneur lourd",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13"
+    },
+    "description": "Votre maîtrise des armes lourdes vous permet de décimer vos adversaires avec des coups dévastateurs.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Expert en armes lourdes : maîtrisez toutes les armes lourdes"
+      },
+      {
+        "type": "autre",
+        "valeur": "Critique dévastateur : après un coup critique, infligez des dégâts supplémentaires égaux au bonus de maîtrise"
+      },
+      {
+        "type": "autre",
+        "valeur": "Ablation : après un coup critique avec une arme lourde, effectuez une attaque au même type contre la même cible (1×/tour)"
+      }
+    ]
+  },
+  {
+    "id": "combattant_a_deux_armes",
+    "nom": "Combattant à deux armes",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "DEX 13"
+    },
+    "description": "Vous excellez dans le combat avec une arme dans chaque main.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Attaque à deux armes améliorée : ajoutez le modificateur de caract. aux dégâts de la seconde attaque"
+      },
+      {
+        "type": "autre",
+        "valeur": "Dégainage rapide : rangez/sortez deux armes à une seule main simultanément"
+      }
+    ]
+  },
+  {
+    "id": "combattant_monte",
+    "nom": "Combattant monté",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous tirez le meilleur parti du combat à cheval ou sur une monture.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR, DEX ou SAG (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Avantage aux jets d'attaque contre toute créature non montée de taille inférieure à la monture"
+      },
+      {
+        "type": "autre",
+        "valeur": "Pas de désavantage lié à la hauteur sur les attaques"
+      },
+      {
+        "type": "autre",
+        "valeur": "Déviation : redirigez une attaque sur vous vers votre monture (Réaction)"
+      }
+    ]
+  },
+  {
+    "id": "comedien",
+    "nom": "Comédien",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "CHA 13"
+    },
+    "description": "Vous êtes un acteur accompli, capable de vous faire passer pour d'autres personnes.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Imitation : imitez une personne connue, les observateurs font un test de SAG (Intuition) DD 8 + mod. CHA + bonus maîtrise pour détecter la supercherie"
+      },
+      {
+        "type": "competence",
+        "valeur": "Maîtrise de Représentation ou Tromperie (au choix)"
+      }
+    ]
+  },
+  {
+    "id": "discret",
+    "nom": "Discret",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "DEX 13"
+    },
+    "description": "Vous êtes passé maître dans l'art de passer inaperçu.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Vision obscure 18 m"
+      },
+      {
+        "type": "autre",
+        "valeur": "Toujours furtif : vous pouvez tenter de vous cacher même si visible"
+      },
+      {
+        "type": "autre",
+        "valeur": "Jamais désavantagé aux tests de Discrétion"
+      }
+    ]
+  },
+  {
+    "id": "duelliste_defensif",
+    "nom": "Duelliste défensif",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "DEX 13"
+    },
+    "description": "Votre technique de parade vous permet de dévier les coups en plein combat.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Parade : Réaction quand une créature vous attaque au corps à corps — ajoutez votre bonus de maîtrise à la CA contre cette attaque"
+      }
+    ]
+  },
+  {
+    "id": "empoisonneur",
+    "nom": "Empoisonneur",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous préparez et appliquez des poisons avec expertise.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT ou DEX (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Maîtrise du matériel d'empoisonneur"
+      },
+      {
+        "type": "autre",
+        "valeur": "Préparez des doses de poison : nombre = bonus de maîtrise; l'application est une action bonus"
+      },
+      {
+        "type": "autre",
+        "valeur": "Résistance aux dégâts de poison"
+      },
+      {
+        "type": "autre",
+        "valeur": "Le DD du poison infligé = 8 + bonus maîtrise + modificateur de caract."
+      }
+    ]
+  },
+  {
+    "id": "empoigneur",
+    "nom": "Empoigneur",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13 ou DEX 13"
+    },
+    "description": "Vous excellez à attraper et immobiliser vos adversaires.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Attaque avec Avantage contre une créature que vous empoignez"
+      },
+      {
+        "type": "autre",
+        "valeur": "Écrasement : infligez 1d6 + mod. FOR à une créature empoignée (action bonus)"
+      }
+    ]
+  },
+  {
+    "id": "expert",
+    "nom": "Expert",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre expertise dans un domaine dépasse de loin celle de vos pairs.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Expertise : doublez le bonus de maîtrise sur une compétence déjà maîtrisée"
+      }
+    ]
+  },
+  {
+    "id": "expert_de_la_charge",
+    "nom": "Expert de la charge",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13"
+    },
+    "description": "Votre charge au combat est une force dévastatrice.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Vitesse +3 m dans le cadre de la charge"
+      },
+      {
+        "type": "autre",
+        "valeur": "Attaque de foulée : foulée déclenchant une attaque sans pénalité"
+      }
+    ]
+  },
+  {
+    "id": "figure_de_proue",
+    "nom": "Figure de proue",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "SAG 13 ou CHA 13"
+    },
+    "description": "Votre charisme naturel galvanise vos alliés et leur donne confiance.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Représentation galvanisante : à la fin d'un repos court, chantez ou harangue; les alliés qui vous écoutent reçoivent chacun 1d6 + modificateur de caract. PV temporaires"
+      }
+    ]
+  },
+  {
+    "id": "formation_aux_armes_de_guerre",
+    "nom": "Formation aux armes de guerre",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous avez reçu une formation au maniement des armes de guerre.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Maîtrise de toutes les armes de guerre"
+      }
+    ]
+  },
+  {
+    "id": "gaillard",
+    "nom": "Gaillard",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre robustesse physique vous permet de résister aux situations mortelles.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à CON (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Résistance à la mort : Avantage aux jets de sauvegarde contre la mort"
+      },
+      {
+        "type": "autre",
+        "valeur": "Récupération rapide : une fois par action Bonus, récupérez 1d6 + bonus de maîtrise PV"
+      }
+    ]
+  },
+  {
+    "id": "incantateur_d_elite",
+    "nom": "Incantateur d'élite",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 8,
+      "classe": null,
+      "caracteristique": "aptitude Sorts"
+    },
+    "description": "Votre maîtrise magique atteint un niveau permettant de contourner les défenses des adversaires.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Contournement des résistances : choisissez un type de dégâts — vos sorts ignorent la Résistance à ce type"
+      }
+    ]
+  },
+  {
+    "id": "mage_de_guerre",
+    "nom": "Mage de guerre",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "aptitude Sorts"
+    },
+    "description": "Vous combinez arts martiaux et magie avec fluidité sur le champ de bataille.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Concentration avantage : Avantage aux jets de sauvegarde de Constitution pour maintenir la Concentration"
+      },
+      {
+        "type": "autre",
+        "valeur": "Sort réactif : quand une créature vous attaque et vous rate, lancez un sort de niveau 0 ou 1 comme Réaction (1×/tour)"
+      }
+    ]
+  },
+  {
+    "id": "magie_rituelle",
+    "nom": "Magie rituelle",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "INT 13 ou SAG 13 ou CHA 13"
+    },
+    "description": "Vous avez appris à lancer certains sorts sous forme de rituel prolongé.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Sorts rituels : choisissez deux sorts avec la propriété rituel de votre liste — lancez-les comme rituel sans dépenser d'emplacement"
+      },
+      {
+        "type": "autre",
+        "valeur": "Les sorts rituels choisis sont toujours considérés comme préparés"
+      }
+    ]
+  },
+  {
+    "id": "maitre_arbaletrier",
+    "nom": "Maître arbalétrier",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "DEX 13"
+    },
+    "description": "Votre maîtrise de l'arbalète vous permet de tirer avec une précision et une vitesse redoutables.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Chargement rapide : ignorez la propriété Chargement des arbalètes légères et à main"
+      },
+      {
+        "type": "autre",
+        "valeur": "Tir au corps à corps : tirez sans Désavantage dans un rayon de 1,5 m d'une créature"
+      },
+      {
+        "type": "autre",
+        "valeur": "L'arbalète légère gagne les propriétés Légère et Allonge"
+      }
+    ]
+  },
+  {
+    "id": "maitre_d_hast",
+    "nom": "Maître d'hast",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13 ou DEX 13"
+    },
+    "description": "Vous manœuvrez les armes d'hast avec fluidité, couvrant une grande zone de combat.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Frappe double : si vous attaquez avec une arme Lourde et Allonge, effectuez une attaque supplémentaire au corps à corps avec la crosse (1d4 + mod.)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Frappe réactive : Réaction pour attaquer une créature entrant dans votre portée"
+      }
+    ]
+  },
+  {
+    "id": "maitre_des_armures_intermediaires",
+    "nom": "Maître des armures intermédiaires",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "formation aux armures intermédiaires"
+    },
+    "description": "Vous portez les armures intermédiaires avec une agilité surprenante.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Porteur agile : en armure intermédiaire, la CA inclut la DEX sans plafond (max DEX +3)"
+      }
+    ]
+  },
+  {
+    "id": "maitre_des_armures_lourdes",
+    "nom": "Maître des armures lourdes",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "formation aux armures lourdes"
+    },
+    "description": "Votre armure lourde devient un rempart quasi impénétrable.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou CON (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Réduction des dégâts : quand une armure lourde vous protège, réduisez les dégâts contondants, perforants et tranchants d'un montant égal au bonus de maîtrise"
+      }
+    ]
+  },
+  {
+    "id": "maitre_des_boucliers",
+    "nom": "Maître des boucliers",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "formation aux boucliers"
+    },
+    "description": "Votre bouclier est à la fois outil défensif et arme offensive.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Coup de bouclier : après une attaque réussie, poussez la cible de 1,5 m ou abattez-la (action bonus)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Interposition : Réaction pour appliquer le bonus CA du bouclier contre une attaque sur un allié adjacent"
+      }
+    ]
+  },
+  {
+    "id": "mobile",
+    "nom": "Mobile",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous vous déplacez avec une rapidité et une fluidité déconcertantes.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à DEX ou CON (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Vitesse augmentée de 3 m"
+      },
+      {
+        "type": "autre",
+        "valeur": "Terrain difficile ignoré quand vous Foncez"
+      },
+      {
+        "type": "autre",
+        "valeur": "Déplacement agile : les attaques d'opportunité contre vous ont le Désavantage (1×/tour)"
+      }
+    ]
+  },
+  {
+    "id": "observateur",
+    "nom": "Observateur",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "INT 13 ou SAG 13"
+    },
+    "description": "Vos sens aiguisés et votre attention aux détails vous rendent difficile à tromper.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT ou SAG (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Observateur attentif : choisissez une compétence parmi Perception, Investigation ou Perspicacité — doublez le bonus de maîtrise si vous la maîtrisez"
+      },
+      {
+        "type": "autre",
+        "valeur": "Observation rapide : action Bonus pour tenter un test de Perception ou Investigation"
+      }
+    ]
+  },
+  {
+    "id": "perforateur",
+    "nom": "Perforateur",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13 ou DEX 13"
+    },
+    "description": "Vos attaques perforantes trouvent les failles dans les armures.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Relancez les 1 sur les dés de dégâts perforants"
+      },
+      {
+        "type": "autre",
+        "valeur": "Critique : infligez un dé de dégâts perforants supplémentaire"
+      }
+    ]
+  },
+  {
+    "id": "preparateur_de_poison",
+    "nom": "Préparateur de poison",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous maîtrisez la préparation et l'application rapide de poisons.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT ou DEX (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Maîtrise du matériel d'empoisonneur"
+      },
+      {
+        "type": "autre",
+        "valeur": "Préparez des doses de poison en fin de repos long (nb = bonus de maîtrise), application action Bonus"
+      },
+      {
+        "type": "autre",
+        "valeur": "Résistance aux dégâts de poison et immunité à l'état Empoisonné de vos propres préparations"
+      }
+    ]
+  },
+  {
+    "id": "protection_intermediaire",
+    "nom": "Protection intermédiaire",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "formation aux armures légères"
+    },
+    "description": "Votre entraînement s'étend aux armures intermédiaires.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Formation aux armures intermédiaires"
+      }
+    ]
+  },
+  {
+    "id": "protection_legere",
+    "nom": "Protection légère",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous avez appris à porter une armure légère et à manier un bouclier.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Formation aux armures légères et aux boucliers"
+      }
+    ]
+  },
+  {
+    "id": "protection_lourde",
+    "nom": "Protection lourde",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "formation aux armures intermédiaires"
+    },
+    "description": "Votre entraînement s'étend aux armures lourdes.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou CON (max 20)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Formation aux armures lourdes"
+      }
+    ]
+  },
+  {
+    "id": "resilient",
+    "nom": "Résilient",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous développez une résistance exceptionnelle dans un type particulier de jet de sauvegarde.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Maîtrise du jet de sauvegarde correspondant à la caractéristique augmentée"
+      }
+    ]
+  },
+  {
+    "id": "sentinelle",
+    "nom": "Sentinelle",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13 ou DEX 13"
+    },
+    "description": "Vous protégez votre zone et punissez quiconque tente de l'ignorer.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Immobilisation : toucher avec une attaque d'opportunité réduit la Vitesse de la cible à 0 jusqu'à la fin de son tour"
+      },
+      {
+        "type": "autre",
+        "valeur": "Réaction protectrice : quand une créature attaque un allié adjacent, attaquez-la en Réaction"
+      }
+    ]
+  },
+  {
+    "id": "telekinesiste",
+    "nom": "Télékinésiste",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "INT 13 ou SAG 13 ou CHA 13"
+    },
+    "description": "Vous manipulez les objets et les créatures à distance par la seule force de votre esprit.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "sort_cantrip",
+        "valeur": "Télékinésie mineure : déplacez un objet verbal de 5 kg max à 9 m (action Magie)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Poussée télékinétique : action Bonus pour déplacer une créature de 1,5 m (JS STR DD = 8 + bonus maîtrise + mod. caract.)"
+      }
+    ]
+  },
+  {
+    "id": "telepathe",
+    "nom": "Télépathe",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 6,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous pouvez lire et communiquer par la pensée avec les créatures qui vous entourent.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Parole télépathique : communiquez avec toute créature dans un rayon de 18 m si elle comprend au moins une langue"
+      },
+      {
+        "type": "autre",
+        "valeur": "Détection des personnes : repérez les créatures Charmées dans un rayon de 18 m"
+      }
+    ]
+  },
+  {
+    "id": "tireur_d_elite",
+    "nom": "Tireur d'élite",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "DEX 13"
+    },
+    "description": "Votre précision au tir vous permet d'atteindre des cibles qui semblent hors de portée.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Tir au corps à corps : pas de Désavantage en tirant dans un rayon de 1,5 m d'une créature"
+      },
+      {
+        "type": "autre",
+        "valeur": "Les arbalètes à distance gagnent les propriétés Légère et Allonge"
+      }
+    ]
+  },
+  {
+    "id": "trancheur",
+    "nom": "Trancheur",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": "FOR 13 ou DEX 13"
+    },
+    "description": "Vos coups tranchants infligent des blessures profondes qui ralentissent vos adversaires.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Critique tranchant : la cible a Désavantage à son prochain jet d'attaque jusqu'au début de votre prochain tour"
+      },
+      {
+        "type": "autre",
+        "valeur": "Coup en traîneau : en Coop, réduisez la Vitesse de la cible de 3 m jusqu'au début de votre tour suivant"
+      }
+    ]
+  },
+  {
+    "id": "tueur_de_mages",
+    "nom": "Tueur de mages",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 4,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous avez développé des techniques spéciales pour neutraliser les lanceurs de sorts.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 20)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Réaction : quand une créature lance un sort dans un rayon de 9 m, effectuez une attaque contre elle"
+      },
+      {
+        "type": "autre",
+        "valeur": "Trouble de concentration : Désavantage aux jets de maintien de Concentration pour les créatures que vous touchez"
+      }
+    ]
+  },
+  {
+    "id": "style_archerie",
+    "nom": "Archerie",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Votre technique d'archerie est parfaitement rodée.",
+    "effets": [
+      {
+        "type": "bonus_attaque",
+        "valeur": "+2 aux jets d'attaque avec des armes à distance"
+      }
+    ]
+  },
+  {
+    "id": "style_armes_a_deux_mains",
+    "nom": "Armes à deux mains",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Vous tirez le maximum de vos armes à deux mains.",
+    "effets": [
+      {
+        "type": "bonus_degats",
+        "valeur": "Relancez les 1 et 2 sur les dés de dégâts des armes à deux mains"
+      }
+    ]
+  },
+  {
+    "id": "style_armes_de_lancer",
+    "nom": "Armes de lancer",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Votre maîtrise des armes de jet est redoutable.",
+    "effets": [
+      {
+        "type": "bonus_degats",
+        "valeur": "+2 aux jets de dégâts avec des armes dotées de la propriété Lancer"
+      }
+    ]
+  },
+  {
+    "id": "style_combat_a_deux_armes",
+    "nom": "Combat à deux armes",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Vous maximisez l'efficacité de vos deux armes.",
+    "effets": [
+      {
+        "type": "bonus_degats",
+        "valeur": "Ajoutez le modificateur de caractéristique aux dégâts de la seconde attaque (action bonus)"
+      }
+    ]
+  },
+  {
+    "id": "style_combat_a_mains_nues",
+    "nom": "Combat à mains nues",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Vos poings et membres sont des armes redoutables.",
+    "effets": [
+      {
+        "type": "bonus_degats",
+        "valeur": "Attaques à mains nues : 1d6 + FOR ou DEX; 1d8 si les deux mains sont libres (pas d'arme ni bouclier)"
+      }
+    ]
+  },
+  {
+    "id": "style_combat_en_aveugle",
+    "nom": "Combat en aveugle",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Vos sens développés vous permettent de localiser les ennemis sans les voir.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "Vision aveugle à 3 m — vous détectez les créatures Invisibles dans ce rayon"
+      }
+    ]
+  },
+  {
+    "id": "style_defense",
+    "nom": "Défense",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Vous excellez à utiliser votre armure pour dévier les coups.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "+1 à la CA tant que vous portez une armure légère, intermédiaire ou lourde"
+      }
+    ]
+  },
+  {
+    "id": "style_duel",
+    "nom": "Duel",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Votre technique de combat à une arme est parfaite.",
+    "effets": [
+      {
+        "type": "bonus_degats",
+        "valeur": "+2 aux jets de dégâts quand vous tenez une seule arme à une main et rien dans l'autre main"
+      }
+    ]
+  },
+  {
+    "id": "style_interception",
+    "nom": "Interception",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Vous interposez votre arme ou votre corps pour protéger vos alliés.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "Réaction : quand une créature touche un allié à 1,5 m de vous, réduisez les dégâts de 1d10 + bonus de maîtrise (min 0)"
+      }
+    ]
+  },
+  {
+    "id": "style_protection",
+    "nom": "Protection",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 1,
+      "classe": "aptitude Style de combat",
+      "caracteristique": null
+    },
+    "description": "Vous utilisez votre bouclier pour dévier les attaques visant vos alliés.",
+    "effets": [
+      {
+        "type": "autre",
+        "valeur": "Réaction (requiert bouclier) : imposez Désavantage à un jet d'attaque contre un allié dans un rayon de 1,5 m"
+      }
+    ]
+  },
+  {
+    "id": "faveur_d_attaque_irresistible",
+    "nom": "Faveur d'attaque irrésistible",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": "FOR ou DEX"
+    },
+    "description": "Vos attaques transcendent les défenses ordinaires.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Vos attaques avec des armes ignorent la Résistance aux dégâts contondants, perforants et tranchants"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_competence",
+    "nom": "Faveur de compétence",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre polyvalence atteint son apogée.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 30)"
+      },
+      {
+        "type": "competence",
+        "valeur": "Polyvidence totale : maîtrisez toutes les compétences"
+      },
+      {
+        "type": "competence",
+        "valeur": "Expertise dans une compétence que vous maîtrisez"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_deplacement_dimensionnel",
+    "nom": "Faveur de déplacement dimensionnel",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous pouvez vous téléporter sur le champ de bataille avec une facilité déconcertante.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Téléportation dimensionnelle : action Magie ou action Bonus pour vous téléporter de 9 m vers un espace inoccupé visible"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_l_esprit_nocturne",
+    "nom": "Faveur de l'esprit nocturne",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Les ténèbres sont votre domaine naturel.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Pas de magie élargi : en zone de Lumière faible ou Ténèbres, devenez Invisible jusqu'à attaque, action Magie ou Réaction"
+      },
+      {
+        "type": "autre",
+        "valeur": "Forme ombreuse élargie : en zone de Lumière faible ou Ténèbres, Résistance à tous les dégâts sauf psychiques et radiants"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_memoire_magique",
+    "nom": "Faveur de mémoire magique",
+    "categorie": "magique",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": "aptitude Sorts"
+    },
+    "description": "Votre mémoire magique vous permet de récupérer des emplacements de sorts épuisés.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à INT, SAG ou CHA (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Mémoire instantanée : récupérez un emplacement de sort du 1er au 4e niveau (1×/repos court)"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_prowesse_martiale",
+    "nom": "Faveur de prouesse martiale",
+    "categorie": "combat",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre maîtrise martiale atteint son apogée.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à FOR ou DEX (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Frappe irrépressible : ignorez le Désavantage sur vos jets d'attaque une fois par tour"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_recuperation",
+    "nom": "Faveur de récupération",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre capacité à récupérer rapidement des blessures est extraordinaire.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Retour d'honneur : si vous commencez votre tour à 0 PV, utilisez votre Réaction pour tomber à 1 PV (1×/repos long)"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_resistance_aux_energies",
+    "nom": "Faveur de résistance aux énergies",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous résistez naturellement à plusieurs types d'énergie destructrice.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Résistance à deux types de dégâts (acide, feu, froid, foudre, nécrotique, poison, psychique, radiant ou tonnerre) au choix"
+      },
+      {
+        "type": "autre",
+        "valeur": "Une fois par Repos long, changez un des types choisis"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_vigueur",
+    "nom": "Faveur de vigueur",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Votre vitalité est quasi surnaturelle.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à CON (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "PV max augmente de 40"
+      },
+      {
+        "type": "autre",
+        "valeur": "Sans faiblesses : votre maximum de PV ne peut pas être réduit"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_vision_lucide",
+    "nom": "Faveur de vision lucide",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vos yeux percent toutes les illusions et voient le monde tel qu'il est vraiment.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Vision lucide à 18 m : voyez dans l'obscurité, percez les illusions, détectez les formes invisibles et voyez dans le Plan Éthéré"
+      }
+    ]
+  },
+  {
+    "id": "faveur_de_vitesse",
+    "nom": "Faveur de vitesse",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Vous vous déplacez à une vitesse surhumaine.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à DEX (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Vitesse augmentée de 9 m"
+      },
+      {
+        "type": "autre",
+        "valeur": "Action Bonus pour vous Dégager (si Entravé) ou Précipiter"
+      }
+    ]
+  },
+  {
+    "id": "faveur_du_destin",
+    "nom": "Faveur du destin",
+    "categorie": "general",
+    "prerequis": {
+      "niveau": 19,
+      "classe": null,
+      "caracteristique": null
+    },
+    "description": "Le destin semble vous sourire, vous offrant un pouvoir unique et récupérable.",
+    "effets": [
+      {
+        "type": "caracteristique",
+        "valeur": "+1 à une caractéristique au choix (max 30)"
+      },
+      {
+        "type": "autre",
+        "valeur": "Sort spécial : choisissez un sort de votre liste — lancez-le sans dépenser d'emplacement (1×/repos long)"
+      }
+    ]
+  }
+]

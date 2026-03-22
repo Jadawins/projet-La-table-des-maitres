@@ -1,0 +1,11 @@
+{
+    "index": "githyanki",
+    "name": {
+          "en": "Githyanki",
+          "fr": "Githyanki"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Githyanki"],
+    "script": "Githyanki",
+    "url": "/api/2014/langues/commun-des-profondeurs"
+  }

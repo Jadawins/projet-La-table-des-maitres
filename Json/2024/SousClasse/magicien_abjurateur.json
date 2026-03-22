@@ -1,0 +1,44 @@
+{
+  "nom": "École d'Abjuration",
+  "classe_parente": "magicien",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Spécialisation en Abjuration",
+          "description": "Quand tu copies un sort d'Abjuration dans ton grimoire, cela coûte moitié moins cher en temps et en matériaux."
+        },
+        {
+          "nom": "Bouclier arcanique",
+          "description": "Lorsque tu lances un sort d'Abjuration de niveau 1 ou supérieur, tu crées un bouclier d'Abjuration avec des PV = 2 × ton niveau de magicien + ton modificateur d'INT. Si tu subis des dégâts, le bouclier les absorbe en premier."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Protection projetée",
+          "description": "Quand tu lances un sort d'Abjuration ciblant une créature autre que toi, tu peux étendre ton Bouclier arcanique à la créature jusqu'à la fin de ton prochain tour."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Résistance améliorée",
+          "description": "Tu peux interposer ton Bouclier arcanique entre toi et une attaque. Lorsque tu subis des dégâts et que le bouclier existe, réduis les dégâts de 1d8."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Résistance aux sorts",
+          "description": "Tu as avantage aux JS contre les sorts. Si tu as ton Bouclier arcanique actif, tu es résistant aux dégâts de sorts."
+        }
+      ]
+    }
+  }
+}

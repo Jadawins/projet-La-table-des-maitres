@@ -1,0 +1,57 @@
+{
+  "nom": "Domaine de la Guerre",
+  "classe_parente": "clerc",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 8, 17],
+  "niveaux": {
+    "3": {
+      "sorts_domaine": {
+        "1": ["bénédiction divine", "faveur divine"],
+        "2": ["aide", "arme spirituelle"]
+      },
+      "capacites": [
+        {
+          "nom": "Maîtrises de guerre",
+          "description": "Tu obtiens la maîtrise des armures lourdes et des armes de guerre."
+        },
+        {
+          "nom": "Prêtre de la guerre",
+          "description": "Quand tu utilises l'action Attaquer, tu peux effectuer une attaque à la main ou avec une arme en action bonus (modificateur SAG fois/repos long)."
+        }
+      ]
+    },
+    "6": {
+      "sorts_domaine": {
+        "3": ["croissance d'épines", "haste"]
+      },
+      "capacites": [
+        {
+          "nom": "Frappe guidée",
+          "description": "Réaction : quand toi ou un allié à 9 m rate un jet d'attaque, tu accordes un bonus de +10 à ce jet (avant de savoir si l'attaque touche). Utilisable 1 fois entre deux repos."
+        }
+      ]
+    },
+    "8": {
+      "sorts_domaine": {
+        "4": ["gardien de la foi", "liberté de mouvement"]
+      },
+      "capacites": [
+        {
+          "nom": "Frappe divine",
+          "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts de tonnerre supplémentaires (2d8 au niveau 14)."
+        }
+      ]
+    },
+    "17": {
+      "sorts_domaine": {
+        "5": ["colonne de flamme", "domination de personne"]
+      },
+      "capacites": [
+        {
+          "nom": "Avatar de la bataille",
+          "description": "Tu es immunisé aux dégâts perforants, tranchants et contondants des armes non-magiques. Les alliés à 9 m de toi bénéficient de la résistance à ces mêmes types de dégâts."
+        }
+      ]
+    }
+  }
+}

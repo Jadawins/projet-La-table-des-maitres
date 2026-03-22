@@ -1,0 +1,183 @@
+[
+  {
+    "index": "common",
+    "name": {
+          "en": "Common",
+          "fr": "Commun"
+                },
+    "type": "Standard",
+    "typical_speakers": ["Humains"],
+    "script": "Commun",
+    "url": "/api/2014/langues/commun"
+  },
+  {
+    "index": "dwarvish",
+    "name": {
+          "en": "Dwarvish",
+          "fr": "Nain"
+                },
+    "desc": "Le nain est une langue rugueuse, caractérisée par des sons durs et gutturaux, reflétant la culture robuste et terre-à-terre de son peuple.",
+    "type": "Standard",
+    "typical_speakers": ["Nains"],
+    "script": "Nain",
+    "url": "/api/2014/langues/nain"
+  },
+  {
+    "index": "elvish",
+    "name": {
+          "en": "Elvish",
+          "fr": "Elfe"
+                },
+    "desc": "L’elfique est une langue fluide et mélodieuse, aux intonations subtiles et à la grammaire complexe. Riche en littérature et en poésie, elle est célèbre parmi les autres peuples pour la beauté de ses chants et de ses récits. Nombreux sont les bardes qui l’apprennent afin d’enrichir leur répertoire de ballades elfiques.",
+    "type": "Standard",
+    "typical_speakers": ["Elfes"],
+    "script": "Elfe",
+    "url": "/api/2014/langues/elfe"
+  },
+  {
+    "index": "giant",
+    "name": {
+          "en": "Giant",
+          "fr": "Géant"
+                },
+    "type": "Standard",
+    "typical_speakers": ["Ogres", "Géants"],
+    "script": "Nain",
+    "url": "/api/2014/langues/geant"
+  },
+  {
+    "index": "gnomish",
+    "name": {
+          "en": "Gnomish",
+          "fr": "Gnome"
+                },
+    "desc": "Le gnome, qui utilise l’écriture naine, est réputé pour ses traités techniques et ses ouvrages détaillant les merveilles du monde naturel, mêlant savoir pratique et curiosité scientifique.",
+    "type": "Standard",
+    "typical_speakers": ["Gnomes"],
+    "script": "Nain",
+    "url": "/api/2014/langues/gnome"
+  },
+  {
+    "index": "goblin",
+    "name": {
+          "en": "Goblin",
+          "fr": "Gobelin"
+                },
+    "type": "Standard",
+    "typical_speakers": ["Goblinoides"],
+    "script": "Nain",
+    "url": "/api/2014/langues/gobelin"
+  },
+  {
+    "index": "halfling",
+    "name": {
+          "en": "Halfling",
+          "fr": "Halfelin"
+                },
+    "desc": "La langue halfeline n’est pas secrète, mais les halfelins révèlent rarement ses subtilités à ceux qui ne sont pas des leurs. Ils écrivent peu et possèdent donc peu de littérature écrite, mais leur tradition orale est riche et vivante, transmise de génération en génération.",
+    "type": "Standard",
+    "typical_speakers": ["Halfelins"],
+    "script": "Commun",
+    "url": "/api/2014/langues/halfelin"
+  },
+  {
+    "index": "orc",
+    "name": {
+          "en": "Orc",
+          "fr": "Orc"
+                },
+    "desc": "L’orc est une langue rude et agressive, dominée par des sons durs et râpeux. Dépourvue d’alphabet propre, elle est généralement écrite en utilisant l’écriture naine.",
+    "type": "Standard",
+    "typical_speakers": ["Orcs"],
+    "script": "Nain",
+    "url": "/api/2014/langues/orc"
+  },
+  {
+    "index": "abyssal",
+    "name": {
+          "en": "Abyssal",
+          "fr": "Abyssal"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Démons"],
+    "script": "Infernal",
+    "url": "/api/2014/langues/abyssal"
+  },
+  {
+    "index": "celestial",
+    "name": {
+          "en": "Celestial",
+          "fr": "Céleste"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Célestes"],
+    "script": "Céleste",
+    "url": "/api/2014/langues/celeste"
+  },
+  {
+    "index": "draconic",
+    "name": {
+          "en": "Draconic",
+          "fr": "Draconique"
+                },
+    "desc": "Le draconique est considéré comme l’une des plus anciennes langues du monde, souvent utilisé dans l’étude des arcanes et des savoirs magiques. Ses sons sifflants et ses consonnes dures lui donnent une sonorité intimidante pour la plupart des autres peuples.",
+    "type": "Exotic",
+    "typical_speakers": ["Dragons", "Drakéides"],
+    "script": "Draconique",
+    "url": "/api/2014/langues/draconique"
+  },
+  {
+    "index": "deep-speech",
+    "name": {
+          "en": "Deep Speech",
+          "fr": "Profond"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Beholders", "Flagelleurs mentaux"],
+    "url": "/api/2014/langues/profond"
+  },
+  {
+    "index": "infernal",
+    "name": {
+          "en": "Infernal",
+          "fr": "Infernal"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Diables"],
+    "script": "Infernal",
+    "url": "/api/2014/langues/infernal"
+  },
+  {
+    "index": "primordial",
+    "name": {
+          "en": "Primordial",
+          "fr": "Primordial"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Élémentaires"],
+    "script": "Nain",
+    "url": "/api/2014/langues/primordial"
+  },
+  {
+    "index": "sylvan",
+    "name": {
+          "en": "Sylvan",
+          "fr": "Sylvain"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Créatures féeriques"],
+    "script": "Elfe",
+    "url": "/api/2014/langues/sylvain"
+  },
+  {
+    "index": "undercommon",
+    "name": {
+          "en": "Undercommon",
+          "fr": "Commun des profondeurs"
+                },
+    "type": "Exotic",
+    "typical_speakers": ["Créatures de l'Outreterre"],
+    "script": "Elfe",
+    "url": "/api/2014/langues/commun-des-profondeurs"
+  }
+]

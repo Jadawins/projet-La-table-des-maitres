@@ -1,0 +1,4350 @@
+[
+  {
+    "index": "barbare",
+    "name": "Barbare",
+    "hit_die": 12,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-dressage",
+                "name": "Compétences: Dressage",
+                "url": "/api/2014/maitrises/competences-dressage"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-athletisme",
+                "name": "Compétences: Athlétisme",
+                "url": "/api/2014/maitrises/competences-athletisme"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intimidation",
+                "name": "Compétences: Intimidation",
+                "url": "/api/2014/maitrises/competences-intimidation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-nature",
+                "name": "Compétences: Nature",
+                "url": "/api/2014/maitrises/competences-nature"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-perception",
+                "name": "Compétences: Perception",
+                "url": "/api/2014/maitrises/competences-perception"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-survie",
+                "name": "Compétences: Survie",
+                "url": "/api/2014/maitrises/competences-survie"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "armure-legere",
+        "name": "Armure légère",
+        "url": "/api/2014/maitrises/armure-legere"
+      },
+      {
+        "index": "armure-intermediaire",
+        "name": "Armure Intermédiaire",
+        "url": "/api/2014/maitrises/armure-intermediaire"
+      },
+      {
+        "index": "bouclier",
+        "name": "Boucliers",
+        "url": "/api/2014/maitrises/bouclier"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "arme-de-guerre",
+        "name": "Armes de guerre",
+        "url": "/api/2014/maitrises/arme-de-guerre"
+      },
+      {
+        "index": "jet-de-sauvegarde-for",
+        "name": "Jet de Sauvegarde : FOR",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-for"
+      },
+      {
+        "index": "jet-de-sauvegarde-con",
+        "name": "Jet de Sauvegarde : CON",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-for"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "for",
+        "name": "FOR",
+        "url": "/api/2014/carateristique/for"
+      },
+      {
+        "index": "con",
+        "name": "CON",
+        "url": "/api/2014/carateristique/con"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "sac-dexplorateur",
+          "name": "Sac d'explorateur",
+          "url": "/api/2014/equipment/sac-dexplorateur"
+        },
+        "quantity": 1
+      },
+      {
+        "equipment": {
+          "index": "javeline",
+          "name": "Javelines",
+          "url": "/api/2014/equipment/javeline"
+        },
+        "quantity": 4
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une hache à deux mains ou (b) n'importe quelle arme de guerre de corps à corps",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "hache-a-deux-mains",
+                "name": "Haches à deux mains",
+                "url": "/api/2014/equipment/hache-a-deux-mains"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quelle arme de guerre de corps à corps",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-de-guerre-de-cac",
+                    "name": "Armes de guerre cac",
+                    "url": "/api/2014/equipment-categories/arme-de-guerre-de-cac"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) deux hachette ou (b) n'importe quelle arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 2,
+              "of": {
+                "index": "hachette",
+                "name": "Hachettes",
+                "url": "/api/2014/equipment/hachette"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quelle arme courante",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/barbare/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "for",
+            "name": "FOR",
+            "url": "/api/2014/carateristique/for"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "bouclier",
+          "name": "Boucliers",
+          "url": "/api/2014/maitrises/bouclier"
+        },
+        {
+          "index": "arme-courante",
+          "name": "Armes courantes",
+          "url": "/api/2014/maitrises/arme-courante"
+        },
+        {
+          "index": "arme-de-guerre",
+          "name": "Armes de guerre",
+          "url": "/api/2014/maitrises/arme-de-guerre"
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "berserker",
+        "name": "Berserker",
+        "url": "/api/2014/sousclasses/berserker"
+      }
+    ],
+    "url": "/api/2014/classes/barbare"
+  },
+  {
+    "index": "barde",
+    "name": "Barde",
+    "hit_die": 8,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez trois compétences",
+        "choose": 3,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-acrobaties",
+                "name": "Compétences: Acrobaties",
+                "url": "/api/2014/maitrises/competences-acrobaties"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-dressage",
+                "name": "Compétences: Dressage",
+                "url": "/api/2014/maitrises/competences-dressage"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-arcane",
+                "name": "Compétences: Arcane",
+                "url": "/api/2014/maitrises/competences-arcane"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-athletisme",
+                "name": "Compétences: Athlétisme",
+                "url": "/api/2014/maitrises/competences-athletisme"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-tromperie",
+                "name": "Compétences: Tromperie",
+                "url": "/api/2014/maitrises/competences-tromperie"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-histoire",
+                "name": "Compétences: Histoire",
+                "url": "/api/2014/maitrises/competences-histoire"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intimidation",
+                "name": "Compétences: Intimidation",
+                "url": "/api/2014/maitrises/competences-intimidation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-investigation",
+                "name": "Compétences: Investigation",
+                "url": "/api/2014/maitrises/competences-investigation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-medecine",
+                "name": "Compétences: Médecine",
+                "url": "/api/2014/maitrises/competences-medecine"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-nature",
+                "name": "Compétences: Nature",
+                "url": "/api/2014/maitrises/competences-nature"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-perception",
+                "name": "Compétences: Perception",
+                "url": "/api/2014/maitrises/competences-perception"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-representation",
+                "name": "Compétences: Représentation",
+                "url": "/api/2014/maitrises/competences-representation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-persuasion",
+                "name": "Compétences: Persuasion",
+                "url": "/api/2014/maitrises/competences-persuasion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-escamotage",
+                "name": "Compétences: Escamotage",
+                "url": "/api/2014/maitrises/competences-escamotage"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-discrétion",
+                "name": "Compétences: Discrétion",
+                "url": "/api/2014/maitrises/competences-discrétion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-survie",
+                "name": "Compétences: Survie",
+                "url": "/api/2014/maitrises/competences-survie"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "Trois instruments de musique au choix",
+        "choose": 3,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "cornemuse",
+                "name": "Cornemuse",
+                "url": "/api/2014/maitrises/cornemuse"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "tambour",
+                "name": "Tambour",
+                "url": "/api/2014/maitrises/tambour"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "tympanon",
+                "name": "Tympanon",
+                "url": "/api/2014/maitrises/tympanon"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "flute",
+                "name": "Flûte",
+                "url": "/api/2014/maitrises/flute"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "luth",
+                "name": "Luth",
+                "url": "/api/2014/maitrises/luth"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "lyre",
+                "name": "Lyre",
+                "url": "/api/2014/maitrises/lyre"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "corne",
+                "name": "Corne",
+                "url": "/api/2014/maitrises/corne"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "flute-de-Pan",
+                "name": "Flûte de Pan",
+                "url": "/api/2014/maitrises/flute-de-Pan"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "chalemie",
+                "name": "Chalemie",
+                "url": "/api/2014/maitrises/chalemie"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "violon",
+                "name": "Violon",
+                "url": "/api/2014/maitrises/violon"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "armure-légère",
+        "name": "Armures légères",
+        "url": "/api/2014/maitrises/armure-legere"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "epee-longue",
+        "name": "Épées longues",
+        "url": "/api/2014/maitrises/epee-longue"
+      },
+      {
+        "index": "rapiere",
+        "name": "Rapières",
+        "url": "/api/2014/maitrises/rapiere"
+      },
+      {
+        "index": "epee-courte",
+        "name": "Épées courtes",
+        "url": "/api/2014/maitrises/epee-courte"
+      },
+      {
+        "index": "arbaletes-de-poing",
+        "name": "Arbalètes de poing",
+        "url": "/api/2014/maitrises/arbalete-de-poing"
+      },
+      {
+        "index": "jet-de-sauvegarde-dex",
+        "name": "Jet de Sauvegarde : DEX",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-dex"
+      },
+      {
+        "index": "jet-de-sauvegarde-cha",
+        "name": "Jet de Sauvegarde : CHA",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-cha"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/2014/carateristique/dex"
+      },
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/2014/carateristique/cha"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "armures-de-cuir",
+          "name": "Armures de cuir",
+          "url": "/api/2014/equipment/armure-de-cuir"
+        },
+        "quantity": 1
+      },
+      {
+        "equipment": {
+          "index": "dagues",
+          "name": "Dagues",
+          "url": "/api/2014/equipment/dague"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une rapière, (b) une épée longue ou (c) n'importe quelle arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "rapiere",
+                "name": "rapiere",
+                "url": "/api/2014/equipment/rapiere"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "epee-longue",
+                "name": "Épées longues",
+                "url": "/api/2014/equipment/epee-longue"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quelle arme courante",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un paquetage de diplomate ou (b) un paquetage d’artiste",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "paquetage-de-diplomate",
+                "name": "Paquetage de diplomate",
+                "url": "/api/2014/equipment/paquetage-de-diplomate"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "paquetage-flechetteiste",
+                "name": "Paquetage d’artiste",
+                "url": "/api/2014/equipment/paquetage-flechetteiste"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un luth ou (b) n'importe quel autre instrument de musique",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "luth",
+                "name": "Luth",
+                "url": "/api/2014/equipment/luth"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quel autre instrument de musique",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "instrument-de-musique",
+                    "name": "Instrument de musique",
+                    "url": "/api/2014/equipment-categories/instrument-de-musique"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/barde/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "cha",
+            "name": "CHA",
+            "url": "/api/2014/carateristique/cha"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "armure-légère",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        }
+      ],
+      "proficiency_choices": [
+        {
+          "desc": "competences",
+          "choose": 1,
+          "type": "maîtrises",
+          "from": {
+            "option_set_type": "options_array",
+            "options": [
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-acrobaties",
+                  "name": "Compétences: Acrobaties",
+                  "url": "/api/2014/maitrises/competences-acrobaties"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-dressage",
+                  "name": "Compétences: Dressage",
+                  "url": "/api/2014/maitrises/competences-dressage"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-arcane",
+                  "name": "Compétences: Arcane",
+                  "url": "/api/2014/maitrises/competences-arcane"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-athletisme",
+                  "name": "Compétences: Athlétisme",
+                  "url": "/api/2014/maitrises/competences-athletisme"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-tromperie",
+                  "name": "Compétences: Tromperie",
+                  "url": "/api/2014/maitrises/competences-tromperie"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-histoire",
+                  "name": "Compétences: Histoire",
+                  "url": "/api/2014/maitrises/competences-histoire"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-intuition",
+                  "name": "Compétences: Intuition",
+                  "url": "/api/2014/maitrises/competences-intuition"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-intimidation",
+                  "name": "Compétences: Intimidation",
+                  "url": "/api/2014/maitrises/competences-intimidation"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-investigation",
+                  "name": "Compétences: Investigation",
+                  "url": "/api/2014/maitrises/competences-investigation"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-medecine",
+                  "name": "Compétences: Médecine",
+                  "url": "/api/2014/maitrises/competences-medecine"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-nature",
+                  "name": "Compétences: Nature",
+                  "url": "/api/2014/maitrises/competences-nature"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-perception",
+                  "name": "Compétences: Perception",
+                  "url": "/api/2014/maitrises/competences-perception"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-representation",
+                  "name": "Compétences: Représentation",
+                  "url": "/api/2014/maitrises/competences-representation"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-persuasion",
+                  "name": "Compétences: Persuasion",
+                  "url": "/api/2014/maitrises/competences-persuasion"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-religion",
+                  "name": "Compétences: Religion",
+                  "url": "/api/2014/maitrises/competences-religion"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-escamotage",
+                  "name": "Compétences: Escamotage",
+                  "url": "/api/2014/maitrises/competences-escamotage"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-discrétion",
+                  "name": "Compétences: Discrétion",
+                  "url": "/api/2014/maitrises/competences-discrétion"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-survie",
+                  "name": "Compétences: Survie",
+                  "url": "/api/2014/maitrises/competences-survie"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "desc": "Instrument de musique",
+          "choose": 1,
+          "type": "maîtrises",
+          "from": {
+            "option_set_type": "options_array",
+            "options": [
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "cornemuse",
+                  "name": "Cornemuse",
+                  "url": "/api/2014/maitrises/cornemuse"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "tambour",
+                  "name": "Tambour",
+                  "url": "/api/2014/maitrises/tambour"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "tympanon",
+                  "name": "Tympanon",
+                  "url": "/api/2014/maitrises/tympanon"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "flute",
+                  "name": "Flûte",
+                  "url": "/api/2014/maitrises/flute"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "luth",
+                  "name": "Luth",
+                  "url": "/api/2014/maitrises/luth"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "lyre",
+                  "name": "Lyre",
+                  "url": "/api/2014/maitrises/lyre"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "corne",
+                  "name": "Corne",
+                  "url": "/api/2014/maitrises/corne"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "flute-de-Pan",
+                  "name": "Flûte de Pan",
+                  "url": "/api/2014/maitrises/flute-de-Pan"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "chalemie",
+                  "name": "Chalemie",
+                  "url": "/api/2014/maitrises/chalemie"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "violon",
+                  "name": "Violon",
+                  "url": "/api/2014/maitrises/violon"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "savoir",
+        "name": "Savoir",
+        "url": "/api/2014/sousclasses/savoir"
+      }
+    ],
+    "url": "/api/2014/classes/barde"
+  },
+  {
+    "index": "cleric",
+    "name": "Cleric",
+    "hit_die": 8,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-histoire",
+                "name": "Compétences: Histoire",
+                "url": "/api/2014/maitrises/competences-histoire"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-medecine",
+                "name": "Compétences: Médecine",
+                "url": "/api/2014/maitrises/competences-medecine"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-persuasion",
+                "name": "Compétences: Persuasion",
+                "url": "/api/2014/maitrises/competences-persuasion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "armure-légère",
+        "name": "Armures légères",
+        "url": "/api/2014/maitrises/armure-legere"
+      },
+      {
+        "index": "armure-intermediaire",
+        "name": "Armures Intermédiaire",
+        "url": "/api/2014/maitrises/armure-intermediaire"
+      },
+      {
+        "index": "bouclier",
+        "name": "Boucliers",
+        "url": "/api/2014/maitrises/bouclier"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "jet-de-sauvegarde-sag",
+        "name": "Jet de Sauvegarde : SAG",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-sag"
+      },
+      {
+        "index": "jet-de-sauvegarde-cha",
+        "name": "Jet de Sauvegarde : CHA",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-cha"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "sag",
+        "name": "SAG",
+        "url": "/api/2014/carateristique/sag"
+      },
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/2014/carateristique/cha"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "bouclier",
+          "name": "Bouclier",
+          "url": "/api/2014/equipment/bouclier"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une masse d'armes ou (b) un marteau de guerre (si vous le maîtrisez)",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "masse",
+                "name": "Masses",
+                "url": "/api/2014/equipment/masse"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "marteau-de-guerre",
+                "name": "Marteau de guerre",
+                "url": "/api/2014/equipment/marteau-de-guerre"
+              },
+              "prerequisites": [
+                {
+                  "type": "proficiency",
+                  "proficiency": {
+                    "index": "marteau-de-guerres",
+                    "name": "Marteau de guerres",
+                    "url": "/api/2014/maitrises/marteau-de-guerres"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) une armure d'écailles ou (b) une armure de cuir ou (c) une cotte de mailles (si vous la maîtrisez)",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "armures-decailles",
+                "name": "Armures d'écailles",
+                "url": "/api/2014/equipment/armure-decailles"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "armures-de-cuir",
+                "name": "Armures de cuir",
+                "url": "/api/2014/equipment/armure-de-cuir"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "cottes-de-mailles",
+                "name": "Cottes de mailles",
+                "url": "/api/2014/equipment/cotte-de-mailles"
+              },
+              "prerequisites": [
+                {
+                  "type": "proficiency",
+                  "proficiency": {
+                    "index": "cottes-de-mailles",
+                    "name": "Cottes de mailles",
+                    "url": "/api/2014/maitrises/cotte-de-mailles"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) une arbalète légère et 20 carreaux ou (b) une arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "arbalete-legere",
+                    "name": "Arbalète légère",
+                    "url": "/api/2014/equipment/arbalete-legere"
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 20,
+                  "of": {
+                    "index": "carreaux",
+                    "name": "Carreaux",
+                    "url": "/api/2014/equipment/carreaux"
+                  }
+                }
+              ]
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "une arme courante",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'ecclésiastique ou (b) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-decclesiastique",
+                "name": "Sac d'ecclésiastique",
+                "url": "/api/2014/equipment/sac-decclesiastique"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "symbole sacré",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "equipment_category",
+          "equipment_category": {
+            "index": "symbole-sacre",
+            "name": "Symbole sacré",
+            "url": "/api/2014/equipment-categories/symbole-sacre"
+          }
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/cleric/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "sag",
+            "name": "SAG",
+            "url": "/api/2014/carateristique/sag"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "armure-legere",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        },
+        {
+          "index": "armure-intermediaire",
+          "name": "Armure Intermédiaires",
+          "url": "/api/2014/maitrises/armure-intermediaire"
+        },
+        {
+          "index": "bouclier",
+          "name": "Boucliers",
+          "url": "/api/2014/maitrises/bouclier"
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "vie",
+        "name": "Vie",
+        "url": "/api/2014/sousclasses/vie"
+      }
+    ],
+    "spells": "/api/2014/classes/cleric/spells",
+    "url": "/api/2014/classes/cleric"
+  },
+  {
+    "index": "druid",
+    "name": "Druid",
+    "hit_die": 8,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-arcane",
+                "name": "Compétences: Arcane",
+                "url": "/api/2014/maitrises/competences-arcane"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-dressage",
+                "name": "Compétences: Dressage",
+                "url": "/api/2014/maitrises/competences-dressage"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-medecine",
+                "name": "Compétences: Médecine",
+                "url": "/api/2014/maitrises/competences-medecine"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-nature",
+                "name": "Compétences: Nature",
+                "url": "/api/2014/maitrises/competences-nature"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-perception",
+                "name": "Compétences: Perception",
+                "url": "/api/2014/maitrises/competences-perception"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-survie",
+                "name": "Compétences: Survie",
+                "url": "/api/2014/maitrises/competences-survie"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "armure-légère",
+        "name": "Armures légères",
+        "url": "/api/2014/maitrises/armure-legere"
+      },
+      {
+        "index": "armure-intermediaire",
+        "name": "Armures Intermédiaire",
+        "url": "/api/2014/maitrises/armure-intermediaire"
+      },
+      {
+        "index": "bouclier",
+        "name": "Boucliers",
+        "url": "/api/2014/maitrises/bouclier"
+      },
+      {
+        "index": "gourdins",
+        "name": "Gourdins",
+        "url": "/api/2014/maitrises/gourdin"
+      },
+      {
+        "index": "dagues",
+        "name": "Dagues",
+        "url": "/api/2014/maitrises/dague"
+      },
+      {
+        "index": "javeline",
+        "name": "Javelines",
+        "url": "/api/2014/maitrises/javeline"
+      },
+      {
+        "index": "masse",
+        "name": "Masses",
+        "url": "/api/2014/maitrises/masses"
+      },
+      {
+        "index": "batons",
+        "name": "Batons",
+        "url": "/api/2014/maitrises/batons"
+      },
+      {
+        "index": "serpes",
+        "name": "Serpes",
+        "url": "/api/2014/maitrises/serpes"
+      },
+      {
+        "index": "lances",
+        "name": "Lances",
+        "url": "/api/2014/maitrises/lances"
+      },
+      {
+        "index": "flechette",
+        "name": "Fléchettes",
+        "url": "/api/2014/maitrises/flechettes"
+      },
+      {
+        "index": "fronde",
+        "name": "Frondes",
+        "url": "/api/2014/maitrises/frondes"
+      },
+      {
+        "index": "cimeterres",
+        "name": "Cimeterres",
+        "url": "/api/2014/maitrises/cimeterres"
+      },
+      {
+        "index": "kit-dherboriste",
+        "name": "Kit d'herboriste",
+        "url": "/api/2014/maitrises/kit-dherboriste"
+      },
+      {
+        "index": "jet-de-sauvegarde-int",
+        "name": "Jet de Sauvegarde : INT",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-int"
+      },
+      {
+        "index": "jet-de-sauvegarde-sag",
+        "name": "Jet de Sauvegarde : SAG",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-sag"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "int",
+        "name": "INT",
+        "url": "/api/2014/carateristique/int"
+      },
+      {
+        "index": "sag",
+        "name": "SAG",
+        "url": "/api/2014/carateristique/sag"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "armure-de-cuir",
+          "name": "Armure de cuir",
+          "url": "/api/2014/equipment/armure-de-cuir"
+        },
+        "quantity": 1
+      },
+      {
+        "equipment": {
+          "index": "sac-dexplorateur",
+          "name": "Sac d'explorateur",
+          "url": "/api/2014/equipment/sac-dexplorateur"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) un bouclier en bois ou (b) une arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "bouclier",
+                "name": "Bouclier",
+                "url": "/api/2014/equipment/bouclier"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "une arme courante",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un cimeterre ou (b) une arme courante de corps à corps",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "cimeterre",
+                "name": "Cimeterre",
+                "url": "/api/2014/equipment/cimeterre"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "une arme courante de corps à corps",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante-cac",
+                    "name": "Arme courante CAC",
+                    "url": "/api/2014/equipment-categories/arme-courante-cac"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "Focaliseur druidique",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "equipment_category",
+          "equipment_category": {
+            "index": "focaliseur-druidique",
+            "name": "Focaliseur druidique",
+            "url": "/api/2014/equipment-categories/focaliseur-druidique"
+          }
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/druid/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "sag",
+            "name": "SAG",
+            "url": "/api/2014/carateristique/sag"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "armure-legere",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        },
+        {
+          "index": "armure-intermediaire",
+          "name": "Armure Intermédiaires",
+          "url": "/api/2014/maitrises/armure-intermediaire"
+        },
+        {
+          "index": "bouclier",
+          "name": "Boucliers",
+          "url": "/api/2014/maitrises/bouclier"
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "terre",
+        "name": "Terre",
+        "url": "/api/2014/sousclasses/land"
+      }
+    ],
+    
+    "spells": "/api/2014/classes/druid/spells",
+    "url": "/api/2014/classes/druid"
+  },
+  {
+    "index": "guerrier",
+    "name": "Guerrier",
+    "hit_die": 10,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-acrobaties",
+                "name": "Compétences: Acrobaties",
+                "url": "/api/2014/maitrises/competences-acrobaties"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-dressage",
+                "name": "Compétences: Dressage",
+                "url": "/api/2014/maitrises/competences-dressage"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-athletisme",
+                "name": "Compétences: Athlétisme",
+                "url": "/api/2014/maitrises/competences-athletisme"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-histoire",
+                "name": "Compétences: Histoire",
+                "url": "/api/2014/maitrises/competences-histoire"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intimidation",
+                "name": "Compétences: Intimidation",
+                "url": "/api/2014/maitrises/competences-intimidation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-perception",
+                "name": "Compétences: Perception",
+                "url": "/api/2014/maitrises/competences-perception"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-survie",
+                "name": "Compétences: Survie",
+                "url": "/api/2014/maitrises/competences-survie"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "toutes-armures",
+        "name": "Toutes les armures",
+        "url": "/api/2014/maitrises/toutes-armure"
+      },
+      {
+        "index": "bouclier",
+        "name": "Boucliers",
+        "url": "/api/2014/maitrises/bouclier"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "arme-de-guerre",
+        "name": "Armes de guerre",
+        "url": "/api/2014/maitrises/arme-de-guerre"
+      },
+      {
+        "index": "jet-de-sauvegarde-for",
+        "name": "Jet de Sauvegarde : FOR",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-for"
+      },
+      {
+        "index": "jet-de-sauvegarde-con",
+        "name": "Jet de Sauvegarde : CON",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-con"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "for",
+        "name": "FOR",
+        "url": "/api/2014/carateristique/for"
+      },
+      {
+        "index": "con",
+        "name": "CON",
+        "url": "/api/2014/carateristique/con"
+      }
+    ],
+    "starting_equipment": [],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une cotte de mailles ou (b) une armure de cuir, un arc long et 20 flèches",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "cotte-de-mailles",
+                "name": "Cotte de mailles",
+                "url": "/api/2014/equipment/cotte-de-mailles"
+              }
+            },
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "armure-de-cuir",
+                    "name": "Armure de cuir",
+                    "url": "/api/2014/equipment/armure-de-cuir"
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "arc-long",
+                    "name": "Arc long",
+                    "url": "/api/2014/equipment/arc-long"
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 20,
+                  "of": {
+                    "index": "fleches",
+                    "name": "Flèches",
+                    "url": "/api/2014/equipment/fleches"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) une arme de guerre et un bouclier ou (b) deux armes de guerre",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "choice",
+                  "choice": {
+                    "desc": "une arme de guerre",
+                    "choose": 1,
+                    "type": "equipment",
+                    "from": {
+                      "option_set_type": "equipment_category",
+                      "equipment_category": {
+                        "index": "arme-de-guerre",
+                        "name": "Armes de guerre",
+                        "url": "/api/2014/equipment-categories/arme-de-guerre"
+                      }
+                    }
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "bouclier",
+                    "name": "Bouclier",
+                    "url": "/api/2014/equipment/bouclier"
+                  }
+                }
+              ]
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "deux armes de guerre",
+                "choose": 2,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-de-guerre",
+                    "name": "Armes de guerre",
+                    "url": "/api/2014/equipment-categories/arme-de-guerre"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) une arbalète légère et 20 carreaux ou (b) deux hachette",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "arbalete-legere",
+                    "name": "Arbalète légère",
+                    "url": "/api/2014/equipment/arbalete-legere"
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 20,
+                  "of": {
+                    "index": "carreaux",
+                    "name": "Carreaux",
+                    "url": "/api/2014/equipment/carreaux"
+                  }
+                }
+              ]
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 2,
+              "of": {
+                "index": "hachette",
+                "name": "Hachette",
+                "url": "/api/2014/equipment/hachette"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'exploration souterraine ou (b) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexploration-souterraine",
+                "name": "Sac d'exploration souterraine",
+                "url": "/api/2014/equipment/sac-dexploration-souterraine"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/guerrier/levels",
+    "multi_classing": {
+      "prerequisite_options": {
+        "type": "carateristique",
+        "choose": 1,
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "score_prerequisite",
+              "ability_score": {
+                "index": "for",
+                "name": "FOR",
+                "url": "/api/2014/carateristique/for"
+              },
+              "minimum_score": 13
+            },
+            {
+              "option_type": "score_prerequisite",
+              "ability_score": {
+                "index": "dex",
+                "name": "DEX",
+                "url": "/api/2014/carateristique/dex"
+              },
+              "minimum_score": 13
+            }
+          ]
+        }
+      },
+      "proficiencies": [
+        {
+          "index": "armure-legere",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        },
+        {
+          "index": "armure-intermediaire",
+          "name": "Armure Intermédiaires",
+          "url": "/api/2014/maitrises/armure-intermediaire"
+        },
+        {
+          "index": "bouclier",
+          "name": "Boucliers",
+          "url": "/api/2014/maitrises/bouclier"
+        },
+        {
+          "index": "arme-courante",
+          "name": "Armes courantes",
+          "url": "/api/2014/maitrises/arme-courante"
+        },
+        {
+          "index": "arme-de-guerre",
+          "name": "Armes de guerre",
+          "url": "/api/2014/maitrises/arme-de-guerre"
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "champion",
+        "name": "Champion",
+        "url": "/api/2014/sousclasses/champion"
+      }
+    ],
+    "url": "/api/2014/classes/guerrier"
+  },
+  {
+    "index": "moine",
+    "name": "Moine",
+    "hit_die": 8,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-acrobaties",
+                "name": "Compétences: Acrobaties",
+                "url": "/api/2014/maitrises/competences-acrobaties"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-athletisme",
+                "name": "Compétences: Athlétisme",
+                "url": "/api/2014/maitrises/competences-athletisme"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-histoire",
+                "name": "Compétences: Histoire",
+                "url": "/api/2014/maitrises/competences-histoire"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-discrétion",
+                "name": "Compétences: Discrétion",
+                "url": "/api/2014/maitrises/competences-discrétion"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "Choisis un type d’outils d’artisan ou un instrument de musique",
+        "type": "maîtrises",
+        "choose": 1,
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "outil d'artisan",
+                "type": "maîtrises",
+                "choose": 1,
+                "from": {
+                  "option_set_type": "options_array",
+                  "options": [
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "fournitures-dalchimiste",
+                        "name": "Fournitures d’alchimiste",
+                        "url": "/api/2014/maitrises/fournitures-dalchimiste"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "fournitures-de-brasseur",
+                        "name": "Fournitures de brasseur",
+                        "url": "/api/2014/maitrises/fournitures-de-brasseur"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "fournitures-de-calligraphe",
+                        "name": "Fournitures de calligraphe",
+                        "url": "/api/2014/maitrises/fournitures-de-calligraphe"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-menuisier",
+                        "name": "Outils de menuisier",
+                        "url": "/api/2014/maitrises/outils-de-menuisier"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-cartographe",
+                        "name": "Outils de cartographe",
+                        "url": "/api/2014/maitrises/outils-de-cartographe"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-cordonnier",
+                        "name": "Outils de cordonnier",
+                        "url": "/api/2014/maitrises/outils-de-cordonnier"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "ustensiles-de-cuisine",
+                        "name": "Ustensiles de cuisine",
+                        "url": "/api/2014/maitrises/ustensiles-de-cuisine"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-souffleur-de-verre",
+                        "name": "Outils de souffleur de verre",
+                        "url": "/api/2014/maitrises/outils-de-souffleur-de-verre"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-joaillier",
+                        "name": "Outils de joaillier",
+                        "url": "/api/2014/maitrises/outils-de-joaillier"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-travailleur-du-cuir",
+                        "name": "Outils de travailleur du cuir",
+                        "url": "/api/2014/maitrises/outils-de-travailleur-du-cuir"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-maçon",
+                        "name": "Outils de maçon",
+                        "url": "/api/2014/maitrises/outils-de-maçon"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "fournitures-de-peintre",
+                        "name": "Fournitures de peintre",
+                        "url": "/api/2014/maitrises/fournitures-de-peintre"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-potier",
+                        "name": "Outils de potier",
+                        "url": "/api/2014/maitrises/outils-de-potier"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-forgeron",
+                        "name": "Outils de forgeron",
+                        "url": "/api/2014/maitrises/outils-de-forgeron"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-bricoleur",
+                        "name": "Outils de bricoleur",
+                        "url": "/api/2014/maitrises/outils-de-bricoleur"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-tisserand",
+                        "name": "Outils de tisserand",
+                        "url": "/api/2014/maitrises/outils-de-tisserand"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "outils-de-sculpteur-sur-bois",
+                        "name": "Outils de sculpteur sur bois",
+                        "url": "/api/2014/maitrises/outils-de-sculpteur-sur-bois"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "trousse-de-deguisement",
+                        "name": "Trousse de déguisement",
+                        "url": "/api/2014/maitrises/trousse-de-deguisement"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "trousse-de-falsification",
+                        "name": "Trousse de falsification",
+                        "url": "/api/2014/maitrises/trousse-de-falsification"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "instrument de musique",
+                "type": "maîtrises",
+                "choose": 1,
+                "from": {
+                  "option_set_type": "options_array",
+                  "options": [
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "cornemuse",
+                        "name": "Cornemuse",
+                        "url": "/api/2014/maitrises/cornemuse"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "tambour",
+                        "name": "Tambour",
+                        "url": "/api/2014/maitrises/tambour"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "tympanon",
+                        "name": "Tympanon",
+                        "url": "/api/2014/maitrises/tympanon"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "flute",
+                        "name": "Flûte",
+                        "url": "/api/2014/maitrises/flute"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "luth",
+                        "name": "Luth",
+                        "url": "/api/2014/maitrises/luth"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "lyre",
+                        "name": "Lyre",
+                        "url": "/api/2014/maitrises/lyre"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "corne",
+                        "name": "Corne",
+                        "url": "/api/2014/maitrises/corne"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "flute-de-Pan",
+                        "name": "Flûte de Pan",
+                        "url": "/api/2014/maitrises/flute-de-Pan"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "chalemie",
+                        "name": "Chalemie",
+                        "url": "/api/2014/maitrises/chalemie"
+                      }
+                    },
+                    {
+                      "option_type": "reference",
+                      "item": {
+                        "index": "violon",
+                        "name": "Violon",
+                        "url": "/api/2014/maitrises/violon"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "epee-courte",
+        "name": "Épées courtes",
+        "url": "/api/2014/maitrises/epee-courte"
+      },
+      {
+        "index": "jet-de-sauvegarde-dex",
+        "name": "Jet de Sauvegarde : DEX",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-dex"
+      },
+      {
+        "index": "jet-de-sauvegarde-for",
+        "name": "Jet de Sauvegarde : FOR",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-for"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "for",
+        "name": "FOR",
+        "url": "/api/2014/carateristique/for"
+      },
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/2014/carateristique/dex"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "flechette",
+          "name": "Fléchette",
+          "url": "/api/2014/equipment/flechette"
+        },
+        "quantity": 10
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une épée courte ou (b) n'importe quelle arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "epee-courte",
+                "name": "Épées courtes",
+                "url": "/api/2014/equipment/epee-courte"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quelle arme courante",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'exploration souterraine ou (b) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexploration-souterraine",
+                "name": "Sac d'exploration souterraine",
+                "url": "/api/2014/equipment/sac-dexploration-souterraine"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/moine/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "dex",
+            "name": "DEX",
+            "url": "/api/2014/carateristique/dex"
+          },
+          "minimum_score": 13
+        },
+        {
+          "ability_score": {
+            "index": "sag",
+            "name": "SAG",
+            "url": "/api/2014/carateristique/sag"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "arme-courante",
+          "name": "Armes courantes",
+          "url": "/api/2014/maitrises/arme-courante"
+        },
+        {
+          "index": "epee-courte",
+          "name": "Épées courtes",
+          "url": "/api/2014/maitrises/epee-courte"
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "paume",
+        "name": "Paume",
+        "url": "/api/2014/sousclasses/paume"
+      }
+    ],
+    "url": "/api/2014/classes/moine"
+  },
+  {
+    "index": "paladin",
+    "name": "Paladin",
+    "hit_die": 10,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-athletisme",
+                "name": "Compétences: Athlétisme",
+                "url": "/api/2014/maitrises/competences-athletisme"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intimidation",
+                "name": "Compétences: Intimidation",
+                "url": "/api/2014/maitrises/competences-intimidation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-medecine",
+                "name": "Compétences: Médecine",
+                "url": "/api/2014/maitrises/competences-medecine"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-persuasion",
+                "name": "Compétences: Persuasion",
+                "url": "/api/2014/maitrises/competences-persuasion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "toutes-armures",
+        "name": "Toutes les armures",
+        "url": "/api/2014/maitrises/toutes-armure"
+      },
+      {
+        "index": "bouclier",
+        "name": "Boucliers",
+        "url": "/api/2014/maitrises/bouclier"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "arme-de-guerre",
+        "name": "Armes de guerre",
+        "url": "/api/2014/maitrises/arme-de-guerre"
+      },
+      {
+        "index": "jet-de-sauvegarde-sag",
+        "name": "Jet de Sauvegarde : SAG",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-sag"
+      },
+      {
+        "index": "jet-de-sauvegarde-cha",
+        "name": "Jet de Sauvegarde : CHA",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-cha"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "sag",
+        "name": "SAG",
+        "url": "/api/2014/carateristique/sag"
+      },
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/2014/carateristique/cha"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "cotte-de-mailles",
+          "name": "Cotte de mailles",
+          "url": "/api/2014/equipment/cotte-de-mailles"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une arme de guerre et un bouclier ou (b) deux armes de guerre",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "choice",
+                  "choice": {
+                    "desc": "une arme de guerre",
+                    "choose": 1,
+                    "type": "equipment",
+                    "from": {
+                      "option_set_type": "equipment_category",
+                      "equipment_category": {
+                        "name": "Armes de guerre",
+                        "index": "arme-de-guerre",
+                        "url": "/api/2014/equipment-categories/arme-de-guerre"
+                      }
+                    }
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "bouclier",
+                    "name": "Bouclier",
+                    "url": "/api/2014/equipment/bouclier"
+                  }
+                }
+              ]
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "deux armes de guerre",
+                "choose": 2,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-de-guerre",
+                    "name": "Armes de guerre",
+                    "url": "/api/2014/equipment-categories/arme-de-guerre"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) cinq javeline ou (b) n'importe quelle arme courante de corps à corps",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 5,
+              "of": {
+                "index": "javeline",
+                "name": "Javelines",
+                "url": "/api/2014/equipment/javeline"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quelle arme courante de corps à corps",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'ecclésiastique ou (b) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-decclesiastique",
+                "name": "Sac d'ecclésiastique",
+                "url": "/api/2014/equipment/sac-decclesiastique"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "symbole sacré",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "equipment_category",
+          "equipment_category": {
+            "index": "symbole-sacre",
+            "name": "Symbole sacré",
+            "url": "/api/2014/equipment-categories/symbole-sacre"
+          }
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/paladin/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "for",
+            "name": "FOR",
+            "url": "/api/2014/carateristique/for"
+          },
+          "minimum_score": 13
+        },
+        {
+          "ability_score": {
+            "index": "cha",
+            "name": "CHA",
+            "url": "/api/2014/carateristique/cha"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "armure-legere",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        },
+        {
+          "index": "armure-intermediaire",
+          "name": "Armure Intermédiaires",
+          "url": "/api/2014/maitrises/armure-intermediaire"
+        },
+        {
+          "index": "bouclier",
+          "name": "Boucliers",
+          "url": "/api/2014/maitrises/bouclier"
+        },
+        {
+          "index": "arme-courante",
+          "name": "Armes courantes",
+          "url": "/api/2014/maitrises/arme-courante"
+        },
+        {
+          "index": "arme-de-guerre",
+          "name": "Armes de guerre",
+          "url": "/api/2014/maitrises/arme-de-guerre"
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "devotion",
+        "name": "Dévotion",
+        "url": "/api/2014/sousclasses/devotion"
+      }
+    ],
+    "spells": "/api/2014/classes/paladin/spells",
+    "url": "/api/2014/classes/paladin"
+  },
+  {
+    "index": "rodeur",
+    "name": "Rôdeur",
+    "hit_die": 10,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 3,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-dressage",
+                "name": "Compétences: Dressage",
+                "url": "/api/2014/maitrises/competences-dressage"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-athletisme",
+                "name": "Compétences: Athlétisme",
+                "url": "/api/2014/maitrises/competences-athletisme"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-investigation",
+                "name": "Compétences: Investigation",
+                "url": "/api/2014/maitrises/competences-investigation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-nature",
+                "name": "Compétences: Nature",
+                "url": "/api/2014/maitrises/competences-nature"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-perception",
+                "name": "Compétences: Perception",
+                "url": "/api/2014/maitrises/competences-perception"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-discrétion",
+                "name": "Compétences: Discrétion",
+                "url": "/api/2014/maitrises/competences-discrétion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-survie",
+                "name": "Compétences: Survie",
+                "url": "/api/2014/maitrises/competences-survie"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "armure-legere",
+        "name": "Armures légères",
+        "url": "/api/2014/maitrises/armure-legere"
+      },
+      {
+        "index": "armure-intermediaire",
+        "name": "Armure Intermédiaires",
+        "url": "/api/2014/maitrises/armure-intermediaire"
+      },
+      {
+        "index": "bouclier",
+        "name": "Boucliers",
+        "url": "/api/2014/maitrises/bouclier"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "arme-de-guerre",
+        "name": "Armes de guerre",
+        "url": "/api/2014/maitrises/arme-de-guerre"
+      },
+      {
+        "index": "jet-de-sauvegarde-dex",
+        "name": "Jet de Sauvegarde : DEX",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-dex"
+      },
+      {
+        "index": "jet-de-sauvegarde-for",
+        "name": "Jet de Sauvegarde : FOR",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-for"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "for",
+        "name": "FOR",
+        "url": "/api/2014/carateristique/for"
+      },
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/2014/carateristique/dex"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "arc-long",
+          "name": "Arc long",
+          "url": "/api/2014/equipment/arc-long"
+        },
+        "quantity": 1
+      },
+      {
+        "equipment": {
+          "index": "fleches",
+          "name": "Flèches",
+          "url": "/api/2014/equipment/fleches"
+        },
+        "quantity": 20
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) armure d'écailles ou (b) armure de cuir",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "armure-decailles",
+                "name": "Armure d'écailles",
+                "url": "/api/2014/equipment/armure-decailles"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "armure-de-cuir",
+                "name": "Armure de cuir",
+                "url": "/api/2014/equipment/armure-de-cuir"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) deux épées courtes ou (b) deux armes courantes de corps à corps",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 2,
+              "of": {
+                "index": "epee-courte",
+                "name": "Épées courtes",
+                "url": "/api/2014/equipment/epee-courte"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "deux armes courantes de corps à corps",
+                "choose": 2,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante-cac",
+                    "name": "Arme courante CAC",
+                    "url": "/api/2014/equipment-categories/arme-courante-cac"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'exploration souterraine ou (b) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexploration-souterraine",
+                "name": "Sac d'exploration souterraine",
+                "url": "/api/2014/equipment/sac-dexploration-souterraine"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/rodeur/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "dex",
+            "name": "DEX",
+            "url": "/api/2014/carateristique/dex"
+          },
+          "minimum_score": 13
+        },
+        {
+          "ability_score": {
+            "index": "sag",
+            "name": "SAG",
+            "url": "/api/2014/carateristique/sag"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "armure-legere",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        },
+        {
+          "index": "armure-intermediaire",
+          "name": "Armure Intermédiaires",
+          "url": "/api/2014/maitrises/armure-intermediaire"
+        },
+        {
+          "index": "bouclier",
+          "name": "Boucliers",
+          "url": "/api/2014/maitrises/bouclier"
+        },
+        {
+          "index": "arme-courante",
+          "name": "Armes courantes",
+          "url": "/api/2014/maitrises/arme-courante"
+        },
+        {
+          "index": "arme-de-guerre",
+          "name": "Armes de guerre",
+          "url": "/api/2014/maitrises/arme-de-guerre"
+        }
+      ],
+      "proficiency_choices": [
+        {
+          "choose": 1,
+          "type": "maîtrises",
+          "from": {
+            "option_set_type": "options_array",
+            "options": [
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-dressage",
+                  "name": "Compétences: Dressage",
+                  "url": "/api/2014/maitrises/competences-dressage"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-athletisme",
+                  "name": "Compétences: Athlétisme",
+                  "url": "/api/2014/maitrises/competences-athletisme"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-intuition",
+                  "name": "Compétences: Intuition",
+                  "url": "/api/2014/maitrises/competences-intuition"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-investigation",
+                  "name": "Compétences: Investigation",
+                  "url": "/api/2014/maitrises/competences-investigation"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-nature",
+                  "name": "Compétences: Nature",
+                  "url": "/api/2014/maitrises/competences-nature"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-perception",
+                  "name": "Compétences: Perception",
+                  "url": "/api/2014/maitrises/competences-perception"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-discrétion",
+                  "name": "Compétences: Discrétion",
+                  "url": "/api/2014/maitrises/competences-discrétion"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-survie",
+                  "name": "Compétences: Survie",
+                  "url": "/api/2014/maitrises/competences-survie"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "chasseur",
+        "name": "Chasseur",
+        "url": "/api/2014/sousclasses/chasseur"
+      }
+    ],
+    "spells": "/api/2014/classes/rodeur/spells",
+    "url": "/api/2014/classes/rodeur"
+  },
+  {
+    "index": "roublard",
+    "name": "Roublard",
+    "hit_die": 8,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez quatre compétences :",
+        "choose": 4,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-acrobaties",
+                "name": "Compétences: Acrobaties",
+                "url": "/api/2014/maitrises/competences-acrobaties"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-athletisme",
+                "name": "Compétences: Athlétisme",
+                "url": "/api/2014/maitrises/competences-athletisme"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-tromperie",
+                "name": "Compétences: Tromperie",
+                "url": "/api/2014/maitrises/competences-tromperie"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intimidation",
+                "name": "Compétences: Intimidation",
+                "url": "/api/2014/maitrises/competences-intimidation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-investigation",
+                "name": "Compétences: Investigation",
+                "url": "/api/2014/maitrises/competences-investigation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-perception",
+                "name": "Compétences: Perception",
+                "url": "/api/2014/maitrises/competences-perception"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-representation",
+                "name": "Compétences: Représentation",
+                "url": "/api/2014/maitrises/competences-representation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-persuasion",
+                "name": "Compétences: Persuasion",
+                "url": "/api/2014/maitrises/competences-persuasion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-escamotage",
+                "name": "Compétences: Escamotage",
+                "url": "/api/2014/maitrises/competences-escamotage"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-discrétion",
+                "name": "Compétences: Discrétion",
+                "url": "/api/2014/maitrises/competences-discrétion"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "armure-legere",
+        "name": "Armures légères",
+        "url": "/api/2014/maitrises/armure-legere"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "epee-longue",
+        "name": "Epée longue",
+        "url": "/api/2014/maitrises/epee-longue"
+      },
+      {
+        "index": "rapiere",
+        "name": "Rapière",
+        "url": "/api/2014/maitrises/rapiere"
+      },
+      {
+        "index": "epee-courte",
+        "name": "Épées courtes",
+        "url": "/api/2014/maitrises/epee-courte"
+      },
+      {
+        "index": "arbalete-de-poing",
+        "name": "Arbalète de poing",
+        "url": "/api/2014/maitrises/arbalete-de-poing"
+      },
+      {
+        "index": "outils-de-voleur",
+        "name": "Outils de voleur",
+        "url": "/api/2014/maitrises/outils-de-voleur"
+      },
+      {
+        "index": "jet-de-sauvegarde-dex",
+        "name": "Jet de Sauvegarde : DEX",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-dex"
+      },
+      {
+        "index": "jet-de-sauvegarde-int",
+        "name": "Jet de Sauvegarde : INT",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-int"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/2014/carateristique/dex"
+      },
+      {
+        "index": "int",
+        "name": "INT",
+        "url": "/api/2014/carateristique/int"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "armure-de-cuir",
+          "name": "Armure de cuir",
+          "url": "/api/2014/equipment/armure-de-cuir"
+        },
+        "quantity": 1
+      },
+      {
+        "equipment": {
+          "index": "dague",
+          "name": "Dague",
+          "url": "/api/2014/equipment/dague"
+        },
+        "quantity": 2
+      },
+      {
+        "equipment": {
+          "index": "outils-de-voleur",
+          "name": "Outils de voleur",
+          "url": "/api/2014/equipment/outils-de-voleur"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une rapière ou (b) une épée courte",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "rapiere",
+                "name": "Rapiere",
+                "url": "/api/2014/equipment/rapiere"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "epee-courte",
+                "name": "Épées courtes",
+                "url": "/api/2014/equipment/epee-courte"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un arc court et un carquois de 20 flèches ou (b) une épée courte",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "arc-court",
+                    "name": "Arc court",
+                    "url": "/api/2014/equipment/arc-court"
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 20,
+                  "of": {
+                    "index": "fleches",
+                    "name": "Flèches",
+                    "url": "/api/2014/equipment/fleches"
+                  }
+                }
+              ]
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "epee-courte",
+                "name": "Épées courtes",
+                "url": "/api/2014/equipment/epee-courte"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac de cambrioleur, (b) un sac d'exploration souterraine ou (c) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-de-cambrioleur",
+                "name": "Sac de cambrioleur",
+                "url": "/api/2014/equipment/sac-de-cambrioleur"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexploration-souterraine",
+                "name": "Sac d'exploration souterraine",
+                "url": "/api/2014/equipment/sac-dexploration-souterraine"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/roublard/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "dex",
+            "name": "DEX",
+            "url": "/api/2014/carateristique/dex"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "armure-legere",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        },
+        {
+          "index": "outils-de-voleur",
+          "name": "Outils de voleur",
+          "url": "/api/2014/maitrises/outils-de-voleur"
+        }
+      ],
+      "proficiency_choices": [
+        {
+          "choose": 1,
+          "type": "maîtrises",
+          "from": {
+            "option_set_type": "options_array",
+            "options": [
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-acrobaties",
+                  "name": "Compétences: Acrobaties",
+                  "url": "/api/2014/maitrises/competences-acrobaties"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-athletisme",
+                  "name": "Compétences: Athlétisme",
+                  "url": "/api/2014/maitrises/competences-athletisme"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-tromperie",
+                  "name": "Compétences: Tromperie",
+                  "url": "/api/2014/maitrises/competences-tromperie"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-intuition",
+                  "name": "Compétences: Intuition",
+                  "url": "/api/2014/maitrises/competences-intuition"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-intimidation",
+                  "name": "Compétences: Intimidation",
+                  "url": "/api/2014/maitrises/competences-intimidation"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-investigation",
+                  "name": "Compétences: Investigation",
+                  "url": "/api/2014/maitrises/competences-investigation"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-perception",
+                  "name": "Compétences: Perception",
+                  "url": "/api/2014/maitrises/competences-perception"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-representation",
+                  "name": "Compétences: Représentation",
+                  "url": "/api/2014/maitrises/competences-representation"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-persuasion",
+                  "name": "Compétences: Persuasion",
+                  "url": "/api/2014/maitrises/competences-persuasion"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-escamotage",
+                  "name": "Compétences: Escamotage",
+                  "url": "/api/2014/maitrises/competences-escamotage"
+                }
+              },
+              {
+                "option_type": "reference",
+                "item": {
+                  "index": "competences-discrétion",
+                  "name": "Compétences: Discrétion",
+                  "url": "/api/2014/maitrises/competences-discrétion"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "voleur",
+        "name": "Voleur",
+        "url": "/api/2014/sousclasses/voleur"
+      }
+    ],
+    "url": "/api/2014/classes/roublard"
+  },
+  {
+    "index": "ensorceleur",
+    "name": "Ensorceleur",
+    "hit_die": 6,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-arcane",
+                "name": "Compétences: Arcane",
+                "url": "/api/2014/maitrises/competences-arcane"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-tromperie",
+                "name": "Compétences: Tromperie",
+                "url": "/api/2014/maitrises/competences-tromperie"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intimidation",
+                "name": "Compétences: Intimidation",
+                "url": "/api/2014/maitrises/competences-intimidation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-persuasion",
+                "name": "Compétences: Persuasion",
+                "url": "/api/2014/maitrises/competences-persuasion"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "dague",
+        "name": "Dague",
+        "url": "/api/2014/maitrises/dague"
+      },
+      {
+        "index": "flechette",
+        "name": "Fléchettes",
+        "url": "/api/2014/maitrises/flechettes"
+      },
+      {
+        "index": "fronde",
+        "name": "Frondes",
+        "url": "/api/2014/maitrises/frondes"
+      },
+      {
+        "index": "batons",
+        "name": "Batons",
+        "url": "/api/2014/maitrises/batons"
+      },
+      {
+        "index": "arbalete-legere",
+        "name": "Arbalète légère",
+        "url": "/api/2014/maitrises/arbalete-legere"
+      },
+      {
+        "index": "jet-de-sauvegarde-con",
+        "name": "Jet de Sauvegarde : CON",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-con"
+      },
+      {
+        "index": "jet-de-sauvegarde-cha",
+        "name": "Jet de Sauvegarde : CHA",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-cha"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "con",
+        "name": "CON",
+        "url": "/api/2014/carateristique/con"
+      },
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/2014/carateristique/cha"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "dague",
+          "name": "Dague",
+          "url": "/api/2014/equipment/dague"
+        },
+        "quantity": 2
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une arbalète légère et 20 carreaux ou (b) n'importe quelle arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "arbalete-legere",
+                    "name": "Arbalète légère",
+                    "url": "/api/2014/equipment/arbalete-legere"
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 20,
+                  "of": {
+                    "index": "carreaux",
+                    "name": "Carreaux",
+                    "url": "/api/2014/equipment/carreaux"
+                  }
+                }
+              ]
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quelle arme courante",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) une sacoche à composants ou (b) un focaliseur arcanique",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sacoche-a-composants",
+                "name": "Sacoche à composants",
+                "url": "/api/2014/equipment/sacoche-a-composants"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "Focaliseur arcanique",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "focaliseur-arcanique",
+                    "name": "Focaliseur arcanique",
+                    "url": "/api/2014/equipment-categories/focaliseur-arcanique"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'exploration souterraine ou (b) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexploration-souterraine",
+                "name": "Sac d'exploration souterraine",
+                "url": "/api/2014/equipment/sac-dexploration-souterraine"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/ensorceleur/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "cha",
+            "name": "CHA",
+            "url": "/api/2014/carateristique/cha"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": []
+    },
+    "subclasses": [
+      {
+        "index": "draconique",
+        "name": "Draconique",
+        "url": "/api/2014/sousclasses/draconique"
+      }
+    ],
+    "spells": "/api/2014/classes/ensorceleur/spells",
+    "url": "/api/2014/classes/ensorceleur"
+  },
+  {
+    "index": "occultiste",
+    "name": "Occultiste",
+    "hit_die": 8,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-arcane",
+                "name": "Compétences: Arcane",
+                "url": "/api/2014/maitrises/competences-arcane"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-tromperie",
+                "name": "Compétences: Tromperie",
+                "url": "/api/2014/maitrises/competences-tromperie"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-histoire",
+                "name": "Compétences: Histoire",
+                "url": "/api/2014/maitrises/competences-histoire"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intimidation",
+                "name": "Compétences: Intimidation",
+                "url": "/api/2014/maitrises/competences-intimidation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-investigation",
+                "name": "Compétences: Investigation",
+                "url": "/api/2014/maitrises/competences-investigation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-nature",
+                "name": "Compétences: Nature",
+                "url": "/api/2014/maitrises/competences-nature"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "armure-legere",
+        "name": "Armures légères",
+        "url": "/api/2014/maitrises/armure-legere"
+      },
+      {
+        "index": "arme-courante",
+        "name": "Armes courantes",
+        "url": "/api/2014/maitrises/arme-courante"
+      },
+      {
+        "index": "jet-de-sauvegarde-sag",
+        "name": "Jet de Sauvegarde : SAG",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-sag"
+      },
+      {
+        "index": "jet-de-sauvegarde-cha",
+        "name": "Jet de Sauvegarde : CHA",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-cha"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "sag",
+        "name": "SAG",
+        "url": "/api/2014/carateristique/sag"
+      },
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/2014/carateristique/cha"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "dague",
+          "name": "Dague",
+          "url": "/api/2014/equipment/dague"
+        },
+        "quantity": 2
+      },
+      {
+        "equipment": {
+          "index": "armure-de-cuir",
+          "name": "Armure de cuir",
+          "url": "/api/2014/equipment/armure-de-cuir"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) une arbalète légère et 20 carreaux ou (b) n'importe quelle arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "multiple",
+              "items": [
+                {
+                  "option_type": "counted_reference",
+                  "count": 1,
+                  "of": {
+                    "index": "arbalete-legere",
+                    "name": "Arbalète légère",
+                    "url": "/api/2014/equipment/arbalete-legere"
+                  }
+                },
+                {
+                  "option_type": "counted_reference",
+                  "count": 20,
+                  "of": {
+                    "index": "carreaux",
+                    "name": "Carreaux",
+                    "url": "/api/2014/equipment/carreaux"
+                  }
+                }
+              ]
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "n'importe quelle arme courante",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "arme-courante",
+                    "name": "Armes courantes",
+                    "url": "/api/2014/equipment-categories/arme-courante"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) une sacoche à composantes ou (b) un focaliseur arcanique",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sacoche-a-composants",
+                "name": "Sacoche à composants",
+                "url": "/api/2014/equipment/sacoche-a-composants"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "Focaliseur arcanique",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "focaliseur-arcanique",
+                    "name": "Focaliseur arcanique",
+                    "url": "/api/2014/equipment-categories/focaliseur-arcanique"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'érudit ou (b) un sac d'exploration souterraine",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-derudit",
+                "name": "Sac d'érudit",
+                "url": "/api/2014/equipment/sac-derudit"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexploration-souterraine",
+                "name": "Sac d'exploration souterraine",
+                "url": "/api/2014/equipment/sac-dexploration-souterraine"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "n'importe quelle arme courante",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "equipment_category",
+          "equipment_category": {
+            "index": "arme-courante",
+            "name": "Armes courantes",
+            "url": "/api/2014/equipment-categories/arme-courante"
+          }
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/occultiste/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "cha",
+            "name": "CHA",
+            "url": "/api/2014/carateristique/cha"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": [
+        {
+          "index": "armure-legere",
+          "name": "Armures légères",
+          "url": "/api/2014/maitrises/armure-legere"
+        },
+        {
+          "index": "arme-courante",
+          "name": "Armes courantes",
+          "url": "/api/2014/maitrises/arme-courante"
+        }
+      ]
+    },
+    "subclasses": [
+      {
+        "index": "fielon",
+        "name": "Fiélon",
+        "url": "/api/2014/sousclasses/fielon"
+      }
+    ],
+    
+    "spells": "/api/2014/classes/occultiste/spells",
+    "url": "/api/2014/classes/occultiste"
+  },
+  {
+    "index": "magicien",
+    "name": "Magicien",
+    "hit_die": 6,
+    "proficiency_choices": [
+      {
+        "desc": "Choisissez deux compétences :",
+        "choose": 2,
+        "type": "maîtrises",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-arcane",
+                "name": "Compétences: Arcane",
+                "url": "/api/2014/maitrises/competences-arcane"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-histoire",
+                "name": "Compétences: Histoire",
+                "url": "/api/2014/maitrises/competences-histoire"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-intuition",
+                "name": "Compétences: Intuition",
+                "url": "/api/2014/maitrises/competences-intuition"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-investigation",
+                "name": "Compétences: Investigation",
+                "url": "/api/2014/maitrises/competences-investigation"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-medecine",
+                "name": "Compétences: Médecine",
+                "url": "/api/2014/maitrises/competences-medecine"
+              }
+            },
+            {
+              "option_type": "reference",
+              "item": {
+                "index": "competences-religion",
+                "name": "Compétences: Religion",
+                "url": "/api/2014/maitrises/competences-religion"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "proficiencies": [
+      {
+        "index": "dague",
+        "name": "Dague",
+        "url": "/api/2014/maitrises/dague"
+      },
+      {
+        "index": "flechette",
+        "name": "Fléchettes",
+        "url": "/api/2014/maitrises/flechettes"
+      },
+      {
+        "index": "fronde",
+        "name": "Frondes",
+        "url": "/api/2014/maitrises/frondes"
+      },
+      {
+        "index": "batons",
+        "name": "Batons",
+        "url": "/api/2014/maitrises/batons"
+      },
+      {
+        "index": "arbalete-legere",
+        "name": "Arbalète légère",
+        "url": "/api/2014/maitrises/arbalete-legere"
+      },
+      {
+        "index": "jet-de-sauvegarde-int",
+        "name": "Jet de Sauvegarde : INT",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-int"
+      },
+      {
+        "index": "jet-de-sauvegarde-sag",
+        "name": "Jet de Sauvegarde : SAG",
+        "url": "/api/2014/maitrises/jet-de-sauvegarde-sag"
+      }
+    ],
+    "saving_throws": [
+      {
+        "index": "int",
+        "name": "INT",
+        "url": "/api/2014/carateristique/int"
+      },
+      {
+        "index": "sag",
+        "name": "SAG",
+        "url": "/api/2014/carateristique/sag"
+      }
+    ],
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "livre-de-sorts",
+          "name": "Livre de sorts",
+          "url": "/api/2014/equipment/livre-de-sorts"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "desc": "(a) un bâton ou (b) une dague",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "baton",
+                "name": "Bâton",
+                "url": "/api/2014/equipment/quarterstaff"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "dague",
+                "name": "Dague",
+                "url": "/api/2014/equipment/dague"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) une sacoche à composantes ou (b) un focaliseur arcanique",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sacoche-a-composants",
+                "name": "Sacoche à composants",
+                "url": "/api/2014/equipment/sacoche-a-composants"
+              }
+            },
+            {
+              "option_type": "choice",
+              "choice": {
+                "desc": "Focaliseur arcanique",
+                "choose": 1,
+                "type": "equipment",
+                "from": {
+                  "option_set_type": "equipment_category",
+                  "equipment_category": {
+                    "index": "focaliseur-arcanique",
+                    "name": "Focaliseur arcanique",
+                    "url": "/api/2014/equipment-categories/focaliseur-arcanique"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "desc": "(a) un sac d'érudit ou (b) un sac d'explorateur",
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "options_array",
+          "options": [
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-derudit",
+                "name": "Sac d'érudit",
+                "url": "/api/2014/equipment/sac-derudit"
+              }
+            },
+            {
+              "option_type": "counted_reference",
+              "count": 1,
+              "of": {
+                "index": "sac-dexplorateur",
+                "name": "Sac d'explorateur",
+                "url": "/api/2014/equipment/sac-dexplorateur"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "class_levels": "/api/2014/classes/magicien/levels",
+    "multi_classing": {
+      "prerequisites": [
+        {
+          "ability_score": {
+            "index": "int",
+            "name": "INT",
+            "url": "/api/2014/carateristique/int"
+          },
+          "minimum_score": 13
+        }
+      ],
+      "proficiencies": []
+    },
+    "subclasses": [
+      {
+        "index": "evocation",
+        "name": "Evocation",
+        "url": "/api/2014/sousclasses/evocation"
+      }
+    ],
+    "spells": "/api/2014/classes/magicien/spells",
+    "url": "/api/2014/classes/magicien"
+  }
+]

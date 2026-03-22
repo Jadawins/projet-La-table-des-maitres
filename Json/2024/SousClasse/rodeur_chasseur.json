@@ -1,0 +1,40 @@
+{
+  "nom": "Chasseur",
+  "classe_parente": "rodeur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 11, 15],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Proie du chasseur",
+          "description": "Choisis une aptitude : Tueur de colosses (1 fois/tour, inflige 1d8 dégâts supplémentaires si la cible est en dessous de ses PV max), Massacreur de géants (attaque de réaction quand un ennemi de taille G ou plus t'attaque), ou Tueur de hordes (tes attaques à distance peuvent rebondir sur un second ennemi adjacent)."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Tactiques défensives",
+          "description": "Choisis une aptitude : Pas de la chasse (difficile d'être surpris), Esquive instinctive (les ennemis cachés n'ont pas avantage contre toi), ou Défense d'acier (si tu es entouré de 3 ennemis ou plus, tu obtiens un bonus de +1 à la CA)."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Carnage multiple",
+          "description": "Choisis une aptitude : Déluge de flèches (1/repos court — action : effectue une attaque de portée contre chaque créature à portée, une seule par créature), Tourbillon d'acier (identique mais en mêlée), ou Multiattaque de monstre (effectue deux attaques contre une créature en plus de tes attaques normales)."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Supériorité du chasseur",
+          "description": "Choisis une aptitude : Esquive brutale (tu peux utiliser ta réaction pour subir la moitié des dégâts d'une zone d'effet), Repli agile (quand tu subis des dégâts d'une attaque, tu peux te déplacer jusqu'à 4,5 m en réaction), ou Immunité aux volées (tu n'es jamais aveuglé ou étourdi par les effets de zone)."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "nom": "Protecteur Fiélon",
+  "classe_parente": "occultiste",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "sorts_elargis": ["mains brûlantes", "mort aux yeux rouges", "rayon ardent", "flamme continue"],
+      "capacites": [
+        {
+          "nom": "Bénédiction du ténébreux",
+          "description": "Quand tu réduis une créature hostile à 0 PV, tu obtiens des PV temporaires = ton niveau de sorcier + ton modificateur de CHA."
+        },
+        {
+          "nom": "Fortune des ténèbres",
+          "description": "1/tour, quand tu rates un jet d'attaque, test de caractéristique ou JS, tu peux relancer le dé et utiliser le nouveau résultat."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Marche à travers les flammes",
+          "description": "Tu obtiens la résistance aux dégâts de feu. De plus, les créatures qui t'attaquent avec une attaque de corps à corps subissent 1d8 dégâts de feu par réaction si tu le souhaites."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Âme des ténèbres",
+          "description": "Tu peux lancer contact glacial et couronne de folie sans dépenser d'emplacement de sort (1/repos long chacun)."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Don du seigneur des ténèbres",
+          "description": "1/repos long, tu peux appliquer ta Résistance aux dégâts de ton pacte à tous les types de dégâts pendant 1 minute."
+        }
+      ]
+    }
+  }
+}

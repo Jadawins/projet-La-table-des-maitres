@@ -1,0 +1,47 @@
+{
+  "nom": "Âme mécanique",
+  "classe_parente": "ensorceleur",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14, 18],
+  "niveaux": {
+    "3": {
+      "sorts_connus_supplementaires": ["alarme", "sphère de feu"],
+      "capacites": [
+        {
+          "nom": "Précision mécanique",
+          "description": "Quand tu lances un sort, tu peux dépenser 1 PS pour relancer un des dés de dégâts ou de soins et conserver le meilleur résultat."
+        },
+        {
+          "nom": "Tir réglé",
+          "description": "Tes sorts ignorent la résistance aux dégâts (mais pas l'immunité). Tu connais le type de résistances d'une créature si tu la touches avec un sort."
+        }
+      ]
+    },
+    "6": {
+      "sorts_connus_supplementaires": ["désintégration partielle", "détection de la magie"],
+      "capacites": [
+        {
+          "nom": "Recalibration magique",
+          "description": "Quand tu rates un jet d'attaque de sort, tu peux dépenser 2 PS pour recommencer le jet. Tu dois utiliser le second résultat."
+        }
+      ]
+    },
+    "14": {
+      "sorts_connus_supplementaires": ["désintégration", "téléportation"],
+      "capacites": [
+        {
+          "nom": "Surcharge arcanique",
+          "description": "1/repos long, tu peux lancer un sort en dépensant 0 PS (les dés de dégâts sont au maximum). Après utilisation, tu subis 2d6 dégâts de force."
+        }
+      ]
+    },
+    "18": {
+      "capacites": [
+        {
+          "nom": "Perfection mécanique",
+          "description": "Tes sorts passent à travers tous les types de résistances et d'immunités aux dégâts, sauf si la cible est derrière un bouclier de force ou similaire. Tes jets d'attaque de sort ne peuvent pas rater sur un résultat naturel de 1."
+        }
+      ]
+    }
+  }
+}

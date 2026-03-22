@@ -1,0 +1,238 @@
+{
+  "nom": "Guerrier",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": ["FOR", "DEX"],
+      "de_vie": { "type": "1d10", "modificateur": "CON" },
+      "sauvegardes_maitrise": ["FOR", "CON"],
+      "competences_choisies": { "nombre": 2, "options": ["Acrobaties", "Athlétisme", "Dressage", "Histoire", "Intuition", "Intimidation", "Perception", "Persuasion", "Survie"] },
+      "maitrises_armes": ["armes_courantes", "armes_de_guerre"],
+      "maitrises_armures": ["armures_legeres", "armures_intermediaires", "armures_lourdes", "boucliers"],
+      "equipement_depart": [
+        { "choix": "A", "contenu": ["Cotte de mailles", "Épée à deux mains", "Fléau d'armes", "8 javelines", "Paquetage d'exploration souterraine", "4 po"] },
+        { "choix": "B", "contenu": ["Armure de cuir clouté", "Cimeterre", "Épée courte", "Arc long", "20 flèches", "Carquois", "Paquetage d'exploration souterraine", "11 po"] },
+        { "choix": "C", "contenu": ["155 po"] }
+      ]
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "second_souffle_utilisations": 2,
+      "techniques_arme_nombre": 3,
+      "capacites": [
+        {
+          "nom": "Techniques d'arme",
+          "description": "Maîtrise des bottes pour 3 types d'armes ; 1 changement possible au repos long.",
+          "type": "passif",
+          "effets": [{ "type": "maitrise_botte", "nombre": 3, "source": ["armes_courantes", "armes_de_guerre"], "modifiable": { "frequence": "repos_long", "nombre_changements": 1 } }]
+        },
+        {
+          "nom": "Souffle vital",
+          "description": "Soin de 1d10 + niveau en action bonus ; recharge au repos court.",
+          "type": "bonus_action",
+          "effets": [{ "type": "soin", "valeur": { "des": "1d10", "ajouter": "niveau_guerrier" } }],
+          "utilisations": { "initial": 2, "recuperation": [{ "type": "repos_court", "gain": 1 }, { "type": "repos_long", "remise_a_max": true }] }
+        },
+        {
+          "nom": "Style de combat",
+          "description": "Don de style de combat, remplaçable à chaque niveau de Guerrier.",
+          "type": "don",
+          "source": "dons_style_de_combat",
+          "note": "Peut être remplacé par un autre don de Style de combat à chaque niveau de Guerrier."
+        }
+      ]
+    },
+    "2": {
+      "capacites": [
+        {
+          "nom": "Élan guerrier",
+          "description": "Action supplémentaire (hors action Magie) une fois par repos court ou long.",
+          "type": "actif",
+          "declencheur": "son_tour",
+          "effets": [{ "type": "action_supplementaire", "restriction": "pas_action_magie" }],
+          "utilisations": { "initial": 1, "recuperation": [{ "type": "repos_court", "remise_a_max": true }, { "type": "repos_long", "remise_a_max": true }] }
+        },
+        {
+          "nom": "Instinct tactique",
+          "description": "Dépense un Souffle vital pour ajouter 1d10 à un test de caractéristique raté.",
+          "type": "optionnel",
+          "declencheur": { "type": "test_caracteristique_rate" },
+          "effets": [{ "type": "depense_utilisation", "cible": "souffle_vital", "action_requise": false, "jet": "1d10", "effet": "ajouter_au_resultat_du_test", "note": "Peut convertir l'échec en réussite. Si le test rate malgré tout, l'utilisation n'est pas dépensée." }]
+        }
+      ]
+    },
+    "3": {
+      "voie": { "choix": ["Champion", "Chevalier occulte", "Maître de guerre", "Soldat psi"] },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "bonusMaitrise": 2,
+      "second_souffle_utilisations": 3,
+      "techniques_arme_nombre": 4,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "capacites": [
+        {
+          "nom": "Attaque supplémentaire",
+          "description": "2 attaques par action Attaquer.",
+          "type": "passif",
+          "effets": [{ "type": "attaque_sup", "valeur": 1, "total_attaques": 2, "conditions": [{ "type": "action", "valeur": "Attaquer" }] }]
+        },
+        {
+          "nom": "Manœuvre tactique",
+          "description": "Lors d'un Souffle vital (bonus action), déplacement de moitié vitesse sans attaque d'opportunité.",
+          "type": "passif",
+          "declencheur": { "type": "activation", "cible": "souffle_vital", "via": "bonus_action" },
+          "effets": [{ "type": "deplacement", "valeur": "moitie_vitesse", "provoque_attaques_opportunite": false }]
+        }
+      ]
+    },
+    "6": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "7": { "verifier_sous_classe": true },
+    "8": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "capacites": [
+        {
+          "nom": "Feinte tactique",
+          "description": "Remplace la botte d'une arme par Poussée, Ralentissement ou Sape.",
+          "type": "optionnel",
+          "declencheur": { "type": "attaque_avec_arme_a_botte" },
+          "effets": [{ "type": "remplacement_botte", "options": ["Poussée", "Ralentissement", "Sape"] }]
+        },
+        {
+          "nom": "Ténacité",
+          "description": "Relance un JS raté en ajoutant le niveau de Guerrier au résultat (1/repos long).",
+          "type": "optionnel",
+          "declencheur": { "type": "jet_sauvegarde_rate" },
+          "effets": [{ "type": "relance_jet_sauvegarde", "bonus": "niveau_guerrier", "note": "Le nouveau jet s'applique obligatoirement." }],
+          "utilisations": { "initial": 1, "recuperation": [{ "type": "repos_long", "remise_a_max": true }] }
+        }
+      ]
+    },
+    "10": {
+      "second_souffle_utilisations": 4,
+      "techniques_arme_nombre": 5,
+      "verifier_sous_classe": true
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Troisième attaque",
+          "description": "3 attaques par action Attaquer.",
+          "type": "passif",
+          "effets": [{ "type": "attaque_sup", "valeur": 1, "total_attaques": 3, "conditions": [{ "type": "action", "valeur": "Attaquer" }] }]
+        }
+      ]
+    },
+    "12": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "tenacite_utilisations": 2,
+      "capacites": [
+        {
+          "nom": "Analyse martiale",
+          "description": "Après avoir manqué une attaque, avantage au prochain jet d'attaque contre cette créature.",
+          "type": "passif",
+          "declencheur": { "type": "jet_attaque_rate", "cible": "creature" },
+          "effets": [{ "type": "avantage", "cible": "prochain_jet_attaque_meme_creature", "duree": "jusqu_fin_prochain_tour" }]
+        },
+        {
+          "nom": "Ténacité",
+          "description": "Passe à 2 utilisations de Ténacité par repos long.",
+          "type": "amelioration",
+          "effets": [{ "type": "augmentation_utilisations", "nouvelle_valeur": 2 }]
+        }
+      ]
+    },
+    "14": {
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "15": { "verifier_sous_classe": true },
+    "16": {
+      "techniques_arme_nombre": 6,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": { "nombre": 2, "valeur_max": 1, "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"] },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "tenacite_utilisations": 3,
+      "capacites": [
+        {
+          "nom": "Élan guerrier",
+          "description": "Passe à 2 utilisations d'Élan guerrier par repos (max 1 par tour).",
+          "type": "amelioration",
+          "effets": [{ "type": "augmentation_utilisations", "nouvelle_valeur": 2, "restriction_par_tour": 1 }]
+        },
+        {
+          "nom": "Ténacité",
+          "description": "Passe à 3 utilisations de Ténacité par repos long.",
+          "type": "amelioration",
+          "effets": [{ "type": "augmentation_utilisations", "nouvelle_valeur": 3 }]
+        }
+      ]
+    },
+    "18": { "verifier_sous_classe": true },
+    "19": {
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "capacites": [
+        {
+          "nom": "Quatrième attaque",
+          "description": "4 attaques par action Attaquer.",
+          "type": "passif",
+          "effets": [{ "type": "attaque_sup", "valeur": 1, "total_attaques": 4, "conditions": [{ "type": "action", "valeur": "Attaquer" }] }]
+        }
+      ]
+    }
+  }
+}

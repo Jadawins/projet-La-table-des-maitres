@@ -1,0 +1,35 @@
+{
+  "id": "halfelin",
+  "nom": "Halfelin",
+  "description": "Petites creatures guidees par des dieux accordant de l'importance a la vie paisible et au foyer. Naturallement attires vers la decouverte et l'aventure. Longevite d'environ 150 ans.",
+  "taille": {
+    "categorie": "P",
+    "details": "entre 60 cm et 90 cm"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "agilite_halfeline",
+      "nom": "Agilite halfeline",
+      "description": "Vous pouvez vous deplacer dans l'espace d'une creature de taille superieure a la votre, mais ne pouvez pas vous arreter dans ce meme espace."
+    },
+    {
+      "id": "brave",
+      "nom": "Brave",
+      "description": "Vous avez l'Avantage aux jets de sauvegarde visant a eviter l'etat Effrayé ou a y mettre un terme."
+    },
+    {
+      "id": "chance",
+      "nom": "Chance",
+      "description": "Lorsque vous obtenez un 1 sur un d20 pour un Test de d20, vous pouvez relancer le de. Vous devez utiliser le nouveau resultat."
+    },
+    {
+      "id": "discretion_naturelle",
+      "nom": "Discretion naturelle",
+      "description": "Il vous suffit d'etre dans l'espace d'une creature de taille M ou plus grande d'un cran superieur pour pouvoir entreprendre l'action Furtivite."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [],
+  "sorts_innes": []
+}

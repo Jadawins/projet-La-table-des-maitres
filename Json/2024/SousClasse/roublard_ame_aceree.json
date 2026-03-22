@@ -1,0 +1,40 @@
+{
+  "nom": "Âme acérée",
+  "classe_parente": "roublard",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 9, 13, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Magie psionique",
+          "description": "Tu obtiens un pool de puissance psionique (dés d6). Pool = ton bonus de maîtrise. Se recharge au repos long. Utilise des dés pour des effets : Flèche mentale (action bonus, 1 dé, cible doit réussir JS INT ou subit 1d6 + SAG dégâts psychiques), Distorsion (1 dé, avantage à une attaque), ou Barrière (1 dé, résistance aux dégâts jusqu'au début du prochain tour)."
+        }
+      ]
+    },
+    "9": {
+      "capacites": [
+        {
+          "nom": "Télépathie de combat",
+          "description": "Tu peux communiquer télépathiquement avec tes alliés. En combat, tu peux dépenser 1 dé psionique pour donner à un allié l'avantage à son prochain jet d'attaque."
+        }
+      ]
+    },
+    "13": {
+      "capacites": [
+        {
+          "nom": "Assaut psychique",
+          "description": "Quand tu utilises l'Attaque sournoise, tu peux dépenser 1 dé psionique pour obliger la cible à réussir un JS de SAG ou être Étourdie jusqu'à la fin de son prochain tour (en plus des dégâts normaux)."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Domination psychique",
+          "description": "Dépense 3 dés psioniques pour lancer suggestion sans emplacement de sort. Si la cible est ta cible d'Attaque sournoise active, elle a désavantage au JS."
+        }
+      ]
+    }
+  }
+}

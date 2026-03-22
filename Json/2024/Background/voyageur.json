@@ -1,0 +1,58 @@
+{
+  "id": "voyageur",
+  "nom": "Voyageur",
+  "description": "Vous avez grandi dans la rue ou sur les routes, apprenant à vous débrouiller parmi toutes sortes de gens dans les situations les plus improbables.",
+  "competences": [
+    "Discrétion",
+    "Intuition"
+  ],
+  "outils": [
+    "Outils de voleur"
+  ],
+  "langues": [],
+  "don": "Chanceux",
+  "equipement": [
+    {
+      "nom": "Dague",
+      "quantite": 2
+    },
+    {
+      "nom": "Outils de voleur",
+      "quantite": 1
+    },
+    {
+      "nom": "Sac de couchage",
+      "quantite": 1
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 18
+    }
+  ],
+  "aptitude": {
+    "nom": "Chanceux",
+    "description": "Vous disposez de 3 points de chance par repos long, dépensables pour relancer un jet d'attaque, de caractéristique ou de sauvegarde."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je m'adapte à n'importe quelle situation.",
+      "Je ne fais confiance qu'à ce que je vois de mes propres yeux."
+    ],
+    "ideaux": [
+      "Liberté : Personne ne me possède, personne ne me contrôle.",
+      "Solidarité : On s'entraide dans la rue."
+    ],
+    "liens": [
+      "Quelqu'un m'a aidé quand j'en avais besoin — je dois lui rendre la pareille.",
+      "Je protège mon quartier d'origine."
+    ],
+    "defauts": [
+      "Je mens par réflexe même quand ce n'est pas nécessaire.",
+      "J'ai du mal à m'engager sur le long terme."
+    ]
+  }
+}

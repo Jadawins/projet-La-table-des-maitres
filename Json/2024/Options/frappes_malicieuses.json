@@ -1,0 +1,46 @@
+[
+  {
+    "nom": "Croc-en-jambe",
+    "niveau_requis": 5,
+    "cout_des": "1d6",
+    "jet_sauvegarde": "DEX",
+    "condition_cible": "taille_G_ou_inferieure",
+    "description": "La cible (taille G ou inférieure) doit réussir un jet de sauvegarde de DEX (DD = 8 + DEX + maîtrise) ou se retrouver À terre."
+  },
+  {
+    "nom": "Poison",
+    "niveau_requis": 5,
+    "cout_des": "1d6",
+    "jet_sauvegarde": "CON",
+    "prerequis": "materiel_empoisonneur",
+    "description": "La cible doit réussir un jet de sauvegarde de CON ou être Empoisonnée pendant 1 minute. Elle peut renouveler le JS à la fin de chacun de ses tours."
+  },
+  {
+    "nom": "Repli",
+    "niveau_requis": 5,
+    "cout_des": "1d6",
+    "jet_sauvegarde": null,
+    "description": "Immédiatement après l'attaque, déplace-toi de la moitié de ta vitesse sans provoquer d'attaque d'opportunité."
+  },
+  {
+    "nom": "Assommer",
+    "niveau_requis": 14,
+    "cout_des": "6d6",
+    "jet_sauvegarde": "CON",
+    "description": "La cible doit réussir un jet de sauvegarde de CON ou être Inconsciente pendant 1 minute. Elle reprend conscience si elle subit des dégâts ou réussit un JS de CON à la fin de son tour."
+  },
+  {
+    "nom": "Aveugler",
+    "niveau_requis": 14,
+    "cout_des": "3d6",
+    "jet_sauvegarde": "DEX",
+    "description": "La cible doit réussir un jet de sauvegarde de DEX ou être Aveuglée jusqu'à la fin de son prochain tour."
+  },
+  {
+    "nom": "Hébéter",
+    "niveau_requis": 14,
+    "cout_des": "2d6",
+    "jet_sauvegarde": "CON",
+    "description": "La cible doit réussir un jet de sauvegarde de CON ou être limitée à une seule action parmi déplacement, action ou action bonus lors de son prochain tour."
+  }
+]

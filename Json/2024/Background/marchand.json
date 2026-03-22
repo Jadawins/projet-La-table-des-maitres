@@ -1,0 +1,54 @@
+{
+  "id": "marchand",
+  "nom": "Marchand",
+  "description": "Vous avez appris le commerce auprès d'un négociant ou dans une caravane. Vous savez évaluer marchandises et clients et gérer des routes commerciales.",
+  "competences": [
+    "Dressage",
+    "Persuasion"
+  ],
+  "outils": [
+    "Instruments de navigation"
+  ],
+  "langues": [],
+  "don": "Chanceux",
+  "equipement": [
+    {
+      "nom": "Instruments de navigateur",
+      "quantite": 1
+    },
+    {
+      "nom": "Sachet",
+      "quantite": 2
+    },
+    {
+      "nom": "Tenue de voyage",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 22
+    }
+  ],
+  "aptitude": {
+    "nom": "Chanceux",
+    "description": "Vous disposez de 3 points de chance par repos long, dépensables pour relancer un jet d'attaque, de caractéristique ou de sauvegarde."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je peux trouver un prix pour n'importe quoi.",
+      "Je connais toujours quelqu'un dans chaque ville."
+    ],
+    "ideaux": [
+      "Profit : Le commerce est le moteur du progrès.",
+      "Équité : Un bon accord profite aux deux parties."
+    ],
+    "liens": [
+      "Ma famille compte sur les revenus de mon commerce.",
+      "Je dois honorer un accord passé avec un partenaire."
+    ],
+    "defauts": [
+      "Je vois tout comme une opportunité commerciale.",
+      "Je mens parfois sur la qualité de mes marchandises."
+    ]
+  }
+}

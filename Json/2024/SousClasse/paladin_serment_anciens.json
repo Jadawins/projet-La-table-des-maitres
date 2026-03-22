@@ -1,0 +1,48 @@
+{
+  "nom": "Serment des Anciens",
+  "classe_parente": "paladin",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 7, 15, 20],
+  "niveaux": {
+    "3": {
+      "sorts_serment": {
+        "1": ["lueur féerique", "soins des blessures"],
+        "2": ["croissance de plantes", "lumière du jour"]
+      },
+      "capacites": [
+        {
+          "nom": "Lumière féerique",
+          "description": "Canal divin : tu projettes une lueur magique. Pendant 1 minute, tu émets une lumière brillante sur 9 m (faible sur 9 m supplémentaires). Les créatures mortes-vivantes et les fées dans cette lumière ont désavantage aux jets d'attaque contre toi."
+        },
+        {
+          "nom": "Sanctuaire naturel",
+          "description": "Canal divin : les créatures de type bête ou plante dans un rayon de 9 m ne t'attaquent pas pendant 1 minute (JS SAG pour résister à l'effet)."
+        }
+      ]
+    },
+    "7": {
+      "capacites": [
+        {
+          "nom": "Aura de vigilance",
+          "description": "Toi et les alliés à 3 m avez résistance aux dégâts de sort (9 m au niveau 18)."
+        }
+      ]
+    },
+    "15": {
+      "capacites": [
+        {
+          "nom": "Résistance des bois anciens",
+          "description": "Tu es immunisé aux dégâts de poison, à la maladie et à la condition Charmé. Tes alliés dans ton Aura de vigilance ont l'avantage aux JS contre les effets de Charme."
+        }
+      ]
+    },
+    "20": {
+      "capacites": [
+        {
+          "nom": "Gardien éternel",
+          "description": "1/repos long : pendant 1 minute, tu deviens un esprit-nature. Tu obtiens la résistance aux dégâts perforants, tranchants et contondants (y compris magiques). Les créatures Charmées ou Effrayées de toi ne peuvent pas te cibler."
+        }
+      ]
+    }
+  }
+}

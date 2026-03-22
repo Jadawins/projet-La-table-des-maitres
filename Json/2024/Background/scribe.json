@@ -1,0 +1,62 @@
+{
+  "id": "scribe",
+  "nom": "Scribe",
+  "description": "Vous avez travaillé dans un scriptorium ou une administration, copiant des documents officiels et apprenant à rédiger avec précision.",
+  "competences": [
+    "Investigation",
+    "Perception"
+  ],
+  "outils": [
+    "Matériel de calligraphe"
+  ],
+  "langues": [],
+  "don": "Doué",
+  "equipement": [
+    {
+      "nom": "Matériel de calligraphe",
+      "quantite": 1
+    },
+    {
+      "nom": "Pinces",
+      "quantite": 1
+    },
+    {
+      "nom": "Lampe",
+      "quantite": 1
+    },
+    {
+      "nom": "Huile (flacon)",
+      "quantite": 3
+    },
+    {
+      "nom": "Parchemin",
+      "quantite": 12
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 8
+    }
+  ],
+  "aptitude": {
+    "nom": "Doué",
+    "description": "Vous gagnez la maîtrise de trois compétences supplémentaires de votre choix, fruit de votre formation polyvalente."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je prends des notes sur tout ce que j'observe.",
+      "Je suis à l'aise avec les formulaires et la paperasse."
+    ],
+    "ideaux": [
+      "Précision : Les mots doivent être choisis avec soin.",
+      "Ordre : Une bonne administration est le fondement de la société."
+    ],
+    "liens": [
+      "J'ai copié un document qui contient un secret dangereux.",
+      "Le scriptorium où j'ai travaillé m'a formé et je lui dois loyauté."
+    ],
+    "defauts": [
+      "Je suis paralysé sans documentation écrite.",
+      "Je refuse de prendre position sans preuve formelle."
+    ]
+  }
+}

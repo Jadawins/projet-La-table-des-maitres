@@ -1,0 +1,44 @@
+{
+  "nom": "Voie des Quatre Éléments",
+  "classe_parente": "moine",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 11, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Maîtrise des éléments",
+          "description": "Tu apprends deux disciplines élémentaires parmi une liste (feu, eau, air, terre). Chaque discipline est un sort ou un effet activé en dépensant des points de ki (ki = modifications d'élément, ki = niveau de sort + 1 minimum)."
+        },
+        {
+          "nom": "Discipline de base",
+          "description": "Tu peux toujours façonner les éléments sans dépenser de ki pour créer des effets mineurs décoratifs."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Disciplines supplémentaires",
+          "description": "Tu apprends deux disciplines élémentaires supplémentaires."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Maîtrise avancée",
+          "description": "Tu apprends deux disciplines élémentaires supplémentaires. Tes attaques à mains nues infligent un type de dégâts supplémentaire (acide, froid, feu, foudre ou tonnerre) au choix lors de l'attaque."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Incarnation élémentaire",
+          "description": "Tu apprends deux disciplines élémentaires supplémentaires. 1/repos long, tu peux te transformer en élémentaire (air, eau, feu ou terre) pendant 10 minutes tout en conservant tes statistiques."
+        }
+      ]
+    }
+  }
+}

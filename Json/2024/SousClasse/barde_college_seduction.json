@@ -1,0 +1,36 @@
+{
+  "nom": "Collège de la Séduction",
+  "classe_parente": "barde",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Charme irrésistible",
+          "description": "Action bonus : tente de charmer une créature à 18 m (JS SAG, DD = DD sorts). Si elle rate, elle est Charmée par toi pendant 1 heure ou jusqu'à ce que tu l'attaques."
+        },
+        {
+          "nom": "Séduction magique",
+          "description": "Tu peux ajouter ton modificateur de CHA au lieu de DEX à la CA si tu ne portes pas d'armure ou de bouclier."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Présence envoûtante",
+          "description": "Quand une créature Charmée par toi est Charmée par un autre effet, tu peux dépenser 1 Inspiration bardique pour maintenir ta Charme active."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Domination mentale",
+          "description": "Tu peux lancer domination de personne sans dépenser d'emplacement de sort (1/repos long). Les créatures Charmées par toi ont désavantage aux JS contre tes sorts."
+        }
+      ]
+    }
+  }
+}

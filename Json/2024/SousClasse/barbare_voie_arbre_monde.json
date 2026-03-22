@@ -1,0 +1,44 @@
+{
+  "nom": "Voie de l'Arbre-Monde",
+  "classe_parente": "barbare",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 10, 14],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Déplacement cosmique",
+          "description": "Quand tu Rages, tu peux te téléporter jusqu'à 9 m vers un espace inoccupé visible."
+        },
+        {
+          "nom": "Maîtrise des langues",
+          "description": "Tu apprends deux langues supplémentaires de ton choix."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Branches protectrices",
+          "description": "Quand une créature à 3 m de toi est touchée par une attaque, tu peux utiliser ta réaction pour lui accorder un bonus d'armure de 1d12 contre cette attaque."
+        }
+      ]
+    },
+    "10": {
+      "capacites": [
+        {
+          "nom": "Voyage dans les branches",
+          "description": "Pendant ta Rage, lorsque tu touches une créature avec une attaque, tu peux te téléporter avec elle (si elle est consentante ou si elle rate un JS de FOR) vers un espace à 9 m."
+        }
+      ]
+    },
+    "14": {
+      "capacites": [
+        {
+          "nom": "Résonance des racines",
+          "description": "Tu peux lancer passage par les arbres sans dépenser d'emplacement de sort (1/repos long). Ta caractéristique d'incantation est CON."
+        }
+      ]
+    }
+  }
+}

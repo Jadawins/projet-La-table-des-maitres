@@ -1,0 +1,57 @@
+{
+  "caracteristiques": [
+    {
+      "nom": "Force",
+      "code": "FOR",
+      "competences": [
+        "Athlétisme"
+      ]
+    },
+    {
+      "nom": "Dextérité",
+      "code": "DEX",
+      "competences": [
+        "Acrobaties",
+        "Discrétion",
+        "Escamotage"
+      ]
+    },
+    {
+      "nom": "Constitution",
+      "code": "CON",
+      "competences": []
+    },
+    {
+      "nom": "Intelligence",
+      "code": "INT",
+      "competences": [
+        "Arcanes",
+        "Histoire",
+        "Investigation",
+        "Nature",
+        "Religion"
+      ]
+    },
+    {
+      "nom": "Sagesse",
+      "code": "SAG",
+      "competences": [
+        "Dressage",
+        "Intuition",
+        "Médecine",
+        "Perception",
+        "Survie"
+      ]
+    },
+    {
+      "nom": "Charisme",
+      "code": "CHA",
+      "competences": [
+        "Intimidation",
+        "Persuasion",
+        "Représentation",
+        "Tromperie"
+      ]
+    }
+  ]
+}

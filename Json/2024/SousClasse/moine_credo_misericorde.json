@@ -1,0 +1,44 @@
+{
+  "nom": "Voie de la Miséricorde",
+  "classe_parente": "moine",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 6, 11, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Mains de guérison",
+          "description": "Action ou action bonus (si tu touches avec une attaque à mains nues) : dépense 1 point de ki pour restaurer un nombre de PV = 1d10 + modificateur SAG à une créature touchée."
+        },
+        {
+          "nom": "Mains de blessure",
+          "description": "Quand tu frappes avec une attaque à mains nues, tu peux dépenser 1 point de ki pour infliger 1d10 dégâts nécrotiques supplémentaires."
+        }
+      ]
+    },
+    "6": {
+      "capacites": [
+        {
+          "nom": "Médecin de l'âme",
+          "description": "Quand tu utilises Mains de guérison, tu peux également supprimer une maladie ou un poison touchant la créature."
+        }
+      ]
+    },
+    "11": {
+      "capacites": [
+        {
+          "nom": "Visiteur de la miséricorde",
+          "description": "Dépense 5 points de ki pour lancer rappel à la vie. La créature cible doit avoir été morte pendant moins de 24 heures."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Grâce suprême",
+          "description": "Quand tu utilises Mains de guérison, tu peux restaurer les PV à leur maximum (1/repos long). Tes Mains de blessure infligent maintenant 2d10 dégâts nécrotiques."
+        }
+      ]
+    }
+  }
+}

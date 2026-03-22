@@ -1,0 +1,181 @@
+[
+  {
+    "index": "for",
+    "name":  {
+          "en": "STR",
+          "fr": "FOR"
+                },
+    "full_name": "Force",
+    "desc": [
+      "La Force mesure la puissance physique, l'entraînement athlétique et la capacité à exercer une force brute.",
+      "Un test de Force peut représenter toute tentative de soulever, pousser, tirer ou briser quelque chose, de forcer le passage à travers un espace, ou d’appliquer une force brute dans une situation. La compétence Athlétisme reflète l’aptitude à certains types de tests de Force."                                                                                                                            
+    ],
+    "skills": [
+      {
+        "name": "Athlétisme",
+        "index": "athlétisme",
+        "url": "/api/2014/skills/athletics"
+      }
+    ],
+    "url": "/api/2014/caracteristiques/for"
+  },
+  {
+    "index": "dex",
+    "name": {
+          "en": "DEX",
+          "fr": "DEX"
+                },
+    "full_name": "Dextérité",
+    "desc": [
+      "La Dextérité mesure l’agilité, les réflexes et l’équilibre.",
+      "Un test de Dextérité peut représenter toute tentative de se déplacer avec agilité, rapidité ou discrétion, ou d’éviter une chute sur un terrain instable. Les compétences Acrobaties, Escamotage et Discrétion reflètent l’aptitude à certains types de tests de Dextérité."
+    ],
+    "skills": [
+      {
+        "name": "Acrobaties",
+        "index": "acrobaties",
+        "url": "/api/2014/skills/acrobatics"
+      },
+      {
+        "name": "Escamotage",
+        "index": "escamotage",
+        "url": "/api/2014/skills/sleight-of-hand"
+      },
+      {
+        "name": "Discrétion",
+        "index": "discrétion",
+        "url": "/api/2014/skills/stealth"
+      }
+    ],
+    "url": "/api/2014/caracteristiques/dex"
+  },
+  {
+    "index": "con",
+    "name": {
+          "en": "CON",
+          "fr": "CON"
+                },
+    "full_name": "Constitution",
+    "desc": [
+      "La Constitution mesure la santé, l'endurance et la force vitale.",
+      "Les tests de Constitution sont rares, et aucune compétence n’est liée à ces tests, car l’endurance que représente cette caractéristique est principalement passive, ne nécessitant pas un effort spécifique de la part du personnage ou du monstre."
+    ],
+    "skills": [],
+    "url": "/api/2014/caracteristiques/con"
+  },
+  {
+    "index": "int",
+    "name": {
+          "en": "INT",
+          "fr": "INT"
+                },
+    "full_name": "Intelligence",
+    "desc": [
+      "L'Intelligence mesure l'acuité mentale, la précision du rappel et la capacité à raisonner.",
+      "Un test d'Intelligence intervient lorsque vous devez faire appel à la logique, à l'éducation, à la mémoire ou au raisonnement déductif. Les compétences Arcanes, Histoire, Investigation, Nature et Religion reflètent l'aptitude à certains types de tests d'Intelligence."
+    ],
+    "skills": [
+      {
+        "name": "Arcanes",
+        "index": "arcanes",
+        "url": "/api/2014/skills/arcana"
+      },
+      {
+        "name": "Histoire",
+        "index": "histoire",
+        "url": "/api/2014/skills/history"
+      },
+      {
+        "name": "Investigation",
+        "index": "investigation",
+        "url": "/api/2014/skills/investigation"
+      },
+      {
+        "name": "Nature",
+        "index": "nature",
+        "url": "/api/2014/skills/nature"
+      },
+      {
+        "name": "Religion",
+        "index": "religion",
+        "url": "/api/2014/skills/religion"
+      }
+    ],
+    "url": "/api/2014/caracteristiques/int"
+  },
+  {
+    "index": "sag",
+    "name": {
+          "en": "WIS",
+          "fr": "SAG"
+                },
+    "full_name": "Sagesse",
+    "desc": [
+      "La Sagesse reflète votre capacité à être en phase avec le monde qui vous entoure et représente la perspicacité ainsi que l'intuition.",
+      "Un test de Sagesse peut refléter un effort pour lire le langage corporel, comprendre les sentiments de quelqu’un, remarquer des éléments de l’environnement ou s’occuper d’une personne blessée. Les compétences Dressage d'animaux, Perception, Médecine, Perspicacité et Survie reflètent l’aptitude à certains types de tests de Sagesse."
+    ],
+    "skills": [
+      {
+        "name": "Dressage",
+        "index": "dressage",
+        "url": "/api/2014/skills/animal-handling"
+      },
+      {
+        "name": "Intuition",
+        "index": "intuition",
+        "url": "/api/2014/skills/insight"
+      },
+      {
+        "name": "Médicine",
+        "index": "médicine",
+        "url": "/api/2014/skills/medicine"
+      },
+      {
+        "name": "Perception",
+        "index": "perception",
+        "url": "/api/2014/skills/perception"
+      },
+      {
+        "name": "Survie",
+        "index": "survie",
+        "url": "/api/2014/skills/survival"
+      }
+    ],
+    "url": "/api/2014/caracteristiques/sag"
+  },
+  {
+    "index": "cha",
+    "name": {
+          "en": "CHA",
+          "fr": "CHA"
+                },
+    "full_name": "Charisme",
+    "desc": [
+      "Le Charisme mesure votre capacité à interagir efficacement avec les autres. Il inclut des facteurs tels que la confiance en soi et l'éloquence, et peut représenter une personnalité charismatique ou autoritaire.",
+      "Un test de Charisme peut survenir lorsque vous essayez d'influencer ou de divertir les autres, lorsque vous tentez de faire une bonne impression ou de raconter un mensonge convaincant, ou lorsque vous vous trouvez dans une situation sociale délicate. Les compétences Bluff, Intimidation, Performance et Persuasion reflètent l'aptitude à certains types de tests de Charisme."
+    ],
+    "skills": [
+      {
+        "name": "Tromperie",
+        "index": "tromperie",
+        "url": "/api/2014/skills/deception"
+      },
+      {
+        "name": "Intimidation",
+        "index": "intimidation",
+        "url": "/api/2014/skills/intimidation"
+      },
+      {
+        "name": "Représentation",
+        "index": "représentation",
+        "url": "/api/2014/skills/performance"
+      },
+      {
+        "name": "Persuasion",
+        "index": "persuasion",
+        "url": "/api/2014/skills/persuasion"
+      }
+    ],
+    "url": "/api/2014/caracteristiques/cha"
+  }
+]

@@ -1,0 +1,699 @@
+[
+  {
+    "id": "materiel_d_alchimiste",
+    "nom": "Matériel d’alchimiste",
+    "categorie": "artisan",
+    "prix": 50,
+    "poids": 4,
+    "caracteristique": "INT",
+    "utilisations": [
+      {
+        "action": "identifier_substance",
+        "dd": 15,
+        "competences_associees": [
+          "Nature",
+          "Arcane",
+          "Médecine"
+        ],
+        "avantage_si_double_maitrise": true
+      },
+      {
+        "action": "allumer_un_feu",
+        "dd": 15,
+        "competences_associees": [
+          "Survie"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "acide",
+      "feu grégeois",
+      "huile",
+      "papier",
+      "parfum",
+      "sacoche à composants"
+    ]
+  },
+  {
+    "id": "materiel_de_brasseur",
+    "nom": "Matériel de brasseur",
+    "categorie": "artisan",
+    "prix": 20,
+    "poids": 4.5,
+    "caracteristique": "INT",
+    "utilisations": [
+      {
+        "action": "detecter_poison_boisson",
+        "dd": 15,
+        "competences_associees": [
+          "Médecine",
+          "Perception"
+        ],
+        "avantage_si_double_maitrise": true
+      },
+      {
+        "action": "identifier_alcool",
+        "dd": 10,
+        "competences_associees": [
+          "Histoire",
+          "Survie"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "antidote"
+    ]
+  },
+  {
+    "id": "materiel_de_calligraphe",
+    "nom": "Matériel de calligraphe",
+    "categorie": "artisan",
+    "prix": 10,
+    "poids": 2.5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "ecriture_impressionnante",
+        "dd": 10,
+        "competences_associees": [
+          "Histoire",
+          "Arcane"
+        ],
+        "avantage_si_double_maitrise": true
+      },
+      {
+        "action": "resister_contrefacon",
+        "dd": 15,
+        "competences_associees": [
+          "Investigation"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "encre",
+      "parchemin de sort"
+    ]
+  },
+  {
+    "id": "materiel_de_peintre",
+    "nom": "Matériel de peintre",
+    "categorie": "artisan",
+    "prix": 10,
+    "poids": 2.5,
+    "caracteristique": "SAG",
+    "utilisations": [
+      {
+        "action": "produire_image_ressemblante",
+        "dd": 10,
+        "competences_associees": [
+          "Artisanat",
+          "Religion"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "focaliseur druidique",
+      "symbole sacré"
+    ]
+  },
+  {
+    "id": "outils_de_bricoleur",
+    "nom": "Outils de bricoleur",
+    "categorie": "artisan",
+    "prix": 50,
+    "poids": 5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "assembler_objet_complexe_temporaire",
+        "dd": 10,
+        "competences_associees": [
+          "Survie",
+          "Investigation"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "mousquet",
+      "pistolet",
+      "boîte à amadou",
+      "clé",
+      "lanterne à capote",
+      "lanterne sourde",
+      "menottes",
+      "pelle",
+      "pince à mâchoires",
+      "serrure",
+      "sifflet"
+    ]
+  },
+  {
+    "id": "outils_de_cartographe",
+    "nom": "Outils de cartographe",
+    "categorie": "artisan",
+    "prix": 15,
+    "poids": 3,
+    "caracteristique": "SAG",
+    "utilisations": [
+      {
+        "action": "cartographier_region",
+        "dd": 15,
+        "competences_associees": [
+          "Nature",
+          "Histoire",
+          "Survie"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "carte"
+    ]
+  },
+  {
+    "id": "outils_de_charpentier",
+    "nom": "Outils de charpentier",
+    "categorie": "artisan",
+    "prix": 8,
+    "poids": 3,
+    "caracteristique": "FOR",
+    "utilisations": [
+      {
+        "action": "sceller_forcer_porte_contenant",
+        "dd": 20,
+        "competences_associees": [
+          "Athlétisme",
+          "Survie"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "bâton de combat",
+      "bélier portable",
+      "coffre",
+      "échelle",
+      "gourdin",
+      "masse",
+      "perche",
+      "tonneau",
+      "torche"
+    ]
+  },
+  {
+    "id": "outils_de_cordonnier",
+    "nom": "Outils de cordonnier",
+    "categorie": "artisan",
+    "prix": 5,
+    "poids": 2.5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "modifier_chaussures_avantage_acrobatie",
+        "dd": 10,
+        "competences_associees": [
+          "Acrobaties"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "matériel d'escalade"
+    ]
+  },
+  {
+    "id": "outils_de_forgeron",
+    "nom": "Outils de forgeron",
+    "categorie": "artisan",
+    "prix": 20,
+    "poids": 4,
+    "caracteristique": "FOR",
+    "utilisations": [
+      {
+        "action": "forcer_porte_ou_contenant",
+        "dd": 20,
+        "competences_associees": [
+          "Athlétisme"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "toute arme de corps à corps (hors bâton de combat, gourdin, masse de fouet)",
+      "toute arme intermédiaire (hors armure de peau)",
+      "toute armure lourde",
+      "balles pour arme à feu",
+      "billes de fronde",
+      "chaîne",
+      "chausse-trappes",
+      "grappin",
+      "pied-de-biche",
+      "pointes en fer",
+      "pot en fer",
+      "seau"
+    ]
+  },
+  {
+    "id": "outils_de_joaillier",
+    "nom": "Outils de joaillier",
+    "categorie": "artisan",
+    "prix": 25,
+    "poids": 1,
+    "caracteristique": "INT",
+    "utilisations": [
+      {
+        "action": "evaluer_valeur_gemme",
+        "dd": 15,
+        "competences_associees": [
+          "Investigation",
+          "Arcanes"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "focaliseur arcanique",
+      "symbole sacré"
+    ]
+  },
+  {
+    "id": "outils_de_macon",
+    "nom": "Outils de maçon",
+    "categorie": "artisan",
+    "prix": 10,
+    "poids": 4,
+    "caracteristique": "FOR",
+    "utilisations": [
+      {
+        "action": "ciseler_symbole_ou_creuser_pierre",
+        "dd": 10,
+        "competences_associees": [
+          "Survie"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "palan"
+    ]
+  },
+  {
+    "id": "outils_de_menuisier",
+    "nom": "Outils de menuisier",
+    "categorie": "artisan",
+    "prix": 1,
+    "poids": 2.5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "sculpter_motif_bois",
+        "dd": 10,
+        "competences_associees": [
+          "Artisanat"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "armes à distance (sauf fronde, mousquet et pistolet)",
+      "bâton de combat",
+      "carreaux d’arbalète",
+      "arbalète de chasse",
+      "flèches",
+      "focaliseur arcanique",
+      "focaliseur druidique",
+      "porte-plume"
+    ]
+  },
+  {
+    "id": "outils_de_potier",
+    "nom": "Outils de potier",
+    "categorie": "artisan",
+    "prix": 10,
+    "poids": 1.5,
+    "caracteristique": "INT",
+    "utilisations": [
+      {
+        "action": "determiner_contenu_objet_ceramique",
+        "dd": 15,
+        "competences_associees": [
+          "Investigation"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "cruche",
+      "lampe"
+    ]
+  },
+  {
+    "id": "outils_de_souffleur_de_verre",
+    "nom": "Outils de souffleur de verre",
+    "categorie": "artisan",
+    "prix": 30,
+    "poids": 2.5,
+    "caracteristique": "INT",
+    "utilisations": [
+      {
+        "action": "analyser_contenu_objet_verre",
+        "dd": 15,
+        "competences_associees": [
+          "Investigation"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "bouteille en verre",
+      "fiole",
+      "longue-vue",
+      "loupe"
+    ]
+  },
+  {
+    "id": "outils_de_tanneur",
+    "nom": "Outils de tanneur",
+    "categorie": "artisan",
+    "prix": 5,
+    "poids": 2.5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "ajouter_motif_objet_cuir",
+        "dd": 10,
+        "competences_associees": [
+          "Artisanat"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "fouet",
+      "fronde",
+      "armure de cuir",
+      "armure de cuir clouté",
+      "armure de peaux",
+      "carquois",
+      "étui à carreaux d’arbalète",
+      "étui à cartes ou à parchemins",
+      "outre",
+      "parchemin",
+      "sacoche",
+      "sac à dos"
+    ]
+  },
+  {
+    "id": "outils_de_tisserand",
+    "nom": "Outils de tisserand",
+    "categorie": "artisan",
+    "prix": 1,
+    "poids": 2.5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "reparer_vetement",
+        "dd": 10,
+        "competences_associees": [
+          "Artisanat"
+        ],
+        "avantage_si_double_maitrise": true
+      },
+      {
+        "action": "coudre_motif_taille_tp",
+        "dd": 10,
+        "competences_associees": [
+          "Artisanat"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "armure matelassée",
+      "beaux habits",
+      "corde",
+      "couverture",
+      "ficelle",
+      "filet",
+      "panier",
+      "robe",
+      "sac",
+      "sac de couchage",
+      "tente",
+      "tenue de voyage"
+    ]
+  },
+  {
+    "id": "ustensiles_de_cuisinier",
+    "nom": "Ustensiles de cuisinier",
+    "categorie": "artisan",
+    "prix": 1,
+    "poids": 4,
+    "caracteristique": "SAG",
+    "utilisations": [
+      {
+        "action": "ameliorer_saveur_aliments",
+        "dd": 10,
+        "competences_associees": [
+          "Survie"
+        ],
+        "avantage_si_double_maitrise": true
+      },
+      {
+        "action": "detectar_poison_aliment",
+        "dd": 15,
+        "competences_associees": [
+          "Médecine",
+          "Survie"
+        ],
+        "avantage_si_double_maitrise": true
+      }
+    ],
+    "artisanat": [
+      "rations"
+    ]
+  },
+  {
+    "id": "accessoires_de_deguisement",
+    "nom": "Accessoires de déguisement",
+    "categorie": "autre",
+    "prix": 25,
+    "poids": 1.5,
+    "caracteristique": "CHA",
+    "utilisations": [
+      {
+        "action": "appliquer du maquillage",
+        "dd": 10
+      }
+    ],
+    "artisanat": [
+      "costume"
+    ]
+  },
+  {
+    "id": "boite_de_jeux",
+    "nom": "Boîte de jeux",
+    "categorie": "autre",
+    "prix": null,
+    "poids": null,
+    "caracteristique": "SAG",
+    "utilisations": [
+      {
+        "action": "déterminer si quelqu’un triche",
+        "dd": 10
+      },
+      {
+        "action": "gagner la partie",
+        "dd": 20
+      }
+    ],
+    "variants": [
+      {
+        "nom": "cartes à jouer",
+        "prix": 5,
+        "poids": 0.1
+      },
+      {
+        "nom": "dés",
+        "prix": 1,
+        "poids": 0.1
+      },
+      {
+        "nom": "échecs draconiques",
+        "prix": 1,
+        "poids": 0.2
+      },
+      {
+        "nom": "jeu des dragons",
+        "prix": 1,
+        "poids": 0.2
+      }
+    ]
+  },
+  {
+    "id": "instruments_de_musique",
+    "nom": "Instruments de musique",
+    "categorie": "autre",
+    "prix": null,
+    "poids": null,
+    "caracteristique": "CHA",
+    "utilisations": [
+      {
+        "action": "jouer un air connu",
+        "dd": 10
+      },
+      {
+        "action": "improviser une chanson",
+        "dd": 15
+      }
+    ],
+    "variants": [
+      {
+        "nom": "chalemie",
+        "prix": 2,
+        "poids": 0.5
+      },
+      {
+        "nom": "cor",
+        "prix": 3,
+        "poids": 1
+      },
+      {
+        "nom": "cornemuse",
+        "prix": 30,
+        "poids": 3
+      },
+      {
+        "nom": "flûte",
+        "prix": 2,
+        "poids": 0.5
+      },
+      {
+        "nom": "flûte de pan",
+        "prix": 12,
+        "poids": 0.5
+      },
+      {
+        "nom": "luth",
+        "prix": 35,
+        "poids": 1
+      },
+      {
+        "nom": "lyre",
+        "prix": 30,
+        "poids": 1
+      },
+      {
+        "nom": "tambour",
+        "prix": 5,
+        "poids": 1.5
+      },
+      {
+        "nom": "tympanon",
+        "prix": 25,
+        "poids": 0.5
+      },
+      {
+        "nom": "viol",
+        "prix": 30,
+        "poids": 1
+      }
+    ]
+  },
+  {
+    "id": "instruments_de_navigateur",
+    "nom": "Instruments de navigateur",
+    "categorie": "autre",
+    "prix": 25,
+    "poids": 1,
+    "caracteristique": "SAG",
+    "utilisations": [
+      {
+        "action": "tracer un cap",
+        "dd": 10
+      },
+      {
+        "action": "déterminer sa position en observant les étoiles",
+        "dd": 15
+      }
+    ]
+  },
+  {
+    "id": "materiel_de_contrefacon",
+    "nom": "Matériel de contrefaçon",
+    "categorie": "autre",
+    "prix": 15,
+    "poids": 2.5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "imiter 10 mots ou moins de l’écriture d’autrui",
+        "dd": 10
+      },
+      {
+        "action": "reproduire un cachet de cire",
+        "dd": 20
+      }
+    ]
+  },
+  {
+    "id": "materiel_d_empoisonneur",
+    "nom": "Matériel d’empoisonneur",
+    "categorie": "autre",
+    "prix": 50,
+    "poids": 1,
+    "caracteristique": "INT",
+    "utilisations": [
+      {
+        "action": "déterminer qu’un objet est empoisonné",
+        "dd": 10
+      }
+    ],
+    "artisanat": [
+      "poison standard"
+    ]
+  },
+  {
+    "id": "materiel_d_herboriste",
+    "nom": "Matériel d’herboriste",
+    "categorie": "autre",
+    "prix": 5,
+    "poids": 1.5,
+    "caracteristique": "INT",
+    "utilisations": [
+      {
+        "action": "identifier une plante",
+        "dd": 10
+      }
+    ],
+    "artisanat": [
+      "antidote",
+      "bougie",
+      "trousse de soins",
+      "potion de guérison"
+    ]
+  },
+  {
+    "id": "outils_de_voleur",
+    "nom": "Outils de voleur",
+    "categorie": "autre",
+    "prix": 25,
+    "poids": 0.5,
+    "caracteristique": "DEX",
+    "utilisations": [
+      {
+        "action": "crocheter une serrure",
+        "dd": 15
+      },
+      {
+        "action": "désamorcer un piège",
+        "dd": 15
+      }
+    ]
+  }
+]

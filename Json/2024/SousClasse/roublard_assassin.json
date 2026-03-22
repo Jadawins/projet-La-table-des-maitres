@@ -1,0 +1,44 @@
+{
+  "nom": "Assassin",
+  "classe_parente": "roublard",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 9, 13, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Maîtrises d'assassin",
+          "description": "Tu obtiens la maîtrise des outils de déguisement et du matériel d'empoisonneur."
+        },
+        {
+          "nom": "Assassinat",
+          "description": "Tu as avantage aux jets d'attaque contre les créatures qui n'ont pas encore joué lors de ce combat. Tout coup touché sur une créature surprise est un coup critique. Les alliés qui frappent une cible lors du round de surprise obtiennent également l'Attaque sournoise (si applicable)."
+        }
+      ]
+    },
+    "9": {
+      "capacites": [
+        {
+          "nom": "Identité fictive",
+          "description": "Tu crées une fausse identité documentée. Tu peux te déguiser en 1 heure en utilisant des matériaux valant 25 po. Les créatures le croient réel sauf si tu te trahis."
+        }
+      ]
+    },
+    "13": {
+      "capacites": [
+        {
+          "nom": "Imposteur",
+          "description": "Après 3 heures d'observation d'une créature humanoïde, tu peux parfaitement l'imiter (voix, manière, comportement). Les jets de Perception des créatures qui la connaissent ont désavantage."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Tueur embusqué",
+          "description": "Quand tu utilises l'Attaque sournoise lors d'un round de surprise, ou contre une cible qui n'a pas encore agi, tu peux relancer tous les 1 sur les dés de dégâts. Si la cible survit, elle ignore sa résistance aux dégâts perforants et tranchants jusqu'à la fin de ton prochain tour."
+        }
+      ]
+    }
+  }
+}

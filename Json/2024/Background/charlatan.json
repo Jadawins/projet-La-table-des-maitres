@@ -1,0 +1,54 @@
+{
+  "id": "charlatan",
+  "nom": "Charlatan",
+  "description": "Vous avez vécu en escroquant vos prochains grâce à de fausses identités, des produits miracles ou des titres fictifs soigneusement entretenus.",
+  "competences": [
+    "Escamotage",
+    "Tromperie"
+  ],
+  "outils": [
+    "Matériel de contrefaçon"
+  ],
+  "langues": [],
+  "don": "Truand",
+  "equipement": [
+    {
+      "nom": "Matériel de contrefaçon",
+      "quantite": 1
+    },
+    {
+      "nom": "Faux habits",
+      "quantite": 1
+    },
+    {
+      "nom": "Costume",
+      "quantite": 1
+    },
+    {
+      "nom": "Pièces d'or",
+      "quantite": 15
+    }
+  ],
+  "aptitude": {
+    "nom": "Truand",
+    "description": "Vous possédez une fausse identité préétablie avec papiers et contacts. Vous pouvez créer de nouveaux documents contrefaits au fil de vos aventures."
+  },
+  "caracteristiques_suggerees": {
+    "traits": [
+      "Je mens si facilement que même moi je n'y fais plus attention.",
+      "Je flatte sans vergogne pour obtenir ce que je veux."
+    ],
+    "ideaux": [
+      "Indépendance : Je ne dois rien à personne.",
+      "Créativité : Chaque escroquerie est une oeuvre d'art."
+    ],
+    "liens": [
+      "J'ai escroqué quelqu'un qui ne le méritait pas et je dois réparer ça.",
+      "Mon partenaire est la seule personne en qui j'ai confiance."
+    ],
+    "defauts": [
+      "Je ne peux pas m'empêcher d'arnaquer même quand c'est inutile.",
+      "Je fuis dès que les choses deviennent sérieuses."
+    ]
+  }
+}

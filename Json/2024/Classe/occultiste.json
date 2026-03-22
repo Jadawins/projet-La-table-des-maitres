@@ -1,0 +1,345 @@
+{
+  "nom": "Occultiste",
+  "source": "PHB2024",
+  "version": "1.1",
+  "derniere_maj": "2026-03-08",
+  "niveaux": {
+    "0": {
+      "caracteristique_principale": "CHA",
+      "de_vie": {
+        "type": "1d8",
+        "modificateur": "CON"
+      },
+      "sauvegardes_maitrise": ["SAG", "CHA"],
+      "competences_choisies": {
+        "nombre": 2,
+        "options": ["Arcanes", "Histoire", "Intimidation", "Investigation", "Nature", "Religion", "Tromperie"]
+      },
+      "maitrises_armes": ["armes_courantes"],
+      "maitrises_armures": ["armures_legeres"],
+      "equipement_depart": [
+        {
+          "choix": "A",
+          "contenu": [
+            "Armure de cuir",
+            "Serpe",
+            "2 dagues",
+            "Focaliseur arcanique (orbe)",
+            "Livre (savoir occulte)",
+            "Paquetage d'érudit",
+            "15 po"
+          ]
+        },
+        {
+          "choix": "B",
+          "contenu": ["100 po"]
+        }
+      ],
+      "incantation": true,
+      "caracteristique_incantation": "CHA",
+      "focaliseur": "focaliseur_arcanique"
+    },
+    "1": {
+      "bonusMaitrise": 2,
+      "sorts_mineurs": 2,
+      "sorts_prepares": 2,
+      "emplacements_pacte": { "nombre": 1, "niveau": 1 },
+      "manifestations_occultes_nombre": 1,
+      "capacites": [
+        {
+          "nom": "Magie liée",
+          "description": "Incantation par CHA ; les emplacements de pacte se rechargent au repos court ou long.",
+          "type": "incantation",
+          "caracteristique": "CHA",
+          "focaliseur": "focaliseur_arcanique",
+          "recuperation_emplacements": ["repos_court", "repos_long"],
+          "modification_sorts_prepares": "niveau_occultiste_gagne",
+          "note": "Tous les emplacements sont du même niveau (indiqué dans la table). Les emplacements récupèrent lors d'un repos court ou long."
+        },
+        {
+          "nom": "Révélations occultes",
+          "description": "Choisit des manifestations occultes (pouvoirs passifs ou actifs) dont le nombre augmente avec le niveau.",
+          "type": "passif",
+          "note": "Nombre de révélations connues indiqué dans la table. Une peut être remplacée à chaque niveau d'Occultiste gagné.",
+          "effets": [
+            {
+              "type": "choix",
+              "reference": "manifestations_occultes",
+              "nombre_choix": "manifestations_occultes_nombre"
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "sorts_mineurs": 2,
+      "sorts_prepares": 3,
+      "emplacements_pacte": { "nombre": 2, "niveau": 1 },
+      "manifestations_occultes_nombre": 3,
+      "capacites": [
+        {
+          "nom": "Astuce mystique",
+          "description": "Après un rite ésotérique d'1 minute (1/repos long), récupère jusqu'à la moitié des emplacements de pacte dépensés.",
+          "type": "actif",
+          "declencheur": "rite_esoterique_1_minute",
+          "effets": [
+            {
+              "type": "recuperation_emplacements_pacte",
+              "jusqu_a": "ceil(max_emplacements / 2)"
+            }
+          ],
+          "utilisations": {
+            "initial": 1,
+            "recuperation": [
+              { "type": "repos_long", "remise_a_max": true }
+            ]
+          }
+        }
+      ]
+    },
+    "3": {
+      "sorts_mineurs": 2,
+      "sorts_prepares": 4,
+      "emplacements_pacte": { "nombre": 2, "niveau": 2 },
+      "voie": {
+        "choix": [
+          "Protecteur Archifée",
+          "Protecteur Céleste",
+          "Protecteur Fiélon",
+          "Protecteur Grand Ancien"
+        ]
+      },
+      "verifier_sous_classe": true
+    },
+    "4": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 5,
+      "emplacements_pacte": { "nombre": 2, "niveau": 2 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "5": {
+      "bonusMaitrise": 3,
+      "sorts_mineurs": 3,
+      "sorts_prepares": 6,
+      "emplacements_pacte": { "nombre": 2, "niveau": 3 },
+      "manifestations_occultes_nombre": 5
+    },
+    "6": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 7,
+      "emplacements_pacte": { "nombre": 2, "niveau": 3 },
+      "verifier_sous_classe": true
+    },
+    "7": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 8,
+      "emplacements_pacte": { "nombre": 2, "niveau": 4 },
+      "manifestations_occultes_nombre": 6
+    },
+    "8": {
+      "sorts_mineurs": 3,
+      "sorts_prepares": 9,
+      "emplacements_pacte": { "nombre": 2, "niveau": 4 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "9": {
+      "bonusMaitrise": 4,
+      "sorts_mineurs": 3,
+      "sorts_prepares": 10,
+      "emplacements_pacte": { "nombre": 2, "niveau": 5 },
+      "manifestations_occultes_nombre": 7,
+      "capacites": [
+        {
+          "nom": "Communion avec le patron",
+          "description": "Lance Contact avec les plans pour contacter directement le patron, avec réussite automatique au jet de sauvegarde (1/repos long).",
+          "type": "actif",
+          "effets": [
+            {
+              "type": "sort_toujours_prepare",
+              "sort": "contact_avec_les_plans"
+            },
+            {
+              "type": "lancer_sort_sans_emplacement",
+              "sort": "contact_avec_les_plans",
+              "jet_sauvegarde": "reussite_automatique",
+              "note": "Permet de contacter directement le patron. Nécessite un repos long pour renouveler cet usage."
+            }
+          ],
+          "utilisations": {
+            "initial": 1,
+            "recuperation": [
+              { "type": "repos_long", "remise_a_max": true }
+            ]
+          }
+        }
+      ]
+    },
+    "10": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 10,
+      "emplacements_pacte": { "nombre": 2, "niveau": 5 },
+      "verifier_sous_classe": true
+    },
+    "11": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 11,
+      "emplacements_pacte": { "nombre": 3, "niveau": 5 },
+      "capacites": [
+        {
+          "nom": "Secret arcanique",
+          "description": "Choisit un sort de haut niveau (niv. 6 ici) dans n'importe quelle liste ; lançable sans emplacement 1/repos long.",
+          "type": "passif",
+          "slots_arcanums": [
+            { "niveau_sort": 6 }
+          ],
+          "utilisations_par_sort": 1,
+          "recuperation": [
+            { "type": "repos_long", "remise_a_max": true }
+          ],
+          "note": "Chaque arcanum est lancé sans emplacement. Peut être remplacé à chaque niveau d'Occultiste gagné par un sort du même niveau."
+        }
+      ]
+    },
+    "12": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 11,
+      "emplacements_pacte": { "nombre": 3, "niveau": 5 },
+      "manifestations_occultes_nombre": 8,
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "13": {
+      "bonusMaitrise": 5,
+      "sorts_mineurs": 4,
+      "sorts_prepares": 12,
+      "emplacements_pacte": { "nombre": 3, "niveau": 5 },
+      "capacites": [
+        {
+          "nom": "Secret arcanique",
+          "description": "Ajoute un arcanum de niveau 7.",
+          "type": "amelioration",
+          "effets": [
+            { "type": "ajout_arcanum", "niveau_sort": 7 }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 12,
+      "emplacements_pacte": { "nombre": 3, "niveau": 5 },
+      "verifier_sous_classe": true
+    },
+    "15": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 13,
+      "emplacements_pacte": { "nombre": 3, "niveau": 5 },
+      "manifestations_occultes_nombre": 9,
+      "capacites": [
+        {
+          "nom": "Secret arcanique",
+          "description": "Ajoute un arcanum de niveau 8.",
+          "type": "amelioration",
+          "effets": [
+            { "type": "ajout_arcanum", "niveau_sort": 8 }
+          ]
+        }
+      ]
+    },
+    "16": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 13,
+      "emplacements_pacte": { "nombre": 3, "niveau": 5 },
+      "amelioration": {
+        "type": "caracteristique_ou_don",
+        "choix": {
+          "caracteristique": {
+            "nombre": 2,
+            "valeur_max": 1,
+            "liste": ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+          },
+          "don": { "liste": "dons_eligibles" }
+        }
+      }
+    },
+    "17": {
+      "bonusMaitrise": 6,
+      "sorts_mineurs": 4,
+      "sorts_prepares": 14,
+      "emplacements_pacte": { "nombre": 4, "niveau": 5 },
+      "capacites": [
+        {
+          "nom": "Secret arcanique",
+          "description": "Ajoute un arcanum de niveau 9.",
+          "type": "amelioration",
+          "effets": [
+            { "type": "ajout_arcanum", "niveau_sort": 9 }
+          ]
+        }
+      ]
+    },
+    "18": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 14,
+      "emplacements_pacte": { "nombre": 4, "niveau": 5 },
+      "manifestations_occultes_nombre": 10
+    },
+    "19": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 15,
+      "emplacements_pacte": { "nombre": 4, "niveau": 5 },
+      "amelioration": {
+        "type": "don",
+        "choix": { "liste": "dons_eligibles_ou_faveur_epique" }
+      }
+    },
+    "20": {
+      "sorts_mineurs": 4,
+      "sorts_prepares": 15,
+      "emplacements_pacte": { "nombre": 4, "niveau": 5 },
+      "capacites": [
+        {
+          "nom": "Maîtrise occulte",
+          "description": "L'Astuce mystique récupère désormais TOUS les emplacements de pacte dépensés (au lieu de la moitié).",
+          "type": "amelioration",
+          "effets": [
+            {
+              "type": "amelioration_aptitude",
+              "cible": "Astuce mystique",
+              "modification": "recupere_TOUS_les_emplacements_pacte_depenses"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

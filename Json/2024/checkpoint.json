@@ -1,0 +1,50 @@
+{
+  "derniere_mise_a_jour": "2026-03-21T20:45:00",
+  "etape_courante": "termine",
+  "statut": "termine",
+  "background": {
+    "statut": "termine",
+    "fichiers_termines": [
+      "acolyte",
+      "artisan",
+      "artiste",
+      "charlatan",
+      "criminel",
+      "ermite",
+      "fermier",
+      "garde",
+      "guide",
+      "marchand",
+      "marin",
+      "noble",
+      "sage",
+      "scribe",
+      "soldat",
+      "voyageur"
+    ],
+    "fichier_en_cours": null,
+    "restants": []
+  },
+  "don": {
+    "statut": "termine",
+    "entrees_terminees": 75,
+    "derniere_entree": "faveur_du_destin"
+  },
+  "espece": {
+    "statut": "termine",
+    "fichiers_termines": [
+      "aasimar",
+      "drakeide",
+      "elfe",
+      "gnome",
+      "goliath",
+      "halfelin",
+      "humain",
+      "nain",
+      "orc",
+      "tieffelin"
+    ],
+    "fichier_en_cours": null,
+    "restants": []
+  }
+}

@@ -1,0 +1,141 @@
+[
+  {
+    "index": "acolyte",
+    "name": "Acolyte",
+    "starting_proficiencies": [
+      {
+        "index": "compétences-intuition",
+        "name": "Compétences: Intuition",
+        "url": "/api/2014/proficiencies/skill-insight"
+      },
+      {
+        "index": "compétences-religion",
+        "name": "Compétences: Religion",
+        "url": "/api/2014/proficiencies/skill-religion"
+      }
+    ],
+    "language_options": {
+      "choose": 2,
+      "type": "languages",
+      "from": {
+        "option_set_type": "resource_list",
+        "resource_list_url": "/api/2014/languages"
+      }
+    },
+    "starting_equipment": [
+      {
+        "equipment": {
+          "index": "vetement-commun",
+          "name": "Vêtements communs",
+          "url": "/api/2014/equipment/vetement-commun"
+        },
+        "quantity": 1
+      },
+      {
+        "equipment": {
+          "index": "bourse",
+          "name": "Bourse",
+          "url": "/api/2014/equipment/bourse"
+        },
+        "quantity": 1
+      }
+    ],
+    "starting_equipment_options": [
+      {
+        "choose": 1,
+        "type": "equipment",
+        "from": {
+          "option_set_type": "equipment_category",
+          "equipment_category": {
+            "index": "symbole-sacres",
+            "name": "Symboles sacrés",
+            "url": "/api/2014/equipment-categories/symbole-sacres"
+          }
+        }
+      }
+    ],
+    "feature": {
+      "name": "Refuge des Fidèles",
+      "desc": [
+        "En tant qu’acolyte, vous êtes respecté par les fidèles de votre culte et pouvez mener les rites religieux de votre divinité. Vous et vos compagnons pouvez recevoir gratuitement des soins et de l’hospitalité dans les temples ou sanctuaires de votre foi, à condition de fournir vous-même les composants matériels nécessaires aux sorts. Ceux qui partagent votre religion vous soutiendront personnellement, vous permettant de vivre modestement grâce à leur aide.",
+        "Vous pouvez également être lié à un temple précis dédié à votre divinité ou à votre panthéon, où vous possédez une résidence. Il peut s’agir du temple où vous avez servi par le passé, si vous êtes resté en bons termes avec lui, ou d’un nouveau lieu de culte que vous avez adopté. Tant que vous vous trouvez à proximité de ce temple et que vous restez en bons termes avec ses membres, vous pouvez demander l’aide des prêtres, à condition que cette aide ne soit pas dangereuse ou compromettante pour eux."
+      ]
+    },
+     "url": "/api/2014/historiques/acolyte"
+  },
+  {
+    "index": "artisan-de-guilde",
+    "name": "Artisan de guilde",
+    "starting_proficiencies": [
+     {
+      "index": "competences-intuition",
+      "name": "Compétences: Intuition",
+      "url": "/api/2014/proficiencies/skill-insight"
+     },
+     {
+      "index": "competences-persuasion",
+      "name": "Compétences: Persuasion",
+      "url": "/api/2014/proficiencies/skill-persuasion"
+     }
+    ],
+    "tool_proficiencies": {
+      "desc": "Vous gagnez la maîtrise d’un type d’outils artisanaux de votre choix.",
+      "choose": 1,
+      "type": "maîtrises",
+      "from": {
+      "option_set_type": "resource_list",
+      "resource_list_url": "/api/2014/maitrises/outils-artisanaux"
+      }
+    },
+    "language_options": {
+    "choose": 1,
+    "type": "languages",
+    "from": {
+      "option_set_type": "resource_list",
+      "resource_list_url": "/api/2014/langues"
+    }
+    },
+    "starting_equipment": [
+    {
+      "equipment": {
+        "index": "outil-artisan",
+        "name": "Outils d'artisan (de votre choix)",
+        "url": "/api/2014/equipment/artisan-tools"
+      },
+      "quantity": 1
+    },
+    {
+      "equipment": {
+        "index": "lettre-recommandation-guilde",
+        "name": "Lettre de recommandation de votre guilde",
+        "url": "/api/2014/equipment/recommendation-letter"
+      },
+      "quantity": 1
+    },
+    {
+      "equipment": {
+        "index": "vetements-de-voyage",
+        "name": "Vêtements de voyage",
+        "url": "/api/2014/equipment/travelers-clothes"
+      },
+      "quantity": 1
+    },
+    {
+      "equipment": {
+        "index": "bourse-15po",
+        "name": "Bourse contenant 15 po",
+        "url": "/api/2014/equipment/bourse"
+      },
+      "quantity": 1
+    }
+    ],
+    "feature": {
+    "name": "Membre de guilde",
+    "desc": [
+      "Vous bénéficiez du soutien logistique et politique de votre guilde, incluant hébergement, rencontres professionnelles et potentiellement l'aide de figures influentes.",
+      "Vous devez verser une cotisation de 5 po par mois. Un défaut de paiement nécessite une régularisation pour retrouver vos privilèges."
+    ]
+    },
+    "url": "/api/2014/backgrounds/artisan-de-guilde"
+ }
+]

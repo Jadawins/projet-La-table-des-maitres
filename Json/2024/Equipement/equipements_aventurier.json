@@ -1,0 +1,1348 @@
+[
+  {
+  "nom": "Acide",
+  "prix": {
+    "quantite": 25,
+    "monnaie": "po"
+  },
+  "poids": 0.5,
+  "moteur": {
+    "utilisation": {
+      "type": "attaque",
+      "portee": "6 m",
+      "jet_sauvegarde": {
+        "caracteristique": "Dextérité",
+        "dd_base": 8,
+        "modificateurs": ["mod_Dex", "bonus_maitrise"]
+      },
+      "degats": {
+        "quantite": "2d6",
+        "type": "acide"
+      }
+    }
+   }
+  },
+  {
+    "nom": "Antidote",
+    "prix": {
+      "quantite": 50,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "effet_mecanique": {
+      "type": "bonus_sauvegarde",
+      "avantage": true,
+      "etat_cible": "Empoisonné",
+      "duree": "1 heure"
+    }
+  },
+  {
+    "nom": "Beaux habits",
+    "prix": {
+      "quantite": 15,
+      "monnaie": "po"
+    },
+    "poids": 3
+  },
+  {
+    "nom": "Bélier portable",
+    "prix": {
+      "quantite": 4,
+      "monnaie": "po"
+    },
+    "poids": 17.5,
+    "effet_mecanique": {
+      "type": "bonus_test",
+      "caracteristique": "Force",
+      "bonus": 4,
+      "avantage_si_aide": true
+    }
+  },
+  {
+    "nom": "Billes",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 1,
+    "effet_mecanique": {
+      "type": "piege_sol",
+      "zone": "3x3 m",
+      "sauvegarde": {
+        "caracteristique": "Dextérité",
+        "dd": 10,
+        "effet": "prone"
+      }
+    }
+  },
+  {
+    "nom": "Boîte à amadou",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pa"
+    },
+    "poids": 0.5,
+    "effet_mecanique": {
+      "type": "utilitaire",
+      "action": "Bonus",
+      "fonction": "allumer flamme",
+      "restriction": "inopérant sous pluie"
+    }
+  },
+  {
+    "nom": "Bougie",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "pc"
+    },
+    "poids": 0
+  },
+  {
+    "nom": "Bouteille en verre",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 1
+  },
+  {
+    "nom": "Cadenas",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "poids": 0.5,
+    "moteur": {
+      "dd_ouverture": 15,
+      "type_jet": "Dextérité",
+      "avantage_si_crochetage": true
+    }
+  },
+  {
+    "nom": "Carquois",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 0.5,
+    "capacite": {
+      "type": "flèches",
+      "quantite": 20
+    }
+  },
+  {
+    "nom": "Carte",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 0
+  },
+  {
+    "nom": "Chaîne",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 5,
+    "moteur": {
+      "longueur_max": "3 m",
+      "dd_athletisme": 20,
+      "dd_acrobatie": 13,
+      "effet_enrayage": true
+    }
+  },
+  {
+    "nom": "Coffre",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 12.5,
+    "capacite": {
+      "volume": "0.36 m³"
+    }
+  },
+  {
+    "nom": "Cloche",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "moteur": {
+      "portee_sonore": "18 m"
+    }
+  },
+  {
+    "nom": "Chausses-trappes",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 1,
+    "moteur": {
+      "zone": "1.5 m x 1.5 m",
+      "dd_dexterite": 15,
+      "degats": {
+        "quantite": 1,
+        "type": "perforants"
+      },
+      "vitesse_reduite": true,
+      "recuperation": "10 minutes"
+    }
+  },
+  {
+  "nom": "Corde",
+  "prix": {
+    "quantite": 1,
+    "monnaie": "po"
+  },
+  "poids": 2.5,
+  "moteur": {
+    "actions": [
+      {
+        "nom": "Nouer",
+        "type": "utilisation",
+        "jet": {
+          "caracteristique": "Dextérité",
+          "competence": "Escamotage",
+          "dd": 10
+        }
+      },
+      {
+        "nom": "Rompre",
+        "type": "libération",
+        "jet": {
+          "caracteristique": "Force",
+          "competence": "Athlétisme",
+          "dd": 20
+        }
+      },
+      {
+        "nom": "Se libérer",
+        "type": "libération",
+        "conditions": ["Entravé (corde)"],
+        "jet": {
+          "caracteristique": "Dextérité",
+          "competence": "Acrobaties",
+          "dd": 15
+        }
+      }
+    ],
+    "conditions_requises_pour_attache": [
+      "Agrippé",
+      "Entravé",
+      "Neutralisé"
+    ]
+  }
+  },
+  {
+    "nom": "Costume",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 2,
+    "moteur": {
+      "avantage_tests_deguisement": true
+    }
+  },
+  {
+    "nom": "Couverture",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pa"
+    },
+    "poids": 1.5,
+    "moteur": {
+      "avantage_sauvegardes_froid_extreme": true
+    }
+  },
+  {
+    "nom": "Cruche",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "pc"
+    },
+    "poids": 2,
+    "capacite": {
+      "liquide_litres": 4
+    }
+  },
+  {
+    "nom": "Eau bénite",
+    "prix": {
+      "quantite": 25,
+      "monnaie": "po"
+    },
+    "poids": 0.5,
+    "moteur": {
+      "utilisation": {
+        "type": "attaque",
+        "portee": "6 m",
+        "jet_sauvegarde": {
+          "caracteristique": "Dextérité",
+          "dd_base": 8,
+          "modificateurs": ["mod_Dex", "bonus_maitrise"]
+        },
+        "degats": {
+          "quantite": "2d8",
+          "type": "radiants",
+          "cible": ["Fiélon", "Mort-vivant"]
+        }
+      }
+    }
+  },
+  {
+    "nom": "Échelle",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "pa"
+    },
+    "poids": 12.5,
+    "moteur": {
+      "hauteur": "3 m",
+      "effets": ["permet de monter ou descendre"]
+    }
+  },
+  {
+    "nom": "Encre",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "moteur": {
+      "volume": "30 ml",
+      "capacité_ecriture": "500 pages"
+    }
+  },
+  {
+    "nom": "Étui à cartes ou à parchemins",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 0.5,
+    "moteur": {
+      "contenance": {
+        "feuilles_papier": 10,
+        "feuilles_parchemin": 5
+      }
+    }
+  },
+  {
+    "nom": "Étui pour carreaux d’arbalète",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 0.5,
+    "moteur": {
+      "contenance": {
+        "carreaux": 20
+      }
+    }
+  },
+  {
+  "nom": "Feu grégeois",
+  "prix": {
+    "quantite": 50,
+    "monnaie": "po"
+  },
+  "poids": 0.5,
+  "moteur": {
+    "utilisation": {
+      "type": "attaque",
+      "portee": "6 m",
+      "jet_sauvegarde": {
+        "caracteristique": "Dextérité",
+        "dd_base": 8,
+        "modificateurs": ["mod_Dex", "bonus_maitrise"]
+      },
+      "degats": {
+        "quantite": "1d4",
+        "type": "feu"
+      },
+      "effets": ["cible_en_flamme"]
+    }
+  }
+},
+{
+  "nom": "Ficelle",
+  "prix": {
+    "quantite": 1,
+    "monnaie": "pa"
+  },
+  "poids": 0
+},
+{
+  "nom": "Filet",
+  "prix": {
+    "quantite": 1,
+    "monnaie": "po"
+  },
+  "poids": 1.5,
+  "moteur": {
+    "utilisation": {
+      "type": "attaque",
+      "portee": "4,5 m",
+      "jet_sauvegarde": {
+        "caracteristique": "Dextérité",
+        "dd_base": 8,
+        "modificateurs": ["mod_Dex", "bonus_maitrise"]
+      },
+      "effets": [
+        {
+          "nom": "Entravé",
+          "condition_fin": [
+            {
+              "type": "action",
+              "test": {
+                "caracteristique": "Force",
+                "competence": "Athlétisme",
+                "dd": 10
+              }
+            },
+            {
+              "type": "destruction",
+              "points_de_vie": 5,
+              "ca": 10,
+              "immunites_annulent": [
+                "contondants",
+                "psychiques",
+                "poison"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "inefficace_si_taille": "TG"
+  }
+},
+{
+  "nom": "Fiole",
+  "prix": {
+    "quantite": 1,
+    "monnaie": "po"
+  },
+  "poids": 0
+},
+{
+  "nom": "Flasque",
+  "prix": {
+    "quantite": 2,
+    "monnaie": "pc"
+  },
+  "poids": 0
+},
+{
+    "nom": "Baguette",
+    "categorie": "focaliseur",
+    "type_focaliseur": "arcanique",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "poids": 0.5
+},
+{
+    "nom": "Bâton",
+    "categorie": "focaliseur",
+    "type_focaliseur": "arcanique",
+    "remarque": "également bâton de combat",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 2
+},
+{
+    "nom": "Cristal",
+    "categorie": "focaliseur",
+    "type_focaliseur": "arcanique",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "poids": 0.5
+},
+{
+    "nom": "Orbe",
+    "categorie": "focaliseur",
+    "type_focaliseur": "arcanique",
+    "prix": {
+      "quantite": 20,
+      "monnaie": "po"
+    },
+    "poids": 1.5
+},
+{
+    "nom": "Sceptre",
+    "categorie": "focaliseur",
+    "type_focaliseur": "arcanique",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "poids": 1
+},
+{
+    "nom": "Baguette d’if",
+    "categorie": "focaliseur",
+    "type_focaliseur": "druidique",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "poids": 0.5
+  },
+  {
+    "nom": "Bâton en bois",
+    "categorie": "focaliseur",
+    "type_focaliseur": "druidique",
+    "remarque": "également bâton de combat",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 2
+  },
+  {
+    "nom": "Branche de houx",
+    "categorie": "focaliseur",
+    "type_focaliseur": "druidique",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 0
+  },
+  {
+    "nom": "Grappin",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 2,
+    "moteur": {
+      "dd_acrobatie": 13
+    }
+  },
+  {
+  "nom": "Huile",
+  "categorie": "equipement",
+  "prix": {
+    "quantite": 1,
+    "monnaie": "pa"
+  },
+  "poids": 0.5,
+  "moteur": {
+    "attaque": {
+      "type": "jet_dhuile",
+      "portee": "6 m",
+      "jet_sauvegarde": {
+        "caracteristique": "Dexterite",
+        "dd": "8 + mod_Dex + bonus_maitrise",
+        "effet_si_echec": "cible est couverte d’huile"
+      },
+      "embrasement": {
+        "condition": "subit des degats de feu avant que l’huile ait seché (1 min)",
+        "degats": "5",
+        "type_degats": "feu",
+        "remarque": "provoqués par l’embrasement"
+      }
+    },
+    "espace": {
+      "zone": "1,5 m x 1,5 m",
+      "duree": "2 rounds",
+      "effet": {
+        "degats": 5,
+        "type_degats": "feu",
+        "frequence": "1 fois max par tour"
+      }
+    },
+    "combustible": {
+      "utilisation": "lampe ou lanterne",
+      "duree": "6 heures",
+      "remarque": "durée non continue, peut être éteinte et rallumée"
+    }
+  }
+  },
+  {
+  "nom": "Lampe",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 5, 
+    "monnaie": "pa" 
+},
+  "poids": 0.5,
+  "moteur": {
+    "combustible": "huile",
+    "duree": "6 heures",
+    "eclairage": {
+      "vive": "4,5 m",
+      "faible": "9 m"
+    }
+  }
+},
+{
+  "nom": "Lanterne à capote",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 5, 
+    "monnaie": "po" 
+},
+  "poids": 1,
+  "moteur": {
+    "combustible": "huile",
+    "duree": "6 heures",
+    "eclairage": {
+      "vive": "9 m",
+      "faible": "9 m",
+      "mode_silencieux": {
+        "action": "bonus",
+        "vive": "1,5 m"
+      }
+    }
+  }
+},
+{
+  "nom": "Lanterne sourde",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 10, 
+    "monnaie": "po" 
+},
+  "poids": 1,
+  "moteur": {
+    "combustible": "huile",
+    "duree": "6 heures",
+    "eclairage": {
+      "vive": "18 m",
+      "faible": "18 m"
+    }
+  }
+},
+{
+  "nom": "Livre",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 25, 
+    "monnaie": "po" 
+},
+  "poids": 2.5,
+  "moteur": {
+    "bonus_tests": {
+      "caracteristique": "Intelligence",
+      "domaines": ["Arcanes", "Histoire", "Nature", "Religion"],
+      "valeur": 5
+    }
+  }
+},
+{
+  "nom": "Longue-vue",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 1000, 
+    "monnaie": "po" 
+},
+  "poids": 0.5,
+  "moteur": {
+    "effet": "grossissement x2"
+  }
+},
+{
+  "nom": "Loupe",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 100, 
+    "monnaie": "po" 
+},
+  "poids": 0,
+  "moteur": {
+    "bonus_tests": {
+      "avantage": true,
+      "caracteristique": "tous",
+      "condition": "inspection détaillée ou estimation de valeur"
+    },
+    "feu": {
+      "source": "soleil",
+      "durée": "5 minutes",
+      "besoin": "amadu"
+    }
+  }
+},
+{
+  "nom": "Matériel d'escalade",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 25, 
+    "monnaie": "po" 
+},
+  "poids": 6,
+  "moteur": {
+    "ancrage": true,
+    "rayon_deplacement_ancre": "7.5 m",
+    "action_desancrage": "bonus"
+  }
+},
+{
+  "nom": "Menottes",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 2, 
+    "monnaie": "po" 
+},
+  "poids": 3,
+  "moteur": {
+    "taille_max": "M",
+    "portee": "1.5 m",
+    "conditions": ["Agrippé", "Entravé", "Neutralisé"],
+    "effets": ["Désavantage jets d'attaque", "Entravé si attachées à un point fixe"],
+    "liberation": {
+      "dd": 20,
+      "caracteristique": "Dextérité",
+      "competence": "Escamotage",
+      "action": "action"
+    },
+    "brisage": {
+      "dd": 25,
+      "caracteristique": "Force",
+      "competence": "Athlétisme",
+      "action": "action"
+    },
+    "crochetage_sans_clef": {
+      "dd": 15,
+      "competence": "Escamotage",
+      "outils": "Outils de voleur"
+    },
+    "clef_fournie": true
+  }
+},
+{
+  "nom": "Miroir",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 5, 
+    "monnaie": "po" 
+},
+  "poids": 0.2
+},
+{
+  "nom": "Outre",
+  "categorie": "equipement",
+  "prix": { 
+    "quantite": 2, 
+    "monnaie": "pa" 
+},
+  "poids": 2.5,
+  "moteur": {
+    "contenance": "2 litres"
+  }
+},
+{
+  "nom": "Balles d’arme à feu",
+  "categorie": "munition",
+  "prix": { 
+    "quantite": 3, 
+    "monnaie": "po" 
+},
+  "poids": 1,
+  "quantite": 10,
+  "rangement": "sacoche"
+},
+{
+  "nom": "Billes de fronde",
+  "categorie": "munition",
+  "prix": { 
+    "quantite": 4, 
+    "monnaie": "pc" 
+},
+  "poids": 0.75,
+  "quantite": 20,
+  "rangement": "sacoche"
+},
+{
+  "nom": "Carreaux",
+  "categorie": "munition",
+  "prix": { 
+    "quantite": 1, 
+    "monnaie": "po" 
+},
+  "poids": 0.75,
+  "quantite": 20,
+  "rangement": "étui"
+},
+{
+  "nom": "Dards",
+  "categorie": "munition",
+  "prix": { 
+    "quantite": 1, 
+    "monnaie": "po" 
+},
+  "poids": 0.5,
+  "quantite": 50,
+  "rangement": "sacoche"
+},
+{
+  "nom": "Flèches",
+  "categorie": "munition",
+  "prix": { 
+    "quantite": 1, 
+    "monnaie": "po" 
+},
+  "poids": 0.5,
+  "quantite": 20,
+  "rangement": "carquois"
+},
+{
+    "nom": "Palan",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 2.5
+},
+{
+    "nom": "Panier",
+    "prix": {
+      "quantite": 4,
+      "monnaie": "pa"
+    },
+    "poids": 1
+},
+{
+    "nom": "Papier",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "pa"
+    },
+    "poids": 0
+},
+{
+    "nom": "Paquetage d’artiste",
+    "prix": {
+      "quantite": 40,
+      "monnaie": "po"
+    },
+    "contenu": [
+      "sac à dos",
+      "boîte à amadou",
+      "cloche",
+      "3 costumes",
+      "8 flasques d’huile",
+      "9 jours de rations",
+      "lanterne sourde",
+      "miroir",
+      "outre",
+      "sac de couchage"
+    ],
+    "poids": 29
+},
+{
+    "nom": "Paquetage de diplomate",
+    "prix": {
+      "quantite": 39,
+      "monnaie": "po"
+    },
+    "contenu": [
+      "beaux habits",
+      "boîte à amadou",
+      "coffre",
+      "encre",
+      "2 étuis à cartes et à parchemins",
+      "5 feuilles de papier",
+      "5 feuilles de parchemin",
+      "4 flasques d’huile",
+      "lampe",
+      "5 porte-plume",
+      "parfum"
+    ],
+    "poids": 19.5
+},
+{
+    "nom": "Paquetage d’ecclésiastique",
+    "prix": {
+      "quantite": 33,
+      "monnaie": "po"
+    },
+    "contenu": [
+      "sac à dos",
+      "boîte à amadou",
+      "couverture",
+      "eau bénite",
+      "lampe",
+      "7 jours de rations",
+      "robe"
+    ],
+    "poids": 14.5
+},
+{
+    "nom": "Paquetage d’érudit",
+    "prix": {
+      "quantite": 40,
+      "monnaie": "po"
+    },
+    "contenu": [
+      "sac à dos",
+      "boîte à amadou",
+      "encre",
+      "lampe",
+      "livre",
+      "porte-plume",
+      "10 flasques d’huile",
+      "10 feuilles de parchemin"
+    ],
+    "poids": 11
+},
+{
+    "nom": "Paquetage d’explorateur",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "contenu": [
+      "sac à dos",
+      "sac de couchage",
+      "boîte à amadou",
+      "corde",
+      "2 flasques d’huile",
+      "10 jours de rations",
+      "outre",
+      "10 torches"
+    ],
+    "poids": 27.5
+},
+{
+    "nom": "Paquetage d’explorateur",
+    "prix": {
+      "quantite": 10,
+      "monnaie": "po"
+    },
+    "contenu": [
+      "sac à dos",
+      "sac de couchage",
+      "boîte à amadou",
+      "corde",
+      "2 flasques d’huile",
+      "10 jours de rations",
+      "outre",
+      "10 torches"
+    ],
+    "poids": 27.5
+},
+{
+    "nom": "Paquetage d’exploration souterraine",
+    "prix": {
+      "quantite": 12,
+      "monnaie": "po"
+    },
+    "contenu": [
+      "sac à dos",
+      "boîte à amadou",
+      "chausse-trappes",
+      "corde",
+      "2 flasques d’huile",
+      "10 jours de rations",
+      "outre",
+      "pied-de-biche",
+      "10 torches"
+    ],
+    "poids": 27.5
+},
+{
+    "nom": "Parchemin",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "pa"
+    },
+    "poids": 0
+},
+{
+    "nom": "Parchemin de sort (sort mineur)",
+    "prix": {
+      "quantite": 30,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "moteur": {
+      "type": "objet_magique",
+      "niveau_sort": 0,
+      "dd_sauvegarde": 15,
+      "bonus_attaque": 5,
+      "consommable": true
+    }
+},
+{
+    "nom": "Parchemin de sort (sort de niveau 1)",
+    "prix": {
+      "quantite": 50,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "moteur": {
+      "type": "objet_magique",
+      "niveau_sort": 1,
+      "dd_sauvegarde": 15,
+      "bonus_attaque": 5,
+      "consommable": true
+    }
+},
+{
+    "nom": "Parfum",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "moteur": {
+      "effet": {
+        "avantage_test": "charisme_persuasion",
+        "cible": "humanoide_indifferent",
+        "rayon": "1.5m",
+        "duree": "1h"
+      }
+    }
+},
+{
+    "nom": "Pelle",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "moteur": {
+      "temps_creusage": "1h",
+      "volume": {
+        "largeur": "1.5m",
+        "profondeur": "1.5m"
+      }
+    }
+},
+{
+    "nom": "Perche",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pc"
+    },
+    "poids": 3.5,
+    "moteur": {
+      "longueur": "3m",
+      "avantage_si_utilisee": {
+        "competence": "athletisme",
+        "situation": "saut"
+      }
+    }
+},
+{
+    "nom": "Pied-de-biche",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 2.5,
+    "moteur": {
+      "avantage_test": {
+        "competence": "force",
+        "condition": "levier"
+      }
+    }
+},
+{
+    "nom": "Piège à mâchoires",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 12.5,
+    "moteur": {
+      "action": "utilisation",
+      "dd_sauvegarde_dexterite": 13,
+      "degats": {
+        "type": "perforant",
+        "valeur": "1d4"
+      },
+      "vitesse_reduite": true,
+      "longueur_chaine": "0.9m",
+      "liberation": {
+        "test": {
+          "type": "athletisme",
+          "dd": 13
+        },
+        "aide_possible": true
+      },
+      "echec_infliction": {
+        "type": "perforant",
+        "valeur": 1
+      }
+    }
+},
+{
+    "nom": "Pointes en fer (x10)",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 2.5,
+    "moteur": {
+      "utilisation": "bloquer_porte_ou_attacher_chaine",
+      "quantite": 10
+    }
+},
+{
+    "nom": "Poison standard",
+    "prix": {
+      "quantite": 100,
+      "monnaie": "po"
+    },
+    "poids": 0,
+    "moteur": {
+      "action": "bonus",
+      "applique_sur": ["arme", "munitions"],
+      "quantite_max_munitions": 3,
+      "effet": {
+        "type": "degats_supplémentaires",
+        "valeur": "1d4",
+        "type_degats": "perforant ou tranchant"
+      },
+      "duree": "1 minute ou jusqu'à l'impact"
+    }
+},
+{
+    "nom": "Porte-plume",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "pc"
+    },
+    "poids": 0
+  },
+  {
+    "nom": "Pot en fer",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 5,
+    "moteur": {
+      "contenance_litres": 4
+    }
+},
+{
+    "nom": "Potion de guérison",
+    "prix": {
+      "quantite": 50,
+      "monnaie": "po"
+    },
+    "poids": 0.25,
+    "moteur": {
+      "action": "bonus",
+      "portee": "1.5m",
+      "effet": {
+        "type": "soin",
+        "valeur": "2d4+2"
+      }
+    }
+},
+{
+    "nom": "Rations",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pa"
+    },
+    "poids": 1
+},
+{
+    "nom": "Robe",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 2
+},
+{
+    "nom": "Sac",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "pc"
+    },
+    "poids": 0.25,
+    "moteur": {
+      "contenance_kg": 15,
+      "volume_m3": 0.03
+    }
+},
+{
+    "nom": "Sac à dos",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 2.5,
+    "moteur": {
+      "contenance_kg": 15,
+      "volume_m3": 0.03
+    }
+},
+{
+    "nom": "Sac de couchage",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "po"
+    },
+    "poids": 3.5,
+    "moteur": {
+      "effet": "avantage_sauvegarde_froid_extreme",
+      "taille_creature": ["P", "M"]
+    }
+},
+{
+    "nom": "Sacoche",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pa"
+    },
+    "poids": 0.5,
+    "moteur": {
+      "contenance_kg": 3,
+      "volume_m3": 0.006
+    }
+},
+{
+    "nom": "Sacoche à composantes",
+    "prix": {
+      "quantite": 25,
+      "monnaie": "po"
+    },
+    "poids": 1,
+    "moteur": {
+      "type": "focaliseur",
+      "focaliseur": "arcanique"
+    }
+},
+{
+    "nom": "Seau",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pc"
+    },
+    "poids": 1,
+    "moteur": {
+      "contenance_litres": 15,
+      "volume_m3": 0.015
+    }
+},
+{
+    "nom": "Sifflet",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "pc"
+    },
+    "poids": 0,
+    "moteur": {
+      "portee_sonore_m": 180
+    }
+},
+{
+  "nom": "Symbole sacré (Amulette)",
+  "categorie": "focaliseur",
+  "type_focaliseur": "divin",
+  "forme": "amulette",
+  "prix": {
+    "quantite": 5,
+    "monnaie": "po"
+  },
+  "poids": 0.5,
+  "utilisation": ["porté", "tenu"]
+},
+{
+  "nom": "Symbole sacré (Emblème)",
+  "categorie": "focaliseur",
+  "type_focaliseur": "divin",
+  "forme": "Emblème",
+  "prix": {
+    "quantite": 5,
+    "monnaie": "po"
+  },
+  "poids": 0.5,
+  "utilisation": ["cousu", "fixé"]
+},
+{
+  "nom": "Symbole sacré (Reliquaire)",
+  "categorie": "focaliseur",
+  "type_focaliseur": "divin",
+  "forme": "Reliquaire",
+  "prix": {
+    "quantite": 5,
+    "monnaie": "po"
+  },
+  "poids": 0.5,
+  "utilisation": ["tenu"]
+},
+{
+    "nom": "Tente",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 10,
+    "moteur": {
+      "capacite_creatures": 2,
+      "taille_max": ["P", "M"]
+    }
+},
+{
+    "nom": "Tenue de voyage",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 2
+},
+{
+    "nom": "Tonneau",
+    "prix": {
+      "quantite": 2,
+      "monnaie": "po"
+    },
+    "poids": 35,
+    "moteur": {
+      "capacite_liquide_l": 160,
+      "volume_m3": 0.12
+    }
+},
+{
+    "nom": "Torche",
+    "prix": {
+      "quantite": 1,
+      "monnaie": "pc"
+    },
+    "poids": 0.5,
+    "moteur": {
+      "duree_minutes": 60,
+      "lumiere_vive_m": 6,
+      "lumiere_faible_sup_m": 6,
+      "attaque_possible": true,
+      "degats": {
+        "type": "feu",
+        "valeur": 1
+      }
+    }
+},
+{
+    "nom": "Trousse de soins",
+    "prix": {
+      "quantite": 5,
+      "monnaie": "po"
+    },
+    "poids": 1.5,
+    "moteur": {
+      "charges": 10,
+      "stabilisation_automatique": true,
+      "sans_test": true
+    }
+}
+]
+

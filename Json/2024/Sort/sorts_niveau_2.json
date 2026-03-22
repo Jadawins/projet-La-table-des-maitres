@@ -1,0 +1,1906 @@
+[
+  {
+    "id": "agrandissement_rapetissement",
+    "nom": "Agrandissement/Rapetissement",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une pincée de poudre de fer"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Ciblez une créature visible. JS de Constitution. Agrandissement : taille doublée, dégâts doublés, Avantage aux tests de Force. Rapetissement : taille réduite de moitié, dégâts divisés par 2, Désavantage aux tests de Force."
+  },
+  {
+    "id": "aide",
+    "nom": "Aide",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide",
+      "Paladin",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une bandelette de tissu blanc"
+    },
+    "duree": "8 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Jusqu'à 3 créatures consentantes à portée voient leur maximum de PV et leurs PV actuels augmenter de 5 pour 8 heures. +5 PV par niveau au-delà du 2e."
+  },
+  {
+    "id": "amelioration_caracteristique",
+    "nom": "Amélioration de caractéristique",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide",
+      "Ensorceleur",
+      "Magicien",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une plume ou une touffe de fourrure"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Touchez une créature consentante. Accordez l'un des effets : Force du taureau (Avantage FOR), Grâce du chat (Avantage DEX), Constitution de l'ours (Avantage CON + PV temporaires), Sagesse du hibou (Avantage SAG), Intelligence du renard (Avantage INT), Charisme du phénix (Avantage CHA)."
+  },
+  {
+    "id": "apaisement_emotions",
+    "nom": "Apaisement des émotions",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Clerc"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 6
+    },
+    "sauvegarde": {
+      "caracteristique": "CHA",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Sphère de 6 m. Chaque créature choisie dans la zone effectue un JS de Charisme : échec = Charmée et immunisée à la Peur (votre choix par cible) pour la durée. Fin prématurée si la cible subit des dégâts."
+  },
+  {
+    "id": "appel_de_destrier",
+    "nom": "Appel de destrier",
+    "niveau": 2,
+    "ecole": "Invocation",
+    "classes": [
+      "Paladin"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Invoquez un destrier magique dans un espace libre à portée. Il obéit à vos ordres et peut servir de monture. Disparaît à 0 PV. Peut être congédié et rappelé."
+  },
+  {
+    "id": "arme_magique",
+    "nom": "Arme magique",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Paladin",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Action bonus : touchez une arme non magique. Elle devient magique avec un bonus de +1 aux jets d'attaque et de dégâts pour 1 heure."
+  },
+  {
+    "id": "arme_spirituelle",
+    "nom": "Arme spirituelle",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "1 minute",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [
+      {
+        "type": "force",
+        "valeur": "1d8"
+      }
+    ],
+    "niveau_superieur": {
+      "par_niveau": 1,
+      "ajout_degats": "1d8"
+    },
+    "description": "Action bonus : créez une arme de force flottante à portée. Action Magie chaque tour : déplacez-la de 9 m et effectuez une attaque de sort au corps à corps (1d8 force + mod. d'incantation)."
+  },
+  {
+    "id": "augure",
+    "nom": "Augure",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Magicien"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "objets divinatoires d'une valeur minimale de 25 po"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": true,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Consultez un oracle pour une action envisagée dans les 30 minutes. Réponse : Bien, Malheur, Bien et Malheur, ou Rien. Chaque utilisation supplémentaire dans la même journée ajoute 25% de chance d'obtenir un résultat aléatoire."
+  },
+  {
+    "id": "aura_magique_de_nystul",
+    "nom": "Aura magique de Nystul",
+    "niveau": 2,
+    "ecole": "Illusion",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un petit carré de soie"
+    },
+    "duree": "24 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Touchez un objet ou une créature. Modifiez son aura magique (apparaît magique/non magique, ou d'une école choisie) ou son type perçu pour Détection du mal et du bien. Dure 24 h."
+  },
+  {
+    "id": "bouche_magique",
+    "nom": "Bouche magique",
+    "niveau": 2,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Magicien"
+    ],
+    "temps_incantation": "1 minute",
+    "portee": "1.5m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "Poudre de jade d'une valeur minimale de 10 po, que le sort détruit"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": true,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Inscrivez un message verbal sur un objet (contact). Définissez une condition de déclenchement. Quand elle est remplie, une bouche récite le message (max 25 mots, jusqu'à 10 minutes)."
+  },
+  {
+    "id": "bourrasque",
+    "nom": "Bourrasque",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Druide",
+      "Ensorceleur",
+      "Magicien",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "Une graine de légumineuse"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "ligne",
+      "rayon_m": 18
+    },
+    "sauvegarde": {
+      "caracteristique": "FOR",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Ligne de vent de 18 m de long et 1,5 m de large. Toute créature dans la ligne effectue un JS de Force ou est repoussée de 4,5 m. Rend les attaques à distance difficiles à travers la ligne. Éteint les petites flammes."
+  },
+  {
+    "id": "cecite_surdite",
+    "nom": "Cécité/Surdité",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "1 minute",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Ciblez une créature visible. JS de Constitution : échec = Aveuglée ou Sourde (au choix) pour 1 minute. La cible répète le JS à la fin de chacun de ses tours."
+  },
+  {
+    "id": "convocation_de_bete",
+    "nom": "Convocation de bête",
+    "niveau": 2,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "27m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une plume, une touffe de fourrure et une goutte de poisson dans un gland d'or (valeur minimale 200 po)"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Invoque un esprit bestial dans un espace inoccupé à portée. À l'incantation, choisissez un environnement : air, eau ou terre. L'esprit utilise le profil d'Esprit bestial ci-dessous, modifié par l'environnement choisi. La créature joue juste après vous sur votre initiative, obéit à vos ordres (pas d'action requise) et, sans ordre, prend Esquive et se met à l'abri. Elle disparaît si elle tombe à 0 PV ou si le sort se termine."
+  },
+  {
+    "id": "corde_enchantee",
+    "nom": "Corde enchantée",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un morceau de corde"
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Une corde de 18 m se rigidifie verticalement. Une créature au sommet peut entrer dans un espace extradimensionnel pour 8 créatures de taille M. Invisible et inaccessible depuis l'extérieur."
+  },
+  {
+    "id": "cordon_de_fleches",
+    "nom": "Cordon de flèches",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une tresse décorative"
+    },
+    "duree": "8 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 9
+    },
+    "sauvegarde": {
+      "caracteristique": "DEX",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "perforant",
+        "valeur": "3d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Enchantez jusqu'à 4 munitions. La première créature (sauf vous) entrant dans une sphère de 9 m autour des munitions déclenche leur décharge : JS de Dextérité, 3d6 perforant en cas d'échec, moitié en cas de réussite."
+  },
+  {
+    "id": "couronne_du_dement",
+    "nom": "Couronne du dément",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Une créature visible effectue un JS de Sagesse. Échec : Charmée pour la durée. Action bonus chaque tour : ordonnez à la cible de se déplacer et d'attaquer une créature de votre choix."
+  },
+  {
+    "id": "croissance_d_epines",
+    "nom": "Croissance d'épines",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "45m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "sept épines"
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 6
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [
+      {
+        "type": "perforant",
+        "valeur": "2d4"
+      }
+    ],
+    "niveau_superieur": null,
+    "description": "Sphère de 6 m de rayon de ronces épaisses. Terrain difficile. Chaque créature (sauf vous) qui se déplace dans la zone subit 2d4 dégâts perforants par tranche de 1,5 m parcourus."
+  },
+  {
+    "id": "deblocage",
+    "nom": "Déblocage",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Ouvrez une porte, fenêtre, coffre ou objet fermé à portée. Annule aussi les effets de Verrou magique si le DD de votre sort le dépasse."
+  },
+  {
+    "id": "detection_de_l_invisibilite",
+    "nom": "Détection de l'invisibilité",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une pincée de talc"
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "description": "Pendant 1 heure, vous voyez les créatures et objets Invisibles comme visibles, et percevez les créatures du Plan Éthéré dans un rayon de 18 m."
+  },
+  {
+    "id": "detection_des_pensees",
+    "nom": "Détection des pensées",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "1 pièce de cuivre"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 9
+    },
+    "sauvegarde": {
+      "caracteristique": "INT",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Détecte les pensées superficielles des créatures dans un rayon de 9 m qui maîtrisent au moins une langue. L'action Magie permet d'approfondir la lecture (JS INT pour résister) ou de cibler une nouvelle créature. La cible peut tenter un test d'Intelligence (Arcanes) contre le DD du sort pour détecter la lecture mentale et y mettre fin."
+  },
+  {
+    "id": "detection_des_pieges",
+    "nom": "Détection des pièges",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Perçoit la présence de tout piège dans le champ de vision à portée. Révèle la nature générale du danger mais pas son emplacement précis ni ses détails mécaniques. Un glyphe de garde est considéré comme un piège."
+  },
+  {
+    "id": "discours_captivant",
+    "nom": "Discours captivant",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Contraint les créatures choisies parmi celles visibles à portée à effectuer un JS de Sagesse. En cas d'échec, la cible subit un malus de -10 aux tests de Sagesse (Perception) et sa Perception passive est réduite du même montant jusqu'à la fin du sort."
+  },
+  {
+    "id": "doux_repos",
+    "nom": "Doux repos",
+    "niveau": 2,
+    "ecole": "Necromancie",
+    "classes": [
+      "Clerc",
+      "Magicien",
+      "Paladin"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "2 pieces de cuivre, que le sort detruit"
+    },
+    "duree": "10 jours",
+    "concentration": false,
+    "rituel": true,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Protege un cadavre ou une depouille contre la putrefaction et toute transformation en mort-vivant. Les jours passes sous cet effet ne comptent pas dans le delai maximal pour ramener la cible a la vie avec des sorts de resurrection."
+  },
+  {
+    "id": "epine_mentale",
+    "nom": "Épine mentale",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "psychique",
+        "valeur": "3d8"
+      }
+    ],
+    "niveau_superieur": "+1d8 par niveau d'emplacement au-dessus du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "JS de Sagesse : échec = 3d8 dégâts psychiques et le lanceur connaît l'emplacement exact de la cible pour toute la durée (même si invisible) ; réussite = moitié des dégâts seulement."
+  },
+  {
+    "id": "flamme_eternelle",
+    "nom": "Flamme éternelle",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Clerc",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "poudre de rubis d'une valeur de 50 po, détruite par le sort"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Crée sur un objet touché une flamme magique permanente qui éclaire comme une torche (6m vive, 6m faible) sans chaleur, sans fumée, sans consommer d'oxygène. Elle ne peut pas être éteinte par le vent. Elle peut être recouverte/occultée pour bloquer la lumière."
+  },
+  {
+    "id": "fleche_acide_de_melf",
+    "nom": "Flèche acide de Melf",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "27m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une feuille de rhubarbe et de la poudre d'estomac de serpent"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "acide",
+        "valeur": "4d4"
+      },
+      {
+        "type": "acide",
+        "valeur": "2d4",
+        "note": "fin du tour suivant"
+      }
+    ],
+    "niveau_superieur": "+1d4 de dégâts initiaux par niveau d'emplacement au-dessus du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Attaque de sort à distance. Touche : 4d4 dégâts d'acide immédiats + 2d4 dégâts d'acide à la fin du prochain tour de la cible. Rate : 2d4 dégâts d'acide immédiats (éclaboussures)."
+  },
+  {
+    "id": "flou",
+    "nom": "Flou",
+    "niveau": 2,
+    "ecole": "Illusion",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Votre corps devient flou pour toute la durée. Les créatures ont le Désavantage aux jets d'attaque contre vous. Toute créature qui peut voir sans dépendre de la vue (écholocation, vision véritable, etc.) est immunisée contre cet effet."
+  },
+  {
+    "id": "foulee_brumeuse",
+    "nom": "Foulée brumeuse",
+    "niveau": 2,
+    "ecole": "Invocation",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une brume argentée vous enveloppe brièvement et vous vous téléportez dans un espace inoccupé visible dans un rayon de 9 m."
+  },
+  {
+    "id": "fracassement",
+    "nom": "Fracassement",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un fragment de mica"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 3
+    },
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": true
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "tonnerre",
+        "valeur": "3d8"
+      }
+    ],
+    "niveau_superieur": "+1d8 par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Vacarme assourdissant dans une Sphère de 3 m centrée sur un point visible. JS de Constitution : 3d8 dégâts de tonnerre en cas d'échec, moitié en cas de réussite. Les Artificiels ont le Désavantage à ce JS. Les objets non magiques non portés dans la zone subissent également les dégâts."
+  },
+  {
+    "id": "force_fantaismagorique",
+    "nom": "Force fantaismagorique",
+    "niveau": 2,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un peu de laine brute"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "INT",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [
+      {
+        "type": "psychique",
+        "valeur": "1d6",
+        "note": "par tour si la cible se trouve à 1,50 m ou moins de l'illusion"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une créature visible à portée effectue un JS d'Intelligence ou voit une illusion fantaismagorique (objet, créature ou phénomène, cube de 2 m max). L'illusion est perceptible par tous les sens. Chaque tour, si la cible est à 1,50 m ou moins, elle subit 1d6 dégâts psychiques du type adapté à l'illusion. La cible peut examiner l'illusion (action Étude, test INT contre DC du sort) pour la percer à jour."
+  },
+  {
+    "id": "image_miroir",
+    "nom": "Image miroir",
+    "niveau": 2,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "1 minute",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Trois doubles illusoires de vous-même apparaissent dans votre espace. Chaque fois qu'une créature vous touche, lancez 1d20 : sur 6+, c'est un double qui est touché et détruit (CA du double = 10 + mod DEX). Si tous les doubles sont détruits ou si la durée expire, le sort prend fin. Les créatures Aveuglées ou à vision aveugle ne sont pas affectées."
+  },
+  {
+    "id": "immobilisation_de_personne",
+    "nom": "Immobilisation de personne",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide",
+      "Ensorceleur",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un petit morceau de fer plat"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "SAG",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": "Ciblez un Humanoïde supplémentaire par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Un Humanoïde visible à portée effectue un JS de Sagesse ou est Paralysé pour la durée. À la fin de chacun de ses tours, il peut refaire le JS pour mettre fin au sort en cas de réussite."
+  },
+  {
+    "id": "invisibilite",
+    "nom": "Invisibilité",
+    "niveau": 2,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un cil enfermé dans de la sève de gomme arabique"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": "Ciblez une créature supplémentaire par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "La créature touchée devient Invisible pour la durée. Tout ce qu'elle porte est également invisible. Le sort prend fin prématurément si la cible effectue un jet d'attaque, inflige des dégâts ou lance un sort."
+  },
+  {
+    "id": "lien_de_protection",
+    "nom": "Lien de protection",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc",
+      "Paladin"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "deux bagues de platine d'une valeur minimale de 50 po chacune, portées par les deux créatures"
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez un lien avec une créature consentante. Tant qu'elle est à 18 m ou moins : +1 à sa CA et ses JS, Résistance à tous les dégâts. Mais chaque fois qu'elle subit des dégâts, vous en subissez autant. Le sort prend fin si l'une de vous tombe à 0 PV ou si vous vous éloignez de plus de 18 m."
+  },
+  {
+    "id": "localisation_d_animaux_ou_de_plantes",
+    "nom": "Localisation d'animaux ou de plantes",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action ou rituel",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une touffe de poils de bison"
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": true,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Nommez une espèce de Bête ou de Plante (ou une plante non magique spécifique). Vous savez la direction et la distance jusqu'à l'exemplaire le plus proche dans un rayon de 1,5 km, s'il en existe un."
+  },
+  {
+    "id": "localisation_d_objet",
+    "nom": "Localisation d'objet",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide",
+      "Magicien",
+      "Paladin",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une brindille fourchue"
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Nommez ou décrivez un objet familier (vu à moins de 9 m) ou la plus proche représentation d'un type d'objet. Vous percevez la direction et la distance de l'objet dans un rayon de 300 m, s'il s'y trouve. Inefficace si une épaisseur de plomb sépare vous de l'objet."
+  },
+  {
+    "id": "lame_de_feu",
+    "nom": "Lame de feu",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Druide"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une feuille d'amarante"
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "corps_a_corps",
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "3d6"
+      }
+    ],
+    "niveau_superieur": "+1d6 par tranche de 2 niveaux au-dessus du 2e (4e = 4d6, 6e = 5d6, 8e = 6d6).",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Faites jaillir une lame de feu de la taille d'un cimeterre dans votre main. Lumière vive 3 m, faible 3 m supplémentaires. Action Magie : attaque de sort au corps à corps (3d6 feu, sans modificateur de caractéristique aux dégâts). La lame disparaît et réapparaît au prix d'une action bonus."
+  },
+  {
+    "id": "levitation",
+    "nom": "Lévitation",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un ressort métallique"
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": {
+      "caracteristique": "CON",
+      "demi_si_reussi": false
+    },
+    "attaque": null,
+    "degats": [],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Une créature ou un objet de TG ou moins prend son envol jusqu'à 6 m de haut pour la durée. Une créature non consentante effectue un JS de Constitution pour résister. Vous pouvez déplacer la cible verticalement jusqu'à 6 m par action Magie. Elle peut se déplacer horizontalement de sa propre initiative. Quand le sort prend fin, elle retombe doucement."
+  },
+  {
+    "id": "messager_animal",
+    "nom": "Messager animal",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action ou rituel",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un peu de nourriture"
+    },
+    "duree": "24 heures",
+    "concentration": false,
+    "rituel": true,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": "La durée augmente de 48 heures par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Désignez une petite bête sauvage dans le rayon comme messager. Décrivez une destination et un destinataire. La bête voyage vers ce lieu et délivre un message court que vous murmurez. Si elle atteint le destinataire, elle repart aussitôt. La bête ne peut traverser que des distances raisonnables (max 50 km en 24 h)."
+  },
+  {
+    "id": "metal_brulant",
+    "nom": "Métal brûlant",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Barde",
+      "Druide"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un bout de fer et une flamme"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "CON",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "2d8"
+      }
+    ],
+    "niveau_superieur": "+1d8 par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Chauffez un objet en métal à portée jusqu'au rouge. Toute créature en contact avec l'objet subit 2d8 dégâts de feu (JS CON demi). Action Magie : infligez les dégâts à nouveau. Une créature qui rate son JS lâche l'objet ; sinon, elle subit le Désavantage aux jets d'attaque et tests jusqu'au début de votre prochain tour."
+  },
+  {
+    "id": "modification_d_apparence",
+    "nom": "Modification d'apparence",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Modifiez votre apparence physique : taille (±30 cm), poids, traits, couleur de peau et cheveux, type de corps. Vous restez humanoïde. L'illusion ne trompe pas le toucher. Un observateur attentif peut tenter un test d'Intelligence (Investigation) contre votre DD de sort."
+  },
+  {
+    "id": "nuee_de_daggers",
+    "nom": "Nuée de daggers",
+    "niveau": 2,
+    "ecole": "Invocation",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": "un fragment de verre"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "cube",
+      "rayon_m": 1.5
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": [
+      {
+        "type": "tranchant",
+        "valeur": "4d4"
+      }
+    ],
+    "niveau_superieur": "+2d4 par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Remplissez un Cube de 1,5 m de côté de daggers tourbillonnants. Toute créature qui entre dans la zone ou y commence son tour subit 4d4 dégâts tranchants."
+  },
+  {
+    "id": "passage_sans_trace",
+    "nom": "Passage sans trace",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "des cendres d'une feuille calcinée de gui"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Vous et jusqu'à dix créatures consentantes à portée vous déplacez en silence. Pour la durée, chaque créature affectée bénéficie d'un bonus de +10 aux tests de Dextérité (Discrétion) et ne laisse aucune trace dans son sillage. Elles ne peuvent pas être pistées par des moyens non magiques."
+  },
+  {
+    "id": "pattes_d_araignees",
+    "nom": "Pattes d'araignées",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une goutte de bitume et une araignée"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": "Vous pouvez cibler une créature supplémentaire par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "La créature touchée peut se déplacer sur les surfaces verticales et à l'envers, et gagne une Vitesse d'escalade égale à sa Vitesse. Elle doit garder les mains libres pour grimper."
+  },
+  {
+    "id": "peau_d_ecorce",
+    "nom": "Peau d'écorce",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une poignée d'écorce"
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "La peau de la créature touchée se couvre d'une écorce protectrice. Jusqu'à la fin du sort, la CA de la cible passe à 17 si elle est inférieure à cette valeur."
+  },
+  {
+    "id": "presence_bestiale",
+    "nom": "Présence bestiale",
+    "niveau": 2,
+    "ecole": "Divination",
+    "classes": [
+      "Druide",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action ou rituel",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": true,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Vous touchez une bête consentante. Pour toute la durée, vous pouvez percevoir par les sens de la bête (voir par ses yeux, entendre par ses oreilles). Vous êtes aveugle et sourd à vos propres sens pendant ce temps."
+  },
+  {
+    "id": "presence_royale_de_yolane",
+    "nom": "Présence royale de Yolane",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un diadème miniature"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "emanation",
+      "rayon_m": 3
+    },
+    "sauvegarde": "SAG",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "psychique",
+        "valeur": "4d6"
+      }
+    ],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Enveloppez-vous d'une prestance surnaturelle (Émanation 3 m). À chaque fois qu'une créature visible entre dans l'Émanation ou y commence son tour, elle doit réussir un JS de Sagesse ou subir 4d6 dégâts psychiques + état À terre, et peut être repoussée de 3 m (réussite : moitié des dégâts seulement). Chaque créature ne fait ce JS qu'une fois par tour."
+  },
+  {
+    "id": "priere_de_guerison",
+    "nom": "Prière de guérison",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc",
+      "Paladin"
+    ],
+    "temps_incantation": "10 minutes",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": "+2d8 par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Jusqu'à six créatures visibles à portée récupèrent chacune 2d8 + votre modificateur de caractéristique d'incantation en points de vie."
+  },
+  {
+    "id": "protection_contre_le_poison",
+    "nom": "Protection contre le poison",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Clerc",
+      "Druide",
+      "Paladin",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "1 heure",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Neutralisez un poison affectant la créature touchée. Pour la durée, elle bénéficie de l'Avantage aux JS contre l'état Empoisonné et de la Résistance aux dégâts de poison."
+  },
+  {
+    "id": "rayon_affaiblissant",
+    "nom": "Rayon affaiblissant",
+    "niveau": 2,
+    "ecole": "Nécromancie",
+    "classes": [
+      "Ensorceleur",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "CON",
+    "attaque": "distance",
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Attaque de sort à distance : sur un touché, la cible a le Désavantage aux jets d'attaque basés sur la Force et aux tests de Force. À la fin de chacun de ses tours, elle peut effectuer un JS de Constitution pour mettre fin à l'effet."
+  },
+  {
+    "id": "rayon_ardent",
+    "nom": "Rayon ardent",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": "distance",
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "2d6"
+      }
+    ],
+    "niveau_superieur": "+1 rayon par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez trois rayons de feu enflammés. Effectuez une attaque de sort à distance séparée pour chacun (vers la même cible ou des cibles différentes). Chaque rayon inflige 2d6 dégâts de feu sur un touché."
+  },
+  {
+    "id": "restauration_partielle",
+    "nom": "Restauration partielle",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Druide",
+      "Paladin",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Touchez une créature pour mettre fin à un état : Assourdi, Aveuglé, Empoisonné ou Paralysé."
+  },
+  {
+    "id": "silence",
+    "nom": "Silence",
+    "niveau": 2,
+    "ecole": "Illusion",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action ou rituel",
+    "portee": "36m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": true,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 6
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une sphère de silence totale de 6 m de rayon. Aucun son ne peut ni y être produit ni y transiter. Les créatures dans la zone sont immunisées aux dégâts de tonnerre et ne peuvent pas utiliser les composantes verbales des sorts."
+  },
+  {
+    "id": "souffle_du_dragon",
+    "nom": "Souffle du dragon",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un piment"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "cone",
+      "rayon_m": 4.5
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "variable",
+        "valeur": "3d6"
+      }
+    ],
+    "niveau_superieur": "+1d6 par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Touchez une créature consentante. Pour la durée, elle peut utiliser son action pour souffler dans un cône de 4,5 m. Choisissez le type de dégâts (acide, feu, foudre, froid ou poison) lors de l'incantation. JS de Dextérité ou 3d6 dégâts du type choisi (réussite : moitié)."
+  },
+  {
+    "id": "sphere_de_feu",
+    "nom": "Sphère de feu",
+    "niveau": 2,
+    "ecole": "Invocation",
+    "classes": [
+      "Druide",
+      "Ensorceleur"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une boule de graisse"
+    },
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 1.5
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": [
+      {
+        "type": "feu",
+        "valeur": "2d6"
+      }
+    ],
+    "niveau_superieur": "+1d6 par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une sphère de feu de 1,5 m de diamètre dans un espace inoccupé. Toute créature qui pénètre dans la zone ou y commence son tour : JS DEX ou 2d6 feu (réussite : moitié). Action Magie : déplacez la sphère de 9 m."
+  },
+  {
+    "id": "suggestion",
+    "nom": "Suggestion",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "9m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": "une langue de serpent"
+    },
+    "duree": "concentration, jusqu'à 8 heures",
+    "concentration": true,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": "SAG",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Suggérez un cours d'action raisonnable à une créature qui vous comprend (JS SAG). Si elle rate son JS, elle suit la suggestion pour la durée ou jusqu'à l'accomplissement de la tâche. La suggestion ne peut pas causer de tort évident à la cible."
+  },
+  {
+    "id": "tenebres",
+    "nom": "Ténèbres",
+    "niveau": 2,
+    "ecole": "Évocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien",
+      "Occultiste"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": false,
+      "M": "une touffe de fourrure de chauve-souris et un bout de charbon"
+    },
+    "duree": "concentration, jusqu'à 10 minutes",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 4.5
+    },
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez des ténèbres magiques impénétrables dans une sphère de 4,5 m de rayon à un point à portée. Aucune lumière non magique ni lumière magique de niveau inférieur ne peut la dissiper. Peut être lancé sur un objet pour être transportable."
+  },
+  {
+    "id": "toile_d_araignee",
+    "nom": "Toile d'araignée",
+    "niveau": 2,
+    "ecole": "Invocation",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "un quartier de toile d'araignée"
+    },
+    "duree": "concentration, jusqu'à 1 heure",
+    "concentration": true,
+    "rituel": false,
+    "zone": {
+      "forme": "cube",
+      "rayon_m": 6
+    },
+    "sauvegarde": "DEX",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Remplissez un Cube de 6 m de toiles collantes. La zone devient Terrain difficile. Chaque créature qui entre ou commence son tour dans la zone : JS DEX ou Entravée. Une créature Entravée peut se libérer (test de Force, Athlétisme DD). La toile est inflammable."
+  },
+  {
+    "id": "verrou_magique",
+    "nom": "Verrou magique",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Magicien"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "poudre d'or d'une valeur minimale de 25 po qui se détruit"
+    },
+    "duree": "jusqu'à dissipation",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Verrouillez magiquement une porte, fenêtre, portail ou autre objet fermant. Le DD pour l'ouvrir est augmenté de 10. Vous pouvez choisir un mot de passe qui supprime temporairement l'effet. Déblocage magique supprime l'effet pendant 10 minutes."
+  },
+  {
+    "id": "vigueur_arcanique",
+    "nom": "Vigueur arcanique",
+    "niveau": 2,
+    "ecole": "Abjuration",
+    "classes": [
+      "Ensorceleur",
+      "Magicien"
+    ],
+    "temps_incantation": "action bonus",
+    "portee": "personnelle",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "instantanée",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": "Le nombre de Dés de vie que vous lancez augmente d'un par niveau d'emplacement au-delà du 2e.",
+    "invocation": null,
+    "table_effets": null,
+    "description": "Puisez dans votre force vitale pour vous soigner. Lancez un ou deux de vos Dés de vie non dépensés et récupérez un nombre de PV égal au total obtenu. Déduisez ces Dés de vie de votre total disponible."
+  },
+  {
+    "id": "vision_dans_le_noir",
+    "nom": "Vision dans le noir",
+    "niveau": 2,
+    "ecole": "Transmutation",
+    "classes": [
+      "Druide",
+      "Ensorceleur",
+      "Magicien",
+      "Rôdeur"
+    ],
+    "temps_incantation": "action",
+    "portee": "contact",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": "une carotte séchée"
+    },
+    "duree": "8 heures",
+    "concentration": false,
+    "rituel": false,
+    "zone": null,
+    "sauvegarde": null,
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "La créature consentante que vous touchez acquiert la Vision dans le noir sur 45 m pour la durée du sort."
+  },
+  {
+    "id": "zone_de_verite",
+    "nom": "Zone de vérité",
+    "niveau": 2,
+    "ecole": "Enchantement",
+    "classes": [
+      "Barde",
+      "Clerc",
+      "Paladin"
+    ],
+    "temps_incantation": "action",
+    "portee": "18m",
+    "composantes": {
+      "V": true,
+      "S": true,
+      "M": false
+    },
+    "duree": "10 minutes",
+    "concentration": false,
+    "rituel": false,
+    "zone": {
+      "forme": "sphere",
+      "rayon_m": 4.5
+    },
+    "sauvegarde": "CHA",
+    "attaque": null,
+    "degats": null,
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Créez une zone magique qui empêche le mensonge dans une sphère de 4,5 m de rayon. Toute créature qui entre dans la zone : JS de Charisme. En cas d'échec, elle ne peut pas sciemment mentir pendant la durée. Vous savez si chaque créature a réussi ou raté son JS."
+  }
+]

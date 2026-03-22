@@ -1,0 +1,30 @@
+{
+  "id": "orc",
+  "nom": "Orc",
+  "description": "Creation de Gruumsh, un dieu puissant qui sillonnait jadis les grands espaces du Plan Materiel. Les orcs conservent les dons de leur dieu ancestral : endurance, determination et capacite a voir dans les tenebres.",
+  "taille": {
+    "categorie": "M",
+    "details": "entre 1,80 m et 2,15 m"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "acharnement",
+      "nom": "Acharnement",
+      "description": "Si vous tombez a 0 PV sans etre tue sur le coup, vous pouvez en fait vous retrouver a 1 PV. 1 fois par Repos long."
+    },
+    {
+      "id": "poussee_d_adrenaline",
+      "nom": "Poussee d'adrenaline",
+      "description": "Vous pouvez entreprendre l'action Foulee en tant qu'Action Bonus. Quand vous faites ainsi, vous recevez un nombre de points de vie temporaires egal a votre bonus de maitrise."
+    },
+    {
+      "id": "vision_dans_le_noir_orc",
+      "nom": "Vision dans le noir",
+      "description": "Vous disposez de la Vision dans le noir sur 36 m."
+    }
+  ],
+  "competences_maitrises": [],
+  "resistances": [],
+  "sorts_innes": []
+}

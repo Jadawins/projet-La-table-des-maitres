@@ -1,0 +1,48 @@
+{
+  "nom": "Voleur",
+  "classe_parente": "roublard",
+  "source": "PHB2024",
+  "niveaux_aptitudes": [3, 9, 13, 17],
+  "niveaux": {
+    "3": {
+      "capacites": [
+        {
+          "nom": "Mains agiles",
+          "description": "Tu peux utiliser l'action bonus pour effectuer les actions Dérobert, Utiliser un objet ou Utiliser les outils de crochetage."
+        },
+        {
+          "nom": "Grimper avec les mains et les pieds",
+          "description": "Ta vitesse d'escalade est égale à ta vitesse de déplacement. Les surfaces inclinées ne te ralentissent pas."
+        },
+        {
+          "nom": "Second souffle",
+          "description": "Tu peux utiliser l'action Esquiver en action bonus lors de ton tour, ou effectuer une Chute amortie (réduction de dégâts de chute = niveau de roublard × 0,3 m ignorés)."
+        }
+      ]
+    },
+    "9": {
+      "capacites": [
+        {
+          "nom": "Utiliser un objet magique",
+          "description": "Tu peux ignorer toutes les conditions d'utilisation d'un objet magique (classe, alignement, etc.) sauf si l'objet en décide autrement."
+        }
+      ]
+    },
+    "13": {
+      "capacites": [
+        {
+          "nom": "Réflexes du voleur",
+          "description": "Si tu n'es pas surpris, tu peux agir en premier à l'initiative quel que soit le résultat. Ce tour est pris en bonus avant ton tour normal. Lors de ce tour bonus, tu peux seulement effectuer l'action Attaquer ou Ruse."
+        }
+      ]
+    },
+    "17": {
+      "capacites": [
+        {
+          "nom": "Furtivité absolue",
+          "description": "Quand tu utilises l'action Ruse pour te Cacher, tu peux tenter de te cacher même si tu es directement observé. Tu as également avantage à tous les tests de Discrétion dans des zones à faible visibilité."
+        }
+      ]
+    }
+  }
+}

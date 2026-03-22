@@ -1,0 +1,44 @@
+{
+  "id": "elfe",
+  "nom": "Elfe",
+  "description": "Creatures des Plans Feерiques descendant du dieu Corellon. Incapables de se metamorphoser, ils ont preserve une version fixe de leur forme. Longevite d'environ 750 ans. Ils n'ont pas besoin de dormir.",
+  "taille": {
+    "categorie": "M",
+    "details": "entre 1,50 m et 1,85 m"
+  },
+  "vitesse": 9,
+  "traits": [
+    {
+      "id": "ascendance_feerique",
+      "nom": "Ascendance feerique",
+      "description": "Vous avez l'Avantage aux jets de sauvegarde visant a eviter l'etat Charme ou a y mettre un terme."
+    },
+    {
+      "id": "lignage_elfique",
+      "nom": "Lignage elfique",
+      "description": "Choisissez un lignage : Drow (Vision dans le noir 36 m, lumieres dansantes ; niv 3 lueurs feерiques ; niv 5 tenebres) ; Elfe sylvestre (Vitesse 10,30 m, druidisme ; niv 3 grande foulee ; niv 5 passage sans trace) ; Haut-elfe (prestidigitation remplacable chaque Repos long par sort mineur Magicien ; niv 3 detection de la magie ; niv 5 foulee brumeuse)."
+    },
+    {
+      "id": "sens_aigus",
+      "nom": "Sens aigus",
+      "description": "Vous maitrisez une competence parmi : Intuition, Perception ou Survie."
+    },
+    {
+      "id": "transe",
+      "nom": "Transe",
+      "description": "Vous n'avez pas besoin de dormir. Vous pouvez terminer un Repos long en 4 heures d'etat de transe meditative, pendant laquelle vous restez conscients."
+    },
+    {
+      "id": "vision_dans_le_noir_elfe",
+      "nom": "Vision dans le noir",
+      "description": "Vous disposez de la Vision dans le noir sur 18 m (36 m si lignage Drow)."
+    }
+  ],
+  "competences_maitrises": [
+    "au_choix_intuition_perception_survie"
+  ],
+  "resistances": [],
+  "sorts_innes": [
+    "variable_selon_lignage"
+  ]
+}
