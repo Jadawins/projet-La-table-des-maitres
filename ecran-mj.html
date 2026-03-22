@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Écran MJ — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ecran-mj.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- ═══ TOPBAR ════════════════════════════════════════════════ -->
+  <div class="mj-topbar">
+    <div class="topbar-left">
+      <a id="btn-retour" href="sessions.html" class="btn-retour">
+        <i class="fa-solid fa-arrow-left"></i> Session
+      </a>
+      <span class="topbar-session-nom" id="topbar-session-nom">Chargement…</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="topbar-round" id="topbar-round"></span>
+      <span class="synchro-indicator" id="synchro-indicator"><i class="fa-solid fa-rotate fa-spin"></i> Synchro</span>
+    </div>
+    <div class="topbar-right">
+      <button class="btn-retour" onclick="terminerCombat()" id="btn-terminer" style="border-color:rgba(200,50,50,0.5);color:#ff8888;">
+        <i class="fa-solid fa-flag-checkered"></i> Terminer le combat
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══ LAYOUT 3 COLONNES ════════════════════════════════════ -->
+  <div class="mj-layout">
+
+    <!-- ─── COL GAUCHE : Tracker initiative ─────────────────── -->
+    <div class="mj-col">
+      <div class="mj-col-header">
+        <span><i class="fa-solid fa-list-ol"></i> Initiative</span>
+        <span id="round-badge" style="color:#865dff;font-size:0.78rem;"></span>
+      </div>
+      <div class="mj-col-body" id="initiative-list">
+        <div style="text-align:center;padding:2rem;color:#555;">
+          <i class="fa-solid fa-spinner fa-spin"></i><p>Chargement…</p>
+        </div>
+      </div>
+      <div class="mj-col-footer">
+        <button class="btn-tour-suivant" onclick="tourSuivant()">
+          <i class="fa-solid fa-forward-step"></i> Tour suivant
+        </button>
+        <button class="btn-add-participant" onclick="ouvrirModalParticipant()">
+          <i class="fa-solid fa-plus"></i> Ajouter un participant
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── COL CENTRALE : Zone de jeu ───────────────────────── -->
+    <div class="mj-col">
+      <div class="mj-col-header">
+        <span><i class="fa-solid fa-gamepad"></i> Zone de jeu</span>
+      </div>
+      <div class="mj-col-body">
+
+        <!-- PV joueurs -->
+        <div id="joueurs-pv-section">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.07em;color:#c9a84c;opacity:0.75;margin:0 0 0.5rem;">
+            <i class="fa-solid fa-users"></i> PV des joueurs
+          </div>
+          <div id="joueurs-pv-list"></div>
+        </div>
+
+        <!-- Lanceur de dés -->
+        <div class="des-section">
+          <h4><i class="fa-solid fa-dice-d20"></i> Lanceur de dés</h4>
+          <div class="des-rapides">
+            <button class="btn-de" onclick="lancerRapide(4)">d4</button>
+            <button class="btn-de" onclick="lancerRapide(6)">d6</button>
+            <button class="btn-de" onclick="lancerRapide(8)">d8</button>
+            <button class="btn-de" onclick="lancerRapide(10)">d10</button>
+            <button class="btn-de" onclick="lancerRapide(12)">d12</button>
+            <button class="btn-de" onclick="lancerRapide(20)">d20</button>
+            <button class="btn-de" onclick="lancerRapide(100)">d100</button>
+          </div>
+          <div class="des-custom">
+            <input type="text" id="des-formule" placeholder="2d6+3" />
+            <button class="btn-lancer" onclick="lancerFormule()"><i class="fa-solid fa-dice"></i> Lancer</button>
+          </div>
+          <div class="resultat-de" id="resultat-de" style="display:none">
+            <div class="resultat-total" id="resultat-total">—</div>
+            <div class="resultat-detail" id="resultat-detail"></div>
+          </div>
+          <div class="historique-des" id="historique-des"></div>
+        </div>
+
+        <!-- Notes MJ -->
+        <div class="notes-mj-section">
+          <h4><i class="fa-solid fa-pen"></i> Notes rapides</h4>
+          <textarea class="notes-mj-textarea" id="notes-mj" placeholder="Notes de la session…"></textarea>
+          <p class="notes-save-status" id="notes-status"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── COL DROITE : Messagerie ───────────────────────────── -->
+    <div class="mj-col">
+      <div class="mj-col-header">
+        <span><i class="fa-solid fa-comments"></i> Messagerie</span>
+      </div>
+      <div class="mj-col-body" id="messages-list">
+        <div style="text-align:center;padding:2rem;color:#555;font-size:0.82rem;">Aucun message</div>
+      </div>
+      <div class="mj-col-footer">
+        <div class="msg-form">
+          <input type="text" id="msg-contenu" placeholder="Votre message…"
+            onkeydown="if(event.key==='Enter')envoyerMessage()" />
+          <div class="msg-form-row">
+            <select id="msg-dest">
+              <option value="tous">→ Tous</option>
+            </select>
+            <label class="msg-secret-label">
+              <input type="checkbox" id="msg-secret" /> 🔒 Secret
+            </label>
+          </div>
+          <button class="btn-send" onclick="envoyerMessage()">
+            <i class="fa-solid fa-paper-plane"></i> Envoyer
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ MODALE AJOUTER PARTICIPANT ═══════════════════════════ -->
+  <div class="modal-overlay hidden" id="modal-participant">
+    <div class="modal-box">
+      <button class="modal-close" onclick="fermerModal()">✕</button>
+      <p class="modal-title"><i class="fa-solid fa-user-plus"></i> Ajouter un participant</p>
+      <div class="form-group">
+        <label>Nom</label>
+        <input type="text" id="p-nom" placeholder="Gobelin Chef…" />
+      </div>
+      <div class="form-group">
+        <label>Type</label>
+        <select id="p-type">
+          <option value="monstre">Monstre</option>
+          <option value="pnj">PNJ</option>
+          <option value="joueur">Joueur</option>
+        </select>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Initiative</label>
+          <input type="number" id="p-init" value="10" min="0" max="30" />
+        </div>
+        <div class="form-group">
+          <label>PV max</label>
+          <input type="number" id="p-pv" value="10" min="1" />
+        </div>
+        <div class="form-group">
+          <label>CA</label>
+          <input type="number" id="p-ca" value="10" min="1" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Visible par les joueurs</label>
+        <select id="p-visible">
+          <option value="true">Oui</option>
+          <option value="false">Non (monstre caché)</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-sm-secondary" onclick="fermerModal()">Annuler</button>
+        <button class="btn-sm-primary" onclick="ajouterParticipant()">
+          <i class="fa-solid fa-plus"></i> Ajouter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH -->
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+    const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+    const { url, key } = await res.json();
+    const supabase = createClient(url, key);
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) { window.location.href = "login.html"; return; }
+    window.SUPABASE_TOKEN = session.access_token;
+    window.USER_ID = session.user.id;
+    window.USER_PSEUDO = session.user.user_metadata?.full_name
+      || session.user.user_metadata?.preferred_username
+      || session.user.email || 'MJ';
+  </script>
+
+  <script src="js/ecran-mj.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "derniere_mise_a_jour": "2026-03-22T21:50:00",
+  "statut": "en_cours",
+  "etapes": {
+    "routes_api": "termine",
+    "ecran_mj_html": "termine",
+    "css_ecran_mj": "termine",
+    "js_ecran_mj": "termine",
+    "session_detail_update": "termine",
+    "vue_joueur": "termine",
+    "pm2_restart": "non_commence"
+  },
+  "derniere_etape": "vue_joueur"
+}
