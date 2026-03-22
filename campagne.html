@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sessions — La Table du Maître</title>
+  <title>Mes Campagnes — La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
-  <link rel="stylesheet" href="css/sessions.css">
+  <link rel="stylesheet" href="css/campagne.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -30,13 +30,13 @@
         <h2>Menu MJ</h2>
         <ul class="sidebar-menu">
           <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de nouvelles races</a></li>
-          <li><a href="sessions.html?role=mj" class="active"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
-          <li><a href="campagne.html"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
+          <li><a href="sessions.html?role=mj"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
+          <li><a href="campagne.html" class="active"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
         </ul>
         <h2>Menu Joueurs</h2>
         <ul class="sidebar-menu">
           <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
-          <li><a href="sessions.html?role=joueur" class="active"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
           <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
         </ul>
       </div>
@@ -47,43 +47,23 @@
   </aside>
 
   <!-- CONTENU -->
-  <main class="sessions-page">
+  <main class="campagne-page">
     <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
 
-    <div class="sessions-header">
-      <div>
-        <h1><i class="fa-solid fa-dice-d20"></i> Sessions</h1>
-        <p>Rejoignez une aventure ou créez la vôtre</p>
-      </div>
-      <a href="creer-session.html" class="btn-creer-session" id="btn-creer">
-        <i class="fa-solid fa-plus"></i> Créer une session
-      </a>
+    <h1><i class="fa-solid fa-book-skull"></i> Mes Campagnes</h1>
+    <p class="page-subtitle">Créez et gérez vos campagnes de jeu de rôle</p>
+
+    <div class="campagne-topbar">
+      <span id="campagnes-count" style="color:#777;font-size:0.82rem;"></span>
+      <button class="btn-primary" onclick="ouvrirModalCreer()">
+        <i class="fa-solid fa-plus"></i> Nouvelle campagne
+      </button>
     </div>
 
-    <!-- TOOLBAR -->
-    <div class="sessions-toolbar">
-      <input type="text" id="recherche" placeholder="Rechercher une session…" autocomplete="off" />
-      <div class="filter-pills">
-        <button class="filter-pill active" data-statut="toutes">Toutes</button>
-        <button class="filter-pill" data-statut="recrutement">Recrutement</button>
-        <button class="filter-pill" data-statut="en_cours">En cours</button>
-        <button class="filter-pill" data-statut="pausee">En pause</button>
-        <button class="filter-pill" data-statut="terminee">Terminées</button>
-      </div>
-    </div>
-
-    <!-- MES SESSIONS -->
-    <div id="mes-sessions-section" style="display:none">
-      <p class="sessions-section-title"><i class="fa-solid fa-star"></i> Mes sessions</p>
-      <div class="sessions-grid" id="mes-sessions-grid"></div>
-    </div>
-
-    <!-- TOUTES LES SESSIONS -->
-    <p class="sessions-section-title" id="autres-title"><i class="fa-solid fa-globe"></i> Sessions disponibles</p>
-    <div class="sessions-grid" id="sessions-grid">
-      <div class="empty-state" style="grid-column:1/-1">
+    <div id="campagnes-grid" class="campagnes-grid">
+      <div class="empty-state">
         <i class="fa-solid fa-spinner fa-spin"></i>
         <p>Chargement…</p>
       </div>
@@ -91,8 +71,34 @@
   </main>
 </div>
 
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
+<!-- MODAL CRÉATION -->
+<div class="modal-overlay hidden" id="modal-creer">
+  <div class="modal-box">
+    <button class="modal-close" onclick="fermerModal()">✕</button>
+    <p class="modal-title"><i class="fa-solid fa-plus"></i> Nouvelle campagne</p>
+    <div class="form-group">
+      <label>Nom de la campagne</label>
+      <input type="text" id="c-nom" placeholder="La Malédiction de Strahd…" />
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="c-desc" placeholder="Un résumé de la campagne…" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Statut initial</label>
+      <select id="c-statut">
+        <option value="preparation">En préparation</option>
+        <option value="en_cours">En cours</option>
+      </select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="fermerModal()">Annuler</button>
+      <button class="btn-primary" onclick="creerCampagne()">
+        <i class="fa-solid fa-plus"></i> Créer
+      </button>
+    </div>
+  </div>
+</div>
 
 <!-- AUTH -->
 <script type="module">
@@ -101,30 +107,20 @@
   const { url, key } = await res.json();
   const supabase = createClient(url, key);
   const { data: { session } } = await supabase.auth.getSession();
-  if (!session) { window.location.href = "login.html"; }
-  else {
-    window.SUPABASE_TOKEN = session.access_token;
-    window.USER_ID = session.user.id;
-    window.USER_PSEUDO = session.user.user_metadata?.full_name || session.user.user_metadata?.preferred_username || session.user.email;
-  }
+  if (!session) { window.location.href = "login.html"; return; }
+  window.SUPABASE_TOKEN = session.access_token;
 </script>
 
-<!-- SIDEBAR -->
+<script src="js/campagne.js"></script>
 <script type="module">
   import { toggleSidebar } from './js/sidebar.js';
   window.toggleSidebar = toggleSidebar;
 </script>
-
-<!-- THÈME -->
 <div class="theme-toggle-container">
   <button id="theme-toggle" class="lanterne-btn">
     <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
   </button>
 </div>
 <script src="js/theme.js"></script>
-
-<!-- SESSIONS JS -->
-<script src="js/sessions.js"></script>
-
 </body>
 </html>

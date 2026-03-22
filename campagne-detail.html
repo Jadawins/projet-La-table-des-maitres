@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Éditeur de campagne — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/campagne.css">
+  <!-- Quill.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- TOPBAR FIXE -->
+  <div class="editor-topbar">
+    <div class="editor-topbar-left">
+      <a href="campagne.html" class="btn-retour">
+        <i class="fa-solid fa-arrow-left"></i> Campagnes
+      </a>
+      <span class="editor-topbar-nom" id="topbar-nom">Chargement…</span>
+      <span class="save-indicator" id="save-indicator">—</span>
+    </div>
+    <div style="display:flex;gap:0.5rem;align-items:center;">
+      <select id="statut-select" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#ccc;padding:0.3rem 0.6rem;font-size:0.78rem;" onchange="sauvegarderMeta()">
+        <option value="preparation">En préparation</option>
+        <option value="en_cours">En cours</option>
+        <option value="terminee">Terminée</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- LAYOUT 2 COLONNES -->
+  <div class="campagne-detail-layout">
+
+    <!-- ─── COL GAUCHE : Navigation ─────────────────────────── -->
+    <div class="campagne-nav">
+      <div class="campagne-nav-header">
+        <h3><i class="fa-solid fa-list"></i> Chapitres</h3>
+        <button class="nav-add-btn btn-icon add" onclick="ajouterChapitre()" title="Ajouter un chapitre" style="width:auto;padding:0;">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      <div class="campagne-nav-body" id="nav-body">
+        <div style="padding:1rem;color:#555;font-size:0.8rem;text-align:center;">Chargement…</div>
+      </div>
+    </div>
+
+    <!-- ─── COL DROITE : Éditeur ─────────────────────────────── -->
+    <div class="campagne-editor" id="campagne-editor">
+      <div class="editor-content" id="editor-content">
+        <div style="text-align:center;padding:4rem;color:#555;">
+          <i class="fa-solid fa-arrow-left" style="font-size:2rem;color:#333;"></i>
+          <p style="margin-top:1rem;">Sélectionnez un chapitre dans la navigation</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL : AJOUTER MONSTRE -->
+  <div class="modal-overlay hidden" id="modal-monstre">
+    <div class="modal-box">
+      <button class="modal-close" onclick="fermerModalMonstre()">✕</button>
+      <p class="modal-title"><i class="fa-solid fa-skull"></i> Ajouter un monstre</p>
+      <div class="form-group">
+        <label>Nom</label>
+        <input type="text" id="m-nom" placeholder="Gobelin…" />
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;">
+        <div class="form-group">
+          <label>Quantité</label>
+          <input type="number" id="m-qte" value="1" min="1" max="20" />
+        </div>
+        <div class="form-group">
+          <label>PV max</label>
+          <input type="number" id="m-pv" value="10" min="1" />
+        </div>
+        <div class="form-group">
+          <label>CA</label>
+          <input type="number" id="m-ca" value="12" min="1" />
+        </div>
+        <div class="form-group">
+          <label>Bonus init.</label>
+          <input type="number" id="m-init" value="0" />
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="fermerModalMonstre()">Annuler</button>
+        <button class="btn-primary" onclick="validerAjoutMonstre()">
+          <i class="fa-solid fa-plus"></i> Ajouter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : SÉLECTIONNER SESSION POUR LANCER -->
+  <div class="modal-overlay hidden" id="modal-lancer">
+    <div class="modal-box">
+      <button class="modal-close" onclick="fermerModalLancer()">✕</button>
+      <p class="modal-title"><i class="fa-solid fa-sword"></i> Lancer la rencontre</p>
+      <p style="color:#999;font-size:0.85rem;margin-bottom:1rem;">Choisissez la session dans laquelle charger cette rencontre :</p>
+      <div class="form-group">
+        <label>Session active</label>
+        <select id="lancer-session-select">
+          <option value="">Chargement des sessions…</option>
+        </select>
+      </div>
+      <p style="color:#777;font-size:0.78rem;">Les monstres seront pré-chargés dans le tracker d'initiative.</p>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="fermerModalLancer()">Annuler</button>
+        <button class="btn-primary" onclick="validerLancerRencontre()">
+          <i class="fa-solid fa-sword"></i> Lancer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH -->
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+    const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+    const { url, key } = await res.json();
+    const supabase = createClient(url, key);
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) { window.location.href = "login.html"; return; }
+    window.SUPABASE_TOKEN = session.access_token;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+  <script src="js/campagne-detail.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>
