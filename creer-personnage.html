@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un personnage — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/personnage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+</head>
+<body>
+<div style="padding:0.6rem 1.5rem;background:rgba(10,8,20,0.97);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:1rem;">
+  <a href="mes-personnages.html" style="color:#888;text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.4rem;">
+    <i class="fa-solid fa-arrow-left"></i> Mes personnages
+  </a>
+  <span style="color:#555;font-size:0.82rem;">Création de personnage PHB 2024</span>
+</div>
+
+<div class="wizard-layout">
+
+  <!-- BARRE DE PROGRESSION -->
+  <div class="wizard-progress" id="wizard-progress"></div>
+
+  <!-- ÉTAPE 1 — Informations de base -->
+  <div class="wizard-panel active" data-step="1">
+    <div class="step-title"><i class="fa-solid fa-user"></i> Informations de base</div>
+    <div class="step-subtitle">Donnez vie à votre personnage avec son nom et sa philosophie.</div>
+
+    <div class="form-row" style="margin-bottom:1.2rem;">
+      <div class="form-field" style="grid-column:1/-1;">
+        <label>Nom du personnage *</label>
+        <input type="text" id="p-nom" placeholder="Thorin Marteaufer…" autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="form-row form-row-3">
+      <div class="form-field">
+        <label>Niveau</label>
+        <input type="number" id="p-niveau" value="1" min="1" max="20" />
+      </div>
+      <div class="form-field">
+        <label>Expérience</label>
+        <input type="number" id="p-xp" value="0" min="0" readonly style="opacity:0.6;" />
+      </div>
+      <div class="form-field">
+        <label>Bonus de maîtrise</label>
+        <input type="text" id="p-maitrise" value="+2" readonly style="opacity:0.6;" />
+      </div>
+    </div>
+
+    <div style="margin-top:1.2rem;">
+      <label style="font-size:0.72rem;color:#999;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:0.6rem;">Alignement</label>
+      <div class="alignement-grid" id="alignement-grid">
+        <button class="align-btn" data-align="loyal_bon">Loyal Bon</button>
+        <button class="align-btn" data-align="neutre_bon">Neutre Bon</button>
+        <button class="align-btn" data-align="chaotique_bon">Chaotique Bon</button>
+        <button class="align-btn" data-align="loyal_neutre">Loyal Neutre</button>
+        <button class="align-btn" data-align="neutre_neutre">Neutre</button>
+        <button class="align-btn" data-align="chaotique_neutre">Chaotique Neutre</button>
+        <button class="align-btn" data-align="loyal_mauvais">Loyal Mauvais</button>
+        <button class="align-btn" data-align="neutre_mauvais">Neutre Mauvais</button>
+        <button class="align-btn" data-align="chaotique_mauvais">Chaotique Mauvais</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 2 — Espèce -->
+  <div class="wizard-panel" data-step="2">
+    <div class="step-title"><i class="fa-solid fa-dna"></i> Espèce</div>
+    <div class="step-subtitle">Choisissez l'origine de votre personnage.</div>
+    <div class="cards-grid cards-grid-lg" id="especes-grid">
+      <div style="grid-column:1/-1;text-align:center;color:#555;padding:2rem;"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    </div>
+    <div class="detail-panel" id="espece-detail"></div>
+  </div>
+
+  <!-- ÉTAPE 3 — Classe -->
+  <div class="wizard-panel" data-step="3">
+    <div class="step-title"><i class="fa-solid fa-shield-halved"></i> Classe</div>
+    <div class="step-subtitle">Choisissez la vocation de votre personnage.</div>
+    <div class="cards-grid cards-grid-lg" id="classes-grid">
+      <div style="grid-column:1/-1;text-align:center;color:#555;padding:2rem;"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    </div>
+    <div class="detail-panel" id="classe-detail"></div>
+    <div id="sousclasse-section" style="display:none;margin-top:1.2rem;">
+      <div class="step-subtitle" style="margin-bottom:0.5rem;"><i class="fa-solid fa-star"></i> Sous-classe (niveau ≥ 3)</div>
+      <div class="cards-grid" id="sousclasses-grid"></div>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 4 — Historique -->
+  <div class="wizard-panel" data-step="4">
+    <div class="step-title"><i class="fa-solid fa-scroll"></i> Historique</div>
+    <div class="step-subtitle">Votre passé avant l'aventure.</div>
+    <div class="cards-grid cards-grid-lg" id="backgrounds-grid">
+      <div style="grid-column:1/-1;text-align:center;color:#555;padding:2rem;"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    </div>
+    <div class="detail-panel" id="background-detail"></div>
+  </div>
+
+  <!-- ÉTAPE 5 — Caractéristiques -->
+  <div class="wizard-panel" data-step="5">
+    <div class="step-title"><i class="fa-solid fa-fist-raised"></i> Caractéristiques</div>
+    <div class="step-subtitle">Entrez les valeurs obtenues lors de vos lancers de dés (IRL). Les modificateurs sont calculés automatiquement.</div>
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-box">
+        <div class="stat-name">FOR</div>
+        <input class="stat-input" type="number" id="stat-FOR" value="10" min="1" max="30" />
+        <div class="stat-modifier" id="mod-FOR">+0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-name">DEX</div>
+        <input class="stat-input" type="number" id="stat-DEX" value="10" min="1" max="30" />
+        <div class="stat-modifier" id="mod-DEX">+0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-name">CON</div>
+        <input class="stat-input" type="number" id="stat-CON" value="10" min="1" max="30" />
+        <div class="stat-modifier" id="mod-CON">+0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-name">INT</div>
+        <input class="stat-input" type="number" id="stat-INT" value="10" min="1" max="30" />
+        <div class="stat-modifier" id="mod-INT">+0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-name">SAG</div>
+        <input class="stat-input" type="number" id="stat-SAG" value="10" min="1" max="30" />
+        <div class="stat-modifier" id="mod-SAG">+0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-name">CHA</div>
+        <input class="stat-input" type="number" id="stat-CHA" value="10" min="1" max="30" />
+        <div class="stat-modifier" id="mod-CHA">+0</div>
+      </div>
+    </div>
+    <div style="font-size:0.78rem;color:#666;padding:0.5rem 0.3rem;">
+      <i class="fa-solid fa-info-circle"></i>
+      Modificateur = (valeur − 10) ÷ 2, arrondi à l'inférieur.
+    </div>
+  </div>
+
+  <!-- ÉTAPE 6 — Compétences -->
+  <div class="wizard-panel" data-step="6">
+    <div class="step-title"><i class="fa-solid fa-list-check"></i> Compétences</div>
+    <div class="step-subtitle">Sélectionnez vos maîtrises de compétences.</div>
+    <div id="comp-counter" class="comp-counter">—</div>
+    <div class="competences-grid" id="competences-grid"></div>
+  </div>
+
+  <!-- ÉTAPE 7 — Équipement de départ -->
+  <div class="wizard-panel" data-step="7">
+    <div class="step-title"><i class="fa-solid fa-backpack"></i> Équipement de départ</div>
+    <div class="step-subtitle">Cochez les items que vous emportez.</div>
+    <div class="equip-list" id="equip-list"></div>
+    <div style="margin-top:0.75rem;">
+      <div style="font-size:0.72rem;color:#666;margin-bottom:0.4rem;">Ajouter un item manuellement :</div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <input type="text" id="equip-custom-nom" placeholder="Nom…" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#e0e0e0;padding:0.4rem 0.7rem;font-size:0.82rem;flex:1;min-width:120px;" />
+        <input type="number" id="equip-custom-qte" value="1" min="1" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#e0e0e0;padding:0.4rem 0.5rem;font-size:0.82rem;width:60px;text-align:center;" />
+        <button onclick="ajouterEquipCustom()" style="background:rgba(134,93,255,0.7);border:none;border-radius:6px;color:#fff;padding:0.4rem 0.9rem;font-size:0.82rem;cursor:pointer;">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 8 — Sorts -->
+  <div class="wizard-panel" data-step="8">
+    <div class="step-title"><i class="fa-solid fa-hat-wizard"></i> Sorts</div>
+    <div class="step-subtitle" id="sorts-subtitle">Choisissez vos sorts connus.</div>
+    <div id="sorts-section">
+      <div id="sorts-mineurs-section">
+        <div style="font-size:0.82rem;color:#c9a84c;margin-bottom:0.5rem;font-weight:600;">Sorts mineurs (Niveau 0)</div>
+        <div id="sorts-mineurs-counter" class="sorts-counter"></div>
+        <div class="sorts-search">
+          <input type="text" id="search-mineurs" placeholder="Rechercher…" oninput="filtrerSorts('mineurs')" />
+          <select id="ecole-mineurs" onchange="filtrerSorts('mineurs')">
+            <option value="">Toutes les écoles</option>
+          </select>
+        </div>
+        <div class="sorts-list" id="sorts-mineurs-list"></div>
+      </div>
+      <div id="sorts-niv1-section" style="margin-top:1.2rem;">
+        <div style="font-size:0.82rem;color:#c9a84c;margin-bottom:0.5rem;font-weight:600;">Sorts de niveau 1</div>
+        <div id="sorts-niv1-counter" class="sorts-counter"></div>
+        <div class="sorts-search">
+          <input type="text" id="search-niv1" placeholder="Rechercher…" oninput="filtrerSorts('niv1')" />
+          <select id="ecole-niv1" onchange="filtrerSorts('niv1')">
+            <option value="">Toutes les écoles</option>
+          </select>
+        </div>
+        <div class="sorts-list" id="sorts-niv1-list"></div>
+      </div>
+    </div>
+    <div id="sorts-non-lanceur" style="display:none;text-align:center;padding:3rem;color:#555;">
+      <i class="fa-solid fa-ban" style="font-size:2rem;margin-bottom:0.75rem;display:block;"></i>
+      Votre classe ne pratique pas la magie.
+    </div>
+  </div>
+
+  <!-- ÉTAPE 9 — Traits & Personnalité -->
+  <div class="wizard-panel" data-step="9">
+    <div class="step-title"><i class="fa-solid fa-heart"></i> Traits &amp; Personnalité</div>
+    <div class="step-subtitle">Définissez la personnalité de votre personnage. Des suggestions issues de votre historique sont disponibles.</div>
+
+    <div id="suggestions-section" style="margin-bottom:1.2rem;display:none;">
+      <div style="font-size:0.72rem;color:#c9a84c;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Suggestions de votre historique</div>
+      <div id="suggestions-content"></div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>Traits de personnalité</label>
+        <textarea id="p-traits" placeholder="Je suis direct et dis ce que je pense…" rows="3"></textarea>
+      </div>
+      <div class="form-field">
+        <label>Idéaux</label>
+        <textarea id="p-ideaux" placeholder="Honneur : Je vis par mon code…" rows="3"></textarea>
+      </div>
+      <div class="form-field">
+        <label>Liens</label>
+        <textarea id="p-liens" placeholder="Je ferais n'importe quoi pour mes compagnons…" rows="3"></textarea>
+      </div>
+      <div class="form-field">
+        <label>Défauts</label>
+        <textarea id="p-defauts" placeholder="Je méprise les faibles…" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="form-row" style="margin-top:0.5rem;">
+      <div class="form-field">
+        <label>Apparence physique</label>
+        <textarea id="p-apparence" placeholder="Grande, cheveux noirs, yeux gris…" rows="2"></textarea>
+      </div>
+      <div class="form-field">
+        <label>Historique personnel</label>
+        <textarea id="p-historique" placeholder="Avant l'aventure, j'étais…" rows="2"></textarea>
+      </div>
+    </div>
+    <div class="form-field" style="margin-top:0.5rem;">
+      <label>Notes diverses</label>
+      <textarea id="p-notes" placeholder="Objectifs, secrets, alliés…" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 10 — Récapitulatif -->
+  <div class="wizard-panel" data-step="10">
+    <div class="step-title"><i class="fa-solid fa-check-circle"></i> Récapitulatif</div>
+    <div class="step-subtitle">Vérifiez votre personnage avant de le créer.</div>
+    <div id="recap-content"></div>
+  </div>
+
+  <!-- NAVIGATION WIZARD -->
+  <div class="wizard-nav">
+    <button class="btn-wiz-prev" id="btn-prev" onclick="prevStep()">
+      <i class="fa-solid fa-arrow-left"></i> Précédent
+    </button>
+    <span class="wizard-nav-info" id="nav-info"></span>
+    <button class="btn-wiz-next" id="btn-next" onclick="nextStep()">
+      Suivant <i class="fa-solid fa-arrow-right"></i>
+    </button>
+    <button class="btn-wiz-submit hidden" id="btn-submit" onclick="creerPersonnage()">
+      <i class="fa-solid fa-wand-magic-sparkles"></i> Créer le personnage !
+    </button>
+  </div>
+
+</div>
+
+<!-- AUTH -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) { window.location.href = "login.html"; return; }
+  window.SUPABASE_TOKEN = session.access_token;
+</script>
+
+<script src="js/creer-personnage.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>
