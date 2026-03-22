@@ -609,8 +609,11 @@ function renderCompetences() {
   const bg = W.bg_data;
   const bm = BONUS_MAITRISE[Math.min(W.niveau-1,19)];
   const nbChoix = classe?.competences_choisies?.nombre || 2;
-  const optionsClasse = (classe?.competences_choisies?.options || []).map(normalizeComp);
-  const bgComps = (bg?.competences || []).map(normalizeComp);
+  const rawOpts = classe?.competences_choisies?.options;
+  const optionsClasse = rawOpts === 'toutes'
+    ? TOUTES_COMPETENCES.map(c => normalizeComp(c.nom))
+    : [].concat(rawOpts || []).map(normalizeComp);
+  const bgComps = [].concat(bg?.competences || []).map(normalizeComp);
   const choisies = W.competences_choisies.map(normalizeComp);
 
   document.getElementById('comp-counter').textContent =
@@ -646,7 +649,10 @@ function updateCompCounter(max) {
   if (checked >= max) {
     boxes.filter(b => !b.checked).forEach(b => b.disabled = true);
   } else {
-    const optionsClasse = (classe?.competences_choisies?.options || []).map(normalizeComp);
+    const rawOpts2 = classe?.competences_choisies?.options;
+    const optionsClasse = rawOpts2 === 'toutes'
+      ? TOUTES_COMPETENCES.map(c => normalizeComp(c.nom))
+      : [].concat(rawOpts2 || []).map(normalizeComp);
     boxes.forEach(b => {
       if (!bgComps.includes(normalizeComp(b.dataset.nom)))
         b.disabled = !optionsClasse.includes(normalizeComp(b.dataset.nom));
