@@ -105,42 +105,73 @@
   <!-- ÉTAPE 5 — Caractéristiques -->
   <div class="wizard-panel" data-step="5">
     <div class="step-title"><i class="fa-solid fa-fist-raised"></i> Caractéristiques</div>
-    <div class="step-subtitle">Entrez les valeurs obtenues lors de vos lancers de dés (IRL). Les modificateurs sont calculés automatiquement.</div>
-    <div class="stats-grid" id="stats-grid">
-      <div class="stat-box">
-        <div class="stat-name">FOR</div>
-        <input class="stat-input" type="number" id="stat-FOR" value="10" min="1" max="30" />
-        <div class="stat-modifier" id="mod-FOR">+0</div>
+    <div class="step-subtitle">Choisissez comment attribuer vos caractéristiques.</div>
+
+    <!-- Choix de méthode -->
+    <div class="method-select">
+      <div class="method-card" id="method-standard" onclick="selectStatsMethod('standard')">
+        <div class="method-card-icon"><i class="fa-solid fa-list-ol"></i></div>
+        <div class="method-card-title">Valeurs standard</div>
+        <div class="method-card-desc">Utilisez les valeurs recommandées par le livre : 15, 14, 13, 12, 10, 8</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-name">DEX</div>
-        <input class="stat-input" type="number" id="stat-DEX" value="10" min="1" max="30" />
-        <div class="stat-modifier" id="mod-DEX">+0</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-name">CON</div>
-        <input class="stat-input" type="number" id="stat-CON" value="10" min="1" max="30" />
-        <div class="stat-modifier" id="mod-CON">+0</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-name">INT</div>
-        <input class="stat-input" type="number" id="stat-INT" value="10" min="1" max="30" />
-        <div class="stat-modifier" id="mod-INT">+0</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-name">SAG</div>
-        <input class="stat-input" type="number" id="stat-SAG" value="10" min="1" max="30" />
-        <div class="stat-modifier" id="mod-SAG">+0</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-name">CHA</div>
-        <input class="stat-input" type="number" id="stat-CHA" value="10" min="1" max="30" />
-        <div class="stat-modifier" id="mod-CHA">+0</div>
+      <div class="method-card" id="method-dice" onclick="selectStatsMethod('dice')">
+        <div class="method-card-icon"><i class="fa-solid fa-dice"></i></div>
+        <div class="method-card-title">Jet de dés</div>
+        <div class="method-card-desc">Entrez vos résultats de lancers (4d6, retirez le dé le plus faible)</div>
       </div>
     </div>
-    <div style="font-size:0.78rem;color:#666;padding:0.5rem 0.3rem;">
-      <i class="fa-solid fa-info-circle"></i>
-      Modificateur = (valeur − 10) ÷ 2, arrondi à l'inférieur.
+
+    <!-- MÉTHODE A — Valeurs standard (drag & drop) -->
+    <div id="stats-method-standard" style="display:none;">
+      <div class="pool-label"><i class="fa-solid fa-hand-pointer"></i> Faites glisser les valeurs sur les caractéristiques</div>
+      <div class="stat-pool" id="stat-pool"></div>
+      <div class="stats-grid-dnd" id="stats-grid-dnd"></div>
+      <div style="font-size:0.75rem;color:#555;margin-top:0.4rem;">
+        <i class="fa-solid fa-rotate-left"></i> Cliquez sur une valeur assignée pour la libérer.
+      </div>
+    </div>
+
+    <!-- MÉTHODE B — Jet de dés (saisie libre) -->
+    <div id="stats-method-dice" style="display:none;">
+      <div class="dice-reminder">
+        <i class="fa-solid fa-dice" style="color:var(--gold);margin-right:0.4rem;"></i>
+        Lancez 4d6, retirez le dé le plus bas, notez le total — répétez 6 fois.
+      </div>
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-box">
+          <div class="stat-name">FOR</div>
+          <input class="stat-input" type="number" id="stat-FOR" value="10" min="3" max="20" />
+          <div class="stat-modifier" id="mod-FOR">+0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-name">DEX</div>
+          <input class="stat-input" type="number" id="stat-DEX" value="10" min="3" max="20" />
+          <div class="stat-modifier" id="mod-DEX">+0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-name">CON</div>
+          <input class="stat-input" type="number" id="stat-CON" value="10" min="3" max="20" />
+          <div class="stat-modifier" id="mod-CON">+0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-name">INT</div>
+          <input class="stat-input" type="number" id="stat-INT" value="10" min="3" max="20" />
+          <div class="stat-modifier" id="mod-INT">+0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-name">SAG</div>
+          <input class="stat-input" type="number" id="stat-SAG" value="10" min="3" max="20" />
+          <div class="stat-modifier" id="mod-SAG">+0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-name">CHA</div>
+          <input class="stat-input" type="number" id="stat-CHA" value="10" min="3" max="20" />
+          <div class="stat-modifier" id="mod-CHA">+0</div>
+        </div>
+      </div>
+      <div style="font-size:0.78rem;color:#666;padding:0.5rem 0.3rem;">
+        <i class="fa-solid fa-info-circle"></i> Modificateur = (valeur − 10) ÷ 2, arrondi à l'inférieur.
+      </div>
     </div>
   </div>
 

@@ -373,6 +373,198 @@
 .align-btn:hover { border-color: rgba(134,93,255,0.4); color: #ddd; }
 .align-btn.selected { border-color: var(--purple); background: rgba(134,93,255,0.15); color: var(--text-light); font-weight: 600; }
 
+/* ─── MÉTHODE SÉLECTION STATS ────────────────────────────────── */
+
+.method-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.method-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.method-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 12px rgba(201,168,76,0.15);
+}
+
+.method-card.selected {
+  border-color: #8b5cf6;
+  background: rgba(139,92,246,0.08);
+  box-shadow: 0 0 16px rgba(139,92,246,0.2);
+}
+
+.method-card-icon {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.method-card.selected .method-card-icon { color: #b090ff; }
+
+.method-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 0.4rem;
+}
+
+.method-card-desc {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+/* ─── DRAG & DROP STATS ───────────────────────────────────────── */
+
+.pool-label {
+  font-size: 0.72rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-pool {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  min-height: 56px;
+  padding: 0.6rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px dashed rgba(201,168,76,0.25);
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+  align-items: center;
+}
+
+.stat-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06));
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.stat-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201,168,76,0.3);
+}
+
+.stat-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(139,92,246,0.08));
+  border: 1.5px solid #8b5cf6;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c8b8ff;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.drag-clone {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: linear-gradient(135deg, rgba(201,168,76,0.3), rgba(201,168,76,0.1));
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  opacity: 0.95;
+}
+
+.stats-grid-dnd {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.stat-drop-box {
+  background: var(--card-bg);
+  border: 2px dashed rgba(201,168,76,0.3);
+  border-radius: 10px;
+  padding: 0.8rem 0.4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 96px;
+  transition: border-color 0.15s, background 0.15s;
+  cursor: default;
+}
+
+.stat-drop-box.drag-over {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.06);
+  border-style: solid;
+}
+
+.stat-drop-box.filled {
+  border-color: rgba(139,92,246,0.5);
+  border-style: solid;
+  background: rgba(139,92,246,0.06);
+}
+
+.drop-value {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-modifier {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #a090e0;
+  min-height: 1.2rem;
+}
+
+.dice-reminder {
+  font-size: 0.82rem;
+  color: #888;
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid rgba(201,168,76,0.4);
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+}
+
 /* ─── STATS CARACTÉRISTIQUES ─────────────────────────────────── */
 
 .stats-grid {
@@ -1336,6 +1528,8 @@
 
 @media (max-width: 768px) {
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats-grid-dnd { grid-template-columns: repeat(3, 1fr); }
+  .method-select { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .form-row-3 { grid-template-columns: 1fr 1fr; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }

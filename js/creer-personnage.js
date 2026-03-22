@@ -56,6 +56,8 @@ const W = {
   classe: null, classe_data: null, sous_classe: null, sc_data: null,
   background: null, bg_data: null,
   stats: { FOR: 10, DEX: 10, CON: 10, INT: 10, SAG: 10, CHA: 10 },
+  stats_method: null,
+  stats_assigned: { FOR: null, DEX: null, CON: null, INT: null, SAG: null, CHA: null },
   competences_choisies: [],
   equipement: [],
   sorts_mineurs: [], sorts_niv1: [],
@@ -166,6 +168,12 @@ function updateNav() {
     next.classList.remove('hidden');
     submit.classList.add('hidden');
   }
+  // Reset btn-next state (step 5 may have disabled it)
+  if (W.step !== 5) {
+    next.disabled = false;
+    next.style.opacity = '';
+    next.style.cursor = '';
+  }
   info.textContent = `Étape ${W.step} sur ${W.totalSteps}`;
 }
 
@@ -189,6 +197,13 @@ function validateStep(n) {
   if (n === 2 && !W.espece) { alert('Sélectionnez une espèce.'); return false; }
   if (n === 3 && !W.classe) { alert('Sélectionnez une classe.'); return false; }
   if (n === 4 && !W.background) { alert('Sélectionnez un historique.'); return false; }
+  if (n === 5) {
+    if (!W.stats_method) { alert('Choisissez une méthode d\'attribution des caractéristiques.'); return false; }
+    if (W.stats_method === 'standard') {
+      const allAssigned = ['FOR','DEX','CON','INT','SAG','CHA'].every(k => W.stats_assigned[k] !== null);
+      if (!allAssigned) { alert('Distribuez toutes les valeurs standard avant de continuer.'); return false; }
+    }
+  }
   return true;
 }
 
@@ -199,9 +214,15 @@ function collectStep(n) {
     W.xp = XP_PAR_NIVEAU[W.niveau - 1] || 0;
   }
   if (n === 5) {
-    ['FOR','DEX','CON','INT','SAG','CHA'].forEach(k => {
-      W.stats[k] = parseInt(document.getElementById(`stat-${k}`).value) || 10;
-    });
+    if (W.stats_method === 'dice') {
+      ['FOR','DEX','CON','INT','SAG','CHA'].forEach(k => {
+        W.stats[k] = parseInt(document.getElementById(`stat-${k}`).value) || 10;
+      });
+    } else if (W.stats_method === 'standard') {
+      ['FOR','DEX','CON','INT','SAG','CHA'].forEach(k => {
+        if (W.stats_assigned[k] !== null) W.stats[k] = W.stats_assigned[k];
+      });
+    }
   }
   if (n === 6) {
     W.competences_choisies = [...document.querySelectorAll('.comp-check:checked')].map(el => el.dataset.nom);
@@ -232,6 +253,7 @@ async function onStepEnter(n) {
   if (n === 2) await loadEspeces();
   if (n === 3) await loadClasses();
   if (n === 4) await loadBackgrounds();
+  if (n === 5) initStatsStep();
   if (n === 6) renderCompetences();
   if (n === 7) renderEquipement();
   if (n === 8) await loadSorts();
@@ -438,6 +460,146 @@ function selectBackground(id) {
       <div class="trait-item-name">${esc(b.aptitude.nom)}</div>
       <div class="trait-item-desc">${esc(b.aptitude.description)}</div>
     </div>` : ''}`;
+}
+
+// ─── ÉTAPE 5 — Caractéristiques ───────────────────────────────
+
+const STANDARD_VALUES = [15, 14, 13, 12, 10, 8];
+const STAT_KEYS = ['FOR', 'DEX', 'CON', 'INT', 'SAG', 'CHA'];
+let _dragData = null, _dragClone = null, _dragStartX = 0, _dragStartY = 0;
+
+function initStatsStep() {
+  if (W.stats_method) selectStatsMethod(W.stats_method);
+  updateNextBtn();
+}
+
+function selectStatsMethod(method) {
+  W.stats_method = method;
+  document.querySelectorAll('.method-card').forEach(c => c.classList.remove('selected'));
+  const card = document.getElementById('method-' + method);
+  if (card) card.classList.add('selected');
+  const stdEl = document.getElementById('stats-method-standard');
+  const diceEl = document.getElementById('stats-method-dice');
+  if (stdEl) stdEl.style.display = method === 'standard' ? 'block' : 'none';
+  if (diceEl) diceEl.style.display = method === 'dice' ? 'block' : 'none';
+  if (method === 'standard') renderStatsDnD();
+  updateNextBtn();
+}
+
+function getRemainingPool() {
+  const assigned = Object.values(W.stats_assigned).filter(v => v !== null);
+  const remaining = [...STANDARD_VALUES];
+  assigned.forEach(v => { const i = remaining.indexOf(v); if (i >= 0) remaining.splice(i, 1); });
+  return remaining;
+}
+
+function renderStatsDnD() {
+  const pool = getRemainingPool();
+  const poolEl = document.getElementById('stat-pool');
+  if (!poolEl) return;
+  poolEl.innerHTML = pool.map(v =>
+    `<div class="stat-badge" data-value="${v}" data-from="pool">${v}</div>`
+  ).join('');
+
+  const gridEl = document.getElementById('stats-grid-dnd');
+  if (!gridEl) return;
+  gridEl.innerHTML = STAT_KEYS.map(k => {
+    const val = W.stats_assigned[k];
+    const modVal = val !== null ? fmtMod(mod(val)) : '';
+    return `<div class="stat-drop-box${val !== null ? ' filled' : ''}" data-stat="${k}">
+      <div class="stat-name">${k}</div>
+      <div class="drop-value">${val !== null ? `<span class="stat-badge-sm" data-value="${val}" data-from="${k}">${val}</span>` : ''}</div>
+      <div class="drop-modifier">${modVal}</div>
+    </div>`;
+  }).join('');
+
+  setupStatsDnD();
+}
+
+function setupStatsDnD() {
+  document.querySelectorAll('#stat-pool .stat-badge, #stats-grid-dnd .stat-badge-sm').forEach(el => {
+    el.addEventListener('pointerdown', onStatPointerDown);
+  });
+}
+
+function onStatPointerDown(e) {
+  e.preventDefault();
+  const el = e.currentTarget;
+  _dragData = { value: parseInt(el.dataset.value), from: el.dataset.from };
+  _dragStartX = e.clientX;
+  _dragStartY = e.clientY;
+  _dragClone = null;
+  document.addEventListener('pointermove', onStatPointerMove);
+  document.addEventListener('pointerup', onStatPointerUp);
+}
+
+function onStatPointerMove(e) {
+  const dist = Math.hypot(e.clientX - _dragStartX, e.clientY - _dragStartY);
+  if (dist > 5 && !_dragClone) {
+    _dragClone = document.createElement('div');
+    _dragClone.className = 'stat-badge drag-clone';
+    _dragClone.textContent = _dragData.value;
+    document.body.appendChild(_dragClone);
+  }
+  if (_dragClone) {
+    _dragClone.style.left = (e.clientX - 22) + 'px';
+    _dragClone.style.top = (e.clientY - 22) + 'px';
+    document.querySelectorAll('.stat-drop-box').forEach(z => {
+      const r = z.getBoundingClientRect();
+      const over = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      z.classList.toggle('drag-over', over);
+    });
+  }
+}
+
+function onStatPointerUp(e) {
+  document.removeEventListener('pointermove', onStatPointerMove);
+  document.removeEventListener('pointerup', onStatPointerUp);
+  if (_dragClone) { _dragClone.remove(); _dragClone = null; }
+  document.querySelectorAll('.stat-drop-box').forEach(z => z.classList.remove('drag-over'));
+  if (!_dragData) return;
+
+  const dist = Math.hypot(e.clientX - _dragStartX, e.clientY - _dragStartY);
+  if (dist < 5) {
+    // Click : si valeur dans une zone, la retirer
+    if (_dragData.from !== 'pool') {
+      W.stats_assigned[_dragData.from] = null;
+      renderStatsDnD();
+      updateNextBtn();
+    }
+  } else {
+    // Drag : déposer sur une zone
+    const target = document.elementFromPoint(e.clientX, e.clientY)?.closest('.stat-drop-box');
+    if (target) {
+      const toStat = target.dataset.stat;
+      if (toStat !== _dragData.from) {
+        const existing = W.stats_assigned[toStat];
+        W.stats_assigned[toStat] = _dragData.value;
+        if (_dragData.from !== 'pool') {
+          W.stats_assigned[_dragData.from] = existing; // swap
+        }
+        renderStatsDnD();
+        updateNextBtn();
+      }
+    }
+  }
+  _dragData = null;
+}
+
+function updateNextBtn() {
+  if (W.step !== 5) return;
+  const btn = document.getElementById('btn-next');
+  if (!btn) return;
+  if (W.stats_method === 'standard') {
+    const allAssigned = STAT_KEYS.every(k => W.stats_assigned[k] !== null);
+    btn.disabled = !allAssigned;
+    btn.style.opacity = allAssigned ? '' : '0.4';
+    btn.style.cursor = allAssigned ? '' : 'not-allowed';
+  } else {
+    btn.disabled = false;
+    btn.style.opacity = '';
+    btn.style.cursor = '';
+  }
 }
 
 // ─── ÉTAPE 6 — Compétences ────────────────────────────────────
