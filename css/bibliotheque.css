@@ -495,3 +495,131 @@
   background: rgba(255, 255, 255, 0.7);
   color: #2b0040;
 }
+
+/* =============================================================
+   MONSTRES — Badges FP & cards
+   ============================================================= */
+
+.fp-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.fp-vert   { background: rgba(76,175,80,0.2);  color: #81c784; border: 1px solid rgba(76,175,80,0.4); }
+.fp-jaune  { background: rgba(201,168,76,0.2); color: #c9a84c; border: 1px solid rgba(201,168,76,0.4); }
+.fp-orange { background: rgba(255,152,0,0.2);  color: #ffb74d; border: 1px solid rgba(255,152,0,0.4); }
+.fp-rouge  { background: rgba(244,67,54,0.2);  color: #e57373; border: 1px solid rgba(244,67,54,0.4); }
+
+.monstre-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.monstre-nom-original {
+  font-size: 0.72rem;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+/* =============================================================
+   MONSTRES — Modal détail
+   ============================================================= */
+
+.monstre-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.monstre-modal-header .fp-badge {
+  font-size: 0.88rem;
+  padding: 0.3rem 0.75rem;
+  flex-shrink: 0;
+}
+
+.monstre-stats-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.monstre-stats-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #c9a84c;
+  opacity: 0.75;
+}
+
+.stat-val {
+  font-size: 0.9rem;
+  color: #e8dfc8;
+}
+
+.stat-val em {
+  font-size: 0.78rem;
+  color: #888;
+  font-style: normal;
+}
+
+.monstre-carac-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.monstre-carac-cell {
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 6px;
+  padding: 0.4rem 0.2rem;
+}
+
+.carac-key {
+  font-size: 0.65rem;
+  color: #c9a84c;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.carac-val {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e8dfc8;
+}
+
+.carac-mod {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.monstre-fp-row {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+  color: #c9a84c;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .monstre-carac-grid { grid-template-columns: repeat(3, 1fr); }
+  .monstre-stats-row  { flex-direction: column; gap: 0.75rem; }
+}

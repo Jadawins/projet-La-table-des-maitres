@@ -42,7 +42,7 @@ function appliquerTooltips(texte) {
 }
 
 // ─── ONGLETS ─────────────────────────────────────────────────
-const ONGLETS = ['sorts', 'classes', 'especes', 'backgrounds', 'dons', 'equipement', 'glossaire'];
+const ONGLETS = ['sorts', 'classes', 'especes', 'backgrounds', 'dons', 'equipement', 'glossaire', 'monstres'];
 
 function changerOnglet(onglet) {
   state.onglet = onglet;
@@ -109,6 +109,29 @@ function renderFiltres() {
     document.getElementById('f-categorie-equip').addEventListener('change', e => { state.filtres.categorie = e.target.value; state.page = 1; chargerDonnees(); });
   }
 
+  if (state.onglet === 'monstres') {
+    const FP_VALUES = ['0','1/8','1/4','1/2','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'];
+    const fpOpts = FP_VALUES.map(v => `<option value="${v}">${v}</option>`).join('');
+    const TYPES = ['beast','humanoid','undead','dragon','fiend','celestial','elemental','fey','giant','ooze','aberration','construct','plant','monstrosity'];
+    const TYPES_FR = {'beast':'Bête','humanoid':'Humanoïde','undead':'Mort-vivant','dragon':'Dragon','fiend':'Fiélon','celestial':'Céleste','elemental':'Élémentaire','fey':'Fée','giant':'Géant','ooze':'Vase','aberration':'Aberration','construct':'Artificiel','plant':'Plante','monstrosity':'Monstruosité'};
+    zone.innerHTML = `
+      <select id="f-fp-min" title="FP min"><option value="">FP min</option>${fpOpts}</select>
+      <select id="f-fp-max" title="FP max"><option value="">FP max</option>${fpOpts}</select>
+      <select id="f-type-monstre" title="Type">
+        <option value="">Tous les types</option>
+        ${TYPES.map(t => `<option value="${t}">${TYPES_FR[t]||t}</option>`).join('')}
+      </select>
+      <select id="f-taille-monstre" title="Taille">
+        <option value="">Toutes tailles</option>
+        ${['TP','P','M','G','TG','Gig'].map(t => `<option value="${t}">${t}</option>`).join('')}
+      </select>
+    `;
+    document.getElementById('f-fp-min').addEventListener('change', e => { state.filtres.fp_min = e.target.value; state.page = 1; chargerDonnees(); });
+    document.getElementById('f-fp-max').addEventListener('change', e => { state.filtres.fp_max = e.target.value; state.page = 1; chargerDonnees(); });
+    document.getElementById('f-type-monstre').addEventListener('change', e => { state.filtres.type = e.target.value; state.page = 1; chargerDonnees(); });
+    document.getElementById('f-taille-monstre').addEventListener('change', e => { state.filtres.taille = e.target.value; state.page = 1; chargerDonnees(); });
+  }
+
   if (state.onglet === 'glossaire') {
     zone.innerHTML = `
       <select id="f-categorie-glossaire" title="Catégorie">
@@ -159,6 +182,13 @@ async function chargerDonnees() {
       case 'glossaire':
         if (state.filtres.categorie) params.set('categorie', state.filtres.categorie);
         url = `${API}/GetGlossaire?${params}`;
+        break;
+      case 'monstres':
+        if (state.filtres.fp_min)  params.set('fp_min',  state.filtres.fp_min);
+        if (state.filtres.fp_max)  params.set('fp_max',  state.filtres.fp_max);
+        if (state.filtres.type)    params.set('type',    state.filtres.type);
+        if (state.filtres.taille)  params.set('taille',  state.filtres.taille);
+        url = `${API}/GetMonstres?${params}`;
         break;
     }
 
@@ -223,6 +253,7 @@ function renderCarte(item, idx) {
     case 'dons': return carteDon(item, idx);
     case 'equipement': return carteEquipement(item, idx);
     case 'glossaire': return carteGlossaire(item, idx);
+    case 'monstres':  return carteMonster(item, idx);
     default: return '';
   }
 }
@@ -308,6 +339,34 @@ function carteGlossaire(g, idx) {
   </div>`;
 }
 
+// ─── FP BADGE ─────────────────────────────────────────────────
+function fpBadge(fp, fpNum) {
+  let cls = 'fp-vert';
+  if (fpNum >= 11) cls = 'fp-rouge';
+  else if (fpNum >= 5) cls = 'fp-orange';
+  else if (fpNum >= 2) cls = 'fp-jaune';
+  return `<span class="fp-badge ${cls}">FP ${fp}</span>`;
+}
+
+function carteMonster(m, idx) {
+  const TYPES_FR = {'beast':'Bête','humanoid':'Humanoïde','undead':'Mort-vivant','dragon':'Dragon','fiend':'Fiélon','celestial':'Céleste','elemental':'Élémentaire','fey':'Fée','giant':'Géant','ooze':'Vase','aberration':'Aberration','construct':'Artificiel','plant':'Plante','monstrosity':'Monstruosité'};
+  const typeFr = TYPES_FR[m.type?.toLowerCase()] || m.type || '—';
+  return `<div class="biblio-card monstre-card" data-idx="${idx}">
+    <div class="monstre-card-header">
+      <div>
+        <p class="card-title">${m.nom || '—'}</p>
+        ${m.nom_original && m.nom_original !== m.nom ? `<p class="monstre-nom-original">${m.nom_original}</p>` : ''}
+      </div>
+      ${fpBadge(m.fp || '0', m.fp_numerique ?? 0)}
+    </div>
+    <p class="card-subtitle">${typeFr} · ${m.taille || '—'}</p>
+    <div class="card-tags">
+      <span class="card-tag"><i class="fa-solid fa-heart"></i> ${m.pv ?? '—'} PV</span>
+      <span class="card-tag"><i class="fa-solid fa-shield"></i> CA ${m.ca ?? '—'}</span>
+    </div>
+  </div>`;
+}
+
 // ─── PAGINATION ───────────────────────────────────────────────
 function renderPagination() {
   const total = Math.ceil(state.data.length / PER_PAGE);
@@ -334,11 +393,22 @@ window.goPage = function(p) {
 };
 
 // ─── MODAL ────────────────────────────────────────────────────
-function ouvrirModal(item) {
+async function ouvrirModal(item) {
   const overlay = document.getElementById('modal-overlay');
   const body = document.getElementById('modal-body');
-  body.innerHTML = renderModalContent(item);
   overlay.classList.remove('hidden');
+
+  if (state.onglet === 'monstres') {
+    body.innerHTML = '<div style="text-align:center;padding:3rem;color:#888;"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>';
+    try {
+      const res = await fetch(`${API}/GetMonstres/${item.slug}`);
+      const full = await res.json();
+      body.innerHTML = modalMonstre(full);
+    } catch { body.innerHTML = '<p style="color:#f44">Erreur de chargement.</p>'; }
+    return;
+  }
+
+  body.innerHTML = renderModalContent(item);
 }
 
 function fermerModal() {
@@ -354,6 +424,7 @@ function renderModalContent(item) {
     case 'dons': return modalDon(item);
     case 'equipement': return modalEquipement(item);
     case 'glossaire': return modalGlossaire(item);
+    case 'monstres':  return modalMonstre(item);
     default: return `<pre>${JSON.stringify(item, null, 2)}</pre>`;
   }
 }
@@ -474,6 +545,121 @@ function modalGlossaire(g) {
     <div class="modal-section"><h3>Description</h3><p>${g.description || '—'}</p></div>
     ${g.effets?.length ? `<div class="modal-section"><h3>Effets mécaniques</h3><ul>${g.effets.map(ef => `<li>${ef.type || ''} ${ef.detail || ef.cible || ''}</li>`).join('')}</ul></div>` : ''}
     ${g.lire_aussi?.length ? `<div class="modal-section"><h3>Voir aussi</h3><p>${g.lire_aussi.join(', ')}</p></div>` : ''}
+  `;
+}
+
+function modalMonstre(m) {
+  const TYPES_FR = {'beast':'Bête','humanoid':'Humanoïde','undead':'Mort-vivant','dragon':'Dragon','fiend':'Fiélon','celestial':'Céleste','elemental':'Élémentaire','fey':'Fée','giant':'Géant','ooze':'Vase','aberration':'Aberration','construct':'Artificiel','plant':'Plante','monstrosity':'Monstruosité'};
+  const typeFr = TYPES_FR[m.type?.toLowerCase()] || m.type || '—';
+  const TAILLES = {TP:'Très petite',P:'Petite',M:'Moyenne',G:'Grande',TG:'Très grande',Gig:'Gigantesque'};
+
+  function vitesseHtml(v) {
+    if (!v) return '—';
+    const parts = [];
+    if (v.marche)      parts.push(`${v.marche} m`);
+    if (v.nage)        parts.push(`nage ${v.nage} m`);
+    if (v.vol)         parts.push(`vol ${v.vol} m`);
+    if (v.fouissement) parts.push(`fouissement ${v.fouissement} m`);
+    if (v.escalade)    parts.push(`escalade ${v.escalade} m`);
+    return parts.join(', ') || '—';
+  }
+
+  function sensHtml(s) {
+    if (!s) return '—';
+    const parts = [];
+    if (s.vision_dans_le_noir) parts.push(`Vision dans le noir ${s.vision_dans_le_noir} m`);
+    if (s.vision_aveugle)      parts.push(`Vision aveugle ${s.vision_aveugle} m`);
+    if (s.vision_vraie)        parts.push(`Vision vraie ${s.vision_vraie} m`);
+    if (s.tremblements)        parts.push(`Tremblement ${s.tremblements} m`);
+    if (s.perception_passive)  parts.push(`Perception passive ${s.perception_passive}`);
+    return parts.join(', ') || '—';
+  }
+
+  function carac(key) {
+    const c = m.caracteristiques || {};
+    const val = c[key] ?? '—';
+    const mod = c[key + '_mod'];
+    const modStr = mod != null ? (mod >= 0 ? `+${mod}` : `${mod}`) : '';
+    return `<div class="monstre-carac-cell"><div class="carac-key">${key}</div><div class="carac-val">${val}</div><div class="carac-mod">${modStr}</div></div>`;
+  }
+
+  function saveRow() {
+    const saves = m.jets_sauvegarde || {};
+    const actifs = Object.entries(saves).filter(([,v]) => v != null);
+    if (!actifs.length) return '';
+    return `<p>Jets de sauvegarde : ${actifs.map(([k,v]) => `${k} ${v >= 0 ? '+' : ''}${v}`).join(', ')}</p>`;
+  }
+
+  function competencesRow() {
+    const comp = m.competences || {};
+    const actifs = Object.entries(comp).filter(([,v]) => v != null);
+    if (!actifs.length) return '';
+    return `<p>Compétences : ${actifs.map(([k,v]) => `${k} ${v >= 0 ? '+' : ''}${v}`).join(', ')}</p>`;
+  }
+
+  function listSection(title, arr) {
+    if (!arr?.length) return '';
+    return `<div class="modal-section"><h3>${title}</h3>${arr.map(a =>
+      `<p><strong>${a.nom}</strong>${a.description ? ' — ' + a.description : ''}</p>`
+    ).join('')}</div>`;
+  }
+
+  function tagList(title, arr) {
+    if (!arr?.length) return '';
+    return `<div class="modal-section"><h3>${title}</h3><p>${arr.join(', ')}</p></div>`;
+  }
+
+  return `
+    <div class="monstre-modal-header">
+      <div>
+        <p class="modal-title">${m.nom || '—'}</p>
+        ${m.nom_original && m.nom_original !== m.nom ? `<p class="monstre-nom-original">${m.nom_original}</p>` : ''}
+        <p class="modal-subtitle">${TAILLES[m.taille] || m.taille || '—'} ${typeFr} · ${m.alignement || '—'}</p>
+      </div>
+      ${fpBadge(m.fp || '0', m.fp_numerique ?? 0)}
+    </div>
+
+    <div class="modal-section monstre-stats-row">
+      <div><span class="stat-label">PV</span><span class="stat-val">${m.pv ?? '—'} <em>${m.pv_formule ? '(' + m.pv_formule + ')' : ''}</em></span></div>
+      <div><span class="stat-label">CA</span><span class="stat-val">${m.ca ?? '—'}${m.ca_detail ? ' <em>(' + m.ca_detail + ')</em>' : ''}</span></div>
+      <div><span class="stat-label">Vitesse</span><span class="stat-val">${vitesseHtml(m.vitesse)}</span></div>
+    </div>
+
+    <div class="modal-section">
+      <h3>Caractéristiques</h3>
+      <div class="monstre-carac-grid">
+        ${['FOR','DEX','CON','INT','SAG','CHA'].map(carac).join('')}
+      </div>
+      ${saveRow()}
+      ${competencesRow()}
+    </div>
+
+    ${(m.resistances?.length || m.immunites_degats?.length || m.vulnerabilites?.length || m.immunites_etats?.length) ? `
+    <div class="modal-section">
+      <h3>Résistances &amp; Immunités</h3>
+      ${m.resistances?.length     ? `<p>Résistances : ${m.resistances.join(', ')}</p>` : ''}
+      ${m.immunites_degats?.length? `<p>Immunités (dégâts) : ${m.immunites_degats.join(', ')}</p>` : ''}
+      ${m.vulnerabilites?.length  ? `<p>Vulnérabilités : ${m.vulnerabilites.join(', ')}</p>` : ''}
+      ${m.immunites_etats?.length ? `<p>Immunités (états) : ${m.immunites_etats.join(', ')}</p>` : ''}
+    </div>` : ''}
+
+    <div class="modal-section">
+      <h3>Sens &amp; Langues</h3>
+      <p>${sensHtml(m.sens)}</p>
+      ${m.langues?.length ? `<p>Langues : ${m.langues.join(', ')}</p>` : ''}
+    </div>
+
+    <div class="modal-section monstre-fp-row">
+      <span>FP ${m.fp || '—'}</span>
+      <span>${m.bonus_maitrise ? 'Bonus maîtrise +' + m.bonus_maitrise : ''}</span>
+      <span>${m.experience ? m.experience.toLocaleString('fr-FR') + ' XP' : ''}</span>
+    </div>
+
+    ${listSection('Traits', m.traits)}
+    ${listSection('Actions', m.actions)}
+    ${listSection('Actions bonus', m.actions_bonus)}
+    ${listSection('Réactions', m.reactions)}
+    ${listSection('Actions légendaires', m.actions_legendaires)}
   `;
 }
 
