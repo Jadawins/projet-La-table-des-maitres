@@ -455,23 +455,21 @@ function toggleSlot(emplIdx, dotIdx) {
 // ─── ÉQUIPEMENT ───────────────────────────────────────────────
 
 // Détecte les items de monnaie dans l'équipement et les transfère vers perso.monnaie
-const MONNAIE_PATTERNS = [
-  { re: /^(\d+)\s*pp$/i,                         cle: 'pp', extract: m => +m[1] },
-  { re: /^(\d+)\s*po$/i,                         cle: 'po', extract: m => +m[1] },
-  { re: /^(\d+)\s*pe$/i,                         cle: 'pe', extract: m => +m[1] },
-  { re: /^(\d+)\s*pa$/i,                         cle: 'pa', extract: m => +m[1] },
-  { re: /^(\d+)\s*pc$/i,                         cle: 'pc', extract: m => +m[1] },
-  { re: /^pp$/i,                                  cle: 'pp', extract: () => null },
-  { re: /^po$/i,                                  cle: 'po', extract: () => null },
-  { re: /^pe$/i,                                  cle: 'pe', extract: () => null },
-  { re: /^pa$/i,                                  cle: 'pa', extract: () => null },
-  { re: /^pc$/i,                                  cle: 'pc', extract: () => null },
-  { re: /pi[eè]ces?\s*de\s*platine/i,            cle: 'pp', extract: () => null },
-  { re: /pi[eè]ces?\s*d['']or/i,                 cle: 'po', extract: () => null },
-  { re: /pi[eè]ces?\s*d[''][\u00e9e]lectrum/i,   cle: 'pe', extract: () => null },
-  { re: /pi[eè]ces?\s*d['']argent/i,             cle: 'pa', extract: () => null },
-  { re: /pi[eè]ces?\s*de\s*cuivre/i,             cle: 'pc', extract: () => null },
-];
+function _detecterMonnaie(nomOriginal) {
+  const n = nomOriginal.trim().toLowerCase().replace(/\s+/g, ' ');
+  // "X pp/po/pe/pa/pc"
+  const mNombre = n.match(/^(\d+)\s*(pp|po|pe|pa|pc)$/);
+  if (mNombre) return { cle: mNombre[2], montant: parseInt(mNombre[1]) };
+  // Juste "po", "pa", etc.
+  if (/^(pp|po|pe|pa|pc)$/.test(n)) return { cle: n, montant: null };
+  // "Pièces d'or" / "pieces d or" / etc. — on cherche le métal sans dépendre de l'apostrophe
+  if (/pi.{0,4}ces?.{0,5}or\b/.test(n))     return { cle: 'po', montant: null };
+  if (/pi.{0,4}ces?.{0,5}argent/.test(n))    return { cle: 'pa', montant: null };
+  if (/pi.{0,4}ces?.{0,5}cuivre/.test(n))    return { cle: 'pc', montant: null };
+  if (/pi.{0,4}ces?.{0,5}lectrum/.test(n))   return { cle: 'pe', montant: null };
+  if (/pi.{0,4}ces?.{0,5}platine/.test(n))   return { cle: 'pp', montant: null };
+  return null;
+}
 
 function migrerMonnaieDepuisEquipement() {
   if (!perso.equipement?.length) return;
@@ -479,19 +477,11 @@ function migrerMonnaieDepuisEquipement() {
   const garder = [];
   let modifie = false;
   for (const item of perso.equipement) {
-    const nom = (item.nom || '').trim();
-    let trouve = false;
-    for (const p of MONNAIE_PATTERNS) {
-      const m = nom.match(p.re);
-      if (!m) continue;
-      const valeurExtraite = p.extract(m);
-      const montant = valeurExtraite !== null ? valeurExtraite : (item.quantite || 1);
-      perso.monnaie[p.cle] = (perso.monnaie[p.cle] || 0) + montant;
-      trouve = true;
-      modifie = true;
-      break;
-    }
-    if (!trouve) garder.push(item);
+    const detect = _detecterMonnaie(item.nom || '');
+    if (!detect) { garder.push(item); continue; }
+    const montant = detect.montant !== null ? detect.montant : (item.quantite || 1);
+    perso.monnaie[detect.cle] = (perso.monnaie[detect.cle] || 0) + montant;
+    modifie = true;
   }
   if (modifie) {
     perso.equipement = garder;
