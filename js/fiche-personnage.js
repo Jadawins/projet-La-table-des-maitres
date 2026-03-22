@@ -123,6 +123,7 @@ function renderAll() {
   renderCompetences();
   renderAttaques();
   renderSorts();
+  migrerMonnaieDepuisEquipement();
   renderEquipement();
   renderMonnaie();
   renderTraits();
@@ -452,6 +453,52 @@ function toggleSlot(emplIdx, dotIdx) {
 }
 
 // ─── ÉQUIPEMENT ───────────────────────────────────────────────
+
+// Détecte les items de monnaie dans l'équipement et les transfère vers perso.monnaie
+const MONNAIE_PATTERNS = [
+  { re: /^(\d+)\s*pp$/i,                         cle: 'pp', extract: m => +m[1] },
+  { re: /^(\d+)\s*po$/i,                         cle: 'po', extract: m => +m[1] },
+  { re: /^(\d+)\s*pe$/i,                         cle: 'pe', extract: m => +m[1] },
+  { re: /^(\d+)\s*pa$/i,                         cle: 'pa', extract: m => +m[1] },
+  { re: /^(\d+)\s*pc$/i,                         cle: 'pc', extract: m => +m[1] },
+  { re: /^pp$/i,                                  cle: 'pp', extract: () => null },
+  { re: /^po$/i,                                  cle: 'po', extract: () => null },
+  { re: /^pe$/i,                                  cle: 'pe', extract: () => null },
+  { re: /^pa$/i,                                  cle: 'pa', extract: () => null },
+  { re: /^pc$/i,                                  cle: 'pc', extract: () => null },
+  { re: /pi[eè]ces?\s*de\s*platine/i,            cle: 'pp', extract: () => null },
+  { re: /pi[eè]ces?\s*d['']or/i,                 cle: 'po', extract: () => null },
+  { re: /pi[eè]ces?\s*d[''][\u00e9e]lectrum/i,   cle: 'pe', extract: () => null },
+  { re: /pi[eè]ces?\s*d['']argent/i,             cle: 'pa', extract: () => null },
+  { re: /pi[eè]ces?\s*de\s*cuivre/i,             cle: 'pc', extract: () => null },
+];
+
+function migrerMonnaieDepuisEquipement() {
+  if (!perso.equipement?.length) return;
+  if (!perso.monnaie) perso.monnaie = {};
+  const garder = [];
+  let modifie = false;
+  for (const item of perso.equipement) {
+    const nom = (item.nom || '').trim();
+    let trouve = false;
+    for (const p of MONNAIE_PATTERNS) {
+      const m = nom.match(p.re);
+      if (!m) continue;
+      const valeurExtraite = p.extract(m);
+      const montant = valeurExtraite !== null ? valeurExtraite : (item.quantite || 1);
+      perso.monnaie[p.cle] = (perso.monnaie[p.cle] || 0) + montant;
+      trouve = true;
+      modifie = true;
+      break;
+    }
+    if (!trouve) garder.push(item);
+  }
+  if (modifie) {
+    perso.equipement = garder;
+    markDirty('equipement', perso.equipement);
+    markDirty('monnaie', perso.monnaie);
+  }
+}
 
 function renderEquipement() {
   const tbody = document.getElementById('equip-tbody');
