@@ -1,0 +1,106 @@
+{
+  "slug": "dretch",
+  "nom": "Dretch",
+  "nom_original": "Dretch",
+  "taille": "P",
+  "type": "Fiend",
+  "sous_type": "demon",
+  "alignement": "chaotic evil",
+  "ca": 11,
+  "ca_detail": "natural armor",
+  "pv": 18,
+  "pv_formule": "4d6+4",
+  "vitesse": {
+    "marche": 6,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 11,
+    "FOR_mod": 0,
+    "DEX": 11,
+    "DEX_mod": 0,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 8,
+    "SAG_mod": -1,
+    "CHA": 3,
+    "CHA_mod": -4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 9,
+    "tremblements": null
+  },
+  "langues": [
+    "Abyssal",
+    "telepathy 60 ft. (works only with creatures that understand Abyssal)"
+  ],
+  "fp": "1/4",
+  "fp_numerique": 0.25,
+  "bonus_maitrise": 2,
+  "experience": 50,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dretch makes two attacks: one with its bite and one with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage.",
+      "bonus_attaque": 2,
+      "degats_de": "1d6",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 5 (2d4) slashing damage.",
+      "bonus_attaque": 2,
+      "degats_de": "2d4",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Fetid Cloud (1/Day)",
+      "description": "A 10-foot radius of disgusting green gas extends out from the dretch. The gas spreads around corners, and its area is lightly obscured. It lasts for 1 minute or until a strong wind disperses it. Any creature that starts its turn in that area must succeed on a DC 11 Constitution saving throw or be poisoned until the start of its next turn. While poisoned in this way, the target can take either an action or a bonus action on its turn, not both, and can't take reactions.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "archmage",
+  "nom": "Archimage",
+  "nom_original": "Archmage",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any alignment",
+  "ca": 12,
+  "ca_detail": "15 with _mage armor_",
+  "pv": 99,
+  "pv_formule": "18d8+18",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 10,
+    "FOR_mod": 0,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 20,
+    "INT_mod": 5,
+    "SAG": 15,
+    "SAG_mod": 2,
+    "CHA": 16,
+    "CHA_mod": 3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": 9,
+    "SAG": 6,
+    "CHA": null
+  },
+  "competences": {
+    "arcana": 13,
+    "history": 13
+  },
+  "resistances": [
+    "damage from spells; non magical bludgeoning",
+    "piercing",
+    "and slashing (from stoneskin)"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 12,
+    "tremblements": null
+  },
+  "langues": [
+    "any six languages"
+  ],
+  "fp": "12",
+  "fp_numerique": 12,
+  "bonus_maitrise": 4,
+  "experience": 8400,
+  "traits": [
+    {
+      "nom": "Magic Resistance",
+      "description": "The archmage has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Spellcasting",
+      "description": "The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:\n\n* Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp\n* 1st level (4 slots): detect magic, identify, mage armor*, magic missile\n* 2nd level (3 slots): detect thoughts, mirror image, misty step\n* 3rd level (3 slots): counterspell,fly, lightning bolt\n* 4th level (3 slots): banishment, fire shield, stoneskin*\n* 5th level (3 slots): cone of cold, scrying, wall of force\n* 6th level (1 slot): globe of invulnerability\n* 7th level (1 slot): teleport\n* 8th level (1 slot): mind blank*\n* 9th level (1 slot): time stop\n* The archmage casts these spells on itself before combat.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Dagger",
+      "description": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "1d4",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

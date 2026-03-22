@@ -1,0 +1,106 @@
+{
+  "slug": "merrow",
+  "nom": "Merrow",
+  "nom_original": "Merrow",
+  "taille": "G",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 45,
+  "pv_formule": "6d10+12",
+  "vitesse": {
+    "marche": 3,
+    "nage": 12,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 8,
+    "INT_mod": -1,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 9,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Abyssal",
+    "Aquan"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The merrow can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The merrow makes two attacks: one with its bite and one with its claws or harpoon.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "1d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) slashing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d4",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Harpoon",
+      "description": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a Huge or smaller creature, it must succeed on a Strength contest against the merrow or be pulled up to 20 feet toward the merrow.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "hydra",
+  "nom": "Hydre",
+  "nom_original": "Hydra",
+  "taille": "TG",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 15,
+  "ca_detail": "natural armor",
+  "pv": 172,
+  "pv_formule": "15d12+75",
+  "vitesse": {
+    "marche": 9,
+    "nage": 9,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 20,
+    "FOR_mod": 5,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 6
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 16,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "8",
+  "fp_numerique": 8,
+  "bonus_maitrise": 3,
+  "experience": 3900,
+  "traits": [
+    {
+      "nom": "Hold Breath",
+      "description": "The hydra can hold its breath for 1 hour.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Multiple Heads",
+      "description": "The hydra has five heads. While it has more than one head, the hydra has advantage on saving throws against being blinded, charmed, deafened, frightened, stunned, and knocked unconscious.\nWhenever the hydra takes 25 or more damage in a single turn, one of its heads dies. If all its heads die, the hydra dies.\nAt the end of its turn, it grows two heads for each of its heads that died since its last turn, unless it has taken fire damage since its last turn. The hydra regains 10 hit points for each head regrown in this way.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Reactive Heads",
+      "description": "For each head the hydra has beyond one, it gets an extra reaction that can be used only for opportunity attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Wakeful",
+      "description": "While the hydra sleeps, at least one of its heads is awake.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The hydra makes as many bite attacks as it has heads.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 10 (1d10 + 5) piercing damage.",
+      "bonus_attaque": 8,
+      "degats_de": "1d10",
+      "degats_bonus": 5
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

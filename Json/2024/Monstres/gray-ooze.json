@@ -1,0 +1,109 @@
+{
+  "slug": "gray-ooze",
+  "nom": "Gray Ooze",
+  "nom_original": "Gray Ooze",
+  "taille": "M",
+  "type": "Ooze",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 8,
+  "ca_detail": null,
+  "pv": 22,
+  "pv_formule": "3d8+9",
+  "vitesse": {
+    "marche": 3,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": 3
+  },
+  "caracteristiques": {
+    "FOR": 12,
+    "FOR_mod": 1,
+    "DEX": 6,
+    "DEX_mod": -2,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 6,
+    "SAG_mod": -2,
+    "CHA": 2,
+    "CHA_mod": -4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "stealth": 2
+  },
+  "resistances": [
+    "acid",
+    "cold",
+    "fire"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "prone"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Amorphous",
+      "description": "The ooze can move through a space as narrow as 1 inch wide without squeezing.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Corrode Metal",
+      "description": "Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.\nThe ooze can eat through 2-inch-thick, nonmagical metal in 1 round.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "False Appearance",
+      "description": "While the ooze remains motionless, it is indistinguishable from an oily pool or wet rock.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Pseudopod",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage plus 7 (2d6) acid damage, and if the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10.",
+      "bonus_attaque": 3,
+      "degats_de": "1d6",
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

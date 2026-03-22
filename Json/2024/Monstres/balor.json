@@ -1,0 +1,144 @@
+{
+  "slug": "balor",
+  "nom": "Balor",
+  "nom_original": "Balor",
+  "taille": "TG",
+  "type": "Fiend",
+  "sous_type": "demon",
+  "alignement": "chaotic evil",
+  "ca": 19,
+  "ca_detail": "natural armor",
+  "pv": 262,
+  "pv_formule": "21d12+126",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": 24,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 26,
+    "FOR_mod": 8,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 22,
+    "CON_mod": 6,
+    "INT": 20,
+    "INT_mod": 5,
+    "SAG": 16,
+    "SAG_mod": 3,
+    "CHA": 22,
+    "CHA_mod": 6
+  },
+  "jets_sauvegarde": {
+    "FOR": 14,
+    "DEX": null,
+    "CON": 12,
+    "INT": null,
+    "SAG": 9,
+    "CHA": 12
+  },
+  "competences": {},
+  "resistances": [
+    "cold",
+    "lightning; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": 36,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "fp": "19",
+  "fp_numerique": 19,
+  "bonus_maitrise": 6,
+  "experience": 22000,
+  "traits": [
+    {
+      "nom": "Death Throes",
+      "description": "When the balor dies, it explodes, and each creature within 30 feet of it must make a DC 20 Dexterity saving throw, taking 70 (20d6) fire damage on a failed save, or half as much damage on a successful one. The explosion ignites flammable objects in that area that aren't being worn or carried, and it destroys the balor's weapons.",
+      "bonus_attaque": 0,
+      "degats_de": "20d6",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Fire Aura",
+      "description": "At the start of each of the balor's turns, each creature within 5 feet of it takes 10 (3d6) fire damage, and flammable objects in the aura that aren't being worn or carried ignite. A creature that touches the balor or hits it with a melee attack while within 5 feet of it takes 10 (3d6) fire damage.",
+      "bonus_attaque": 0,
+      "degats_de": "3d6",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The balor has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Weapons",
+      "description": "The balor's weapon attacks are magical.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The balor makes two attacks: one with its longsword and one with its whip.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Longsword",
+      "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 21 (3d8 + 8) slashing damage plus 13 (3d8) lightning damage. If the balor scores a critical hit, it rolls damage dice three times, instead of twice.",
+      "bonus_attaque": 14,
+      "degats_de": "3d8+3d8",
+      "degats_bonus": 8
+    },
+    {
+      "nom": "Whip",
+      "description": "Melee Weapon Attack: +14 to hit, reach 30 ft., one target. Hit: 15 (2d6 + 8) slashing damage plus 10 (3d6) fire damage, and the target must succeed on a DC 20 Strength saving throw or be pulled up to 25 feet toward the balor.",
+      "bonus_attaque": 14,
+      "degats_de": "2d6+3d6",
+      "degats_bonus": 8
+    },
+    {
+      "nom": "Teleport",
+      "description": "The balor magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Variant: Summon Demon (1/Day)",
+      "description": "The demon chooses what to summon and attempts a magical summoning.\nA balor has a 50 percent chance of summoning 1d8 vrocks, 1d6 hezrous, 1d4 glabrezus, 1d3 nalfeshnees, 1d2 mariliths, or one goristro.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

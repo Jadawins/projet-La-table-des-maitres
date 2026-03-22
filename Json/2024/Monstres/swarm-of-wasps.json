@@ -1,0 +1,95 @@
+{
+  "slug": "swarm-of-wasps",
+  "nom": "Swarm of Wasps",
+  "nom_original": "Swarm of Wasps",
+  "taille": "M",
+  "type": "Beast",
+  "sous_type": "Swarm",
+  "alignement": "unaligned",
+  "ca": 12,
+  "ca_detail": "natural armor",
+  "pv": 22,
+  "pv_formule": "5d8",
+  "vitesse": {
+    "marche": 1.5,
+    "nage": null,
+    "vol": 9,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 3,
+    "FOR_mod": -4,
+    "DEX": 13,
+    "DEX_mod": 1,
+    "CON": 10,
+    "CON_mod": 0,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 7,
+    "SAG_mod": -2,
+    "CHA": 1,
+    "CHA_mod": -5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 3,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Swarm",
+      "description": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bites",
+      "description": "Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.",
+      "bonus_attaque": 3,
+      "degats_de": "4d4",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

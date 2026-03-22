@@ -1,0 +1,111 @@
+{
+  "slug": "young-white-dragon",
+  "nom": "Young White Dragon",
+  "nom_original": "Young White Dragon",
+  "taille": "G",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 133,
+  "pv_formule": "14d10+56",
+  "vitesse": {
+    "marche": 12,
+    "nage": 12,
+    "vol": 24,
+    "fouissement": 6,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 18,
+    "CON_mod": 4,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 12,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 3,
+    "CON": 7,
+    "INT": null,
+    "SAG": 3,
+    "CHA": 4
+  },
+  "competences": {
+    "perception": 6,
+    "stealth": 3
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "cold"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": 9,
+    "vision_vraie": null,
+    "perception_passive": 16,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "6",
+  "fp_numerique": 6,
+  "bonus_maitrise": 3,
+  "experience": 2300,
+  "traits": [
+    {
+      "nom": "Ice Walk",
+      "description": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra movement.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) cold damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d10+1d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Cold Breath (Recharge 5-6)",
+      "description": "The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 45 (10d8) cold damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "10d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

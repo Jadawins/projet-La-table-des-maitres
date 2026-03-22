@@ -1,0 +1,88 @@
+{
+  "slug": "ogre-zombie",
+  "nom": "Ogre Zombie",
+  "nom_original": "Ogre Zombie",
+  "taille": "G",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "neutral evil",
+  "ca": 8,
+  "ca_detail": null,
+  "pv": 85,
+  "pv_formule": "9d10+36",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 6,
+    "DEX_mod": -2,
+    "CON": 18,
+    "CON_mod": 4,
+    "INT": 3,
+    "INT_mod": -4,
+    "SAG": 6,
+    "SAG_mod": -2,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": 0,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [
+    "understands Common and Giant but can't speak"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Undead Fortitude",
+      "description": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Morningstar",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d8",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

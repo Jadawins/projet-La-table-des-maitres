@@ -1,0 +1,95 @@
+{
+  "slug": "priest",
+  "nom": "Prêtre",
+  "nom_original": "Priest",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any alignment",
+  "ca": 13,
+  "ca_detail": "chain shirt",
+  "pv": 27,
+  "pv_formule": "5d8+5",
+  "vitesse": {
+    "marche": 7.5,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 10,
+    "FOR_mod": 0,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 13,
+    "INT_mod": 1,
+    "SAG": 16,
+    "SAG_mod": 3,
+    "CHA": 13,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "medicine": 7,
+    "persuasion": 3,
+    "religion": 5
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [
+    "any two languages"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Divine Eminence",
+      "description": "As a bonus action, the priest can expend a spell slot to cause its melee weapon attacks to magically deal an extra 10 (3d6) radiant damage to a target on a hit. This benefit lasts until the end of the turn. If the priest expends a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each level above 1st.",
+      "bonus_attaque": 0,
+      "degats_de": "3d6",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Spellcasting",
+      "description": "The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:\n\n* Cantrips (at will): light, sacred flame, thaumaturgy\n* 1st level (4 slots): cure wounds, guiding bolt, sanctuary\n* 2nd level (3 slots): lesser restoration, spiritual weapon\n* 3rd level (2 slots): dispel magic, spirit guardians",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Mace",
+      "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) bludgeoning damage.",
+      "bonus_attaque": 2,
+      "degats_de": "1d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

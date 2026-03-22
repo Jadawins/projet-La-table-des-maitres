@@ -1,0 +1,111 @@
+{
+  "slug": "young-black-dragon",
+  "nom": "Young Black Dragon",
+  "nom_original": "Young Black Dragon",
+  "taille": "G",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 18,
+  "ca_detail": "natural armor",
+  "pv": 127,
+  "pv_formule": "15d10+45",
+  "vitesse": {
+    "marche": 12,
+    "nage": 12,
+    "vol": 24,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 17,
+    "CON_mod": 3,
+    "INT": 12,
+    "INT_mod": 1,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 15,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 5,
+    "CON": 6,
+    "INT": null,
+    "SAG": 3,
+    "CHA": 5
+  },
+  "competences": {
+    "perception": 6,
+    "stealth": 5
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "acid"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": 9,
+    "vision_vraie": null,
+    "perception_passive": 16,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "7",
+  "fp_numerique": 7,
+  "bonus_maitrise": 3,
+  "experience": 2900,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The dragon can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) acid damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d10+1d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Acid Breath (Recharge 5-6)",
+      "description": "The dragon exhales acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 49 (11d8) acid damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "11d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

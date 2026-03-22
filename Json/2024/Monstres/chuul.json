@@ -1,0 +1,111 @@
+{
+  "slug": "chuul",
+  "nom": "Chuul",
+  "nom_original": "Chuul",
+  "taille": "G",
+  "type": "Aberration",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 16,
+  "ca_detail": "natural armor",
+  "pv": 93,
+  "pv_formule": "11d10+33",
+  "vitesse": {
+    "marche": 9,
+    "nage": 9,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 4
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "understands Deep Speech but can't speak"
+  ],
+  "fp": "4",
+  "fp_numerique": 4,
+  "bonus_maitrise": 2,
+  "experience": 1100,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The chuul can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Sense Magic",
+      "description": "The chuul senses magic within 120 feet of it at will. This trait otherwise works like the detect magic spell but isn't itself magical.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The chuul makes two pincer attacks. If the chuul is grappling a creature, the chuul can also use its tentacles once.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pincer",
+      "description": "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage. The target is grappled (escape DC 14) if it is a Large or smaller creature and the chuul doesn't have two other creatures grappled.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Tentacles",
+      "description": "One creature grappled by the chuul must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. Until this poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": "http://api.open5e.com/static/img/object_illustrations/open5e-illustrations/monsters/chuul.png"
+}

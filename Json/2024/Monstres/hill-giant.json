@@ -1,0 +1,92 @@
+{
+  "slug": "hill-giant",
+  "nom": "Hill Giant",
+  "nom_original": "Hill Giant",
+  "taille": "TG",
+  "type": "Giant",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 105,
+  "pv_formule": "10d12+40",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 21,
+    "FOR_mod": 5,
+    "DEX": 8,
+    "DEX_mod": -1,
+    "CON": 19,
+    "CON_mod": 4,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 9,
+    "SAG_mod": -1,
+    "CHA": 6,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 2
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 12,
+    "tremblements": null
+  },
+  "langues": [
+    "Giant"
+  ],
+  "fp": "5",
+  "fp_numerique": 5,
+  "bonus_maitrise": 3,
+  "experience": 1800,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The giant makes two greatclub attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Greatclub",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 18 (3d8 + 5) bludgeoning damage.",
+      "bonus_attaque": 8,
+      "degats_de": "3d8",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Rock",
+      "description": "Ranged Weapon Attack: +8 to hit, range 60/240 ft., one target. Hit: 21 (3d10 + 5) bludgeoning damage.",
+      "bonus_attaque": 8,
+      "degats_de": "3d10",
+      "degats_bonus": 5
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

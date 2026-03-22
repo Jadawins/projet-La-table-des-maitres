@@ -1,0 +1,123 @@
+{
+  "slug": "chain-devil",
+  "nom": "Chain Devil",
+  "nom_original": "Chain Devil",
+  "taille": "M",
+  "type": "Fiend",
+  "sous_type": "devil",
+  "alignement": "lawful evil",
+  "ca": 16,
+  "ca_detail": "natural armor",
+  "pv": 85,
+  "pv_formule": "10d8+40",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 18,
+    "CON_mod": 4,
+    "INT": 11,
+    "INT_mod": 0,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 14,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "cold; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "fp": "11",
+  "fp_numerique": 11,
+  "bonus_maitrise": 4,
+  "experience": 7200,
+  "traits": [
+    {
+      "nom": "Devil's Sight",
+      "description": "Magical darkness doesn't impede the devil's darkvision.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The devil has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The devil makes two attacks with its chains.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Chain",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) slashing damage. The target is grappled (escape DC 14) if the devil isn't already grappling a creature. Until this grapple ends, the target is restrained and takes 7 (2d6) piercing damage at the start of each of its turns.",
+      "bonus_attaque": 8,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Animate Chains (Recharges after a Short or Long Rest)",
+      "description": "Up to four chains the devil can see within 60 feet of it magically sprout razor-edged barbs and animate under the devil's control, provided that the chains aren't being worn or carried.\nEach animated chain is an object with AC 20, 20 hit points, resistance to piercing damage, and immunity to psychic and thunder damage. When the devil uses Multiattack on its turn, it can use each animated chain to make one additional chain attack. An animated chain can grapple one creature of its own but can't make attacks while grappling. An animated chain reverts to its inanimate state if reduced to 0 hit points or if the devil is incapacitated or dies.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [
+    {
+      "nom": "Unnerving Mask",
+      "description": "When a creature the devil can see starts its turn within 30 feet of the devil, the devil can create the illusion that it looks like one of the creature's departed loved ones or bitter enemies. If the creature can see the devil, it must succeed on a DC 14 Wisdom saving throw or be frightened until the end of its turn.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

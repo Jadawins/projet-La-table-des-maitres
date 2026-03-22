@@ -1,0 +1,76 @@
+{
+  "slug": "giant-poisonous-snake",
+  "nom": "Giant Poisonous Snake",
+  "nom_original": "Giant Poisonous Snake",
+  "taille": "M",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 14,
+  "ca_detail": null,
+  "pv": 11,
+  "pv_formule": "2d8+2",
+  "vitesse": {
+    "marche": 9,
+    "nage": 9,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 10,
+    "FOR_mod": 0,
+    "DEX": 18,
+    "DEX_mod": 4,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 3,
+    "CHA_mod": -4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 2
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 3,
+    "vision_vraie": null,
+    "perception_passive": 12,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/4",
+  "fp_numerique": 0.25,
+  "bonus_maitrise": 2,
+  "experience": 50,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 6 (1d4 + 4) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 6,
+      "degats_de": "1d4",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,116 @@
+{
+  "slug": "mimic",
+  "nom": "Mimic",
+  "nom_original": "Mimic",
+  "taille": "M",
+  "type": "Monstrosity",
+  "sous_type": "shapechanger",
+  "alignement": "neutral",
+  "ca": 12,
+  "ca_detail": "natural armor",
+  "pv": 58,
+  "pv_formule": "9d8+18",
+  "vitesse": {
+    "marche": 4.5,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 17,
+    "FOR_mod": 3,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "stealth": 5
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "acid"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "prone"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Shapechanger",
+      "description": "The mimic can use its action to polymorph into an object or back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Adhesive (Object Form Only)",
+      "description": "The mimic adheres to anything that touches it. A Huge or smaller creature adhered to the mimic is also grappled by it (escape DC 13). Ability checks made to escape this grapple have disadvantage.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "False Appearance (Object Form Only)",
+      "description": "While the mimic remains motionless, it is indistinguishable from an ordinary object.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Grappler",
+      "description": "The mimic has advantage on attack rolls against any creature grappled by it.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Pseudopod",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage. If the mimic is in object form, the target is subjected to its Adhesive trait.",
+      "bonus_attaque": 5,
+      "degats_de": "1d8",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 4 (1d8) acid damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d8+1d8",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,117 @@
+{
+  "slug": "doppelganger",
+  "nom": "Doppelganger",
+  "nom_original": "Doppelganger",
+  "taille": "M",
+  "type": "Monstrosity",
+  "sous_type": "shapechanger",
+  "alignement": "unaligned",
+  "ca": 14,
+  "ca_detail": null,
+  "pv": 52,
+  "pv_formule": "8d8+16",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 11,
+    "FOR_mod": 0,
+    "DEX": 18,
+    "DEX_mod": 4,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 11,
+    "INT_mod": 0,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 14,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "deception": 6,
+    "insight": 3
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "Common"
+  ],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [
+    {
+      "nom": "Shapechanger",
+      "description": "The doppelganger can use its action to polymorph into a Small or Medium humanoid it has seen, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Ambusher",
+      "description": "The doppelganger has advantage on attack rolls against any creature it has surprised.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Surprise Attack",
+      "description": "If the doppelganger surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 (3d6) damage from the attack.",
+      "bonus_attaque": 0,
+      "degats_de": "3d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The doppelganger makes two melee attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) bludgeoning damage.",
+      "bonus_attaque": 6,
+      "degats_de": "1d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Read Thoughts",
+      "description": "The doppelganger magically reads the surface thoughts of one creature within 60 ft. of it. The effect can penetrate barriers, but 3 ft. of wood or dirt, 2 ft. of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the doppelganger can continue reading its thoughts, as long as the doppelganger's concentration isn't broken (as if concentrating on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Insight) and Charisma (Deception, Intimidation, and Persuasion) checks against the target.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

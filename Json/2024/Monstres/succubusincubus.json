@@ -1,0 +1,128 @@
+{
+  "slug": "succubusincubus",
+  "nom": "Succubus/Incubus",
+  "nom_original": "Succubus/Incubus",
+  "taille": "M",
+  "type": "Fiend",
+  "sous_type": "shapechanger",
+  "alignement": "neutral evil",
+  "ca": 15,
+  "ca_detail": "natural armor",
+  "pv": 66,
+  "pv_formule": "12d8+12",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 8,
+    "FOR_mod": -1,
+    "DEX": 17,
+    "DEX_mod": 3,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 15,
+    "INT_mod": 2,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 20,
+    "CHA_mod": 5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "deception": 9,
+    "insight": 5,
+    "perception": 5,
+    "persuasion": 9,
+    "stealth": 7
+  },
+  "resistances": [
+    "cold",
+    "fire",
+    "lightning",
+    "poison; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 15,
+    "tremblements": null
+  },
+  "langues": [
+    "Abyssal",
+    "Common",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "fp": "4",
+  "fp_numerique": 4,
+  "bonus_maitrise": 2,
+  "experience": 1100,
+  "traits": [
+    {
+      "nom": "Telepathic Bond",
+      "description": "The fiend ignores the range restriction on its telepathy when communicating with a creature it has charmed. The two don't even need to be on the same plane of existence.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Shapechanger",
+      "description": "The fiend can use its action to polymorph into a Small or Medium humanoid, or back into its true form. Without wings, the fiend loses its flying speed. Other than its size and speed, its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Claw (Fiend Form Only)",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Charm",
+      "description": "One humanoid the fiend can see within 30 feet of it must succeed on a DC 15 Wisdom saving throw or be magically charmed for 1 day. The charmed target obeys the fiend's verbal or telepathic commands. If the target suffers any harm or receives a suicidal command, it can repeat the saving throw, ending the effect on a success. If the target successfully saves against the effect, or if the effect on it ends, the target is immune to this fiend's Charm for the next 24 hours.\nThe fiend can have only one target charmed at a time. If it charms another, the effect on the previous target ends.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Draining Kiss",
+      "description": "The fiend kisses a creature charmed by it or a willing creature. The target must make a DC 15 Constitution saving throw against this magic, taking 32 (5d10 + 5) psychic damage on a failed save, or half as much damage on a successful one. The target's hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
+      "bonus_attaque": 0,
+      "degats_de": "5d10",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Etherealness",
+      "description": "The fiend magically enters the Ethereal Plane from the Material Plane, or vice versa.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,133 @@
+{
+  "slug": "barbed-devil",
+  "nom": "Barbed Devil",
+  "nom_original": "Barbed Devil",
+  "taille": "M",
+  "type": "Fiend",
+  "sous_type": "devil",
+  "alignement": "lawful evil",
+  "ca": 15,
+  "ca_detail": "natural armor",
+  "pv": 110,
+  "pv_formule": "13d8+52",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 16,
+    "FOR_mod": 3,
+    "DEX": 17,
+    "DEX_mod": 3,
+    "CON": 18,
+    "CON_mod": 4,
+    "INT": 12,
+    "INT_mod": 1,
+    "SAG": 14,
+    "SAG_mod": 2,
+    "CHA": 14,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": 6,
+    "DEX": null,
+    "CON": 7,
+    "INT": null,
+    "SAG": 5,
+    "CHA": 5
+  },
+  "competences": {
+    "deception": 5,
+    "insight": 5,
+    "perception": 8
+  },
+  "resistances": [
+    "cold; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 18,
+    "tremblements": null
+  },
+  "langues": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "fp": "5",
+  "fp_numerique": 5,
+  "bonus_maitrise": 3,
+  "experience": 1800,
+  "traits": [
+    {
+      "nom": "Barbed Hide",
+      "description": "At the start of each of its turns, the barbed devil deals 5 (1d10) piercing damage to any creature grappling it.",
+      "bonus_attaque": 0,
+      "degats_de": "1d10",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Devil's Sight",
+      "description": "Magical darkness doesn't impede the devil's darkvision.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The devil has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The devil makes three melee attacks: one with its tail and two with its claws. Alternatively, it can use Hurl Flame twice.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Tail",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Hurl Flame",
+      "description": "Ranged Spell Attack: +5 to hit, range 150 ft., one target. Hit: 10 (3d6) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire.",
+      "bonus_attaque": 5,
+      "degats_de": "3d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

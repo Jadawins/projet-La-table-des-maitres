@@ -1,0 +1,116 @@
+{
+  "slug": "dryad",
+  "nom": "Dryade",
+  "nom_original": "Dryad",
+  "taille": "M",
+  "type": "Fey",
+  "sous_type": null,
+  "alignement": "neutral",
+  "ca": 11,
+  "ca_detail": "16 with _barkskin_",
+  "pv": 22,
+  "pv_formule": "5d8",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 10,
+    "FOR_mod": 0,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 14,
+    "INT_mod": 2,
+    "SAG": 15,
+    "SAG_mod": 2,
+    "CHA": 18,
+    "CHA_mod": 4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 4,
+    "stealth": 5
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "Elvish",
+    "Sylvan"
+  ],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [
+    {
+      "nom": "Innate Spellcasting",
+      "description": "The dryad's innate spellcasting ability is Charisma (spell save DC 14). The dryad can innately cast the following spells, requiring no material components:\n\nAt will: druidcraft\n3/day each: entangle, goodberry\n1/day each: barkskin, pass without trace, shillelagh",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The dryad has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Speak with Beasts and Plants",
+      "description": "The dryad can communicate with beasts and plants as if they shared a language.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Tree Stride",
+      "description": "Once on her turn, the dryad can use 10 ft. of her movement to step magically into one living tree within her reach and emerge from a second living tree within 60 ft. of the first tree, appearing in an unoccupied space within 5 ft. of the second tree. Both trees must be large or bigger.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Club",
+      "description": "Melee Weapon Attack: +2 to hit (+6 to hit with shillelagh), reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage, or 8 (1d8 + 4) bludgeoning damage with shillelagh.",
+      "bonus_attaque": 2,
+      "degats_de": "1d4",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Fey Charm",
+      "description": "The dryad targets one humanoid or beast that she can see within 30 feet of her. If the target can see the dryad, it must succeed on a DC 14 Wisdom saving throw or be magically charmed. The charmed creature regards the dryad as a trusted friend to be heeded and protected. Although the target isn't under the dryad's control, it takes the dryad's requests or actions in the most favorable way it can.\nEach time the dryad or its allies do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the dryad dies, is on a different plane of existence from the target, or ends the effect as a bonus action. If a target's saving throw is successful, the target is immune to the dryad's Fey Charm for the next 24 hours.\nThe dryad can have no more than one humanoid and up to three beasts charmed at a time.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

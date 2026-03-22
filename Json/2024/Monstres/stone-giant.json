@@ -1,0 +1,109 @@
+{
+  "slug": "stone-giant",
+  "nom": "Stone Giant",
+  "nom_original": "Stone Giant",
+  "taille": "TG",
+  "type": "Giant",
+  "sous_type": null,
+  "alignement": "neutral",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 126,
+  "pv_formule": "11d12+55",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 23,
+    "FOR_mod": 6,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 9,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 5,
+    "CON": 8,
+    "INT": null,
+    "SAG": 4,
+    "CHA": null
+  },
+  "competences": {
+    "athletics": 12,
+    "perception": 4
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "Giant"
+  ],
+  "fp": "7",
+  "fp_numerique": 7,
+  "bonus_maitrise": 3,
+  "experience": 2900,
+  "traits": [
+    {
+      "nom": "Stone Camouflage",
+      "description": "The giant has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The giant makes two greatclub attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Greatclub",
+      "description": "Melee Weapon Attack: +9 to hit, reach 15 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.",
+      "bonus_attaque": 9,
+      "degats_de": "3d8",
+      "degats_bonus": 6
+    },
+    {
+      "nom": "Rock",
+      "description": "Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.",
+      "bonus_attaque": 9,
+      "degats_de": "4d10",
+      "degats_bonus": 6
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [
+    {
+      "nom": "Rock Catching",
+      "description": "If a rock or similar object is hurled at the giant, the giant can, with a successful DC 10 Dexterity saving throw, catch the missile and take no bludgeoning damage from it.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

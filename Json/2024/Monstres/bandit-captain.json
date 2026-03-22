@@ -1,0 +1,101 @@
+{
+  "slug": "bandit-captain",
+  "nom": "Bandit Captain",
+  "nom_original": "Bandit Captain",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any non-lawful alignment",
+  "ca": 15,
+  "ca_detail": "studded leather",
+  "pv": 65,
+  "pv_formule": "10d8+20",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 15,
+    "FOR_mod": 2,
+    "DEX": 16,
+    "DEX_mod": 3,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 14,
+    "INT_mod": 2,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 14,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": 4,
+    "DEX": 5,
+    "CON": null,
+    "INT": null,
+    "SAG": 2,
+    "CHA": null
+  },
+  "competences": {
+    "athletics": 4,
+    "deception": 4
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "any two languages"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The captain makes three melee attacks: two with its scimitar and one with its dagger. Or the captain makes two ranged attacks with its daggers.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Scimitar",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Dagger",
+      "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 5 (1d4 + 3) piercing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d4",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [
+    {
+      "nom": "Parry",
+      "description": "The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

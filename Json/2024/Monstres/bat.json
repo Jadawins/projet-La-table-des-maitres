@@ -1,0 +1,89 @@
+{
+  "slug": "bat",
+  "nom": "Chauve-souris",
+  "nom_original": "Bat",
+  "taille": "TP",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 1,
+  "pv_formule": "1d4-1",
+  "vitesse": {
+    "marche": 1.5,
+    "nage": null,
+    "vol": 9,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 2,
+    "FOR_mod": -4,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 8,
+    "CON_mod": -1,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 4,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "0",
+  "fp_numerique": 0,
+  "bonus_maitrise": 2,
+  "experience": 10,
+  "traits": [
+    {
+      "nom": "Echolocation",
+      "description": "The bat can't use its blindsight while deafened.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Keen Hearing",
+      "description": "The bat has advantage on Wisdom (Perception) checks that rely on hearing.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

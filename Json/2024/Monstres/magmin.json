@@ -1,0 +1,97 @@
+{
+  "slug": "magmin",
+  "nom": "Magmin",
+  "nom_original": "Magmin",
+  "taille": "P",
+  "type": "Elemental",
+  "sous_type": null,
+  "alignement": "chaotic neutral",
+  "ca": 14,
+  "ca_detail": "natural armor",
+  "pv": 9,
+  "pv_formule": "2d6+2",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 7,
+    "FOR_mod": -2,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 8,
+    "INT_mod": -1,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 10,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "fire"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Ignan"
+  ],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Death Burst",
+      "description": "When the magmin dies, it explodes in a burst of fire and magma. Each creature within 10 ft. of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one. Flammable objects that aren't being worn or carried in that area are ignited.",
+      "bonus_attaque": 0,
+      "degats_de": "2d6",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Ignited Illumination",
+      "description": "As a bonus action, the magmin can set itself ablaze or extinguish its flames. While ablaze, the magmin sheds bright light in a 10-foot radius and dim light for an additional 10 ft.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Touch",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) fire damage. If the target is a creature or a flammable object, it ignites. Until a target takes an action to douse the fire, the target takes 3 (1d6) fire damage at the end of each of its turns.",
+      "bonus_attaque": 4,
+      "degats_de": "2d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

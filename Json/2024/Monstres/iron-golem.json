@@ -1,0 +1,139 @@
+{
+  "slug": "iron-golem",
+  "nom": "Iron Golem",
+  "nom_original": "Iron Golem",
+  "taille": "G",
+  "type": "Construct",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 20,
+  "ca_detail": "natural armor",
+  "pv": 210,
+  "pv_formule": "20d10+100",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 24,
+    "FOR_mod": 7,
+    "DEX": 9,
+    "DEX_mod": -1,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 3,
+    "INT_mod": -4,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 1,
+    "CHA_mod": -5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "fire",
+    "poison",
+    "psychic; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with adamantine weapons"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "fp": "16",
+  "fp_numerique": 16,
+  "bonus_maitrise": 5,
+  "experience": 15000,
+  "traits": [
+    {
+      "nom": "Fire Absorption",
+      "description": "Whenever the golem is subjected to fire damage, it takes no damage and instead regains a number of hit points equal to the fire damage dealt.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Immutable Form",
+      "description": "The golem is immune to any spell or effect that would alter its form.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The golem has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Weapons",
+      "description": "The golem's weapon attacks are magical.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The golem makes two melee attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.",
+      "bonus_attaque": 13,
+      "degats_de": "3d8",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Sword",
+      "description": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 23 (3d10 + 7) slashing damage.",
+      "bonus_attaque": 13,
+      "degats_de": "3d10",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Poison Breath (Recharge 5-6)",
+      "description": "The golem exhales poisonous gas in a 15-foot cone. Each creature in that area must make a DC 19 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "10d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

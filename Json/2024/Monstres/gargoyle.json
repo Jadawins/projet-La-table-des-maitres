@@ -1,0 +1,108 @@
+{
+  "slug": "gargoyle",
+  "nom": "Gargouille",
+  "nom_original": "Gargoyle",
+  "taille": "M",
+  "type": "Elemental",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 15,
+  "ca_detail": "natural armor",
+  "pv": 52,
+  "pv_formule": "7d8+21",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 15,
+    "FOR_mod": 2,
+    "DEX": 11,
+    "DEX_mod": 0,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with adamantine weapons"
+  ],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "exhaustion",
+    "petrified",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Terran"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "False Appearance",
+      "description": "While the gargoyle remains motion less, it is indistinguishable from an inanimate statue.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The gargoyle makes two attacks: one with its bite and one with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "zombie",
+  "nom": "Zombie",
+  "nom_original": "Zombie",
+  "taille": "M",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "neutral evil",
+  "ca": 8,
+  "ca_detail": null,
+  "pv": 22,
+  "pv_formule": "3d8+9",
+  "vitesse": {
+    "marche": 6,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 13,
+    "FOR_mod": 1,
+    "DEX": 6,
+    "DEX_mod": -2,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 3,
+    "INT_mod": -4,
+    "SAG": 6,
+    "SAG_mod": -2,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": 0,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "fp": "1/4",
+  "fp_numerique": 0.25,
+  "bonus_maitrise": 2,
+  "experience": 50,
+  "traits": [
+    {
+      "nom": "Undead Fortitude",
+      "description": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage.",
+      "bonus_attaque": 3,
+      "degats_de": "1d6",
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "ghast",
+  "nom": "Ghast",
+  "nom_original": "Ghast",
+  "taille": "M",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 13,
+  "ca_detail": null,
+  "pv": 36,
+  "pv_formule": "8d8",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 16,
+    "FOR_mod": 3,
+    "DEX": 17,
+    "DEX_mod": 3,
+    "CON": 10,
+    "CON_mod": 0,
+    "INT": 11,
+    "INT_mod": 0,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "necrotic"
+  ],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Common"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Stench",
+      "description": "Any creature that starts its turn within 5 ft. of the ghast must succeed on a DC 10 Constitution saving throw or be poisoned until the start of its next turn. On a successful saving throw, the creature is immune to the ghast's Stench for 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Turn Defiance",
+      "description": "The ghast and any ghouls within 30 ft. of it have advantage on saving throws against effects that turn undead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 12 (2d8 + 3) piercing damage.",
+      "bonus_attaque": 3,
+      "degats_de": "2d8",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 5,
+      "degats_de": "2d6",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

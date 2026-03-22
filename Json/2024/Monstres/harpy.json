@@ -1,0 +1,97 @@
+{
+  "slug": "harpy",
+  "nom": "Harpie",
+  "nom_original": "Harpy",
+  "taille": "M",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 11,
+  "ca_detail": null,
+  "pv": 38,
+  "pv_formule": "7d8+7",
+  "vitesse": {
+    "marche": 6,
+    "nage": null,
+    "vol": 12,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 12,
+    "FOR_mod": 1,
+    "DEX": 13,
+    "DEX_mod": 1,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 7,
+    "INT_mod": -2,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 13,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Common"
+  ],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The harpy makes two attacks: one with its claws and one with its club.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) slashing damage.",
+      "bonus_attaque": 3,
+      "degats_de": "2d4",
+      "degats_bonus": 1
+    },
+    {
+      "nom": "Club",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage.",
+      "bonus_attaque": 3,
+      "degats_de": "1d4",
+      "degats_bonus": 1
+    },
+    {
+      "nom": "Luring Song",
+      "description": "The harpy sings a magical melody. Every humanoid and giant within 300 ft. of the harpy that can hear the song must succeed on a DC 11 Wisdom saving throw or be charmed until the song ends. The harpy must take a bonus action on its subsequent turns to continue singing. It can stop singing at any time. The song ends if the harpy is incapacitated.\nWhile charmed by the harpy, a target is incapacitated and ignores the songs of other harpies. If the charmed target is more than 5 ft. away from the harpy, the must move on its turn toward the harpy by the most direct route. It doesn't avoid opportunity attacks, but before moving into damaging terrain, such as lava or a pit, and whenever it takes damage from a source other than the harpy, a target can repeat the saving throw. A creature can also repeat the saving throw at the end of each of its turns. If a creature's saving throw is successful, the effect ends on it.\nA target that successfully saves is immune to this harpy's song for the next 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

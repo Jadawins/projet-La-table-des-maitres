@@ -1,0 +1,122 @@
+{
+  "slug": "magma-mephit",
+  "nom": "Magma Mephit",
+  "nom_original": "Magma Mephit",
+  "taille": "P",
+  "type": "Elemental",
+  "sous_type": null,
+  "alignement": "neutral evil",
+  "ca": 11,
+  "ca_detail": null,
+  "pv": 22,
+  "pv_formule": "5d6+5",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": 9,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 8,
+    "FOR_mod": -1,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 7,
+    "INT_mod": -2,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 10,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "stealth": 3
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [
+    "cold"
+  ],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Ignan",
+    "Terran"
+  ],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Death Burst",
+      "description": "When the mephit dies, it explodes in a burst of lava. Each creature within 5 ft. of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "2d6",
+      "degats_bonus": null
+    },
+    {
+      "nom": "False Appearance",
+      "description": "While the mephit remains motionless, it is indistinguishable from an ordinary mound of magma.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Innate Spellcasting (1/Day)",
+      "description": "The mephit can innately cast _heat metal_ (spell save DC 10), requiring no material components. Its innate spellcasting ability is Charisma.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) fire damage.",
+      "bonus_attaque": 3,
+      "degats_de": "1d4",
+      "degats_bonus": 1
+    },
+    {
+      "nom": "Fire Breath (Recharge 6)",
+      "description": "The mephit exhales a 15-foot cone of fire. Each creature in that area must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Variant: Summon Mephits (1/Day)",
+      "description": "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "animated-armor",
+  "nom": "Animated Armor",
+  "nom_original": "Animated Armor",
+  "taille": "M",
+  "type": "Construct",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 18,
+  "ca_detail": "natural armor",
+  "pv": 33,
+  "pv_formule": "6d8+6",
+  "vitesse": {
+    "marche": 7.5,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 14,
+    "FOR_mod": 2,
+    "DEX": 11,
+    "DEX_mod": 0,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 3,
+    "SAG_mod": -4,
+    "CHA": 1,
+    "CHA_mod": -5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison",
+    "psychic"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 6,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [
+    {
+      "nom": "Antimagic Susceptibility",
+      "description": "The armor is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the armor must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "False Appearance",
+      "description": "While the armor remains motionless, it is indistinguishable from a normal suit of armor.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The armor makes two melee attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

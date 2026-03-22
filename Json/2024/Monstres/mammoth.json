@@ -1,0 +1,89 @@
+{
+  "slug": "mammoth",
+  "nom": "Mammouth",
+  "nom_original": "Mammoth",
+  "taille": "TG",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 126,
+  "pv_formule": "11d12+55",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 24,
+    "FOR_mod": 7,
+    "DEX": 9,
+    "DEX_mod": -1,
+    "CON": 21,
+    "CON_mod": 5,
+    "INT": 3,
+    "INT_mod": -4,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 6,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "6",
+  "fp_numerique": 6,
+  "bonus_maitrise": 3,
+  "experience": 2300,
+  "traits": [
+    {
+      "nom": "Trampling Charge",
+      "description": "If the mammoth moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the mammoth can make one stomp attack against it as a bonus action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Gore",
+      "description": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) piercing damage.",
+      "bonus_attaque": 10,
+      "degats_de": "4d8",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Stomp",
+      "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one prone creature. Hit: 29 (4d10 + 7) bludgeoning damage.",
+      "bonus_attaque": 10,
+      "degats_de": "4d10",
+      "degats_bonus": 7
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

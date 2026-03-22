@@ -1,0 +1,102 @@
+{
+  "slug": "cult-fanatic",
+  "nom": "Cult Fanatic",
+  "nom_original": "Cult Fanatic",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any non-good alignment",
+  "ca": 13,
+  "ca_detail": "leather armor",
+  "pv": 22,
+  "pv_formule": "6d8+6",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 11,
+    "FOR_mod": 0,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 14,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "deception": 4,
+    "persuasion": 4,
+    "religion": 2
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "any one language (usually Common)"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Dark Devotion",
+      "description": "The fanatic has advantage on saving throws against being charmed or frightened.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Spellcasting",
+      "description": "The fanatic is a 4th-level spellcaster. Its spell casting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:\n\nCantrips (at will): light, sacred flame, thaumaturgy\n* 1st level (4 slots): command, inflict wounds, shield of faith\n* 2nd level (3 slots): hold person, spiritual weapon",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The fanatic makes two melee attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Dagger",
+      "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 4 (1d4 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d4",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

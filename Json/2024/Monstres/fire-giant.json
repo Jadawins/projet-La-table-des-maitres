@@ -1,0 +1,95 @@
+{
+  "slug": "fire-giant",
+  "nom": "Fire Giant",
+  "nom_original": "Fire Giant",
+  "taille": "TG",
+  "type": "Giant",
+  "sous_type": null,
+  "alignement": "lawful evil",
+  "ca": 18,
+  "ca_detail": "plate",
+  "pv": 162,
+  "pv_formule": "13d12+78",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 25,
+    "FOR_mod": 7,
+    "DEX": 9,
+    "DEX_mod": -1,
+    "CON": 23,
+    "CON_mod": 6,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 14,
+    "SAG_mod": 2,
+    "CHA": 13,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 3,
+    "CON": 10,
+    "INT": null,
+    "SAG": null,
+    "CHA": 5
+  },
+  "competences": {
+    "athletics": 11,
+    "perception": 6
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "fire"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 16,
+    "tremblements": null
+  },
+  "langues": [
+    "Giant"
+  ],
+  "fp": "9",
+  "fp_numerique": 9,
+  "bonus_maitrise": 4,
+  "experience": 5000,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The giant makes two greatsword attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Greatsword",
+      "description": "Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 28 (6d6 + 7) slashing damage.",
+      "bonus_attaque": 11,
+      "degats_de": "6d6",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Rock",
+      "description": "Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit: 29 (4d10 + 7) bludgeoning damage.",
+      "bonus_attaque": 11,
+      "degats_de": "4d10",
+      "degats_bonus": 7
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

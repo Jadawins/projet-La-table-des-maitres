@@ -1,0 +1,94 @@
+{
+  "slug": "orc",
+  "nom": "Orque",
+  "nom_original": "Orc",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "orc",
+  "alignement": "chaotic evil",
+  "ca": 13,
+  "ca_detail": "hide armor",
+  "pv": 15,
+  "pv_formule": "2d8+6",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 16,
+    "FOR_mod": 3,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 7,
+    "INT_mod": -2,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 10,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "intimidation": 2
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Orc"
+  ],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Aggressive",
+      "description": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Greataxe",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d12",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Javelin",
+      "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

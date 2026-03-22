@@ -1,0 +1,88 @@
+{
+  "slug": "giant-scorpion",
+  "nom": "Giant Scorpion",
+  "nom_original": "Giant Scorpion",
+  "taille": "G",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 15,
+  "ca_detail": "natural armor",
+  "pv": 52,
+  "pv_formule": "7d10+14",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 15,
+    "FOR_mod": 2,
+    "DEX": 13,
+    "DEX_mod": 1,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 9,
+    "SAG_mod": -1,
+    "CHA": 3,
+    "CHA_mod": -4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 9,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 12). The scorpion has two claws, each of which can grapple only one target.",
+      "bonus_attaque": 4,
+      "degats_de": "1d8",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Multiattack",
+      "description": "The scorpion makes three attacks: two with its claws and one with its sting.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Sting",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (1d10 + 2) piercing damage, and the target must make a DC 12 Constitution saving throw, taking 22 (4d10) poison damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 4,
+      "degats_de": "1d10",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

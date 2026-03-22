@@ -1,0 +1,113 @@
+{
+  "slug": "lion",
+  "nom": "Lion",
+  "nom_original": "Lion",
+  "taille": "G",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 26,
+  "pv_formule": "4d10+4",
+  "vitesse": {
+    "marche": 15,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 17,
+    "FOR_mod": 3,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 3,
+    "INT_mod": -4,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 3,
+    "stealth": 6
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [
+    {
+      "nom": "Keen Smell",
+      "description": "The lion has advantage on Wisdom (Perception) checks that rely on smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pack Tactics",
+      "description": "The lion has advantage on an attack roll against a creature if at least one of the lion's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pounce",
+      "description": "If the lion moves at least 20 ft. straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the lion can make one bite attack against it as a bonus action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Running Leap",
+      "description": "With a 10-foot running start, the lion can long jump up to 25 ft..",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d8",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

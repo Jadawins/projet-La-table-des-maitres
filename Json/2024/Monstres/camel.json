@@ -1,0 +1,74 @@
+{
+  "slug": "camel",
+  "nom": "Chameau",
+  "nom_original": "Camel",
+  "taille": "G",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 9,
+  "ca_detail": null,
+  "pv": 15,
+  "pv_formule": "2d10+4",
+  "vitesse": {
+    "marche": 15,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 16,
+    "FOR_mod": 3,
+    "DEX": 8,
+    "DEX_mod": -1,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 8,
+    "SAG_mod": -1,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 9,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/8",
+  "fp_numerique": 0.125,
+  "bonus_maitrise": 2,
+  "experience": 25,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d4",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

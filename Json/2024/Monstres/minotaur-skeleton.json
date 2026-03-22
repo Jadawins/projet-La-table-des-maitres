@@ -1,0 +1,98 @@
+{
+  "slug": "minotaur-skeleton",
+  "nom": "Minotaur Skeleton",
+  "nom_original": "Minotaur Skeleton",
+  "taille": "G",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "lawful evil",
+  "ca": 12,
+  "ca_detail": "natural armor",
+  "pv": 67,
+  "pv_formule": "9d10+18",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 11,
+    "DEX_mod": 0,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 8,
+    "SAG_mod": -1,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [
+    "bludgeoning"
+  ],
+  "immunites_etats": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 9,
+    "tremblements": null
+  },
+  "langues": [
+    "understands Abyssal but can't speak"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Charge",
+      "description": "If the skeleton moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.",
+      "bonus_attaque": 0,
+      "degats_de": "2d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Greataxe",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d12",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Gore",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d8",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

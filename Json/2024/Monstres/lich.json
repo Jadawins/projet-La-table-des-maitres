@@ -1,0 +1,153 @@
+{
+  "slug": "lich",
+  "nom": "Liche",
+  "nom_original": "Lich",
+  "taille": "M",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "any evil alignment",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 135,
+  "pv_formule": "18d8+54",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 11,
+    "FOR_mod": 0,
+    "DEX": 16,
+    "DEX_mod": 3,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 20,
+    "INT_mod": 5,
+    "SAG": 14,
+    "SAG_mod": 2,
+    "CHA": 16,
+    "CHA_mod": 3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": 10,
+    "INT": 12,
+    "SAG": 9,
+    "CHA": null
+  },
+  "competences": {
+    "arcana": 19,
+    "history": 12,
+    "insight": 9,
+    "perception": 9
+  },
+  "resistances": [
+    "cold",
+    "lightning",
+    "necrotic"
+  ],
+  "immunites_degats": [
+    "poison; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": 36,
+    "perception_passive": 19,
+    "tremblements": null
+  },
+  "langues": [
+    "Common plus up to five other languages"
+  ],
+  "fp": "21",
+  "fp_numerique": 21,
+  "bonus_maitrise": 7,
+  "experience": 33000,
+  "traits": [
+    {
+      "nom": "Legendary Resistance (3/Day)",
+      "description": "If the lich fails a saving throw, it can choose to succeed instead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Rejuvenation",
+      "description": "If it has a phylactery, a destroyed lich gains a new body in 1d10 days, regaining all its hit points and becoming active again. The new body appears within 5 feet of the phylactery.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Spellcasting",
+      "description": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:\n\n* Cantrips (at will): mage hand, prestidigitation, ray of frost\n* 1st level (4 slots): detect magic, magic missile, shield, thunderwave\n* 2nd level (3 slots): detect thoughts, invisibility, acid arrow, mirror image\n* 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball\n* 4th level (3 slots): blight, dimension door\n* 5th level (3 slots): cloudkill, scrying\n* 6th level (1 slot): disintegrate, globe of invulnerability\n* 7th level (1 slot): finger of death, plane shift\n* 8th level (1 slot): dominate monster, power word stun\n* 9th level (1 slot): power word kill",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Turn Resistance",
+      "description": "The lich has advantage on saving throws against any effect that turns undead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Paralyzing Touch",
+      "description": "Melee Spell Attack: +12 to hit, reach 5 ft., one creature. Hit: 10 (3d6) cold damage. The target must succeed on a DC 18 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 12,
+      "degats_de": "3d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [
+    {
+      "nom": "Cantrip",
+      "description": "The lich casts a cantrip.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Paralyzing Touch (Costs 2 Actions)",
+      "description": "The lich uses its Paralyzing Touch.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Frightening Gaze (Costs 2 Actions)",
+      "description": "The lich fixes its gaze on one creature it can see within 10 feet of it. The target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to the lich's gaze for the next 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Disrupt Life (Costs 3 Actions)",
+      "description": "Each non-undead creature within 20 feet of the lich must make a DC 18 Constitution saving throw against this magic, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "6d6",
+      "degats_bonus": null
+    }
+  ],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,130 @@
+{
+  "slug": "nalfeshnee",
+  "nom": "Nalfeshnee",
+  "nom_original": "Nalfeshnee",
+  "taille": "G",
+  "type": "Fiend",
+  "sous_type": "demon",
+  "alignement": "chaotic evil",
+  "ca": 18,
+  "ca_detail": "natural armor",
+  "pv": 184,
+  "pv_formule": "16d10+96",
+  "vitesse": {
+    "marche": 6,
+    "nage": null,
+    "vol": 9,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 21,
+    "FOR_mod": 5,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 22,
+    "CON_mod": 6,
+    "INT": 19,
+    "INT_mod": 4,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 15,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": 11,
+    "INT": 9,
+    "SAG": 6,
+    "CHA": 7
+  },
+  "competences": {},
+  "resistances": [
+    "cold",
+    "fire",
+    "lightning; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": 36,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "fp": "13",
+  "fp_numerique": 13,
+  "bonus_maitrise": 5,
+  "experience": 10000,
+  "traits": [
+    {
+      "nom": "Magic Resistance",
+      "description": "The nalfeshnee has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The nalfeshnee uses Horror Nimbus if it can. It then makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 32 (5d10 + 5) piercing damage.",
+      "bonus_attaque": 10,
+      "degats_de": "5d10",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) slashing damage.",
+      "bonus_attaque": 10,
+      "degats_de": "3d6",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Horror Nimbus (Recharge 5-6)",
+      "description": "The nalfeshnee magically emits scintillating, multicolored light. Each creature within 15 feet of the nalfeshnee that can see the light must succeed on a DC 15 Wisdom saving throw or be frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the nalfeshnee's Horror Nimbus for the next 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Teleport",
+      "description": "The nalfeshnee magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Variant: Summon Demon (1/Day)",
+      "description": "The demon chooses what to summon and attempts a magical summoning.\nA nalfeshnee has a 50 percent chance of summoning 1d4 vrocks, 1d3 hezrous, 1d2 glabrezus, or one nalfeshnee.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "noble",
+  "nom": "Noble",
+  "nom_original": "Noble",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any alignment",
+  "ca": 15,
+  "ca_detail": "breastplate",
+  "pv": 9,
+  "pv_formule": "2d8",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 11,
+    "FOR_mod": 0,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 12,
+    "INT_mod": 1,
+    "SAG": 14,
+    "SAG_mod": 2,
+    "CHA": 16,
+    "CHA_mod": 3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "deception": 5,
+    "insight": 4,
+    "persuasion": 5
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 12,
+    "tremblements": null
+  },
+  "langues": [
+    "any two languages"
+  ],
+  "fp": "1/8",
+  "fp_numerique": 0.125,
+  "bonus_maitrise": 2,
+  "experience": 25,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Rapier",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
+      "bonus_attaque": 3,
+      "degats_de": "1d8",
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [
+    {
+      "nom": "Parry",
+      "description": "The noble adds 2 to its AC against one melee attack that would hit it. To do so, the noble must see the attacker and be wielding a melee weapon.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

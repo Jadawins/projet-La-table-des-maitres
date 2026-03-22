@@ -1,0 +1,147 @@
+{
+  "slug": "adult-blue-dragon",
+  "nom": "Adult Blue Dragon",
+  "nom_original": "Adult Blue Dragon",
+  "taille": "TG",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "lawful evil",
+  "ca": 19,
+  "ca_detail": "natural armor",
+  "pv": 225,
+  "pv_formule": "18d12+108",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": 24,
+    "fouissement": 9,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 25,
+    "FOR_mod": 7,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 23,
+    "CON_mod": 6,
+    "INT": 16,
+    "INT_mod": 3,
+    "SAG": 15,
+    "SAG_mod": 2,
+    "CHA": 19,
+    "CHA_mod": 4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 5,
+    "CON": 11,
+    "INT": null,
+    "SAG": 7,
+    "CHA": 9
+  },
+  "competences": {
+    "perception": 12,
+    "stealth": 5
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "lightning"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 22,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "16",
+  "fp_numerique": 16,
+  "bonus_maitrise": 5,
+  "experience": 15000,
+  "traits": [
+    {
+      "nom": "Legendary Resistance (3/Day)",
+      "description": "If the dragon fails a saving throw, it can choose to succeed instead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage plus 5 (1d10) lightning damage.",
+      "bonus_attaque": 12,
+      "degats_de": "2d10+1d10",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 14 (2d6 + 7) slashing damage.",
+      "bonus_attaque": 12,
+      "degats_de": "2d6",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Tail",
+      "description": "Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit: 16 (2d8 + 7) bludgeoning damage.",
+      "bonus_attaque": 12,
+      "degats_de": "2d8",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Frightful Presence",
+      "description": "Each creature of the dragon's choice that is within 120 ft. of the dragon and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Lightning Breath (Recharge 5-6)",
+      "description": "The dragon exhales lightning in a 90-foot line that is 5 ft. wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "12d10",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [
+    {
+      "nom": "Detect",
+      "description": "The dragon makes a Wisdom (Perception) check.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Tail Attack",
+      "description": "The dragon makes a tail attack.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Wing Attack (Costs 2 Actions)",
+      "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "source": "SRD-2024",
+  "image": null
+}

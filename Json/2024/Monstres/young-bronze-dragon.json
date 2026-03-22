@@ -1,0 +1,112 @@
+{
+  "slug": "young-bronze-dragon",
+  "nom": "Young Bronze Dragon",
+  "nom_original": "Young Bronze Dragon",
+  "taille": "G",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "lawful good",
+  "ca": 18,
+  "ca_detail": "natural armor",
+  "pv": 142,
+  "pv_formule": "15d10+60",
+  "vitesse": {
+    "marche": 12,
+    "nage": 12,
+    "vol": 24,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 21,
+    "FOR_mod": 5,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 19,
+    "CON_mod": 4,
+    "INT": 14,
+    "INT_mod": 2,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 17,
+    "CHA_mod": 3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 3,
+    "CON": 7,
+    "INT": null,
+    "SAG": 4,
+    "CHA": 6
+  },
+  "competences": {
+    "insight": 4,
+    "perception": 7,
+    "stealth": 3
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "lightning"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": 9,
+    "vision_vraie": null,
+    "perception_passive": 17,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "8",
+  "fp_numerique": 8,
+  "bonus_maitrise": 3,
+  "experience": 3900,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The dragon can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage.",
+      "bonus_attaque": 8,
+      "degats_de": "2d10",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
+      "bonus_attaque": 8,
+      "degats_de": "2d6",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Breath Weapons (Recharge 5-6)",
+      "description": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon.",
+      "bonus_attaque": 0,
+      "degats_de": "10d10",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

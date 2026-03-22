@@ -1,0 +1,103 @@
+{
+  "slug": "scout",
+  "nom": "Éclaireur",
+  "nom_original": "Scout",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any alignment",
+  "ca": 13,
+  "ca_detail": "leather armor",
+  "pv": 16,
+  "pv_formule": "3d8+3",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 11,
+    "FOR_mod": 0,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 11,
+    "INT_mod": 0,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "nature": 4,
+    "perception": 5,
+    "stealth": 6,
+    "survival": 5
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 15,
+    "tremblements": null
+  },
+  "langues": [
+    "any one language (usually Common)"
+  ],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Keen Hearing and Sight",
+      "description": "The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The scout makes two melee attacks or two ranged attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Shortsword",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Longbow",
+      "description": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d8",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

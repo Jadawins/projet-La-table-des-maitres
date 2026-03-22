@@ -1,0 +1,86 @@
+{
+  "slug": "shrieker",
+  "nom": "Shrieker",
+  "nom_original": "Shrieker",
+  "taille": "M",
+  "type": "Plant",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 5,
+  "ca_detail": null,
+  "pv": 13,
+  "pv_formule": "3d8",
+  "vitesse": {
+    "marche": null,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 1,
+    "FOR_mod": -5,
+    "DEX": 1,
+    "DEX_mod": -5,
+    "CON": 10,
+    "CON_mod": 0,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 3,
+    "SAG_mod": -4,
+    "CHA": 1,
+    "CHA_mod": -5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "blinded",
+    "deafened",
+    "frightened"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 9,
+    "vision_vraie": null,
+    "perception_passive": 6,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "0",
+  "fp_numerique": 0,
+  "bonus_maitrise": 2,
+  "experience": 10,
+  "traits": [
+    {
+      "nom": "False Appearance",
+      "description": "While the shrieker remains motionless, it is indistinguishable from an ordinary fungus.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Shriek",
+      "description": "When bright light or a creature is within 30 feet of the shrieker, it emits a shriek audible within 300 feet of it. The shrieker continues to shriek until the disturbance moves out of range and for 1d4 of the shrieker's turns afterward",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

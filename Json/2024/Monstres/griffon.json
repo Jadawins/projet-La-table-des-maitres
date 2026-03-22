@@ -1,0 +1,98 @@
+{
+  "slug": "griffon",
+  "nom": "Griffon",
+  "nom_original": "Griffon",
+  "taille": "G",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 59,
+  "pv_formule": "7d10+21",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": 24,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 5
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 15,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Keen Sight",
+      "description": "The griffon has advantage on Wisdom (Perception) checks that rely on sight.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The griffon makes two attacks: one with its beak and one with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Beak",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "1d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

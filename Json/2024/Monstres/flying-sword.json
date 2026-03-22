@@ -1,0 +1,100 @@
+{
+  "slug": "flying-sword",
+  "nom": "Flying Sword",
+  "nom_original": "Flying Sword",
+  "taille": "P",
+  "type": "Construct",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 17,
+  "pv_formule": "5d6",
+  "vitesse": {
+    "marche": null,
+    "nage": null,
+    "vol": 15,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 12,
+    "FOR_mod": 1,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 5,
+    "SAG_mod": -3,
+    "CHA": 1,
+    "CHA_mod": -5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 4,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison",
+    "psychic"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 7,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/4",
+  "fp_numerique": 0.25,
+  "bonus_maitrise": 2,
+  "experience": 50,
+  "traits": [
+    {
+      "nom": "Antimagic Susceptibility",
+      "description": "The sword is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the sword must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "False Appearance",
+      "description": "While the sword remains motionless and isn't flying, it is indistinguishable from a normal sword.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Longsword",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage.",
+      "bonus_attaque": 3,
+      "degats_de": "1d8",
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

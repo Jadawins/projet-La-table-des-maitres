@@ -1,0 +1,90 @@
+{
+  "slug": "skeleton",
+  "nom": "Squelette",
+  "nom_original": "Skeleton",
+  "taille": "M",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "lawful evil",
+  "ca": 13,
+  "ca_detail": "armor scraps",
+  "pv": 13,
+  "pv_formule": "2d8+4",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 10,
+    "FOR_mod": 0,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 8,
+    "SAG_mod": -1,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "poison"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [
+    "bludgeoning"
+  ],
+  "immunites_etats": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 9,
+    "tremblements": null
+  },
+  "langues": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "fp": "1/4",
+  "fp_numerique": 0.25,
+  "bonus_maitrise": 2,
+  "experience": 50,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Shortsword",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Shortbow",
+      "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "vulture",
+  "nom": "Vulture",
+  "nom_original": "Vulture",
+  "taille": "M",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 10,
+  "ca_detail": null,
+  "pv": 5,
+  "pv_formule": "1d8+1",
+  "vitesse": {
+    "marche": 3,
+    "nage": null,
+    "vol": 15,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 7,
+    "FOR_mod": -2,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 4,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 3
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "0",
+  "fp_numerique": 0,
+  "bonus_maitrise": 2,
+  "experience": 10,
+  "traits": [
+    {
+      "nom": "Keen Sight and Smell",
+      "description": "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pack Tactics",
+      "description": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Beak",
+      "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
+      "bonus_attaque": 2,
+      "degats_de": "1d4",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

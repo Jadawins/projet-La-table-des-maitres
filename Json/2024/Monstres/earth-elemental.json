@@ -1,0 +1,112 @@
+{
+  "slug": "earth-elemental",
+  "nom": "Earth Elemental",
+  "nom_original": "Earth Elemental",
+  "taille": "G",
+  "type": "Elemental",
+  "sous_type": null,
+  "alignement": "neutral",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 126,
+  "pv_formule": "12d10+60",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": 9,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 20,
+    "FOR_mod": 5,
+    "DEX": 8,
+    "DEX_mod": -1,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [
+    "thunder"
+  ],
+  "immunites_etats": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": 18
+  },
+  "langues": [
+    "Terran"
+  ],
+  "fp": "5",
+  "fp_numerique": 5,
+  "bonus_maitrise": 3,
+  "experience": 1800,
+  "traits": [
+    {
+      "nom": "Earth Glide",
+      "description": "The elemental can burrow through nonmagical, unworked earth and stone. While doing so, the elemental doesn't disturb the material it moves through.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Siege Monster",
+      "description": "The elemental deals double damage to objects and structures.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The elemental makes two slam attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.",
+      "bonus_attaque": 8,
+      "degats_de": "2d8",
+      "degats_bonus": 5
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

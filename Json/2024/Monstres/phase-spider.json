@@ -1,0 +1,98 @@
+{
+  "slug": "phase-spider",
+  "nom": "Araignée de phase",
+  "nom_original": "Phase Spider",
+  "taille": "G",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 32,
+  "pv_formule": "5d10+5",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": 9
+  },
+  "caracteristiques": {
+    "FOR": 15,
+    "FOR_mod": 2,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 12,
+    "CON_mod": 1,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 6,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "stealth": 6
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [
+    {
+      "nom": "Ethereal Jaunt",
+      "description": "As a bonus action, the spider can magically shift from the Material Plane to the Ethereal Plane, or vice versa.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Spider Climb",
+      "description": "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Web Walker",
+      "description": "The spider ignores movement restrictions caused by webbing.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (1d10 + 2) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
+      "bonus_attaque": 4,
+      "degats_de": "1d10",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

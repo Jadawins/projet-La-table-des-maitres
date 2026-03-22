@@ -1,0 +1,143 @@
+{
+  "slug": "pit-fiend",
+  "nom": "Fiend des fosses",
+  "nom_original": "Pit Fiend",
+  "taille": "G",
+  "type": "Fiend",
+  "sous_type": "devil",
+  "alignement": "lawful evil",
+  "ca": 19,
+  "ca_detail": "natural armor",
+  "pv": 300,
+  "pv_formule": "24d10+168",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 26,
+    "FOR_mod": 8,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 24,
+    "CON_mod": 7,
+    "INT": 22,
+    "INT_mod": 6,
+    "SAG": 18,
+    "SAG_mod": 4,
+    "CHA": 24,
+    "CHA_mod": 7
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 8,
+    "CON": 13,
+    "INT": null,
+    "SAG": 10,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "cold; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": 36,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "fp": "20",
+  "fp_numerique": 20,
+  "bonus_maitrise": 6,
+  "experience": 25000,
+  "traits": [
+    {
+      "nom": "Fear Aura",
+      "description": "Any creature hostile to the pit fiend that starts its turn within 20 feet of the pit fiend must make a DC 21 Wisdom saving throw, unless the pit fiend is incapacitated. On a failed save, the creature is frightened until the start of its next turn. If a creature's saving throw is successful, the creature is immune to the pit fiend's Fear Aura for the next 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The pit fiend has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Weapons",
+      "description": "The pit fiend's weapon attacks are magical.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Innate Spellcasting",
+      "description": "The pit fiend's spellcasting ability is Charisma (spell save DC 21). The pit fiend can innately cast the following spells, requiring no material components:\nAt will: detect magic, fireball\n3/day each: hold monster, wall of fire",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The pit fiend makes four attacks: one with its bite, one with its claw, one with its mace, and one with its tail.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) piercing damage. The target must succeed on a DC 21 Constitution saving throw or become poisoned. While poisoned in this way, the target can't regain hit points, and it takes 21 (6d6) poison damage at the start of each of its turns. The poisoned target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 14,
+      "degats_de": "4d6",
+      "degats_bonus": 8
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 17 (2d8 + 8) slashing damage.",
+      "bonus_attaque": 14,
+      "degats_de": "2d8",
+      "degats_bonus": 8
+    },
+    {
+      "nom": "Mace",
+      "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) bludgeoning damage plus 21 (6d6) fire damage.",
+      "bonus_attaque": 14,
+      "degats_de": "2d6",
+      "degats_bonus": 8
+    },
+    {
+      "nom": "Tail",
+      "description": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 24 (3d10 + 8) bludgeoning damage.",
+      "bonus_attaque": 14,
+      "degats_de": "3d10",
+      "degats_bonus": 8
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

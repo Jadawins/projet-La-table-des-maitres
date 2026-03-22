@@ -1,0 +1,120 @@
+{
+  "slug": "shadow",
+  "nom": "Ombre",
+  "nom_original": "Shadow",
+  "taille": "M",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 16,
+  "pv_formule": "3d8+3",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 6,
+    "FOR_mod": -2,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "stealth": 4
+  },
+  "resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "necrotic",
+    "poison"
+  ],
+  "vulnerabilites": [
+    "radiant"
+  ],
+  "immunites_etats": [
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Amorphous",
+      "description": "The shadow can move through a space as narrow as 1 inch wide without squeezing.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Shadow Stealth",
+      "description": "While in dim light or darkness, the shadow can take the Hide action as a bonus action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Sunlight Weakness",
+      "description": "While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Strength Drain",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) necrotic damage, and the target's Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.\nIf a non-evil humanoid dies from this attack, a new shadow rises from the corpse 1d4 hours later.",
+      "bonus_attaque": 4,
+      "degats_de": "2d6",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

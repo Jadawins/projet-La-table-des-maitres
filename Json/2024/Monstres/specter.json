@@ -1,0 +1,112 @@
+{
+  "slug": "specter",
+  "nom": "Spectre",
+  "nom_original": "Specter",
+  "taille": "M",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 22,
+  "pv_formule": "5d8",
+  "vitesse": {
+    "marche": null,
+    "nage": null,
+    "vol": 15,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 1,
+    "FOR_mod": -5,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "necrotic",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "understands all languages it knew in life but can't speak"
+  ],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [
+    {
+      "nom": "Incorporeal Movement",
+      "description": "The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Sunlight Sensitivity",
+      "description": "While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Life Drain",
+      "description": "Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 10 (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
+      "bonus_attaque": 4,
+      "degats_de": "3d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "swarm-of-quippers",
+  "nom": "Swarm of Quippers",
+  "nom_original": "Swarm of Quippers",
+  "taille": "M",
+  "type": "Beast",
+  "sous_type": "Swarm",
+  "alignement": "unaligned",
+  "ca": 13,
+  "ca_detail": null,
+  "pv": 28,
+  "pv_formule": "8d8-8",
+  "vitesse": {
+    "marche": null,
+    "nage": 12,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 13,
+    "FOR_mod": 1,
+    "DEX": 16,
+    "DEX_mod": 3,
+    "CON": 9,
+    "CON_mod": -1,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 7,
+    "SAG_mod": -2,
+    "CHA": 2,
+    "CHA_mod": -4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [
+    {
+      "nom": "Blood Frenzy",
+      "description": "The swarm has advantage on melee attack rolls against any creature that doesn't have all its hit points.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Swarm",
+      "description": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny quipper. The swarm can't regain hit points or gain temporary hit points.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Water Breathing",
+      "description": "The swarm can breathe only underwater.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bites",
+      "description": "Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing damage if the swarm has half of its hit points or fewer.",
+      "bonus_attaque": 5,
+      "degats_de": "4d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "killer-whale",
+  "nom": "Killer Whale",
+  "nom_original": "Killer Whale",
+  "taille": "TG",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 12,
+  "ca_detail": "natural armor",
+  "pv": 90,
+  "pv_formule": "12d12+12",
+  "vitesse": {
+    "marche": null,
+    "nage": 18,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 3,
+    "INT_mod": -4,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 3
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 36,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [
+    {
+      "nom": "Echolocation",
+      "description": "The whale can't use its blindsight while deafened.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Hold Breath",
+      "description": "The whale can hold its breath for 30 minutes",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Keen Hearing",
+      "description": "The whale has advantage on Wisdom (Perception) checks that rely on hearing.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 21 (5d6 + 4) piercing damage.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "giant-vulture",
+  "nom": "Giant Vulture",
+  "nom_original": "Giant Vulture",
+  "taille": "G",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "neutral evil",
+  "ca": 10,
+  "ca_detail": null,
+  "pv": 22,
+  "pv_formule": "3d10+6",
+  "vitesse": {
+    "marche": 3,
+    "nage": null,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 15,
+    "FOR_mod": 2,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 3
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [
+    "understands Common but can't speak"
+  ],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [
+    {
+      "nom": "Keen Sight and Smell",
+      "description": "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pack Tactics",
+      "description": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The vulture makes two attacks: one with its beak and one with its talons.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Beak",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "2d4",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Talons",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "2d6",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "cloud-giant",
+  "nom": "Cloud Giant",
+  "nom_original": "Cloud Giant",
+  "taille": "TG",
+  "type": "Giant",
+  "sous_type": null,
+  "alignement": "neutral good (50%) or neutral evil (50%)",
+  "ca": 14,
+  "ca_detail": "natural armor",
+  "pv": 200,
+  "pv_formule": "16d12+96",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 27,
+    "FOR_mod": 8,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 22,
+    "CON_mod": 6,
+    "INT": 12,
+    "INT_mod": 1,
+    "SAG": 16,
+    "SAG_mod": 3,
+    "CHA": 16,
+    "CHA_mod": 3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": 10,
+    "INT": null,
+    "SAG": 7,
+    "CHA": 7
+  },
+  "competences": {
+    "insight": 7,
+    "perception": 7
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 17,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Giant"
+  ],
+  "fp": "9",
+  "fp_numerique": 9,
+  "bonus_maitrise": 4,
+  "experience": 5000,
+  "traits": [
+    {
+      "nom": "Keen Smell",
+      "description": "The giant has advantage on Wisdom (Perception) checks that rely on smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Innate Spellcasting",
+      "description": "The giant's innate spellcasting ability is Charisma. It can innately cast the following spells, requiring no material components:\n\nAt will: detect magic, fog cloud, light\n3/day each: feather fall, fly, misty step, telekinesis\n1/day each: control weather, gaseous form",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The giant makes two morningstar attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Morningstar",
+      "description": "Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 21 (3d8 + 8) piercing damage.",
+      "bonus_attaque": 12,
+      "degats_de": "3d8",
+      "degats_bonus": 8
+    },
+    {
+      "nom": "Rock",
+      "description": "Ranged Weapon Attack: +12 to hit, range 60/240 ft., one target. Hit: 30 (4d10 + 8) bludgeoning damage.",
+      "bonus_attaque": 12,
+      "degats_de": "4d10",
+      "degats_bonus": 8
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

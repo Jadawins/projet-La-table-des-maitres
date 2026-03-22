@@ -1,0 +1,118 @@
+{
+  "slug": "wereboar",
+  "nom": "Sanglier-garou",
+  "nom_original": "Wereboar",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "human",
+  "alignement": "neutral evil",
+  "ca": 10,
+  "ca_detail": "10 in humanoid form, 11 (natural armor) in boar or hybrid form",
+  "pv": 78,
+  "pv_formule": "12d8+24",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 17,
+    "FOR_mod": 3,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 2
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 12,
+    "tremblements": null
+  },
+  "langues": [
+    "Common (can't speak in boar form)"
+  ],
+  "fp": "4",
+  "fp_numerique": 4,
+  "bonus_maitrise": 2,
+  "experience": 1100,
+  "traits": [
+    {
+      "nom": "Shapechanger",
+      "description": "The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Charge (Boar or Hybrid Form Only)",
+      "description": "If the wereboar moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+      "bonus_attaque": 0,
+      "degats_de": "2d6",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Relentless (Recharges after a Short or Long Rest)",
+      "description": "If the wereboar takes 14 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack (Humanoid or Hybrid Form Only)",
+      "description": "The wereboar makes two attacks, only one of which can be with its tusks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Maul (Humanoid or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.",
+      "bonus_attaque": 5,
+      "degats_de": "2d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Tusks (Boar or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy.",
+      "bonus_attaque": 5,
+      "degats_de": "2d6",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

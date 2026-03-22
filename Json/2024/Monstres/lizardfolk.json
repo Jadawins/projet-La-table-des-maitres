@@ -1,0 +1,116 @@
+{
+  "slug": "lizardfolk",
+  "nom": "Homme-lézard",
+  "nom_original": "Lizardfolk",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "lizardfolk",
+  "alignement": "neutral",
+  "ca": 15,
+  "ca_detail": "natural armor, shield",
+  "pv": 22,
+  "pv_formule": "4d8+4",
+  "vitesse": {
+    "marche": 9,
+    "nage": 9,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 15,
+    "FOR_mod": 2,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 7,
+    "INT_mod": -2,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 3,
+    "stealth": 4,
+    "survival": 5
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [
+    "Draconic"
+  ],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Hold Breath",
+      "description": "The lizardfolk can hold its breath for 15 minutes.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The lizardfolk makes two melee attacks, each one with a different weapon.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Heavy Club",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Javelin",
+      "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Spiked Shield",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d6",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

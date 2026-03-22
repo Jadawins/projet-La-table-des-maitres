@@ -1,0 +1,88 @@
+{
+  "slug": "white-dragon-wyrmling",
+  "nom": "White Dragon Wyrmling",
+  "nom_original": "White Dragon Wyrmling",
+  "taille": "M",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 16,
+  "ca_detail": "natural armor",
+  "pv": 32,
+  "pv_formule": "5d8+10",
+  "vitesse": {
+    "marche": 9,
+    "nage": 9,
+    "vol": 18,
+    "fouissement": 4.5,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 14,
+    "FOR_mod": 2,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 2,
+    "CON": 4,
+    "INT": null,
+    "SAG": 2,
+    "CHA": 2
+  },
+  "competences": {
+    "perception": 4,
+    "stealth": 2
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "cold"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": 3,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "Draconic"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 2 (1d4) cold damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d10+1d4",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Cold Breath (Recharge 5-6)",
+      "description": "The dragon exhales an icy blast of hail in a 15-foot cone. Each creature in that area must make a DC 12 Constitution saving throw, taking 22 (5d8) cold damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "5d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

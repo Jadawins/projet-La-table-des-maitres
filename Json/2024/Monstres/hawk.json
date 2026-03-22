@@ -1,0 +1,84 @@
+{
+  "slug": "hawk",
+  "nom": "Faucon",
+  "nom_original": "Hawk",
+  "taille": "TP",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 13,
+  "ca_detail": null,
+  "pv": 1,
+  "pv_formule": "1d4-1",
+  "vitesse": {
+    "marche": 3,
+    "nage": null,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 5,
+    "FOR_mod": -3,
+    "DEX": 16,
+    "DEX_mod": 3,
+    "CON": 8,
+    "CON_mod": -1,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 14,
+    "SAG_mod": 2,
+    "CHA": 6,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 4
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "0",
+  "fp_numerique": 0,
+  "bonus_maitrise": 2,
+  "experience": 10,
+  "traits": [
+    {
+      "nom": "Keen Sight",
+      "description": "The hawk has advantage on Wisdom (Perception) checks that rely on sight.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Talons",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
+      "bonus_attaque": 5,
+      "degats_de": null,
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

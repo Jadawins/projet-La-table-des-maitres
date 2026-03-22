@@ -1,0 +1,118 @@
+{
+  "slug": "werebear",
+  "nom": "Ours-garou",
+  "nom_original": "Werebear",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "human",
+  "alignement": "neutral good",
+  "ca": 10,
+  "ca_detail": "10 in humanoid form, 11 (natural armor) in bear and hybrid form",
+  "pv": 135,
+  "pv_formule": "18d8+54",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 17,
+    "CON_mod": 3,
+    "INT": 11,
+    "INT_mod": 0,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 12,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 7
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 17,
+    "tremblements": null
+  },
+  "langues": [
+    "Common (can't speak in bear form)"
+  ],
+  "fp": "5",
+  "fp_numerique": 5,
+  "bonus_maitrise": 3,
+  "experience": 1800,
+  "traits": [
+    {
+      "nom": "Shapechanger",
+      "description": "The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it. is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Keen Smell",
+      "description": "The werebear has advantage on Wisdom (Perception) checks that rely on smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "In bear form, the werebear makes two claw attacks. In humanoid form, it makes two greataxe attacks. In hybrid form, it can attack like a bear or a humanoid.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite (Bear or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with were bear lycanthropy.",
+      "bonus_attaque": 7,
+      "degats_de": "2d10",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Claw (Bear or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Greataxe (Humanoid or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "1d12",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

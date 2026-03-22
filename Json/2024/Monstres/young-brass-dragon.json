@@ -1,0 +1,104 @@
+{
+  "slug": "young-brass-dragon",
+  "nom": "Young Brass Dragon",
+  "nom_original": "Young Brass Dragon",
+  "taille": "G",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "chaotic good",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 110,
+  "pv_formule": "13d10+39",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": 24,
+    "fouissement": 6,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 17,
+    "CON_mod": 3,
+    "INT": 12,
+    "INT_mod": 1,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 15,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 3,
+    "CON": 6,
+    "INT": null,
+    "SAG": 3,
+    "CHA": 5
+  },
+  "competences": {
+    "perception": 6,
+    "persuasion": 5,
+    "stealth": 3
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "fire"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": 9,
+    "vision_vraie": null,
+    "perception_passive": 16,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "6",
+  "fp_numerique": 6,
+  "bonus_maitrise": 3,
+  "experience": 2300,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d10",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Breath Weapons (Recharge 5-6)",
+      "description": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.\n**Sleep Breath.** The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
+      "bonus_attaque": 0,
+      "degats_de": "12d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

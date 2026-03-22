@@ -1,0 +1,107 @@
+{
+  "slug": "shambling-mound",
+  "nom": "Shambling Mound",
+  "nom_original": "Shambling Mound",
+  "taille": "G",
+  "type": "Plant",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 15,
+  "ca_detail": "natural armor",
+  "pv": 136,
+  "pv_formule": "16d10+48",
+  "vitesse": {
+    "marche": 6,
+    "nage": 6,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 8,
+    "DEX_mod": -1,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "stealth": 2
+  },
+  "resistances": [
+    "cold",
+    "fire"
+  ],
+  "immunites_degats": [
+    "lightning"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "blinded",
+    "deafened",
+    "exhaustion"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "5",
+  "fp_numerique": 5,
+  "bonus_maitrise": 3,
+  "experience": 1800,
+  "traits": [
+    {
+      "nom": "Lightning Absorption",
+      "description": "Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The shambling mound makes two slam attacks. If both attacks hit a Medium or smaller target, the target is grappled (escape DC 14), and the shambling mound uses its Engulf on it.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Engulf",
+      "description": "The shambling mound engulfs a Medium or smaller creature grappled by it. The engulfed target is blinded, restrained, and unable to breathe, and it must succeed on a DC 14 Constitution saving throw at the start of each of the mound's turns or take 13 (2d8 + 4) bludgeoning damage. If the mound moves, the engulfed target moves with it. The mound can have only one creature engulfed at a time.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

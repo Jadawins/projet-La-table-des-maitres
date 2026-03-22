@@ -1,0 +1,130 @@
+{
+  "slug": "planetar",
+  "nom": "Planetar",
+  "nom_original": "Planetar",
+  "taille": "G",
+  "type": "Celestial",
+  "sous_type": null,
+  "alignement": "lawful good",
+  "ca": 19,
+  "ca_detail": "natural armor",
+  "pv": 200,
+  "pv_formule": "16d10+112",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": 36,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 24,
+    "FOR_mod": 7,
+    "DEX": 20,
+    "DEX_mod": 5,
+    "CON": 24,
+    "CON_mod": 7,
+    "INT": 19,
+    "INT_mod": 4,
+    "SAG": 22,
+    "SAG_mod": 6,
+    "CHA": 25,
+    "CHA_mod": 7
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": 12,
+    "INT": null,
+    "SAG": 11,
+    "CHA": 12
+  },
+  "competences": {
+    "perception": 11
+  },
+  "resistances": [
+    "radiant; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": 36,
+    "perception_passive": 21,
+    "tremblements": null
+  },
+  "langues": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "fp": "16",
+  "fp_numerique": 16,
+  "bonus_maitrise": 5,
+  "experience": 15000,
+  "traits": [
+    {
+      "nom": "Angelic Weapons",
+      "description": "The planetar's weapon attacks are magical. When the planetar hits with any weapon, the weapon deals an extra 5d8 radiant damage (included in the attack).",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Divine Awareness",
+      "description": "The planetar knows if it hears a lie.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Innate Spellcasting",
+      "description": "The planetar's spellcasting ability is Charisma (spell save DC 20). The planetar can innately cast the following spells, requiring no material components:\nAt will: detect evil and good, invisibility (self only)\n3/day each: blade barrier, dispel evil and good, flame strike, raise dead\n1/day each: commune, control weather, insect plague",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The planetar has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The planetar makes two melee attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Greatsword",
+      "description": "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 21 (4d6 + 7) slashing damage plus 22 (5d8) radiant damage.",
+      "bonus_attaque": 12,
+      "degats_de": "4d6+5d8",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Healing Touch (4/Day)",
+      "description": "The planetar touches another creature. The target magically regains 30 (6d8 + 3) hit points and is freed from any curse, disease, poison, blindness, or deafness.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

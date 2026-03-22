@@ -1,0 +1,123 @@
+{
+  "slug": "hezrou",
+  "nom": "Hezrou",
+  "nom_original": "Hezrou",
+  "taille": "G",
+  "type": "Fiend",
+  "sous_type": "demon",
+  "alignement": "chaotic evil",
+  "ca": 16,
+  "ca_detail": "natural armor",
+  "pv": 136,
+  "pv_formule": "13d10+65",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 17,
+    "DEX_mod": 3,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 13,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": 7,
+    "DEX": null,
+    "CON": 8,
+    "INT": null,
+    "SAG": 4,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "cold",
+    "fire",
+    "lightning; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "fp": "8",
+  "fp_numerique": 8,
+  "bonus_maitrise": 3,
+  "experience": 3900,
+  "traits": [
+    {
+      "nom": "Magic Resistance",
+      "description": "The hezrou has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Stench",
+      "description": "Any creature that starts its turn within 10 feet of the hezrou must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. On a successful saving throw, the creature is immune to the hezrou's stench for 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The hezrou makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d10",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Variant: Summon Demon (1/Day)",
+      "description": "The demon chooses what to summon and attempts a magical summoning.\nA hezrou has a 30 percent chance of summoning 2d6 dretches or one hezrou.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": "http://api.open5e.com/static/img/object_illustrations/open5e-illustrations/monsters/hezrou.png"
+}

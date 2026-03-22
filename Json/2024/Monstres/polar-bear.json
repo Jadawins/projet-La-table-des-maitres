@@ -1,0 +1,98 @@
+{
+  "slug": "polar-bear",
+  "nom": "Polar Bear",
+  "nom_original": "Polar Bear",
+  "taille": "G",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 12,
+  "ca_detail": "natural armor",
+  "pv": 42,
+  "pv_formule": "5d10+15",
+  "vitesse": {
+    "marche": 12,
+    "nage": 9,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 20,
+    "FOR_mod": 5,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 3
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Keen Smell",
+      "description": "The bear has advantage on Wisdom (Perception) checks that rely on smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The bear makes two attacks: one with its bite and one with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) piercing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "1d8",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Claws",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d6",
+      "degats_bonus": 5
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

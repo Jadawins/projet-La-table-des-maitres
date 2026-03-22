@@ -1,0 +1,131 @@
+{
+  "slug": "deva",
+  "nom": "Deva",
+  "nom_original": "Deva",
+  "taille": "M",
+  "type": "Celestial",
+  "sous_type": null,
+  "alignement": "lawful good",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 136,
+  "pv_formule": "16d8+64",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": 27,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 18,
+    "DEX_mod": 4,
+    "CON": 18,
+    "CON_mod": 4,
+    "INT": 17,
+    "INT_mod": 3,
+    "SAG": 20,
+    "SAG_mod": 5,
+    "CHA": 20,
+    "CHA_mod": 5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": 9,
+    "CHA": 9
+  },
+  "competences": {
+    "insight": 9,
+    "perception": 9
+  },
+  "resistances": [
+    "radiant; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 19,
+    "tremblements": null
+  },
+  "langues": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "fp": "10",
+  "fp_numerique": 10,
+  "bonus_maitrise": 4,
+  "experience": 5900,
+  "traits": [
+    {
+      "nom": "Angelic Weapons",
+      "description": "The deva's weapon attacks are magical. When the deva hits with any weapon, the weapon deals an extra 4d8 radiant damage (included in the attack).",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Innate Spellcasting",
+      "description": "The deva's spellcasting ability is Charisma (spell save DC 17). The deva can innately cast the following spells, requiring only verbal components:\nAt will: detect evil and good\n1/day each: commune, raise dead",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The deva has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The deva makes two melee attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Mace",
+      "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) bludgeoning damage plus 18 (4d8) radiant damage.",
+      "bonus_attaque": 8,
+      "degats_de": "1d6+4d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Healing Touch (3/Day)",
+      "description": "The deva touches another creature. The target magically regains 20 (4d8 + 2) hit points and is freed from any curse, disease, poison, blindness, or deafness.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Change Shape",
+      "description": "The deva magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the deva's choice).\nIn a new form, the deva retains its game statistics and ability to speak, but its AC, movement modes, Strength, Dexterity, and special senses are replaced by those of the new form, and it gains any statistics and capabilities (except class features, legendary actions, and lair actions) that the new form has but that it lacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

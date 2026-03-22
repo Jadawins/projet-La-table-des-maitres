@@ -1,0 +1,112 @@
+{
+  "slug": "winter-wolf",
+  "nom": "Winter Wolf",
+  "nom_original": "Winter Wolf",
+  "taille": "G",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "neutral evil",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 75,
+  "pv_formule": "10d10+20",
+  "vitesse": {
+    "marche": 15,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 13,
+    "DEX_mod": 1,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 7,
+    "INT_mod": -2,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 5,
+    "stealth": 3
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "cold"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 15,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Giant",
+    "Winter Wolf"
+  ],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [
+    {
+      "nom": "Keen Hearing and Smell",
+      "description": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pack Tactics",
+      "description": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Snow Camouflage",
+      "description": "The wolf has advantage on Dexterity (Stealth) checks made to hide in snowy terrain.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Cold Breath (Recharge 5-6)",
+      "description": "The wolf exhales a blast of freezing wind in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 0,
+      "degats_de": "4d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

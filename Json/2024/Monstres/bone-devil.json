@@ -1,0 +1,118 @@
+{
+  "slug": "bone-devil",
+  "nom": "Bone Devil",
+  "nom_original": "Bone Devil",
+  "taille": "G",
+  "type": "Fiend",
+  "sous_type": "devil",
+  "alignement": "lawful evil",
+  "ca": 19,
+  "ca_detail": "natural armor",
+  "pv": 142,
+  "pv_formule": "15d10+60",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": 12,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 16,
+    "DEX_mod": 3,
+    "CON": 18,
+    "CON_mod": 4,
+    "INT": 13,
+    "INT_mod": 1,
+    "SAG": 14,
+    "SAG_mod": 2,
+    "CHA": 16,
+    "CHA_mod": 3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": 5,
+    "SAG": 6,
+    "CHA": 7
+  },
+  "competences": {
+    "deception": 7,
+    "insight": 6
+  },
+  "resistances": [
+    "cold; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 9,
+    "tremblements": null
+  },
+  "langues": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "fp": "9",
+  "fp_numerique": 9,
+  "bonus_maitrise": 4,
+  "experience": 5000,
+  "traits": [
+    {
+      "nom": "Devil's Sight",
+      "description": "Magical darkness doesn't impede the devil's darkvision.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The devil has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The devil makes three attacks: two with its claws and one with its sting.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 8 (1d8 + 4) slashing damage.",
+      "bonus_attaque": 8,
+      "degats_de": "1d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Sting",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 13 (2d8 + 4) piercing damage plus 17 (5d6) poison damage, and the target must succeed on a DC 14 Constitution saving throw or become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 8,
+      "degats_de": "2d8",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

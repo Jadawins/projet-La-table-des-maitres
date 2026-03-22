@@ -1,0 +1,109 @@
+{
+  "slug": "swarm-of-bats",
+  "nom": "Swarm of Bats",
+  "nom_original": "Swarm of Bats",
+  "taille": "M",
+  "type": "Beast",
+  "sous_type": "Swarm",
+  "alignement": "unaligned",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 22,
+  "pv_formule": "5d8",
+  "vitesse": {
+    "marche": null,
+    "nage": null,
+    "vol": 9,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 5,
+    "FOR_mod": -3,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 10,
+    "CON_mod": 0,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 4,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/4",
+  "fp_numerique": 0.25,
+  "bonus_maitrise": 2,
+  "experience": 50,
+  "traits": [
+    {
+      "nom": "Echolocation",
+      "description": "The swarm can't use its blindsight while deafened.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Keen Hearing",
+      "description": "The swarm has advantage on Wisdom (Perception) checks that rely on hearing.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Swarm",
+      "description": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny bat. The swarm can't regain hit points or gain temporary hit points.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bites",
+      "description": "Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing damage if the swarm has half of its hit points or fewer.",
+      "bonus_attaque": 4,
+      "degats_de": "2d4",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

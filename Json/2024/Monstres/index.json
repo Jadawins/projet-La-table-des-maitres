@@ -1,0 +1,2900 @@
+[
+  {
+    "slug": "aboleth",
+    "nom": "Aboleth",
+    "nom_original": "Aboleth",
+    "fp": "10",
+    "fp_numerique": 10,
+    "type": "Aberration",
+    "taille": "G"
+  },
+  {
+    "slug": "acolyte",
+    "nom": "Acolyte",
+    "nom_original": "Acolyte",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "adult-black-dragon",
+    "nom": "Adult Black Dragon",
+    "nom_original": "Adult Black Dragon",
+    "fp": "14",
+    "fp_numerique": 14,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-blue-dragon",
+    "nom": "Adult Blue Dragon",
+    "nom_original": "Adult Blue Dragon",
+    "fp": "16",
+    "fp_numerique": 16,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-brass-dragon",
+    "nom": "Adult Brass Dragon",
+    "nom_original": "Adult Brass Dragon",
+    "fp": "13",
+    "fp_numerique": 13,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-bronze-dragon",
+    "nom": "Adult Bronze Dragon",
+    "nom_original": "Adult Bronze Dragon",
+    "fp": "15",
+    "fp_numerique": 15,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-copper-dragon",
+    "nom": "Adult Copper Dragon",
+    "nom_original": "Adult Copper Dragon",
+    "fp": "14",
+    "fp_numerique": 14,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-gold-dragon",
+    "nom": "Adult Gold Dragon",
+    "nom_original": "Adult Gold Dragon",
+    "fp": "17",
+    "fp_numerique": 17,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-green-dragon",
+    "nom": "Adult Green Dragon",
+    "nom_original": "Adult Green Dragon",
+    "fp": "15",
+    "fp_numerique": 15,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-red-dragon",
+    "nom": "Adult Red Dragon",
+    "nom_original": "Adult Red Dragon",
+    "fp": "17",
+    "fp_numerique": 17,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-silver-dragon",
+    "nom": "Adult Silver Dragon",
+    "nom_original": "Adult Silver Dragon",
+    "fp": "16",
+    "fp_numerique": 16,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "adult-white-dragon",
+    "nom": "Adult White Dragon",
+    "nom_original": "Adult White Dragon",
+    "fp": "13",
+    "fp_numerique": 13,
+    "type": "Dragon",
+    "taille": "TG"
+  },
+  {
+    "slug": "air-elemental",
+    "nom": "Air Elemental",
+    "nom_original": "Air Elemental",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Elemental",
+    "taille": "G"
+  },
+  {
+    "slug": "ancient-black-dragon",
+    "nom": "Ancient Black Dragon",
+    "nom_original": "Ancient Black Dragon",
+    "fp": "21",
+    "fp_numerique": 21,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-blue-dragon",
+    "nom": "Ancient Blue Dragon",
+    "nom_original": "Ancient Blue Dragon",
+    "fp": "23",
+    "fp_numerique": 23,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-brass-dragon",
+    "nom": "Ancient Brass Dragon",
+    "nom_original": "Ancient Brass Dragon",
+    "fp": "20",
+    "fp_numerique": 20,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-bronze-dragon",
+    "nom": "Ancient Bronze Dragon",
+    "nom_original": "Ancient Bronze Dragon",
+    "fp": "22",
+    "fp_numerique": 22,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-copper-dragon",
+    "nom": "Ancient Copper Dragon",
+    "nom_original": "Ancient Copper Dragon",
+    "fp": "21",
+    "fp_numerique": 21,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-gold-dragon",
+    "nom": "Ancient Gold Dragon",
+    "nom_original": "Ancient Gold Dragon",
+    "fp": "24",
+    "fp_numerique": 24,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-green-dragon",
+    "nom": "Ancient Green Dragon",
+    "nom_original": "Ancient Green Dragon",
+    "fp": "22",
+    "fp_numerique": 22,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-red-dragon",
+    "nom": "Ancient Red Dragon",
+    "nom_original": "Ancient Red Dragon",
+    "fp": "24",
+    "fp_numerique": 24,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-silver-dragon",
+    "nom": "Ancient Silver Dragon",
+    "nom_original": "Ancient Silver Dragon",
+    "fp": "23",
+    "fp_numerique": 23,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "ancient-white-dragon",
+    "nom": "Ancient White Dragon",
+    "nom_original": "Ancient White Dragon",
+    "fp": "20",
+    "fp_numerique": 20,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "androsphinx",
+    "nom": "Androsphinx",
+    "nom_original": "Androsphinx",
+    "fp": "17",
+    "fp_numerique": 17,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "animated-armor",
+    "nom": "Animated Armor",
+    "nom_original": "Animated Armor",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Construct",
+    "taille": "M"
+  },
+  {
+    "slug": "ankheg",
+    "nom": "Ankheg",
+    "nom_original": "Ankheg",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "ape",
+    "nom": "Ape",
+    "nom_original": "Ape",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "archmage",
+    "nom": "Archimage",
+    "nom_original": "Archmage",
+    "fp": "12",
+    "fp_numerique": 12,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "assassin",
+    "nom": "Assassin",
+    "nom_original": "Assassin",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "awakened-shrub",
+    "nom": "Awakened Shrub",
+    "nom_original": "Awakened Shrub",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Plant",
+    "taille": "P"
+  },
+  {
+    "slug": "awakened-tree",
+    "nom": "Awakened Tree",
+    "nom_original": "Awakened Tree",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Plant",
+    "taille": "TG"
+  },
+  {
+    "slug": "axe-beak",
+    "nom": "Axe Beak",
+    "nom_original": "Axe Beak",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "azer",
+    "nom": "Azer",
+    "nom_original": "Azer",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Elemental",
+    "taille": "M"
+  },
+  {
+    "slug": "baboon",
+    "nom": "Baboon",
+    "nom_original": "Baboon",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "badger",
+    "nom": "Badger",
+    "nom_original": "Badger",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "balor",
+    "nom": "Balor",
+    "nom_original": "Balor",
+    "fp": "19",
+    "fp_numerique": 19,
+    "type": "Fiend",
+    "taille": "TG"
+  },
+  {
+    "slug": "bandit",
+    "nom": "Bandit",
+    "nom_original": "Bandit",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "bandit-captain",
+    "nom": "Bandit Captain",
+    "nom_original": "Bandit Captain",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "barbed-devil",
+    "nom": "Barbed Devil",
+    "nom_original": "Barbed Devil",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "basilisk",
+    "nom": "Basilic",
+    "nom_original": "Basilisk",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "bat",
+    "nom": "Chauve-souris",
+    "nom_original": "Bat",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "bearded-devil",
+    "nom": "Bearded Devil",
+    "nom_original": "Bearded Devil",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "behir",
+    "nom": "Béhir",
+    "nom_original": "Behir",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Monstrosity",
+    "taille": "TG"
+  },
+  {
+    "slug": "berserker",
+    "nom": "Berserker",
+    "nom_original": "Berserker",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "black-bear",
+    "nom": "Black Bear",
+    "nom_original": "Black Bear",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "black-dragon-wyrmling",
+    "nom": "Black Dragon Wyrmling",
+    "nom_original": "Black Dragon Wyrmling",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "black-pudding",
+    "nom": "Black Pudding",
+    "nom_original": "Black Pudding",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Ooze",
+    "taille": "G"
+  },
+  {
+    "slug": "blink-dog",
+    "nom": "Blink Dog",
+    "nom_original": "Blink Dog",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Fey",
+    "taille": "M"
+  },
+  {
+    "slug": "blood-hawk",
+    "nom": "Blood Hawk",
+    "nom_original": "Blood Hawk",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "blue-dragon-wyrmling",
+    "nom": "Blue Dragon Wyrmling",
+    "nom_original": "Blue Dragon Wyrmling",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "boar",
+    "nom": "Sanglier",
+    "nom_original": "Boar",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "bone-devil",
+    "nom": "Bone Devil",
+    "nom_original": "Bone Devil",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "brass-dragon-wyrmling",
+    "nom": "Brass Dragon Wyrmling",
+    "nom_original": "Brass Dragon Wyrmling",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "bronze-dragon-wyrmling",
+    "nom": "Bronze Dragon Wyrmling",
+    "nom_original": "Bronze Dragon Wyrmling",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "brown-bear",
+    "nom": "Brown Bear",
+    "nom_original": "Brown Bear",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "bugbear",
+    "nom": "Bugbear",
+    "nom_original": "Bugbear",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "bulette",
+    "nom": "Bulette",
+    "nom_original": "Bulette",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "camel",
+    "nom": "Chameau",
+    "nom_original": "Camel",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "cat",
+    "nom": "Chat",
+    "nom_original": "Cat",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "centaur",
+    "nom": "Centaure",
+    "nom_original": "Centaur",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "chain-devil",
+    "nom": "Chain Devil",
+    "nom_original": "Chain Devil",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "chimera",
+    "nom": "Chimère",
+    "nom_original": "Chimera",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "chuul",
+    "nom": "Chuul",
+    "nom_original": "Chuul",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Aberration",
+    "taille": "G"
+  },
+  {
+    "slug": "clay-golem",
+    "nom": "Clay Golem",
+    "nom_original": "Clay Golem",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Construct",
+    "taille": "G"
+  },
+  {
+    "slug": "cloaker",
+    "nom": "Enveloppeur",
+    "nom_original": "Cloaker",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Aberration",
+    "taille": "G"
+  },
+  {
+    "slug": "cloud-giant",
+    "nom": "Cloud Giant",
+    "nom_original": "Cloud Giant",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Giant",
+    "taille": "TG"
+  },
+  {
+    "slug": "cockatrice",
+    "nom": "Cockatrice",
+    "nom_original": "Cockatrice",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Monstrosity",
+    "taille": "P"
+  },
+  {
+    "slug": "commoner",
+    "nom": "Roturier",
+    "nom_original": "Commoner",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "constrictor-snake",
+    "nom": "Constrictor Snake",
+    "nom_original": "Constrictor Snake",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "copper-dragon-wyrmling",
+    "nom": "Copper Dragon Wyrmling",
+    "nom_original": "Copper Dragon Wyrmling",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "couatl",
+    "nom": "Couatl",
+    "nom_original": "Couatl",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Celestial",
+    "taille": "M"
+  },
+  {
+    "slug": "crab",
+    "nom": "Crab",
+    "nom_original": "Crab",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "crocodile",
+    "nom": "Crocodile",
+    "nom_original": "Crocodile",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "cult-fanatic",
+    "nom": "Cult Fanatic",
+    "nom_original": "Cult Fanatic",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "cultist",
+    "nom": "Cultist",
+    "nom_original": "Cultist",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "darkmantle",
+    "nom": "Sombre manteau",
+    "nom_original": "Darkmantle",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Monstrosity",
+    "taille": "P"
+  },
+  {
+    "slug": "death-dog",
+    "nom": "Death Dog",
+    "nom_original": "Death Dog",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "deep-gnome-svirfneblin",
+    "nom": "Deep Gnome (Svirfneblin)",
+    "nom_original": "Deep Gnome (Svirfneblin)",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "P"
+  },
+  {
+    "slug": "deer",
+    "nom": "Cerf",
+    "nom_original": "Deer",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "deva",
+    "nom": "Deva",
+    "nom_original": "Deva",
+    "fp": "10",
+    "fp_numerique": 10,
+    "type": "Celestial",
+    "taille": "M"
+  },
+  {
+    "slug": "dire-wolf",
+    "nom": "Dire Wolf",
+    "nom_original": "Dire Wolf",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "djinni",
+    "nom": "Djinn",
+    "nom_original": "Djinni",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Elemental",
+    "taille": "G"
+  },
+  {
+    "slug": "doppelganger",
+    "nom": "Doppelganger",
+    "nom_original": "Doppelganger",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "draft-horse",
+    "nom": "Draft Horse",
+    "nom_original": "Draft Horse",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "dragon-turtle",
+    "nom": "Dragon Turtle",
+    "nom_original": "Dragon Turtle",
+    "fp": "17",
+    "fp_numerique": 17,
+    "type": "Dragon",
+    "taille": "Gig"
+  },
+  {
+    "slug": "dretch",
+    "nom": "Dretch",
+    "nom_original": "Dretch",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Fiend",
+    "taille": "P"
+  },
+  {
+    "slug": "drider",
+    "nom": "Drider",
+    "nom_original": "Drider",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "drow",
+    "nom": "Drow",
+    "nom_original": "Drow",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "druid",
+    "nom": "Druide",
+    "nom_original": "Druid",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "dryad",
+    "nom": "Dryade",
+    "nom_original": "Dryad",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Fey",
+    "taille": "M"
+  },
+  {
+    "slug": "duergar",
+    "nom": "Duergar",
+    "nom_original": "Duergar",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "dust-mephit",
+    "nom": "Dust Mephit",
+    "nom_original": "Dust Mephit",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Elemental",
+    "taille": "P"
+  },
+  {
+    "slug": "eagle",
+    "nom": "Aigle",
+    "nom_original": "Eagle",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "earth-elemental",
+    "nom": "Earth Elemental",
+    "nom_original": "Earth Elemental",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Elemental",
+    "taille": "G"
+  },
+  {
+    "slug": "efreeti",
+    "nom": "Éfrit",
+    "nom_original": "Efreeti",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Elemental",
+    "taille": "G"
+  },
+  {
+    "slug": "elephant",
+    "nom": "Éléphant",
+    "nom_original": "Elephant",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "elk",
+    "nom": "Élan",
+    "nom_original": "Elk",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "erinyes",
+    "nom": "Érinye",
+    "nom_original": "Erinyes",
+    "fp": "12",
+    "fp_numerique": 12,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "ettercap",
+    "nom": "Ettercap",
+    "nom_original": "Ettercap",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "ettin",
+    "nom": "Ettin",
+    "nom_original": "Ettin",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Giant",
+    "taille": "G"
+  },
+  {
+    "slug": "fire-elemental",
+    "nom": "Fire Elemental",
+    "nom_original": "Fire Elemental",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Elemental",
+    "taille": "G"
+  },
+  {
+    "slug": "fire-giant",
+    "nom": "Fire Giant",
+    "nom_original": "Fire Giant",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Giant",
+    "taille": "TG"
+  },
+  {
+    "slug": "flesh-golem",
+    "nom": "Flesh Golem",
+    "nom_original": "Flesh Golem",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Construct",
+    "taille": "M"
+  },
+  {
+    "slug": "flying-snake",
+    "nom": "Flying Snake",
+    "nom_original": "Flying Snake",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "flying-sword",
+    "nom": "Flying Sword",
+    "nom_original": "Flying Sword",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Construct",
+    "taille": "P"
+  },
+  {
+    "slug": "frog",
+    "nom": "Frog",
+    "nom_original": "Frog",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "frost-giant",
+    "nom": "Frost Giant",
+    "nom_original": "Frost Giant",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Giant",
+    "taille": "TG"
+  },
+  {
+    "slug": "gargoyle",
+    "nom": "Gargouille",
+    "nom_original": "Gargoyle",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Elemental",
+    "taille": "M"
+  },
+  {
+    "slug": "gelatinous-cube",
+    "nom": "Gelatinous Cube",
+    "nom_original": "Gelatinous Cube",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Ooze",
+    "taille": "G"
+  },
+  {
+    "slug": "ghast",
+    "nom": "Ghast",
+    "nom_original": "Ghast",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "ghost",
+    "nom": "Ghost",
+    "nom_original": "Ghost",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "ghoul",
+    "nom": "Goule",
+    "nom_original": "Ghoul",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "giant-ape",
+    "nom": "Giant Ape",
+    "nom_original": "Giant Ape",
+    "fp": "7",
+    "fp_numerique": 7,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "giant-badger",
+    "nom": "Giant Badger",
+    "nom_original": "Giant Badger",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "giant-bat",
+    "nom": "Giant Bat",
+    "nom_original": "Giant Bat",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-boar",
+    "nom": "Giant Boar",
+    "nom_original": "Giant Boar",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-centipede",
+    "nom": "Giant Centipede",
+    "nom_original": "Giant Centipede",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "giant-constrictor-snake",
+    "nom": "Giant Constrictor Snake",
+    "nom_original": "Giant Constrictor Snake",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "giant-crab",
+    "nom": "Giant Crab",
+    "nom_original": "Giant Crab",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "giant-crocodile",
+    "nom": "Giant Crocodile",
+    "nom_original": "Giant Crocodile",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "giant-eagle",
+    "nom": "Giant Eagle",
+    "nom_original": "Giant Eagle",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-elk",
+    "nom": "Giant Elk",
+    "nom_original": "Giant Elk",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "giant-fire-beetle",
+    "nom": "Giant Fire Beetle",
+    "nom_original": "Giant Fire Beetle",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "giant-frog",
+    "nom": "Giant Frog",
+    "nom_original": "Giant Frog",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "giant-goat",
+    "nom": "Giant Goat",
+    "nom_original": "Giant Goat",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-hyena",
+    "nom": "Giant Hyena",
+    "nom_original": "Giant Hyena",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-lizard",
+    "nom": "Giant Lizard",
+    "nom_original": "Giant Lizard",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-octopus",
+    "nom": "Giant Octopus",
+    "nom_original": "Giant Octopus",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-owl",
+    "nom": "Giant Owl",
+    "nom_original": "Giant Owl",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-poisonous-snake",
+    "nom": "Giant Poisonous Snake",
+    "nom_original": "Giant Poisonous Snake",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "giant-rat",
+    "nom": "Giant Rat",
+    "nom_original": "Giant Rat",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "giant-rat-diseased",
+    "nom": "Giant Rat (Diseased)",
+    "nom_original": "Giant Rat (Diseased)",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "giant-scorpion",
+    "nom": "Giant Scorpion",
+    "nom_original": "Giant Scorpion",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-sea-horse",
+    "nom": "Giant Sea Horse",
+    "nom_original": "Giant Sea Horse",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-shark",
+    "nom": "Giant Shark",
+    "nom_original": "Giant Shark",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "giant-spider",
+    "nom": "Giant Spider",
+    "nom_original": "Giant Spider",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-toad",
+    "nom": "Giant Toad",
+    "nom_original": "Giant Toad",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-vulture",
+    "nom": "Giant Vulture",
+    "nom_original": "Giant Vulture",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "giant-wasp",
+    "nom": "Giant Wasp",
+    "nom_original": "Giant Wasp",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "giant-weasel",
+    "nom": "Giant Weasel",
+    "nom_original": "Giant Weasel",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "giant-wolf-spider",
+    "nom": "Giant Wolf Spider",
+    "nom_original": "Giant Wolf Spider",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "gibbering-mouther",
+    "nom": "Gibbering Mouther",
+    "nom_original": "Gibbering Mouther",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Aberration",
+    "taille": "M"
+  },
+  {
+    "slug": "glabrezu",
+    "nom": "Glabrezu",
+    "nom_original": "Glabrezu",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "gladiator",
+    "nom": "Gladiateur",
+    "nom_original": "Gladiator",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "gnoll",
+    "nom": "Gnoll",
+    "nom_original": "Gnoll",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "goat",
+    "nom": "Goat",
+    "nom_original": "Goat",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "goblin",
+    "nom": "Gobelin",
+    "nom_original": "Goblin",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Humanoid",
+    "taille": "P"
+  },
+  {
+    "slug": "gold-dragon-wyrmling",
+    "nom": "Gold Dragon Wyrmling",
+    "nom_original": "Gold Dragon Wyrmling",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "gorgon",
+    "nom": "Gorgon",
+    "nom_original": "Gorgon",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "gray-ooze",
+    "nom": "Gray Ooze",
+    "nom_original": "Gray Ooze",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Ooze",
+    "taille": "M"
+  },
+  {
+    "slug": "green-dragon-wyrmling",
+    "nom": "Green Dragon Wyrmling",
+    "nom_original": "Green Dragon Wyrmling",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "green-hag",
+    "nom": "Green Hag",
+    "nom_original": "Green Hag",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Fey",
+    "taille": "M"
+  },
+  {
+    "slug": "grick",
+    "nom": "Grick",
+    "nom_original": "Grick",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "griffon",
+    "nom": "Griffon",
+    "nom_original": "Griffon",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "grimlock",
+    "nom": "Grimlock",
+    "nom_original": "Grimlock",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "guard",
+    "nom": "Garde",
+    "nom_original": "Guard",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "guardian-naga",
+    "nom": "Guardian Naga",
+    "nom_original": "Guardian Naga",
+    "fp": "10",
+    "fp_numerique": 10,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "gynosphinx",
+    "nom": "Gynosphinx",
+    "nom_original": "Gynosphinx",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "half-red-dragon-veteran",
+    "nom": "Half-Red Dragon Veteran",
+    "nom_original": "Half-Red Dragon Veteran",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "harpy",
+    "nom": "Harpie",
+    "nom_original": "Harpy",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "hawk",
+    "nom": "Faucon",
+    "nom_original": "Hawk",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "hell-hound",
+    "nom": "Chien de l'enfer",
+    "nom_original": "Hell Hound",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "hezrou",
+    "nom": "Hezrou",
+    "nom_original": "Hezrou",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "hill-giant",
+    "nom": "Hill Giant",
+    "nom_original": "Hill Giant",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Giant",
+    "taille": "TG"
+  },
+  {
+    "slug": "hippogriff",
+    "nom": "Hippogriffe",
+    "nom_original": "Hippogriff",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "hobgoblin",
+    "nom": "Hobgobelin",
+    "nom_original": "Hobgoblin",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "homunculus",
+    "nom": "Homunculus",
+    "nom_original": "Homunculus",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Construct",
+    "taille": "TP"
+  },
+  {
+    "slug": "horned-devil",
+    "nom": "Horned Devil",
+    "nom_original": "Horned Devil",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "hunter-shark",
+    "nom": "Hunter Shark",
+    "nom_original": "Hunter Shark",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "hydra",
+    "nom": "Hydre",
+    "nom_original": "Hydra",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Monstrosity",
+    "taille": "TG"
+  },
+  {
+    "slug": "hyena",
+    "nom": "Hyena",
+    "nom_original": "Hyena",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "ice-devil",
+    "nom": "Ice Devil",
+    "nom_original": "Ice Devil",
+    "fp": "14",
+    "fp_numerique": 14,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "ice-mephit",
+    "nom": "Ice Mephit",
+    "nom_original": "Ice Mephit",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Elemental",
+    "taille": "P"
+  },
+  {
+    "slug": "imp",
+    "nom": "Diablotin",
+    "nom_original": "Imp",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Fiend",
+    "taille": "TP"
+  },
+  {
+    "slug": "invisible-stalker",
+    "nom": "Invisible Stalker",
+    "nom_original": "Invisible Stalker",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Elemental",
+    "taille": "M"
+  },
+  {
+    "slug": "iron-golem",
+    "nom": "Iron Golem",
+    "nom_original": "Iron Golem",
+    "fp": "16",
+    "fp_numerique": 16,
+    "type": "Construct",
+    "taille": "G"
+  },
+  {
+    "slug": "jackal",
+    "nom": "Jackal",
+    "nom_original": "Jackal",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "killer-whale",
+    "nom": "Killer Whale",
+    "nom_original": "Killer Whale",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "knight",
+    "nom": "Chevalier",
+    "nom_original": "Knight",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "kobold",
+    "nom": "Kobold",
+    "nom_original": "Kobold",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Humanoid",
+    "taille": "P"
+  },
+  {
+    "slug": "kraken",
+    "nom": "Kraken",
+    "nom_original": "Kraken",
+    "fp": "23",
+    "fp_numerique": 23,
+    "type": "Monstrosity",
+    "taille": "Gig"
+  },
+  {
+    "slug": "lamia",
+    "nom": "Lamie",
+    "nom_original": "Lamia",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "lemure",
+    "nom": "Lemure",
+    "nom_original": "Lemure",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "lich",
+    "nom": "Liche",
+    "nom_original": "Lich",
+    "fp": "21",
+    "fp_numerique": 21,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "lion",
+    "nom": "Lion",
+    "nom_original": "Lion",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "lizard",
+    "nom": "Lizard",
+    "nom_original": "Lizard",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "lizardfolk",
+    "nom": "Homme-lézard",
+    "nom_original": "Lizardfolk",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "mage",
+    "nom": "Mage",
+    "nom_original": "Mage",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "magma-mephit",
+    "nom": "Magma Mephit",
+    "nom_original": "Magma Mephit",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Elemental",
+    "taille": "P"
+  },
+  {
+    "slug": "magmin",
+    "nom": "Magmin",
+    "nom_original": "Magmin",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Elemental",
+    "taille": "P"
+  },
+  {
+    "slug": "mammoth",
+    "nom": "Mammouth",
+    "nom_original": "Mammoth",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "manticore",
+    "nom": "Manticore",
+    "nom_original": "Manticore",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "marilith",
+    "nom": "Marilith",
+    "nom_original": "Marilith",
+    "fp": "16",
+    "fp_numerique": 16,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "mastiff",
+    "nom": "Mastiff",
+    "nom_original": "Mastiff",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "medusa",
+    "nom": "Méduse",
+    "nom_original": "Medusa",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "merfolk",
+    "nom": "Homme-poisson",
+    "nom_original": "Merfolk",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "merrow",
+    "nom": "Merrow",
+    "nom_original": "Merrow",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "mimic",
+    "nom": "Mimic",
+    "nom_original": "Mimic",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "minotaur",
+    "nom": "Minotaure",
+    "nom_original": "Minotaur",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "minotaur-skeleton",
+    "nom": "Minotaur Skeleton",
+    "nom_original": "Minotaur Skeleton",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Undead",
+    "taille": "G"
+  },
+  {
+    "slug": "mule",
+    "nom": "Mule",
+    "nom_original": "Mule",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "mummy",
+    "nom": "Momie",
+    "nom_original": "Mummy",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "mummy-lord",
+    "nom": "Mummy Lord",
+    "nom_original": "Mummy Lord",
+    "fp": "15",
+    "fp_numerique": 15,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "nalfeshnee",
+    "nom": "Nalfeshnee",
+    "nom_original": "Nalfeshnee",
+    "fp": "13",
+    "fp_numerique": 13,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "night-hag",
+    "nom": "Night Hag",
+    "nom_original": "Night Hag",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "nightmare",
+    "nom": "Cauchemar",
+    "nom_original": "Nightmare",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "noble",
+    "nom": "Noble",
+    "nom_original": "Noble",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "ochre-jelly",
+    "nom": "Ochre Jelly",
+    "nom_original": "Ochre Jelly",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Ooze",
+    "taille": "G"
+  },
+  {
+    "slug": "octopus",
+    "nom": "Octopus",
+    "nom_original": "Octopus",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "P"
+  },
+  {
+    "slug": "ogre",
+    "nom": "Ogre",
+    "nom_original": "Ogre",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Giant",
+    "taille": "G"
+  },
+  {
+    "slug": "ogre-zombie",
+    "nom": "Ogre Zombie",
+    "nom_original": "Ogre Zombie",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Undead",
+    "taille": "G"
+  },
+  {
+    "slug": "oni",
+    "nom": "Oni",
+    "nom_original": "Oni",
+    "fp": "7",
+    "fp_numerique": 7,
+    "type": "Giant",
+    "taille": "G"
+  },
+  {
+    "slug": "orc",
+    "nom": "Orque",
+    "nom_original": "Orc",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "otyugh",
+    "nom": "Otyugh",
+    "nom_original": "Otyugh",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Aberration",
+    "taille": "G"
+  },
+  {
+    "slug": "owl",
+    "nom": "Hibou",
+    "nom_original": "Owl",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "owlbear",
+    "nom": "Owlbear",
+    "nom_original": "Owlbear",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "panther",
+    "nom": "Panthère",
+    "nom_original": "Panther",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "pegasus",
+    "nom": "Pégase",
+    "nom_original": "Pegasus",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Celestial",
+    "taille": "G"
+  },
+  {
+    "slug": "phase-spider",
+    "nom": "Araignée de phase",
+    "nom_original": "Phase Spider",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "pit-fiend",
+    "nom": "Fiend des fosses",
+    "nom_original": "Pit Fiend",
+    "fp": "20",
+    "fp_numerique": 20,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "planetar",
+    "nom": "Planetar",
+    "nom_original": "Planetar",
+    "fp": "16",
+    "fp_numerique": 16,
+    "type": "Celestial",
+    "taille": "G"
+  },
+  {
+    "slug": "plesiosaurus",
+    "nom": "Plesiosaurus",
+    "nom_original": "Plesiosaurus",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "poisonous-snake",
+    "nom": "Poisonous Snake",
+    "nom_original": "Poisonous Snake",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "polar-bear",
+    "nom": "Polar Bear",
+    "nom_original": "Polar Bear",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "pony",
+    "nom": "Poney",
+    "nom_original": "Pony",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "priest",
+    "nom": "Prêtre",
+    "nom_original": "Priest",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "pseudodragon",
+    "nom": "Pseudodragon",
+    "nom_original": "Pseudodragon",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Dragon",
+    "taille": "TP"
+  },
+  {
+    "slug": "purple-worm",
+    "nom": "Purple Worm",
+    "nom_original": "Purple Worm",
+    "fp": "15",
+    "fp_numerique": 15,
+    "type": "Monstrosity",
+    "taille": "Gig"
+  },
+  {
+    "slug": "quasit",
+    "nom": "Quasi-démon",
+    "nom_original": "Quasit",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Fiend",
+    "taille": "TP"
+  },
+  {
+    "slug": "quipper",
+    "nom": "Quipper",
+    "nom_original": "Quipper",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "rakshasa",
+    "nom": "Rakshasa",
+    "nom_original": "Rakshasa",
+    "fp": "13",
+    "fp_numerique": 13,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "rat",
+    "nom": "Rat",
+    "nom_original": "Rat",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "raven",
+    "nom": "Corbeau",
+    "nom_original": "Raven",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "red-dragon-wyrmling",
+    "nom": "Red Dragon Wyrmling",
+    "nom_original": "Red Dragon Wyrmling",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "reef-shark",
+    "nom": "Reef Shark",
+    "nom_original": "Reef Shark",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "remorhaz",
+    "nom": "Remorhaz",
+    "nom_original": "Remorhaz",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Monstrosity",
+    "taille": "TG"
+  },
+  {
+    "slug": "rhinoceros",
+    "nom": "Rhinocéros",
+    "nom_original": "Rhinoceros",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "riding-horse",
+    "nom": "Riding Horse",
+    "nom_original": "Riding Horse",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "roc",
+    "nom": "Roc",
+    "nom_original": "Roc",
+    "fp": "11",
+    "fp_numerique": 11,
+    "type": "Monstrosity",
+    "taille": "Gig"
+  },
+  {
+    "slug": "roper",
+    "nom": "Roper",
+    "nom_original": "Roper",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "rug-of-smothering",
+    "nom": "Rug of Smothering",
+    "nom_original": "Rug of Smothering",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Construct",
+    "taille": "G"
+  },
+  {
+    "slug": "rust-monster",
+    "nom": "Monstre de rouille",
+    "nom_original": "Rust Monster",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Monstrosity",
+    "taille": "M"
+  },
+  {
+    "slug": "saber-toothed-tiger",
+    "nom": "Saber-Toothed Tiger",
+    "nom_original": "Saber-Toothed Tiger",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "sahuagin",
+    "nom": "Sahuagin",
+    "nom_original": "Sahuagin",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "salamander",
+    "nom": "Salamander",
+    "nom_original": "Salamander",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Elemental",
+    "taille": "G"
+  },
+  {
+    "slug": "satyr",
+    "nom": "Satyre",
+    "nom_original": "Satyr",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Fey",
+    "taille": "M"
+  },
+  {
+    "slug": "scorpion",
+    "nom": "Scorpion",
+    "nom_original": "Scorpion",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "scout",
+    "nom": "Éclaireur",
+    "nom_original": "Scout",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "sea-hag",
+    "nom": "Sea Hag",
+    "nom_original": "Sea Hag",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Fey",
+    "taille": "M"
+  },
+  {
+    "slug": "sea-horse",
+    "nom": "Sea Horse",
+    "nom_original": "Sea Horse",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "shadow",
+    "nom": "Ombre",
+    "nom_original": "Shadow",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "shambling-mound",
+    "nom": "Shambling Mound",
+    "nom_original": "Shambling Mound",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Plant",
+    "taille": "G"
+  },
+  {
+    "slug": "shield-guardian",
+    "nom": "Shield Guardian",
+    "nom_original": "Shield Guardian",
+    "fp": "7",
+    "fp_numerique": 7,
+    "type": "Construct",
+    "taille": "G"
+  },
+  {
+    "slug": "shrieker",
+    "nom": "Shrieker",
+    "nom_original": "Shrieker",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Plant",
+    "taille": "M"
+  },
+  {
+    "slug": "silver-dragon-wyrmling",
+    "nom": "Silver Dragon Wyrmling",
+    "nom_original": "Silver Dragon Wyrmling",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "skeleton",
+    "nom": "Squelette",
+    "nom_original": "Skeleton",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "solar",
+    "nom": "Solar",
+    "nom_original": "Solar",
+    "fp": "21",
+    "fp_numerique": 21,
+    "type": "Celestial",
+    "taille": "G"
+  },
+  {
+    "slug": "specter",
+    "nom": "Spectre",
+    "nom_original": "Specter",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "spider",
+    "nom": "Araignée",
+    "nom_original": "Spider",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "spirit-naga",
+    "nom": "Spirit Naga",
+    "nom_original": "Spirit Naga",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "sprite",
+    "nom": "Sprite",
+    "nom_original": "Sprite",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Fey",
+    "taille": "TP"
+  },
+  {
+    "slug": "spy",
+    "nom": "Espion",
+    "nom_original": "Spy",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "steam-mephit",
+    "nom": "Steam Mephit",
+    "nom_original": "Steam Mephit",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Elemental",
+    "taille": "P"
+  },
+  {
+    "slug": "stirge",
+    "nom": "Stirge",
+    "nom_original": "Stirge",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "stone-giant",
+    "nom": "Stone Giant",
+    "nom_original": "Stone Giant",
+    "fp": "7",
+    "fp_numerique": 7,
+    "type": "Giant",
+    "taille": "TG"
+  },
+  {
+    "slug": "stone-golem",
+    "nom": "Stone Golem",
+    "nom_original": "Stone Golem",
+    "fp": "10",
+    "fp_numerique": 10,
+    "type": "Construct",
+    "taille": "G"
+  },
+  {
+    "slug": "storm-giant",
+    "nom": "Storm Giant",
+    "nom_original": "Storm Giant",
+    "fp": "13",
+    "fp_numerique": 13,
+    "type": "Giant",
+    "taille": "TG"
+  },
+  {
+    "slug": "succubusincubus",
+    "nom": "Succubus/Incubus",
+    "nom_original": "Succubus/Incubus",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Fiend",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-bats",
+    "nom": "Swarm of Bats",
+    "nom_original": "Swarm of Bats",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-beetles",
+    "nom": "Swarm of Beetles",
+    "nom_original": "Swarm of Beetles",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-centipedes",
+    "nom": "Swarm of Centipedes",
+    "nom_original": "Swarm of Centipedes",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-insects",
+    "nom": "Swarm of Insects",
+    "nom_original": "Swarm of Insects",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-poisonous-snakes",
+    "nom": "Swarm of Poisonous Snakes",
+    "nom_original": "Swarm of Poisonous Snakes",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-quippers",
+    "nom": "Swarm of Quippers",
+    "nom_original": "Swarm of Quippers",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-rats",
+    "nom": "Swarm of Rats",
+    "nom_original": "Swarm of Rats",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-ravens",
+    "nom": "Swarm of Ravens",
+    "nom_original": "Swarm of Ravens",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-spiders",
+    "nom": "Swarm of Spiders",
+    "nom_original": "Swarm of Spiders",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "swarm-of-wasps",
+    "nom": "Swarm of Wasps",
+    "nom_original": "Swarm of Wasps",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "tarrasque",
+    "nom": "Tarrasque",
+    "nom_original": "Tarrasque",
+    "fp": "30",
+    "fp_numerique": 30,
+    "type": "Monstrosity",
+    "taille": "Gig"
+  },
+  {
+    "slug": "thug",
+    "nom": "Brigand",
+    "nom_original": "Thug",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "tiger",
+    "nom": "Tigre",
+    "nom_original": "Tiger",
+    "fp": "1",
+    "fp_numerique": 1,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "treant",
+    "nom": "Sylvanien",
+    "nom_original": "Treant",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Plant",
+    "taille": "TG"
+  },
+  {
+    "slug": "tribal-warrior",
+    "nom": "Tribal Warrior",
+    "nom_original": "Tribal Warrior",
+    "fp": "1/8",
+    "fp_numerique": 0.125,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "triceratops",
+    "nom": "Triceratops",
+    "nom_original": "Triceratops",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "troll",
+    "nom": "Troll",
+    "nom_original": "Troll",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Giant",
+    "taille": "G"
+  },
+  {
+    "slug": "tyrannosaurus-rex",
+    "nom": "Tyrannosaurus Rex",
+    "nom_original": "Tyrannosaurus Rex",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Beast",
+    "taille": "TG"
+  },
+  {
+    "slug": "unicorn",
+    "nom": "Licorne",
+    "nom_original": "Unicorn",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Celestial",
+    "taille": "G"
+  },
+  {
+    "slug": "vampire",
+    "nom": "Vampire",
+    "nom_original": "Vampire",
+    "fp": "13",
+    "fp_numerique": 13,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "vampire-spawn",
+    "nom": "Vampire Spawn",
+    "nom_original": "Vampire Spawn",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "veteran",
+    "nom": "Vétéran",
+    "nom_original": "Veteran",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "violet-fungus",
+    "nom": "Violet Fungus",
+    "nom_original": "Violet Fungus",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Plant",
+    "taille": "M"
+  },
+  {
+    "slug": "vrock",
+    "nom": "Vrock",
+    "nom_original": "Vrock",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Fiend",
+    "taille": "G"
+  },
+  {
+    "slug": "vulture",
+    "nom": "Vulture",
+    "nom_original": "Vulture",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "warhorse",
+    "nom": "Warhorse",
+    "nom_original": "Warhorse",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Beast",
+    "taille": "G"
+  },
+  {
+    "slug": "warhorse-skeleton",
+    "nom": "Warhorse Skeleton",
+    "nom_original": "Warhorse Skeleton",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Undead",
+    "taille": "G"
+  },
+  {
+    "slug": "water-elemental",
+    "nom": "Water Elemental",
+    "nom_original": "Water Elemental",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Elemental",
+    "taille": "G"
+  },
+  {
+    "slug": "weasel",
+    "nom": "Weasel",
+    "nom_original": "Weasel",
+    "fp": "0",
+    "fp_numerique": 0,
+    "type": "Beast",
+    "taille": "TP"
+  },
+  {
+    "slug": "werebear",
+    "nom": "Ours-garou",
+    "nom_original": "Werebear",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "wereboar",
+    "nom": "Sanglier-garou",
+    "nom_original": "Wereboar",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "wererat",
+    "nom": "Rat-garou",
+    "nom_original": "Wererat",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "weretiger",
+    "nom": "Tigre-garou",
+    "nom_original": "Weretiger",
+    "fp": "4",
+    "fp_numerique": 4,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "werewolf",
+    "nom": "Loup-garou",
+    "nom_original": "Werewolf",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Humanoid",
+    "taille": "M"
+  },
+  {
+    "slug": "white-dragon-wyrmling",
+    "nom": "White Dragon Wyrmling",
+    "nom_original": "White Dragon Wyrmling",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Dragon",
+    "taille": "M"
+  },
+  {
+    "slug": "wight",
+    "nom": "Spectre",
+    "nom_original": "Wight",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "will-o-wisp",
+    "nom": "Will-o'-Wisp",
+    "nom_original": "Will-o'-Wisp",
+    "fp": "2",
+    "fp_numerique": 2,
+    "type": "Undead",
+    "taille": "TP"
+  },
+  {
+    "slug": "winter-wolf",
+    "nom": "Winter Wolf",
+    "nom_original": "Winter Wolf",
+    "fp": "3",
+    "fp_numerique": 3,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "wolf",
+    "nom": "Loup",
+    "nom_original": "Wolf",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Beast",
+    "taille": "M"
+  },
+  {
+    "slug": "worg",
+    "nom": "Worg",
+    "nom_original": "Worg",
+    "fp": "1/2",
+    "fp_numerique": 0.5,
+    "type": "Monstrosity",
+    "taille": "G"
+  },
+  {
+    "slug": "wraith",
+    "nom": "Revenant",
+    "nom_original": "Wraith",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Undead",
+    "taille": "M"
+  },
+  {
+    "slug": "wyvern",
+    "nom": "Wyverne",
+    "nom_original": "Wyvern",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "xorn",
+    "nom": "Xorn",
+    "nom_original": "Xorn",
+    "fp": "5",
+    "fp_numerique": 5,
+    "type": "Elemental",
+    "taille": "M"
+  },
+  {
+    "slug": "young-black-dragon",
+    "nom": "Young Black Dragon",
+    "nom_original": "Young Black Dragon",
+    "fp": "7",
+    "fp_numerique": 7,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-blue-dragon",
+    "nom": "Young Blue Dragon",
+    "nom_original": "Young Blue Dragon",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-brass-dragon",
+    "nom": "Young Brass Dragon",
+    "nom_original": "Young Brass Dragon",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-bronze-dragon",
+    "nom": "Young Bronze Dragon",
+    "nom_original": "Young Bronze Dragon",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-copper-dragon",
+    "nom": "Young Copper Dragon",
+    "nom_original": "Young Copper Dragon",
+    "fp": "7",
+    "fp_numerique": 7,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-gold-dragon",
+    "nom": "Young Gold Dragon",
+    "nom_original": "Young Gold Dragon",
+    "fp": "10",
+    "fp_numerique": 10,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-green-dragon",
+    "nom": "Young Green Dragon",
+    "nom_original": "Young Green Dragon",
+    "fp": "8",
+    "fp_numerique": 8,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-red-dragon",
+    "nom": "Young Red Dragon",
+    "nom_original": "Young Red Dragon",
+    "fp": "10",
+    "fp_numerique": 10,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-silver-dragon",
+    "nom": "Young Silver Dragon",
+    "nom_original": "Young Silver Dragon",
+    "fp": "9",
+    "fp_numerique": 9,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "young-white-dragon",
+    "nom": "Young White Dragon",
+    "nom_original": "Young White Dragon",
+    "fp": "6",
+    "fp_numerique": 6,
+    "type": "Dragon",
+    "taille": "G"
+  },
+  {
+    "slug": "zombie",
+    "nom": "Zombie",
+    "nom_original": "Zombie",
+    "fp": "1/4",
+    "fp_numerique": 0.25,
+    "type": "Undead",
+    "taille": "M"
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "slug": "bearded-devil",
+  "nom": "Bearded Devil",
+  "nom_original": "Bearded Devil",
+  "taille": "M",
+  "type": "Fiend",
+  "sous_type": "devil",
+  "alignement": "lawful evil",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 52,
+  "pv_formule": "8d8+16",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 16,
+    "FOR_mod": 3,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 9,
+    "INT_mod": -1,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": 5,
+    "DEX": null,
+    "CON": 4,
+    "INT": null,
+    "SAG": 2,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "cold; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [
+    {
+      "nom": "Devil's Sight",
+      "description": "Magical darkness doesn't impede the devil's darkvision.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The devil has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Steadfast",
+      "description": "The devil can't be frightened while it can see an allied creature within 30 feet of it.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The devil makes two attacks: one with its beard and one with its glaive.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Beard",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or be poisoned for 1 minute. While poisoned in this way, the target can't regain hit points. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 5,
+      "degats_de": "1d8",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Glaive",
+      "description": "Melee Weapon Attack: +5 to hit, reach 10 ft., one target. Hit: 8 (1d10 + 3) slashing damage. If the target is a creature other than an undead or a construct, it must succeed on a DC 12 Constitution saving throw or lose 5 (1d10) hit points at the start of each of its turns due to an infernal wound. Each time the devil hits the wounded target with this attack, the damage dealt by the wound increases by 5 (1d10). Any creature can take an action to stanch the wound with a successful DC 12 Wisdom (Medicine) check. The wound also closes if the target receives magical healing.",
+      "bonus_attaque": 5,
+      "degats_de": "1d10",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

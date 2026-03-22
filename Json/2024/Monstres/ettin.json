@@ -1,0 +1,108 @@
+{
+  "slug": "ettin",
+  "nom": "Ettin",
+  "nom_original": "Ettin",
+  "taille": "G",
+  "type": "Giant",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 12,
+  "ca_detail": "natural armor",
+  "pv": 85,
+  "pv_formule": "10d10+30",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 21,
+    "FOR_mod": 5,
+    "DEX": 8,
+    "DEX_mod": -1,
+    "CON": 17,
+    "CON_mod": 3,
+    "INT": 6,
+    "INT_mod": -2,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 4
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "Giant",
+    "Orc"
+  ],
+  "fp": "4",
+  "fp_numerique": 4,
+  "bonus_maitrise": 2,
+  "experience": 1100,
+  "traits": [
+    {
+      "nom": "Two Heads",
+      "description": "The ettin has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, and knocked unconscious.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Wakeful",
+      "description": "When one of the ettin's heads is asleep, its other head is awake.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The ettin makes two attacks: one with its battleaxe and one with its morningstar.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Battleaxe",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d8",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Morningstar",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) piercing damage.",
+      "bonus_attaque": 7,
+      "degats_de": "2d8",
+      "degats_bonus": 5
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

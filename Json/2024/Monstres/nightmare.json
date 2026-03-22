@@ -1,0 +1,102 @@
+{
+  "slug": "nightmare",
+  "nom": "Cauchemar",
+  "nom_original": "Nightmare",
+  "taille": "G",
+  "type": "Fiend",
+  "sous_type": null,
+  "alignement": "neutral evil",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 68,
+  "pv_formule": "8d10+24",
+  "vitesse": {
+    "marche": 18,
+    "nage": null,
+    "vol": 27,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 15,
+    "CHA_mod": 2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "fire"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "understands Abyssal",
+    "Common",
+    "and Infernal but can't speak"
+  ],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [
+    {
+      "nom": "Confer Fire Resistance",
+      "description": "The nightmare can grant resistance to fire damage to anyone riding it.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Illumination",
+      "description": "The nightmare sheds bright light in a 10-foot radius and dim light for an additional 10 feet.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Hooves",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) fire damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d8+2d6",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Ethereal Stride",
+      "description": "The nightmare and up to three willing creatures within 5 feet of it magically enter the Ethereal Plane from the Material Plane, or vice versa.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

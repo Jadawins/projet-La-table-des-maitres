@@ -1,0 +1,87 @@
+{
+  "slug": "mage",
+  "nom": "Mage",
+  "nom_original": "Mage",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any alignment",
+  "ca": 12,
+  "ca_detail": "15 with _mage armor_",
+  "pv": 40,
+  "pv_formule": "9d8",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 9,
+    "FOR_mod": -1,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 17,
+    "INT_mod": 3,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": 6,
+    "SAG": 4,
+    "CHA": null
+  },
+  "competences": {
+    "arcana": 6,
+    "history": 6
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "any four languages"
+  ],
+  "fp": "6",
+  "fp_numerique": 6,
+  "bonus_maitrise": 3,
+  "experience": 2300,
+  "traits": [
+    {
+      "nom": "Spellcasting",
+      "description": "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:\n\n* Cantrips (at will): fire bolt, light, mage hand, prestidigitation\n* 1st level (4 slots): detect magic, mage armor, magic missile, shield\n* 2nd level (3 slots): misty step, suggestion\n* 3rd level (3 slots): counterspell, fireball, fly\n* 4th level (3 slots): greater invisibility, ice storm\n* 5th level (1 slot): cone of cold",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Dagger",
+      "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d4",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

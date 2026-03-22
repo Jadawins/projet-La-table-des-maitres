@@ -1,0 +1,133 @@
+{
+  "slug": "weretiger",
+  "nom": "Tigre-garou",
+  "nom_original": "Weretiger",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "human",
+  "alignement": "neutral",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 120,
+  "pv_formule": "16d8+48",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 17,
+    "FOR_mod": 3,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 5,
+    "stealth": 4
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with silvered weapons"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 15,
+    "tremblements": null
+  },
+  "langues": [
+    "Common (can't speak in tiger form)"
+  ],
+  "fp": "4",
+  "fp_numerique": 4,
+  "bonus_maitrise": 2,
+  "experience": 1100,
+  "traits": [
+    {
+      "nom": "Shapechanger",
+      "description": "The weretiger can use its action to polymorph into a tiger-humanoid hybrid or into a tiger, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Keen Hearing and Smell",
+      "description": "The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pounce (Tiger or Hybrid Form Only)",
+      "description": "If the weretiger moves at least 15 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the weretiger can make one bite attack against it as a bonus action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack (Humanoid or Hybrid Form Only)",
+      "description": "In humanoid form, the weretiger makes two scimitar attacks or two longbow attacks. In hybrid form, it can attack like a humanoid or make two claw attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite (Tiger or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 13 Constitution saving throw or be cursed with weretiger lycanthropy.",
+      "bonus_attaque": 5,
+      "degats_de": "1d10",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Claw (Tiger or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d8",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Scimitar (Humanoid or Hybrid Form Only)",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Longbow (Humanoid or Hybrid Form Only)",
+      "description": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d8",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

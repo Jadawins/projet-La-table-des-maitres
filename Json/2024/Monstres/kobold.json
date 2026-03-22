@@ -1,0 +1,99 @@
+{
+  "slug": "kobold",
+  "nom": "Kobold",
+  "nom_original": "Kobold",
+  "taille": "P",
+  "type": "Humanoid",
+  "sous_type": "kobold",
+  "alignement": "lawful evil",
+  "ca": 12,
+  "ca_detail": null,
+  "pv": 5,
+  "pv_formule": "2d6-2",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 7,
+    "FOR_mod": -2,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 9,
+    "CON_mod": -1,
+    "INT": 8,
+    "INT_mod": -1,
+    "SAG": 7,
+    "SAG_mod": -2,
+    "CHA": 8,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "1/8",
+  "fp_numerique": 0.125,
+  "bonus_maitrise": 2,
+  "experience": 25,
+  "traits": [
+    {
+      "nom": "Sunlight Sensitivity",
+      "description": "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Pack Tactics",
+      "description": "The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Dagger",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d4",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Sling",
+      "description": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d4",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

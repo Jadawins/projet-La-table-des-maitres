@@ -1,0 +1,81 @@
+{
+  "slug": "warhorse-skeleton",
+  "nom": "Warhorse Skeleton",
+  "nom_original": "Warhorse Skeleton",
+  "taille": "G",
+  "type": "Undead",
+  "sous_type": null,
+  "alignement": "lawful evil",
+  "ca": 13,
+  "ca_detail": "barding scraps",
+  "pv": 22,
+  "pv_formule": "3d10+6",
+  "vitesse": {
+    "marche": 18,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 18,
+    "FOR_mod": 4,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 8,
+    "SAG_mod": -1,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [
+    "bludgeoning"
+  ],
+  "immunites_etats": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 9,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Hooves",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

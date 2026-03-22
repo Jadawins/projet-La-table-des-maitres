@@ -1,0 +1,100 @@
+{
+  "slug": "lemure",
+  "nom": "Lemure",
+  "nom_original": "Lemure",
+  "taille": "M",
+  "type": "Fiend",
+  "sous_type": "devil",
+  "alignement": "lawful evil",
+  "ca": 7,
+  "ca_detail": null,
+  "pv": 13,
+  "pv_formule": "3d8",
+  "vitesse": {
+    "marche": 4.5,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 10,
+    "FOR_mod": 0,
+    "DEX": 5,
+    "DEX_mod": -3,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 1,
+    "INT_mod": -5,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 3,
+    "CHA_mod": -4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "cold"
+  ],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "understands infernal but can't speak"
+  ],
+  "fp": "0",
+  "fp_numerique": 0,
+  "bonus_maitrise": 2,
+  "experience": 10,
+  "traits": [
+    {
+      "nom": "Devil's Sight",
+      "description": "Magical darkness doesn't impede the lemure's darkvision.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Hellish Rejuvenation",
+      "description": "A lemure that dies in the Nine Hells comes back to life with all its hit points in 1d10 days unless it is killed by a good-aligned creature with a bless spell cast on that creature or its remains are sprinkled with holy water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Fist",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
+      "bonus_attaque": 3,
+      "degats_de": "1d4",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

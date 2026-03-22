@@ -1,0 +1,162 @@
+{
+  "slug": "ancient-bronze-dragon",
+  "nom": "Ancient Bronze Dragon",
+  "nom_original": "Ancient Bronze Dragon",
+  "taille": "Gig",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "lawful good",
+  "ca": 22,
+  "ca_detail": "natural armor",
+  "pv": 444,
+  "pv_formule": "24d20+192",
+  "vitesse": {
+    "marche": 12,
+    "nage": 12,
+    "vol": 24,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 29,
+    "FOR_mod": 9,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 27,
+    "CON_mod": 8,
+    "INT": 18,
+    "INT_mod": 4,
+    "SAG": 17,
+    "SAG_mod": 3,
+    "CHA": 21,
+    "CHA_mod": 5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 7,
+    "CON": 15,
+    "INT": null,
+    "SAG": 10,
+    "CHA": 12
+  },
+  "competences": {
+    "insight": 10,
+    "perception": 17,
+    "stealth": 7
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "lightning"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": 18,
+    "vision_vraie": null,
+    "perception_passive": 27,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "22",
+  "fp_numerique": 22,
+  "bonus_maitrise": 7,
+  "experience": 41000,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The dragon can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Legendary Resistance (3/Day)",
+      "description": "If the dragon fails a saving throw, it can choose to succeed instead.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +16 to hit, reach 15 ft., one target. Hit: 20 (2d10 + 9) piercing damage.",
+      "bonus_attaque": 16,
+      "degats_de": "2d10",
+      "degats_bonus": 9
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +16 to hit, reach 10 ft., one target. Hit: 16 (2d6 + 9) slashing damage.",
+      "bonus_attaque": 16,
+      "degats_de": "1d6",
+      "degats_bonus": 9
+    },
+    {
+      "nom": "Tail",
+      "description": "Melee Weapon Attack: +16 to hit, reach 20 ft., one target. Hit: 18 (2d8 + 9) bludgeoning damage.",
+      "bonus_attaque": 16,
+      "degats_de": "2d8",
+      "degats_bonus": 9
+    },
+    {
+      "nom": "Frightful Presence",
+      "description": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 20 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Breath Weapons (Recharge 5-6)",
+      "description": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 23 Strength saving throw. On a failed save, the creature is pushed 60 feet away from the dragon.",
+      "bonus_attaque": 0,
+      "degats_de": "16d10",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Change Shape",
+      "description": "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).\nIn a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [
+    {
+      "nom": "Detect",
+      "description": "The dragon makes a Wisdom (Perception) check.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Tail Attack",
+      "description": "The dragon makes a tail attack.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Wing Attack (Costs 2 Actions)",
+      "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "source": "SRD-2024",
+  "image": null
+}

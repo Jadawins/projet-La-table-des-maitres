@@ -1,0 +1,124 @@
+{
+  "slug": "stone-golem",
+  "nom": "Stone Golem",
+  "nom_original": "Stone Golem",
+  "taille": "G",
+  "type": "Construct",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 178,
+  "pv_formule": "17d10+85",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 22,
+    "FOR_mod": 6,
+    "DEX": 9,
+    "DEX_mod": -1,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 3,
+    "INT_mod": -4,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 1,
+    "CHA_mod": -5
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison",
+    "psychic; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks not made with adamantine weapons"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "fp": "10",
+  "fp_numerique": 10,
+  "bonus_maitrise": 4,
+  "experience": 5900,
+  "traits": [
+    {
+      "nom": "Immutable Form",
+      "description": "The golem is immune to any spell or effect that would alter its form.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Resistance",
+      "description": "The golem has advantage on saving throws against spells and other magical effects.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Weapons",
+      "description": "The golem's weapon attacks are magical.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The golem makes two slam attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.",
+      "bonus_attaque": 10,
+      "degats_de": "3d8",
+      "degats_bonus": 6
+    },
+    {
+      "nom": "Slow (Recharge 5-6)",
+      "description": "The golem targets one or more creatures it can see within 10 ft. of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

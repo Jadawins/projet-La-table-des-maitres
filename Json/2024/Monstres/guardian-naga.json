@@ -1,0 +1,104 @@
+{
+  "slug": "guardian-naga",
+  "nom": "Guardian Naga",
+  "nom_original": "Guardian Naga",
+  "taille": "G",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "lawful good",
+  "ca": 18,
+  "ca_detail": "natural armor",
+  "pv": 127,
+  "pv_formule": "15d10+45",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 18,
+    "DEX_mod": 4,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 16,
+    "INT_mod": 3,
+    "SAG": 19,
+    "SAG_mod": 4,
+    "CHA": 18,
+    "CHA_mod": 4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 8,
+    "CON": 7,
+    "INT": 7,
+    "SAG": 8,
+    "CHA": 8
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "Celestial",
+    "Common"
+  ],
+  "fp": "10",
+  "fp_numerique": 10,
+  "bonus_maitrise": 4,
+  "experience": 5900,
+  "traits": [
+    {
+      "nom": "Rejuvenation",
+      "description": "If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Spellcasting",
+      "description": "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:\n\n* Cantrips (at will): mending, sacred flame, thaumaturgy\n* 1st level (4 slots): command, cure wounds, shield of faith\n* 2nd level (3 slots): calm emotions, hold person\n* 3rd level (3 slots): bestow curse, clairvoyance\n* 4th level (3 slots): banishment, freedom of movement\n* 5th level (2 slots): flame strike, geas\n* 6th level (1 slot): true seeing",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one creature. Hit: 8 (1d8 + 4) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 8,
+      "degats_de": "1d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Spit Poison",
+      "description": "Ranged Weapon Attack: +8 to hit, range 15/30 ft., one creature. Hit: The target must make a DC 15 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 8,
+      "degats_de": "10d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

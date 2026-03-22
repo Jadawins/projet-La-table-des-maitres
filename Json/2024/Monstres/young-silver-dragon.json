@@ -1,0 +1,105 @@
+{
+  "slug": "young-silver-dragon",
+  "nom": "Young Silver Dragon",
+  "nom_original": "Young Silver Dragon",
+  "taille": "G",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "lawful good",
+  "ca": 18,
+  "ca_detail": "natural armor",
+  "pv": 168,
+  "pv_formule": "16d10+80",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": 24,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 23,
+    "FOR_mod": 6,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 21,
+    "CON_mod": 5,
+    "INT": 14,
+    "INT_mod": 2,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 19,
+    "CHA_mod": 4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 4,
+    "CON": 9,
+    "INT": null,
+    "SAG": 4,
+    "CHA": 8
+  },
+  "competences": {
+    "arcana": 6,
+    "history": 6,
+    "perception": 8,
+    "stealth": 4
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "cold"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": 9,
+    "vision_vraie": null,
+    "perception_passive": 18,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Draconic"
+  ],
+  "fp": "9",
+  "fp_numerique": 9,
+  "bonus_maitrise": 4,
+  "experience": 5000,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon makes three attacks: one with its bite and two with its claws.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.",
+      "bonus_attaque": 10,
+      "degats_de": "2d10",
+      "degats_bonus": 6
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.",
+      "bonus_attaque": 10,
+      "degats_de": "2d6",
+      "degats_bonus": 6
+    },
+    {
+      "nom": "Breath Weapons (Recharge 5-6)",
+      "description": "The dragon uses one of the following breath weapons.\n**Cold Breath.** The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.\n**Paralyzing Breath.** The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 0,
+      "degats_de": "12d8",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

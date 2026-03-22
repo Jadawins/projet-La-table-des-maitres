@@ -1,0 +1,111 @@
+{
+  "slug": "deep-gnome-svirfneblin",
+  "nom": "Deep Gnome (Svirfneblin)",
+  "nom_original": "Deep Gnome (Svirfneblin)",
+  "taille": "P",
+  "type": "Humanoid",
+  "sous_type": "gnome",
+  "alignement": "neutral good",
+  "ca": 15,
+  "ca_detail": "chain shirt",
+  "pv": 16,
+  "pv_formule": "3d6+6",
+  "vitesse": {
+    "marche": 6,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 15,
+    "FOR_mod": 2,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 12,
+    "INT_mod": 1,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 9,
+    "CHA_mod": -1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "investigation": 3,
+    "perception": 2,
+    "stealth": 4
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 12,
+    "tremblements": null
+  },
+  "langues": [
+    "Gnomish",
+    "Terran",
+    "Undercommon"
+  ],
+  "fp": "1/2",
+  "fp_numerique": 0.5,
+  "bonus_maitrise": 2,
+  "experience": 100,
+  "traits": [
+    {
+      "nom": "Stone Camouflage",
+      "description": "The gnome has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Gnome Cunning",
+      "description": "The gnome has advantage on Intelligence, Wisdom, and Charisma saving throws against magic.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Innate Spellcasting",
+      "description": "The gnome's innate spellcasting ability is Intelligence (spell save DC 11). It can innately cast the following spells, requiring no material components:\nAt will: nondetection (self only)\n1/day each: blindness/deafness, blur, disguise self",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "War Pick",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+      "bonus_attaque": 4,
+      "degats_de": "1d8",
+      "degats_bonus": 2
+    },
+    {
+      "nom": "Poisoned Dart",
+      "description": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or be poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 4,
+      "degats_de": "1d4",
+      "degats_bonus": 2
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

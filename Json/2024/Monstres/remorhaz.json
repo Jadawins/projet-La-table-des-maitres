@@ -1,0 +1,92 @@
+{
+  "slug": "remorhaz",
+  "nom": "Remorhaz",
+  "nom_original": "Remorhaz",
+  "taille": "TG",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 195,
+  "pv_formule": "17d12+85",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": 6,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 24,
+    "FOR_mod": 7,
+    "DEX": 13,
+    "DEX_mod": 1,
+    "CON": 21,
+    "CON_mod": 5,
+    "INT": 4,
+    "INT_mod": -3,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "cold",
+    "fire"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": 18
+  },
+  "langues": [],
+  "fp": "11",
+  "fp_numerique": 11,
+  "bonus_maitrise": 4,
+  "experience": 7200,
+  "traits": [
+    {
+      "nom": "Heated Body",
+      "description": "A creature that touches the remorhaz or hits it with a melee attack while within 5 feet of it takes 10 (3d6) fire damage.",
+      "bonus_attaque": 0,
+      "degats_de": "3d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 40 (6d10 + 7) piercing damage plus 10 (3d6) fire damage. If the target is a creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the remorhaz can't bite another target.",
+      "bonus_attaque": 11,
+      "degats_de": "6d10+3d6",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Swallow",
+      "description": "The remorhaz makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, that creature takes the bite's damage and is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the remorhaz, and it takes 21 (6d6) acid damage at the start of each of the remorhaz's turns.\nIf the remorhaz takes 30 damage or more on a single turn from a creature inside it, the remorhaz must succeed on a DC 15 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet oft he remorhaz. If the remorhaz dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 15 feet of movement, exiting prone.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

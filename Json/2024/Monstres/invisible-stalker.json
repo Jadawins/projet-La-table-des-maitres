@@ -1,0 +1,117 @@
+{
+  "slug": "invisible-stalker",
+  "nom": "Invisible Stalker",
+  "nom_original": "Invisible Stalker",
+  "taille": "M",
+  "type": "Elemental",
+  "sous_type": null,
+  "alignement": "neutral",
+  "ca": 14,
+  "ca_detail": null,
+  "pv": 104,
+  "pv_formule": "16d8+32",
+  "vitesse": {
+    "marche": 15,
+    "nage": null,
+    "vol": 15,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 16,
+    "FOR_mod": 3,
+    "DEX": 19,
+    "DEX_mod": 4,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 15,
+    "SAG_mod": 2,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 8,
+    "stealth": 10
+  },
+  "resistances": [
+    "bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 18,
+    "tremblements": null
+  },
+  "langues": [
+    "Auran",
+    "understands Common but doesn't speak it"
+  ],
+  "fp": "6",
+  "fp_numerique": 6,
+  "bonus_maitrise": 3,
+  "experience": 2300,
+  "traits": [
+    {
+      "nom": "Invisibility",
+      "description": "The stalker is invisible.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Faultless Tracker",
+      "description": "The stalker is given a quarry by its summoner. The stalker knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The stalker also knows the location of its summoner.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The stalker makes two slam attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Slam",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "giant-octopus",
+  "nom": "Giant Octopus",
+  "nom_original": "Giant Octopus",
+  "taille": "G",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 11,
+  "ca_detail": null,
+  "pv": 52,
+  "pv_formule": "8d10+8",
+  "vitesse": {
+    "marche": 3,
+    "nage": 18,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 17,
+    "FOR_mod": 3,
+    "DEX": 13,
+    "DEX_mod": 1,
+    "CON": 13,
+    "CON_mod": 1,
+    "INT": 4,
+    "INT_mod": -3,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 4,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 4,
+    "stealth": 5
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1",
+  "fp_numerique": 1,
+  "bonus_maitrise": 2,
+  "experience": 200,
+  "traits": [
+    {
+      "nom": "Hold Breath",
+      "description": "While out of water, the octopus can hold its breath for 1 hour.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Underwater Camouflage",
+      "description": "The octopus has advantage on Dexterity (Stealth) checks made while underwater.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Water Breathing",
+      "description": "The octopus can breathe only underwater.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Tentacles",
+      "description": "Melee Weapon Attack: +5 to hit, reach 15 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage. If the target is a creature, it is grappled (escape DC 16). Until this grapple ends, the target is restrained, and the octopus can't use its tentacles on another target.",
+      "bonus_attaque": 5,
+      "degats_de": "2d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Ink Cloud (Recharges after a Short or Long Rest)",
+      "description": "A 20-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

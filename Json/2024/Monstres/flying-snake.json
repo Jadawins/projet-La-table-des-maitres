@@ -1,0 +1,82 @@
+{
+  "slug": "flying-snake",
+  "nom": "Flying Snake",
+  "nom_original": "Flying Snake",
+  "taille": "TP",
+  "type": "Beast",
+  "sous_type": null,
+  "alignement": "unaligned",
+  "ca": 14,
+  "ca_detail": null,
+  "pv": 5,
+  "pv_formule": "2d4",
+  "vitesse": {
+    "marche": 9,
+    "nage": 9,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 4,
+    "FOR_mod": -3,
+    "DEX": 18,
+    "DEX_mod": 4,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 2,
+    "INT_mod": -4,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 5,
+    "CHA_mod": -3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": 3,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [],
+  "fp": "1/8",
+  "fp_numerique": 0.125,
+  "bonus_maitrise": 2,
+  "experience": 25,
+  "traits": [
+    {
+      "nom": "Flyby",
+      "description": "The snake doesn't provoke opportunity attacks when it flies out of an enemy's reach.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1 piercing damage plus 7 (3d4) poison damage.",
+      "bonus_attaque": 6,
+      "degats_de": null,
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

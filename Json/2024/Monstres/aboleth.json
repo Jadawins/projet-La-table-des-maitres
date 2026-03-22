@@ -1,0 +1,145 @@
+{
+  "slug": "aboleth",
+  "nom": "Aboleth",
+  "nom_original": "Aboleth",
+  "taille": "G",
+  "type": "Aberration",
+  "sous_type": null,
+  "alignement": "lawful evil",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 135,
+  "pv_formule": "18d10+36",
+  "vitesse": {
+    "marche": 3,
+    "nage": 12,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 21,
+    "FOR_mod": 5,
+    "DEX": 9,
+    "DEX_mod": -1,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 18,
+    "INT_mod": 4,
+    "SAG": 15,
+    "SAG_mod": 2,
+    "CHA": 18,
+    "CHA_mod": 4
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": 6,
+    "INT": 8,
+    "SAG": 6,
+    "CHA": null
+  },
+  "competences": {
+    "history": 12,
+    "perception": 10
+  },
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 20,
+    "tremblements": null
+  },
+  "langues": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "fp": "10",
+  "fp_numerique": 10,
+  "bonus_maitrise": 4,
+  "experience": 5900,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The aboleth can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Mucous Cloud",
+      "description": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 ft. of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Probing Telepathy",
+      "description": "If a creature communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The aboleth makes three tentacle attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Tentacle",
+      "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed.",
+      "bonus_attaque": 9,
+      "degats_de": "2d6",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Tail",
+      "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) bludgeoning damage.",
+      "bonus_attaque": 9,
+      "degats_de": "3d6",
+      "degats_bonus": 5
+    },
+    {
+      "nom": "Enslave (3/day)",
+      "description": "The aboleth targets one creature it can see within 30 ft. of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [
+    {
+      "nom": "Detect",
+      "description": "The aboleth makes a Wisdom (Perception) check.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Tail Swipe",
+      "description": "The aboleth makes one tail attack.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Psychic Drain (Costs 2 Actions)",
+      "description": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "source": "SRD-2024",
+  "image": "http://api.open5e.com/static/img/object_illustrations/open5e-illustrations/monsters/aboleth.png"
+}

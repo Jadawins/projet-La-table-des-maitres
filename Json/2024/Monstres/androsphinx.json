@@ -1,0 +1,146 @@
+{
+  "slug": "androsphinx",
+  "nom": "Androsphinx",
+  "nom_original": "Androsphinx",
+  "taille": "G",
+  "type": "Monstrosity",
+  "sous_type": null,
+  "alignement": "lawful neutral",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 199,
+  "pv_formule": "19d10+95",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 22,
+    "FOR_mod": 6,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 16,
+    "INT_mod": 3,
+    "SAG": 18,
+    "SAG_mod": 4,
+    "CHA": 23,
+    "CHA_mod": 6
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 6,
+    "CON": 11,
+    "INT": 9,
+    "SAG": 10,
+    "CHA": null
+  },
+  "competences": {
+    "arcana": 9,
+    "perception": 10,
+    "religion": 15
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "psychic; bludgeoning",
+    "piercing",
+    "and slashing from nonmagical attacks"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "frightened"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": 36,
+    "perception_passive": 20,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Sphinx"
+  ],
+  "fp": "17",
+  "fp_numerique": 17,
+  "bonus_maitrise": 6,
+  "experience": 18000,
+  "traits": [
+    {
+      "nom": "Inscrutable",
+      "description": "The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx's intentions or sincerity have disadvantage.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Magic Weapons",
+      "description": "The sphinx's weapon attacks are magical.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Spellcasting",
+      "description": "The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:\n\n* Cantrips (at will): sacred flame, spare the dying, thaumaturgy\n* 1st level (4 slots): command, detect evil and good, detect magic\n* 2nd level (3 slots): lesser restoration, zone of truth\n* 3rd level (3 slots): dispel magic, tongues\n* 4th level (3 slots): banishment, freedom of movement\n* 5th level (2 slots): flame strike, greater restoration\n* 6th level (1 slot): heroes' feast",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The sphinx makes two claw attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 17 (2d10 + 6) slashing damage.",
+      "bonus_attaque": 12,
+      "degats_de": "2d10",
+      "degats_bonus": 6
+    },
+    {
+      "nom": "Roar (3/Day)",
+      "description": "The sphinx emits a magical roar. Each time it roars before finishing a long rest, the roar is louder and the effect is different, as detailed below. Each creature within 500 feet of the sphinx and able to hear the roar must make a saving throw.\n**First Roar.** Each creature that fails a DC 18 Wisdom saving throw is frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n**Second Roar.** Each creature that fails a DC 18 Wisdom saving throw is deafened and frightened for 1 minute. A frightened creature is paralyzed and can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n**Third Roar.** Each creature makes a DC 18 Constitution saving throw. On a failed save, a creature takes 44 (8d10) thunder damage and is knocked prone. On a successful save, the creature takes half as much damage and isn't knocked prone.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [
+    {
+      "nom": "Claw Attack",
+      "description": "The sphinx makes one claw attack.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Teleport (Costs 2 Actions)",
+      "description": "The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Cast a Spell (Costs 3 Actions)",
+      "description": "The sphinx casts a spell from its list of prepared spells, using a spell slot as normal.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "source": "SRD-2024",
+  "image": null
+}

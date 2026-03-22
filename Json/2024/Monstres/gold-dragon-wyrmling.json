@@ -1,0 +1,96 @@
+{
+  "slug": "gold-dragon-wyrmling",
+  "nom": "Gold Dragon Wyrmling",
+  "nom_original": "Gold Dragon Wyrmling",
+  "taille": "M",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "lawful good",
+  "ca": 17,
+  "ca_detail": "natural armor",
+  "pv": 60,
+  "pv_formule": "8d8+24",
+  "vitesse": {
+    "marche": 9,
+    "nage": 9,
+    "vol": 18,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 14,
+    "DEX_mod": 2,
+    "CON": 17,
+    "CON_mod": 3,
+    "INT": 14,
+    "INT_mod": 2,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 16,
+    "CHA_mod": 3
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 4,
+    "CON": 5,
+    "INT": null,
+    "SAG": 2,
+    "CHA": 5
+  },
+  "competences": {
+    "perception": 4,
+    "stealth": 4
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "fire"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": 3,
+    "vision_vraie": null,
+    "perception_passive": 14,
+    "tremblements": null
+  },
+  "langues": [
+    "Draconic"
+  ],
+  "fp": "3",
+  "fp_numerique": 3,
+  "bonus_maitrise": 2,
+  "experience": 700,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The dragon can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "1d10",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Breath Weapons (Recharge 5-6)",
+      "description": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 22 (4d10) fire damage on a failed save, or half as much damage on a successful one.\n**Weakening Breath.** The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "bonus_attaque": 0,
+      "degats_de": "4d10",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

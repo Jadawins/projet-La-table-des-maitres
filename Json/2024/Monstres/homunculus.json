@@ -1,0 +1,89 @@
+{
+  "slug": "homunculus",
+  "nom": "Homunculus",
+  "nom_original": "Homunculus",
+  "taille": "TP",
+  "type": "Construct",
+  "sous_type": null,
+  "alignement": "neutral",
+  "ca": 13,
+  "ca_detail": "natural armor",
+  "pv": 5,
+  "pv_formule": "2d4",
+  "vitesse": {
+    "marche": 6,
+    "nage": null,
+    "vol": 12,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 4,
+    "FOR_mod": -3,
+    "DEX": 15,
+    "DEX_mod": 2,
+    "CON": 11,
+    "CON_mod": 0,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "charmed",
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 10,
+    "tremblements": null
+  },
+  "langues": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "fp": "0",
+  "fp_numerique": 0,
+  "bonus_maitrise": 2,
+  "experience": 10,
+  "traits": [
+    {
+      "nom": "Telepathic Bond",
+      "description": "While the homunculus is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or be poisoned for 1 minute. If the saving throw fails by 5 or more, the target is instead poisoned for 5 (1d10) minutes and unconscious while poisoned in this way.",
+      "bonus_attaque": 4,
+      "degats_de": null,
+      "degats_bonus": 1
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

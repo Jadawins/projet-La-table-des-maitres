@@ -1,0 +1,115 @@
+{
+  "slug": "dragon-turtle",
+  "nom": "Dragon Turtle",
+  "nom_original": "Dragon Turtle",
+  "taille": "Gig",
+  "type": "Dragon",
+  "sous_type": null,
+  "alignement": "neutral",
+  "ca": 20,
+  "ca_detail": "natural armor",
+  "pv": 341,
+  "pv_formule": "22d20+110",
+  "vitesse": {
+    "marche": 6,
+    "nage": 12,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 25,
+    "FOR_mod": 7,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 20,
+    "CON_mod": 5,
+    "INT": 10,
+    "INT_mod": 0,
+    "SAG": 12,
+    "SAG_mod": 1,
+    "CHA": 12,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 6,
+    "CON": 11,
+    "INT": null,
+    "SAG": 7,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [
+    "fire"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 36,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "Aquan",
+    "Draconic"
+  ],
+  "fp": "17",
+  "fp_numerique": 17,
+  "bonus_maitrise": 6,
+  "experience": 18000,
+  "traits": [
+    {
+      "nom": "Amphibious",
+      "description": "The dragon turtle can breathe air and water.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The dragon turtle makes three attacks: one with its bite and two with its claws. It can make one tail attack in place of its two claw attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) piercing damage.",
+      "bonus_attaque": 13,
+      "degats_de": "3d12",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 16 (2d8 + 7) slashing damage.",
+      "bonus_attaque": 13,
+      "degats_de": "2d8",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Tail",
+      "description": "Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be pushed up to 10 feet away from the dragon turtle and knocked prone.",
+      "bonus_attaque": 13,
+      "degats_de": "3d12",
+      "degats_bonus": 7
+    },
+    {
+      "nom": "Steam Breath (Recharge 5-6)",
+      "description": "The dragon turtle exhales scalding steam in a 60-foot cone. Each creature in that area must make a DC 18 Constitution saving throw, taking 52 (15d6) fire damage on a failed save, or half as much damage on a successful one. Being underwater doesn't grant resistance against this damage.",
+      "bonus_attaque": 0,
+      "degats_de": "15d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

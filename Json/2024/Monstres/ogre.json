@@ -1,0 +1,84 @@
+{
+  "slug": "ogre",
+  "nom": "Ogre",
+  "nom_original": "Ogre",
+  "taille": "G",
+  "type": "Giant",
+  "sous_type": null,
+  "alignement": "chaotic evil",
+  "ca": 11,
+  "ca_detail": "hide armor",
+  "pv": 59,
+  "pv_formule": "7d10+21",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 19,
+    "FOR_mod": 4,
+    "DEX": 8,
+    "DEX_mod": -1,
+    "CON": 16,
+    "CON_mod": 3,
+    "INT": 5,
+    "INT_mod": -3,
+    "SAG": 7,
+    "SAG_mod": -2,
+    "CHA": 7,
+    "CHA_mod": -2
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 8,
+    "tremblements": null
+  },
+  "langues": [
+    "Common",
+    "Giant"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Greatclub",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d8",
+      "degats_bonus": 4
+    },
+    {
+      "nom": "Javelin",
+      "description": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "2d6",
+      "degats_bonus": 4
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

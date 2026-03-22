@@ -1,0 +1,117 @@
+{
+  "slug": "xorn",
+  "nom": "Xorn",
+  "nom_original": "Xorn",
+  "taille": "M",
+  "type": "Elemental",
+  "sous_type": null,
+  "alignement": "neutral",
+  "ca": 19,
+  "ca_detail": "natural armor",
+  "pv": 73,
+  "pv_formule": "7d8+42",
+  "vitesse": {
+    "marche": 6,
+    "nage": null,
+    "vol": null,
+    "fouissement": 6,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 17,
+    "FOR_mod": 3,
+    "DEX": 10,
+    "DEX_mod": 0,
+    "CON": 22,
+    "CON_mod": 6,
+    "INT": 11,
+    "INT_mod": 0,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 11,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": null,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "perception": 6,
+    "stealth": 3
+  },
+  "resistances": [
+    "piercing and slashing from nonmagical attacks not made with adamantine weapons"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": 18,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 16,
+    "tremblements": 18
+  },
+  "langues": [
+    "Terran"
+  ],
+  "fp": "5",
+  "fp_numerique": 5,
+  "bonus_maitrise": 3,
+  "experience": 1800,
+  "traits": [
+    {
+      "nom": "Earth Glide",
+      "description": "The xorn can burrow through nonmagical, unworked earth and stone. While doing so, the xorn doesn't disturb the material it moves through.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Stone Camouflage",
+      "description": "The xorn has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Treasure Sense",
+      "description": "The xorn can pinpoint, by scent, the location of precious metals and stones, such as coins and gems, within 60 ft. of it.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The xorn makes three claw attacks and one bite attack.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Bite",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (3d6 + 3) piercing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "3d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Claw",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+      "bonus_attaque": 6,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

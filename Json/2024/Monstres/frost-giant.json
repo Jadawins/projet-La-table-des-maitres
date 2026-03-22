@@ -1,0 +1,95 @@
+{
+  "slug": "frost-giant",
+  "nom": "Frost Giant",
+  "nom_original": "Frost Giant",
+  "taille": "TG",
+  "type": "Giant",
+  "sous_type": null,
+  "alignement": "neutral evil",
+  "ca": 15,
+  "ca_detail": "patchwork armor",
+  "pv": 138,
+  "pv_formule": "12d12+60",
+  "vitesse": {
+    "marche": 12,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 23,
+    "FOR_mod": 6,
+    "DEX": 9,
+    "DEX_mod": -1,
+    "CON": 21,
+    "CON_mod": 5,
+    "INT": 9,
+    "INT_mod": -1,
+    "SAG": 10,
+    "SAG_mod": 0,
+    "CHA": 12,
+    "CHA_mod": 1
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": 8,
+    "INT": null,
+    "SAG": 3,
+    "CHA": 4
+  },
+  "competences": {
+    "athletics": 9,
+    "perception": 3
+  },
+  "resistances": [],
+  "immunites_degats": [
+    "cold"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [
+    "Giant"
+  ],
+  "fp": "8",
+  "fp_numerique": 8,
+  "bonus_maitrise": 3,
+  "experience": 3900,
+  "traits": [],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The giant makes two greataxe attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Greataxe",
+      "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 25 (3d12 + 6) slashing damage.",
+      "bonus_attaque": 9,
+      "degats_de": "3d12",
+      "degats_bonus": 6
+    },
+    {
+      "nom": "Rock",
+      "description": "Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.",
+      "bonus_attaque": 9,
+      "degats_de": "4d10",
+      "degats_bonus": 6
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

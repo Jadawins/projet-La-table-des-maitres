@@ -1,0 +1,119 @@
+{
+  "slug": "assassin",
+  "nom": "Assassin",
+  "nom_original": "Assassin",
+  "taille": "M",
+  "type": "Humanoid",
+  "sous_type": "any race",
+  "alignement": "any non-good alignment",
+  "ca": 15,
+  "ca_detail": "studded leather",
+  "pv": 78,
+  "pv_formule": "12d8+24",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 11,
+    "FOR_mod": 0,
+    "DEX": 16,
+    "DEX_mod": 3,
+    "CON": 14,
+    "CON_mod": 2,
+    "INT": 13,
+    "INT_mod": 1,
+    "SAG": 11,
+    "SAG_mod": 0,
+    "CHA": 10,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": 6,
+    "CON": null,
+    "INT": 4,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {
+    "acrobatics": 6,
+    "deception": 3,
+    "perception": 3,
+    "stealth": 9
+  },
+  "resistances": [
+    "poison"
+  ],
+  "immunites_degats": [],
+  "vulnerabilites": [],
+  "immunites_etats": [],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 13,
+    "tremblements": null
+  },
+  "langues": [
+    "Thieves' cant plus any two languages"
+  ],
+  "fp": "8",
+  "fp_numerique": 8,
+  "bonus_maitrise": 3,
+  "experience": 3900,
+  "traits": [
+    {
+      "nom": "Assassinate",
+      "description": "During its first turn, the assassin has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the assassin scores against a surprised creature is a critical hit.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Evasion",
+      "description": "If the assassin is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the assassin instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Sneak Attack (1/Turn)",
+      "description": "The assassin deals an extra 13 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of the assassin that isn't incapacitated and the assassin doesn't have disadvantage on the attack roll.",
+      "bonus_attaque": 0,
+      "degats_de": "4d6",
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Multiattack",
+      "description": "The assassin makes two shortsword attacks.",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Shortsword",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 6,
+      "degats_de": "1d6",
+      "degats_bonus": 3
+    },
+    {
+      "nom": "Light Crossbow",
+      "description": "Ranged Weapon Attack: +6 to hit, range 80/320 ft., one target. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.",
+      "bonus_attaque": 6,
+      "degats_de": "1d8",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}

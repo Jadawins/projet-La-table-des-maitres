@@ -1,0 +1,103 @@
+{
+  "slug": "azer",
+  "nom": "Azer",
+  "nom_original": "Azer",
+  "taille": "M",
+  "type": "Elemental",
+  "sous_type": null,
+  "alignement": "lawful neutral",
+  "ca": 17,
+  "ca_detail": "natural armor, shield",
+  "pv": 39,
+  "pv_formule": "6d8+12",
+  "vitesse": {
+    "marche": 9,
+    "nage": null,
+    "vol": null,
+    "fouissement": null,
+    "escalade": null
+  },
+  "caracteristiques": {
+    "FOR": 17,
+    "FOR_mod": 3,
+    "DEX": 12,
+    "DEX_mod": 1,
+    "CON": 15,
+    "CON_mod": 2,
+    "INT": 12,
+    "INT_mod": 1,
+    "SAG": 13,
+    "SAG_mod": 1,
+    "CHA": 10,
+    "CHA_mod": 0
+  },
+  "jets_sauvegarde": {
+    "FOR": null,
+    "DEX": null,
+    "CON": 4,
+    "INT": null,
+    "SAG": null,
+    "CHA": null
+  },
+  "competences": {},
+  "resistances": [],
+  "immunites_degats": [
+    "fire",
+    "poison"
+  ],
+  "vulnerabilites": [],
+  "immunites_etats": [
+    "poisoned"
+  ],
+  "sens": {
+    "vision_dans_le_noir": null,
+    "vision_aveugle": null,
+    "vision_vraie": null,
+    "perception_passive": 11,
+    "tremblements": null
+  },
+  "langues": [
+    "Ignan"
+  ],
+  "fp": "2",
+  "fp_numerique": 2,
+  "bonus_maitrise": 2,
+  "experience": 450,
+  "traits": [
+    {
+      "nom": "Heated Body",
+      "description": "A creature that touches the azer or hits it with a melee attack while within 5 ft. of it takes 5 (1d10) fire damage.",
+      "bonus_attaque": 0,
+      "degats_de": "1d10",
+      "degats_bonus": null
+    },
+    {
+      "nom": "Heated Weapons",
+      "description": "When the azer hits with a metal melee weapon, it deals an extra 3 (1d6) fire damage (included in the attack).",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    },
+    {
+      "nom": "Illumination",
+      "description": "The azer sheds bright light in a 10-foot radius and dim light for an additional 10 ft..",
+      "bonus_attaque": null,
+      "degats_de": null,
+      "degats_bonus": null
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Warhammer",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage.",
+      "bonus_attaque": 5,
+      "degats_de": "1d8+1d6",
+      "degats_bonus": 3
+    }
+  ],
+  "actions_bonus": [],
+  "reactions": [],
+  "actions_legendaires": [],
+  "source": "SRD-2024",
+  "image": null
+}
