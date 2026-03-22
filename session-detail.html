@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/sessions.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+</head>
+<body>
+<div class="page-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de nouvelles races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="sessions.html"><i class="fa-solid fa-dice-d20"></i> Sessions</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil site</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="sessions-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+    </button>
+
+    <p class="breadcrumb"><a href="sessions.html"><i class="fa-solid fa-arrow-left"></i> Sessions</a> › <span id="breadcrumb-nom">Session</span></p>
+
+    <!-- CHARGEMENT -->
+    <div id="loading-state" style="text-align:center;padding:3rem;color:#c9a84c;">
+      <i class="fa-solid fa-spinner fa-spin" style="font-size:2rem;"></i>
+      <p>Chargement de la session…</p>
+    </div>
+
+    <!-- CONTENU PRINCIPAL -->
+    <div id="detail-content" style="display:none">
+      <div class="session-detail-layout">
+
+        <!-- COLONNE PRINCIPALE -->
+        <div class="session-detail-main">
+          <h1 class="session-detail-title" id="detail-nom"></h1>
+          <p class="session-detail-mj" id="detail-mj"></p>
+          <div class="modal-tags" id="detail-tags" style="margin-bottom:1rem;"></div>
+          <p class="session-detail-desc" id="detail-desc"></p>
+
+          <!-- JOUEURS -->
+          <div id="joueurs-section">
+            <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.07em;color:#c9a84c;opacity:0.75;margin:0 0 0.75rem;">
+              <i class="fa-solid fa-users"></i> Joueurs (<span id="nb-joueurs">0</span>)
+            </h3>
+            <ul class="joueurs-list" id="joueurs-list"></ul>
+          </div>
+        </div>
+
+        <!-- COLONNE DROITE -->
+        <div class="session-detail-sidebar">
+
+          <!-- Actions joueur non-membre -->
+          <div class="detail-block" id="block-rejoindre" style="display:none">
+            <h3>Rejoindre</h3>
+            <button class="btn-primary" style="width:100%" onclick="ouvrirModalRejoindre()">
+              <i class="fa-solid fa-right-to-bracket"></i> Rejoindre la session
+            </button>
+          </div>
+
+          <!-- Mon personnage (joueur membre) -->
+          <div class="detail-block" id="block-mon-perso" style="display:none">
+            <h3>Mon personnage</h3>
+            <p id="mon-perso-nom" style="font-size:0.9rem;color:#d5d1a9;margin:0 0 0.75rem;"></p>
+            <button class="btn-secondary" style="width:100%;justify-content:center;" onclick="ouvrirModalPerso()">
+              <i class="fa-solid fa-pen"></i> Changer de personnage
+            </button>
+            <button class="btn-danger" style="width:100%;justify-content:center;margin-top:0.5rem;" onclick="quitterSession()">
+              <i class="fa-solid fa-right-from-bracket"></i> Quitter la session
+            </button>
+          </div>
+
+          <!-- Panneau MJ -->
+          <div class="detail-block" id="block-mj" style="display:none">
+            <h3>Panneau MJ</h3>
+            <div class="mj-actions">
+              <div>
+                <label style="font-size:0.8rem;color:#aaa;display:block;margin-bottom:0.3rem;">Statut de la session</label>
+                <select class="statut-select" id="mj-statut-select" style="width:100%" onchange="changerStatut()">
+                  <option value="recrutement">Recrutement</option>
+                  <option value="en_cours">En cours</option>
+                  <option value="pausee">En pause</option>
+                  <option value="terminee">Terminée</option>
+                </select>
+              </div>
+              <button class="btn-secondary" onclick="window.location.href='creer-session.html?edit='+SESSION_ID" style="justify-content:center;">
+                <i class="fa-solid fa-pen"></i> Modifier la session
+              </button>
+              <button class="btn-danger" onclick="supprimerSession()" style="justify-content:center;">
+                <i class="fa-solid fa-trash"></i> Supprimer la session
+              </button>
+            </div>
+          </div>
+
+          <!-- Infos générales -->
+          <div class="detail-block">
+            <h3>Informations</h3>
+            <p style="font-size:0.85rem;color:#aaa;margin:0 0 0.4rem;">
+              <i class="fa-solid fa-gamepad" style="width:16px;"></i> <span id="info-systeme"></span>
+            </p>
+            <p style="font-size:0.85rem;color:#aaa;margin:0 0 0.4rem;">
+              <i class="fa-solid fa-calendar" style="width:16px;"></i> Créée le <span id="info-date"></span>
+            </p>
+            <p style="font-size:0.85rem;color:#aaa;margin:0;">
+              <i class="fa-solid fa-clock" style="width:16px;"></i> Activité le <span id="info-activite"></span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- MODALE REJOINDRE (mot de passe) -->
+<div class="modal-overlay hidden" id="modal-rejoindre">
+  <div class="modal-box">
+    <button class="modal-close" onclick="fermerModal('modal-rejoindre')">✕</button>
+    <p class="modal-title"><i class="fa-solid fa-lock"></i> Session privée</p>
+    <p style="font-size:0.85rem;color:#aaa;margin:0 0 1rem;">Entrez le mot de passe pour rejoindre cette session.</p>
+    <div class="form-group">
+      <label for="mdp-rejoindre">Mot de passe</label>
+      <input type="password" id="mdp-rejoindre" placeholder="Mot de passe…" />
+    </div>
+    <div class="form-actions">
+      <button class="btn-secondary" onclick="fermerModal('modal-rejoindre')">Annuler</button>
+      <button class="btn-primary" onclick="rejoindreSession()">
+        <i class="fa-solid fa-right-to-bracket"></i> Rejoindre
+      </button>
+    </div>
+    <p id="rejoindre-error" style="color:#ff8888;font-size:0.82rem;margin-top:0.5rem;display:none;"></p>
+  </div>
+</div>
+
+<!-- MODALE PERSONNAGE -->
+<div class="modal-overlay hidden" id="modal-perso">
+  <div class="modal-box">
+    <button class="modal-close" onclick="fermerModal('modal-perso')">✕</button>
+    <p class="modal-title"><i class="fa-solid fa-user-shield"></i> Choisir un personnage</p>
+    <p style="font-size:0.85rem;color:#aaa;margin:0 0 1rem;">Associez un de vos personnages à cette session.</p>
+    <div id="perso-list-modal"></div>
+    <p style="font-size:0.8rem;color:#666;text-align:center;margin-top:0.75rem;">
+      <a href="mes-personnages.html" style="color:#865dff;text-decoration:none;">
+        <i class="fa-solid fa-plus"></i> Créer un nouveau personnage
+      </a>
+    </p>
+    <p id="perso-error" style="color:#ff8888;font-size:0.82rem;margin-top:0.5rem;display:none;"></p>
+  </div>
+</div>
+
+<!-- MODALE REJOINDRE PUIS PERSO (public) -->
+<div class="modal-overlay hidden" id="modal-rejoindre-public">
+  <div class="modal-box">
+    <button class="modal-close" onclick="fermerModal('modal-rejoindre-public')">✕</button>
+    <p class="modal-title"><i class="fa-solid fa-right-to-bracket"></i> Rejoindre la session ?</p>
+    <p style="font-size:0.85rem;color:#aaa;margin:0 0 1.5rem;">Voulez-vous rejoindre <strong id="nom-session-confirm"></strong> ?</p>
+    <div class="form-actions">
+      <button class="btn-secondary" onclick="fermerModal('modal-rejoindre-public')">Annuler</button>
+      <button class="btn-primary" onclick="rejoindreSession()">
+        <i class="fa-solid fa-check"></i> Rejoindre
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) { window.location.href = "login.html"; }
+  else {
+    window.SUPABASE_TOKEN = session.access_token;
+    window.USER_ID = session.user.id;
+    window.USER_PSEUDO = session.user.user_metadata?.full_name || session.user.user_metadata?.preferred_username || session.user.email;
+  }
+</script>
+
+<!-- SIDEBAR -->
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+
+<!-- THÈME -->
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+<script src="js/session-detail.js"></script>
+
+</body>
+</html>

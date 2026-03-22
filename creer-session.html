@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer une session — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/sessions.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+</head>
+<body>
+<div class="page-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de nouvelles races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="sessions.html"><i class="fa-solid fa-dice-d20"></i> Sessions</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil site</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="sessions-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+    </button>
+
+    <p class="breadcrumb"><a href="sessions.html"><i class="fa-solid fa-arrow-left"></i> Sessions</a> › Créer une session</p>
+
+    <div class="session-form">
+      <h2><i class="fa-solid fa-wand-sparkles"></i> Nouvelle session</h2>
+
+      <div class="form-group">
+        <label for="nom">Nom de la session *</label>
+        <input type="text" id="nom" placeholder="La Crypte Oubliée…" maxlength="80" required />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Décrivez votre campagne, le style de jeu, le niveau requis…"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="systeme">Système de jeu</label>
+        <select id="systeme">
+          <option value="D&D 2024">D&amp;D 2024</option>
+          <option value="D&D 5e">D&amp;D 5e (2014)</option>
+          <option value="Pathfinder 2e">Pathfinder 2e</option>
+          <option value="Homebrew">Homebrew</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="statut">Statut initial</label>
+        <select id="statut">
+          <option value="recrutement">Recrutement ouvert</option>
+          <option value="en_cours">En cours</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="visibilite">Visibilité</label>
+        <select id="visibilite" onchange="togglePassword()">
+          <option value="publique">Publique — tout le monde peut rejoindre</option>
+          <option value="privee">Privée — mot de passe requis</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="mdp-group" style="display:none">
+        <label for="mot_de_passe">Mot de passe</label>
+        <input type="password" id="mot_de_passe" placeholder="Mot de passe pour rejoindre…" />
+      </div>
+
+      <div class="form-actions">
+        <a href="sessions.html" class="btn-secondary">Annuler</a>
+        <button class="btn-primary" id="btn-creer" onclick="creerSession()">
+          <i class="fa-solid fa-plus"></i> Créer la session
+        </button>
+      </div>
+
+      <p id="form-error" style="color:#ff8888;font-size:0.85rem;margin-top:0.5rem;display:none;"></p>
+    </div>
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- AUTH -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) { window.location.href = "login.html"; }
+  else {
+    window.SUPABASE_TOKEN = session.access_token;
+    window.USER_ID = session.user.id;
+    window.USER_PSEUDO = session.user.user_metadata?.full_name || session.user.user_metadata?.preferred_username || session.user.email;
+  }
+</script>
+
+<!-- SIDEBAR -->
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+
+<!-- THÈME -->
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+<script src="js/creer-session.js"></script>
+
+</body>
+</html>

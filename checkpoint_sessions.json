@@ -1,0 +1,17 @@
+{
+  "derniere_mise_a_jour": "2026-03-22T20:30:00",
+  "statut": "en_cours",
+  "etapes": {
+    "routes_api": "termine",
+    "sessions_html": "termine",
+    "creer_session_html": "termine",
+    "session_detail_html": "termine",
+    "css": "termine",
+    "js_sessions": "termine",
+    "js_creer_session": "termine",
+    "js_session_detail": "termine",
+    "sidebar_toutes_pages": "non_commence",
+    "pm2_restart": "non_commence"
+  },
+  "derniere_etape": "js_session_detail"
+}

@@ -1,0 +1,702 @@
+/* =============================================================
+   SESSIONS — Styles spécifiques
+   ============================================================= */
+
+/* Layout principal */
+.sessions-page {
+  margin-left: 260px;
+  padding: 1.5rem 2rem;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+#sidebar.collapsed ~ .sessions-page {
+  margin-left: 64px;
+}
+
+/* En-tête de page */
+.sessions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sessions-header h1 {
+  font-size: 1.8rem;
+  color: #c9a84c;
+  text-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+  margin: 0;
+}
+
+.sessions-header p {
+  font-size: 0.88rem;
+  opacity: 0.65;
+  margin: 0.2rem 0 0;
+}
+
+/* Barre recherche + filtres */
+.sessions-toolbar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sessions-toolbar input[type="text"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f0e6d2;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.sessions-toolbar input[type="text"]:focus {
+  border-color: #865dff;
+}
+
+.sessions-toolbar input::placeholder {
+  color: #666;
+}
+
+/* Filtres statut */
+.filter-pills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(0, 0, 0, 0.4);
+  color: #d5d1a9;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-pill:hover {
+  background: rgba(134, 93, 255, 0.18);
+  border-color: #865dff;
+  color: #c9b8ff;
+}
+
+.filter-pill.active {
+  background: rgba(201, 168, 76, 0.18);
+  border-color: #c9a84c;
+  color: #c9a84c;
+  font-weight: bold;
+}
+
+/* Section "Mes sessions" */
+.sessions-section-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c9a84c;
+  opacity: 0.7;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Grille de cards */
+.sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Card session */
+.session-card {
+  background: rgba(10, 5, 25, 0.8);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 12px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.session-card:hover {
+  border-color: #c9a84c;
+  box-shadow: 0 0 18px rgba(201, 168, 76, 0.2);
+  transform: translateY(-2px);
+}
+
+.session-card.ma-session {
+  border-color: rgba(134, 93, 255, 0.45);
+}
+
+.session-card.ma-session:hover {
+  border-color: #865dff;
+  box-shadow: 0 0 18px rgba(134, 93, 255, 0.2);
+}
+
+.session-card-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.badge-mj {
+  background: rgba(201, 168, 76, 0.2);
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+}
+
+.badge-joueur {
+  background: rgba(134, 93, 255, 0.2);
+  border: 1px solid #865dff;
+  color: #c9b8ff;
+}
+
+.session-card-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #c9a84c;
+  margin: 0 0 0.25rem;
+  padding-right: 3rem;
+}
+
+.session-card-mj {
+  font-size: 0.78rem;
+  color: #888;
+  margin: 0 0 0.6rem;
+}
+
+.session-card-mj i {
+  margin-right: 0.3rem;
+}
+
+.session-card-desc {
+  font-size: 0.82rem;
+  color: #bbb;
+  line-height: 1.5;
+  margin: 0 0 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.session-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.session-tag {
+  font-size: 0.73rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid;
+}
+
+.tag-recrutement { background: rgba(76, 201, 76, 0.1); border-color: rgba(76, 201, 76, 0.4); color: #7dff7d; }
+.tag-en_cours    { background: rgba(201, 168, 76, 0.1); border-color: rgba(201, 168, 76, 0.4); color: #c9a84c; }
+.tag-pausee      { background: rgba(180, 120, 20, 0.1); border-color: rgba(180, 120, 20, 0.4); color: #d4930a; }
+.tag-terminee    { background: rgba(120, 120, 120, 0.1); border-color: rgba(120, 120, 120, 0.4); color: #aaa; }
+.tag-privee      { background: rgba(200, 50, 50, 0.1); border-color: rgba(200, 50, 50, 0.35); color: #ff8888; }
+.tag-systeme     { background: rgba(100, 60, 200, 0.1); border-color: rgba(100, 60, 200, 0.35); color: #a088ff; }
+
+.session-card-joueurs {
+  font-size: 0.75rem;
+  color: #777;
+  margin-left: auto;
+}
+
+/* Bouton créer */
+.btn-creer-session {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-creer-session:hover {
+  background: rgba(201, 168, 76, 0.28);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.25);
+}
+
+/* Boutons génériques */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  background: rgba(134, 93, 255, 0.2);
+  border: 1px solid #865dff;
+  color: #c9b8ff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: rgba(134, 93, 255, 0.35);
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  background: rgba(200, 50, 50, 0.15);
+  border: 1px solid rgba(200, 50, 50, 0.6);
+  color: #ff8888;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-danger:hover {
+  background: rgba(200, 50, 50, 0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  color: #d5d1a9;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(201, 168, 76, 0.12);
+}
+
+/* Formulaire sessions */
+.session-form {
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(10, 5, 25, 0.7);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.session-form h2 {
+  color: #c9a84c;
+  font-size: 1.3rem;
+  margin: 0 0 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #c9a84c;
+  margin-bottom: 0.4rem;
+  opacity: 0.85;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 8px;
+  color: #f0e6d2;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #865dff;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group select option {
+  background: #1a1030;
+  color: #f0e6d2;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Page détail session */
+.session-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.session-detail-main {
+  background: rgba(10, 5, 25, 0.75);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.session-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-block {
+  background: rgba(10, 5, 25, 0.75);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.detail-block h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #c9a84c;
+  opacity: 0.75;
+  margin: 0 0 0.75rem;
+}
+
+.session-detail-title {
+  font-size: 1.6rem;
+  color: #c9a84c;
+  margin: 0 0 0.3rem;
+}
+
+.session-detail-mj {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 1rem;
+}
+
+.session-detail-desc {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+/* Liste joueurs */
+.joueurs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.joueur-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 0.5rem;
+}
+
+.joueur-item:last-child {
+  border-bottom: none;
+}
+
+.joueur-pseudo {
+  font-size: 0.88rem;
+  color: #d5d1a9;
+}
+
+.joueur-perso {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.btn-expulser {
+  background: transparent;
+  border: 1px solid rgba(200, 50, 50, 0.4);
+  color: #ff8888;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-expulser:hover {
+  background: rgba(200, 50, 50, 0.2);
+}
+
+/* Sélecteur statut MJ */
+.statut-select {
+  padding: 0.35rem 0.7rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 6px;
+  color: #f0e6d2;
+  font-size: 0.85rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Actions MJ */
+.mj-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Notification toast */
+.toast {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-family: 'Georgia', serif;
+  z-index: 5000;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: rgba(40, 120, 40, 0.9);
+  border: 1px solid rgba(76, 200, 76, 0.5);
+  color: #b0ffb0;
+}
+
+.toast.error {
+  background: rgba(120, 30, 30, 0.9);
+  border: 1px solid rgba(200, 50, 50, 0.5);
+  color: #ffb0b0;
+}
+
+/* =============================================================
+   MODALES
+   ============================================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.hidden { display: none; }
+
+.modal-box {
+  background: rgba(12, 8, 30, 0.98);
+  border: 1px solid #c9a84c;
+  border-radius: 12px;
+  max-width: 480px;
+  width: 100%;
+  padding: 1.8rem;
+  position: relative;
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  color: #c9a84c;
+  margin: 0 0 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover { color: #c9a84c; }
+
+/* Card personnage dans modale */
+.perso-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.perso-card:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: #c9a84c;
+}
+
+.perso-card.selected {
+  background: rgba(134, 93, 255, 0.15);
+  border-color: #865dff;
+}
+
+.perso-card-name {
+  font-size: 0.9rem;
+  color: #d5d1a9;
+  font-weight: bold;
+}
+
+.perso-card-class {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+/* État vide */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #555;
+}
+
+.empty-state i {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: #3a3a3a;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 0.82rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: #865dff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================================
+   RESPONSIVE
+   ============================================================= */
+
+@media (max-width: 1100px) {
+  .sessions-grid { grid-template-columns: repeat(2, 1fr); }
+  .session-detail-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .sessions-page {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .sessions-grid { grid-template-columns: 1fr; }
+  .sessions-header { flex-direction: column; }
+  .session-form { padding: 1.2rem; }
+}
+
+/* =============================================================
+   THÈME CLAIR
+   ============================================================= */
+
+[data-theme="light"] .session-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(100, 60, 20, 0.35);
+}
+
+[data-theme="light"] .session-card-title { color: #7a5200; }
+[data-theme="light"] .session-card-desc { color: #444; }
+[data-theme="light"] .session-detail-main,
+[data-theme="light"] .detail-block,
+[data-theme="light"] .session-form {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(100, 60, 20, 0.3);
+}
+
+[data-theme="light"] .session-detail-title { color: #7a5200; }
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea,
+[data-theme="light"] .form-group select {
+  background: rgba(255, 255, 255, 0.8);
+  color: #2b0040;
+  border-color: rgba(100, 60, 20, 0.4);
+}
+
+[data-theme="light"] .sessions-toolbar input {
+  background: rgba(255, 255, 255, 0.7);
+  color: #2b0040;
+}
