@@ -3,51 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil</title>
+  <title>Bibliothèque — La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
-  <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/bibliotheque.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
   </script>
-  <style>
-    /* Fond semi-transparent + tailles spécifiques home */
-    main h1 {
-      font-size: 1.5rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      padding: 0.5rem 1rem;
-      display: inline-block;
-    }
-
-    main > p {
-      font-size: 0.9rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      padding: 0.4rem 0.9rem;
-      display: inline-block;
-    }
-
-    [data-theme="light"] main h1,
-    [data-theme="light"] main > p {
-      background: rgba(255, 255, 255, 0.6);
-    }
-
-    .project-edito h2 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-edito p {
-      font-size: 0.88rem;
-    }
-  </style>
 </head>
 <body>
   <div class="page-container">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header sidebar-header-flex">
         <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
@@ -65,7 +35,7 @@
           <h2>Menu Joueurs</h2>
           <ul class="sidebar-menu">
             <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
-            <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+            <li><a href="bibliotheque.html" class="active"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
             <li><a href="#"><i class="fa-solid fa-dice-d20"></i> Sessions Joueurs</a></li>
           </ul>
         </div>
@@ -75,82 +45,82 @@
       </div>
     </aside>
 
-    <main>
+    <!-- CONTENU PRINCIPAL -->
+    <main class="biblio-page">
       <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
         <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
-      </button>      
-      <h1>Bienvenue sur La Table du Maître</h1>
-      <p>Le site est en construction... 🚰</p>
-      <section class="project-edito">
-  <h2>📖 Édito du Maître</h2>
-  <p>
-    Bienvenue à tous ! Le site avance, j'ai presque fini la création de race pour la version 2014.
-    Je vais pouvoir commencer a créer les races à paertir du SRD 2014 + du Homebrew.
-  </p>
-  <p>
-    <strong>À venir :</strong>
-    <ul>
-      <li>✨ Ajout de la Création des races pour la version 2024</li>
-      <li>🧩 Mise en place de la page des créations des sous races pour les version 2014 et 2024.</li>
-    </ul>
-  </p>
-  <p>
-    Merci pour votre patience et votre enthousiasme. <br>
-    – Wiwi 🧙‍♂️
-  </p>
-</section>
+      </button>
+
+      <div class="biblio-header">
+        <h1><i class="fa-solid fa-book-open"></i> Bibliothèque</h1>
+        <p>Sorts, classes, espèces, historiques, dons et équipements — PHB 2024</p>
+      </div>
+
+      <!-- RECHERCHE GLOBALE -->
+      <div class="biblio-search-bar">
+        <input type="text" id="recherche-globale" placeholder="Rechercher dans la bibliothèque…" autocomplete="off" />
+      </div>
+
+      <!-- ONGLETS -->
+      <div class="biblio-tabs">
+        <button class="biblio-tab active" data-tab="sorts"><i class="fa-solid fa-wand-sparkles"></i> Sorts</button>
+        <button class="biblio-tab" data-tab="classes"><i class="fa-solid fa-shield-halved"></i> Classes</button>
+        <button class="biblio-tab" data-tab="especes"><i class="fa-solid fa-dragon"></i> Espèces</button>
+        <button class="biblio-tab" data-tab="backgrounds"><i class="fa-solid fa-scroll"></i> Historiques</button>
+        <button class="biblio-tab" data-tab="dons"><i class="fa-solid fa-star"></i> Dons</button>
+        <button class="biblio-tab" data-tab="equipement"><i class="fa-solid fa-shield"></i> Équipement</button>
+        <button class="biblio-tab" data-tab="glossaire"><i class="fa-solid fa-book"></i> Glossaire</button>
+      </div>
+
+      <!-- FILTRES DYNAMIQUES -->
+      <div class="biblio-filters" id="biblio-filters"></div>
+
+      <!-- COMPTEUR -->
+      <p class="biblio-count" id="biblio-count"></p>
+
+      <!-- GRILLE DES CARTES -->
+      <div class="biblio-grid" id="biblio-grille"></div>
+
+      <!-- PAGINATION -->
+      <div class="biblio-pagination" id="biblio-pagination"></div>
     </main>
+
   </div>
+
+  <!-- MODAL DÉTAIL -->
+  <div class="modal-overlay hidden" id="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- AUTH -->
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-
     const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
     const { url, key } = await res.json();
     const supabase = createClient(url, key);
-
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
-      window.location.href = "login.html";
-    } else {
-      localStorage.setItem("userId", user.id);
-
-      const provider = user.app_metadata?.provider;
-
-      if (provider === 'google' || provider === 'discord') {
-        const meta = user.user_metadata || {};
-
-        const username = meta.full_name || meta.name || meta.preferred_username || user.email;
-        const avatar_url = meta.avatar_url || null;
-        const discord_username = provider === 'discord'
-          ? (meta.custom_claims?.global_name || meta.preferred_username || meta.user_name || null)
-          : null;
-
-        fetch("https://myrpgtable.fr/api/SyncUser", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            supabase_id: user.id,
-            email: user.email,
-            username,
-            avatar_url,
-            provider,
-            discord_username
-          })
-        }).catch(e => console.warn("SyncUser échoué :", e));
-      }
-    }
+    if (!user) window.location.href = "login.html";
   </script>
-  
+
+  <!-- SIDEBAR -->
   <script type="module">
     import { toggleSidebar } from './js/sidebar.js';
     window.toggleSidebar = toggleSidebar;
   </script>
+
+  <!-- THÈME -->
   <div class="theme-toggle-container">
     <button id="theme-toggle" class="lanterne-btn">
       <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
     </button>
   </div>
   <script src="js/theme.js"></script>
-  
+
+  <!-- BIBLIOTHÈQUE -->
+  <script src="js/bibliotheque.js"></script>
+
 </body>
 </html>
