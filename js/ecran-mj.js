@@ -634,10 +634,16 @@ async function chargerCombat() {
 
 // ─── INIT ─────────────────────────────────────────────────────
 
-function waitForAuth(fn, tries = 0) {
-  if (window.SUPABASE_TOKEN) return fn();
-  if (tries > 40) return;
-  setTimeout(() => waitForAuth(fn, tries + 1), 100);
+let _authDone = false;
+function waitForAuth(fn) {
+  function fire() { if (_authDone) return; _authDone = true; fn(); }
+  if (window.SUPABASE_TOKEN) { fire(); return; }
+  window.addEventListener('supabase-ready', fire, { once: true });
+  let n = 0;
+  const t = setInterval(() => {
+    if (window.SUPABASE_TOKEN) { clearInterval(t); fire(); }
+    if (++n > 150) clearInterval(t);
+  }, 100);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

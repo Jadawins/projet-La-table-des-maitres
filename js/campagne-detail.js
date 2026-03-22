@@ -30,10 +30,16 @@ const CARACTERISTIQUES = ['FOR','DEX','CON','INT','SAG','CHA'];
 
 // ─── INIT ─────────────────────────────────────────────────────
 
-function waitForAuth(cb, tries = 0) {
-  if (window.SUPABASE_TOKEN) { token = window.SUPABASE_TOKEN; cb(); return; }
-  if (tries > 40) return;
-  setTimeout(() => waitForAuth(cb, tries + 1), 100);
+let _authDone = false;
+function waitForAuth(cb) {
+  function fire() { if (_authDone) return; _authDone = true; token = window.SUPABASE_TOKEN; cb(); }
+  if (window.SUPABASE_TOKEN) { fire(); return; }
+  window.addEventListener('supabase-ready', fire, { once: true });
+  let n = 0;
+  const t = setInterval(() => {
+    if (window.SUPABASE_TOKEN) { clearInterval(t); fire(); }
+    if (++n > 150) clearInterval(t);
+  }, 100);
 }
 
 function authHeaders() {

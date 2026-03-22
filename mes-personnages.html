@@ -79,17 +79,23 @@
   const supabase = createClient(url, key);
   const { data: { session } } = await supabase.auth.getSession();
   if (!session) { window.location.href = "login.html"; }
-  else { window.SUPABASE_TOKEN = session.access_token; }
+  else { window.SUPABASE_TOKEN = session.access_token; window.dispatchEvent(new Event('supabase-ready')); }
 </script>
 
 <script>
 const API = 'https://myrpgtable.fr/api';
 let token = null;
 
-function waitForAuth(cb, t=0) {
-  if (window.SUPABASE_TOKEN) { token = window.SUPABASE_TOKEN; cb(); return; }
-  if (t > 40) return;
-  setTimeout(() => waitForAuth(cb, t+1), 100);
+let _authDone = false;
+function waitForAuth(cb) {
+  function fire() { if (_authDone) return; _authDone = true; token = window.SUPABASE_TOKEN; cb(); }
+  if (window.SUPABASE_TOKEN) { fire(); return; }
+  window.addEventListener('supabase-ready', fire, { once: true });
+  let n = 0;
+  const t = setInterval(() => {
+    if (window.SUPABASE_TOKEN) { clearInterval(t); fire(); }
+    if (++n > 150) clearInterval(t);
+  }, 100);
 }
 
 function authH() { return { 'Content-Type':'application/json', Authorization:`Bearer ${token}` }; }

@@ -128,7 +128,7 @@
     const supabase = createClient(url, key);
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) { window.location.href = "login.html"; }
-    else { window.SUPABASE_TOKEN = session.access_token; }
+    else { window.SUPABASE_TOKEN = session.access_token; window.dispatchEvent(new Event('supabase-ready')); }
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>

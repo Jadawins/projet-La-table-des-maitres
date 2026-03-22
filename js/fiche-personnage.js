@@ -26,10 +26,17 @@ const TOUTES_COMPETENCES = [
 
 // ─── UTILITAIRES ──────────────────────────────────────────────
 
-function waitForAuth(cb, t = 0) {
-  if (window.SUPABASE_TOKEN) { token = window.SUPABASE_TOKEN; cb(); return; }
-  if (t > 40) return;
-  setTimeout(() => waitForAuth(cb, t + 1), 100);
+let _authDone = false;
+function waitForAuth(cb) {
+  function fire() { if (_authDone) return; _authDone = true; token = window.SUPABASE_TOKEN; cb(); }
+  if (window.SUPABASE_TOKEN) { fire(); return; }
+  window.addEventListener('supabase-ready', fire, { once: true });
+  // Fallback polling si l'événement est manqué
+  let n = 0;
+  const t = setInterval(() => {
+    if (window.SUPABASE_TOKEN) { clearInterval(t); fire(); }
+    if (++n > 150) clearInterval(t);
+  }, 100);
 }
 
 function authHeaders() {

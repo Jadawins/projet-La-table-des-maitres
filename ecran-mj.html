@@ -191,6 +191,7 @@
     if (!session) { window.location.href = "login.html"; }
     else {
       window.SUPABASE_TOKEN = session.access_token;
+      window.dispatchEvent(new Event('supabase-ready'));
       window.USER_ID = session.user.id;
       window.USER_PSEUDO = session.user.user_metadata?.full_name
         || session.user.user_metadata?.preferred_username
