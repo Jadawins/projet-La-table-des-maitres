@@ -92,11 +92,11 @@ function isDvMax(dv) {
 }
 
 function isCaster(classeData) {
-  return !!(classeData?._full?.niveaux?.['0']?.incantation);
+  return !!(classeData?.incantation);
 }
 
 function getCaracIncantation(classeData) {
-  return classeData?._full?.niveaux?.['0']?.caracteristique_incantation || null;
+  return classeData?.caracteristique_incantation || null;
 }
 
 function getNombreMineurs(classeId, niveau) {
@@ -321,7 +321,9 @@ async function loadClasses() {
     const r = await fetch(`${API}/GetClasses2024`);
     W._classes = await r.json();
     renderClassesGrid();
-  } catch {}
+  } catch (err) {
+    document.getElementById('classes-grid').innerHTML = '<p style="color:#f00">Erreur de chargement des classes</p>';
+  }
 }
 
 function renderClassesGrid() {
@@ -494,7 +496,7 @@ function updateCompCounter(max) {
 
 function renderEquipement() {
   const list = document.getElementById('equip-list');
-  const classeEquip = W.classe_data?._full?.niveaux?.['0']?.equipement_depart || [];
+  const classeEquip = W.classe_data?.equipement_depart || [];
   const bgEquip = W.bg_data?.equipement || [];
   const items = [];
 
@@ -828,8 +830,8 @@ async function creerPersonnage() {
       defauts: W.defauts ? [W.defauts] : []
     },
     langues: (W.espece_data?.langues || ['commun']),
-    maitrise_armes: W.classe_data?._full?.niveaux?.['0']?.maitrises_armes || [],
-    maitrise_armures: W.classe_data?._full?.niveaux?.['0']?.maitrises_armures || [],
+    maitrise_armes: W.classe_data?.maitrises_armes || [],
+    maitrise_armures: W.classe_data?.maitrises_armures || [],
     notes: W.notes,
     apparence: W.apparence,
     historique_perso: W.historique_perso
