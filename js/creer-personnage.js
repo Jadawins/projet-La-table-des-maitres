@@ -330,7 +330,7 @@ function renderClassesGrid() {
   const grid = document.getElementById('classes-grid');
   grid.innerHTML = W._classes.map(c => {
     const dv = c.de_vie?.type || 'd8';
-    const car = (c.caracteristique_principale||[]).join('/');
+    const car = [].concat(c.caracteristique_principale||[]).join('/');
     return `
     <div class="select-card ${W.classe === c.id ? 'selected' : ''}" onclick="selectClasse('${c.id}')">
       <div class="card-name">${esc(c.nom)}</div>
