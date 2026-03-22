@@ -702,7 +702,7 @@
 }
 
 .sorts-search input, .sorts-search select {
-  background: rgba(255,255,255,0.05);
+  background: rgba(20,16,40,0.95);
   border: 1px solid var(--border);
   border-radius: 7px;
   color: #e0e0e0;
@@ -711,6 +711,11 @@
 }
 
 .sorts-search input { flex: 1; }
+
+.sorts-search select option {
+  background: #1a1530;
+  color: #e0e0e0;
+}
 
 .sorts-list {
   display: flex;
@@ -741,9 +746,33 @@
 .sort-conc { font-size: 0.65rem; color: #c9a84c; }
 
 .sorts-counter {
-  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  color: #aaa;
+}
+
+.sorts-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.3);
   color: var(--gold);
-  margin-bottom: 0.6rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.sorts-counter-badge.done {
+  background: rgba(80,180,120,0.15);
+  border-color: rgba(80,180,120,0.4);
+  color: #6dd8a0;
 }
 
 /* ─── RÉCAPITULATIF ──────────────────────────────────────────── */

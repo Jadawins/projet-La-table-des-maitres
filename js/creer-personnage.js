@@ -757,8 +757,8 @@ async function loadSorts() {
   document.getElementById('ecole-mineurs').innerHTML = `<option value="">Toutes</option>` + ecolesMin.map(e => `<option>${esc(e)}</option>`).join('');
   document.getElementById('ecole-niv1').innerHTML = `<option value="">Toutes</option>` + ecolesNiv1.map(e => `<option>${esc(e)}</option>`).join('');
 
-  document.getElementById('sorts-mineurs-counter').textContent = `Choisissez ${nbMin} sort(s) mineur(s).`;
-  document.getElementById('sorts-niv1-counter').textContent = `Choisissez ${nbNiv1} sort(s) de niveau 1.`;
+  updateSortsCounter('mineurs', nbMin);
+  updateSortsCounter('niv1', nbNiv1);
 
   renderSortsList('mineurs', mineurs, nbMin);
   renderSortsList('niv1', niv1, nbNiv1);
@@ -802,7 +802,18 @@ function toggleSort(id, type, max) {
     if (W[selKey].length >= max) return;
     W[selKey].push(id);
   }
+  updateSortsCounter(type, max);
   filtrerSorts(type);
+}
+
+function updateSortsCounter(type, max) {
+  const selKey = type === 'mineurs' ? 'sorts_mineurs' : 'sorts_niv1';
+  const count = W[selKey].length;
+  const label = type === 'mineurs' ? 'sort(s) mineur(s)' : 'sort(s) de niveau 1';
+  const el = document.getElementById(`sorts-${type}-counter`);
+  if (!el) return;
+  const done = count >= max;
+  el.innerHTML = `<span class="sorts-counter-badge${done ? ' done' : ''}">${count} / ${max}</span> ${label} choisi${count > 1 ? 's' : ''}`;
 }
 
 // ─── ÉTAPE 9 — Traits & Suggestions ──────────────────────────
