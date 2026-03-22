@@ -487,6 +487,7 @@ function migrerMonnaieDepuisEquipement() {
     perso.equipement = garder;
     markDirty('equipement', perso.equipement);
     markDirty('monnaie', perso.monnaie);
+    flushSave();
   }
 }
 
