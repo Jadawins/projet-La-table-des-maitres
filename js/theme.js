@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.setAttribute("data-theme", savedTheme);
   updateLanterneIcon(savedTheme);
 
+  if (!lanterneBtn) return;
   lanterneBtn.addEventListener("click", () => {
     const currentTheme = document.body.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";

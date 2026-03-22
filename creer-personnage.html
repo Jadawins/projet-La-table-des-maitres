@@ -277,8 +277,8 @@
   const { url, key } = await res.json();
   const supabase = createClient(url, key);
   const { data: { session } } = await supabase.auth.getSession();
-  if (!session) { window.location.href = "login.html"; return; }
-  window.SUPABASE_TOKEN = session.access_token;
+  if (!session) { window.location.href = "login.html"; }
+  else { window.SUPABASE_TOKEN = session.access_token; }
 </script>
 
 <script src="js/creer-personnage.js"></script>
