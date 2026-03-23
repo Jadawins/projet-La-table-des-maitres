@@ -617,6 +617,7 @@ async function chargerCombat() {
     await chargerMessages();
     await chargerJournal();
     await chargerVoteReposMJ();
+    await chargerJoueursXP();
 
     // Auto-save notes 30s
     notesTimer = setInterval(sauvegarderNotes, 30000);
@@ -990,10 +991,115 @@ function afficherResultatReposMJ(msg, type) {
 // ─── INTÉGRATION JOURNAL DANS AUTO-REFRESH ────────────────────
 
 const _origRefresh = refresh;
+// ─── XP / NIVEAU ──────────────────────────────────────────────
+
+const XP_PAR_NIVEAU_MJ = {
+  1:0, 2:300, 3:900, 4:2700, 5:6500, 6:14000, 7:23000, 8:34000,
+  9:48000, 10:64000, 11:85000, 12:100000, 13:120000, 14:140000,
+  15:165000, 16:195000, 17:225000, 18:265000, 19:305000, 20:355000
+};
+
+let _joueursSession = [];
+
+async function chargerJoueursXP() {
+  if (!sessionId) return;
+  try {
+    const r = await fetch(`${API}/Sessions/${sessionId}`, { headers: authHeaders() });
+    if (!r.ok) return;
+    const s = await r.json();
+    _joueursSession = (s.joueurs || []).filter(j => j.personnage_id);
+    await _renderJoueursXP();
+  } catch {}
+}
+
+async function _renderJoueursXP() {
+  const list = document.getElementById('mj-xp-joueurs-list');
+  if (!list) return;
+  if (!_joueursSession.length) {
+    list.innerHTML = '<div style="font-size:0.78rem;color:#555;">Aucun joueur avec personnage.</div>';
+    return;
+  }
+  // Charger les persos pour avoir XP/niveau
+  const items = [];
+  for (const j of _joueursSession) {
+    try {
+      const r = await fetch(`${API}/Personnages/${j.personnage_id}`, { headers: authHeaders() });
+      if (r.ok) {
+        const p = await r.json();
+        const xp = p.experience || 0;
+        const niv = p.niveau || 1;
+        const xpNext = niv < 20 ? XP_PAR_NIVEAU_MJ[niv + 1] : null;
+        const levelUp = xpNext && xp >= xpNext;
+        items.push(`<div class="mj-xp-joueur-row">
+          <span class="mj-xp-joueur-nom">${p.nom}</span>
+          <span class="mj-xp-joueur-niv">Niv ${niv}</span>
+          <span class="mj-xp-joueur-xp">${xp.toLocaleString('fr')} XP</span>
+          ${levelUp ? '<span class="mj-xp-joueur-levelup">⬆️ Level up !</span>' : ''}
+        </div>`);
+      }
+    } catch {}
+  }
+  list.innerHTML = items.join('');
+}
+
+async function distribuerXP() {
+  const montant = parseInt(document.getElementById('mj-xp-montant')?.value) || 0;
+  if (!montant) return;
+  const result = document.getElementById('mj-xp-result');
+  result.className = 'info';
+  result.textContent = '⏳ Distribution en cours…';
+  result.style.display = 'block';
+  try {
+    const r = await fetch(`${API}/Sessions/${sessionId}/xp`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({ xp_total: montant, distribution: 'egal' })
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error);
+    const niveaux = d.distribues.filter(j => j.level_up).map(j => `${j.nom} → Niv ${j.niveau}`);
+    result.className = 'succes';
+    result.textContent = `🌟 ${montant} XP distribués !${niveaux.length ? ' ⬆️ ' + niveaux.join(', ') : ''}`;
+    document.getElementById('mj-xp-montant').value = '';
+    await _renderJoueursXP();
+  } catch (e) {
+    result.className = '';
+    result.style.background = 'rgba(248,113,113,0.1)';
+    result.style.color = '#f87171';
+    result.textContent = 'Erreur : ' + e.message;
+  }
+}
+
+async function monterNiveauJalon() {
+  const result = document.getElementById('mj-xp-result');
+  result.className = 'info';
+  result.textContent = '⏳ Montée en niveau…';
+  result.style.display = 'block';
+  try {
+    const r = await fetch(`${API}/Sessions/${sessionId}/jalon`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({})
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error);
+    const noms = (d.montes || []).map(j => `${j.nom} → Niv ${j.nouveau_niveau}`).join(', ');
+    result.className = 'succes';
+    result.textContent = `⬆️ Monté${d.montes?.length > 1 ? 's' : ''} : ${noms || 'Aucun'}`;
+    await _renderJoueursXP();
+  } catch (e) {
+    result.className = '';
+    result.style.background = 'rgba(248,113,113,0.1)';
+    result.style.color = '#f87171';
+    result.textContent = 'Erreur : ' + e.message;
+  }
+}
+
 async function refresh() {
   await _origRefresh();
   await chargerJournal();
   await chargerVoteReposMJ();
+  await chargerJoueursXP();
 }
 
 // Exposer pour les onclick HTML inline
@@ -1006,3 +1112,5 @@ window.retirerCondition = retirerCondition;
 window.toggleVisible = toggleVisible;
 window.majNotes = majNotes;
 window.supprimerParticipant = supprimerParticipant;
+window.distribuerXP = distribuerXP;
+window.monterNiveauJalon = monterNiveauJalon;

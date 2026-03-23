@@ -107,6 +107,7 @@ async function init() {
     if (!r.ok) { location.href = 'mes-personnages.html'; return; }
     perso = await r.json();
   } catch { location.href = 'mes-personnages.html'; return; }
+  window._perso = perso; // exposer pour le wizard niveau
   renderAll();
 }
 
@@ -130,6 +131,7 @@ function renderAll() {
   renderTraits();
   renderLanguesMaitrises();
   renderDesVie();
+  if (typeof renderBarreXP === 'function') renderBarreXP(perso);
 
   const inspDiamond = document.getElementById('inspire-diamond');
   if (inspDiamond) {

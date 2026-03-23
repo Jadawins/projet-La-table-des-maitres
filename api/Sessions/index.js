@@ -331,4 +331,86 @@ router.post('/:id/expulser', async (req, res) => {
   }
 });
 
+// ─── XP TABLE ─────────────────────────────────────────────────
+const XP_PAR_NIVEAU = {
+  1:0, 2:300, 3:900, 4:2700, 5:6500, 6:14000, 7:23000, 8:34000,
+  9:48000, 10:64000, 11:85000, 12:100000, 13:120000, 14:140000,
+  15:165000, 16:195000, 17:225000, 18:265000, 19:305000, 20:355000
+};
+function niveauDepuisXP(xp) {
+  for (let i = 20; i >= 2; i--) { if ((xp || 0) >= XP_PAR_NIVEAU[i]) return i; }
+  return 1;
+}
+
+// ─── POST /:id/xp — distribuer XP à tous les joueurs ──────────
+router.post('/:id/xp', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { xp_total, distribution, xp_individuel } = req.body;
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne({ _id: new ObjectId(req.params.id) });
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      if (session.mj_id !== userId) return res.status(403).json({ error: 'Réservé au MJ' });
+
+      const joueurs = (session.joueurs || []).filter(j => j.personnage_id);
+      if (!joueurs.length) return res.json({ ok: true, distribues: [] });
+
+      const resultats = [];
+      for (const j of joueurs) {
+        const xpGagne = distribution === 'individuel'
+          ? (xp_individuel?.[String(j.personnage_id)] || 0)
+          : Math.floor(xp_total / joueurs.length);
+        if (!xpGagne) continue;
+        const perso = await db.collection('personnages').findOne({ _id: j.personnage_id });
+        if (!perso) continue;
+        const ancienXP  = perso.experience || 0;
+        const ancienNiv = perso.niveau || 1;
+        const nouvelXP  = ancienXP + xpGagne;
+        const nouveauNiv = niveauDepuisXP(nouvelXP);
+        const levelUp   = nouveauNiv > ancienNiv;
+        const upd = { experience: nouvelXP, derniere_modification: new Date() };
+        if (levelUp) upd.niveau = nouveauNiv;
+        await db.collection('personnages').updateOne({ _id: j.personnage_id }, { $set: upd });
+        resultats.push({ nom: perso.nom, xp: xpGagne, total_xp: nouvelXP, niveau: levelUp ? nouveauNiv : ancienNiv, level_up: levelUp });
+      }
+
+      // Journal combat si actif
+      const combat = await db.collection('combats').findOne({ session_id: req.params.id, statut: 'actif' });
+      if (combat) {
+        const msg = `🌟 ${xp_total || 'XP'} XP distribués à ${joueurs.length} joueur(s)`;
+        await db.collection('combats').updateOne({ _id: combat._id }, { $push: { messages: { contenu: msg, expediteur_nom: 'Système', type: 'systeme', date: new Date() } } });
+      }
+      res.json({ ok: true, distribues: resultats });
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ─── POST /:id/jalon — monter en niveau (jalon) ───────────────
+router.post('/:id/jalon', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { joueurs_ids } = req.body; // optionnel : cibler des joueurs spécifiques
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne({ _id: new ObjectId(req.params.id) });
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      if (session.mj_id !== userId) return res.status(403).json({ error: 'Réservé au MJ' });
+
+      const joueurs = (session.joueurs || []).filter(j => j.personnage_id && (!joueurs_ids?.length || joueurs_ids.includes(String(j.personnage_id))));
+      const resultats = [];
+      for (const j of joueurs) {
+        const perso = await db.collection('personnages').findOne({ _id: j.personnage_id });
+        if (!perso) continue;
+        const ancienNiv = perso.niveau || 1;
+        if (ancienNiv >= 20) continue;
+        const nouveauNiv = ancienNiv + 1;
+        await db.collection('personnages').updateOne({ _id: j.personnage_id }, { $set: { niveau: nouveauNiv, progression: 'jalon', derniere_modification: new Date() } });
+        resultats.push({ nom: perso.nom, ancien_niveau: ancienNiv, nouveau_niveau: nouveauNiv });
+      }
+      res.json({ ok: true, montes: resultats });
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
 module.exports = router;

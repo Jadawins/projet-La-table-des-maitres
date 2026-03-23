@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/ecran-mj.css">
   <link rel="stylesheet" href="css/combat.css">
   <link rel="stylesheet" href="css/ressources.css">
+  <link rel="stylesheet" href="css/niveau.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -132,6 +133,26 @@
             <button class="mj-repos-btn imposer-long"  onclick="imposerReposMJ('long')">💤 Imposer Repos Long</button>
           </div>
           <div id="mj-repos-result" style="margin-top:0.4rem;"></div>
+        </div>
+
+        <!-- XP & Niveau -->
+        <div class="notes-mj-section mj-xp-section" style="margin-bottom:0.75rem;">
+          <h3><i class="fa-solid fa-star"></i> XP & Niveau</h3>
+          <div class="mj-xp-panel">
+            <!-- Liste joueurs -->
+            <div class="mj-xp-joueurs" id="mj-xp-joueurs-list"></div>
+            <!-- Distribution XP -->
+            <div class="mj-xp-row" style="margin-top:0.6rem;">
+              <span class="mj-xp-label">XP à distribuer :</span>
+              <input type="number" class="mj-xp-input" id="mj-xp-montant" placeholder="500" min="0" />
+              <button class="mj-xp-btn distribuer" onclick="distribuerXP()">🌟 Distribuer (égal)</button>
+            </div>
+            <!-- Jalon -->
+            <div class="mj-xp-row">
+              <button class="mj-xp-btn jalon" onclick="monterNiveauJalon()">⬆️ Monter en niveau (Jalon)</button>
+            </div>
+            <div id="mj-xp-result" style="display:none;"></div>
+          </div>
         </div>
 
         <!-- Journal de combat -->

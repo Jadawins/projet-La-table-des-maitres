@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/personnage.css">
   <link rel="stylesheet" href="css/combat.css">
   <link rel="stylesheet" href="css/ressources.css">
+  <link rel="stylesheet" href="css/niveau.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -51,6 +52,9 @@
       <input class="pv-input" id="pv-temp" type="number" value="0" onchange="markDirty('combat.pv_temporaires',+this.value)" />
     </div>
   </div>
+
+  <!-- BARRE XP -->
+  <div id="xp-section" style="min-width:180px;flex:1;max-width:320px;"></div>
 
   <!-- STATS RAPIDES -->
   <div class="fiche-combat-quick" id="fiche-combat-quick"></div>
@@ -244,6 +248,7 @@
 
 <!-- BADGE NOTIFICATION REPOS -->
 <div id="repos-notif-badge" onclick="ouvrirModalVoteRepos()">⏰ Chargement…</div>
+<div id="levelup-badge" onclick="lancerWizardNiveau(window._perso)">⬆️ Niveau sup. dispo !</div>
 
 <!-- MODAL : PROPOSER UN REPOS -->
 <div class="modal-overlay hidden" id="modal-proposer-repos">
@@ -491,6 +496,92 @@
   </div>
 </div>
 
+<!-- MODAL LEVEL UP WIZARD -->
+<div class="modal-overlay hidden" id="modal-levelup">
+  <div class="modal-box" style="max-width:560px;max-height:90vh;overflow-y:auto;">
+    <button class="modal-close" onclick="document.getElementById('modal-levelup').classList.add('hidden')">✕</button>
+
+    <!-- En-tête -->
+    <div class="niv-wizard-header">
+      <div class="niv-wizard-title">🎉 Montée en niveau !</div>
+      <div class="niv-wizard-subtitle"></div>
+    </div>
+
+    <!-- Stepper -->
+    <div class="niv-stepper"></div>
+
+    <!-- Étape PV -->
+    <div class="niv-step" data-step="pv">
+      <div class="niv-step-title">❤️ Points de vie</div>
+      <div class="niv-pv-options">
+        <div class="niv-pv-option" data-mode="fixe">📊 Valeur fixe (recommandé)</div>
+        <div class="niv-pv-option" data-mode="lancer">🎲 Lancer les dés de vie</div>
+      </div>
+      <div class="niv-pv-hint" style="display:block;"></div>
+      <div class="niv-pv-lancer-row" style="display:none;">
+        <div class="niv-pv-input-row">
+          <span>Résultat du dé :</span>
+          <input type="number" id="niv-pv-lancé" min="1" max="12" placeholder="ex: 7" />
+        </div>
+      </div>
+      <div class="niv-pv-fixe-row">
+        <div class="niv-pv-hint" style="display:none;"></div>
+      </div>
+      <div class="niv-pv-total" style="margin-top:0.5rem;"></div>
+      <div class="niv-pv-fixe-val" style="display:none;"></div>
+    </div>
+
+    <!-- Étape Capacités -->
+    <div class="niv-step" data-step="capacites">
+      <div class="niv-step-title">✨ Nouvelles capacités</div>
+      <div class="niv-capacite-list"></div>
+    </div>
+
+    <!-- Étape Sous-classe -->
+    <div class="niv-step" data-step="sous_classe">
+      <div class="niv-step-title">⭐ Choisir une sous-classe</div>
+      <p style="font-size:0.8rem;color:#aaa;margin-bottom:0.5rem;">Choisissez la voie qui définira votre personnage.</p>
+      <div class="niv-sousclasse-grid"></div>
+      <div id="niv-sc-detail" style="display:none;margin-top:0.5rem;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.25);border-radius:8px;padding:0.6rem;font-size:0.8rem;color:#ccc;"></div>
+    </div>
+
+    <!-- Étape Don/Carac -->
+    <div class="niv-step" data-step="don_carac">
+      <div class="niv-step-title">💪 Amélioration de caractéristique ou Don</div>
+      <div class="niv-don-options">
+        <div class="niv-don-option" data-mode="carac">💪 Amélioration de caractéristique</div>
+        <div class="niv-don-option" data-mode="don">📜 Choisir un Don</div>
+      </div>
+      <div id="niv-carac-block" style="display:none;margin-top:0.5rem;">
+        <div class="niv-carac-info" id="niv-carac-info"></div>
+        <div class="niv-carac-grid"></div>
+      </div>
+      <div id="niv-don-block" style="display:none;margin-top:0.5rem;">
+        <div class="niv-don-list"></div>
+      </div>
+    </div>
+
+    <!-- Étape Sorts -->
+    <div class="niv-step" data-step="sorts">
+      <div class="niv-step-title">🔮 Emplacements de sorts</div>
+      <div class="niv-sorts-content"></div>
+    </div>
+
+    <!-- Étape Récap -->
+    <div class="niv-step" data-step="recap">
+      <div class="niv-step-title">📋 Récapitulatif</div>
+      <div class="niv-recap-list"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="niv-wizard-nav">
+      <button class="niv-btn-prev" onclick="wizardPrev()">← Précédent</button>
+      <button class="niv-btn-next" onclick="wizardNext()">Suivant →</button>
+      <button class="niv-btn-confirm" style="display:none;" onclick="confirmerNiveau()">✅ Confirmer la montée en niveau</button>
+    </div>
+  </div>
+</div>
+
 <!-- AUTH -->
 <script type="module">
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
@@ -502,6 +593,7 @@
   else { window.SUPABASE_TOKEN = session.access_token; window.dispatchEvent(new Event('supabase-ready')); }
 </script>
 
+<script src="js/niveau.js"></script>
 <script src="js/fiche-personnage.js"></script>
 <script src="js/theme.js"></script>
 </body>
