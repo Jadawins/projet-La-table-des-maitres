@@ -1,0 +1,330 @@
+/* ================================================================
+   RESSOURCES.CSS — Ressources de classe & système de repos
+   ================================================================ */
+
+/* ─── COULEURS PAR CLASSE ───────────────────────────────────── */
+:root {
+  --res-barbare:    #e05a2b;
+  --res-druide:     #4caf50;
+  --res-moine:      #00bcd4;
+  --res-paladin:    #c9a84c;
+  --res-clerc:      #e0e0e0;
+  --res-ensorceleur:#e91e8c;
+  --res-occultiste: #7c3aed;
+  --res-guerrier:   #5b8dd9;
+  --res-barde:      #facc15;
+  --res-magicien:   #3b82f6;
+}
+
+/* ─── SECTION RESSOURCES ────────────────────────────────────── */
+.ressources-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.ressource-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.ressource-icone {
+  font-size: 1.1rem;
+  width: 1.4rem;
+  text-align: center;
+}
+
+.ressource-nom {
+  font-size: 0.8rem;
+  color: #ccc;
+  flex: 1;
+  min-width: 120px;
+}
+
+.ressource-cases {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  max-width: 200px;
+}
+
+.ressource-case {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ressource-case.pleine { background: var(--case-color, #c9a84c); border-color: var(--case-color, #c9a84c); }
+.ressource-case:hover { opacity: 0.8; }
+
+.ressource-chiffre {
+  font-size: 0.78rem;
+  color: #aaa;
+  white-space: nowrap;
+  min-width: 36px;
+  text-align: center;
+}
+
+.ressource-controls {
+  display: flex;
+  gap: 3px;
+}
+
+.res-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+.res-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.res-btn.plus  { color: #4caf50; border-color: rgba(76,175,80,0.3); }
+.res-btn.moins { color: #f44336; border-color: rgba(244,67,54,0.3); }
+
+.res-badge-reset {
+  font-size: 0.62rem;
+  padding: 1px 5px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.res-badge-reset.court { background: rgba(0,188,212,0.15); color: #00bcd4; border: 1px solid rgba(0,188,212,0.3); }
+.res-badge-reset.long  { background: rgba(133,77,255,0.15); color: #a78bfa; border: 1px solid rgba(133,77,255,0.3); }
+
+/* Couleurs par classe */
+.ressource-case.barbare    { --case-color: var(--res-barbare); }
+.ressource-case.druide     { --case-color: var(--res-druide); }
+.ressource-case.moine      { --case-color: var(--res-moine); }
+.ressource-case.paladin    { --case-color: var(--res-paladin); }
+.ressource-case.clerc      { --case-color: var(--res-clerc); }
+.ressource-case.ensorceleur{ --case-color: var(--res-ensorceleur); }
+.ressource-case.occultiste { --case-color: var(--res-occultiste); }
+.ressource-case.guerrier   { --case-color: var(--res-guerrier); }
+.ressource-case.barde      { --case-color: var(--res-barde); }
+.ressource-case.magicien   { --case-color: var(--res-magicien); }
+
+/* ─── BOUTONS REPOS ─────────────────────────────────────────── */
+.repos-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn-repos {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.btn-repos.court {
+  background: rgba(0,188,212,0.1);
+  color: #00bcd4;
+  border-color: rgba(0,188,212,0.3);
+}
+.btn-repos.court:hover { background: rgba(0,188,212,0.2); }
+.btn-repos.long {
+  background: rgba(133,77,255,0.1);
+  color: #a78bfa;
+  border-color: rgba(133,77,255,0.3);
+}
+.btn-repos.long:hover { background: rgba(133,77,255,0.2); }
+.btn-repos:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ─── BADGE NOTIFICATION REPOS ──────────────────────────────── */
+#repos-notif-badge {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 1rem;
+  background: #991b1b;
+  color: #fca5a5;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: bold;
+  z-index: 600;
+  cursor: pointer;
+  animation: badgePulse 2s ease-in-out infinite;
+  box-shadow: 0 2px 12px rgba(153,27,27,0.5);
+}
+#repos-notif-badge.visible { display: block; }
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* ─── MODAL VOTE REPOS ──────────────────────────────────────── */
+#modal-vote-repos .modal-box {
+  max-width: 440px;
+}
+
+.vote-repos-info {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.vote-timer {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #facc15;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.votes-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.5rem 0;
+}
+.vote-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.4rem;
+}
+.vote-item .v-nom { color: #ccc; }
+.vote-item .v-rep { font-weight: bold; }
+.vote-item .v-rep.ok  { color: #4ade80; }
+.vote-item .v-rep.non { color: #f87171; }
+.vote-item .v-rep.att { color: #888; }
+
+.vote-btns {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+.vote-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.vote-btn.ok  { background: #166534; color: #86efac; }
+.vote-btn.non { background: #7f1d1d; color: #fca5a5; }
+
+/* ─── MODAL PROPOSER REPOS ──────────────────────────────────── */
+#modal-proposer-repos .modal-box {
+  max-width: 400px;
+}
+
+.repos-effet-list {
+  font-size: 0.78rem;
+  color: #aaa;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+}
+.repos-effet-list li { margin-bottom: 0.2rem; }
+
+/* ─── MODAL DÉS DE VIE (court) ──────────────────────────────── */
+#modal-dv-court .modal-box {
+  max-width: 380px;
+}
+
+/* ─── PANNEAU REPOS MJ ──────────────────────────────────────── */
+.mj-repos-section {
+  margin-top: 0.75rem;
+}
+
+.mj-repos-section h3 {
+  font-size: 0.82rem;
+  color: #c9a84c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem;
+}
+
+.repos-vote-panel {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 0.78rem;
+}
+.repos-vote-panel .rv-titre {
+  font-weight: bold;
+  color: #e0d0ff;
+  margin-bottom: 0.4rem;
+}
+.repos-vote-panel .rv-timer {
+  color: #facc15;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin: 0.3rem 0;
+}
+.repos-vote-panel .rv-scores {
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.mj-repos-btn-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.mj-repos-btn {
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: bold;
+  transition: opacity 0.15s;
+}
+.mj-repos-btn:hover { opacity: 0.85; }
+.mj-repos-btn.valider { background: #14532d; color: #86efac; }
+.mj-repos-btn.refuser { background: #7f1d1d; color: #fca5a5; }
+.mj-repos-btn.imposer-court { background: rgba(0,188,212,0.15); color: #00bcd4; border: 1px solid rgba(0,188,212,0.3); }
+.mj-repos-btn.imposer-long  { background: rgba(133,77,255,0.15); color: #a78bfa; border: 1px solid rgba(133,77,255,0.3); }
+
+/* ─── RÉSULTAT REPOS (flash) ────────────────────────────────── */
+.repos-result-msg {
+  font-size: 0.88rem;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+.repos-result-msg.succes { background: rgba(74,222,128,0.1); color: #4ade80; border: 1px solid #166534; }
+.repos-result-msg.echec  { background: rgba(248,113,113,0.1); color: #f87171; border: 1px solid #991b1b; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .ressource-cases { max-width: 140px; }
+  .ressource-case { width: 12px; height: 12px; }
+  .repos-buttons { gap: 0.4rem; }
+  .btn-repos { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+}

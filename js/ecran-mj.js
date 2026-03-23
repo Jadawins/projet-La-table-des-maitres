@@ -616,6 +616,7 @@ async function chargerCombat() {
     peuplerDestinataireSelect();
     await chargerMessages();
     await chargerJournal();
+    await chargerVoteReposMJ();
 
     // Auto-save notes 30s
     notesTimer = setInterval(sauvegarderNotes, 30000);
@@ -878,12 +879,121 @@ async function confirmerAttaqueMJ() {
 }
 window.confirmerAttaqueMJ = confirmerAttaqueMJ;
 
+// ─── PANNEAU REPOS MJ ─────────────────────────────────────────
+
+let _reposActifMJId  = null;
+let _mjTimerInterval = null;
+
+async function chargerVoteReposMJ() {
+  if (!sessionId) return;
+  try {
+    const r = await fetch(`${API}/Repos/actif/${sessionId}`, { headers: authHeaders() });
+    if (!r.ok) {
+      document.getElementById('mj-repos-vote-panel').style.display = 'none';
+      _reposActifMJId = null;
+      return;
+    }
+    const data = await r.json();
+    _reposActifMJId = data._id;
+
+    const panel = document.getElementById('mj-repos-vote-panel');
+    if (panel) panel.style.display = 'block';
+    const titreEl = document.getElementById('mj-repos-titre');
+    if (titreEl) titreEl.textContent =
+      `${data.type==='court'?'🌙':'💤'} ${data.demandeur_nom} — Repos ${data.type==='court'?'Court':'Long'}`;
+
+    const nbOk  = (data.votes||[]).filter(v => v.reponse==='ok').length;
+    const nbNon = (data.votes||[]).filter(v => v.reponse==='non').length;
+    const nbAtt = (data.votes||[]).length - nbOk - nbNon;
+    const scEl = document.getElementById('mj-repos-scores');
+    if (scEl) scEl.textContent = `Votes : ✅ ${nbOk}  ❌ ${nbNon}  ⏳ ${nbAtt}`;
+
+    const votesEl = document.getElementById('mj-repos-votes');
+    if (votesEl) votesEl.innerHTML = (data.votes||[]).map(v => `
+      <div class="vote-item">
+        <span class="v-nom">${escapeHtml(v.nom)}</span>
+        <span class="v-rep ${v.reponse||'att'}">${v.reponse==='ok'?'✅':v.reponse==='non'?'❌':'⏳'}</span>
+      </div>`).join('') || '<div style="color:#555;font-size:0.72rem;">Aucun vote</div>';
+
+    // Timer
+    if (data.timer_expire && !_mjTimerInterval) {
+      _mjTimerInterval = setInterval(() => {
+        const restant = Math.max(0, Math.floor((new Date(data.timer_expire) - new Date()) / 1000));
+        const el = document.getElementById('mj-repos-timer');
+        if (el) { el.textContent = `⏱️ ${String(Math.floor(restant/60)).padStart(2,'0')}:${String(restant%60).padStart(2,'0')}`; el.style.display='block'; }
+        if (restant <= 0) { clearInterval(_mjTimerInterval); _mjTimerInterval = null; }
+      }, 1000);
+    }
+  } catch(e) { /* silencieux */ }
+}
+
+async function validerReposMJ() {
+  if (!_reposActifMJId) return;
+  try {
+    await fetch(`${API}/Repos/${_reposActifMJId}/valider`, { method:'PUT', headers: authHeaders() });
+    await fetch(`${API}/Repos/${_reposActifMJId}/appliquer`, { method:'POST', headers: authHeaders() });
+    const panel = document.getElementById('mj-repos-vote-panel');
+    if (panel) panel.style.display = 'none';
+    afficherResultatReposMJ('✅ Repos validé et appliqué à tous !', 'succes');
+    _reposActifMJId = null;
+    await chargerJournal();
+  } catch(e) { console.error(e); }
+}
+window.validerReposMJ = validerReposMJ;
+
+async function refuserReposMJ() {
+  if (!_reposActifMJId) return;
+  try {
+    await fetch(`${API}/Repos/${_reposActifMJId}/refuser`, { method:'PUT', headers: authHeaders() });
+    const panel = document.getElementById('mj-repos-vote-panel');
+    if (panel) panel.style.display = 'none';
+    afficherResultatReposMJ('❌ Repos refusé.', 'echec');
+    _reposActifMJId = null;
+  } catch(e) { console.error(e); }
+}
+window.refuserReposMJ = refuserReposMJ;
+
+async function majTimerReposMJ() {
+  if (!_reposActifMJId) return;
+  const timer = parseInt(document.getElementById('mj-repos-timer-sel')?.value) || 0;
+  try {
+    await fetch(`${API}/Repos/${_reposActifMJId}/timer`, {
+      method:'PUT', headers: authHeaders(), body: JSON.stringify({ timer_secondes: timer })
+    });
+  } catch(e) { /* silencieux */ }
+}
+window.majTimerReposMJ = majTimerReposMJ;
+
+async function imposerReposMJ(type) {
+  if (!sessionId) return;
+  try {
+    const r = await fetch(`${API}/Repos/imposer`, {
+      method:'POST', headers: authHeaders(),
+      body: JSON.stringify({ session_id: sessionId, type })
+    });
+    const data = await r.json();
+    afficherResultatReposMJ(
+      `${type==='court'?'🌙':'💤'} Repos ${type==='court'?'court':'long'} imposé à ${data.nb_personnages||0} personnage(s) !`,
+      'succes'
+    );
+  } catch(e) { afficherResultatReposMJ(`❌ ${e.message}`, 'echec'); }
+}
+window.imposerReposMJ = imposerReposMJ;
+
+function afficherResultatReposMJ(msg, type) {
+  const el = document.getElementById('mj-repos-result');
+  if (!el) return;
+  el.innerHTML = `<div class="repos-result-msg ${type}" style="font-size:0.76rem;">${msg}</div>`;
+  setTimeout(() => { el.innerHTML=''; }, 5000);
+}
+
 // ─── INTÉGRATION JOURNAL DANS AUTO-REFRESH ────────────────────
 
 const _origRefresh = refresh;
 async function refresh() {
   await _origRefresh();
   await chargerJournal();
+  await chargerVoteReposMJ();
 }
 
 // Exposer pour les onclick HTML inline

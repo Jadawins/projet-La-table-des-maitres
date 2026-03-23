@@ -121,6 +121,7 @@ function renderAll() {
   renderCaracteristiques();
   renderSauvegardes();
   renderCompetences();
+  renderRessources();
   renderAttaques();
   renderSorts();
   migrerMonnaieDepuisEquipement();
@@ -514,6 +515,344 @@ async function supprimerPersonnage() {
     location.href = 'mes-personnages.html';
   } catch (e) { alert('Erreur : ' + e.message); }
 }
+
+// ═══════════════════════════════════════════════════════════════
+//  RESSOURCES DE CLASSE
+// ═══════════════════════════════════════════════════════════════
+
+const RESSOURCES_CONFIG = {
+  barbare:     [{ id:'rages',            nom:'Rages',                  icone:'🔥', maxFn: niv => niv>=17?6:niv>=12?5:niv>=6?4:niv>=3?3:2, reset:'long' }],
+  druide:      [{ id:'formes_sauvages',  nom:'Formes sauvages',        icone:'🐺', maxFn: ()  => 2,                                          reset:'court' }],
+  moine:       [{ id:'ki',               nom:'Points de ki',           icone:'✨', maxFn: niv => niv,                                        reset:'court' }],
+  paladin:     [
+    { id:'channel_divinite', nom:'Channel Divinité', icone:'⚜️', maxFn: () => 2,       reset:'court' },
+    { id:'imposition_mains', nom:'Imposition des mains', icone:'🤲', maxFn: niv => niv*5, reset:'long' }
+  ],
+  clerc:       [{ id:'channel_divinite', nom:'Channel Divinité',       icone:'✝️', maxFn: () => 2,                                           reset:'court' }],
+  ensorceleur: [{ id:'sorcellerie',      nom:'Points de sorcellerie',  icone:'💜', maxFn: niv => niv,                                        reset:'long' }],
+  occultiste:  [{ id:'pacte',            nom:'Emplacements de Pacte',  icone:'📜', maxFn: niv => niv>=9?4:niv>=5?3:niv>=3?2:1,              reset:'court' }],
+  guerrier:    [
+    { id:'second_souffle', nom:'Second Souffle', icone:'🛡️', maxFn: () => 1,          reset:'court' },
+    { id:'action_surge',   nom:'Action Surge',   icone:'⚡', maxFn: niv => niv>=17?2:1, reset:'court' }
+  ],
+  barde:       [{ id:'inspiration',      nom:'Inspiration bardique',   icone:'🎵', maxFn: () => Math.max(1, getMod('CHA')), reset:'court' }],
+  magicien:    [{ id:'recuperation',     nom:'Récupération arcanique', icone:'📚', maxFn: niv => Math.max(1, Math.ceil(niv/2)), reset:'court' }]
+};
+
+function getConfigsClasse() {
+  const classe = (perso.classe || '').toLowerCase();
+  return RESSOURCES_CONFIG[classe] || [];
+}
+
+function getRessourceMax(cfg) {
+  const niv = perso.niveau || 1;
+  return cfg.maxFn(niv, perso);
+}
+
+function renderRessources() {
+  const configs = getConfigsClasse();
+  const section = document.getElementById('ressources-section');
+  const list    = document.getElementById('ressources-list');
+  if (!configs.length) { if (section) section.style.display = 'none'; return; }
+  if (section) section.style.display = 'block';
+
+  const classe  = (perso.classe || '').toLowerCase();
+  const resData = perso.ressources_classe || {};
+
+  list.innerHTML = configs.map(cfg => {
+    const maxVal = getRessourceMax(cfg);
+    const cur    = resData[cfg.id]?.actuel ?? maxVal;
+    const safe   = Math.min(Math.max(0, cur), maxVal);
+    const displayMax = maxVal > 20 ? 0 : maxVal;
+    const cases = displayMax > 0
+      ? Array.from({ length: maxVal }, (_, i) =>
+          `<div class="ressource-case ${classe} ${i < safe ? 'pleine' : ''}" onclick="toggleRessourceCase('${cfg.id}',${i},${maxVal})"></div>`
+        ).join('')
+      : '';
+
+    return `
+    <div class="ressource-row">
+      <span class="ressource-icone">${cfg.icone}</span>
+      <span class="ressource-nom">${cfg.nom}</span>
+      ${displayMax > 0 ? `<div class="ressource-cases">${cases}</div>` : ''}
+      <span class="ressource-chiffre">${safe}/${maxVal}</span>
+      <div class="ressource-controls">
+        <button class="res-btn moins" onclick="modifierRessource('${cfg.id}',-1,${maxVal})">−</button>
+        <button class="res-btn plus"  onclick="modifierRessource('${cfg.id}',+1,${maxVal})">+</button>
+      </div>
+      <span class="res-badge-reset ${cfg.reset}">${cfg.reset === 'court' ? 'Court' : 'Long'}</span>
+    </div>`;
+  }).join('');
+}
+
+function toggleRessourceCase(id, idx, maxVal) {
+  if (!perso.ressources_classe) perso.ressources_classe = {};
+  const cur = perso.ressources_classe[id]?.actuel ?? maxVal;
+  perso.ressources_classe[id] = { actuel: cur > idx ? idx : idx + 1, max: maxVal };
+  sauvegarderRessource(id, perso.ressources_classe[id].actuel);
+  renderRessources();
+}
+
+function modifierRessource(id, delta, maxVal) {
+  if (!perso.ressources_classe) perso.ressources_classe = {};
+  const cur  = perso.ressources_classe[id]?.actuel ?? maxVal;
+  const nouv = Math.max(0, Math.min(maxVal, cur + delta));
+  perso.ressources_classe[id] = { actuel: nouv, max: maxVal };
+  sauvegarderRessource(id, nouv);
+  renderRessources();
+}
+
+async function sauvegarderRessource(id, valeur) {
+  try {
+    await fetch(`${API}/Personnages/${persoId}/ressources`, {
+      method: 'PUT', headers: authHeaders(),
+      body: JSON.stringify({ ressource: id, valeur })
+    });
+  } catch(e) { /* silencieux */ }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  SYSTÈME DE REPOS
+// ═══════════════════════════════════════════════════════════════
+
+let _reposActifId  = null;
+let _reposActif    = null;
+let _reposType     = null;
+let _timerInterval = null;
+
+function proposerRepos(type) {
+  _reposType = type;
+  const titrEl = document.getElementById('proposer-repos-titre');
+  if (titrEl) titrEl.textContent = type === 'court' ? '🌙 Proposer un Repos Court' : '💤 Proposer un Repos Long';
+  const effets = type === 'court'
+    ? ['Dépenser des dés de vie pour récupérer des PV', 'Reset ressources court (Formes sauvages, Ki, Channel, Second Souffle…)', 'NE reset PAS les emplacements de sorts (sauf Occultiste)']
+    : ['Récupération complète des PV', 'Récupération de la moitié des dés de vie', 'Reset de toutes les ressources', 'Reset de tous les emplacements de sorts', 'Réduction de 1 niveau d\'Épuisement'];
+  const efftEl = document.getElementById('proposer-repos-effets');
+  if (efftEl) efftEl.innerHTML = effets.map(e => `<li>${e}</li>`).join('');
+  document.getElementById('modal-proposer-repos').classList.remove('hidden');
+}
+
+async function confirmerProposerRepos() {
+  const sessionId = getSessionIdFiche();
+  if (!sessionId) { alert('Aucune session active. Ouvrez la fiche depuis une session.'); return; }
+  const mode  = document.getElementById('repos-mode').value;
+  const timer = parseInt(document.getElementById('repos-timer').value) || 0;
+  try {
+    const r = await fetch(`${API}/Repos`, {
+      method: 'POST', headers: authHeaders(),
+      body: JSON.stringify({ session_id: sessionId, type: _reposType, demandeur_nom: perso.nom || 'Joueur', mode_validation: mode, timer_secondes: timer })
+    });
+    if (!r.ok) throw new Error((await r.json()).error);
+    const data = await r.json();
+    _reposActifId = data._id; _reposActif = data;
+    document.getElementById('modal-proposer-repos').classList.add('hidden');
+    afficherResultatRepos('✅ Vote créé ! En attente des réponses…', 'succes');
+  } catch(e) {
+    afficherResultatRepos(`❌ ${e.message}`, 'echec');
+    document.getElementById('modal-proposer-repos').classList.add('hidden');
+  }
+}
+
+async function verifierVoteRepos() {
+  const sessionId = getSessionIdFiche();
+  if (!sessionId) return;
+  try {
+    const r = await fetch(`${API}/Repos/actif/${sessionId}`, { headers: authHeaders() });
+    if (!r.ok) {
+      masquerNotifRepos();
+      if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+      if (_reposActifId) { _reposActifId = null; _reposActif = null; }
+      return;
+    }
+    const data = await r.json();
+    _reposActifId = data._id; _reposActif = data;
+
+    const userId = localStorage.getItem('userId');
+    const dejaVote = (data.votes || []).find(v => v.user_id === userId);
+
+    const badge = document.getElementById('repos-notif-badge');
+    if (badge) {
+      badge.textContent = `⏰ ${data.demandeur_nom} propose un Repos ${data.type === 'court' ? 'Court' : 'Long'}`;
+      badge.classList.add('visible');
+    }
+    if (data.timer_expire && !_timerInterval) demarrerTimerRepos(data.timer_expire);
+
+    // Ouvrir modal si pas encore voté et pas l'initiateur
+    if (!dejaVote && data.demandeur_id !== userId) {
+      const modal = document.getElementById('modal-vote-repos');
+      if (modal && modal.classList.contains('hidden')) ouvrirModalVoteRepos();
+    }
+
+    // Si résolu → appliquer
+    if (data.statut === 'accepte' || data.statut === 'force') {
+      await appliquerEffetsRepos(data);
+      masquerNotifRepos();
+    } else if (data.statut === 'refuse' || data.statut === 'expire') {
+      masquerNotifRepos();
+    }
+  } catch(e) { /* silencieux */ }
+}
+
+function masquerNotifRepos() {
+  document.getElementById('repos-notif-badge')?.classList.remove('visible');
+}
+
+function demarrerTimerRepos(expireDate) {
+  if (_timerInterval) clearInterval(_timerInterval);
+  _timerInterval = setInterval(() => {
+    const restant = Math.max(0, Math.floor((new Date(expireDate) - new Date()) / 1000));
+    const el = document.getElementById('vote-repos-timer');
+    if (el) { el.textContent = `⏱️ ${String(Math.floor(restant/60)).padStart(2,'0')}:${String(restant%60).padStart(2,'0')}`; el.style.display='block'; }
+    if (restant <= 0) { clearInterval(_timerInterval); _timerInterval = null; }
+  }, 1000);
+}
+
+function ouvrirModalVoteRepos() {
+  if (!_reposActif) return;
+  const data = _reposActif;
+  const userId = localStorage.getItem('userId');
+  document.getElementById('vote-repos-titre').textContent =
+    `${data.type==='court'?'🌙':'💤'} ${data.demandeur_nom} propose un Repos ${data.type==='court'?'Court':'Long'}`;
+  document.getElementById('vote-repos-effets').textContent =
+    data.type==='court' ? '• Dés de vie → PV  • Reset ressources court' : '• PV max  • Toutes ressources  • Sorts reset';
+  const liste = document.getElementById('vote-repos-liste');
+  liste.innerHTML = (data.votes||[]).map(v => `
+    <div class="vote-item"><span class="v-nom">${esc(v.nom)}</span>
+    <span class="v-rep ${v.reponse||'att'}">${v.reponse==='ok'?'✅ OK':v.reponse==='non'?'❌ Non':'⏳ ?'}</span></div>`
+  ).join('') || '<div style="color:#555;font-size:0.75rem;">Aucun vote pour l\'instant</div>';
+  if (data.timer_expire) demarrerTimerRepos(data.timer_expire);
+  const dejaVote = (data.votes||[]).find(v => v.user_id === userId);
+  document.querySelectorAll('#modal-vote-repos .vote-btn').forEach(b => b.style.display = dejaVote ? 'none' : '');
+  document.getElementById('modal-vote-repos').classList.remove('hidden');
+}
+
+async function voterRepos(reponse) {
+  if (!_reposActifId) return;
+  const userId = localStorage.getItem('userId');
+  try {
+    const r = await fetch(`${API}/Repos/${_reposActifId}/vote`, {
+      method: 'PUT', headers: authHeaders(),
+      body: JSON.stringify({ user_id: userId, nom: perso.nom||'Joueur', reponse })
+    });
+    const data = await r.json();
+    document.getElementById('modal-vote-repos').classList.add('hidden');
+    masquerNotifRepos();
+    if (data.statut === 'accepte' || data.statut === 'force') await appliquerEffetsRepos(_reposActif);
+    else afficherResultatRepos(`Vote : ${reponse==='ok'?'✅ OK':'❌ Non'}`, reponse==='ok'?'succes':'echec');
+  } catch(e) { console.error(e); }
+}
+
+async function appliquerEffetsRepos(data) {
+  if (!data) return;
+  const isLong = data.type === 'long';
+  if (isLong) {
+    perso.combat = perso.combat || {};
+    const pvMax = perso.combat.pv_max || 10;
+    perso.combat.pv_actuels = pvMax;
+    document.getElementById('pv-actuels').value = pvMax;
+    updatePVBar();
+    const dvTotal = perso.combat.des_vie?.total || (perso.niveau||1);
+    const dvRest  = perso.combat.des_vie?.restants ?? dvTotal;
+    if (!perso.combat.des_vie) perso.combat.des_vie = {};
+    perso.combat.des_vie.restants = Math.min(dvTotal, dvRest + Math.max(1, Math.floor(dvTotal/2)));
+    const dvEl = document.getElementById('dv-restants');
+    if (dvEl) dvEl.value = perso.combat.des_vie.restants;
+    if (perso.sorts?.emplacements?.length) perso.sorts.emplacements = perso.sorts.emplacements.map(e => ({...e, utilises:0}));
+    renderSorts();
+    flashPV('soin');
+    afficherResultatRepos('💤 Repos long ! Toutes ressources récupérées.', 'succes');
+  } else {
+    ouvrirModalDVCourt();
+    afficherResultatRepos('🌙 Repos court ! Ressources récupérées.', 'succes');
+  }
+  resetRessources(isLong ? 'long' : 'court');
+  _reposActifId = null; _reposActif = null;
+  const payload = {};
+  if (isLong) {
+    payload['combat.pv_actuels'] = perso.combat.pv_actuels;
+    payload['combat.des_vie']    = perso.combat.des_vie;
+    if (perso.sorts?.emplacements) payload['sorts.emplacements'] = perso.sorts.emplacements;
+  }
+  payload['ressources_classe'] = perso.ressources_classe;
+  try {
+    await fetch(`${API}/Personnages/${persoId}`, { method:'PUT', headers:authHeaders(), body:JSON.stringify(payload) });
+  } catch(e) { /* silencieux */ }
+}
+
+function resetRessources(type) {
+  const configs = getConfigsClasse();
+  if (!perso.ressources_classe) perso.ressources_classe = {};
+  for (const cfg of configs) {
+    if (type === 'long' || cfg.reset === 'court') {
+      const maxVal = getRessourceMax(cfg);
+      perso.ressources_classe[cfg.id] = { actuel: maxVal, max: maxVal };
+    }
+  }
+  renderRessources();
+}
+
+function ouvrirModalDVCourt() {
+  const combat = perso.combat || {};
+  const dvTotal = combat.des_vie?.total || (perso.niveau||1);
+  const dvRest  = combat.des_vie?.restants ?? dvTotal;
+  const dvType  = combat.des_vie?.type || 'd8';
+  document.getElementById('dv-court-info').textContent =
+    `Dés de vie : ${dvRest}/${dvTotal} (${dvType}). Chaque dé : 1${dvType} + ${fmtMod(getMod('CON'))} PV`;
+  document.getElementById('dv-depenser').value = Math.min(1, dvRest);
+  document.getElementById('dv-pv-gain').textContent = '';
+  document.getElementById('modal-dv-court').classList.remove('hidden');
+}
+
+function calculerSoinDV() {
+  const nb    = parseInt(document.getElementById('dv-depenser').value) || 0;
+  const faces = parseInt((perso.combat?.des_vie?.type||'d8').replace('d','')) || 8;
+  const moyen = Math.floor((faces/2+0.5)*nb + getMod('CON')*nb);
+  document.getElementById('dv-pv-gain').textContent = `≈ +${Math.max(0,moyen)} PV (moy.)`;
+}
+
+function appliquerDVCourt() {
+  const nb    = parseInt(document.getElementById('dv-depenser').value) || 0;
+  const combat = perso.combat || {};
+  const dvTotal = combat.des_vie?.total || (perso.niveau||1);
+  const dvRest  = combat.des_vie?.restants ?? dvTotal;
+  const faces   = parseInt((combat.des_vie?.type||'d8').replace('d','')) || 8;
+  if (nb > dvRest) { alert(`Vous n'avez que ${dvRest} dé(s) de vie.`); return; }
+  let total = 0;
+  for (let i=0;i<nb;i++) total += Math.floor(Math.random()*faces)+1;
+  total += getMod('CON')*nb;
+  total = Math.max(0, total);
+  const pvMax  = combat.pv_max || 10;
+  const pvNouv = Math.min(pvMax, (combat.pv_actuels ?? pvMax) + total);
+  perso.combat.pv_actuels = pvNouv;
+  if (!perso.combat.des_vie) perso.combat.des_vie = {};
+  perso.combat.des_vie.restants = dvRest - nb;
+  document.getElementById('pv-actuels').value = pvNouv;
+  const dvEl = document.getElementById('dv-restants');
+  if (dvEl) dvEl.value = dvRest - nb;
+  updatePVBar();
+  flashPV('soin');
+  markDirty('combat.pv_actuels', pvNouv);
+  markDirty('combat.des_vie', perso.combat.des_vie);
+  document.getElementById('modal-dv-court').classList.add('hidden');
+  afficherResultatRepos(`🌙 ${nb}${combat.des_vie?.type||'d8'} lancé(s) : +${total} PV → ${pvNouv}/${pvMax}`, 'succes');
+}
+
+function afficherResultatRepos(msg, type) {
+  const el = document.getElementById('repos-result');
+  if (!el) return;
+  el.innerHTML = `<div class="repos-result-msg ${type}">${msg}</div>`;
+  setTimeout(() => { el.innerHTML=''; }, 6000);
+}
+
+window.proposerRepos          = proposerRepos;
+window.confirmerProposerRepos = confirmerProposerRepos;
+window.ouvrirModalVoteRepos   = ouvrirModalVoteRepos;
+window.voterRepos             = voterRepos;
+window.ouvrirModalDVCourt     = ouvrirModalDVCourt;
+window.calculerSoinDV         = calculerSoinDV;
+window.appliquerDVCourt       = appliquerDVCourt;
+window.modifierRessource      = modifierRessource;
+window.toggleRessourceCase    = toggleRessourceCase;
 
 // ─── COMBAT : ATTAQUES AMÉLIORÉES (avec bouton Attaquer) ──────
 
@@ -1066,7 +1405,8 @@ function demarrerCombatPolling() {
 
   // Lancer le polling
   refreshCombatFiche();
-  _refreshCombatTimer = setInterval(refreshCombatFiche, 5000);
+  verifierVoteRepos();
+  _refreshCombatTimer = setInterval(() => { refreshCombatFiche(); verifierVoteRepos(); }, 5000);
   window.addEventListener('beforeunload', () => clearInterval(_refreshCombatTimer));
 }
 

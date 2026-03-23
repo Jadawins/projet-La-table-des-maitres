@@ -140,4 +140,35 @@ router.delete('/:id', async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
+// ─── PUT /:id/ressources — mettre à jour une ressource ────────
+router.put('/:id/ressources', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+
+  const { ressource, valeur, ressources_completes } = req.body;
+  try {
+    let oid;
+    try { oid = new ObjectId(req.params.id); }
+    catch { return res.status(400).json({ error: 'ID invalide' }); }
+
+    const update = { derniere_modification: new Date() };
+    if (ressources_completes) {
+      update['ressources_classe'] = ressources_completes;
+    } else if (ressource && valeur !== undefined) {
+      update[`ressources_classe.${ressource}.actuel`] = parseInt(valeur);
+    } else {
+      return res.status(400).json({ error: 'ressource+valeur ou ressources_completes requis' });
+    }
+
+    const result = await withDb(db =>
+      db.collection('personnages').updateOne(
+        { _id: oid, user_id: userId },
+        { $set: update }
+      )
+    );
+    if (!result.matchedCount) return res.status(403).json({ error: 'Personnage introuvable ou non autorisé' });
+    res.json({ success: true });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
 module.exports = router;

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ecran-mj.css">
   <link rel="stylesheet" href="css/combat.css">
+  <link rel="stylesheet" href="css/ressources.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -97,6 +98,40 @@
             <div class="resultat-detail" id="resultat-detail"></div>
           </div>
           <div class="historique-des" id="historique-des"></div>
+        </div>
+
+        <!-- Repos -->
+        <div class="notes-mj-section mj-repos-section" style="margin-bottom:0.75rem;">
+          <h3><i class="fa-solid fa-bed"></i> Repos</h3>
+          <div id="mj-repos-vote-panel" class="repos-vote-panel" style="display:none;">
+            <div class="rv-titre" id="mj-repos-titre"></div>
+            <div class="rv-timer" id="mj-repos-timer" style="display:none;"></div>
+            <div class="rv-scores" id="mj-repos-scores"></div>
+            <div class="votes-liste" id="mj-repos-votes"></div>
+            <div style="display:flex;gap:0.5rem;margin-top:0.4rem;flex-wrap:wrap;align-items:center;">
+              <label style="font-size:0.68rem;color:#888;">Mode :</label>
+              <select id="mj-repos-mode" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.2rem;border-radius:4px;font-size:0.7rem;">
+                <option value="majorite">Majorité</option>
+                <option value="unanimite">Unanimité</option>
+              </select>
+              <label style="font-size:0.68rem;color:#888;">Timer :</label>
+              <select id="mj-repos-timer-sel" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.2rem;border-radius:4px;font-size:0.7rem;" onchange="majTimerReposMJ()">
+                <option value="0">Sans limite</option>
+                <option value="60">1 min</option>
+                <option value="120">2 min</option>
+                <option value="300">5 min</option>
+              </select>
+            </div>
+            <div class="mj-repos-btn-row">
+              <button class="mj-repos-btn valider" onclick="validerReposMJ()">✅ Valider</button>
+              <button class="mj-repos-btn refuser" onclick="refuserReposMJ()">❌ Refuser</button>
+            </div>
+          </div>
+          <div class="mj-repos-btn-row" style="margin-top:0.4rem;">
+            <button class="mj-repos-btn imposer-court" onclick="imposerReposMJ('court')">🌙 Imposer Repos Court</button>
+            <button class="mj-repos-btn imposer-long"  onclick="imposerReposMJ('long')">💤 Imposer Repos Long</button>
+          </div>
+          <div id="mj-repos-result" style="margin-top:0.4rem;"></div>
         </div>
 
         <!-- Journal de combat -->

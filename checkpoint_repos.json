@@ -1,0 +1,17 @@
+{
+  "derniere_mise_a_jour": "2026-03-23T12:00:00",
+  "statut": "termine",
+  "etapes": {
+    "ressources_classe_fiche": "termine",
+    "boutons_repos_fiche": "termine",
+    "systeme_vote_repos": "termine",
+    "timer_vote": "termine",
+    "ecran_mj_repos": "termine",
+    "effets_repos_court": "termine",
+    "effets_repos_long": "termine",
+    "routes_api": "termine",
+    "notifications": "termine",
+    "css_ressources": "termine"
+  },
+  "derniere_etape": "edito_mis_a_jour"
+}

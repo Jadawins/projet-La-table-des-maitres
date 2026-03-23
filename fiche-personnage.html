@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/personnage.css">
   <link rel="stylesheet" href="css/combat.css">
+  <link rel="stylesheet" href="css/ressources.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -142,6 +143,12 @@
       </button>
     </div>
 
+    <!-- Ressources de classe -->
+    <div class="fiche-section" id="ressources-section" style="display:none;">
+      <div class="fiche-section-title"><i class="fa-solid fa-bolt"></i> Ressources</div>
+      <div class="ressources-section" id="ressources-list"></div>
+    </div>
+
     <!-- Sorts (si caster) -->
     <div class="fiche-section" id="sorts-section" style="display:none;">
       <div class="fiche-section-title"><i class="fa-solid fa-hat-wizard"></i> Incantation</div>
@@ -211,6 +218,20 @@
       <textarea class="trait-textarea" id="historique-field" rows="3" onchange="markDirty('historique_perso',this.value)"></textarea>
     </div>
 
+    <!-- Repos -->
+    <div class="fiche-section">
+      <div class="fiche-section-title"><i class="fa-solid fa-bed"></i> Repos</div>
+      <div class="repos-buttons">
+        <button class="btn-repos court" id="btn-repos-court" onclick="proposerRepos('court')" title="Proposer un repos court à l'équipe">
+          🌙 Repos Court
+        </button>
+        <button class="btn-repos long" id="btn-repos-long" onclick="proposerRepos('long')" title="Proposer un repos long à l'équipe">
+          💤 Repos Long
+        </button>
+      </div>
+      <div id="repos-result" style="margin-top:0.5rem;"></div>
+    </div>
+
     <!-- Langues & Maîtrises -->
     <div class="fiche-section">
       <div class="fiche-section-title"><i class="fa-solid fa-language"></i> Langues &amp; Maîtrises</div>
@@ -218,6 +239,77 @@
       <div id="maitrises-section" style="font-size:0.75rem;color:#888;line-height:1.5;"></div>
     </div>
 
+  </div>
+</div>
+
+<!-- BADGE NOTIFICATION REPOS -->
+<div id="repos-notif-badge" onclick="ouvrirModalVoteRepos()">⏰ Chargement…</div>
+
+<!-- MODAL : PROPOSER UN REPOS -->
+<div class="modal-overlay hidden" id="modal-proposer-repos">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('modal-proposer-repos').classList.add('hidden')">✕</button>
+    <div class="modal-title" id="proposer-repos-titre">🌙 Proposer un Repos Court</div>
+    <div class="vote-repos-info">
+      <ul class="repos-effet-list" id="proposer-repos-effets"></ul>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.5rem;">
+      <div class="form-field">
+        <label style="font-size:0.72rem;color:#888;">Mode de vote</label>
+        <select id="repos-mode" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.3rem;border-radius:5px;width:100%;font-size:0.78rem;">
+          <option value="majorite">Majorité</option>
+          <option value="unanimite">Unanimité</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label style="font-size:0.72rem;color:#888;">Timer</label>
+        <select id="repos-timer" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.3rem;border-radius:5px;width:100%;font-size:0.78rem;">
+          <option value="0">Sans limite</option>
+          <option value="60">1 minute</option>
+          <option value="120" selected>2 minutes</option>
+          <option value="300">5 minutes</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="document.getElementById('modal-proposer-repos').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-sm-primary" id="btn-confirmer-repos" onclick="confirmerProposerRepos()">Proposer</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL : VOTE REPOS (reçu par les autres joueurs) -->
+<div class="modal-overlay hidden" id="modal-vote-repos">
+  <div class="modal-box">
+    <div class="modal-title" id="vote-repos-titre"></div>
+    <div class="vote-repos-info">
+      <div id="vote-repos-timer" class="vote-timer" style="display:none;"></div>
+      <div id="vote-repos-effets" style="font-size:0.78rem;color:#aaa;margin-bottom:0.5rem;"></div>
+      <div class="votes-liste" id="vote-repos-liste"></div>
+    </div>
+    <div class="vote-btns">
+      <button class="vote-btn ok"  onclick="voterRepos('ok')">✅ OK</button>
+      <button class="vote-btn non" onclick="voterRepos('non')">❌ Non</button>
+    </div>
+    <div id="vote-repos-result" style="margin-top:0.5rem;"></div>
+  </div>
+</div>
+
+<!-- MODAL : DÉPENSER DÉS DE VIE (repos court) -->
+<div class="modal-overlay hidden" id="modal-dv-court">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('modal-dv-court').classList.add('hidden')">✕</button>
+    <div class="modal-title">🌙 Repos Court — Dés de vie</div>
+    <div style="font-size:0.82rem;color:#aaa;margin-bottom:0.6rem;" id="dv-court-info"></div>
+    <div class="form-field">
+      <label>Dés de vie à dépenser :</label>
+      <input type="number" id="dv-depenser" min="0" value="1" style="width:70px;" oninput="calculerSoinDV()" />
+      <span style="font-size:0.72rem;color:#888;" id="dv-pv-gain"></span>
+    </div>
+    <div class="modal-actions" style="margin-top:0.6rem;">
+      <button class="btn-secondary" onclick="document.getElementById('modal-dv-court').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-sm-primary" style="background:#14532d;border-color:#166534;" onclick="appliquerDVCourt()">Récupérer PV</button>
+    </div>
   </div>
 </div>
 
