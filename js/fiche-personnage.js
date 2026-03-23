@@ -321,23 +321,7 @@ function toggleInspiration() {
   markDirty('inspiration', perso.inspiration);
 }
 
-// ─── ATTAQUES ─────────────────────────────────────────────────
-
-function renderAttaques() {
-  const tbody = document.getElementById('attaques-tbody');
-  const attacks = perso.attaques || [];
-  if (!attacks.length) {
-    tbody.innerHTML = `<tr><td colspan="4" style="color:#555;font-size:0.78rem;text-align:center;padding:0.5rem;">Aucune attaque</td></tr>`;
-    return;
-  }
-  tbody.innerHTML = attacks.map((a, i) => `
-    <tr>
-      <td>${esc(a.nom)}</td>
-      <td class="atk-bonus">${esc(a.bonus_attaque)}</td>
-      <td class="atk-degats">${esc(a.degats)} <span style="color:#888;font-size:0.65rem;">${esc(a.type||'')}</span></td>
-      <td><button class="btn-icon" style="color:#555;background:none;border:none;cursor:pointer;font-size:0.75rem;" onclick="supprimerAttaque(${i})">✕</button></td>
-    </tr>`).join('');
-}
+// ─── ATTAQUES (voir section COMBAT plus bas pour renderAttaques) ─
 
 function ouvrirModalAttaque() {
   ['atk-nom','atk-bonus','atk-degats','atk-type'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
@@ -386,60 +370,7 @@ function toggleMortDot(el) {
   el.classList.toggle('used');
 }
 
-// ─── SORTS ────────────────────────────────────────────────────
-
-function renderSorts() {
-  const sorts = perso.sorts || {};
-  if (!sorts.caracteristique_incantation) {
-    document.getElementById('sorts-section').style.display = 'none';
-    return;
-  }
-  document.getElementById('sorts-section').style.display = 'block';
-  const car = sorts.caracteristique_incantation;
-  const dd = sorts.dd_sorts || (8 + getBM() + getMod(car));
-  const bonus = sorts.bonus_attaque_sort || (getBM() + getMod(car));
-  document.getElementById('sort-stats-row').innerHTML = `
-    <span><strong style="color:#e0d0ff;">${car}</strong> — Caractéristique d'incantation</span>
-    <span>DD sorts : <strong style="color:#e0d0ff;">${dd}</strong></span>
-    <span>Bonus attaque : <strong style="color:#e0d0ff;">${fmtMod(bonus)}</strong></span>`;
-
-  // Emplacements
-  const empl = sorts.emplacements || [];
-  const slots = document.getElementById('spell-slots');
-  if (!empl.length) {
-    slots.innerHTML = '<span style="color:#555;font-size:0.75rem;">Aucun emplacement défini</span>';
-  } else {
-    slots.innerHTML = empl.map((e, i) => {
-      const dots = Array.from({ length: e.total }, (_, j) => `
-        <div class="slot-dot ${j < e.utilises ? 'used' : 'available'}"
-             onclick="toggleSlot(${i},${j})"></div>`).join('');
-      return `<div class="spell-slot-col">
-        <div class="slot-level-label">Niv.${e.niveau||i+1}</div>
-        <div class="slot-dots">${dots}</div>
-      </div>`;
-    }).join('');
-  }
-
-  // Sorts connus par niveau
-  const connus = sorts.sorts_connus || [];
-  const parNiveau = {};
-  connus.forEach(s => {
-    const niv = s.niveau ?? 0;
-    if (!parNiveau[niv]) parNiveau[niv] = [];
-    parNiveau[niv].push(s);
-  });
-  const sortsEl = document.getElementById('sorts-connus-list');
-  if (!connus.length) {
-    sortsEl.innerHTML = '<span style="color:#555;font-size:0.78rem;">Aucun sort connu</span>';
-    return;
-  }
-  sortsEl.innerHTML = Object.keys(parNiveau).sort((a,b)=>+a-+b).map(niv => `
-    <div class="sorts-niveau-group">
-      <div class="sorts-niveau-header">${niv == 0 ? 'Sorts mineurs' : `Niveau ${niv}`}</div>
-      ${parNiveau[niv].map(s => `
-        <span class="sort-chip">${esc(s.nom)}</span>`).join('')}
-    </div>`).join('');
-}
+// ─── SORTS (voir section COMBAT plus bas pour renderSorts) ────
 
 function toggleSlot(emplIdx, dotIdx) {
   const empl = perso.sorts?.emplacements;
@@ -584,6 +515,581 @@ async function supprimerPersonnage() {
   } catch (e) { alert('Erreur : ' + e.message); }
 }
 
+// ─── COMBAT : ATTAQUES AMÉLIORÉES (avec bouton Attaquer) ──────
+
+function renderAttaques() {
+  const tbody = document.getElementById('attaques-tbody');
+  const attacks = perso.attaques || [];
+  if (!attacks.length) {
+    tbody.innerHTML = `<tr><td colspan="5" style="color:#555;font-size:0.78rem;text-align:center;padding:0.5rem;">Aucune attaque</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = attacks.map((a, i) => `
+    <tr>
+      <td>${esc(a.nom)}</td>
+      <td class="atk-bonus">${esc(a.bonus_attaque)}</td>
+      <td class="atk-degats">${esc(a.degats)} <span style="color:#888;font-size:0.65rem;">${esc(a.type||'')}</span></td>
+      <td>${combatActif ? `<button class="atk-btn-attaquer" onclick="ouvrirAttaqueCombat(${i})">⚔️</button>` : ''}</td>
+      <td><button class="btn-icon" style="color:#555;background:none;border:none;cursor:pointer;font-size:0.75rem;" onclick="supprimerAttaque(${i})">✕</button></td>
+    </tr>`).join('');
+}
+
+// ─── SORTS AMÉLIORÉS (avec bouton Lancer) ────────────────────
+
+function renderSorts() {
+  const sorts = perso.sorts || {};
+  if (!sorts.caracteristique_incantation) {
+    document.getElementById('sorts-section').style.display = 'none';
+    return;
+  }
+  document.getElementById('sorts-section').style.display = 'block';
+  const car = sorts.caracteristique_incantation;
+  const dd = sorts.dd_sorts || (8 + getBM() + getMod(car));
+  const bonus = sorts.bonus_attaque_sort || (getBM() + getMod(car));
+  document.getElementById('sort-stats-row').innerHTML = `
+    <span><strong style="color:#e0d0ff;">${car}</strong> — Caractéristique d'incantation</span>
+    <span>DD sorts : <strong style="color:#e0d0ff;">${dd}</strong></span>
+    <span>Bonus attaque : <strong style="color:#e0d0ff;">${fmtMod(bonus)}</strong></span>`;
+
+  // Emplacements
+  const empl = sorts.emplacements || [];
+  const slots = document.getElementById('spell-slots');
+  if (!empl.length) {
+    slots.innerHTML = '<span style="color:#555;font-size:0.75rem;">Aucun emplacement défini</span>';
+  } else {
+    slots.innerHTML = empl.map((e, i) => {
+      const dots = Array.from({ length: e.total }, (_, j) => `
+        <div class="slot-dot ${j < e.utilises ? 'used' : 'available'}"
+             onclick="toggleSlot(${i},${j})"></div>`).join('');
+      return `<div class="spell-slot-col">
+        <div class="slot-level-label">Niv.${e.niveau||i+1}</div>
+        <div class="slot-dots">${dots}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Sorts connus par niveau — avec bouton Lancer
+  const connus = sorts.sorts_connus || [];
+  const parNiveau = {};
+  connus.forEach(s => {
+    const niv = s.niveau ?? 0;
+    if (!parNiveau[niv]) parNiveau[niv] = [];
+    parNiveau[niv].push(s);
+  });
+  const sortsEl = document.getElementById('sorts-connus-list');
+  if (!connus.length) {
+    sortsEl.innerHTML = '<span style="color:#555;font-size:0.78rem;">Aucun sort connu</span>';
+    return;
+  }
+  sortsEl.innerHTML = Object.keys(parNiveau).sort((a,b)=>+a-+b).map(niv => `
+    <div class="sorts-niveau-group">
+      <div class="sorts-niveau-header">${niv == 0 ? 'Sorts mineurs' : `Niveau ${niv}`}</div>
+      ${parNiveau[niv].map(s => `
+        <div class="sort-row-item">
+          <span class="sort-nom-label">${esc(s.nom)}</span>
+          ${s.concentration ? '<span class="sort-badge-c">C</span>' : ''}
+          ${s.rituel ? '<span class="sort-badge-r">R</span>' : ''}
+          ${combatActif ? `<button class="btn-lancer-sort" onclick="lancerSortCombat('${esc(s.nom)}',${niv},${!!s.concentration})">Lancer</button>` : ''}
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+// ─── COMBAT JOUEUR : ÉTAT GLOBAL ─────────────────────────────
+
+let combatActif      = false;
+let combatId_fiche   = null;
+let combatData_fiche = null;
+let _pvPrecedent     = null;
+let _joueurPartId    = null;
+let _refreshCombatTimer = null;
+let _actionUtilisee  = false;
+let _bonusUtilise    = false;
+let _reactionUtilisee = false;
+let _atkEnCours      = null; // { attaque, index }
+let _sortEnCours     = null;
+let _ciblSelecte     = null;
+
+function getSessionIdFiche() {
+  return localStorage.getItem('sessionId') || new URLSearchParams(location.search).get('session');
+}
+
+// ─── AUTO-REFRESH COMBAT (5s) ─────────────────────────────────
+
+async function refreshCombatFiche() {
+  const sessionId = getSessionIdFiche();
+  if (!sessionId) return;
+  try {
+    const r = await fetch(`${API}/Combats/${sessionId}`, { headers: authHeaders() });
+    if (!r.ok) {
+      if (combatActif) { combatActif = false; masquerPanelCombat(); }
+      return;
+    }
+    const data = await r.json();
+    combatData_fiche = data;
+    combatId_fiche   = data._id;
+
+    if (!combatActif) { combatActif = true; afficherPanelCombat(); }
+
+    // Trouver le participant correspondant à ce joueur
+    const userId = localStorage.getItem('userId');
+    _joueurPartId = (data.participants || []).find(p => p.user_id === userId)?.id || null;
+    const joueurPart = data.participants.find(p => p.id === _joueurPartId);
+
+    // PV flash
+    if (joueurPart && _pvPrecedent !== null) {
+      if (joueurPart.pv_actuels < _pvPrecedent) flashPV('degats');
+      else if (joueurPart.pv_actuels > _pvPrecedent) flashPV('soin');
+    }
+    if (joueurPart) {
+      _pvPrecedent = joueurPart.pv_actuels;
+      // Mettre à jour la barre PV si les PV ont changé depuis le MJ
+      const pvActEl = document.getElementById('pv-actuels');
+      if (pvActEl && parseInt(pvActEl.value) !== joueurPart.pv_actuels) {
+        pvActEl.value = joueurPart.pv_actuels;
+        if (!perso.combat) perso.combat = {};
+        perso.combat.pv_actuels = joueurPart.pv_actuels;
+        updatePVBar();
+      }
+      // Interface mort
+      if (joueurPart.pv_actuels === 0) afficherInterfaceMort(joueurPart);
+      else masquerInterfaceMort();
+    }
+
+    // Indicateur de tour
+    const sorted = [...data.participants].sort((a,b) => b.initiative - a.initiative);
+    const partActuel = sorted[data.tour_actuel];
+    const monTour = partActuel && partActuel.id === _joueurPartId;
+
+    const badgeMon = document.getElementById('badge-mon-tour');
+    const badgeAtt = document.getElementById('badge-attente');
+    if (monTour) {
+      badgeMon.classList.add('visible');
+      badgeAtt.textContent = '';
+      // Reset actions au début du tour
+      if (!_actionUtilisee && !_bonusUtilise && !_reactionUtilisee) resetActionsTour();
+    } else {
+      badgeMon.classList.remove('visible');
+      badgeAtt.textContent = partActuel ? `En attente du tour de ${partActuel.nom}…` : '';
+    }
+
+    // Journal
+    await chargerJournalFiche();
+
+  } catch (e) { /* silencieux */ }
+}
+
+async function chargerJournalFiche() {
+  if (!combatId_fiche) return;
+  try {
+    const r = await fetch(`${API}/Combats/${combatId_fiche}/journal`, { headers: authHeaders() });
+    if (!r.ok) return;
+    const entries = await r.json();
+    renderJournalFiche(entries);
+  } catch (e) { /* silencieux */ }
+}
+
+function renderJournalFiche(entries) {
+  const el = document.getElementById('journal-combat-fiche');
+  if (!el) return;
+  if (!entries.length) { el.innerHTML = '<span style="color:#555;font-size:0.72rem;">Journal vide…</span>'; return; }
+  el.innerHTML = entries.slice(-30).map(e => {
+    const heure = new Date(e.timestamp).toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+    const cls = e.type === 'combat' ? (e.contenu.includes('💚') ? 'soin' : 'combat') : e.type || '';
+    return `<div class="journal-entry ${cls}"><span class="j-heure">${heure}</span>${esc(e.contenu)}</div>`;
+  }).join('');
+  el.scrollTop = el.scrollHeight;
+}
+
+function flashPV(type) {
+  const el = document.getElementById('pv-flash-overlay');
+  if (!el) return;
+  el.className = '';
+  void el.offsetWidth; // reflow
+  el.className = `flash-${type}`;
+  if (navigator.vibrate) navigator.vibrate(type === 'degats' ? [200] : [80]);
+}
+
+function afficherPanelCombat() {
+  const panel = document.getElementById('combat-panel');
+  if (panel) panel.classList.add('actif');
+  renderAttaques(); // re-render pour afficher boutons Attaquer
+  renderSorts();
+}
+
+function masquerPanelCombat() {
+  const panel = document.getElementById('combat-panel');
+  if (panel) panel.classList.remove('actif');
+  renderAttaques();
+  renderSorts();
+}
+
+function afficherInterfaceMort(participant) {
+  const el = document.getElementById('mort-interface');
+  if (!el) return;
+  el.classList.add('visible');
+  const jm = participant.jets_mort || { succes: 0, echecs: 0 };
+  ['succes','echec'].forEach(type => {
+    const dots = document.querySelectorAll(`#mort-dots-${type === 'succes' ? 'succes' : 'echecs'} .mort-dot`);
+    dots.forEach((d, i) => {
+      d.className = 'mort-dot';
+      if (type === 'succes' && i < jm.succes) d.classList.add('succes-filled');
+      if (type === 'echec'  && i < jm.echecs) d.classList.add('echec-filled');
+    });
+  });
+}
+
+function masquerInterfaceMort() {
+  const el = document.getElementById('mort-interface');
+  if (el) el.classList.remove('visible');
+}
+
+async function jetMort(resultat) {
+  if (!combatId_fiche || !_joueurPartId) return;
+  try {
+    const r = await fetch(`${API}/Combats/${combatId_fiche}/mort`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({ participant_id: _joueurPartId, resultat })
+    });
+    const data = await r.json();
+    const msg = document.getElementById('mort-message');
+    if (msg) {
+      msg.textContent = data.log || '';
+      msg.style.color = data.stabilise ? '#4ade80' : data.mort ? '#f87171' : '#aaa';
+    }
+    if (data.stabilise || data.mort) {
+      setTimeout(masquerInterfaceMort, 3000);
+    }
+    if (data.succes !== undefined) {
+      // Mettre à jour les dots
+      const part = combatData_fiche?.participants?.find(p => p.id === _joueurPartId);
+      if (part) {
+        part.jets_mort = { succes: data.succes, echecs: data.echecs };
+        part.pv_actuels = data.pv_actuels ?? part.pv_actuels;
+        afficherInterfaceMort(part);
+      }
+    }
+  } catch (e) { console.error(e); }
+}
+
+// ─── ACTIONS DE TOUR ──────────────────────────────────────────
+
+function resetActionsTour() {
+  _actionUtilisee   = false;
+  _bonusUtilise     = false;
+  _reactionUtilisee = false;
+  const slots = ['slot-action','slot-bonus','slot-reaction'];
+  slots.forEach(id => document.getElementById(id)?.classList.remove('utilise'));
+}
+
+function marquerAction() {
+  _actionUtilisee = true;
+  document.getElementById('slot-action')?.classList.add('utilise');
+}
+function marquerBonus() {
+  _bonusUtilise = true;
+  document.getElementById('slot-bonus')?.classList.add('utilise');
+}
+function marquerReaction() {
+  _reactionUtilisee = true;
+  document.getElementById('slot-reaction')?.classList.add('utilise');
+}
+
+// ─── ATTAQUE EN COMBAT ────────────────────────────────────────
+
+function ouvrirAttaqueCombat(atkIdx) {
+  if (!combatData_fiche) return;
+  const atk = (perso.attaques || [])[atkIdx];
+  if (!atk) return;
+  _atkEnCours   = { attaque: atk, index: atkIdx };
+  _ciblSelecte  = null;
+
+  document.getElementById('atk-combat-nom').textContent   = atk.nom;
+  document.getElementById('atk-combat-bonus').textContent = atk.bonus_attaque || '+0';
+  document.getElementById('atk-d20').value     = '';
+  document.getElementById('atk-degats-val').value = '';
+  document.getElementById('atk-type-label').textContent = atk.type || '';
+  document.getElementById('atk-result-box').style.display  = 'none';
+  document.getElementById('atk-degats-row').style.display  = 'none';
+
+  // Peupler la liste des cibles (participants visibles hors joueur)
+  const cibles = (combatData_fiche.participants || []).filter(p => p.id !== _joueurPartId);
+  const listEl = document.getElementById('cibles-list');
+  listEl.innerHTML = cibles.length
+    ? cibles.map(p => `
+        <div class="cible-item" data-pid="${p.id}" onclick="selectionnerCible('${p.id}')">
+          <span>${esc(p.nom)}</span>
+          <span>
+            <span class="cible-ca">CA ${p.ca}</span>
+            <span class="cible-pv">PV ${p.pv_actuels}/${p.pv_max}</span>
+          </span>
+        </div>`).join('')
+    : '<div style="color:#555;font-size:0.78rem;">Aucune cible visible</div>';
+
+  document.getElementById('modal-attaque-combat').classList.remove('hidden');
+}
+
+function selectionnerCible(pid) {
+  _ciblSelecte = pid;
+  document.querySelectorAll('#cibles-list .cible-item').forEach(el => {
+    el.classList.toggle('selected', el.dataset.pid === pid);
+  });
+  calculerResultatAttaque();
+}
+
+function calculerResultatAttaque() {
+  if (!_atkEnCours) return;
+  const d20 = parseInt(document.getElementById('atk-d20').value);
+  if (isNaN(d20)) return;
+
+  // Parser le bonus
+  const bonusStr = _atkEnCours.attaque.bonus_attaque || '+0';
+  const bonus = parseInt(bonusStr.replace(/^\+/, '')) || 0;
+  const total = d20 + bonus;
+
+  const cible = _ciblSelecte ? (combatData_fiche?.participants || []).find(p => p.id === _ciblSelecte) : null;
+  const ca = cible?.ca || '?';
+
+  const boxEl  = document.getElementById('atk-result-box');
+  const totEl  = document.getElementById('atk-result-total');
+  const verdEl = document.getElementById('atk-result-verdict');
+  boxEl.style.display = 'block';
+  totEl.textContent   = `${total} vs CA ${ca}`;
+
+  if (d20 === 1) {
+    verdEl.textContent = '💨 Raté automatiquement !'; verdEl.className = 'verdict rate';
+    document.getElementById('atk-degats-row').style.display = 'none';
+  } else if (d20 === 20) {
+    verdEl.textContent = '💥 COUP CRITIQUE ! (dés doublés)'; verdEl.className = 'verdict critique';
+    document.getElementById('atk-degats-row').style.display = 'flex';
+  } else if (cible && total >= ca) {
+    verdEl.textContent = '✅ Touché !'; verdEl.className = 'verdict touche';
+    document.getElementById('atk-degats-row').style.display = 'flex';
+  } else {
+    verdEl.textContent = cible ? '❌ Raté !' : '(choisir une cible)'; verdEl.className = 'verdict rate';
+    document.getElementById('atk-degats-row').style.display = 'none';
+  }
+}
+
+async function confirmerAttaqueCombat() {
+  if (!_atkEnCours || !combatId_fiche) return;
+  const d20 = parseInt(document.getElementById('atk-d20').value);
+  if (isNaN(d20)) return;
+  const degats = parseInt(document.getElementById('atk-degats-val').value) || 0;
+  const userId = localStorage.getItem('userId');
+
+  try {
+    await fetch(`${API}/Combats/${combatId_fiche}/attaque`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({
+        attaquant_id: _joueurPartId || userId,
+        cible_id: _ciblSelecte,
+        d20,
+        degats,
+        type_degats: _atkEnCours.attaque.type || ''
+      })
+    });
+    document.getElementById('modal-attaque-combat').classList.add('hidden');
+    marquerAction();
+    await chargerJournalFiche();
+  } catch (e) { console.error(e); }
+}
+
+// ─── SORT EN COMBAT ───────────────────────────────────────────
+
+function ouvrirModalSortCombat() {
+  if (!combatData_fiche) return;
+  const sorts = perso.sorts?.sorts_connus || [];
+  const listEl = document.getElementById('sorts-modal-list');
+  listEl.innerHTML = sorts.length
+    ? sorts.map(s => `
+        <div class="sort-modal-item" data-snom="${esc(s.nom)}" data-sniv="${s.niveau||0}" data-sconc="${!!s.concentration}" onclick="selectionnerSortModal(this,'${esc(s.nom)}',${s.niveau||0},${!!s.concentration})">
+          <span>${esc(s.nom)}</span>
+          <span>
+            <span class="sort-m-niv">Niv.${s.niveau||0}</span>
+            ${s.concentration ? '<span class="sort-badge-c" style="margin-left:0.3rem;">C</span>' : ''}
+          </span>
+        </div>`).join('')
+    : '<div style="color:#555;font-size:0.78rem;">Aucun sort connu</div>';
+
+  // Cibles
+  const cibles = (combatData_fiche.participants || []).filter(p => p.id !== _joueurPartId);
+  document.getElementById('sort-cibles-list').innerHTML = cibles.map(p => `
+    <div class="cible-item" data-pid="${p.id}" onclick="selectionnerCibleSort('${p.id}')">
+      <span>${esc(p.nom)}</span>
+      <span class="cible-pv">PV ${p.pv_actuels}/${p.pv_max}</span>
+    </div>`).join('');
+
+  _sortEnCours = null; _ciblSelecte = null;
+  document.getElementById('sort-cible-section').style.display = 'none';
+  document.getElementById('sort-jet-section').style.display   = 'none';
+  document.getElementById('sort-d20').value    = '';
+  document.getElementById('sort-degats').value = '';
+  document.getElementById('sort-type-degats').value = '';
+  document.getElementById('modal-sort-combat').classList.remove('hidden');
+}
+
+function lancerSortCombat(nom, niv, concentration) {
+  ouvrirModalSortCombat();
+  setTimeout(() => {
+    const item = document.querySelector(`[data-snom="${nom}"]`);
+    if (item) selectionnerSortModal(item, nom, niv, concentration);
+  }, 50);
+}
+
+function selectionnerSortModal(el, nom, niv, conc) {
+  _sortEnCours = { nom, niveau: niv, concentration: conc };
+  document.querySelectorAll('.sort-modal-item').forEach(i => i.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('sort-cible-section').style.display = 'block';
+  document.getElementById('sort-jet-section').style.display   = 'flex';
+}
+
+function selectionnerCibleSort(pid) {
+  _ciblSelecte = pid;
+  document.querySelectorAll('#sort-cibles-list .cible-item').forEach(el => {
+    el.classList.toggle('selected', el.dataset.pid === pid);
+  });
+}
+
+async function confirmerSortCombat() {
+  if (!_sortEnCours || !combatId_fiche) return;
+  const userId = localStorage.getItem('userId');
+  const body = {
+    lanceur_id: _joueurPartId || userId,
+    sort_nom:   _sortEnCours.nom,
+    sort_niveau: _sortEnCours.niveau,
+    concentration: _sortEnCours.concentration,
+    cible_id: _ciblSelecte || null,
+    d20: parseInt(document.getElementById('sort-d20').value) || null,
+    degats: parseInt(document.getElementById('sort-degats').value) || 0,
+    type_degats: document.getElementById('sort-type-degats').value.trim()
+  };
+
+  // Si concentration, vérifier si déjà concentré
+  if (_sortEnCours.concentration) {
+    const moi = combatData_fiche?.participants?.find(p => p.id === _joueurPartId);
+    if (moi && (moi.conditions || []).includes('concentre')) {
+      alert(`⚠️ Vous perdez la concentration sur ${moi.sort_concentration || 'votre sort précédent'}.`);
+    }
+  }
+
+  try {
+    await fetch(`${API}/Combats/${combatId_fiche}/sort`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify(body)
+    });
+    document.getElementById('modal-sort-combat').classList.add('hidden');
+    marquerAction();
+    await chargerJournalFiche();
+  } catch (e) { console.error(e); }
+}
+
+// ─── JET DE SAUVEGARDE ────────────────────────────────────────
+
+function ouvrirModalSauvegarde() {
+  document.getElementById('js-d20').value = '';
+  document.getElementById('js-result-box').style.display = 'none';
+  document.getElementById('modal-sauvegarde').classList.remove('hidden');
+}
+
+function calculerJS() {
+  const d20 = parseInt(document.getElementById('js-d20').value);
+  const car  = document.getElementById('js-car').value;
+  const dd   = parseInt(document.getElementById('js-dd').value) || 10;
+  if (isNaN(d20)) return;
+
+  // Trouver le bonus de sauvegarde
+  const s = (perso.jets_sauvegarde || {})[car] || {};
+  const hasMaitrise = s.maitrise || false;
+  const bonus = getMod(car) + (hasMaitrise ? getBM() : 0);
+  const total = d20 + bonus;
+  const reussi = total >= dd;
+
+  const el = document.getElementById('js-result-box');
+  el.style.display = 'block';
+  el.className = `js-result ${reussi ? 'reussi' : 'rate'}`;
+  el.textContent = `${car} : d20(${d20}) ${bonus >= 0 ? '+' : ''}${bonus} = ${total} vs DD ${dd} — ${reussi ? '✅ Réussi !' : '❌ Raté !'}`;
+
+  // Concentration automatique si CON
+  if (car === 'CON' && !reussi) {
+    const moi = combatData_fiche?.participants?.find(p => p.id === _joueurPartId);
+    if (moi && (moi.conditions || []).includes('concentre')) {
+      el.textContent += ` 💨 Concentration brisée !`;
+    }
+  }
+}
+
+async function confirmerSauvegarde() {
+  if (!combatId_fiche || !_joueurPartId) {
+    document.getElementById('modal-sauvegarde').classList.add('hidden');
+    return;
+  }
+  const d20  = parseInt(document.getElementById('js-d20').value);
+  const car  = document.getElementById('js-car').value;
+  const dd   = parseInt(document.getElementById('js-dd').value) || 10;
+  if (isNaN(d20)) { document.getElementById('modal-sauvegarde').classList.add('hidden'); return; }
+
+  const s = (perso.jets_sauvegarde || {})[car] || {};
+  const bonus = getMod(car) + (s.maitrise ? getBM() : 0);
+
+  try {
+    const r = await fetch(`${API}/Combats/${combatId_fiche}/sauvegarde`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({ participant_id: _joueurPartId, caracteristique: car, d20, modificateur: bonus, dd })
+    });
+    const data = await r.json();
+    if (data.concentration_brisee) alert('💨 Votre Concentration est brisée !');
+    document.getElementById('modal-sauvegarde').classList.add('hidden');
+    await chargerJournalFiche();
+  } catch (e) { console.error(e); }
+}
+
+function ouvrirChoixAction() {
+  // Simple: ouvre le premier menu d'attaque si des attaques existent
+  if ((perso.attaques || []).length) ouvrirAttaqueCombat(0);
+  else alert('Aucune attaque définie. Utilisez "Ajouter une attaque".');
+}
+
 // ─── DÉMARRAGE ────────────────────────────────────────────────
 
-waitForAuth(init);
+function demarrerCombatPolling() {
+  // Stocker sessionId si passé en URL
+  const sid = new URLSearchParams(location.search).get('session');
+  if (sid) localStorage.setItem('sessionId', sid);
+
+  // PV de départ pour détection flash
+  _pvPrecedent = perso.combat?.pv_actuels ?? null;
+
+  // Lancer le polling
+  refreshCombatFiche();
+  _refreshCombatTimer = setInterval(refreshCombatFiche, 5000);
+  window.addEventListener('beforeunload', () => clearInterval(_refreshCombatTimer));
+}
+
+// Exposer les fonctions
+window.jetMort              = jetMort;
+window.ouvrirAttaqueCombat  = ouvrirAttaqueCombat;
+window.selectionnerCible    = selectionnerCible;
+window.calculerResultatAttaque = calculerResultatAttaque;
+window.confirmerAttaqueCombat  = confirmerAttaqueCombat;
+window.marquerAction        = marquerAction;
+window.marquerBonus         = marquerBonus;
+window.marquerReaction      = marquerReaction;
+window.ouvrirChoixAction    = ouvrirChoixAction;
+window.ouvrirModalSortCombat = ouvrirModalSortCombat;
+window.lancerSortCombat     = lancerSortCombat;
+window.selectionnerSortModal = selectionnerSortModal;
+window.selectionnerCibleSort = selectionnerCibleSort;
+window.confirmerSortCombat  = confirmerSortCombat;
+window.ouvrirModalSauvegarde = ouvrirModalSauvegarde;
+window.calculerJS           = calculerJS;
+window.confirmerSauvegarde  = confirmerSauvegarde;
+
+waitForAuth(async () => {
+  await init();
+  demarrerCombatPolling();
+});

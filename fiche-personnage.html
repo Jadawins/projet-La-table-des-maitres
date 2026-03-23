@@ -6,6 +6,7 @@
   <title>Fiche de personnage — La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/personnage.css">
+  <link rel="stylesheet" href="css/combat.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -220,6 +221,70 @@
   </div>
 </div>
 
+<!-- FLASH PV -->
+<div id="pv-flash-overlay"></div>
+
+<!-- PANNEAU COMBAT JOUEUR -->
+<div id="combat-panel">
+  <div class="combat-panel-header">
+    <div id="badge-mon-tour">⚔️ C'est votre tour !</div>
+    <div id="badge-attente"></div>
+    <div style="display:flex;gap:0.5rem;margin-left:auto;">
+      <button class="btn-action-combat sort" onclick="ouvrirModalSortCombat()" id="btn-lancer-sort-combat">🔮 Lancer un sort</button>
+      <button class="btn-action-combat neutre" onclick="ouvrirModalSauvegarde()">🎲 Jet de sauvegarde</button>
+    </div>
+  </div>
+  <div class="combat-actions-row" id="combat-actions-slots">
+    <div class="combat-action-slot" id="slot-action">
+      <span class="slot-label">Action</span>
+      <button class="btn-action-combat attaque" id="btn-action-attaque" onclick="ouvrirChoixAction()">⚔️ Choisir</button>
+      <button class="btn-action-combat neutre" onclick="marquerAction()" id="btn-action-utilise" style="display:none;">✓ Utilisée</button>
+    </div>
+    <div class="combat-action-slot" id="slot-bonus">
+      <span class="slot-label">Bonus</span>
+      <button class="btn-action-combat neutre" onclick="marquerBonus()">Bonus</button>
+    </div>
+    <div class="combat-action-slot" id="slot-reaction">
+      <span class="slot-label">Réaction</span>
+      <button class="btn-action-combat neutre" onclick="marquerReaction()">Réaction</button>
+    </div>
+  </div>
+  <div class="journal-combat" id="journal-combat-fiche"></div>
+</div>
+
+<!-- INTERFACE MORT -->
+<div id="mort-interface">
+  <div class="mort-box">
+    <h2>💀 À l'agonie…</h2>
+    <p style="font-size:0.82rem;color:#aaa;margin-bottom:0.75rem;">Jets de sauvegarde contre la mort</p>
+    <div>
+      <div style="font-size:0.72rem;color:#4caf50;margin-bottom:0.3rem;">Succès</div>
+      <div class="mort-dots-row" id="mort-dots-succes">
+        <div class="mort-dot" data-idx="0" data-type="succes"></div>
+        <div class="mort-dot" data-idx="1" data-type="succes"></div>
+        <div class="mort-dot" data-idx="2" data-type="succes"></div>
+      </div>
+    </div>
+    <div style="margin-top:0.5rem;">
+      <div style="font-size:0.72rem;color:#f44336;margin-bottom:0.3rem;">Échecs</div>
+      <div class="mort-dots-row" id="mort-dots-echecs">
+        <div class="mort-dot" data-idx="0" data-type="echec"></div>
+        <div class="mort-dot" data-idx="1" data-type="echec"></div>
+        <div class="mort-dot" data-idx="2" data-type="echec"></div>
+      </div>
+    </div>
+    <div class="mort-btn-row">
+      <button class="mort-btn succes" onclick="jetMort('succes')">✅ Succès</button>
+      <button class="mort-btn echec"  onclick="jetMort('echec')">❌ Échec</button>
+    </div>
+    <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+      <button class="mort-btn" style="background:#78350f;color:#fde68a;font-size:0.78rem;" onclick="jetMort('nat20')">20 naturel ✨</button>
+      <button class="mort-btn" style="background:#1e1b4b;color:#c7d2fe;font-size:0.78rem;" onclick="jetMort('nat1')">1 naturel 💀</button>
+    </div>
+    <div id="mort-message" style="margin-top:0.75rem;font-size:0.88rem;font-weight:bold;"></div>
+  </div>
+</div>
+
 <!-- MODAL : AJOUTER ATTAQUE -->
 <div class="modal-overlay hidden" id="modal-attaque">
   <div class="modal-box">
@@ -236,6 +301,100 @@
     <div class="modal-actions">
       <button class="btn-secondary" onclick="fermerModalAttaque()" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
       <button class="btn-sm-primary" onclick="validerAttaque()">Ajouter</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL : ATTAQUE EN COMBAT (choix cible + d20) -->
+<div class="modal-overlay hidden" id="modal-attaque-combat">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('modal-attaque-combat').classList.add('hidden')">✕</button>
+    <div class="modal-title">⚔️ Attaquer</div>
+    <div style="font-size:0.78rem;color:#aaa;margin-bottom:0.4rem;">Arme : <strong id="atk-combat-nom" style="color:#c9a84c;"></strong> — Bonus : <span id="atk-combat-bonus"></span></div>
+
+    <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Choisir une cible :</div>
+    <div class="cibles-list" id="cibles-list"></div>
+
+    <div style="margin-top:0.75rem;">
+      <div class="form-field">
+        <label>Résultat du d20 :</label>
+        <input type="number" id="atk-d20" min="1" max="20" style="width:80px;" oninput="calculerResultatAttaque()" />
+      </div>
+      <div class="atk-result-box" id="atk-result-box" style="display:none;">
+        <div class="total" id="atk-result-total"></div>
+        <div class="verdict" id="atk-result-verdict"></div>
+      </div>
+      <div class="form-field" id="atk-degats-row" style="margin-top:0.6rem;display:none;">
+        <label>Dégâts infligés :</label>
+        <input type="number" id="atk-degats-val" min="0" style="width:80px;" />
+        <span style="font-size:0.72rem;color:#888;" id="atk-type-label"></span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="document.getElementById('modal-attaque-combat').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-sm-primary" style="background:#6b0f0f;border-color:#991b1b;" onclick="confirmerAttaqueCombat()">Confirmer</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL : LANCER UN SORT EN COMBAT -->
+<div class="modal-overlay hidden" id="modal-sort-combat">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('modal-sort-combat').classList.add('hidden')">✕</button>
+    <div class="modal-title">🔮 Lancer un sort</div>
+    <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Choisir un sort :</div>
+    <div class="sorts-modal-list" id="sorts-modal-list"></div>
+
+    <div id="sort-cible-section" style="display:none;margin-top:0.6rem;">
+      <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Cible (optionnelle) :</div>
+      <div class="cibles-list" id="sort-cibles-list"></div>
+    </div>
+
+    <div style="margin-top:0.6rem;display:flex;flex-direction:column;gap:0.4rem;" id="sort-jet-section" style="display:none;">
+      <div class="form-field">
+        <label>d20 (si jet d'attaque) :</label>
+        <input type="number" id="sort-d20" min="1" max="20" style="width:80px;" />
+      </div>
+      <div class="form-field">
+        <label>Dégâts (si applicable) :</label>
+        <input type="number" id="sort-degats" min="0" style="width:80px;" />
+        <input type="text" id="sort-type-degats" placeholder="feu, froid…" style="width:100px;margin-left:0.4rem;" />
+      </div>
+    </div>
+
+    <div class="modal-actions" style="margin-top:0.75rem;">
+      <button class="btn-secondary" onclick="document.getElementById('modal-sort-combat').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-sm-primary" style="background:#3b1072;border-color:#5b21b6;" onclick="confirmerSortCombat()">Lancer</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL : JET DE SAUVEGARDE -->
+<div class="modal-overlay hidden" id="modal-sauvegarde">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('modal-sauvegarde').classList.add('hidden')">✕</button>
+    <div class="modal-title">🎲 Jet de sauvegarde</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.5rem;">
+      <div class="form-field">
+        <label>Caractéristique</label>
+        <select id="js-car" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.3rem;border-radius:5px;width:100%;">
+          <option>FOR</option><option>DEX</option><option>CON</option>
+          <option>INT</option><option>SAG</option><option>CHA</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>DD (difficulté)</label>
+        <input type="number" id="js-dd" value="10" min="1" max="30" style="width:100%;" />
+      </div>
+    </div>
+    <div class="form-field">
+      <label>Résultat du d20 :</label>
+      <input type="number" id="js-d20" min="1" max="20" style="width:80px;" oninput="calculerJS()" />
+    </div>
+    <div id="js-result-box" style="display:none;" class="js-result"></div>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="document.getElementById('modal-sauvegarde').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-sm-primary" onclick="confirmerSauvegarde()">Confirmer</button>
     </div>
   </div>
 </div>

@@ -152,6 +152,11 @@ function renderInitiativeList() {
           <div class="cond-picker">${condManquantes}</div>
         </details>
 
+        <div class="participant-row" style="gap:0.4rem;flex-wrap:wrap;">
+          <button class="btn-action-combat attaque" style="font-size:0.7rem;padding:0.2rem 0.6rem;" onclick="ouvrirModalDegats('${p.id}')">⚔️ Dégâts</button>
+          <button class="btn-action-combat soin" style="font-size:0.7rem;padding:0.2rem 0.6rem;" onclick="ouvrirModalSoin('${p.id}')">💚 Soin</button>
+        </div>
+
         <textarea class="notes-input" rows="1" placeholder="Notes…"
           onchange="majNotes('${p.id}', this.value)">${p.notes || ''}</textarea>
       </div>`;
@@ -610,6 +615,7 @@ async function chargerCombat() {
     renderJoueursPv();
     peuplerDestinataireSelect();
     await chargerMessages();
+    await chargerJournal();
 
     // Auto-save notes 30s
     notesTimer = setInterval(sauvegarderNotes, 30000);
@@ -662,6 +668,223 @@ document.addEventListener('DOMContentLoaded', () => {
     sauvegarderNotes();
   });
 });
+
+// ─── JOURNAL DE COMBAT ─────────────────────────────────────────
+
+async function chargerJournal() {
+  if (!combatId) return;
+  try {
+    const r = await fetch(`${API}/Combats/${combatId}/journal`, { headers: authHeaders() });
+    if (!r.ok) return;
+    const entries = await r.json();
+    renderJournal(entries);
+  } catch (e) { /* silencieux */ }
+}
+
+function renderJournal(entries) {
+  const el = document.getElementById('journal-mj');
+  if (!el) return;
+  if (!entries.length) { el.innerHTML = '<span style="color:#555;font-size:0.72rem;">Journal vide…</span>'; return; }
+  el.innerHTML = entries.slice(-60).map(e => {
+    const heure = new Date(e.timestamp).toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+    const texte = escapeHtml(e.contenu);
+    const cls = e.type === 'combat'
+      ? (e.contenu.includes('💚') ? 'soin' : e.contenu.includes('💀') ? 'mort' : 'combat')
+      : e.type || '';
+    return `<div class="journal-entry ${cls}"><span class="j-heure">${heure}</span>${texte}</div>`;
+  }).join('');
+  el.scrollTop = el.scrollHeight;
+}
+
+// ─── MODAL DÉGÂTS MJ AMÉLIORÉ ─────────────────────────────────
+
+const TYPES_DEGATS = ['contondants','perçants','tranchants','feu','froid','foudre','acide','poison','nécrotique','radiant','psychique','force','tonnerre'];
+
+let _mjDmgTarget = null;
+let _mjHealTarget = null;
+let _mjTypeDmg = 'physiques';
+
+function ouvrirModalDegats(pid) {
+  _mjDmgTarget = pid;
+  _mjTypeDmg = '';
+  const p = trouverParticipant(pid);
+  if (!p) return;
+
+  document.getElementById('modal-degats-nom').textContent  = p.nom;
+  document.getElementById('modal-degats-pv').textContent   = `PV : ${p.pv_actuels}/${p.pv_max}`;
+  document.getElementById('modal-degats-val').value        = '';
+  document.getElementById('modal-degats-resist').textContent  = '';
+  document.getElementById('modal-degats-immun').textContent   = '';
+
+  // Afficher résistances/immunités si connues
+  if ((p.resistances || []).length) {
+    document.getElementById('modal-degats-resist').textContent = `Résistances : ${p.resistances.join(', ')}`;
+  }
+  if ((p.immunites || []).length) {
+    document.getElementById('modal-degats-immun').textContent = `Immunités : ${p.immunites.join(', ')}`;
+  }
+
+  // Grille types
+  const grid = document.getElementById('modal-degats-types');
+  grid.innerHTML = TYPES_DEGATS.map(t => `
+    <span class="type-degats-badge" data-type="${t}" onclick="selectionnerTypeDmg('${t}')">${t}</span>`).join('');
+
+  document.getElementById('modal-degats-mj').classList.remove('hidden');
+}
+window.ouvrirModalDegats = ouvrirModalDegats;
+
+function selectionnerTypeDmg(type) {
+  _mjTypeDmg = type;
+  document.querySelectorAll('.type-degats-badge').forEach(b => b.classList.toggle('selected', b.dataset.type === type));
+}
+window.selectionnerTypeDmg = selectionnerTypeDmg;
+
+async function confirmerDegats() {
+  if (!_mjDmgTarget || !combatId) return;
+  const val = parseInt(document.getElementById('modal-degats-val').value) || 0;
+  const type = _mjTypeDmg;
+  const soignant = window.USER_PSEUDO || 'MJ';
+
+  try {
+    const r = await fetch(`${API}/Combats/${combatId}/attaque`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({
+        attaquant_id: 'mj',
+        cible_id: _mjDmgTarget,
+        d20: 15, // touche automatique depuis le MJ
+        degats: val,
+        type_degats: type
+      })
+    });
+    const data = await r.json();
+
+    // Mettre à jour localement
+    const p = trouverParticipant(_mjDmgTarget);
+    if (p && data.pv_restants !== undefined) p.pv_actuels = data.pv_restants;
+    renderInitiativeList();
+    renderJoueursPv();
+
+    document.getElementById('modal-degats-mj').classList.add('hidden');
+    await chargerJournal();
+    await chargerMessages();
+  } catch (e) { console.error(e); }
+}
+window.confirmerDegats = confirmerDegats;
+
+function ouvrirModalSoin(pid) {
+  _mjHealTarget = pid;
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  document.getElementById('modal-soin-nom').textContent = p.nom;
+  document.getElementById('modal-soin-pv-act').textContent = `PV : ${p.pv_actuels}/${p.pv_max}`;
+  document.getElementById('modal-soin-val').value = '';
+  document.getElementById('modal-soin-mj').classList.remove('hidden');
+}
+window.ouvrirModalSoin = ouvrirModalSoin;
+
+async function confirmerSoin() {
+  if (!_mjHealTarget || !combatId) return;
+  const val = parseInt(document.getElementById('modal-soin-val').value) || 0;
+  const soignant = window.USER_PSEUDO || 'MJ';
+
+  try {
+    const r = await fetch(`${API}/Combats/${combatId}/soin`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({ cible_id: _mjHealTarget, pv: val, soignant_nom: soignant })
+    });
+    const data = await r.json();
+
+    const p = trouverParticipant(_mjHealTarget);
+    if (p && data.pv_restants !== undefined) p.pv_actuels = data.pv_restants;
+    renderInitiativeList();
+    renderJoueursPv();
+
+    document.getElementById('modal-soin-mj').classList.add('hidden');
+    await chargerJournal();
+    await chargerMessages();
+  } catch (e) { console.error(e); }
+}
+window.confirmerSoin = confirmerSoin;
+
+// ─── ATTAQUE MONSTRE → JOUEUR (depuis MJ) ─────────────────────
+
+let _mjAtkSource = null;
+let _mjAtkTarget = null;
+
+function ouvrirModalAttaqueMJ() {
+  if (!combatData) return;
+  _mjAtkSource = null; _mjAtkTarget = null;
+
+  const monstres = combatData.participants.filter(p => p.type !== 'joueur');
+  const joueurs  = combatData.participants.filter(p => p.type === 'joueur');
+
+  document.getElementById('mj-atk-source-list').innerHTML = monstres.length
+    ? monstres.map(p => `<div class="cible-item" data-pid="${p.id}" onclick="selMJAtkSource('${p.id}')">${escapeHtml(p.nom)}</div>`).join('')
+    : '<div style="color:#555;font-size:0.78rem;">Aucun monstre</div>';
+
+  document.getElementById('mj-atk-target-list').innerHTML = joueurs.length
+    ? joueurs.map(p => `<div class="cible-item" data-pid="${p.id}" onclick="selMJAtkTarget('${p.id}')">${escapeHtml(p.nom)} <span class="cible-ca">CA ${p.ca}</span></div>`).join('')
+    : '<div style="color:#555;font-size:0.78rem;">Aucun joueur</div>';
+
+  document.getElementById('mj-atk-d20').value = '';
+  document.getElementById('mj-atk-degats').value = '';
+  document.getElementById('mj-atk-type').value = '';
+  document.getElementById('modal-attaque-mj').classList.remove('hidden');
+}
+window.ouvrirModalAttaqueMJ = ouvrirModalAttaqueMJ;
+
+function selMJAtkSource(pid) {
+  _mjAtkSource = pid;
+  document.querySelectorAll('#mj-atk-source-list .cible-item').forEach(el => el.classList.toggle('selected', el.dataset.pid === pid));
+}
+window.selMJAtkSource = selMJAtkSource;
+
+function selMJAtkTarget(pid) {
+  _mjAtkTarget = pid;
+  document.querySelectorAll('#mj-atk-target-list .cible-item').forEach(el => el.classList.toggle('selected', el.dataset.pid === pid));
+}
+window.selMJAtkTarget = selMJAtkTarget;
+
+async function confirmerAttaqueMJ() {
+  if (!combatId) return;
+  const d20    = parseInt(document.getElementById('mj-atk-d20').value) || 10;
+  const degats = parseInt(document.getElementById('mj-atk-degats').value) || 0;
+  const type   = document.getElementById('mj-atk-type').value.trim();
+
+  try {
+    const r = await fetch(`${API}/Combats/${combatId}/attaque`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({
+        attaquant_id: _mjAtkSource || 'mj',
+        cible_id: _mjAtkTarget,
+        d20, degats,
+        type_degats: type
+      })
+    });
+    const data = await r.json();
+    if (_mjAtkTarget) {
+      const p = trouverParticipant(_mjAtkTarget);
+      if (p && data.pv_restants !== undefined) p.pv_actuels = data.pv_restants;
+    }
+    renderInitiativeList();
+    renderJoueursPv();
+    document.getElementById('modal-attaque-mj').classList.add('hidden');
+    await chargerJournal();
+    await chargerMessages();
+  } catch (e) { console.error(e); }
+}
+window.confirmerAttaqueMJ = confirmerAttaqueMJ;
+
+// ─── INTÉGRATION JOURNAL DANS AUTO-REFRESH ────────────────────
+
+const _origRefresh = refresh;
+async function refresh() {
+  await _origRefresh();
+  await chargerJournal();
+}
 
 // Exposer pour les onclick HTML inline
 window.majInitiative = majInitiative;
