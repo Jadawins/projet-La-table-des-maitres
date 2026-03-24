@@ -144,7 +144,7 @@ function renderFiltres() {
 
   if (state.onglet === 'objets-magiques') {
     const CATS = [
-      { v: '', l: 'Toutes' },
+      { v: '', l: 'Catégorie : toutes' },
       { v: 'anneau', l: 'Anneau' },
       { v: 'potion', l: 'Potion' },
       { v: 'arme_magique', l: 'Arme magique' },
@@ -157,7 +157,7 @@ function renderFiltres() {
       { v: 'autre', l: 'Autre' }
     ];
     const RARETES = [
-      { v: '', l: 'Toutes' },
+      { v: '', l: 'Rareté : toutes' },
       { v: 'commun', l: 'Commun' },
       { v: 'peu_commun', l: 'Peu commun' },
       { v: 'rare', l: 'Rare' },
@@ -166,16 +166,16 @@ function renderFiltres() {
       { v: 'artefact', l: 'Artefact' }
     ];
     zone.innerHTML = `
-      <select id="f-cat-om" title="Catégorie">
+      <select id="f-cat-om">
         ${CATS.map(c => `<option value="${c.v}">${c.l}</option>`).join('')}
       </select>
-      <select id="f-rarete-om" title="Rareté">
+      <select id="f-rarete-om">
         ${RARETES.map(r => `<option value="${r.v}">${r.l}</option>`).join('')}
       </select>
-      <select id="f-harmo-om" title="Harmonisation">
-        <option value="">Tous</option>
-        <option value="true">Oui</option>
-        <option value="false">Non</option>
+      <select id="f-harmo-om">
+        <option value="">Harmonisation : tous</option>
+        <option value="true">Harmonisation : oui</option>
+        <option value="false">Harmonisation : non</option>
       </select>
     `;
     document.getElementById('f-cat-om').addEventListener('change', e => { state.filtres.categorie = e.target.value; state.page = 1; chargerDonnees(); });
