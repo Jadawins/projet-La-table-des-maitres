@@ -1,0 +1,531 @@
+/* ================================================================
+   TUTORIEL.CSS — Guide joueur & MJ
+   Thème sombre médiéval, légèrement plus lisible pour la doc
+   ================================================================ */
+
+:root {
+  --tuto-bg:        #13151f;
+  --tuto-card:      #1c1f30;
+  --tuto-border:    #2d3154;
+  --tuto-accent:    #c9a84c;
+  --tuto-purple:    #865dff;
+  --tuto-orange:    #f97316;
+  --tuto-blue:      #4a9eff;
+  --tuto-green:     #4ade80;
+  --tuto-text:      #e8e8f0;
+  --tuto-muted:     #8892b0;
+  --tuto-step-bg:   rgba(201,168,76,0.06);
+  --tuto-tip-bg:    rgba(134,93,255,0.1);
+  --tuto-warn-bg:   rgba(249,115,22,0.1);
+  --tuto-info-bg:   rgba(74,158,255,0.08);
+}
+
+/* ─── RESET / PAGE ───────────────────────────────────────────── */
+body {
+  background: var(--tuto-bg);
+  color: var(--tuto-text);
+}
+
+.tuto-page {
+  padding: 1.5rem 1.5rem 3rem;
+  max-width: 860px;
+  margin: 0 auto;
+  margin-left: calc(64px + 1.5rem); /* sidebar collapsée */
+}
+
+.sidebar.expanded ~ .page-container .tuto-page,
+.sidebar.expanded ~ main.tuto-page {
+  margin-left: calc(260px + 1.5rem);
+}
+
+/* ─── BREADCRUMB ─────────────────────────────────────────────── */
+.tuto-breadcrumb {
+  font-size: 0.75rem;
+  color: var(--tuto-muted);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.tuto-breadcrumb a {
+  color: var(--tuto-accent);
+  text-decoration: none;
+}
+.tuto-breadcrumb a:hover { text-decoration: underline; }
+.tuto-breadcrumb .sep { opacity: 0.4; }
+.tuto-breadcrumb .current { color: var(--tuto-text); }
+
+/* ─── EN-TÊTE HERO (page index) ─────────────────────────────── */
+.tuto-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(160deg, rgba(201,168,76,0.06) 0%, rgba(134,93,255,0.04) 100%);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+}
+.tuto-hero h1 {
+  font-size: 1.7rem;
+  color: var(--tuto-accent);
+  margin: 0 0 0.5rem;
+  font-family: Georgia, serif;
+}
+.tuto-hero p {
+  font-size: 0.95rem;
+  color: var(--tuto-muted);
+  margin: 0 0 1.25rem;
+}
+
+/* Barre de recherche (index) */
+.tuto-search-wrap {
+  display: flex;
+  justify-content: center;
+}
+.tuto-search-bar {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--tuto-border);
+  border-radius: 24px;
+  color: var(--tuto-text);
+  padding: 0.55rem 1rem 0.55rem 2.6rem;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238892b0' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 0.8rem center;
+}
+.tuto-search-bar:focus { border-color: var(--tuto-accent); }
+.tuto-search-bar::placeholder { color: var(--tuto-muted); }
+
+/* ─── SECTIONS INDEX ─────────────────────────────────────────── */
+.tuto-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.tuto-section {
+  background: var(--tuto-card);
+  border: 1px solid var(--tuto-border);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+.tuto-section-title {
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--tuto-accent);
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--tuto-border);
+}
+
+/* ─── CARDS GUIDE ────────────────────────────────────────────── */
+.tuto-cards { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.tuto-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: var(--tuto-text);
+  transition: all 0.15s;
+  background: rgba(255,255,255,0.02);
+}
+.tuto-card:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: rgba(201,168,76,0.25);
+  color: var(--tuto-accent);
+}
+.tuto-card-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
+}
+.tuto-card-body { flex: 1; min-width: 0; }
+.tuto-card-title {
+  font-size: 0.85rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tuto-card-desc {
+  font-size: 0.72rem;
+  color: var(--tuto-muted);
+  margin-top: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tuto-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+.tuto-card-time {
+  font-size: 0.65rem;
+  color: var(--tuto-muted);
+  white-space: nowrap;
+}
+.tuto-badge-new {
+  font-size: 0.58rem;
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: rgba(74,222,128,0.15);
+  color: var(--tuto-green);
+  border: 1px solid rgba(74,222,128,0.3);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Cacher les cards lors de la recherche */
+.tuto-card.hidden { display: none; }
+
+/* ─── EN-TÊTE PAGE TUTO ──────────────────────────────────────── */
+.tuto-header {
+  margin-bottom: 1.5rem;
+}
+.tuto-header h1 {
+  font-size: 1.5rem;
+  color: var(--tuto-accent);
+  margin: 0 0 0.4rem;
+  font-family: Georgia, serif;
+}
+.tuto-header .tuto-desc {
+  font-size: 0.88rem;
+  color: var(--tuto-muted);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+.tuto-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.tuto-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(134,93,255,0.4);
+  background: rgba(134,93,255,0.1);
+  color: #b09dff;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: bold;
+  transition: all 0.15s;
+}
+.tuto-guide-btn:hover { background: rgba(134,93,255,0.2); border-color: rgba(134,93,255,0.6); }
+
+/* ─── BARRE DE PROGRESSION ───────────────────────────────────── */
+.tuto-progress {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.tuto-progress-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.tuto-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tuto-purple), var(--tuto-accent));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.tuto-progress-label {
+  font-size: 0.72rem;
+  color: var(--tuto-muted);
+  white-space: nowrap;
+}
+
+/* ─── ÉTAPES ─────────────────────────────────────────────────── */
+.tuto-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.1rem;
+  background: var(--tuto-step-bg);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 10px;
+  position: relative;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.tuto-step:hover {
+  border-color: rgba(201,168,76,0.3);
+}
+
+/* Cercle numéroté */
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(201,168,76,0.3), rgba(201,168,76,0.1));
+  border: 2px solid var(--tuto-accent);
+  color: var(--tuto-accent);
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.step-content h3 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--tuto-text);
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+.step-content p {
+  font-size: 0.83rem;
+  color: var(--tuto-muted);
+  line-height: 1.6;
+  margin: 0 0 0.7rem;
+}
+.step-content p:last-child { margin-bottom: 0; }
+.step-content strong { color: var(--tuto-text); }
+.step-content code {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 3px;
+  padding: 0.1rem 0.3rem;
+  font-size: 0.8em;
+  font-family: monospace;
+  color: #f8c8a0;
+}
+
+/* ─── BOÎTES ASTUCE / AVERTISSEMENT / INFO ───────────────────── */
+.tuto-tip, .tuto-warning, .tuto-info {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.tuto-tip {
+  background: var(--tuto-tip-bg);
+  border-left: 3px solid var(--tuto-purple);
+  color: #c4b5fd;
+}
+.tuto-tip .tuto-box-icon { color: var(--tuto-purple); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.tuto-tip strong { color: #d8b4fe; }
+
+.tuto-warning {
+  background: var(--tuto-warn-bg);
+  border-left: 3px solid var(--tuto-orange);
+  color: #fed7aa;
+}
+.tuto-warning .tuto-box-icon { color: var(--tuto-orange); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.tuto-warning strong { color: #fdba74; }
+
+.tuto-info {
+  background: var(--tuto-info-bg);
+  border-left: 3px solid var(--tuto-blue);
+  color: #bfdbfe;
+}
+.tuto-info .tuto-box-icon { color: var(--tuto-blue); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.tuto-info strong { color: #93c5fd; }
+
+.tuto-box-body { flex: 1; }
+.tuto-box-label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  opacity: 0.8;
+  margin-bottom: 0.2rem;
+}
+
+/* ─── SCREENSHOTS ────────────────────────────────────────────── */
+.tuto-screenshot {
+  margin: 0.8rem 0 0.3rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  line-height: 0;
+}
+.tuto-screenshot svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.tuto-screenshot figcaption {
+  font-size: 0.68rem;
+  color: var(--tuto-muted);
+  text-align: center;
+  padding: 0.35rem;
+  background: rgba(0,0,0,0.3);
+  line-height: 1.3;
+}
+
+/* ─── BLOC CODE / TERMINAL ───────────────────────────────────── */
+.tuto-code {
+  background: #0d1117;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: #c9d1d9;
+  margin: 0.6rem 0;
+  overflow-x: auto;
+}
+.tuto-code .k { color: #ff7b72; }
+.tuto-code .s { color: #a5d6ff; }
+.tuto-code .c { color: #8b949e; }
+
+/* ─── NAVIGATION PRÉCÉDENT / SUIVANT ────────────────────────── */
+.tuto-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--tuto-border);
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.tuto-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: bold;
+  transition: all 0.15s;
+  border: 1px solid var(--tuto-border);
+}
+.tuto-nav-prev { color: var(--tuto-muted); background: rgba(255,255,255,0.03); }
+.tuto-nav-prev:hover { color: var(--tuto-text); background: rgba(255,255,255,0.06); }
+.tuto-nav-home { color: var(--tuto-muted); background: rgba(255,255,255,0.03); }
+.tuto-nav-home:hover { color: var(--tuto-accent); border-color: rgba(201,168,76,0.3); }
+.tuto-nav-next {
+  color: var(--tuto-accent);
+  background: rgba(201,168,76,0.1);
+  border-color: rgba(201,168,76,0.3);
+}
+.tuto-nav-next:hover { background: rgba(201,168,76,0.18); }
+.tuto-nav-placeholder { flex: 1; }
+
+/* ─── GUIDE INTERACTIF — OVERLAY ────────────────────────────── */
+.tuto-guide-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 9000;
+  pointer-events: all;
+}
+.tuto-guide-overlay.hidden { display: none; }
+
+/* Highlight : l'élément ciblé passe au-dessus de l'overlay */
+.tuto-spotlight {
+  position: relative !important;
+  z-index: 9001 !important;
+  box-shadow: 0 0 0 5px var(--tuto-accent), 0 0 0 9999px rgba(0,0,0,0.78) !important;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Tooltip du guide */
+.tuto-guide-tooltip {
+  position: fixed;
+  background: #1c1f30;
+  border: 1px solid var(--tuto-accent);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  max-width: 320px;
+  z-index: 9002;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.tuto-guide-tooltip h4 {
+  font-size: 0.88rem;
+  color: var(--tuto-accent);
+  margin: 0 0 0.4rem;
+}
+.tuto-guide-tooltip p {
+  font-size: 0.8rem;
+  color: var(--tuto-muted);
+  margin: 0 0 0.8rem;
+  line-height: 1.5;
+}
+.tuto-guide-step-count {
+  font-size: 0.68rem;
+  color: var(--tuto-muted);
+  margin-bottom: 0.6rem;
+}
+.tuto-guide-controls {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.tuto-gc-btn {
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  border: 1px solid var(--tuto-border);
+  background: rgba(255,255,255,0.05);
+  color: var(--tuto-muted);
+  cursor: pointer;
+  font-size: 0.73rem;
+  font-weight: bold;
+  transition: all 0.12s;
+}
+.tuto-gc-btn:hover { color: var(--tuto-text); background: rgba(255,255,255,0.1); }
+.tuto-gc-btn.next-btn {
+  background: rgba(201,168,76,0.12);
+  border-color: rgba(201,168,76,0.3);
+  color: var(--tuto-accent);
+}
+.tuto-gc-btn.next-btn:hover { background: rgba(201,168,76,0.22); }
+.tuto-gc-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--tuto-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.2rem;
+  transition: color 0.12s;
+}
+.tuto-gc-close:hover { color: var(--tuto-text); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tuto-page { margin-left: 1rem; padding: 1rem; }
+  .tuto-sections { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .tuto-hero h1 { font-size: 1.3rem; }
+  .tuto-step { grid-template-columns: 36px 1fr; gap: 0.7rem; }
+  .tuto-nav { flex-direction: column; align-items: stretch; }
+  .tuto-nav a { justify-content: center; }
+}

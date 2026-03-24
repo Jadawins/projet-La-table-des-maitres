@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repos court &amp; long — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+    </button>
+
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">🌙 Repos court &amp; long</span>
+    </div>
+
+    <div class="tuto-header">
+      <h1>🌙 Repos court &amp; long</h1>
+      <p class="tuto-desc">Proposez un repos à vos alliés, votez ensemble, et récupérez automatiquement vos PV, ressources et emplacements de sorts. Le MJ valide ou refuse le repos en temps réel.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">🎯 Guide interactif</button>
+        <span style="font-size:0.72rem;color:#8892b0;">~3 min de lecture · 7 étapes</span>
+      </div>
+    </div>
+
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">7 étapes</span>
+    </div>
+
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Proposer un repos</h3>
+        <p>Depuis votre fiche personnage, cliquez sur <strong>🌙 Repos court</strong> ou <strong>🌟 Repos long</strong>. Cette action envoie une <strong>proposition de repos</strong> à tous les joueurs de la session. La différence :</p>
+        <p>• <strong>Repos court</strong> (1h) — dépensez des Dés de vie pour récupérer des PV, rechargez certaines ressources<br>
+           • <strong>Repos long</strong> (8h) — récupérez tous vos PV, tous vos emplacements de sorts, tous vos dés de vie (jusqu'à la moitié)</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Le panneau de vote</h3>
+        <p>Une fois la proposition envoyée, un <strong>panneau de vote</strong> apparaît sur la fiche de tous les joueurs. Chacun peut voter ✅ <strong>Accepter</strong> ou ❌ <strong>Refuser</strong>. Les votes s'affichent en temps réel — vous voyez qui a voté et le résultat courant.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Panneau de vote repos</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">3/4 joueurs → ✅ Accepté · 1/4 → ❌ Refusé</text></svg><figcaption>Le vote est visible par tous les joueurs en temps réel</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Voter pour le repos</h3>
+        <p>Cliquez sur ✅ <strong>J'accepte</strong> si le contexte narratif permet le repos (pas d'ennemi en vue, endroit sûr…). Cliquez sur ❌ <strong>Je refuse</strong> si votre personnage estime que la situation est trop dangereuse. Vous pouvez changer votre vote tant que le MJ n'a pas tranché.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Le MJ valide ou refuse</h3>
+        <p>Le MJ voit le résultat du vote dans son panneau et peut :</p>
+        <p>✅ <strong>Valider</strong> — le repos est appliqué à tous les joueurs qui ont accepté<br>
+           ❌ <strong>Refuser</strong> — le repos est annulé (le MJ peut écrire une raison narrative)<br>
+           ⚡ <strong>Imposer</strong> — le MJ force le repos sur tous les joueurs (même ceux qui ont refusé)</p>
+      </div>
+    </div>
+
+    <div class="tuto-warning">
+      <span class="tuto-box-icon">⚠️</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Repos en zone de danger</div>
+        Si votre groupe tente un <strong>repos long dans une zone dangereuse</strong>, le MJ peut déclencher une rencontre aléatoire qui interrompt le repos. Dans ce cas, vous ne récupérez pas vos ressources.
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Dépenser des Dés de Vie (repos court)</h3>
+        <p>Si le repos court est validé, une fenêtre apparaît pour vous permettre de <strong>dépenser vos Dés de Vie</strong>. Indiquez le nombre de dés à utiliser — le système calcule automatiquement les PV récupérés en ajoutant votre modificateur de Constitution à chaque dé.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Les effets du repos long</h3>
+        <p>Si le repos long est validé, votre fiche est mise à jour automatiquement :</p>
+        <p>❤️ PV remis à leur maximum<br>
+           🔮 Tous vos emplacements de sorts rechargés<br>
+           🎲 Dés de vie rechargés jusqu'à la moitié de votre niveau (arrondi au supérieur)<br>
+           ⚡ Ressources de classe rechargées (Fureur Barbare, Ki, Lay on Hands…)</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160"><rect width="760" height="160" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="158" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="75" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Résumé du repos long appliqué</text><text x="380" y="100" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">PV : 12/45 → 45/45 · Emplacements : 0/0/0 → 4/3/2</text></svg><figcaption>Tous vos compteurs sont remis à zéro après un repos long</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="7">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>Journal et notification</h3>
+        <p>Chaque repos validé est enregistré dans le <strong>journal de session</strong> visible par le MJ. Tous les joueurs reçoivent une <strong>notification</strong> confirmant les ressources récupérées. Si un joueur était absent au moment du vote, il récupère quand même ses ressources si le repos long est validé.</p>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Fréquence des repos</div>
+        En D&D 5e (PHB 2024), vous ne pouvez bénéficier des effets d'un <strong>repos long qu'une fois toutes les 24 heures</strong>. Le système vérifie automatiquement si vous pouvez faire un nouveau repos long ou si le dernier est trop récent.
+      </div>
+    </div>
+
+    <nav class="tuto-nav">
+      <a href="tutoriel-niveau.html" class="tuto-nav-prev">← Monter en niveau</a>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Tutoriel</a>
+      <span class="tuto-nav-next" style="opacity:0.3;cursor:default;">Fin du guide</span>
+    </nav>
+  </main>
+</div>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">import { toggleSidebar } from './js/sidebar.js'; window.toggleSidebar = toggleSidebar;</script>
+<div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('repos'));</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combat MJ — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+    </button>
+
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">⚔️ Gérer un combat (MJ)</span>
+    </div>
+
+    <div class="tuto-header">
+      <h1>⚔️ Gérer un combat (MJ)</h1>
+      <p class="tuto-desc">En tant que MJ, vous contrôlez l'intégralité du combat : participants, initiative, dégâts sur les monstres, conditions, et issue finale. Le tracker vous guide tour par tour.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">🎯 Guide interactif</button>
+        <span style="font-size:0.72rem;color:#8892b0;">~5 min de lecture · 10 étapes</span>
+      </div>
+    </div>
+
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">10 étapes</span>
+    </div>
+
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Lancer un nouveau combat</h3>
+        <p>Depuis votre <strong>écran MJ</strong> (accessible via Dashboard MJ → session active), cliquez sur <strong>⚔️ Nouveau combat</strong>. Tous les joueurs connectés à la session verront automatiquement le panneau combat s'afficher sur leur fiche.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Bouton Nouveau combat</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Le tracker d'initiative s'ouvre côté MJ</text></svg><figcaption>Un clic suffit pour démarrer un combat et alerter tous les joueurs</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Les joueurs sont ajoutés automatiquement</h3>
+        <p>Les personnages de tous les joueurs participants sont <strong>automatiquement ajoutés</strong> au tracker avec leur initiative (à demander aux joueurs de lancer). Chaque carte affiche le nom, les PV actuels/max, la CA, et les conditions actives.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Ajouter des monstres</h3>
+        <p>Cliquez sur <strong>+ Ajouter un participant</strong> pour insérer des monstres manuellement. Renseignez le nom, les PV, la CA et l'initiative. Vous pouvez ajouter autant de créatures que nécessaire — dragons, hordes de gobelins, PNJ ennemis…</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Formulaire ajout monstre</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Nom, PV, CA, initiative</text></svg><figcaption>Ajoutez des monstres depuis la bibliothèque ou manuellement</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Le tracker d'initiative</h3>
+        <p>Les participants sont <strong>triés automatiquement</strong> du score d'initiative le plus haut au plus bas. Le participant actif est mis en évidence. Le joueur dont c'est le tour reçoit un badge doré clignotant sur sa fiche.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Passer au tour suivant</h3>
+        <p>Cliquez sur <strong>Tour suivant ▶</strong> pour passer au participant suivant dans l'ordre d'initiative. Le badge du joueur actif se déplace automatiquement. Le numéro de round s'incrémente après que tous les participants ont joué.</p>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Réinitialiser l'initiative</div>
+        Si vous avez besoin de recommencer le combat (erreur de saisie, nouvel affrontement), cliquez sur <strong>🔄 Réinitialiser l'initiative</strong>. Le round revient à 1 et le tour à 0 sans supprimer les participants.
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Infliger des dégâts à un monstre</h3>
+        <p>Quand un joueur attaque un monstre, vous recevez une notification. Ajustez les PV du monstre depuis sa carte : cliquez sur <strong>✏️ Modifier PV</strong> dans le menu <strong>···</strong> ou directement sur la barre de PV. Entrez les PV modifiés et confirmez.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="90" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Carte monstre avec menu ···</text><text x="380" y="115" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">☠️ Tuer — 🏃 Fuite — 😴 Neutraliser — ✏️ Modifier PV</text></svg><figcaption>Le menu ··· donne accès à toutes les actions sur un participant</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="7">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>Menu ··· — Actions sur les participants</h3>
+        <p>Cliquez sur <strong>···</strong> sur n'importe quelle carte pour accéder aux actions rapides :</p>
+        <p>☠️ <strong>Tuer</strong> — PV = 0, marque le monstre comme mort<br>
+           🏃 <strong>Fuite</strong> — retire le participant du combat<br>
+           😴 <strong>Neutraliser</strong> — applique la condition Inconscient<br>
+           ✏️ <strong>Modifier PV</strong> — entrez un nombre exact de PV</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="8">
+      <div class="step-number">8</div>
+      <div class="step-content">
+        <h3>Appliquer des conditions</h3>
+        <p>Sur la carte d'un participant, vous pouvez appliquer des <strong>conditions de jeu</strong> : Empoisonné, Étourdi, Paralysé, Aveuglé, Charmé, Effrayé… Les conditions s'affichent sous forme de badges colorés sur la carte du participant, visibles également côté joueur.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="9">
+      <div class="step-number">9</div>
+      <div class="step-content">
+        <h3>Envoyer un flash aux joueurs</h3>
+        <p>Utilisez les boutons <strong>Flash rouge</strong> et <strong>Flash vert</strong> sur la carte d'un joueur pour lui signaler visuellement qu'il a reçu des dégâts (rouge) ou a été soigné (vert). Ces effets s'affichent instantanément sur sa fiche.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="10">
+      <div class="step-number">10</div>
+      <div class="step-content">
+        <h3>Terminer le combat</h3>
+        <p>Cliquez sur <strong>🏁 Terminer le combat</strong>. Une fenêtre s'ouvre avec 4 options :</p>
+        <p>🏆 <strong>Victoire</strong> — les joueurs gagnent<br>
+           🏃 <strong>Fuite des monstres</strong> — les ennemis fuient<br>
+           💀 <strong>Défaite</strong> — les joueurs ont perdu<br>
+           📋 <strong>Autre</strong> — saisie libre</p>
+        <p>Si vous choisissez Victoire, vous pouvez distribuer des <strong>XP</strong> à tous les joueurs de la session en un clic. Le panneau combat se ferme côté joueurs, et le résultat est enregistré dans le journal.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="90" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Modal Terminer le combat</text><text x="380" y="115" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Choix issue + XP à distribuer</text></svg><figcaption>La distribution d'XP notifie chaque joueur et met à jour leur fiche</figcaption></figure>
+      </div>
+    </div>
+
+    <nav class="tuto-nav">
+      <a href="tutoriel-campagne.html" class="tuto-nav-prev">← Créer une campagne</a>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Tutoriel</a>
+      <a href="tutoriel-niveau.html" class="tuto-nav-next">Monter en niveau →</a>
+    </nav>
+  </main>
+</div>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">import { toggleSidebar } from './js/sidebar.js'; window.toggleSidebar = toggleSidebar;</script>
+<div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('combat-mj'));</script>
+</body>
+</html>

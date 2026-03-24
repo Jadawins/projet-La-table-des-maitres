@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliothèque — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden"><img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" /></button>
+
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">📖 Bibliothèque</span>
+    </div>
+
+    <div class="tuto-header">
+      <h1>📖 Utiliser la bibliothèque</h1>
+      <p class="tuto-desc">La bibliothèque contient 374 sorts, 322 monstres, 12 classes, 48 sous-classes, 10 espèces, 16 historiques, 75 dons et l'équipement complet du PHB 2024. Tout est consultable et filtrable.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">🎯 Guide interactif</button>
+        <span style="font-size:0.72rem;color:#8892b0;">~2 min de lecture · 6 étapes</span>
+      </div>
+    </div>
+
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">6 étapes</span>
+    </div>
+
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Ouvrir la Bibliothèque</h3>
+        <p>Dans la sidebar, cliquez sur <strong>"Bibliothèque"</strong>. La page charge immédiatement toutes les catégories disponibles. Aucun chargement long n'est nécessaire — tout le contenu est mis en cache localement.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Naviguer entre les onglets</h3>
+        <p>La bibliothèque est organisée en onglets :</p>
+        <p>🔮 <strong>Sorts</strong> — 374 sorts PHB 2024 avec description complète<br>
+           🐉 <strong>Bestiaire</strong> — 322 monstres SRD avec stats, actions et traits<br>
+           ⚔️ <strong>Classes</strong> — 12 classes + 48 sous-classes<br>
+           🧬 <strong>Espèces</strong> — 10 espèces avec traits raciaux<br>
+           📜 <strong>Historiques</strong> — 16 historiques<br>
+           ⭐ <strong>Dons</strong> — 75 dons PHB 2024<br>
+           🗡️ <strong>Équipement</strong> — armes, armures, objets courants</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160"><rect width="760" height="160" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="158" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="75" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Barre d'onglets de la bibliothèque</text><text x="380" y="100" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Sorts — Bestiaire — Classes — Espèces — Historiques — Dons — Équipement</text></svg><figcaption>Les onglets de la bibliothèque PHB 2024</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Utiliser la barre de recherche</h3>
+        <p>La barre de recherche en haut filtre instantanément les résultats. Tapez un nom de sort, un monstre ou un mot-clé. La recherche est partielle : <code>"boule"</code> trouvera <em>Boule de feu</em>.</p>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Astuce</div>
+        Vous pouvez chercher un sort <strong>par son effet</strong> plutôt que son nom : tapez <code>"sommeil"</code>, <code>"feu"</code>, <code>"vol"</code> pour trouver rapidement ce que vous cherchez.
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Utiliser les filtres avancés</h3>
+        <p>Sous la barre de recherche, des filtres permettent d'affiner :</p>
+        <p>• <strong>Niveau</strong> (0 à 9 pour les sorts, FP pour les monstres)<br>
+           • <strong>École de magie</strong> (Évocation, Illusion, Nécromancie…)<br>
+           • <strong>Classe compatible</strong> (n'affiche que les sorts de votre classe)<br>
+           • <strong>Type de créature</strong> (humanoïde, dragon, mort-vivant…)</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Afficher la fiche complète</h3>
+        <p>Cliquez sur n'importe quelle carte pour ouvrir la fiche détaillée. Pour un sort : composantes, portée, durée, description complète avec les effets à différents niveaux. Pour un monstre : caractéristiques, CA, PV, actions, traits et résistances.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220"><rect width="760" height="220" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="218" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="100" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Fiche détail d'un sort (Boule de feu)</text><text x="380" y="125" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Composantes, portée, durée, description complète</text></svg><figcaption>Fiche détail d'un sort avec toutes les informations</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Les infobulles (termes en bleu)</h3>
+        <p>Dans les descriptions, les <strong style="color:#4a9eff;">termes techniques en bleu</strong> sont des mots-clés cliquables. Survolez-les pour voir une infobulle explicative du terme de jeu (Avantage, Désavantage, Action bonus, Concentration…).</p>
+      </div>
+    </div>
+
+    <nav class="tuto-nav">
+      <a href="tutoriel-rejoindre-session.html" class="tuto-nav-prev">← Rejoindre une session</a>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Tutoriel</a>
+      <a href="tutoriel-combat-joueur.html" class="tuto-nav-next">Combat joueur →</a>
+    </nav>
+  </main>
+</div>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">import { toggleSidebar } from './js/sidebar.js'; window.toggleSidebar = toggleSidebar;</script>
+<div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('bibliotheque'));</script>
+</body>
+</html>

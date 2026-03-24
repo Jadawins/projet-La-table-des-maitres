@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer son personnage — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+    </button>
+
+    <!-- BREADCRUMB -->
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">👤 Créer son personnage</span>
+    </div>
+
+    <!-- EN-TÊTE -->
+    <div class="tuto-header">
+      <h1>👤 Créer son personnage</h1>
+      <p class="tuto-desc">L'assistant de création guide pas à pas en 10 étapes : espèce, classe, caractéristiques, équipement et sorts. Comptez environ 10–15 minutes pour votre premier personnage.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">
+          🎯 Guide interactif
+        </button>
+        <span style="font-size:0.72rem;color:#8892b0;">~5 min de lecture · 12 étapes</span>
+      </div>
+    </div>
+
+    <!-- PROGRESSION -->
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">12 étapes</span>
+    </div>
+
+    <!-- ÉTAPES -->
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Ouvrir "Mes Personnages"</h3>
+        <p>Dans le menu de gauche, section <strong>Menu Joueurs</strong>, cliquez sur <strong>"Mes Personnages"</strong>. C'est depuis cette page que vous gérez tous vos personnages.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Sidebar avec "Mes Personnages" mis en évidence</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Menu Joueurs › Mes Personnages</text></svg><figcaption>Le lien "Mes Personnages" dans la sidebar gauche</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Cliquer sur "Créer un personnage"</h3>
+        <p>Sur la page Mes Personnages, cliquez sur le bouton <strong>"+ Créer un personnage"</strong> en haut à droite. L'assistant de création s'ouvre.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Bouton "+ Créer un personnage"</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Bouton doré en haut à droite de la liste</text></svg><figcaption>Le bouton de création est situé en haut de la liste des personnages</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Étape 1 — Informations de base</h3>
+        <p>Renseignez le <strong>nom</strong> de votre personnage, son <strong>niveau de départ</strong> (généralement 1) et son <strong>alignement</strong> (Loyal Bon, Chaotique Neutre…). Ces informations peuvent être modifiées plus tard sur la fiche.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Étape 2 — Choisir son espèce</h3>
+        <p>Faites défiler les espèces disponibles (Humain, Elfe, Nain, Halfelin, Gnome, Tieffelin…). Cliquez sur une espèce pour voir ses <strong>traits raciaux</strong> et ses <strong>bonus de caractéristiques</strong>, puis cliquez à nouveau pour confirmer.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="95" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Grille des espèces avec carte sélectionnée</text><text x="380" y="120" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">10 espèces PHB 2024 disponibles</text></svg><figcaption>La grille des espèces — cliquez pour voir les détails</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Étape 3 — Choisir sa classe</h3>
+        <p>Choisissez parmi les <strong>12 classes PHB 2024</strong> (Barbare, Barde, Clerc, Druide, Ensorceleur, Guerrier, Magicien, Moine, Paladin, Rôdeur, Roublard, Sorcier). Chaque classe affiche ses <strong>dés de vie</strong>, ses <strong>ressources</strong> et sa <strong>capacité principale</strong>.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Étape 4 — Choisir son historique</h3>
+        <p>L'historique représente le passé de votre personnage avant l'aventure (Acolyte, Criminel, Artisan, Ermite…). Il vous donne des <strong>compétences</strong>, un <strong>équipement de départ</strong> et un <strong>trait de personnalité</strong>.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="7">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>Étape 5 — Répartir ses caractéristiques</h3>
+        <p>Deux méthodes disponibles :</p>
+        <p>• <strong>Valeurs standard</strong> : 15, 14, 13, 12, 10, 8 — faites glisser chaque valeur vers une caractéristique (FOR, DEX, CON, INT, SAG, CHA).<br>
+           • <strong>Jet de dés</strong> : lancez 4d6, ignorez le plus petit — répétez 6 fois.</p>
+        <p>Les <strong>modificateurs</strong> (entre −5 et +5) sont calculés automatiquement.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="95" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Interface de répartition des caractéristiques</text><text x="380" y="120" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Drag & drop des valeurs ou saisie directe</text></svg><figcaption>Répartissez les 6 valeurs entre vos caractéristiques</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Astuce</div>
+        Mettez votre <strong>caractéristique principale</strong> la plus haute : FOR pour un Guerrier, DEX pour un Roublard, SAG pour un Clerc, INT pour un Magicien, CHA pour un Barde/Sorcier, CON pour tout le monde en deuxième choix.
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="8">
+      <div class="step-number">8</div>
+      <div class="step-content">
+        <h3>Étape 6 — Choisir ses compétences</h3>
+        <p>Votre classe et historique définissent combien de <strong>compétences de maîtrise</strong> vous pouvez choisir. Les compétences sélectionnées ajoutent votre <strong>bonus de maîtrise</strong> (+2 au niveau 1) aux jets concernés.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="9">
+      <div class="step-number">9</div>
+      <div class="step-content">
+        <h3>Étape 7 — Équipement de départ</h3>
+        <p>Sélectionnez votre pack d'équipement de départ proposé par votre classe et historique. Vous pouvez aussi choisir de commencer avec de l'<strong>or</strong> pour acheter vous-même dans la bibliothèque.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="10">
+      <div class="step-number">10</div>
+      <div class="step-content">
+        <h3>Étape 8 — Sorts (classes lanceuses)</h3>
+        <p>Si votre classe peut lancer des sorts (Magicien, Clerc, Druide, Barde, Sorcier…), choisissez vos sorts préparés et connus parmi ceux disponibles à votre niveau. Un filtre par niveau et école vous aide à trouver rapidement.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Sélecteur de sorts avec filtres</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Filtres par niveau, école, classe</text></svg><figcaption>Sélecteur de sorts — filtrez par niveau et école de magie</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="11">
+      <div class="step-number">11</div>
+      <div class="step-content">
+        <h3>Étape 9 — Traits &amp; personnalité</h3>
+        <p>Ajoutez un <strong>trait de personnalité</strong>, un <strong>idéal</strong>, un <strong>lien</strong> et un <strong>défaut</strong>. Ces informations sont pré-remplies selon votre historique mais vous pouvez les modifier librement pour personnaliser votre rôle.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="12">
+      <div class="step-number">12</div>
+      <div class="step-content">
+        <h3>Étape 10 — Récapitulatif et confirmation</h3>
+        <p>Une page récapitule toutes vos données : caractéristiques, modificateurs, PV max, CA, maîtrises, sorts. Vérifiez tout, puis cliquez <strong>"Créer mon personnage"</strong>. Votre fiche complète est générée automatiquement.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="90" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Page récapitulative avec bouton de confirmation</text><text x="380" y="115" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Toutes les stats calculées automatiquement</text></svg><figcaption>Le récapitulatif final avant création du personnage</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Astuce</div>
+        Tu peux <strong>sauvegarder à tout moment</strong> et reprendre plus tard. Le wizard conserve ta progression dans le navigateur.
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Astuce</div>
+        Les <strong>modificateurs</strong> (bonus de caractéristiques, maîtrises, bonus d'attaque) sont <strong>calculés automatiquement</strong> sur toute la fiche — tu n'as rien à calculer manuellement.
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="tuto-nav">
+      <span class="tuto-nav-placeholder"></span>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Retour au tutoriel</a>
+      <a href="tutoriel-rejoindre-session.html" class="tuto-nav-next">Rejoindre une session →</a>
+    </nav>
+  </main>
+</div>
+
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('creer-personnage'));</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combat (joueur) — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+    </button>
+
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">⚔️ Combat (joueur)</span>
+    </div>
+
+    <div class="tuto-header">
+      <h1>⚔️ Combat — Vue Joueur</h1>
+      <p class="tuto-desc">Quand le MJ lance un combat, votre interface change automatiquement. Apprenez à gérer votre tour, lancer vos attaques, utiliser vos sorts et survivre aux jets de mort.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">🎯 Guide interactif</button>
+        <span style="font-size:0.72rem;color:#8892b0;">~4 min de lecture · 9 étapes</span>
+      </div>
+    </div>
+
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">9 étapes</span>
+    </div>
+
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Le panneau Combat apparaît automatiquement</h3>
+        <p>Quand le MJ démarre un combat depuis l'écran MJ, un <strong>panneau Combat</strong> s'affiche en temps réel sur votre fiche personnage. Vous n'avez rien à faire — la connexion est automatique. Le panneau affiche l'ordre d'initiative et les participants.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Panneau combat sur la fiche joueur</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Tracker d'initiative, participants, PV de vos alliés</text></svg><figcaption>Le panneau combat s'active automatiquement dès que le MJ lance un combat</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Attendre son tour — le badge doré</h3>
+        <p>Quand c'est votre tour, un <strong style="color:#c9a84c;">badge doré clignotant</strong> apparaît en haut de votre fiche. C'est votre signal pour agir. Vous avez une <strong>Action</strong>, une <strong>Action bonus</strong> (si disponible), un <strong>Déplacement</strong> et une <strong>Réaction</strong> par tour.</p>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Astuce</div>
+        Pendant le tour des autres, préparez votre action : regardez l'ordre d'initiative, choisissez votre cible, vérifiez les emplacements de sorts restants.
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Effectuer une attaque</h3>
+        <p>Cliquez sur le bouton de votre attaque (arme ou attaque à mains nues). Une fenêtre apparaît pour <strong>sélectionner votre cible</strong> parmi les participants visibles. Lancez votre dé d20 dans la vraie vie, puis entrez le résultat.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="90" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Interface d'attaque</text><text x="380" y="115" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Sélection cible → d20 → résultat touche/raté</text></svg><figcaption>Le système compare automatiquement votre jet à la CA de la cible</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Entrer les dégâts</h3>
+        <p>Si votre attaque touche, le système vous demande d'entrer vos dégâts. Lancez les dés de dégâts de votre arme dans la vraie vie et entrez le total. Le MJ voit le résultat et déduit les PV de la cible.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Actions, action bonus et réaction</h3>
+        <p>Votre fiche affiche clairement vos actions disponibles ce tour :</p>
+        <p>⚡ <strong>Action</strong> — attaquer, lancer un sort, Aider, Foncer, Se cacher…<br>
+           ✨ <strong>Action bonus</strong> — disponible selon votre classe et capacités<br>
+           🛡️ <strong>Réaction</strong> — déclenchée hors de votre tour (attaque d'opportunité, Bouclier…)</p>
+        <p>Les cases cochées s'estompent visuellement pour indiquer qu'elles sont utilisées.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Lancer un sort</h3>
+        <p>Depuis l'onglet <strong>Sorts</strong> de votre fiche, cliquez sur un sort disponible. Choisissez le <strong>niveau d'emplacement</strong> à utiliser (si applicable), sélectionnez la cible, puis entrez votre résultat de jet de sauvegarde ou votre d20. Les emplacements de sorts se consomment automatiquement.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Onglet Sorts en combat</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Emplacements consommés automatiquement</text></svg><figcaption>Les emplacements grisés indiquent qu'ils ont déjà été utilisés</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="7">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>Jet de sauvegarde</h3>
+        <p>Quand le MJ vous demande un jet de sauvegarde, une notification apparaît sur votre écran. Lancez le dé dans la vraie vie et entrez le résultat dans le champ prévu. Le MJ voit immédiatement si vous réussissez ou échouez.</p>
+      </div>
+    </div>
+
+    <div class="tuto-warning">
+      <span class="tuto-box-icon">⚠️</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Flash rouge</div>
+        Si votre écran <strong>flashe en rouge</strong>, vous venez de recevoir des dégâts. Si votre écran <strong>flashe en vert</strong>, vous avez été soigné. Ces effets visuels sont déclenchés par le MJ en temps réel.
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="8">
+      <div class="step-number">8</div>
+      <div class="step-content">
+        <h3>Tomber à 0 PV — Jets de mort</h3>
+        <p>Si vos PV tombent à 0, votre personnage est <strong>inconscient</strong>. La section <strong>Jets de sauvegarde contre la mort</strong> apparaît. À chaque début de votre tour, lancez un d20 :</p>
+        <p>• ≥ 10 → succès (cochez une case succès)<br>
+           • ≤ 9 → échec (cochez une case échec)<br>
+           • 3 succès → vous stabilisez<br>
+           • 3 échecs → votre personnage meurt</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="9">
+      <div class="step-number">9</div>
+      <div class="step-content">
+        <h3>Fin du combat</h3>
+        <p>Quand le MJ termine le combat, votre panneau combat se ferme automatiquement. Si le MJ distribue des XP, une notification apparaît avec les points gagnés. Si vous avez monté en niveau, le <strong>badge Level Up</strong> s'allume sur votre fiche.</p>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Concentration</div>
+        Si vous maintenez un sort de concentration et subissez des dégâts, le MJ peut vous demander un jet de constitution. Le DC est 10 ou la moitié des dégâts reçus (le plus élevé des deux).
+      </div>
+    </div>
+
+    <nav class="tuto-nav">
+      <a href="tutoriel-bibliotheque.html" class="tuto-nav-prev">← Bibliothèque</a>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Tutoriel</a>
+      <a href="tutoriel-niveau.html" class="tuto-nav-next">Monter en niveau →</a>
+    </nav>
+  </main>
+</div>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">import { toggleSidebar } from './js/sidebar.js'; window.toggleSidebar = toggleSidebar;</script>
+<div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('combat-joueur'));</script>
+</body>
+</html>

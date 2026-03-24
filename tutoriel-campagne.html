@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer une campagne — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+    </button>
+
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">📋 Créer une campagne</span>
+    </div>
+
+    <div class="tuto-header">
+      <h1>📋 Créer une campagne</h1>
+      <p class="tuto-desc">Le Dashboard MJ est votre hub central. Créez une campagne avec l'éditeur de blocs, liez vos sessions, préparez vos rencontres et suivez la progression de vos joueurs.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">🎯 Guide interactif</button>
+        <span style="font-size:0.72rem;color:#8892b0;">~5 min de lecture · 7 étapes</span>
+      </div>
+    </div>
+
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">7 étapes</span>
+    </div>
+
+    <div id="dashboard"></div>
+
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Accéder au Dashboard MJ</h3>
+        <p>Dans la sidebar, cliquez sur <strong>Dashboard MJ</strong>. Ce hub central regroupe toutes vos campagnes, vos sessions actives, les statistiques de vos joueurs et votre journal de campagne.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Dashboard MJ — Vue d'accueil</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Campagnes récentes, sessions actives, stats globales</text></svg><figcaption>Le Dashboard MJ centralise toute la gestion de vos parties</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Créer une nouvelle campagne</h3>
+        <p>Dans la colonne de navigation gauche, cliquez sur <strong>+ Nouvelle campagne</strong>. Une fenêtre s'ouvre pour saisir le nom et la description de votre campagne. Confirmez — la campagne apparaît dans votre liste et l'éditeur de blocs s'ouvre automatiquement.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>L'éditeur de blocs</h3>
+        <p>Le cœur de la campagne est son <strong>éditeur de blocs</strong>. Chaque bloc est un élément de contenu que vous pouvez réorganiser librement. Cliquez sur un type de bloc dans la barre d'outils pour l'ajouter :</p>
+        <p>⚔️ <strong>Rencontre</strong> — description du combat, monstres, récompenses<br>
+           🎲 <strong>Jet demandé</strong> — type de compétence, DC, conséquences<br>
+           💰 <strong>Loot</strong> — trésors, objets magiques, monnaie<br>
+           👤 <strong>PNJ</strong> — personnage non-joueur avec traits et motivations<br>
+           🗺️ <strong>Lieu</strong> — description d'un endroit avec ambiance<br>
+           📝 <strong>Texte libre</strong> — notes, lore, description narrative</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="90" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Éditeur de blocs</text><text x="380" y="115" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Blocs Rencontre / PNJ / Loot / Lieu / Texte</text></svg><figcaption>L'éditeur de blocs structure votre contenu de scénario</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Auto-save</div>
+        Vos modifications sont <strong>sauvegardées automatiquement toutes les 30 secondes</strong>. Vous pouvez aussi forcer la sauvegarde avec le bouton <strong>💾 Enregistrer</strong> dans la barre d'outils.
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Créer et lier une session</h3>
+        <p>Dans la colonne de navigation, cliquez sur <strong>+ Nouvelle session</strong>. Renseignez le nom, la date prévue, et choisissez si elle est publique ou privée (avec mot de passe optionnel). La session sera liée à votre campagne active.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Gérer les joueurs et le dashboard de session</h3>
+        <p>Sélectionnez une session active dans la liste pour voir le <strong>dashboard de session</strong> : cartes de chaque joueur avec leurs PV actuels, conditions, niveaux, et actions rapides (envoyer un message, infliger des dégâts, envoyer un flash).</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="90" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Dashboard session</text><text x="380" y="115" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Cartes joueurs avec PV, conditions, actions rapides</text></svg><figcaption>Suivez l'état de vos joueurs en temps réel pendant la session</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Le journal de campagne</h3>
+        <p>Chaque action importante (combat terminé, XP distribués, joueur rejoint…) est automatiquement <strong>enregistrée dans le journal</strong>. Vous pouvez aussi ajouter des entrées manuelles pour noter des événements narratifs ou des décisions de vos joueurs.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="7">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>Distribuer XP et gérer la progression</h3>
+        <p>Depuis le panneau contextuel droit, utilisez le module <strong>Distribution XP</strong> pour attribuer des points d'expérience à l'issue d'une rencontre. Choisissez entre XP classique ou système au <strong>jalon</strong> (montée de niveau automatique sans XP). Les fiches joueurs se mettent à jour instantanément.</p>
+      </div>
+    </div>
+
+    <div class="tuto-info">
+      <span class="tuto-box-icon">ℹ️</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Lancer un combat</div>
+        Pour démarrer un combat depuis une session active, accédez à l'<strong>Écran MJ</strong> (bouton dans le dashboard de session). C'est depuis cet écran que vous gérez l'initiative et le tracker en temps réel. Voir le tutoriel <a href="tutoriel-combat-mj.html" style="color:#93c5fd;">Gérer un combat (MJ)</a>.
+      </div>
+    </div>
+
+    <nav class="tuto-nav">
+      <a href="tutoriel.html" class="tuto-nav-prev">← Tutoriel</a>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Tutoriel</a>
+      <a href="tutoriel-combat-mj.html" class="tuto-nav-next">Combat MJ →</a>
+    </nav>
+  </main>
+</div>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">import { toggleSidebar } from './js/sidebar.js'; window.toggleSidebar = toggleSidebar;</script>
+<div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('campagne'));</script>
+</body>
+</html>

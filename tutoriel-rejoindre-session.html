@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejoindre une session — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+    </button>
+
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">🚪 Rejoindre une session</span>
+    </div>
+
+    <div class="tuto-header">
+      <h1>🚪 Rejoindre une session</h1>
+      <p class="tuto-desc">Trouvez une partie ouverte au recrutement, rejoignez-la (publique ou avec mot de passe) et associez votre personnage pour être prêt à jouer.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">🎯 Guide interactif</button>
+        <span style="font-size:0.72rem;color:#8892b0;">~3 min de lecture · 7 étapes</span>
+      </div>
+    </div>
+
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">7 étapes</span>
+    </div>
+
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Ouvrir "Mes Sessions (Joueur)"</h3>
+        <p>Dans le menu de gauche, cliquez sur <strong>"Mes Sessions (Joueur)"</strong>. Vous arrivez sur la page qui liste les sessions disponibles et celles que vous avez déjà rejointes.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Page Sessions avec liste des parties</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Sessions disponibles au recrutement</text></svg><figcaption>La page Sessions liste toutes les parties auxquelles vous pouvez vous joindre</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Parcourir les sessions disponibles</h3>
+        <p>Chaque carte de session affiche : le <strong>nom de la partie</strong>, le <strong>MJ</strong>, le <strong>nombre de joueurs</strong> actuels et le <strong>statut</strong> (Recrutement ouvert, En cours, Terminée).</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Filtrer par statut</h3>
+        <p>Utilisez les onglets en haut de la liste pour n'afficher que les sessions <strong>"En recrutement"</strong> — ce sont les seules que vous pouvez rejoindre. Les sessions "En cours" sont visibles mais ne peuvent plus être rejointes.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Voir les détails d'une session</h3>
+        <p>Cliquez sur une carte pour afficher la page de détail : description de la campagne, joueurs inscrits, règles de la partie. Vous pouvez décider de rejoindre depuis cette page.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200"><rect width="760" height="200" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="198" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="90" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Page détail d'une session</text><text x="380" y="115" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Joueurs inscrits, description, bouton rejoindre</text></svg><figcaption>La page détail d'une session avant de la rejoindre</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Session publique — Rejoindre directement</h3>
+        <p>Sur une session publique, cliquez simplement sur <strong>"Rejoindre"</strong>. Vous êtes ajouté à la liste des joueurs immédiatement. Le MJ peut vous voir dans son interface.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Session privée — Entrer le mot de passe</h3>
+        <p>Si la session est <strong>🔒 Privée</strong>, un champ mot de passe apparaît. Demandez le code au MJ qui organise la partie. Entrez-le et cliquez "Rejoindre".</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="7">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>Associer son personnage</h3>
+        <p>Après avoir rejoint, choisissez <strong>quel personnage vous jouez</strong> dans cette session via le menu déroulant. Vous pouvez changer votre personnage tant que la session n'a pas démarré.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Sélecteur de personnage dans la session</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Liste déroulante de vos personnages disponibles</text></svg><figcaption>Associez un de vos personnages à la session</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-warning">
+      <span class="tuto-box-icon">⚠️</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Attention</div>
+        Un même personnage <strong>ne peut pas être utilisé dans deux sessions simultanées</strong>. Si votre personnage est déjà engagé dans une partie active, il n'apparaîtra pas dans la liste de sélection.
+      </div>
+    </div>
+
+    <div id="gestion"></div>
+
+    <div class="tuto-info">
+      <span class="tuto-box-icon">ℹ️</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Gestion côté MJ</div>
+        En tant que MJ, créez une session depuis le <a href="tutoriel-campagne.html" style="color:#93c5fd;">Dashboard MJ</a>. Vous pouvez inviter les joueurs par le code de session, gérer les inscriptions et démarrer la partie quand tout le monde est prêt.
+      </div>
+    </div>
+
+    <nav class="tuto-nav">
+      <a href="tutoriel-creer-personnage.html" class="tuto-nav-prev">← Créer son personnage</a>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Tutoriel</a>
+      <a href="tutoriel-bibliotheque.html" class="tuto-nav-next">Bibliothèque →</a>
+    </nav>
+  </main>
+</div>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+<div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('rejoindre-session'));</script>
+</body>
+</html>

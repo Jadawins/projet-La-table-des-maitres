@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/style-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+</head>
+<body>
+<div class="page-container">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+    </button>
+
+    <!-- HERO -->
+    <div class="tuto-hero">
+      <h1>📚 Guide du joueur &amp; du Maître de Jeu</h1>
+      <p>Apprenez à utiliser La Table du Maître, pas à pas.</p>
+      <div class="tuto-search-wrap">
+        <input type="search" id="tuto-search" class="tuto-search-bar"
+          placeholder="Rechercher dans le guide… (sorts, combat, niveau…)" />
+      </div>
+    </div>
+
+    <!-- DEUX SECTIONS -->
+    <div class="tuto-sections">
+
+      <!-- GUIDE JOUEUR -->
+      <div class="tuto-section">
+        <div class="tuto-section-title">
+          <span>🧙</span> Guide du Joueur
+        </div>
+        <div class="tuto-cards">
+
+          <a href="tutoriel-creer-personnage.html" class="tuto-card"
+             data-search="créer personnage wizard espèce classe caractéristiques sorts">
+            <div class="tuto-card-icon">👤</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Créer son personnage</div>
+              <div class="tuto-card-desc">Wizard 10 étapes — espèce, classe, sorts…</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~5 min</span>
+              <span class="tuto-badge-new">Nouveau</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-rejoindre-session.html" class="tuto-card"
+             data-search="rejoindre session partie public privé mot de passe">
+            <div class="tuto-card-icon">🚪</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Rejoindre une session</div>
+              <div class="tuto-card-desc">Trouver une partie et associer son perso</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~3 min</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-bibliotheque.html" class="tuto-card"
+             data-search="bibliothèque sorts classes espèces infobulles recherche filtres">
+            <div class="tuto-card-icon">📖</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Utiliser la bibliothèque</div>
+              <div class="tuto-card-desc">374 sorts, bestiaire, équipement, dons…</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~2 min</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-combat-joueur.html" class="tuto-card"
+             data-search="combat joueur attaque dés dégâts sort tour jets de mort concentration">
+            <div class="tuto-card-icon">⚔️</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Combat (vue joueur)</div>
+              <div class="tuto-card-desc">Attaques, sorts, jets de mort, conditions</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~4 min</span>
+              <span class="tuto-badge-new">Nouveau</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-niveau.html" class="tuto-card"
+             data-search="monter niveau XP expérience jalon level up sous-classe don caractéristiques">
+            <div class="tuto-card-icon">⬆️</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Monter en niveau</div>
+              <div class="tuto-card-desc">XP, jalon, wizard de montée en niveau</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~4 min</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-repos.html" class="tuto-card"
+             data-search="repos court long récupérer PV sorts ressources vote sondage">
+            <div class="tuto-card-icon">🌙</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Repos court &amp; long</div>
+              <div class="tuto-card-desc">Proposer, voter, récupérer ses ressources</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~3 min</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- GUIDE MJ -->
+      <div class="tuto-section">
+        <div class="tuto-section-title">
+          <span>🎲</span> Guide du Maître de Jeu
+        </div>
+        <div class="tuto-cards">
+
+          <a href="tutoriel-campagne.html" class="tuto-card"
+             data-search="campagne éditeur blocs rencontre loot PNJ lieu chapitre">
+            <div class="tuto-card-icon">📋</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Créer une campagne</div>
+              <div class="tuto-card-desc">Éditeur de blocs, rencontres, PNJ, lieux</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~5 min</span>
+              <span class="tuto-badge-new">Nouveau</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-combat-mj.html" class="tuto-card"
+             data-search="combat MJ initiative monstres tracker conditions dégâts XP terminer">
+            <div class="tuto-card-icon">⚔️</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Gérer un combat (MJ)</div>
+              <div class="tuto-card-desc">Initiative, tracker, actions sur monstres</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~5 min</span>
+              <span class="tuto-badge-new">Nouveau</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-campagne.html#dashboard" class="tuto-card"
+             data-search="dashboard MJ hub session joueurs statistiques journal">
+            <div class="tuto-card-icon">🗺️</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Dashboard MJ</div>
+              <div class="tuto-card-desc">Hub central — sessions, stats, journal</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~3 min</span>
+            </div>
+          </a>
+
+          <a href="tutoriel-rejoindre-session.html#gestion" class="tuto-card"
+             data-search="session MJ gérer joueurs XP distribuons roles">
+            <div class="tuto-card-icon">📊</div>
+            <div class="tuto-card-body">
+              <div class="tuto-card-title">Gérer les sessions</div>
+              <div class="tuto-card-desc">Joueurs, rôles, XP, messagerie temps réel</div>
+            </div>
+            <div class="tuto-card-meta">
+              <span class="tuto-card-time">~3 min</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div><!-- /tuto-sections -->
+  </main>
+</div>
+
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+  else {
+    localStorage.setItem("userId", user.id);
+    document.dispatchEvent(new CustomEvent('supabase-ready', { detail: { user } }));
+  }
+</script>
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+</body>
+</html>

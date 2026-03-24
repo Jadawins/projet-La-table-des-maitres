@@ -1,0 +1,21 @@
+{
+  "derniere_mise_a_jour": "2026-03-24T23:45:00",
+  "statut": "termine",
+  "etapes": {
+    "page_accueil": "termine",
+    "css_tutoriel": "termine",
+    "js_tutoriel": "termine",
+    "guide_interactif": "termine",
+    "page_personnage": "termine",
+    "page_session": "termine",
+    "page_bibliotheque": "termine",
+    "page_combat_joueur": "termine",
+    "page_combat_mj": "termine",
+    "page_campagne": "termine",
+    "page_niveau": "termine",
+    "page_repos": "termine",
+    "sidebar_update": "termine",
+    "edito_home": "termine"
+  },
+  "derniere_etape": "tutoriel-repos.html"
+}

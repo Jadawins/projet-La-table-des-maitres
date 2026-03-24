@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monter en niveau — Tutoriel</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/tutoriel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>const savedTheme=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",savedTheme);</script>
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Menu" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer"><a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a></div>
+    </div>
+  </aside>
+
+  <main class="tuto-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+    </button>
+
+    <div class="tuto-breadcrumb">
+      <a href="tutoriel.html">📚 Tutoriel</a>
+      <span class="sep">›</span>
+      <span class="current">⬆️ Monter en niveau</span>
+    </div>
+
+    <div class="tuto-header">
+      <h1>⬆️ Monter en niveau</h1>
+      <p class="tuto-desc">Gagnez de l'XP, débloquez de nouvelles capacités, choisissez votre sous-classe, augmentez vos caractéristiques et obtenez de nouveaux sorts — le tout guidé étape par étape.</p>
+      <div class="tuto-header-row">
+        <button id="btn-guide" class="tuto-guide-btn" style="display:none;">🎯 Guide interactif</button>
+        <span style="font-size:0.72rem;color:#8892b0;">~4 min de lecture · 10 étapes</span>
+      </div>
+    </div>
+
+    <div class="tuto-progress">
+      <div class="tuto-progress-track">
+        <div class="tuto-progress-fill" id="tuto-progress-fill" style="width:0%"></div>
+      </div>
+      <span class="tuto-progress-label" id="tuto-progress-label">10 étapes</span>
+    </div>
+
+    <div class="tuto-step" data-step="1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>La barre d'XP</h3>
+        <p>Sur votre fiche personnage, une <strong>barre dorée</strong> indique votre progression vers le niveau suivant. Passez la souris sur la barre pour voir votre XP actuel et le seuil du prochain niveau. La barre se remplit à chaque distribution d'XP par le MJ.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 140"><rect width="760" height="140" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="138" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="65" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Barre XP sur la fiche personnage</text><text x="380" y="90" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">850 / 1000 XP → Niveau 3</text></svg><figcaption>La barre dorée progresse à chaque rencontre remportée</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Le badge Level Up !</h3>
+        <p>Quand votre XP dépasse le seuil du niveau suivant, un <strong>badge animé ⬆️ Level Up !</strong> apparaît sur votre fiche. Ce badge reste visible jusqu'à ce que vous fassiez la montée de niveau — vous pouvez attendre la fin de la session si vous préférez.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Lancer le wizard de montée de niveau</h3>
+        <p>Cliquez sur le badge <strong>Level Up !</strong> ou sur le bouton <strong>⬆️ Monter en niveau</strong> pour démarrer l'assistant. Le wizard analyse votre classe et votre nouveau niveau pour ne vous présenter que les choix pertinents.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Nouveaux PV</h3>
+        <p>La première étape du wizard calcule vos <strong>nouveaux PV</strong>. Vous choisissez entre :</p>
+        <p>• <strong>Jet de dé</strong> — lancez le dé de vie de votre classe (d6, d8, d10, d12) + modificateur CON<br>
+           • <strong>Valeur fixe</strong> — la moyenne du dé + 1 + modificateur CON (option recommandée)</p>
+        <p>Les PV maximum sont mis à jour automatiquement.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="5">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Nouvelles capacités de classe</h3>
+        <p>Le wizard affiche toutes les <strong>capacités débloquées</strong> à votre nouveau niveau. Chaque capacité est présentée avec sa description complète. Certains niveaux débloquent plusieurs capacités en même temps — lisez-les attentivement avant de continuer.</p>
+        <figure class="tuto-screenshot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180"><rect width="760" height="180" rx="8" fill="#0f1117"/><rect x="1" y="1" width="758" height="178" rx="7" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><text x="380" y="85" fill="#c9a84c" font-family="Georgia" font-size="14" text-anchor="middle" opacity="0.6">📸 Screenshot : Wizard montée de niveau</text><text x="380" y="110" fill="#8892b0" font-family="sans-serif" font-size="11" text-anchor="middle">Nouvelles capacités, nouveaux sorts, sous-classe…</text></svg><figcaption>Le wizard liste toutes les améliorations de votre classe</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="6">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>Choisir sa sous-classe (niveaux clés)</h3>
+        <p>À certains niveaux (souvent niveau 3), vous devez <strong>choisir votre sous-classe</strong>. Le wizard présente toutes les sous-classes disponibles pour votre classe avec une description. Ce choix est permanent — prenez le temps de bien lire avant de confirmer.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="7">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>Amélioration de caractéristiques</h3>
+        <p>Tous les 4 niveaux, vous obtenez une <strong>Amélioration de Caractéristique</strong>. Vous pouvez :</p>
+        <p>• Ajouter +2 à une caractéristique, ou<br>
+           • Ajouter +1 à deux caractéristiques différentes, ou<br>
+           • Prendre un <strong>Don</strong> à la place</p>
+        <p>Le wizard vous guide dans ce choix avec les limites maximales (20 par défaut).</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="8">
+      <div class="step-number">8</div>
+      <div class="step-content">
+        <h3>Choisir un don</h3>
+        <p>Si vous choisissez de prendre un <strong>Don</strong> plutôt qu'une amélioration de caractéristique, le wizard affiche la liste des 75 dons disponibles (PHB 2024). Chaque don indique ses prérequis et son effet. Seuls les dons dont vous remplissez les conditions sont sélectionnables.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="9">
+      <div class="step-number">9</div>
+      <div class="step-content">
+        <h3>Nouveaux emplacements de sorts</h3>
+        <p>Si vous êtes lanceur de sorts, le wizard met à jour votre <strong>tableau de sorts</strong> : nouveaux emplacements de sorts, nouveaux sorts connus (pour les Ensorceleurs et Bardes), ou nouveaux sorts préparés (pour les Mages et Clercs). Vous choisissez les sorts directement depuis la bibliothèque intégrée.</p>
+      </div>
+    </div>
+
+    <div class="tuto-step" data-step="10">
+      <div class="step-number">10</div>
+      <div class="step-content">
+        <h3>Confirmer la montée de niveau</h3>
+        <p>La dernière étape du wizard affiche un <strong>récapitulatif complet</strong> de tous vos choix. Vérifiez que tout est correct, puis cliquez sur <strong>✅ Confirmer le niveau X</strong>. Votre fiche est mise à jour instantanément — PV, caractéristiques, capacités, sorts — et le badge Level Up disparaît.</p>
+      </div>
+    </div>
+
+    <div class="tuto-tip">
+      <span class="tuto-box-icon">💡</span>
+      <div class="tuto-box-body">
+        <div class="tuto-box-label">Système Jalon</div>
+        Si votre MJ utilise le système au <strong>jalon</strong>, vous ne gagnez pas d'XP. La montée de niveau est déclenchée directement par le MJ quand il juge que le groupe mérite de progresser. Le badge Level Up apparaît quand même sur votre fiche.
+      </div>
+    </div>
+
+    <nav class="tuto-nav">
+      <a href="tutoriel-combat-joueur.html" class="tuto-nav-prev">← Combat joueur</a>
+      <a href="tutoriel.html" class="tuto-nav-home">📚 Tutoriel</a>
+      <a href="tutoriel-repos.html" class="tuto-nav-next">Repos →</a>
+    </nav>
+  </main>
+</div>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = "login.html";
+</script>
+<script type="module">import { toggleSidebar } from './js/sidebar.js'; window.toggleSidebar = toggleSidebar;</script>
+<div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/tutoriel.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => initTutorielPage('niveau'));</script>
+</body>
+</html>
