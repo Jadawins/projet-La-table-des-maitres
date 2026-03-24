@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard MJ — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/dashboard-mj.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+</head>
+<body class="dashboard-body">
+
+<!-- SIDEBAR (identique aux autres pages) -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header sidebar-header-flex">
+    <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+      <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+    </button>
+    <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-nav-area">
+      <h2>Menu MJ</h2>
+      <ul class="sidebar-menu">
+        <li><a href="dashboard-mj.html" class="active"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+        <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+      </ul>
+      <h2>Menu Joueurs</h2>
+      <ul class="sidebar-menu">
+        <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+        <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+        <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">
+      <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a>
+    </div>
+  </div>
+</aside>
+
+<!-- LAYOUT PRINCIPAL -->
+<div class="db-layout">
+
+  <!-- TOPBAR -->
+  <div class="db-topbar" id="db-topbar">
+    <div class="db-topbar-left">
+      <button class="toggle-glow db-topbar-toggle hidden" id="closed-book-button" onclick="toggleSidebar()" aria-label="Ouvrir Menu">
+        <img src="assets/icone/livrefermer.png" alt="Menu" class="icon-book" />
+      </button>
+      <span class="db-topbar-title" id="db-topbar-titre">Dashboard MJ</span>
+    </div>
+    <div class="db-topbar-right" id="topbar-right">
+      <!-- notifications injectées ici -->
+    </div>
+  </div>
+
+  <!-- MAIN 3 COLONNES -->
+  <div class="db-main" id="db-main">
+
+    <!-- ══════════════════════════════════════════════════════════
+         COLONNE GAUCHE — Navigation campagnes / sessions
+    ══════════════════════════════════════════════════════════ -->
+    <nav class="db-col-nav" id="db-col-nav">
+
+      <!-- Campagnes -->
+      <div class="db-nav-section">
+        <div class="db-nav-section-header">
+          <span><i class="fa-solid fa-book-skull"></i> Campagnes</span>
+          <button class="db-btn-new" onclick="ouvrirModalNouvelleC()" title="Nouvelle campagne">+</button>
+        </div>
+        <div id="db-liste-campagnes">
+          <div class="db-nav-loading"><i class="fa-solid fa-spinner fa-spin"></i></div>
+        </div>
+      </div>
+
+      <!-- Sessions -->
+      <div class="db-nav-section">
+        <div class="db-nav-section-header">
+          <span><i class="fa-solid fa-scroll"></i> Sessions</span>
+          <button class="db-btn-new" onclick="ouvrirModalNouvelleS()" title="Nouvelle session">+</button>
+        </div>
+        <div id="db-liste-sessions">
+          <div class="db-nav-loading"><i class="fa-solid fa-spinner fa-spin"></i></div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════════
+         COLONNE CENTRE — Contenu principal
+    ══════════════════════════════════════════════════════════ -->
+    <div class="db-col-content" id="db-col-content">
+
+      <!-- VUE PAR DÉFAUT / ACCUEIL -->
+      <div id="vue-accueil" class="db-view active">
+        <div class="db-welcome">
+          <i class="fa-solid fa-gauge-high db-welcome-icon"></i>
+          <h2>Bienvenue sur votre Dashboard</h2>
+          <p>Sélectionnez une campagne ou une session dans la navigation de gauche.</p>
+          <div class="db-welcome-actions">
+            <button class="db-btn primary" onclick="ouvrirModalNouvelleC()">
+              <i class="fa-solid fa-plus"></i> Nouvelle campagne
+            </button>
+            <button class="db-btn blue" onclick="ouvrirModalNouvelleS()">
+              <i class="fa-solid fa-play"></i> Nouvelle session
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VUE CAMPAGNE -->
+      <div id="vue-campagne" class="db-view">
+        <div class="db-view-header">
+          <div>
+            <h2 id="campagne-titre" class="db-view-title">—</h2>
+            <span id="campagne-statut-badge" class="db-nav-badge"></span>
+          </div>
+          <div class="db-view-header-actions">
+            <button class="db-btn ghost sm" onclick="ouvrirModalStatsC()">
+              <i class="fa-solid fa-chart-simple"></i> Stats
+            </button>
+            <button class="db-btn primary sm" onclick="enregistrerCampagne()">
+              <i class="fa-solid fa-floppy-disk"></i> Enregistrer
+            </button>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="db-card" style="margin-bottom:1rem;">
+          <label class="db-label">Description</label>
+          <textarea id="campagne-desc" class="db-input db-textarea" rows="3" placeholder="Synopsis de la campagne…" oninput="marqueSaleCampagne()"></textarea>
+        </div>
+
+        <!-- Éditeur de blocs -->
+        <div class="db-card db-editor-card">
+          <div class="db-toolbar">
+            <span class="db-toolbar-label">Ajouter un bloc :</span>
+            <button class="db-tbtn bloc rencontre" onclick="ajouterBloc('rencontre')" title="Rencontre">
+              <i class="fa-solid fa-swords"></i> Rencontre
+            </button>
+            <button class="db-tbtn bloc jet" onclick="ajouterBloc('jet')" title="Jet de dés">
+              <i class="fa-solid fa-dice-d20"></i> Jet de dés
+            </button>
+            <button class="db-tbtn bloc loot" onclick="ajouterBloc('loot')" title="Loot">
+              <i class="fa-solid fa-gem"></i> Loot
+            </button>
+            <button class="db-tbtn bloc pnj" onclick="ajouterBloc('pnj')" title="PNJ">
+              <i class="fa-solid fa-person"></i> PNJ
+            </button>
+            <button class="db-tbtn bloc lieu" onclick="ajouterBloc('lieu')" title="Lieu">
+              <i class="fa-solid fa-map-location-dot"></i> Lieu
+            </button>
+            <button class="db-tbtn" onclick="ajouterBloc('texte')" title="Texte libre">
+              <i class="fa-solid fa-align-left"></i> Texte
+            </button>
+          </div>
+          <div id="editeur-blocs" class="db-editeur">
+            <!-- blocs injectés dynamiquement -->
+          </div>
+        </div>
+      </div>
+
+      <!-- VUE SESSION EN COURS -->
+      <div id="vue-session" class="db-view">
+        <div class="db-view-header">
+          <div>
+            <h2 id="session-titre" class="db-view-title">—</h2>
+            <span id="session-statut-badge" class="db-nav-badge"></span>
+          </div>
+          <div class="db-view-header-actions">
+            <button class="db-btn blue sm" onclick="ouvrirModalMessage()">
+              <i class="fa-solid fa-paper-plane"></i> Message groupe
+            </button>
+            <button class="db-btn primary sm" onclick="ouvrirEcranMJ()">
+              <i class="fa-solid fa-display"></i> Écran MJ
+            </button>
+            <button class="db-btn danger sm" onclick="terminerSession()">
+              <i class="fa-solid fa-flag-checkered"></i> Terminer
+            </button>
+          </div>
+        </div>
+
+        <!-- Tableau de bord session -->
+        <div class="db-session-stats" id="session-stats-rapides">
+          <div class="db-stat-mini"><i class="fa-solid fa-users"></i> <span id="stat-joueurs">—</span></div>
+          <div class="db-stat-mini"><i class="fa-solid fa-hourglass"></i> <span id="stat-duree">—</span></div>
+          <div class="db-stat-mini"><i class="fa-solid fa-skull"></i> <span id="stat-morts">0</span> morts</div>
+          <div class="db-stat-mini"><i class="fa-solid fa-star"></i> <span id="stat-xp">0</span> XP dist.</div>
+        </div>
+
+        <!-- Cartes joueurs -->
+        <div id="db-joueurs-grid" class="db-joueurs-grid">
+          <!-- injecté dynamiquement -->
+        </div>
+
+        <!-- Journal de session -->
+        <div class="db-card" style="margin-top:1rem;">
+          <div class="db-card-header">
+            <span><i class="fa-solid fa-book-open"></i> Journal de session</span>
+            <button class="db-btn ghost sm" onclick="exporterJournal()">
+              <i class="fa-solid fa-download"></i>
+            </button>
+          </div>
+          <div id="db-journal" class="db-journal">
+            <!-- entrées injectées -->
+          </div>
+          <div class="db-journal-input">
+            <input type="text" id="journal-input" class="db-input" placeholder="Ajouter une note…" onkeydown="if(event.key==='Enter')ajouterNoteJournal()">
+            <button class="db-btn primary sm" onclick="ajouterNoteJournal()"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VUE HISTORIQUE -->
+      <div id="vue-historique" class="db-view">
+        <div class="db-view-header">
+          <h2 class="db-view-title"><i class="fa-solid fa-clock-rotate-left"></i> Historique des sessions</h2>
+        </div>
+        <div id="db-historique-liste" class="db-histo-liste">
+          <div class="db-nav-loading"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+
+      <!-- VUE STATS CAMPAGNE -->
+      <div id="vue-stats" class="db-view">
+        <div class="db-view-header">
+          <h2 class="db-view-title"><i class="fa-solid fa-chart-simple"></i> Statistiques — <span id="stats-campagne-nom"></span></h2>
+          <button class="db-btn ghost sm" onclick="afficherVue('vue-campagne')">← Retour</button>
+        </div>
+        <div id="db-stats-grid" class="db-stats-grid">
+          <!-- injecté -->
+        </div>
+      </div>
+
+    </div><!-- /db-col-content -->
+
+    <!-- ══════════════════════════════════════════════════════════
+         COLONNE DROITE — Panneau contextuel
+    ══════════════════════════════════════════════════════════ -->
+    <aside class="db-col-ctx" id="db-col-ctx">
+
+      <!-- Actions rapides -->
+      <div class="db-ctx-section" id="ctx-actions">
+        <div class="db-ctx-header">Actions rapides</div>
+        <div id="ctx-actions-contenu">
+          <p class="db-ctx-empty">Sélectionnez une campagne ou session.</p>
+        </div>
+      </div>
+
+      <!-- Infos session active -->
+      <div class="db-ctx-section" id="ctx-session-info" style="display:none;">
+        <div class="db-ctx-header">Session active</div>
+        <div id="ctx-session-infos-contenu"></div>
+      </div>
+
+      <!-- XP rapide MJ -->
+      <div class="db-ctx-section" id="ctx-xp" style="display:none;">
+        <div class="db-ctx-header"><i class="fa-solid fa-star"></i> Distribuer XP</div>
+        <div class="db-ctx-xp">
+          <input type="number" id="ctx-xp-valeur" class="db-input" placeholder="XP à distribuer" min="0">
+          <div class="db-ctx-xp-buttons">
+            <button class="db-btn success sm" onclick="distribuerXPDashboard()">
+              <i class="fa-solid fa-share-from-square"></i> Distribuer
+            </button>
+            <button class="db-btn blue sm" onclick="jalonDashboard()">
+              <i class="fa-solid fa-arrow-up"></i> Jalon
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dés rapides -->
+      <div class="db-ctx-section" id="ctx-des">
+        <div class="db-ctx-header"><i class="fa-solid fa-dice-d20"></i> Lanceur de dés</div>
+        <div class="db-des-grid">
+          <button class="db-de-btn" onclick="lancerDe(4)">d4</button>
+          <button class="db-de-btn" onclick="lancerDe(6)">d6</button>
+          <button class="db-de-btn" onclick="lancerDe(8)">d8</button>
+          <button class="db-de-btn" onclick="lancerDe(10)">d10</button>
+          <button class="db-de-btn" onclick="lancerDe(12)">d12</button>
+          <button class="db-de-btn accent" onclick="lancerDe(20)">d20</button>
+          <button class="db-de-btn" onclick="lancerDe(100)">d100</button>
+        </div>
+        <div id="db-de-resultat" class="db-de-resultat">—</div>
+        <div id="db-de-historique" class="db-de-histo"></div>
+      </div>
+
+    </aside>
+
+  </div><!-- /db-main -->
+</div><!-- /db-layout -->
+
+<!-- ══════════════════════════════════════════════════════════
+     MODALS
+══════════════════════════════════════════════════════════ -->
+
+<!-- Modal nouvelle campagne -->
+<div class="db-modal-overlay hidden" id="modal-nouvelle-campagne">
+  <div class="db-modal">
+    <div class="db-modal-header">
+      <span><i class="fa-solid fa-book-skull"></i> Nouvelle campagne</span>
+      <button class="db-modal-close" onclick="fermerModal('modal-nouvelle-campagne')">✕</button>
+    </div>
+    <div class="db-modal-body">
+      <label class="db-label">Nom de la campagne *</label>
+      <input type="text" id="nc-nom" class="db-input" placeholder="Le Manoir Maudit…">
+      <label class="db-label" style="margin-top:0.8rem;">Description</label>
+      <textarea id="nc-desc" class="db-input db-textarea" rows="3" placeholder="Une brève description…"></textarea>
+    </div>
+    <div class="db-modal-footer">
+      <button class="db-btn ghost" onclick="fermerModal('modal-nouvelle-campagne')">Annuler</button>
+      <button class="db-btn primary" onclick="creerCampagne()">
+        <i class="fa-solid fa-plus"></i> Créer
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal nouvelle session -->
+<div class="db-modal-overlay hidden" id="modal-nouvelle-session">
+  <div class="db-modal">
+    <div class="db-modal-header">
+      <span><i class="fa-solid fa-scroll"></i> Nouvelle session</span>
+      <button class="db-modal-close" onclick="fermerModal('modal-nouvelle-session')">✕</button>
+    </div>
+    <div class="db-modal-body">
+      <label class="db-label">Nom de la session *</label>
+      <input type="text" id="ns-nom" class="db-input" placeholder="Séance 1 — L'Arrivée…">
+      <label class="db-label" style="margin-top:0.8rem;">Campagne associée</label>
+      <select id="ns-campagne" class="db-input db-select">
+        <option value="">— Aucune campagne —</option>
+      </select>
+      <label class="db-label" style="margin-top:0.8rem;">Visibilité</label>
+      <select id="ns-visibilite" class="db-input db-select">
+        <option value="public">Publique</option>
+        <option value="private">Privée (mot de passe)</option>
+      </select>
+      <div id="ns-mdp-wrap" style="display:none; margin-top:0.8rem;">
+        <label class="db-label">Mot de passe</label>
+        <input type="text" id="ns-mdp" class="db-input" placeholder="motdepasse123">
+      </div>
+    </div>
+    <div class="db-modal-footer">
+      <button class="db-btn ghost" onclick="fermerModal('modal-nouvelle-session')">Annuler</button>
+      <button class="db-btn primary" onclick="creerSession()">
+        <i class="fa-solid fa-play"></i> Créer
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal message groupe -->
+<div class="db-modal-overlay hidden" id="modal-message">
+  <div class="db-modal">
+    <div class="db-modal-header">
+      <span><i class="fa-solid fa-paper-plane"></i> Message au groupe</span>
+      <button class="db-modal-close" onclick="fermerModal('modal-message')">✕</button>
+    </div>
+    <div class="db-modal-body">
+      <label class="db-label">Message *</label>
+      <textarea id="msg-contenu" class="db-input db-textarea" rows="4" placeholder="Votre message pour tous les joueurs…"></textarea>
+    </div>
+    <div class="db-modal-footer">
+      <button class="db-btn ghost" onclick="fermerModal('modal-message')">Annuler</button>
+      <button class="db-btn primary" onclick="envoyerMessageGroupe()">
+        <i class="fa-solid fa-paper-plane"></i> Envoyer
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal terminer session -->
+<div class="db-modal-overlay hidden" id="modal-terminer">
+  <div class="db-modal">
+    <div class="db-modal-header">
+      <span><i class="fa-solid fa-flag-checkered"></i> Terminer la session</span>
+      <button class="db-modal-close" onclick="fermerModal('modal-terminer')">✕</button>
+    </div>
+    <div class="db-modal-body">
+      <p style="color:var(--db-secondary); font-size:0.9rem;">Cette action termine la session et génère un résumé automatique. Les joueurs seront notifiés.</p>
+      <label class="db-label" style="margin-top:0.8rem;">Résumé de séance (optionnel)</label>
+      <textarea id="terminer-resume" class="db-input db-textarea" rows="4" placeholder="Ce qu'il s'est passé lors de cette séance…"></textarea>
+    </div>
+    <div class="db-modal-footer">
+      <button class="db-btn ghost" onclick="fermerModal('modal-terminer')">Annuler</button>
+      <button class="db-btn danger" onclick="confirmerTerminerSession()">
+        <i class="fa-solid fa-flag-checkered"></i> Terminer la session
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    window.location.href = "login.html";
+  } else {
+    localStorage.setItem("userId", user.id);
+    const { data: { session } } = await supabase.auth.getSession();
+    window._supabaseToken = session?.access_token || null;
+    window._supabaseUser = user;
+    document.dispatchEvent(new CustomEvent('supabase-ready', { detail: { user, token: window._supabaseToken } }));
+  }
+</script>
+
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/dashboard-mj.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "derniere_mise_a_jour": "2026-03-24T22:00:00",
+  "statut": "termine",
+  "etapes": {
+    "dashboard_html": "termine",
+    "css_dashboard": "termine",
+    "js_dashboard": "termine",
+    "colonne_navigation": "termine",
+    "editeur_blocs": "termine",
+    "bloc_rencontre": "termine",
+    "bloc_jet_des": "termine",
+    "bloc_loot": "termine",
+    "bloc_pnj": "termine",
+    "bloc_lieu": "termine",
+    "tableau_bord_session": "termine",
+    "historique_sessions": "termine",
+    "statistiques": "termine",
+    "refonte_campagne_detail": "non_commence",
+    "refonte_session_detail": "non_commence",
+    "routes_api": "termine",
+    "sidebar_update": "termine",
+    "edito_home": "termine"
+  },
+  "derniere_etape": "commit_push"
+}
