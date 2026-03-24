@@ -833,3 +833,77 @@ body {
 
   .mj-col-body { overflow: visible; }
 }
+
+/* ─── MENU "..." PARTICIPANT ────────────────────────────────── */
+.btn-menu-actions {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #666;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  padding: 0 0.45rem;
+  border-radius: 4px;
+  transition: all 0.15s;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.btn-menu-actions:hover { color: #c9a84c; border-color: rgba(201,168,76,0.4); }
+
+.participant-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  background: #1a1a2e;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 7px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  z-index: 200;
+  min-width: 170px;
+  overflow: hidden;
+}
+.participant-dropdown.hidden { display: none; }
+
+.pmenu-item {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.8rem;
+  text-align: left;
+  transition: background 0.12s;
+  white-space: nowrap;
+}
+.pmenu-item:hover { background: rgba(255,255,255,0.07); color: #fff; }
+.pmenu-item.danger { color: #fca5a5; }
+.pmenu-item.danger:hover { background: rgba(248,113,113,0.12); color: #f87171; }
+
+/* ─── MODAL FIN DE COMBAT ───────────────────────────────────── */
+.fin-combat-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.fin-combat-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: #ccc;
+  transition: all 0.12s;
+}
+.fin-combat-option:hover { background: rgba(255,255,255,0.05); border-color: rgba(201,168,76,0.25); }
+.fin-combat-option input[type="radio"] { accent-color: #c9a84c; }
+.fin-combat-option:has(input:checked) {
+  background: rgba(201,168,76,0.08);
+  border-color: rgba(201,168,76,0.4);
+  color: #f0f0f0;
+}

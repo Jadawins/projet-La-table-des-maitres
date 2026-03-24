@@ -152,9 +152,20 @@ function renderInitiativeList() {
           <div class="cond-picker">${condManquantes}</div>
         </details>
 
-        <div class="participant-row" style="gap:0.4rem;flex-wrap:wrap;">
+        <div class="participant-row" style="gap:0.4rem;flex-wrap:wrap;position:relative;">
           <button class="btn-action-combat attaque" style="font-size:0.7rem;padding:0.2rem 0.6rem;" onclick="ouvrirModalDegats('${p.id}')">⚔️ Dégâts</button>
           <button class="btn-action-combat soin" style="font-size:0.7rem;padding:0.2rem 0.6rem;" onclick="ouvrirModalSoin('${p.id}')">💚 Soin</button>
+          <button class="btn-menu-actions" onclick="toggleMenuP('${p.id}', event)" title="Actions avancées">···</button>
+          <div class="participant-dropdown hidden" id="pmenu-${p.id}">
+            ${p.type !== 'joueur' ? `
+              <button class="pmenu-item danger" onclick="tuerMonstre('${p.id}')">☠️ Tuer</button>
+              <button class="pmenu-item" onclick="fuirParticipant('${p.id}')">🏃 Fuite monstre</button>
+              <button class="pmenu-item" onclick="neutraliserMonstre('${p.id}')">😴 Neutraliser</button>
+            ` : `
+              <button class="pmenu-item" onclick="fuirParticipant('${p.id}')">🏃 Fuite joueur</button>
+            `}
+            <button class="pmenu-item" onclick="ouvrirModifPvManuel('${p.id}')">✏️ Modifier PV</button>
+          </div>
         </div>
 
         <textarea class="notes-input" rows="1" placeholder="Notes…"
@@ -523,21 +534,209 @@ function escapeHtml(str) {
   return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-// ─── TERMINER COMBAT ─────────────────────────────────────────
+// ─── MENU "..." PAR PARTICIPANT ───────────────────────────────
 
-async function terminerCombat() {
-  if (!confirm('Terminer le combat ? Il sera archivé.')) return;
+function toggleMenuP(pid, event) {
+  event?.stopPropagation();
+  // Fermer tous les autres menus ouverts
+  document.querySelectorAll('.participant-dropdown').forEach(m => {
+    if (m.id !== `pmenu-${pid}`) m.classList.add('hidden');
+  });
+  const menu = document.getElementById(`pmenu-${pid}`);
+  if (menu) menu.classList.toggle('hidden');
+}
+window.toggleMenuP = toggleMenuP;
+
+// Fermer les menus en cliquant ailleurs
+document.addEventListener('click', () => {
+  document.querySelectorAll('.participant-dropdown').forEach(m => m.classList.add('hidden'));
+});
+
+// ─── ACTIONS RAPIDES SUR PARTICIPANT ─────────────────────────
+
+async function tuerMonstre(pid) {
+  document.getElementById(`pmenu-${pid}`)?.classList.add('hidden');
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  p.pv_actuels = 0;
+  renderInitiativeList();
+  renderJoueursPv();
+  await sauvegarderParticipants();
+  envoyerMsgSysteme(`☠️ ${p.nom} tué par le MJ.`);
+  await ajouterCondition(pid, 'inconscient');
+}
+window.tuerMonstre = tuerMonstre;
+
+async function fuirParticipant(pid) {
+  document.getElementById(`pmenu-${pid}`)?.classList.add('hidden');
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  const nom = p.nom;
+  const verbe = p.type === 'joueur' ? 'quitte le combat' : 'prend la fuite !';
+  combatData.participants = combatData.participants.filter(x => x.id !== pid);
+  // Ajuster tour_actuel si nécessaire
+  const sorted = [...combatData.participants].sort((a, b) => b.initiative - a.initiative);
+  if (combatData.tour_actuel >= sorted.length && sorted.length > 0) {
+    combatData.tour_actuel = 0;
+  }
+  renderInitiativeList();
+  renderJoueursPv();
+  peuplerDestinataireSelect();
+  await fetch(`${API}/Combats/${combatId}`, {
+    method: 'PUT',
+    headers: authHeaders(),
+    body: JSON.stringify({ participants: combatData.participants, tour_actuel: combatData.tour_actuel })
+  });
+  envoyerMsgSysteme(`🏃 ${nom} ${verbe}`);
+}
+window.fuirParticipant = fuirParticipant;
+
+async function neutraliserMonstre(pid) {
+  document.getElementById(`pmenu-${pid}`)?.classList.add('hidden');
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  await ajouterCondition(pid, 'inconscient');
+  envoyerMsgSysteme(`😴 ${p.nom} est neutralisé (Inconscient).`);
+}
+window.neutraliserMonstre = neutraliserMonstre;
+
+let _pvManuelPid = null;
+
+function ouvrirModifPvManuel(pid) {
+  document.getElementById(`pmenu-${pid}`)?.classList.add('hidden');
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  _pvManuelPid = pid;
+  document.getElementById('modal-pv-manuel-nom').textContent    = p.nom;
+  document.getElementById('modal-pv-manuel-actuel').textContent = `PV actuels : ${p.pv_actuels} / ${p.pv_max}`;
+  document.getElementById('modal-pv-manuel-val').value          = p.pv_actuels;
+  document.getElementById('modal-pv-manuel').classList.remove('hidden');
+  setTimeout(() => document.getElementById('modal-pv-manuel-val').focus(), 50);
+}
+window.ouvrirModifPvManuel = ouvrirModifPvManuel;
+
+async function confirmerModifPvManuel() {
+  if (!_pvManuelPid) return;
+  const val = parseInt(document.getElementById('modal-pv-manuel-val').value);
+  if (isNaN(val) || val < 0) return;
+  const p = trouverParticipant(_pvManuelPid);
+  if (!p) return;
+  const ancienPv = p.pv_actuels;
+  p.pv_actuels = Math.min(p.pv_max * 2, val);
+  renderInitiativeList();
+  renderJoueursPv();
+  await sauvegarderParticipants();
+  envoyerMsgSysteme(`✏️ PV de ${p.nom} modifiés manuellement : ${ancienPv} → ${p.pv_actuels}`);
+  if (ancienPv > 0 && p.pv_actuels === 0 && p.type === 'joueur' && p.user_id && typeof createNotification === 'function') {
+    createNotification({ user_id: p.user_id, session_id: sessionId, type: 'mort', titre: '💀 Vous êtes à 0 PV !', message: `${p.nom} est à 0 PV.`, lien: p.personnage_id ? `/fiche-personnage.html?id=${p.personnage_id}` : null });
+  }
+  document.getElementById('modal-pv-manuel').classList.add('hidden');
+  _pvManuelPid = null;
+}
+window.confirmerModifPvManuel = confirmerModifPvManuel;
+
+// ─── RÉINITIALISER INITIATIVE ─────────────────────────────────
+
+async function reinitialiserInitiative() {
+  if (!combatId) return;
+  if (!confirm('Réinitialiser l\'initiative ? Le round repasse à 1 et le tour au premier participant.')) return;
+  combatData.round       = 1;
+  combatData.tour_actuel = 0;
+  renderInitiativeList();
   try {
     await fetch(`${API}/Combats/${combatId}`, {
       method: 'PUT',
       headers: authHeaders(),
-      body: JSON.stringify({ statut: 'termine' })
+      body: JSON.stringify({ round: 1, tour_actuel: 0 })
     });
-    clearInterval(refreshInterval);
-    window.location.href = `session-detail.html?id=${sessionId}`;
+    envoyerMsgSysteme('🔄 Initiative réinitialisée — Round 1.');
   } catch (e) { console.error(e); }
 }
-window.terminerCombat = terminerCombat;
+window.reinitialiserInitiative = reinitialiserInitiative;
+
+// ─── TERMINER COMBAT ─────────────────────────────────────────
+
+const LABELS_FIN = {
+  victoire: '✅ Victoire des joueurs',
+  fuite:    '🏃 Les monstres fuient',
+  defaite:  '💀 Défaite des joueurs',
+  autre:    '🤝 Autre'
+};
+
+function ouvrirModalFinCombat() {
+  // Remettre victoire par défaut
+  const radios = document.querySelectorAll('input[name="fin-raison"]');
+  radios.forEach(r => { r.checked = r.value === 'victoire'; });
+  document.getElementById('fin-combat-autre-wrap').style.display = 'none';
+  document.getElementById('fin-combat-xp-wrap').style.display = 'block';
+  document.getElementById('fin-combat-xp').value = '';
+  document.getElementById('modal-fin-combat').classList.remove('hidden');
+}
+window.ouvrirModalFinCombat = ouvrirModalFinCombat;
+
+function majFinCombatUI(val) {
+  document.getElementById('fin-combat-autre-wrap').style.display = val === 'autre' ? 'block' : 'none';
+  document.getElementById('fin-combat-xp-wrap').style.display   = val === 'victoire' ? 'block' : 'none';
+}
+window.majFinCombatUI = majFinCombatUI;
+
+async function confirmerFinCombat() {
+  if (!combatId) return;
+  const raison = document.querySelector('input[name="fin-raison"]:checked')?.value || 'victoire';
+  const autreTexte = document.getElementById('fin-combat-autre-texte').value.trim();
+  const xpADistribuer = parseInt(document.getElementById('fin-combat-xp').value) || 0;
+
+  const label = raison === 'autre' && autreTexte
+    ? `🤝 ${autreTexte}`
+    : LABELS_FIN[raison] || raison;
+
+  document.getElementById('modal-fin-combat').classList.add('hidden');
+
+  try {
+    // Marquer le combat comme terminé
+    await fetch(`${API}/Combats/${combatId}`, {
+      method: 'PUT',
+      headers: authHeaders(),
+      body: JSON.stringify({ statut: 'termine', raison_fin: raison, raison_texte: label })
+    });
+
+    // Log journal
+    envoyerMsgSysteme(`⚔️ Combat terminé — ${label}`);
+
+    // Notifier tous les joueurs
+    const joueurs = (combatData.participants || []).filter(p => p.type === 'joueur' && p.user_id);
+    for (const j of joueurs) {
+      if (typeof createNotification === 'function') {
+        createNotification({
+          user_id: j.user_id,
+          session_id: sessionId,
+          type: raison === 'defaite' ? 'mort' : 'combat',
+          titre: `⚔️ Combat terminé`,
+          message: label,
+          lien: j.personnage_id ? `/fiche-personnage.html?id=${j.personnage_id}` : null
+        });
+      }
+    }
+
+    // Distribuer XP automatiquement si victoire + XP renseigné
+    if (raison === 'victoire' && xpADistribuer > 0) {
+      try {
+        await fetch(`${API}/Sessions/${sessionId}/xp`, {
+          method: 'POST',
+          headers: authHeaders(),
+          body: JSON.stringify({ xp: xpADistribuer })
+        });
+        envoyerMsgSysteme(`🌟 ${xpADistribuer} XP distribués automatiquement !`);
+      } catch (e) { console.warn('Distribution XP échouée', e); }
+    }
+
+    clearInterval(refreshInterval);
+    clearInterval(notesTimer);
+    setTimeout(() => { window.location.href = `session-detail.html?id=${sessionId}`; }, 1500);
+
+  } catch (e) { console.error(e); }
+}
+window.confirmerFinCombat = confirmerFinCombat;
 
 // ─── SÉLECTEUR DESTINATAIRE ───────────────────────────────────
 
@@ -1137,3 +1336,12 @@ window.majNotes = majNotes;
 window.supprimerParticipant = supprimerParticipant;
 window.distribuerXP = distribuerXP;
 window.monterNiveauJalon = monterNiveauJalon;
+window.reinitialiserInitiative = reinitialiserInitiative;
+window.ouvrirModalFinCombat = ouvrirModalFinCombat;
+window.majFinCombatUI = majFinCombatUI;
+window.confirmerFinCombat = confirmerFinCombat;
+window.tuerMonstre = tuerMonstre;
+window.fuirParticipant = fuirParticipant;
+window.neutraliserMonstre = neutraliserMonstre;
+window.ouvrirModifPvManuel = ouvrirModifPvManuel;
+window.confirmerModifPvManuel = confirmerModifPvManuel;

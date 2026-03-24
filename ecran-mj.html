@@ -31,7 +31,7 @@
       <span class="synchro-indicator" id="synchro-indicator"><i class="fa-solid fa-rotate fa-spin"></i> Synchro</span>
     </div>
     <div class="topbar-right">
-      <button class="btn-retour" onclick="terminerCombat()" id="btn-terminer" style="border-color:rgba(200,50,50,0.5);color:#ff8888;">
+      <button class="btn-retour" onclick="ouvrirModalFinCombat()" id="btn-terminer" style="border-color:rgba(200,50,50,0.5);color:#ff8888;">
         <i class="fa-solid fa-flag-checkered"></i> Terminer le combat
       </button>
     </div>
@@ -60,6 +60,9 @@
         </button>
         <button class="btn-add-participant" onclick="ouvrirModalAttaqueMJ()" style="background:rgba(107,15,15,0.6);border-color:rgba(153,27,27,0.5);color:#fca5a5;margin-top:0.3rem;">
           ⚔️ Attaque monstre
+        </button>
+        <button class="btn-add-participant" onclick="reinitialiserInitiative()" style="background:rgba(50,50,80,0.6);border-color:rgba(100,100,150,0.5);color:#aaa;margin-top:0.3rem;">
+          🔄 Réinitialiser l'initiative
         </button>
       </div>
     </div>
@@ -311,6 +314,68 @@
       <div class="modal-actions" style="margin-top:0.75rem;">
         <button class="btn-sm-secondary" onclick="document.getElementById('modal-attaque-mj').classList.add('hidden')">Annuler</button>
         <button class="btn-sm-primary" style="background:#6b0f0f;border-color:#991b1b;" onclick="confirmerAttaqueMJ()">Attaquer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : FIN DE COMBAT -->
+  <div class="modal-overlay hidden" id="modal-fin-combat">
+    <div class="modal-box" style="max-width:420px;">
+      <button class="modal-close" onclick="document.getElementById('modal-fin-combat').classList.add('hidden')">✕</button>
+      <p class="modal-title">🏁 Terminer le combat</p>
+      <p style="font-size:0.78rem;color:#aaa;margin-bottom:0.75rem;">Comment se termine ce combat ?</p>
+      <div class="fin-combat-options" id="fin-combat-options">
+        <label class="fin-combat-option">
+          <input type="radio" name="fin-raison" value="victoire" onchange="majFinCombatUI(this.value)" checked />
+          <span>✅ Victoire des joueurs</span>
+        </label>
+        <label class="fin-combat-option">
+          <input type="radio" name="fin-raison" value="fuite" onchange="majFinCombatUI(this.value)" />
+          <span>🏃 Les monstres fuient</span>
+        </label>
+        <label class="fin-combat-option">
+          <input type="radio" name="fin-raison" value="defaite" onchange="majFinCombatUI(this.value)" />
+          <span>💀 Défaite des joueurs</span>
+        </label>
+        <label class="fin-combat-option">
+          <input type="radio" name="fin-raison" value="autre" onchange="majFinCombatUI(this.value)" />
+          <span>🤝 Autre…</span>
+        </label>
+      </div>
+      <!-- Champ libre pour "Autre" -->
+      <div id="fin-combat-autre-wrap" style="display:none;margin-top:0.5rem;">
+        <input type="text" id="fin-combat-autre-texte" placeholder="Précisez…"
+          style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:0.35rem 0.5rem;border-radius:5px;font-size:0.8rem;box-sizing:border-box;" />
+      </div>
+      <!-- XP automatique si victoire -->
+      <div id="fin-combat-xp-wrap" style="margin-top:0.75rem;">
+        <label style="font-size:0.72rem;color:#888;display:block;margin-bottom:0.25rem;">XP à distribuer (optionnel) :</label>
+        <input type="number" id="fin-combat-xp" min="0" placeholder="0"
+          style="width:120px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:0.3rem 0.5rem;border-radius:5px;font-size:0.8rem;" />
+      </div>
+      <div class="modal-actions" style="margin-top:1rem;">
+        <button class="btn-sm-secondary" onclick="document.getElementById('modal-fin-combat').classList.add('hidden')">Annuler</button>
+        <button class="btn-sm-primary" style="background:#6b0f0f;border-color:#991b1b;" onclick="confirmerFinCombat()">
+          🏁 Confirmer la fin
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : MODIFIER PV MANUEL -->
+  <div class="modal-overlay hidden" id="modal-pv-manuel">
+    <div class="modal-box" style="max-width:300px;">
+      <button class="modal-close" onclick="document.getElementById('modal-pv-manuel').classList.add('hidden')">✕</button>
+      <p class="modal-title">✏️ Modifier PV — <span id="modal-pv-manuel-nom" style="color:#c9a84c;"></span></p>
+      <p style="font-size:0.78rem;color:#aaa;" id="modal-pv-manuel-actuel"></p>
+      <div class="form-group" style="margin-top:0.5rem;">
+        <label>Nouveaux PV actuels</label>
+        <input type="number" id="modal-pv-manuel-val" min="0" placeholder="15"
+          style="width:100px;" onkeydown="if(event.key==='Enter')confirmerModifPvManuel()" />
+      </div>
+      <div class="modal-actions" style="margin-top:0.75rem;">
+        <button class="btn-sm-secondary" onclick="document.getElementById('modal-pv-manuel').classList.add('hidden')">Annuler</button>
+        <button class="btn-sm-primary" onclick="confirmerModifPvManuel()">Appliquer</button>
       </div>
     </div>
   </div>
