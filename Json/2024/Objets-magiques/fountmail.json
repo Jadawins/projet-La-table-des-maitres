@@ -1,0 +1,16 @@
+{
+  "slug": "fountmail",
+  "nom": "Fountmail",
+  "nom_original": "Fountmail",
+  "categorie": "armure_magique",
+  "rarete": "legendaire",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This armor is a dazzling white suit of chain mail with an alabaster-colored steel collar that covers part of the face. You gain a +3 bonus to AC while you wear this armor. In addition, you gain the following benefits: - You add your Strength and Wisdom modifiers in addition to your Constitution modifier on all rolls when spending Hit Die to recover hit points. - You can't be frightened. - You have resistance to necrotic damage.",
+  "effets": [],
+  "poids": "65.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

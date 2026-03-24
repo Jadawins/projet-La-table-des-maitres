@@ -1,0 +1,16 @@
+{
+  "slug": "shifting-shirt",
+  "nom": "Shifting Shirt",
+  "nom_original": "Shifting Shirt",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This nondescript, smock-like garment changes its appearance on command. While wearing this shirt, you can use a bonus action to speak the shirt's command word and cause it to assume the appearance of a different set of clothing. You decide what it looks like, including color, style, and accessories—from filthy beggar's clothes to glittering court attire. The illusory appearance lasts until you use this property again or remove the shirt.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

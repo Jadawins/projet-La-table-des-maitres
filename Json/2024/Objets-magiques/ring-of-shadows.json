@@ -1,0 +1,16 @@
+{
+  "slug": "ring-of-shadows",
+  "nom": "Anneau de Shadows",
+  "nom_original": "Ring of Shadows",
+  "categorie": "anneau",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "While wearing this ebony ring in dim light or darkness, you have advantage on Dexterity (Stealth) checks. When you roll a 20 on a Dexterity (Stealth) check, the ring's magic ceases to function until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

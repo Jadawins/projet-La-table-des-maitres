@@ -1,0 +1,16 @@
+{
+  "slug": "hidden-armament",
+  "nom": "Hidden Armament",
+  "nom_original": "Hidden Armament",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "While holding this magic weapon, you can use an action to transform it into a tattoo on the palm of your hand. You can use a bonus action to transform the tattoo back into a weapon.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

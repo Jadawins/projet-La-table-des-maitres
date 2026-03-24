@@ -1,0 +1,16 @@
+{
+  "slug": "elixir-of-oracular-delirium",
+  "nom": "Elixir of Oracular Delirium",
+  "nom_original": "Elixir of Oracular Delirium",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This pearlescent fluid perpetually swirls inside its container with a slow kaleidoscopic churn. When you drink this potion, you can cast the guidance spell for 1 hour at will. You can end this effect early as an action and gain the effects of the augury spell. If you do, you are afflicted with short-term madness after learning the spell's results.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

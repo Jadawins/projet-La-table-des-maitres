@@ -1,0 +1,16 @@
+{
+  "slug": "mock-box",
+  "nom": "Mock Box",
+  "nom_original": "Mock Box",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While you hold this small, square contraption, you can use an action to target a creature within 60 feet of you that can hear you. The target must succeed on a DC 13 Charisma saving throw or attack rolls against it have advantage until the start of its next turn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

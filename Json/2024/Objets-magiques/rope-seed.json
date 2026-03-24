@@ -1,0 +1,16 @@
+{
+  "slug": "rope-seed",
+  "nom": "Rope Seed",
+  "nom_original": "Rope Seed",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "If you soak this 5-foot piece of twine in at least one pint of water, it grows into a 50-foot length of hemp rope after 1 minute.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

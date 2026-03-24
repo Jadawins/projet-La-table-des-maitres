@@ -1,0 +1,16 @@
+{
+  "slug": "standard-of-divinity-pike",
+  "nom": "Standard of Divinity (Pike)",
+  "nom_original": "Standard of Divinity (Pike)",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This weapon was created in a long-forgotten holy war. A woven banner bearing the symbol of a god hangs from it. When you attune to it, the banner changes to the colors and symbol of your deity. You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

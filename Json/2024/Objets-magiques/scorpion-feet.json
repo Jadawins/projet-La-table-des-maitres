@@ -1,0 +1,16 @@
+{
+  "slug": "scorpion-feet",
+  "nom": "Scorpion Feet",
+  "nom_original": "Scorpion Feet",
+  "categorie": "objet_merveilleux",
+  "rarete": "legendaire",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These thick-soled leather sandals offer comfortable and safe passage across shifting sands. While you wear them, you gain the following benefits:\n- Your speed isn't reduced while in magical or nonmagical difficult terrain made of sand.\n- You have advantage on all ability checks and saving throws against natural hazards where sand is a threatening element.\n- You have immunity to poison damage and advantage on saving throws against being poisoned.\n- You leave no tracks or other traces of your passage through sandy terrain.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

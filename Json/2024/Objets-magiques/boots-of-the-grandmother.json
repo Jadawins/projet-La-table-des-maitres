@@ -1,0 +1,16 @@
+{
+  "slug": "boots-of-the-grandmother",
+  "nom": "Bottes de the Grandmother",
+  "nom_original": "Boots of the Grandmother",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing these boots, you have proficiency in the Stealth skill if you don't already have it, and you double your proficiency bonus on Dexterity (Stealth) checks. As an action, you can drip three drops of fresh blood onto the boots to ease your passage through the world. For 1d6 hours, you and your allies within 30 feet of you ignore difficult terrain. Once used, this property can't be used again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

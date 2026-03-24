@@ -1,0 +1,16 @@
+{
+  "slug": "primordial-scale",
+  "nom": "Primordial Scale",
+  "nom_original": "Primordial Scale",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This armor is fashioned from the scales of a great, subterranean beast shunned by the gods. While wearing it, you have darkvision out to a range of 60 feet. If you already have darkvision, wearing the armor increases its range by 60 feet, but you have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you are in sunlight. In addition, while wearing this armor, you have advantage on saving throws against spells cast by agents of the gods, such as celestials, fiends, clerics, and cultists.",
+  "effets": [],
+  "poids": "45.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

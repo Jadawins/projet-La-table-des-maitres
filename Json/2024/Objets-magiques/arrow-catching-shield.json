@@ -1,0 +1,16 @@
+{
+  "slug": "arrow-catching-shield",
+  "nom": "Arrow-Catching Shield",
+  "nom_original": "Arrow-Catching Shield",
+  "categorie": "autre",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "autre",
+  "description": "You gain a +2 bonus to AC against ranged attacks while you wield this shield. This bonus is in addition to the shield's normal bonus to AC. In addition, whenever an attacker makes a ranged attack against a target within 5 feet of you, you can use your reaction to become the target of the attack instead.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

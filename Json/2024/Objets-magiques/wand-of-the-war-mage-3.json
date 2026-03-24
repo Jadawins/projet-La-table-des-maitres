@@ -1,0 +1,16 @@
+{
+  "slug": "wand-of-the-war-mage-3",
+  "nom": "Baguette de the War Mage (+3)",
+  "nom_original": "Wand of the War Mage (+3)",
+  "categorie": "baguette",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "baguette",
+  "description": "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity. In addition, you ignore half cover when making a spell attack.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

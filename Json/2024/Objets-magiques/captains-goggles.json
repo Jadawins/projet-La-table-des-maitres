@@ -1,0 +1,16 @@
+{
+  "slug": "captains-goggles",
+  "nom": "Captain's Goggles",
+  "nom_original": "Captain's Goggles",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These copper and glass goggles are prized by air and sea captains across the world. The goggles are designed to repel water and never fog. After attuning to the goggles, your name (or preferred moniker) appears on the side of the goggles. While wearing the goggles, you can't suffer from exhaustion.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

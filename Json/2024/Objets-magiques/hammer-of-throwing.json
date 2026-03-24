@@ -1,0 +1,16 @@
+{
+  "slug": "hammer-of-throwing",
+  "nom": "Hammer of Throwing",
+  "nom_original": "Hammer of Throwing",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You gain a +1 bonus to attack and damage rolls with this magic weapon. In addition, when you throw the hammer, it returns to your hand at the end of your turn. If you have no hand free, it falls to the ground at your feet.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

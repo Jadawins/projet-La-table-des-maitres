@@ -1,0 +1,16 @@
+{
+  "slug": "ring-of-free-action",
+  "nom": "Anneau d'action libre",
+  "nom_original": "Ring of Free Action",
+  "categorie": "anneau",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "While you wear this ring, difficult terrain doesn't cost you extra movement. In addition, magic can neither reduce your speed nor cause you to be paralyzed or restrained.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

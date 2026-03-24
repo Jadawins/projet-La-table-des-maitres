@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-the-manta-ray",
+  "nom": "Cape de la raie manta",
+  "nom_original": "Cloak of the Manta Ray",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this cloak with its hood up, you can breathe underwater, and you have a swimming speed of 60 feet. Pulling the hood up or down requires an action.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

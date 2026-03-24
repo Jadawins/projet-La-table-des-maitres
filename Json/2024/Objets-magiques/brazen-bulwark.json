@@ -1,0 +1,16 @@
+{
+  "slug": "brazen-bulwark",
+  "nom": "Brazen Bulwark",
+  "nom_original": "Brazen Bulwark",
+  "categorie": "autre",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "autre",
+  "description": "This rectangular shield is plated with polished brass and resembles a crenelated tower. While wielding this shield, you gain a +1 bonus to AC. This bonus is in addition to the shield's normal bonus to AC.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

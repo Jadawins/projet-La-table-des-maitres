@@ -1,0 +1,16 @@
+{
+  "slug": "spyglass-of-summoning",
+  "nom": "Spyglass of Summoning",
+  "nom_original": "Spyglass of Summoning",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Arcane runes encircle this polished brass spyglass. You can view creatures and objects as far as 600 feet away through the spyglass, and they are magnified to twice their size. You can magnify your view of a creature or object to up to four times its size by twisting the end of the spyglass.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

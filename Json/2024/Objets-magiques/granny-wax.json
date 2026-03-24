@@ -1,0 +1,16 @@
+{
+  "slug": "granny-wax",
+  "nom": "Granny Wax",
+  "nom_original": "Granny Wax",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Normally found in a small glass jar containing 1d3 doses, this foul-smelling, greasy yellow substance is made by hags in accordance with an age-old secret recipe. You can use an action to rub one dose of the wax onto an ordinary broom or wooden stick and transform it into a broom of flying for 1 hour.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

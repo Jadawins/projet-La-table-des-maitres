@@ -1,0 +1,16 @@
+{
+  "slug": "bloodwhisper-cauldron",
+  "nom": "Bloodwhisper Cauldron",
+  "nom_original": "Bloodwhisper Cauldron",
+  "categorie": "objet_merveilleux",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This ancient, oxidized cauldron sits on three stubby legs and has images of sacrifice and ritual cast into its iron sides. When filled with concoctions that contain blood, the bubbling cauldron seems to whisper secrets of ancient power to those bold enough to listen. While filled with blood, the cauldron has the following properties. Once filled, the cauldron can't be refilled again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "medallion-of-thoughts",
+  "nom": "Médaillon de la pensée",
+  "nom_original": "Medallion of Thoughts",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "The medallion has 3 charges. While wearing it, you can use an action and expend 1 charge to cast the _detect thoughts_ spell (save DC 13) from it. The medallion regains 1d3 expended charges daily at dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

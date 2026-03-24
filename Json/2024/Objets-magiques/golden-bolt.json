@@ -1,0 +1,16 @@
+{
+  "slug": "golden-bolt",
+  "nom": "Golden Bolt",
+  "nom_original": "Golden Bolt",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. This crossbow doesn't have the loading property, and it doesn't require ammunition. Immediately after firing a bolt from this weapon, another golden bolt forms to take its place.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

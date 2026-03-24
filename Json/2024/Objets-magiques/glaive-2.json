@@ -1,0 +1,16 @@
+{
+  "slug": "glaive-2",
+  "nom": "Glaive (+2)",
+  "nom_original": "Glaive (+2)",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You have a bonus to attack and damage rolls made with this magic weapon. The bonus is determined by the weapon's rarity.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

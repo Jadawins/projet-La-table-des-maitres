@@ -1,0 +1,16 @@
+{
+  "slug": "bloodthirsty-lance",
+  "nom": "Bloodthirsty Lance",
+  "nom_original": "Bloodthirsty Lance",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This magic weapon bears long, branching channels inscribed into its blade or head, and it gives off a coppery scent. When you damage a creature that has blood with this weapon, it loses an additional 2d6 hit points from blood loss.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

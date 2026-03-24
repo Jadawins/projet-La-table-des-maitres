@@ -1,0 +1,16 @@
+{
+  "slug": "charm-of-restoration",
+  "nom": "Charm of Restoration",
+  "nom_original": "Charm of Restoration",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This fist-sized ball of tightly-wound green fronds contains the bark of a magical plant with curative properties. A natural loop is formed from one of the fronds, allowing the charm to be hung from a pack, belt, or weapon pommel. As long as you carry this charm, whenever you are targeted by a spell or magical effect that restores your hit points, you regain an extra 1 hit point.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

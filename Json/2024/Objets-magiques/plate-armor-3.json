@@ -1,0 +1,16 @@
+{
+  "slug": "plate-armor-3",
+  "nom": "Plate Armor (+3)",
+  "nom_original": "Plate Armor (+3)",
+  "categorie": "armure_magique",
+  "rarete": "tres_rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
+  "effets": [],
+  "poids": "65.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

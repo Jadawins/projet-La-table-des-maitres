@@ -1,0 +1,16 @@
+{
+  "slug": "potion-of-buoyancy",
+  "nom": "Potion de Buoyancy",
+  "nom_original": "Potion of Buoyancy",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "When you drink this clear, effervescent liquid, your body becomes unnaturally buoyant for 1 hour. When you are immersed in water or other liquids, you rise to the surface (at a rate of up to 30 feet per round) to float and bob there. You have advantage on Strength (Athletics) checks made to swim or stay afloat in rough water, and you automatically succeed on such checks in calm waters.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

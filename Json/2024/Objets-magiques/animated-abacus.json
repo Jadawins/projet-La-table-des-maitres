@@ -1,0 +1,16 @@
+{
+  "slug": "animated-abacus",
+  "nom": "Animated Abacus",
+  "nom_original": "Animated Abacus",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "If you speak a mathematical equation within 5 feet of this abacus, it calculates the equation and displays the solution. If you are touching the abacus, it calculates only the equations you speak, ignoring all other spoken equations.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

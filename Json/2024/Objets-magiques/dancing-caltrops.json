@@ -1,0 +1,16 @@
+{
+  "slug": "dancing-caltrops",
+  "nom": "Dancing Caltrops",
+  "nom_original": "Dancing Caltrops",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "After you pour these magic caltrops out of the bag into an area, you can use a bonus action to animate them and command them to move up to 10 feet to occupy a different square area that is 5 feet on a side.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

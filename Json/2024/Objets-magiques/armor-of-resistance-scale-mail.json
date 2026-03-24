@@ -1,0 +1,16 @@
+{
+  "slug": "armor-of-resistance-scale-mail",
+  "nom": "Armure de Resistance (Scale Mail)",
+  "nom_original": "Armor of Resistance (Scale Mail)",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "You have resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly from the options below.\n\n| d10 | Damage Type |\n|-----|-------------|\n| 1   | Acid        |\n| 2   | Cold        |\n| 3   | Fire        |\n| 4   | Force       |\n| 5   | Lightning   |\n| 6   | Necrotic    |\n| 7   | Poison      |\n| 8   | Psychic     |\n| 9   | Radiant     |\n| 10  | Thunder     |",
+  "effets": [],
+  "poids": "45.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

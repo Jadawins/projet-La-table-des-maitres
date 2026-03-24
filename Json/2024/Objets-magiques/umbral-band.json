@@ -1,0 +1,16 @@
+{
+  "slug": "umbral-band",
+  "nom": "Umbral Band",
+  "nom_original": "Umbral Band",
+  "categorie": "anneau",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "This blackened steel ring is cold to the touch. While wearing this ring, you have darkvision out to a range of 30 feet, and you have advantage on Dexterity (Stealth) checks while in an area of dim light or darkness.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

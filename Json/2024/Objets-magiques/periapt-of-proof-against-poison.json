@@ -1,0 +1,16 @@
+{
+  "slug": "periapt-of-proof-against-poison",
+  "nom": "Périapte de protection contre le poison",
+  "nom_original": "Periapt of Proof against Poison",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This delicate silver chain has a brilliant-cut black gem pendant. While you wear it, poisons have no effect on you. You are immune to the poisoned condition and have immunity to poison damage.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

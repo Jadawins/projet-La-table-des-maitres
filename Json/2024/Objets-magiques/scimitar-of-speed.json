@@ -1,0 +1,16 @@
+{
+  "slug": "scimitar-of-speed",
+  "nom": "Scimitar of Speed",
+  "nom_original": "Scimitar of Speed",
+  "categorie": "arme_magique",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You gain a +2 bonus to attack and damage rolls made with this magic weapon. In addition, you can make one attack with it as a bonus action on each of your turns.",
+  "effets": [],
+  "poids": "3.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

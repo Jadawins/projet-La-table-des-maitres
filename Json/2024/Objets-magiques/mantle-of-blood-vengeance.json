@@ -1,0 +1,16 @@
+{
+  "slug": "mantle-of-blood-vengeance",
+  "nom": "Mantle of Blood Vengeance",
+  "nom_original": "Mantle of Blood Vengeance",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This red silk cloak has 3 charges and regains 1d3 expended charges daily at dawn. While wearing it, you can visit retribution on any creature that dares spill your blood. When you take piercing, slashing, or necrotic damage from a creature, you can use a reaction to expend 1 charge to turn your blood into a punishing spray. The creature that damaged you must make a DC 13 Dexterity saving throw, taking 2d10 acid damage on a failed save, or half as much damage on a successful one.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

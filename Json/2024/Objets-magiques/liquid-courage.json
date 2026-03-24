@@ -1,0 +1,16 @@
+{
+  "slug": "liquid-courage",
+  "nom": "Liquid Courage",
+  "nom_original": "Liquid Courage",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This magical cordial is deep red and smells strongly of fennel. You have advantage on the next saving throw against being frightened. The effect ends after you make such a saving throw or when 1 hour has passed.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

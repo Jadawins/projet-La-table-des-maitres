@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-the-empire",
+  "nom": "Cape de the Empire",
+  "nom_original": "Cloak of the Empire",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This voluminous grey cloak has bright red trim and the sigil from an unknown empire on its back. The cloak is stiff and doesn't fold as easily as normal cloth. Whenever you are struck by a ranged weapon attack, you can use a reaction to reduce the damage from that attack by your Charisma modifier (minimum of 1).",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

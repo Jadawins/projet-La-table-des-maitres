@@ -1,0 +1,16 @@
+{
+  "slug": "treebleed-bucket",
+  "nom": "Treebleed Bucket",
+  "nom_original": "Treebleed Bucket",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This combination sap bucket and tap is used to extract sap from certain trees. After 1 hour, the bucketful of sap magically changes into a potion. The potion remains viable for 24 hours, and its type depends on the tree as follows: oak (potion of resistance), rowan (potion of healing), willow (potion of animal friendship), and holly (potion of climbing). The treebleed bucket can magically change sap 20 times, then the bucket and tap become nonmagical.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

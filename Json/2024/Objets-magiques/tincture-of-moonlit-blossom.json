@@ -1,0 +1,16 @@
+{
+  "slug": "tincture-of-moonlit-blossom",
+  "nom": "Tincture of Moonlit Blossom",
+  "nom_original": "Tincture of Moonlit Blossom",
+  "categorie": "potion",
+  "rarete": "tres_rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This potion is steeped using a blossom that grows only in the moonlight. When you drink this potion, your shadow corruption (see Midgard Worldbook) is reduced by three levels. If you aren't using the Midgard setting, you gain the effect of the greater restoration spell instead.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

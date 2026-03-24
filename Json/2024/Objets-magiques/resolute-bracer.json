@@ -1,0 +1,16 @@
+{
+  "slug": "resolute-bracer",
+  "nom": "Resolute Bracer",
+  "nom_original": "Resolute Bracer",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This ornamental bracer features a reservoir sewn into its lining. As an action, you can fill the reservoir with a single potion or vial of liquid, such as a potion of healing or antitoxin. While attuned to this bracer, you can use a bonus action to speak the command word and absorb the liquid as if you had consumed it. Liquid stored in the bracer for longer than 8 hours evaporates.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

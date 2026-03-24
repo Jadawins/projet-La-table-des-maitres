@@ -1,0 +1,16 @@
+{
+  "slug": "goggles-of-shade",
+  "nom": "Goggles of Shade",
+  "nom_original": "Goggles of Shade",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing these dark lenses, you have advantage on Charisma (Deception) checks. If you have the Sunlight Sensitivity trait and wear these goggles, you no longer suffer the penalties of Sunlight Sensitivity while in sunlight.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

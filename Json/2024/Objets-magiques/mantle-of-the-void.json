@@ -1,0 +1,16 @@
+{
+  "slug": "mantle-of-the-void",
+  "nom": "Mantle of the Void",
+  "nom_original": "Mantle of the Void",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this midnight-blue mantle covered in writhing runes, you gain a +1 bonus to saving throws, and if you succeed on a saving throw against a spell that allows you to make a saving throw to take only half the damage or suffer partial effects, you instead take no damage and suffer none of the spell's effects.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

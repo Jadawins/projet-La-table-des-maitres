@@ -1,0 +1,16 @@
+{
+  "slug": "pestilent-spear",
+  "nom": "Pestilent Spear",
+  "nom_original": "Pestilent Spear",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "The head of this spear is deadly sharp, despite the rust and slimy residue on it that always accumulate no matter how well it is cleaned. When you hit a creature with this magic weapon, it must succeed on a DC 13 Constitution saving throw or contract the sewer plague disease.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "mug-of-merry-drinking",
+  "nom": "Mug of Merry Drinking",
+  "nom_original": "Mug of Merry Drinking",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While you hold this broad, tall mug, any liquid placed inside it warms or cools to exactly the temperature you want it, though the mug can't freeze or boil the liquid. If you drop the mug or it is knocked from your hand, it always lands upright without spilling its contents.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

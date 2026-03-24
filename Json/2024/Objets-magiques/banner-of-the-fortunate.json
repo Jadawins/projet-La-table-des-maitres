@@ -1,0 +1,16 @@
+{
+  "slug": "banner-of-the-fortunate",
+  "nom": "Banner of the Fortunate",
+  "nom_original": "Banner of the Fortunate",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While holding this banner aloft with one hand, you can use an action to inspire creatures nearby. Each creature of your choice within 60 feet of you that can see the banner has advantage on its next attack roll. The banner can't be used this way again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

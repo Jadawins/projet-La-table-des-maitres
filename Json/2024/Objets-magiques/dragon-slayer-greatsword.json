@@ -1,0 +1,16 @@
+{
+  "slug": "dragon-slayer-greatsword",
+  "nom": "Dragon Slayer (Greatsword)",
+  "nom_original": "Dragon Slayer (Greatsword)",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon.\n\nWhen you hit a dragon with this weapon, the dragon takes an extra 3d6 damage of the weapon's type. For the purpose of this weapon, \"dragon\" refers to any creature with the dragon type, including dragon turtles and wyverns.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

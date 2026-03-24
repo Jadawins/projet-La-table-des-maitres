@@ -1,0 +1,16 @@
+{
+  "slug": "plumb-of-the-elements",
+  "nom": "Plumb of the Elements",
+  "nom_original": "Plumb of the Elements",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This four-faceted lead weight is hung on a long leather strip, which can be wound around the haft or handle of any melee weapon. You can remove the plumb and transfer it to another weapon whenever you wish. Weapons with the plumb attached to it deal additional force damage equal to your proficiency bonus (up to a maximum of 3). As an action, you can activate the plumb to change this additional damage type to fire, cold, lightning, or back to force.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

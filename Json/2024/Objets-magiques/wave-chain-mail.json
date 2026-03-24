@@ -1,0 +1,16 @@
+{
+  "slug": "wave-chain-mail",
+  "nom": "Wave Chain Mail",
+  "nom_original": "Wave Chain Mail",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "The rows of chain links of this armor seem to ebb and flow like waves while worn. Attacks against you have disadvantage while at least half of your body is submerged in water. In addition, when you are attacked, you can turn all or part of your body into water as a reaction, gaining immunity to bludgeoning, piercing, and slashing damage from nonmagical weapons, until the end of the attacker's turn. Once used, this property of the armor can't be used again until the next dawn.",
+  "effets": [],
+  "poids": "55.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

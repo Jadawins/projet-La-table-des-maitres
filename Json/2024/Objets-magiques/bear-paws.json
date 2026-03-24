@@ -1,0 +1,16 @@
+{
+  "slug": "bear-paws",
+  "nom": "Bear Paws",
+  "nom_original": "Bear Paws",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These hand wraps are made of flexible beeswax that ooze sticky honey. While wearing these gloves, you have advantage on grapple checks. In addition, creatures grappled by you have disadvantage on any checks made to escape your grapple.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

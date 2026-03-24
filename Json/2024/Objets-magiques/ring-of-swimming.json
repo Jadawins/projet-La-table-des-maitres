@@ -1,0 +1,16 @@
+{
+  "slug": "ring-of-swimming",
+  "nom": "Anneau de nage",
+  "nom_original": "Ring of Swimming",
+  "categorie": "anneau",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "You have a swimming speed of 40 feet while wearing this ring.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "apron-of-the-eager-artisan",
+  "nom": "Apron of the Eager Artisan",
+  "nom_original": "Apron of the Eager Artisan",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Created by dwarven artisans, this leather apron has narrow pockets, which hold one type of artisan's tools. If you are wearing the apron and you spend 10 minutes contemplating your next crafting project, the tools in the apron magically change to match those best suited to the task. Once you have changed the tools available, you can't change them again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

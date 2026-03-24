@@ -1,0 +1,16 @@
+{
+  "slug": "white-ape-hide",
+  "nom": "White Ape Hide",
+  "nom_original": "White Ape Hide",
+  "categorie": "armure_magique",
+  "rarete": "tres_rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This armor was made from the remains of a White Ape (see Tome of Beasts) that fell in battle. While wearing this armor, you gain a +2 bonus to AC. In addition, the armor has the following properties while you wear it.",
+  "effets": [],
+  "poids": "12.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

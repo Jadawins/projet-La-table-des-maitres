@@ -1,0 +1,16 @@
+{
+  "slug": "ring-mail-2",
+  "nom": "Ring Mail (+2)",
+  "nom_original": "Ring Mail (+2)",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
+  "effets": [],
+  "poids": "40.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "demon-armor",
+  "nom": "Demon Armor",
+  "nom_original": "Demon Armor",
+  "categorie": "armure_magique",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "While wearing this armor, you gain a +1 bonus to AC, and you can understand and speak Abyssal. In addition, the armor's clawed gauntlets turn unarmed strikes with your hands into magic weapons that deal slashing damage, with a +1 bonus to attack rolls and damage rolls and a damage die of 1d8.\n\n**_Curse_**. Once you don this cursed armor, you can't doff it unless you are targeted by the _remove curse_ spell or similar magic. While wearing the armor, you have disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+  "effets": [],
+  "poids": "65.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

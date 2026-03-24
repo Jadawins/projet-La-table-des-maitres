@@ -1,0 +1,16 @@
+{
+  "slug": "clockwork-mace-of-divinity",
+  "nom": "Clockwork Mace of Divinity",
+  "nom_original": "Clockwork Mace of Divinity",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This clockwork mace is composed of several different metals. While attuned to this magic weapon, you have proficiency with it. As a bonus action, you can command the mace to transform into a trident. When you hit with an attack using this weapon's trident form, the target takes an extra 1d6 radiant damage.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

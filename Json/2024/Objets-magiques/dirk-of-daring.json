@@ -1,0 +1,16 @@
+{
+  "slug": "dirk-of-daring",
+  "nom": "Dirk of Daring",
+  "nom_original": "Dirk of Daring",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. While holding the dagger, you have advantage on saving throws against being frightened.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "weapon-of-warning-greataxe",
+  "nom": "Weapon of Warning (Greataxe)",
+  "nom_original": "Weapon of Warning (Greataxe)",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "As long as this weapon is within your reach and you are attuned to it, you and allies within 30 feet of you gain the following benefits.\n\n**Alarm.** The weapon magically awakens each subject who is sleeping naturally when combat begins. This benefit doesn't wake a subject from magically induced sleep.\n\n**Supernatural Readiness.** Each subject has Advantage on its Initiative rolls.",
+  "effets": [],
+  "poids": "7.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

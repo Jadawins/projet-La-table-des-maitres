@@ -1,0 +1,16 @@
+{
+  "slug": "arrow-of-unpleasant-herbs",
+  "nom": "Arrow of Unpleasant Herbs",
+  "nom_original": "Arrow of Unpleasant Herbs",
+  "categorie": "autre",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "autre",
+  "description": "This arrow's tip is filled with magically preserved, poisonous herbs. When a creature takes damage from the arrow, the arrowhead breaks, releasing the herbs. The creature must succeed on a DC 15 Constitution saving throw or be incapacitated until the end of its next turn as it retches and reels from the poison.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

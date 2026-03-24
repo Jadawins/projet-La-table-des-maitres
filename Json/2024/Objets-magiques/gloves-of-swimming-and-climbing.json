@@ -1,0 +1,16 @@
+{
+  "slug": "gloves-of-swimming-and-climbing",
+  "nom": "Gants de nage et d'escalade",
+  "nom_original": "Gloves of Swimming and Climbing",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing these gloves, climbing and swimming don't cost you extra movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "fly-whisk-of-authority",
+  "nom": "Fly Whisk of Authority",
+  "nom_original": "Fly Whisk of Authority",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "If you use an action to flick this fly whisk, you have advantage on Charisma (Intimidation) and Charisma (Persuasion) checks for 10 minutes. You can't use the fly whisk this way again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

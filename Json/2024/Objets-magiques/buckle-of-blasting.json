@@ -1,0 +1,16 @@
+{
+  "slug": "buckle-of-blasting",
+  "nom": "Buckle of Blasting",
+  "nom_original": "Buckle of Blasting",
+  "categorie": "objet_merveilleux",
+  "rarete": "legendaire",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This soot-colored steel buckle has an exploding flame etched into its surface. It can be affixed to any common belt. While wearing this buckle, you have resistance to force damage. In addition, the buckle has 5 charges, and it regains 1d4 + 1 charges daily at dawn. It has the following properties.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

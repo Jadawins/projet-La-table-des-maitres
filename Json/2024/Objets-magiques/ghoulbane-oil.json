@@ -1,0 +1,16 @@
+{
+  "slug": "ghoulbane-oil",
+  "nom": "Ghoulbane Oil",
+  "nom_original": "Ghoulbane Oil",
+  "categorie": "potion",
+  "rarete": "tres_rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This rusty-red gelatinous liquid glistens with tiny sparkling crystal flecks. The oil can coat one weapon or 5 pieces of ammunition. Applying the oil takes 1 minute. For 1 hour, if a ghoul, ghast, or Darakhul (see Tome of Beasts) takes damage from the coated item, it takes an extra 2d6 damage of the weapon's type.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

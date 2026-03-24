@@ -1,0 +1,16 @@
+{
+  "slug": "agile-hide",
+  "nom": "Agile Hide",
+  "nom_original": "Agile Hide",
+  "categorie": "armure_magique",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This magically enhanced armor is less bulky than its nonmagical version. While wearing a suit of medium agile armor, the maximum Dexterity modifier you can add to determine your Armor Class is 3, instead of 2. While wearing a suit of heavy agile armor, the maximum Dexterity modifier you can add to determine your Armor Class is 1, instead of 0.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "adamantine-armor-splint",
+  "nom": "Adamantine Armor (Splint)",
+  "nom_original": "Adamantine Armor (Splint)",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you're wearing it, any critical hit against you becomes a normal hit.",
+  "effets": [],
+  "poids": "60.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "candied-axe",
+  "nom": "Candied Axe",
+  "nom_original": "Candied Axe",
+  "categorie": "arme_magique",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This battleaxe bears a golden head spun from crystalized honey. Its wooden handle is carved with reliefs of bees. You gain a +2 bonus to attack and damage rolls made with this magic weapon.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

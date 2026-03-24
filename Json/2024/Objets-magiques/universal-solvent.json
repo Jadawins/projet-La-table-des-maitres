@@ -1,0 +1,16 @@
+{
+  "slug": "universal-solvent",
+  "nom": "Solvant universel",
+  "nom_original": "Universal Solvent",
+  "categorie": "objet_merveilleux",
+  "rarete": "legendaire",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This tube holds milky liquid with a strong alcohol smell. You can use an action to pour the contents of the tube onto a surface within reach. The liquid instantly dissolves up to 1 square foot of adhesive it touches, including _sovereign glue._",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

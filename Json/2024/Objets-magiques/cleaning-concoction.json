@@ -1,0 +1,16 @@
+{
+  "slug": "cleaning-concoction",
+  "nom": "Cleaning Concoction",
+  "nom_original": "Cleaning Concoction",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This fresh-smelling, clear green liquid can cover a Medium or smaller creature or object (or matched set of objects, such as a suit of clothes or pair of boots). Applying the liquid takes 1 minute. It removes soiling, stains, and residue, and it neutralizes and removes odors, unless those odors are particularly pungent, such as in skunks or creatures with the Stench trait. Once the potion has cleaned the target, it evaporates, leaving the creature or object both clean and dry.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

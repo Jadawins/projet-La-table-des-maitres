@@ -1,0 +1,16 @@
+{
+  "slug": "saddle-of-the-cavalry-casters",
+  "nom": "Saddle of the Cavalry Casters",
+  "nom_original": "Saddle of the Cavalry Casters",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This magic saddle adjusts its size and shape to fit the animal to which it is strapped. While a mount wears this saddle, creatures have disadvantage on opportunity attacks against the mount or its rider. While you sit astride this saddle, you have advantage on any checks to remain mounted and on Constitution saving throws to maintain concentration on a spell when you take damage.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

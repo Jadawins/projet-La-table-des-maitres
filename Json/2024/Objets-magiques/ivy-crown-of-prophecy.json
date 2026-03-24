@@ -1,0 +1,16 @@
+{
+  "slug": "ivy-crown-of-prophecy",
+  "nom": "Ivy Crown of Prophecy",
+  "nom_original": "Ivy Crown of Prophecy",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this ivy, filigreed crown, you can use an action to cast the divination spell from it. The crown can't be used this way again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

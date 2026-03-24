@@ -1,0 +1,16 @@
+{
+  "slug": "commanders-visage",
+  "nom": "Commander's Visage",
+  "nom_original": "Commander's Visage",
+  "categorie": "objet_merveilleux",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This golden mask resembles a stern face, glowering at the world. While wearing this mask, you have advantage on saving throws against being frightened. The mask has 7 charges for the following properties, and it regains 1d6 + 1 expended charges daily at midnight.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

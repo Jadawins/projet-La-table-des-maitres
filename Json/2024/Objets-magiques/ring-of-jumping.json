@@ -1,0 +1,16 @@
+{
+  "slug": "ring-of-jumping",
+  "nom": "Anneau de saut",
+  "nom_original": "Ring of Jumping",
+  "categorie": "anneau",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "While wearing this ring, you can cast the _jump_ spell from it as a bonus action at will, but can target only yourself when you do so.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

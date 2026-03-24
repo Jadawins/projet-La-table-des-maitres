@@ -1,0 +1,16 @@
+{
+  "slug": "circlet-of-persuasion",
+  "nom": "Circlet of Persuasion",
+  "nom_original": "Circlet of Persuasion",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this circlet, you have advantage on Charisma (Persuasion) checks.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

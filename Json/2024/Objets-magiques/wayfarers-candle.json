@@ -1,0 +1,16 @@
+{
+  "slug": "wayfarers-candle",
+  "nom": "Wayfarer's Candle",
+  "nom_original": "Wayfarer's Candle",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This beeswax candle is stamped with a holy symbol, typically one of a deity associated with light or protection. When lit, it sheds light and heat as a normal candle for up to 1 hour, but it can't be extinguished by wind of any force. It can be blown out or extinguished only by the creature holding it.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

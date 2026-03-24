@@ -1,0 +1,16 @@
+{
+  "slug": "bandana-of-bravado",
+  "nom": "Bandana of Bravado",
+  "nom_original": "Bandana of Bravado",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this bright red bandana, you have advantage on Charisma (Intimidation) checks and on saving throws against being frightened.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

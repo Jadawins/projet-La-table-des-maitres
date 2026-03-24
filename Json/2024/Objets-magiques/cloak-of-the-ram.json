@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-the-ram",
+  "nom": "Cape de the Ram",
+  "nom_original": "Cloak of the Ram",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this cloak, you can use an action to transform into a mountain ram (use the statistics of a giant goat). This effect works like the polymorph spell, except you retain your Intelligence, Wisdom, and Charisma scores. You can use an action to transform back into your original form. Each time you transform into a ram in a single day, you retain the hit points you had the last time you transformed. If you were reduced to 0 hit points the last time you were a ram, you can't become a ram again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

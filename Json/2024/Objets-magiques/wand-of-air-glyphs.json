@@ -1,0 +1,16 @@
+{
+  "slug": "wand-of-air-glyphs",
+  "nom": "Baguette de Air Glyphs",
+  "nom_original": "Wand of Air Glyphs",
+  "categorie": "baguette",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "baguette",
+  "description": "While holding this thin, metal wand, you can use action to cause the tip to glow. When you wave the glowing wand in the air, it leaves a trail of light behind it, allowing you to write or draw on the air. Whatever letters or images you make hang in the air for 1 minute before fading away.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "amulet-of-proof-against-detection-and-location",
+  "nom": "Amulette de protection contre la détection",
+  "nom_original": "Amulet of Proof against Detection and Location",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this amulet, you are hidden from divination magic. You can't be targeted by such magic or perceived through magical scrying sensors.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

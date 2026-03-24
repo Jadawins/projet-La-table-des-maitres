@@ -1,0 +1,16 @@
+{
+  "slug": "ouroboros-amulet",
+  "nom": "Ouroboros Amulet",
+  "nom_original": "Ouroboros Amulet",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Carved in the likeness of a serpent swallowing its own tail, this circular jade amulet is frequently worn by serpentfolk mystics and the worshippers of dark and forgotten gods. While wearing this amulet, you have advantage on saving throws against being charmed. In addition, you can use an action to cast the suggestion spell (save DC 13). The amulet can't be used this way again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "broom-of-sweeping",
+  "nom": "Broom of Sweeping",
+  "nom_original": "Broom of Sweeping",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "You can use an action to speak the broom's command word and give it short instructions consisting of a few words, such as “sweep the floor” or “dust the cabinets.” The broom can clean up to 5 cubic feet each minute and continues cleaning until you use another action to deactivate it. The broom can't climb barriers higher than 5 feet and can't open doors.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

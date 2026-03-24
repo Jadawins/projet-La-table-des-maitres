@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-the-eel",
+  "nom": "Cape de the Eel",
+  "nom_original": "Cloak of the Eel",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this rough, blue-gray leather cloak, you have a swimming speed of 40 feet. When you are hit with a melee weapon attack while wearing this cloak, you can use your reaction to generate a powerful electric charge. The attacker must succeed on a DC 13 Dexterity saving throw or take 2d6 lightning damage. The attacker has disadvantage on the saving throw if it hits you with a metal weapon. The cloak can't be used this way again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

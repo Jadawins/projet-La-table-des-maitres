@@ -1,0 +1,16 @@
+{
+  "slug": "hammer-of-decrees",
+  "nom": "Hammer of Decrees",
+  "nom_original": "Hammer of Decrees",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This adamantine hammer was part of a set of smith's tools used to create weapons of law for an ancient dwarven civilization. It is pitted and appears damaged, and its oak handle is split and bound with cracking hide. While attuned to this hammer, you have advantage on ability checks using smith's tools, and the time it takes you to craft an item with your smith's tools is halved.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

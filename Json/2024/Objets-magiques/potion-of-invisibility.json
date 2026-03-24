@@ -1,0 +1,16 @@
+{
+  "slug": "potion-of-invisibility",
+  "nom": "Potion d'invisibilité",
+  "nom_original": "Potion of Invisibility",
+  "categorie": "potion",
+  "rarete": "tres_rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This potion's container looks empty but feels as though it holds liquid. When you drink it, you become invisible for 1 hour. Anything you wear or carry is invisible with you. The effect ends early if you attack or cast a spell.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

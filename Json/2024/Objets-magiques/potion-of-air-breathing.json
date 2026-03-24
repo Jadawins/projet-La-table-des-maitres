@@ -1,0 +1,16 @@
+{
+  "slug": "potion-of-air-breathing",
+  "nom": "Potion de Air Breathing",
+  "nom_original": "Potion of Air Breathing",
+  "categorie": "potion",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This potion's pale blue fluid smells like salty air, and a seagull's feather floats in it. You can breathe air for 1 hour after drinking this potion. If you could already breathe air, this potion has no effect.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

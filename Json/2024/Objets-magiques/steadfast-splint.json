@@ -1,0 +1,16 @@
+{
+  "slug": "steadfast-splint",
+  "nom": "Steadfast Splint",
+  "nom_original": "Steadfast Splint",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This armor makes you difficult to manipulate both mentally and physically. While wearing this armor, you have advantage on saving throws against being charmed or frightened, and you have advantage on ability checks and saving throws against spells and effects that would move you against your will.",
+  "effets": [],
+  "poids": "60.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

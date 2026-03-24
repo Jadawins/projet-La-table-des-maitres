@@ -1,0 +1,16 @@
+{
+  "slug": "crocodile-hide-armor",
+  "nom": "Crocodile Hide Armor",
+  "nom_original": "Crocodile Hide Armor",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "While wearing this armor fashioned from crocodile skin, you gain a +1 bonus to AC. In addition, you can hold your breath for 15 minutes, and you have a swimming speed equal to your walking speed.",
+  "effets": [],
+  "poids": "12.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "necklace-of-adaptation",
+  "nom": "Collier d'adaptation",
+  "nom_original": "Necklace of Adaptation",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this necklace, you can breathe normally in any environment, and you have advantage on saving throws made against harmful gases and vapors (such as _cloudkill_ and _stinking cloud_ effects, inhaled poisons, and the breath weapons of some dragons).",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "webbed-staff",
+  "nom": "Webbed Staff",
+  "nom_original": "Webbed Staff",
+  "categorie": "baton",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "baton",
+  "description": "This staff is carved of ebony and wrapped in a net of silver wire. While holding it, you can't be caught in webs of any sort and can move through webs as if they were difficult terrain. This staff has 10 charges for the following properties. It regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a 1d20. On a 1, spidersilk surrounds the staff in a cocoon then quickly unravels itself and the staff, destroying the staff.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

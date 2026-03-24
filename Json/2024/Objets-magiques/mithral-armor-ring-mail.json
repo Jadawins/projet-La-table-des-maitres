@@ -1,0 +1,16 @@
+{
+  "slug": "mithral-armor-ring-mail",
+  "nom": "Mithral Armor (Ring-Mail)",
+  "nom_original": "Mithral Armor (Ring-Mail)",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "Mithral is a light, flexible metal. A mithral chain shirt or breastplate can be worn under normal clothes. If the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, the mithral version of the armor doesn't.",
+  "effets": [],
+  "poids": "40.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "amulet-of-the-oracle",
+  "nom": "Amulet of the Oracle",
+  "nom_original": "Amulet of the Oracle",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "When you finish a long rest while wearing this amulet, you can choose one cantrip from the cleric spell list. You can cast that cantrip from the amulet at will, using Wisdom as your spellcasting ability for it.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

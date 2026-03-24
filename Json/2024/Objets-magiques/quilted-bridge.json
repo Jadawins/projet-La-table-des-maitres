@@ -1,0 +1,16 @@
+{
+  "slug": "quilted-bridge",
+  "nom": "Quilted Bridge",
+  "nom_original": "Quilted Bridge",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "A practiced hand sewed together a collection of cloth remnants from magical garb to make this colorful and warm blanket. You can use an action to unfold it and pour out three drops of wine in tribute to its maker. If you do so, the blanket becomes a 5-foot wide, 10-foot-long bridge as sturdy as steel. You can fold the bridge back up as an action.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

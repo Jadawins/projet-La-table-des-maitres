@@ -1,0 +1,16 @@
+{
+  "slug": "boots-of-levitation",
+  "nom": "Bottes de lévitation",
+  "nom_original": "Boots of Levitation",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While you wear these boots, you can use an action to cast the _levitate_ spell on yourself at will.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

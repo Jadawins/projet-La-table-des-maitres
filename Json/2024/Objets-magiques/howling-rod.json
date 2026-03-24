@@ -1,0 +1,16 @@
+{
+  "slug": "howling-rod",
+  "nom": "Howling Rod",
+  "nom_original": "Howling Rod",
+  "categorie": "sceptre",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "sceptre",
+  "description": "This sturdy, iron rod is topped with the head of a howling wolf with red carnelians for eyes. The rod has 5 charges for the following properties, and it regains 1d4 + 1 expended charges daily at dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

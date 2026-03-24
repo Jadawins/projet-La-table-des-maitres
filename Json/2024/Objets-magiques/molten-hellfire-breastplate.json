@@ -1,0 +1,16 @@
+{
+  "slug": "molten-hellfire-breastplate",
+  "nom": "Molten Hellfire Breastplate",
+  "nom_original": "Molten Hellfire Breastplate",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This spiked armor is a dark, almost black crimson when inactive. This more powerful version of hellfire armor has 3 charges. It regains all expended charges daily at dawn. If you expend 1 charge as part of the action to make the armor glow, you can make the armor emit heat in addition to light for 1 minute. For the duration, when a creature touches you or hits you with a melee attack while within 5 feet of you, it takes 1d4 fire damage. You are immune to the armor’s heat while wearing it.",
+  "effets": [],
+  "poids": "20.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

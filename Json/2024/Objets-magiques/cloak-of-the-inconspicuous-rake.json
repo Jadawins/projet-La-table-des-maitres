@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-the-inconspicuous-rake",
+  "nom": "Cape de the Inconspicuous Rake",
+  "nom_original": "Cloak of the Inconspicuous Rake",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This cloak is spun from simple gray wool and closed with a plain, triangular copper clasp. While wearing this cloak, you can use a bonus action to make yourself forgettable for 5 minutes. A creature that sees you must make a DC 15 Intelligence saving throw as soon as you leave its sight. On a failure, the witness remembers seeing a person doing whatever you did, but it doesn't remember details about your appearance or mannerisms and can't accurately describe you to another. Creatures with truesight aren't affected by this cloak. The cloak can't be used this way again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

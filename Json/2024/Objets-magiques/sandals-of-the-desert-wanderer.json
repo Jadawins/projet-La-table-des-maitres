@@ -1,0 +1,16 @@
+{
+  "slug": "sandals-of-the-desert-wanderer",
+  "nom": "Sandals of the Desert Wanderer",
+  "nom_original": "Sandals of the Desert Wanderer",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While you wear these soft leather sandals, you have resistance to fire damage. In addition, you ignore difficult terrain created by loose or deep sand, and you can tolerate temperatures of up to 150 degrees Fahrenheit.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

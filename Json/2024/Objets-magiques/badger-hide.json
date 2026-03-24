@@ -1,0 +1,16 @@
+{
+  "slug": "badger-hide",
+  "nom": "Badger Hide",
+  "nom_original": "Badger Hide",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "While wearing this hairy, black and white armor, you have a burrowing speed of 20 feet, and you have advantage on Wisdom (Perception) checks that rely on smell.",
+  "effets": [],
+  "poids": "12.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

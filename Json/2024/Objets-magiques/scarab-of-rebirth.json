@@ -1,0 +1,16 @@
+{
+  "slug": "scarab-of-rebirth",
+  "nom": "Scarab of Rebirth",
+  "nom_original": "Scarab of Rebirth",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This coin-sized figurine of a scarab is crafted from an unidentifiable blue-gray metal, but it appears mundane in all other respects. When you speak its command word, it whirs to life and burrows into your flesh. You can speak the command word again to remove the scarab. While the scarab is embedded in your flesh, you gain the following:\n- You no longer need to eat or drink.\n- You can magically sense the presence of undead and pinpoint the location of any undead within 30 feet of you.\n- Your hit point maximum is reduced by 10.\n- If you die, you return to life with half your maximum hit points at the start of your next turn. The scarab can't return you to life if you were beheaded, disintegrated, crushed, or similar full-body destruction. Afterwards, the scarab exits your body and goes dormant. It can't be used again until 14 days have passed.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

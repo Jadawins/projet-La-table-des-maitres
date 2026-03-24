@@ -1,0 +1,16 @@
+{
+  "slug": "valkyries-bite",
+  "nom": "Valkyrie's Bite",
+  "nom_original": "Valkyrie's Bite",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This black-bladed scimitar has a guard that resembles outstretched raven wings, and a polished amethyst sits in its pommel. You have a +2 bonus to attack and damage rolls made with this magic weapon. While attuned to the scimitar, you have advantage on initiative rolls. While you hold the scimitar, it sheds dim purple light in a 10-foot radius.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

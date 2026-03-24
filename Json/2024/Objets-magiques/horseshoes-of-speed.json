@@ -1,0 +1,16 @@
+{
+  "slug": "horseshoes-of-speed",
+  "nom": "Fers à cheval de rapidité",
+  "nom_original": "Horseshoes of Speed",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These iron horseshoes come in a set of four. While all four shoes are affixed to the hooves of a horse or similar creature, they increase the creature's walking speed by 30 feet.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

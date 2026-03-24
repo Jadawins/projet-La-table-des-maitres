@@ -1,0 +1,16 @@
+{
+  "slug": "sturdy-scroll-tube",
+  "nom": "Sturdy Scroll Tube",
+  "nom_original": "Sturdy Scroll Tube",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This ornate scroll case is etched with arcane symbology. Scrolls inside this case are immune to damage and are protected from the elements, as long as the scroll case remains closed and intact. The scroll case itself has immunity to all forms of damage, except force damage and thunder damage.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

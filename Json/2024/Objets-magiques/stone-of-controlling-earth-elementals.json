@@ -1,0 +1,16 @@
+{
+  "slug": "stone-of-controlling-earth-elementals",
+  "nom": "Pierre de contrôle des élémentaires de terre",
+  "nom_original": "Stone of Controlling Earth Elementals",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "If the stone is touching the ground, you can use an action to speak its command word and summon an earth elemental, as if you had cast the _conjure elemental_ spell. The stone can't be used this way again until the next dawn. The stone weighs 5 pounds.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

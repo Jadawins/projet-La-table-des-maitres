@@ -1,0 +1,16 @@
+{
+  "slug": "braid-whip-clasp",
+  "nom": "Braid Whip Clasp",
+  "nom_original": "Braid Whip Clasp",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This intricately carved ivory clasp can be wrapped around or woven into braided hair 3 feet or longer. While the clasp is attached to your braided hair, you can speak its command word as a bonus action and transform your braid into a dangerous whip. If you speak the command word again, you end the effect. You gain a +1 bonus to attack and damage rolls made with this magic whip. When the clasp's property has been used for a total of 10 minutes, you can't use it to transform your braid into a whip again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

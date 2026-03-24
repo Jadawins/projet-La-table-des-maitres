@@ -1,0 +1,16 @@
+{
+  "slug": "potion-of-growth",
+  "nom": "Potion de croissance",
+  "nom_original": "Potion of Growth",
+  "categorie": "potion",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "When you drink this potion, you gain the \"enlarge\" effect of the _enlarge/reduce_ spell for 1d4 hours (no concentration required). The red in the potion's liquid continuously expands from a tiny bead to color the clear liquid around it and then contracts. Shaking the bottle fails to interrupt this process.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

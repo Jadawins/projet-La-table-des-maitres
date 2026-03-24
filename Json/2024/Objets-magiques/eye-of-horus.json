@@ -1,0 +1,16 @@
+{
+  "slug": "eye-of-horus",
+  "nom": "Eye of Horus",
+  "nom_original": "Eye of Horus",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This gold and lapis lazuli amulet helps you determine reality from phantasms and trickery. While wearing it, you have advantage on saving throws against illusion spells and against being frightened.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

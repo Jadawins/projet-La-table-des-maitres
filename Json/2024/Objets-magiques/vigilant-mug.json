@@ -1,0 +1,16 @@
+{
+  "slug": "vigilant-mug",
+  "nom": "Vigilant Mug",
+  "nom_original": "Vigilant Mug",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "An impish face sits carved into the side of this bronze mug, its eyes a pair of clear, blue crystals. The imp's eyes turn red when poison or poisonous material is placed or poured inside the mug.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

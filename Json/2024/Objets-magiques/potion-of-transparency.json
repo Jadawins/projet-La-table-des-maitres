@@ -1,0 +1,16 @@
+{
+  "slug": "potion-of-transparency",
+  "nom": "Potion de Transparency",
+  "nom_original": "Potion of Transparency",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "The liquid in this vial is clear like water, and it gives off a slight iridescent sheen when shaken or swirled. When you drink this potion, you and everything you are wearing and carrying turn transparent, but not completely invisible, for 10 minutes. During this time, you have advantage on Dexterity (Stealth) checks, and ranged attacks against you have disadvantage.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

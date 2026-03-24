@@ -1,0 +1,16 @@
+{
+  "slug": "maidens-tears",
+  "nom": "Maiden's Tears",
+  "nom_original": "Maiden's Tears",
+  "categorie": "potion",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This fruity mead is the color of liquid gold and is rumored to be brewed with a tear from the goddess of bearfolk herself. When you drink this mead, you regenerate lost hit points for 1 minute. At the start of your turn, you regain 10 hit points if you have at least 1 hit point.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "elixir-of-focus",
+  "nom": "Elixir of Focus",
+  "nom_original": "Elixir of Focus",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This deep amber concoction seems to glow with an inner light. When you drink this potion, you have advantage on the next ability check you make within 10 minutes, then the elixir's effect ends.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

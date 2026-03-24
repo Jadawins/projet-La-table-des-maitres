@@ -1,0 +1,16 @@
+{
+  "slug": "blackguards-handaxe",
+  "nom": "Blackguard's Handaxe",
+  "nom_original": "Blackguard's Handaxe",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you draw this weapon, you can use a bonus action to cast the thaumaturgy spell from it. You can have only one of the spell's effects active at a time when you cast it in this way.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

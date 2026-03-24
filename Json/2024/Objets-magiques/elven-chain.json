@@ -1,0 +1,16 @@
+{
+  "slug": "elven-chain",
+  "nom": "Chaîne elfique",
+  "nom_original": "Elven Chain",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "You gain a +1 bonus to AC while you wear this armor. You are considered proficient with this armor even if you lack proficiency with medium armor.",
+  "effets": [],
+  "poids": "20.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "scoundrels-gambit",
+  "nom": "Scoundrel's Gambit",
+  "nom_original": "Scoundrel's Gambit",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This fluted silver tube, barely two inches long, bears tiny runes etched between the grooves. While holding this tube, you can use an action to cast the magic missile spell from it. Once used, the tube can't be used to cast magic missile again until 12 hours have passed.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

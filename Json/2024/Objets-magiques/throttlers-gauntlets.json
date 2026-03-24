@@ -1,0 +1,16 @@
+{
+  "slug": "throttlers-gauntlets",
+  "nom": "Throttler's Gauntlets",
+  "nom_original": "Throttler's Gauntlets",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These durable leather gloves allow you to choke a creature you are grappling, preventing them from speaking. While you are grappling a creature, you can use a bonus action to throttle it. The creature takes damage equal to your proficiency bonus and can't speak coherently or cast spells with verbal components until the end of its next turn. You can choose to not damage the creature when you throttle it. A creature can still breathe, albeit uncomfortably, while throttled.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

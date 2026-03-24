@@ -1,0 +1,16 @@
+{
+  "slug": "sanguine-lance",
+  "nom": "Sanguine Lance",
+  "nom_original": "Sanguine Lance",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This fiendish lance runs red with blood. You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit a creature that has blood with this lance, the target takes an extra 1d6 necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

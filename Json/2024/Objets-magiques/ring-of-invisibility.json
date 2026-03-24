@@ -1,0 +1,16 @@
+{
+  "slug": "ring-of-invisibility",
+  "nom": "Anneau d'invisibilité",
+  "nom_original": "Ring of Invisibility",
+  "categorie": "anneau",
+  "rarete": "legendaire",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "While wearing this ring, you can turn invisible as an action. Anything you are wearing or carrying is invisible with you. You remain invisible until the ring is removed, until you attack or cast a spell, or until you use a bonus action to become visible again.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

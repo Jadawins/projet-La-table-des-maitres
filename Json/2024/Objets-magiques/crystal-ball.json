@@ -1,0 +1,16 @@
+{
+  "slug": "crystal-ball",
+  "nom": "Boule de cristal",
+  "nom_original": "Crystal Ball",
+  "categorie": "objet_merveilleux",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "The typical crystal ball, a very rare item, is about 6 inches in diameter. While touching it, you can cast the scrying spell (save DC 17) with it.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

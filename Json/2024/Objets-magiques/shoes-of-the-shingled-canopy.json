@@ -1,0 +1,16 @@
+{
+  "slug": "shoes-of-the-shingled-canopy",
+  "nom": "Shoes of the Shingled Canopy",
+  "nom_original": "Shoes of the Shingled Canopy",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These well-made, black leather shoes have brass buckles shaped like chimneys. While wearing the shoes, you have proficiency in the Acrobatics skill. In addition, while falling, you can use a reaction to cast the feather fall spell by holding your nose. The shoes can't be used this way again until the next dusk.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

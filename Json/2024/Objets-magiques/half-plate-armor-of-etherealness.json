@@ -1,0 +1,16 @@
+{
+  "slug": "half-plate-armor-of-etherealness",
+  "nom": "Half Plate Armure de Etherealness",
+  "nom_original": "Half Plate Armor of Etherealness",
+  "categorie": "armure_magique",
+  "rarete": "legendaire",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "While you're wearing this armor, you can take a Magic action and use a command word to gain the effect of the Etherealness spell. The spell ends immediately if you remove the armor or take a Magic action to repeat the command word. This property of the armor can't be used again until the next dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

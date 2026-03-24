@@ -1,0 +1,16 @@
+{
+  "slug": "survival-knife",
+  "nom": "Survival Knife",
+  "nom_original": "Survival Knife",
+  "categorie": "arme_magique",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "When holding this sturdy knife, you can use an action to transform it into a crowbar, a fishing rod, a hunting trap, or a hatchet (mainly a chopping tool; if wielded as a weapon, it uses the same statistics as this dagger, except it deals slashing damage). While holding or touching the transformed knife, you can use an action to transform it into another form or back into its original shape.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

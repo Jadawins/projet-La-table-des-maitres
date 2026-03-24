@@ -1,0 +1,16 @@
+{
+  "slug": "vicious-weapon-flail",
+  "nom": "Vicious Weapon (Flail)",
+  "nom_original": "Vicious Weapon (Flail)",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "When you roll a 20 on your attack roll with this magic weapon, your critical hit deals an extra 2d6 damage of the weapon's type.",
+  "effets": [],
+  "poids": "2.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

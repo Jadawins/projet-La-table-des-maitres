@@ -1,0 +1,16 @@
+{
+  "slug": "grifters-deck",
+  "nom": "Grifter's Deck",
+  "nom_original": "Grifter's Deck",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "When you deal a card from this slightly greasy, well-used deck, you can choose any specific card to be on top of the deck, assuming it hasn't already been dealt. Alternatively, you can choose a general card of a specific value or suit that hasn't already been dealt.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

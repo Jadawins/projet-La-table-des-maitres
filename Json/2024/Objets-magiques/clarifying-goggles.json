@@ -1,0 +1,16 @@
+{
+  "slug": "clarifying-goggles",
+  "nom": "Clarifying Goggles",
+  "nom_original": "Clarifying Goggles",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These goggles contain a lens of slightly rippled blue glass that turns clear underwater. While wearing these goggles underwater, you don't have disadvantage on Wisdom (Perception) checks that rely on sight when peering through silt, murk, or other natural underwater phenomena that would ordinarily lightly obscure your vision. While wearing these goggles above water, your vision is lightly obscured.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

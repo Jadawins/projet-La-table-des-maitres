@@ -1,0 +1,16 @@
+{
+  "slug": "ring-of-powerful-summons",
+  "nom": "Anneau de Powerful Summons",
+  "nom_original": "Ring of Powerful Summons",
+  "categorie": "anneau",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "When you summon a creature with a conjuration spell while wearing this ring, the creature gains a +1 bonus to attack and damage rolls and 1d4 + 4 temporary hit points.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

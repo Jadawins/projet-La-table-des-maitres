@@ -1,0 +1,16 @@
+{
+  "slug": "pearl-of-diving",
+  "nom": "Pearl of Diving",
+  "nom_original": "Pearl of Diving",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This white pearl shines iridescently in almost any light. While underwater and grasping the pearl, you have resistance to cold damage and to bludgeoning damage from nonmagical attacks.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

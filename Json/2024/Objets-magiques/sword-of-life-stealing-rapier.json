@@ -1,0 +1,16 @@
+{
+  "slug": "sword-of-life-stealing-rapier",
+  "nom": "Épée de Life Stealing (Rapier)",
+  "nom_original": "Sword of Life Stealing (Rapier)",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "When you attack a creature with this magic weapon and roll a 20 on the attack roll, that target takes an extra 3d6 necrotic damage, provided that the target isn't a construct or an undead. You gain temporary hit points equal to the extra damage dealt.",
+  "effets": [],
+  "poids": "2.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

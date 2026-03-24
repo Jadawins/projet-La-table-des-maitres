@@ -1,0 +1,16 @@
+{
+  "slug": "amulet-of-sustaining-health",
+  "nom": "Amulet of Sustaining Health",
+  "nom_original": "Amulet of Sustaining Health",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this amulet, you need to eat and drink only once every 7 days. In addition, you have advantage on saving throws against effects that would cause you to suffer a level of exhaustion.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

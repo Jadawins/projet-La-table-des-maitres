@@ -1,0 +1,16 @@
+{
+  "slug": "vicious-light-crossbow",
+  "nom": "Vicious Light Crossbow",
+  "nom_original": "Vicious Light Crossbow",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This magic weapon deals an extra 2d6 damage to any creature it hits. This extra damage is of the same type as the weapon's normal damage.",
+  "effets": [],
+  "poids": "5.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

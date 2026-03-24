@@ -1,0 +1,16 @@
+{
+  "slug": "hat-of-disguise",
+  "nom": "Hat of Disguise",
+  "nom_original": "Hat of Disguise",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this hat, you can use an action to cast the _disguise self_ spell from it at will. The spell ends if the hat is removed.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

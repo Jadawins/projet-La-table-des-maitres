@@ -1,0 +1,16 @@
+{
+  "slug": "blasphemous-writ",
+  "nom": "Blasphemous Writ",
+  "nom_original": "Blasphemous Writ",
+  "categorie": "parchemin",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "parchemin",
+  "description": "The Infernal runes inscribed upon this vellum scroll radiate a faint, crimson glow. When you use this spell scroll of command, the save DC is 15 instead of 13, and you can also affect targets that are undead or that don't understand your language.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

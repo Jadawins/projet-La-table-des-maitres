@@ -1,0 +1,16 @@
+{
+  "slug": "tonic-for-the-troubled-mind",
+  "nom": "Tonic for the Troubled Mind",
+  "nom_original": "Tonic for the Troubled Mind",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This potion smells and tastes of lavender and chamomile. When you drink it, it removes any short-term madness afflicting you, and it suppresses any long-term madness afflicting you for 8 hours.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

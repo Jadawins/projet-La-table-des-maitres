@@ -1,0 +1,16 @@
+{
+  "slug": "rainbow-extract",
+  "nom": "Rainbow Extract",
+  "nom_original": "Rainbow Extract",
+  "categorie": "potion",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This thin, oily liquid shimmers with the colors of the spectrum. For 1 hour after drinking this potion, you can use an action to change the color of your hair, skin, eyes, or all three to any color or mixture of colors in any hue, pattern, or saturation you choose. You can change the colors as often as you want for the duration, but the color changes disappear at the end of the duration.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

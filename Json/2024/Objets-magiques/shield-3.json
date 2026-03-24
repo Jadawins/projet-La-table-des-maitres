@@ -1,0 +1,16 @@
+{
+  "slug": "shield-3",
+  "nom": "Shield (+3)",
+  "nom_original": "Shield (+3)",
+  "categorie": "armure_magique",
+  "rarete": "tres_rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "While holding this Shield, you have a bonus to Armor Class determined by the Shield's rarity, in addition to the Shield's normal bonus to AC.",
+  "effets": [],
+  "poids": "6.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "swashing-plumage",
+  "nom": "Swashing Plumage",
+  "nom_original": "Swashing Plumage",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This plumage, a colorful bouquet of tropical hat feathers, has a small pin at its base and can be affixed to any hat or headband. Due to its distracting, ostentatious appearance, creatures hostile to you have disadvantage on opportunity attacks against you.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

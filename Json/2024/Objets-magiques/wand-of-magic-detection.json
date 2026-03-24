@@ -1,0 +1,16 @@
+{
+  "slug": "wand-of-magic-detection",
+  "nom": "Baguette de détection de la magie",
+  "nom_original": "Wand of Magic Detection",
+  "categorie": "baguette",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "baguette",
+  "description": "This wand has 3 charges. While holding it, you can expend 1 charge as an action to cast the _detect magic_ spell from it. The wand regains 1d3 expended charges daily at dawn.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

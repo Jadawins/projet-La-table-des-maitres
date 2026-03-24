@@ -1,0 +1,16 @@
+{
+  "slug": "brooch-of-shielding",
+  "nom": "Brooch of Shielding",
+  "nom_original": "Brooch of Shielding",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this brooch, you have resistance to force damage, and you have immunity to damage from the _magic missile_ spell.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

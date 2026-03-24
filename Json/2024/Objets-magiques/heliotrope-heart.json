@@ -1,0 +1,16 @@
+{
+  "slug": "heliotrope-heart",
+  "nom": "Heliotrope Heart",
+  "nom_original": "Heliotrope Heart",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This polished orb of dark-green stone is latticed with pulsing crimson inclusions that resemble slowly dilating spatters of blood. While attuned to this orb, your hit point maximum can't be reduced by the bite of a vampire, vampire spawn, or other vampiric creature. In addition, while holding this orb, you can use an action to speak its command word and cast the 2nd-level version of the false life spell. Once used, this property can't be used again until the next dusk.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

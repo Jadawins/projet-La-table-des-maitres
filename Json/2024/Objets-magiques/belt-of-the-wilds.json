@@ -1,0 +1,16 @@
+{
+  "slug": "belt-of-the-wilds",
+  "nom": "Ceinture de the Wilds",
+  "nom_original": "Belt of the Wilds",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This thin cord is made from animal sinew. While wearing the cord, you have advantage on Wisdom (Survival) checks to follow tracks left by beasts, giants, and humanoids. While wearing the belt, you can use a bonus action to speak the belt's command word. If you do, you leave tracks of the animal of your choice instead of your regular tracks. These tracks can be those of a Large or smaller beast with a CR of 1 or lower, such as a pony, rabbit, or lion. If you repeat the command word, you end the effect.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

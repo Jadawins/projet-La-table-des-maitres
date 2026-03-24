@@ -1,0 +1,16 @@
+{
+  "slug": "greater-potion-of-troll-blood",
+  "nom": "Greater Potion de Troll Blood",
+  "nom_original": "Greater Potion of Troll Blood",
+  "categorie": "potion",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "When drink this potion, you regain 3 hit points at the start of each of your turns. After it has restored 30 hit points, the potion's effects end.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

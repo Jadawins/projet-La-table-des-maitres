@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-sails",
+  "nom": "Cape de Sails",
+  "nom_original": "Cloak of Sails",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "The interior of this simple, black cloak looks like white sailcloth. While wearing this cloak, you gain a +1 bonus to AC and saving throws. You lose this bonus while using the cloak's Sailcloth property.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

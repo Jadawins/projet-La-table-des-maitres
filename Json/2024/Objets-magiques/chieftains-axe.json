@@ -1,0 +1,16 @@
+{
+  "slug": "chieftains-axe",
+  "nom": "Chieftain's Axe",
+  "nom_original": "Chieftain's Axe",
+  "categorie": "arme_magique",
+  "rarete": "tres_rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "Furs conceal the worn runes lining the haft of this oversized, silver-headed battleaxe. You gain a +2 bonus to attack and damage rolls made with this silvered, magic weapon.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

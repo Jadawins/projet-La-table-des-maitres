@@ -1,0 +1,16 @@
+{
+  "slug": "boots-of-the-swift-striker",
+  "nom": "Bottes de the Swift Striker",
+  "nom_original": "Boots of the Swift Striker",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While you wear these boots, your walking speed increases by 10 feet. In addition, when you take the Dash action while wearing these boots, you can make a single weapon attack at the end of your movement. You can't continue moving after making this attack.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

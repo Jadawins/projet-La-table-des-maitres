@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-protection",
+  "nom": "Cape de protection",
+  "nom_original": "Cloak of Protection",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "You gain a +1 bonus to AC and saving throws while you wear this cloak.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "baba-yagas-cinderskull",
+  "nom": "Baba Yaga's Cinderskull",
+  "nom_original": "Baba Yaga's Cinderskull",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Warm to the touch, this white, dry skull radiates dim, orange light from its eye sockets in a 30-foot radius. While attuned to the skull, you only require half of the daily food and water a creature of your size and type normally requires. In addition, you can withstand extreme temperatures indefinitely, and you automatically succeed on saving throws against extreme temperatures.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

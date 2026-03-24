@@ -1,0 +1,16 @@
+{
+  "slug": "undine-plate",
+  "nom": "Undine Plate",
+  "nom_original": "Undine Plate",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This bright green plate armor is embossed with images of various marine creatures, such as octopuses and rays. While wearing this armor, you have a swimming speed of 40 feet, and you don't have disadvantage on Dexterity (Stealth) checks while underwater.",
+  "effets": [],
+  "poids": "65.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

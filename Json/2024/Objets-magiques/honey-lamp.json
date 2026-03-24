@@ -1,0 +1,16 @@
+{
+  "slug": "honey-lamp",
+  "nom": "Honey Lamp",
+  "nom_original": "Honey Lamp",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Honey lamps, made from glowing honey encased in beeswax, shed light as a lamp. Though the lamps are often found in the shape of a globe, the honey can also be sealed inside stone or wood recesses. If the wax that shields the honey is broken or smashed, the honey crystallizes in 7 days and ceases to glow. Eating the honey while it is still glowing grants darkvision out to a range of 30 feet for 1 week and 1 day.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

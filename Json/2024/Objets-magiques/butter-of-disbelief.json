@@ -1,0 +1,16 @@
+{
+  "slug": "butter-of-disbelief",
+  "nom": "Butter of Disbelief",
+  "nom_original": "Butter of Disbelief",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This stick of magical butter is carved with arcane runes and never melts or spoils. It has 3 charges. While holding this butter, you can use an action to slice off a piece and expend 1 charge to cast the grease spell (save DC 13) from it. The grease that covers the ground looks like melted butter. The butter regains all expended charges daily at dawn. If you expend the last charge, the butter disappears.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

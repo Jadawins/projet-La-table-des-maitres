@@ -1,0 +1,16 @@
+{
+  "slug": "bracers-of-defense",
+  "nom": "Brassards de défense",
+  "nom_original": "Bracers of Defense",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing these bracers, you gain a +2 bonus to AC if you are wearing no armor and using no shield.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "earrings-of-the-agent",
+  "nom": "Earrings of the Agent",
+  "nom_original": "Earrings of the Agent",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Aside from a minor difference in size, these simple golden hoops are identical to one another. Each hoop has 1 charge and provides a different magical effect. Each hoop regains its expended charge daily at dawn. You must be wearing both hoops to use the magic of either hoop.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "philter-of-luck",
+  "nom": "Philter of Luck",
+  "nom_original": "Philter of Luck",
+  "categorie": "potion",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "When you drink this vibrant green, effervescent potion, you gain a finite amount of good fortune. Roll a d3 to determine where your fortune falls: ability checks (1), saving throws (2), or attack rolls (3). When you make a roll associated with your fortune, you can choose to tap into your good fortune and reroll the d20. This effect ends after you tap into your good fortune or when 1 hour has passed. | d3 | Use fortune for |\n| --- | --------------- |\n| 1 | ability checks |\n| 2 | saving throws |\n| 3 | attack rolls |",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

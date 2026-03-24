@@ -1,0 +1,16 @@
+{
+  "slug": "longbow-of-accuracy",
+  "nom": "Longbow of Accuracy",
+  "nom_original": "Longbow of Accuracy",
+  "categorie": "arme_magique",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "The normal range of this bow is doubled, but its long range remains the same.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

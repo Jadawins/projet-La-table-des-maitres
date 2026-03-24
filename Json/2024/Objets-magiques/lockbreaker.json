@@ -1,0 +1,16 @@
+{
+  "slug": "lockbreaker",
+  "nom": "Lockbreaker",
+  "nom_original": "Lockbreaker",
+  "categorie": "arme_magique",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You can use this stiletto-bladed dagger to open locks by using an action and making a Strength check. The DC is 5 less than the DC to pick the lock (minimum DC 10). On a success, the lock is broken.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

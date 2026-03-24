@@ -1,0 +1,16 @@
+{
+  "slug": "band-of-restraint",
+  "nom": "Band of Restraint",
+  "nom_original": "Band of Restraint",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "These simple leather straps are nearly unbreakable when used as restraints. If you spend 1 minute tying a Small or Medium creature's limbs with these straps, the creature is restrained (escape DC 17) until it escapes or until you speak a command word to release the straps. While restrained by these straps, the target has disadvantage on Strength checks.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

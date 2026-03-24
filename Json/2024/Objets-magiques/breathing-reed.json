@@ -1,0 +1,16 @@
+{
+  "slug": "breathing-reed",
+  "nom": "Breathing Reed",
+  "nom_original": "Breathing Reed",
+  "categorie": "objet_merveilleux",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This tiny river reed segment is cool to the touch. If you chew the reed while underwater, it provides you with enough air to breathe for up to 10 minutes. At the end of the duration, the reed loses its magic and can be harmlessly swallowed or spit out.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

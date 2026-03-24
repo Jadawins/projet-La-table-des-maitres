@@ -1,0 +1,16 @@
+{
+  "slug": "armor-of-cushioning",
+  "nom": "Armure de Cushioning",
+  "nom_original": "Armor of Cushioning",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "While wearing this armor, you have resistance to bludgeoning damage. In addition, you can use a reaction when you fall to reduce any falling damage you take by an amount equal to twice your level.",
+  "effets": [],
+  "poids": "8.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

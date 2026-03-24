@@ -1,0 +1,16 @@
+{
+  "slug": "living-juggernaut",
+  "nom": "Living Juggernaut",
+  "nom_original": "Living Juggernaut",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This broad, bulky suit of plate is adorned with large, blunt spikes and has curving bull horns affixed to its helm. While wearing this armor, you gain a +1 bonus to AC, and difficult terrain doesn't cost you extra movement.",
+  "effets": [],
+  "poids": "65.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

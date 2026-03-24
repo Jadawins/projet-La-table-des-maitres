@@ -1,0 +1,16 @@
+{
+  "slug": "sword-of-life-stealing-greatsword",
+  "nom": "Épée de Life Stealing (Greatsword)",
+  "nom_original": "Sword of Life Stealing (Greatsword)",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "When you attack a creature with this magic weapon and roll a 20 on the attack roll, that target takes an extra 3d6 necrotic damage, provided that the target isn't a construct or an undead. You gain temporary hit points equal to the extra damage dealt.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

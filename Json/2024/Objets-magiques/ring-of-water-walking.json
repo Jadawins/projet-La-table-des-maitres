@@ -1,0 +1,16 @@
+{
+  "slug": "ring-of-water-walking",
+  "nom": "Anneau de marche sur l'eau",
+  "nom_original": "Ring of Water Walking",
+  "categorie": "anneau",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "While wearing this ring, you can stand on and move across any liquid surface as if it were solid ground.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": null,
+  "source": "SRD",
+  "image": null
+}

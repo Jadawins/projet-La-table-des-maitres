@@ -1,0 +1,16 @@
+{
+  "slug": "half-plate-armor-1",
+  "nom": "Half Plate Armor (+1)",
+  "nom_original": "Half Plate Armor (+1)",
+  "categorie": "armure_magique",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
+  "effets": [],
+  "poids": "40.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

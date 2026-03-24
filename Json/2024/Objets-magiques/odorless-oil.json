@@ -1,0 +1,16 @@
+{
+  "slug": "odorless-oil",
+  "nom": "Odorless Oil",
+  "nom_original": "Odorless Oil",
+  "categorie": "potion",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "This odorless, colorless oil can cover a Medium or smaller object or creature, along with the equipment the creature is wearing or carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. For 1 hour, the affected target gives off no scent, can't be tracked by scent, and can't be detected with Wisdom (Perception) checks that rely on smell.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

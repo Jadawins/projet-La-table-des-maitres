@@ -1,0 +1,16 @@
+{
+  "slug": "bed-of-spikes",
+  "nom": "Bed of Spikes",
+  "nom_original": "Bed of Spikes",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This wide, wooden plank holds hundreds of two-inch long needle-like spikes. When you finish a long rest on the bed, you have resistance to piercing damage and advantage on Constitution saving throws to maintain your concentration on spells you cast for 8 hours or until you finish a short or long rest. Once used, the bed can't be used again until the next dusk.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

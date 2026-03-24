@@ -1,0 +1,16 @@
+{
+  "slug": "knockabout-billet",
+  "nom": "Knockabout Billet",
+  "nom_original": "Knockabout Billet",
+  "categorie": "arme_magique",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This stout, oaken cudgel helps you knock your opponents to the ground or away from you. When you hit a creature with this magic weapon, you can shove the target as part of the same attack, using your attack roll in place of a Strength (Athletics) check. The weapon deals damage as normal, regardless of the result of the shove. This property of the club can be used no more than once per hour.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

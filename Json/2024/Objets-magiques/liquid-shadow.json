@@ -1,0 +1,16 @@
+{
+  "slug": "liquid-shadow",
+  "nom": "Liquid Shadow",
+  "nom_original": "Liquid Shadow",
+  "categorie": "potion",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "The contents of this bottle are inky black and seem to absorb the light. The dark liquid can cover a single Small or Medium creature. Applying the liquid takes 1 minute. For 1 hour, the coated creature has advantage on Dexterity (Stealth) checks. Alternately, you can use an action to hurl the bottle up to 20 feet, shattering it on impact. Magical darkness spreads from the point of impact to fill a 15-foot-radius sphere for 1 minute. This darkness works like the darkness spell.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

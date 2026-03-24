@@ -1,0 +1,16 @@
+{
+  "slug": "medal-of-valor",
+  "nom": "Medal of Valor",
+  "nom_original": "Medal of Valor",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "You are immune to the frightened condition while you wear this medal. If you are already frightened, the effect ends immediately when you put on the medal.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

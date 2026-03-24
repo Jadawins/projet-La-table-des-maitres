@@ -1,0 +1,16 @@
+{
+  "slug": "crystal-ball-of-true-seeing",
+  "nom": "Crystal Ball of True Seeing",
+  "nom_original": "Crystal Ball of True Seeing",
+  "categorie": "objet_merveilleux",
+  "rarete": "legendaire",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "The typical crystal ball, a very rare item, is about 6 inches in diameter. While touching it, you can cast the scrying spell (save DC 17) with it.\r\n\r\nWhile scrying with the crystal ball, you have truesight with a radius of 120 feet centered on the spell's sensor.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

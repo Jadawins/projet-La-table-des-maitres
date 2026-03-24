@@ -1,0 +1,16 @@
+{
+  "slug": "hewers-draught",
+  "nom": "Hewer's Draught",
+  "nom_original": "Hewer's Draught",
+  "categorie": "potion",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "When you drink this potion, you have advantage on attack rolls made with weapons that deal piercing or slashing damage for 1 minute. This potion's translucent amber liquid glimmers when agitated.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

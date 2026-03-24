@@ -1,0 +1,16 @@
+{
+  "slug": "buzzing-greataxe",
+  "nom": "Buzzing Greataxe",
+  "nom_original": "Buzzing Greataxe",
+  "categorie": "arme_magique",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "You can use a bonus action to speak this weapon's command word, causing the blade to emit a loud buzzing sound. The buzzing noise is audible out to 100 feet. While the sword is buzzing, it deals an extra 2d6 thunder damage to any target it hits. The buzzing lasts until you use a bonus action to speak the command word again or until you drop or sheathe the weapon.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

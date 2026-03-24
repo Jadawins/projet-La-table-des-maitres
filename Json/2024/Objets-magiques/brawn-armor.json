@@ -1,0 +1,16 @@
+{
+  "slug": "brawn-armor",
+  "nom": "Brawn Armor",
+  "nom_original": "Brawn Armor",
+  "categorie": "armure_magique",
+  "rarete": "rare",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "armure_magique",
+  "description": "This armor was crafted from the hide of an ancient grizzly bear. While wearing it, you gain a +1 bonus to AC, and you have advantage on grapple checks. The armor has 3 charges. You can use a bonus action to expend 1 charge to deal your unarmed strike damage to a creature you are grappling. The armor regains all expended charges daily at dawn.",
+  "effets": [],
+  "poids": "12.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

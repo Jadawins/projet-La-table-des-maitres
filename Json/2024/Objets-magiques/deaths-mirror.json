@@ -1,0 +1,16 @@
+{
+  "slug": "deaths-mirror",
+  "nom": "Death's Mirror",
+  "nom_original": "Death's Mirror",
+  "categorie": "anneau",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "anneau",
+  "description": "Made from woven lead and silver, this ring fits only on the hand's smallest finger. As the moon is a dull reflection of the sun's glory, so too is the power within this ring merely an imitation of the healing energies that can bestow true life. The ring has 3 charges and regains all expended charges daily at dawn. While wearing the ring, you can expend 1 charge as a bonus action to gain 5 temporary hit points for 1 hour.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

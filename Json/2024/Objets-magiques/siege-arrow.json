@@ -1,0 +1,16 @@
+{
+  "slug": "siege-arrow",
+  "nom": "Siege Arrow",
+  "nom_original": "Siege Arrow",
+  "categorie": "autre",
+  "rarete": "commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "autre",
+  "description": "This magic arrow's tip is enchanted to soften stone and warp wood. When this arrow hits an object or structure, it deals double damage then becomes a nonmagical arrow.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

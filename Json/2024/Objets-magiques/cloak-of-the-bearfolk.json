@@ -1,0 +1,16 @@
+{
+  "slug": "cloak-of-the-bearfolk",
+  "nom": "Cape de the Bearfolk",
+  "nom_original": "Cloak of the Bearfolk",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "While wearing this cloak, your Constitution score is 15, and you have proficiency in the Athletics skill. The cloak has no effect if you already have proficiency in this skill or if your Constitution score is already 15 or higher.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

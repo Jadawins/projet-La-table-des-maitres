@@ -1,0 +1,16 @@
+{
+  "slug": "mantle-of-the-forest-lord",
+  "nom": "Mantle of the Forest Lord",
+  "nom_original": "Mantle of the Forest Lord",
+  "categorie": "objet_merveilleux",
+  "rarete": "rare",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "Created by village elders for druidic scouts to better traverse and survey the perimeters of their lands, this cloak resembles thick oak bark but bends and flows like silk. While wearing this cloak, you can use an action to cast the tree stride spell on yourself at will, except trees need not be living in order to pass through them.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

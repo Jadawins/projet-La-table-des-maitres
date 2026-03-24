@@ -1,0 +1,16 @@
+{
+  "slug": "blade-of-the-temple-guardian",
+  "nom": "Blade of the Temple Guardian",
+  "nom_original": "Blade of the Temple Guardian",
+  "categorie": "arme_magique",
+  "rarete": "peu_commun",
+  "harmonisation": true,
+  "harmonisation_detail": null,
+  "type": "arme_magique",
+  "description": "This simple but elegant shortsword is a magic weapon. When you are wielding it and use the Flurry of Blows class feature, you can make your bonus attacks with the sword rather than unarmed strikes. If you deal damage to a creature with this weapon and reduce it to 0 hit points, you absorb some of its energy, regaining 1 expended ki point.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

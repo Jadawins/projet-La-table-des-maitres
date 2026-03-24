@@ -1,0 +1,16 @@
+{
+  "slug": "mask-of-the-leaping-gazelle",
+  "nom": "Mask of the Leaping Gazelle",
+  "nom_original": "Mask of the Leaping Gazelle",
+  "categorie": "objet_merveilleux",
+  "rarete": "peu_commun",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "objet_merveilleux",
+  "description": "This painted wooden animal mask is adorned with a pair of gazelle horns. While wearing this mask, your walking speed increases by 10 feet, and your long jump is up to 25 feet with a 10-foot running start.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}

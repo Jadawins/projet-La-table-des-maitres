@@ -1,0 +1,16 @@
+{
+  "slug": "supreme-potion-of-troll-blood",
+  "nom": "Supreme Potion de Troll Blood",
+  "nom_original": "Supreme Potion of Troll Blood",
+  "categorie": "potion",
+  "rarete": "legendaire",
+  "harmonisation": false,
+  "harmonisation_detail": null,
+  "type": "potion",
+  "description": "When you drink this potion, you regain 8 hit points at the start of each of your turns. After it has restored 80 hit points, the potion's effects end.",
+  "effets": [],
+  "poids": "0.000",
+  "prix_estime": "0.00",
+  "source": "SRD",
+  "image": null
+}
