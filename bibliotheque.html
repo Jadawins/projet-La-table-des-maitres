@@ -76,6 +76,7 @@
         <button class="biblio-tab" data-tab="equipement"><i class="fa-solid fa-shield"></i> Équipement</button>
         <button class="biblio-tab" data-tab="glossaire"><i class="fa-solid fa-book"></i> Glossaire</button>
         <button class="biblio-tab" data-tab="monstres"><i class="fa-solid fa-skull-crossbones"></i> Monstres</button>
+        <button class="biblio-tab" data-tab="objets-magiques"><i class="fa-solid fa-hat-wizard"></i> Objets magiques</button>
       </div>
 
       <!-- FILTRES DYNAMIQUES -->
@@ -107,8 +108,10 @@
     const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
     const { url, key } = await res.json();
     const supabase = createClient(url, key);
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) window.location.href = "login.html";
+    const { data: { session }, error } = await supabase.auth.getSession();
+    if (error) console.warn('Auth error:', error.message);
+    if (!session) { window.location.href = "login.html"; }
+    else { window.SUPABASE_TOKEN = session.access_token; }
   </script>
 
   <!-- SIDEBAR -->

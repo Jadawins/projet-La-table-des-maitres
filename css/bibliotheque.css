@@ -623,3 +623,48 @@
   .monstre-carac-grid { grid-template-columns: repeat(3, 1fr); }
   .monstre-stats-row  { flex-direction: column; gap: 0.75rem; }
 }
+
+/* =============================================================
+   OBJETS MAGIQUES
+   ============================================================= */
+
+/* Card */
+.om-card { position: relative; }
+.om-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; margin-bottom: .35rem; }
+.om-nom-original { font-size: .72rem; color: var(--color-text-muted, #888); margin: .1rem 0 0; font-style: italic; }
+
+/* Badges de rareté */
+.om-rarete-badge {
+  font-size: .68rem;
+  font-weight: 700;
+  padding: .2rem .55rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.om-commun     { background: #555; color: #ddd; }
+.om-peu-commun { background: #1a4a1a; color: #6ddc6d; border: 1px solid #4caf50; }
+.om-rare       { background: #0d2a4a; color: #64b5f6; border: 1px solid #2196f3; }
+.om-tres-rare  { background: #2a0a4a; color: #ce93d8; border: 1px solid #9c27b0; }
+.om-legendaire {
+  background: linear-gradient(135deg, #3a2500, #5a3c00);
+  color: #ffd700;
+  border: 1px solid #c9a84c;
+  animation: om-glow-gold 2s ease-in-out infinite alternate;
+}
+.om-artefact   { background: #4a0a0a; color: #ff6b6b; border: 1px solid #f44336; }
+
+@keyframes om-glow-gold {
+  from { box-shadow: 0 0 4px rgba(201,168,76,.4); }
+  to   { box-shadow: 0 0 10px rgba(201,168,76,.9); }
+}
+
+/* Tags spéciaux */
+.om-harmo    { background: rgba(138,43,226,.25); color: #ce93d8; border: 1px solid #9c27b0; }
+.om-homebrew { background: rgba(255,107,107,.15); color: #ff9090; border: 1px solid #f44336; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .om-card-header { flex-direction: column; }
+  .om-rarete-badge { align-self: flex-start; }
+}

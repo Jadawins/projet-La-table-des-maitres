@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un objet magique — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <style>
+    .creation-page {
+      margin-left: 260px;
+      padding: 2rem;
+      min-height: 100vh;
+      transition: margin-left .3s ease;
+    }
+    #sidebar.collapsed ~ .creation-page { margin-left: 64px; }
+
+    .creation-header { text-align: center; margin-bottom: 2rem; }
+    .creation-header h1 { font-size: 1.9rem; color: #c9a84c; text-shadow: 0 0 10px rgba(201,168,76,.5); margin: 0 0 .25rem; }
+    .creation-header p { opacity: .7; font-size: .9rem; }
+
+    .creation-form {
+      max-width: 760px;
+      margin: 0 auto;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(201,168,76,.25);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: .85rem; color: #c9a84c; margin-bottom: .35rem; font-weight: 600; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .6rem .9rem;
+      background: rgba(0,0,0,.5);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: 8px;
+      color: #f0e6d2;
+      font-size: .9rem;
+      font-family: inherit;
+      box-sizing: border-box;
+      transition: border-color .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #c9a84c;
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-check { display: flex; align-items: center; gap: .6rem; }
+    .form-check input[type="checkbox"] { width: auto; accent-color: #c9a84c; transform: scale(1.3); }
+    .form-check label { font-size: .9rem; color: #f0e6d2; font-weight: normal; margin: 0; }
+
+    /* Effets dynamiques */
+    .effets-list { list-style: none; padding: 0; margin: .5rem 0; }
+    .effets-list li {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
+    .effets-list li input { flex: 1; }
+    .btn-remove-effet {
+      background: rgba(244,67,54,.15);
+      border: 1px solid #f44336;
+      color: #f44336;
+      border-radius: 6px;
+      padding: .3rem .6rem;
+      cursor: pointer;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+    .btn-remove-effet:hover { background: rgba(244,67,54,.3); }
+
+    .btn-add-effet {
+      background: none;
+      border: 1px dashed rgba(201,168,76,.5);
+      color: #c9a84c;
+      border-radius: 8px;
+      padding: .45rem 1rem;
+      cursor: pointer;
+      font-size: .85rem;
+      width: 100%;
+      margin-top: .25rem;
+    }
+    .btn-add-effet:hover { border-color: #c9a84c; background: rgba(201,168,76,.05); }
+
+    /* Boutons */
+    .form-actions { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+    .btn-save {
+      flex: 1;
+      min-width: 160px;
+      padding: .75rem 1.5rem;
+      background: linear-gradient(135deg, #c9a84c, #e6c96a);
+      color: #1a1209;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-save:hover { opacity: .88; }
+    .btn-save:disabled { opacity: .5; cursor: not-allowed; }
+
+    .btn-partager {
+      flex: 1;
+      min-width: 160px;
+      padding: .75rem 1.5rem;
+      background: rgba(138,43,226,.2);
+      color: #ce93d8;
+      border: 1px solid #9c27b0;
+      border-radius: 10px;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+      display: none;
+    }
+    .btn-partager.visible { display: flex; align-items: center; gap: .5rem; justify-content: center; }
+    .btn-partager:hover { background: rgba(138,43,226,.35); }
+
+    .btn-retour {
+      padding: .75rem 1.2rem;
+      background: none;
+      border: 1px solid rgba(201,168,76,.4);
+      color: #c9a84c;
+      border-radius: 10px;
+      font-size: .9rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .btn-retour:hover { background: rgba(201,168,76,.1); }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(4rem);
+      background: #1e3a1e;
+      color: #6ddc6d;
+      border: 1px solid #4caf50;
+      border-radius: 10px;
+      padding: .75rem 1.5rem;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: transform .3s, opacity .3s;
+      opacity: 0;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    .toast.error { background: #3a0e0e; color: #ff9090; border-color: #f44336; }
+
+    .required-star { color: #f44336; margin-left: 2px; }
+  </style>
+</head>
+<body>
+<div class="page-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="creer-objet-magique.html" class="active"><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</a></li>
+          <li><a href="sessions.html?role=mj"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
+          <li><a href="campagne.html"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="creation-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+    </button>
+
+    <div class="creation-header">
+      <h1><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</h1>
+      <p>Conçois ton propre objet homebrew, visible uniquement par toi et tes joueurs</p>
+    </div>
+
+    <form class="creation-form" id="form-objet" novalidate>
+
+      <!-- Nom -->
+      <div class="form-group">
+        <label for="nom">Nom <span class="required-star">*</span></label>
+        <input type="text" id="nom" name="nom" placeholder="Ex : Épée du Crépuscule" required autocomplete="off" />
+      </div>
+
+      <!-- Catégorie + Rareté -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="categorie">Catégorie</label>
+          <select id="categorie" name="categorie">
+            <option value="arme_magique">Arme magique</option>
+            <option value="armure_magique">Armure magique</option>
+            <option value="anneau">Anneau</option>
+            <option value="potion">Potion</option>
+            <option value="baguette">Baguette</option>
+            <option value="baton">Bâton</option>
+            <option value="parchemin">Parchemin</option>
+            <option value="objet_merveilleux" selected>Objet merveilleux</option>
+            <option value="sceptre">Sceptre</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="rarete">Rareté</label>
+          <select id="rarete" name="rarete">
+            <option value="commun">Commun</option>
+            <option value="peu_commun" selected>Peu commun</option>
+            <option value="rare">Rare</option>
+            <option value="tres_rare">Très rare</option>
+            <option value="legendaire">Légendaire</option>
+            <option value="artefact">Artefact</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Harmonisation -->
+      <div class="form-group">
+        <div class="form-check">
+          <input type="checkbox" id="harmonisation" name="harmonisation" />
+          <label for="harmonisation">Nécessite une harmonisation</label>
+        </div>
+        <div id="harmo-detail-zone" style="margin-top:.6rem;display:none;">
+          <input type="text" id="harmonisation_detail" name="harmonisation_detail"
+                 placeholder="Précision (ex : par un ensorceleur, un magicien ou un occultiste)" />
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Décris l'apparence, l'origine et les propriétés de l'objet…"></textarea>
+      </div>
+
+      <!-- Effets -->
+      <div class="form-group">
+        <label>Effets <span style="opacity:.6;font-weight:normal">(optionnel)</span></label>
+        <ul class="effets-list" id="effets-list"></ul>
+        <button type="button" class="btn-add-effet" id="btn-add-effet">
+          <i class="fa-solid fa-plus"></i> Ajouter un effet
+        </button>
+      </div>
+
+      <!-- Poids + Prix -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="poids">Poids (kg)</label>
+          <input type="number" id="poids" name="poids" min="0" step="0.1" placeholder="Ex : 1.5" />
+        </div>
+        <div class="form-group">
+          <label for="prix_estime">Prix estimé (po)</label>
+          <input type="number" id="prix_estime" name="prix_estime" min="0" step="1" placeholder="Ex : 500" />
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="form-group">
+        <label for="image">URL de l'image <span style="opacity:.6;font-weight:normal">(optionnel)</span></label>
+        <input type="url" id="image" name="image" placeholder="https://…" autocomplete="off" />
+      </div>
+
+      <!-- Actions -->
+      <div class="form-actions">
+        <a href="bibliotheque.html#objets-magiques" class="btn-retour">
+          <i class="fa-solid fa-arrow-left"></i> Retour
+        </a>
+        <button type="submit" class="btn-save" id="btn-save">
+          <i class="fa-solid fa-floppy-disk"></i> Sauvegarder
+        </button>
+        <button type="button" class="btn-partager" id="btn-partager">
+          <i class="fa-solid fa-share-nodes"></i> Partager à mes joueurs
+        </button>
+      </div>
+
+    </form>
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- THÈME -->
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+
+<!-- SIDEBAR -->
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+
+<!-- AUTH + LOGIQUE -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+  const API = 'https://myrpgtable.fr/api';
+  let accessToken = null;
+  let savedId = null;
+
+  // Auth
+  const keyRes = await fetch(`${API}/GetSupabaseKey`);
+  const { url, key } = await keyRes.json();
+  const supabase = createClient(url, key);
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) { window.location.href = 'login.html'; }
+  accessToken = session.access_token;
+
+  // ─── Harmonisation toggle ─────────────────────────────────
+  document.getElementById('harmonisation').addEventListener('change', e => {
+    document.getElementById('harmo-detail-zone').style.display = e.target.checked ? 'block' : 'none';
+  });
+
+  // ─── Effets dynamiques ────────────────────────────────────
+  function ajouterEffet(valeur = '') {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <input type="text" placeholder="Ex : +1 aux jets d'attaque et de dégâts" value="${valeur.replace(/"/g, '&quot;')}" />
+      <button type="button" class="btn-remove-effet" title="Supprimer">✕</button>
+    `;
+    li.querySelector('.btn-remove-effet').addEventListener('click', () => li.remove());
+    document.getElementById('effets-list').appendChild(li);
+  }
+
+  document.getElementById('btn-add-effet').addEventListener('click', () => ajouterEffet());
+
+  function getEffets() {
+    return [...document.querySelectorAll('#effets-list li input')]
+      .map(i => i.value.trim()).filter(Boolean);
+  }
+
+  // ─── Soumission ───────────────────────────────────────────
+  document.getElementById('form-objet').addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const nom = document.getElementById('nom').value.trim();
+    if (!nom) { showToast('Le nom est obligatoire.', true); return; }
+
+    const btn = document.getElementById('btn-save');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sauvegarde…';
+
+    const body = {
+      nom,
+      categorie:             document.getElementById('categorie').value,
+      rarete:                document.getElementById('rarete').value,
+      harmonisation:         document.getElementById('harmonisation').checked,
+      harmonisation_detail:  document.getElementById('harmonisation_detail').value.trim() || null,
+      description:           document.getElementById('description').value.trim(),
+      effets:                getEffets(),
+      poids:                 document.getElementById('poids').value || null,
+      prix_estime:           document.getElementById('prix_estime').value || null,
+      image:                 document.getElementById('image').value.trim() || null
+    };
+
+    try {
+      const res = await fetch(`${API}/objets-magiques/custom`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+        },
+        body: JSON.stringify(body)
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+
+      const objet = await res.json();
+      savedId = objet._id;
+
+      showToast('Objet magique sauvegardé !');
+      document.getElementById('btn-partager').classList.add('visible');
+
+    } catch (err) {
+      showToast(`Erreur : ${err.message}`, true);
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Sauvegarder';
+    }
+  });
+
+  // ─── Partager ─────────────────────────────────────────────
+  document.getElementById('btn-partager').addEventListener('click', async () => {
+    if (!savedId) return;
+    try {
+      const res = await fetch(`${API}/objets-magiques/custom/${savedId}/partager`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${accessToken}` }
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      showToast('Objet partagé à tes joueurs !');
+    } catch (err) {
+      showToast(`Erreur : ${err.message}`, true);
+    }
+  });
+
+  // ─── Toast ────────────────────────────────────────────────
+  function showToast(msg, isError = false) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast' + (isError ? ' error' : '');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+</script>
+
+<script src="js/notifications.js"></script>
+</body>
+</html>

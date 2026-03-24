@@ -42,7 +42,7 @@ function appliquerTooltips(texte) {
 }
 
 // ─── ONGLETS ─────────────────────────────────────────────────
-const ONGLETS = ['sorts', 'classes', 'especes', 'backgrounds', 'dons', 'equipement', 'glossaire', 'monstres'];
+const ONGLETS = ['sorts', 'classes', 'especes', 'backgrounds', 'dons', 'equipement', 'glossaire', 'monstres', 'objets-magiques'];
 
 function changerOnglet(onglet) {
   state.onglet = onglet;
@@ -141,6 +141,47 @@ function renderFiltres() {
     `;
     document.getElementById('f-categorie-glossaire').addEventListener('change', e => { state.filtres.categorie = e.target.value; state.page = 1; chargerDonnees(); });
   }
+
+  if (state.onglet === 'objets-magiques') {
+    const CATS = [
+      { v: '', l: 'Toutes' },
+      { v: 'anneau', l: 'Anneau' },
+      { v: 'potion', l: 'Potion' },
+      { v: 'arme_magique', l: 'Arme magique' },
+      { v: 'armure_magique', l: 'Armure magique' },
+      { v: 'baguette', l: 'Baguette' },
+      { v: 'baton', l: 'Bâton' },
+      { v: 'parchemin', l: 'Parchemin' },
+      { v: 'objet_merveilleux', l: 'Objet merveilleux' },
+      { v: 'sceptre', l: 'Sceptre' },
+      { v: 'autre', l: 'Autre' }
+    ];
+    const RARETES = [
+      { v: '', l: 'Toutes' },
+      { v: 'commun', l: 'Commun' },
+      { v: 'peu_commun', l: 'Peu commun' },
+      { v: 'rare', l: 'Rare' },
+      { v: 'tres_rare', l: 'Très rare' },
+      { v: 'legendaire', l: 'Légendaire' },
+      { v: 'artefact', l: 'Artefact' }
+    ];
+    zone.innerHTML = `
+      <select id="f-cat-om" title="Catégorie">
+        ${CATS.map(c => `<option value="${c.v}">${c.l}</option>`).join('')}
+      </select>
+      <select id="f-rarete-om" title="Rareté">
+        ${RARETES.map(r => `<option value="${r.v}">${r.l}</option>`).join('')}
+      </select>
+      <select id="f-harmo-om" title="Harmonisation">
+        <option value="">Tous</option>
+        <option value="true">Oui</option>
+        <option value="false">Non</option>
+      </select>
+    `;
+    document.getElementById('f-cat-om').addEventListener('change', e => { state.filtres.categorie = e.target.value; state.page = 1; chargerDonnees(); });
+    document.getElementById('f-rarete-om').addEventListener('change', e => { state.filtres.rarete = e.target.value; state.page = 1; chargerDonnees(); });
+    document.getElementById('f-harmo-om').addEventListener('change', e => { state.filtres.harmonisation = e.target.value; state.page = 1; chargerDonnees(); });
+  }
 }
 
 // ─── CHARGEMENT DES DONNÉES ───────────────────────────────────
@@ -190,11 +231,20 @@ async function chargerDonnees() {
         if (state.filtres.taille)  params.set('taille',  state.filtres.taille);
         url = `${API}/GetMonstres?${params}`;
         break;
+      case 'objets-magiques':
+        if (state.filtres.categorie)    params.set('categorie', state.filtres.categorie);
+        if (state.filtres.rarete)       params.set('rarete', state.filtres.rarete);
+        if (state.filtres.harmonisation !== undefined && state.filtres.harmonisation !== '')
+          params.set('harmonisation', state.filtres.harmonisation);
+        url = `${API}/objets-magiques?${params}`;
+        break;
     }
 
     const res = await fetch(url);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    state.data = await res.json();
+    const json = await res.json();
+    // Objets magiques → réponse enveloppée {items, total}
+    state.data = Array.isArray(json) ? json : (json.items || json);
 
     // Mettre à jour catégories armes/armures dynamiquement
     if (state.onglet === 'equipement') {
@@ -253,7 +303,8 @@ function renderCarte(item, idx) {
     case 'dons': return carteDon(item, idx);
     case 'equipement': return carteEquipement(item, idx);
     case 'glossaire': return carteGlossaire(item, idx);
-    case 'monstres':  return carteMonster(item, idx);
+    case 'monstres':        return carteMonster(item, idx);
+    case 'objets-magiques': return carteObjetMagique(item, idx);
     default: return '';
   }
 }
@@ -367,6 +418,80 @@ function carteMonster(m, idx) {
   </div>`;
 }
 
+// ─── OBJETS MAGIQUES ──────────────────────────────────────────
+const RARETE_CONFIG = {
+  commun:        { label: 'Commun',       cls: 'om-commun' },
+  peu_commun:    { label: 'Peu commun',   cls: 'om-peu-commun' },
+  rare:          { label: 'Rare',         cls: 'om-rare' },
+  tres_rare:     { label: 'Très rare',    cls: 'om-tres-rare' },
+  legendaire:    { label: 'Légendaire',   cls: 'om-legendaire' },
+  artefact:      { label: 'Artefact',     cls: 'om-artefact' }
+};
+
+const CAT_ICONS = {
+  anneau:           'fa-ring',
+  potion:           'fa-flask',
+  arme_magique:     'fa-sword',
+  armure_magique:   'fa-shield-halved',
+  baguette:         'fa-wand-magic',
+  baton:            'fa-staff-snake',
+  parchemin:        'fa-scroll',
+  objet_merveilleux:'fa-hat-wizard',
+  sceptre:          'fa-scepter',
+  autre:            'fa-box-open'
+};
+
+function raretyBadge(rarete) {
+  const cfg = RARETE_CONFIG[rarete] || { label: rarete || '—', cls: 'om-commun' };
+  return `<span class="om-rarete-badge ${cfg.cls}">${cfg.label}</span>`;
+}
+
+function catLabel(cat) {
+  const MAP = {
+    anneau: 'Anneau', potion: 'Potion', arme_magique: 'Arme magique',
+    armure_magique: 'Armure magique', baguette: 'Baguette', baton: 'Bâton',
+    parchemin: 'Parchemin', objet_merveilleux: 'Objet merveilleux',
+    sceptre: 'Sceptre', autre: 'Autre'
+  };
+  return MAP[cat] || (cat ? cat.replace(/_/g, ' ') : '—');
+}
+
+function carteObjetMagique(o, idx) {
+  const icon = CAT_ICONS[o.categorie] || 'fa-box-open';
+  return `<div class="biblio-card om-card" data-idx="${idx}">
+    <div class="om-card-header">
+      <div>
+        <p class="card-title">${o.nom || '—'}</p>
+        ${o.nom_original && o.nom_original !== o.nom ? `<p class="om-nom-original">${o.nom_original}</p>` : ''}
+      </div>
+      ${raretyBadge(o.rarete)}
+    </div>
+    <p class="card-subtitle"><i class="fa-solid ${icon}"></i> ${catLabel(o.categorie)}</p>
+    <div class="card-tags">
+      ${o.harmonisation ? '<span class="card-tag om-harmo">✦ Harmonisation</span>' : ''}
+      ${o.source === 'homebrew' ? '<span class="card-tag om-homebrew">Homebrew</span>' : ''}
+    </div>
+  </div>`;
+}
+
+function modalObjetMagique(o) {
+  return `
+    <p class="modal-title">${o.nom || '—'}</p>
+    ${o.nom_original && o.nom_original !== o.nom ? `<p class="om-nom-original" style="margin-bottom:.5rem;color:var(--color-text-muted)">${o.nom_original}</p>` : ''}
+    <div class="modal-tags">
+      ${raretyBadge(o.rarete)}
+      <span class="card-tag"><i class="fa-solid ${CAT_ICONS[o.categorie]||'fa-box-open'}"></i> ${catLabel(o.categorie)}</span>
+      ${o.harmonisation ? '<span class="card-tag om-harmo">✦ Harmonisation requise' + (o.harmonisation_detail ? ' — ' + o.harmonisation_detail : '') + '</span>' : ''}
+    </div>
+    <div class="modal-section">
+      <h3>Description</h3>
+      <p>${o.description || '—'}</p>
+    </div>
+    ${o.effets?.length ? `<div class="modal-section"><h3>Effets</h3><ul>${o.effets.map(ef => `<li>${typeof ef === 'string' ? ef : JSON.stringify(ef)}</li>`).join('')}</ul></div>` : ''}
+    ${o.poids != null ? `<div class="modal-section"><p>Poids : ${o.poids} kg${o.prix_estime ? ' &nbsp;|&nbsp; Prix estimé : ' + o.prix_estime + ' po' : ''}</p></div>` : ''}
+  `;
+}
+
 // ─── PAGINATION ───────────────────────────────────────────────
 function renderPagination() {
   const total = Math.ceil(state.data.length / PER_PAGE);
@@ -408,6 +533,16 @@ async function ouvrirModal(item) {
     return;
   }
 
+  if (state.onglet === 'objets-magiques') {
+    body.innerHTML = '<div style="text-align:center;padding:3rem;color:#888;"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>';
+    try {
+      const res = await fetch(`${API}/objets-magiques/${item.slug}`);
+      const full = await res.json();
+      body.innerHTML = modalObjetMagique(full);
+    } catch { body.innerHTML = '<p style="color:#f44">Erreur de chargement.</p>'; }
+    return;
+  }
+
   body.innerHTML = renderModalContent(item);
 }
 
@@ -424,7 +559,8 @@ function renderModalContent(item) {
     case 'dons': return modalDon(item);
     case 'equipement': return modalEquipement(item);
     case 'glossaire': return modalGlossaire(item);
-    case 'monstres':  return modalMonstre(item);
+    case 'monstres':        return modalMonstre(item);
+    case 'objets-magiques': return modalObjetMagique(item);
     default: return `<pre>${JSON.stringify(item, null, 2)}</pre>`;
   }
 }

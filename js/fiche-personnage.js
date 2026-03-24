@@ -432,12 +432,17 @@ function renderEquipement() {
     tbody.innerHTML = `<tr><td colspan="3" style="color:#555;font-size:0.78rem;">Aucun équipement</td></tr>`;
     return;
   }
-  tbody.innerHTML = equip.map((e, i) => `
-    <tr>
-      <td>${esc(e.nom)}</td>
+  tbody.innerHTML = equip.map((e, i) => {
+    const magBadge = e.magique ? `<span class="equip-badge-magic">✨</span>` : '';
+    const harmoBadge = (e.magique && e.harmonisation_possible)
+      ? `<span class="equip-badge-harmo" onclick="toggleHarmonisation(${i})" title="${e.harmonise ? 'Désharmoniser' : 'Harmoniser'}">${e.harmonise ? '⚡ Harmonisé' : '○ Harmoniser'}</span>`
+      : '';
+    return `<tr>
+      <td>${esc(e.nom)}${magBadge}${harmoBadge}</td>
       <td><input type="number" value="${e.quantite||1}" min="1" style="width:44px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:4px;color:#ccc;text-align:center;padding:0.15rem;" onchange="updateItemQte(${i},+this.value)" /></td>
       <td><button onclick="supprimerItem(${i})" style="background:none;border:none;color:#555;cursor:pointer;font-size:0.75rem;">✕</button></td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 function updateItemQte(i, qte) {

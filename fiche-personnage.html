@@ -184,9 +184,14 @@
         <thead><tr><th>Objet</th><th>Qté</th><th></th></tr></thead>
         <tbody id="equip-tbody"></tbody>
       </table>
-      <button class="btn-add-attack" onclick="ajouterItem()">
-        <i class="fa-solid fa-plus"></i> Ajouter un objet
-      </button>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.4rem;">
+        <button class="btn-add-attack" onclick="ajouterItem()">
+          <i class="fa-solid fa-plus"></i> Ajouter un objet
+        </button>
+        <button class="btn-add-attack" onclick="ouvrirModalObjetMagique()" style="background:rgba(138,43,226,.2);border-color:rgba(156,39,176,.5);color:#ce93d8;">
+          <i class="fa-solid fa-hat-wizard"></i> Objet magique
+        </button>
+      </div>
     </div>
 
     <!-- Monnaie -->
@@ -598,5 +603,241 @@
 <script src="js/niveau.js"></script>
 <script src="js/fiche-personnage.js"></script>
 <script src="js/theme.js"></script>
+
+<!-- ══ MODAL OBJETS MAGIQUES ══════════════════════════════════ -->
+<div id="modal-om-overlay" style="
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+  z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="
+    background:#1a1209;border:1px solid rgba(201,168,76,.35);border-radius:14px;
+    width:100%;max-width:680px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;">
+
+    <!-- En-tête -->
+    <div style="padding:1.2rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.2);display:flex;align-items:center;gap:.8rem;">
+      <i class="fa-solid fa-hat-wizard" style="color:#c9a84c;font-size:1.2rem;"></i>
+      <h2 style="margin:0;font-size:1.1rem;color:#c9a84c;flex:1;">Ajouter un objet magique</h2>
+      <button onclick="fermerModalObjetMagique()" style="background:none;border:none;color:#888;font-size:1.4rem;cursor:pointer;line-height:1;">✕</button>
+    </div>
+
+    <!-- Filtres -->
+    <div style="padding:.85rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:.6rem;flex-wrap:wrap;">
+      <input id="om-search" type="text" placeholder="Rechercher…" autocomplete="off"
+        style="flex:1;min-width:150px;padding:.45rem .8rem;background:rgba(0,0,0,.5);border:1px solid rgba(201,168,76,.3);border-radius:8px;color:#f0e6d2;font-size:.85rem;" />
+      <select id="om-cat-filter"
+        style="padding:.45rem .7rem;background:rgba(0,0,0,.5);border:1px solid rgba(201,168,76,.3);border-radius:8px;color:#f0e6d2;font-size:.82rem;">
+        <option value="">Toutes catégories</option>
+        <option value="anneau">Anneau</option>
+        <option value="potion">Potion</option>
+        <option value="arme_magique">Arme magique</option>
+        <option value="armure_magique">Armure magique</option>
+        <option value="baguette">Baguette</option>
+        <option value="baton">Bâton</option>
+        <option value="parchemin">Parchemin</option>
+        <option value="objet_merveilleux">Objet merveilleux</option>
+        <option value="autre">Autre</option>
+      </select>
+    </div>
+
+    <!-- Compteur harmonisation -->
+    <div id="om-harmo-counter" style="padding:.5rem 1.5rem;font-size:.78rem;color:#ce93d8;display:none;">
+      ✦ <span id="om-harmo-count">0</span>/3 harmonisations actives
+    </div>
+
+    <!-- Résultats -->
+    <div id="om-results" style="overflow-y:auto;flex:1;padding:.75rem 1.5rem;">
+      <div style="text-align:center;padding:2rem;color:#555;"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+    </div>
+
+    <!-- Pagination -->
+    <div id="om-pagination" style="padding:.6rem 1.5rem;border-top:1px solid rgba(255,255,255,.06);display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;"></div>
+  </div>
+</div>
+
+<style>
+.om-result-item {
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.65rem .75rem;border-radius:8px;cursor:pointer;
+  border:1px solid transparent;margin-bottom:.4rem;
+  transition:background .15s,border-color .15s;
+}
+.om-result-item:hover { background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.3); }
+.om-result-name { font-size:.88rem;color:#f0e6d2;font-weight:600; }
+.om-result-sub  { font-size:.72rem;color:#888;margin-top:.1rem; }
+.om-rarete-sm   { font-size:.65rem;font-weight:700;padding:.15rem .45rem;border-radius:12px;white-space:nowrap; }
+.om-commun-sm     { background:#555;color:#ddd; }
+.om-peu-commun-sm { background:#1a4a1a;color:#6ddc6d;border:1px solid #4caf50; }
+.om-rare-sm       { background:#0d2a4a;color:#64b5f6;border:1px solid #2196f3; }
+.om-tres-rare-sm  { background:#2a0a4a;color:#ce93d8;border:1px solid #9c27b0; }
+.om-legendaire-sm { background:linear-gradient(135deg,#3a2500,#5a3c00);color:#ffd700;border:1px solid #c9a84c; }
+.om-artefact-sm   { background:#4a0a0a;color:#ff6b6b;border:1px solid #f44336; }
+.om-pag-btn { padding:.3rem .6rem;background:rgba(0,0,0,.4);border:1px solid rgba(201,168,76,.3);color:#c9a84c;border-radius:6px;cursor:pointer;font-size:.8rem; }
+.om-pag-btn.active { background:rgba(201,168,76,.2); }
+.om-pag-btn:disabled { opacity:.4;cursor:default; }
+/* Badge ✨ dans inventaire */
+.equip-badge-magic { font-size:.65rem;background:rgba(138,43,226,.2);color:#ce93d8;border:1px solid rgba(156,39,176,.4);border-radius:10px;padding:.1rem .4rem;margin-left:.4rem;vertical-align:middle; }
+.equip-badge-harmo { font-size:.65rem;background:rgba(255,215,0,.1);color:#ffd700;border:1px solid rgba(255,215,0,.4);border-radius:10px;padding:.1rem .4rem;margin-left:.3rem;vertical-align:middle;cursor:pointer; }
+</style>
+
+<script>
+(function() {
+  const API = 'https://myrpgtable.fr/api';
+  const RARETE_CLS = {
+    commun:'om-commun-sm', peu_commun:'om-peu-commun-sm', rare:'om-rare-sm',
+    tres_rare:'om-tres-rare-sm', legendaire:'om-legendaire-sm', artefact:'om-artefact-sm'
+  };
+  const RARETE_LBL = {
+    commun:'Commun', peu_commun:'Peu commun', rare:'Rare',
+    tres_rare:'Très rare', legendaire:'Légendaire', artefact:'Artefact'
+  };
+  const CAT_LBL = {
+    anneau:'Anneau', potion:'Potion', arme_magique:'Arme magique',
+    armure_magique:'Armure magique', baguette:'Baguette', baton:'Bâton',
+    parchemin:'Parchemin', objet_merveilleux:'Objet merveilleux', sceptre:'Sceptre', autre:'Autre'
+  };
+
+  let omData = [], omPage = 1, omSearch = '', omCat = '';
+  const PER = 24;
+
+  window.ouvrirModalObjetMagique = async function() {
+    const overlay = document.getElementById('modal-om-overlay');
+    overlay.style.display = 'flex';
+    document.getElementById('om-search').value = '';
+    document.getElementById('om-cat-filter').value = '';
+    omSearch = ''; omCat = ''; omPage = 1;
+    updateHarmoCounter();
+    await fetchOM();
+    // Listeners une seule fois
+    if (!overlay._initialized) {
+      overlay._initialized = true;
+      let debTimer;
+      document.getElementById('om-search').addEventListener('input', e => {
+        clearTimeout(debTimer);
+        debTimer = setTimeout(() => { omSearch = e.target.value.trim(); omPage = 1; fetchOM(); }, 300);
+      });
+      document.getElementById('om-cat-filter').addEventListener('change', e => {
+        omCat = e.target.value; omPage = 1; fetchOM();
+      });
+      overlay.addEventListener('click', e => { if (e.target === overlay) fermerModalObjetMagique(); });
+    }
+  };
+
+  window.fermerModalObjetMagique = function() {
+    document.getElementById('modal-om-overlay').style.display = 'none';
+  };
+
+  function updateHarmoCounter() {
+    const equip = (typeof perso !== 'undefined' && perso.equipement) ? perso.equipement : [];
+    const count = equip.filter(e => e.magique && e.harmonise).length;
+    const zone = document.getElementById('om-harmo-counter');
+    zone.style.display = count > 0 ? 'block' : 'none';
+    document.getElementById('om-harmo-count').textContent = count;
+  }
+
+  async function fetchOM() {
+    const res_el = document.getElementById('om-results');
+    res_el.innerHTML = '<div style="text-align:center;padding:2rem;color:#555;"><i class="fa-solid fa-spinner fa-spin"></i></div>';
+    try {
+      const params = new URLSearchParams();
+      if (omSearch) params.set('recherche', omSearch);
+      if (omCat)    params.set('categorie', omCat);
+      const token = window.SUPABASE_TOKEN || '';
+      const res = await fetch(`${API}/objets-magiques?${params}`, {
+        headers: token ? { 'Authorization': `Bearer ${token}` } : {}
+      });
+      const json = await res.json();
+      omData = json.items || json;
+      renderOMResults();
+    } catch(e) {
+      res_el.innerHTML = `<p style="color:#f44;text-align:center;">Erreur : ${e.message}</p>`;
+    }
+  }
+
+  function renderOMResults() {
+    const debut = (omPage - 1) * PER;
+    const page = omData.slice(debut, debut + PER);
+    const res_el = document.getElementById('om-results');
+    if (!omData.length) {
+      res_el.innerHTML = '<p style="text-align:center;color:#555;padding:2rem;">Aucun résultat</p>';
+      document.getElementById('om-pagination').innerHTML = '';
+      return;
+    }
+    res_el.innerHTML = page.map(o => {
+      const rc = RARETE_CLS[o.rarete] || 'om-commun-sm';
+      const rl = RARETE_LBL[o.rarete] || (o.rarete || '');
+      const cat = CAT_LBL[o.categorie] || (o.categorie || '');
+      const harmoTag = o.harmonisation ? ' <span style="font-size:.65rem;color:#ce93d8;">✦</span>' : '';
+      return `<div class="om-result-item" onclick="ajouterObjetMagique(${JSON.stringify(o).replace(/"/g,'&quot;')})">
+        <div>
+          <div class="om-result-name">${o.nom}${harmoTag}</div>
+          <div class="om-result-sub">${cat}</div>
+        </div>
+        <span class="om-rarete-sm ${rc}">${rl}</span>
+      </div>`;
+    }).join('');
+
+    // Pagination
+    const total = Math.ceil(omData.length / PER);
+    const pag = document.getElementById('om-pagination');
+    if (total <= 1) { pag.innerHTML = ''; return; }
+    let btns = `<button class="om-pag-btn" ${omPage===1?'disabled':''} onclick="omGoPage(${omPage-1})">‹</button>`;
+    for (let i = 1; i <= total; i++) {
+      if (i === 1 || i === total || Math.abs(i - omPage) <= 1) {
+        btns += `<button class="om-pag-btn ${i===omPage?'active':''}" onclick="omGoPage(${i})">${i}</button>`;
+      } else if (Math.abs(i - omPage) === 2) {
+        btns += `<button class="om-pag-btn" disabled>…</button>`;
+      }
+    }
+    btns += `<button class="om-pag-btn" ${omPage===total?'disabled':''} onclick="omGoPage(${omPage+1})">›</button>`;
+    pag.innerHTML = btns;
+  }
+
+  window.omGoPage = function(p) { omPage = p; renderOMResults(); };
+
+  window.ajouterObjetMagique = function(o) {
+    if (typeof perso === 'undefined') return;
+    if (!perso.equipement) perso.equipement = [];
+
+    // Vérif harmonisation max 3
+    if (o.harmonisation) {
+      const actives = perso.equipement.filter(e => e.magique && e.harmonise).length;
+      if (actives >= 3) {
+        alert('Maximum 3 harmonisations simultanées atteint.');
+        return;
+      }
+    }
+
+    perso.equipement.push({
+      nom: o.nom,
+      quantite: 1,
+      magique: true,
+      slug: o.slug,
+      rarete: o.rarete,
+      harmonise: false,
+      harmonisation_possible: !!o.harmonisation
+    });
+
+    if (typeof markDirty === 'function') markDirty('equipement', perso.equipement);
+    if (typeof renderEquipement === 'function') renderEquipement();
+    fermerModalObjetMagique();
+  };
+
+  window.toggleHarmonisation = function(i) {
+    if (typeof perso === 'undefined' || !perso.equipement) return;
+    const item = perso.equipement[i];
+    if (!item || !item.harmonisation_possible) return;
+
+    if (!item.harmonise) {
+      const actives = perso.equipement.filter((e, idx) => idx !== i && e.magique && e.harmonise).length;
+      if (actives >= 3) { alert('Maximum 3 harmonisations simultanées.'); return; }
+      item.harmonise = true;
+    } else {
+      item.harmonise = false;
+    }
+
+    if (typeof markDirty === 'function') markDirty('equipement', perso.equipement);
+    if (typeof renderEquipement === 'function') renderEquipement();
+  };
+})();
+</script>
 </body>
 </html>
