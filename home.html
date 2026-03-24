@@ -189,36 +189,48 @@
     const { url, key } = await res.json();
     const supabase = createClient(url, key);
 
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
-      window.location.href = "login.html";
-    } else {
+    function syncOAuthUser(user) {
       localStorage.setItem("userId", user.id);
-
       const provider = user.app_metadata?.provider;
-
       if (provider === 'google' || provider === 'discord') {
         const meta = user.user_metadata || {};
-
         const username = meta.full_name || meta.name || meta.preferred_username || user.email;
         const avatar_url = meta.avatar_url || null;
         const discord_username = provider === 'discord'
           ? (meta.custom_claims?.global_name || meta.preferred_username || meta.user_name || null)
           : null;
-
         fetch("https://myrpgtable.fr/api/SyncUser", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            supabase_id: user.id,
-            email: user.email,
-            username,
-            avatar_url,
-            provider,
-            discord_username
-          })
+          body: JSON.stringify({ supabase_id: user.id, email: user.email, username, avatar_url, provider, discord_username })
         }).catch(e => console.warn("SyncUser échoué :", e));
       }
+    }
+
+    // Utilise onAuthStateChange pour attendre que Supabase traite
+    // le hash fragment OAuth (#access_token=...) avant de vérifier la session.
+    // Évite le race condition qui faisait échouer Discord (et parfois Google).
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
+        if (!session) {
+          window.location.href = "login.html";
+        } else {
+          syncOAuthUser(session.user);
+        }
+      } else if (event === 'SIGNED_OUT') {
+        window.location.href = "login.html";
+      }
+    });
+
+    // Fallback immédiat pour les sessions déjà établies (email/password)
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) {
+      syncOAuthUser(session.user);
+    } else if (!window.location.hash.includes('access_token')) {
+      // Pas de hash OAuth et pas de session → rediriger
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) window.location.href = "login.html";
+      else syncOAuthUser(user);
     }
   </script>
   
