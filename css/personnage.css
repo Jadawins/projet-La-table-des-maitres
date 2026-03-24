@@ -1449,8 +1449,14 @@
 /* ─── PAGE MES PERSONNAGES ───────────────────────────────────── */
 
 .perso-page {
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
   max-width: 1000px;
   padding: 2rem;
+}
+
+#sidebar.hidden ~ main.perso-page {
+  margin-left: 0;
 }
 
 .perso-page h1 {

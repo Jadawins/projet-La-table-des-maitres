@@ -5,8 +5,14 @@
 /* ─── PAGE LISTE ─────────────────────────────────────────────── */
 
 .campagne-page {
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
   padding: 2rem;
   max-width: 1100px;
+}
+
+#sidebar.hidden ~ main.campagne-page {
+  margin-left: 0;
 }
 
 .campagne-page h1 {
