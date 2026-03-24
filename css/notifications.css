@@ -1,0 +1,309 @@
+/* ================================================================
+   NOTIFICATIONS.CSS — Cloche, panneau, toasts
+   ================================================================ */
+
+/* ─── BOUTON CLOCHE ─────────────────────────────────────────── */
+#notif-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px 6px;
+  color: #ccc;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+#notif-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
+
+#notif-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.58rem;
+  font-weight: bold;
+  border-radius: 10px;
+  min-width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  display: none;
+  animation: badgeNotifPulse 1.5s ease-in-out infinite;
+}
+#notif-badge.visible { display: flex; }
+@keyframes badgeNotifPulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* ─── PANNEAU NOTIFICATIONS ─────────────────────────────────── */
+#notif-panneau {
+  position: fixed;
+  top: 64px;
+  left: 10px;
+  width: 320px;
+  max-height: 480px;
+  background: rgba(15, 13, 25, 0.97);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+#notif-panneau.ouvert { display: flex; }
+
+.notif-panneau-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.notif-panneau-titre {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #c9a84c;
+}
+.notif-btn-tout-lu {
+  font-size: 0.7rem;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.notif-btn-tout-lu:hover { color: #ccc; }
+
+.notif-liste {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.3rem 0;
+  scroll-behavior: smooth;
+}
+
+.notif-vide {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+/* ─── ITEM NOTIFICATION ─────────────────────────────────────── */
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.12s;
+  position: relative;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+.notif-item:hover { background: rgba(255,255,255,0.04); }
+.notif-item.non-lu {
+  background: rgba(201,168,76,0.05);
+  border-left-color: #c9a84c;
+}
+.notif-item.non-lu:hover { background: rgba(201,168,76,0.08); }
+
+.notif-icone {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  width: 22px;
+  text-align: center;
+}
+
+.notif-corps { flex: 1; min-width: 0; }
+
+.notif-titre {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #e0e0e0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notif-item.non-lu .notif-titre { color: #fde68a; }
+
+.notif-message {
+  font-size: 0.72rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.1rem;
+}
+
+.notif-date {
+  font-size: 0.65rem;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+.notif-lu-btn {
+  font-size: 0.65rem;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  transition: color 0.15s;
+  align-self: center;
+}
+.notif-lu-btn:hover { color: #4ade80; }
+
+/* Type colors */
+.notif-item[data-type="tour"]               { --notif-color: #f5c842; }
+.notif-item[data-type="level_up"]           { --notif-color: #a78bfa; }
+.notif-item[data-type="repos"]              { --notif-color: #00bcd4; }
+.notif-item[data-type="message"]            { --notif-color: #e0e0e0; }
+.notif-item[data-type="joueur_rejoint"]     { --notif-color: #4ade80; }
+.notif-item[data-type="combat_debut"]       { --notif-color: #fb923c; }
+.notif-item[data-type="combat_fin"]         { --notif-color: #94a3b8; }
+.notif-item[data-type="mort"]               { --notif-color: #f87171; }
+.notif-item[data-type="soin_critique"]      { --notif-color: #4ade80; }
+.notif-item[data-type="sort_concentration"] { --notif-color: #c084fc; }
+
+.notif-item.non-lu[data-type] { border-left-color: var(--notif-color, #c9a84c); }
+
+.notif-panneau-footer {
+  padding: 0.4rem 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  flex-shrink: 0;
+}
+.notif-footer-lien {
+  font-size: 0.72rem;
+  color: #666;
+  text-decoration: none;
+}
+.notif-footer-lien:hover { color: #c9a84c; }
+
+/* ─── TOAST NOTIFICATIONS ───────────────────────────────────── */
+#notif-toasts {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 3000;
+  pointer-events: none;
+}
+
+.notif-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: rgba(15, 13, 25, 0.97);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-left: 3px solid var(--toast-color, #c9a84c);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  min-width: 260px;
+  max-width: 320px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  pointer-events: all;
+  cursor: pointer;
+  animation: toastIn 0.3s ease forwards;
+  transition: opacity 0.3s;
+}
+.notif-toast.sortie { animation: toastOut 0.3s ease forwards; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes toastOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(20px); }
+}
+
+.notif-toast[data-type="tour"]               { --toast-color: #f5c842; }
+.notif-toast[data-type="level_up"]           { --toast-color: #a78bfa; }
+.notif-toast[data-type="repos"]              { --toast-color: #00bcd4; }
+.notif-toast[data-type="message"]            { --toast-color: #e0e0e0; }
+.notif-toast[data-type="joueur_rejoint"]     { --toast-color: #4ade80; }
+.notif-toast[data-type="combat_debut"]       { --toast-color: #fb923c; }
+.notif-toast[data-type="combat_fin"]         { --toast-color: #94a3b8; }
+.notif-toast[data-type="mort"]               { --toast-color: #f87171; }
+.notif-toast[data-type="soin_critique"]      { --toast-color: #4ade80; }
+.notif-toast[data-type="sort_concentration"] { --toast-color: #c084fc; }
+
+.notif-toast-icone { font-size: 1.1rem; flex-shrink: 0; }
+.notif-toast-body  { flex: 1; min-width: 0; }
+.notif-toast-titre { font-size: 0.82rem; font-weight: bold; color: #e0e0e0; }
+.notif-toast-msg   { font-size: 0.73rem; color: #999; margin-top: 0.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ─── MODALE PERMISSION PUSH ────────────────────────────────── */
+#notif-permission-modal {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15,13,25,0.97);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  max-width: 380px;
+  width: calc(100% - 2rem);
+  z-index: 2500;
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  animation: toastIn 0.3s ease;
+}
+#notif-permission-modal.visible { display: flex; }
+
+.notif-perm-titre {
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #fde68a;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.notif-perm-msg {
+  font-size: 0.8rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+.notif-perm-btns {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.notif-perm-btn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: opacity 0.15s;
+}
+.notif-perm-btn:hover { opacity: 0.85; }
+.notif-perm-btn.autoriser { background: rgba(201,168,76,0.2); color: #fde68a; border: 1px solid rgba(201,168,76,0.3); }
+.notif-perm-btn.plus-tard { background: rgba(255,255,255,0.05); color: #888; border: 1px solid rgba(255,255,255,0.1); }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  #notif-panneau { width: calc(100vw - 20px); left: 10px; right: 10px; }
+  #notif-toasts  { bottom: 5rem; right: 0.5rem; left: 0.5rem; }
+  .notif-toast   { max-width: 100%; }
+}

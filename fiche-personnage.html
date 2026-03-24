@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/combat.css">
   <link rel="stylesheet" href="css/ressources.css">
   <link rel="stylesheet" href="css/niveau.css">
+  <link rel="stylesheet" href="css/notifications.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -593,6 +594,7 @@
   else { window.SUPABASE_TOKEN = session.access_token; window.dispatchEvent(new Event('supabase-ready')); }
 </script>
 
+<script src="js/notifications.js"></script>
 <script src="js/niveau.js"></script>
 <script src="js/fiche-personnage.js"></script>
 <script src="js/theme.js"></script>

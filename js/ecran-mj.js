@@ -202,7 +202,12 @@ async function majPvDirect(pid, val) {
   renderInitiativeList();
   renderJoueursPv();
   await sauvegarderParticipants();
-  if (p.pv_actuels === 0) envoyerMsgSysteme(`${p.nom} tombe à 0 PV !`);
+  if (p.pv_actuels === 0) {
+    envoyerMsgSysteme(`${p.nom} tombe à 0 PV !`);
+    if (p.type === 'joueur' && p.user_id && typeof createNotification === 'function') {
+      createNotification({ user_id: p.user_id, session_id: sessionId, type: 'mort', titre: '💀 Vous êtes à 0 PV !', message: `${p.nom} est à 0 PV ! Jets de mort.`, lien: p.personnage_id ? `/fiche-personnage.html?id=${p.personnage_id}` : null });
+    }
+  }
 }
 
 async function appliquerDelta(pid, delta) {
@@ -215,7 +220,12 @@ async function appliquerDelta(pid, delta) {
   await sauvegarderParticipants();
   const verbe = delta < 0 ? `subit ${Math.abs(delta)} dégâts` : `récupère ${delta} PV`;
   envoyerMsgSysteme(`${p.nom} ${verbe}. PV : ${p.pv_actuels}/${p.pv_max}`);
-  if (avant > 0 && p.pv_actuels === 0) envoyerMsgSysteme(`${p.nom} tombe à 0 PV !`);
+  if (avant > 0 && p.pv_actuels === 0) {
+    envoyerMsgSysteme(`${p.nom} tombe à 0 PV !`);
+    if (p.type === 'joueur' && p.user_id && typeof createNotification === 'function') {
+      createNotification({ user_id: p.user_id, session_id: sessionId, type: 'mort', titre: '💀 Vous êtes à 0 PV !', message: `${p.nom} est à 0 PV ! Jets de mort.`, lien: p.personnage_id ? `/fiche-personnage.html?id=${p.personnage_id}` : null });
+    }
+  }
 }
 
 async function ajouterCondition(pid, condKey) {
@@ -279,6 +289,19 @@ async function tourSuivant() {
     combatData.tour_actuel = data.tour_actuel;
     renderInitiativeList();
     await chargerMessages();
+
+    // Notifier le joueur dont c'est le tour
+    const actif = combatData.participants?.[data.tour_actuel];
+    if (actif && actif.type === 'joueur' && actif.user_id && typeof createNotification === 'function') {
+      createNotification({
+        user_id: actif.user_id,
+        session_id: sessionId,
+        type: 'tour',
+        titre: "C'est votre tour !",
+        message: `${actif.nom}, c'est à vous d'agir !`,
+        lien: actif.personnage_id ? `/fiche-personnage.html?id=${actif.personnage_id}` : null
+      });
+    }
   } catch (e) { console.error(e); }
 }
 window.tourSuivant = tourSuivant;

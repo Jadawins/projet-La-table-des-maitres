@@ -168,10 +168,15 @@ function renderBarreXP(perso) {
   // Badge level-up
   const badge = document.getElementById('levelup-badge');
   if (badge) {
+    const dejaVisible = badge.classList.contains('visible');
     if (levelUpDisponible) {
       badge.textContent = `⬆️ Niveau ${niveau + 1} disponible !`;
       badge.classList.add('visible');
       badge.onclick = () => lancerWizardNiveau(window._perso);
+      // Toast notification si le badge vient d'apparaître
+      if (!dejaVisible && typeof toastLocal === 'function') {
+        toastLocal('level_up', `⬆️ Niveau ${niveau + 1} disponible !`, `${perso.nom || 'Votre personnage'} peut monter en niveau.`);
+      }
     } else {
       badge.classList.remove('visible');
     }

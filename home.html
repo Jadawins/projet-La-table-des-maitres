@@ -2,12 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
   <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -86,7 +88,16 @@
   <h2>📖 Édito du Maître</h2>
   <p><strong>✅ Fait récemment :</strong></p>
   <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 23/03/2026</summary>
+    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 24/03/2026</summary>
+    <ul style="margin-top:0.4rem;">
+      <li>🔔 <strong>Système de notifications complet</strong> — cloche dans la sidebar avec badge rouge animé, panneau déroulant des notifications non lues, toasts temps réel pour tous les événements (tour, level-up, repos, mort…)</li>
+      <li>📲 <strong>Notifications push navigateur</strong> — service worker, demande de permission discrète, notifications système même onglet en arrière-plan</li>
+      <li>🎵 <strong>Son discret</strong> — tonalité web audio au déclenchement d'une nouvelle notification</li>
+      <li>📦 <strong>Base PWA</strong> — manifest.json + service worker avec cache statique</li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 23/03/2026 ▶</summary>
     <ul style="margin-top:0.4rem;">
       <li>⬆️ <strong>Montée en niveau</strong> — assistant wizard multi-étapes (PV, nouvelles capacités, sous-classe au niv.3, amélioration carac/don, emplacements de sorts), confettis au passage de niveau</li>
       <li>🌟 <strong>Distribution XP</strong> — panneau MJ pour distribuer XP en parts égales ou individuelles, détection automatique du level-up, notification badge sur la fiche joueur</li>
@@ -129,8 +140,7 @@
   <p><strong>⚙️ Technique :</strong></p>
   <ul>
     <li>👤 Page de profil utilisateur complète</li>
-    <li>🔔 Système de notifications (ton tour, message reçu…)</li>
-    <li>📴 Mode hors ligne / PWA</li>
+    <li>📴 Mode hors ligne / PWA (base installée)</li>
     <li>📜 Historique des sessions passées</li>
   </ul>
   <p><strong>📦 Contenu :</strong></p>
@@ -202,5 +212,6 @@
   </div>
   <script src="js/theme.js"></script>
   
+<script src="js/notifications.js"></script>
 </body>
 </html>

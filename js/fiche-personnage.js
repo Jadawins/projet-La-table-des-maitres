@@ -649,6 +649,10 @@ async function confirmerProposerRepos() {
     _reposActifId = data._id; _reposActif = data;
     document.getElementById('modal-proposer-repos').classList.add('hidden');
     afficherResultatRepos('✅ Vote créé ! En attente des réponses…', 'succes');
+    // Toast local
+    if (typeof toastLocal === 'function') {
+      toastLocal('repos', `🌙 Repos ${_reposType} proposé`, `${perso.nom} propose un repos. Vote en cours…`);
+    }
   } catch(e) {
     afficherResultatRepos(`❌ ${e.message}`, 'echec');
     document.getElementById('modal-proposer-repos').classList.add('hidden');

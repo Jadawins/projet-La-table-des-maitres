@@ -2,11 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Session — La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
   <link rel="stylesheet" href="css/sessions.css">
   <link rel="stylesheet" href="css/ecran-mj.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -415,5 +417,6 @@ document.addEventListener('DOMContentLoaded', () => waitAndLoad());
 window.addEventListener('beforeunload', () => clearInterval(combatRefreshInterval));
 </script>
 
+<script src="js/notifications.js"></script>
 </body>
 </html>
