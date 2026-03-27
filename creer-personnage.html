@@ -203,30 +203,9 @@
   <!-- ÉTAPE 8 — Sorts -->
   <div class="wizard-panel" data-step="8">
     <div class="step-title"><i class="fa-solid fa-hat-wizard"></i> Sorts</div>
-    <div class="step-subtitle" id="sorts-subtitle">Choisissez vos sorts connus.</div>
+    <div class="step-subtitle" id="sorts-subtitle">Choisissez vos sorts.</div>
     <div id="sorts-section">
-      <div id="sorts-mineurs-section">
-        <div style="font-size:0.82rem;color:#c9a84c;margin-bottom:0.5rem;font-weight:600;">Sorts mineurs (Niveau 0)</div>
-        <div id="sorts-mineurs-counter" class="sorts-counter"></div>
-        <div class="sorts-search">
-          <input type="text" id="search-mineurs" placeholder="Rechercher…" oninput="filtrerSorts('mineurs')" />
-          <select id="ecole-mineurs" onchange="filtrerSorts('mineurs')">
-            <option value="">Toutes les écoles</option>
-          </select>
-        </div>
-        <div class="sorts-list" id="sorts-mineurs-list"></div>
-      </div>
-      <div id="sorts-niv1-section" style="margin-top:1.2rem;">
-        <div style="font-size:0.82rem;color:#c9a84c;margin-bottom:0.5rem;font-weight:600;">Sorts de niveau 1</div>
-        <div id="sorts-niv1-counter" class="sorts-counter"></div>
-        <div class="sorts-search">
-          <input type="text" id="search-niv1" placeholder="Rechercher…" oninput="filtrerSorts('niv1')" />
-          <select id="ecole-niv1" onchange="filtrerSorts('niv1')">
-            <option value="">Toutes les écoles</option>
-          </select>
-        </div>
-        <div class="sorts-list" id="sorts-niv1-list"></div>
-      </div>
+      <div id="sorts-dynamic-sections"></div>
     </div>
     <div id="sorts-non-lanceur" style="display:none;text-align:center;padding:3rem;color:#555;">
       <i class="fa-solid fa-ban" style="font-size:2rem;margin-bottom:0.75rem;display:block;"></i>

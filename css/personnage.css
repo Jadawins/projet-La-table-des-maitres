@@ -745,7 +745,47 @@
 .sort-check { accent-color: var(--purple); }
 .sort-nom { flex: 1; font-size: 0.82rem; color: #ccc; }
 .sort-ecole { font-size: 0.65rem; color: #888; }
-.sort-conc { font-size: 0.65rem; color: #c9a84c; }
+.sort-conc   { font-size: 0.65rem; color: #c9a84c; }
+.sort-ritual { font-size: 0.65rem; color: #7ab8f5; }
+
+/* Sort désactivé (quota atteint) */
+.sort-row.sort-disabled { opacity: 0.38; cursor: default; }
+.sort-row.sort-disabled:hover { border-color: transparent; }
+
+/* En-tête de section niveau */
+.sorts-niveau-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Badge petit (compteur non-cantrip, pas de max) */
+.sorts-counter-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(134,93,255,0.12);
+  border: 1px solid rgba(134,93,255,0.3);
+  color: #c4b5fd;
+}
+
+/* Bandeau global sorts connus/préparés */
+.sorts-global-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 8px;
+}
 
 .sorts-counter {
   display: flex;

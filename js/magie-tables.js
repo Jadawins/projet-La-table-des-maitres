@@ -131,6 +131,94 @@ function getNbCantrips(classeId, niveau) {
   return (MAGIE_CANTRIPS[id] || [])[n - 1] || 2;
 }
 
+// ─── SORTS CONNUS PAR CLASSE/NIVEAU (niv 1+, hors cantrips) ─────────────────
+const MAGIE_SORTS_CONNUS = {
+  barde:      [2,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22],
+  ensorceleur:[2,4,6,7,8,9,10,11,12,13,13,13,14,14,15,15,15,16,16,16],
+  occultiste: [2,3,4,5,6,7,8,9,10,10,11,11,12,12,13,13,14,14,15,15],
+};
+
+/**
+ * Retourne les niveaux de sorts disponibles (1 à N) pour une classe et un niveau.
+ * Ne comprend PAS les cantrips (0).
+ * Occultiste : progression spéciale selon la spec.
+ */
+function getNiveauxSortsDisponibles(classeId, niveau) {
+  const id  = String(classeId || '').toLowerCase();
+  const n   = Math.max(1, Math.min(20, parseInt(niveau) || 1));
+  const type = MAGIE_TYPE_LANCEUR[id] || 'aucun';
+  if (type === 'aucun') return [];
+
+  if (type === 'complet') {
+    let max;
+    if      (n <= 2)  max = 1;
+    else if (n <= 4)  max = 2;
+    else if (n <= 6)  max = 3;
+    else if (n <= 8)  max = 4;
+    else if (n <= 10) max = 5;
+    else if (n <= 12) max = 6;
+    else if (n <= 14) max = 7;
+    else if (n <= 16) max = 8;
+    else              max = 9;
+    return Array.from({ length: max }, (_, i) => i + 1);
+  }
+
+  if (type === 'demi') {
+    // Paladin commence niv 2, Rôdeur niv 3
+    const debut = (id === 'rodeur') ? 3 : 2;
+    if (n < debut) return [];
+    let max;
+    if      (n <= 4)  max = 1;
+    else if (n <= 8)  max = 2;
+    else if (n <= 12) max = 3;
+    else if (n <= 16) max = 4;
+    else              max = 5;
+    return Array.from({ length: max }, (_, i) => i + 1);
+  }
+
+  if (type === 'pacte') {
+    if (n <= 2) return [1];
+    if (n <= 4) return [2];
+    if (n <= 6) return [1, 2, 3];
+    if (n <= 8) return [1, 2, 3, 4];
+    return [1, 2, 3, 4, 5];
+  }
+
+  return [];
+}
+
+/**
+ * Nombre de sorts connus (niv 1+) pour les classes « connus ».
+ */
+function getNbSortsConnus(classeId, niveau) {
+  const id = String(classeId || '').toLowerCase();
+  const n  = Math.max(1, Math.min(20, parseInt(niveau) || 1));
+  return (MAGIE_SORTS_CONNUS[id] || [])[n - 1] || 0;
+}
+
+/**
+ * Nombre de sorts préparés pour les classes « prepares ».
+ * @param {string} classeId
+ * @param {number} niveau
+ * @param {{ FOR,DEX,CON,INT,SAG,CHA }} stats  valeurs brutes (ex: 14, pas le mod)
+ */
+function getNbSortsPrepares(classeId, niveau, stats) {
+  const id  = String(classeId || '').toLowerCase();
+  const n   = Math.max(1, Math.min(20, parseInt(niveau) || 1));
+  const s   = stats || {};
+  const modSAG = Math.floor(((s.SAG || 10) - 10) / 2);
+  const modINT = Math.floor(((s.INT || 10) - 10) / 2);
+  const modCHA = Math.floor(((s.CHA || 10) - 10) / 2);
+  switch (id) {
+    case 'clerc':    return Math.max(1, n + modSAG);
+    case 'druide':   return Math.max(1, n + modSAG);
+    case 'magicien': return Math.max(1, n + modINT);
+    case 'paladin':  return Math.max(1, Math.floor(n / 2) + modCHA);
+    case 'rodeur':   return Math.max(1, Math.floor(n / 2) + modSAG);
+    default:         return 1;
+  }
+}
+
 /**
  * Met à jour les emplacements existants pour un nouveau niveau,
  * en conservant les utilisations actuelles (sans dépasser le nouveau total).
