@@ -274,7 +274,10 @@ function _construireEtapes(perso, classe) {
   if (niv === 3) _wizardEtapes.push('sous_classe');
   const niveauxAmel = NIVEAUX_AMELIORATION[classe] || [];
   if (niveauxAmel.includes(niv)) _wizardEtapes.push('don_carac');
-  if (CLASSES_SORTS.includes(classe) && SLOTS_PAR_CLASSE_NIVEAU[classe]?.[niv]) _wizardEtapes.push('sorts');
+  const estLanceur = (typeof getTypeLanceur === 'function')
+    ? getTypeLanceur(classe) !== 'aucun'
+    : CLASSES_SORTS.includes(classe) && !!SLOTS_PAR_CLASSE_NIVEAU[classe]?.[niv];
+  if (estLanceur) _wizardEtapes.push('sorts');
   _wizardEtapes.push('recap');
 }
 
@@ -505,8 +508,54 @@ window.selectionnerDon = selectionnerDon;
 
 function _renderEtapeSorts(el) {
   const classe = (_wizardPerso.classe || '').toLowerCase();
+  const content = el.querySelector('.niv-sorts-content');
+
+  // Utiliser magie-tables si disponible
+  if (typeof getSlotsEmplacements === 'function') {
+    const type = getTypeLanceur(classe);
+    if (type === 'aucun') { content.innerHTML = '<p style="color:#888;">Cette classe ne lance pas de sorts.</p>'; return; }
+
+    if (type === 'pacte') {
+      const ancPacte = _TABLE_PACTE[_wizardNouveauNiv - 1] || {nombre:0,niveau:1};
+      const nouvPacte = _TABLE_PACTE[_wizardNouveauNiv] || {nombre:0,niveau:1};
+      const niveauChange = nouvPacte.niveau !== ancPacte.niveau ? ` (niveau ${ancPacte.niveau} → ${nouvPacte.niveau})` : '';
+      const nbChange = nouvPacte.nombre !== ancPacte.nombre ? ` (+${nouvPacte.nombre - ancPacte.nombre})` : '';
+      content.innerHTML = `
+        <p style="font-size:0.82rem;color:#aaa;margin-bottom:0.5rem;">Emplacements de Pacte (reset repos court)</p>
+        <table class="niv-slots-table"><thead><tr><th>Nb emplacements</th><th>Niveau emplacement</th></tr></thead>
+        <tbody><tr>
+          <td class="${nouvPacte.nombre > ancPacte.nombre ? 'niv-slot-new' : ''}">${nouvPacte.nombre}${nbChange}</td>
+          <td class="${nouvPacte.niveau > ancPacte.niveau ? 'niv-slot-new' : ''}">${nouvPacte.niveau}${niveauChange}</td>
+        </tr></tbody></table>`;
+      return;
+    }
+
+    const slotsAnc  = getSlotsEmplacements(classe, _wizardNouveauNiv - 1);
+    const slotsNouv = getSlotsEmplacements(classe, _wizardNouveauNiv);
+
+    const ancMap  = {};
+    slotsAnc.forEach(s => { ancMap[s.niveau] = s.total; });
+    const nouvMap = {};
+    slotsNouv.forEach(s => { nouvMap[s.niveau] = s.total; });
+
+    const tousNiveaux = [...new Set([...Object.keys(ancMap), ...Object.keys(nouvMap)].map(Number))].sort((a,b)=>a-b);
+    let rows = '';
+    for (const niv of tousNiveaux) {
+      const anc  = ancMap[niv]  || 0;
+      const nouv = nouvMap[niv] || 0;
+      if (nouv === 0 && anc === 0) continue;
+      const diff = nouv - anc;
+      rows += `<tr><td>Niveau ${niv}</td><td>${anc}</td><td class="${diff > 0 ? 'niv-slot-new' : ''}">${nouv} ${diff > 0 ? `(+${diff})` : ''}</td></tr>`;
+    }
+    content.innerHTML = rows
+      ? `<table class="niv-slots-table"><thead><tr><th>Niveau sort</th><th>Avant</th><th>Après</th></tr></thead><tbody>${rows}</tbody></table>`
+      : '<p style="font-size:0.82rem;color:#888;">Aucun changement d\'emplacement.</p>';
+    return;
+  }
+
+  // Fallback legacy
   const slots = SLOTS_PAR_CLASSE_NIVEAU[classe];
-  if (!slots) { el.querySelector('.niv-sorts-content').innerHTML = '<p style="color:#888;">Pas d\'emplacements pour cette classe.</p>'; return; }
+  if (!slots) { content.innerHTML = '<p style="color:#888;">Pas d\'emplacements pour cette classe.</p>'; return; }
 
   const slotsAnc = slots[_wizardNouveauNiv - 1] || [0,0,0,0,0,0,0,0,0];
   const slotsNouv = slots[_wizardNouveauNiv] || [0,0,0,0,0,0,0,0,0];
@@ -605,6 +654,17 @@ async function confirmerNiveau() {
     if (_wizardChoix.don) {
       _wizardPerso.aptitudes = _wizardPerso.aptitudes || [];
       _wizardPerso.aptitudes.push({ type: 'don', id: _wizardChoix.don.id, nom: _wizardChoix.don.nom });
+    }
+
+    // Mettre à jour les emplacements de sorts
+    if (typeof mettreAJourSlots === 'function') {
+      const classe = (_wizardPerso.classe || '').toLowerCase();
+      _wizardPerso.sorts = _wizardPerso.sorts || {};
+      _wizardPerso.sorts.emplacements = mettreAJourSlots(
+        _wizardPerso.sorts.emplacements || [],
+        classe,
+        _wizardNouveauNiv
+      );
     }
 
     document.getElementById('modal-levelup').classList.add('hidden');

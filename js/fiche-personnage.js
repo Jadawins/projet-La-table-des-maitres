@@ -901,18 +901,31 @@ function renderSorts() {
     <span>DD sorts : <strong style="color:#e0d0ff;">${dd}</strong></span>
     <span>Bonus attaque : <strong style="color:#e0d0ff;">${fmtMod(bonus)}</strong></span>`;
 
-  // Emplacements
-  const empl = sorts.emplacements || [];
+  // Emplacements — auto-calcul si absent et magie-tables disponible
+  let empl = sorts.emplacements || [];
+  if (!empl.length && typeof getSlotsEmplacements === 'function') {
+    const classe = (perso.classe || '').toLowerCase();
+    const niveau = perso.niveau || 1;
+    const calcules = getSlotsEmplacements(classe, niveau);
+    if (calcules.length) {
+      empl = calcules;
+      sorts.emplacements = empl;
+      markDirty('sorts', sorts);
+    }
+  }
+
   const slots = document.getElementById('spell-slots');
   if (!empl.length) {
     slots.innerHTML = '<span style="color:#555;font-size:0.75rem;">Aucun emplacement défini</span>';
   } else {
     slots.innerHTML = empl.map((e, i) => {
+      const isPacte = e.type === 'pacte';
+      const label = isPacte ? `Pacte Niv.${e.niveau}` : `Niv.${e.niveau||i+1}`;
       const dots = Array.from({ length: e.total }, (_, j) => `
         <div class="slot-dot ${j < e.utilises ? 'used' : 'available'}"
              onclick="toggleSlot(${i},${j})"></div>`).join('');
-      return `<div class="spell-slot-col">
-        <div class="slot-level-label">Niv.${e.niveau||i+1}</div>
+      return `<div class="spell-slot-col${isPacte ? ' pact-slot-col' : ''}">
+        <div class="slot-level-label">${label}</div>
         <div class="slot-dots">${dots}</div>
       </div>`;
     }).join('');

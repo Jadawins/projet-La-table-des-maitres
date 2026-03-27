@@ -1226,6 +1226,11 @@
 .slot-dot.used { background: transparent; }
 .slot-dot.available { background: var(--purple); }
 
+/* Emplacements de pacte (Occultiste) — teinte dorée */
+.pact-slot-col .slot-level-label { color: #c9a84c; }
+.pact-slot-col .slot-dot         { border-color: rgba(201,168,76,0.5); }
+.pact-slot-col .slot-dot.available { background: #c9a84c; }
+
 /* ─── SORTS CONNUS ───────────────────────────────────────────── */
 
 .sorts-par-niveau {

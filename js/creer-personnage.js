@@ -739,8 +739,29 @@ async function loadSorts() {
   const nomClasse = W.classe_data?.nom || '';
   const nbMin = getNombreMineurs(W.classe, W.niveau);
   const nbNiv1 = getNombreNiv1(W.classe, W.niveau);
+
+  // Infos emplacements via magie-tables si disponible
+  let subtitleExtra = '';
+  if (typeof getSlotsEmplacements === 'function' && typeof MAGIE_MODE === 'object') {
+    const type = getTypeLanceur(W.classe);
+    const mode = MAGIE_MODE[W.classe] || 'connus';
+    const slots = getSlotsEmplacements(W.classe, W.niveau);
+    if (type === 'pacte' && slots.length) {
+      subtitleExtra = ` — ${slots[0].total} emplacement(s) de pacte de niveau ${slots[0].niveau} (reset : repos court).`;
+    } else if (slots.length) {
+      const slotDesc = slots.map(s => `${s.total}×niv.${s.niveau}`).join(', ');
+      subtitleExtra = ` — Emplacements : ${slotDesc}.`;
+      if (mode === 'prepares') {
+        const carKey = W.classe_data?.caracteristique_incantation || 'INT';
+        const modVal = Math.floor(((W.stats[carKey] || 10) - 10) / 2);
+        const nbPrepares = Math.max(1, W.niveau + modVal);
+        subtitleExtra += ` Sorts préparés : ${nbPrepares} (niv. + mod. ${carKey}).`;
+      }
+    }
+  }
+
   document.getElementById('sorts-subtitle').textContent =
-    `${nomClasse} niveau ${W.niveau} : choisissez ${nbMin} sort(s) mineur(s) et ${nbNiv1} sort(s) de niveau 1.`;
+    `${nomClasse} niveau ${W.niveau} : choisissez ${nbMin} sort(s) mineur(s) et ${nbNiv1} sort(s) de niveau 1.${subtitleExtra}`;
 
   if (!W._sortsMineurs.length) {
     try {
@@ -997,7 +1018,9 @@ async function creerPersonnage() {
       caracteristique_incantation: carIncant,
       dd_sorts: carIncant ? (8 + bm + mod(stats[carIncant])) : null,
       bonus_attaque_sort: carIncant ? (bm + mod(stats[carIncant])) : null,
-      emplacements: [],
+      emplacements: (typeof getSlotsEmplacements === 'function')
+        ? getSlotsEmplacements(W.classe, niv)
+        : [],
       sorts_connus: [...sortsMineurs, ...sortsNiv1]
     },
     equipement: W.equipement,
