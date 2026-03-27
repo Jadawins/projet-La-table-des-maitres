@@ -86,7 +86,7 @@
   justify-content: center;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #666;
+  color: #999;
   position: relative;
   z-index: 1;
   transition: all 0.2s;
@@ -106,7 +106,7 @@
 
 .step-label {
   font-size: 0.58rem;
-  color: #555;
+  color: #888;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -150,7 +150,7 @@
 
 .wizard-nav-info {
   font-size: 0.78rem;
-  color: #555;
+  color: #888;
 }
 
 .hidden { display: none !important; }
@@ -660,7 +660,7 @@
 
 .comp-char {
   font-size: 0.65rem;
-  color: #555;
+  color: #888;
   min-width: 28px;
 }
 
@@ -690,7 +690,7 @@
 
 .equip-check { accent-color: var(--purple); }
 .equip-nom { flex: 1; font-size: 0.82rem; color: #ccc; }
-.equip-qte { font-size: 0.75rem; color: #666; }
+.equip-qte { font-size: 0.75rem; color: #999; }
 .equip-source { font-size: 0.65rem; padding: 0.1rem 0.35rem; border-radius: 4px; }
 .equip-source.classe { background: rgba(134,93,255,0.15); color: #a090e0; }
 .equip-source.bg { background: rgba(80,160,120,0.15); color: #80c4a0; }
@@ -1178,7 +1178,7 @@
 
 .comp-list-name { flex: 1; color: #bbb; }
 .comp-list-name.has-maitrise { color: var(--text-light); }
-.comp-list-char { font-size: 0.62rem; color: #555; }
+.comp-list-char { font-size: 0.62rem; color: #888; }
 .comp-list-val { font-weight: 700; color: #a090e0; min-width: 24px; text-align: right; }
 
 /* ─── ATTAQUES ───────────────────────────────────────────────── */
@@ -1191,7 +1191,7 @@
 
 .attacks-table th {
   text-align: left;
-  color: #666;
+  color: #999;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1214,7 +1214,7 @@
   background: none;
   border: 1px dashed rgba(255,255,255,0.15);
   border-radius: 6px;
-  color: #666;
+  color: #999;
   width: 100%;
   padding: 0.4rem;
   font-size: 0.75rem;
@@ -1243,7 +1243,7 @@
 
 .slot-level-label {
   font-size: 0.58rem;
-  color: #666;
+  color: #999;
   text-transform: uppercase;
 }
 
@@ -1284,7 +1284,7 @@
 .sorts-niveau-header {
   font-size: 0.65rem;
   text-transform: uppercase;
-  color: #555;
+  color: #888;
   letter-spacing: 0.07em;
   margin-bottom: 0.3rem;
 }
@@ -1320,7 +1320,7 @@
 
 .equip-table th {
   text-align: left;
-  color: #555;
+  color: #888;
   font-size: 0.62rem;
   text-transform: uppercase;
   padding: 0.25rem 0.3rem;
@@ -1437,7 +1437,7 @@
 
 .fiche-save-indicator {
   font-size: 0.72rem;
-  color: #666;
+  color: #888;
 }
 
 .fiche-save-indicator.saved { color: #4caf50; }
@@ -1556,7 +1556,7 @@
   display: flex;
   gap: 0.75rem;
   font-size: 0.72rem;
-  color: #666;
+  color: #999;
 }
 
 .perso-card-actions {
@@ -1601,10 +1601,10 @@
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
-  color: #555;
+  color: #aaa;
 }
 
-.empty-state i { font-size: 3rem; color: #333; margin-bottom: 1rem; display: block; }
+.empty-state i { font-size: 3rem; color: #666; margin-bottom: 1rem; display: block; }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 

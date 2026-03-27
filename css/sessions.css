@@ -65,7 +65,7 @@
 }
 
 .sessions-toolbar input::placeholder {
-  color: #666;
+  color: rgba(255,255,255,0.5);
 }
 
 /* Filtres statut */
@@ -181,7 +181,7 @@
 
 .session-card-mj {
   font-size: 0.78rem;
-  color: #888;
+  color: #aaa;
   margin: 0 0 0.6rem;
 }
 
@@ -223,7 +223,7 @@
 
 .session-card-joueurs {
   font-size: 0.75rem;
-  color: #777;
+  color: #999;
   margin-left: auto;
 }
 
@@ -423,7 +423,7 @@
 
 .session-detail-mj {
   font-size: 0.85rem;
-  color: #888;
+  color: #aaa;
   margin: 0 0 1rem;
 }
 
@@ -461,7 +461,7 @@
 
 .joueur-perso {
   font-size: 0.75rem;
-  color: #777;
+  color: #999;
 }
 
 .btn-expulser {
@@ -620,24 +620,24 @@
 .empty-state {
   text-align: center;
   padding: 3rem 1rem;
-  color: #555;
+  color: #aaa;
 }
 
 .empty-state i {
   font-size: 2.5rem;
   margin-bottom: 0.75rem;
-  color: #3a3a3a;
+  color: #666;
 }
 
 .empty-state p {
-  color: #666;
+  color: #bbb;
   font-size: 0.9rem;
 }
 
 /* Breadcrumb */
 .breadcrumb {
   font-size: 0.82rem;
-  color: #666;
+  color: #aaa;
   margin-bottom: 1rem;
 }
 

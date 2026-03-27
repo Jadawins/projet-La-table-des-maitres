@@ -74,7 +74,7 @@ body {
 
 .synchro-indicator {
   font-size: 0.75rem;
-  color: #555;
+  color: #888;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -210,7 +210,7 @@ body {
 
 .init-label {
   font-size: 0.72rem;
-  color: #777;
+  color: #999;
 }
 
 /* Barre de PV */
@@ -497,7 +497,7 @@ body {
 
 .resultat-detail {
   font-size: 0.75rem;
-  color: #777;
+  color: #999;
   margin-top: 0.2rem;
 }
 
@@ -509,7 +509,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
-  color: #666;
+  color: #999;
   padding: 0.15rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.03);
 }
@@ -542,7 +542,7 @@ body {
   transition: border-color 0.2s ease;
 }
 .notes-mj-textarea:focus { border-color: #865dff; }
-.notes-save-status { font-size: 0.72rem; color: #555; margin-top: 0.25rem; }
+.notes-save-status { font-size: 0.72rem; color: #888; margin-top: 0.25rem; }
 
 /* ─── MESSAGERIE ─────────────────────────────────────────────── */
 .messages-list {
@@ -575,11 +575,11 @@ body {
   color: #c9a84c;
 }
 .message-item.secret .message-auteur { color: #c9b8ff; }
-.message-item.systeme .message-auteur { color: #666; font-style: normal; }
+.message-item.systeme .message-auteur { color: #999; font-style: normal; }
 
 .message-heure {
   font-size: 0.68rem;
-  color: #555;
+  color: #888;
 }
 
 .message-contenu {
@@ -587,7 +587,7 @@ body {
   color: #ccc;
   line-height: 1.4;
 }
-.message-item.systeme .message-contenu { color: #666; font-size: 0.78rem; }
+.message-item.systeme .message-contenu { color: #999; font-size: 0.78rem; }
 .message-item.secret .message-contenu { color: #b0a0ff; }
 
 .message-dest {

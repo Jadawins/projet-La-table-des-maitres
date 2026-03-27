@@ -16,9 +16,11 @@ const _TABLE_COMPLET = {
 };
 
 // ─── TABLE DEMI-LANCEURS (Paladin/Rôdeur) ─────────────────────────────────────
+// PHB 2024 : Paladin a 2 emplacements niv1 dès le niveau 1
+// Rôdeur commence à niv 2 (géré dans getSlotsEmplacements)
 // Index 0 = sorts de niveau 1, index 4 = sorts de niveau 5
 const _TABLE_DEMI = {
-   1:[0,0,0,0,0],  2:[2,0,0,0,0],  3:[3,0,0,0,0],  4:[3,0,0,0,0],
+   1:[2,0,0,0,0],  2:[2,0,0,0,0],  3:[3,0,0,0,0],  4:[3,0,0,0,0],
    5:[4,2,0,0,0],  6:[4,2,0,0,0],  7:[4,3,0,0,0],  8:[4,3,0,0,0],
    9:[4,3,2,0,0], 10:[4,3,2,0,0], 11:[4,3,3,0,0], 12:[4,3,3,0,0],
   13:[4,3,3,1,0], 14:[4,3,3,1,0], 15:[4,3,3,2,0], 16:[4,3,3,2,0],
@@ -53,21 +55,38 @@ const MAGIE_TYPE_LANCEUR = {
   roublard:   'aucun',
 };
 
-// ─── CANTRIPS PAR CLASSE/NIVEAU ───────────────────────────────────────────────
+// ─── CANTRIPS PAR CLASSE/NIVEAU (PHB 2024) ────────────────────────────────────
 const MAGIE_CANTRIPS = {
-  barde:      [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
-  clerc:      [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
-  druide:     [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
-  ensorceleur:[4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6],
-  magicien:   [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
-  occultiste: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
+  //           niv: 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+  barde:      [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  clerc:      [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4],
+  druide:     [2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4],
+  ensorceleur:[4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+  magicien:   [3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  occultiste: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  // Paladin et Rôdeur n'ont pas de cantrips
 };
 
-// ─── SORTS CONNUS/PRÉPARÉS PAR CLASSE ─────────────────────────────────────────
+// ─── SORTS CONNUS/PRÉPARÉS PAR CLASSE (PHB 2024) ──────────────────────────────
+// Pour les classes « connus » : nombre de sorts niv1+ connus
+// Pour les classes « préparés » : nombre max de sorts préparés (base, sans mod)
+//   Clerc, Druide, Magicien : formule (niveau + mod), voir getNbSortsPrepares()
+//   Paladin, Rôdeur : table fixe PHB 2024 ci-dessous
+const _SORTS_PREPARES_PALADIN = [2,3,4,5,6,6,7,7,9,9,10,10,11,11,12,12,14,14,15,15];
+const _SORTS_PREPARES_RODEUR  = [2,3,4,5,6,6,7,7,9,9,10,10,11,11,12,12,14,14,15,15];
+
+const MAGIE_SORTS_CONNUS = {
+  //           niv: 1  2  3  4   5  6  7   8   9  10  11  12  13  14  15  16  17  18  19  20
+  barde:      [4, 5, 6, 7,  9,10,11, 12, 14, 15, 16, 16, 17, 17, 18, 18, 19, 20, 21, 22],
+  ensorceleur:[2, 4, 6, 7,  9,10,11, 12, 14, 15, 16, 16, 17, 17, 18, 18, 19, 20, 21, 22],
+  occultiste: [2, 3, 4, 5,  6, 7, 8,  9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15],
+};
+
+// ─── SORTS CONNUS/PRÉPARÉS — MODE PAR CLASSE ──────────────────────────────────
 const MAGIE_MODE = {
   barde:      'connus',
   ensorceleur:'connus',
-  occultiste: 'connus',
+  occultiste: 'prepares',
   clerc:      'prepares',
   druide:     'prepares',
   magicien:   'prepares',
@@ -108,6 +127,9 @@ function getSlotsEmplacements(classeId, niveau) {
     return [{ niveau: p.niveau, total: p.nombre, utilises: 0, type: 'pacte' }];
   }
 
+  // Rôdeur : pas d'emplacements au niveau 1 (PHB 2024)
+  if (id === 'rodeur' && n === 1) return [];
+
   const table = type === 'complet' ? _TABLE_COMPLET : _TABLE_DEMI;
   const slots = table[n] || [];
   const result = [];
@@ -128,15 +150,8 @@ function getSlotsEmplacements(classeId, niveau) {
 function getNbCantrips(classeId, niveau) {
   const id = String(classeId || '').toLowerCase();
   const n  = Math.max(1, Math.min(20, parseInt(niveau) || 1));
-  return (MAGIE_CANTRIPS[id] || [])[n - 1] || 2;
+  return (MAGIE_CANTRIPS[id] || [])[n - 1] || 0;
 }
-
-// ─── SORTS CONNUS PAR CLASSE/NIVEAU (niv 1+, hors cantrips) ─────────────────
-const MAGIE_SORTS_CONNUS = {
-  barde:      [4,5,6,7,9,10,11,12,14,15,16,16,17,17,18,18,19,20,21,22],
-  ensorceleur:[2,4,6,7,8,9,10,11,12,13,13,13,14,14,15,15,15,16,16,16],
-  occultiste: [2,3,4,5,6,7,8,9,10,10,11,11,12,12,13,13,14,14,15,15],
-};
 
 /**
  * Retourne les niveaux de sorts disponibles (1 à N) pour une classe et un niveau.
@@ -164,9 +179,8 @@ function getNiveauxSortsDisponibles(classeId, niveau) {
   }
 
   if (type === 'demi') {
-    // Paladin commence niv 2, Rôdeur niv 3
-    const debut = (id === 'rodeur') ? 3 : 2;
-    if (n < debut) return [];
+    // PHB 2024 : Paladin a des sorts dès niv 1, Rôdeur dès niv 2
+    if (id === 'rodeur' && n < 2) return [];
     let max;
     if      (n <= 4)  max = 1;
     else if (n <= 8)  max = 2;
@@ -178,7 +192,7 @@ function getNiveauxSortsDisponibles(classeId, niveau) {
 
   if (type === 'pacte') {
     if (n <= 2) return [1];
-    if (n <= 4) return [2];
+    if (n <= 4) return [1, 2];
     if (n <= 6) return [1, 2, 3];
     if (n <= 8) return [1, 2, 3, 4];
     return [1, 2, 3, 4, 5];
@@ -198,6 +212,8 @@ function getNbSortsConnus(classeId, niveau) {
 
 /**
  * Nombre de sorts préparés pour les classes « prepares ».
+ * Paladin et Rôdeur : table fixe PHB 2024.
+ * Clerc, Druide, Magicien : niveau + modificateur de caractéristique.
  * @param {string} classeId
  * @param {number} niveau
  * @param {{ FOR,DEX,CON,INT,SAG,CHA }} stats  valeurs brutes (ex: 14, pas le mod)
@@ -205,16 +221,22 @@ function getNbSortsConnus(classeId, niveau) {
 function getNbSortsPrepares(classeId, niveau, stats) {
   const id  = String(classeId || '').toLowerCase();
   const n   = Math.max(1, Math.min(20, parseInt(niveau) || 1));
+
+  // Table fixe PHB 2024 pour paladin et rôdeur
+  if (id === 'paladin') return _SORTS_PREPARES_PALADIN[n - 1] || 1;
+  if (id === 'rodeur')  return _SORTS_PREPARES_RODEUR[n - 1]  || 1;
+
+  // Occultiste : table fixe (mode préparés en PHB 2024)
+  if (id === 'occultiste') return (MAGIE_SORTS_CONNUS.occultiste || [])[n - 1] || 1;
+
+  // Clerc, Druide, Magicien : formule (niveau + mod caractéristique)
   const s   = stats || {};
   const modSAG = Math.floor(((s.SAG || 10) - 10) / 2);
   const modINT = Math.floor(((s.INT || 10) - 10) / 2);
-  const modCHA = Math.floor(((s.CHA || 10) - 10) / 2);
   switch (id) {
     case 'clerc':    return Math.max(1, n + modSAG);
     case 'druide':   return Math.max(1, n + modSAG);
     case 'magicien': return Math.max(1, n + modINT);
-    case 'paladin':  return Math.max(1, Math.floor(n / 2) + modCHA);
-    case 'rodeur':   return Math.max(1, Math.floor(n / 2) + modSAG);
     default:         return 1;
   }
 }

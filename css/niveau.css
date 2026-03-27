@@ -43,7 +43,7 @@
 
 .xp-jalon-label {
   font-size: 0.68rem;
-  color: #6b7280;
+  color: #999;
   text-align: center;
   margin-top: 0.2rem;
   letter-spacing: 0.03em;
@@ -255,7 +255,7 @@
 
 .niv-cap-desc {
   font-size: 0.78rem;
-  color: #aaa;
+  color: #bbb;
   line-height: 1.5;
 }
 
@@ -288,7 +288,7 @@
 
 .niv-sc-desc {
   font-size: 0.72rem;
-  color: #888;
+  color: #aaa;
   line-height: 1.4;
 }
 
@@ -327,10 +327,10 @@
   padding: 0.4rem;
   text-align: center;
 }
-.niv-carac-item label { font-size: 0.68rem; color: #888; display: block; margin-bottom: 0.2rem; }
+.niv-carac-item label { font-size: 0.68rem; color: #aaa; display: block; margin-bottom: 0.2rem; }
 .niv-carac-item input[type=checkbox] { margin-right: 0.2rem; cursor: pointer; }
 .niv-carac-item .carac-val { font-size: 0.9rem; font-weight: bold; color: #e0e0e0; }
-.niv-carac-item.maxed .carac-val { color: #555; }
+.niv-carac-item.maxed .carac-val { color: #888; }
 .niv-carac-info {
   font-size: 0.78rem;
   color: #fde68a;
@@ -360,7 +360,7 @@
 .niv-don-item:hover { border-color: rgba(245,200,66,0.3); background: rgba(245,200,66,0.05); }
 .niv-don-item.selected { border-color: #f5c842; background: rgba(245,200,66,0.1); }
 .niv-don-item .don-nom { font-size: 0.82rem; font-weight: bold; color: #fde68a; }
-.niv-don-item .don-desc { font-size: 0.72rem; color: #888; margin-top: 0.2rem; line-height: 1.4; }
+.niv-don-item .don-desc { font-size: 0.72rem; color: #aaa; margin-top: 0.2rem; line-height: 1.4; }
 
 /* Sorts step */
 .niv-slots-table {
