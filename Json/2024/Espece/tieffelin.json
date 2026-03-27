@@ -31,5 +31,67 @@
   "sorts_innes": [
     "thaumaturge",
     "variable_selon_heritage"
+  ],
+  "variantes": [
+    {
+      "id": "abyssal",
+      "nom": "Abyssal",
+      "description": "Héritage des Abysses démoniaque. Résistance au poison, magie chaotique et destructrice.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 18,
+      "resistances": ["poison"],
+      "traits_speciaux": [
+        {
+          "id": "magie_abyssale",
+          "nom": "Magie abyssale",
+          "description": "Vous connaissez Thaumaturge (mineur). Niv 3 : Rayon de maladie 1/Repos long. Niv 5 : Immobilisation de monstre 1/Repos long. Caractéristique : Charisme."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "thaumaturge", "nom": "Thaumaturge", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "CHA" },
+        { "id": "rayon_maladie", "nom": "Rayon de maladie", "niveau_sort": 1, "niveau_personnage_requis": 3, "utilisation": "1_repos_long", "caracteristique": "CHA" },
+        { "id": "immobilisation_monstre", "nom": "Immobilisation de monstre", "niveau_sort": 5, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "CHA" }
+      ]
+    },
+    {
+      "id": "chtonien",
+      "nom": "Chtonien",
+      "description": "Héritage des royaumes souterrains et des morts. Résistance nécrotique, pouvoirs liés aux défunts.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 18,
+      "resistances": ["necrotique"],
+      "traits_speciaux": [
+        {
+          "id": "magie_chtonienne",
+          "nom": "Magie chtonienne",
+          "description": "Vous connaissez Thaumaturge (mineur). Niv 3 : Fausse vie 1/Repos long. Niv 5 : Animation des morts 1/Repos long. Caractéristique : Charisme."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "thaumaturge", "nom": "Thaumaturge", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "CHA" },
+        { "id": "fausse_vie", "nom": "Fausse vie", "niveau_sort": 1, "niveau_personnage_requis": 3, "utilisation": "1_repos_long", "caracteristique": "CHA" },
+        { "id": "animation_morts", "nom": "Animation des morts", "niveau_sort": 3, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "CHA" }
+      ]
+    },
+    {
+      "id": "infernal",
+      "nom": "Infernal",
+      "description": "Lignage classique portant la marque d'Asmodée. Résistance au feu, magie des Neuf Enfers.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 18,
+      "resistances": ["feu"],
+      "traits_speciaux": [
+        {
+          "id": "magie_infernale",
+          "nom": "Magie infernale",
+          "description": "Vous connaissez Thaumaturge (mineur). Niv 3 : Représailles infernales 1/Repos long. Niv 5 : Ténèbres 1/Repos long. Caractéristique : Charisme."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "thaumaturge", "nom": "Thaumaturge", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "CHA" },
+        { "id": "represailles_infernales", "nom": "Représailles infernales", "niveau_sort": 1, "niveau_personnage_requis": 3, "utilisation": "1_repos_long", "caracteristique": "CHA" },
+        { "id": "tenebres", "nom": "Ténèbres", "niveau_sort": 2, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "CHA" }
+      ]
+    }
   ]
 }

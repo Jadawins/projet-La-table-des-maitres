@@ -33,5 +33,39 @@
   "resistances": [
     "poison"
   ],
-  "sorts_innes": []
+  "sorts_innes": [],
+  "variantes": [
+    {
+      "id": "nain_collinaire",
+      "nom": "Nain collinaire",
+      "description": "Nains des collines verdoyantes, robustes et endurants. Leur vitalité légendaire leur confère plus de points de vie.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 36,
+      "resistances": ["poison"],
+      "traits_speciaux": [
+        {
+          "id": "vitalite_collinaire",
+          "nom": "Vitalité collinaire",
+          "description": "Votre maximum de points de vie augmente de 1, et augmente encore de 1 à chaque niveau gagné (Ténacité naine améliorée)."
+        }
+      ],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "nain_montagnes",
+      "nom": "Nain des montagnes",
+      "description": "Nains des pics rocheux, guerriers nés. Ils maîtrisent le port des armures légères et intermédiaires.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 36,
+      "resistances": ["poison"],
+      "traits_speciaux": [
+        {
+          "id": "maitrise_armures_naines",
+          "nom": "Maîtrise des armures naines",
+          "description": "Vous maîtrisez les armures légères et intermédiaires."
+        }
+      ],
+      "sorts_raciaux": []
+    }
+  ]
 }

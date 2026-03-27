@@ -40,5 +40,72 @@
   "resistances": [],
   "sorts_innes": [
     "variable_selon_lignage"
+  ],
+  "variantes": [
+    {
+      "id": "drow",
+      "nom": "Drow",
+      "description": "Elfes des profondeurs souterraines, maîtres de la magie obscure. Vision dans le noir 36 m.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 36,
+      "resistances": [],
+      "traits_speciaux": [
+        {
+          "id": "magie_drow",
+          "nom": "Magie drow",
+          "description": "Vous connaissez Lumières dansantes (mineur). Niv 3 : Lueurs féeriques 1/Repos long. Niv 5 : Ténèbres 1/Repos long. Caractéristique : Intelligence."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "lumieres_dansantes", "nom": "Lumières dansantes", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "INT" },
+        { "id": "lueurs_feeriques", "nom": "Lueurs féeriques", "niveau_sort": 1, "niveau_personnage_requis": 3, "utilisation": "1_repos_long", "caracteristique": "INT" },
+        { "id": "tenebres", "nom": "Ténèbres", "niveau_sort": 2, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "INT" }
+      ]
+    },
+    {
+      "id": "elfe_sylvestre",
+      "nom": "Elfe sylvestre",
+      "description": "Elfes des forêts profondes, plus rapides et en harmonie avec la nature. Vitesse 10,5 m.",
+      "vitesse_bonus": 1.5,
+      "vision_dans_le_noir": 18,
+      "resistances": [],
+      "traits_speciaux": [
+        {
+          "id": "pied_leste",
+          "nom": "Pied leste",
+          "description": "Votre Vitesse de déplacement est de 10,5 m au lieu de 9 m."
+        },
+        {
+          "id": "magie_sylvestre",
+          "nom": "Magie sylvestre",
+          "description": "Vous connaissez Druidcraft (mineur). Niv 3 : Grand pas 1/Repos long. Niv 5 : Passe-sans-traces 1/Repos long. Caractéristique : Sagesse."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "druidcraft", "nom": "Druidcraft", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "SAG" },
+        { "id": "grand_pas", "nom": "Grand pas", "niveau_sort": 1, "niveau_personnage_requis": 3, "utilisation": "1_repos_long", "caracteristique": "SAG" },
+        { "id": "passe_sans_traces", "nom": "Passe-sans-traces", "niveau_sort": 2, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "SAG" }
+      ]
+    },
+    {
+      "id": "haut_elfe",
+      "nom": "Haut-elfe",
+      "description": "Elfes aux traditions magiques ancestrales, érudits et raffinés, affinité naturelle pour l'arcane.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 18,
+      "resistances": [],
+      "traits_speciaux": [
+        {
+          "id": "magie_haut_elfe",
+          "nom": "Magie haut-elfe",
+          "description": "Vous connaissez Prestidigitation (mineur). Niv 3 : Détection de la magie 1/Repos long. Niv 5 : Pas brumeux 1/Repos long. Caractéristique : Intelligence."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "prestidigitation", "nom": "Prestidigitation", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "INT" },
+        { "id": "detection_magie", "nom": "Détection de la magie", "niveau_sort": 1, "niveau_personnage_requis": 3, "utilisation": "1_repos_long", "caracteristique": "INT" },
+        { "id": "pas_brumeux", "nom": "Pas brumeux", "niveau_sort": 2, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "INT" }
+      ]
+    }
   ]
 }

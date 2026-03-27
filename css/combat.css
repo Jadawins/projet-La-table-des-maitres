@@ -214,6 +214,7 @@
 .sort-row-item .sort-nom-label { flex: 1; }
 .sort-badge-c { background: rgba(100,60,200,0.25); color: #c4b5fd; border: 1px solid #6d28d9; border-radius: 3px; font-size: 0.6rem; padding: 0 3px; }
 .sort-badge-r { background: rgba(20,100,50,0.25); color: #86efac; border: 1px solid #166534; border-radius: 3px; font-size: 0.6rem; padding: 0 3px; }
+.sort-badge-racial { background: rgba(201,168,76,0.15); color: #c9a84c; border: 1px solid rgba(201,168,76,0.4); border-radius: 3px; font-size: 0.6rem; padding: 0 4px; }
 .btn-lancer-sort { background: #3b1072; color: #c4b5fd; border: 1px solid #5b21b6; border-radius: 5px; padding: 0.15rem 0.5rem; font-size: 0.68rem; cursor: pointer; }
 .btn-lancer-sort:hover { background: #5b21b6; }
 

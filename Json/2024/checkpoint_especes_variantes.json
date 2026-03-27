@@ -1,0 +1,57 @@
+{
+  "date": "2026-03-27",
+  "statut": "termine",
+  "description": "Ajout du système de variantes d'espèces dans le wizard de création de personnage",
+  "fichiers_json_modifies": [
+    "Json/2024/Espece/elfe.json",
+    "Json/2024/Espece/tieffelin.json",
+    "Json/2024/Espece/drakeide.json",
+    "Json/2024/Espece/gnome.json",
+    "Json/2024/Espece/nain.json"
+  ],
+  "fichiers_frontend_modifies": [
+    "creer-personnage.html",
+    "js/creer-personnage.js",
+    "fiche-personnage.html",
+    "js/fiche-personnage.js",
+    "css/combat.css"
+  ],
+  "variantes_par_espece": {
+    "elfe": ["drow", "elfe_sylvestre", "haut_elfe"],
+    "tieffelin": ["abyssal", "chtonien", "infernal"],
+    "drakeide": ["airain", "argent", "blanc", "bleu", "bronze", "cuivre", "noir", "or", "rouge", "vert"],
+    "gnome": ["gnome_forets", "gnome_roches"],
+    "nain": ["nain_collinaire", "nain_montagnes"]
+  },
+  "structure_variante": {
+    "id": "identifiant unique",
+    "nom": "Nom affiché",
+    "description": "Description courte",
+    "vitesse_bonus": "bonus en mètres (0 si aucun)",
+    "vision_dans_le_noir": "portée en mètres",
+    "resistances": ["liste des résistances spécifiques à la variante"],
+    "traits_speciaux": [{ "id": "...", "nom": "...", "description": "..." }],
+    "sorts_raciaux": [
+      {
+        "id": "identifiant du sort",
+        "nom": "Nom du sort",
+        "niveau_sort": "0 pour mineur, 1-9 pour les niveaux normaux",
+        "niveau_personnage_requis": "niveau minimum du personnage pour avoir ce sort",
+        "utilisation": "a_volonte | 1_repos_long | 1_repos_court",
+        "caracteristique": "INT | SAG | CHA"
+      }
+    ]
+  },
+  "comportement_ui": {
+    "detecter_variantes": "si espece_data.variantes.length > 0, afficher le panneau variante-panel",
+    "bloquer_suivant": "validateStep(2) retourne false si espece avec variantes et espece_variante non sélectionné",
+    "stocker": "W.espece_variante (id), W.espece_variante_data (objet), W.sorts_raciaux (filtrés par niveau personnage)",
+    "recap": "affiche Espèce — Variante dans la ligne Espèce",
+    "soumission": "espece_variante envoyé dans le corps, sorts_raciaux dans sorts.sorts_raciaux"
+  },
+  "fiche_personnage": {
+    "section": "sorts-raciaux-section (id HTML)",
+    "affichage": "visible si perso.sorts.sorts_raciaux.length > 0",
+    "badge": ".sort-badge-racial (or/doré, class CSS dans combat.css)"
+  }
+}

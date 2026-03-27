@@ -28,5 +28,48 @@
   "resistances": [],
   "sorts_innes": [
     "variable_selon_lignage"
+  ],
+  "variantes": [
+    {
+      "id": "gnome_forets",
+      "nom": "Gnome des forêts",
+      "description": "Gnomes vivant en symbiose avec la forêt et ses créatures. Illusionnistes nés, amis des animaux.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 18,
+      "resistances": [],
+      "traits_speciaux": [
+        {
+          "id": "magie_des_forets",
+          "nom": "Magie des forêts",
+          "description": "Vous connaissez Illusion mineure (mineur). Communication avec les animaux 1/Repos long (sans emplacement). Niv 3 : Transmutation du bois 1/Repos long. Niv 5 : Croissance naturelle 1/Repos long. Caractéristique : Intelligence."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "illusion_mineure", "nom": "Illusion mineure", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "INT" },
+        { "id": "communication_animaux", "nom": "Communication avec les animaux", "niveau_sort": 1, "niveau_personnage_requis": 1, "utilisation": "1_repos_long", "caracteristique": "INT" },
+        { "id": "transmutation_bois", "nom": "Transmutation du bois", "niveau_sort": 2, "niveau_personnage_requis": 3, "utilisation": "1_repos_long", "caracteristique": "INT" },
+        { "id": "croissance_naturelle", "nom": "Croissance naturelle", "niveau_sort": 3, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "INT" }
+      ]
+    },
+    {
+      "id": "gnome_roches",
+      "nom": "Gnome des roches",
+      "description": "Gnomes inventeurs et mécaniciens, bricoleurs infatigables capables de créer des automates miniatures.",
+      "vitesse_bonus": 0,
+      "vision_dans_le_noir": 18,
+      "resistances": [],
+      "traits_speciaux": [
+        {
+          "id": "bricolage",
+          "nom": "Bricolage",
+          "description": "Vous connaissez Prestidigitation et Réparation (mineurs). Vous pouvez créer un petit appareil mécanique (CA 5, 1 PV) en 1 heure. Niv 3 : sorts selon l'appareil créé. Niv 5 : Animation d'objet 1/Repos long. Caractéristique : Intelligence."
+        }
+      ],
+      "sorts_raciaux": [
+        { "id": "prestidigitation", "nom": "Prestidigitation", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "INT" },
+        { "id": "reparation", "nom": "Réparation", "niveau_sort": 0, "niveau_personnage_requis": 1, "utilisation": "a_volonte", "caracteristique": "INT" },
+        { "id": "animation_objet", "nom": "Animation d'objet", "niveau_sort": 5, "niveau_personnage_requis": 5, "utilisation": "1_repos_long", "caracteristique": "INT" }
+      ]
+    }
   ]
 }

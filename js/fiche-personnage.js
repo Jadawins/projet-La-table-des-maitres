@@ -955,6 +955,27 @@ function renderSorts() {
           ${combatActif ? `<button class="btn-lancer-sort" onclick="lancerSortCombat('${esc(s.nom)}',${niv},${!!s.concentration})">Lancer</button>` : ''}
         </div>`).join('')}
     </div>`).join('');
+
+  renderSortsRaciaux();
+}
+
+function renderSortsRaciaux() {
+  const section = document.getElementById('sorts-raciaux-section');
+  const list = document.getElementById('sorts-raciaux-list');
+  if (!section || !list) return;
+  const raciaux = perso.sorts?.sorts_raciaux || [];
+  if (!raciaux.length) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = raciaux.map(s => {
+    const util = s.utilisation === 'a_volonte' ? 'À volonté' : s.utilisation.replace(/_/g,' ');
+    const niv = s.niveau_sort === 0 ? 'Mineur' : `Niv.${s.niveau_sort}`;
+    return `<div class="sort-row-item">
+      <span class="sort-nom-label">${esc(s.nom)}</span>
+      <span class="sort-badge-racial" title="Sort racial">Racial</span>
+      <span style="font-size:0.7rem;color:#888;margin-left:0.4rem;">${niv} — ${util}</span>
+      ${s.caracteristique ? `<span style="font-size:0.7rem;color:#a090e0;margin-left:0.3rem;">${s.caracteristique}</span>` : ''}
+    </div>`;
+  }).join('');
 }
 
 // ─── COMBAT JOUEUR : ÉTAT GLOBAL ─────────────────────────────

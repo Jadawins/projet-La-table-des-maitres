@@ -38,5 +38,107 @@
   "resistances": [
     "variable_selon_ascendance"
   ],
-  "sorts_innes": []
+  "sorts_innes": [],
+  "variantes": [
+    {
+      "id": "airain",
+      "nom": "Airain (Brass)",
+      "description": "Dragon d'airain — feu. Ligne de souffle. Nature bavarde et curieuse.",
+      "type_degats": "feu",
+      "forme_souffle": "ligne",
+      "resistances": ["feu"],
+      "traits_speciaux": [{ "id": "souffle_airain", "nom": "Souffle (ligne de feu)", "description": "Ligne 9×1,5 m, dégâts de feu. DD Constitution." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "argent",
+      "nom": "Argent (Silver)",
+      "description": "Dragon d'argent — froid. Cône de souffle. Noble et bienveillant.",
+      "type_degats": "froid",
+      "forme_souffle": "cone",
+      "resistances": ["froid"],
+      "traits_speciaux": [{ "id": "souffle_argent", "nom": "Souffle (cône de froid)", "description": "Cône 4,5 m, dégâts de froid. DD Constitution." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "blanc",
+      "nom": "Blanc (White)",
+      "description": "Dragon blanc — froid. Cône de souffle. Instinctif et brutal.",
+      "type_degats": "froid",
+      "forme_souffle": "cone",
+      "resistances": ["froid"],
+      "traits_speciaux": [{ "id": "souffle_blanc", "nom": "Souffle (cône de froid)", "description": "Cône 4,5 m, dégâts de froid. DD Constitution." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "bleu",
+      "nom": "Bleu (Blue)",
+      "description": "Dragon bleu — foudre. Ligne de souffle. Stratège et ambitieux.",
+      "type_degats": "foudre",
+      "forme_souffle": "ligne",
+      "resistances": ["foudre"],
+      "traits_speciaux": [{ "id": "souffle_bleu", "nom": "Souffle (ligne de foudre)", "description": "Ligne 9×1,5 m, dégâts de foudre. DD Dextérité." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "bronze",
+      "nom": "Bronze (Bronze)",
+      "description": "Dragon de bronze — foudre. Ligne de souffle. Loyal et attaché aux humanoïdes.",
+      "type_degats": "foudre",
+      "forme_souffle": "ligne",
+      "resistances": ["foudre"],
+      "traits_speciaux": [{ "id": "souffle_bronze", "nom": "Souffle (ligne de foudre)", "description": "Ligne 9×1,5 m, dégâts de foudre. DD Dextérité." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "cuivre",
+      "nom": "Cuivre (Copper)",
+      "description": "Dragon de cuivre — acide. Ligne de souffle. Espiègle et amateur de devinettes.",
+      "type_degats": "acide",
+      "forme_souffle": "ligne",
+      "resistances": ["acide"],
+      "traits_speciaux": [{ "id": "souffle_cuivre", "nom": "Souffle (ligne d'acide)", "description": "Ligne 9×1,5 m, dégâts d'acide. DD Dextérité." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "noir",
+      "nom": "Noir (Black)",
+      "description": "Dragon noir — acide. Ligne de souffle. Cruel et avide, maître des marécages.",
+      "type_degats": "acide",
+      "forme_souffle": "ligne",
+      "resistances": ["acide"],
+      "traits_speciaux": [{ "id": "souffle_noir", "nom": "Souffle (ligne d'acide)", "description": "Ligne 9×1,5 m, dégâts d'acide. DD Dextérité." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "or",
+      "nom": "Or (Gold)",
+      "description": "Dragon d'or — feu. Cône de souffle. Le plus sage et le plus puissant des dragons métalliques.",
+      "type_degats": "feu",
+      "forme_souffle": "cone",
+      "resistances": ["feu"],
+      "traits_speciaux": [{ "id": "souffle_or", "nom": "Souffle (cône de feu)", "description": "Cône 4,5 m, dégâts de feu. DD Dextérité." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "rouge",
+      "nom": "Rouge (Red)",
+      "description": "Dragon rouge — feu. Cône de souffle. Le plus orgueilleux et destructeur des dragons chromatiques.",
+      "type_degats": "feu",
+      "forme_souffle": "cone",
+      "resistances": ["feu"],
+      "traits_speciaux": [{ "id": "souffle_rouge", "nom": "Souffle (cône de feu)", "description": "Cône 4,5 m, dégâts de feu. DD Dextérité." }],
+      "sorts_raciaux": []
+    },
+    {
+      "id": "vert",
+      "nom": "Vert (Green)",
+      "description": "Dragon vert — poison. Cône de souffle. Manipulateur et intrigant, maître des forêts.",
+      "type_degats": "poison",
+      "forme_souffle": "cone",
+      "resistances": ["poison"],
+      "traits_speciaux": [{ "id": "souffle_vert", "nom": "Souffle (cône de poison)", "description": "Cône 4,5 m, dégâts de poison. DD Constitution." }],
+      "sorts_raciaux": []
+    }
+  ]
 }

@@ -52,7 +52,7 @@ const W = {
   _sortsParNiveau: {},    // cache : { 0:[...], 1:[...], 2:[...], ... }
   // Sélections
   nom: '', alignement: null, niveau: 1, xp: 0,
-  espece: null, espece_data: null,
+  espece: null, espece_data: null, espece_variante: null, espece_variante_data: null, sorts_raciaux: [],
   classe: null, classe_data: null, sous_classe: null, sc_data: null,
   background: null, bg_data: null,
   stats: { FOR: 10, DEX: 10, CON: 10, INT: 10, SAG: 10, CHA: 10 },
@@ -194,7 +194,12 @@ function validateStep(n) {
     const nom = document.getElementById('p-nom').value.trim();
     if (!nom) { alert('Le nom du personnage est obligatoire.'); document.getElementById('p-nom').focus(); return false; }
   }
-  if (n === 2 && !W.espece) { alert('Sélectionnez une espèce.'); return false; }
+  if (n === 2) {
+    if (!W.espece) { alert('Sélectionnez une espèce.'); return false; }
+    if ((W.espece_data?.variantes || []).length > 0 && !W.espece_variante) {
+      alert('Sélectionnez un lignage / héritage pour votre espèce.'); return false;
+    }
+  }
   if (n === 3 && !W.classe) { alert('Sélectionnez une classe.'); return false; }
   if (n === 4 && !W.background) { alert('Sélectionnez un historique.'); return false; }
   if (n === 5) {
@@ -343,7 +348,12 @@ function renderEspecesGrid() {
 function selectEspece(id) {
   W.espece = id;
   W.espece_data = W._especes.find(e => e.id === id);
+  // Reset variant when species changes
+  W.espece_variante = null;
+  W.espece_variante_data = null;
+  W.sorts_raciaux = [];
   renderEspecesGrid();
+
   const d = document.getElementById('espece-detail');
   const e = W.espece_data;
   d.classList.add('visible');
@@ -356,7 +366,66 @@ function selectEspece(id) {
           <div class="trait-item-desc">${esc(t.description)}</div>
         </div>`).join('')}
     </div>
-    ${(e.sorts_innes||[]).length ? `<div style="margin-top:0.6rem;font-size:0.78rem;color:#a090e0;">Sorts innés : ${e.sorts_innes.join(', ')}</div>` : ''}`;
+    ${(e.resistances||[]).filter(r => !r.startsWith('variable')).length ? `<div style="margin-top:0.4rem;font-size:0.78rem;color:#88c0a0;">Résistances : ${e.resistances.filter(r=>!r.startsWith('variable')).join(', ')}</div>` : ''}`;
+
+  // Show/hide variant panel
+  const varPanel = document.getElementById('variante-panel');
+  const variantes = e.variantes || [];
+  if (variantes.length > 0) {
+    varPanel.style.display = 'block';
+    renderVariantesGrid(variantes);
+    document.getElementById('variante-detail').classList.remove('visible');
+    document.getElementById('variante-detail').innerHTML = '';
+  } else {
+    varPanel.style.display = 'none';
+    document.getElementById('variantes-grid').innerHTML = '';
+  }
+}
+
+function renderVariantesGrid(variantes) {
+  const grid = document.getElementById('variantes-grid');
+  grid.innerHTML = variantes.map(v => `
+    <div class="select-card ${W.espece_variante === v.id ? 'selected' : ''}" onclick="selectVariante('${v.id}')">
+      <div class="card-name">${esc(v.nom)}</div>
+      <div class="card-sub">
+        ${(v.resistances||[]).map(r => `<span class="card-tag">${esc(r)}</span>`).join('')}
+        ${v.vitesse_bonus ? `<span class="card-tag">+${v.vitesse_bonus}m</span>` : ''}
+        ${v.vision_dans_le_noir > 18 ? `<span class="card-tag">Vision ${v.vision_dans_le_noir}m</span>` : ''}
+      </div>
+      <div style="font-size:0.72rem;color:#999;margin-top:0.3rem;line-height:1.4;">${esc((v.description||'').slice(0,80))}…</div>
+    </div>`).join('');
+}
+
+function selectVariante(id) {
+  const variantes = W.espece_data?.variantes || [];
+  W.espece_variante = id;
+  W.espece_variante_data = variantes.find(v => v.id === id);
+  // Store racial spells filtered by character level
+  W.sorts_raciaux = (W.espece_variante_data?.sorts_raciaux || [])
+    .filter(s => s.niveau_personnage_requis <= (W.niveau || 1));
+
+  renderVariantesGrid(variantes);
+
+  const v = W.espece_variante_data;
+  const d = document.getElementById('variante-detail');
+  d.classList.add('visible');
+  d.innerHTML = `
+    <h3>${esc(v.nom)}</h3>
+    <p style="font-size:0.8rem;color:#aaa;margin-bottom:0.6rem;">${esc(v.description||'')}</p>
+    ${(v.traits_speciaux||[]).map(t => `
+      <div class="trait-item">
+        <div class="trait-item-name">${esc(t.nom)}</div>
+        <div class="trait-item-desc">${esc(t.description)}</div>
+      </div>`).join('')}
+    ${(v.sorts_raciaux||[]).length ? `
+      <div style="margin-top:0.6rem;font-size:0.78rem;color:#a090e0;">
+        <strong>Sorts raciaux :</strong><br>
+        ${v.sorts_raciaux.map(s => {
+          const util = s.utilisation === 'a_volonte' ? 'à volonté' : s.utilisation.replace(/_/g,' ');
+          const req = s.niveau_personnage_requis > 1 ? ` (dès niv ${s.niveau_personnage_requis})` : '';
+          return `<span style="display:inline-block;margin:0.15rem 0.4rem 0.15rem 0;">${esc(s.nom)} — ${util}${req}</span>`;
+        }).join('')}
+      </div>` : ''}`;
 }
 
 // ─── ÉTAPE 3 — Classes ────────────────────────────────────────
@@ -1075,7 +1144,7 @@ function buildRecap() {
       <h3><i class="fa-solid fa-user"></i> Identité</h3>
       <div class="recap-row"><span class="recap-label">Nom</span><span class="recap-val">${esc(W.nom)}</span></div>
       <div class="recap-row"><span class="recap-label">Niveau</span><span class="recap-val">${niv}</span></div>
-      <div class="recap-row"><span class="recap-label">Espèce</span><span class="recap-val">${esc(W.espece_data?.nom||W.espece)}</span></div>
+      <div class="recap-row"><span class="recap-label">Espèce</span><span class="recap-val">${esc(W.espece_data?.nom||W.espece)}${W.espece_variante_data ? ` — ${esc(W.espece_variante_data.nom)}` : ''}</span></div>
       <div class="recap-row"><span class="recap-label">Classe</span><span class="recap-val">${esc(W.classe_data?.nom||W.classe)}${W.sc_data?` / ${esc(W.sc_data.nom)}`:''}</span></div>
       <div class="recap-row"><span class="recap-label">Historique</span><span class="recap-val">${esc(W.bg_data?.nom||W.background)}</span></div>
       <div class="recap-row"><span class="recap-label">Alignement</span><span class="recap-val">${esc((W.alignement||'—').replace(/_/g,' '))}</span></div>
@@ -1183,6 +1252,7 @@ async function creerPersonnage() {
     niveau: niv,
     experience: W.xp,
     espece: W.espece,
+    espece_variante: W.espece_variante || null,
     classe: W.classe,
     sous_classe: W.sous_classe,
     background: W.background,
@@ -1204,7 +1274,8 @@ async function creerPersonnage() {
       emplacements: (typeof getSlotsEmplacements === 'function')
         ? getSlotsEmplacements(W.classe, niv)
         : [],
-      sorts_connus: sortsConnus
+      sorts_connus: sortsConnus,
+      sorts_raciaux: W.sorts_raciaux || []
     },
     equipement: W.equipement,
     monnaie: { pp: 0, po: 0, pe: 0, pa: 0, pc: 0 },
