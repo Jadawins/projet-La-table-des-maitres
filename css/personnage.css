@@ -379,7 +379,7 @@
 
 .method-select {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -565,6 +565,89 @@
   border-radius: 6px;
   padding: 0.6rem 0.9rem;
   margin-bottom: 1rem;
+}
+
+/* ─── POINT BUY ──────────────────────────────────────────────── */
+
+.pb-counter {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #c9a84c;
+  text-align: center;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 8px;
+  letter-spacing: 0.04em;
+}
+
+.pb-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.pb-stat-row {
+  display: grid;
+  grid-template-columns: 3rem 2rem 2.8rem 2rem 5rem 3rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+}
+
+.pb-stat-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #c8b8ff;
+}
+
+.pb-stat-val {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.pb-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(201,168,76,0.5);
+  background: rgba(201,168,76,0.1);
+  color: #c9a84c;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, opacity 0.15s;
+  padding: 0;
+  line-height: 1;
+}
+.pb-btn:hover:not(:disabled) { background: rgba(201,168,76,0.25); }
+.pb-btn-off, .pb-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.pb-cost {
+  font-size: 0.72rem;
+  color: #888;
+}
+
+.pb-modifier {
+  font-size: 0.88rem;
+  color: #a090e0;
+  font-weight: 600;
+  text-align: right;
 }
 
 /* ─── STATS CARACTÉRISTIQUES ─────────────────────────────────── */
@@ -1611,7 +1694,8 @@
 @media (max-width: 768px) {
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .stats-grid-dnd { grid-template-columns: repeat(3, 1fr); }
-  .method-select { grid-template-columns: 1fr; }
+  .method-select { grid-template-columns: 1fr 1fr; }
+  .pb-stat-row { grid-template-columns: 3rem 2rem 2.8rem 2rem 4rem 2.5rem; gap: 0.3rem; }
   .form-row { grid-template-columns: 1fr; }
   .form-row-3 { grid-template-columns: 1fr 1fr; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }

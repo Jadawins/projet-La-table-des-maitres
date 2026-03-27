@@ -58,6 +58,7 @@ const W = {
   stats: { FOR: 10, DEX: 10, CON: 10, INT: 10, SAG: 10, CHA: 10 },
   stats_method: null,
   stats_assigned: { FOR: null, DEX: null, CON: null, INT: null, SAG: null, CHA: null },
+  stats_pointbuy: { FOR: 8, DEX: 8, CON: 8, INT: 8, SAG: 8, CHA: 8 },
   competences_choisies: [],
   equipement: [],
   sorts_choisis: {},      // { 0:[ids cantrips], 1:[ids niv1], 2:[...], ... }
@@ -205,8 +206,14 @@ function validateStep(n) {
   if (n === 5) {
     if (!W.stats_method) { alert('Choisissez une méthode d\'attribution des caractéristiques.'); return false; }
     if (W.stats_method === 'standard') {
-      const allAssigned = ['FOR','DEX','CON','INT','SAG','CHA'].every(k => W.stats_assigned[k] !== null);
+      const allAssigned = STAT_KEYS.every(k => W.stats_assigned[k] !== null);
       if (!allAssigned) { alert('Distribuez toutes les valeurs standard avant de continuer.'); return false; }
+    }
+    if (W.stats_method === 'pointbuy') {
+      if (pbTotalSpent() !== PB_BUDGET) {
+        alert(`Dépensez exactement ${PB_BUDGET} points. (${pbTotalSpent()}/${PB_BUDGET} utilisés)`);
+        return false;
+      }
     }
   }
   if (n === 8) {
@@ -248,9 +255,9 @@ function collectStep(n) {
         W.stats[k] = parseInt(document.getElementById(`stat-${k}`).value) || 10;
       });
     } else if (W.stats_method === 'standard') {
-      ['FOR','DEX','CON','INT','SAG','CHA'].forEach(k => {
-        if (W.stats_assigned[k] !== null) W.stats[k] = W.stats_assigned[k];
-      });
+      STAT_KEYS.forEach(k => { if (W.stats_assigned[k] !== null) W.stats[k] = W.stats_assigned[k]; });
+    } else if (W.stats_method === 'pointbuy') {
+      STAT_KEYS.forEach(k => { W.stats[k] = W.stats_pointbuy[k]; });
     }
   }
   if (n === 6) {
@@ -559,6 +566,8 @@ function selectBackground(id) {
 
 const STANDARD_VALUES = [15, 14, 13, 12, 10, 8];
 const STAT_KEYS = ['FOR', 'DEX', 'CON', 'INT', 'SAG', 'CHA'];
+const PB_BUDGET = 27;
+const PB_COSTS = { 8:0, 9:1, 10:2, 11:3, 12:4, 13:5, 14:7, 15:9 };
 let _dragData = null, _dragClone = null, _dragStartX = 0, _dragStartY = 0;
 
 function initStatsStep() {
@@ -573,9 +582,12 @@ function selectStatsMethod(method) {
   if (card) card.classList.add('selected');
   const stdEl = document.getElementById('stats-method-standard');
   const diceEl = document.getElementById('stats-method-dice');
-  if (stdEl) stdEl.style.display = method === 'standard' ? 'block' : 'none';
-  if (diceEl) diceEl.style.display = method === 'dice' ? 'block' : 'none';
-  if (method === 'standard') renderStatsDnD();
+  const pbEl  = document.getElementById('stats-method-pointbuy');
+  if (stdEl)  stdEl.style.display  = method === 'standard'  ? 'block' : 'none';
+  if (diceEl) diceEl.style.display = method === 'dice'      ? 'block' : 'none';
+  if (pbEl)   pbEl.style.display   = method === 'pointbuy'  ? 'block' : 'none';
+  if (method === 'standard')  renderStatsDnD();
+  if (method === 'pointbuy')  renderPointBuy();
   updateNextBtn();
 }
 
@@ -683,16 +695,62 @@ function updateNextBtn() {
   if (W.step !== 5) return;
   const btn = document.getElementById('btn-next');
   if (!btn) return;
+  let ok = true;
   if (W.stats_method === 'standard') {
-    const allAssigned = STAT_KEYS.every(k => W.stats_assigned[k] !== null);
-    btn.disabled = !allAssigned;
-    btn.style.opacity = allAssigned ? '' : '0.4';
-    btn.style.cursor = allAssigned ? '' : 'not-allowed';
-  } else {
-    btn.disabled = false;
-    btn.style.opacity = '';
-    btn.style.cursor = '';
+    ok = STAT_KEYS.every(k => W.stats_assigned[k] !== null);
+  } else if (W.stats_method === 'pointbuy') {
+    ok = pbTotalSpent() === PB_BUDGET;
   }
+  btn.disabled = !ok;
+  btn.style.opacity = ok ? '' : '0.4';
+  btn.style.cursor = ok ? '' : 'not-allowed';
+}
+
+// ─── POINT BUY ────────────────────────────────────────────────
+
+function pbCost(v) { return PB_COSTS[v] ?? 0; }
+function pbTotalSpent() { return STAT_KEYS.reduce((s, k) => s + pbCost(W.stats_pointbuy[k]), 0); }
+function pbRemaining() { return PB_BUDGET - pbTotalSpent(); }
+
+function renderPointBuy() {
+  const remaining = pbRemaining();
+  const counterEl = document.getElementById('pb-counter');
+  if (counterEl) {
+    counterEl.textContent = `Points restants : ${remaining} / ${PB_BUDGET}`;
+    counterEl.style.color = remaining === 0 ? '#4ade80' : remaining > 0 ? '#c9a84c' : '#f87171';
+  }
+  const grid = document.getElementById('pb-grid');
+  if (!grid) return;
+  grid.innerHTML = STAT_KEYS.map(k => {
+    const val = W.stats_pointbuy[k];
+    const cost = pbCost(val);
+    const nextCost = pbCost(val + 1) - cost;
+    const canInc = val < 15 && remaining >= nextCost;
+    const canDec = val > 8;
+    return `<div class="pb-stat-row">
+      <div class="pb-stat-name">${k}</div>
+      <button class="pb-btn${canDec ? '' : ' pb-btn-off'}" onclick="pbDecrement('${k}')" ${canDec ? '' : 'disabled'}>−</button>
+      <div class="pb-stat-val">${val}</div>
+      <button class="pb-btn${canInc ? '' : ' pb-btn-off'}" onclick="pbIncrement('${k}')" ${canInc ? '' : 'disabled'}>+</button>
+      <div class="pb-cost">(coût : ${cost})</div>
+      <div class="pb-modifier">${fmtMod(mod(val))}</div>
+    </div>`;
+  }).join('');
+  updateNextBtn();
+}
+
+function pbIncrement(k) {
+  const val = W.stats_pointbuy[k];
+  if (val >= 15) return;
+  if (pbRemaining() < pbCost(val + 1) - pbCost(val)) return;
+  W.stats_pointbuy[k]++;
+  renderPointBuy();
+}
+
+function pbDecrement(k) {
+  if (W.stats_pointbuy[k] <= 8) return;
+  W.stats_pointbuy[k]--;
+  renderPointBuy();
 }
 
 // ─── ÉTAPE 6 — Compétences ────────────────────────────────────

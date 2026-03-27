@@ -126,6 +126,11 @@
         <div class="method-card-title">Jet de dés</div>
         <div class="method-card-desc">Entrez vos résultats de lancers (4d6, retirez le dé le plus faible)</div>
       </div>
+      <div class="method-card" id="method-pointbuy" onclick="selectStatsMethod('pointbuy')">
+        <div class="method-card-icon"><i class="fa-solid fa-coins"></i></div>
+        <div class="method-card-title">Achat de points</div>
+        <div class="method-card-desc">Budget de 27 points à répartir librement (min 8, max 15 par carac)</div>
+      </div>
     </div>
 
     <!-- MÉTHODE A — Valeurs standard (drag & drop) -->
@@ -176,8 +181,22 @@
           <div class="stat-modifier" id="mod-CHA">+0</div>
         </div>
       </div>
-      <div style="font-size:0.78rem;color:#666;padding:0.5rem 0.3rem;">
+      <div style="font-size:0.78rem;color:#999;padding:0.5rem 0.3rem;">
         <i class="fa-solid fa-info-circle"></i> Modificateur = (valeur − 10) ÷ 2, arrondi à l'inférieur.
+      </div>
+    </div>
+
+    <!-- MÉTHODE C — Achat de points (Point Buy PHB 2024) -->
+    <div id="stats-method-pointbuy" style="display:none;">
+      <div class="dice-reminder">
+        <i class="fa-solid fa-coins" style="color:var(--gold);margin-right:0.4rem;"></i>
+        Répartissez exactement <strong>27 points</strong> entre vos 6 caractéristiques (min 8, max 15).
+        Les valeurs 14 et 15 coûtent plus cher (7 et 9 pts).
+      </div>
+      <div id="pb-counter" class="pb-counter">Points restants : 27 / 27</div>
+      <div id="pb-grid" class="pb-grid"></div>
+      <div style="font-size:0.72rem;color:#888;margin-top:0.6rem;">
+        Table des coûts : 8=0 · 9=1 · 10=2 · 11=3 · 12=4 · 13=5 · 14=7 · 15=9
       </div>
     </div>
   </div>

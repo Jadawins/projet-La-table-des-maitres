@@ -1,0 +1,27 @@
+{
+  "statut": "termine",
+  "date": "2026-03-27",
+  "etapes": {
+    "interface_3_methodes": "termine",
+    "logique_point_buy": "termine",
+    "validation": "termine"
+  },
+  "details": {
+    "budget": 27,
+    "min_par_carac": 8,
+    "max_par_carac": 15,
+    "table_couts": { "8":0, "9":1, "10":2, "11":3, "12":4, "13":5, "14":7, "15":9 },
+    "fichiers_modifies": [
+      "creer-personnage.html",
+      "js/creer-personnage.js",
+      "css/personnage.css"
+    ],
+    "comportement": {
+      "compteur": "#pb-counter change de couleur : vert si 0 restant, doré si > 0, rouge si dépassement",
+      "bouton_plus": "grisé si val=15 ou points restants insuffisants pour payer le prochain palier",
+      "bouton_moins": "grisé si val=8",
+      "suivant": "bloqué tant que total != 27 (updateNextBtn + validateStep)",
+      "collect": "W.stats_pointbuy[k] copié dans W.stats[k] au passage d'étape"
+    }
+  }
+}
