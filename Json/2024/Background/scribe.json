@@ -1,5 +1,6 @@
 {
   "id": "scribe",
+  "bonus_caracteristiques": { "suggerees": ["DEX", "INT"] },
   "nom": "Scribe",
   "description": "Vous avez travaillé dans un scriptorium ou une administration, copiant des documents officiels et apprenant à rédiger avec précision.",
   "competences": [

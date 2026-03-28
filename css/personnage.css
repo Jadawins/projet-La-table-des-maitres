@@ -1902,3 +1902,44 @@
 [data-theme="light"] .comp-list-row {
   background: rgba(0,0,0,0.02);
 }
+
+/* ─── Background Bonus Panel ─────────────────────────── */
+.bg-bonus-modes {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.bg-bonus-mode-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.82rem;
+  padding: 0.45rem 1rem;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.bg-bonus-mode-btn:hover {
+  background: rgba(134,93,255,0.15);
+  border-color: rgba(134,93,255,0.4);
+  color: #e0e0e0;
+}
+.bg-bonus-mode-btn.active {
+  background: rgba(134,93,255,0.25);
+  border-color: rgba(134,93,255,0.6);
+  color: #c8b8ff;
+  font-weight: 600;
+}
+.bg-bonus-select {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+.bg-bonus-select:focus {
+  outline: none;
+  border-color: rgba(134,93,255,0.5);
+}

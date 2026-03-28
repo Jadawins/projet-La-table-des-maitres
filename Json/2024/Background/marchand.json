@@ -1,5 +1,6 @@
 {
   "id": "marchand",
+  "bonus_caracteristiques": { "suggerees": ["CON", "CHA"] },
   "nom": "Marchand",
   "description": "Vous avez appris le commerce auprès d'un négociant ou dans une caravane. Vous savez évaluer marchandises et clients et gérer des routes commerciales.",
   "competences": [

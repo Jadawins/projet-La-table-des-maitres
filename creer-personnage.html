@@ -107,6 +107,21 @@
       <div style="grid-column:1/-1;text-align:center;color:#555;padding:2rem;"><i class="fa-solid fa-spinner fa-spin"></i></div>
     </div>
     <div class="detail-panel" id="background-detail"></div>
+    <div id="bg-bonus-panel" style="display:none;margin-top:1rem;">
+      <div class="step-subtitle" style="margin-bottom:0.75rem;">
+        <i class="fa-solid fa-arrow-up"></i> Bonus de caractéristiques (Background PHB 2024)
+      </div>
+      <div class="bg-bonus-modes">
+        <button class="bg-bonus-mode-btn" id="bg-mode-2plus1" onclick="setBgBonusMode('2plus1')">
+          <i class="fa-solid fa-plus-minus"></i> +2 / +1
+        </button>
+        <button class="bg-bonus-mode-btn" id="bg-mode-3fois1" onclick="setBgBonusMode('3fois1')">
+          <i class="fa-solid fa-equals"></i> +1 / +1 / +1
+        </button>
+      </div>
+      <div id="bg-bonus-inputs" style="margin-top:0.75rem;"></div>
+      <div id="bg-bonus-preview" style="margin-top:0.5rem;font-size:0.78rem;color:#888;"></div>
+    </div>
   </div>
 
   <!-- ÉTAPE 5 — Caractéristiques -->

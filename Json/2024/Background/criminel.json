@@ -1,5 +1,6 @@
 {
   "id": "criminel",
+  "bonus_caracteristiques": { "suggerees": ["DEX", "INT"] },
   "nom": "Criminel",
   "description": "Vous avez gagné votre vie dans les ruelles sombres, coupant des bourses ou trafiquant des marchandises illicites, seul ou au sein d'un réseau criminel.",
   "competences": [

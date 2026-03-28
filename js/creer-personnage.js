@@ -53,6 +53,8 @@ const W = {
   // Sélections
   nom: '', alignement: null, niveau: 1, xp: 0,
   espece: null, espece_data: null, espece_variante: null, espece_variante_data: null, sorts_raciaux: [],
+  bg_bonus: { FOR: 0, DEX: 0, CON: 0, INT: 0, SAG: 0, CHA: 0 },
+  bg_bonus_mode: null,
   classe: null, classe_data: null, sous_classe: null, sc_data: null,
   background: null, bg_data: null,
   stats: { FOR: 10, DEX: 10, CON: 10, INT: 10, SAG: 10, CHA: 10 },
@@ -205,7 +207,10 @@ function validateStep(n) {
     }
   }
   if (n === 3 && !W.classe) { alert('Sélectionnez une classe.'); return false; }
-  if (n === 4 && !W.background) { alert('Sélectionnez un historique.'); return false; }
+  if (n === 4) {
+    if (!W.background) { alert('Sélectionnez un historique.'); return false; }
+    if (!bgBonusIsValid()) { alert('Choisissez comment répartir vos bonus de caractéristiques du background.'); return false; }
+  }
   if (n === 5) {
     if (!W.stats_method) { alert('Choisissez une méthode d\'attribution des caractéristiques.'); return false; }
     if (W.stats_method === 'standard') {
@@ -577,6 +582,114 @@ function selectBackground(id) {
       <div class="trait-item-name">${esc(b.aptitude.nom)}</div>
       <div class="trait-item-desc">${esc(b.aptitude.description)}</div>
     </div>` : ''}`;
+  // Reset bonus si on change de background
+  W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
+  W.bg_bonus_mode = null;
+  const panel = document.getElementById('bg-bonus-panel');
+  if (panel) panel.style.display = 'block';
+  const inputsEl = document.getElementById('bg-bonus-inputs');
+  if (inputsEl) inputsEl.innerHTML = '';
+  const previewEl = document.getElementById('bg-bonus-preview');
+  if (previewEl) previewEl.textContent = '';
+  document.querySelectorAll('.bg-bonus-mode-btn').forEach(b => b.classList.remove('active'));
+}
+
+function setBgBonusMode(mode) {
+  W.bg_bonus_mode = mode;
+  W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
+  document.querySelectorAll('.bg-bonus-mode-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('bg-mode-' + mode)?.classList.add('active');
+  renderBgBonusInputs();
+}
+
+function renderBgBonusInputs() {
+  const el = document.getElementById('bg-bonus-inputs');
+  if (!el) return;
+  const suggerees = W.bg_data?.bonus_caracteristiques?.suggerees || [];
+  const sugLabel = suggerees.length ? ` <span style="color:#c9a84c;font-size:0.72rem;">(suggérées : ${suggerees.join(', ')})</span>` : '';
+
+  if (W.bg_bonus_mode === '2plus1') {
+    el.innerHTML = `
+      <div style="font-size:0.78rem;color:#aaa;margin-bottom:0.5rem;">Choisissez quelle caractéristique reçoit +2 et laquelle reçoit +1.${sugLabel}</div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+2 à :</div>
+          <select class="bg-bonus-select" id="bg-sel-2" onchange="applyBgBonus2plus1()">
+            <option value="">— choisir —</option>
+            ${STAT_KEYS.map(k => `<option value="${k}">${k}</option>`).join('')}
+          </select>
+        </div>
+        <div>
+          <div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+1 à :</div>
+          <select class="bg-bonus-select" id="bg-sel-1" onchange="applyBgBonus2plus1()">
+            <option value="">— choisir —</option>
+            ${STAT_KEYS.map(k => `<option value="${k}">${k}</option>`).join('')}
+          </select>
+        </div>
+      </div>`;
+  } else if (W.bg_bonus_mode === '3fois1') {
+    el.innerHTML = `
+      <div style="font-size:0.78rem;color:#aaa;margin-bottom:0.5rem;">Choisissez 3 caractéristiques différentes qui reçoivent chacune +1.${sugLabel}</div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        ${[0,1,2].map(i => `
+        <div>
+          <div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+1 à :</div>
+          <select class="bg-bonus-select" id="bg-sel-3-${i}" onchange="applyBgBonus3fois1()">
+            <option value="">— choisir —</option>
+            ${STAT_KEYS.map(k => `<option value="${k}">${k}</option>`).join('')}
+          </select>
+        </div>`).join('')}
+      </div>`;
+  }
+}
+
+function applyBgBonus2plus1() {
+  const sel2 = document.getElementById('bg-sel-2')?.value;
+  const sel1 = document.getElementById('bg-sel-1')?.value;
+  W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
+  if (sel2) W.bg_bonus[sel2] = (W.bg_bonus[sel2] || 0) + 2;
+  if (sel1 && sel1 !== sel2) W.bg_bonus[sel1] = (W.bg_bonus[sel1] || 0) + 1;
+  renderBgBonusPreview();
+}
+
+function applyBgBonus3fois1() {
+  const vals = [0,1,2].map(i => document.getElementById(`bg-sel-3-${i}`)?.value).filter(Boolean);
+  W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
+  const seen = new Set();
+  vals.forEach(k => { if (!seen.has(k)) { W.bg_bonus[k] = 1; seen.add(k); } });
+  renderBgBonusPreview();
+}
+
+function bgBonusIsValid() {
+  if (!W.bg_bonus_mode) return false;
+  const total = Object.values(W.bg_bonus).reduce((s, v) => s + v, 0);
+  if (W.bg_bonus_mode === '2plus1') {
+    const sel2 = document.getElementById('bg-sel-2')?.value;
+    const sel1 = document.getElementById('bg-sel-1')?.value;
+    return sel2 && sel1 && sel1 !== sel2 && total === 3;
+  }
+  if (W.bg_bonus_mode === '3fois1') {
+    const nonZero = Object.values(W.bg_bonus).filter(v => v > 0).length;
+    return nonZero === 3 && total === 3;
+  }
+  return false;
+}
+
+function renderBgBonusPreview() {
+  const el = document.getElementById('bg-bonus-preview');
+  if (!el) return;
+  const parts = STAT_KEYS.filter(k => W.bg_bonus[k] > 0)
+    .map(k => `<span style="color:#4ade80;">${k} +${W.bg_bonus[k]}</span>`);
+  el.innerHTML = parts.length ? `Bonus appliqués : ${parts.join(' · ')}` : '';
+}
+
+// ─── STATS FINALES (base + bonus background) ──────────────────
+function finalStats() {
+  const fs = {};
+  STAT_KEYS.forEach(k => {
+    fs[k] = Math.min(20, (W.stats[k] || 10) + (W.bg_bonus[k] || 0));
+  });
+  return fs;
 }
 
 // ─── ÉTAPE 5 — Caractéristiques ───────────────────────────────
@@ -776,7 +889,7 @@ function initPVStep() {
   // Réinitialise le niveau 1 (toujours auto)
   const niv = W.niveau;
   const dvMax = isDvMax(getDv(W.classe_data));
-  const conMod = mod(W.stats.CON);
+  const conMod = mod(finalStats().CON);
   W.pv_resultats[1] = Math.max(1, dvMax + conMod);
   renderPVStep();
 }
@@ -1363,8 +1476,9 @@ function copierSuggestion(champ, texte) {
 function buildRecap() {
   collectStep(10);
   const niv = W.niveau;
+  const stats = finalStats();
   const bm = BONUS_MAITRISE[Math.min(niv-1,19)];
-  const dexMod = mod(W.stats.DEX);
+  const dexMod = mod(stats.DEX);
   const pvMax = pvTotalCalc();
   const ca = 10 + dexMod;
   const init = dexMod;
@@ -1373,7 +1487,7 @@ function buildRecap() {
   const saves = W.classe_data?.sauvegardes_maitrise || [];
   const savesHtml = ['FOR','DEX','CON','INT','SAG','CHA'].map(k => {
     const hasMaitrise = saves.map(s => s.toUpperCase()).includes(k);
-    const val = mod(W.stats[k]) + (hasMaitrise ? bm : 0);
+    const val = mod(stats[k]) + (hasMaitrise ? bm : 0);
     return `<div class="recap-row"><span class="recap-label">${k}</span><span class="recap-val">${fmtMod(val)} ${hasMaitrise?'✓':''}</span></div>`;
   }).join('');
 
@@ -1382,7 +1496,7 @@ function buildRecap() {
   const compsHtml = TOUTES_COMPETENCES
     .filter(c => allComps.some(ac => normalizeComp(ac) === normalizeComp(c.nom)))
     .map(c => {
-      const val = mod(W.stats[c.car]) + bm;
+      const val = mod(stats[c.car]) + bm;
       return `<div class="recap-row"><span class="recap-label">${c.nom}</span><span class="recap-val">${fmtMod(val)}</span></div>`;
     }).join('');
 
@@ -1403,7 +1517,7 @@ function buildRecap() {
     <div class="recap-block">
       <h3><i class="fa-solid fa-fist-raised"></i> Caractéristiques</h3>
       ${['FOR','DEX','CON','INT','SAG','CHA'].map(k =>
-        `<div class="recap-row"><span class="recap-label">${k}</span><span class="recap-val">${W.stats[k]} (${fmtMod(mod(W.stats[k]))})</span></div>`
+        `<div class="recap-row"><span class="recap-label">${k}</span><span class="recap-val">${stats[k]} (${fmtMod(mod(stats[k]))})</span></div>`
       ).join('')}
     </div>
 
@@ -1457,7 +1571,7 @@ async function creerPersonnage() {
   collectStep(W.step);
   const niv = W.niveau;
   const bm = BONUS_MAITRISE[Math.min(niv-1,19)];
-  const stats = W.stats;
+  const stats = finalStats();
   const saves = (W.classe_data?.sauvegardes_maitrise || []).map(s => s.toUpperCase());
 
   const caracteristiques = {};
@@ -1506,6 +1620,7 @@ async function creerPersonnage() {
     sous_classe: W.sous_classe,
     background: W.background,
     alignement: W.alignement,
+    bonus_background: { ...W.bg_bonus },
     caracteristiques,
     bonus_maitrise: bm,
     combat: {

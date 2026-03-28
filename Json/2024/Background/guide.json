@@ -1,5 +1,6 @@
 {
   "id": "guide",
+  "bonus_caracteristiques": { "suggerees": ["DEX", "SAG"] },
   "nom": "Guide",
   "description": "Vous avez grandi en plein air, loin des villes. Vous maîtrisez la navigation en terrain sauvage et savez tirer parti des ressources naturelles.",
   "competences": [
