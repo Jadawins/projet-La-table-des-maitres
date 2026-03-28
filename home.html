@@ -107,49 +107,6 @@
       <li>⚙️ <strong>Bonus de caractéristiques background PHB 2024</strong> — nouvelle étape dans le wizard (step 4) : après avoir choisi son background, le joueur répartit +2/+1 ou +1/+1/+1 sur ses caractéristiques. Les stats finales (base + bonus) sont appliquées partout : PV, compétences, sorts, DD de sort, fiche de personnage</li>
     </ul>
   </details>
-  <p style="margin-top:1rem;"><strong>🗺️ Roadmap corrections :</strong></p>
-
-  <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#f97316;cursor:pointer;list-style:none;">🔴 Priorité 1 — Moteur de règles (critique)</summary>
-    <ul style="margin-top:0.4rem;">
-      <li>🔮 <strong>Système de magie</strong> — emplacements corrects toutes classes/niveaux, pact magic occultiste, sorts connus vs préparés, cas "aucun emplacement" faux, niveaux &gt;1 affichent tous les niveaux disponibles</li>
-      <li>🎲 <strong>Points de vie</strong> — recalcul cascadé depuis les stats finales (bonus background inclus), stockage propre des gains par niveau ✅ <em>partiellement fait</em></li>
-      <li>📋 <strong>Compétences</strong> — pas de doublon classe/background/espèce, remplacement automatique si doublon</li>
-      <li>⚔️ <strong>Sous-classe</strong> — débloquée au bon niveau uniquement, capacités bien appliquées</li>
-      <li>🧬 <strong>Espèces avec variantes</strong> — application correcte des effets (Elfe, Tieffelin, Drakéide) ✅ <em>partiellement fait</em></li>
-    </ul>
-  </details>
-
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#fb923c;cursor:pointer;list-style:none;">🟠 Priorité 2 — Validation &amp; sécurité</summary>
-    <ul style="margin-top:0.4rem;">
-      <li>🛡️ <strong>validateCharacter()</strong> — vérification globale : caracs valides, compétences OK, sorts valides, niveau cohérent, sous-classe valide, or dépensé correctement</li>
-      <li>🔒 <strong>Verrouillage</strong> — stats non modifiables après création, choix invalides bloqués</li>
-      <li>🎒 <strong>Équipement</strong> — choix A/B respecté, mode achat avec PO, déduction correcte de l'or</li>
-    </ul>
-  </details>
-
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#facc15;cursor:pointer;list-style:none;">🟡 Priorité 3 — UX fiche personnage</summary>
-    <ul style="margin-top:0.4rem;">
-      <li>📑 <strong>Refonte fiche avec onglets</strong> — Combat/Fiche · Inventaire · Description</li>
-      <li>💬 <strong>Tooltips sorts</strong>, sections rétractables, couleurs lisibles</li>
-    </ul>
-  </details>
-
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#60a5fa;cursor:pointer;list-style:none;">🔵 Priorité 4 — Gameplay avancé</summary>
-    <ul style="margin-top:0.4rem;">
-      <li>🎲 <strong>Dés de vie</strong> — choix du nombre, calcul PV récupérés</li>
-      <li>😴 <strong>Repos</strong> — boutons visibles, application des règles automatique</li>
-      <li>🛡️ <strong>Armure</strong> — une seule équipée, changement dynamique</li>
-      <li>⚡ <strong>Ressources de classe</strong> — composants sorts, bouton reset MJ</li>
-    </ul>
-  </details>
-
-  <hr style="border-color:rgba(255,255,255,0.08);margin:0.75rem 0;" />
-  <p><strong>✅ Fait récemment :</strong></p>
-
   <details style="margin-bottom:0.4rem;">
     <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 27/03/2026 ▶</summary>
     <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
@@ -225,6 +182,45 @@
       <li>🎲 <strong>Gestion de sessions</strong> — créer une partie publique ou privée, rejoindre avec mot de passe, associer son personnage, vue MJ avec gestion des joueurs</li>
     </ul>
   </details>
+  <hr style="border-color:rgba(255,255,255,0.08);margin:0.75rem 0;" />
+  <p><strong>🗺️ Roadmap corrections :</strong></p>
+
+  <details open style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#f97316;cursor:pointer;list-style:none;">🔴 Priorité 1 — Moteur de règles (critique)</summary>
+    <ul style="margin-top:0.4rem;">
+      <li>🔮 <strong>Système de magie</strong> — emplacements corrects toutes classes/niveaux, pact magic occultiste, sorts connus vs préparés, cas "aucun emplacement" faux, niveaux &gt;1 affichent tous les niveaux disponibles</li>
+      <li>🎲 <strong>Points de vie</strong> — recalcul cascadé depuis les stats finales (bonus background inclus), stockage propre des gains par niveau ✅ <em>partiellement fait</em></li>
+      <li>📋 <strong>Compétences</strong> — pas de doublon classe/background/espèce, remplacement automatique si doublon</li>
+      <li>⚔️ <strong>Sous-classe</strong> — débloquée au bon niveau uniquement, capacités bien appliquées</li>
+      <li>🧬 <strong>Espèces avec variantes</strong> — application correcte des effets (Elfe, Tieffelin, Drakéide) ✅ <em>partiellement fait</em></li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#fb923c;cursor:pointer;list-style:none;">🟠 Priorité 2 — Validation &amp; sécurité</summary>
+    <ul style="margin-top:0.4rem;">
+      <li>🛡️ <strong>validateCharacter()</strong> — vérification globale : caracs valides, compétences OK, sorts valides, niveau cohérent, sous-classe valide, or dépensé correctement</li>
+      <li>🔒 <strong>Verrouillage</strong> — stats non modifiables après création, choix invalides bloqués</li>
+      <li>🎒 <strong>Équipement</strong> — choix A/B respecté, mode achat avec PO, déduction correcte de l'or</li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#facc15;cursor:pointer;list-style:none;">🟡 Priorité 3 — UX fiche personnage</summary>
+    <ul style="margin-top:0.4rem;">
+      <li>📑 <strong>Refonte fiche avec onglets</strong> — Combat/Fiche · Inventaire · Description</li>
+      <li>💬 <strong>Tooltips sorts</strong>, sections rétractables, couleurs lisibles</li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#60a5fa;cursor:pointer;list-style:none;">🔵 Priorité 4 — Gameplay avancé</summary>
+    <ul style="margin-top:0.4rem;">
+      <li>🎲 <strong>Dés de vie</strong> — choix du nombre, calcul PV récupérés</li>
+      <li>😴 <strong>Repos</strong> — boutons visibles, application des règles automatique</li>
+      <li>🛡️ <strong>Armure</strong> — une seule équipée, changement dynamique</li>
+      <li>⚡ <strong>Ressources de classe</strong> — composants sorts, bouton reset MJ</li>
+    </ul>
+  </details>
+
+  <hr style="border-color:rgba(255,255,255,0.08);margin:0.75rem 0;" />
   <p><strong>🔜 Fonctionnel manquant :</strong></p>
   <ul>
     <li>🎒 Inventaire partagé de groupe</li>
