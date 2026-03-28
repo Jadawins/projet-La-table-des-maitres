@@ -97,18 +97,15 @@
       <li>✅ <strong>Barde — quota de compétences réduit à 1</strong> — les compétences du background étaient comptées dans le quota de classe, réduisant faussement les choix disponibles</li>
       <li>✅ <strong>Bonus background — mode +2/+1 non conforme PHB 2024</strong> — le joueur pouvait choisir n'importe quelle stat, alors que le PHB 2024 fixe les deux stats selon le background (ex : Acolyte → INT/SAG uniquement). Corrigé : deux boutons radio seulement, joueur choisit l'ordre +2/+1 mais pas les stats</li>
     </ul>
-    <p style="color:#4ade80;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🗄️ Infrastructure :</p>
-    <ul style="margin-top:0;">
-      <li>📋 <strong>Compétences sans hardcodage</strong> — suppression de TOUTES_COMPETENCES, nouvelle route <code>/GetCompetences2024</code> → MongoDB ; les 18 compétences sont chargées à la volée. Correction : Escamotage manquant, typo Athlétisme. Doublons espèce/background/classe gérés automatiquement avec badges visuels (BG violet / ESP bleu)</li>
-    </ul>
     <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
     <ul style="margin-top:0;">
       <li>❤️ <strong>Étape "Points de vie" dans le wizard</strong> — nouvelle étape 6 entre Caractéristiques et Compétences : niveau 1 automatique (DV max + CON), niveaux 2+ au choix entre valeur fixe (DV/2+1+CON) ou lancer de dé (aléatoire ou saisie manuelle), minimum 1 PV par niveau, récapitulatif en temps réel, bouton Suivant bloqué tant que tous les niveaux ne sont pas remplis</li>
+      <li>⚙️ <strong>Bonus de caractéristiques background PHB 2024</strong> — étape 4 du wizard : après avoir choisi son background, le joueur répartit +2/+1 (sur les 2 stats du background) ou +1/+1/+1 (3 stats libres). Stats finales appliquées partout : PV, compétences, DD de sort</li>
     </ul>
     <p style="color:#4ade80;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🗄️ Infrastructure :</p>
     <ul style="margin-top:0;">
-      <li>🍃 <strong>Migration API → MongoDB</strong> — toutes les routes de données (sorts, classes, espèces, backgrounds, armes, armures, dons, sous-classes, monstres, glossaire, correspondances) lisent désormais depuis MongoDB au lieu des fichiers JSON locaux</li>
-      <li>⚙️ <strong>Bonus de caractéristiques background PHB 2024</strong> — nouvelle étape dans le wizard (step 4) : après avoir choisi son background, le joueur répartit +2/+1 ou +1/+1/+1 sur ses caractéristiques. Les stats finales (base + bonus) sont appliquées partout : PV, compétences, sorts, DD de sort, fiche de personnage</li>
+      <li>🍃 <strong>Migration API → MongoDB</strong> — toutes les routes de données (sorts, classes, espèces, backgrounds, armes, armures, dons, sous-classes, monstres, glossaire, correspondances) lisent depuis MongoDB</li>
+      <li>📋 <strong>Compétences sans hardcodage</strong> — nouvelle route <code>/GetCompetences2024</code> → MongoDB ; correction Escamotage manquant + typo Athlétisme ; doublons espèce/background/classe gérés automatiquement avec badges visuels (BG violet / ESP bleu)</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">
