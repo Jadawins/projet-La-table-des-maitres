@@ -10,27 +10,6 @@ let token = null;
 const XP_PAR_NIVEAU = [0,300,900,2700,6500,14000,23000,34000,48000,64000,85000,100000,120000,140000,165000,195000,225000,265000,305000,355000];
 const BONUS_MAITRISE = [2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6];
 
-const TOUTES_COMPETENCES = [
-  { nom: 'Acrobaties',       car: 'DEX' },
-  { nom: 'Arcanes',          car: 'INT' },
-  { nom: 'Athlétisme',       car: 'FOR' },
-  { nom: 'Discrétion',       car: 'DEX' },
-  { nom: 'Dressage',         car: 'SAG' },
-  { nom: 'Escamotage',       car: 'DEX' },
-  { nom: 'Histoire',         car: 'INT' },
-  { nom: 'Intimidation',     car: 'CHA' },
-  { nom: 'Investigation',    car: 'INT' },
-  { nom: 'Médecine',         car: 'SAG' },
-  { nom: 'Nature',           car: 'INT' },
-  { nom: 'Perception',       car: 'SAG' },
-  { nom: 'Perspicacité',     car: 'SAG' },
-  { nom: 'Persuasion',       car: 'CHA' },
-  { nom: 'Religion',         car: 'INT' },
-  { nom: 'Représentation',   car: 'CHA' },
-  { nom: 'Survie',           car: 'SAG' },
-  { nom: 'Tromperie',        car: 'CHA' },
-];
-
 // Normalise les noms de compétences (accents)
 function normalizeComp(s) {
   return String(s).toLowerCase()
@@ -50,6 +29,7 @@ const W = {
   // Données chargées
   _especes: [], _classes: [], _sousclasses: [], _backgrounds: [],
   _sortsParNiveau: {},    // cache : { 0:[...], 1:[...], 2:[...], ... }
+  _competences: [],   // chargées depuis l'API
   // Sélections
   nom: '', alignement: null, niveau: 1, xp: 0,
   espece: null, espece_data: null, espece_variante: null, espece_variante_data: null, sorts_raciaux: [],
@@ -282,7 +262,13 @@ function collectStep(n) {
     }
   }
   if (n === 7) {
-    W.competences_choisies = [...document.querySelectorAll('.comp-check:checked')].map(el => el.dataset.nom);
+    // Comps cochées par le joueur (hors auto)
+    const bgComps = (W.bg_data?.competences || []).map(normalizeComp);
+    const especeComps = getEspeceComps();
+    const autoComps = [...new Set([...bgComps, ...especeComps])];
+    W.competences_choisies = [...document.querySelectorAll('.comp-check:checked')]
+      .filter(el => !autoComps.includes(normalizeComp(el.dataset.nom)))
+      .map(el => el.dataset.nom);
   }
   if (n === 8) {
     W.equipement = [...document.querySelectorAll('.equip-check:checked')].map(el => ({
@@ -312,7 +298,7 @@ async function onStepEnter(n) {
   if (n === 4) await loadBackgrounds();
   if (n === 5) initStatsStep();
   if (n === 6) initPVStep();
-  if (n === 7) renderCompetences();
+  if (n === 7) { loadCompetences().then(() => renderCompetences()); }
   if (n === 8) renderEquipement();
   if (n === 9) await loadSorts();
   if (n === 10) renderTraitsSuggestions();
@@ -549,6 +535,37 @@ async function loadBackgrounds() {
     W._backgrounds = await r.json();
     renderBgGrid();
   } catch {}
+}
+
+async function loadCompetences() {
+  if (W._competences.length) return;
+  try {
+    const r = await fetch(`${API}/GetCompetences2024`);
+    const data = await r.json();
+    // Normalise le champ "caracteristique" → "car" pour compatibilité interne
+    W._competences = data.map(c => ({ nom: c.nom, car: c.caracteristique }));
+  } catch {
+    // Fallback hardcodé minimal si l'API est indisponible
+    W._competences = [
+      { nom: 'Acrobaties', car: 'DEX' }, { nom: 'Arcanes', car: 'INT' },
+      { nom: 'Athlétisme', car: 'FOR' }, { nom: 'Discrétion', car: 'DEX' },
+      { nom: 'Dressage', car: 'SAG' },   { nom: 'Escamotage', car: 'DEX' },
+      { nom: 'Histoire', car: 'INT' },   { nom: 'Intimidation', car: 'CHA' },
+      { nom: 'Investigation', car: 'INT' }, { nom: 'Médecine', car: 'SAG' },
+      { nom: 'Nature', car: 'INT' },     { nom: 'Perception', car: 'SAG' },
+      { nom: 'Perspicacité', car: 'SAG' }, { nom: 'Persuasion', car: 'CHA' },
+      { nom: 'Religion', car: 'INT' },   { nom: 'Représentation', car: 'CHA' },
+      { nom: 'Survie', car: 'SAG' },     { nom: 'Tromperie', car: 'CHA' }
+    ];
+  }
+}
+
+// Retourne les compétences fixes données par l'espèce (hors "au_choix")
+function getEspeceComps() {
+  const maitrises = W.espece_data?.competences_maitrises || [];
+  return maitrises
+    .filter(m => !String(m).startsWith('au_choix'))
+    .map(normalizeComp);
 }
 
 function renderBgGrid() {
@@ -1004,34 +1021,51 @@ function updateNextBtnPV() {
 // ─── ÉTAPE 7 — Compétences ────────────────────────────────────
 
 function renderCompetences() {
+  const competences = W._competences;
+  if (!competences.length) { loadCompetences().then(() => renderCompetences()); return; }
+
   const classe = W.classe_data;
   const bg = W.bg_data;
-  const bm = BONUS_MAITRISE[Math.min(W.niveau-1,19)];
+  const stats = finalStats();
+  const bm = BONUS_MAITRISE[Math.min(W.niveau - 1, 19)];
   const nbChoix = classe?.competences_choisies?.nombre || 2;
   const rawOpts = classe?.competences_choisies?.options;
   const optionsClasse = rawOpts === 'toutes'
-    ? TOUTES_COMPETENCES.map(c => normalizeComp(c.nom))
+    ? competences.map(c => normalizeComp(c.nom))
     : [].concat(rawOpts || []).map(normalizeComp);
+
   const bgComps = [].concat(bg?.competences || []).map(normalizeComp);
+  const especeComps = getEspeceComps();
+  // Toutes les comps acquises automatiquement (bg + espèce fixe)
+  const autoComps = [...new Set([...bgComps, ...especeComps])];
   const choisies = W.competences_choisies.map(normalizeComp);
 
   document.getElementById('comp-counter').textContent =
-    `Choisissez ${nbChoix} compétences parmi celles de votre classe (en blanc). Les compétences de votre historique sont automatiquement acquises (en vert).`;
+    `Choisissez ${nbChoix} compétence(s) parmi celles de votre classe (blanc). ` +
+    `Background (vert) et espèce (bleu) sont automatiques.`;
 
   const grid = document.getElementById('competences-grid');
-  grid.innerHTML = TOUTES_COMPETENCES.map(comp => {
+  grid.innerHTML = competences.map(comp => {
     const nc = normalizeComp(comp.nom);
     const inBg = bgComps.includes(nc);
+    const inEspece = especeComps.includes(nc);
     const inClasse = optionsClasse.includes(nc);
-    const isChecked = inBg || choisies.includes(nc);
-    const mod_val = fmtMod(mod(W.stats[comp.car] || 10) + (isChecked ? bm : 0));
-    const disabled = inBg || (!inClasse && !isChecked);
+    const isAuto = autoComps.includes(nc);
+    const isChecked = isAuto || choisies.includes(nc);
+    const mod_val = fmtMod(mod(stats[comp.car] || 10) + (isChecked ? bm : 0));
+    const disabled = isAuto || (!inClasse && !choisies.includes(nc));
+
+    const labelClass = inBg ? 'from-bg' : inEspece ? 'from-espece' : inClasse ? 'from-class' : '';
+    const badge = inBg ? '<span class="comp-badge comp-badge-bg">BG</span>'
+                : inEspece ? '<span class="comp-badge comp-badge-espece">ESP</span>'
+                : '';
+
     return `
     <div class="comp-row">
       <input type="checkbox" class="comp-check" data-nom="${comp.nom}"
              ${isChecked ? 'checked' : ''} ${disabled ? 'disabled' : ''}
              onchange="updateCompCounter(${nbChoix})" />
-      <span class="comp-label ${inClasse ? 'from-class' : inBg ? 'from-bg' : ''}">${comp.nom}</span>
+      <span class="comp-label ${labelClass}">${comp.nom}${badge}</span>
       <span class="comp-char">${comp.car}</span>
       <span class="comp-bonus">${mod_val}</span>
     </div>`;
@@ -1042,23 +1076,27 @@ function renderCompetences() {
 function updateCompCounter(max) {
   const bg = W.bg_data;
   const bgComps = (bg?.competences || []).map(normalizeComp);
+  const especeComps = getEspeceComps();
+  const autoComps = [...new Set([...bgComps, ...especeComps])];
+
   const rawOpts2 = W.classe_data?.competences_choisies?.options;
+  const competences = W._competences;
   const optionsClasse = rawOpts2 === 'toutes'
-    ? TOUTES_COMPETENCES.map(c => normalizeComp(c.nom))
+    ? competences.map(c => normalizeComp(c.nom))
     : [].concat(rawOpts2 || []).map(normalizeComp);
 
-  // Cases cochables par le joueur : options de classe, hors background
+  // Cases cochables : options de classe, hors comps automatiques
   const optionBoxes = [...document.querySelectorAll('.comp-check')]
     .filter(b => {
       const nc = normalizeComp(b.dataset.nom);
-      return optionsClasse.includes(nc) && !bgComps.includes(nc);
+      return optionsClasse.includes(nc) && !autoComps.includes(nc);
     });
   const checked = optionBoxes.filter(b => b.checked).length;
 
   optionBoxes.forEach(b => {
     if (!b.checked) b.disabled = checked >= max;
   });
-  updateExpertiseSection();
+  if (typeof updateExpertiseSection === 'function') updateExpertiseSection();
 }
 
 function getExpertiseSlots(classe, niveau) {
@@ -1087,7 +1125,7 @@ function updateExpertiseSection() {
   W.competences_expertise = W.competences_expertise.filter(e => proficientNorm.has(normalizeComp(e)));
 
   const chosen = W.competences_expertise.map(normalizeComp);
-  const proficientComps = TOUTES_COMPETENCES.filter(c => proficientNorm.has(normalizeComp(c.nom)));
+  const proficientComps = W._competences.filter(c => proficientNorm.has(normalizeComp(c.nom)));
 
   section.innerHTML = `
     <div class="expertise-header">
@@ -1497,8 +1535,14 @@ function buildRecap() {
   }).join('');
 
   // Compétences choisies
-  const allComps = [...(W.bg_data?.competences||[]), ...W.competences_choisies];
-  const compsHtml = TOUTES_COMPETENCES
+  const especeCompsFixedRecap = (W.espece_data?.competences_maitrises || [])
+    .filter(m => !String(m).startsWith('au_choix'));
+  const allComps = [...new Set([
+    ...(W.bg_data?.competences || []),
+    ...especeCompsFixedRecap,
+    ...W.competences_choisies
+  ])];
+  const compsHtml = W._competences
     .filter(c => allComps.some(ac => normalizeComp(ac) === normalizeComp(c.nom)))
     .map(c => {
       const val = mod(stats[c.car]) + bm;
@@ -1590,8 +1634,14 @@ async function creerPersonnage() {
     jets_sauvegarde[k] = { maitrise: hasMaitrise, valeur: mod(stats[k]) + (hasMaitrise ? bm : 0) };
   });
 
-  const allComps = [...new Set([...(W.bg_data?.competences||[]), ...W.competences_choisies])];
-  const competences = TOUTES_COMPETENCES.filter(c =>
+  const especeCompsFixed = (W.espece_data?.competences_maitrises || [])
+    .filter(m => !String(m).startsWith('au_choix'));
+  const allComps = [...new Set([
+    ...(W.bg_data?.competences || []),
+    ...especeCompsFixed,
+    ...W.competences_choisies
+  ])];
+  const competences = W._competences.filter(c =>
     allComps.some(ac => normalizeComp(ac) === normalizeComp(c.nom))
   ).map(c => ({
     nom: c.nom, caracteristique: c.car, maitrise: true,
