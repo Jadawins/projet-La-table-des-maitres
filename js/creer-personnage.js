@@ -921,9 +921,12 @@ function updateCompCounter(max) {
     ? TOUTES_COMPETENCES.map(c => normalizeComp(c.nom))
     : [].concat(rawOpts2 || []).map(normalizeComp);
 
-  // Toutes les cases de classe (pas les bg qui sont toujours disabled)
+  // Cases cochables par le joueur : options de classe, hors background
   const optionBoxes = [...document.querySelectorAll('.comp-check')]
-    .filter(b => optionsClasse.includes(normalizeComp(b.dataset.nom)));
+    .filter(b => {
+      const nc = normalizeComp(b.dataset.nom);
+      return optionsClasse.includes(nc) && !bgComps.includes(nc);
+    });
   const checked = optionBoxes.filter(b => b.checked).length;
 
   optionBoxes.forEach(b => {
