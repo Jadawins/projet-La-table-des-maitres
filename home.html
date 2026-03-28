@@ -106,6 +106,7 @@
     <ul style="margin-top:0;">
       <li>🍃 <strong>Migration API → MongoDB</strong> — toutes les routes de données (sorts, classes, espèces, backgrounds, armes, armures, dons, sous-classes, monstres, glossaire, correspondances) lisent depuis MongoDB</li>
       <li>📋 <strong>Compétences sans hardcodage</strong> — nouvelle route <code>/GetCompetences2024</code> → MongoDB ; correction Escamotage manquant + typo Athlétisme ; doublons espèce/background/classe gérés automatiquement avec badges visuels (BG violet / ESP bleu)</li>
+      <li>⚙️ <strong>Sous-classe dynamique</strong> — niveau de déverrouillage lu depuis le JSON de classe (<code>niveaux[n].verifier_sous_classe</code>) ; sous-classe obligatoire dans <code>validateStep(3)</code> dès le niveau requis ; titre de section mis à jour dynamiquement</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">

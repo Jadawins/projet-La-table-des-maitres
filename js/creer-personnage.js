@@ -186,7 +186,14 @@ function validateStep(n) {
       alert('Sélectionnez un lignage / héritage pour votre espèce.'); return false;
     }
   }
-  if (n === 3 && !W.classe) { alert('Sélectionnez une classe.'); return false; }
+  if (n === 3) {
+    if (!W.classe) { alert('Sélectionnez une classe.'); return false; }
+    const unlock = getNiveauSousClasse(W.classe_data);
+    if ((W.niveau || 1) >= unlock && !W.sous_classe) {
+      alert('Sélectionnez une sous-classe (obligatoire à partir du niveau ' + unlock + ').');
+      return false;
+    }
+  }
   if (n === 4) {
     if (!W.background) { alert('Sélectionnez un historique.'); return false; }
     if (!bgBonusIsValid()) { alert('Choisissez comment répartir vos bonus de caractéristiques du background.'); return false; }
@@ -473,6 +480,16 @@ function renderClassesGrid() {
   }).join('');
 }
 
+function getNiveauSousClasse(classeData) {
+  if (!classeData?.niveaux) return 3;
+  const niveaux = classeData.niveaux;
+  const found = Object.keys(niveaux)
+    .map(Number)
+    .sort((a, b) => a - b)
+    .find(n => niveaux[String(n)]?.verifier_sous_classe === true);
+  return found ?? 3;
+}
+
 async function selectClasse(id) {
   W.classe = id;
   W.classe_data = W._classes.find(c => c.id === id);
@@ -494,9 +511,12 @@ async function selectClasse(id) {
       <span><i class="fa-solid fa-list-check"></i> ${nbComp} compétences au choix</span>
     </div>`;
 
-  // Sous-classes si niveau ≥ 3
+  // Sous-classes si niveau >= unlock level
   const scSection = document.getElementById('sousclasse-section');
-  if ((W.niveau || 1) >= 3) {
+  const unlockNiveau = getNiveauSousClasse(W.classe_data);
+  const subtitle = document.getElementById('sousclasse-subtitle');
+  if (subtitle) subtitle.innerHTML = '<i class="fa-solid fa-star"></i> Sous-classe (niveau ' + unlockNiveau + ')';
+  if ((W.niveau || 1) >= unlockNiveau) {
     scSection.style.display = 'block';
     await loadSousClasses(id);
   } else {
