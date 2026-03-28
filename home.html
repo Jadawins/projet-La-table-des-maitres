@@ -97,6 +97,10 @@
       <li>✅ <strong>Barde — quota de compétences réduit à 1</strong> — les compétences du background étaient comptées dans le quota de classe, réduisant faussement les choix disponibles</li>
       <li>✅ <strong>Bonus background — mode +2/+1 non conforme PHB 2024</strong> — le joueur pouvait choisir n'importe quelle stat, alors que le PHB 2024 fixe les deux stats selon le background (ex : Acolyte → INT/SAG uniquement). Corrigé : deux boutons radio seulement, joueur choisit l'ordre +2/+1 mais pas les stats</li>
     </ul>
+    <p style="color:#4ade80;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🗄️ Infrastructure :</p>
+    <ul style="margin-top:0;">
+      <li>📋 <strong>Compétences sans hardcodage</strong> — suppression de TOUTES_COMPETENCES, nouvelle route <code>/GetCompetences2024</code> → MongoDB ; les 18 compétences sont chargées à la volée. Correction : Escamotage manquant, typo Athlétisme. Doublons espèce/background/classe gérés automatiquement avec badges visuels (BG violet / ESP bleu)</li>
+    </ul>
     <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
     <ul style="margin-top:0;">
       <li>❤️ <strong>Étape "Points de vie" dans le wizard</strong> — nouvelle étape 6 entre Caractéristiques et Compétences : niveau 1 automatique (DV max + CON), niveaux 2+ au choix entre valeur fixe (DV/2+1+CON) ou lancer de dé (aléatoire ou saisie manuelle), minimum 1 PV par niveau, récapitulatif en temps réel, bouton Suivant bloqué tant que tous les niveaux ne sont pas remplis</li>
@@ -190,7 +194,7 @@
     <ul style="margin-top:0.4rem;">
       <li>🔮 <strong>Système de magie</strong> — emplacements corrects toutes classes/niveaux, pact magic occultiste, sorts connus vs préparés, cas "aucun emplacement" faux, niveaux &gt;1 affichent tous les niveaux disponibles</li>
       <li>🎲 <strong>Points de vie</strong> — recalcul cascadé depuis les stats finales (bonus background inclus), stockage propre des gains par niveau ✅ <em>partiellement fait</em></li>
-      <li>📋 <strong>Compétences</strong> — pas de doublon classe/background/espèce, remplacement automatique si doublon</li>
+      <li>✅ <strong>Compétences</strong> — pas de doublon classe/background/espèce, remplacement automatique si doublon</li>
       <li>⚔️ <strong>Sous-classe</strong> — débloquée au bon niveau uniquement, capacités bien appliquées</li>
       <li>🧬 <strong>Espèces avec variantes</strong> — application correcte des effets (Elfe, Tieffelin, Drakéide) ✅ <em>partiellement fait</em></li>
     </ul>
