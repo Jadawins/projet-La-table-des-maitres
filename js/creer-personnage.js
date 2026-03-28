@@ -914,23 +914,21 @@ function renderCompetences() {
 }
 
 function updateCompCounter(max) {
-  const classe = W.classe_data;
   const bg = W.bg_data;
   const bgComps = (bg?.competences || []).map(normalizeComp);
-  const boxes = [...document.querySelectorAll('.comp-check:not(:disabled)')];
-  const checked = boxes.filter(b => b.checked).length;
-  if (checked >= max) {
-    boxes.filter(b => !b.checked).forEach(b => b.disabled = true);
-  } else {
-    const rawOpts2 = classe?.competences_choisies?.options;
-    const optionsClasse = rawOpts2 === 'toutes'
-      ? TOUTES_COMPETENCES.map(c => normalizeComp(c.nom))
-      : [].concat(rawOpts2 || []).map(normalizeComp);
-    boxes.forEach(b => {
-      if (!bgComps.includes(normalizeComp(b.dataset.nom)))
-        b.disabled = !optionsClasse.includes(normalizeComp(b.dataset.nom));
-    });
-  }
+  const rawOpts2 = W.classe_data?.competences_choisies?.options;
+  const optionsClasse = rawOpts2 === 'toutes'
+    ? TOUTES_COMPETENCES.map(c => normalizeComp(c.nom))
+    : [].concat(rawOpts2 || []).map(normalizeComp);
+
+  // Toutes les cases de classe (pas les bg qui sont toujours disabled)
+  const optionBoxes = [...document.querySelectorAll('.comp-check')]
+    .filter(b => optionsClasse.includes(normalizeComp(b.dataset.nom)));
+  const checked = optionBoxes.filter(b => b.checked).length;
+
+  optionBoxes.forEach(b => {
+    if (!b.checked) b.disabled = checked >= max;
+  });
 }
 
 // ─── ÉTAPE 7 — Équipement ─────────────────────────────────────
