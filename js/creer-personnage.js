@@ -46,7 +46,7 @@ function normalizeComp(s) {
 
 const W = {
   step: 1,
-  totalSteps: 10,
+  totalSteps: 11,
   // Données chargées
   _especes: [], _classes: [], _sousclasses: [], _backgrounds: [],
   _sortsParNiveau: {},    // cache : { 0:[...], 1:[...], 2:[...], ... }
@@ -59,6 +59,8 @@ const W = {
   stats_method: null,
   stats_assigned: { FOR: null, DEX: null, CON: null, INT: null, SAG: null, CHA: null },
   stats_pointbuy: { FOR: 8, DEX: 8, CON: 8, INT: 8, SAG: 8, CHA: 8 },
+  pv_resultats: {},       // { 1: X, 2: Y, ... } — PV gagnés par niveau
+  pv_methode: {},         // { 2: 'fixe'|'de', ... }
   competences_choisies: [],
   equipement: [],
   sorts_choisis: {},      // { 0:[ids cantrips], 1:[ids niv1], 2:[...], ... }
@@ -67,7 +69,7 @@ const W = {
 };
 
 const STEPS_LABELS = ['Infos', 'Espèce', 'Classe', 'Historique',
-  'Stats', 'Compétences', 'Équipement', 'Sorts', 'Traits', 'Récap'];
+  'Stats', 'PV', 'Compétences', 'Équipement', 'Sorts', 'Traits', 'Récap'];
 
 // ─── UTILITAIRES ──────────────────────────────────────────────
 
@@ -216,7 +218,13 @@ function validateStep(n) {
       }
     }
   }
-  if (n === 8) {
+  if (n === 6) {
+    if (!pvAllSet()) {
+      alert('Choisissez les points de vie pour chaque niveau avant de continuer.');
+      return false;
+    }
+  }
+  if (n === 9) {
     if (!isCaster(W.classe_data)) return true;
     if (typeof getNiveauxSortsDisponibles !== 'function') return true; // magie-tables absent
     const nbC = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
@@ -260,19 +268,19 @@ function collectStep(n) {
       STAT_KEYS.forEach(k => { W.stats[k] = W.stats_pointbuy[k]; });
     }
   }
-  if (n === 6) {
+  if (n === 7) {
     W.competences_choisies = [...document.querySelectorAll('.comp-check:checked')].map(el => el.dataset.nom);
   }
-  if (n === 7) {
+  if (n === 8) {
     W.equipement = [...document.querySelectorAll('.equip-check:checked')].map(el => ({
       nom: el.dataset.nom, quantite: parseInt(el.dataset.qte) || 1
     }));
   }
-  if (n === 8) {
+  if (n === 9) {
     // sorts_choisis est maintenu en temps réel par toggleSortNiveau()
     // On ne lit rien depuis le DOM ici
   }
-  if (n === 9) {
+  if (n === 10) {
     W.traits = document.getElementById('p-traits').value.trim();
     W.ideaux = document.getElementById('p-ideaux').value.trim();
     W.liens = document.getElementById('p-liens').value.trim();
@@ -290,10 +298,11 @@ async function onStepEnter(n) {
   if (n === 3) await loadClasses();
   if (n === 4) await loadBackgrounds();
   if (n === 5) initStatsStep();
-  if (n === 6) renderCompetences();
-  if (n === 7) renderEquipement();
-  if (n === 8) await loadSorts();
-  if (n === 9) renderTraitsSuggestions();
+  if (n === 6) initPVStep();
+  if (n === 7) renderCompetences();
+  if (n === 8) renderEquipement();
+  if (n === 9) await loadSorts();
+  if (n === 10) renderTraitsSuggestions();
 }
 
 // ─── ÉTAPE 1 — Alignement & Niveau ───────────────────────────
@@ -753,7 +762,120 @@ function pbDecrement(k) {
   renderPointBuy();
 }
 
-// ─── ÉTAPE 6 — Compétences ────────────────────────────────────
+// ─── ÉTAPE 6 — Points de vie ──────────────────────────────────
+
+function initPVStep() {
+  // Réinitialise le niveau 1 (toujours auto)
+  const niv = W.niveau;
+  const dvMax = isDvMax(getDv(W.classe_data));
+  const conMod = mod(W.stats.CON);
+  W.pv_resultats[1] = Math.max(1, dvMax + conMod);
+  renderPVStep();
+}
+
+function renderPVStep() {
+  const niv = W.niveau;
+  const dvMax = isDvMax(getDv(W.classe_data));
+  const dvType = getDv(W.classe_data);
+  const conMod = mod(W.stats.CON);
+  const fixed = Math.max(1, Math.floor(dvMax / 2) + 1 + conMod);
+  let html = '<div class="pv-list">';
+  // Niveau 1 — auto
+  const pv1 = W.pv_resultats[1] || Math.max(1, dvMax + conMod);
+  html += `
+    <div class="pv-row pv-row-auto">
+      <span class="pv-lvl-badge">Niv 1</span>
+      <span class="pv-auto-label"><i class="fa-solid fa-lock" style="font-size:0.7rem;opacity:0.5;"></i> Automatique — ${dvType} max (${dvMax}) + CON (${fmtMod(conMod)})</span>
+      <span class="pv-val-badge pv-val-set">+${pv1} PV</span>
+    </div>`;
+  // Niveaux 2+
+  for (let lv = 2; lv <= niv; lv++) {
+    const val = W.pv_resultats[lv];
+    const hasVal = val !== undefined && val !== null;
+    html += `<div class="pv-row" id="pv-row-${lv}">
+      <span class="pv-lvl-badge">Niv ${lv}</span>
+      <div class="pv-actions">
+        <button class="pv-btn-choice${W.pv_methode[lv]==='fixe'?' pv-btn-active':''}" onclick="pvSetMethode(${lv},'fixe')">
+          <i class="fa-solid fa-equals"></i> Fixe <span class="pv-fixed-val">${fixed > 0 ? '+' : ''}${fixed}</span>
+        </button>
+        <button class="pv-btn-choice${W.pv_methode[lv]==='de'?' pv-btn-active':''}" onclick="lancerDePV(${lv})">
+          <i class="fa-solid fa-dice-d${dvMax}"></i> Lancer ${dvType}
+        </button>
+        <input class="pv-manual-input" type="number" min="1" max="${dvMax}" placeholder="Saisir…"
+          value="${hasVal && W.pv_methode[lv]==='de' ? val - conMod : ''}"
+          oninput="pvSaisir(${lv}, this.value)" title="Résultat du dé (sans le modificateur de CON)" />
+      </div>
+      <span class="pv-val-badge ${hasVal ? 'pv-val-set' : 'pv-val-empty'}" id="pv-val-${lv}">
+        ${hasVal ? (val >= 0 ? '+' : '') + val + ' PV' : '—'}
+      </span>
+    </div>`;
+  }
+  html += '</div>';
+  // Récap
+  html += `<div class="pv-recap-section">
+    <span class="pv-recap-label"><i class="fa-solid fa-heart"></i> Total PV max :</span>
+    <span class="pv-recap-total" id="pv-recap-total">${pvAllSet() ? pvTotalCalc() : '—'}</span>
+    ${!pvAllSet() ? '<span class="pv-recap-hint">Remplissez tous les niveaux pour continuer</span>' : ''}
+  </div>`;
+  document.getElementById('pv-step-content').innerHTML = html;
+  updateNextBtnPV();
+}
+
+function pvTotalCalc() {
+  return Object.values(W.pv_resultats).reduce((s, v) => s + (v || 0), 0);
+}
+
+function pvAllSet() {
+  for (let lv = 1; lv <= W.niveau; lv++) {
+    if (W.pv_resultats[lv] === undefined || W.pv_resultats[lv] === null) return false;
+  }
+  return true;
+}
+
+function pvSetMethode(lv, methode) {
+  W.pv_methode[lv] = methode;
+  if (methode === 'fixe') {
+    const dvMax = isDvMax(getDv(W.classe_data));
+    const conMod = mod(W.stats.CON);
+    W.pv_resultats[lv] = Math.max(1, Math.floor(dvMax / 2) + 1 + conMod);
+  }
+  renderPVStep();
+}
+
+function lancerDePV(lv) {
+  W.pv_methode[lv] = 'de';
+  const dvMax = isDvMax(getDv(W.classe_data));
+  const conMod = mod(W.stats.CON);
+  const roll = Math.floor(Math.random() * dvMax) + 1;
+  W.pv_resultats[lv] = Math.max(1, roll + conMod);
+  renderPVStep();
+}
+
+function pvSaisir(lv, rawVal) {
+  const dvMax = isDvMax(getDv(W.classe_data));
+  const conMod = mod(W.stats.CON);
+  const roll = Math.max(1, Math.min(dvMax, parseInt(rawVal) || 1));
+  W.pv_methode[lv] = 'de';
+  W.pv_resultats[lv] = Math.max(1, roll + conMod);
+  const badge = document.getElementById(`pv-val-${lv}`);
+  if (badge) {
+    const val = W.pv_resultats[lv];
+    badge.className = 'pv-val-badge pv-val-set';
+    badge.textContent = (val >= 0 ? '+' : '') + val + ' PV';
+  }
+  const recap = document.getElementById('pv-recap-total');
+  if (recap) recap.textContent = pvAllSet() ? pvTotalCalc() : '—';
+  updateNextBtnPV();
+}
+
+function updateNextBtnPV() {
+  const btn = document.getElementById('btn-next');
+  if (!btn) return;
+  btn.disabled = !pvAllSet();
+  btn.style.opacity = pvAllSet() ? '1' : '0.4';
+}
+
+// ─── ÉTAPE 7 — Compétences ────────────────────────────────────
 
 function renderCompetences() {
   const classe = W.classe_data;
@@ -1165,16 +1287,14 @@ function copierSuggestion(champ, texte) {
   if (el) el.value = el.value ? el.value + '\n' + texte : texte;
 }
 
-// ─── ÉTAPE 10 — Récapitulatif ─────────────────────────────────
+// ─── ÉTAPE 11 — Récapitulatif ─────────────────────────────────
 
 function buildRecap() {
-  collectStep(9);
+  collectStep(10);
   const niv = W.niveau;
   const bm = BONUS_MAITRISE[Math.min(niv-1,19)];
-  const conMod = mod(W.stats.CON);
   const dexMod = mod(W.stats.DEX);
-  const dvMax = isDvMax(getDv(W.classe_data));
-  const pvMax = dvMax + conMod * niv;
+  const pvMax = pvTotalCalc();
   const ca = 10 + dexMod;
   const init = dexMod;
 
@@ -1288,8 +1408,7 @@ async function creerPersonnage() {
     valeur: mod(stats[c.car]) + bm
   }));
 
-  const dvMax = isDvMax(getDv(W.classe_data));
-  const pvMax = dvMax + mod(stats.CON) * niv;
+  const pvMax = pvTotalCalc();
   const ca = 10 + mod(stats.DEX);
 
   // Sorts — flatten sorts_choisis par niveau
@@ -1319,6 +1438,7 @@ async function creerPersonnage() {
     bonus_maitrise: bm,
     combat: {
       pv_max: pvMax, pv_actuels: pvMax, pv_temporaires: 0,
+      pv_par_niveau: { ...W.pv_resultats },
       ca, initiative: mod(stats.DEX), vitesse: W.espece_data?.vitesse || 9,
       des_vie: { total: niv, restants: niv, type: getDv(W.classe_data) }
     },

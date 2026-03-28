@@ -1689,6 +1689,120 @@
 
 .empty-state i { font-size: 3rem; color: #666; margin-bottom: 1rem; display: block; }
 
+/* ─── ÉTAPE PV ────────────────────────────────────────────────── */
+
+.pv-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.pv-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  flex-wrap: wrap;
+}
+
+.pv-row-auto {
+  background: rgba(201,168,76,0.05);
+  border-color: rgba(201,168,76,0.15);
+}
+
+.pv-lvl-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 4px;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+.pv-auto-label {
+  font-size: 0.78rem;
+  color: #aaa;
+  flex: 1;
+}
+
+.pv-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.pv-btn-choice {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: #ccc;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.pv-btn-choice:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.pv-btn-choice.pv-btn-active {
+  background: rgba(134,93,255,0.2);
+  border-color: rgba(134,93,255,0.5);
+  color: #d4b8ff;
+}
+
+.pv-manual-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.5rem;
+  width: 70px;
+  text-align: center;
+}
+.pv-manual-input::placeholder { color: #555; }
+
+.pv-val-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.pv-val-set {
+  background: rgba(134,93,255,0.15);
+  border: 1px solid rgba(134,93,255,0.35);
+  color: #c4aaff;
+}
+.pv-val-empty {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #555;
+}
+
+.pv-recap-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+.pv-recap-label { font-size: 0.82rem; color: #c9a84c; }
+.pv-recap-total {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+}
+.pv-recap-hint { font-size: 0.72rem; color: #666; margin-left: auto; font-style: italic; }
+
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
