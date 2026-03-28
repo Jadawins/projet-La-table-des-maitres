@@ -1,35 +1,29 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const { MongoClient } = require('mongodb');
 
-const BG_DIR = path.join(__dirname, '../../Json/2024/Background');
-
-function loadAllBackgrounds() {
-  const files = fs.readdirSync(BG_DIR).filter(f => f.endsWith('.json'));
-  return files.map(f => {
-    const data = JSON.parse(fs.readFileSync(path.join(BG_DIR, f), 'utf-8'));
-    return data;
-  });
-}
-
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const client = new MongoClient(process.env.MONGO_URI);
   try {
-    let backgrounds = loadAllBackgrounds();
+    await client.connect();
+    const col = client.db('myrpgtable').collection('backgrounds');
+    const query = {};
     const { recherche } = req.query;
 
     if (recherche) {
-      const q = recherche.toLowerCase();
-      backgrounds = backgrounds.filter(b =>
-        (b.nom && b.nom.toLowerCase().includes(q)) ||
-        (b.description && b.description.toLowerCase().includes(q))
-      );
+      query.$or = [
+        { nom: { $regex: recherche, $options: 'i' } },
+        { description: { $regex: recherche, $options: 'i' } }
+      ];
     }
 
+    const backgrounds = await col.find(query, { projection: { _id: 0, _source: 0 } }).toArray();
     res.status(200).json(backgrounds);
   } catch (err) {
     console.error('Erreur GetBackgrounds2024:', err.message);
     res.status(500).json({ error: err.message });
+  } finally {
+    await client.close();
   }
 });
 

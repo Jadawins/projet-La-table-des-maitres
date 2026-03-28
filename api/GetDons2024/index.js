@@ -1,30 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const { MongoClient } = require('mongodb');
 
-const FILE = path.join(__dirname, '../../Json/2024/Don/dons.json');
-
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const client = new MongoClient(process.env.MONGO_URI);
   try {
-    let dons = JSON.parse(fs.readFileSync(FILE, 'utf-8'));
+    await client.connect();
+    const col = client.db('myrpgtable').collection('dons');
+    const query = {};
     const { categorie, recherche } = req.query;
 
-    if (categorie) {
-      dons = dons.filter(d => d.categorie && d.categorie.toLowerCase() === categorie.toLowerCase());
-    }
+    if (categorie) query.categorie = { $regex: new RegExp(`^${categorie}$`, 'i') };
     if (recherche) {
-      const q = recherche.toLowerCase();
-      dons = dons.filter(d =>
-        (d.nom && d.nom.toLowerCase().includes(q)) ||
-        (d.description && d.description.toLowerCase().includes(q))
-      );
+      query.$or = [
+        { nom: { $regex: recherche, $options: 'i' } },
+        { description: { $regex: recherche, $options: 'i' } }
+      ];
     }
 
+    const dons = await col.find(query, { projection: { _id: 0, _source: 0 } }).toArray();
     res.status(200).json(dons);
   } catch (err) {
     console.error('Erreur GetDons2024:', err.message);
     res.status(500).json({ error: err.message });
+  } finally {
+    await client.close();
   }
 });
 

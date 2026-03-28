@@ -1,54 +1,34 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const { MongoClient } = require('mongodb');
 
-const SORT_DIR = path.join(__dirname, '../../Json/2024/Sort');
-
-function loadAllSorts() {
-  const all = [];
-  for (let i = 0; i <= 9; i++) {
-    const file = path.join(SORT_DIR, `sorts_niveau_${i}.json`);
-    if (fs.existsSync(file)) {
-      const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
-      all.push(...data);
-    }
-  }
-  return all;
-}
-
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const client = new MongoClient(process.env.MONGO_URI);
   try {
-    let sorts = loadAllSorts();
+    await client.connect();
+    const col = client.db('myrpgtable').collection('sorts');
+    const query = {};
     const { niveau, ecole, classe, concentration, rituel, recherche } = req.query;
 
-    if (niveau !== undefined && niveau !== '') {
-      sorts = sorts.filter(s => s.niveau === parseInt(niveau));
-    }
-    if (ecole) {
-      sorts = sorts.filter(s => s.ecole && s.ecole.toLowerCase() === ecole.toLowerCase());
-    }
-    if (classe) {
-      sorts = sorts.filter(s => Array.isArray(s.classes) && s.classes.some(c => c.toLowerCase() === classe.toLowerCase()));
-    }
-    if (concentration !== undefined && concentration !== '') {
-      sorts = sorts.filter(s => s.concentration === (concentration === 'true'));
-    }
-    if (rituel !== undefined && rituel !== '') {
-      sorts = sorts.filter(s => s.rituel === (rituel === 'true'));
-    }
+    if (niveau !== undefined && niveau !== '') query.niveau = parseInt(niveau);
+    if (ecole) query.ecole = { $regex: new RegExp(`^${ecole}$`, 'i') };
+    if (classe) query.classes = { $elemMatch: { $regex: new RegExp(`^${classe}$`, 'i') } };
+    if (concentration !== undefined && concentration !== '') query.concentration = concentration === 'true';
+    if (rituel !== undefined && rituel !== '') query.rituel = rituel === 'true';
     if (recherche) {
-      const q = recherche.toLowerCase();
-      sorts = sorts.filter(s =>
-        (s.nom && s.nom.toLowerCase().includes(q)) ||
-        (s.description && s.description.toLowerCase().includes(q))
-      );
+      query.$or = [
+        { nom: { $regex: recherche, $options: 'i' } },
+        { description: { $regex: recherche, $options: 'i' } }
+      ];
     }
 
+    const sorts = await col.find(query, { projection: { _id: 0, _source: 0 } }).toArray();
     res.status(200).json(sorts);
   } catch (err) {
     console.error('Erreur GetSorts2024:', err.message);
     res.status(500).json({ error: err.message });
+  } finally {
+    await client.close();
   }
 });
 

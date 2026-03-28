@@ -1,30 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const { MongoClient } = require('mongodb');
 
-const FILE = path.join(__dirname, '../../Json/2024/Regles/glossaire.json');
-
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const client = new MongoClient(process.env.MONGO_URI);
   try {
-    let entrees = JSON.parse(fs.readFileSync(FILE, 'utf-8'));
+    await client.connect();
+    const col = client.db('myrpgtable').collection('glossaire');
+    const query = {};
     const { categorie, recherche } = req.query;
 
-    if (categorie) {
-      entrees = entrees.filter(e => e.categorie && e.categorie.toLowerCase() === categorie.toLowerCase());
-    }
+    if (categorie) query.categorie = { $regex: new RegExp(`^${categorie}$`, 'i') };
     if (recherche) {
-      const q = recherche.toLowerCase();
-      entrees = entrees.filter(e =>
-        (e.nom && e.nom.toLowerCase().includes(q)) ||
-        (e.description && e.description.toLowerCase().includes(q))
-      );
+      query.$or = [
+        { nom: { $regex: recherche, $options: 'i' } },
+        { description: { $regex: recherche, $options: 'i' } }
+      ];
     }
 
+    const entrees = await col.find(query, { projection: { _id: 0, _source: 0 } }).toArray();
     res.status(200).json(entrees);
   } catch (err) {
     console.error('Erreur GetGlossaire:', err.message);
     res.status(500).json({ error: err.message });
+  } finally {
+    await client.close();
   }
 });
 

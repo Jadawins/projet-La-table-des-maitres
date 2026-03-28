@@ -1,35 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const { MongoClient } = require('mongodb');
 
-const SC_DIR = path.join(__dirname, '../../Json/2024/SousClasse');
-
-function loadAllSousClasses() {
-  const files = fs.readdirSync(SC_DIR).filter(f => f.endsWith('.json'));
-  return files.map(f => {
-    const data = JSON.parse(fs.readFileSync(path.join(SC_DIR, f), 'utf-8'));
-    return { id: f.replace('.json', ''), ...data };
-  });
-}
-
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const client = new MongoClient(process.env.MONGO_URI);
   try {
-    let sousClasses = loadAllSousClasses();
+    await client.connect();
+    const col = client.db('myrpgtable').collection('sous_classes');
+    const query = {};
     const { classe, recherche } = req.query;
 
-    if (classe) {
-      sousClasses = sousClasses.filter(sc => sc.classe_parente && sc.classe_parente.toLowerCase() === classe.toLowerCase());
-    }
-    if (recherche) {
-      const q = recherche.toLowerCase();
-      sousClasses = sousClasses.filter(sc => sc.nom && sc.nom.toLowerCase().includes(q));
-    }
+    if (classe) query.classe_parente = { $regex: new RegExp(`^${classe}$`, 'i') };
+    if (recherche) query.nom = { $regex: recherche, $options: 'i' };
 
+    const docs = await col.find(query).toArray();
+    const sousClasses = docs.map(({ _id, _source, ...rest }) => ({ id: _source, ...rest }));
     res.status(200).json(sousClasses);
   } catch (err) {
     console.error('Erreur GetSousClasses2024:', err.message);
     res.status(500).json({ error: err.message });
+  } finally {
+    await client.close();
   }
 });
 
