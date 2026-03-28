@@ -62,6 +62,7 @@ const W = {
   pv_resultats: {},       // { 1: X, 2: Y, ... } — PV gagnés par niveau
   pv_methode: {},         // { 2: 'fixe'|'de', ... }
   competences_choisies: [],
+  competences_expertise: [],
   equipement: [],
   sorts_choisis: {},      // { 0:[ids cantrips], 1:[ids niv1], 2:[...], ... }
   traits: '', ideaux: '', liens: '', defauts: '',
@@ -221,6 +222,13 @@ function validateStep(n) {
   if (n === 6) {
     if (!pvAllSet()) {
       alert('Choisissez les points de vie pour chaque niveau avant de continuer.');
+      return false;
+    }
+  }
+  if (n === 7) {
+    const nSlots = getExpertiseSlots(W.classe, W.niveau);
+    if (nSlots > 0 && W.competences_expertise.length < nSlots) {
+      alert(`Choisissez ${nSlots} compétence${nSlots > 1 ? 's' : ''} pour l'Expertise. (${W.competences_expertise.length}/${nSlots})`);
       return false;
     }
   }
@@ -932,6 +940,68 @@ function updateCompCounter(max) {
   optionBoxes.forEach(b => {
     if (!b.checked) b.disabled = checked >= max;
   });
+  updateExpertiseSection();
+}
+
+function getExpertiseSlots(classe, niveau) {
+  const table = {
+    barde:    [[2, 2], [9, 2]],
+    roublard: [[1, 2], [6, 2]]
+  };
+  const entries = table[String(classe || '').toLowerCase()] || [];
+  return entries.reduce((total, [minNiv, nb]) => niveau >= minNiv ? total + nb : total, 0);
+}
+
+function updateExpertiseSection() {
+  const section = document.getElementById('expertise-section');
+  if (!section) return;
+
+  const nSlots = getExpertiseSlots(W.classe, W.niveau);
+  if (nSlots === 0) { section.innerHTML = ''; return; }
+
+  const bgComps = (W.bg_data?.competences || []).map(normalizeComp);
+  const proficientNorm = new Set([
+    ...bgComps,
+    ...[...document.querySelectorAll('.comp-check:checked')].map(b => normalizeComp(b.dataset.nom))
+  ]);
+
+  // Nettoyer les choix invalides si une comp a ete decochee
+  W.competences_expertise = W.competences_expertise.filter(e => proficientNorm.has(normalizeComp(e)));
+
+  const chosen = W.competences_expertise.map(normalizeComp);
+  const proficientComps = TOUTES_COMPETENCES.filter(c => proficientNorm.has(normalizeComp(c.nom)));
+
+  section.innerHTML = `
+    <div class="expertise-header">
+      <i class="fa-solid fa-star"></i> Expertise
+      <span class="expertise-counter ${chosen.length >= nSlots ? 'expertise-counter-done' : ''}">${chosen.length} / ${nSlots}</span>
+    </div>
+    <div class="expertise-hint">Choisissez ${nSlots} compétence${nSlots > 1 ? 's' : ''} pour lesquelles doubler votre bonus de maîtrise.</div>
+    <div class="expertise-grid">
+      ${proficientComps.map(c => {
+        const nc = normalizeComp(c.nom);
+        const isChosen = chosen.includes(nc);
+        const disabled = !isChosen && chosen.length >= nSlots;
+        return `<label class="expertise-row${isChosen ? ' expertise-active' : ''}${disabled ? ' expertise-disabled' : ''}">
+          <input type="checkbox" class="expertise-check" data-nom="${c.nom}"
+            ${isChosen ? 'checked' : ''} ${disabled ? 'disabled' : ''}
+            onchange="toggleExpertise('${c.nom}')" />
+          <span class="expertise-nom">${c.nom}</span>
+          <span class="comp-char">${c.car}</span>
+        </label>`;
+      }).join('')}
+    </div>`;
+}
+
+function toggleExpertise(nom) {
+  const nc = normalizeComp(nom);
+  const idx = W.competences_expertise.findIndex(e => normalizeComp(e) === nc);
+  if (idx >= 0) {
+    W.competences_expertise.splice(idx, 1);
+  } else {
+    W.competences_expertise.push(nom);
+  }
+  updateExpertiseSection();
 }
 
 // ─── ÉTAPE 7 — Équipement ─────────────────────────────────────
@@ -1405,8 +1475,9 @@ async function creerPersonnage() {
   const competences = TOUTES_COMPETENCES.filter(c =>
     allComps.some(ac => normalizeComp(ac) === normalizeComp(c.nom))
   ).map(c => ({
-    nom: c.nom, caracteristique: c.car, maitrise: true, expertise: false,
-    valeur: mod(stats[c.car]) + bm
+    nom: c.nom, caracteristique: c.car, maitrise: true,
+    expertise: W.competences_expertise.some(e => normalizeComp(e) === normalizeComp(c.nom)),
+    valeur: mod(stats[c.car]) + bm * (W.competences_expertise.some(e => normalizeComp(e) === normalizeComp(c.nom)) ? 2 : 1)
   }));
 
   const pvMax = pvTotalCalc();

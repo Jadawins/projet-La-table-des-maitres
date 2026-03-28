@@ -1689,6 +1689,72 @@
 
 .empty-state i { font-size: 3rem; color: #666; margin-bottom: 1rem; display: block; }
 
+/* ─── EXPERTISE ───────────────────────────────────────────────── */
+
+.expertise-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.expertise-counter {
+  font-size: 0.72rem;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 4px;
+  padding: 0.1rem 0.45rem;
+  color: #c9a84c;
+  margin-left: auto;
+}
+.expertise-counter-done {
+  background: rgba(80,200,120,0.15);
+  border-color: rgba(80,200,120,0.4);
+  color: #50c878;
+}
+
+.expertise-hint {
+  font-size: 0.72rem;
+  color: #777;
+  margin-bottom: 0.6rem;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.3rem;
+}
+
+.expertise-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #ccc;
+  transition: background 0.12s;
+}
+.expertise-row:hover { background: rgba(255,255,255,0.06); }
+.expertise-row.expertise-active {
+  background: rgba(201,168,76,0.12);
+  border-color: rgba(201,168,76,0.4);
+  color: #f0d780;
+}
+.expertise-row.expertise-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.expertise-nom { flex: 1; }
+
 /* ─── ÉTAPE PV ────────────────────────────────────────────────── */
 
 .pv-list { display: flex; flex-direction: column; gap: 0.5rem; }
