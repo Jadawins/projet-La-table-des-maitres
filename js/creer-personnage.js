@@ -605,50 +605,58 @@ function setBgBonusMode(mode) {
 function renderBgBonusInputs() {
   const el = document.getElementById('bg-bonus-inputs');
   if (!el) return;
-  const suggerees = W.bg_data?.bonus_caracteristiques?.suggerees || [];
-  const sugLabel = suggerees.length ? ` <span style="color:#c9a84c;font-size:0.72rem;">(suggérées : ${suggerees.join(', ')})</span>` : '';
+  const sug = W.bg_data?.bonus_caracteristiques?.suggerees || [];
+  const [s0, s1] = sug;
 
   if (W.bg_bonus_mode === '2plus1') {
-    el.innerHTML = `
-      <div style="font-size:0.78rem;color:#aaa;margin-bottom:0.5rem;">Choisissez quelle caractéristique reçoit +2 et laquelle reçoit +1.${sugLabel}</div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-        <div>
-          <div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+2 à :</div>
-          <select class="bg-bonus-select" id="bg-sel-2" onchange="applyBgBonus2plus1()">
-            <option value="">— choisir —</option>
-            ${STAT_KEYS.map(k => `<option value="${k}">${k}</option>`).join('')}
-          </select>
-        </div>
-        <div>
-          <div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+1 à :</div>
-          <select class="bg-bonus-select" id="bg-sel-1" onchange="applyBgBonus2plus1()">
-            <option value="">— choisir —</option>
-            ${STAT_KEYS.map(k => `<option value="${k}">${k}</option>`).join('')}
-          </select>
-        </div>
-      </div>`;
+    // PHB 2024 : +2/+1 fixé aux 2 caracs du background, joueur choisit seulement l'ordre
+    if (!s0 || !s1) {
+      el.innerHTML = '<div style="font-size:0.78rem;color:#f87171;">Donn\u00e9es manquantes pour ce background.</div>';
+      return;
+    }
+    el.innerHTML =
+      '<div style="font-size:0.78rem;color:#aaa;margin-bottom:0.6rem;">R\u00e9partissez entre ' +
+      '<strong style="color:#e0e0e0;">' + s0 + '</strong> et <strong style="color:#e0e0e0;">' + s1 + '</strong>\u00a0:</div>' +
+      '<div style="display:flex;flex-direction:column;gap:0.5rem;">' +
+        '<label class="bg-bonus-radio-row">' +
+          '<input type="radio" name="bg-bonus-order" value="A" onchange="applyBgBonus2plus1('A')" />' +
+          '<span class="bg-bonus-radio-label">' +
+            '<span class="bg-bonus-tag bg-bonus-tag-2">+2</span>\u00a0' + s0 +
+            '\u00a0\u00b7\u00a0<span class="bg-bonus-tag bg-bonus-tag-1">+1</span>\u00a0' + s1 +
+          '</span>' +
+        '</label>' +
+        '<label class="bg-bonus-radio-row">' +
+          '<input type="radio" name="bg-bonus-order" value="B" onchange="applyBgBonus2plus1('B')" />' +
+          '<span class="bg-bonus-radio-label">' +
+            '<span class="bg-bonus-tag bg-bonus-tag-1">+1</span>\u00a0' + s0 +
+            '\u00a0\u00b7\u00a0<span class="bg-bonus-tag bg-bonus-tag-2">+2</span>\u00a0' + s1 +
+          '</span>' +
+        '</label>' +
+      '</div>';
   } else if (W.bg_bonus_mode === '3fois1') {
-    el.innerHTML = `
-      <div style="font-size:0.78rem;color:#aaa;margin-bottom:0.5rem;">Choisissez 3 caractéristiques différentes qui reçoivent chacune +1.${sugLabel}</div>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-        ${[0,1,2].map(i => `
-        <div>
-          <div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+1 à :</div>
-          <select class="bg-bonus-select" id="bg-sel-3-${i}" onchange="applyBgBonus3fois1()">
-            <option value="">— choisir —</option>
-            ${STAT_KEYS.map(k => `<option value="${k}">${k}</option>`).join('')}
-          </select>
-        </div>`).join('')}
-      </div>`;
+    const opts = STAT_KEYS.map(k => '<option value="' + k + '">' + k + '</option>').join('');
+    el.innerHTML =
+      '<div style="font-size:0.78rem;color:#aaa;margin-bottom:0.5rem;">Choisissez 3 caract\u00e9ristiques diff\u00e9rentes (+1 chacune).</div>' +
+      '<div style="display:flex;gap:0.75rem;flex-wrap:wrap;">' +
+      [0,1,2].map(i =>
+        '<div>' +
+          '<div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+1 \u00e0 :</div>' +
+          '<select class="bg-bonus-select" id="bg-sel-3-' + i + '" onchange="applyBgBonus3fois1()">' +
+            '<option value="">\u2014 choisir \u2014</option>' + opts +
+          '</select>' +
+        '</div>'
+      ).join('') +
+      '</div>';
   }
 }
 
-function applyBgBonus2plus1() {
-  const sel2 = document.getElementById('bg-sel-2')?.value;
-  const sel1 = document.getElementById('bg-sel-1')?.value;
+function applyBgBonus2plus1(order) {
+  const sug = W.bg_data?.bonus_caracteristiques?.suggerees || [];
+  const [s0, s1] = sug;
+  if (!s0 || !s1) return;
   W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
-  if (sel2) W.bg_bonus[sel2] = (W.bg_bonus[sel2] || 0) + 2;
-  if (sel1 && sel1 !== sel2) W.bg_bonus[sel1] = (W.bg_bonus[sel1] || 0) + 1;
+  if (order === 'A') { W.bg_bonus[s0] = 2; W.bg_bonus[s1] = 1; }
+  else               { W.bg_bonus[s0] = 1; W.bg_bonus[s1] = 2; }
   renderBgBonusPreview();
 }
 
@@ -664,13 +672,10 @@ function bgBonusIsValid() {
   if (!W.bg_bonus_mode) return false;
   const total = Object.values(W.bg_bonus).reduce((s, v) => s + v, 0);
   if (W.bg_bonus_mode === '2plus1') {
-    const sel2 = document.getElementById('bg-sel-2')?.value;
-    const sel1 = document.getElementById('bg-sel-1')?.value;
-    return sel2 && sel1 && sel1 !== sel2 && total === 3;
+    return total === 3 && Object.values(W.bg_bonus).some(v => v === 2);
   }
   if (W.bg_bonus_mode === '3fois1') {
-    const nonZero = Object.values(W.bg_bonus).filter(v => v > 0).length;
-    return nonZero === 3 && total === 3;
+    return Object.values(W.bg_bonus).filter(v => v > 0).length === 3 && total === 3;
   }
   return false;
 }
