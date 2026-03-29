@@ -29,7 +29,7 @@ const W = {
   // Données chargées
   _especes: [], _classes: [], _sousclasses: [], _backgrounds: [],
   _sortsParNiveau: {},    // cache : { 0:[...], 1:[...], 2:[...], ... }
-  _competences: [],   // chargées depuis l'API
+  _competences: [],   // chargées depuis l\'API
   // Sélections
   nom: '', alignement: null, niveau: 1, xp: 0,
   espece: null, espece_data: null, espece_variante: null, espece_variante_data: null, sorts_raciaux: [],
@@ -549,7 +549,7 @@ async function loadCompetences() {
     // Normalise le champ "caracteristique" → "car" pour compatibilité interne
     W._competences = data.map(c => ({ nom: c.nom, car: c.caracteristique }));
   } catch {
-    // Fallback hardcodé minimal si l'API est indisponible
+    // Fallback hardcodé minimal si l\'API est indisponible
     W._competences = [
       { nom: 'Acrobaties', car: 'DEX' }, { nom: 'Arcanes', car: 'INT' },
       { nom: 'Athlétisme', car: 'FOR' }, { nom: 'Discrétion', car: 'DEX' },
@@ -564,7 +564,7 @@ async function loadCompetences() {
   }
 }
 
-// Retourne les compétences fixes données par l'espèce (hors "au_choix")
+// Retourne les compétences fixes données par l\'espèce (hors "au_choix")
 function getEspeceComps() {
   const maitrises = W.espece_data?.competences_maitrises || [];
   return maitrises
@@ -630,7 +630,7 @@ function renderBgBonusInputs() {
   const [s0, s1] = sug;
 
   if (W.bg_bonus_mode === '2plus1') {
-    // PHB 2024 : +2/+1 fixé aux 2 caracs du background, joueur choisit seulement l'ordre
+    // PHB 2024 : +2/+1 fixé aux 2 caracs du background, joueur choisit seulement l\'ordre
     if (!s0 || !s1) {
       el.innerHTML = '<div style="font-size:0.78rem;color:#f87171;">Donn\u00e9es manquantes pour ce background.</div>';
       return;
@@ -640,14 +640,14 @@ function renderBgBonusInputs() {
       '<strong style="color:#e0e0e0;">' + s0 + '</strong> et <strong style="color:#e0e0e0;">' + s1 + '</strong>\u00a0:</div>' +
       '<div style="display:flex;flex-direction:column;gap:0.5rem;">' +
         '<label class="bg-bonus-radio-row">' +
-          '<input type="radio" name="bg-bonus-order" value="A" onchange="applyBgBonus2plus1('A')" />' +
+          '<input type="radio" name="bg-bonus-order" value="A" onchange="applyBgBonus2plus1(\'A\')" />' +
           '<span class="bg-bonus-radio-label">' +
             '<span class="bg-bonus-tag bg-bonus-tag-2">+2</span>\u00a0' + s0 +
             '\u00a0\u00b7\u00a0<span class="bg-bonus-tag bg-bonus-tag-1">+1</span>\u00a0' + s1 +
           '</span>' +
         '</label>' +
         '<label class="bg-bonus-radio-row">' +
-          '<input type="radio" name="bg-bonus-order" value="B" onchange="applyBgBonus2plus1('B')" />' +
+          '<input type="radio" name="bg-bonus-order" value="B" onchange="applyBgBonus2plus1(\'B\')" />' +
           '<span class="bg-bonus-radio-label">' +
             '<span class="bg-bonus-tag bg-bonus-tag-1">+1</span>\u00a0' + s0 +
             '\u00a0\u00b7\u00a0<span class="bg-bonus-tag bg-bonus-tag-2">+2</span>\u00a0' + s1 +
@@ -1173,7 +1173,7 @@ function renderEquipement() {
 
   let html = '';
 
-  // ── Choix d'équipement de la classe (A / B / C) ──
+  // ── Choix d\'équipement de la classe (A / B / C) ──
   if (classeEquip.length > 0) {
     html += '<div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.5rem;">Équipement de classe — choisissez une option :</div>';
     classeEquip.forEach(opt => {
@@ -1190,7 +1190,7 @@ function renderEquipement() {
 
   // ── Équipement du background (fixe) ──
   if (bgEquip.length > 0) {
-    html += '<div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.4rem;">Équipement d'historique :</div>';
+    html += '<div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.4rem;">\u00c9quipement d\'historique :</div>';
     bgEquip.forEach(e => {
       html += `<div class="equip-row">
         <span class="equip-nom">${esc(e.nom)}</span>
@@ -1229,25 +1229,25 @@ function selectEquipChoix(choix) {
   const bgEquip = W.bg_data?.equipement || [];
   W.equipement = [];
 
-  // Vérifier si c'est un choix "or uniquement" (contient uniquement des entrées en "po")
+  // Vérifier si c\'est un choix "or uniquement" (contient uniquement des entrées en "po")
   const contenu = opt?.contenu || [];
   contenu.forEach(nom => {
     const poMatch = String(nom).match(/^(\d+)\s*po$/i);
     if (poMatch) {
-      // C'est de l'or — stocker séparément
+      // C\'est de l\'or — stocker séparément
       W.equipement_or_depart = parseInt(poMatch[1]);
     } else {
       W.equipement.push({ nom, quantite: 1, source: 'classe' });
     }
   });
 
-  // Ajouter l'équipement du background
+  // Ajouter l\'équipement du background
   bgEquip.forEach(e => {
     W.equipement.push({ nom: e.nom, quantite: e.quantite || 1, source: 'bg' });
   });
 }
 
-// ─── BOUTIQUE D'ACHAT LIBRE ──────────────────────────────────
+// ─── BOUTIQUE D\'ACHAT LIBRE ──────────────────────────────────
 
 function switchEquipTab(mode, doLoad) {
   W.equipement_mode = mode;
@@ -1485,7 +1485,7 @@ async function loadSorts() {
 
   if (!W.sorts_choisis) W.sorts_choisis = {};
 
-  // Pour les lanceurs tiers (sous-classe), les sorts viennent d'une autre classe
+  // Pour les lanceurs tiers (sous-classe), les sorts viennent d\'une autre classe
   const _filtreSortsClasse = W.sc_data?.filtre_sorts_classe;
   const nomClasse = _filtreSortsClasse
     ? (_filtreSortsClasse.charAt(0).toUpperCase() + _filtreSortsClasse.slice(1))
@@ -1614,7 +1614,7 @@ function _renderListeNiveau(niveauSort, _unused) {
 
   const search = document.getElementById(`search-sort-${niveauSort}`)?.value || '';
   const ecole  = document.getElementById(`ecole-sort-${niveauSort}`)?.value  || '';
-  // Pour les lanceurs tiers (sous-classe), les sorts viennent d'une autre classe
+  // Pour les lanceurs tiers (sous-classe), les sorts viennent d\'une autre classe
   const _filtreSortsClasse = W.sc_data?.filtre_sorts_classe;
   const nomClasse = _filtreSortsClasse
     ? (_filtreSortsClasse.charAt(0).toUpperCase() + _filtreSortsClasse.slice(1))
@@ -1672,7 +1672,7 @@ function toggleSortNiveau(niveauSort, spellId) {
   if (idx >= 0) {
     arr.splice(idx, 1);
   } else {
-    // Vérifier limites avant d'ajouter
+    // Vérifier limites avant d\'ajouter
     const nbCantrips = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
     if (niveauSort === 0 && arr.length >= nbCantrips) return;
     if (niveauSort > 0  && _isAtMaxSorts())           return;
@@ -1898,14 +1898,14 @@ function validateCharacter() {
       alert('Dépensez exactement ' + PB_BUDGET + ' points.'); return false;
     }
   } else if (!W.stats_method) {
-    alert('Choisissez une méthode d'attribution des caractéristiques.'); return false;
+    alert('Choisissez une méthode d\'attribution des caractéristiques.'); return false;
   }
   // 7. PV
   if (!pvAllSet()) { alert('Choisissez les points de vie pour chaque niveau.'); return false; }
   // 8. Compétences
   const nSlots = getExpertiseSlots(W.classe, W.niveau);
   if (nSlots > 0 && W.competences_expertise.length < nSlots) {
-    alert('Choisissez ' + nSlots + ' compétence(s) pour l'Expertise.'); return false;
+    alert('Choisissez ' + nSlots + ' compétence(s) pour l\'Expertise.'); return false;
   }
   // 9. Sorts (si lanceur)
   if (isCaster(W.classe_data, W.sc_data)) {
@@ -1931,7 +1931,7 @@ function validateCharacter() {
   }
   // 10. Équipement : un choix de classe doit être fait
   if ((W.classe_data?.equipement_depart || []).length > 0 && !W.equipement_choix_classe) {
-    alert('Choisissez une option d'équipement pour votre classe.'); return false;
+    alert('Choisissez une option d\'équipement pour votre classe.'); return false;
   }
   return true;
 }
