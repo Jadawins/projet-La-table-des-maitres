@@ -1168,7 +1168,7 @@ function toggleExpertise(nom) {
 // ─── ÉTAPE 7 — Équipement ─────────────────────────────────────
 
 function renderEquipement() {
-  const classeEquip = W.classe_data?.equipement_depart || [];
+  const classeEquip = W.classe_data?.equipement_depart || W.classe_data?.niveaux?.['0']?.equipement_depart || [];
   const bgEquip = W.bg_data?.equipement || [];
 
   // ── 1. Choix d\'option classe (toujours visible au-dessus des onglets) ──
@@ -1232,7 +1232,7 @@ function _updateAchatTab() {
 
 function selectEquipChoix(choix) {
   W.equipement_choix_classe = choix;
-  const classeEquip = W.classe_data?.equipement_depart || [];
+  const classeEquip = W.classe_data?.equipement_depart || W.classe_data?.niveaux?.['0']?.equipement_depart || [];
   const opt = classeEquip.find(o => o.choix === choix);
 
   // Mettre à jour visuellement les labels
@@ -1295,7 +1295,7 @@ function getBudgetAchat() {
   let total = 0;
   // Or du choix de classe (option "X po" uniquement)
   if (W.equipement_choix_classe) {
-    const opt = (W.classe_data?.equipement_depart || []).find(o => o.choix === W.equipement_choix_classe);
+    const opt = (W.classe_data?.equipement_depart || W.classe_data?.niveaux?.['0']?.equipement_depart || []).find(o => o.choix === W.equipement_choix_classe);
     (opt?.contenu || []).forEach(nom => {
       const m = String(nom).match(/^(\d+)\s*po$/i);
       if (m) total += parseInt(m[1]);
@@ -1954,7 +1954,7 @@ function validateCharacter() {
     }
   }
   // 10. Équipement : un choix de classe doit être fait
-  if ((W.classe_data?.equipement_depart || []).length > 0 && !W.equipement_choix_classe) {
+  if ((W.classe_data?.equipement_depart || W.classe_data?.niveaux?.['0']?.equipement_depart || []).length > 0 && !W.equipement_choix_classe) {
     alert('Choisissez une option d\'équipement pour votre classe.'); return false;
   }
   return true;
