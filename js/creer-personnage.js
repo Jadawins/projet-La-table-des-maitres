@@ -25,7 +25,7 @@ function normalizeComp(s) {
 
 const W = {
   step: 1,
-  totalSteps: 11,
+  totalSteps: 12,
   // Données chargées
   _especes: [], _classes: [], _sousclasses: [], _backgrounds: [],
   _sortsParNiveau: {},    // cache : { 0:[...], 1:[...], 2:[...], ... }
@@ -57,7 +57,7 @@ const W = {
 };
 
 const STEPS_LABELS = ['Infos', 'Espèce', 'Classe', 'Historique',
-  'Stats', 'PV', 'Compétences', 'Équipement', 'Sorts', 'Traits', 'Récap'];
+  'Stats', 'PV', 'Compétences', 'Équipement', 'Boutique', 'Sorts', 'Traits', 'Récap'];
 
 // ─── UTILITAIRES ──────────────────────────────────────────────
 
@@ -140,8 +140,8 @@ function updateNav() {
     next.classList.remove('hidden');
     submit.classList.add('hidden');
   }
-  // Reset btn-next state (step 5 et 9 gèrent leur propre verrouillage)
-  if (W.step !== 5 && W.step !== 9) {
+  // Reset btn-next state (step 5 et 10 gèrent leur propre verrouillage)
+  if (W.step !== 5 && W.step !== 10) {
     next.disabled = false;
     next.style.opacity = '';
     next.style.cursor = '';
@@ -210,9 +210,16 @@ function validateStep(n) {
       return false;
     }
   }
-  if (n === 9) {
+  // Étape 9 : boutique — toujours valide (achat optionnel)
+  if (n === 8) {
+    const classeEquip = W.classe_data?.equipement_depart || W.classe_data?.niveaux?.['0']?.equipement_depart || [];
+    if (classeEquip.length > 0 && !W.equipement_choix_classe) {
+      alert('Choisissez une option d\'équipement pour votre classe.'); return false;
+    }
+  }
+  if (n === 10) {
     if (!isCaster(W.classe_data, W.sc_data)) return true;
-    if (typeof getNiveauxSortsDisponibles !== 'function') return true; // magie-tables absent
+    if (typeof getNiveauxSortsDisponibles !== 'function') return true;
     const nbC = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
     if (nbC > 0 && (W.sorts_choisis[0] || []).length < nbC) {
       alert(`Choisissez ${nbC} sort(s) mineur(s). (${(W.sorts_choisis[0]||[]).length}/${nbC})`);
@@ -267,10 +274,12 @@ function collectStep(n) {
     // W.equipement est maintenu en temps réel par selectEquipChoix()
   }
   if (n === 9) {
-    // sorts_choisis est maintenu en temps réel par toggleSortNiveau()
-    // On ne lit rien depuis le DOM ici
+    // panier maintenu en temps réel par ajouterPanier/retirerPanier
   }
   if (n === 10) {
+    // sorts_choisis est maintenu en temps réel par toggleSortNiveau()
+  }
+  if (n === 11) {
     W.traits = document.getElementById('p-traits').value.trim();
     W.ideaux = document.getElementById('p-ideaux').value.trim();
     W.liens = document.getElementById('p-liens').value.trim();
@@ -291,8 +300,9 @@ async function onStepEnter(n) {
   if (n === 6) initPVStep();
   if (n === 7) { loadCompetences().then(() => renderCompetences()); }
   if (n === 8) renderEquipement();
-  if (n === 9) await loadSorts();
-  if (n === 10) renderTraitsSuggestions();
+  if (n === 9) renderBoutiqueStep();
+  if (n === 10) await loadSorts();
+  if (n === 11) renderTraitsSuggestions();
 }
 
 // ─── ÉTAPE 1 — Alignement & Niveau ───────────────────────────
@@ -1220,14 +1230,134 @@ function renderEquipement() {
   }
 }
 
-function _updateAchatTab() {
-  const btn = document.getElementById('equip-tab-achat');
-  if (!btn) return;
-  const hasBudget = getBudgetAchat() > 0;
-  btn.disabled = !hasBudget;
-  btn.title = hasBudget ? '' : 'Sélectionnez une option "or" pour accéder à l\'achat libre';
-  btn.style.opacity = hasBudget ? '' : '0.4';
-  btn.style.cursor = hasBudget ? '' : 'not-allowed';
+function renderBoutiqueStep() {
+  const budget = getBudgetAchat();
+  const budgetEl = document.getElementById('boutique-budget-restant');
+  const budgetTotalEl = document.getElementById('boutique-budget-total');
+  if (budgetEl) budgetEl.textContent = Math.round(budget * 100) / 100;
+  if (budgetTotalEl) budgetTotalEl.textContent = Math.round(budget * 100) / 100;
+
+  if (!budget) {
+    const listEl = document.getElementById('boutique-generale-list');
+    const magieEl = document.getElementById('boutique-magie-list');
+    const msg = '<div style="color:#888;font-size:0.85rem;text-align:center;padding:2rem;">Vous avez choisi un pack d\'équipement — pas d\'or disponible pour la boutique.</div>';
+    if (listEl) listEl.innerHTML = msg;
+    if (magieEl) magieEl.innerHTML = '';
+    return;
+  }
+
+  loadCatalogueStep();
+}
+
+async function loadCatalogueStep() {
+  if (W._catalogue.length > 0) { renderBoutiqueGenerale(); renderBoutiqueMagie(); return; }
+  const listEl = document.getElementById('boutique-generale-list');
+  if (listEl) listEl.innerHTML = '<div style="color:#888;text-align:center;padding:2rem;"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>';
+  try {
+    const [armes, armures, equips] = await Promise.all([
+      fetch(`${API}/GetArmes2024`).then(r => r.json()),
+      fetch(`${API}/GetArmures2024`).then(r => r.json()),
+      fetch(`${API}/GetEquipements2024`).then(r => r.json()),
+    ]);
+    W._catalogue = [
+      ...armes.map(i => ({ ...i, type: 'arme' })),
+      ...armures.map(i => ({ ...i, type: 'armure' })),
+      ...equips,
+    ].filter(i => i.prix);
+    renderBoutiqueGenerale();
+    renderBoutiqueMagie();
+  } catch {
+    if (listEl) listEl.innerHTML = '<div style="color:#f66;text-align:center;padding:1rem;">Erreur de chargement.</div>';
+  }
+}
+
+const MAGIE_CATS = ['focus_arcanique', 'focus_druidique', 'symbole_sacre', 'composante', 'grimoire', 'baguette', 'baton', 'orbe', 'cristal', 'amulette', 'sacoche_composantes'];
+const MAGIE_NOMS_KEYS = ['focus', 'druid', 'sacré', 'sacre', 'componente', 'grimoire', 'baguette', 'cristal', 'orbe', 'bâton', 'baton', 'amulette', 'sacoche', 'encens', 'parchemin'];
+
+function _isMagicItem(item) {
+  const cat = (item.categorie || '').toLowerCase();
+  const nom = (item.nom || '').toLowerCase();
+  if (MAGIE_CATS.some(c => cat.includes(c))) return true;
+  if (MAGIE_NOMS_KEYS.some(k => nom.includes(k))) return true;
+  return false;
+}
+
+function renderBoutiqueGenerale() {
+  const search = (document.getElementById('boutique-search')?.value || '').toLowerCase();
+  const type   = document.getElementById('boutique-filtre-type')?.value || '';
+  const budget = getBudgetAchat();
+  const pool = W._catalogue.filter(i => {
+    if (_isMagicItem(i)) return false; // séparé dans la section magie
+    if (type && i.type !== type) return false;
+    if (search && !i.nom.toLowerCase().includes(search)) return false;
+    return true;
+  });
+  _renderBoutiqueList('boutique-generale-list', pool, budget);
+}
+
+function renderBoutiqueMagie() {
+  const budget = getBudgetAchat();
+  const pool = W._catalogue.filter(i => _isMagicItem(i));
+  _renderBoutiqueList('boutique-magie-list', pool, budget);
+}
+
+function _renderBoutiqueList(containerId, pool, budget) {
+  const list = document.getElementById(containerId);
+  if (!list) return;
+  if (!pool.length) {
+    list.innerHTML = '<div style="color:#555;font-size:0.78rem;text-align:center;padding:1rem;">Aucun article trouvé.</div>';
+    return;
+  }
+  list.innerHTML = pool.map(item => {
+    const prixPo = prixEnPoItem(item.prix);
+    const inPanier = (W.panier || []).find(p => p.nom === item.nom);
+    const qte = inPanier?.quantite || 0;
+    const tooExpensive = prixPo > budgetRestant() + (inPanier ? inPanier.prix_po * inPanier.quantite : 0);
+    const prixStr = formatPrix(item.prix);
+    let detail = '';
+    if (item.type === 'arme' && item.degats) detail = item.degats.de + ' ' + item.degats.type;
+    if (item.type === 'armure' && item.classe_armure) detail = 'CA ' + item.classe_armure.base + (item.classe_armure.modificateur_dex ? '+DEX' : '');
+    return `<div class="boutique-row${tooExpensive && qte === 0 ? ' boutique-disabled' : ''}">
+      <div class="boutique-row-info">
+        <span class="boutique-nom">${esc(item.nom)}</span>
+        ${detail ? `<span class="boutique-detail">${esc(detail)}</span>` : ''}
+        <span class="boutique-type boutique-type-${item.type}">${item.type}</span>
+      </div>
+      <div class="boutique-row-actions">
+        <span class="boutique-prix">${prixStr}</span>
+        <div class="boutique-qty">
+          <button class="boutique-btn-qty" onclick="retirerPanier('${esc(item.nom)}')" ${qte === 0 ? 'disabled' : ''}>−</button>
+          <span class="boutique-qty-val">${qte}</span>
+          <button class="boutique-btn-qty" data-item-nom="${esc(item.nom)}" onclick="ajouterPanierParNom(this)" ${tooExpensive ? 'disabled' : ''}>+</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function _updatePanierStep() {
+  updateBudgetDisplay();
+  const budgetEl = document.getElementById('boutique-budget-restant');
+  if (budgetEl) budgetEl.textContent = Math.round(budgetRestant() * 100) / 100;
+  renderBoutiqueGenerale();
+  renderBoutiqueMagie();
+  renderPanierStep();
+}
+
+function renderPanierStep() {
+  const el = document.getElementById('boutique-panier');
+  if (!el) return;
+  if (!W.panier?.length) {
+    el.innerHTML = '<div style="color:#555;font-size:0.78rem;font-style:italic;">Aucun item acheté.</div>';
+    return;
+  }
+  el.innerHTML = W.panier.map(p => `
+    <div class="panier-row">
+      <span class="panier-nom">${esc(p.nom)}</span>
+      <span class="panier-qte">×${p.quantite}</span>
+      <span class="panier-prix">${Math.round(p.prix_po * p.quantite * 100) / 100} po</span>
+      <button class="panier-remove" onclick="retirerPanier('${esc(p.nom)}')" title="Retirer un">−</button>
+    </div>`).join('');
 }
 
 function selectEquipChoix(choix) {
@@ -1434,8 +1564,7 @@ function ajouterPanier(item) {
   else { W.panier.push({ ...item, quantite: 1 }); }
   // Sync W.equipement
   syncEquipementFromPanier();
-  updateBudgetDisplay();
-  renderBoutique();
+  _updatePanierStep();
 }
 
 function retirerPanier(nom) {
@@ -1445,8 +1574,7 @@ function retirerPanier(nom) {
   if (W.panier[idx].quantite > 1) { W.panier[idx].quantite--; }
   else { W.panier.splice(idx, 1); }
   syncEquipementFromPanier();
-  updateBudgetDisplay();
-  renderBoutique();
+  _updatePanierStep();
 }
 
 function syncEquipementFromPanier() {
@@ -1554,7 +1682,7 @@ async function loadSorts() {
   }
 
   _renderSortsStep8();
-  _updateBtnSuivant9();
+  _updateBtnSuivant10();
 }
 
 function _renderSortsStep8() {
@@ -1708,7 +1836,7 @@ function toggleSortNiveau(niveauSort, spellId) {
   // Re-rendre toutes les listes (mise à jour disabled)
   const tousNiveaux = [0, ...getNiveauxSortsDisponibles(getCasterKey(), W.niveau)];
   tousNiveaux.forEach(n => _renderListeNiveau(n));
-  _updateBtnSuivant9();
+  _updateBtnSuivant10();
 }
 
 function _refreshSortsCounters() {
@@ -1739,8 +1867,8 @@ function _refreshSortsCounters() {
   }
 }
 
-function _updateBtnSuivant9() {
-  if (W.step !== 9) return;
+function _updateBtnSuivant10() {
+  if (W.step !== 10) return;
   const btn = document.getElementById('btn-next');
   if (!btn) return;
   const ok = _validateSorts8Silent();
@@ -1795,7 +1923,7 @@ function copierSuggestion(champ, texte) {
 // ─── ÉTAPE 11 — Récapitulatif ─────────────────────────────────
 
 function buildRecap() {
-  collectStep(10);
+  collectStep(11);
   const niv = W.niveau;
   const stats = finalStats();
   const bm = BONUS_MAITRISE[Math.min(niv-1,19)];

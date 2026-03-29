@@ -233,65 +233,59 @@
   </div>
 
   <!-- ÉTAPE 8 — Équipement de départ -->
+  <!-- ÉTAPE 8 — Équipement (choix d'option) -->
   <div class="wizard-panel" data-step="8">
     <div class="step-title"><i class="fa-solid fa-backpack"></i> Équipement de départ</div>
+    <div class="step-subtitle">Choisissez votre option d'équipement. Si vous choisissez de l'or, vous pourrez acheter librement à l'étape suivante.</div>
+    <div id="equip-options-classe" style="margin-top:0.75rem;"></div>
+    <div class="equip-list" id="equip-list-bg" style="margin-top:0.75rem;"></div>
+  </div>
 
-    <!-- 1. Choix d'option de classe (toujours visible) -->
-    <div id="equip-options-classe"></div>
+  <!-- ÉTAPE 9 — Boutique -->
+  <div class="wizard-panel" data-step="9">
+    <div class="step-title"><i class="fa-solid fa-shop"></i> Boutique</div>
 
-    <!-- 2. Onglets Pack / Achat (après le choix) -->
-    <div class="equip-tabs" style="margin-top:1rem;">
-      <button id="equip-tab-pack" class="equip-tab active" onclick="switchEquipTab('pack')">
-        <i class="fa-solid fa-box-open"></i> Pack de départ
-      </button>
-      <button id="equip-tab-achat" class="equip-tab" onclick="switchEquipTab('achat')">
-        <i class="fa-solid fa-shop"></i> Achat libre
-      </button>
+    <!-- Budget -->
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;">
+      <div class="equip-budget" id="equip-budget-display">
+        <i class="fa-solid fa-coins"></i>
+        Or disponible : <span id="boutique-budget-restant" style="font-weight:700;color:#c9a84c;">0</span> / <span id="boutique-budget-total" style="color:#888;">0</span> po
+      </div>
     </div>
 
-    <!-- MODE PACK -->
-    <div id="equip-panel-pack">
-      <div class="equip-list" id="equip-list-bg"></div>
+    <!-- Section 1 : Équipement général -->
+    <div style="font-size:0.8rem;color:#c9a84c;font-weight:600;margin-bottom:0.5rem;letter-spacing:0.04em;">
+      <i class="fa-solid fa-shield-halved"></i> Équipement général
     </div>
+    <div class="equip-boutique-filtres">
+      <input type="text" id="boutique-search" placeholder="Rechercher…" oninput="renderBoutiqueGenerale()" />
+      <select id="boutique-filtre-type" onchange="renderBoutiqueGenerale()">
+        <option value="">Tous les types</option>
+        <option value="arme">Armes</option>
+        <option value="armure">Armures</option>
+        <option value="equipement">Équipements</option>
+        <option value="outil">Outils</option>
+      </select>
+    </div>
+    <div id="boutique-generale-list" class="equip-boutique-list" style="margin-bottom:1.25rem;"></div>
 
-    <!-- MODE ACHAT LIBRE -->
-    <div id="equip-panel-achat" style="display:none;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin:0.5rem 0 0.8rem;">
-        <div class="step-subtitle" style="margin:0;">Dépensez votre or de départ dans la boutique.</div>
-        <div id="equip-budget-display" class="equip-budget">
-          <i class="fa-solid fa-coins"></i> <span id="equip-budget-restant">0</span> / <span id="equip-budget-total">0</span> po
-        </div>
-      </div>
+    <!-- Section 2 : Équipement de magie -->
+    <div style="font-size:0.8rem;color:#b090ff;font-weight:600;margin-bottom:0.5rem;letter-spacing:0.04em;">
+      <i class="fa-solid fa-wand-sparkles"></i> Équipement de magie
+    </div>
+    <div id="boutique-magie-list" class="equip-boutique-list" style="margin-bottom:1.25rem;"></div>
 
-      <!-- Filtres boutique -->
-      <div class="equip-boutique-filtres">
-        <input type="text" id="equip-search" placeholder="Rechercher…" oninput="filtrerBoutique()" />
-        <select id="equip-filtre-type" onchange="filtrerBoutique()">
-          <option value="">Tous les types</option>
-          <option value="arme">Armes</option>
-          <option value="armure">Armures</option>
-          <option value="equipement">Équipements</option>
-          <option value="outil">Outils</option>
-        </select>
-      </div>
-
-      <!-- Liste boutique -->
-      <div id="equip-boutique-list" class="equip-boutique-list">
-        <div style="color:#555;text-align:center;padding:2rem;"><i class="fa-solid fa-spinner fa-spin"></i></div>
-      </div>
-
-      <!-- Panier -->
-      <div style="margin-top:1rem;">
-        <div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.4rem;"><i class="fa-solid fa-cart-shopping"></i> Panier</div>
-        <div id="equip-panier" class="equip-panier">
-          <div style="color:#555;font-size:0.78rem;font-style:italic;">Aucun item acheté.</div>
-        </div>
-      </div>
+    <!-- Panier -->
+    <div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.4rem;">
+      <i class="fa-solid fa-cart-shopping"></i> Panier
+    </div>
+    <div id="boutique-panier" class="equip-panier">
+      <div style="color:#555;font-size:0.78rem;font-style:italic;">Aucun item acheté.</div>
     </div>
   </div>
 
-  <!-- ÉTAPE 9 — Sorts -->
-  <div class="wizard-panel" data-step="9">
+  <!-- ÉTAPE 10 — Sorts -->
+  <div class="wizard-panel" data-step="10">
     <div class="step-title"><i class="fa-solid fa-hat-wizard"></i> Sorts</div>
     <div class="step-subtitle" id="sorts-subtitle">Choisissez vos sorts.</div>
     <div id="sorts-section">
@@ -303,8 +297,8 @@
     </div>
   </div>
 
-  <!-- ÉTAPE 10 — Traits & Personnalité -->
-  <div class="wizard-panel" data-step="10">
+  <!-- ÉTAPE 11 — Traits & Personnalité -->
+  <div class="wizard-panel" data-step="11">
     <div class="step-title"><i class="fa-solid fa-heart"></i> Traits &amp; Personnalité</div>
     <div class="step-subtitle">Définissez la personnalité de votre personnage. Des suggestions issues de votre historique sont disponibles.</div>
 
@@ -347,8 +341,8 @@
     </div>
   </div>
 
-  <!-- ÉTAPE 11 — Récapitulatif -->
-  <div class="wizard-panel" data-step="11">
+  <!-- ÉTAPE 12 — Récapitulatif -->
+  <div class="wizard-panel" data-step="12">
     <div class="step-title"><i class="fa-solid fa-check-circle"></i> Récapitulatif</div>
     <div class="step-subtitle">Vérifiez votre personnage avant de le créer.</div>
     <div id="recap-content"></div>
