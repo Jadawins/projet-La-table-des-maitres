@@ -24,15 +24,21 @@ async function withDb(fn) {
 // ─── GET / — liste avec filtres + pagination ─────────────────
 router.get('/', async (req, res) => {
   try {
-    const { categorie, rarete, harmonisation, recherche, page = 1 } = req.query;
+    const { categorie, rarete, harmonisation, recherche, page = 1, homebrew_only } = req.query;
     const userId = getUserId(req);
 
     const filter = {};
 
-    // Filtres sur les objets SRD + homebrew visibles
-    const orClauses = [{ source: 'SRD' }];
-    if (userId) orClauses.push({ mj_id: userId });
-    filter.$or = orClauses;
+    // Filtres visibilité
+    if (homebrew_only === 'true') {
+      if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+      filter.source = 'homebrew';
+      filter.mj_id = userId;
+    } else {
+      const orClauses = [{ source: 'SRD' }];
+      if (userId) orClauses.push({ mj_id: userId });
+      filter.$or = orClauses;
+    }
 
     if (categorie) filter.categorie = categorie;
     if (rarete)    filter.rarete = rarete;
@@ -129,6 +135,23 @@ router.post('/custom/:id/partager', async (req, res) => {
         { $set: { partage_session: true } }
       )
     );
+    res.json({ ok: true });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ─── DELETE /custom/:id — supprimer un homebrew ──────────────
+router.delete('/custom/:id', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  try {
+    const result = await withDb(db =>
+      db.collection('objets_magiques').deleteOne(
+        { _id: new ObjectId(req.params.id), mj_id: userId, source: 'homebrew' }
+      )
+    );
+    if (result.deletedCount === 0) return res.status(404).json({ error: 'Introuvable ou accès refusé' });
     res.json({ ok: true });
   } catch (e) {
     res.status(500).json({ error: e.message });

@@ -65,6 +65,7 @@
           <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
             <li><a href="sessions.html?role=mj"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
             <li><a href="campagne.html"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
+            <li><a href="creer-objet-magique.html"><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</a></li>
           </ul>
           <h2>Menu Joueurs</h2>
           <ul class="sidebar-menu">
@@ -118,6 +119,8 @@
       <li>📚 <strong>Page Classes bibliothèque</strong> — cartes corrigées (dé de vie, carac. principale, jets de sauvegarde), modal avec aptitudes listées par niveau</li>
       <li>📱 <strong>Sidebar overlay mobile</strong> — clic en dehors de la sidebar la ferme automatiquement</li>
       <li>🔮 <strong>Emplacements vides</strong> — texte "Aucun emplacement (sorts mineurs uniquement)" avec style lisible en violet</li>
+      <li>🪄 <strong>Section "Mes Homebrew" dans la bibliothèque</strong> — nouvel onglet dédié : liste les objets homebrew créés par le MJ (appel API avec token, filtre <code>homebrew_only=true</code>), cartes avec boutons Modifier (lien vers le formulaire) et Supprimer (DELETE API avec confirmation), modal détail complet</li>
+      <li>🔗 <strong>Lien "Créer un objet magique" dans le menu MJ</strong> — ajouté dans la sidebar de toutes les pages (sous "Mes Campagnes") pour un accès direct au formulaire homebrew</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">
@@ -268,9 +271,9 @@
   </details>
 
   <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#a855f7;cursor:pointer;list-style:none;">⚫ Priorité 6 — Features futures</summary>
+    <summary style="font-size:0.82rem;color:#a855f7;cursor:pointer;list-style:none;">🔄 Priorité 6 — Features futures — <em>en cours</em></summary>
     <ul style="margin-top:0.4rem;">
-      <li>⬜ <strong>Création objets magiques homebrew</strong> — formulaire complet, sauvegarde MongoDB, partage joueurs</li>
+      <li>✅ <strong>Objets magiques homebrew</strong> — formulaire de création, sauvegarde MongoDB, partage joueurs, onglet "Mes Homebrew" dans la bibliothèque (voir / modifier / supprimer), lien accès rapide dans le menu MJ</li>
       <li>⬜ <strong>Partage MJ</strong> — notes de campagne publiques/privées, handouts</li>
       <li>⬜ <strong>Séparation MJ / Joueurs</strong> — vue MJ masquée pour les joueurs</li>
       <li>⬜ <strong>Interface joueur simplifiée</strong> — mode "joueur only" sans les outils MJ</li>

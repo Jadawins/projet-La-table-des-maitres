@@ -42,7 +42,7 @@ function appliquerTooltips(texte) {
 }
 
 // ─── ONGLETS ─────────────────────────────────────────────────
-const ONGLETS = ['sorts', 'classes', 'especes', 'backgrounds', 'dons', 'equipement', 'glossaire', 'monstres', 'objets-magiques'];
+const ONGLETS = ['sorts', 'classes', 'especes', 'backgrounds', 'dons', 'equipement', 'glossaire', 'monstres', 'objets-magiques', 'mes-homebrew'];
 
 function changerOnglet(onglet) {
   state.onglet = onglet;
@@ -182,6 +182,25 @@ function renderFiltres() {
     document.getElementById('f-rarete-om').addEventListener('change', e => { state.filtres.rarete = e.target.value; state.page = 1; chargerDonnees(); });
     document.getElementById('f-harmo-om').addEventListener('change', e => { state.filtres.harmonisation = e.target.value; state.page = 1; chargerDonnees(); });
   }
+
+  if (state.onglet === 'mes-homebrew') {
+    const RARETES_HB = [
+      { v: '', l: 'Rareté : toutes' },
+      { v: 'commun', l: 'Commun' },
+      { v: 'peu_commun', l: 'Peu commun' },
+      { v: 'rare', l: 'Rare' },
+      { v: 'tres_rare', l: 'Très rare' },
+      { v: 'legendaire', l: 'Légendaire' },
+      { v: 'artefact', l: 'Artefact' }
+    ];
+    zone.innerHTML = `
+      <a href="creer-objet-magique.html" class="btn-homebrew-creer"><i class="fa-solid fa-plus"></i> Créer un objet</a>
+      <select id="f-rarete-hb">
+        ${RARETES_HB.map(r => `<option value="${r.v}">${r.l}</option>`).join('')}
+      </select>
+    `;
+    document.getElementById('f-rarete-hb').addEventListener('change', e => { state.filtres.rarete = e.target.value; state.page = 1; chargerDonnees(); });
+  }
 }
 
 // ─── CHARGEMENT DES DONNÉES ───────────────────────────────────
@@ -238,9 +257,18 @@ async function chargerDonnees() {
           params.set('harmonisation', state.filtres.harmonisation);
         url = `${API}/objets-magiques?${params}`;
         break;
+      case 'mes-homebrew':
+        if (state.filtres.rarete) params.set('rarete', state.filtres.rarete);
+        params.set('homebrew_only', 'true');
+        params.set('page', 'all');
+        url = `${API}/objets-magiques?${params}`;
+        break;
     }
 
-    const res = await fetch(url);
+    const fetchOpts = (state.onglet === 'mes-homebrew' && window.SUPABASE_TOKEN)
+      ? { headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}` } }
+      : {};
+    const res = await fetch(url, fetchOpts);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
     // Objets magiques → réponse enveloppée {items, total}
@@ -305,6 +333,7 @@ function renderCarte(item, idx) {
     case 'glossaire': return carteGlossaire(item, idx);
     case 'monstres':        return carteMonster(item, idx);
     case 'objets-magiques': return carteObjetMagique(item, idx);
+    case 'mes-homebrew':    return carteHomebrew(item, idx);
     default: return '';
   }
 }
@@ -495,6 +524,72 @@ function modalObjetMagique(o) {
   `;
 }
 
+// ─── MES HOMEBREW ─────────────────────────────────────────────
+function carteHomebrew(o, idx) {
+  const icon = CAT_ICONS[o.categorie] || 'fa-box-open';
+  return `<div class="biblio-card om-card hb-card" data-idx="${idx}">
+    <div class="om-card-header">
+      <div>
+        <p class="card-title">${o.nom || '—'}</p>
+      </div>
+      ${raretyBadge(o.rarete)}
+    </div>
+    <p class="card-subtitle"><i class="fa-solid ${icon}"></i> ${catLabel(o.categorie)}</p>
+    <div class="card-tags">
+      ${o.harmonisation ? '<span class="card-tag om-harmo">✦ Harmonisation</span>' : ''}
+    </div>
+    <div class="hb-card-actions">
+      <a href="creer-objet-magique.html?slug=${encodeURIComponent(o.slug)}" class="btn-hb-edit" onclick="event.stopPropagation()">
+        <i class="fa-solid fa-pen"></i> Modifier
+      </a>
+      <button class="btn-hb-delete" onclick="supprimerHomebrew('${o._id}', event)">
+        <i class="fa-solid fa-trash"></i> Supprimer
+      </button>
+    </div>
+  </div>`;
+}
+
+function modalHomebrew(o) {
+  return `
+    <p class="modal-title">${o.nom || '—'}</p>
+    <div class="modal-tags">
+      ${raretyBadge(o.rarete)}
+      <span class="card-tag"><i class="fa-solid ${CAT_ICONS[o.categorie]||'fa-box-open'}"></i> ${catLabel(o.categorie)}</span>
+      ${o.harmonisation ? '<span class="card-tag om-harmo">✦ Harmonisation requise' + (o.harmonisation_detail ? ' — ' + o.harmonisation_detail : '') + '</span>' : ''}
+    </div>
+    <div class="modal-section">
+      <h3>Description</h3>
+      <p>${o.description || '—'}</p>
+    </div>
+    ${o.effets?.length ? `<div class="modal-section"><h3>Effets</h3><ul>${o.effets.map(ef => `<li>${typeof ef === 'string' ? ef : JSON.stringify(ef)}</li>`).join('')}</ul></div>` : ''}
+    ${o.poids != null ? `<div class="modal-section"><p>Poids : ${o.poids} kg${o.prix_estime ? ' &nbsp;|&nbsp; Prix estimé : ' + o.prix_estime + ' po' : ''}</p></div>` : ''}
+    <div class="modal-section hb-modal-actions">
+      <a href="creer-objet-magique.html?slug=${encodeURIComponent(o.slug)}" class="btn-hb-edit">
+        <i class="fa-solid fa-pen"></i> Modifier
+      </a>
+      <button class="btn-hb-delete" onclick="supprimerHomebrew('${o._id}', event)">
+        <i class="fa-solid fa-trash"></i> Supprimer
+      </button>
+    </div>
+  `;
+}
+
+window.supprimerHomebrew = async function(id, event) {
+  event.stopPropagation();
+  if (!confirm('Supprimer définitivement cet objet homebrew ?')) return;
+  try {
+    const res = await fetch(`${API}/objets-magiques/custom/${id}`, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}` }
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    fermerModal();
+    chargerDonnees();
+  } catch (e) {
+    alert('Erreur lors de la suppression : ' + e.message);
+  }
+};
+
 // ─── PAGINATION ───────────────────────────────────────────────
 function renderPagination() {
   const total = Math.ceil(state.data.length / PER_PAGE);
@@ -546,6 +641,18 @@ async function ouvrirModal(item) {
     return;
   }
 
+  if (state.onglet === 'mes-homebrew') {
+    body.innerHTML = '<div style="text-align:center;padding:3rem;color:#888;"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>';
+    try {
+      const res = await fetch(`${API}/objets-magiques/${item.slug}`, {
+        headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}` }
+      });
+      const full = await res.json();
+      body.innerHTML = modalHomebrew(full);
+    } catch { body.innerHTML = '<p style="color:#f44">Erreur de chargement.</p>'; }
+    return;
+  }
+
   body.innerHTML = renderModalContent(item);
 }
 
@@ -564,6 +671,7 @@ function renderModalContent(item) {
     case 'glossaire': return modalGlossaire(item);
     case 'monstres':        return modalMonstre(item);
     case 'objets-magiques': return modalObjetMagique(item);
+    case 'mes-homebrew':    return modalHomebrew(item);
     default: return `<pre>${JSON.stringify(item, null, 2)}</pre>`;
   }
 }
