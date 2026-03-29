@@ -1232,21 +1232,30 @@ function renderEquipement() {
 
 function renderBoutiqueStep() {
   const budget = getBudgetAchat();
-  const budgetEl = document.getElementById('boutique-budget-restant');
-  const budgetTotalEl = document.getElementById('boutique-budget-total');
-  if (budgetEl) budgetEl.textContent = Math.round(budget * 100) / 100;
-  if (budgetTotalEl) budgetTotalEl.textContent = Math.round(budget * 100) / 100;
+  _refreshBudgetDisplay();
 
   if (!budget) {
+    const msg = '<div style="color:#888;font-size:0.85rem;text-align:center;padding:2rem;">Vous avez choisi un pack d\'équipement — pas d\'or disponible pour la boutique.</div>';
     const listEl = document.getElementById('boutique-generale-list');
     const magieEl = document.getElementById('boutique-magie-list');
-    const msg = '<div style="color:#888;font-size:0.85rem;text-align:center;padding:2rem;">Vous avez choisi un pack d\'équipement — pas d\'or disponible pour la boutique.</div>';
     if (listEl) listEl.innerHTML = msg;
     if (magieEl) magieEl.innerHTML = '';
     return;
   }
 
   loadCatalogueStep();
+}
+
+function _refreshBudgetDisplay() {
+  const budget = getBudgetAchat();
+  const restant = budgetRestant();
+  const totalEl = document.getElementById('boutique-budget-total');
+  const restantEl = document.getElementById('boutique-budget-restant');
+  if (totalEl) totalEl.textContent = Math.round(budget * 100) / 100;
+  if (restantEl) {
+    restantEl.textContent = Math.round(restant * 100) / 100;
+    restantEl.style.color = restant < 0 ? '#f87171' : restant === 0 ? '#4ade80' : '#c9a84c';
+  }
 }
 
 async function loadCatalogueStep() {
@@ -1336,9 +1345,7 @@ function _renderBoutiqueList(containerId, pool, budget) {
 }
 
 function _updatePanierStep() {
-  updateBudgetDisplay();
-  const budgetEl = document.getElementById('boutique-budget-restant');
-  if (budgetEl) budgetEl.textContent = Math.round(budgetRestant() * 100) / 100;
+  _refreshBudgetDisplay();
   renderBoutiqueGenerale();
   renderBoutiqueMagie();
   renderPanierStep();
