@@ -195,18 +195,18 @@
   <hr style="border-color:rgba(255,255,255,0.08);margin:0.75rem 0;" />
   <p><strong>🗺️ Roadmap corrections :</strong></p>
 
-  <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#f97316;cursor:pointer;list-style:none;">🔴 Priorité 1 — Moteur de règles (critique)</summary>
-    <ul style="margin-top:0.4rem;">
-      <li>🔮 <strong>Système de magie</strong> — emplacements corrects toutes classes/niveaux, pact magic occultiste, sorts connus vs préparés, cas "aucun emplacement" faux, niveaux &gt;1 affichent tous les niveaux disponibles</li>
-      <li>🎲 <strong>Points de vie</strong> — recalcul cascadé depuis les stats finales (bonus background inclus), stockage propre des gains par niveau ✅ <em>partiellement fait</em></li>
-      <li>✅ <strong>Compétences</strong> — pas de doublon classe/background/espèce, remplacement automatique si doublon</li>
-      <li>⚔️ <strong>Sous-classe</strong> — débloquée au bon niveau uniquement, capacités bien appliquées</li>
-      <li>🧬 <strong>Espèces avec variantes</strong> — application correcte des effets (Elfe, Tieffelin, Drakéide) ✅ <em>partiellement fait</em></li>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#4ade80;cursor:pointer;list-style:none;">✅ Priorité 1 — Moteur de règles (critique) — <em>terminé</em></summary>
+    <ul style="margin-top:0.4rem;color:#aaa;">
+      <li>✅ <strong>Système de magie</strong> — emplacements corrects toutes classes/niveaux, pact magic occultiste, sorts connus vs préparés, lanceurs tiers (Chevalier occulte, Arnaqueur arcanique)</li>
+      <li>✅ <strong>Points de vie</strong> — niveau 1 automatique (DV max + CON), niveaux 2+ au choix fixe ou jet, stockage par niveau</li>
+      <li>✅ <strong>Compétences</strong> — pas de doublon classe/background/espèce, badges visuels, remplacement automatique</li>
+      <li>✅ <strong>Sous-classe</strong> — débloquée au bon niveau (lu depuis le JSON), obligatoire dès le niveau requis</li>
+      <li>✅ <strong>Bonus caractéristiques background</strong> — mode +2/+1 PHB 2024 fixé aux stats du background, ou +1/+1/+1 libre</li>
     </ul>
   </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#fb923c;cursor:pointer;list-style:none;">🟠 Priorité 2 — Validation &amp; sécurité</summary>
+  <details open style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#fb923c;cursor:pointer;list-style:none;">🟠 Priorité 2 — Validation &amp; sécurité — <em>en cours</em></summary>
     <ul style="margin-top:0.4rem;">
       <li>🛡️ <strong>validateCharacter()</strong> — vérification globale : caracs valides, compétences OK, sorts valides, niveau cohérent, sous-classe valide, or dépensé correctement</li>
       <li>🔒 <strong>Verrouillage</strong> — stats non modifiables après création, choix invalides bloqués</li>
