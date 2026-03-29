@@ -138,6 +138,7 @@ function renderAll() {
     inspDiamond.classList.toggle('active', !!perso.inspiration);
   }
   document.getElementById('bonus-maitrise-display').textContent = '+' + getBM();
+  initSectionsCollapsibles();
 }
 
 // ─── HEADER : TAGS ────────────────────────────────────────────
@@ -948,7 +949,17 @@ function renderSorts() {
     <div class="sorts-niveau-group">
       <div class="sorts-niveau-header">${niv == 0 ? 'Sorts mineurs' : `Niveau ${niv}`}</div>
       ${parNiveau[niv].map(s => `
-        <div class="sort-row-item">
+        <div class="sort-row-item"
+             data-sort-nom="${esc(s.nom)}"
+             data-sort-ecole="${esc(s.ecole||'')}"
+             data-sort-portee="${esc(s.portee||'')}"
+             data-sort-duree="${esc(s.duree||'')}"
+             data-sort-temps="${esc(s.temps_incantation||'')}"
+             data-sort-desc="${esc((s.description||'').slice(0,300))}"
+             data-sort-id="${esc(s.id||'')}"
+             data-sort-niveau="${niv}"
+             onmouseenter="showSortTooltip(event,this)"
+             onmouseleave="hideSortTooltip()">
           <span class="sort-nom-label">${esc(s.nom)}</span>
           ${s.concentration ? '<span class="sort-badge-c">C</span>' : ''}
           ${s.rituel ? '<span class="sort-badge-r">R</span>' : ''}
@@ -1473,6 +1484,113 @@ window.confirmerSortCombat  = confirmerSortCombat;
 window.ouvrirModalSauvegarde = ouvrirModalSauvegarde;
 window.calculerJS           = calculerJS;
 window.confirmerSauvegarde  = confirmerSauvegarde;
+
+// ─── TOOLTIP SORTS ────────────────────────────────────────────
+
+const _sortCache = {};
+
+function _getSortTooltipEl() {
+  let el = document.getElementById('sort-tooltip');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'sort-tooltip';
+    el.className = 'sort-tooltip';
+    document.body.appendChild(el);
+  }
+  return el;
+}
+
+function showSortTooltip(event, row) {
+  const d = row.dataset;
+  const nom    = d.sortNom   || '';
+  const ecole  = d.sortEcole || '';
+  const portee = d.sortPortee|| '';
+  const duree  = d.sortDuree || '';
+  const temps  = d.sortTemps || '';
+  const desc   = d.sortDesc  || '';
+  const niv    = d.sortNiveau;
+  const id     = d.sortId    || '';
+
+  const el = _getSortTooltipEl();
+
+  const nivLabel = niv == 0 ? 'Sort mineur' : `Niveau ${niv}`;
+  const infos = [ecole, portee, duree, temps].filter(Boolean).join(' · ');
+
+  const renderTooltip = (description) => {
+    el.innerHTML = `
+      <div class="st-header">
+        <span class="st-nom">${esc(nom)}</span>
+        <span class="st-niv">${esc(nivLabel)}</span>
+      </div>
+      ${infos ? `<div class="st-infos">${esc(infos)}</div>` : ''}
+      ${description ? `<div class="st-desc">${esc(description)}</div>` : '<div class="st-desc st-no-data">Description non disponible</div>'}`;
+    el.classList.add('visible');
+    _positionTooltip(event, el);
+  };
+
+  if (desc) {
+    renderTooltip(desc);
+  } else if (id && _sortCache[id]) {
+    const s = _sortCache[id];
+    row.dataset.sortDesc  = (s.description || '').slice(0, 300);
+    row.dataset.sortEcole = s.ecole || '';
+    row.dataset.sortPortee= s.portee || '';
+    row.dataset.sortDuree = s.duree || '';
+    row.dataset.sortTemps = s.temps_incantation || '';
+    renderTooltip(s.description || '');
+  } else if (id) {
+    renderTooltip('');
+    const niveau = parseInt(niv) || 0;
+    fetch(`${API}/GetSorts2024?niveau=${niveau}`)
+      .then(r => r.json())
+      .then(list => {
+        (list || []).forEach(s => { if (s.id) _sortCache[s.id] = s; });
+        const found = _sortCache[id];
+        if (found) {
+          row.dataset.sortDesc  = (found.description || '').slice(0, 300);
+          row.dataset.sortEcole = found.ecole || '';
+          row.dataset.sortPortee= found.portee || '';
+          row.dataset.sortDuree = found.duree || '';
+          row.dataset.sortTemps = found.temps_incantation || '';
+          if (el.classList.contains('visible')) renderTooltip(found.description || '');
+        }
+      }).catch(() => {});
+  } else {
+    renderTooltip('');
+  }
+}
+
+function _positionTooltip(event, el) {
+  const vw = window.innerWidth;
+  const x = event.clientX + window.scrollX;
+  const y = event.clientY + window.scrollY;
+  el.style.top  = (y + 16) + 'px';
+  el.style.left = Math.min(x + 12, vw + window.scrollX - 260) + 'px';
+}
+
+function hideSortTooltip() {
+  const el = document.getElementById('sort-tooltip');
+  if (el) el.classList.remove('visible');
+}
+
+// ─── SECTIONS RÉTRACTABLES ────────────────────────────────────
+
+function initSectionsCollapsibles() {
+  document.querySelectorAll('.fiche-section-title').forEach(title => {
+    const section = title.closest('.fiche-section');
+    if (!section) return;
+    title.style.cursor = 'pointer';
+    title.setAttribute('title', 'Cliquer pour réduire/agrandir');
+
+    const key = 'section_collapsed_' + (title.textContent || '').trim().slice(0, 40);
+    if (localStorage.getItem(key) === '1') section.classList.add('collapsed');
+
+    title.addEventListener('click', () => {
+      section.classList.toggle('collapsed');
+      localStorage.setItem(key, section.classList.contains('collapsed') ? '1' : '0');
+    });
+  });
+}
 
 waitForAuth(async () => {
   await init();

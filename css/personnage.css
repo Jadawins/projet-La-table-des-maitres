@@ -2225,3 +2225,66 @@
 }
 .comp-badge-bg     { background: rgba(134,93,255,0.2); color: #c8b8ff; border: 1px solid rgba(134,93,255,0.3); }
 .comp-badge-espece { background: rgba(96,165,250,0.2); color: #60a5fa; border: 1px solid rgba(96,165,250,0.3); }
+
+/* ─── Tooltip sorts ─────────────────────────────────────────── */
+.sort-tooltip {
+  position: absolute;
+  z-index: 9000;
+  width: 240px;
+  background: #12102a;
+  border: 1px solid rgba(134,93,255,0.4);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.55);
+}
+.sort-tooltip.visible { opacity: 1; }
+.st-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.st-nom {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #e0d0ff;
+}
+.st-niv {
+  font-size: 0.67rem;
+  color: #865dff;
+  white-space: nowrap;
+}
+.st-infos {
+  font-size: 0.7rem;
+  color: #c9a84c;
+  margin-bottom: 0.35rem;
+}
+.st-desc {
+  font-size: 0.73rem;
+  color: #b0b0c8;
+  line-height: 1.45;
+}
+.st-no-data { color: #555; font-style: italic; }
+
+/* ─── Sections rétractables ─────────────────────────────────── */
+.fiche-section-title {
+  user-select: none;
+}
+.fiche-section-title::after {
+  content: ' ▾';
+  font-size: 0.65rem;
+  opacity: 0.5;
+  margin-left: 0.3rem;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.fiche-section.collapsed .fiche-section-title::after {
+  transform: rotate(-90deg);
+}
+.fiche-section.collapsed > *:not(.fiche-section-title) {
+  display: none !important;
+}

@@ -2179,7 +2179,7 @@ async function creerPersonnage() {
     const pool   = W._sortsParNiveau?.[nv] || [];
     ids.forEach(id => {
       const s = pool.find(x => x.id === id);
-      if (s) sortsConnus.push({ id: s.id, nom: s.nom, niveau: nv });
+      if (s) sortsConnus.push({ id: s.id, nom: s.nom, niveau: nv, ecole: s.ecole||'', portee: s.portee||'', duree: s.duree||'', temps_incantation: s.temps_incantation||'', concentration: !!s.concentration, rituel: !!s.rituel, description: (s.description||'').slice(0,300) });
     });
   }
   const carIncant = getCaracIncantation(W.classe_data, W.sc_data);
