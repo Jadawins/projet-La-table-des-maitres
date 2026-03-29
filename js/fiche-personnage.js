@@ -1009,7 +1009,7 @@ function renderSorts() {
 
   const slots = document.getElementById('spell-slots');
   if (!empl.length) {
-    slots.innerHTML = '<span style="color:#555;font-size:0.75rem;">Aucun emplacement défini</span>';
+    slots.innerHTML = '<span class="empl-vide">Aucun emplacement (sorts mineurs uniquement)</span>';
   } else {
     slots.innerHTML = empl.map((e, i) => {
       const isPacte = e.type === 'pacte';

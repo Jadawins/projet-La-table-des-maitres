@@ -668,3 +668,45 @@
   .om-card-header { flex-direction: column; }
   .om-rarete-badge { align-self: flex-start; }
 }
+
+/* ─── Modal Classe — aptitudes par niveau ─────────────────── */
+.classe-niveaux-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.classe-niveau-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+.classe-niv-badge {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: rgba(134,93,255,0.15);
+  border: 1px solid rgba(134,93,255,0.3);
+  border-radius: 5px;
+  color: #c4b5fd;
+  padding: 0.15rem 0.4rem;
+  min-width: 40px;
+  text-align: center;
+  margin-top: 0.15rem;
+}
+.classe-caps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.classe-cap {
+  font-size: 0.78rem;
+  color: #c8c8d8;
+}
+.classe-cap strong {
+  color: #e0d0ff;
+  margin-right: 0.35rem;
+}
+.classe-cap-desc {
+  color: #888;
+  font-size: 0.73rem;
+}

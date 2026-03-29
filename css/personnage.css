@@ -2188,6 +2188,18 @@
   border: 1px solid rgba(201,168,76,0.35);
 }
 
+/* ─── Emplacements vides ──────────────────────────────────── */
+.empl-vide {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #7060a0;
+  font-style: italic;
+  padding: 0.2rem 0.5rem;
+  background: rgba(134,93,255,0.06);
+  border: 1px solid rgba(134,93,255,0.15);
+  border-radius: 5px;
+}
+
 /* ─── Fiche onglets ─────────────────────────────────────── */
 .fiche-tabs {
   display: flex;

@@ -324,12 +324,15 @@ function carteSort(s, idx) {
 }
 
 function carteClasse(c, idx) {
-  const de = c.de_vie ? `${c.de_vie.type}` : '';
+  const n0 = c.niveaux?.['0'] || {};
+  const de = n0.de_vie?.type || '';
+  const saves = n0.sauvegardes_maitrise || [];
+  const car = n0.caracteristique_principale || '';
   return `<div class="biblio-card" data-idx="${idx}">
     <p class="card-title">${c.nom || '—'}</p>
-    <p class="card-subtitle">${de ? 'Dé de vie : ' + de : ''}</p>
+    <p class="card-subtitle">${de ? 'Dé de vie : ' + de : ''}${de && car ? ' · ' : ''}${car ? 'Carac. : ' + car : ''}</p>
     <div class="card-tags">
-      ${(c.sauvegardes_maitrise || []).map(s => `<span class="card-tag gold">${s}</span>`).join('')}
+      ${saves.map(s => `<span class="card-tag gold">${s}</span>`).join('')}
     </div>
   </div>`;
 }
@@ -594,24 +597,43 @@ function modalClasse(c) {
   const data = c._full || c;
   const n0 = data.niveaux?.['0'] || {};
   const competences = n0.competences_choisies;
+
+  // Aptitudes par niveau (niveaux 1 à 20)
+  const niveaux = data.niveaux || {};
+  const aptitudesHtml = Object.entries(niveaux)
+    .filter(([niv]) => niv !== '0' && parseInt(niv) > 0)
+    .sort(([a],[b]) => parseInt(a)-parseInt(b))
+    .map(([niv, nd]) => {
+      const caps = nd.capacites || [];
+      if (!caps.length) return '';
+      return `<div class="classe-niveau-row">
+        <span class="classe-niv-badge">Niv.${niv}</span>
+        <div class="classe-caps">${caps.map(cap => `
+          <div class="classe-cap">
+            <strong>${cap.nom || ''}</strong>
+            ${cap.description ? `<span class="classe-cap-desc">${cap.description.slice(0,120)}${cap.description.length>120?'…':''}</span>` : ''}
+          </div>`).join('')}
+        </div>
+      </div>`;
+    }).filter(Boolean).join('');
+
   return `
     <p class="modal-title">${data.nom}</p>
     <p class="modal-subtitle">Source : ${data.source || 'PHB 2024'}</p>
     <div class="modal-section">
       <h3>Informations de base</h3>
-      <p>Dé de vie : ${n0.de_vie?.type || '—'}</p>
-      <p>Caractéristique principale : ${n0.caracteristique_principale || '—'}</p>
-      <p>Jets de sauvegarde : ${(n0.sauvegardes_maitrise || []).join(', ')}</p>
+      <p>Dé de vie : <strong>${n0.de_vie?.type || '—'}</strong></p>
+      <p>Caractéristique principale : <strong>${n0.caracteristique_principale || '—'}</strong></p>
+      <p>Jets de sauvegarde : <strong>${(n0.sauvegardes_maitrise || []).join(', ') || '—'}</strong></p>
     </div>
     ${competences ? `<div class="modal-section"><h3>Compétences (${competences.nombre} au choix)</h3><p>${competences.options?.join(', ') || ''}</p></div>` : ''}
     <div class="modal-section">
-      <h3>Maîtrises d'armures</h3>
-      <p>${(n0.maitrises_armures || []).join(', ') || '—'}</p>
+      <h3>Maîtrises</h3>
+      <p>Armures : ${(n0.maitrises_armures || []).join(', ') || '—'}</p>
+      <p>Armes : ${(n0.maitrises_armes || []).join(', ') || '—'}</p>
+      ${n0.maitrises_outils?.length ? `<p>Outils : ${n0.maitrises_outils.join(', ')}</p>` : ''}
     </div>
-    <div class="modal-section">
-      <h3>Maîtrises d'armes</h3>
-      <p>${(n0.maitrises_armes || []).join(', ') || '—'}</p>
-    </div>
+    ${aptitudesHtml ? `<div class="modal-section"><h3>Aptitudes par niveau</h3><div class="classe-niveaux-list">${aptitudesHtml}</div></div>` : ''}
   `;
 }
 
