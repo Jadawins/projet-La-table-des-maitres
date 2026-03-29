@@ -1207,8 +1207,10 @@ function renderEquipement() {
     selectEquipChoix(classeEquip[0].choix);
   }
 
-  // Afficher le bon panel selon le mode
-  switchEquipTab(W.equipement_mode || 'pack', false);
+  // Afficher le bon panel selon le mode (seulement si les éléments existent)
+  if (document.getElementById('equip-panel-pack')) {
+    switchEquipTab(W.equipement_mode || 'pack', false);
+  }
 }
 
 function selectEquipChoix(choix) {
@@ -1338,7 +1340,7 @@ function renderBoutique() {
   if (!list) return;
 
   if (!budget) {
-    list.innerHTML = '<div style="color:#888;font-size:0.8rem;text-align:center;padding:1.5rem;">Aucun budget disponible.<br>Choisissez une option de classe avec de l'or (ex : "90 po").</div>';
+    list.innerHTML = '<div style="color:#888;font-size:0.8rem;text-align:center;padding:1.5rem;">Aucun budget disponible.<br>Choisissez une option de classe avec de l\'or (ex : "90 po").</div>';
     return;
   }
 
