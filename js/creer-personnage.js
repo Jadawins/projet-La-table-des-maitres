@@ -149,16 +149,40 @@ function updateNav() {
   info.textContent = `Étape ${W.step} sur ${W.totalSteps}`;
 }
 
+const _W_SAVE_KEY = 'wizard_draft';
+
+function saveWizardDraft() {
+  // Ne pas sauvegarder les caches volumineux
+  const { _especes, _classes, _sousclasses, _backgrounds, _sortsParNiveau, _competences, _catalogue, ...rest } = W;
+  try { localStorage.setItem(_W_SAVE_KEY, JSON.stringify(rest)); } catch {}
+}
+
+function clearWizardDraft() {
+  localStorage.removeItem(_W_SAVE_KEY);
+}
+
+function restoreWizardDraft() {
+  try {
+    const raw = localStorage.getItem(_W_SAVE_KEY);
+    if (!raw) return false;
+    const saved = JSON.parse(raw);
+    Object.assign(W, saved);
+    return true;
+  } catch { return false; }
+}
+
 function nextStep() {
   if (!validateStep(W.step)) return;
   collectStep(W.step);
   if (W.step === W.totalSteps - 1) buildRecap();
   if (W.step < W.totalSteps) showStep(W.step + 1);
+  saveWizardDraft();
 }
 
 function prevStep() {
   collectStep(W.step);
   if (W.step > 1) showStep(W.step - 1);
+  saveWizardDraft();
 }
 
 function validateStep(n) {
@@ -308,6 +332,20 @@ async function onStepEnter(n) {
 // ─── ÉTAPE 1 — Alignement & Niveau ───────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Restaurer le brouillon si présent
+  if (restoreWizardDraft() && W.step > 1) {
+    const banner = document.createElement('div');
+    banner.id = 'draft-banner';
+    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#1a1a2e;border-bottom:1px solid rgba(201,168,76,0.4);padding:0.5rem 1rem;display:flex;align-items:center;justify-content:space-between;font-size:0.82rem;color:#c9a84c;';
+    banner.innerHTML = `<span><i class="fa-solid fa-floppy-disk"></i> Brouillon restauré — vous étiez à l'étape ${W.step}</span>
+      <div style="display:flex;gap:0.75rem;">
+        <button onclick="clearWizardDraft();document.getElementById('draft-banner').remove();showStep(1);" style="background:none;border:1px solid #555;border-radius:5px;color:#aaa;padding:0.2rem 0.6rem;cursor:pointer;font-size:0.78rem;">Recommencer</button>
+        <button onclick="document.getElementById('draft-banner').remove();" style="background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.4);border-radius:5px;color:#c9a84c;padding:0.2rem 0.6rem;cursor:pointer;font-size:0.78rem;">Continuer →</button>
+      </div>`;
+    document.body.prepend(banner);
+    showStep(W.step);
+  }
+
   // Alignement
   const alignGrid = document.getElementById('alignement-grid');
   if (alignGrid) {
@@ -2204,6 +2242,7 @@ async function creerPersonnage() {
     });
     const data = await res.json();
     if (data._id) {
+      clearWizardDraft();
       window.location.href = `fiche-personnage.html?id=${data._id}`;
     } else {
       alert('Erreur : ' + (data.error || 'inconnue'));
