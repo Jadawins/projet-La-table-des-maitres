@@ -1,6 +1,12 @@
 {
   "id": "fermier",
-  "bonus_caracteristiques": { "suggerees": ["STR", "CON"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "STR",
+      "CON",
+      "SAG"
+    ]
+  },
   "nom": "Fermier",
   "description": "Vous avez grandi proche de la terre, cultivant les champs et soignant les animaux. Cette vie vous a forgé physiquement et vous a appris la patience.",
   "competences": [

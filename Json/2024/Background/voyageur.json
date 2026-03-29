@@ -1,6 +1,12 @@
 {
   "id": "voyageur",
-  "bonus_caracteristiques": { "suggerees": ["DEX", "SAG"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "DEX",
+      "INT",
+      "CHA"
+    ]
+  },
   "nom": "Voyageur",
   "description": "Vous avez grandi dans la rue ou sur les routes, apprenant à vous débrouiller parmi toutes sortes de gens dans les situations les plus improbables.",
   "competences": [

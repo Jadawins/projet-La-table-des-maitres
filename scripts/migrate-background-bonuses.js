@@ -4,23 +4,24 @@
 require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
 const { MongoClient } = require('mongodb');
 
+// PHB 2024 — 3 caractéristiques par background
 const BONUSES = {
-  acolyte:   { suggerees: ['INT', 'SAG'] },
-  artisan:   { suggerees: ['STR', 'INT'] },
-  artiste:   { suggerees: ['DEX', 'CHA'] },
-  charlatan: { suggerees: ['DEX', 'CHA'] },
-  criminel:  { suggerees: ['DEX', 'INT'] },
-  ermite:    { suggerees: ['CON', 'SAG'] },
-  fermier:   { suggerees: ['STR', 'CON'] },
-  garde:     { suggerees: ['STR', 'INT'] },
-  guide:     { suggerees: ['DEX', 'SAG'] },
-  marchand:  { suggerees: ['CON', 'CHA'] },
-  marin:     { suggerees: ['STR', 'DEX'] },
-  noble:     { suggerees: ['INT', 'CHA'] },
-  sage:      { suggerees: ['INT', 'SAG'] },
-  scribe:    { suggerees: ['DEX', 'INT'] },
-  soldat:    { suggerees: ['STR', 'CON'] },
-  voyageur:  { suggerees: ['DEX', 'SAG'] },
+  acolyte:   { suggerees: ['INT', 'SAG', 'CHA'] },
+  artisan:   { suggerees: ['STR', 'DEX', 'INT'] },
+  artiste:   { suggerees: ['STR', 'DEX', 'CHA'] },
+  charlatan: { suggerees: ['DEX', 'CON', 'CHA'] },
+  criminel:  { suggerees: ['DEX', 'INT', 'CHA'] },
+  ermite:    { suggerees: ['CON', 'INT', 'SAG'] },
+  fermier:   { suggerees: ['STR', 'CON', 'SAG'] },
+  garde:     { suggerees: ['STR', 'DEX', 'INT'] },
+  guide:     { suggerees: ['STR', 'DEX', 'SAG'] },
+  marchand:  { suggerees: ['CON', 'INT', 'CHA'] },
+  marin:     { suggerees: ['STR', 'DEX', 'SAG'] },
+  noble:     { suggerees: ['STR', 'INT', 'CHA'] },
+  sage:      { suggerees: ['CON', 'INT', 'SAG'] },
+  scribe:    { suggerees: ['DEX', 'INT', 'CHA'] },
+  soldat:    { suggerees: ['STR', 'DEX', 'CON'] },
+  voyageur:  { suggerees: ['DEX', 'INT', 'CHA'] },
 };
 
 async function run() {

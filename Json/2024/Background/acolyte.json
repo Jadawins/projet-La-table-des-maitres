@@ -1,6 +1,12 @@
 {
   "id": "acolyte",
-  "bonus_caracteristiques": { "suggerees": ["INT", "SAG"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "INT",
+      "SAG",
+      "CHA"
+    ]
+  },
   "nom": "Acolyte",
   "description": "Vous avez servi dans un temple, accomplissant des rites et offices religieux. Cette expérience vous a initié à la puissance divine et aux hiérarchies religieuses.",
   "competences": [

@@ -1,6 +1,12 @@
 {
   "id": "artiste",
-  "bonus_caracteristiques": { "suggerees": ["DEX", "CHA"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "STR",
+      "DEX",
+      "CHA"
+    ]
+  },
   "nom": "Artiste",
   "description": "Vous avez grandi parmi des artistes itinérants, apprenant à captiver un public et à vivre de votre talent de musicien ou acrobate.",
   "competences": [

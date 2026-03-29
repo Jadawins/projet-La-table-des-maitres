@@ -1,6 +1,12 @@
 {
   "id": "ermite",
-  "bonus_caracteristiques": { "suggerees": ["CON", "SAG"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "CON",
+      "INT",
+      "SAG"
+    ]
+  },
   "nom": "Ermite",
   "description": "Vous avez vécu en reclus loin de la civilisation, méditant et étudiant dans la solitude. Cette retraite vous a apporté sagesse et sérénité.",
   "competences": [

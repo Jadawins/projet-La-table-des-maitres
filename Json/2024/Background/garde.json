@@ -1,6 +1,12 @@
 {
   "id": "garde",
-  "bonus_caracteristiques": { "suggerees": ["STR", "INT"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "STR",
+      "DEX",
+      "INT"
+    ]
+  },
   "nom": "Garde",
   "description": "Vous avez assuré la sécurité d'une ville ou d'un bâtiment important. Vos années de faction vous ont appris à détecter les menaces et à maintenir l'ordre.",
   "competences": [

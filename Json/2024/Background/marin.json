@@ -1,6 +1,12 @@
 {
   "id": "marin",
-  "bonus_caracteristiques": { "suggerees": ["STR", "DEX"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "STR",
+      "DEX",
+      "SAG"
+    ]
+  },
   "nom": "Marin",
   "description": "Vous avez navigué sur les mers, affronté tempêtes et pirates, et fréquenté les ports du monde entier. La mer est votre foyer.",
   "competences": [

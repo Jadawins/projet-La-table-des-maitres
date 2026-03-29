@@ -1,6 +1,12 @@
 {
   "id": "soldat",
-  "bonus_caracteristiques": { "suggerees": ["STR", "CON"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "STR",
+      "DEX",
+      "CON"
+    ]
+  },
   "nom": "Soldat",
   "description": "Vous avez servi dans une armée régulière ou une milice. Vous connaissez la discipline militaire et les réalités brutales du champ de bataille.",
   "competences": [

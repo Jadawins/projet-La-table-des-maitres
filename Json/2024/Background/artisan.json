@@ -1,6 +1,12 @@
 {
   "id": "artisan",
-  "bonus_caracteristiques": { "suggerees": ["STR", "INT"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "STR",
+      "DEX",
+      "INT"
+    ]
+  },
   "nom": "Artisan",
   "description": "Vous avez appris un métier dans l'atelier d'un maître artisan. Vous savez créer des objets de qualité et négocier avec une clientèle exigeante.",
   "competences": [

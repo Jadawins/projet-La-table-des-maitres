@@ -1,6 +1,12 @@
 {
   "id": "charlatan",
-  "bonus_caracteristiques": { "suggerees": ["DEX", "CHA"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "DEX",
+      "CON",
+      "CHA"
+    ]
+  },
   "nom": "Charlatan",
   "description": "Vous avez vécu en escroquant vos prochains grâce à de fausses identités, des produits miracles ou des titres fictifs soigneusement entretenus.",
   "competences": [

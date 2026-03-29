@@ -1,6 +1,12 @@
 {
   "id": "noble",
-  "bonus_caracteristiques": { "suggerees": ["INT", "CHA"] },
+  "bonus_caracteristiques": {
+    "suggerees": [
+      "STR",
+      "INT",
+      "CHA"
+    ]
+  },
   "nom": "Noble",
   "description": "Vous avez grandi dans une famille aisée ou aristocratique, bénéficiant d'une éducation de qualité et d'une exposition aux intrigues politiques.",
   "competences": [

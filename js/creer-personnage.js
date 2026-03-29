@@ -637,65 +637,56 @@ function renderBgBonusInputs() {
   const el = document.getElementById('bg-bonus-inputs');
   if (!el) return;
   const sug = W.bg_data?.bonus_caracteristiques?.suggerees || [];
-  const [s0, s1] = sug;
 
   if (W.bg_bonus_mode === '2plus1') {
-    // PHB 2024 : +2/+1 fixé aux 2 caracs du background, joueur choisit seulement l\'ordre
-    if (!s0 || !s1) {
-      el.innerHTML = '<div style="font-size:0.78rem;color:#f87171;">Donn\u00e9es manquantes pour ce background.</div>';
+    // PHB 2024 : choisir laquelle des 3 stats reçoit +2, laquelle reçoit +1
+    if (sug.length < 2) {
+      el.innerHTML = '<div style="font-size:0.78rem;color:#f87171;">Données manquantes pour ce background.</div>';
       return;
     }
+    const opts2 = sug.map(k => '<option value="' + k + '">' + k + '</option>').join('');
     el.innerHTML =
-      '<div style="font-size:0.78rem;color:#aaa;margin-bottom:0.6rem;">R\u00e9partissez entre ' +
-      '<strong style="color:#e0e0e0;">' + s0 + '</strong> et <strong style="color:#e0e0e0;">' + s1 + '</strong>\u00a0:</div>' +
-      '<div style="display:flex;flex-direction:column;gap:0.5rem;">' +
-        '<label class="bg-bonus-radio-row">' +
-          '<input type="radio" name="bg-bonus-order" value="A" onchange="applyBgBonus2plus1(\'A\')" />' +
-          '<span class="bg-bonus-radio-label">' +
-            '<span class="bg-bonus-tag bg-bonus-tag-2">+2</span>\u00a0' + s0 +
-            '\u00a0\u00b7\u00a0<span class="bg-bonus-tag bg-bonus-tag-1">+1</span>\u00a0' + s1 +
-          '</span>' +
-        '</label>' +
-        '<label class="bg-bonus-radio-row">' +
-          '<input type="radio" name="bg-bonus-order" value="B" onchange="applyBgBonus2plus1(\'B\')" />' +
-          '<span class="bg-bonus-radio-label">' +
-            '<span class="bg-bonus-tag bg-bonus-tag-1">+1</span>\u00a0' + s0 +
-            '\u00a0\u00b7\u00a0<span class="bg-bonus-tag bg-bonus-tag-2">+2</span>\u00a0' + s1 +
-          '</span>' +
-        '</label>' +
+      '<div style="font-size:0.78rem;color:#aaa;margin-bottom:0.75rem;">Choisissez la répartition parmi : ' +
+      '<strong style="color:#e0e0e0;">' + sug.join(', ') + '</strong></div>' +
+      '<div style="display:flex;gap:1.25rem;align-items:flex-start;flex-wrap:wrap;">' +
+        '<div>' +
+          '<div style="font-size:0.72rem;color:#c8b8ff;margin-bottom:0.3rem;"><span class="bg-bonus-tag bg-bonus-tag-2">+2</span> à :</div>' +
+          '<select class="bg-bonus-select" id="bg-sel-2" onchange="applyBgBonus2plus1()">' +
+            '<option value="">— choisir —</option>' + opts2 +
+          '</select>' +
+        '</div>' +
+        '<div>' +
+          '<div style="font-size:0.72rem;color:#e8c96a;margin-bottom:0.3rem;"><span class="bg-bonus-tag bg-bonus-tag-1">+1</span> à :</div>' +
+          '<select class="bg-bonus-select" id="bg-sel-1" onchange="applyBgBonus2plus1()">' +
+            '<option value="">— choisir —</option>' + opts2 +
+          '</select>' +
+        '</div>' +
       '</div>';
   } else if (W.bg_bonus_mode === '3fois1') {
-    const opts = STAT_KEYS.map(k => '<option value="' + k + '">' + k + '</option>').join('');
+    // PHB 2024 : +1 automatique aux 3 stats du background, pas de choix
+    W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
+    sug.forEach(k => { W.bg_bonus[k] = 1; });
     el.innerHTML =
-      '<div style="font-size:0.78rem;color:#aaa;margin-bottom:0.5rem;">Choisissez 3 caract\u00e9ristiques diff\u00e9rentes (+1 chacune).</div>' +
-      '<div style="display:flex;gap:0.75rem;flex-wrap:wrap;">' +
-      [0,1,2].map(i =>
-        '<div>' +
-          '<div style="font-size:0.72rem;color:#c9a84c;margin-bottom:0.25rem;">+1 \u00e0 :</div>' +
-          '<select class="bg-bonus-select" id="bg-sel-3-' + i + '" onchange="applyBgBonus3fois1()">' +
-            '<option value="">\u2014 choisir \u2014</option>' + opts +
-          '</select>' +
+      '<div style="font-size:0.78rem;color:#aaa;margin-bottom:0.4rem;">Bonus appliqués automatiquement :</div>' +
+      '<div style="display:flex;gap:0.75rem;">' +
+      sug.map(k =>
+        '<div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:0.3rem 0.75rem;text-align:center;">' +
+          '<div style="font-size:0.72rem;color:#e8c96a;font-weight:700;">+1</div>' +
+          '<div style="font-size:0.82rem;color:#e0e0e0;">' + k + '</div>' +
         '</div>'
       ).join('') +
       '</div>';
+    renderBgBonusPreview();
   }
 }
 
-function applyBgBonus2plus1(order) {
+function applyBgBonus2plus1() {
   const sug = W.bg_data?.bonus_caracteristiques?.suggerees || [];
-  const [s0, s1] = sug;
-  if (!s0 || !s1) return;
+  const k2 = document.getElementById('bg-sel-2')?.value;
+  const k1 = document.getElementById('bg-sel-1')?.value;
   W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
-  if (order === 'A') { W.bg_bonus[s0] = 2; W.bg_bonus[s1] = 1; }
-  else               { W.bg_bonus[s0] = 1; W.bg_bonus[s1] = 2; }
-  renderBgBonusPreview();
-}
-
-function applyBgBonus3fois1() {
-  const vals = [0,1,2].map(i => document.getElementById(`bg-sel-3-${i}`)?.value).filter(Boolean);
-  W.bg_bonus = { FOR:0, DEX:0, CON:0, INT:0, SAG:0, CHA:0 };
-  const seen = new Set();
-  vals.forEach(k => { if (!seen.has(k)) { W.bg_bonus[k] = 1; seen.add(k); } });
+  if (k2 && sug.includes(k2)) W.bg_bonus[k2] = 2;
+  if (k1 && sug.includes(k1) && k1 !== k2) W.bg_bonus[k1] = 1;
   renderBgBonusPreview();
 }
 
@@ -706,7 +697,7 @@ function bgBonusIsValid() {
     return total === 3 && Object.values(W.bg_bonus).some(v => v === 2);
   }
   if (W.bg_bonus_mode === '3fois1') {
-    return Object.values(W.bg_bonus).filter(v => v > 0).length === 3 && total === 3;
+    return total === 3 && Object.values(W.bg_bonus).filter(v => v > 0).length === 3;
   }
   return false;
 }
