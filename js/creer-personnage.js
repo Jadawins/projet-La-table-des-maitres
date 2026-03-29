@@ -299,27 +299,37 @@ async function onStepEnter(n) {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Alignement
-  document.getElementById('alignement-grid').addEventListener('click', e => {
-    const btn = e.target.closest('.align-btn');
-    if (!btn) return;
-    document.querySelectorAll('.align-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    W.alignement = btn.dataset.align;
-  });
+  const alignGrid = document.getElementById('alignement-grid');
+  if (alignGrid) {
+    alignGrid.addEventListener('click', e => {
+      const btn = e.target.closest('.align-btn');
+      if (!btn) return;
+      document.querySelectorAll('.align-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      W.alignement = btn.dataset.align;
+    });
+  }
 
   // Niveau → XP + maîtrise
-  document.getElementById('p-niveau').addEventListener('input', function() {
-    const niv = parseInt(this.value) || 1;
-    document.getElementById('p-xp').value = XP_PAR_NIVEAU[Math.min(niv-1,19)] || 0;
-    document.getElementById('p-maitrise').value = '+' + (BONUS_MAITRISE[Math.min(niv-1,19)] || 2);
-  });
+  const niveauEl = document.getElementById('p-niveau');
+  if (niveauEl) {
+    niveauEl.addEventListener('input', function() {
+      const niv = parseInt(this.value) || 1;
+      const xpEl = document.getElementById('p-xp');
+      const maiEl = document.getElementById('p-maitrise');
+      if (xpEl) xpEl.value = XP_PAR_NIVEAU[Math.min(niv-1,19)] || 0;
+      if (maiEl) maiEl.value = '+' + (BONUS_MAITRISE[Math.min(niv-1,19)] || 2);
+    });
+  }
 
   // Stats → modificateurs
   ['FOR','DEX','CON','INT','SAG','CHA'].forEach(k => {
-    document.getElementById(`stat-${k}`).addEventListener('input', function() {
+    const el = document.getElementById(`stat-${k}`);
+    if (el) el.addEventListener('input', function() {
       const v = parseInt(this.value) || 10;
       W.stats[k] = v;
-      document.getElementById(`mod-${k}`).textContent = fmtMod(mod(v));
+      const modEl = document.getElementById(`mod-${k}`);
+      if (modEl) modEl.textContent = fmtMod(mod(v));
     });
   });
 
