@@ -105,6 +105,10 @@
     <ul style="margin-top:0;">
       <li>✨ <strong>Étape 8 — Équipement</strong> — choix d'option A/B/C en premier, équipement background en dessous</li>
       <li>✨ <strong>Étape 9 — Boutique</strong> — nouvelle étape dédiée à l'achat libre : budget issu du choix de classe, deux sections (équipement général + équipement de magie : focus, grimoire, baguette, cristal…), panier avec or restant en temps réel</li>
+      <li>💾 <strong>Sauvegarde automatique du wizard</strong> — progression du wizard de création persistée en localStorage ; bannière "Reprendre" à la reconnexion, bouton Recommencer</li>
+      <li>📑 <strong>Fiche — refonte avec onglets</strong> — 3 onglets : <em>Fiche</em> (carac, sauvegardes, compétences, combat, sorts), <em>Inventaire</em> (équipement, monnaie, repos, langues), <em>Description</em> (traits, idéaux, liens, défauts, apparence) ; onglet actif persisté en localStorage</li>
+      <li>💬 <strong>Tooltips sorts</strong> — survol d'un sort sur la fiche = popup (école, portée, durée, description) ; les nouveaux personnages ont la description stockée ; les anciens : lazy-fetch transparent depuis l'API</li>
+      <li>🗂️ <strong>Sections rétractables</strong> — clic sur n'importe quel titre de section (▾) pour réduire/agrandir ; état mémorisé par section en localStorage</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">
@@ -215,28 +219,33 @@
       <li>✅ <strong>Bonus caractéristiques background</strong> — mode +2/+1 PHB 2024 fixé aux stats du background, ou +1/+1/+1 libre</li>
     </ul>
   </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#4ade80;cursor:pointer;list-style:none;">✅ Priorité 2 — Validation &amp; sécurité — <em>terminé</em></summary>
+    <ul style="margin-top:0.4rem;color:#aaa;">
+      <li>✅ <strong>validateCharacter()</strong> — vérification globale avant soumission : nom, espèce/lignage, classe, sous-classe, background, bonus stats, PV, compétences expertise, sorts</li>
+      <li>✅ <strong>Choix invalides bloqués</strong> — bouton Suivant verrouillé dynamiquement à chaque étape</li>
+      <li>✅ <strong>Équipement</strong> — choix A/B/C respecté, boutique avec PO déduites en temps réel, étape indépendante</li>
+      <li>⏸️ <strong>Stats non modifiables après création</strong> — différé (P3 refonte fiche couvre le même périmètre)</li>
+    </ul>
+  </details>
   <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#fb923c;cursor:pointer;list-style:none;">🟠 Priorité 2 — Validation &amp; sécurité — <em>en cours</em></summary>
+    <summary style="font-size:0.82rem;color:#facc15;cursor:pointer;list-style:none;">🟡 Priorité 3 — UX fiche personnage — <em>en cours</em></summary>
     <ul style="margin-top:0.4rem;">
-      <li>🛡️ <strong>validateCharacter()</strong> — vérification globale : caracs valides, compétences OK, sorts valides, niveau cohérent, sous-classe valide, or dépensé correctement</li>
-      <li>🔒 <strong>Verrouillage</strong> — stats non modifiables après création, choix invalides bloqués</li>
-      <li>🎒 <strong>Équipement</strong> — choix A/B respecté, mode achat avec PO, déduction correcte de l'or</li>
+      <li>✅ <strong>Refonte fiche avec onglets</strong> — Fiche · Inventaire · Description, onglet actif persisté</li>
+      <li>✅ <strong>Tooltips sorts</strong> — popup école/portée/durée/description au survol, lazy-fetch si données absentes</li>
+      <li>✅ <strong>Sections rétractables</strong> — tous les titres de section sont cliquables ▾, état persisté</li>
+      <li>✅ <strong>Sauvegarde wizard</strong> — progression persistée en localStorage entre les sessions</li>
+      <li>⬜ <strong>Sorts en panneau déroulant</strong> — liste des sorts groupée par niveau, dépliable</li>
+      <li>⬜ <strong>Couleurs lisibles &amp; taille champs caractéristiques</strong> — améliorations visuelles restantes</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#facc15;cursor:pointer;list-style:none;">🟡 Priorité 3 — UX fiche personnage</summary>
+    <summary style="font-size:0.82rem;color:#60a5fa;cursor:pointer;list-style:none;">🔵 Priorité 4 — Gameplay avancé — <em>suivant</em></summary>
     <ul style="margin-top:0.4rem;">
-      <li>📑 <strong>Refonte fiche avec onglets</strong> — Combat/Fiche · Inventaire · Description</li>
-      <li>💬 <strong>Tooltips sorts</strong>, sections rétractables, couleurs lisibles</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#60a5fa;cursor:pointer;list-style:none;">🔵 Priorité 4 — Gameplay avancé</summary>
-    <ul style="margin-top:0.4rem;">
-      <li>🎲 <strong>Dés de vie</strong> — choix du nombre, calcul PV récupérés</li>
-      <li>😴 <strong>Repos</strong> — boutons visibles, application des règles automatique</li>
-      <li>🛡️ <strong>Armure</strong> — une seule équipée, changement dynamique</li>
-      <li>⚡ <strong>Ressources de classe</strong> — composants sorts, bouton reset MJ</li>
+      <li>⬜ <strong>Dés de vie</strong> — choix du nombre de dés à dépenser, calcul PV récupérés</li>
+      <li>⬜ <strong>Repos</strong> — boutons visibles sur la fiche, application des règles automatique</li>
+      <li>⬜ <strong>Armure</strong> — une seule équipée à la fois, CA mise à jour dynamiquement</li>
+      <li>⬜ <strong>Ressources de classe</strong> — composants de sorts, bouton reset MJ</li>
     </ul>
   </details>
 
