@@ -138,6 +138,7 @@ function renderAll() {
     inspDiamond.classList.toggle('active', !!perso.inspiration);
   }
   document.getElementById('bonus-maitrise-display').textContent = '+' + getBM();
+  renderArmureEquipee();
   initSectionsCollapsibles();
 }
 
@@ -387,6 +388,89 @@ function toggleSlot(emplIdx, dotIdx) {
   renderSorts();
 }
 
+// ─── ARMURE & CA ──────────────────────────────────────────────
+
+// base CA, dexMax (99 = illimité, 0 = aucun DEX)
+const ARMURES_CA = {
+  'sans armure':           { base: 10, dexMax: 99 },
+  'armure matelassée':     { base: 11, dexMax: 99 },
+  'armure de cuir':        { base: 11, dexMax: 99 },
+  'cuir clouté':           { base: 12, dexMax: 99 },
+  'armure de cuir clouté': { base: 12, dexMax: 99 },
+  'broigne':               { base: 12, dexMax: 99 },
+  'chemise de mailles':    { base: 13, dexMax:  2 },
+  'cotte de mailles':      { base: 14, dexMax:  2 },
+  'cuirasse':              { base: 13, dexMax:  2 },
+  'cotte de plaques':      { base: 14, dexMax:  2 },
+  'demi-plate':            { base: 15, dexMax:  2 },
+  'plates divisées':       { base: 16, dexMax:  0 },
+  'harnois':               { base: 18, dexMax:  0 },
+};
+const BOUCLIER_BONUS = 2;
+
+function _matchArmure(nom) {
+  const n = (nom || '').toLowerCase().trim();
+  for (const key of Object.keys(ARMURES_CA)) {
+    if (key === 'sans armure') continue;
+    if (n.includes(key)) return key;
+  }
+  return null;
+}
+
+function _hasBouclier() {
+  return (perso.equipement || []).some(e => (e.nom||'').toLowerCase().includes('bouclier'));
+}
+
+function calculerCA(armureKey) {
+  const data = ARMURES_CA[armureKey] || ARMURES_CA['sans armure'];
+  const dexMod = getMod('DEX');
+  const dexBonus = Math.min(dexMod, data.dexMax === 99 ? dexMod : data.dexMax);
+  const bouclier = _hasBouclier() ? BOUCLIER_BONUS : 0;
+  return data.base + dexBonus + bouclier;
+}
+
+function renderArmureEquipee() {
+  const el = document.getElementById('armure-section');
+  if (!el) return;
+
+  const armuresInventaire = (perso.equipement || [])
+    .map(e => ({ nom: e.nom, key: _matchArmure(e.nom) }))
+    .filter(e => e.key);
+
+  const equipee = perso.combat?.armure_equipee || 'sans armure';
+  const bouclier = _hasBouclier();
+  const caCalc = calculerCA(equipee);
+
+  const options = [
+    { key: 'sans armure', label: 'Sans armure (CA 10 + DEX)' },
+    ...armuresInventaire.map(a => ({ key: a.key, label: a.nom }))
+  ];
+
+  el.innerHTML = `
+    <div class="armure-row">
+      <select class="armure-select" onchange="equiperArmure(this.value)">
+        ${options.map(o => `<option value="${esc(o.key)}" ${o.key===equipee?'selected':''}>${esc(o.label)}</option>`).join('')}
+      </select>
+      <div class="armure-ca-badge">
+        <span class="armure-ca-val">${caCalc}</span>
+        <span class="armure-ca-label">CA</span>
+      </div>
+    </div>
+    ${bouclier ? `<div class="armure-bouclier-badge"><i class="fa-solid fa-shield"></i> Bouclier +2 inclus</div>` : ''}
+  `;
+}
+
+function equiperArmure(key) {
+  if (!perso.combat) perso.combat = {};
+  perso.combat.armure_equipee = key;
+  const ca = calculerCA(key);
+  perso.combat.ca = ca;
+  markDirty('combat.armure_equipee', key);
+  markDirty('combat.ca', ca);
+  renderArmureEquipee();
+  renderCombatQuick();
+}
+
 // ─── ÉQUIPEMENT ───────────────────────────────────────────────
 
 // Détecte les items de monnaie dans l'équipement et les transfère vers perso.monnaie
@@ -455,6 +539,7 @@ function supprimerItem(i) {
   perso.equipement.splice(i, 1);
   markDirty('equipement', perso.equipement);
   renderEquipement();
+  renderArmureEquipee();
 }
 
 function ajouterItem() {
@@ -464,6 +549,7 @@ function ajouterItem() {
   perso.equipement.push({ nom: nom.trim(), quantite: 1 });
   markDirty('equipement', perso.equipement);
   renderEquipement();
+  renderArmureEquipee();
 }
 
 // ─── MONNAIE ──────────────────────────────────────────────────
@@ -567,7 +653,11 @@ function renderRessources() {
   const classe  = (perso.classe || '').toLowerCase();
   const resData = perso.ressources_classe || {};
 
-  list.innerHTML = configs.map(cfg => {
+  list.innerHTML = `<div style="display:flex;justify-content:flex-end;margin-bottom:0.4rem;">
+    <button class="btn-reset-ressources" onclick="resetRessources('long')" title="Remettre toutes les ressources au maximum (ex: après repos long)">
+      <i class="fa-solid fa-rotate-right"></i> Reset
+    </button>
+  </div>` + configs.map(cfg => {
     const maxVal = getRessourceMax(cfg);
     const cur    = resData[cfg.id]?.actuel ?? maxVal;
     const safe   = Math.min(Math.max(0, cur), maxVal);
@@ -850,10 +940,12 @@ function appliquerDVCourt() {
 }
 
 function afficherResultatRepos(msg, type) {
-  const el = document.getElementById('repos-result');
-  if (!el) return;
-  el.innerHTML = `<div class="repos-result-msg ${type}">${msg}</div>`;
-  setTimeout(() => { el.innerHTML=''; }, 6000);
+  ['repos-result', 'repos-result-fiche'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = `<div class="repos-result-msg ${type}">${msg}</div>`;
+    setTimeout(() => { el.innerHTML = ''; }, 6000);
+  });
 }
 
 window.proposerRepos          = proposerRepos;
@@ -1494,6 +1586,8 @@ window.selectionnerCibleSort = selectionnerCibleSort;
 window.confirmerSortCombat  = confirmerSortCombat;
 window.ouvrirModalSauvegarde = ouvrirModalSauvegarde;
 window.toggleSortsNiveau    = toggleSortsNiveau;
+window.equiperArmure        = equiperArmure;
+window.resetRessources      = resetRessources;
 window.calculerJS           = calculerJS;
 window.confirmerSauvegarde  = confirmerSauvegarde;
 

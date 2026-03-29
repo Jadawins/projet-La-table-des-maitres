@@ -2264,6 +2264,104 @@
 .comp-badge-bg     { background: rgba(134,93,255,0.2); color: #c8b8ff; border: 1px solid rgba(134,93,255,0.3); }
 .comp-badge-espece { background: rgba(96,165,250,0.2); color: #60a5fa; border: 1px solid rgba(96,165,250,0.3); }
 
+/* ─── Dés de vie — actions rapides ──────────────────────────── */
+.dv-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.btn-dv-depenser {
+  background: rgba(134,93,255,0.15);
+  border: 1px solid rgba(134,93,255,0.4);
+  color: #c4b5fd;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-dv-depenser:hover { background: rgba(134,93,255,0.28); }
+
+.btn-repos-rapide {
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: 1px solid;
+  transition: background 0.15s;
+}
+.btn-repos-rapide.court {
+  background: rgba(30,58,138,0.25);
+  border-color: rgba(59,130,246,0.4);
+  color: #93c5fd;
+}
+.btn-repos-rapide.court:hover { background: rgba(30,58,138,0.45); }
+.btn-repos-rapide.long {
+  background: rgba(20,83,45,0.25);
+  border-color: rgba(74,222,128,0.35);
+  color: #86efac;
+}
+.btn-repos-rapide.long:hover { background: rgba(20,83,45,0.45); }
+
+/* ─── Armure équipée ─────────────────────────────────────────── */
+.armure-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.armure-select {
+  flex: 1;
+  background: #1a1a2e;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 6px;
+  color: #e0d0c0;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.armure-ca-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 8px;
+  padding: 0.2rem 0.6rem;
+  min-width: 46px;
+}
+.armure-ca-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c9a84c;
+}
+.armure-ca-label {
+  font-size: 0.6rem;
+  color: #c9a84c;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.armure-bouclier-badge {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  color: #60a5fa;
+}
+
+/* ─── Reset ressources ───────────────────────────────────────── */
+.btn-reset-ressources {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 5px;
+  color: #888;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.btn-reset-ressources:hover {
+  color: #c4b5fd;
+  border-color: rgba(134,93,255,0.4);
+}
+
 /* ─── Tooltip sorts ─────────────────────────────────────────── */
 .sort-tooltip {
   position: absolute;

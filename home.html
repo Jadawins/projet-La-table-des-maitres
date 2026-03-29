@@ -111,6 +111,10 @@
       <li>🗂️ <strong>Sections rétractables</strong> — clic sur n'importe quel titre de section (▾) pour réduire/agrandir ; état mémorisé par section en localStorage</li>
       <li>🔮 <strong>Sorts en panneaux déroulants</strong> — la liste des sorts est désormais groupée par niveau avec un bandeau cliquable (▾, compteur de sorts) ; chaque niveau est dépliable/repliable indépendamment, état persisté en localStorage</li>
       <li>👁️ <strong>Lisibilité fiche</strong> — champs de caractéristiques agrandis (46 px, 1.05 rem), modificateurs plus contrastés (violet clair), noms de compétences et jets de sauvegarde plus lisibles (blanc/gris clair), couleurs de valeur unifiées</li>
+      <li>🎲 <strong>Dés de vie — bouton Dépenser</strong> — accès direct sans passer par l'onglet Inventaire ; modal avec nombre de dés au choix, calcul PV moy. + modificateur CON</li>
+      <li>🌙 <strong>Repos rapides depuis l'onglet Fiche</strong> — boutons Repos Court et Repos Long dans la section Dés de vie, résultat affiché en temps réel sans changer d'onglet</li>
+      <li>🛡️ <strong>Armure équipée</strong> — nouvelle section dans Inventaire : auto-détecte les armures de l'équipement, sélection → CA recalculée (base armure + DEX limité selon type + bouclier +2 si présent)</li>
+      <li>🔄 <strong>Reset ressources</strong> — bouton sur la section Ressources pour remettre toutes les ressources de classe au maximum</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">
@@ -241,13 +245,13 @@
       <li>✅ <strong>Lisibilité</strong> — champs carac agrandis, modificateurs et valeurs plus contrastés</li>
     </ul>
   </details>
-  <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#60a5fa;cursor:pointer;list-style:none;">🔵 Priorité 4 — Gameplay avancé — <em>suivant</em></summary>
-    <ul style="margin-top:0.4rem;">
-      <li>⬜ <strong>Dés de vie</strong> — choix du nombre de dés à dépenser, calcul PV récupérés</li>
-      <li>⬜ <strong>Repos</strong> — boutons visibles sur la fiche, application des règles automatique</li>
-      <li>⬜ <strong>Armure</strong> — une seule équipée à la fois, CA mise à jour dynamiquement</li>
-      <li>⬜ <strong>Ressources de classe</strong> — composants de sorts, bouton reset MJ</li>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#4ade80;cursor:pointer;list-style:none;">✅ Priorité 4 — Gameplay avancé — <em>terminé</em></summary>
+    <ul style="margin-top:0.4rem;color:#aaa;">
+      <li>✅ <strong>Dés de vie</strong> — bouton "Dépenser" sur l'onglet Fiche, modal avec calcul PV + mod. CON</li>
+      <li>✅ <strong>Repos</strong> — boutons Repos Court / Long sur l'onglet Fiche (section Dés de vie), résultat affiché sans changer d'onglet</li>
+      <li>✅ <strong>Armure</strong> — section "Armure équipée" dans Inventaire : auto-détection, CA calculée (base + DEX limité, bouclier +2 inclus), mise à jour immédiate</li>
+      <li>✅ <strong>Ressources de classe</strong> — bouton Reset sur la section, remet toutes les ressources au maximum</li>
     </ul>
   </details>
 
