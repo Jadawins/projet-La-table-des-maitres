@@ -87,32 +87,6 @@ function getCaracIncantation(classeData) {
   return classeData?.caracteristique_incantation || null;
 }
 
-function getNombreMineurs(classeId, niveau) {
-  const table = {
-    barde: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
-    clerc: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
-    druide: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
-    ensorceleur: [4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6],
-    magicien: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
-    occultiste: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
-  };
-  return (table[classeId] || [2])[Math.min(niveau-1, 19)];
-}
-
-function getNombreNiv1(classeId, niveau) {
-  const table = {
-    barde: [2,3,4,4,4,4,4,4,4,5,6,6,6,6,6,6,6,6,6,6],
-    clerc: [3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
-    druide: [2,3,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
-    ensorceleur: [2,3,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
-    magicien: [6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44],
-    occultiste: [2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
-    paladin: [0,2,3,3,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
-    rodeur: [0,0,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4],
-  };
-  return (table[classeId] || [0])[Math.min(niveau-1, 19)];
-}
-
 // ─── BARRE DE PROGRESSION ─────────────────────────────────────
 
 function renderProgress() {
@@ -154,8 +128,8 @@ function updateNav() {
     next.classList.remove('hidden');
     submit.classList.add('hidden');
   }
-  // Reset btn-next state (step 5 may have disabled it)
-  if (W.step !== 5) {
+  // Reset btn-next state (step 5 et 9 gèrent leur propre verrouillage)
+  if (W.step !== 5 && W.step !== 9) {
     next.disabled = false;
     next.style.opacity = '';
     next.style.cursor = '';
@@ -1300,7 +1274,7 @@ async function loadSorts() {
   }
 
   _renderSortsStep8();
-  _updateBtnSuivant8();
+  _updateBtnSuivant9();
 }
 
 function _renderSortsStep8() {
@@ -1450,7 +1424,7 @@ function toggleSortNiveau(niveauSort, spellId) {
   // Re-rendre toutes les listes (mise à jour disabled)
   const tousNiveaux = [0, ...getNiveauxSortsDisponibles(W.classe, W.niveau)];
   tousNiveaux.forEach(n => _renderListeNiveau(n));
-  _updateBtnSuivant8();
+  _updateBtnSuivant9();
 }
 
 function _refreshSortsCounters() {
@@ -1481,8 +1455,8 @@ function _refreshSortsCounters() {
   }
 }
 
-function _updateBtnSuivant8() {
-  if (W.step !== 8) return;
+function _updateBtnSuivant9() {
+  if (W.step !== 9) return;
   const btn = document.getElementById('btn-next');
   if (!btn) return;
   const ok = _validateSorts8Silent();
