@@ -90,14 +90,12 @@
   <h2>📖 Édito du Maître</h2>
   <p><strong>✅ Fait récemment :</strong></p>
   <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 28/03/2026</summary>
+    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 28/03/2026 ▶</summary>
     <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
     <ul style="margin-top:0;">
       <li>✅ <strong>Compétences — décocher réactivait pas les cases</strong> — après avoir atteint le maximum de compétences choisies, décocher une compétence ne dégrisait pas les autres options disponibles</li>
       <li>✅ <strong>Barde — quota de compétences réduit à 1</strong> — les compétences du background étaient comptées dans le quota de classe, réduisant faussement les choix disponibles</li>
       <li>✅ <strong>Bonus background — mode +2/+1 non conforme PHB 2024</strong> — le joueur pouvait choisir n'importe quelle stat, alors que le PHB 2024 fixe les deux stats selon le background (ex : Acolyte → INT/SAG uniquement). Corrigé : deux boutons radio seulement, joueur choisit l'ordre +2/+1 mais pas les stats</li>
-      <li>✅ <strong>Sorts — bouton Suivant toujours actif</strong> — sur l'étape Sorts (étape 9), le bouton "Suivant" n'était jamais verrouillé dynamiquement : <code>_updateBtnSuivant</code> vérifiait <code>W.step !== 8</code> alors que les sorts sont à l'étape 9. Corrigé + suppression dead code (<code>getNombreMineurs</code>, <code>getNombreNiv1</code>) qui dupliquait <code>magie-tables.js</code></li>
-      <li>✅ <strong>Guerrier Chevalier occulte / Roublard Arnaqueur arcanique — aucun sort proposé</strong> — ces deux sous-classes sont des lanceurs tiers (1/3, PHB 2024) mais <code>isCaster()</code> ne regardait que la classe de base. Corrigé : <code>getCasterKey()</code> détecte si la sous-classe est lanceur et utilise sa propre table de progression ; sorts filtrés sur les sorts de Magicien ; cantrips et sorts connus corrects selon le niveau</li>
     </ul>
     <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
     <ul style="margin-top:0;">
@@ -109,6 +107,14 @@
       <li>🍃 <strong>Migration API → MongoDB</strong> — toutes les routes de données (sorts, classes, espèces, backgrounds, armes, armures, dons, sous-classes, monstres, glossaire, correspondances) lisent depuis MongoDB</li>
       <li>📋 <strong>Compétences sans hardcodage</strong> — nouvelle route <code>/GetCompetences2024</code> → MongoDB ; correction Escamotage manquant + typo Athlétisme ; doublons espèce/background/classe gérés automatiquement avec badges visuels (BG violet / ESP bleu)</li>
       <li>⚙️ <strong>Sous-classe dynamique</strong> — niveau de déverrouillage lu depuis le JSON de classe (<code>niveaux[n].verifier_sous_classe</code>) ; sous-classe obligatoire dans <code>validateStep(3)</code> dès le niveau requis ; titre de section mis à jour dynamiquement</li>
+    </ul>
+  </details>
+  <details open style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 29/03/2026</summary>
+    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
+    <ul style="margin-top:0;">
+      <li>✅ <strong>Sorts — bouton Suivant toujours actif</strong> — sur l'étape Sorts (étape 9), le bouton "Suivant" n'était jamais verrouillé dynamiquement : <code>_updateBtnSuivant</code> vérifiait <code>W.step !== 8</code> alors que les sorts sont à l'étape 9. Corrigé + suppression dead code (<code>getNombreMineurs</code>, <code>getNombreNiv1</code>) qui dupliquait <code>magie-tables.js</code></li>
+      <li>✅ <strong>Guerrier Chevalier occulte / Roublard Arnaqueur arcanique — aucun sort proposé</strong> — ces deux sous-classes sont des lanceurs tiers (1/3, PHB 2024) mais <code>isCaster()</code> ne regardait que la classe de base. Corrigé : <code>getCasterKey()</code> détecte si la sous-classe est lanceur et utilise sa propre table de progression ; sorts filtrés sur les sorts de Magicien ; cantrips et sorts connus corrects selon le niveau</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">
