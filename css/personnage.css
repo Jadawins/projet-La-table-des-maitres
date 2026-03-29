@@ -2150,6 +2150,68 @@
   border: 1px solid rgba(201,168,76,0.35);
 }
 
+/* ─── Fiche onglets ─────────────────────────────────────── */
+.fiche-tabs {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.75rem 1.25rem 0;
+  border-bottom: 2px solid rgba(134,93,255,0.25);
+  background: #0d0d1a;
+}
+.fiche-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 0.55rem 1.25rem;
+  color: #8888aa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: color 0.15s, border-color 0.15s;
+}
+.fiche-tab:hover {
+  color: #c8c8d8;
+}
+.fiche-tab.active {
+  color: #c8b8ff;
+  border-bottom-color: #865dff;
+}
+.fiche-tab-panel {
+  display: none;
+}
+.fiche-tab-panel.active {
+  display: block;
+}
+.fiche-body-single {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+.fiche-col-wide {
+  width: 100%;
+}
+.desc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media (max-width: 700px) {
+  .desc-grid { grid-template-columns: 1fr; }
+}
+.desc-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #865dff;
+  margin-bottom: 0.3rem;
+}
+
 /* ─── Compétences — badges source ───────────────────────── */
 .from-espece { color: #60a5fa; }
 .comp-badge {
