@@ -236,8 +236,11 @@
   <div class="wizard-panel" data-step="8">
     <div class="step-title"><i class="fa-solid fa-backpack"></i> Équipement de départ</div>
 
-    <!-- Onglets Pack / Achat -->
-    <div class="equip-tabs">
+    <!-- 1. Choix d'option de classe (toujours visible) -->
+    <div id="equip-options-classe"></div>
+
+    <!-- 2. Onglets Pack / Achat (après le choix) -->
+    <div class="equip-tabs" style="margin-top:1rem;">
       <button id="equip-tab-pack" class="equip-tab active" onclick="switchEquipTab('pack')">
         <i class="fa-solid fa-box-open"></i> Pack de départ
       </button>
@@ -248,8 +251,7 @@
 
     <!-- MODE PACK -->
     <div id="equip-panel-pack">
-      <div class="step-subtitle" style="margin-top:0.5rem;">Choisissez l'équipement prédéfini de votre classe.</div>
-      <div class="equip-list" id="equip-list"></div>
+      <div class="equip-list" id="equip-list-bg"></div>
     </div>
 
     <!-- MODE ACHAT LIBRE -->

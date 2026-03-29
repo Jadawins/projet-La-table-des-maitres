@@ -1168,50 +1168,66 @@ function toggleExpertise(nom) {
 // ─── ÉTAPE 7 — Équipement ─────────────────────────────────────
 
 function renderEquipement() {
-  const container = document.getElementById('equip-list');
   const classeEquip = W.classe_data?.equipement_depart || [];
   const bgEquip = W.bg_data?.equipement || [];
 
-  let html = '';
-
-  // ── Choix d\'équipement de la classe (A / B / C) ──
-  if (classeEquip.length > 0) {
-    html += '<div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.5rem;">Équipement de classe — choisissez une option :</div>';
-    classeEquip.forEach(opt => {
-      const selected = W.equipement_choix_classe === opt.choix;
-      html += `<label class="equip-choix-row${selected ? ' selected' : ''}" onclick="selectEquipChoix('${opt.choix}')">
-        <input type="radio" name="equip-classe" value="${opt.choix}" ${selected ? 'checked' : ''}
-               onchange="selectEquipChoix('${opt.choix}')" style="margin-right:0.5rem;" />
-        <span style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-right:0.5rem;">Option ${opt.choix}</span>
-        <span style="font-size:0.78rem;color:#ddd;">${(opt.contenu || []).join(', ')}</span>
-      </label>`;
-    });
-    html += '<div style="height:0.8rem;"></div>';
+  // ── 1. Choix d\'option classe (toujours visible au-dessus des onglets) ──
+  const optContainer = document.getElementById('equip-options-classe');
+  if (optContainer) {
+    let optHtml = '';
+    if (classeEquip.length > 0) {
+      optHtml += '<div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.5rem;">Équipement de classe — choisissez une option :</div>';
+      classeEquip.forEach(opt => {
+        const selected = W.equipement_choix_classe === opt.choix;
+        optHtml += `<label class="equip-choix-row${selected ? ' selected' : ''}" onclick="selectEquipChoix('${opt.choix}')">
+          <input type="radio" name="equip-classe" value="${opt.choix}" ${selected ? 'checked' : ''}
+                 onchange="selectEquipChoix('${opt.choix}')" style="margin-right:0.5rem;" />
+          <span style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-right:0.5rem;">Option ${opt.choix}</span>
+          <span style="font-size:0.78rem;color:#ddd;">${(opt.contenu || []).join(', ')}</span>
+        </label>`;
+      });
+    }
+    optContainer.innerHTML = optHtml;
   }
 
-  // ── Équipement du background (fixe) ──
-  if (bgEquip.length > 0) {
-    html += '<div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin-bottom:0.4rem;">\u00c9quipement d\'historique :</div>';
-    bgEquip.forEach(e => {
-      html += `<div class="equip-row">
-        <span class="equip-nom">${esc(e.nom)}</span>
-        <span class="equip-qte">×${e.quantite || 1}</span>
-        <span class="equip-source bg">Historique</span>
-      </div>`;
-    });
+  // ── 2. Équipement du background dans le panel Pack ──
+  const bgContainer = document.getElementById('equip-list-bg');
+  if (bgContainer) {
+    let bgHtml = '';
+    if (bgEquip.length > 0) {
+      bgHtml += '<div style="font-size:0.78rem;color:#c9a84c;font-weight:600;margin:0.75rem 0 0.4rem;">\u00c9quipement d\'historique :</div>';
+      bgEquip.forEach(e => {
+        bgHtml += `<div class="equip-row">
+          <span class="equip-nom">${esc(e.nom)}</span>
+          <span class="equip-qte">×${e.quantite || 1}</span>
+          <span class="equip-source bg">Historique</span>
+        </div>`;
+      });
+    }
+    bgContainer.innerHTML = bgHtml;
   }
-
-  container.innerHTML = html;
 
   // Sélectionner le premier choix par défaut si rien choisi
   if (!W.equipement_choix_classe && classeEquip.length > 0) {
     selectEquipChoix(classeEquip[0].choix);
+  } else {
+    _updateAchatTab();
   }
 
-  // Afficher le bon panel selon le mode (seulement si les éléments existent)
+  // Afficher le bon panel selon le mode
   if (document.getElementById('equip-panel-pack')) {
     switchEquipTab(W.equipement_mode || 'pack', false);
   }
+}
+
+function _updateAchatTab() {
+  const btn = document.getElementById('equip-tab-achat');
+  if (!btn) return;
+  const hasBudget = getBudgetAchat() > 0;
+  btn.disabled = !hasBudget;
+  btn.title = hasBudget ? '' : 'Sélectionnez une option "or" pour accéder à l\'achat libre';
+  btn.style.opacity = hasBudget ? '' : '0.4';
+  btn.style.cursor = hasBudget ? '' : 'not-allowed';
 }
 
 function selectEquipChoix(choix) {
@@ -1246,6 +1262,13 @@ function selectEquipChoix(choix) {
   bgEquip.forEach(e => {
     W.equipement.push({ nom: e.nom, quantite: e.quantite || 1, source: 'bg' });
   });
+
+  // Activer/désactiver l\'onglet achat selon budget disponible
+  _updateAchatTab();
+  // Si on choisit une option sans or et qu\'on est en mode achat, repasser en pack
+  if (W.equipement_mode === 'achat' && getBudgetAchat() === 0) {
+    switchEquipTab('pack', false);
+  }
 }
 
 // ─── BOUTIQUE D\'ACHAT LIBRE ──────────────────────────────────
