@@ -93,6 +93,9 @@
     <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 29/03/2026</summary>
     <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
     <ul style="margin-top:0;">
+      <li>✅ <strong>Équipement — choix A/B/C</strong> — l'étape équipement ne proposait que l'option A hardcodée. Corrigé : boutons radio pour chaque option de la classe (ex: Barde → Armure de cuir + dagues <em>ou</em> 90 po) ; l'or de départ (option "X po") est crédité dans la monnaie du personnage, pas ajouté comme item</li>
+      <li>✅ <strong>validateCharacter()</strong> — validation globale avant soumission finale : nom, espèce, lignage, classe, sous-classe, background, bonus stats, PV, compétences expertise, sorts — bloque la création si un champ est incomplet même en sautant des étapes</li>
+      <li>✅ <strong>Sorts soumission — lanceurs tiers</strong> — <code>creerPersonnage()</code> utilisait <code>W.classe</code> au lieu de <code>getCasterKey()</code> pour les emplacements et la liste de sorts</li>
       <li>✅ <strong>Sorts — bouton Suivant toujours actif</strong> — sur l'étape Sorts (étape 9), le bouton "Suivant" n'était jamais verrouillé dynamiquement : <code>_updateBtnSuivant</code> vérifiait <code>W.step !== 8</code> alors que les sorts sont à l'étape 9. Corrigé + suppression dead code (<code>getNombreMineurs</code>, <code>getNombreNiv1</code>) qui dupliquait <code>magie-tables.js</code></li>
       <li>✅ <strong>Guerrier Chevalier occulte / Roublard Arnaqueur arcanique — aucun sort proposé</strong> — ces deux sous-classes sont des lanceurs tiers (1/3, PHB 2024) mais <code>isCaster()</code> ne regardait que la classe de base. Corrigé : <code>getCasterKey()</code> détecte si la sous-classe est lanceur et utilise sa propre table de progression ; sorts filtrés sur les sorts de Magicien ; cantrips et sorts connus corrects selon le niveau</li>
     </ul>

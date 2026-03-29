@@ -778,6 +778,21 @@
 .equip-source.classe { background: rgba(134,93,255,0.15); color: #a090e0; }
 .equip-source.bg { background: rgba(80,160,120,0.15); color: #80c4a0; }
 
+.equip-choix-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+.equip-choix-row:hover { border-color: var(--purple); }
+.equip-choix-row.selected { border-color: var(--purple); background: rgba(134,93,255,0.1); }
+
 /* ─── SORTS ──────────────────────────────────────────────────── */
 
 .sorts-search {
