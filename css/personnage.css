@@ -1267,30 +1267,30 @@
 }
 
 .carac-name {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--gold);
-  width: 32px;
+  width: 34px;
   text-align: center;
 }
 
 .carac-val-input {
-  width: 38px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid var(--border);
+  width: 46px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(201,168,76,0.35);
   border-radius: 5px;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   text-align: center;
-  padding: 0.2rem;
+  padding: 0.22rem;
 }
 
 .carac-mod {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #a090e0;
-  min-width: 32px;
+  color: #c4b5fd;
+  min-width: 34px;
   text-align: center;
 }
 
@@ -1373,8 +1373,8 @@
 
 .save-dot.filled { background: var(--purple); border-color: var(--purple); }
 
-.save-name { flex: 1; color: #bbb; }
-.save-bonus { font-weight: 700; color: #a090e0; min-width: 28px; text-align: right; }
+.save-name { flex: 1; color: #c8c8d8; }
+.save-bonus { font-weight: 700; color: #c4b5fd; min-width: 32px; text-align: right; }
 
 /* ─── COMPÉTENCES FICHE ──────────────────────────────────────── */
 
@@ -1406,10 +1406,10 @@
 .comp-dot.maitrise { background: var(--purple); border-color: var(--purple); }
 .comp-dot.expertise { background: var(--gold); border-color: var(--gold); }
 
-.comp-list-name { flex: 1; color: #bbb; }
-.comp-list-name.has-maitrise { color: var(--text-light); }
-.comp-list-char { font-size: 0.62rem; color: #888; }
-.comp-list-val { font-weight: 700; color: #a090e0; min-width: 24px; text-align: right; }
+.comp-list-name { flex: 1; color: #c8c8d8; }
+.comp-list-name.has-maitrise { color: #fff; font-weight: 600; }
+.comp-list-char { font-size: 0.65rem; color: #999; }
+.comp-list-val { font-weight: 700; color: #c4b5fd; min-width: 28px; text-align: right; }
 
 /* ─── ATTAQUES ───────────────────────────────────────────────── */
 
@@ -1509,15 +1509,53 @@
   gap: 0.5rem;
 }
 
-.sorts-niveau-group { }
+/* Panneau déroulant sorts (fiche) */
+.sorts-niveau-group {
+  border: 1px solid rgba(134,93,255,0.15);
+  border-radius: 7px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
 
 .sorts-niveau-header {
-  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.38rem 0.65rem;
+  background: rgba(134,93,255,0.07);
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #888;
   letter-spacing: 0.07em;
-  margin-bottom: 0.3rem;
+  color: #b0a0e0;
+  transition: background 0.12s;
 }
+.sorts-niveau-header:hover { background: rgba(134,93,255,0.13); }
+
+.sng-arrow {
+  font-size: 0.6rem;
+  opacity: 0.6;
+  transition: transform 0.18s;
+  margin-left: auto;
+}
+.sorts-niveau-group.collapsed .sng-arrow { transform: rotate(-90deg); }
+
+.sng-count {
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: rgba(134,93,255,0.2);
+  border: 1px solid rgba(134,93,255,0.35);
+  border-radius: 9px;
+  padding: 0 0.4rem;
+  color: #c4b5fd;
+}
+
+.sng-content {
+  padding: 0.3rem 0.5rem 0.4rem;
+}
+.sorts-niveau-group.collapsed .sng-content { display: none; }
 
 .sort-chip {
   display: inline-flex;

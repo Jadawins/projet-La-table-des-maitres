@@ -945,27 +945,38 @@ function renderSorts() {
     sortsEl.innerHTML = '<span style="color:#555;font-size:0.78rem;">Aucun sort connu</span>';
     return;
   }
-  sortsEl.innerHTML = Object.keys(parNiveau).sort((a,b)=>+a-+b).map(niv => `
-    <div class="sorts-niveau-group">
-      <div class="sorts-niveau-header">${niv == 0 ? 'Sorts mineurs' : `Niveau ${niv}`}</div>
-      ${parNiveau[niv].map(s => `
-        <div class="sort-row-item"
-             data-sort-nom="${esc(s.nom)}"
-             data-sort-ecole="${esc(s.ecole||'')}"
-             data-sort-portee="${esc(s.portee||'')}"
-             data-sort-duree="${esc(s.duree||'')}"
-             data-sort-temps="${esc(s.temps_incantation||'')}"
-             data-sort-desc="${esc((s.description||'').slice(0,300))}"
-             data-sort-id="${esc(s.id||'')}"
-             data-sort-niveau="${niv}"
-             onmouseenter="showSortTooltip(event,this)"
-             onmouseleave="hideSortTooltip()">
-          <span class="sort-nom-label">${esc(s.nom)}</span>
-          ${s.concentration ? '<span class="sort-badge-c">C</span>' : ''}
-          ${s.rituel ? '<span class="sort-badge-r">R</span>' : ''}
-          ${combatActif ? `<button class="btn-lancer-sort" onclick="lancerSortCombat('${esc(s.nom)}',${niv},${!!s.concentration})">Lancer</button>` : ''}
-        </div>`).join('')}
-    </div>`).join('');
+  sortsEl.innerHTML = Object.keys(parNiveau).sort((a,b)=>+a-+b).map(niv => {
+    const collapsed = localStorage.getItem('sorts_niv_collapsed_' + niv) === '1' ? ' collapsed' : '';
+    const label = niv == 0 ? 'Sorts mineurs' : `Niveau ${niv}`;
+    const count = parNiveau[niv].length;
+    return `
+    <div class="sorts-niveau-group${collapsed}" id="sng-${niv}">
+      <div class="sorts-niveau-header" onclick="toggleSortsNiveau(${niv})">
+        <span>${label}</span>
+        <span class="sng-count">${count}</span>
+        <span class="sng-arrow">▾</span>
+      </div>
+      <div class="sng-content">
+        ${parNiveau[niv].map(s => `
+          <div class="sort-row-item"
+               data-sort-nom="${esc(s.nom)}"
+               data-sort-ecole="${esc(s.ecole||'')}"
+               data-sort-portee="${esc(s.portee||'')}"
+               data-sort-duree="${esc(s.duree||'')}"
+               data-sort-temps="${esc(s.temps_incantation||'')}"
+               data-sort-desc="${esc((s.description||'').slice(0,300))}"
+               data-sort-id="${esc(s.id||'')}"
+               data-sort-niveau="${niv}"
+               onmouseenter="showSortTooltip(event,this)"
+               onmouseleave="hideSortTooltip()">
+            <span class="sort-nom-label">${esc(s.nom)}</span>
+            ${s.concentration ? '<span class="sort-badge-c">C</span>' : ''}
+            ${s.rituel ? '<span class="sort-badge-r">R</span>' : ''}
+            ${combatActif ? `<button class="btn-lancer-sort" onclick="lancerSortCombat('${esc(s.nom)}',${niv},${!!s.concentration})">Lancer</button>` : ''}
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
 
   renderSortsRaciaux();
 }
@@ -1482,6 +1493,7 @@ window.selectionnerSortModal = selectionnerSortModal;
 window.selectionnerCibleSort = selectionnerCibleSort;
 window.confirmerSortCombat  = confirmerSortCombat;
 window.ouvrirModalSauvegarde = ouvrirModalSauvegarde;
+window.toggleSortsNiveau    = toggleSortsNiveau;
 window.calculerJS           = calculerJS;
 window.confirmerSauvegarde  = confirmerSauvegarde;
 
@@ -1571,6 +1583,13 @@ function _positionTooltip(event, el) {
 function hideSortTooltip() {
   const el = document.getElementById('sort-tooltip');
   if (el) el.classList.remove('visible');
+}
+
+function toggleSortsNiveau(niv) {
+  const el = document.getElementById('sng-' + niv);
+  if (!el) return;
+  el.classList.toggle('collapsed');
+  localStorage.setItem('sorts_niv_collapsed_' + niv, el.classList.contains('collapsed') ? '1' : '0');
 }
 
 // ─── SECTIONS RÉTRACTABLES ────────────────────────────────────
