@@ -39,7 +39,17 @@ const _TABLE_PACTE = {
   19:{nombre:4,niveau:5}, 20:{nombre:4,niveau:5}
 };
 
-// ─── TYPE DE LANCEUR PAR CLASSE ───────────────────────────────────────────────
+// ─── TABLE LANCEURS TIERS (Chevalier occulte / Arnaqueur arcanique) ───────────
+// Débloqué au niveau 3 de la classe. Index 0 = sorts de niveau 1.
+const _TABLE_TIERS = {
+   1:[0,0,0,0],  2:[0,0,0,0],  3:[2,0,0,0],  4:[3,0,0,0],
+   5:[3,0,0,0],  6:[3,0,0,0],  7:[4,2,0,0],  8:[4,2,0,0],
+   9:[4,2,0,0], 10:[4,3,0,0], 11:[4,3,0,0], 12:[4,3,0,0],
+  13:[4,3,2,0], 14:[4,3,2,0], 15:[4,3,2,0], 16:[4,3,3,0],
+  17:[4,3,3,0], 18:[4,3,3,0], 19:[4,3,3,1], 20:[4,3,3,1]
+};
+
+// ─── TYPE DE LANCEUR PAR CLASSE OU SOUS-CLASSE ────────────────────────────────
 const MAGIE_TYPE_LANCEUR = {
   barde:      'complet',
   clerc:      'complet',
@@ -53,6 +63,9 @@ const MAGIE_TYPE_LANCEUR = {
   guerrier:   'aucun',
   moine:      'aucun',
   roublard:   'aucun',
+  // Lanceurs via sous-classe (1/3)
+  guerrier_chevalier_occulte:    'tiers',
+  roublard_arnaqueur_arcanique:  'tiers',
 };
 
 // ─── CANTRIPS PAR CLASSE/NIVEAU (PHB 2024) ────────────────────────────────────
@@ -64,7 +77,10 @@ const MAGIE_CANTRIPS = {
   ensorceleur:[4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
   magicien:   [3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   occultiste: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-  // Paladin et Rôdeur n'ont pas de cantrips
+  // Paladin et Rodeur n'ont pas de cantrips
+  // Lanceurs tiers (sous-classe) : 0 avant niveau 3, puis 3, puis 4 a partir de niv 10
+  guerrier_chevalier_occulte:   [0, 0, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  roublard_arnaqueur_arcanique: [0, 0, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
 };
 
 // ─── SORTS CONNUS/PRÉPARÉS PAR CLASSE (PHB 2024) ──────────────────────────────
@@ -80,6 +96,9 @@ const MAGIE_SORTS_CONNUS = {
   barde:      [4, 5, 6, 7,  9,10,11, 12, 14, 15, 16, 16, 17, 17, 18, 18, 19, 20, 21, 22],
   ensorceleur:[2, 4, 6, 7,  9,10,11, 12, 14, 15, 16, 16, 17, 17, 18, 18, 19, 20, 21, 22],
   occultiste: [2, 3, 4, 5,  6, 7, 8,  9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15],
+  // Lanceurs tiers (PHB 2024) : sorts connus par niveau de classe
+  guerrier_chevalier_occulte:   [0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9,10,10,11,11,11,12,13],
+  roublard_arnaqueur_arcanique: [0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9,10,10,11,11,11,12,13],
 };
 
 // ─── SORTS CONNUS/PRÉPARÉS — MODE PAR CLASSE ──────────────────────────────────
@@ -92,6 +111,9 @@ const MAGIE_MODE = {
   magicien:   'prepares',
   paladin:    'prepares',
   rodeur:     'prepares',
+  // Lanceurs tiers (sous-classe)
+  guerrier_chevalier_occulte:   'connus',
+  roublard_arnaqueur_arcanique: 'connus',
 };
 
 // ─── API PUBLIQUE ─────────────────────────────────────────────────────────────
@@ -127,8 +149,17 @@ function getSlotsEmplacements(classeId, niveau) {
     return [{ niveau: p.niveau, total: p.nombre, utilises: 0, type: 'pacte' }];
   }
 
-  // Rôdeur : pas d'emplacements au niveau 1 (PHB 2024)
+  // Rodeur : pas d'emplacements au niveau 1 (PHB 2024)
   if (id === 'rodeur' && n === 1) return [];
+
+  if (type === 'tiers') {
+    const slots = _TABLE_TIERS[n] || [];
+    const result = [];
+    for (let i = 0; i < slots.length; i++) {
+      if (slots[i] > 0) result.push({ niveau: i + 1, total: slots[i], utilises: 0 });
+    }
+    return result;
+  }
 
   const table = type === 'complet' ? _TABLE_COMPLET : _TABLE_DEMI;
   const slots = table[n] || [];
@@ -196,6 +227,15 @@ function getNiveauxSortsDisponibles(classeId, niveau) {
     if (n <= 6) return [1, 2, 3];
     if (n <= 8) return [1, 2, 3, 4];
     return [1, 2, 3, 4, 5];
+  }
+
+  if (type === 'tiers') {
+    // Sorts disponibles a partir du niveau 3 de classe
+    if (n < 3)  return [];
+    if (n <= 6)  return [1];
+    if (n <= 12) return [1, 2];
+    if (n <= 18) return [1, 2, 3];
+    return [1, 2, 3, 4];
   }
 
   return [];

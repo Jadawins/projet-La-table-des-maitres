@@ -79,12 +79,19 @@ function isDvMax(dv) {
   return parseInt(dv.replace('d',''));
 }
 
-function isCaster(classeData) {
-  return !!(classeData?.incantation);
+function isCaster(classeData, scData) {
+  return !!(classeData?.incantation || scData?.incantation);
 }
 
-function getCaracIncantation(classeData) {
-  return classeData?.caracteristique_incantation || null;
+function getCaracIncantation(classeData, scData) {
+  return classeData?.caracteristique_incantation || scData?.caracteristique_incantation || null;
+}
+
+// Retourne la cle a utiliser pour les tables de magie (classe ou sous-classe)
+function getCasterKey() {
+  if (W.classe_data?.incantation) return W.classe;
+  if (W.sc_data?.incantation)     return W.sous_classe;
+  return W.classe;
 }
 
 // ─── BARRE DE PROGRESSION ─────────────────────────────────────
@@ -199,19 +206,19 @@ function validateStep(n) {
     }
   }
   if (n === 9) {
-    if (!isCaster(W.classe_data)) return true;
+    if (!isCaster(W.classe_data, W.sc_data)) return true;
     if (typeof getNiveauxSortsDisponibles !== 'function') return true; // magie-tables absent
-    const nbC = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
+    const nbC = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
     if (nbC > 0 && (W.sorts_choisis[0] || []).length < nbC) {
       alert(`Choisissez ${nbC} sort(s) mineur(s). (${(W.sorts_choisis[0]||[]).length}/${nbC})`);
       return false;
     }
-    const niveaux = getNiveauxSortsDisponibles(W.classe, W.niveau);
+    const niveaux = getNiveauxSortsDisponibles(getCasterKey(), W.niveau);
     if (niveaux.length > 0) {
-      const mode = MAGIE_MODE[W.classe];
+      const mode = MAGIE_MODE[getCasterKey()];
       let cible = 0;
-      if (mode === 'connus')   cible = getNbSortsConnus(W.classe, W.niveau);
-      if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(W.classe, W.niveau, W.stats));
+      if (mode === 'connus')   cible = getNbSortsConnus(getCasterKey(), W.niveau);
+      if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(getCasterKey(), W.niveau, finalStats()));
       if (cible > 0) {
         const total = niveaux.reduce((acc, nv) => acc + (W.sorts_choisis[nv]?.length || 0), 0);
         if (total < cible) {
@@ -1223,7 +1230,7 @@ async function loadSorts() {
   const nonLanceur = document.getElementById('sorts-non-lanceur');
   const container  = document.getElementById('sorts-dynamic-sections');
 
-  if (!isCaster(W.classe_data)) {
+  if (!isCaster(W.classe_data, W.sc_data)) {
     section.style.display = 'none';
     nonLanceur.style.display = 'block';
     return;
@@ -1233,21 +1240,25 @@ async function loadSorts() {
 
   if (!W.sorts_choisis) W.sorts_choisis = {};
 
-  const nomClasse = W.classe_data?.nom || '';
-  const nbCantrips = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
-  const niveaux    = getNiveauxSortsDisponibles(W.classe, W.niveau);
-  const mode       = MAGIE_MODE[W.classe] || '';
+  // Pour les lanceurs tiers (sous-classe), les sorts viennent d'une autre classe
+  const _filtreSortsClasse = W.sc_data?.filtre_sorts_classe;
+  const nomClasse = _filtreSortsClasse
+    ? (_filtreSortsClasse.charAt(0).toUpperCase() + _filtreSortsClasse.slice(1))
+    : (W.classe_data?.nom || '');
+  const nbCantrips = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
+  const niveaux    = getNiveauxSortsDisponibles(getCasterKey(), W.niveau);
+  const mode       = MAGIE_MODE[getCasterKey()] || '';
 
   // Sous-titre
   let parts = [];
   if (nbCantrips > 0) parts.push(`${nbCantrips} sort(s) mineur(s)`);
   if (niveaux.length > 0) {
     if (mode === 'connus') {
-      const nb = getNbSortsConnus(W.classe, W.niveau);
+      const nb = getNbSortsConnus(getCasterKey(), W.niveau);
       parts.push(`${nb} sort(s) connu(s)`);
     } else if (mode === 'prepares') {
-      const nb = Math.max(0, getNbSortsPrepares(W.classe, W.niveau, W.stats));
-      const carKey = W.classe_data?.caracteristique_incantation || 'INT';
+      const nb = Math.max(0, getNbSortsPrepares(getCasterKey(), W.niveau, finalStats()));
+      const carKey = getCaracIncantation(W.classe_data, W.sc_data) || 'INT';
       parts.push(`${nb} sort(s) préparé(s) (niv.+mod.${carKey})`);
     }
   } else if (nbCantrips === 0) {
@@ -1280,16 +1291,16 @@ async function loadSorts() {
 function _renderSortsStep8() {
   const container  = document.getElementById('sorts-dynamic-sections');
   const nomClasse  = W.classe_data?.nom || '';
-  const nbCantrips = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
-  const niveaux    = getNiveauxSortsDisponibles(W.classe, W.niveau);
-  const mode       = MAGIE_MODE[W.classe] || '';
+  const nbCantrips = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
+  const niveaux    = getNiveauxSortsDisponibles(getCasterKey(), W.niveau);
+  const mode       = MAGIE_MODE[getCasterKey()] || '';
   let html = '';
 
   // Bandeau global sorts niv 1+
   if (niveaux.length > 0) {
     let cible = 0, modeLabel = '';
-    if (mode === 'connus')   { cible = getNbSortsConnus(W.classe, W.niveau);   modeLabel = 'connus'; }
-    if (mode === 'prepares') { cible = Math.max(0, getNbSortsPrepares(W.classe, W.niveau, W.stats)); modeLabel = 'préparés'; }
+    if (mode === 'connus')   { cible = getNbSortsConnus(getCasterKey(), W.niveau);   modeLabel = 'connus'; }
+    if (mode === 'prepares') { cible = Math.max(0, getNbSortsPrepares(getCasterKey(), W.niveau, finalStats())); modeLabel = 'préparés'; }
     const total = niveaux.reduce((acc, n) => acc + (W.sorts_choisis[n]?.length || 0), 0);
     if (cible > 0) {
       const done = total >= cible;
@@ -1358,8 +1369,12 @@ function _renderListeNiveau(niveauSort, _unused) {
 
   const search = document.getElementById(`search-sort-${niveauSort}`)?.value || '';
   const ecole  = document.getElementById(`ecole-sort-${niveauSort}`)?.value  || '';
-  const nomClasse = W.classe_data?.nom || '';
-  const nbCantrips = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
+  // Pour les lanceurs tiers (sous-classe), les sorts viennent d'une autre classe
+  const _filtreSortsClasse = W.sc_data?.filtre_sorts_classe;
+  const nomClasse = _filtreSortsClasse
+    ? (_filtreSortsClasse.charAt(0).toUpperCase() + _filtreSortsClasse.slice(1))
+    : (W.classe_data?.nom || '');
+  const nbCantrips = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
 
   const pool = (W._sortsParNiveau[niveauSort] || [])
     .filter(s => (s.classes||[]).some(c => c.toLowerCase() === nomClasse.toLowerCase()))
@@ -1392,12 +1407,12 @@ function _renderListeNiveau(niveauSort, _unused) {
 }
 
 function _isAtMaxSorts() {
-  const niveaux = getNiveauxSortsDisponibles(W.classe, W.niveau);
+  const niveaux = getNiveauxSortsDisponibles(getCasterKey(), W.niveau);
   if (!niveaux.length) return false;
-  const mode = MAGIE_MODE[W.classe];
+  const mode = MAGIE_MODE[getCasterKey()];
   let cible = 0;
-  if (mode === 'connus')   cible = getNbSortsConnus(W.classe, W.niveau);
-  if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(W.classe, W.niveau, W.stats));
+  if (mode === 'connus')   cible = getNbSortsConnus(getCasterKey(), W.niveau);
+  if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(getCasterKey(), W.niveau, finalStats()));
   const total = niveaux.reduce((acc, n) => acc + (W.sorts_choisis[n]?.length || 0), 0);
   return total >= cible;
 }
@@ -1413,7 +1428,7 @@ function toggleSortNiveau(niveauSort, spellId) {
     arr.splice(idx, 1);
   } else {
     // Vérifier limites avant d'ajouter
-    const nbCantrips = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
+    const nbCantrips = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
     if (niveauSort === 0 && arr.length >= nbCantrips) return;
     if (niveauSort > 0  && _isAtMaxSorts())           return;
     arr.push(spellId);
@@ -1422,13 +1437,13 @@ function toggleSortNiveau(niveauSort, spellId) {
   _refreshSortsCounters();
 
   // Re-rendre toutes les listes (mise à jour disabled)
-  const tousNiveaux = [0, ...getNiveauxSortsDisponibles(W.classe, W.niveau)];
+  const tousNiveaux = [0, ...getNiveauxSortsDisponibles(getCasterKey(), W.niveau)];
   tousNiveaux.forEach(n => _renderListeNiveau(n));
   _updateBtnSuivant9();
 }
 
 function _refreshSortsCounters() {
-  const nbCantrips = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
+  const nbCantrips = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
   // Cantrips
   const bc = document.getElementById('sorts-counter-0');
   if (bc && nbCantrips > 0) {
@@ -1437,16 +1452,16 @@ function _refreshSortsCounters() {
     bc.className    = `sorts-counter-badge${nb >= nbCantrips ? ' done' : ''}`;
   }
   // Niveaux 1+
-  const niveaux = getNiveauxSortsDisponibles(W.classe, W.niveau);
+  const niveaux = getNiveauxSortsDisponibles(getCasterKey(), W.niveau);
   niveaux.forEach(n => {
     const b = document.getElementById(`sorts-counter-${n}`);
     if (b) b.textContent = (W.sorts_choisis[n] || []).length;
   });
   // Global
-  const mode  = MAGIE_MODE[W.classe] || '';
+  const mode  = MAGIE_MODE[getCasterKey()] || '';
   let cible = 0;
-  if (mode === 'connus')   cible = getNbSortsConnus(W.classe, W.niveau);
-  if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(W.classe, W.niveau, W.stats));
+  if (mode === 'connus')   cible = getNbSortsConnus(getCasterKey(), W.niveau);
+  if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(getCasterKey(), W.niveau, finalStats()));
   const bg = document.getElementById('sorts-total-badge');
   if (bg && cible > 0) {
     const total = niveaux.reduce((acc, n) => acc + (W.sorts_choisis[n]?.length || 0), 0);
@@ -1466,15 +1481,15 @@ function _updateBtnSuivant9() {
 }
 
 function _validateSorts8Silent() {
-  if (!isCaster(W.classe_data)) return true;
-  const nbC = (MAGIE_CANTRIPS[W.classe] !== undefined) ? getNbCantrips(W.classe, W.niveau) : 0;
+  if (!isCaster(W.classe_data, W.sc_data)) return true;
+  const nbC = (MAGIE_CANTRIPS[getCasterKey()] !== undefined) ? getNbCantrips(getCasterKey(), W.niveau) : 0;
   if (nbC > 0 && (W.sorts_choisis[0] || []).length < nbC) return false;
-  const niveaux = getNiveauxSortsDisponibles(W.classe, W.niveau);
+  const niveaux = getNiveauxSortsDisponibles(getCasterKey(), W.niveau);
   if (!niveaux.length) return true;
-  const mode  = MAGIE_MODE[W.classe] || '';
+  const mode  = MAGIE_MODE[getCasterKey()] || '';
   let cible = 0;
-  if (mode === 'connus')   cible = getNbSortsConnus(W.classe, W.niveau);
-  if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(W.classe, W.niveau, W.stats));
+  if (mode === 'connus')   cible = getNbSortsConnus(getCasterKey(), W.niveau);
+  if (mode === 'prepares') cible = Math.max(0, getNbSortsPrepares(getCasterKey(), W.niveau, finalStats()));
   if (cible === 0) return true;
   const total = niveaux.reduce((acc, n) => acc + (W.sorts_choisis[n]?.length || 0), 0);
   return total >= cible;
@@ -1593,7 +1608,7 @@ function buildRecap() {
 
     ${(() => {
       const lignes = [];
-      const tousNiv = [0, ...getNiveauxSortsDisponibles(W.classe, W.niveau)];
+      const tousNiv = [0, ...getNiveauxSortsDisponibles(getCasterKey(), W.niveau)];
       for (const nv of tousNiv) {
         const ids  = W.sorts_choisis?.[nv] || [];
         const pool = W._sortsParNiveau?.[nv] || [];

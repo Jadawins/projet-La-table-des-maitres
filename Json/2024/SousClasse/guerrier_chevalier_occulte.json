@@ -2,25 +2,30 @@
   "nom": "Chevalier occulte",
   "classe_parente": "guerrier",
   "source": "PHB2024",
+  "incantation": true,
+  "caracteristique_incantation": "INT",
+  "type_lanceur": "tiers",
+  "filtre_sorts_classe": "magicien",
+  "ecoles_sorts_preferees": ["Abjuration", "\u00c9vocation"],
   "niveaux_aptitudes": [3, 7, 10, 15, 18],
   "niveaux": {
     "3": {
       "capacites": [
         {
           "nom": "Incantation",
-          "description": "Tu lances des sorts de magicien en utilisant INT. Tu connais 3 sorts mineurs et 3 sorts des écoles d'Abjuration ou d'Évocation principalement. Tu as 2 emplacements de sort de niveau 1."
+          "description": "Tu lances des sorts de magicien en utilisant INT. Tu connais 3 sorts mineurs et 3 sorts des \u00e9coles d'Abjuration ou d'\u00c9vocation principalement. Tu as 2 emplacements de sort de niveau 1."
         },
         {
-          "nom": "Arme liée",
-          "description": "Tu peux lier jusqu'à 2 armes à toi (rituel de 1 heure). Tu peux invoquer une arme liée dans ta main libre en action bonus. Elle revient si désarmée."
+          "nom": "Arme li\u00e9e",
+          "description": "Tu peux lier jusqu'\u00e0 2 armes \u00e0 toi (rituel de 1 heure). Tu peux invoquer une arme li\u00e9e dans ta main libre en action bonus. Elle revient si d\u00e9sarm\u00e9e."
         }
       ]
     },
     "7": {
       "capacites": [
         {
-          "nom": "Défense par la guerre",
-          "description": "Réaction : quand toi ou un allié à 9 m est touché par une attaque, dépense un emplacement de sort pour annuler la touche."
+          "nom": "D\u00e9fense par la guerre",
+          "description": "R\u00e9action : quand toi ou un alli\u00e9 \u00e0 9 m est touch\u00e9 par une attaque, d\u00e9pense un emplacement de sort pour annuler la touche."
         }
       ]
     },
@@ -28,7 +33,7 @@
       "capacites": [
         {
           "nom": "Frappe arcanique",
-          "description": "Quand tu frappe avec une arme, tu peux dépenser un emplacement de sort pour lancer un sort avec un temps d'incantation d'une action en action bonus ce tour."
+          "description": "Quand tu frappe avec une arme, tu peux d\u00e9penser un emplacement de sort pour lancer un sort avec un temps d'incantation d'une action en action bonus ce tour."
         }
       ]
     },
@@ -36,15 +41,15 @@
       "capacites": [
         {
           "nom": "Bouclier arcanique",
-          "description": "Réaction : quand tu es frappé par une attaque, tu peux dépenser un emplacement de sort de niveau 2 ou supérieur pour obtenir un bouclier temporaire de 2d6 PV temporaires par niveau de l'emplacement."
+          "description": "R\u00e9action : quand tu es frapp\u00e9 par une attaque, tu peux d\u00e9penser un emplacement de sort de niveau 2 ou sup\u00e9rieur pour obtenir un bouclier temporaire de 2d6 PV temporaires par niveau de l'emplacement."
         }
       ]
     },
     "18": {
       "capacites": [
         {
-          "nom": "Maître de guerre",
-          "description": "Tu peux lancer des sorts de niveau 1 à 4 via Frappe arcanique. De plus, tes armes liées peuvent stocker des sorts (jusqu'au niveau 3) que tu peux déclencher lors d'une touche."
+          "nom": "Ma\u00eetre de guerre",
+          "description": "Tu peux lancer des sorts de niveau 1 \u00e0 4 via Frappe arcanique. De plus, tes armes li\u00e9es peuvent stocker des sorts (jusqu'au niveau 3) que tu peux d\u00e9clencher lors d'une touche."
         }
       ]
     }
