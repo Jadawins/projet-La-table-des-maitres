@@ -216,8 +216,8 @@
     </button>
 
     <div class="creation-header">
-      <h1><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</h1>
-      <p>Conçois ton propre objet homebrew, visible uniquement par toi et tes joueurs</p>
+      <h1 id="page-titre"><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</h1>
+      <p id="page-sous-titre">Conçois ton propre objet homebrew, visible uniquement par toi et tes joueurs</p>
     </div>
 
     <form class="creation-form" id="form-objet" novalidate>
@@ -344,6 +344,8 @@
   const API = 'https://myrpgtable.fr/api';
   let accessToken = null;
   let savedId = null;
+  let editSlug = null;
+  let editObjectId = null;
 
   // Auth
   const keyRes = await fetch(`${API}/GetSupabaseKey`);
@@ -352,6 +354,43 @@
   const { data: { session } } = await supabase.auth.getSession();
   if (!session) { window.location.href = 'login.html'; }
   accessToken = session.access_token;
+
+  // ─── Mode édition via ?slug= ──────────────────────────────
+  const urlParams = new URLSearchParams(window.location.search);
+  editSlug = urlParams.get('slug');
+  if (editSlug) {
+    try {
+      const resEdit = await fetch(`${API}/objets-magiques/${encodeURIComponent(editSlug)}`, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      });
+      if (!resEdit.ok) throw new Error(`HTTP ${resEdit.status}`);
+      const obj = await resEdit.json();
+      editObjectId = obj._id;
+      savedId = obj._id;
+
+      // Remplir le formulaire
+      document.getElementById('nom').value = obj.nom || '';
+      document.getElementById('categorie').value = obj.categorie || 'objet_merveilleux';
+      document.getElementById('rarete').value = obj.rarete || 'peu_commun';
+      document.getElementById('harmonisation').checked = !!obj.harmonisation;
+      if (obj.harmonisation) {
+        document.getElementById('harmo-detail-zone').style.display = 'block';
+        document.getElementById('harmonisation_detail').value = obj.harmonisation_detail || '';
+      }
+      document.getElementById('description').value = obj.description || '';
+      document.getElementById('poids').value = obj.poids ?? '';
+      document.getElementById('prix_estime').value = obj.prix_estime ?? '';
+      document.getElementById('image').value = obj.image || '';
+      (obj.effets || []).forEach(ef => ajouterEffet(typeof ef === 'string' ? ef : JSON.stringify(ef)));
+
+      document.getElementById('page-titre').innerHTML = '<i class="fa-solid fa-pen"></i> Modifier un objet magique';
+      document.getElementById('page-sous-titre').textContent = 'Modification de : ' + obj.nom;
+      document.getElementById('btn-save').innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Enregistrer les modifications';
+      document.getElementById('btn-partager').classList.add('visible');
+    } catch (err) {
+      showToast(`Impossible de charger l'objet : ${err.message}`, true);
+    }
+  }
 
   // ─── Harmonisation toggle ─────────────────────────────────
   document.getElementById('harmonisation').addEventListener('change', e => {
@@ -401,24 +440,31 @@
     };
 
     try {
-      const res = await fetch(`${API}/objets-magiques/custom`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accessToken}`
-        },
-        body: JSON.stringify(body)
-      });
+      const isEdit = !!editObjectId;
+      const res = await fetch(
+        isEdit ? `${API}/objets-magiques/custom/${editObjectId}` : `${API}/objets-magiques/custom`,
+        {
+          method: isEdit ? 'PUT' : 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`
+          },
+          body: JSON.stringify(body)
+        }
+      );
 
       if (!res.ok) {
         const err = await res.json();
         throw new Error(err.error || `HTTP ${res.status}`);
       }
 
-      const objet = await res.json();
-      savedId = objet._id;
+      if (!isEdit) {
+        const objet = await res.json();
+        savedId = objet._id;
+        editObjectId = objet._id;
+      }
 
-      showToast('Objet magique sauvegardé !');
+      showToast(isEdit ? 'Modifications enregistrées !' : 'Objet magique sauvegardé !');
       document.getElementById('btn-partager').classList.add('visible');
 
     } catch (err) {

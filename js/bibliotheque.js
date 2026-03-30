@@ -203,6 +203,18 @@ function renderFiltres() {
   }
 }
 
+// ─── ATTENTE DU TOKEN AUTH ────────────────────────────────────
+function waitForToken(timeout = 5000) {
+  if (window.SUPABASE_TOKEN) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const start = Date.now();
+    const check = setInterval(() => {
+      if (window.SUPABASE_TOKEN) { clearInterval(check); resolve(); }
+      else if (Date.now() - start > timeout) { clearInterval(check); reject(new Error('Token non disponible')); }
+    }, 100);
+  });
+}
+
 // ─── CHARGEMENT DES DONNÉES ───────────────────────────────────
 async function chargerDonnees() {
   afficherLoading();
@@ -265,6 +277,9 @@ async function chargerDonnees() {
         break;
     }
 
+    if (state.onglet === 'mes-homebrew') {
+      try { await waitForToken(); } catch { afficherErreur('Connexion requise'); return; }
+    }
     const fetchOpts = (state.onglet === 'mes-homebrew' && window.SUPABASE_TOKEN)
       ? { headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}` } }
       : {};

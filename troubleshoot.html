@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troubleshoot — La Table du Maître</title>
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <link rel="stylesheet" href="css/theme.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0d0d14; color: #e0d0ff; padding: 1.5rem; }
+    h1 { font-size: 1.5rem; color: #c9a84c; margin-bottom: 0.3rem; }
+    .subtitle { color: #888; font-size: 0.82rem; margin-bottom: 1.5rem; }
+
+    .section { margin-bottom: 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem 1.2rem; }
+    .section h2 { font-size: 0.9rem; color: #c9a84c; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .test-row { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.5rem; font-size: 0.82rem; }
+    .test-name { flex: 1; color: #c8c8d8; }
+    .test-status { min-width: 90px; font-weight: 700; font-size: 0.75rem; text-align: center; padding: 0.2rem 0.5rem; border-radius: 5px; }
+    .status-wait  { background: rgba(255,255,255,0.07); color: #888; }
+    .status-ok    { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+    .status-warn  { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+    .status-error { background: rgba(244,67,54,0.15); color: #f87171; border: 1px solid rgba(244,67,54,0.3); }
+    .test-detail  { color: #666; font-size: 0.73rem; font-style: italic; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .btn-run { background: rgba(201,168,76,0.15); color: #c9a84c; border: 1px solid rgba(201,168,76,0.3); padding: 0.45rem 1.1rem; border-radius: 8px; cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: background 0.15s; }
+    .btn-run:hover { background: rgba(201,168,76,0.28); }
+    .btn-run:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .summary-bar { display: flex; gap: 1rem; align-items: center; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.7rem 1rem; margin-bottom: 1.5rem; font-size: 0.82rem; }
+    .sum-item { display: flex; align-items: center; gap: 0.35rem; }
+    .sum-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+    .auth-badge { font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 20px; background: rgba(255,255,255,0.07); color: #888; }
+    .auth-badge.logged { background: rgba(74,222,128,0.15); color: #4ade80; }
+
+    .log-zone { background: rgba(0,0,0,0.4); border-radius: 6px; padding: 0.6rem 0.9rem; font-size: 0.72rem; color: #888; max-height: 120px; overflow-y: auto; margin-top: 0.5rem; font-family: monospace; }
+    .log-ok    { color: #4ade80; }
+    .log-warn  { color: #fbbf24; }
+    .log-error { color: #f87171; }
+
+    .progress-bar { height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; margin-bottom: 1rem; overflow: hidden; }
+    .progress-fill { height: 100%; background: #c9a84c; width: 0%; transition: width 0.3s; }
+  </style>
+</head>
+<body>
+
+<div class="header-row">
+  <div>
+    <h1>🔧 Troubleshoot — La Table du Maître</h1>
+    <p class="subtitle">Tests automatiques de l'API, de l'auth et des fonctionnalités</p>
+  </div>
+  <span class="auth-badge" id="auth-badge">Non connecté</span>
+</div>
+
+<div class="summary-bar" id="summary-bar">
+  <span style="color:#888">Lance les tests pour voir le résumé</span>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+
+<button class="btn-run" id="btn-run-all" onclick="lancerTousLesTests()">▶ Lancer tous les tests</button>
+&nbsp;
+<button class="btn-run" onclick="location.reload()">↺ Réinitialiser</button>
+
+<br><br>
+
+<!-- AUTH -->
+<div class="section">
+  <h2>🔐 Authentification</h2>
+  <div id="tests-auth"></div>
+</div>
+
+<!-- API DONNÉES -->
+<div class="section">
+  <h2>📡 API — Données bibliothèque</h2>
+  <div id="tests-api-data"></div>
+</div>
+
+<!-- API PERSO -->
+<div class="section">
+  <h2>🧙 API — Personnages</h2>
+  <div id="tests-api-perso"></div>
+</div>
+
+<!-- OBJETS MAGIQUES -->
+<div class="section">
+  <h2>🪄 API — Objets magiques</h2>
+  <div id="tests-om"></div>
+</div>
+
+<!-- PAGES -->
+<div class="section">
+  <h2>📄 Pages (chargement HTML)</h2>
+  <div id="tests-pages"></div>
+</div>
+
+<!-- LOG -->
+<div class="section">
+  <h2>📋 Log détaillé</h2>
+  <div class="log-zone" id="log-zone">En attente des tests…</div>
+</div>
+
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+  const API = 'https://myrpgtable.fr/api';
+  let token = null;
+  let supabase = null;
+  let totalTests = 0;
+  let doneTests = 0;
+
+  const log = (msg, type = '') => {
+    const zone = document.getElementById('log-zone');
+    const line = document.createElement('div');
+    line.className = type ? `log-${type}` : '';
+    line.textContent = `[${new Date().toLocaleTimeString('fr-FR')}] ${msg}`;
+    zone.appendChild(line);
+    zone.scrollTop = zone.scrollHeight;
+  };
+
+  function setStatus(id, status, detail = '') {
+    const row = document.getElementById(id);
+    if (!row) return;
+    row.querySelector('.test-status').className = `test-status status-${status}`;
+    row.querySelector('.test-status').textContent = { ok: '✓ OK', warn: '⚠ AVERT.', error: '✗ ERREUR', wait: '…' }[status] || status;
+    if (detail) row.querySelector('.test-detail').textContent = detail;
+    doneTests++;
+    document.getElementById('progress-fill').style.width = `${Math.round(doneTests / totalTests * 100)}%`;
+    if (doneTests >= totalTests) updateSummary();
+  }
+
+  function addTest(containerId, id, name) {
+    const row = document.createElement('div');
+    row.className = 'test-row';
+    row.id = id;
+    row.innerHTML = `<span class="test-name">${name}</span><span class="test-status status-wait">…</span><span class="test-detail"></span>`;
+    document.getElementById(containerId).appendChild(row);
+    totalTests++;
+  }
+
+  function updateSummary() {
+    const ok    = document.querySelectorAll('.status-ok').length;
+    const warn  = document.querySelectorAll('.status-warn').length;
+    const error = document.querySelectorAll('.status-error').length;
+    document.getElementById('summary-bar').innerHTML = `
+      <div class="sum-item"><div class="sum-dot" style="background:#4ade80"></div> <strong style="color:#4ade80">${ok}</strong> OK</div>
+      <div class="sum-item"><div class="sum-dot" style="background:#fbbf24"></div> <strong style="color:#fbbf24">${warn}</strong> Avertissements</div>
+      <div class="sum-item"><div class="sum-dot" style="background:#f87171"></div> <strong style="color:#f87171">${error}</strong> Erreurs</div>
+      <span style="color:#666;margin-left:auto;">${ok + warn + error} tests exécutés</span>
+    `;
+  }
+
+  async function testApi(id, url, opts = {}, validateFn = null) {
+    try {
+      const r = await fetch(url, opts);
+      if (!r.ok) { setStatus(id, 'error', `HTTP ${r.status}`); log(`✗ ${id} → HTTP ${r.status}`, 'error'); return null; }
+      const data = await r.json();
+      const detail = validateFn ? validateFn(data) : null;
+      if (detail && detail.startsWith('⚠')) { setStatus(id, 'warn', detail); log(`⚠ ${id} → ${detail}`, 'warn'); }
+      else { setStatus(id, 'ok', detail || ''); log(`✓ ${id}`, 'ok'); }
+      return data;
+    } catch (e) {
+      setStatus(id, 'error', e.message);
+      log(`✗ ${id} → ${e.message}`, 'error');
+      return null;
+    }
+  }
+
+  window.lancerTousLesTests = async function() {
+    document.getElementById('btn-run-all').disabled = true;
+    document.getElementById('log-zone').innerHTML = '';
+    totalTests = 0; doneTests = 0;
+
+    // ── Déclarer tous les tests ──────────────────────────────
+    // Auth
+    addTest('tests-auth',       't-supabase-key',  'GetSupabaseKey');
+    addTest('tests-auth',       't-auth-session',  'Session Supabase active');
+
+    // API données
+    addTest('tests-api-data',   't-sorts',         'GET /GetSorts2024');
+    addTest('tests-api-data',   't-classes',       'GET /GetClasses2024');
+    addTest('tests-api-data',   't-especes',       'GET /GetEspeces2024');
+    addTest('tests-api-data',   't-backgrounds',   'GET /GetBackgrounds2024');
+    addTest('tests-api-data',   't-dons',          'GET /GetDons2024');
+    addTest('tests-api-data',   't-armes',         'GET /GetArmes2024');
+    addTest('tests-api-data',   't-armures',       'GET /GetArmures2024');
+    addTest('tests-api-data',   't-monstres',      'GET /GetMonstres');
+    addTest('tests-api-data',   't-glossaire',     'GET /GetGlossaire');
+    addTest('tests-api-data',   't-correspondances','GET /GetCorrespondances');
+
+    // API personnages
+    addTest('tests-api-perso',  't-perso-list',    'GET /Personnages (liste)');
+    addTest('tests-api-perso',  't-perso-schema',  'Schéma personnage — champs obligatoires');
+
+    // Objets magiques
+    addTest('tests-om',         't-om-list',       'GET /objets-magiques (liste SRD)');
+    addTest('tests-om',         't-om-count',      'Nombre d\'objets magiques');
+    addTest('tests-om',         't-om-auth',       'GET /objets-magiques avec auth (homebrew_only)');
+    addTest('tests-om',         't-om-slug',       'GET /objets-magiques/:slug (fiche complète)');
+
+    // Pages
+    const pages = [
+      ['t-page-home',       'home.html',              'home.html'],
+      ['t-page-biblio',     'bibliotheque.html',      'bibliotheque.html'],
+      ['t-page-perso',      'mes-personnages.html',   'mes-personnages.html'],
+      ['t-page-dashboard',  'dashboard-mj.html',      'dashboard-mj.html'],
+      ['t-page-sessions',   'sessions.html',          'sessions.html'],
+      ['t-page-om-creer',   'creer-objet-magique.html','creer-objet-magique.html'],
+    ];
+    pages.forEach(([id, , label]) => addTest('tests-pages', id, label));
+
+    log('Démarrage des tests…');
+    document.getElementById('progress-fill').style.width = '0%';
+
+    // ── 1. Auth ──────────────────────────────────────────────
+    const keyData = await testApi('t-supabase-key', `${API}/GetSupabaseKey`, {},
+      d => d.url && d.key ? `url: ${d.url.slice(0, 30)}…` : '⚠ url ou key manquant');
+
+    if (keyData?.url && keyData?.key) {
+      supabase = createClient(keyData.url, keyData.key);
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        token = session.access_token;
+        document.getElementById('auth-badge').className = 'auth-badge logged';
+        document.getElementById('auth-badge').textContent = '✓ Connecté : ' + (session.user.email || session.user.id.slice(0, 8));
+        setStatus('t-auth-session', 'ok', session.user.email || 'session active');
+        log(`✓ Connecté en tant que ${session.user.email}`, 'ok');
+      } else {
+        setStatus('t-auth-session', 'warn', 'Pas de session — tests auth désactivés');
+        log('⚠ Pas de session Supabase active (non connecté)', 'warn');
+      }
+    } else {
+      setStatus('t-auth-session', 'error', 'GetSupabaseKey a échoué');
+    }
+
+    // ── 2. API données ────────────────────────────────────────
+    const checkArray = d => Array.isArray(d) ? `${d.length} entrées` : (d?.items ? `${d.items.length} entrées` : '⚠ format inattendu');
+
+    await testApi('t-sorts',          `${API}/GetSorts2024`,         {}, d => checkArray(d));
+    await testApi('t-classes',        `${API}/GetClasses2024`,       {}, d => checkArray(d));
+    await testApi('t-especes',        `${API}/GetEspeces2024`,       {}, d => checkArray(d));
+    await testApi('t-backgrounds',    `${API}/GetBackgrounds2024`,   {}, d => checkArray(d));
+    await testApi('t-dons',           `${API}/GetDons2024`,          {}, d => checkArray(d));
+    await testApi('t-armes',          `${API}/GetArmes2024`,         {}, d => checkArray(d));
+    await testApi('t-armures',        `${API}/GetArmures2024`,       {}, d => checkArray(d));
+    await testApi('t-monstres',       `${API}/GetMonstres`,          {}, d => checkArray(d));
+    await testApi('t-glossaire',      `${API}/GetGlossaire`,         {}, d => checkArray(d));
+    await testApi('t-correspondances',`${API}/GetCorrespondances`,   {}, d => checkArray(d));
+
+    // ── 3. Personnages ────────────────────────────────────────
+    if (token) {
+      const persos = await testApi('t-perso-list', `${API}/Personnages`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }, d => Array.isArray(d) ? `${d.length} personnage(s)` : '⚠ format inattendu');
+
+      if (persos && persos.length > 0) {
+        const p = persos[0];
+        const champs = ['nom', 'classe', 'niveau', 'combat'];
+        const manquants = champs.filter(c => !(c in p));
+        if (manquants.length) setStatus('t-perso-schema', 'warn', `Champs absents: ${manquants.join(', ')}`);
+        else setStatus('t-perso-schema', 'ok', `OK sur "${p.nom}"`);
+        log(`✓ Schéma personnage "${p.nom}" vérifié`, 'ok');
+      } else {
+        setStatus('t-perso-schema', 'warn', 'Aucun personnage à valider');
+        log('⚠ Aucun personnage pour tester le schéma', 'warn');
+      }
+    } else {
+      setStatus('t-perso-list',   'warn', 'Non connecté');
+      setStatus('t-perso-schema', 'warn', 'Non connecté');
+    }
+
+    // ── 4. Objets magiques ────────────────────────────────────
+    const omData = await testApi('t-om-list', `${API}/objets-magiques`, {},
+      d => d.items ? `${d.total} objets (page 1/${d.pages})` : '⚠ format inattendu');
+
+    if (omData?.total !== undefined) {
+      if (omData.total === 0) setStatus('t-om-count', 'warn', '0 objet en base');
+      else if (omData.total < 50) setStatus('t-om-count', 'warn', `Seulement ${omData.total} objets`);
+      else setStatus('t-om-count', 'ok', `${omData.total} objets en base`);
+      log(`✓ ${omData.total} objets magiques en base`, 'ok');
+    } else {
+      setStatus('t-om-count', 'error', 'Impossible de lire total');
+    }
+
+    if (token) {
+      await testApi('t-om-auth', `${API}/objets-magiques?homebrew_only=true&page=all`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }, d => d.items ? `${d.items.length} homebrew` : '⚠ format inattendu');
+    } else {
+      setStatus('t-om-auth', 'warn', 'Non connecté');
+    }
+
+    // Tester la fiche d'un objet si on en a un
+    if (omData?.items?.length > 0) {
+      const slug = omData.items[0].slug;
+      await testApi('t-om-slug', `${API}/objets-magiques/${slug}`, {},
+        d => d.nom ? `"${d.nom}"` : '⚠ champ nom absent');
+    } else {
+      setStatus('t-om-slug', 'warn', 'Aucun objet à tester');
+    }
+
+    // ── 5. Pages HTML ─────────────────────────────────────────
+    for (const [id, path] of pages) {
+      try {
+        const r = await fetch(path);
+        if (!r.ok) { setStatus(id, 'error', `HTTP ${r.status}`); log(`✗ ${path} → HTTP ${r.status}`, 'error'); }
+        else {
+          const html = await r.text();
+          const hasSidebar = html.includes('Menu MJ');
+          const hasScript  = html.includes('<script');
+          if (!hasSidebar) setStatus(id, 'warn', 'Sidebar absente');
+          else if (!hasScript) setStatus(id, 'warn', 'Aucun script détecté');
+          else { setStatus(id, 'ok', `${Math.round(html.length / 1024)} Ko`); log(`✓ ${path} (${Math.round(html.length / 1024)} Ko)`, 'ok'); }
+        }
+      } catch (e) {
+        setStatus(id, 'error', e.message);
+        log(`✗ ${path} → ${e.message}`, 'error');
+      }
+    }
+
+    document.getElementById('btn-run-all').disabled = false;
+    log('Tests terminés.', 'ok');
+  };
+</script>
+
+</body>
+</html>

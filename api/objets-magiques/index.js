@@ -141,10 +141,51 @@ router.post('/custom/:id/partager', async (req, res) => {
   }
 });
 
+// ─── PUT /custom/:id — modifier un homebrew ──────────────────
+router.put('/custom/:id', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  if (!ObjectId.isValid(req.params.id)) return res.status(400).json({ error: 'ID invalide' });
+
+  const { nom, categorie, rarete, harmonisation, harmonisation_detail,
+          description, effets, poids, prix_estime, image } = req.body;
+  if (!nom) return res.status(400).json({ error: 'Le nom est obligatoire' });
+
+  const update = {
+    nom,
+    nom_original: nom,
+    categorie: categorie || 'autre',
+    rarete: rarete || 'peu_commun',
+    harmonisation: !!harmonisation,
+    harmonisation_detail: harmonisation_detail || null,
+    description: description || '',
+    effets: Array.isArray(effets) ? effets : [],
+    poids: poids ? parseFloat(poids) : null,
+    prix_estime: prix_estime ? parseFloat(prix_estime) : null,
+    image: image || null,
+    updated_at: new Date()
+  };
+
+  try {
+    const result = await withDb(db =>
+      db.collection('objets_magiques').updateOne(
+        { _id: new ObjectId(req.params.id), mj_id: userId, source: 'homebrew' },
+        { $set: update }
+      )
+    );
+    if (result.matchedCount === 0) return res.status(404).json({ error: 'Introuvable ou accès refusé' });
+    res.json({ ok: true });
+  } catch (e) {
+    console.error('Erreur objets-magiques PUT /custom/:id:', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
 // ─── DELETE /custom/:id — supprimer un homebrew ──────────────
 router.delete('/custom/:id', async (req, res) => {
   const userId = getUserId(req);
   if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  if (!ObjectId.isValid(req.params.id)) return res.status(400).json({ error: 'ID invalide' });
   try {
     const result = await withDb(db =>
       db.collection('objets_magiques').deleteOne(
