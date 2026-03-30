@@ -28,7 +28,6 @@ async function creerSession() {
   const nom = document.getElementById('nom').value.trim();
   const description = document.getElementById('description').value.trim();
   const systeme = document.getElementById('systeme').value;
-  const statut = document.getElementById('statut').value;
   const visibilite = document.getElementById('visibilite').value;
   const mot_de_passe = document.getElementById('mot_de_passe').value;
   const errEl = document.getElementById('form-error');
@@ -63,7 +62,7 @@ async function creerSession() {
       headers: authHeaders(),
       body: JSON.stringify({
         nom, description, visibilite, mot_de_passe: visibilite === 'privee' ? mot_de_passe : undefined,
-        statut, systeme, mj_pseudo: window.USER_PSEUDO || 'MJ'
+        systeme, mj_pseudo: window.USER_PSEUDO || 'MJ'
       })
     });
 

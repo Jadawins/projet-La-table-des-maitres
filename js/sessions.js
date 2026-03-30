@@ -28,7 +28,7 @@ function formatDate(dateStr) {
 }
 
 function statutLabel(s) {
-  const labels = { recrutement: 'Recrutement', en_cours: 'En cours', pausee: 'En pause', terminee: 'Terminée' };
+  const labels = { recrutement: 'Recrutement', en_cours: 'En cours', terminee: 'Terminée' };
   return labels[s] || s;
 }
 

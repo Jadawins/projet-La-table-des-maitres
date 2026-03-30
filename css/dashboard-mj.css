@@ -160,6 +160,7 @@ body.dashboard-body {
 .db-nav-badge.prep    { background: rgba(251,191,36,0.15); color: var(--db-warning); border: 1px solid rgba(251,191,36,0.3); }
 .db-nav-badge.done    { background: rgba(255,255,255,0.05); color: var(--db-secondary); border: 1px solid rgba(255,255,255,0.1); }
 .db-nav-badge.recruit { background: rgba(74,158,255,0.15); color: var(--db-blue); border: 1px solid rgba(74,158,255,0.3); }
+.db-nav-badge.wait    { background: rgba(251,191,36,0.15); color: var(--db-warning); border: 1px solid rgba(251,191,36,0.3); }
 
 /* ─── BOUTONS ────────────────────────────────────────────────── */
 .db-btn {

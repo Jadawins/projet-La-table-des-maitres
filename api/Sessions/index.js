@@ -127,7 +127,7 @@ router.post('/', async (req, res) => {
     mj_pseudo: mj_pseudo || 'MJ',
     visibilite: visibilite === 'privee' ? 'privee' : 'publique',
     mot_de_passe: (visibilite === 'privee' && mot_de_passe) ? hashPassword(mot_de_passe) : null,
-    statut: statut || 'recrutement',
+    statut: 'recrutement',
     joueurs: [],
     date_creation: now,
     date_derniere_activite: now,
@@ -411,6 +411,40 @@ router.post('/:id/jalon', async (req, res) => {
       res.json({ ok: true, montes: resultats });
     });
   } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ─── POST /:id/demarrer — démarrer une session ───────────────
+router.post('/:id/demarrer', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne({ _id: new ObjectId(req.params.id) });
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      if (session.mj_id !== userId) return res.status(403).json({ error: 'Réservé au MJ' });
+      if (session.statut === 'en_cours') return res.status(400).json({ error: 'Session déjà démarrée' });
+      if (session.statut === 'terminee') return res.status(400).json({ error: 'Session déjà terminée' });
+
+      await db.collection('sessions').updateOne(
+        { _id: new ObjectId(req.params.id) },
+        { $set: { statut: 'en_cours', date_debut: session.date_debut || new Date(), date_derniere_activite: new Date() } }
+      );
+
+      // Notifier les joueurs
+      const joueurIds = (session.joueurs || []).map(j => j.user_id).filter(Boolean);
+      if (joueurIds.length) {
+        await db.collection('notifications').insertMany(joueurIds.map(uid => ({
+          user_id: uid, type: 'session_demarree', titre: 'Session démarrée',
+          message: `La session "${session.nom}" a démarré !`, lu: false, date: new Date()
+        })));
+      }
+
+      res.json({ ok: true });
+    });
+  } catch (e) {
+    console.error('Erreur POST /Sessions/:id/demarrer:', e.message);
+    res.status(500).json({ error: e.message });
+  }
 });
 
 // ─── POST /:id/terminer — clôturer une session ────────────────

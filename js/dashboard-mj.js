@@ -91,14 +91,15 @@ function _renderSessions() {
   el.innerHTML = _sessions.map(s => `
     <div class="db-nav-item ${_sessionId === String(s._id) ? 'actif' : ''}" onclick="selectionnerSession('${s._id}')">
       <span class="db-nav-item-name">${_esc(s.nom)}</span>
-      <span class="db-nav-badge ${s.statut === 'active' ? 'active' : 'done'}">${s.statut === 'active' ? '●' : '✓'}</span>
+      <span class="db-nav-badge ${{ recrutement:'wait', en_cours:'active', active:'active', terminee:'done' }[s.statut] || 'wait'}">${{ recrutement:'⏳', en_cours:'●', active:'●', terminee:'✓' }[s.statut] || '⏳'}</span>
     </div>
   `).join('');
 }
 
 function _labelStatut(s) {
   if (!s || s === 'prep') return '⚙';
-  if (s === 'active') return '●';
+  if (s === 'recrutement') return '⏳';
+  if (s === 'en_cours' || s === 'active') return '●';
   if (s === 'terminee') return '✓';
   return s;
 }
@@ -147,15 +148,17 @@ async function selectionnerSession(id) {
 
   document.getElementById('session-titre').textContent = s.nom;
   const badge = document.getElementById('session-statut-badge');
-  badge.textContent = s.statut === 'active' ? '● Active' : '✓ Terminée';
-  badge.className = `db-nav-badge ${s.statut === 'active' ? 'active' : 'done'}`;
+  const statutBadge = { recrutement: '⏳ Recrutement', en_cours: '● En cours', terminee: '✓ Terminée' };
+  const statutCls   = { recrutement: 'wait', en_cours: 'active', terminee: 'done' };
+  badge.textContent = statutBadge[s.statut] || s.statut;
+  badge.className = `db-nav-badge ${statutCls[s.statut] || 'wait'}`;
   document.getElementById('db-topbar-titre').textContent = s.nom;
   afficherVue('vue-session');
 
   await _chargerDashboardSession(s._id);
   _mettreAJourCtxSession(s);
 
-  if (s.statut === 'active') {
+  if (s.statut === 'en_cours' || s.statut === 'active') {
     _stopRefresh();
     _refreshInterval = setInterval(() => _chargerDashboardSession(_sessionId), 5000);
   }
@@ -493,6 +496,30 @@ async function envoyerMessageGroupe() {
   }
 }
 
+async function demarrerSession() {
+  if (!_sessionId) return;
+  try {
+    const r = await fetch(`${API}/Sessions/${_sessionId}/demarrer`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${_token}` }
+    });
+    if (!r.ok) throw new Error((await r.json()).error || `HTTP ${r.status}`);
+    _showToast('success', 'Session démarrée !');
+    await chargerSessions();
+    const s = _sessions.find(x => String(x._id) === _sessionId);
+    if (s) {
+      const badge = document.getElementById('session-statut-badge');
+      badge.textContent = '● En cours';
+      badge.className = 'db-nav-badge active';
+      _mettreAJourCtxSession(s);
+      _stopRefresh();
+      _refreshInterval = setInterval(() => _chargerDashboardSession(_sessionId), 5000);
+    }
+  } catch (e) {
+    _showToast('danger', e.message || 'Erreur lors du démarrage');
+  }
+}
+
 function terminerSession() {
   document.getElementById('terminer-resume').value = '';
   ouvrirModal('modal-terminer');
@@ -700,32 +727,50 @@ function _mettreAJourCtxCampagne(c) {
 }
 
 function _mettreAJourCtxSession(s) {
-  const isActive = s.statut === 'active';
+  const statut = s.statut || 'recrutement';
+  const isRecrutement = statut === 'recrutement';
+  const isEnCours     = statut === 'en_cours' || statut === 'active';
+  const isTerminee    = statut === 'terminee';
+
   document.getElementById('ctx-session-info').style.display = 'block';
-  document.getElementById('ctx-xp').style.display = isActive ? 'block' : 'none';
+  document.getElementById('ctx-xp').style.display = isEnCours ? 'block' : 'none';
+
+  const statutLabels = { recrutement: 'Recrutement', en_cours: 'En cours', active: 'En cours', terminee: 'Terminée' };
   document.getElementById('ctx-session-infos-contenu').innerHTML = `
     <div style="font-size:0.82rem;color:var(--db-secondary);">
-      <div style="margin-bottom:0.3rem;"><i class="fa-solid fa-circle ${isActive ? 'text-success' : ''}"></i> Statut : <strong>${isActive ? 'Active' : 'Terminée'}</strong></div>
+      <div style="margin-bottom:0.3rem;"><i class="fa-solid fa-circle${isEnCours ? ' text-success' : ''}"></i> Statut : <strong>${statutLabels[statut] || statut}</strong></div>
       ${s.campagne_nom ? `<div style="margin-bottom:0.3rem;"><i class="fa-solid fa-book-skull"></i> Campagne : ${_esc(s.campagne_nom)}</div>` : ''}
-      ${isActive ? `<button class="db-btn primary" style="width:100%;margin-top:0.5rem;" onclick="ouvrirEcranMJ()"><i class="fa-solid fa-display"></i> Écran MJ</button>` : `<button class="db-btn ghost" style="width:100%;margin-top:0.5rem;" onclick="afficherHistorique('${s._id}')"><i class="fa-solid fa-clock-rotate-left"></i> Voir historique</button>`}
+      ${isEnCours ? `<button class="db-btn primary" style="width:100%;margin-top:0.5rem;" onclick="ouvrirEcranMJ()"><i class="fa-solid fa-display"></i> Écran MJ</button>` : ''}
+      ${isTerminee ? `<button class="db-btn ghost" style="width:100%;margin-top:0.5rem;" onclick="afficherHistorique('${s._id}')"><i class="fa-solid fa-clock-rotate-left"></i> Voir historique</button>` : ''}
     </div>
   `;
+
   const actionsEl = document.getElementById('ctx-actions-contenu');
-  actionsEl.innerHTML = isActive ? `
-    <button class="db-btn blue" style="width:100%;margin-bottom:0.4rem;" onclick="ouvrirModalMessage()">
-      <i class="fa-solid fa-paper-plane"></i> Message groupe
-    </button>
-    <button class="db-btn danger" style="width:100%;" onclick="terminerSession()">
-      <i class="fa-solid fa-flag-checkered"></i> Terminer la session
-    </button>
-  ` : `
-    <button class="db-btn ghost" style="width:100%;margin-bottom:0.4rem;" onclick="afficherHistorique('${s._id}')">
-      <i class="fa-solid fa-clock-rotate-left"></i> Historique
-    </button>
-    <button class="db-btn ghost" style="width:100%;" onclick="ouvrirModalStatsS('${s._id}')">
-      <i class="fa-solid fa-chart-simple"></i> Statistiques
-    </button>
-  `;
+  if (isRecrutement) {
+    actionsEl.innerHTML = `
+      <button class="db-btn primary" style="width:100%;margin-bottom:0.4rem;" onclick="demarrerSession()">
+        <i class="fa-solid fa-play"></i> Démarrer la session
+      </button>
+    `;
+  } else if (isEnCours) {
+    actionsEl.innerHTML = `
+      <button class="db-btn blue" style="width:100%;margin-bottom:0.4rem;" onclick="ouvrirModalMessage()">
+        <i class="fa-solid fa-paper-plane"></i> Message groupe
+      </button>
+      <button class="db-btn danger" style="width:100%;" onclick="terminerSession()">
+        <i class="fa-solid fa-flag-checkered"></i> Terminer la session
+      </button>
+    `;
+  } else {
+    actionsEl.innerHTML = `
+      <button class="db-btn ghost" style="width:100%;margin-bottom:0.4rem;" onclick="afficherHistorique('${s._id}')">
+        <i class="fa-solid fa-clock-rotate-left"></i> Historique
+      </button>
+      <button class="db-btn ghost" style="width:100%;" onclick="ouvrirModalStatsS('${s._id}')">
+        <i class="fa-solid fa-chart-simple"></i> Statistiques
+      </button>
+    `;
+  }
 }
 
 async function ouvrirModalStatsS(sessionId) {
@@ -820,7 +865,7 @@ Object.assign(window, {
   enregistrerCampagne, marqueSaleCampagne,
   ajouterBloc, majBloc, monterBloc, descendreBloc, supprimerBloc,
   ouvrirModalMessage, envoyerMessageGroupe,
-  terminerSession, confirmerTerminerSession,
+  demarrerSession, terminerSession, confirmerTerminerSession,
   ouvrirEcranMJ, ouvrirFicheJoueur, soignerJoueur,
   distribuerXPDashboard, jalonDashboard,
   afficherHistorique, ouvrirModalStatsC, ouvrirModalStatsS,
