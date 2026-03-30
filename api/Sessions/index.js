@@ -413,4 +413,46 @@ router.post('/:id/jalon', async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
+// ─── POST /:id/terminer — clôturer une session ────────────────
+router.post('/:id/terminer', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { resume } = req.body;
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne({ _id: new ObjectId(req.params.id) });
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      if (session.mj_id !== userId) return res.status(403).json({ error: 'Réservé au MJ' });
+
+      const update = {
+        statut: 'terminee',
+        date_fin: new Date(),
+        date_derniere_activite: new Date()
+      };
+      if (resume) update.resume_derniere_seance = resume;
+
+      await db.collection('sessions').updateOne({ _id: new ObjectId(req.params.id) }, { $set: update });
+
+      // Notifier les joueurs
+      const joueurIds = (session.joueurs || []).map(j => j.user_id).filter(Boolean);
+      if (joueurIds.length) {
+        const notifs = joueurIds.map(uid => ({
+          user_id: uid,
+          type: 'session_terminee',
+          titre: 'Session terminée',
+          message: `La session "${session.nom}" a été clôturée par le MJ.`,
+          lu: false,
+          date: new Date()
+        }));
+        await db.collection('notifications').insertMany(notifs);
+      }
+
+      res.json({ ok: true });
+    });
+  } catch (e) {
+    console.error('Erreur POST /Sessions/:id/terminer:', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
 module.exports = router;
