@@ -160,3 +160,9 @@ body[data-theme='light'] textarea:focus {
     margin-right: 0.5rem;
     vertical-align: middle;
   }
+
+/* ─── SELECT OPTIONS — lisibilité sur fond sombre ─────────────── */
+select option {
+  background: #1a1a2e;
+  color: #f0f0f0;
+}
