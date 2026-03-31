@@ -26,12 +26,18 @@
   .sidebar-header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 8px;
     height: 64px;
     padding: 0 12px;
     box-sizing: border-box;
     flex-shrink: 0;
+  }
+
+  /* Pousse cloche+engrenage vers la droite */
+  .sidebar-header #notif-btn {
+    margin-left: auto;
   }
   
   .sidebar-title {
