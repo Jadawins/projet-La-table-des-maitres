@@ -416,8 +416,9 @@
     localStorage.setItem("userId", user.id);
     const { data: { session } } = await supabase.auth.getSession();
     window._supabaseToken = session?.access_token || null;
+    window.SUPABASE_TOKEN = session?.access_token || null;
     window._supabaseUser = user;
-    document.dispatchEvent(new CustomEvent('supabase-ready', { detail: { user, token: window._supabaseToken } }));
+    window.dispatchEvent(new CustomEvent('supabase-ready', { detail: { user, token: window._supabaseToken } }));
   }
 </script>
 

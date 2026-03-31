@@ -185,8 +185,11 @@
   const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
   const { url, key } = await res.json();
   const supabase = createClient(url, key);
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) window.location.href = "login.html";
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) window.location.href = "login.html";
+  localStorage.setItem('userId', session.user.id);
+  window.SUPABASE_TOKEN = session.access_token;
+  window.dispatchEvent(new Event('supabase-ready'));
 </script>
 <script type="module">import { toggleSidebar } from './js/sidebar.js'; window.toggleSidebar = toggleSidebar;</script>
 <div class="theme-toggle-container"><button id="theme-toggle" class="lanterne-btn"><img id="lanterne-icon" src="assets/img/sombre.png" alt="Thème" /></button></div>
