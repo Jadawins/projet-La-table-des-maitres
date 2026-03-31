@@ -66,6 +66,7 @@
             <li><a href="sessions.html?role=mj"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
             <li><a href="campagne.html"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
             <li><a href="creer-objet-magique.html"><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</a></li>
+          <li><a href="creer-monstre.html"><i class="fa-solid fa-skull-crossbones"></i> Mes Monstres</a></li>
           </ul>
           <h2>Menu Joueurs</h2>
           <ul class="sidebar-menu">
@@ -104,6 +105,9 @@
       <li>📚 <strong>Chapitres avec drag &amp; drop</strong> — liste des chapitres dans la colonne gauche, réordonnables par glisser-déposer, création via prompt, auto-sélection du premier chapitre au chargement</li>
       <li>💾 <strong>Auto-save 30s</strong> — sauvegarde automatique du contenu TipTap (JSON) dans MongoDB champ <code>chapitres</code> ; indicateur ✓/⏳/● dans la topbar</li>
       <li>🔄 <strong>Migration ancien format</strong> — si une campagne a des données Quill (<code>blocs</code>), elles sont converties en un chapitre de compatibilité au chargement</li>
+      <li>💀 <strong>Monstres custom MJ</strong> — page <em>Mes Monstres</em> (Menu MJ) : créer/modifier/supprimer des monstres avec nom, type, FP, PV, CA, vitesse, formule de dés, attaques (nom/dégâts/bonus/type), XP, description ; XP auto-suggéré selon le FP (table D&D 2024) ; disponible depuis toutes les pages via la sidebar</li>
+      <li>🔍 <strong>Recherche BDD dans écran MJ</strong> — champ de recherche dans la modale "Ajouter un participant" : tape le nom → résultats live depuis <code>MonstresCustom</code>, clic → pré-remplit PV/CA/XP/attaques du monstre</li>
+      <li>⭐ <strong>XP automatique à la fin du combat</strong> — modale "Terminer le combat" : XP calculé automatiquement en additionnant l'XP de chaque monstre participant ; répartition affichée (XP total / nombre de joueurs) ; distribution via la route <code>POST /Combats/:id/fin</code> qui met à jour l'XP des personnages en BDD</li>
     </ul>
   </details>
   <details style="margin-bottom:0.4rem;">

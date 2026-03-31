@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un monstre — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui-clean.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <style>
+    .monstre-form { max-width: 720px; margin: 0 auto; }
+    .monstre-form h2 { color: #c9a84c; font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .form-section { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
+    .form-section h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: #555; margin: 0 0 0.9rem; }
+    .form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+    .form-group { margin-bottom: 0.7rem; }
+    .form-group label { display: block; font-size: 0.72rem; color: #888; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 0.42rem 0.7rem; color: #f0f0f0; font-size: 0.85rem;
+      box-sizing: border-box; font-family: inherit; transition: border-color 0.15s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: rgba(134,93,255,0.5);
+    }
+    /* Attaques */
+    .attaques-list { border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; margin-bottom: 0.7rem; min-height: 40px; }
+    .atk-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.65rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; color: #ccc; }
+    .atk-row:last-child { border-bottom: none; }
+    .atk-row-label { flex: 1; }
+    .atk-badge { font-size: 0.7rem; background: rgba(255,255,255,0.06); border-radius: 3px; padding: 1px 5px; color: #888; }
+    .atk-remove { background: none; border: none; color: #444; cursor: pointer; font-size: 0.72rem; padding: 0 0.15rem; }
+    .atk-remove:hover { color: #f08080; }
+    .atk-form-row { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: flex-end; }
+    .atk-form-row input, .atk-form-row select { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 5px; padding: 0.35rem 0.5rem; color: #f0f0f0; font-size: 0.78rem; font-family: inherit; }
+    .btn-add-atk { background: rgba(134,93,255,0.18); border: 1px solid rgba(134,93,255,0.4); color: #c4b5fd; border-radius: 5px; padding: 0.35rem 0.7rem; font-size: 0.78rem; cursor: pointer; font-family: inherit; white-space: nowrap; }
+    .btn-add-atk:hover { background: rgba(134,93,255,0.28); }
+    /* XP auto badge */
+    .xp-hint { font-size: 0.72rem; color: #865dff; margin-top: 0.25rem; }
+    /* Actions */
+    .form-actions { display: flex; gap: 0.6rem; justify-content: flex-end; margin-top: 1.2rem; flex-wrap: wrap; }
+    .btn-primary { background: #865dff; color: #fff; border: none; border-radius: 7px; padding: 0.48rem 1.2rem; font-size: 0.85rem; cursor: pointer; font-family: inherit; font-weight: 500; }
+    .btn-primary:hover { background: #9b7fe8; }
+    .btn-secondary { background: rgba(255,255,255,0.07); color: #bbb; border: 1px solid rgba(255,255,255,0.12); border-radius: 7px; padding: 0.48rem 1.1rem; font-size: 0.85rem; cursor: pointer; font-family: inherit; text-decoration: none; display: inline-flex; align-items: center; }
+    .btn-danger { background: rgba(139,0,0,0.2); color: #f08080; border: 1px solid rgba(139,0,0,0.35); border-radius: 7px; padding: 0.48rem 1.1rem; font-size: 0.85rem; cursor: pointer; font-family: inherit; margin-right: auto; }
+    .btn-danger:hover { background: rgba(139,0,0,0.4); }
+    /* Error */
+    .form-error { color: #ff8888; font-size: 0.82rem; margin-top: 0.5rem; display: none; }
+    /* Toast */
+    .toast { position: fixed; bottom: 1.5rem; right: 1.5rem; padding: 0.55rem 1.1rem; border-radius: 8px; font-size: 0.83rem; color: #fff; z-index: 2000; opacity: 0; transform: translateY(8px); transition: opacity 0.22s, transform 0.22s; pointer-events: none; }
+    .toast.success { background: #2d5a27; }
+    .toast.error { background: #8B0000; }
+    .toast.visible { opacity: 1; transform: translateY(0); }
+    /* Mes monstres */
+    .mes-monstres-section { margin-top: 2.5rem; }
+    .mes-monstres-section h2 { color: #865dff; font-size: 1.1rem; margin-bottom: 1rem; }
+    .monstres-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.8rem; }
+    .monstre-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 0.9rem 1.1rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .monstre-card-nom { font-weight: 600; color: #e8e0ff; font-size: 0.92rem; }
+    .monstre-card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .monstre-tag { font-size: 0.7rem; background: rgba(255,255,255,0.06); border-radius: 3px; padding: 1px 6px; color: #999; }
+    .monstre-card-actions { display: flex; gap: 0.4rem; margin-top: 0.3rem; }
+    .btn-edit-monstre { background: rgba(134,93,255,0.14); border: 1px solid rgba(134,93,255,0.35); color: #c4b5fd; border-radius: 5px; padding: 0.28rem 0.75rem; font-size: 0.75rem; cursor: pointer; font-family: inherit; }
+    .btn-edit-monstre:hover { background: rgba(134,93,255,0.25); }
+    .btn-del-monstre { background: rgba(139,0,0,0.12); border: 1px solid rgba(139,0,0,0.25); color: #f08080; border-radius: 5px; padding: 0.28rem 0.65rem; font-size: 0.75rem; cursor: pointer; font-family: inherit; }
+    .btn-del-monstre:hover { background: rgba(139,0,0,0.3); }
+  </style>
+</head>
+<body>
+<div class="page-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header sidebar-header-flex">
+      <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
+        <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
+      </button>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+          <li><a href="sessions.html?role=mj"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
+          <li><a href="campagne.html"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
+          <li><a href="creer-objet-magique.html"><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</a></li>
+          <li><a href="creer-monstre.html" class="active"><i class="fa-solid fa-skull-crossbones"></i> Mes Monstres</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil site</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="sessions-page">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+      <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
+    </button>
+
+    <p class="breadcrumb"><a href="dashboard-mj.html"><i class="fa-solid fa-arrow-left"></i> Dashboard MJ</a> › Mes Monstres</p>
+
+    <div class="monstre-form">
+      <h2 id="form-titre"><i class="fa-solid fa-skull-crossbones"></i> Nouveau monstre</h2>
+
+      <!-- Identité -->
+      <div class="form-section">
+        <h3>Identité</h3>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Nom *</label>
+            <input type="text" id="nom" placeholder="Gobelin chef…" maxlength="80" />
+          </div>
+          <div class="form-group">
+            <label>Type</label>
+            <select id="type">
+              <option value="humanoïde">Humanoïde</option>
+              <option value="bête">Bête</option>
+              <option value="mort-vivant">Mort-vivant</option>
+              <option value="dragon">Dragon</option>
+              <option value="fiélon">Fiélon</option>
+              <option value="géant">Géant</option>
+              <option value="aberration">Aberration</option>
+              <option value="élémentaire">Élémentaire</option>
+              <option value="fée">Fée</option>
+              <option value="céleste">Céleste</option>
+              <option value="construction">Construction</option>
+              <option value="vase">Vase</option>
+              <option value="plante">Plante</option>
+              <option value="créature magique">Créature magique</option>
+              <option value="forme gazeuse">Forme gazeuse</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid-3">
+          <div class="form-group">
+            <label>Taille</label>
+            <select id="taille">
+              <option value="TP">Très petit</option>
+              <option value="P">Petit</option>
+              <option value="M" selected>Moyen</option>
+              <option value="G">Grand</option>
+              <option value="TG">Très grand</option>
+              <option value="Gig">Gigantesque</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Facteur de Puissance (FP)</label>
+            <select id="fp">
+              <option value="0">0</option>
+              <option value="1/8">1/8</option>
+              <option value="1/4">1/4</option>
+              <option value="1/2">1/2</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>XP gagné <span id="xp-hint" class="xp-hint"></span></label>
+            <input type="number" id="xp" min="0" value="25" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats de combat -->
+      <div class="form-section">
+        <h3>Stats de combat</h3>
+        <div class="form-grid-3">
+          <div class="form-group">
+            <label>Points de vie max</label>
+            <input type="number" id="pv" min="1" value="10" />
+          </div>
+          <div class="form-group">
+            <label>Formule PV (facultatif)</label>
+            <input type="text" id="pv_formule" placeholder="2d6+3" maxlength="20" />
+          </div>
+          <div class="form-group">
+            <label>Classe d'armure (CA)</label>
+            <input type="number" id="ca" min="1" max="30" value="12" />
+          </div>
+          <div class="form-group">
+            <label>Vitesse (m)</label>
+            <input type="number" id="vitesse" min="0" value="9" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Attaques -->
+      <div class="form-section">
+        <h3>Attaques</h3>
+        <div class="attaques-list" id="attaques-list">
+          <div id="atk-empty" style="padding:0.65rem;text-align:center;color:#444;font-size:0.75rem;">
+            Aucune attaque — ajoutez-en ci-dessous
+          </div>
+        </div>
+        <div class="atk-form-row">
+          <input type="text"   id="atk-nom"    placeholder="Nom (ex: Cimeterre)" style="flex:2;min-width:100px" />
+          <input type="text"   id="atk-degats" placeholder="Dés (ex: 1d6+2)"    style="flex:1;min-width:80px" />
+          <input type="number" id="atk-bonus"  placeholder="Bonus atk" value="3" style="max-width:75px" />
+          <select id="atk-type" style="min-width:90px">
+            <option value="tranchant">Tranchant</option>
+            <option value="perçant">Perçant</option>
+            <option value="contondant">Contondant</option>
+            <option value="feu">Feu</option>
+            <option value="froid">Froid</option>
+            <option value="foudre">Foudre</option>
+            <option value="poison">Poison</option>
+            <option value="acide">Acide</option>
+            <option value="nécrotique">Nécrotique</option>
+            <option value="psychique">Psychique</option>
+          </select>
+          <button class="btn-add-atk" id="btn-add-atk">+ Attaque</button>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-section">
+        <h3>Description / Notes MJ</h3>
+        <div class="form-group">
+          <textarea id="description" placeholder="Tactiques, traits spéciaux, contexte narratif…" style="min-height:80px"></textarea>
+        </div>
+      </div>
+
+      <p id="form-error" class="form-error"></p>
+
+      <div class="form-actions">
+        <button class="btn-danger" id="btn-supprimer" style="display:none" onclick="supprimerMonstre()">
+          🗑️ Supprimer
+        </button>
+        <a href="dashboard-mj.html" class="btn-secondary">Annuler</a>
+        <button class="btn-primary" id="btn-sauvegarder" onclick="sauvegarder()">
+          <i class="fa-solid fa-save"></i> <span id="btn-label">Créer le monstre</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── MES MONSTRES ─────────────────────────────── -->
+    <div class="mes-monstres-section monstre-form">
+      <h2><i class="fa-solid fa-list"></i> Mes monstres</h2>
+      <div class="monstres-grid" id="monstres-grid">
+        <div style="color:#444;font-size:0.8rem;">Chargement…</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- AUTH -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) { window.location.href = "login.html"; }
+  else {
+    window.SUPABASE_TOKEN = session.access_token;
+    window.USER_ID = session.user.id;
+    window.dispatchEvent(new Event('supabase-ready'));
+  }
+</script>
+
+<!-- SIDEBAR -->
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+
+<!-- THÈME -->
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
+
+<script>
+const API = 'https://myrpgtable.fr/api';
+let token = null;
+let editId = null;   // null = création, sinon ObjectId du monstre en édition
+let attaques = [];   // liste des attaques en cours de saisie
+
+// XP par FP (D&D 2024)
+const XP_PAR_FP = {
+  '0':25,'1/8':25,'1/4':50,'1/2':100,
+  '1':200,'2':450,'3':700,'4':1100,'5':1800,
+  '6':2300,'7':2900,'8':3900,'9':5000,'10':5900,
+  '11':7200,'12':8400,'13':10000,'14':11500,'15':13000,
+  '16':15000,'17':18000,'18':20000,'19':22000,'20':25000
+};
+
+function authHeaders() {
+  return { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` };
+}
+
+function showToast(msg, type='success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type}`;
+  t.classList.add('visible');
+  setTimeout(() => t.classList.remove('visible'), 3200);
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Auto-remplir XP quand FP change
+document.getElementById('fp').addEventListener('change', function() {
+  const xp = XP_PAR_FP[this.value];
+  if (xp !== undefined) {
+    document.getElementById('xp').value = xp;
+    document.getElementById('xp-hint').textContent = `(suggestion FP ${this.value})`;
+  }
+});
+
+// ─── ATTAQUES ─────────────────────────────────────────────────
+function renderAttaques() {
+  const list  = document.getElementById('attaques-list');
+  const empty = document.getElementById('atk-empty');
+  if (!attaques.length) {
+    empty.style.display = '';
+    list.querySelectorAll('.atk-row').forEach(el => el.remove());
+    return;
+  }
+  empty.style.display = 'none';
+  // Reconstruire
+  list.querySelectorAll('.atk-row').forEach(el => el.remove());
+  attaques.forEach((a, i) => {
+    const row = document.createElement('div');
+    row.className = 'atk-row';
+    row.innerHTML = `
+      <span class="atk-row-label">${escHtml(a.nom)}</span>
+      <span class="atk-badge">+${a.bonus} atk</span>
+      <span class="atk-badge">${escHtml(a.degats)}</span>
+      <span class="atk-badge">${escHtml(a.type)}</span>
+      <button class="atk-remove" data-i="${i}">✕</button>
+    `;
+    list.insertBefore(row, empty);
+  });
+  list.querySelectorAll('.atk-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      attaques.splice(parseInt(btn.dataset.i), 1);
+      renderAttaques();
+    });
+  });
+}
+
+document.getElementById('btn-add-atk').addEventListener('click', () => {
+  const nom    = document.getElementById('atk-nom').value.trim();
+  const degats = document.getElementById('atk-degats').value.trim();
+  if (!nom || !degats) return;
+  attaques.push({
+    nom,
+    degats,
+    bonus: parseInt(document.getElementById('atk-bonus').value) || 0,
+    type:  document.getElementById('atk-type').value
+  });
+  document.getElementById('atk-nom').value = '';
+  document.getElementById('atk-degats').value = '';
+  renderAttaques();
+});
+
+document.getElementById('atk-nom').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('btn-add-atk').click();
+});
+
+// ─── SAUVEGARDER ──────────────────────────────────────────────
+async function sauvegarder() {
+  const nom = document.getElementById('nom').value.trim();
+  const err = document.getElementById('form-error');
+  err.style.display = 'none';
+
+  if (!nom) {
+    err.textContent = 'Le nom est requis.';
+    err.style.display = 'block';
+    return;
+  }
+
+  const btn = document.getElementById('btn-sauvegarder');
+  btn.disabled = true;
+
+  const body = {
+    nom,
+    type:        document.getElementById('type').value,
+    taille:      document.getElementById('taille').value,
+    fp:          document.getElementById('fp').value,
+    pv:          parseInt(document.getElementById('pv').value)       || 10,
+    pv_formule:  document.getElementById('pv_formule').value.trim(),
+    ca:          parseInt(document.getElementById('ca').value)        || 10,
+    vitesse:     parseInt(document.getElementById('vitesse').value)   || 9,
+    attaques:    [...attaques],
+    xp:          parseInt(document.getElementById('xp').value)        || 0,
+    description: document.getElementById('description').value.trim()
+  };
+
+  try {
+    const url    = editId ? `${API}/MonstresCustom/${editId}` : `${API}/MonstresCustom`;
+    const method = editId ? 'PUT' : 'POST';
+    const res = await fetch(url, { method, headers: authHeaders(), body: JSON.stringify(body) });
+    const data = await res.json();
+
+    if (!res.ok) { err.textContent = data.error || 'Erreur.'; err.style.display = 'block'; btn.disabled = false; return; }
+
+    showToast(editId ? 'Monstre mis à jour !' : 'Monstre créé !');
+    resetForm();
+    await chargerMesMonstres();
+  } catch(e) {
+    err.textContent = `Erreur réseau : ${e.message}`;
+    err.style.display = 'block';
+  }
+  btn.disabled = false;
+}
+window.sauvegarder = sauvegarder;
+
+// ─── SUPPRIMER ────────────────────────────────────────────────
+async function supprimerMonstre() {
+  if (!editId) return;
+  if (!confirm('Supprimer ce monstre définitivement ?')) return;
+  try {
+    await fetch(`${API}/MonstresCustom/${editId}`, { method: 'DELETE', headers: authHeaders() });
+    showToast('Monstre supprimé');
+    resetForm();
+    await chargerMesMonstres();
+  } catch { showToast('Erreur', 'error'); }
+}
+window.supprimerMonstre = supprimerMonstre;
+
+// ─── RESET FORMULAIRE ─────────────────────────────────────────
+function resetForm() {
+  editId = null;
+  attaques = [];
+  document.getElementById('nom').value = '';
+  document.getElementById('type').value = 'humanoïde';
+  document.getElementById('taille').value = 'M';
+  document.getElementById('fp').value = '0';
+  document.getElementById('pv').value = '10';
+  document.getElementById('pv_formule').value = '';
+  document.getElementById('ca').value = '12';
+  document.getElementById('vitesse').value = '9';
+  document.getElementById('xp').value = '25';
+  document.getElementById('xp-hint').textContent = '';
+  document.getElementById('description').value = '';
+  document.getElementById('form-error').style.display = 'none';
+  document.getElementById('btn-supprimer').style.display = 'none';
+  document.getElementById('form-titre').innerHTML = '<i class="fa-solid fa-skull-crossbones"></i> Nouveau monstre';
+  document.getElementById('btn-label').textContent = 'Créer le monstre';
+  renderAttaques();
+}
+
+// ─── ÉDITER UN MONSTRE ────────────────────────────────────────
+function chargerEdition(m) {
+  editId   = m._id;
+  attaques = JSON.parse(JSON.stringify(m.attaques || []));
+
+  document.getElementById('nom').value         = m.nom || '';
+  document.getElementById('type').value        = m.type || 'humanoïde';
+  document.getElementById('taille').value      = m.taille || 'M';
+  document.getElementById('fp').value          = m.fp || '0';
+  document.getElementById('pv').value          = m.pv || 10;
+  document.getElementById('pv_formule').value  = m.pv_formule || '';
+  document.getElementById('ca').value          = m.ca || 10;
+  document.getElementById('vitesse').value     = m.vitesse || 9;
+  document.getElementById('xp').value          = m.xp || 0;
+  document.getElementById('description').value = m.description || '';
+  document.getElementById('form-error').style.display = 'none';
+  document.getElementById('btn-supprimer').style.display = '';
+  document.getElementById('form-titre').innerHTML = `<i class="fa-solid fa-skull-crossbones"></i> Modifier : ${escHtml(m.nom)}`;
+  document.getElementById('btn-label').textContent = 'Mettre à jour';
+  renderAttaques();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── CHARGER MES MONSTRES ─────────────────────────────────────
+async function chargerMesMonstres() {
+  const grid = document.getElementById('monstres-grid');
+  grid.innerHTML = '<div style="color:#444;font-size:0.8rem;">Chargement…</div>';
+  try {
+    const res = await fetch(`${API}/MonstresCustom`, { headers: authHeaders() });
+    if (!res.ok) { grid.innerHTML = '<div style="color:#555;font-size:0.8rem;">Erreur de chargement</div>'; return; }
+    const docs = await res.json();
+
+    if (!docs.length) {
+      grid.innerHTML = '<div style="color:#444;font-size:0.82rem;grid-column:1/-1;">Aucun monstre créé. Utilisez le formulaire ci-dessus !</div>';
+      return;
+    }
+
+    grid.innerHTML = docs.map(m => `
+      <div class="monstre-card">
+        <div class="monstre-card-nom">${escHtml(m.nom)}</div>
+        <div class="monstre-card-meta">
+          <span class="monstre-tag">FP ${m.fp}</span>
+          <span class="monstre-tag">PV ${m.pv}</span>
+          <span class="monstre-tag">CA ${m.ca}</span>
+          <span class="monstre-tag">${m.xp} XP</span>
+          <span class="monstre-tag">${escHtml(m.type)}</span>
+        </div>
+        ${m.attaques?.length ? `<div style="font-size:0.75rem;color:#777;">${m.attaques.map(a => escHtml(a.nom)).join(', ')}</div>` : ''}
+        <div class="monstre-card-actions">
+          <button class="btn-edit-monstre" data-id="${m._id}">✏️ Modifier</button>
+          <button class="btn-del-monstre"  data-id="${m._id}">🗑️</button>
+        </div>
+      </div>
+    `).join('');
+
+    grid.querySelectorAll('.btn-edit-monstre').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const m = docs.find(d => d._id === btn.dataset.id);
+        if (m) chargerEdition(m);
+      });
+    });
+
+    grid.querySelectorAll('.btn-del-monstre').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        if (!confirm('Supprimer ce monstre ?')) return;
+        try {
+          await fetch(`${API}/MonstresCustom/${btn.dataset.id}`, { method: 'DELETE', headers: authHeaders() });
+          showToast('Supprimé');
+          await chargerMesMonstres();
+          if (editId === btn.dataset.id) resetForm();
+        } catch { showToast('Erreur', 'error'); }
+      });
+    });
+
+  } catch { grid.innerHTML = '<div style="color:#555;font-size:0.8rem;">Erreur réseau</div>'; }
+}
+
+// ─── INIT ─────────────────────────────────────────────────────
+function waitForAuth(cb, tries=0) {
+  if (window.SUPABASE_TOKEN) { token = window.SUPABASE_TOKEN; return cb(); }
+  if (tries > 30) return;
+  setTimeout(() => waitForAuth(cb, tries + 1), 100);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Vérifier si édition via URL
+  const params = new URLSearchParams(location.search);
+  const editParam = params.get('id');
+
+  waitForAuth(async () => {
+    await chargerMesMonstres();
+    // Si URL contient ?id= → charger le monstre pour édition
+    if (editParam) {
+      try {
+        const res = await fetch(`${API}/MonstresCustom/${editParam}`, { headers: authHeaders() });
+        if (res.ok) { const m = await res.json(); chargerEdition(m); }
+      } catch { /* ignore */ }
+    }
+  });
+});
+</script>
+</body>
+</html>

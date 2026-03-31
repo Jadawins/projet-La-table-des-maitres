@@ -208,9 +208,19 @@
 
   <!-- ═══ MODALE AJOUTER PARTICIPANT ═══════════════════════════ -->
   <div class="modal-overlay hidden" id="modal-participant">
-    <div class="modal-box">
+    <div class="modal-box" style="max-width:480px;">
       <button class="modal-close" onclick="fermerModal()">✕</button>
       <p class="modal-title"><i class="fa-solid fa-user-plus"></i> Ajouter un participant</p>
+
+      <!-- Recherche BDD monstres -->
+      <div class="form-group" id="monstre-search-group">
+        <label>🔍 Rechercher dans mes monstres</label>
+        <div style="display:flex;gap:0.4rem;">
+          <input type="text" id="monstre-search" placeholder="Gobelin, Dragon…" style="flex:1" oninput="rechercherMonstres()" />
+        </div>
+        <div id="monstre-results" style="border:1px solid rgba(255,255,255,0.08);border-radius:6px;margin-top:0.3rem;max-height:140px;overflow-y:auto;display:none;"></div>
+      </div>
+
       <div class="form-group">
         <label>Nom</label>
         <input type="text" id="p-nom" placeholder="Gobelin Chef…" />
@@ -235,6 +245,10 @@
         <div class="form-group">
           <label>CA</label>
           <input type="number" id="p-ca" value="10" min="1" />
+        </div>
+        <div class="form-group">
+          <label>XP (si monstre)</label>
+          <input type="number" id="p-xp" value="0" min="0" />
         </div>
       </div>
       <div class="form-group">
@@ -349,9 +363,13 @@
       </div>
       <!-- XP automatique si victoire -->
       <div id="fin-combat-xp-wrap" style="margin-top:0.75rem;">
-        <label style="font-size:0.72rem;color:#888;display:block;margin-bottom:0.25rem;">XP à distribuer (optionnel) :</label>
-        <input type="number" id="fin-combat-xp" min="0" placeholder="0"
-          style="width:120px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:0.3rem 0.5rem;border-radius:5px;font-size:0.8rem;" />
+        <label style="font-size:0.72rem;color:#888;display:block;margin-bottom:0.25rem;">XP à distribuer :</label>
+        <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+          <input type="number" id="fin-combat-xp" min="0" placeholder="0"
+            style="width:100px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:0.3rem 0.5rem;border-radius:5px;font-size:0.8rem;" />
+          <span id="fin-combat-xp-auto" style="font-size:0.72rem;color:#c9a84c;"></span>
+        </div>
+        <p id="fin-combat-xp-repartition" style="font-size:0.72rem;color:#777;margin:0.25rem 0 0;"></p>
       </div>
       <div class="modal-actions" style="margin-top:1rem;">
         <button class="btn-sm-secondary" onclick="document.getElementById('modal-fin-combat').classList.add('hidden')">Annuler</button>

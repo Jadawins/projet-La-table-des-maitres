@@ -319,12 +319,17 @@ window.tourSuivant = tourSuivant;
 
 // ─── MODALE PARTICIPANT ───────────────────────────────────────
 
+let _monstreSearchTimeout = null;
+
 function ouvrirModalParticipant() {
   document.getElementById('p-nom').value = '';
   document.getElementById('p-type').value = 'monstre';
   document.getElementById('p-init').value = '10';
   document.getElementById('p-pv').value = '10';
   document.getElementById('p-ca').value = '10';
+  document.getElementById('p-xp').value = '0';
+  document.getElementById('monstre-search').value = '';
+  document.getElementById('monstre-results').style.display = 'none';
   document.getElementById('modal-participant').classList.remove('hidden');
 }
 window.ouvrirModalParticipant = ouvrirModalParticipant;
@@ -334,16 +339,72 @@ function fermerModal() {
 }
 window.fermerModal = fermerModal;
 
+// Recherche de monstres dans MonstresCustom
+async function rechercherMonstres() {
+  clearTimeout(_monstreSearchTimeout);
+  _monstreSearchTimeout = setTimeout(async () => {
+    const q = document.getElementById('monstre-search').value.trim();
+    const resultsEl = document.getElementById('monstre-results');
+    if (!q) { resultsEl.style.display = 'none'; return; }
+    try {
+      const res = await fetch(`${API}/MonstresCustom?recherche=${encodeURIComponent(q)}`, { headers: authHeaders() });
+      if (!res.ok) return;
+      const docs = await res.json();
+      if (!docs.length) {
+        resultsEl.innerHTML = '<div style="padding:0.5rem 0.75rem;color:#444;font-size:0.78rem;">Aucun résultat</div>';
+        resultsEl.style.display = 'block';
+        return;
+      }
+      resultsEl.innerHTML = docs.map(m => `
+        <div class="monstre-result-item" data-id="${m._id}"
+             style="padding:0.4rem 0.75rem;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.8rem;display:flex;gap:0.5rem;align-items:center;color:#ccc;transition:background 0.1s;"
+             onmouseover="this.style.background='rgba(134,93,255,0.12)'"
+             onmouseout="this.style.background=''"
+             onclick="selectionnerMonstre(${JSON.stringify(m).replace(/"/g,'&quot;')})">
+          <span style="flex:1">${m.nom}</span>
+          <span style="font-size:0.7rem;color:#555;">FP ${m.fp}</span>
+          <span style="font-size:0.7rem;color:#555;">PV ${m.pv}</span>
+          <span style="font-size:0.7rem;color:#555;">CA ${m.ca}</span>
+          <span style="font-size:0.7rem;color:#c9a84c;">${m.xp} XP</span>
+        </div>
+      `).join('');
+      resultsEl.style.display = 'block';
+    } catch { /* silencieux */ }
+  }, 250);
+}
+window.rechercherMonstres = rechercherMonstres;
+
+function selectionnerMonstre(m) {
+  document.getElementById('p-nom').value  = m.nom;
+  document.getElementById('p-type').value = 'monstre';
+  document.getElementById('p-pv').value   = m.pv  || 10;
+  document.getElementById('p-ca').value   = m.ca  || 10;
+  document.getElementById('p-xp').value   = m.xp  || 0;
+  document.getElementById('monstre-search').value = '';
+  document.getElementById('monstre-results').style.display = 'none';
+  // Stocker les attaques du monstre pour usage éventuel
+  document.getElementById('p-nom')._attaques   = m.attaques || [];
+  document.getElementById('p-nom')._monstreId  = m._id;
+}
+window.selectionnerMonstre = selectionnerMonstre;
+
 async function ajouterParticipant() {
   if (!combatId) return;
+  const nomEl = document.getElementById('p-nom');
   const body = {
-    nom: document.getElementById('p-nom').value || 'Inconnu',
-    type: document.getElementById('p-type').value,
-    initiative: parseInt(document.getElementById('p-init').value) || 0,
-    pv_max: parseInt(document.getElementById('p-pv').value) || 10,
-    ca: parseInt(document.getElementById('p-ca').value) || 10,
+    nom:             nomEl.value || 'Inconnu',
+    type:            document.getElementById('p-type').value,
+    initiative:      parseInt(document.getElementById('p-init').value) || 0,
+    pv_max:          parseInt(document.getElementById('p-pv').value)    || 10,
+    ca:              parseInt(document.getElementById('p-ca').value)    || 10,
+    xp:              parseInt(document.getElementById('p-xp').value)    || 0,
+    attaques:        nomEl._attaques  || [],
+    monstre_id:      nomEl._monstreId || null,
     visible_joueurs: document.getElementById('p-visible').value !== 'false'
   };
+  // Réinitialiser les données cachées
+  nomEl._attaques  = [];
+  nomEl._monstreId = null;
   try {
     const res = await fetch(`${API}/Combats/${combatId}/participant`, {
       method: 'POST',
@@ -664,12 +725,29 @@ const LABELS_FIN = {
 };
 
 function ouvrirModalFinCombat() {
-  // Remettre victoire par défaut
   const radios = document.querySelectorAll('input[name="fin-raison"]');
   radios.forEach(r => { r.checked = r.value === 'victoire'; });
   document.getElementById('fin-combat-autre-wrap').style.display = 'none';
   document.getElementById('fin-combat-xp-wrap').style.display = 'block';
-  document.getElementById('fin-combat-xp').value = '';
+
+  // Calculer XP automatique depuis les monstres du combat
+  const monstres = (combatData?.participants || []).filter(p => p.type === 'monstre' && p.xp > 0);
+  const xpAuto   = monstres.reduce((sum, m) => sum + (m.xp || 0), 0);
+  const nbJoueurs = (combatData?.participants || []).filter(p => p.type === 'joueur').length;
+
+  document.getElementById('fin-combat-xp').value = xpAuto || '';
+  if (xpAuto > 0) {
+    document.getElementById('fin-combat-xp-auto').textContent = `(calculé depuis les monstres)`;
+    if (nbJoueurs > 0) {
+      const parJoueur = Math.floor(xpAuto / nbJoueurs);
+      document.getElementById('fin-combat-xp-repartition').textContent =
+        `→ ${parJoueur} XP / joueur (${nbJoueurs} joueur${nbJoueurs > 1 ? 's' : ''})`;
+    }
+  } else {
+    document.getElementById('fin-combat-xp-auto').textContent = '';
+    document.getElementById('fin-combat-xp-repartition').textContent = '';
+  }
+
   document.getElementById('modal-fin-combat').classList.remove('hidden');
 }
 window.ouvrirModalFinCombat = ouvrirModalFinCombat;
@@ -718,15 +796,24 @@ async function confirmerFinCombat() {
       }
     }
 
-    // Distribuer XP automatiquement si victoire + XP renseigné
-    if (raison === 'victoire' && xpADistribuer > 0) {
+    // Distribuer XP via la route /fin (calcule aussi XP auto depuis monstres)
+    if (raison === 'victoire') {
       try {
-        await fetch(`${API}/Sessions/${sessionId}/xp`, {
+        const finRes = await fetch(`${API}/Combats/${combatId}/fin`, {
           method: 'POST',
           headers: authHeaders(),
-          body: JSON.stringify({ xp: xpADistribuer })
+          body: JSON.stringify({ raison, xp_total: xpADistribuer || 0 })
         });
-        envoyerMsgSysteme(`🌟 ${xpADistribuer} XP distribués automatiquement !`);
+        if (finRes.ok) {
+          const finData = await finRes.json();
+          const xpEffectif = finData.xp_total || xpADistribuer;
+          if (xpEffectif > 0) {
+            const msg = finData.xp_par_joueur > 0
+              ? `🌟 ${xpEffectif} XP distribués — ${finData.xp_par_joueur} XP/joueur !`
+              : `🌟 ${xpEffectif} XP distribués !`;
+            envoyerMsgSysteme(msg);
+          }
+        }
       } catch (e) { console.warn('Distribution XP échouée', e); }
     }
 
