@@ -91,7 +91,32 @@
   <h2>📖 Édito du Maître</h2>
   <p><strong>✅ Fait récemment :</strong></p>
   <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 29/03/2026</summary>
+    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 31/03/2026</summary>
+    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
+    <ul style="margin-top:0;">
+      <li>📝 <strong>Éditeur de campagne inline — refonte complète</strong> — remplacement de Quill par TipTap (CDN esm.sh) ; l'éditeur fonctionne comme un traitement de texte où les blocs spéciaux sont intégrés directement dans le texte sous forme d'éléments colorés cliquables</li>
+      <li>⚔️ <strong>Bloc Rencontre</strong> — fond rouge bordeaux, modal avec nom/difficulté/description/liste de monstres (nom, quantité, PV, CA) ; en session active → bouton "🚀 Lancer le combat" redirige vers ecran-mj avec les monstres pré-chargés</li>
+      <li>🎲 <strong>Bloc Jet de compétence</strong> — fond violet, compétence + caractéristique auto-remplie + DD + contexte + texte succès/échec ; en session active → bouton "📢 Envoyer aux joueurs" crée une notification pour chaque joueur de la session</li>
+      <li>💰 <strong>Bloc Loot</strong> — fond doré, liste d'items dynamiques (nom, quantité, type : monnaie/équipement/consommable/autre) ; en session active → bouton "🎁 Distribuer"</li>
+      <li>👤 <strong>Bloc PNJ</strong> — fond vert forêt, description publique + notes secrètes MJ (en rouge) + attitude (Amical/Indifférent/Hostile)</li>
+      <li>📍 <strong>Bloc Lieu</strong> — fond bleu ardoise, description publique + notes MJ ; en session active → bouton "👁️ Partager aux joueurs" envoie la description via notifications</li>
+      <li>🖼️ <strong>Bloc Image</strong> — fond gris ardoise, champ URL + prévisualisation inline ; en session active → bouton "👁️ Montrer aux joueurs" envoie l'URL via notifications</li>
+      <li>📚 <strong>Chapitres avec drag &amp; drop</strong> — liste des chapitres dans la colonne gauche, réordonnables par glisser-déposer, création via prompt, auto-sélection du premier chapitre au chargement</li>
+      <li>💾 <strong>Auto-save 30s</strong> — sauvegarde automatique du contenu TipTap (JSON) dans MongoDB champ <code>chapitres</code> ; indicateur ✓/⏳/● dans la topbar</li>
+      <li>🔄 <strong>Migration ancien format</strong> — si une campagne a des données Quill (<code>blocs</code>), elles sont converties en un chapitre de compatibilité au chargement</li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 30/03/2026 ▶</summary>
+    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
+    <ul style="margin-top:0;">
+      <li>🎮 <strong>Flow statut session recrutement → en_cours → terminée</strong> — création forcée à statut "recrutement" (champ select retiré du formulaire) ; dashboard MJ : bouton "▶ Démarrer" (statut recrutement) / "■ Terminer" (statut en_cours) ; badges ⏳/●/✓ dans la liste et l'entête de session</li>
+      <li>🛣️ <strong>Routes POST /Sessions/:id/demarrer et /terminer</strong> — demarrer passe à en_cours et notifie tous les joueurs de la session ; terminer passe à terminee</li>
+      <li>🔧 <strong>Filtre "pausée" retiré de sessions.html</strong> — ce statut n'existe plus dans le flow</li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 29/03/2026 ▶</summary>
     <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
     <ul style="margin-top:0;">
       <li>✅ <strong>Équipement — choix A/B/C</strong> — l'étape équipement ne proposait que l'option A hardcodée. Corrigé : boutons radio pour chaque option de la classe (ex: Barde → Armure de cuir + dagues <em>ou</em> 90 po) ; l'or de départ (option "X po") est crédité dans la monnaie du personnage, pas ajouté comme item</li>

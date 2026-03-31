@@ -2,12 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Éditeur de campagne — La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/campagne.css">
-  <!-- Quill.js -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css">
+  <link rel="stylesheet" href="css/campagne-detail.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -16,123 +15,333 @@
 </head>
 <body>
 
-  <!-- TOPBAR FIXE -->
-  <div class="editor-topbar">
-    <div class="editor-topbar-left">
-      <a href="campagne.html" class="btn-retour">
-        <i class="fa-solid fa-arrow-left"></i> Campagnes
-      </a>
-      <span class="editor-topbar-nom" id="topbar-nom">Chargement…</span>
-      <span class="save-indicator" id="save-indicator">—</span>
+<!-- ─── TOPBAR ─────────────────────────────────────────────────── -->
+<div class="editor-topbar">
+  <div class="editor-topbar-left">
+    <a href="campagne.html" class="btn-retour">
+      <i class="fa-solid fa-arrow-left"></i> Campagnes
+    </a>
+    <span class="editor-topbar-nom" id="topbar-nom">Chargement…</span>
+    <span class="save-indicator" id="save-indicator">—</span>
+  </div>
+  <div style="display:flex;gap:0.5rem;align-items:center;">
+    <select id="statut-select" class="statut-select">
+      <option value="preparation">En préparation</option>
+      <option value="en_cours">En cours</option>
+      <option value="terminee">Terminée</option>
+    </select>
+  </div>
+</div>
+
+<!-- ─── LAYOUT 2 COLONNES ─────────────────────────────────────── -->
+<div class="campagne-detail-layout">
+
+  <!-- COL GAUCHE : Navigation chapitres -->
+  <div class="campagne-nav">
+    <div class="campagne-nav-header">
+      <h3><i class="fa-solid fa-list"></i> Chapitres</h3>
+      <button class="nav-add-btn" id="btn-add-chapitre" title="Ajouter un chapitre">
+        <i class="fa-solid fa-plus"></i>
+      </button>
     </div>
-    <div style="display:flex;gap:0.5rem;align-items:center;">
-      <select id="statut-select" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#ccc;padding:0.3rem 0.6rem;font-size:0.78rem;" onchange="sauvegarderMeta()">
-        <option value="preparation">En préparation</option>
-        <option value="en_cours">En cours</option>
-        <option value="terminee">Terminée</option>
-      </select>
+    <div class="campagne-nav-body" id="nav-body">
+      <div style="padding:1rem;color:#444;font-size:0.78rem;text-align:center;">Chargement…</div>
     </div>
   </div>
 
-  <!-- LAYOUT 2 COLONNES -->
-  <div class="campagne-detail-layout">
+  <!-- COL DROITE : Éditeur -->
+  <div class="campagne-editor-area">
 
-    <!-- ─── COL GAUCHE : Navigation ─────────────────────────── -->
-    <div class="campagne-nav">
-      <div class="campagne-nav-header">
-        <h3><i class="fa-solid fa-list"></i> Chapitres</h3>
-        <button class="nav-add-btn btn-icon add" onclick="ajouterChapitre()" title="Ajouter un chapitre" style="width:auto;padding:0;">
-          <i class="fa-solid fa-plus"></i>
-        </button>
-      </div>
-      <div class="campagne-nav-body" id="nav-body">
-        <div style="padding:1rem;color:#555;font-size:0.8rem;text-align:center;">Chargement…</div>
-      </div>
+    <!-- TOOLBAR -->
+    <div class="editor-toolbar" id="editor-toolbar">
+      <button class="tb-btn" data-cmd="bold"   title="Gras"><b>B</b></button>
+      <button class="tb-btn" data-cmd="italic" title="Italique"><i>I</i></button>
+      <button class="tb-btn" data-cmd="h2"     title="Titre H2">H2</button>
+      <button class="tb-btn" data-cmd="h3"     title="Titre H3">H3</button>
+      <button class="tb-btn" data-cmd="bullet" title="Liste à puces">
+        <i class="fa-solid fa-list-ul"></i>
+      </button>
+      <div class="tb-sep"></div>
+      <button class="tb-btn tb-rencontre" data-bloc="rencontre" title="Insérer une rencontre">⚔️ Rencontre</button>
+      <button class="tb-btn tb-jet"       data-bloc="jet"       title="Insérer un jet de compétence">🎲 Jet</button>
+      <button class="tb-btn tb-loot"      data-bloc="loot"      title="Insérer du loot">💰 Loot</button>
+      <button class="tb-btn tb-pnj"       data-bloc="pnj"       title="Insérer un PNJ">👤 PNJ</button>
+      <button class="tb-btn tb-lieu"      data-bloc="lieu"      title="Insérer un lieu">📍 Lieu</button>
+      <button class="tb-btn tb-image"     data-bloc="imagebloc" title="Insérer une image">🖼️ Image</button>
     </div>
 
-    <!-- ─── COL DROITE : Éditeur ─────────────────────────────── -->
-    <div class="campagne-editor" id="campagne-editor">
-      <div class="editor-content" id="editor-content">
-        <div style="text-align:center;padding:4rem;color:#555;">
-          <i class="fa-solid fa-arrow-left" style="font-size:2rem;color:#333;"></i>
-          <p style="margin-top:1rem;">Sélectionnez un chapitre dans la navigation</p>
-        </div>
+    <!-- ÉDITEUR -->
+    <div class="editor-wrapper" id="editor-wrapper">
+      <div class="editor-placeholder" id="editor-placeholder">
+        <i class="fa-solid fa-book-open" style="font-size:2.5rem;color:#2a2a3e;"></i>
+        <p>Sélectionnez un chapitre dans la navigation</p>
+        <p style="font-size:0.78rem;color:#333;">ou cliquez sur <strong style="color:#555">+</strong> pour en créer un</p>
       </div>
+      <div id="tiptap-editor" style="display:none;"></div>
     </div>
 
   </div>
+</div>
 
-  <!-- MODAL : AJOUTER MONSTRE -->
-  <div class="modal-overlay hidden" id="modal-monstre">
-    <div class="modal-box">
-      <button class="modal-close" onclick="fermerModalMonstre()">✕</button>
-      <p class="modal-title"><i class="fa-solid fa-skull"></i> Ajouter un monstre</p>
+<!-- ═══════════════════ MODALES ═══════════════════════════════ -->
+
+<!-- ─── MODAL RENCONTRE ──────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="modal-rencontre">
+  <div class="modal-box modal-wide">
+    <button class="modal-close" id="close-rencontre">✕</button>
+    <p class="modal-title">⚔️ Rencontre</p>
+    <div class="session-banner" id="session-banner-rencontre" style="display:none">
+      🎮 Session active — cliquez sur <strong>Lancer le combat</strong> pour démarrer dans l'écran MJ
+    </div>
+    <div class="form-row">
       <div class="form-group">
-        <label>Nom</label>
-        <input type="text" id="m-nom" placeholder="Gobelin…" />
+        <label>Nom de la rencontre</label>
+        <input type="text" id="renc-nom" placeholder="Embuscade des Gobelins…" />
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;">
-        <div class="form-group">
-          <label>Quantité</label>
-          <input type="number" id="m-qte" value="1" min="1" max="20" />
-        </div>
-        <div class="form-group">
-          <label>PV max</label>
-          <input type="number" id="m-pv" value="10" min="1" />
-        </div>
-        <div class="form-group">
-          <label>CA</label>
-          <input type="number" id="m-ca" value="12" min="1" />
-        </div>
-        <div class="form-group">
-          <label>Bonus init.</label>
-          <input type="number" id="m-init" value="0" />
-        </div>
-      </div>
-      <div class="modal-actions">
-        <button class="btn-secondary" onclick="fermerModalMonstre()">Annuler</button>
-        <button class="btn-primary" onclick="validerAjoutMonstre()">
-          <i class="fa-solid fa-plus"></i> Ajouter
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL : SÉLECTIONNER SESSION POUR LANCER -->
-  <div class="modal-overlay hidden" id="modal-lancer">
-    <div class="modal-box">
-      <button class="modal-close" onclick="fermerModalLancer()">✕</button>
-      <p class="modal-title"><i class="fa-solid fa-sword"></i> Lancer la rencontre</p>
-      <p style="color:#999;font-size:0.85rem;margin-bottom:1rem;">Choisissez la session dans laquelle charger cette rencontre :</p>
       <div class="form-group">
-        <label>Session active</label>
-        <select id="lancer-session-select">
-          <option value="">Chargement des sessions…</option>
+        <label>Difficulté</label>
+        <select id="renc-diff">
+          <option value="facile">Facile</option>
+          <option value="moyen" selected>Moyen</option>
+          <option value="difficile">Difficile</option>
+          <option value="mortel">Mortel ☠️</option>
         </select>
       </div>
-      <p style="color:#777;font-size:0.78rem;">Les monstres seront pré-chargés dans le tracker d'initiative.</p>
-      <div class="modal-actions">
-        <button class="btn-secondary" onclick="fermerModalLancer()">Annuler</button>
-        <button class="btn-primary" onclick="validerLancerRencontre()">
-          <i class="fa-solid fa-sword"></i> Lancer
-        </button>
+    </div>
+    <div class="form-group">
+      <label>Description / Notes MJ</label>
+      <textarea id="renc-desc" placeholder="Contexte, tactiques, conditions spéciales…"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Monstres</label>
+      <div class="items-list" id="renc-monstres-list">
+        <div class="items-list-empty">Aucun monstre — ajoutez-en ci-dessous</div>
+      </div>
+      <div class="add-item-row">
+        <input type="text"   id="renc-m-nom" placeholder="Nom du monstre" style="flex:2" />
+        <input type="number" id="renc-m-qte" placeholder="Qté" value="1" min="1" max="20" style="max-width:55px" />
+        <input type="number" id="renc-m-pv"  placeholder="PV"  value="10" min="1"  style="max-width:55px" />
+        <input type="number" id="renc-m-ca"  placeholder="CA"  value="12" min="1"  style="max-width:55px" />
+        <button class="btn-add-item" id="renc-add-monstre">+ Ajouter</button>
       </div>
     </div>
+    <div class="modal-actions">
+      <button class="btn-danger"    id="renc-supprimer"   style="display:none">🗑️ Supprimer</button>
+      <button class="btn-secondary" id="renc-annuler">Annuler</button>
+      <button class="btn-session"   id="renc-lancer"      style="display:none">🚀 Lancer le combat</button>
+      <button class="btn-primary"   id="renc-sauvegarder">💾 Sauvegarder</button>
+    </div>
   </div>
+</div>
 
-  <!-- AUTH -->
-  <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-    const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
-    const { url, key } = await res.json();
-    const supabase = createClient(url, key);
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) { window.location.href = "login.html"; }
-    else { window.SUPABASE_TOKEN = session.access_token; window.dispatchEvent(new Event('supabase-ready')); }
-  </script>
+<!-- ─── MODAL JET ─────────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="modal-jet">
+  <div class="modal-box">
+    <button class="modal-close" id="close-jet">✕</button>
+    <p class="modal-title">🎲 Jet de compétence</p>
+    <div class="session-banner" id="session-banner-jet" style="display:none">
+      🎮 Session active — envoyez ce jet directement aux joueurs
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Compétence</label>
+        <select id="jet-comp"></select>
+      </div>
+      <div class="form-group">
+        <label>Caractéristique</label>
+        <select id="jet-carac">
+          <option value="FOR">FOR</option>
+          <option value="DEX">DEX</option>
+          <option value="CON">CON</option>
+          <option value="INT">INT</option>
+          <option value="SAG">SAG</option>
+          <option value="CHA">CHA</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Difficulté (DD)</label>
+      <input type="number" id="jet-dd" value="15" min="1" max="30" style="max-width:100px" />
+    </div>
+    <div class="form-group">
+      <label>Contexte (affiché aux joueurs)</label>
+      <textarea id="jet-contexte" placeholder="Les aventuriers tentent de repérer l'embuscade…"></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label style="color:#4ade80">✓ Succès</label>
+        <textarea id="jet-succes" placeholder="Vous apercevez des silhouettes…" style="min-height:60px"></textarea>
+      </div>
+      <div class="form-group">
+        <label style="color:#f08080">✗ Échec</label>
+        <textarea id="jet-echec" placeholder="Vous êtes surpris !" style="min-height:60px"></textarea>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-danger"    id="jet-supprimer"   style="display:none">🗑️ Supprimer</button>
+      <button class="btn-secondary" id="jet-annuler">Annuler</button>
+      <button class="btn-session"   id="jet-envoyer"     style="display:none">📢 Envoyer aux joueurs</button>
+      <button class="btn-primary"   id="jet-sauvegarder">💾 Sauvegarder</button>
+    </div>
+  </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
-  <script src="js/campagne-detail.js"></script>
-  <script src="js/theme.js"></script>
+<!-- ─── MODAL LOOT ─────────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="modal-loot">
+  <div class="modal-box">
+    <button class="modal-close" id="close-loot">✕</button>
+    <p class="modal-title">💰 Loot</p>
+    <div class="session-banner" id="session-banner-loot" style="display:none">
+      🎮 Session active — distribuez le butin aux joueurs
+    </div>
+    <div class="form-group">
+      <label>Nom du loot</label>
+      <input type="text" id="loot-nom" placeholder="Bourse du chef gobelin…" />
+    </div>
+    <div class="form-group">
+      <label>Items</label>
+      <div class="items-list" id="loot-items-list">
+        <div class="items-list-empty">Aucun item</div>
+      </div>
+      <div class="add-item-row">
+        <input type="text"   id="loot-i-nom" placeholder="Nom de l'item" style="flex:2" />
+        <input type="number" id="loot-i-qte" placeholder="Qté" value="1" min="1" style="max-width:55px" />
+        <select id="loot-i-type">
+          <option value="monnaie">Monnaie</option>
+          <option value="equipement">Équipement</option>
+          <option value="consommable">Consommable</option>
+          <option value="autre">Autre</option>
+        </select>
+        <button class="btn-add-item" id="loot-add-item">+ Ajouter</button>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-danger"    id="loot-supprimer"   style="display:none">🗑️ Supprimer</button>
+      <button class="btn-secondary" id="loot-annuler">Annuler</button>
+      <button class="btn-session"   id="loot-distribuer"  style="display:none">🎁 Distribuer aux joueurs</button>
+      <button class="btn-primary"   id="loot-sauvegarder">💾 Sauvegarder</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL PNJ ──────────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="modal-pnj">
+  <div class="modal-box">
+    <button class="modal-close" id="close-pnj">✕</button>
+    <p class="modal-title">👤 PNJ</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nom</label>
+        <input type="text" id="pnj-nom" placeholder="Aldric le Tavernier…" />
+      </div>
+      <div class="form-group">
+        <label>Attitude</label>
+        <select id="pnj-attitude">
+          <option value="amical">😊 Amical</option>
+          <option value="indifferent" selected>😐 Indifférent</option>
+          <option value="hostile">😠 Hostile</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Description publique</label>
+      <textarea id="pnj-desc" placeholder="Un homme corpulent aux mains calleuses…"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="notes-mj-label">🔒 Notes secrètes MJ</label>
+      <textarea id="pnj-notes" class="notes-mj-field" placeholder="Il travaille secrètement pour le culte…"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-danger"    id="pnj-supprimer"   style="display:none">🗑️ Supprimer</button>
+      <button class="btn-secondary" id="pnj-annuler">Annuler</button>
+      <button class="btn-primary"   id="pnj-sauvegarder">💾 Sauvegarder</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL LIEU ─────────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="modal-lieu">
+  <div class="modal-box">
+    <button class="modal-close" id="close-lieu">✕</button>
+    <p class="modal-title">📍 Lieu</p>
+    <div class="session-banner" id="session-banner-lieu" style="display:none">
+      🎮 Session active — partagez ce lieu avec les joueurs
+    </div>
+    <div class="form-group">
+      <label>Nom du lieu</label>
+      <input type="text" id="lieu-nom" placeholder="Taverne du Sanglier Noir…" />
+    </div>
+    <div class="form-group">
+      <label>Description publique</label>
+      <textarea id="lieu-desc" placeholder="Une taverne bruyante à l'odeur de fumée et de bière…"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="notes-mj-label">🔒 Notes secrètes MJ</label>
+      <textarea id="lieu-notes" class="notes-mj-field" placeholder="Le patron cache quelque chose dans la cave…"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-danger"    id="lieu-supprimer"   style="display:none">🗑️ Supprimer</button>
+      <button class="btn-secondary" id="lieu-annuler">Annuler</button>
+      <button class="btn-session"   id="lieu-partager"    style="display:none">👁️ Partager aux joueurs</button>
+      <button class="btn-primary"   id="lieu-sauvegarder">💾 Sauvegarder</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL IMAGE ────────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="modal-imagebloc">
+  <div class="modal-box">
+    <button class="modal-close" id="close-imagebloc">✕</button>
+    <p class="modal-title">🖼️ Image</p>
+    <div class="session-banner" id="session-banner-imagebloc" style="display:none">
+      🎮 Session active — montrez cette image aux joueurs
+    </div>
+    <div class="form-group">
+      <label>Nom de l'image</label>
+      <input type="text" id="img-nom" placeholder="Carte du village…" />
+    </div>
+    <div class="form-group">
+      <label>URL de l'image</label>
+      <input type="url" id="img-url" placeholder="https://…" />
+      <img id="img-preview" class="img-preview" alt="Aperçu" />
+    </div>
+    <div class="modal-actions">
+      <button class="btn-danger"    id="img-supprimer"   style="display:none">🗑️ Supprimer</button>
+      <button class="btn-secondary" id="img-annuler">Annuler</button>
+      <button class="btn-session"   id="img-montrer"     style="display:none">👁️ Montrer aux joueurs</button>
+      <button class="btn-primary"   id="img-sauvegarder">💾 Sauvegarder</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ─── AUTH ───────────────────────────────────────────────────── -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+  const { url, key } = await res.json();
+  const supabase = createClient(url, key);
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) { window.location.href = "login.html"; }
+  else {
+    window.SUPABASE_TOKEN = session.access_token;
+    window.USER_ID = session.user.id;
+    window.dispatchEvent(new Event('supabase-ready'));
+  }
+</script>
+
+<!-- ─── ÉDITEUR TIPTAP ─────────────────────────────────────────── -->
+<script type="module" src="js/campagne-detail.js"></script>
+
+<!-- ─── THÈME ─────────────────────────────────────────────────── -->
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
+<script src="js/theme.js"></script>
+
 </body>
 </html>
