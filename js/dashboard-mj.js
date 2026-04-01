@@ -182,9 +182,10 @@ async function selectionnerSession(id) {
 }
 
 async function _chargerDashboardSession(id) {
+  const tok = _token || window._supabaseToken || window.SUPABASE_TOKEN;
   try {
-    const r = await fetch(`${API}/Sessions/${id}/stats`, { headers: { Authorization: `Bearer ${_token}` } });
-    if (!r.ok) return;
+    const r = await fetch(`${API}/Sessions/${id}/stats`, { headers: { Authorization: `Bearer ${tok}` } });
+    if (!r.ok) { console.warn('stats HTTP', r.status, await r.text()); return; }
     const data = await r.json();
     _renderDashboardSession(data);
   } catch (e) { console.warn('Erreur chargement session stats:', e); }
