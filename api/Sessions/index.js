@@ -84,6 +84,65 @@ router.get('/', async (req, res) => {
   }
 });
 
+// ─── GET /Sessions/:id/stats — stats + journal d'une session ──
+router.get('/:id/stats', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne(
+        { _id: new ObjectId(req.params.id) },
+        { projection: { mot_de_passe: 0 } }
+      );
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+
+      res.status(200).json({
+        joueurs: session.joueurs || [],
+        stats: session.stats || { duree: '—', morts: 0, xp_total: 0 },
+        journal: session.journal || []
+      });
+    });
+  } catch (err) {
+    console.error('Erreur GET /Sessions/:id/stats:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ─── POST /Sessions/:id/journal — ajouter une entrée journal ──
+router.post('/:id/journal', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+
+  const { message, type } = req.body;
+  if (!message) return res.status(400).json({ error: 'message requis' });
+
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne({ _id: new ObjectId(req.params.id) });
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+
+      const isMJ = session.mj_id === userId;
+      const isJoueur = (session.joueurs || []).some(j => j.user_id === userId);
+      if (!isMJ && !isJoueur) return res.status(403).json({ error: 'Accès refusé' });
+
+      const entry = { message, type: type || 'note', date: new Date() };
+      await db.collection('sessions').updateOne(
+        { _id: new ObjectId(req.params.id) },
+        {
+          $push: { journal: entry },
+          $set: { date_derniere_activite: new Date() }
+        }
+      );
+
+      res.status(201).json({ ok: true, entry });
+    });
+  } catch (err) {
+    console.error('Erreur POST /Sessions/:id/journal:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // ─── GET /Sessions/:id — détail d'une session ─────────────────
 router.get('/:id', async (req, res) => {
   const userId = getUserId(req);
