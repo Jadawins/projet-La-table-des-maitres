@@ -23,9 +23,9 @@ function _autoInit() {
     _token  = window._supabaseToken;
     _init();
   } else {
-    document.addEventListener('supabase-ready', e => {
-      _userId = e.detail.user.id;
-      _token  = e.detail.token;
+    window.addEventListener('supabase-ready', e => {
+      _userId = e.detail?.user?.id || localStorage.getItem('userId');
+      _token  = e.detail?.token || window._supabaseToken || window.SUPABASE_TOKEN;
       _init();
     }, { once: true });
     let tries = 0;
@@ -684,13 +684,23 @@ async function ajouterNoteJournal() {
   if (!msg || !_sessionId) return;
   input.value = '';
   try {
-    await fetch(`${API}/Sessions/${_sessionId}/journal`, {
+    const r = await fetch(`${API}/Sessions/${_sessionId}/journal`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${_token}` },
       body: JSON.stringify({ message: msg, type: 'note' })
     });
-    _chargerDashboardSession(_sessionId);
-  } catch { /* ignore */ }
+    if (!r.ok) {
+      const d = await r.json().catch(() => ({}));
+      _showToast('danger', d.error || 'Erreur lors de l\'ajout');
+      input.value = msg; // remet le texte
+      return;
+    }
+  } catch (e) {
+    _showToast('danger', 'Erreur réseau');
+    input.value = msg;
+    return;
+  }
+  await _chargerDashboardSession(_sessionId);
 }
 
 function exporterJournal() {
