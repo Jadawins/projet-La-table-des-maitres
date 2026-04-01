@@ -143,17 +143,32 @@ async function selectionnerSession(id) {
   _renderCampagnes();
   _renderSessions();
 
-  const s = _sessions.find(x => String(x._id) === _sessionId);
+  let s = _sessions.find(x => String(x._id) === _sessionId);
   if (!s) return;
 
   document.getElementById('session-titre').textContent = s.nom;
+  document.getElementById('db-topbar-titre').textContent = s.nom;
+  afficherVue('vue-session');
+
+  // Re-fetch le statut depuis l'API pour ne pas afficher un cache périmé
+  try {
+    const rf = await fetch(`${API}/Sessions/${_sessionId}`, { headers: { Authorization: `Bearer ${_token}` } });
+    if (rf.ok) {
+      const fresh = await rf.json();
+      // Normaliser 'active' → 'en_cours'
+      if (fresh.statut === 'active') fresh.statut = 'en_cours';
+      s = { ...s, ...fresh };
+      // Mettre à jour le cache local
+      const idx = _sessions.findIndex(x => String(x._id) === _sessionId);
+      if (idx !== -1) _sessions[idx] = s;
+    }
+  } catch (e) { /* garder le cache */ }
+
   const badge = document.getElementById('session-statut-badge');
   const statutBadge = { recrutement: '⏳ Recrutement', en_cours: '● En cours', terminee: '✓ Terminée' };
   const statutCls   = { recrutement: 'wait', en_cours: 'active', terminee: 'done' };
   badge.textContent = statutBadge[s.statut] || s.statut;
   badge.className = `db-nav-badge ${statutCls[s.statut] || 'wait'}`;
-  document.getElementById('db-topbar-titre').textContent = s.nom;
-  afficherVue('vue-session');
 
   await _chargerDashboardSession(s._id);
   _mettreAJourCtxSession(s);

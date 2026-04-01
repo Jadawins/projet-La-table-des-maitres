@@ -99,7 +99,8 @@ function renderSession() {
   document.getElementById('block-mon-perso').style.display = s.est_joueur ? 'block' : 'none';
 
   if (s.est_mj) {
-    document.getElementById('mj-statut-select').value = s.statut;
+    // Normaliser 'active' (ancien nom) → 'en_cours'
+    document.getElementById('mj-statut-select').value = s.statut === 'active' ? 'en_cours' : s.statut;
   }
 
   if (s.est_joueur) {
