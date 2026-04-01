@@ -142,6 +142,8 @@ async function selectionnerSession(id) {
   _campagneId = null;
   _renderCampagnes();
   _renderSessions();
+  const ji = document.getElementById('journal-input');
+  if (ji) ji.value = '';
 
   let s = _sessions.find(x => String(x._id) === _sessionId);
   if (!s) return;
@@ -683,21 +685,20 @@ async function ajouterNoteJournal() {
   const msg = input.value.trim();
   if (!msg || !_sessionId) return;
   input.value = '';
+  const tok = _token || window._supabaseToken || window.SUPABASE_TOKEN;
   try {
     const r = await fetch(`${API}/Sessions/${_sessionId}/journal`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${_token}` },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${tok}` },
       body: JSON.stringify({ message: msg, type: 'note' })
     });
     if (!r.ok) {
       const d = await r.json().catch(() => ({}));
       _showToast('danger', d.error || 'Erreur lors de l\'ajout');
-      input.value = msg; // remet le texte
       return;
     }
   } catch (e) {
     _showToast('danger', 'Erreur réseau');
-    input.value = msg;
     return;
   }
   await _chargerDashboardSession(_sessionId);
