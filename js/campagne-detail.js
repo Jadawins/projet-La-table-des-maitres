@@ -189,7 +189,7 @@ function initEditor() {
       isDirty = true;
       setSaveIndicator('dirty');
       clearTimeout(saveTimer);
-      saveTimer = setTimeout(() => autoSave(), 30000);
+      saveTimer = setTimeout(() => autoSave(), 2000);
     },
     onSelectionUpdate() {
       updateToolbarState();
@@ -824,7 +824,7 @@ function markDirty() {
   isDirty = true;
   setSaveIndicator('dirty');
   clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => autoSave(), 30000);
+  saveTimer = setTimeout(() => autoSave(), 2000);
 }
 
 async function autoSave() {
@@ -994,7 +994,7 @@ async function init() {
   document.getElementById('btn-add-chapitre').addEventListener('click', ajouterChapitre);
 
   // Auto-save toutes les 30s
-  setInterval(() => { if (isDirty) autoSave(); }, 30000);
+  setInterval(() => { if (isDirty) autoSave(); }, 10000);
 
   // ─── Rendu initial ───────────────────────────────────────────
   renderNav();
