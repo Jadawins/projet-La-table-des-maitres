@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "You must be proficient with percussion instruments to use these drums. The drums have 3 charges. You can use an action to play them and expend 1 charge to create a baleful rumble. Each creature of your choice within 60 feet of you that hears you play must succeed on a DC 13 Wisdom saving throw or have disadvantage on its next weapon or spell attack roll. A creature that succeeds on its saving throw is immune to the effect of these drums for 24 hours. The drum regains 1d3 expended charges daily at dawn.",
+  "description_fr": "Vous devez avoir la maîtrise des instruments à percussion pour utiliser ces tambours. Ils possèdent 3 charges. Vous pouvez utiliser une action pour en jouer et dépenser 1 charge afin de produire un grondement sinistre. Chaque créature de votre choix dans un rayon de 18 mètres (60 pieds) qui vous entend jouer doit réussir un jet de sauvegarde de Sagesse DD 13 ou avoir le désavantage à son prochain jet d'attaque avec une arme ou un sort. Une créature qui réussit son jet de sauvegarde est immunisée aux effets de ces tambours pendant 24 heures. Les tambours récupèrent 1d3 charges dépensées chaque jour à l'aube.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

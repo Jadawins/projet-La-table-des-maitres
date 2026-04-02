@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Les bandes d'or tourbillonnantes de cette couronne évoquent les dunes du désert, et des dizaines de petites émeraudes, rubis et saphirs sont nichés parmi les entrelacs habilement forgés. Tant que vous portez cette couronne, vous bénéficiez des avantages suivants : votre valeur d'Intelligence est portée à 25 (sans effet si elle est déjà de 25 ou plus) ; vous disposez d'une vitesse de vol égale à votre vitesse de déplacement ; si vous ne portez aucune armure et ne tenez pas de bouclier, votre CA est égale à 16 + votre modificateur de Dextérité."
 }

@@ -12,5 +12,6 @@
   "poids": "12.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette armure a été façonnée à partir de la peau d'un ancien ours brun. Tant que vous la portez, vous obtenez un bonus de +1 à la CA et avez l'avantage aux tests de lutte. L'armure possède 3 charges. Vous pouvez utiliser une action bonus pour dépenser 1 charge et infliger vos dégâts d'attaque à mains nues à une créature que vous maintenez en prise. L'armure récupère toutes ses charges dépensées chaque jour à l'aube."
 }

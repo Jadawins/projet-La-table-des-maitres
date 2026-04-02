@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce cube de 7,5 cm de côté irradie une énergie magique palpable. Ses six faces sont chacune liée à un plan d'existence différent, dont le Plan Matériel. Les autres faces sont reliées à des plans choisis par le MD. Vous pouvez utiliser une action pour appuyer sur une face afin de lancer le sort portail et ouvrir un passage vers le plan correspondant. Alternativement, en appuyant deux fois sur une même face par une action, vous pouvez lancer le sort changement de plan (DD 17) pour transporter des cibles vers le plan correspondant. Le cube possède 3 charges ; chaque utilisation en dépense 1. Il récupère 1d3 charges dépensées chaque jour à l'aube."
 }

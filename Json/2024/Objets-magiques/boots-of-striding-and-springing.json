@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces bottes, votre vitesse de déplacement à pied devient 9 mètres, sauf si elle est déjà supérieure, et votre vitesse n'est pas réduite si vous êtes surchargé ou portez une armure lourde. De plus, vous pouvez sauter trois fois la distance normale, sans toutefois pouvoir sauter plus loin que votre mouvement restant ne vous le permet."
 }

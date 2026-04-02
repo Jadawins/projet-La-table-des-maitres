@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce fouet est constitué de vertèbres humanoïdes dont les bords ont été magiquement affûtés et pointus, reliées entre elles par des fils d'acier tressés. La poignée est faite d'un demi-fémur enveloppé de cuir souple tanné dans de la peau humanoïde. Vous obtenez un bonus de +1 aux jets d'attaque et de dégâts avec cette arme. Vous pouvez utiliser une action pour envelopper le fouet d'énergie infernale. Pendant 1 minute, vous gagnez 5 points de vie temporaires la première fois que vous touchez une créature à chacun de vos tours. De plus, lorsque vous infligez des dégâts avec cette arme, la créature doit réussir un jet de sauvegarde de Constitution DD 17 ou voir son maximum de points de vie réduit d'un montant égal aux dégâts subis. Cette réduction dure jusqu'à ce que la créature effectue un repos long. Cette propriété du fouet ne peut plus être utilisée avant l'aube suivante."
 }

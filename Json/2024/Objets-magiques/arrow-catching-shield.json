@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "autre",
   "description": "You gain a +2 bonus to AC against ranged attacks while you wield this shield. This bonus is in addition to the shield's normal bonus to AC. In addition, whenever an attacker makes a ranged attack against a target within 5 feet of you, you can use your reaction to become the target of the attack instead.",
+  "description_fr": "Lorsque vous maniez ce bouclier, vous gagnez un bonus de +2 à la CA contre les attaques à distance. Ce bonus s'ajoute au bonus normal du bouclier à la CA. De plus, chaque fois qu'un attaquant effectue une attaque à distance contre une cible se trouvant à 1,50 mètre (5 cases) ou moins de vous, vous pouvez utiliser votre réaction pour devenir la cible de cette attaque à sa place.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,

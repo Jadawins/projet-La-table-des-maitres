@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette craie scintille dans la lumière, comme infusée de particules de mica ou de gypse. Elle possède 10 charges. Vous pouvez utiliser une action et dépenser 1 charge pour dessiner une porte sur n'importe quelle surface solide sur laquelle la craie peut laisser une marque. Vous pouvez ensuite pousser cette porte en imaginant une vraie porte dans un rayon de 16 km de votre emplacement actuel. La porte que vous imaginez doit être une porte que vous avez déjà franchie normalement au moins une fois. La craie ouvre un portail magique vers cette autre porte, et vous pouvez traverser le portail pour apparaître à cet autre endroit comme si vous aviez franchi cette porte. À destination, la porte cible s'ouvre, révélant un portail lumineux d'où vous émergez. Une fois de l'autre côté, vous pouvez fermer la porte, dissipant le portail, ou la laisser ouverte jusqu'à 1 minute. Tant que la porte est ouverte, toute créature pouvant passer par la porte de craie peut traverser le portail dans les deux sens. Chaque fois que vous utilisez la craie, lancez 1d20. Sur un résultat de 1, la magie fonctionne mal et vous connecte à une porte aléatoire similaire à celle que vous aviez imaginée dans le même rayon, qui pourrait être une porte que vous n'avez jamais vue. La craie devient non magique lorsque vous utilisez la dernière charge."
 }

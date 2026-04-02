@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Mis au point par des magiciens passionnés d'art culinaire, ce simple bouillon soigne les blessures des animaux compagnons et des familiers. Lorsqu'une bête ou un familier consomme ce bouillon, il récupère 2d4 + 2 points de vie. Vous pouvez également mélanger un pétale de fleur dans le bouillon ; la bête ou le familier gagne alors 2d4 points de vie temporaires pour 8 heures."
 }

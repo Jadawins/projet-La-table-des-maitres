@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cet encensoir enchanté teinte l'air d'une ombre fumée et magique. En le tenant en main, vous pouvez utiliser une action pour prononcer son mot de commande, ce qui lui fait émettre de l'ombre dans un rayon de 9 mètres pendant 1 heure. La lumière vive et la lumière du soleil dans cette zone sont réduites à une lumière faible, et la lumière faible est réduite à une obscurité magique. L'ombre se propage autour des coins, et aucune lumière non magique ne peut l'illuminer. Elle émane de l'encensoir et se déplace avec lui. Envelopper entièrement l'encensoir dans un objet hermétiquement fermé, comme une marmite avec couvercle ou un sac en cuir, bloque l'ombre. Si une partie de cette zone se superpose à une zone de lumière créée par un sort de niveau 2 ou inférieur, ce sort est dissipé. Une fois utilisé pour émettre de l'ombre, l'encensoir ne peut plus le faire jusqu'au prochain crépuscule."
 }

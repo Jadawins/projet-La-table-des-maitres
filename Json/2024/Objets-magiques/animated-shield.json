@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "autre",
   "description": "While holding this shield, you can speak its command word as a bonus action to cause it to animate. The shield leaps into the air and hovers in your space to protect you as if you were wielding it, leaving your hands free. The shield remains animated for 1 minute, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point the shield falls to the ground or into your hand if you have one free.",
+  "description_fr": "Tant que vous tenez ce bouclier en main, vous pouvez prononcer son mot de commande en guise d'action bonus pour l'animer. Le bouclier s'élève dans les airs et flotte dans votre espace pour vous protéger comme si vous le maniiez, laissant vos mains libres. Le bouclier reste animé pendant 1 minute, jusqu'à ce que vous utilisiez une action bonus pour mettre fin à cet effet, ou jusqu'à ce que vous soyez neutralisé ou mouriez, auquel cas il tombe au sol ou dans votre main si l'une d'elles est libre.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,

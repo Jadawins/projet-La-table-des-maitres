@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Lorsque vous buvez ce liquide violet au goût acidulé, votre esprit s'ouvre à de nouvelles formes de communication. Pendant 1 heure, si vous passez 1 minute à écouter des créatures s'exprimer dans une langue particulière, vous acquérez la capacité de communiquer dans cette langue pour la durée restante. La magie de cette potion s'applique également aux langages non verbaux, comme les langages gestuels ou chorégraphiques, à condition que vous passiez 1 minute à les observer et que vous possédiez l'anatomie et les membres nécessaires pour les pratiquer."
 }

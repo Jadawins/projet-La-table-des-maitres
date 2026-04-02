@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "This long, thin retort is fashioned from smoky yellow glass and is topped with an intricately carved brass stopper. You can unstopper the retort and fill it with liquid as an action. Once you do so, it spews out multicolored bubbles in a 20-foot radius. The bubbles last for 1d4 + 1 rounds. While they last, creatures within the radius are blinded and the area is heavily obscured to all creatures except those with tremorsense. The liquid in the retort is destroyed in the process with no harmful effect on its surroundings. If any bubbles are popped, they burst with a wet smacking sound but no other effect.",
+  "description_fr": "Cette longue cornue effilée est fabriquée en verre jaune fumé et surmontée d'un bouchon de laiton finement sculpté. Vous pouvez déboucher la cornue et la remplir de liquide par une action. Ce faisant, elle projette des bulles multicolores dans un rayon de 6 mètres (20 pieds). Les bulles persistent pendant 1d4 + 1 rounds. Tant qu'elles durent, les créatures dans ce rayon sont aveuglées et la zone est fortement obscurcie pour toutes les créatures sauf celles dotées du sens des vibrations. Le liquide contenu dans la cornue est détruit au cours du processus, sans effet néfaste sur son environnement. Si des bulles sont crevées, elles éclatent avec un claquement humide, sans autre effet.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

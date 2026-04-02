@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "While wearing this gray garment, you have a +5 bonus to your passive Wisdom (Perception) score.",
+  "description_fr": "Lorsque vous portez ce vêtement gris, vous bénéficiez d'un bonus de +5 à votre score passif de Sagesse (Perception).",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

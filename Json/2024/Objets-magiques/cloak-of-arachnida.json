@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce vêtement raffiné est confectionné en soie noire entrelacée de fils argentés à peine visibles. En le portant, vous bénéficiez des avantages suivants :\n\n* Vous avez la résistance aux dégâts de poison.\n* Vous disposez d'une vitesse d'escalade égale à votre vitesse de déplacement.\n* Vous pouvez vous déplacer verticalement sur les surfaces et à l'envers sur les plafonds tout en gardant les mains libres.\n* Vous ne pouvez pas être pris dans des toiles et pouvez vous déplacer à travers elles comme si c'était un terrain difficile.\n* Vous pouvez utiliser une action pour lancer le sort _toile d'araignée_ (DD de sauvegarde 13). La toile créée par le sort couvre deux fois sa zone normale. Une fois utilisée, cette propriété de la cape ne peut plus être utilisée jusqu'à l'aube suivante."
 }

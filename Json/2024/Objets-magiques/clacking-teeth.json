@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Prélevée sur un Fleshspurned (voir Tome of Beasts 2), un fantôme dentu, cette mâchoire osseuse renferme des dents surdimensionnées qui suintent de l'ectoplasme. La mâchoire possède 3 charges et récupère 1d3 charges dépensées quotidiennement au crépuscule. En tenant la mâchoire, vous pouvez utiliser une action pour dépenser 1 de ses charges et choisir une cible dans un rayon de 9 mètres. Les dents de la mâchoire s'entrechoquent, et la cible doit réussir un jet de sauvegarde de Sagesse DD 15 ou être confuse pendant 1 minute. Tant qu'elle est confuse, la cible agit comme si elle était sous les effets du sort _confusion_. La cible peut réeffectuer le jet de sauvegarde à la fin de chacun de ses tours, mettant fin à l'effet en cas de réussite."
 }

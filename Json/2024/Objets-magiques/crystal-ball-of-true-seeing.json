@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "La boule de cristal ordinaire, un objet très rare, mesure environ 15 cm de diamètre. En la touchant, vous pouvez lancer le sort scrutation (DD 17) grâce à elle. Pendant que vous scrutez avec la boule, vous disposez de la vision parfaite dans un rayon de 36 mètres centré sur le capteur du sort."
 }

@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "This magic scimitar is empowered by your movements. For every 10 feet you move before making an attack, you gain a +1 bonus to the attack and damage rolls of that attack, and the scimitar deals an extra 1d6 slashing damage if the attack hits (maximum of +3 and 3d6). In addition, if you use the Dash action and move within 5 feet of a creature, you can attack that creature as a bonus action. On a hit, the target takes an extra 2d6 slashing damage.",
+  "description_fr": "Ce cimeterre magique est renforcé par vos mouvements. Pour chaque tranche de 3 mètres parcourus avant d'effectuer une attaque, vous gagnez un bonus de +1 aux jets d'attaque et de dégâts de cette attaque, et le cimeterre inflige 1d6 dégâts tranchants supplémentaires si l'attaque touche (maximum de +3 et 3d6). De plus, si vous utilisez l'action Foncer et vous déplacez à 1,50 mètre ou moins d'une créature, vous pouvez l'attaquer en guise d'action bonus. En cas de succès, la cible subit 2d6 dégâts tranchants supplémentaires.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

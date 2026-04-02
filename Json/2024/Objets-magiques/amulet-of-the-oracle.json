@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "When you finish a long rest while wearing this amulet, you can choose one cantrip from the cleric spell list. You can cast that cantrip from the amulet at will, using Wisdom as your spellcasting ability for it.",
+  "description_fr": "Lorsque vous terminez un repos long en portant cette amulette, vous pouvez choisir un tour de magie parmi la liste de sorts du clerc. Vous pouvez lancer ce tour de magie depuis l'amulette à volonté, en utilisant la Sagesse comme caractéristique d'incantation.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

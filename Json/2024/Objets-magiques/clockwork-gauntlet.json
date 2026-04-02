@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "This metal gauntlet has a steam-powered ram built into the greaves. It has 3 charges and regains 1d3 expended charges daily at dawn. While wearing the gauntlet, you can expend 1 charge as a bonus action to force the ram in the gauntlets to slam a creature within 5 feet of you. The ram thrusts out from the gauntlet and makes its attack with a +5 bonus. On a hit, the target takes 2d8 bludgeoning damage, and it must succeed on a DC 13 Constitution saving throw or be stunned until the end of its next turn.",
+  "description_fr": "Ce gantelet de métal est équipé d'un bélier mécanique à vapeur intégré dans l'armure. Il possède 3 charges et récupère 1d3 charges dépensées chaque jour à l'aube. Lorsque vous portez le gantelet, vous pouvez dépenser 1 charge en tant qu'action bonus pour forcer le bélier à frapper une créature située à moins de 1,5 mètre de vous. Le bélier jaillit du gantelet et effectue son attaque avec un bonus de +5. Sur un coup réussi, la cible subit 2d8 dégâts contondants et doit réussir un jet de sauvegarde de Constitution DD 13 ou être étourdie jusqu'à la fin de son prochain tour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

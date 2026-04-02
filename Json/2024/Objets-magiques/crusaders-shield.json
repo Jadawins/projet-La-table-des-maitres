@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Un bossoir en bronze est serti au centre de ce bouclier rond. Lorsque vous vous harmonisez avec le bouclier, le bossoir change de forme pour devenir le symbole de votre connexion divine : un symbole sacré pour un clerc ou un paladin, ou une gravure de gui ou d'une autre plante sacrée pour un druide. Vous pouvez utiliser le bouclier comme focaliseur d'incantation pour vos sorts."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Des charmes et protections faits de griffes, plumes, écailles ou objets similaires ornent cette armure, sur laquelle sont gravées les effigies des créatures ayant contribué ces ornements. L'armure protège contre un type spécifique d'ennemi, indiqué par ses ornements. Tant que vous portez cette armure, vous obtenez un bonus à la CA contre les attaques des créatures du type que l'armure repousse. Ce bonus est déterminé par sa rareté. L'armure protège contre l'un des types de créatures suivants : aberration, bête, céleste, artificiel, dragon, élémentaire, fée, fiélon, géant, humanoïde, monstruosité, vase, plante ou mort-vivant."
 }

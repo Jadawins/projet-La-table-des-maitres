@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Vous bénéficiez d'un bonus aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Le bonus est déterminé par la rareté de l'arme."
 }

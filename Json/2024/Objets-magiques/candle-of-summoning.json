@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "This black candle burns with an eerie, green flame. The candle's magic is activated when the candle is lit, which requires an action. When lit, the candle sheds bright light in a 5-foot radius and dim light for an additional 5 feet. Each creature in the candle's light has advantage on Constitution saving throws to maintain concentration on conjuration spells. After burning for 1 hour, or if the flame is magically or nonmagically snuffed out, it is destroyed. Alternatively, when you light the candle for the first time, you can cast the spirit guardians spell (save DC 15) with it. Doing so destroys the candle.",
+  "description_fr": "Cette bougie noire brûle d'une flamme sinistre et verte. Sa magie s'active lorsqu'on l'allume, ce qui nécessite une action. Une fois allumée, elle diffuse une lumière vive dans un rayon de 1,5 mètre (5 pieds) et une lumière faible sur 1,5 mètre supplémentaire. Toute créature dans la lumière de la bougie a l'avantage aux jets de sauvegarde de Constitution pour maintenir la concentration sur les sorts de convocation. Après avoir brûlé pendant 1 heure, ou si sa flamme est éteinte de façon magique ou non magique, elle est détruite. Alternativement, lorsque vous allumez la bougie pour la première fois, vous pouvez lancer le sort gardiens spirituels (DD de sauvegarde 15) avec elle. Ce faisant, la bougie est détruite.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

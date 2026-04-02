@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce tube métallique creux mesure environ 30 cm de long et pèse 500 grammes. Vous pouvez le frapper en utilisant une action, en le pointant vers un objet pouvant être ouvert dans un rayon de 36 mètres, comme une porte, un couvercle ou une serrure. La cloche émet une tonalité claire, et un verrou ou un loquet de l'objet s'ouvre à moins que le son ne puisse atteindre l'objet. S'il ne reste plus aucun verrou ni loquet, l'objet lui-même s'ouvre.\n\nLa cloche peut être utilisée dix fois. Après la dixième utilisation, elle se fissure et devient inutilisable."
 }

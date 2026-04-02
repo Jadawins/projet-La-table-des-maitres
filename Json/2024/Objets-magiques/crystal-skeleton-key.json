@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce passe-partout magique est le trésor chéri de bien des voleurs intrépides. Il en existe plusieurs variantes, chacune fabriquée dans un matériau distinct. En Os (Rare) : tant que cette clé est sur vous, vous avez l'avantage aux tests pour désamorcer des pièges ou crocheter des serrures. La clé possède 3 charges permettant de lancer : verrou magique (2 charges), détection du poison et des maladies (1 charge) ou déblocage (1 charge), silencieusement. Elle récupère 1d3 charges à l'aube. Sur un 1 au d20 après la dernière charge, elle se désagrège. En Cuivre (Commun) : avantage aux tests pour désamorcer des pièges ou crocheter des serrures. En Cristal (Très Rare) : même avantage aux tests. La clé possède 5 charges pour lancer : verrou magique (2 charges), détection de la magie (1 charge), porte dimensionnelle (3 charges) ou déblocage (1 charge), silencieusement. Elle récupère 1d3 charges à l'aube. Sur un 1 au d20 après la dernière charge, elle se fracasse. En Argent (Peu commun) : avantage aux mêmes tests. En tenant la clé, vous pouvez lancer déblocage silencieusement par une action, mais pas avant l'aube suivante."
 }

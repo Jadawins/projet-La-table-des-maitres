@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "This wide, wooden plank holds hundreds of two-inch long needle-like spikes. When you finish a long rest on the bed, you have resistance to piercing damage and advantage on Constitution saving throws to maintain your concentration on spells you cast for 8 hours or until you finish a short or long rest. Once used, the bed can't be used again until the next dusk.",
+  "description_fr": "Cette large planche de bois est hérissée de centaines de pointes acérées longues de cinq centimètres. Lorsque vous terminez un repos long allongé sur ce lit, vous bénéficiez de la résistance aux dégâts perforants et de l'avantage aux jets de sauvegarde de Constitution pour maintenir votre concentration sur les sorts que vous lancez, pendant 8 heures ou jusqu'à ce que vous terminiez un repos court ou long. Une fois utilisé, ce lit ne peut l'être de nouveau qu'au prochain crépuscule.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

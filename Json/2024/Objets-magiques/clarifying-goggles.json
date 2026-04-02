@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ces lunettes contiennent un verre légèrement ondulé de couleur bleue qui devient transparent sous l'eau. En portant ces lunettes sous l'eau, vous n'avez pas le désavantage aux tests de Sagesse (Perception) basés sur la vue lorsque vous regardez à travers des sédiments, de la vase ou d'autres phénomènes sous-marins naturels qui obscurciraient légèrement votre vision. En portant ces lunettes hors de l'eau, votre vision est légèrement obscurcie."
 }

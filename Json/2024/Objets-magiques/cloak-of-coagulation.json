@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "En portant cette cape rouge rouille, votre sang coagule rapidement. Lorsque vous êtes soumis à un effet qui inflige des dégâts supplémentaires lors des rounds suivants en raison d'une hémorragie, d'une perte de sang ou de dégâts nécrotiques continus, comme l'attaque de queue d'un diable cornu ou une épée des blessures, l'effet cesse après un seul round de dégâts. Par exemple, si une stirge vous touche avec sa trompe, vous subissez les dégâts initiaux, puis les dégâts de perte de sang au round suivant, après quoi la blessure se coagule, la stirge se détache et vous ne subissez plus de dégâts. La cape n'empêche pas une créature d'utiliser à nouveau une telle attaque ou un tel effet ; un diable cornu ou une stirge peut vous attaquer à nouveau, bien que la cape continue d'arrêter les effets récurrents après un seul round."
 }

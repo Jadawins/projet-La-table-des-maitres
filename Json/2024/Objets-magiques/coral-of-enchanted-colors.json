@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce morceau de corail cérébral mort et blanc miroite d'une multitude de couleurs lorsqu'il est plongé sous l'eau. En tenant ce corail sous l'eau, vous pouvez utiliser une action pour projeter un rayon de lumière colorée vers une créature que vous pouvez voir dans un rayon de 18 mètres. La cible doit effectuer un jet de sauvegarde de Constitution DD 17. La couleur du rayon détermine ses effets, tels que décrits ci-après. Chaque couleur ne peut être utilisée qu'une seule fois. Le corail récupère l'usage de toutes ses couleurs à l'aube suivante s'il est immergé dans l'eau pendant au moins 1 heure."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ces bottes fourrées sont douillettes et semblent bien chaudes. Tant que vous les portez, vous bénéficiez des avantages suivants :\n\n* Vous avez la résistance aux dégâts de froid.\n* Vous ignorez le terrain difficile créé par la glace ou la neige.\n* Vous pouvez tolérer des températures jusqu'à -45 degrés Celsius sans protection supplémentaire. Si vous portez des vêtements chauds, vous pouvez tolérer des températures jusqu'à -73 degrés Celsius."
 }

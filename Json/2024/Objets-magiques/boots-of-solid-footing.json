@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Une semelle épaisse et caoutchouteuse recouvre le dessous et les côtés de ces solides bottes en cuir, utiles pour se déplacer dans des ruelles encombrées, des égouts glissants ou des plaques de glace. Tant que vous portez ces bottes, vous pouvez utiliser une action bonus pour prononcer le mot de commande. Ce faisant, les terrains difficiles non magiques ne vous coûtent pas de mouvement supplémentaire. En prononçant à nouveau le mot de commande en action bonus, vous mettez fin à l'effet. Lorsque la propriété des bottes a été utilisée pour un total de 1 minute, la magie cesse de fonctionner jusqu'à l'aube suivante."
 }

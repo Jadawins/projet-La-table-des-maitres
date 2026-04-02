@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez cette cape avec sa capuche relevée, les tests de Sagesse (Perception) effectués pour vous voir ont le désavantage, et vous avez l'avantage aux tests de Dextérité (Discrétion) effectués pour vous cacher, car la couleur de la cape se modifie pour vous camoufler. Relever ou baisser la capuche nécessite une action."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce liquide trouble et nauséabond de couleur violet-gris est fabriqué à partir de cerveaux liquéfiés de créatures lanceuses de sorts, comme les abolettes. Quiconque consomme ce mélange répugnant doit réussir un jet de sauvegarde d'Intelligence DD 15. En cas de réussite, le buveur est infusé d'énergie magique et récupère 1d6 + 4 emplacements de sorts dépensés. En cas d'échec, le buveur est frappé d'une folie à court terme pendant 1 jour. Si une créature consomme plusieurs doses de jus de cerveau et échoue à trois jets de sauvegarde d'Intelligence consécutifs, elle est frappée d'une folie à long terme de façon permanente et rate automatiquement tous les jets de sauvegarde ultérieurs provoqués par la consommation de jus de cerveau."
 }

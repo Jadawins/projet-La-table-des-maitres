@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce marque-page en tissu est inscrit de runes floues difficiles à déchiffrer. Si vous utilisez ce marque-page lors de recherches sur des maux anciens (tels que des archidiables ou des seigneurs démons) ou des mystères extraplanaires (comme le Vide ou les Grands Anciens) durant un repos long, le marque-page s'effrite en poussière et vous transmet son savoir. Vous doublez votre bonus de maîtrise aux tests d'Arcanes, d'Histoire et de Religion pour rappeler des connaissances sur le sujet de vos recherches pendant les 24 heures suivantes. Si vous n'avez pas la maîtrise de ces compétences, vous l'obtenez pendant 24 heures, mais uniquement pour rappeler des informations sur le sujet de vos recherches."
 }

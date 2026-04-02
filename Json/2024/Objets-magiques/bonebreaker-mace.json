@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Vous obtenez un bonus de +1 aux jets d'attaque et de dégâts effectués avec cette arme magique. Le bonus passe à +3 lorsque vous l'utilisez pour attaquer une créature morte-vivante. Souvent confiées aux sombres exécuteurs des grandes nécropoles, ces armes peuvent réduire les morts-vivants en éclats d'un seul coup. Lorsque vous touchez une créature morte-vivante avec cette arme magique, traitez cette créature comme si elle était vulnérable aux dégâts contondants. Si elle est déjà vulnérable à ce type de dégâts, votre attaque inflige 1d6 dégâts radiants supplémentaires."
 }

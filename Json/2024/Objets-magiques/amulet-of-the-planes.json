@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "While wearing this amulet, you can use an action to name a location that you are familiar with on another plane of existence. Then make a DC 15 Intelligence check. On a successful check, you cast the _plane shift_ spell. On a failure, you and each creature and object within 15 feet of you travel to a random destination. Roll a d100. On a 1-60, you travel to a random location on the plane you named. On a 61-100, you travel to a randomly determined plane of existence.",
+  "description_fr": "Tant que vous portez cette amulette, vous pouvez utiliser une action pour nommer un lieu que vous connaissez sur un autre plan d'existence. Effectuez ensuite un test d'Intelligence DD 15. En cas de réussite, vous lancez le sort changement de plan. En cas d'échec, vous et chaque créature et objet dans un rayon de 4,5 mètres autour de vous voyagez vers une destination aléatoire. Lancez un d100 : sur un résultat de 1 à 60, vous arrivez à un endroit aléatoire du plan nommé ; sur un résultat de 61 à 100, vous arrivez sur un plan d'existence déterminé aléatoirement.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

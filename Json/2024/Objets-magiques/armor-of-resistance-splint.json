@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "armure_magique",
   "description": "You have resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly from the options below.\n\n| d10 | Damage Type |\n|-----|-------------|\n| 1   | Acid        |\n| 2   | Cold        |\n| 3   | Fire        |\n| 4   | Force       |\n| 5   | Lightning   |\n| 6   | Necrotic    |\n| 7   | Poison      |\n| 8   | Psychic     |\n| 9   | Radiant     |\n| 10  | Thunder     |",
+  "description_fr": "Vous avez la résistance à un type de dégâts tant que vous portez cette armure. Le MJ choisit le type ou le détermine aléatoirement parmi les options ci-dessous.\n\n| d10 | Type de dégâts |\n|-----|----------------|\n| 1   | Acide          |\n| 2   | Froid          |\n| 3   | Feu            |\n| 4   | Force          |\n| 5   | Foudre         |\n| 6   | Nécrotique     |\n| 7   | Poison         |\n| 8   | Psychique      |\n| 9   | Radiant        |\n| 10  | Tonnerre       |",
   "effets": [],
   "poids": "60.000",
   "prix_estime": null,

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce parfum au doux parfum floral charme ceux qui occupent une position sociale élevée. Le parfum peut couvrir une créature de taille M ou inférieure, et son application prend 1 minute. Pendant 1 heure, la créature affectée obtient un bonus de +5 aux tests de Charisme effectués pour interagir socialement ou exercer une influence sur des nobles, des personnalités politiques ou d'autres individus de haut rang."
 }

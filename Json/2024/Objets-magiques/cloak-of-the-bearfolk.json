@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "En portant cette cape, votre valeur de Constitution est de 15 et vous avez la maîtrise de la compétence Athlétisme. La cape n'a aucun effet si vous avez déjà la maîtrise de cette compétence ou si votre valeur de Constitution est déjà de 15 ou plus."
 }

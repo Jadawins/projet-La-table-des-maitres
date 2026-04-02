@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Lorsqu'un feu brûle dans ce brasero en laiton, vous pouvez utiliser une action pour prononcer le mot de commande du brasero et invoquer un élémentaire du feu, comme si vous aviez lancé le sort convocation d'élémentaire. Le brasero ne peut plus être utilisé de cette façon avant l'aube suivante.\n\nLe brasero pèse 2,5 kg."
 }

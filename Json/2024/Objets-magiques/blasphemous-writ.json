@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "parchemin",
   "description": "The Infernal runes inscribed upon this vellum scroll radiate a faint, crimson glow. When you use this spell scroll of command, the save DC is 15 instead of 13, and you can also affect targets that are undead or that don't understand your language.",
+  "description_fr": "Les runes infernales gravées sur ce parchemin de vélin irradient une faible lueur cramoisie. Lorsque vous utilisez ce parchemin de sort d'injonction, le DD du jet de sauvegarde est de 15 au lieu de 13, et vous pouvez également affecter des cibles qui sont des morts-vivants ou qui ne comprennent pas votre langue.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

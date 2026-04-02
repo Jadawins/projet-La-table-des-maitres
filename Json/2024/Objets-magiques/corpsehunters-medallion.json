@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette amulette est façonnée à partir de crânes de rats des cimetières ou d'os sculptés de défunts ignobles. Tant que vous la portez, vous bénéficiez d'une résistance aux dégâts nécrotiques."
 }

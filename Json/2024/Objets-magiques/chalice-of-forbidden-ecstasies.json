@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "La coupe de ce calice en grenat est sculptée à l'effigie d'un crâne humain. Lorsque le calice est rempli de sang, la pierre précieuse rouge foncé pulse d'une lumière écarlate scintillante qui éclaire faiblement dans un rayon de 1,5 mètre. Toute créature qui boit du sang dans ce calice a le désavantage aux jets de sauvegarde contre vos sorts d'enchantement pendant les 24 heures suivantes. De plus, vous pouvez utiliser une action pour lancer le sort _suggestion_, en utilisant votre DD de jet de sauvegarde de sort, sur une créature qui a bu du sang dans le calice au cours des 24 dernières heures. Vous devez maintenir la concentration pour conserver cet effet pendant sa durée. Une fois utilisé, le pouvoir de suggestion du calice ne peut plus être utilisé jusqu'au prochain crépuscule."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette boule de la taille d'un poing, formée de frondes vertes étroitement enroulées, contient l'écorce d'une plante magique aux propriétés curatives. Une boucle naturelle formée par l'une des frondes permet de suspendre le charme à un sac, une ceinture ou un pommeau d'arme. Tant que vous portez ce charme, chaque fois que vous êtes ciblé par un sort ou un effet magique qui restaure vos points de vie, vous récupérez 1 point de vie supplémentaire."
 }

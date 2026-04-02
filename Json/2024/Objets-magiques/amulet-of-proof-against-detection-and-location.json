@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "While wearing this amulet, you are hidden from divination magic. You can't be targeted by such magic or perceived through magical scrying sensors.",
+  "description_fr": "Tant que vous portez cette amulette, vous êtes dissimulé à la magie de divination. Vous ne pouvez pas être ciblé par ce type de magie ni perçu à travers les capteurs de scrutation magique.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette cape en brocart de laine présente un motif répétitif de têtes d'écureuils et de branches d'arbres. Elle possède 3 charges et récupère toutes les charges dépensées quotidiennement à l'aube. En portant cette cape, vous pouvez utiliser une action pour dépenser 1 charge afin de lancer le sort _légion d'écureuils enragés_ (voir Deep Magic pour la 5e édition). Vous n'avez pas besoin d'être dans une forêt pour lancer ce sort depuis cette cape, car les écureuils viennent de l'intérieur de la cape. Lorsque le sort prend fin, l'essaim disparaît à l'intérieur de la cape."
 }

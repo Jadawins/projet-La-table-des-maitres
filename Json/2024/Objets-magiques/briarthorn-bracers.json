@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "These leather bracers are inscribed with Elvish runes. While wearing these bracers, you gain a +1 bonus to AC if you are using no shield. In addition, while in a forest, nonmagical difficult terrain costs you no extra movement.",
+  "description_fr": "Ces brassards de cuir sont gravés de runes elfiques. Tant que vous les portez, vous bénéficiez d'un bonus de +1 à la CA si vous ne maniez pas de bouclier. De plus, lorsque vous vous trouvez en forêt, les terrains difficiles non magiques ne vous coûtent pas de mouvement supplémentaire.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

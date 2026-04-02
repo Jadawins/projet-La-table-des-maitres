@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Lorsque ce bol est rempli d'eau, vous pouvez utiliser une action pour prononcer le mot de commande du bol et invoquer un élémentaire de l'eau, comme si vous aviez lancé le sort convocation d'élémentaire. Le bol ne peut plus être utilisé de cette façon avant l'aube suivante.\n\nLe bol mesure environ 30 centimètres de diamètre pour une profondeur de moitié. Il pèse 1,5 kg et peut contenir environ 11 litres."
 }

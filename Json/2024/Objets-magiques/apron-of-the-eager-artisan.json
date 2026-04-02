@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "Created by dwarven artisans, this leather apron has narrow pockets, which hold one type of artisan's tools. If you are wearing the apron and you spend 10 minutes contemplating your next crafting project, the tools in the apron magically change to match those best suited to the task. Once you have changed the tools available, you can't change them again until the next dawn.",
+  "description_fr": "Conçu par des artisans nains, ce tablier de cuir est pourvu de poches étroites pouvant contenir un type d'outils d'artisan. Si vous portez le tablier et que vous consacrez 10 minutes à méditer sur votre prochain projet de fabrication, les outils contenus dans le tablier se transforment magiquement pour correspondre à ceux les mieux adaptés à la tâche. Une fois les outils disponibles changés, vous ne pouvez plus les modifier jusqu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

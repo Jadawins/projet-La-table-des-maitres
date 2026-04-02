@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Lorsque vous portez ce simple foulard en toile autour du cou ou de la tête, il projette une légère illusion sur vous qui vous permet de vous fondre dans la masse environnante, évitant d'attirer l'attention. Dans un lieu comptant 25 créatures humanoïdes ou plus, telle qu'une rue animée, un marché ou un autre espace public, les tests de Sagesse (Perception) visant à vous repérer parmi la foule sont effectués avec désavantage. Le pouvoir de cet objet ne fonctionne que pour les créatures de type humanoïde ou pour celles qui adoptent une forme humanoïde par magie."
 }

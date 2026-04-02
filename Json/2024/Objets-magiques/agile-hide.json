@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "armure_magique",
   "description": "This magically enhanced armor is less bulky than its nonmagical version. While wearing a suit of medium agile armor, the maximum Dexterity modifier you can add to determine your Armor Class is 3, instead of 2. While wearing a suit of heavy agile armor, the maximum Dexterity modifier you can add to determine your Armor Class is 1, instead of 0.",
+  "description_fr": "Cette armure magiquement améliorée est moins encombrante que sa version non magique. Lorsque vous portez une armure intermédiaire agile, le modificateur de Dextérité maximum que vous pouvez ajouter pour déterminer votre CA est de 3, au lieu de 2. Lorsque vous portez une armure lourde agile, le modificateur de Dextérité maximum que vous pouvez ajouter pour déterminer votre CA est de 1, au lieu de 0.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

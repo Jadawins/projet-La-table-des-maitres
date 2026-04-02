@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce rouleau de feutre rouge mesure environ 90 cm de long et 30 cm de large, et pèse 4,5 kg. Vous pouvez utiliser une action pour prononcer le mot de commande du tapis et le faire se dérouler, créant ainsi une surface de marche horizontale ou un pont pouvant atteindre 3 mètres de large, 18 mètres de long et 6 mm d'épaisseur. Le tapis n'a pas besoin d'être ancré et peut léviter. Il est immunisé contre tous les dégâts et n'est pas affecté par le sort dissolution de la magie. Le sort désintégration détruit cependant le tapis. Celui-ci reste déroulé jusqu'à ce que vous utilisiez une action pour répéter le mot de commande, le faisant se rouler à nouveau. Une fois enroulé, il ne peut plus être déroulé avant l'aube suivante."
 }

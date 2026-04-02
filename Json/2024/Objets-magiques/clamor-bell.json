@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Vous pouvez fixer cette petite cloche en laiton à un objet à l'aide des cordons de cuir attachés à son sommet. Si quelqu'un d'autre que vous ramasse, interagit avec ou utilise l'objet sans prononcer au préalable le mot de commande de la cloche, celle-ci sonne pendant 5 minutes ou jusqu'à ce que vous la touchiez et prononciez à nouveau le mot de commande. La sonnerie est audible à 30 mètres de distance. Si une créature utilise une action pour couper les liens retenant la cloche à l'objet, la cloche cesse de sonner 1 round après avoir été détachée de l'objet."
 }

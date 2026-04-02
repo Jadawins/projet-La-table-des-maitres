@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Lorsqu'il n'est pas lié à un livre, ce recouvrement de cuir rouge est gaufré d'images d'yeux sur chaque centimètre de sa surface. Lorsque vous enveloppez ce recouvrement autour d'un tome, il transforme l'apparence du livre en une simple couverture rouge avec un titre de votre choix et des pages vierges sur lesquelles vous pouvez écrire. En regardant le livre ainsi enveloppé, les autres créatures ne voient que la version rouge ordinaire avec tout contenu que vous y avez écrit. Une créature qui réussit un test de Sagesse (Perception) DD 15 voit le vrai livre et peut retirer le recouvrement."
 }

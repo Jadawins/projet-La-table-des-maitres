@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Fabriquée par des mages kobolds spécialistes des automates, cette bague en laiton est façonnée pour ressembler à un dragon lové. Lorsque vous prononcez ou chuchotez le mot de commande en draconique gravé à l'intérieur de la bague, le dragon de laiton se déroule et tente de crocheter toute serrure dans un rayon de 3 mètres de vous. Le dragon crochète la serrure en utilisant votre bonus de maîtrise mais avec l'avantage. Il est traité comme possédant des outils de voleur pour les tentatives de crochetage. Il utilise votre bonus de Dextérité (Discrétion) à des fins de dissimulation, mais avec l'avantage en raison de sa très petite taille. Que la tentative réussisse ou non, une fois que vous avez utilisé la bague pour tenter de crocheter une serrure, elle ne peut plus l'être avant le coucher du soleil suivant."
 }

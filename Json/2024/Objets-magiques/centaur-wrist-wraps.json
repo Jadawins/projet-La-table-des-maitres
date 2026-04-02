@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ces lanières de cuir et de fourrure sont imprégnées de magie chamanique centaurique. Elles sont teintées d'un ambre profond, et des motifs complexes peints en bleu semblent flotter au-dessus du cuir. En portant ces lanières, vous pouvez invoquer leur magie pour relancer un jet d'attaque effectué avec un arc court ou un arc long. Vous devez utiliser le nouveau résultat. Une fois utilisées, les lanières doivent être exposées à la fumée de bois pendant 15 minutes avant de pouvoir être réutilisées de cette façon."
 }

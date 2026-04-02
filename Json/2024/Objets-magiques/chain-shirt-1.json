@@ -12,5 +12,6 @@
   "poids": "20.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Vous bénéficiez d'un bonus à la CA tant que vous portez cette armure. Ce bonus est déterminé par sa rareté."
 }

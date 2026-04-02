@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "En portant cette cape, vous avez l'avantage aux tests de Dextérité (Discrétion). Dans une zone de lumière faible ou d'obscurité, vous pouvez saisir les bords de la cape des deux mains et l'utiliser pour voler à une vitesse de 12 mètres. Si jamais vous relâchez les bords de la cape en volant de cette façon, ou si vous n'êtes plus en lumière faible ou dans l'obscurité, vous perdez cette vitesse de vol.\n\nEn portant la cape dans une zone de lumière faible ou d'obscurité, vous pouvez utiliser votre action pour lancer _métamorphose_ sur vous-même, vous transformant en chauve-souris. Sous forme de chauve-souris, vous conservez vos valeurs d'Intelligence, de Sagesse et de Charisme. Le cape ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
 }

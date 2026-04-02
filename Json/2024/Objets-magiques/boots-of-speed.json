@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces bottes, vous pouvez utiliser une action bonus pour claquer les talons des bottes. Ce faisant, les bottes doublent votre vitesse de déplacement à pied, et toute créature qui effectue une attaque d'opportunité contre vous a le désavantage au jet d'attaque. En claquant à nouveau les talons, vous mettez fin à l'effet.\n\nLorsque la propriété des bottes a été utilisée pour un total de 10 minutes, la magie cesse de fonctionner jusqu'à ce que vous terminiez un repos long."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette montre de poche en or possède 3 charges et récupère 1d3 charges dépensées quotidiennement à minuit. En la tenant en main, vous pouvez utiliser une action pour la remonter et dépenser 1 charge afin de lancer le sort _célérité_. Si le pendentif est détruit (CA 14, 15 points de vie) alors qu'il possède 3 charges, la créature qui l'a brisé obtient les effets du sort _arrêt du temps_."
 }

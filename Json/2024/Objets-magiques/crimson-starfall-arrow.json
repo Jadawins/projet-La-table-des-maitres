@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette flèche magique est alimentée par le sacrifice de votre propre énergie vitale et explose à l'impact. Si vous touchez une créature avec cette flèche, vous pouvez dépenser un ou plusieurs Dés de Vie, jusqu'à votre maximum. Pour chaque Dé de Vie dépensé, lancez le dé et ajoutez votre modificateur de Constitution. Vous perdez des points de vie égaux au total obtenu, et chaque créature dans un rayon de 3 mètres autour de la cible, y compris la cible elle-même, doit réussir un jet de sauvegarde de Dextérité DD 15 ; elle subit des dégâts nécrotiques égaux aux points de vie que vous avez perdus en cas d'échec, ou la moitié en cas de réussite. Vous ne pouvez pas utiliser ce pouvoir si vous n'avez pas de sang. Les Dés de Vie dépensés pour cette flèche ne peuvent pas être utilisés pour récupérer des points de vie lors d'un repos court. Vous récupérez les Dés de Vie dépensés normalement."
 }

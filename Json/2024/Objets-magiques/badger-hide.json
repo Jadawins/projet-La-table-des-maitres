@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "armure_magique",
   "description": "While wearing this hairy, black and white armor, you have a burrowing speed of 20 feet, and you have advantage on Wisdom (Perception) checks that rely on smell.",
+  "description_fr": "Lorsque vous portez cette armure poilue noir et blanc, vous disposez d'une vitesse de fouissement de 6 mètres (20 pieds) et vous avez l'avantage aux tests de Sagesse (Perception) basés sur l'odorat.",
   "effets": [],
   "poids": "12.000",
   "prix_estime": "0.00",

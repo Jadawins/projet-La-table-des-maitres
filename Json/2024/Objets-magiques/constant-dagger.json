@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Vous obtenez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Lorsque vous obtenez un 20 sur un jet d'attaque avec cette arme, la cible perd sa résistance aux dégâts contondants, perforants et tranchants jusqu'au début de votre prochain tour. Si elle bénéficie d'une immunité à ces types de dégâts, son immunité devient alors une résistance jusqu'au début de votre prochain tour. Si la créature ne possède ni résistance ni immunité à ces dégâts, vous lancez vos dés de dégâts trois fois au lieu de deux."
 }

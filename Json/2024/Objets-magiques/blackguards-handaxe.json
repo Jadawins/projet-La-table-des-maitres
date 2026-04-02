@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you draw this weapon, you can use a bonus action to cast the thaumaturgy spell from it. You can have only one of the spell's effects active at a time when you cast it in this way.",
+  "description_fr": "Vous gagnez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Lorsque vous dégainez cette arme, vous pouvez utiliser une action bonus pour lancer le sort thaumaturgie depuis celle-ci. Vous ne pouvez avoir qu'un seul des effets du sort actif à la fois lorsque vous le lancez de cette manière.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

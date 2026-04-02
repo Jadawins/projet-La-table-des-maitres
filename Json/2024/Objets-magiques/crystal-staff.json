@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Taillé dans un seul bloc de cristal massif, ce bâton présente de nombreuses facettes réfléchissantes qui produisent un effet étrangement hypnotique. Il possède 10 charges. En le tenant, vous pouvez utiliser une action pour dépenser 1 charge ou plus afin de lancer l'un des sorts suivants, en utilisant votre DD de sauvegarde et votre caractéristique d'incantation : gerbe chromatique (1 charge), confusion des sens* (3 charges), confusion (4 charges), motif hypnotique (3 charges), fissure de joyaux* (3 charges), rayon prismatique* (5 charges) ou vaporisation prismatique (7 charges). Les sorts marqués d'un astérisque (*) proviennent de Deep Magic for 5th Edition. Le bâton récupère 1d6 + 4 charges dépensées chaque jour à l'aube. Si vous dépensez la dernière charge, lancez un d20. Sur un 1, le cristal vole en éclats, détruisant le bâton et infligeant 2d6 dégâts perforants à chaque créature dans un rayon de 3 mètres."
 }

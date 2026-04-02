@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "armure_magique",
   "description": "A creature that starts its turn in your space must succeed on a DC 15 Constitution saving throw or lose 3d6 hit points due to blood loss, and you regain a number of hit points equal to half the number of hit points the creature lost. Constructs and undead who aren't vampires are immune to this effect. Once used, you can't use this property of the armor again until the next dawn.",
+  "description_fr": "Toute créature qui commence son tour dans votre espace doit réussir un jet de sauvegarde de Constitution DD 15 ou perdre 3d6 points de vie à cause d'une perte de sang, et vous récupérez un nombre de points de vie égal à la moitié des points de vie perdus par la créature. Les artificiels et les morts-vivants qui ne sont pas des vampires sont immunisés contre cet effet. Une fois cette propriété utilisée, vous ne pouvez plus y recourir avant l'aube suivante.",
   "effets": [],
   "poids": "12.000",
   "prix_estime": "0.00",

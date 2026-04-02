@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ces gants ont la forme de pinces de crabe mais s'enfilent facilement sur les mains. Tant que vous les portez, vous pouvez effectuer l'action Attaquer pour réaliser deux attaques au corps à corps avec les pinces. Vous avez la maîtrise de ces pinces. Chacune a une allonge de 1,50 m et inflige des dégâts contondants égaux à 1d6 + votre modificateur de Force lors d'un coup. Si vous touchez une créature de votre taille ou plus petite avec une pince, vous la saisissez automatiquement. Vous ne pouvez pas avoir plus de deux créatures saisies simultanément. Tant que vous saisissez une cible avec une pince, vous ne pouvez pas attaquer d'autres créatures avec cette pince. Tant que vous portez ces gants, vous avez le désavantage aux tests de Charisme et de Dextérité, mais l'avantage aux tests pour manœuvrer un appareil de crabe et aux jets d'attaque avec ses pinces. De plus, vous ne pouvez pas manier d'armes ni de bouclier, et ne pouvez pas lancer de sort à composante somatique. Une créature dotée d'une Intelligence de 8 ou plus et possédant deux pinces peut également porter ces gants ; elle dispose alors de deux mains humanoïdes à la place de ses pinces, lui permettant de manier des armes et d'avoir l'avantage aux tests de Dextérité nécessitant une manipulation fine. Enfiler ou retirer les gants nécessite une action."
 }

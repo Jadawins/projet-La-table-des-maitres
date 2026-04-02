@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution is already 19 or higher.",
+  "description_fr": "Votre valeur de Constitution est de 19 tant que vous portez cette amulette. Elle n'a aucun effet si votre Constitution est déjà de 19 ou supérieure.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

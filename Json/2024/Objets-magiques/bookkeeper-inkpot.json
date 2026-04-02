@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce récipient en verre ressemble à un encrier ordinaire. Une plume faite d'une plume d'autruche l'accompagne. Vous pouvez utiliser une action pour prononcer le mot de commande de l'encrier en ciblant un Bibliothécaire (voir Creature Codex) que vous pouvez voir dans un rayon de 3 mètres. Un bibliothécaire non consentant doit réussir un jet de sauvegarde de Charisme DD 13 ou être transféré dans l'encrier, faisant de vous son nouveau « créateur ». Tant que le bibliothécaire est contenu dans l'encrier, il ne souffre d'aucun mal d'être séparé de son livre lié, mais il ne peut utiliser aucune de ses actions ou capacités liées à son livre. Tremper la plume dans l'encrier et écrire dans un livre lie le bibliothécaire à ce nouveau livre. Si l'encrier est trouvé comme trésor, il y a 50 % de chances qu'il contienne un bibliothécaire. Un sort d'identification révèle la présence d'un bibliothécaire avant d'utiliser l'encre de l'encrier."
 }

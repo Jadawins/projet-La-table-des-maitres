@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "This cape smells faintly of brimstone. While wearing it, you can use it to cast the _dimension door_ spell as an action. This property of the cape can't be used again until the next dawn.\r\n\r\nWhen you disappear, you leave behind a cloud of smoke, and you appear in a similar cloud of smoke at your destination. The smoke lightly obscures the space you left and the space you appear in, and it dissipates at the end of your next turn. A light or stronger wind disperses the smoke.",
+  "description_fr": "Cette cape dégage un léger parfum de soufre. Tant que vous la portez, vous pouvez l'utiliser pour lancer le sort _porte dimensionnelle_ par une action. Cette propriété ne peut être utilisée à nouveau qu'à l'aube suivante.\r\n\r\nLorsque vous disparaissez, vous laissez derrière vous un nuage de fumée, et vous réapparaissez dans un nuage similaire à destination. La fumée obscurcit légèrement l'espace que vous avez quitté et celui où vous apparaissez, puis se dissipe à la fin de votre prochain tour. Un vent léger ou plus fort disperse la fumée.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

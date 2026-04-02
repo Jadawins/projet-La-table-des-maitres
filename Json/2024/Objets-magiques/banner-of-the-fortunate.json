@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "While holding this banner aloft with one hand, you can use an action to inspire creatures nearby. Each creature of your choice within 60 feet of you that can see the banner has advantage on its next attack roll. The banner can't be used this way again until the next dawn.",
+  "description_fr": "Tant que vous tenez cette bannière à bout de bras d'une main, vous pouvez utiliser une action pour galvaniser les créatures environnantes. Chaque créature de votre choix dans un rayon de 18 mètres autour de vous pouvant voir la bannière a l'avantage à son prochain jet d'attaque. La bannière ne peut plus être utilisée de cette manière jusqu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

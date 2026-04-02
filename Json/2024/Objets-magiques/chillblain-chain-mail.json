@@ -12,5 +12,6 @@
   "poids": "55.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette armure est forgée à partir de plaques ou d'anneaux d'acier bleu qui se chevauchent et présente un aspect givré. En portant cette armure, vous obtenez un bonus de +1 à la CA et vous avez la résistance aux dégâts de froid. De plus, lorsqu'une créature vous touche avec une attaque d'arme de mêlée, elle doit réussir un jet de sauvegarde de Constitution DD 15 ou être engourdie par le froid surnaturel émanant de l'armure. Une créature engourdie par le froid ne peut utiliser qu'une action ou une action bonus lors de son tour, pas les deux, et sa vitesse de déplacement est réduite de 3 mètres jusqu'à la fin de son prochain tour."
 }

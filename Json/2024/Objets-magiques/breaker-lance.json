@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Vous obtenez un bonus de +1 aux jets d'attaque et de dégâts avec cette arme magique. Lorsque vous attaquez un objet ou une structure avec cette lance magique et que vous touchez, maximisez les dés de dégâts de votre arme contre la cible. La lance possède 3 charges. Dans le cadre d'une action d'attaque avec la lance, vous pouvez dépenser une charge en frappant une barrière créée par un sort, comme un mur de feu ou un mur de force, ou une entrée protégée par le sort verrou magique. Vous devez réussir un test de Force contre un DD égal à 10 + le niveau du sort. En cas de réussite, le sort prend fin. La lance récupère 1d3 charges dépensées chaque jour à l'aube."
 }

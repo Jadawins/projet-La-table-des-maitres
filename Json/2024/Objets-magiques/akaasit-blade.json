@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. This dagger is crafted from the arm blade of a defeated Akaasit (see Tome of Beasts 2). You can use an action to activate a small measure of prescience within the dagger for 1 minute. If you are attacked by a creature you can see within 5 feet of you while this effect is active, you can use your reaction to make one attack with this dagger against the attacker. If your attack hits, the dagger loses its prescience, and its prescience can't be activated again until the next dawn.",
+  "description_fr": "Vous obtenez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Cette dague est forgée à partir de la lame brachiale d'un Akaasit vaincu (voir Tome of Beasts 2). Vous pouvez utiliser une action pour activer une légère prescience dans la dague pendant 1 minute. Si une créature que vous pouvez voir dans un rayon de 1,50 mètre vous attaque pendant que cet effet est actif, vous pouvez utiliser votre réaction pour effectuer une attaque avec cette dague contre l'assaillant. Si votre attaque touche, la dague perd sa prescience, qui ne peut être réactivée avant l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

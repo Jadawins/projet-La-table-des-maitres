@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "This simple but elegant shortsword is a magic weapon. When you are wielding it and use the Flurry of Blows class feature, you can make your bonus attacks with the sword rather than unarmed strikes. If you deal damage to a creature with this weapon and reduce it to 0 hit points, you absorb some of its energy, regaining 1 expended ki point.",
+  "description_fr": "Cette épée courte simple mais élégante est une arme magique. Lorsque vous la maniez et utilisez la capacité de classe Déluge de coups, vous pouvez effectuer vos attaques bonus avec l'épée plutôt qu'avec des attaques à mains nues. Si vous infligez des dégâts à une créature avec cette arme et la réduisez à 0 point de vie, vous absorbez une partie de son énergie et récupérez 1 point de ki dépensé.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

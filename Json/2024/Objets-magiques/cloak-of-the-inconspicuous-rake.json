@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette cape est tissée de simple laine grise et fermée par une agrafe en cuivre triangulaire ordinaire. En portant cette cape, vous pouvez utiliser une action bonus pour vous rendre mémorable pendant 5 minutes. Une créature qui vous voit doit effectuer un jet de sauvegarde d'Intelligence DD 15 dès que vous quittez son champ de vision. En cas d'échec, le témoin se souvient d'avoir vu une personne faire ce que vous faisiez, mais ne se souvient d'aucun détail sur votre apparence ou vos manières et ne peut pas vous décrire avec précision à quelqu'un d'autre. Les créatures dotées de la vision parfaite ne sont pas affectées par cette cape. La cape ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
 }

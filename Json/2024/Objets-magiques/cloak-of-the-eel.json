@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "En portant cette cape rugueuse en cuir bleu-gris, vous disposez d'une vitesse de nage de 12 mètres. Lorsque vous êtes touché par une attaque d'arme de mêlée en portant cette cape, vous pouvez utiliser votre réaction pour générer une puissante décharge électrique. L'attaquant doit réussir un jet de sauvegarde de Dextérité DD 13 ou subir 2d6 dégâts de foudre. L'attaquant a le désavantage au jet de sauvegarde s'il vous a touché avec une arme métallique. La cape ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ces lanières de peau brute sont ornées de lignes de runes cramoisies sur toute leur longueur. Elles nécessitent 10 minutes de trempage dans de l'eau salée avant d'être soigneusement enroulées autour de vos avant-bras. Une fois ajustées, vous obtenez un bonus de +1 aux jets d'attaque et de dégâts avec les attaques à mains nues. Les lanières deviennent cassantes à l'usage. Après avoir infligé des dégâts avec des attaques à mains nues 10 fois, elles s'effritent."
 }

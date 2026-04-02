@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "armure_magique",
   "description": "While wearing this armor, you gain a +1 bonus to AC, and you can use an action to cause parts of the armor to unravel into long, animated chains. While the chains are active, you have a climbing speed equal to your walking speed, and your AC is reduced by 2. You can use a bonus action to deactivate the chains, returning the armor to normal.",
+  "description_fr": "Tant que vous portez cette armure, vous bénéficiez d'un bonus de +1 à la CA, et vous pouvez utiliser une action pour faire se dérouler certaines parties de l'armure en longues chaînes animées. Tant que les chaînes sont actives, vous disposez d'une vitesse d'escalade égale à votre vitesse de déplacement, mais votre CA est réduite de 2. Vous pouvez utiliser une action bonus pour désactiver les chaînes et redonner à l'armure son aspect normal.",
   "effets": [],
   "poids": "55.000",
   "prix_estime": "0.00",

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces bottes, vous avez la maîtrise de la compétence Discrétion si vous ne l'avez pas déjà, et vous doublez votre bonus de maîtrise aux tests de Dextérité (Discrétion). En tant qu'action, vous pouvez verser trois gouttes de sang frais sur les bottes pour faciliter votre passage dans le monde. Pendant 1d6 heures, vous et vos alliés dans un rayon de 9 mètres ignorez le terrain difficile. Une fois utilisée, cette propriété ne peut plus l'être avant l'aube suivante."
 }

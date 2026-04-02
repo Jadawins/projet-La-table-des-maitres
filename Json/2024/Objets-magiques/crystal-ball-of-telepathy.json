@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "La boule de cristal ordinaire, un objet très rare, mesure environ 15 cm de diamètre. En la touchant, vous pouvez lancer le sort scrutation (DD 17) grâce à elle. Les variantes suivantes sont des objets légendaires aux propriétés supplémentaires. Pendant que vous scrutez avec la boule, vous pouvez communiquer par télépathie avec les créatures que vous pouvez voir dans un rayon de 9 mètres autour du capteur du sort. Vous pouvez également utiliser une action pour lancer le sort suggestion (DD 17) à travers le capteur sur l'une de ces créatures. Vous n'avez pas besoin de maintenir la concentration sur cette suggestion, mais elle prend fin si la scrutation se termine. Une fois utilisée, cette propriété de suggestion ne peut plus être utilisée avant l'aube suivante."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "En portant cette cape avec sa capuche relevée, vous pouvez respirer sous l'eau et vous disposez d'une vitesse de nage de 18 mètres. Relever ou baisser la capuche nécessite une action."
 }

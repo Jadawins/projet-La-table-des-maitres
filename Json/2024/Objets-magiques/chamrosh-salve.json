@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce pot en céramique de 7,5 cm de diamètre contient 1d4 + 1 doses d'un mélange sirupeux qui sent légèrement la fourrure de chien fraîchement lavée. Le pot est d'un blanc doré glorieux, rappelant la fourrure chatoyante du Chamrosh (voir Tome of Beasts 2), le chien sacré qui a donné son nom à ce baume. En une action, une dose de la pommade peut être appliquée sur la peau. La créature qui la reçoit récupère 2d8 + 1 points de vie et est guérie des états charmé, effrayé et empoisonné."
 }

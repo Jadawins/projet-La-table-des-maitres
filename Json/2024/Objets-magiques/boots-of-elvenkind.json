@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces bottes, vos pas ne font aucun bruit, quelle que soit la surface sur laquelle vous vous déplacez. Vous avez également l'avantage aux tests de Dextérité (Discrétion) reposant sur le déplacement silencieux."
 }

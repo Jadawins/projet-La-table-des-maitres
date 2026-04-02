@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "This worked leather collar has stitching in the shapes of various animals. While a beast wears this collar, its base AC becomes 13 + its Dexterity modifier. It has no effect if the beast's base AC is already 13 or higher. This collar affects only beasts, which can include a creature affected by the polymorph spell or a druid assuming a beast form using Wild Shape.",
+  "description_fr": "Ce collier en cuir travaillé est orné de broderies représentant divers animaux. Tant qu'une bête porte ce collier, sa CA de base devient 13 + son modificateur de Dextérité. Il n'a aucun effet si la CA de base de la bête est déjà de 13 ou plus. Ce collier n'affecte que les bêtes, ce qui peut inclure une créature soumise au sort de métamorphose ou un druide prenant une forme de bête grâce à la Forme sauvage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

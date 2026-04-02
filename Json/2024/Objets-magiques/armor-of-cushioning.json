@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "armure_magique",
   "description": "While wearing this armor, you have resistance to bludgeoning damage. In addition, you can use a reaction when you fall to reduce any falling damage you take by an amount equal to twice your level.",
+  "description_fr": "Tant que vous portez cette armure, vous avez la résistance aux dégâts contondants. De plus, vous pouvez utiliser une réaction lorsque vous chutez pour réduire les dégâts de chute que vous subissez d'un montant égal au double de votre niveau.",
   "effets": [],
   "poids": "8.000",
   "prix_estime": "0.00",

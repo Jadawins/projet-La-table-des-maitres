@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Si ce petit chaudron en cuivre est rempli d'eau et de 225 grammes de viande, légumes ou autres vivres, puis placé sur le feu, il produit un ragoût simple mais nourrissant qui apporte à une créature assez de nourriture pour subvenir à ses besoins pendant une journée. Tant que la nourriture est conservée dans le chaudron avec le couvercle, elle reste fraîche et comestible jusqu'à 24 heures, bien qu'elle refroidisse si elle n'est pas réchauffée."
 }

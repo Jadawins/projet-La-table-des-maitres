@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce bouclier rectangulaire est plaqué de laiton poli et ressemble à une tour crénelée. Tant que vous maniez ce bouclier, vous obtenez un bonus de +1 à la CA, en plus du bonus normal conféré par le bouclier."
 }

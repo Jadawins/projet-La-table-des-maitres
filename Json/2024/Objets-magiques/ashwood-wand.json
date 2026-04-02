@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "baguette",
   "description": "You can use this wand as a spellcasting focus. The wand has 3 charges and regains all expended charges daily at dawn. When you cast a spell that deals fire damage while using this wand as your spellcasting focus, the spell deals 1 extra fire damage. If you expend 1 of the wand's charges during the casting, the spell deals 1d4 + 1 extra fire damage instead.",
+  "description_fr": "Vous pouvez utiliser cette baguette comme focalisateur d'incantation. Elle possède 3 charges et récupère toutes ses charges dépensées chaque jour à l'aube. Lorsque vous lancez un sort infligeant des dégâts de feu en utilisant cette baguette comme focalisateur d'incantation, le sort inflige 1 dégât de feu supplémentaire. Si vous dépensez 1 charge de la baguette lors de l'incantation, le sort inflige plutôt 1d4 + 1 dégâts de feu supplémentaires.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

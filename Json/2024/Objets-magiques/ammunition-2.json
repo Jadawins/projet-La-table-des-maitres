@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "You have a bonus to attack rolls and damage rolls made with this piece of magic ammunition. The bonus is determined by the rarity of the ammunition. Once it hits a target, the ammunition is no longer magical. This ammunition is typically found or sold in quantities of ten or twenty pieces. Ten pieces of this ammunition are equivalent in value to a potion of the same rarity.",
+  "description_fr": "Vous bénéficiez d'un bonus aux jets d'attaque et aux jets de dégâts effectués avec cette munition magique. Le bonus est déterminé par la rareté de la munition. Une fois qu'elle touche une cible, la munition perd ses propriétés magiques. Ces munitions se trouvent ou se vendent généralement par lots de dix ou vingt pièces. Dix pièces de ces munitions ont une valeur équivalente à une potion de même rareté.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

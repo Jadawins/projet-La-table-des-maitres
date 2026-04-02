@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez cette cape, elle projette une illusion qui vous fait paraître à un endroit légèrement différent de votre emplacement réel, ce qui amène toute créature à avoir le désavantage aux jets d'attaque contre vous. Si vous subissez des dégâts, cette propriété cesse de fonctionner jusqu'au début de votre prochain tour. Elle est également supprimée lorsque vous êtes neutralisé, entravé ou autrement incapable de vous déplacer."
 }

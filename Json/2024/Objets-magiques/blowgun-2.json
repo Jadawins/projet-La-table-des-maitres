@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "You have a bonus to attack and damage rolls made with this magic weapon. The bonus is determined by the weapon's rarity.",
+  "description_fr": "Vous bénéficiez d'un bonus aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Ce bonus est déterminé par la rareté de l'arme.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,

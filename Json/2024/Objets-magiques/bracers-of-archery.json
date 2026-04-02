@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces brassards, vous avez la maîtrise de l'arc long et de l'arc court, et vous obtenez un bonus de +2 aux jets de dégâts pour les attaques à distance effectuées avec ces armes."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Souvent utilisée par les assassins pour étrangler leurs victimes endormies, cette lourde boule de laiton mesure 15 centimètres de diamètre et pèse environ 7 kg. Une image de serpent lové est estampée tout autour. Vous pouvez utiliser une action pour ordonner à l'orbe de se dérouler en un serpent de laiton d'environ 1,80 mètre de long et 7,5 cm d'épaisseur. Vous pouvez le diriger par commande télépathique pour attaquer toute créature dans votre ligne de vue. Utilisez les statistiques du serpent constricteur, mais avec une CA de 14 et un indice de dangerosité de 1/2. Le serpent peut rester animé jusqu'à 5 minutes ou jusqu'à être réduit à 0 point de vie. Réduit à 0 point de vie, il reprend la forme d'orbe et devient inerte pendant 1 semaine. S'il est blessé sans être réduit à 0 point de vie, il retrouve tous ses points de vie à la prochaine invocation. Une fois utilisé pour se transformer en serpent, l'orbe ne peut plus l'être avant le coucher du soleil suivant."
 }

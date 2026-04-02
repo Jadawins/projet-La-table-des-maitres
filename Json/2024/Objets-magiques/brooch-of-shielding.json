@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "While wearing this brooch, you have resistance to force damage, and you have immunity to damage from the _magic missile_ spell.",
+  "description_fr": "Tant que vous portez cette broche, vous êtes résistant aux dégâts de force et vous êtes immunisé aux dégâts infligés par le sort _projectile magique_.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

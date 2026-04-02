@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "This golden mask resembles a stern face, glowering at the world. While wearing this mask, you have advantage on saving throws against being frightened. The mask has 7 charges for the following properties, and it regains 1d6 + 1 expended charges daily at midnight.",
+  "description_fr": "Ce masque doré représente un visage sévère, qui toise le monde avec austérité. Lorsque vous portez ce masque, vous avez l'avantage aux jets de sauvegarde contre l'état effrayé. Le masque possède 7 charges pour les propriétés suivantes et récupère 1d6 + 1 charges dépensées chaque jour à minuit.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

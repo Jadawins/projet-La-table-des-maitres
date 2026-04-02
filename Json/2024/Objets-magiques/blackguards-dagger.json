@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "You have advantage on attack rolls made with this weapon against a target if another enemy of the target is within 5 feet of it, and it has no allies within 5 feet of it.",
+  "description_fr": "Vous avez l'avantage aux jets d'attaque effectués avec cette arme contre une cible si un autre ennemi de la cible se trouve à 1,50 mètre ou moins d'elle, et qu'aucun allié de la cible n'est à 1,50 mètre ou moins d'elle.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette cape inhabituelle est composée de nombreuses lanières larges et épaisses en tissu superposées. Cape Rampante (Commune) : lorsque vous êtes à terre, vous pouvez animer la cape pour qu'elle vous tire le long du sol, vous permettant d'ignorer le coût de déplacement supplémentaire lié au fait de ramper. Vous ne pouvez toutefois vous déplacer qu'à votre vitesse de déplacement normale et ne pouvez pas vous relever à moins d'avoir encore au moins la moitié de votre déplacement restant. Cape Rampante Robuste (Peu commune) : cette version plus puissante vous permet également de grimper grâce aux lanières préhensiles, vous accordant une vitesse d'escalade de 6 mètres. Si vous possédez déjà une vitesse d'escalade, la cape l'augmente de 3 mètres. Lors de l'utilisation de la cape pour grimper, vous pouvez garder les mains libres."
 }

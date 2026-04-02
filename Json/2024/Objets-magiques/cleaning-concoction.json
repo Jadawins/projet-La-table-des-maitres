@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Ce liquide vert clair et frais peut couvrir une créature ou un objet de taille Moyenne ou plus petite (ou un ensemble assorti d'objets, comme un costume ou une paire de bottes). L'application du liquide prend 1 minute. Il élimine la saleté, les taches et les résidus, et neutralise et supprime les odeurs, à moins qu'elles ne soient particulièrement fortes, comme chez les mouffettes ou les créatures dotées du trait Puanteur. Une fois que la potion a nettoyé la cible, elle s'évapore, laissant la créature ou l'objet propre et sec."
 }

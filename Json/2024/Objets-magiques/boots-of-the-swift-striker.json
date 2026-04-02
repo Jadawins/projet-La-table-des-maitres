@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces bottes, votre vitesse de déplacement à pied augmente de 3 mètres. De plus, lorsque vous effectuez l'action Foncer en portant ces bottes, vous pouvez faire une unique attaque à l'arme à la fin de votre déplacement. Vous ne pouvez pas continuer à vous déplacer après avoir effectué cette attaque."
 }

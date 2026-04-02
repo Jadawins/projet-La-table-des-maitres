@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "autre",
   "description": "This black ammunition has yellow fletching or yellow paint. When you fire this magic ammunition, it makes an angry buzzing sound, and it multiplies in flight. As it flies, 2d4 identical pieces of ammunition magically appear around it, all speeding toward your target. Roll separate attack rolls for each additional arrow or bullet. Duplicate ammunition disappears after missing or after dealing its damage. If the angry hornet and all its duplicates miss, the angry hornet remains magical and can be fired again, otherwise it is destroyed.",
+  "description_fr": "Cette munition noire est dotée d'un empennage jaune ou peinte en jaune. Lorsque vous tirez cette munition magique, elle émet un bourdonnement menaçant et se multiplie en vol. Durant sa trajectoire, 2d4 munitions identiques apparaissent magiquement autour d'elle, toutes fonçant vers votre cible. Effectuez des jets d'attaque séparés pour chaque flèche ou projectile supplémentaire. Les munitions dupliquées disparaissent après avoir raté leur cible ou après avoir infligé leurs dégâts. Si le frelon furieux et tous ses doubles manquent leur cible, la munition originale conserve son caractère magique et peut être tirée de nouveau ; sinon, elle est détruite.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "These simple leather straps are nearly unbreakable when used as restraints. If you spend 1 minute tying a Small or Medium creature's limbs with these straps, the creature is restrained (escape DC 17) until it escapes or until you speak a command word to release the straps. While restrained by these straps, the target has disadvantage on Strength checks.",
+  "description_fr": "Ces simples lanières de cuir sont presque indestructibles lorsqu'elles servent d'entraves. Si vous passez 1 minute à lier les membres d'une créature de taille Petite ou Moyenne avec ces lanières, la créature est entravée (DD d'évasion 17) jusqu'à ce qu'elle s'échappe ou que vous prononciez un mot de commande pour libérer les lanières. Tant qu'elle est entravée par ces lanières, la cible a le désavantage aux tests de Force.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

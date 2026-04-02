@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "L'intérieur de cette cape noire simple ressemble à de la toile de voile blanche. En portant cette cape, vous obtenez un bonus de +1 à la CA et aux jets de sauvegarde. Vous perdez ce bonus lorsque vous utilisez la propriété Toile de voile de la cape."
 }

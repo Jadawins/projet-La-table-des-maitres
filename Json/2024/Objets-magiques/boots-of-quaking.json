@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces bottes à bouts en acier, la terre tremble sur votre passage, provoquant des secousses inoffensives mais inquiétantes. Si vous vous déplacez d'au moins 4,5 mètres en un seul tour, toutes les créatures dans un rayon de 3 mètres de vous à n'importe quel point de votre déplacement doivent réussir un jet de sauvegarde de Force DD 16 ou subir 1d6 dégâts de force et être mises à terre. De plus, en portant ces bottes, vous pouvez lancer tremblement de terre, sans concentration, en prononçant un mot de commande et en sautant sur un point du sol. Le sort est centré sur ce point. Une fois ce sort lancé de cette façon, vous ne pouvez plus le faire avant l'aube suivante."
 }

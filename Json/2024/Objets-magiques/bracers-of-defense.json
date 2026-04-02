@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces brassards, vous obtenez un bonus de +2 à la CA si vous ne portez pas d'armure et n'utilisez pas de bouclier."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette ceinture est faite d'intestins traités et tannés de loup sanguinaire, enchantée pour conférer à son porteur la férocité et la détermination du loup. En portant cette ceinture, vous pouvez utiliser une action pour lancer les sorts _druidisme_ ou _communication avec les animaux_ à volonté. De plus, vous avez l'avantage aux tests de Sagesse (Perception) faisant appel à l'ouïe ou à l'odorat. Si vous tombez à 0 points de vie alors que vous êtes harmonisé à la ceinture et que vous ratez deux jets de sauvegarde contre la mort, vous mourez immédiatement lorsque votre corps explose violemment dans un flot de sang, et un loup sanguinaire émerge de vos entrailles. Vous prenez le contrôle du loup sanguinaire, qui gagne des points de vie supplémentaires égaux à la moitié de vos points de vie maximum avant votre mort. La ceinture s'effrite alors et est détruite. Si le loup est ciblé par un sort _délivrance des malédictions_, vous renaissez quand le loup meurt, tout comme le loup est né de votre mort. Cependant, si la malédiction persiste à la mort du loup, vous restez mort."
 }

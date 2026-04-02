@@ -12,5 +12,6 @@
   "poids": "20.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette cuirasse en bronze représente deux krakens en train de se battre. En portant cette armure, vous obtenez un bonus de +1 à la CA. Vous pouvez utiliser une action pour prononcer le mot de commande de l'armure afin de libérer un nuage de brume noire (si vous êtes hors de l'eau) ou d'encre noire (si vous êtes sous l'eau). Il se répand en un nuage de 6 mètres de rayon autour de vous. La zone est fortement obscurcie pendant 1 minute, bien qu'un vent de vitesse modérée ou supérieure (au moins 16 km/h) ou un courant significatif le dissipe. L'armure ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
 }

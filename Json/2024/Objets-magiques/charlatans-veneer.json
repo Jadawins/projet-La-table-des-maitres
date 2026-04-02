@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette écharpe de soie est une version plus puissante de la Veneer du Roturier. Dans une zone contenant 12 humanoïdes ou plus, les tests de Sagesse (Perception) effectués pour vous repérer ont le désavantage. Vous pouvez utiliser une action bonus pour invoquer le pouvoir de l'écharpe et susciter un sentiment de confiance chez ceux à qui vous parlez. Dans ce cas, vous avez l'avantage au prochain test de Charisme (Persuasion) que vous effectuez contre un humanoïde dans une zone contenant 12 humanoïdes ou plus. De plus, en portant l'écharpe, vous pouvez utiliser _modifier la mémoire_ sur un humanoïde que vous avez réussi à persuader au cours des dernières 24 heures. L'écharpe ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
 }

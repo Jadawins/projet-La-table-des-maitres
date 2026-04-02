@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "armure_magique",
   "description": "This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you're wearing it, any critical hit against you becomes a normal hit.",
+  "description_fr": "Cette armure est renforcée d'adamantium, l'une des substances les plus dures qui soit. Tant que vous la portez, tout coup critique porté contre vous devient un coup normal.",
   "effets": [],
   "poids": "20.000",
   "prix_estime": null,

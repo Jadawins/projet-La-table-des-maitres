@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "arme_magique",
   "description": "This clockwork mace is composed of several different metals. While attuned to this magic weapon, you have proficiency with it. As a bonus action, you can command the mace to transform into a trident. When you hit with an attack using this weapon's trident form, the target takes an extra 1d6 radiant damage.",
+  "description_fr": "Cette masse mécanique est composée de plusieurs métaux différents. Tant que vous êtes harmonisé à cette arme magique, vous avez la maîtrise de celle-ci. En tant qu'action bonus, vous pouvez ordonner à la masse de se transformer en trident. Lorsque vous touchez avec une attaque utilisant la forme de trident de cette arme, la cible subit 1d6 dégâts radiants supplémentaires.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

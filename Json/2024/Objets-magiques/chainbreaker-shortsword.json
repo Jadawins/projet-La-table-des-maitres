@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Vous gagnez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Lorsque vous utilisez cette arme pour attaquer ou briser des chaînes, des menottes ou des objets métalliques similaires qui immobilisent des créatures, vous avez l'avantage au jet d'attaque ou au test de caractéristique. De plus, ces objets ont la vulnérabilité aux dégâts de cette épée."
 }

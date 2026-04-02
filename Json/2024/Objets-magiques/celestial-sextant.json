@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "The ancient elves constructed these sextants to use as navigational aids on all their seagoing vessels. The knowledge of their manufacture has been lost, and few of them remain. While attuned to the sextant, you can spend 1 minute using the sextant to determine your latitude and longitude, provided you can see the sun or stars. You can use an action steer up to four vessels that are within 1 mile of the sextant, provided their crews are willing. To do so, you must have spent at least 1 hour aboard each of the controlled vessels, performing basic sailing tasks and familiarizing yourself with the vessel.",
+  "description_fr": "Les anciens elfes fabriquaient ces sextants pour s'en servir d'aides à la navigation sur tous leurs navires. Le secret de leur fabrication a été perdu et il n'en reste que très peu. Tant que vous êtes harmonisé avec le sextant, vous pouvez passer 1 minute à l'utiliser pour déterminer votre latitude et votre longitude, à condition de pouvoir voir le soleil ou les étoiles. Vous pouvez utiliser une action pour gouverner jusqu'à quatre navires situés à moins de 1,5 km (1 mile) du sextant, à condition que leurs équipages y consentent. Pour ce faire, vous devez avoir passé au moins 1 heure à bord de chacun des navires commandés, en effectuant des tâches de navigation élémentaires et en vous familiarisant avec le bâtiment.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

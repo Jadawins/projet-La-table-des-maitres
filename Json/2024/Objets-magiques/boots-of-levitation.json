@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez ces bottes, vous pouvez utiliser une action pour lancer le sort lévitation sur vous-même à volonté."
 }

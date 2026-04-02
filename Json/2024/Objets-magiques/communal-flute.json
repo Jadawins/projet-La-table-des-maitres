@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette flûte sculptée de motifs de crânes peut servir de focaliseur d'incantation. Si vous jouez de la flûte pendant 10 minutes au-dessus d'un cadavre, vous pouvez lancer le sort parler aux morts depuis la flûte. La flûte ne peut plus être utilisée de cette façon avant l'aube suivante."
 }

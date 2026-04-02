@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "En portant ce cerclet, vous bénéficiez des avantages suivants : - **Langue des fées**. Vous pouvez parler et comprendre le sylvain. - **Ami des fées.** Vous avez l'avantage aux tests de caractéristique pour interagir socialement avec les créatures féeriques.\n- **Sens du poison.** Vous savez si la nourriture ou la boisson que vous tenez contient du poison."
 }

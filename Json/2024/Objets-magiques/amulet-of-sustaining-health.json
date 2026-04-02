@@ -8,6 +8,7 @@
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
   "description": "While wearing this amulet, you need to eat and drink only once every 7 days. In addition, you have advantage on saving throws against effects that would cause you to suffer a level of exhaustion.",
+  "description_fr": "Tant que vous portez cette amulette, vous n'avez besoin de manger et de boire qu'une fois tous les 7 jours. De plus, vous avez l'avantage aux jets de sauvegarde contre les effets qui vous feraient subir un niveau d'épuisement.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",

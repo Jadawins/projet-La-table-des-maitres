@@ -12,5 +12,6 @@
   "poids": "12.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Tant que vous portez cette armure fabriquée en peau de crocodile, vous obtenez un bonus de +1 à la CA. De plus, vous pouvez retenir votre souffle pendant 15 minutes et vous disposez d'une vitesse de nage égale à votre vitesse de déplacement."
 }

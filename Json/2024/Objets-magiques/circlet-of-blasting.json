@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "En portant ce cerclet, vous pouvez utiliser une action pour lancer le sort _rayon ardent_ grâce à lui. Lorsque vous effectuez les jets d'attaque du sort, vous le faites avec un bonus d'attaque de +5. Le cerclet ne peut pas être utilisé de cette façon jusqu'à l'aube suivante."
 }

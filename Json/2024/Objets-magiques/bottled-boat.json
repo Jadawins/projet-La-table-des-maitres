@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette bouteille en verre transparent contient une minuscule réplique d'une barque en bois, jusque dans les moindres détails : deux solides avirons, un minuscule rouleau de corde de chanvre, un filet de pêche et un petit tonnelet. Vous pouvez utiliser une action pour briser la bouteille, la détruisant et libérant son contenu. La barque et tous les objets apparaissent à taille réelle, normaux et permanents : 15 mètres de corde de chanvre, un tonnelet contenant 75 litres d'eau fraîche, deux avirons et une barque de 3,6 mètres de long."
 }

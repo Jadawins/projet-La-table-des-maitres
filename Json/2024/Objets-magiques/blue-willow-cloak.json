@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette légère cape de soie féerique est imperméable. Lorsque vous portez cette cape sous la pluie, vous pouvez utiliser votre action pour relever la capuche et devenir invisible pendant jusqu'à 1 heure. L'effet prend fin prématurément si vous attaquez ou lancez un sort, si vous utilisez une action pour rabaisser la capuche, ou si la pluie s'arrête. La cape ne peut plus être utilisée de cette façon avant l'aube suivante."
 }

@@ -12,5 +12,6 @@
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "description_fr": "Cette cape délicate est ornée d'une multitude de fleurs roses, violettes et jaunes. En la portant, vous avez l'avantage aux tests de Dextérité (Discrétion) effectués pour vous cacher dans des zones contenant des plantes en fleurs. La cape possède 3 charges. Lorsqu'une créature que vous pouvez voir vous cible avec une attaque, vous pouvez utiliser votre réaction pour dépenser 1 de ses charges afin de libérer une pluie de pétales. Dans ce cas, l'attaquant a le désavantage au jet d'attaque. La cape récupère 1d3 charges dépensées quotidiennement à l'aube."
 }
