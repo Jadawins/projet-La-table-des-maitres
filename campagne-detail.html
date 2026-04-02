@@ -247,16 +247,41 @@
       <div class="items-list" id="loot-items-list">
         <div class="items-list-empty">Aucun item</div>
       </div>
-      <div class="add-item-row">
-        <input type="text"   id="loot-i-nom" placeholder="Nom de l'item" style="flex:2" />
-        <input type="number" id="loot-i-qte" placeholder="Qté" value="1" min="1" style="max-width:55px" />
-        <select id="loot-i-type">
-          <option value="monnaie">Monnaie</option>
-          <option value="equipement">Équipement</option>
-          <option value="consommable">Consommable</option>
-          <option value="autre">Autre</option>
-        </select>
-        <button class="btn-add-item" id="loot-add-item">+ Ajouter</button>
+
+      <!-- ─── Recherche objets magiques ─────────────────────── -->
+      <div class="monstre-search-zone">
+        <div class="monstre-filters">
+          <input type="text" id="loot-i-search" placeholder="🔍 Rechercher un objet…" autocomplete="off" />
+          <select id="loot-i-categorie">
+            <option value="">Toutes catégories</option>
+            <option value="arme_magique">Arme</option>
+            <option value="armure_magique">Armure</option>
+            <option value="potion">Potion</option>
+            <option value="parchemin">Parchemin</option>
+            <option value="baguette">Baguette</option>
+            <option value="baton">Bâton</option>
+            <option value="sceptre">Sceptre</option>
+            <option value="anneau">Anneau</option>
+            <option value="objet_merveilleux">Objet merveilleux</option>
+          </select>
+          <select id="loot-i-rarete">
+            <option value="">Toutes raretés</option>
+            <option value="commun">Commun</option>
+            <option value="peu_commun">Peu commun</option>
+            <option value="rare">Rare</option>
+            <option value="tres_rare">Très rare</option>
+            <option value="legendaire">Légendaire</option>
+          </select>
+        </div>
+        <div id="loot-i-results" class="monstre-results"></div>
+        <div class="monstre-add-row">
+          <div class="monstre-selected-card" id="loot-i-selected-card">
+            <span id="loot-i-selected-nom">Sélectionnez un objet</span>
+            <span id="loot-i-selected-badges"></span>
+          </div>
+          <input type="number" id="loot-i-qte" placeholder="Qté" value="1" min="1" title="Quantité" />
+          <button class="btn-add-item" id="loot-add-item">+ Ajouter</button>
+        </div>
       </div>
     </div>
     <div class="modal-actions">

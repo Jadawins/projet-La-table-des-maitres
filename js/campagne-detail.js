@@ -32,6 +32,10 @@ let tempItems    = [];
 let selectedMonstre      = null;
 let _monstresSearchTimer = null;
 
+// Recherche loot
+let selectedLootItem    = null;
+let _lootSearchTimer    = null;
+
 // ─── COMPÉTENCES ─────────────────────────────────────────────
 const COMPETENCES = [
   'Acrobaties','Arcanes','Athlétisme','Discrétion','Dressage',
@@ -442,6 +446,7 @@ function ouvrirModal(type, data, bid, getPos) {
     suppBtn('loot-supprimer');
     document.getElementById('loot-nom').value = data.nom || '';
     tempItems = JSON.parse(JSON.stringify(data.items || []));
+    resetLootSearch();
     renderItemsList();
     show('modal-loot');
 
@@ -702,6 +707,13 @@ function selectMonstrefromDB(m) {
 }
 
 // ─── LISTE ITEMS LOOT ─────────────────────────────────────────
+const LOOT_TYPE_MAP = {
+  arme_magique: 'equipement', armure_magique: 'equipement',
+  potion: 'consommable', parchemin: 'consommable',
+  baguette: 'autre', baton: 'autre', sceptre: 'autre',
+  anneau: 'autre', objet_merveilleux: 'autre'
+};
+
 function renderItemsList() {
   const list = document.getElementById('loot-items-list');
   if (!tempItems.length) {
@@ -712,6 +724,7 @@ function renderItemsList() {
     <div class="item-row">
       <span class="item-row-label">${escHtml(item.nom)}</span>
       <span class="item-row-badge">×${item.quantite}</span>
+      ${item.rarete ? `<span class="item-row-badge">${escHtml(item.rarete)}</span>` : ''}
       <span class="item-row-badge">${escHtml(item.type)}</span>
       <button class="item-remove-btn" data-i="${i}">✕</button>
     </div>
@@ -725,15 +738,116 @@ function renderItemsList() {
 }
 
 function ajouterItem() {
-  const nom = document.getElementById('loot-i-nom').value.trim();
-  if (!nom) return;
+  if (!selectedLootItem) { showToast('Sélectionnez un objet dans les résultats', 'error'); return; }
   tempItems.push({
-    nom,
-    quantite: parseInt(document.getElementById('loot-i-qte').value) || 1,
-    type:     document.getElementById('loot-i-type').value
+    nom:      selectedLootItem.nom || selectedLootItem.nom_original,
+    slug:     selectedLootItem.slug || null,
+    rarete:   selectedLootItem.rarete || null,
+    categorie: selectedLootItem.categorie || null,
+    type:     LOOT_TYPE_MAP[selectedLootItem.categorie] || 'autre',
+    quantite: parseInt(document.getElementById('loot-i-qte').value) || 1
   });
-  document.getElementById('loot-i-nom').value = '';
+  resetLootSearch();
   renderItemsList();
+}
+
+// ─── RECHERCHE LOOT DB ────────────────────────────────────────
+function resetLootSearch() {
+  selectedLootItem = null;
+  const _g = id => document.getElementById(id);
+  if (_g('loot-i-search'))   _g('loot-i-search').value   = '';
+  if (_g('loot-i-categorie')) _g('loot-i-categorie').value = '';
+  if (_g('loot-i-rarete'))   _g('loot-i-rarete').value   = '';
+  if (_g('loot-i-qte'))      _g('loot-i-qte').value      = 1;
+  if (_g('loot-i-selected-nom'))    _g('loot-i-selected-nom').textContent = 'Sélectionnez un objet';
+  if (_g('loot-i-selected-badges')) _g('loot-i-selected-badges').innerHTML = '';
+  if (_g('loot-i-selected-card'))   _g('loot-i-selected-card').classList.remove('active');
+  const results = _g('loot-i-results');
+  if (results) { results.innerHTML = ''; results.classList.remove('visible'); }
+}
+
+function initLootSearch() {
+  const ids = ['loot-i-search', 'loot-i-categorie', 'loot-i-rarete'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', triggerLootSearch);
+    if (el.tagName === 'SELECT') el.addEventListener('change', triggerLootSearch);
+  });
+}
+
+function triggerLootSearch() {
+  clearTimeout(_lootSearchTimer);
+  _lootSearchTimer = setTimeout(doSearchLoot, 280);
+}
+
+async function doSearchLoot() {
+  const q         = document.getElementById('loot-i-search')?.value.trim()   || '';
+  const categorie = document.getElementById('loot-i-categorie')?.value        || '';
+  const rarete    = document.getElementById('loot-i-rarete')?.value           || '';
+  const results   = document.getElementById('loot-i-results');
+  if (!results) return;
+
+  if (!q && !categorie && !rarete) {
+    results.innerHTML = '';
+    results.classList.remove('visible');
+    return;
+  }
+
+  results.innerHTML = '<div class="monstre-loading">Recherche…</div>';
+  results.classList.add('visible');
+
+  const params = new URLSearchParams();
+  if (q)         params.set('recherche',  q);
+  if (categorie) params.set('categorie',  categorie);
+  if (rarete)    params.set('rarete',     rarete);
+
+  try {
+    const res  = await fetch(`${API}/objets-magiques?${params}`, { headers: authHeaders() });
+    const data = await res.json();
+    const list = Array.isArray(data.items) ? data.items : (Array.isArray(data) ? data : []);
+    renderLootResults(list.slice(0, 12));
+  } catch {
+    results.innerHTML = '<div class="monstre-loading">Erreur de chargement</div>';
+  }
+}
+
+function renderLootResults(list) {
+  const results = document.getElementById('loot-i-results');
+  if (!list.length) {
+    results.innerHTML = '<div class="monstre-loading">Aucun résultat</div>';
+    return;
+  }
+  results.innerHTML = list.map(item => `
+    <div class="monstre-result-item" data-slug="${escHtml(item.slug || '')}">
+      <span class="monstre-result-nom">${escHtml(item.nom || item.nom_original || '')}</span>
+      <span class="monstre-result-badges">
+        <span class="item-row-badge">${escHtml(item.rarete || '')}</span>
+        <span class="item-row-badge">${escHtml(item.categorie || '')}</span>
+      </span>
+    </div>
+  `).join('');
+  results.querySelectorAll('.monstre-result-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const item = list.find(x => (x.slug || '') === el.dataset.slug);
+      if (item) selectLootItemFromDB(item);
+    });
+  });
+}
+
+function selectLootItemFromDB(item) {
+  selectedLootItem = item;
+  const _g = id => document.getElementById(id);
+  if (_g('loot-i-selected-nom'))    _g('loot-i-selected-nom').textContent = item.nom || item.nom_original || '';
+  if (_g('loot-i-selected-badges')) _g('loot-i-selected-badges').innerHTML = `
+    <span class="item-row-badge">${escHtml(item.rarete || '')}</span>
+    <span class="item-row-badge">${escHtml(item.categorie || '')}</span>
+  `;
+  if (_g('loot-i-selected-card')) _g('loot-i-selected-card').classList.add('active');
+  if (_g('loot-i-qte')) _g('loot-i-qte').value = 1;
+  const results = _g('loot-i-results');
+  if (results) { results.classList.remove('visible'); }
+  if (_g('loot-i-search')) _g('loot-i-search').value = '';
 }
 
 // ─── IMAGE PREVIEW ────────────────────────────────────────────
@@ -948,8 +1062,8 @@ async function init() {
   document.getElementById('loot-sauvegarder')   .addEventListener('click', () => sauvegarderBloc('loot'));
   document.getElementById('loot-supprimer')     .addEventListener('click', () => supprimerBlocActif('loot'));
   document.getElementById('loot-add-item')      .addEventListener('click', ajouterItem);
-  document.getElementById('loot-i-nom')         .addEventListener('keydown', e => { if (e.key === 'Enter') ajouterItem(); });
   document.getElementById('loot-distribuer')    .addEventListener('click', () => showToast('Distribution — bientôt disponible…'));
+  initLootSearch();
 
   // PNJ
   document.getElementById('close-pnj')         .addEventListener('click', () => fermerModal('pnj'));
