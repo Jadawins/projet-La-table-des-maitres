@@ -597,20 +597,20 @@ function ajouterMonstre() {
 // ─── RECHERCHE MONSTRES DB ────────────────────────────────────
 function resetMonstresSearch() {
   selectedMonstre = null;
-  document.getElementById('renc-m-search').value  = '';
-  document.getElementById('renc-m-type').value    = '';
-  document.getElementById('renc-m-taille').value  = '';
-  document.getElementById('renc-m-fp-min').value  = '';
-  document.getElementById('renc-m-fp-max').value  = '';
-  document.getElementById('renc-m-qte').value     = 1;
-  document.getElementById('renc-m-pv').value      = 10;
-  document.getElementById('renc-m-ca').value      = 12;
-  document.getElementById('renc-m-selected-nom').textContent = 'Sélectionnez un monstre';
-  document.getElementById('renc-m-selected-badges').innerHTML = '';
-  document.getElementById('renc-m-selected-card').classList.remove('active');
-  const results = document.getElementById('renc-m-results');
-  results.innerHTML = '';
-  results.classList.remove('visible');
+  const _g = id => document.getElementById(id);
+  if (_g('renc-m-search'))   _g('renc-m-search').value   = '';
+  if (_g('renc-m-type'))     _g('renc-m-type').value     = '';
+  if (_g('renc-m-taille'))   _g('renc-m-taille').value   = '';
+  if (_g('renc-m-fp-min'))   _g('renc-m-fp-min').value   = '';
+  if (_g('renc-m-fp-max'))   _g('renc-m-fp-max').value   = '';
+  if (_g('renc-m-qte'))      _g('renc-m-qte').value      = 1;
+  if (_g('renc-m-pv'))       _g('renc-m-pv').value       = 10;
+  if (_g('renc-m-ca'))       _g('renc-m-ca').value       = 12;
+  if (_g('renc-m-selected-nom'))    _g('renc-m-selected-nom').textContent = 'Sélectionnez un monstre';
+  if (_g('renc-m-selected-badges')) _g('renc-m-selected-badges').innerHTML = '';
+  if (_g('renc-m-selected-card'))   _g('renc-m-selected-card').classList.remove('active');
+  const results = _g('renc-m-results');
+  if (results) { results.innerHTML = ''; results.classList.remove('visible'); }
 }
 
 function initMonstresSearch() {

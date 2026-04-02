@@ -92,11 +92,12 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   const userId = getUserId(req);
   if (!userId) return res.status(401).json({ error: 'Non authentifié' });
-  const { nom, description, statut } = req.body;
+  const { nom, description, statut, chapitres } = req.body;
   const update = { derniere_modification: new Date() };
   if (nom !== undefined) update.nom = nom;
   if (description !== undefined) update.description = description;
   if (statut !== undefined) update.statut = statut;
+  if (chapitres !== undefined) update.chapitres = chapitres;
   try {
     const result = await withDb(db =>
       db.collection('campagnes').updateOne(
