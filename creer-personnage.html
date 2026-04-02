@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Créer un personnage — La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="css/personnage.css">
+  <link rel="stylesheet" href="css/notifications.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -13,11 +15,14 @@
   </script>
 </head>
 <body>
-<div style="padding:0.6rem 1.5rem;background:rgba(10,8,20,0.97);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:1rem;">
-  <a href="mes-personnages.html" style="color:#888;text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.4rem;">
-    <i class="fa-solid fa-arrow-left"></i> Mes personnages
-  </a>
-  <span style="color:#555;font-size:0.82rem;">Création de personnage PHB 2024</span>
+<div style="padding:0.6rem 1.5rem;background:rgba(10,8,20,0.97);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:1rem;justify-content:space-between;">
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="mes-personnages.html" style="color:#888;text-decoration:none;font-size:0.82rem;display:flex;align-items:center;gap:0.4rem;">
+      <i class="fa-solid fa-arrow-left"></i> Mes personnages
+    </a>
+    <span style="color:#555;font-size:0.82rem;">Création de personnage PHB 2024</span>
+  </div>
+  <div class="topbar-right"></div>
 </div>
 
 <div class="wizard-layout">
@@ -378,5 +383,6 @@
 <script src="js/magie-tables.js?v=20260329"></script>
 <script src="js/creer-personnage.js?v=20260329"></script>
 <script src="js/theme.js?v=20260329"></script>
+<script src="js/notifications.js"></script>
 </body>
 </html>

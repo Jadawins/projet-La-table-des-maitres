@@ -4,82 +4,103 @@
   <meta charset="UTF-8">
   <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nom de ta page</title>
+  <title>Nom de ta page — La Table du Maître</title>
 
-  <!-- Gestion du theme clair/sombre directement au chargement -->
+  <!-- Thème appliqué avant le rendu pour éviter le flash -->
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
   </script>
 
-  <!-- Chargement des CSS globaux -->
+  <!-- CSS globaux -->
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
   <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/notifications.css">
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS spécifique à cette page -->
+  <!--<link rel="stylesheet" href="css/TONCSSSPÉCIFIQUE.css">-->
+</head>
 
 <body>
+<div class="page-container">
 
-  <!-- Sidebar -->
+  <!-- ============================================ -->
+  <!-- SIDEBAR                                      -->
+  <!-- ============================================ -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header sidebar-header-flex">
       <button class="toggle-glow" onclick="toggleSidebar()" aria-label="Menu">
         <img id="book-icon" src="assets/icone/livremagie.png" alt="Icône Livre" class="icon-book" />
       </button>
-      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">
-        ⚙️
-      </a>
+      <a href="param.html" class="sidebar-settings-button" aria-label="Paramètres">⚙️</a>
     </div>
     <div class="sidebar-content">
-      <h2>Menu MJ</h2>
-      <ul class="sidebar-menu">
-        <li><a href="CreateRace.html">Créationd de nouvelles races</a></li>  
-        <li><a href="sessions.html">Sessions</a></li>
-      </ul>
-      <h2>Menu Joueurs</h2>
-      <ul class="sidebar-menu">
-        <li><a href="mes-personnages.html">Mes Personnages</a></li>
-        <li><a href="bibliotheque.html">Bibliothèque</a></li>
-        <li><a href="sessions.html">Sessions</a></li>
-      </ul>
-      <li><a href="home.html">Page d'accueil site</a></li>
+      <div class="sidebar-nav-area">
+        <h2>Menu MJ</h2>
+        <ul class="sidebar-menu">
+          <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
+          <li><a href="createrace.html"><i class="fa-solid fa-dragon"></i> Création de races</a></li>
+          <li><a href="sessions.html?role=mj"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
+          <li><a href="campagne.html"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
+          <li><a href="creer-objet-magique.html"><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</a></li>
+          <li><a href="creer-monstre.html"><i class="fa-solid fa-skull-crossbones"></i> Mes Monstres</a></li>
+        </ul>
+        <h2>Menu Joueurs</h2>
+        <ul class="sidebar-menu">
+          <li><a href="mes-personnages.html"><i class="fa-solid fa-user-shield"></i> Mes Personnages</a></li>
+          <li><a href="sessions.html?role=joueur"><i class="fa-solid fa-dice-d20"></i> Mes Sessions (Joueur)</a></li>
+          <li><a href="bibliotheque.html"><i class="fa-solid fa-book-open"></i> Bibliothèque</a></li>
+          <li><a href="tutoriel.html"><i class="fa-solid fa-graduation-cap"></i> Tutoriel</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <a href="home.html"><i class="fa-solid fa-house"></i> Page d'accueil site</a>
+      </div>
     </div>
   </aside>
 
-  
-
-  <!-- Contenu principal -->
+  <!-- ============================================ -->
+  <!-- CONTENU PRINCIPAL                            -->
+  <!-- ============================================ -->
   <main>
-      <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
-     <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+    <!-- Bouton pour réafficher la sidebar quand elle est réduite (mobile) -->
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
 
-    
+    <!-- TON CONTENU ICI -->
+
   </main>
 
-  <!-- Bouton de changement de thème (lanterne) -->
-  <div class="theme-toggle-container">
-    <button id="theme-toggle" class="lanterne-btn">
-      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
-    </button>
-  </div>
+</div><!-- /.page-container -->
 
-  <!-- Chargement des JS globaux -->
-  <script type="module" src="js/sidebar.js"></script>
-  <script src="js/theme.js"></script>
-  <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
+<!-- ============================================ -->
+<!-- BOUTON THÈME (lanterne)                      -->
+<!-- ============================================ -->
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
 
-  <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
-  <script type="module">
-    import { toggleSidebar } from './js/sidebar.js';
-    window.toggleSidebar = toggleSidebar;
-  </script>
-
-  <!-- Ton JS spécifique si besoin (ex: profil.js, etc) -->
-  <!--<script type="module" src="js/TONFICHIERSPECIFIQUE.js"></script>-->
+<!-- ============================================ -->
+<!-- JS GLOBAUX                                   -->
+<!-- ============================================ -->
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+<script src="js/theme.js"></script>
 <script src="js/notifications.js"></script>
+
+<!-- Auth guard (décommente si la page nécessite d'être connecté) -->
+<!--<script type="module" src="js/authGuard.js"></script>-->
+
+<!-- JS spécifique à cette page -->
+<!--<script type="module" src="js/TONJS.js"></script>-->
+
 </body>
 </html>

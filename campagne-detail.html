@@ -7,6 +7,7 @@
   <title>Éditeur de campagne — La Table du Maître</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/campagne-detail.css">
+  <link rel="stylesheet" href="css/notifications.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -24,7 +25,7 @@
     <span class="editor-topbar-nom" id="topbar-nom">Chargement…</span>
     <span class="save-indicator" id="save-indicator">—</span>
   </div>
-  <div style="display:flex;gap:0.5rem;align-items:center;">
+  <div class="topbar-right" style="display:flex;gap:0.5rem;align-items:center;">
     <select id="statut-select" class="statut-select">
       <option value="preparation">En préparation</option>
       <option value="en_cours">En cours</option>
@@ -117,12 +118,55 @@
       <div class="items-list" id="renc-monstres-list">
         <div class="items-list-empty">Aucun monstre — ajoutez-en ci-dessous</div>
       </div>
-      <div class="add-item-row">
-        <input type="text"   id="renc-m-nom" placeholder="Nom du monstre" style="flex:2" />
-        <input type="number" id="renc-m-qte" placeholder="Qté" value="1" min="1" max="20" style="max-width:55px" />
-        <input type="number" id="renc-m-pv"  placeholder="PV"  value="10" min="1"  style="max-width:55px" />
-        <input type="number" id="renc-m-ca"  placeholder="CA"  value="12" min="1"  style="max-width:55px" />
-        <button class="btn-add-item" id="renc-add-monstre">+ Ajouter</button>
+
+      <!-- ─── Recherche monstres ─────────────────────────────── -->
+      <div class="monstre-search-zone">
+        <div class="monstre-filters">
+          <input type="text" id="renc-m-search" placeholder="🔍 Rechercher un monstre…" autocomplete="off" />
+          <select id="renc-m-type">
+            <option value="">Tous types</option>
+            <option value="Beast">Bête</option>
+            <option value="Humanoid">Humanoïde</option>
+            <option value="Undead">Mort-vivant</option>
+            <option value="Dragon">Dragon</option>
+            <option value="Fiend">Fiélon</option>
+            <option value="Monstrosity">Monstruosité</option>
+            <option value="Aberration">Aberration</option>
+            <option value="Construct">Artificiel</option>
+            <option value="Elemental">Élémentaire</option>
+            <option value="Fey">Fée</option>
+            <option value="Giant">Géant</option>
+            <option value="Ooze">Vase</option>
+            <option value="Plant">Plante</option>
+            <option value="Celestial">Céleste</option>
+          </select>
+          <select id="renc-m-taille">
+            <option value="">Taille</option>
+            <option value="TP">Très Petit</option>
+            <option value="P">Petit</option>
+            <option value="M">Moyen</option>
+            <option value="G">Grand</option>
+            <option value="TG">Très Grand</option>
+            <option value="Gig">Gigantesque</option>
+          </select>
+          <div class="monstre-fp-range">
+            <span>FP</span>
+            <input type="number" id="renc-m-fp-min" placeholder="min" min="0" max="30" step="0.5" />
+            <span>–</span>
+            <input type="number" id="renc-m-fp-max" placeholder="max" min="0" max="30" step="0.5" />
+          </div>
+        </div>
+        <div id="renc-m-results" class="monstre-results"></div>
+        <div class="monstre-add-row">
+          <div class="monstre-selected-card" id="renc-m-selected-card">
+            <span id="renc-m-selected-nom">Sélectionnez un monstre</span>
+            <span id="renc-m-selected-badges"></span>
+          </div>
+          <input type="number" id="renc-m-qte" placeholder="Qté" value="1" min="1" max="20" title="Quantité" />
+          <input type="number" id="renc-m-pv"  placeholder="PV"  value="10" min="1" title="Points de vie" />
+          <input type="number" id="renc-m-ca"  placeholder="CA"  value="12" min="1" title="Classe d'armure" />
+          <button class="btn-add-item" id="renc-add-monstre">+ Ajouter</button>
+        </div>
       </div>
     </div>
     <div class="modal-actions">
@@ -342,6 +386,7 @@
   </button>
 </div>
 <script src="js/theme.js"></script>
+<script src="js/notifications.js"></script>
 
 </body>
 </html>

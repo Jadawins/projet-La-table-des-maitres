@@ -28,6 +28,10 @@ let activeBlocGetPos = null;
 let tempMonstres = [];
 let tempItems    = [];
 
+// Recherche monstres
+let selectedMonstre      = null;
+let _monstresSearchTimer = null;
+
 // ─── COMPÉTENCES ─────────────────────────────────────────────
 const COMPETENCES = [
   'Acrobaties','Arcanes','Athlétisme','Discrétion','Dressage',
@@ -416,6 +420,7 @@ function ouvrirModal(type, data, bid, getPos) {
     document.getElementById('renc-diff').value = data.difficulte || 'moyen';
     document.getElementById('renc-desc').value = data.description || '';
     tempMonstres = JSON.parse(JSON.stringify(data.monstres || []));
+    resetMonstresSearch();
     renderMonstresList();
     show('modal-rencontre');
 
@@ -560,6 +565,7 @@ function renderMonstresList() {
     <div class="item-row">
       <span class="item-row-label">${escHtml(m.nom)}</span>
       <span class="item-row-badge">×${m.quantite}</span>
+      ${m.fp != null ? `<span class="item-row-badge">FP ${escHtml(String(m.fp))}</span>` : ''}
       <span class="item-row-badge">PV ${m.pv}</span>
       <span class="item-row-badge">CA ${m.ca}</span>
       <button class="item-remove-btn" data-i="${i}">✕</button>
@@ -574,16 +580,125 @@ function renderMonstresList() {
 }
 
 function ajouterMonstre() {
-  const nom = document.getElementById('renc-m-nom').value.trim();
-  if (!nom) return;
+  if (!selectedMonstre) { showToast('Sélectionnez un monstre dans les résultats', 'error'); return; }
   tempMonstres.push({
-    nom,
+    nom:      selectedMonstre.nom || selectedMonstre.nom_original,
+    slug:     selectedMonstre.slug || null,
+    fp:       selectedMonstre.fp   ?? null,
+    type:     selectedMonstre.type || null,
     quantite: parseInt(document.getElementById('renc-m-qte').value) || 1,
     pv:       parseInt(document.getElementById('renc-m-pv').value)  || 10,
     ca:       parseInt(document.getElementById('renc-m-ca').value)  || 12
   });
-  document.getElementById('renc-m-nom').value = '';
+  resetMonstresSearch();
   renderMonstresList();
+}
+
+// ─── RECHERCHE MONSTRES DB ────────────────────────────────────
+function resetMonstresSearch() {
+  selectedMonstre = null;
+  document.getElementById('renc-m-search').value  = '';
+  document.getElementById('renc-m-type').value    = '';
+  document.getElementById('renc-m-taille').value  = '';
+  document.getElementById('renc-m-fp-min').value  = '';
+  document.getElementById('renc-m-fp-max').value  = '';
+  document.getElementById('renc-m-qte').value     = 1;
+  document.getElementById('renc-m-pv').value      = 10;
+  document.getElementById('renc-m-ca').value      = 12;
+  document.getElementById('renc-m-selected-nom').textContent = 'Sélectionnez un monstre';
+  document.getElementById('renc-m-selected-badges').innerHTML = '';
+  document.getElementById('renc-m-selected-card').classList.remove('active');
+  const results = document.getElementById('renc-m-results');
+  results.innerHTML = '';
+  results.classList.remove('visible');
+}
+
+function initMonstresSearch() {
+  const ids = ['renc-m-search','renc-m-type','renc-m-taille','renc-m-fp-min','renc-m-fp-max'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', triggerMonstresSearch);
+    if (el && el.tagName === 'SELECT') el.addEventListener('change', triggerMonstresSearch);
+  });
+}
+
+function triggerMonstresSearch() {
+  clearTimeout(_monstresSearchTimer);
+  _monstresSearchTimer = setTimeout(doSearchMonstres, 280);
+}
+
+async function doSearchMonstres() {
+  const q      = document.getElementById('renc-m-search').value.trim();
+  const type   = document.getElementById('renc-m-type').value;
+  const taille = document.getElementById('renc-m-taille').value;
+  const fpMin  = document.getElementById('renc-m-fp-min').value;
+  const fpMax  = document.getElementById('renc-m-fp-max').value;
+  const results = document.getElementById('renc-m-results');
+
+  if (!q && !type && !taille && fpMin === '' && fpMax === '') {
+    results.innerHTML = '';
+    results.classList.remove('visible');
+    return;
+  }
+
+  results.innerHTML = '<div class="monstre-loading">Recherche…</div>';
+  results.classList.add('visible');
+
+  const params = new URLSearchParams();
+  if (q)      params.set('recherche', q);
+  if (type)   params.set('type', type);
+  if (taille) params.set('taille', taille);
+  if (fpMin !== '') params.set('fp_min', fpMin);
+  if (fpMax !== '') params.set('fp_max', fpMax);
+
+  try {
+    const res  = await fetch(`${API}/GetMonstres?${params}`);
+    const list = await res.json();
+    renderMonstresResults(Array.isArray(list) ? list.slice(0, 12) : []);
+  } catch {
+    results.innerHTML = '<div class="monstre-loading">Erreur de chargement</div>';
+  }
+}
+
+function renderMonstresResults(list) {
+  const results = document.getElementById('renc-m-results');
+  if (!list.length) {
+    results.innerHTML = '<div class="monstre-loading">Aucun résultat</div>';
+    return;
+  }
+  results.innerHTML = list.map(m => `
+    <div class="monstre-result-item" data-slug="${escHtml(m.slug || '')}">
+      <span class="monstre-result-nom">${escHtml(m.nom || m.nom_original || '')}</span>
+      <span class="monstre-result-badges">
+        <span class="item-row-badge">FP ${escHtml(String(m.fp ?? '?'))}</span>
+        <span class="item-row-badge">${escHtml(m.type || '')}</span>
+        <span class="item-row-badge">${escHtml(m.taille || '')}</span>
+      </span>
+    </div>
+  `).join('');
+  results.querySelectorAll('.monstre-result-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const m = list.find(x => (x.slug || '') === el.dataset.slug);
+      if (m) selectMonstrefromDB(m);
+    });
+  });
+}
+
+function selectMonstrefromDB(m) {
+  selectedMonstre = m;
+  document.getElementById('renc-m-selected-nom').textContent = m.nom || m.nom_original || '';
+  document.getElementById('renc-m-selected-badges').innerHTML = `
+    <span class="item-row-badge">FP ${escHtml(String(m.fp ?? '?'))}</span>
+    <span class="item-row-badge">${escHtml(m.type || '')}</span>
+    <span class="item-row-badge">${escHtml(m.taille || '')}</span>
+  `;
+  document.getElementById('renc-m-selected-card').classList.add('active');
+  if (m.pv) document.getElementById('renc-m-pv').value = m.pv;
+  if (m.ca) document.getElementById('renc-m-ca').value = m.ca;
+  document.getElementById('renc-m-qte').value = 1;
+  const results = document.getElementById('renc-m-results');
+  results.classList.remove('visible');
+  document.getElementById('renc-m-search').value = '';
 }
 
 // ─── LISTE ITEMS LOOT ─────────────────────────────────────────
@@ -817,8 +932,8 @@ async function init() {
   document.getElementById('renc-sauvegarder')   .addEventListener('click', () => sauvegarderBloc('rencontre'));
   document.getElementById('renc-supprimer')     .addEventListener('click', () => supprimerBlocActif('rencontre'));
   document.getElementById('renc-add-monstre')   .addEventListener('click', ajouterMonstre);
-  document.getElementById('renc-m-nom')         .addEventListener('keydown', e => { if (e.key === 'Enter') ajouterMonstre(); });
   document.getElementById('renc-lancer')        .addEventListener('click', lancerCombat);
+  initMonstresSearch();
 
   // Jet
   document.getElementById('close-jet')         .addEventListener('click', () => fermerModal('jet'));
