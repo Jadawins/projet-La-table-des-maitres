@@ -211,7 +211,7 @@
 .vote-item .v-rep { font-weight: bold; }
 .vote-item .v-rep.ok  { color: #4ade80; }
 .vote-item .v-rep.non { color: #f87171; }
-.vote-item .v-rep.att { color: #888; }
+.vote-item .v-rep.att { color: #aaa; }
 
 .vote-btns {
   display: flex;

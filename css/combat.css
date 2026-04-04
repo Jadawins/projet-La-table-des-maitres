@@ -65,7 +65,7 @@
 
 #badge-attente {
   font-size: 0.8rem;
-  color: #888;
+  color: #aaa;
   font-style: italic;
 }
 
@@ -90,7 +90,7 @@
 }
 .combat-action-slot .slot-label {
   font-size: 0.65rem;
-  color: #666;
+  color: #aaa;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -145,7 +145,7 @@
 
 .journal-entry { padding: 0.15rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .journal-entry:last-child { border-bottom: none; }
-.journal-entry .j-heure { color: #555; font-size: 0.68rem; margin-right: 0.4rem; }
+.journal-entry .j-heure { color: #aaa; font-size: 0.68rem; margin-right: 0.4rem; }
 .journal-entry.combat { color: #fca5a5; }
 .journal-entry.soin   { color: #86efac; }
 .journal-entry.mort   { color: #f87171; font-weight: bold; }
@@ -180,7 +180,7 @@
 }
 .cible-item:hover { border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.06); }
 .cible-item.selected { border-color: #c9a84c; background: rgba(201,168,76,0.12); }
-.cible-item .cible-pv { font-size: 0.68rem; color: #888; }
+.cible-item .cible-pv { font-size: 0.68rem; color: #aaa; }
 .cible-item .cible-ca { font-size: 0.72rem; color: #c9a84c; margin-left: 0.5rem; }
 
 .atk-result-box {
@@ -193,7 +193,7 @@
 .atk-result-box .total { font-size: 1.4rem; color: #c9a84c; font-family: Georgia; }
 .atk-result-box .verdict { font-size: 0.8rem; font-weight: bold; margin-top: 0.2rem; }
 .atk-result-box .verdict.touche  { color: #f87171; }
-.atk-result-box .verdict.rate    { color: #888; }
+.atk-result-box .verdict.rate    { color: #aaa; }
 .atk-result-box .verdict.critique { color: #fbbf24; animation: critiqueFlash 0.6s ease-in-out infinite alternate; }
 @keyframes critiqueFlash {
   from { text-shadow: 0 0 4px #fbbf24; }
@@ -239,7 +239,7 @@
 }
 .sort-modal-item:hover { border-color: rgba(134,100,200,0.5); background: rgba(134,100,200,0.08); }
 .sort-modal-item.selected { border-color: #8b5cf6; background: rgba(139,92,246,0.1); }
-.sort-modal-item .sort-m-ecole { font-size: 0.65rem; color: #888; }
+.sort-modal-item .sort-m-ecole { font-size: 0.65rem; color: #aaa; }
 .sort-modal-item .sort-m-niv { font-size: 0.65rem; color: #8b5cf6; }
 
 /* ─── JETS DE MORT (INTERFACE JOUEUR) ───────────────────────── */

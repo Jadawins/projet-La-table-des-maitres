@@ -74,7 +74,7 @@ body {
 
 .synchro-indicator {
   font-size: 0.75rem;
-  color: #888;
+  color: #aaa;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -323,14 +323,14 @@ body {
 .cond-badge.a_terre       { background: rgba(120,80,20,0.2); border-color: rgba(180,120,30,0.5); color: #d4930a; }
 .cond-badge.agrippe       { background: rgba(120,40,40,0.2); border-color: rgba(180,60,60,0.5); color: #ff8888; }
 .cond-badge.assourdi      { background: rgba(80,80,80,0.2);  border-color: rgba(120,120,120,0.5); color: #aaa; }
-.cond-badge.aveugle       { background: rgba(20,20,20,0.4);  border-color: rgba(100,100,100,0.5); color: #888; }
+.cond-badge.aveugle       { background: rgba(20,20,20,0.4);  border-color: rgba(100,100,100,0.5); color: #aaa; }
 .cond-badge.charme        { background: rgba(180,50,180,0.2);border-color: rgba(220,80,220,0.5); color: #e288e2; }
 .cond-badge.effraye       { background: rgba(100,0,0,0.3);   border-color: rgba(200,0,0,0.5); color: #ff6666; }
 .cond-badge.empoisonne    { background: rgba(40,120,40,0.2); border-color: rgba(60,180,60,0.5); color: #70d870; }
 .cond-badge.entrave       { background: rgba(80,60,20,0.2);  border-color: rgba(140,100,30,0.5); color: #c8a03a; }
 .cond-badge.epuisement    { background: rgba(60,20,20,0.3);  border-color: rgba(140,40,40,0.5); color: #d06060; }
 .cond-badge.etourdi       { background: rgba(180,140,0,0.2); border-color: rgba(220,180,0,0.5); color: #e8d000; }
-.cond-badge.inconscient   { background: rgba(0,0,0,0.5);     border-color: rgba(80,80,80,0.5); color: #777; }
+.cond-badge.inconscient   { background: rgba(0,0,0,0.5);     border-color: rgba(80,80,80,0.5); color: #aaa; }
 .cond-badge.invisible     { background: rgba(100,180,220,0.1);border-color: rgba(150,220,255,0.3); color: #aaddff; }
 .cond-badge.neutralise    { background: rgba(40,40,120,0.2); border-color: rgba(80,80,200,0.5); color: #9090ee; }
 .cond-badge.paralyse      { background: rgba(100,0,120,0.2); border-color: rgba(160,0,200,0.5); color: #d060ee; }
@@ -355,7 +355,7 @@ body {
   background: transparent;
   border: none;
   border-top: 1px solid rgba(255,255,255,0.05);
-  color: #888;
+  color: #aaa;
   font-size: 0.75rem;
   font-family: 'Georgia', serif;
   padding: 0.25rem 0;
@@ -542,7 +542,7 @@ body {
   transition: border-color 0.2s ease;
 }
 .notes-mj-textarea:focus { border-color: #865dff; }
-.notes-save-status { font-size: 0.72rem; color: #888; margin-top: 0.25rem; }
+.notes-save-status { font-size: 0.72rem; color: #aaa; margin-top: 0.25rem; }
 
 /* ─── MESSAGERIE ─────────────────────────────────────────────── */
 .messages-list {
@@ -579,7 +579,7 @@ body {
 
 .message-heure {
   font-size: 0.68rem;
-  color: #888;
+  color: #aaa;
 }
 
 .message-contenu {
@@ -631,7 +631,7 @@ body {
   align-items: center;
   gap: 0.3rem;
   font-size: 0.78rem;
-  color: #888;
+  color: #aaa;
   white-space: nowrap;
   cursor: pointer;
 }
@@ -686,7 +686,7 @@ body {
   right: 0.9rem;
   background: transparent;
   border: none;
-  color: #777;
+  color: #aaa;
   font-size: 1.2rem;
   cursor: pointer;
 }
@@ -767,9 +767,9 @@ body {
 /* ─── ACTIONS MONSTRE SUR CARTE ─────────────────────────────── */
 .monstre-actions-zone { margin-top: 0.35rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.35rem; }
 .monstre-actions-row  { display: flex; flex-wrap: wrap; gap: 0.28rem; margin-bottom: 0.28rem; }
-.action-label { font-size: 0.62rem; color: #555; text-transform: uppercase; letter-spacing: 0.06em; width: 100%; margin-bottom: 0.15rem; }
+.action-label { font-size: 0.62rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; width: 100%; margin-bottom: 0.15rem; }
 .btn-action-type { padding: 0.2rem 0.55rem; border-radius: 4px; font-size: 0.69rem; font-family: 'Georgia', serif; cursor: pointer; transition: all 0.12s; }
-.btn-action-type.texte    { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #888; }
+.btn-action-type.texte    { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #aaa; }
 .btn-action-type.texte:hover { color: #ccc; background: rgba(255,255,255,0.1); }
 .btn-action-type.atk      { background: rgba(139,0,0,0.15); border: 1px solid rgba(200,50,50,0.35); color: #fca5a5; }
 .btn-action-type.atk:hover{ background: rgba(139,0,0,0.28); }
@@ -880,7 +880,7 @@ body {
 .btn-menu-actions {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.1);
-  color: #666;
+  color: #aaa;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: bold;

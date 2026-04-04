@@ -13,7 +13,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', sans-serif; background: #0d0d14; color: #e0d0ff; padding: 1.5rem; }
     h1 { font-size: 1.5rem; color: #c9a84c; margin-bottom: 0.3rem; }
-    .subtitle { color: #888; font-size: 0.82rem; margin-bottom: 1.5rem; }
+    .subtitle { color: #aaa; font-size: 0.82rem; margin-bottom: 1.5rem; }
 
     .section { margin-bottom: 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem 1.2rem; }
     .section h2 { font-size: 0.9rem; color: #c9a84c; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
@@ -21,11 +21,11 @@
     .test-row { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.5rem; font-size: 0.82rem; }
     .test-name { flex: 1; color: #c8c8d8; }
     .test-status { min-width: 90px; font-weight: 700; font-size: 0.75rem; text-align: center; padding: 0.2rem 0.5rem; border-radius: 5px; }
-    .status-wait  { background: rgba(255,255,255,0.07); color: #888; }
+    .status-wait  { background: rgba(255,255,255,0.07); color: #aaa; }
     .status-ok    { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
     .status-warn  { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
     .status-error { background: rgba(244,67,54,0.15); color: #f87171; border: 1px solid rgba(244,67,54,0.3); }
-    .test-detail  { color: #666; font-size: 0.73rem; font-style: italic; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .test-detail  { color: #aaa; font-size: 0.73rem; font-style: italic; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
     .btn-run { background: rgba(201,168,76,0.15); color: #c9a84c; border: 1px solid rgba(201,168,76,0.3); padding: 0.45rem 1.1rem; border-radius: 8px; cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: background 0.15s; }
     .btn-run:hover { background: rgba(201,168,76,0.28); }
@@ -36,10 +36,10 @@
     .sum-dot { width: 10px; height: 10px; border-radius: 50%; }
 
     .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-    .auth-badge { font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 20px; background: rgba(255,255,255,0.07); color: #888; }
+    .auth-badge { font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 20px; background: rgba(255,255,255,0.07); color: #aaa; }
     .auth-badge.logged { background: rgba(74,222,128,0.15); color: #4ade80; }
 
-    .log-zone { background: rgba(0,0,0,0.4); border-radius: 6px; padding: 0.6rem 0.9rem; font-size: 0.72rem; color: #888; max-height: 120px; overflow-y: auto; margin-top: 0.5rem; font-family: monospace; }
+    .log-zone { background: rgba(0,0,0,0.4); border-radius: 6px; padding: 0.6rem 0.9rem; font-size: 0.72rem; color: #aaa; max-height: 120px; overflow-y: auto; margin-top: 0.5rem; font-family: monospace; }
     .log-ok    { color: #4ade80; }
     .log-warn  { color: #fbbf24; }
     .log-error { color: #f87171; }
@@ -62,7 +62,7 @@
 </div>
 
 <div class="summary-bar" id="summary-bar">
-  <span style="color:#888">Lance les tests pour voir le résumé</span>
+  <span style="color:#aaa">Lance les tests pour voir le résumé</span>
 </div>
 
 <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
@@ -173,7 +173,7 @@
       <div class="sum-item"><div class="sum-dot" style="background:#4ade80"></div> <strong style="color:#4ade80">${ok}</strong> OK</div>
       <div class="sum-item"><div class="sum-dot" style="background:#fbbf24"></div> <strong style="color:#fbbf24">${warn}</strong> Avertissements</div>
       <div class="sum-item"><div class="sum-dot" style="background:#f87171"></div> <strong style="color:#f87171">${error}</strong> Erreurs</div>
-      <span style="color:#666;margin-left:auto;">${ok + warn + error} tests exécutés</span>
+      <span style="color:#aaa;margin-left:auto;">${ok + warn + error} tests exécutés</span>
     `;
   }
 

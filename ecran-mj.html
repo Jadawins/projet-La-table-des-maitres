@@ -114,12 +114,12 @@
             <div class="rv-scores" id="mj-repos-scores"></div>
             <div class="votes-liste" id="mj-repos-votes"></div>
             <div style="display:flex;gap:0.5rem;margin-top:0.4rem;flex-wrap:wrap;align-items:center;">
-              <label style="font-size:0.68rem;color:#888;">Mode :</label>
+              <label style="font-size:0.68rem;color:#aaa;">Mode :</label>
               <select id="mj-repos-mode" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.2rem;border-radius:4px;font-size:0.7rem;">
                 <option value="majorite">Majorité</option>
                 <option value="unanimite">Unanimité</option>
               </select>
-              <label style="font-size:0.68rem;color:#888;">Timer :</label>
+              <label style="font-size:0.68rem;color:#aaa;">Timer :</label>
               <select id="mj-repos-timer-sel" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.2rem;border-radius:4px;font-size:0.7rem;" onchange="majTimerReposMJ()">
                 <option value="0">Sans limite</option>
                 <option value="60">1 min</option>
@@ -279,7 +279,7 @@
         <label>Dégâts</label>
         <input type="number" id="modal-degats-val" min="0" placeholder="10" style="width:100px;" />
       </div>
-      <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Type de dégâts :</div>
+      <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.3rem;">Type de dégâts :</div>
       <div class="type-degats-grid" id="modal-degats-types"></div>
       <div class="modal-actions" style="margin-top:0.75rem;">
         <button class="btn-sm-secondary" onclick="document.getElementById('modal-degats-mj').classList.add('hidden')">Annuler</button>
@@ -312,22 +312,22 @@
       <p class="modal-title">⚔️ Attaque monstre</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
         <div>
-          <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Attaquant :</div>
+          <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.3rem;">Attaquant :</div>
           <div class="cibles-list" id="mj-atk-source-list"></div>
         </div>
         <div>
-          <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Cible :</div>
+          <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.3rem;">Cible :</div>
           <div class="cibles-list" id="mj-atk-target-list"></div>
         </div>
       </div>
       <!-- Attaques prédéfinies du monstre sélectionné -->
       <div id="mj-atk-predefined" style="display:none;margin-top:0.6rem;">
-        <div style="font-size:0.72rem;color:#888;margin-bottom:0.28rem;">Attaques disponibles :</div>
+        <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.28rem;">Attaques disponibles :</div>
         <div id="mj-atk-predefined-list" style="display:flex;flex-wrap:wrap;gap:0.3rem;"></div>
       </div>
       <!-- Avantage / Désavantage -->
       <div style="display:flex;gap:0.4rem;align-items:center;margin-top:0.65rem;">
-        <span style="font-size:0.72rem;color:#888;">d20 :</span>
+        <span style="font-size:0.72rem;color:#aaa;">d20 :</span>
         <button id="mj-atk-avantage-btn" class="btn-advantage-toggle" data-state="normal" onclick="cycleAvantage()">Normal</button>
         <div id="mj-atk-d20-result" style="font-size:0.72rem;color:#c9a84c;margin-left:auto;"></div>
       </div>
@@ -376,13 +376,13 @@
       </div>
       <!-- XP automatique si victoire -->
       <div id="fin-combat-xp-wrap" style="margin-top:0.75rem;">
-        <label style="font-size:0.72rem;color:#888;display:block;margin-bottom:0.25rem;">XP à distribuer :</label>
+        <label style="font-size:0.72rem;color:#aaa;display:block;margin-bottom:0.25rem;">XP à distribuer :</label>
         <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
           <input type="number" id="fin-combat-xp" min="0" placeholder="0"
             style="width:100px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:0.3rem 0.5rem;border-radius:5px;font-size:0.8rem;" />
           <span id="fin-combat-xp-auto" style="font-size:0.72rem;color:#c9a84c;"></span>
         </div>
-        <p id="fin-combat-xp-repartition" style="font-size:0.72rem;color:#777;margin:0.25rem 0 0;"></p>
+        <p id="fin-combat-xp-repartition" style="font-size:0.72rem;color:#aaa;margin:0.25rem 0 0;"></p>
       </div>
       <div class="modal-actions" style="margin-top:1rem;">
         <button class="btn-sm-secondary" onclick="document.getElementById('modal-fin-combat').classList.add('hidden')">Annuler</button>

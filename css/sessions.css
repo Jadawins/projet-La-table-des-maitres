@@ -573,7 +573,7 @@
   right: 1rem;
   background: transparent;
   border: none;
-  color: #888;
+  color: #aaa;
   font-size: 1.3rem;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -613,7 +613,7 @@
 
 .perso-card-class {
   font-size: 0.78rem;
-  color: #888;
+  color: #aaa;
 }
 
 /* État vide */
@@ -626,7 +626,7 @@
 .empty-state i {
   font-size: 2.5rem;
   margin-bottom: 0.75rem;
-  color: #666;
+  color: #aaa;
 }
 
 .empty-state p {

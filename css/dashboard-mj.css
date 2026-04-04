@@ -413,7 +413,7 @@ body.dashboard-body {
   color: #fed7aa;
 }
 .db-monstre-item .m-nom { flex: 1; }
-.db-monstre-item .m-del { background: none; border: none; color: #888; cursor: pointer; font-size: 0.75rem; }
+.db-monstre-item .m-del { background: none; border: none; color: #aaa; cursor: pointer; font-size: 0.75rem; }
 .db-monstre-item .m-del:hover { color: var(--db-danger); }
 
 /* Loot — liste items */
@@ -431,7 +431,7 @@ body.dashboard-body {
   color: #fde68a;
 }
 .db-loot-item .l-nom { flex: 1; }
-.db-loot-item .l-del { background: none; border: none; color: #888; cursor: pointer; font-size: 0.75rem; }
+.db-loot-item .l-del { background: none; border: none; color: #aaa; cursor: pointer; font-size: 0.75rem; }
 .db-loot-item .l-del:hover { color: var(--db-danger); }
 
 /* Boutons d'action dans les blocs */

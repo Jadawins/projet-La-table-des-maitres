@@ -74,7 +74,7 @@
 }
 .notif-btn-tout-lu {
   font-size: 0.7rem;
-  color: #888;
+  color: #aaa;
   background: none;
   border: none;
   cursor: pointer;
@@ -95,7 +95,7 @@
   padding: 1.5rem;
   text-align: center;
   font-size: 0.82rem;
-  color: #888;
+  color: #aaa;
 }
 
 /* ─── ITEM NOTIFICATION ─────────────────────────────────────── */
@@ -148,13 +148,13 @@
 
 .notif-date {
   font-size: 0.65rem;
-  color: #888;
+  color: #aaa;
   margin-top: 0.2rem;
 }
 
 .notif-lu-btn {
   font-size: 0.65rem;
-  color: #888;
+  color: #aaa;
   background: none;
   border: none;
   cursor: pointer;
@@ -299,7 +299,7 @@
 }
 .notif-perm-btn:hover { opacity: 0.85; }
 .notif-perm-btn.autoriser { background: rgba(201,168,76,0.2); color: #fde68a; border: 1px solid rgba(201,168,76,0.3); }
-.notif-perm-btn.plus-tard { background: rgba(255,255,255,0.05); color: #888; border: 1px solid rgba(255,255,255,0.1); }
+.notif-perm-btn.plus-tard { background: rgba(255,255,255,0.05); color: #aaa; border: 1px solid rgba(255,255,255,0.1); }
 
 /* ─── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 640px) {

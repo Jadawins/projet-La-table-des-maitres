@@ -117,7 +117,7 @@
   border-radius: 50%;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.15);
-  color: #888;
+  color: #aaa;
   font-size: 0.7rem;
   display: flex;
   align-items: center;
@@ -330,7 +330,7 @@
 .niv-carac-item label { font-size: 0.68rem; color: #aaa; display: block; margin-bottom: 0.2rem; }
 .niv-carac-item input[type=checkbox] { margin-right: 0.2rem; cursor: pointer; }
 .niv-carac-item .carac-val { font-size: 0.9rem; font-weight: bold; color: #e0e0e0; }
-.niv-carac-item.maxed .carac-val { color: #888; }
+.niv-carac-item.maxed .carac-val { color: #aaa; }
 .niv-carac-info {
   font-size: 0.78rem;
   color: #fde68a;
@@ -548,7 +548,7 @@
 
 .mj-xp-joueur-nom { color: #ccc; flex: 1; }
 .mj-xp-joueur-niv { color: #c9a84c; font-weight: bold; font-size: 0.75rem; min-width: 36px; text-align: center; }
-.mj-xp-joueur-xp  { color: #888; font-size: 0.72rem; min-width: 60px; text-align: right; }
+.mj-xp-joueur-xp  { color: #aaa; font-size: 0.72rem; min-width: 60px; text-align: right; }
 .mj-xp-joueur-levelup { color: #fde68a; font-size: 0.7rem; }
 
 #mj-xp-result {

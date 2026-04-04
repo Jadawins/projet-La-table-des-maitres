@@ -168,9 +168,9 @@
     <div class="fiche-section" id="sorts-section" style="display:none;">
       <div class="fiche-section-title"><i class="fa-solid fa-hat-wizard"></i> Incantation</div>
       <div style="display:flex;gap:1.5rem;font-size:0.78rem;color:#aaa;margin-bottom:0.75rem;" id="sort-stats-row"></div>
-      <div style="font-size:0.65rem;color:#666;text-transform:uppercase;margin-bottom:0.4rem;">Emplacements de sorts</div>
+      <div style="font-size:0.65rem;color:#aaa;text-transform:uppercase;margin-bottom:0.4rem;">Emplacements de sorts</div>
       <div class="spell-slots-grid" id="spell-slots"></div>
-      <div style="font-size:0.65rem;color:#666;text-transform:uppercase;margin:0.75rem 0 0.4rem;">Sorts connus</div>
+      <div style="font-size:0.65rem;color:#aaa;text-transform:uppercase;margin:0.75rem 0 0.4rem;">Sorts connus</div>
       <div class="sorts-par-niveau" id="sorts-connus-list"></div>
     </div>
 
@@ -233,7 +233,7 @@
     <div class="fiche-section">
       <div class="fiche-section-title"><i class="fa-solid fa-language"></i> Langues &amp; Maîtrises</div>
       <div id="langues-section" style="font-size:0.8rem;color:#aaa;margin-bottom:0.4rem;"></div>
-      <div id="maitrises-section" style="font-size:0.75rem;color:#888;line-height:1.5;"></div>
+      <div id="maitrises-section" style="font-size:0.75rem;color:#aaa;line-height:1.5;"></div>
     </div>
 
   </div>
@@ -307,14 +307,14 @@ if (_savedTab) switchFicheTab(_savedTab);
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.5rem;">
       <div class="form-field">
-        <label style="font-size:0.72rem;color:#888;">Mode de vote</label>
+        <label style="font-size:0.72rem;color:#aaa;">Mode de vote</label>
         <select id="repos-mode" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.3rem;border-radius:5px;width:100%;font-size:0.78rem;">
           <option value="majorite">Majorité</option>
           <option value="unanimite">Unanimité</option>
         </select>
       </div>
       <div class="form-field">
-        <label style="font-size:0.72rem;color:#888;">Timer</label>
+        <label style="font-size:0.72rem;color:#aaa;">Timer</label>
         <select id="repos-timer" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#ccc;padding:0.3rem;border-radius:5px;width:100%;font-size:0.78rem;">
           <option value="0">Sans limite</option>
           <option value="60">1 minute</option>
@@ -356,7 +356,7 @@ if (_savedTab) switchFicheTab(_savedTab);
     <div class="form-field">
       <label>Dés de vie à dépenser :</label>
       <input type="number" id="dv-depenser" min="0" value="1" style="width:70px;" oninput="calculerSoinDV()" />
-      <span style="font-size:0.72rem;color:#888;" id="dv-pv-gain"></span>
+      <span style="font-size:0.72rem;color:#aaa;" id="dv-pv-gain"></span>
     </div>
     <div class="modal-actions" style="margin-top:0.6rem;">
       <button class="btn-secondary" onclick="document.getElementById('modal-dv-court').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#c9a84c;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
@@ -456,7 +456,7 @@ if (_savedTab) switchFicheTab(_savedTab);
     <div class="modal-title">⚔️ Attaquer</div>
     <div style="font-size:0.78rem;color:#aaa;margin-bottom:0.4rem;">Arme : <strong id="atk-combat-nom" style="color:#c9a84c;"></strong> — Bonus : <span id="atk-combat-bonus"></span></div>
 
-    <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Choisir une cible :</div>
+    <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.3rem;">Choisir une cible :</div>
     <div class="cibles-list" id="cibles-list"></div>
 
     <div style="margin-top:0.75rem;">
@@ -471,7 +471,7 @@ if (_savedTab) switchFicheTab(_savedTab);
       <div class="form-field" id="atk-degats-row" style="margin-top:0.6rem;display:none;">
         <label>Dégâts infligés :</label>
         <input type="number" id="atk-degats-val" min="0" style="width:80px;" />
-        <span style="font-size:0.72rem;color:#888;" id="atk-type-label"></span>
+        <span style="font-size:0.72rem;color:#aaa;" id="atk-type-label"></span>
       </div>
     </div>
     <div class="modal-actions">
@@ -486,11 +486,11 @@ if (_savedTab) switchFicheTab(_savedTab);
   <div class="modal-box">
     <button class="modal-close" onclick="document.getElementById('modal-sort-combat').classList.add('hidden')">✕</button>
     <div class="modal-title">🔮 Lancer un sort</div>
-    <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Choisir un sort :</div>
+    <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.3rem;">Choisir un sort :</div>
     <div class="sorts-modal-list" id="sorts-modal-list"></div>
 
     <div id="sort-cible-section" style="display:none;margin-top:0.6rem;">
-      <div style="font-size:0.72rem;color:#888;margin-bottom:0.3rem;">Cible (optionnelle) :</div>
+      <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.3rem;">Cible (optionnelle) :</div>
       <div class="cibles-list" id="sort-cibles-list"></div>
     </div>
 
@@ -658,7 +658,7 @@ if (_savedTab) switchFicheTab(_savedTab);
     <div style="padding:1.2rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.2);display:flex;align-items:center;gap:.8rem;">
       <i class="fa-solid fa-hat-wizard" style="color:#c9a84c;font-size:1.2rem;"></i>
       <h2 style="margin:0;font-size:1.1rem;color:#c9a84c;flex:1;">Ajouter un objet magique</h2>
-      <button onclick="fermerModalObjetMagique()" style="background:none;border:none;color:#888;font-size:1.4rem;cursor:pointer;line-height:1;">✕</button>
+      <button onclick="fermerModalObjetMagique()" style="background:none;border:none;color:#aaa;font-size:1.4rem;cursor:pointer;line-height:1;">✕</button>
     </div>
 
     <!-- Filtres -->
@@ -704,7 +704,7 @@ if (_savedTab) switchFicheTab(_savedTab);
 }
 .om-result-item:hover { background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.3); }
 .om-result-name { font-size:.88rem;color:#f0e6d2;font-weight:600; }
-.om-result-sub  { font-size:.72rem;color:#888;margin-top:.1rem; }
+.om-result-sub  { font-size:.72rem;color:#aaa;margin-top:.1rem; }
 .om-rarete-sm   { font-size:.65rem;font-weight:700;padding:.15rem .45rem;border-radius:12px;white-space:nowrap; }
 .om-commun-sm     { background:#555;color:#ddd; }
 .om-peu-commun-sm { background:#1a4a1a;color:#6ddc6d;border:1px solid #4caf50; }

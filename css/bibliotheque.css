@@ -60,7 +60,7 @@
 }
 
 .biblio-search-bar input::placeholder {
-  color: #888;
+  color: #aaa;
 }
 
 /* Onglets de navigation */
@@ -288,7 +288,7 @@
 .biblio-empty i {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #777;
+  color: #aaa;
 }
 
 .biblio-empty p {
@@ -343,7 +343,7 @@
   right: 1rem;
   background: transparent;
   border: none;
-  color: #888;
+  color: #aaa;
   font-size: 1.4rem;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -574,7 +574,7 @@
 
 .stat-val em {
   font-size: 0.78rem;
-  color: #888;
+  color: #aaa;
   font-style: normal;
 }
 
@@ -707,7 +707,7 @@
   margin-right: 0.35rem;
 }
 .classe-cap-desc {
-  color: #888;
+  color: #aaa;
   font-size: 0.73rem;
 }
 
