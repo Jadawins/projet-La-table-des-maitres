@@ -13,7 +13,10 @@ async function _initAuth() {
     window.location.href = "login.html";
   } else {
     window.SUPABASE_TOKEN = session.access_token;
-    if (session.user) localStorage.setItem('userId', session.user.id);
+    if (session.user) {
+      window.USER_ID = session.user.id;
+      localStorage.setItem('userId', session.user.id);
+    }
     window.dispatchEvent(new Event('supabase-ready'));
   }
 
