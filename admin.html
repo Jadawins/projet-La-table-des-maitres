@@ -43,7 +43,8 @@
     .user-table tr:hover td { background: rgba(255,255,255,0.03); }
     .user-id { font-size: 0.68rem; color: #555; font-family: monospace; }
     .perso-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem; }
-    .perso-tag { background: rgba(134,93,255,0.15); border: 1px solid rgba(134,93,255,0.25); border-radius: 4px; padding: 0.1rem 0.35rem; font-size: 0.68rem; color: #c9b8ff; }
+    .perso-tag { background: rgba(134,93,255,0.15); border: 1px solid rgba(134,93,255,0.25); border-radius: 4px; padding: 0.1rem 0.35rem; font-size: 0.68rem; color: #c9b8ff; text-decoration: none; cursor: pointer; }
+    .perso-tag:hover { background: rgba(134,93,255,0.3); }
     .nb-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); color: #c9a84c; font-weight: 700; font-size: 0.85rem; }
 
     /* Recent lists */
@@ -51,6 +52,7 @@
     .recent-list li { display: flex; align-items: center; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; }
     .recent-list li:last-child { border-bottom: none; }
     .recent-label { color: #d5d1a9; }
+    .recent-label:hover { color: #c9a84c; }
     .recent-meta { color: #666; font-size: 0.72rem; }
 
     /* State */
@@ -182,7 +184,7 @@
       const date = u.derniere_activite
         ? new Date(u.derniere_activite).toLocaleDateString('fr-FR')
         : '—';
-      const tags = u.personnages.map(n => `<span class="perso-tag">${esc(n)}</span>`).join('');
+      const tags = u.personnages.map(p => `<a class="perso-tag" href="fiche-personnage.html?id=${p.id}" target="_blank">${esc(p.nom)}</a>`).join('');
       return `<tr>
         <td><span class="nb-badge">${u.nb_personnages}</span></td>
         <td>
@@ -208,7 +210,7 @@
     if (data.recent_personnages?.length) {
       document.getElementById('recent-perso-list').innerHTML = data.recent_personnages.map(p => `
         <li>
-          <span class="recent-label">${esc(p.nom)} <span style="color:#866;font-size:0.75rem">(${p.classe || '—'} niv.${p.niveau || 1})</span></span>
+          <a class="recent-label" href="fiche-personnage.html?id=${p._id}" target="_blank" style="text-decoration:none;color:inherit;">${esc(p.nom)} <span style="color:#866;font-size:0.75rem">(${p.classe || '—'} niv.${p.niveau || 1})</span></a>
           <span class="recent-meta">${p.created_at ? new Date(p.created_at).toLocaleDateString('fr-FR') : '—'}</span>
         </li>`).join('');
       document.getElementById('section-recent-perso').style.display = 'block';

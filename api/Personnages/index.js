@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { MongoClient, ObjectId } = require('mongodb');
 
+const ADMIN_ID = process.env.ADMIN_USER_ID;
+
 function getUserId(req) {
   const auth = req.headers.authorization || '';
   if (!auth.startsWith('Bearer ')) return null;
@@ -9,6 +11,10 @@ function getUserId(req) {
     const payload = JSON.parse(Buffer.from(auth.slice(7).split('.')[1], 'base64url').toString());
     return payload.sub || null;
   } catch { return null; }
+}
+
+function isAdmin(req) {
+  return ADMIN_ID && getUserId(req) === ADMIN_ID;
 }
 
 async function withDb(fn) {
@@ -97,8 +103,11 @@ router.get('/:id', async (req, res) => {
   const userId = getUserId(req);
   if (!userId) return res.status(401).json({ error: 'Non authentifié' });
   try {
+    const filter = isAdmin(req)
+      ? { _id: new ObjectId(req.params.id) }
+      : { _id: new ObjectId(req.params.id), user_id: userId };
     const p = await withDb(db =>
-      db.collection('personnages').findOne({ _id: new ObjectId(req.params.id), user_id: userId })
+      db.collection('personnages').findOne(filter)
     );
     if (!p) return res.status(404).json({ error: 'Introuvable' });
     res.json(p);

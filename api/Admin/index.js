@@ -53,7 +53,7 @@ router.get('/stats', async (req, res) => {
           { $group: {
             _id: '$user_id',
             count: { $sum: 1 },
-            noms: { $push: '$nom' },
+            persos: { $push: { id: '$_id', nom: '$nom' } },
             derniere_activite: { $max: '$derniere_modification' }
           }},
           { $sort: { count: -1 } },
@@ -85,7 +85,7 @@ router.get('/stats', async (req, res) => {
         utilisateurs: parUtilisateur.map(u => ({
           user_id: u._id,
           nb_personnages: u.count,
-          personnages: u.noms.slice(0, 5),
+          personnages: u.persos.slice(0, 5),
           derniere_activite: u.derniere_activite || null,
         })),
         recent_personnages: recentPersos,
