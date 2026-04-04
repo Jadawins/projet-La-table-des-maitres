@@ -380,6 +380,24 @@
   else { window.SUPABASE_TOKEN = session.access_token; }
 </script>
 
+<!-- MODAL RAPPORT RACE HOMEBREW -->
+<div id="modal-rapport-race" class="hidden" style="position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;display:flex;align-items:center;justify-content:center;">
+  <div style="background:#1a1a2e;border:1px solid rgba(201,168,76,0.3);border-radius:14px;padding:2rem;max-width:420px;width:90%;box-shadow:0 0 40px rgba(0,0,0,0.6);">
+    <h2 style="font-size:1rem;color:#c9a84c;margin:0 0 0.5rem;"><i class="fa-solid fa-flask"></i> Race en bêta-test</h2>
+    <p style="font-size:0.83rem;color:#aaa;margin:0 0 1.2rem;line-height:1.5;">Vous venez de créer un personnage avec une race homebrew. Votre retour aide à la valider — 10 approbations suffisent !</p>
+    <textarea id="rapport-commentaire" placeholder="Commentaire (optionnel)…" rows="3" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#e0d0ff;padding:0.6rem;font-size:0.82rem;resize:vertical;margin-bottom:1rem;"></textarea>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <button onclick="soumettreRapport(true)" style="flex:1;background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.4);color:#4ade80;border-radius:8px;padding:0.6rem;cursor:pointer;font-weight:600;font-size:0.85rem;">
+        <i class="fa-solid fa-thumbs-up"></i> J'approuve
+      </button>
+      <button onclick="soumettreRapport(false)" style="flex:1;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:#f87171;border-radius:8px;padding:0.6rem;cursor:pointer;font-weight:600;font-size:0.85rem;">
+        <i class="fa-solid fa-thumbs-down"></i> Des problèmes
+      </button>
+    </div>
+    <button onclick="passerRapport()" style="width:100%;margin-top:0.6rem;background:none;border:none;color:#666;font-size:0.75rem;cursor:pointer;text-decoration:underline;">Passer sans répondre</button>
+  </div>
+</div>
+
 <script src="js/magie-tables.js?v=20260329"></script>
 <script src="js/creer-personnage.js?v=20260329"></script>
 <script src="js/theme.js?v=20260329"></script>

@@ -390,16 +390,174 @@ document.getElementById('add_armor').addEventListener('click', () => {
   }
 });
 
-// Gestion du formulaire : correction de la virgule dans les champs vitesse
-document.getElementById('raceForm').addEventListener('submit', function (e) {
-  e.preventDefault(); // empêche la soumission par défaut
+function convertirVirguleEnPoint(id) {
+  const el = document.getElementById(id);
+  if (el) el.value = el.value.replace(',', '.');
+}
 
-  // 🔁 Corrige les champs "vitesse" avec des virgules
+function checked(id) {
+  return document.getElementById(id)?.checked || false;
+}
+
+function collecterDonnees() {
+  // Bonus de stats
+  const ability_scores = bonusStats.map(s => ({ stat: s.index, bonus: s.value }));
+
+  // Armes
+  const weapon_categories = Array.from(document.querySelectorAll('input[name="catégorie"]:checked')).map(cb => cb.value);
+  const weapon_list = Array.from(document.querySelectorAll('#weapon_list .weapon-item')).map(d => d.dataset.weapon);
+
+  // Armures
+  const armor_categories = Array.from(document.querySelectorAll('input[name="catégorie_armure"]:checked')).map(cb => cb.value);
+  const armor_list = Array.from(document.querySelectorAll('#armor_list .weapon-item')).map(d => d.dataset.armor);
+
+  // Outils
+  const tools_list = Array.from(document.querySelectorAll('#tools_list .weapon-item')).map(d => d.dataset.tool || d.textContent.replace('❌', '').trim());
+
+  // Langues
+  const languages = Array.from(document.querySelectorAll('#languages_list .weapon-item')).map(d => d.dataset.langue);
+
+  // Compétences fixes
+  const fixed_skills = Array.from(document.querySelectorAll('#fixed_skills_list_fr .weapon-item')).map(d => d.dataset.skill);
+
+  // Compétences restreintes
+  const restricted_skills = Array.from(document.querySelectorAll('#restricted_skills_list_fr .weapon-item')).map(d => d.dataset.skill);
+
+  // Sorts raciaux
+  const racial_spells = Array.from(document.querySelectorAll('#racial_spells_list_fr .weapon-item')).map(d => ({
+    nom: d.dataset.spell,
+    niveau: parseInt(d.dataset.level) || 1,
+    frequence: d.dataset.freq || 'at_will',
+  }));
+
+  // Résistances dégâts
+  const damage_traits = Array.from(document.querySelectorAll('#damage_trait_list .weapon-item')).map(d => ({
+    type: d.dataset.type,
+    resistance: d.dataset.resistance === 'true',
+    immunity: d.dataset.immunity === 'true',
+    advantage: d.dataset.advantage === 'true',
+  }));
+
+  // Maîtrises d'état
+  const condition_masteries = Array.from(document.querySelectorAll('#condition_mastery_list .weapon-item')).map(d => ({
+    condition: d.dataset.condition,
+    type: d.dataset.type,
+  }));
+
+  // Traits RP
+  const rp_traits = Array.from(document.querySelectorAll('#rp_traits_list_fr .weapon-item')).map(d => ({
+    nom: d.dataset.traitName,
+    description: d.dataset.traitDesc,
+  }));
+
+  // Avantage JS magie
+  const save_adv_magic = checked('show_save_adv_magic_fr') ? {
+    str: checked('save_adv_str_fr'),
+    dex: checked('save_adv_dex_fr'),
+    con: checked('save_adv_con_fr'),
+    int: checked('save_adv_int_fr'),
+    wis: checked('save_adv_wis_fr'),
+    cha: checked('save_adv_cha_fr'),
+  } : null;
+
+  // Traits custom (liste des IDs cochés)
+  const TRAITS_CUSTOM = [
+    'trance_trait_fr','halfling_lucky_fr','relentless_endurance_fr','savage_attacks_fr',
+    'lucky_footwork_fr','can_fly_naturally_fr','talons_trait_fr','healing_hands_fr',
+    'hooves_attack_fr','equine_charge_fr','swimming_speed_fr','water_breathing_fr',
+    'aquatic_communication_fr','shifter_fury_fr','hidden_step_fr','unending_breath_fr',
+    'astral_knowledge_fr','svirfneblin_camouflage_fr','fury_of_the_small_fr',
+    'nimble_escape_fr','surprise_attack_fr','stones_endurance_fr','fey_gift_fr',
+    'fortune_from_the_many_fr','kenku_recall_fr','expert_duplication_fr','mimicry_fr',
+    'draconic_cry_fr','kobold_legacy_fr','goring_rush_fr','hammering_horns_fr',
+    'labyrinthine_recall_fr','adrenaline_rush_fr','lizardfolk_bite_fr','hungry_jaws_fr',
+    'hold_breath_15min_fr','hold_breath_1h_fr','natural_armor_fr','trance_srd_fr',
+    'trance_motm_fr','shell_defense_fr','tortle_natural_armor_fr','fearless_fr',
+    'kender_taunt_fr',
+  ];
+  const custom_traits = TRAITS_CUSTOM.filter(id => checked(id));
+
+  return {
+    nom: document.getElementById('name_fr')?.value.trim(),
+    version: document.getElementById('version_fr')?.value,
+    type_creature: document.getElementById('typeSelect')?.value,
+    famille: checked('hasFamilleCheckbox') ? document.getElementById('familleInput')?.value.trim() : null,
+    vitesse: parseFloat(document.getElementById('speed_fr')?.value) || null,
+    taille: {
+      code: document.getElementById('size_code_fr')?.value,
+      description: document.getElementById('size_description_fr')?.value.trim(),
+    },
+    alignement: document.getElementById('alignment_fr')?.value.trim(),
+    age: document.getElementById('age_fr')?.value.trim(),
+    darkvision: checked('darkvision_fr') ? parseInt(document.getElementById('darkvision_distance_fr')?.value) || 18 : null,
+    initiative_bonus: checked('initiative_bonus_fr'),
+    ability_scores: checked('ability_score_fr') ? ability_scores : [],
+    maitrise_armes: checked('show_weapon_section_fr') ? {
+      nom: document.getElementById('weapon_name')?.value.trim(),
+      categories: weapon_categories,
+      armes: weapon_list,
+    } : null,
+    maitrise_armures: checked('show_armor_section_fr') ? {
+      nom: document.getElementById('armor_name')?.value.trim(),
+      categories: armor_categories,
+      armures: armor_list,
+    } : null,
+    maitrise_outils: checked('show_tools_section_fr') ? {
+      nom: document.getElementById('tools_name')?.value.trim(),
+      outils: tools_list,
+    } : null,
+    sorts_raciaux: checked('show_racial_spells_fr') ? racial_spells : [],
+    ascendance_draconique: checked('draconic_ancestry_fr'),
+    manifestation_divine: checked('divine_manifestation_fr'),
+    manifestation_saisonniere: checked('seasonal_manifestation_fr'),
+    langues: checked('show_languages_section_fr') ? {
+      fixes: languages,
+      choix_libre: checked('allow_language_choice_fr'),
+      nb_choix: parseInt(document.getElementById('language_choice_count_fr')?.value) || 0,
+    } : null,
+    competences: checked('show_skills_section_fr') ? {
+      fixes: fixed_skills,
+      choix_libre: checked('allow_skill_choice_fr'),
+      nb_choix: parseInt(document.getElementById('skill_choice_count_fr')?.value) || 0,
+      liste_restreinte: checked('restrict_skill_choice_fr') ? restricted_skills : [],
+      nb_choix_restreint: parseInt(document.getElementById('restricted_skill_choice_count_fr')?.value) || 0,
+    } : null,
+    maitrise_etats: checked('show_condition_mastery_fr') ? condition_masteries : [],
+    avantage_js_magie: save_adv_magic,
+    resistances_degats: checked('show_damage_type_select_fr') ? damage_traits : [],
+    traits_custom: checked('show_custom_traits_fr') ? custom_traits : [],
+    traits_rp: checked('show_rp_traits_fr') ? rp_traits : [],
+    statut: 'draft',
+  };
+}
+
+document.getElementById('raceForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
   convertirVirguleEnPoint('speed_fr');
-  convertirVirguleEnPoint('speed_en');
 
-  // TODO : ici tu pourras ajouter le code pour envoyer les données à ton API
-  console.log('Formulaire prêt à être envoyé avec vitesses corrigées.');
+  const data = collecterDonnees();
+  if (!data.nom) { alert('Le nom de la race est obligatoire.'); return; }
+
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Envoi…';
+
+  try {
+    const r = await fetch('/api/Races', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!r.ok) throw new Error((await r.json()).error || `HTTP ${r.status}`);
+    const result = await r.json();
+    alert(`Race "${data.nom}" créée avec succès (id: ${result._id})`);
+    e.target.reset();
+  } catch (err) {
+    alert('Erreur : ' + err.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Créer la race';
+  }
 });
 
 /**
@@ -596,28 +754,6 @@ document.getElementById('add_language').addEventListener('click', () => {
   list.appendChild(item);
 });
 
-document.getElementById('add_skill').addEventListener('click', () => {
-  const select = document.getElementById('skills_select');
-  const nom = select?.value;
-  if (!nom) return;
-
-  const list = document.getElementById('skills_list');
-  const exists = Array.from(list.children).some(item => item.dataset.skill === nom);
-  if (exists) return;
-
-  const item = document.createElement('div');
-  item.classList.add('weapon-item');
-  item.dataset.skill = nom;
-  item.textContent = nom;
-
-  const btn = document.createElement('button');
-  btn.textContent = '❌';
-  btn.classList.add('remove-weapon-btn');
-  btn.addEventListener('click', () => item.remove());
-
-  item.appendChild(btn);
-  list.appendChild(item);
-});
 
 document.getElementById('add_fixed_skill_fr').addEventListener('click', () => {
   const select = document.getElementById('fixed_skills_select_fr');

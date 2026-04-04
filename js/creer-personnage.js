@@ -390,8 +390,25 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadEspeces() {
   if (W._especes.length) { renderEspecesGrid(); return; }
   try {
-    const r = await fetch(`${API}/GetEspeces2024`);
-    W._especes = await r.json();
+    const [rOff, rHB] = await Promise.allSettled([
+      fetch(`${API}/GetEspeces2024`).then(r => r.json()),
+      fetch(`${API}/Races`).then(r => r.json()),
+    ]);
+    const officielles = rOff.status === 'fulfilled' ? rOff.value : [];
+    const homebrew = rHB.status === 'fulfilled' ? rHB.value.map(hb => ({
+      id: String(hb._id),
+      nom: hb.nom,
+      vitesse: hb.vitesse || 9,
+      taille: hb.taille || { categorie: 'M' },
+      resistances: (hb.resistances_degats || []).map(r => r.type),
+      description: `Race homebrew — ${hb.type_creature || 'Humanoïde'}`,
+      traits: [],
+      variantes: [],
+      _homebrew: true,
+      _statut: hb.statut,
+      _race_id: String(hb._id),
+    })) : [];
+    W._especes = [...officielles, ...homebrew];
     renderEspecesGrid();
   } catch { document.getElementById('especes-grid').innerHTML = '<p style="color:#f00">Erreur de chargement</p>'; }
 }
@@ -400,12 +417,12 @@ function renderEspecesGrid() {
   const grid = document.getElementById('especes-grid');
   grid.innerHTML = W._especes.map(e => `
     <div class="select-card ${W.espece === e.id ? 'selected' : ''}" onclick="selectEspece('${e.id}')">
-      <div class="card-name">${esc(e.nom)}</div>
+      <div class="card-name">${esc(e.nom)}${e._homebrew ? ' <span style="font-size:0.6rem;background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.4);color:#c9a84c;border-radius:4px;padding:0.1rem 0.35rem;vertical-align:middle;">Bêta</span>' : ''}</div>
       <div class="card-sub">
         <span class="card-tag">Vitesse ${e.vitesse || 9}m</span>
         ${(e.resistances||[]).map(r => `<span class="card-tag">${esc(r)}</span>`).join('')}
       </div>
-      <div style="font-size:0.72rem;color:#888;line-height:1.4;margin-top:0.3rem;">${esc((e.description||'').slice(0,80))}…</div>
+      <div style="font-size:0.72rem;color:#aaa;line-height:1.4;margin-top:0.3rem;">${esc((e.description||'').slice(0,80))}…</div>
     </div>`).join('');
 }
 
@@ -2243,7 +2260,12 @@ async function creerPersonnage() {
     const data = await res.json();
     if (data._id) {
       clearWizardDraft();
-      window.location.href = `fiche-personnage.html?id=${data._id}`;
+      // Si race homebrew en draft → demander un rapport avant de rediriger
+      if (W.espece_data?._homebrew && W.espece_data?._statut === 'draft') {
+        montrerModalRapport(W.espece_data._race_id, data._id);
+      } else {
+        window.location.href = `fiche-personnage.html?id=${data._id}`;
+      }
     } else {
       alert('Erreur : ' + (data.error || 'inconnue'));
       btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Créer le personnage !';
@@ -2253,6 +2275,39 @@ async function creerPersonnage() {
     btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Créer le personnage !';
   }
 }
+
+// ─── RAPPORT RACE HOMEBREW ────────────────────────────────────
+
+function montrerModalRapport(raceId, persoId) {
+  const modal = document.getElementById('modal-rapport-race');
+  if (!modal) { window.location.href = `fiche-personnage.html?id=${persoId}`; return; }
+  modal.dataset.raceId = raceId;
+  modal.dataset.persoId = persoId;
+  modal.classList.remove('hidden');
+}
+
+window.soumettreRapport = async function(approbation) {
+  const modal = document.getElementById('modal-rapport-race');
+  const raceId = modal.dataset.raceId;
+  const persoId = modal.dataset.persoId;
+  const commentaire = document.getElementById('rapport-commentaire')?.value.trim() || '';
+
+  try {
+    await fetch(`${API}/Races/${raceId}/rapport`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({ approbation, commentaire }),
+    });
+  } catch { /* non bloquant */ }
+
+  window.location.href = `fiche-personnage.html?id=${persoId}`;
+};
+
+window.passerRapport = function() {
+  const modal = document.getElementById('modal-rapport-race');
+  const persoId = modal.dataset.persoId;
+  window.location.href = `fiche-personnage.html?id=${persoId}`;
+};
 
 // ─── DÉMARRAGE ────────────────────────────────────────────────
 
