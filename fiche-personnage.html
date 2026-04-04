@@ -49,7 +49,7 @@
     <div class="pv-row">
       <span class="pv-label">Maximum</span>
       <input class="pv-input" id="pv-max" type="number" onchange="markDirty('combat.pv_max',+this.value);changePV()" />
-      <span style="font-size:0.7rem;color:#bbb;">Temp</span>
+      <span style="font-size:0.7rem;color:#a78bfa;">Temp</span>
       <input class="pv-input" id="pv-temp" type="number" value="0" onchange="markDirty('combat.pv_temporaires',+this.value)" />
     </div>
   </div>
@@ -117,7 +117,7 @@
         <span id="des-vie-type">—</span>
         <span>Restants :</span>
         <input type="number" id="dv-restants" style="width:50px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:5px;color:#fff;text-align:center;padding:0.25rem;" onchange="markDirty('combat.des_vie.restants',+this.value)" />
-        <span style="color:#bbb;">/ <span id="dv-total"></span></span>
+        <span style="color:#a78bfa;">/ <span id="dv-total"></span></span>
       </div>
       <div class="dv-actions">
         <button class="btn-dv-depenser" onclick="ouvrirModalDVCourt()"><i class="fa-solid fa-dice-d8"></i> Dépenser</button>
@@ -324,7 +324,7 @@ if (_savedTab) switchFicheTab(_savedTab);
       </div>
     </div>
     <div class="modal-actions">
-      <button class="btn-secondary" onclick="document.getElementById('modal-proposer-repos').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-secondary" onclick="document.getElementById('modal-proposer-repos').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#a78bfa;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
       <button class="btn-sm-primary" id="btn-confirmer-repos" onclick="confirmerProposerRepos()">Proposer</button>
     </div>
   </div>
@@ -359,7 +359,7 @@ if (_savedTab) switchFicheTab(_savedTab);
       <span style="font-size:0.72rem;color:#888;" id="dv-pv-gain"></span>
     </div>
     <div class="modal-actions" style="margin-top:0.6rem;">
-      <button class="btn-secondary" onclick="document.getElementById('modal-dv-court').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-secondary" onclick="document.getElementById('modal-dv-court').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#a78bfa;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
       <button class="btn-sm-primary" style="background:#14532d;border-color:#166534;" onclick="appliquerDVCourt()">Récupérer PV</button>
     </div>
   </div>
@@ -443,7 +443,7 @@ if (_savedTab) switchFicheTab(_savedTab);
       </div>
     </div>
     <div class="modal-actions">
-      <button class="btn-secondary" onclick="fermerModalAttaque()" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-secondary" onclick="fermerModalAttaque()" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#a78bfa;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
       <button class="btn-sm-primary" onclick="validerAttaque()">Ajouter</button>
     </div>
   </div>
@@ -475,7 +475,7 @@ if (_savedTab) switchFicheTab(_savedTab);
       </div>
     </div>
     <div class="modal-actions">
-      <button class="btn-secondary" onclick="document.getElementById('modal-attaque-combat').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-secondary" onclick="document.getElementById('modal-attaque-combat').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#a78bfa;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
       <button class="btn-sm-primary" style="background:#6b0f0f;border-color:#991b1b;" onclick="confirmerAttaqueCombat()">Confirmer</button>
     </div>
   </div>
@@ -507,7 +507,7 @@ if (_savedTab) switchFicheTab(_savedTab);
     </div>
 
     <div class="modal-actions" style="margin-top:0.75rem;">
-      <button class="btn-secondary" onclick="document.getElementById('modal-sort-combat').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-secondary" onclick="document.getElementById('modal-sort-combat').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#a78bfa;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
       <button class="btn-sm-primary" style="background:#3b1072;border-color:#5b21b6;" onclick="confirmerSortCombat()">Lancer</button>
     </div>
   </div>
@@ -537,7 +537,7 @@ if (_savedTab) switchFicheTab(_savedTab);
     </div>
     <div id="js-result-box" style="display:none;" class="js-result"></div>
     <div class="modal-actions">
-      <button class="btn-secondary" onclick="document.getElementById('modal-sauvegarde').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#bbb;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
+      <button class="btn-secondary" onclick="document.getElementById('modal-sauvegarde').classList.add('hidden')" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#a78bfa;padding:0.4rem 0.9rem;cursor:pointer;">Annuler</button>
       <button class="btn-sm-primary" onclick="confirmerSauvegarde()">Confirmer</button>
     </div>
   </div>
@@ -687,7 +687,7 @@ if (_savedTab) switchFicheTab(_savedTab);
 
     <!-- Résultats -->
     <div id="om-results" style="overflow-y:auto;flex:1;padding:.75rem 1.5rem;">
-      <div style="text-align:center;padding:2rem;color:#bbb;"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+      <div style="text-align:center;padding:2rem;color:#a78bfa;"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
     </div>
 
     <!-- Pagination -->
@@ -777,7 +777,7 @@ if (_savedTab) switchFicheTab(_savedTab);
 
   async function fetchOM() {
     const res_el = document.getElementById('om-results');
-    res_el.innerHTML = '<div style="text-align:center;padding:2rem;color:#bbb;"><i class="fa-solid fa-spinner fa-spin"></i></div>';
+    res_el.innerHTML = '<div style="text-align:center;padding:2rem;color:#a78bfa;"><i class="fa-solid fa-spinner fa-spin"></i></div>';
     try {
       const params = new URLSearchParams();
       if (omSearch) params.set('recherche', omSearch);
@@ -799,7 +799,7 @@ if (_savedTab) switchFicheTab(_savedTab);
     const page = omData.slice(debut, debut + PER);
     const res_el = document.getElementById('om-results');
     if (!omData.length) {
-      res_el.innerHTML = '<p style="text-align:center;color:#bbb;padding:2rem;">Aucun résultat</p>';
+      res_el.innerHTML = '<p style="text-align:center;color:#a78bfa;padding:2rem;">Aucun résultat</p>';
       document.getElementById('om-pagination').innerHTML = '';
       return;
     }

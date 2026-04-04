@@ -1330,7 +1330,7 @@ async function chargerMesMonstres() {
   grid.innerHTML = '<div style="color:#444;font-size:0.8rem;">Chargement…</div>';
   try {
     const res = await fetch(`${API}/MonstresCustom`, { headers: authHeaders() });
-    if (!res.ok) { grid.innerHTML = '<div style="color:#bbb;font-size:0.8rem;">Erreur de chargement</div>'; return; }
+    if (!res.ok) { grid.innerHTML = '<div style="color:#a78bfa;font-size:0.8rem;">Erreur de chargement</div>'; return; }
     const docs = await res.json();
     if (!docs.length) {
       grid.innerHTML = '<div style="color:#444;font-size:0.82rem;grid-column:1/-1;">Aucun monstre créé. Utilisez le formulaire ci-dessus !</div>';
@@ -1367,7 +1367,7 @@ async function chargerMesMonstres() {
         } catch { showToast('Erreur','error'); }
       });
     });
-  } catch { grid.innerHTML = '<div style="color:#bbb;font-size:0.8rem;">Erreur réseau</div>'; }
+  } catch { grid.innerHTML = '<div style="color:#a78bfa;font-size:0.8rem;">Erreur réseau</div>'; }
 }
 
 // ═══════════════════════════════════════════════════════════════════
