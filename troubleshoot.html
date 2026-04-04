@@ -55,7 +55,10 @@
     <h1>🔧 Troubleshoot — La Table du Maître</h1>
     <p class="subtitle">Tests automatiques de l'API, de l'auth et des fonctionnalités</p>
   </div>
-  <span class="auth-badge" id="auth-badge">Non connecté</span>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <a href="admin.html" style="font-size:0.75rem;padding:0.25rem 0.7rem;border-radius:20px;background:rgba(134,93,255,0.15);color:#a78bfa;border:1px solid rgba(134,93,255,0.3);text-decoration:none;">🛡 Admin</a>
+    <span class="auth-badge" id="auth-badge">Non connecté</span>
+  </div>
 </div>
 
 <div class="summary-bar" id="summary-bar">
@@ -92,6 +95,24 @@
 <div class="section">
   <h2>🪄 API — Objets magiques</h2>
   <div id="tests-om"></div>
+</div>
+
+<!-- SESSIONS -->
+<div class="section">
+  <h2>📜 API — Sessions</h2>
+  <div id="tests-sessions"></div>
+</div>
+
+<!-- CAMPAGNES -->
+<div class="section">
+  <h2>📖 API — Campagnes</h2>
+  <div id="tests-campagnes"></div>
+</div>
+
+<!-- MONSTRES CUSTOM -->
+<div class="section">
+  <h2>💀 API — Monstres Custom</h2>
+  <div id="tests-monstres"></div>
 </div>
 
 <!-- PAGES -->
@@ -204,14 +225,28 @@
     addTest('tests-om',         't-om-auth',       'GET /objets-magiques avec auth (homebrew_only)');
     addTest('tests-om',         't-om-slug',       'GET /objets-magiques/:slug (fiche complète)');
 
+    // Sessions
+    addTest('tests-sessions',   't-sess-list',     'GET /Sessions (liste)');
+    addTest('tests-sessions',   't-sess-schema',   'Schéma session — champs obligatoires');
+
+    // Campagnes
+    addTest('tests-campagnes',  't-camp-list',     'GET /Campagnes (liste)');
+    addTest('tests-campagnes',  't-camp-schema',   'Schéma campagne — champs obligatoires');
+
+    // Monstres custom
+    addTest('tests-monstres',   't-mc-list',       'GET /MonstresCustom (liste)');
+    addTest('tests-monstres',   't-mc-schema',     'Schéma monstre — champs obligatoires');
+
     // Pages
     const pages = [
-      ['t-page-home',       'home.html',              'home.html'],
-      ['t-page-biblio',     'bibliotheque.html',      'bibliotheque.html'],
-      ['t-page-perso',      'mes-personnages.html',   'mes-personnages.html'],
-      ['t-page-dashboard',  'dashboard-mj.html',      'dashboard-mj.html'],
-      ['t-page-sessions',   'sessions.html',          'sessions.html'],
-      ['t-page-om-creer',   'creer-objet-magique.html','creer-objet-magique.html'],
+      ['t-page-home',          'home.html',               'home.html'],
+      ['t-page-biblio',        'bibliotheque.html',       'bibliotheque.html'],
+      ['t-page-perso',         'mes-personnages.html',    'mes-personnages.html'],
+      ['t-page-dashboard',     'dashboard-mj.html',       'dashboard-mj.html'],
+      ['t-page-sessions',      'sessions.html',           'sessions.html'],
+      ['t-page-om-creer',      'creer-objet-magique.html','creer-objet-magique.html'],
+      ['t-page-monstre-creer', 'creer-monstre.html',      'creer-monstre.html'],
+      ['t-page-ecran-mj',      'ecran-mj.html',           'ecran-mj.html'],
     ];
     pages.forEach(([id, , label]) => addTest('tests-pages', id, label));
 
@@ -305,7 +340,73 @@
       setStatus('t-om-slug', 'warn', 'Aucun objet à tester');
     }
 
-    // ── 5. Pages HTML ─────────────────────────────────────────
+    // ── 5. Sessions ──────────────────────────────────────────────
+    if (token) {
+      const sessions = await testApi('t-sess-list', `${API}/Sessions`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }, d => Array.isArray(d) ? `${d.length} session(s)` : '⚠ format inattendu');
+
+      if (sessions && sessions.length > 0) {
+        const s = sessions[0];
+        const champs = ['nom', 'statut', 'mj_id'];
+        const manquants = champs.filter(c => !(c in s));
+        if (manquants.length) setStatus('t-sess-schema', 'warn', `Champs absents: ${manquants.join(', ')}`);
+        else setStatus('t-sess-schema', 'ok', `OK sur "${s.nom}"`);
+        log(`✓ Schéma session "${s.nom}" vérifié`, 'ok');
+      } else if (sessions) {
+        setStatus('t-sess-schema', 'warn', 'Aucune session à valider');
+        log('⚠ Aucune session pour tester le schéma', 'warn');
+      }
+    } else {
+      setStatus('t-sess-list',   'warn', 'Non connecté');
+      setStatus('t-sess-schema', 'warn', 'Non connecté');
+    }
+
+    // ── 6. Campagnes ──────────────────────────────────────────────
+    if (token) {
+      const campagnes = await testApi('t-camp-list', `${API}/Campagnes`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }, d => Array.isArray(d) ? `${d.length} campagne(s)` : '⚠ format inattendu');
+
+      if (campagnes && campagnes.length > 0) {
+        const c = campagnes[0];
+        const champs = ['nom', 'mj_id'];
+        const manquants = champs.filter(f => !(f in c));
+        if (manquants.length) setStatus('t-camp-schema', 'warn', `Champs absents: ${manquants.join(', ')}`);
+        else setStatus('t-camp-schema', 'ok', `OK sur "${c.nom}"`);
+        log(`✓ Schéma campagne "${c.nom}" vérifié`, 'ok');
+      } else if (campagnes) {
+        setStatus('t-camp-schema', 'warn', 'Aucune campagne à valider');
+        log('⚠ Aucune campagne pour tester le schéma', 'warn');
+      }
+    } else {
+      setStatus('t-camp-list',   'warn', 'Non connecté');
+      setStatus('t-camp-schema', 'warn', 'Non connecté');
+    }
+
+    // ── 7. Monstres Custom ────────────────────────────────────────
+    if (token) {
+      const monstres = await testApi('t-mc-list', `${API}/MonstresCustom`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }, d => Array.isArray(d) ? `${d.length} monstre(s)` : '⚠ format inattendu');
+
+      if (monstres && monstres.length > 0) {
+        const m = monstres[0];
+        const champs = ['nom', 'type', 'fp'];
+        const manquants = champs.filter(f => !(f in m));
+        if (manquants.length) setStatus('t-mc-schema', 'warn', `Champs absents: ${manquants.join(', ')}`);
+        else setStatus('t-mc-schema', 'ok', `OK sur "${m.nom}"`);
+        log(`✓ Schéma monstre "${m.nom}" vérifié`, 'ok');
+      } else if (monstres) {
+        setStatus('t-mc-schema', 'warn', 'Aucun monstre à valider');
+        log('⚠ Aucun monstre custom pour tester le schéma', 'warn');
+      }
+    } else {
+      setStatus('t-mc-list',   'warn', 'Non connecté');
+      setStatus('t-mc-schema', 'warn', 'Non connecté');
+    }
+
+    // ── 8. Pages HTML ─────────────────────────────────────────
     for (const [id, path] of pages) {
       try {
         const r = await fetch(path);

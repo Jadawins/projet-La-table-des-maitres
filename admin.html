@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — La Table du Maître</title>
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0d0d14; color: #e0d0ff; padding: 1.5rem; }
+
+    h1 { font-size: 1.4rem; color: #c9a84c; margin-bottom: 0.2rem; }
+    .subtitle { color: #666; font-size: 0.8rem; margin-bottom: 1.5rem; }
+
+    .header-row { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+    .header-links { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .btn-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.9rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; text-decoration: none; border: 1px solid; cursor: pointer; background: none; }
+    .btn-link.primary { border-color: rgba(201,168,76,0.4); color: #c9a84c; background: rgba(201,168,76,0.1); }
+    .btn-link.primary:hover { background: rgba(201,168,76,0.2); }
+    .btn-link.secondary { border-color: rgba(255,255,255,0.12); color: #aaa; background: rgba(255,255,255,0.05); }
+    .btn-link.secondary:hover { background: rgba(255,255,255,0.09); }
+
+    /* Stat cards */
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+    .stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem; text-align: center; }
+    .stat-card .stat-value { font-size: 2rem; font-weight: 700; color: #c9a84c; line-height: 1.1; }
+    .stat-card .stat-label { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.3rem; }
+    .stat-card .stat-icon { font-size: 1.1rem; color: #865dff; margin-bottom: 0.4rem; }
+
+    /* Sections */
+    .section { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.25rem; }
+    .section h2 { font-size: 0.85rem; color: #c9a84c; margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* Table utilisateurs */
+    .user-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    .user-table th { text-align: left; color: #888; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.4rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .user-table td { padding: 0.55rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; color: #c8c8d8; }
+    .user-table tr:hover td { background: rgba(255,255,255,0.03); }
+    .user-id { font-size: 0.68rem; color: #555; font-family: monospace; }
+    .perso-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem; }
+    .perso-tag { background: rgba(134,93,255,0.15); border: 1px solid rgba(134,93,255,0.25); border-radius: 4px; padding: 0.1rem 0.35rem; font-size: 0.68rem; color: #c9b8ff; }
+    .nb-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); color: #c9a84c; font-weight: 700; font-size: 0.85rem; }
+
+    /* Recent lists */
+    .recent-list { list-style: none; }
+    .recent-list li { display: flex; align-items: center; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; }
+    .recent-list li:last-child { border-bottom: none; }
+    .recent-label { color: #d5d1a9; }
+    .recent-meta { color: #666; font-size: 0.72rem; }
+
+    /* State */
+    .loading { text-align: center; padding: 2rem; color: #888; font-size: 0.85rem; }
+    .error-state { color: #f87171; background: rgba(244,67,54,0.07); border: 1px solid rgba(244,67,54,0.2); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.82rem; }
+
+    .refresh-btn { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: #c9a84c; border-radius: 8px; padding: 0.4rem 0.9rem; cursor: pointer; font-size: 0.78rem; font-weight: 600; }
+    .refresh-btn:hover { background: rgba(201,168,76,0.22); }
+
+    .ts { font-size: 0.7rem; color: #555; margin-left: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<div class="header-row">
+  <div>
+    <h1><i class="fa-solid fa-shield-halved" style="color:#865dff"></i> Admin — La Table du Maître</h1>
+    <p class="subtitle">Supervision de la base de données et des utilisateurs</p>
+  </div>
+  <div class="header-links">
+    <button class="btn-link primary" onclick="charger()"><i class="fa-solid fa-rotate"></i> Actualiser</button>
+    <a href="troubleshoot.html" class="btn-link secondary"><i class="fa-solid fa-wrench"></i> Troubleshoot</a>
+    <a href="home.html" class="btn-link secondary"><i class="fa-solid fa-house"></i> Accueil</a>
+  </div>
+</div>
+
+<!-- STAT CARDS -->
+<div class="stat-grid" id="stat-grid">
+  <div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+</div>
+
+<!-- UTILISATEURS -->
+<div class="section" id="section-users" style="display:none">
+  <h2><i class="fa-solid fa-users"></i> Utilisateurs & Personnages <span class="ts" id="gen-at"></span></h2>
+  <div id="users-content"></div>
+</div>
+
+<!-- RÉCENTS -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+  <div class="section" id="section-recent-perso" style="display:none">
+    <h2><i class="fa-solid fa-user-shield"></i> Derniers personnages créés</h2>
+    <ul class="recent-list" id="recent-perso-list"></ul>
+  </div>
+  <div class="section" id="section-recent-sess" style="display:none">
+    <h2><i class="fa-solid fa-scroll"></i> Dernières sessions créées</h2>
+    <ul class="recent-list" id="recent-sess-list"></ul>
+  </div>
+</div>
+
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+  const API = 'https://myrpgtable.fr/api';
+  let token = null;
+
+  // ── Auth ──────────────────────────────────────────────────────
+  try {
+    const res = await fetch(`${API}/GetSupabaseKey`);
+    const { url, key } = await res.json();
+    const supabase = createClient(url, key);
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) { window.location.href = 'login.html'; }
+    token = session.access_token;
+  } catch (e) {
+    document.getElementById('stat-grid').innerHTML =
+      `<div class="error-state"><i class="fa-solid fa-triangle-exclamation"></i> Impossible de vérifier l'authentification : ${e.message}</div>`;
+  }
+
+  // ── Chargement stats ──────────────────────────────────────────
+  window.charger = async function() {
+    document.getElementById('stat-grid').innerHTML =
+      `<div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>`;
+    document.getElementById('section-users').style.display = 'none';
+    document.getElementById('section-recent-perso').style.display = 'none';
+    document.getElementById('section-recent-sess').style.display = 'none';
+
+    try {
+      const r = await fetch(`${API}/Admin/stats`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      if (r.status === 403) {
+        document.getElementById('stat-grid').innerHTML =
+          `<div class="error-state"><i class="fa-solid fa-ban"></i> Accès refusé — cette page est réservée à l'administrateur.</div>`;
+        return;
+      }
+      if (!r.ok) {
+        document.getElementById('stat-grid').innerHTML =
+          `<div class="error-state"><i class="fa-solid fa-triangle-exclamation"></i> Erreur HTTP ${r.status}</div>`;
+        return;
+      }
+
+      const data = await r.json();
+      renderStats(data);
+    } catch (e) {
+      document.getElementById('stat-grid').innerHTML =
+        `<div class="error-state"><i class="fa-solid fa-triangle-exclamation"></i> ${e.message}</div>`;
+    }
+  };
+
+  function renderStats(data) {
+    const t = data.totaux;
+
+    // Stat cards
+    const cards = [
+      { icon: 'fa-user-shield',    label: 'Personnages',     value: t.personnages,                color: '#865dff' },
+      { icon: 'fa-scroll',         label: 'Sessions',        value: t.sessions,                   color: '#c9a84c' },
+      { icon: 'fa-book-skull',     label: 'Campagnes',       value: t.campagnes,                  color: '#22d3ee' },
+      { icon: 'fa-skull-crossbones',label:'Monstres custom', value: t.monstres_custom,            color: '#f87171' },
+      { icon: 'fa-hat-wizard',     label: 'Objets homebrew', value: t.objets_magiques_homebrew,   color: '#a78bfa' },
+      { icon: 'fa-swords',         label: 'Combats',         value: t.combats,                    color: '#fb923c' },
+      { icon: 'fa-users',          label: 'Joueurs actifs',  value: data.utilisateurs.length,     color: '#4ade80' },
+    ];
+
+    document.getElementById('stat-grid').innerHTML = cards.map(c => `
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid ${c.icon}" style="color:${c.color}"></i></div>
+        <div class="stat-value" style="color:${c.color}">${c.value}</div>
+        <div class="stat-label">${c.label}</div>
+      </div>
+    `).join('');
+
+    // Timestamp
+    const ts = new Date(data.generated_at).toLocaleString('fr-FR', { dateStyle:'short', timeStyle:'short' });
+    document.getElementById('gen-at').textContent = `— généré le ${ts}`;
+
+    // Table utilisateurs
+    const tbody = data.utilisateurs.map(u => {
+      const date = u.derniere_activite
+        ? new Date(u.derniere_activite).toLocaleDateString('fr-FR')
+        : '—';
+      const tags = u.personnages.map(n => `<span class="perso-tag">${esc(n)}</span>`).join('');
+      return `<tr>
+        <td><span class="nb-badge">${u.nb_personnages}</span></td>
+        <td>
+          <div class="user-id">${u.user_id}</div>
+          <div class="perso-tags">${tags}${u.nb_personnages > 5 ? `<span class="perso-tag">+${u.nb_personnages - 5} autres</span>` : ''}</div>
+        </td>
+        <td><span class="recent-meta">${date}</span></td>
+      </tr>`;
+    }).join('');
+
+    document.getElementById('users-content').innerHTML = `
+      <table class="user-table">
+        <thead><tr>
+          <th style="width:50px">Persos</th>
+          <th>Utilisateur</th>
+          <th style="width:100px">Dernière activité</th>
+        </tr></thead>
+        <tbody>${tbody || '<tr><td colspan="3" style="color:#555;text-align:center;padding:1rem;">Aucun utilisateur</td></tr>'}</tbody>
+      </table>`;
+    document.getElementById('section-users').style.display = 'block';
+
+    // Récents personnages
+    if (data.recent_personnages?.length) {
+      document.getElementById('recent-perso-list').innerHTML = data.recent_personnages.map(p => `
+        <li>
+          <span class="recent-label">${esc(p.nom)} <span style="color:#866;font-size:0.75rem">(${p.classe || '—'} niv.${p.niveau || 1})</span></span>
+          <span class="recent-meta">${p.created_at ? new Date(p.created_at).toLocaleDateString('fr-FR') : '—'}</span>
+        </li>`).join('');
+      document.getElementById('section-recent-perso').style.display = 'block';
+    }
+
+    // Récentes sessions
+    if (data.recent_sessions?.length) {
+      const statutColor = { recrutement:'#4ade80', en_cours:'#c9a84c', pausee:'#fb923c', terminee:'#888' };
+      document.getElementById('recent-sess-list').innerHTML = data.recent_sessions.map(s => `
+        <li>
+          <span class="recent-label">${esc(s.nom)} <span style="color:${statutColor[s.statut]||'#888'};font-size:0.72rem;">(${s.statut || '—'})</span></span>
+          <span class="recent-meta">${s.created_at ? new Date(s.created_at).toLocaleDateString('fr-FR') : '—'}</span>
+        </li>`).join('');
+      document.getElementById('section-recent-sess').style.display = 'block';
+    }
+  }
+
+  function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  // Auto-load
+  charger();
+</script>
+
+</body>
+</html>
