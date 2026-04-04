@@ -463,12 +463,11 @@
   <details class="form-section">
     <summary><i class="fa-solid fa-wand-sparkles" style="color:#865dff"></i> Traits raciaux prédéfinis</summary>
     <div style="margin-top:0.8rem">
-      <label>
-        <input type="checkbox" id="show_custom_traits_fr" class="trait-checkbox" />
-        Traits raciaux personnalisés
-        <span class="tooltip" title="Afficher les traits raciaux spéciaux déjà définis (Transe, Chance, etc.)">❔</span>
-      </label>
-      <div id="custom_traits_section_fr" style="margin-left: 20px; display: none;">
+      <p style="font-size:0.8rem;color:#aaa;margin:0 0 0.8rem;">Traits mécaniques 2024 (combat, résistances, dés). Cochez ceux que la race possède.</p>
+      <div id="traits_raciaux_dynamiques">
+        <span style="color:#aaa;font-size:0.8rem;">Chargement…</span>
+      </div>
+      <div id="custom_traits_section_fr" style="display:none;">
         <label>
           <input type="checkbox" id="trance_trait_fr" class="trait-checkbox" />
           Transe (repos long en 4h)

@@ -1,0 +1,252 @@
+[
+  {
+    "id": "acharnement",
+    "nom": "Acharnement",
+    "espece": "Orc",
+    "description": "Si vous tombez à 0 PV sans être tué sur le coup, vous pouvez en fait vous retrouver à 1 PV. 1 fois par Repos long.",
+    "mecanique": {
+      "type": "survie_zero_pv",
+      "utilisations": 1,
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "ascendance_draconique",
+    "nom": "Ascendance draconique",
+    "espece": "Drakeide",
+    "description": "Choisissez un dragon ancêtre. Ce choix détermine votre type de Souffle et votre Résistance aux dégâts.",
+    "mecanique": {
+      "type": "choix_ascendance",
+      "options": {
+        "airain":  { "element": "feu",     "forme_souffle": "ligne" },
+        "argent":  { "element": "froid",   "forme_souffle": "cone" },
+        "blanc":   { "element": "froid",   "forme_souffle": "cone" },
+        "bleu":    { "element": "foudre",  "forme_souffle": "ligne" },
+        "bronze":  { "element": "foudre",  "forme_souffle": "ligne" },
+        "cuivre":  { "element": "acide",   "forme_souffle": "ligne" },
+        "noir":    { "element": "acide",   "forme_souffle": "ligne" },
+        "or":      { "element": "feu",     "forme_souffle": "cone" },
+        "rouge":   { "element": "feu",     "forme_souffle": "cone" },
+        "vert":    { "element": "poison",  "forme_souffle": "cone" }
+      },
+      "confere": ["souffle", "resistance_aux_degats"]
+    }
+  },
+  {
+    "id": "resistance_aux_degats",
+    "nom": "Résistance aux dégâts",
+    "espece": "Drakeide",
+    "description": "Résistance au type de dégâts déterminé par l'Ascendance draconique.",
+    "mecanique": {
+      "type": "resistance_degats",
+      "valeur": "variable",
+      "source": "ascendance_draconique"
+    }
+  },
+  {
+    "id": "souffle",
+    "nom": "Souffle",
+    "espece": "Drakeide",
+    "description": "Action Magie : expirez une énergie magique en ligne (4,5m×9m) ou cône (4,5m). JS Dextérité DD = 8+maîtrise+mod. Dégâts : 1d10 (niv 1-4), 2d10 (niv 5-10), 3d10 (niv 11-16), 4d10 (niv 17+). Utilisations : bonus de maîtrise par Repos long.",
+    "mecanique": {
+      "type": "action_combat",
+      "action": "action_magie",
+      "degats_par_niveau": { "1": "1d10", "5": "2d10", "11": "3d10", "17": "4d10" },
+      "type_degats": "variable",
+      "source": "ascendance_draconique",
+      "js": { "caracteristique": "dexterite", "dd": "8+maitrise+mod" },
+      "utilisations": "bonus_maitrise",
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "ascendance_feerique",
+    "nom": "Ascendance féerique",
+    "espece": "Elfe",
+    "description": "Avantage aux jets de sauvegarde pour éviter l'état Charmé ou y mettre un terme.",
+    "mecanique": {
+      "type": "avantage_js",
+      "contre_etats": ["charme"]
+    }
+  },
+  {
+    "id": "brave",
+    "nom": "Brave",
+    "espece": "Halfelin",
+    "description": "Avantage aux jets de sauvegarde pour éviter l'état Effrayé ou y mettre un terme.",
+    "mecanique": {
+      "type": "avantage_js",
+      "contre_etats": ["effrayé"]
+    }
+  },
+  {
+    "id": "chance",
+    "nom": "Chance",
+    "espece": "Halfelin",
+    "description": "Lorsque vous obtenez un 1 sur un d20, vous pouvez relancer le dé. Vous devez utiliser le nouveau résultat.",
+    "mecanique": {
+      "type": "reroll_1",
+      "jets": ["attaque", "sauvegarde", "competence"]
+    }
+  },
+  {
+    "id": "forte_carrure",
+    "nom": "Forte carrure",
+    "espece": "Goliath",
+    "description": "Avantage aux tests pour maîtriser ou éviter l'état Agrippé. Catégorie de taille considérée un cran supérieure pour la charge.",
+    "mecanique": {
+      "type": "avantage_test",
+      "contre_etats": ["agrippé"],
+      "bonus_charge": true
+    }
+  },
+  {
+    "id": "ascendance_geante",
+    "nom": "Ascendance géante",
+    "espece": "Goliath",
+    "description": "Choisissez un bénéfice lié à un type de géant. Utilisable 1 fois par Repos long.",
+    "mecanique": {
+      "type": "choix_ascendance_geante",
+      "options": {
+        "bouliers_ignes":       { "type_degats": "feu",     "des_degats": "1d10", "action": "toucher" },
+        "endurance_de_la_pierre":{ "type": "reduction_degats", "des": "1d12+mod_con", "action": "reaction" },
+        "froid_mordant":        { "type_degats": "froid",   "des_degats": "1d8",  "effet": "vitesse_-1", "action": "toucher" },
+        "renversement_des_coteaux": { "effet": "a_terre",   "action": "toucher" },
+        "saut_des_nues":        { "type": "teleportation",  "distance_m": 9,      "action": "bonus" },
+        "tonnerre_des_cieux":   { "type_degats": "foudre",  "des_degats": "1d8",  "distance_m": 18, "action": "reaction" }
+      },
+      "utilisations": 1,
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "forme_de_geant",
+    "nom": "Forme de géant",
+    "espece": "Goliath",
+    "description": "Niveau 5+. Action Bonus : taille G pendant 10 min. Avantage tests de Force, Vitesse +1,5m. 1 fois par Repos long.",
+    "mecanique": {
+      "type": "transformation",
+      "niveau_min": 5,
+      "action": "bonus",
+      "duree_minutes": 10,
+      "effets": ["taille_G", "avantage_force", "vitesse_+1.5m"],
+      "utilisations": 1,
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "mains_guerisseuses",
+    "nom": "Mains guérisseuses",
+    "espece": "Aasimar",
+    "description": "Action Magie : touchez une créature pour lui faire récupérer bonus_maîtrise + 4 PV. 1 fois par Repos long.",
+    "mecanique": {
+      "type": "soin",
+      "action": "action_magie",
+      "formule": "bonus_maitrise+4",
+      "utilisations": 1,
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "resistance_celeste",
+    "nom": "Résistance céleste",
+    "espece": "Aasimar",
+    "description": "Résistance aux dégâts nécrotiques et de type radiance.",
+    "mecanique": {
+      "type": "resistance_degats",
+      "elements": ["nécrotique", "radiance"]
+    }
+  },
+  {
+    "id": "revelation_celeste",
+    "nom": "Révélation céleste",
+    "espece": "Aasimar",
+    "description": "Transformation 1 minute, 1 fois par Repos long. Choix : Ailes (vol) / Linceul nécrotique (1d8+maîtrise nécrotique/tour) / Radiance intérieure (maîtrise radiance/tour).",
+    "mecanique": {
+      "type": "transformation",
+      "action": "action_magie",
+      "duree_minutes": 1,
+      "options": {
+        "ailes_celestes":      { "confere": "vol" },
+        "linceul_necrotique":  { "type_degats": "nécrotique", "des_degats": "1d8", "bonus": "bonus_maitrise", "par_tour": true },
+        "radiance_interieure": { "type_degats": "radiance",   "bonus": "bonus_maitrise", "par_tour": true }
+      },
+      "utilisations": 1,
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "heritage_felon",
+    "nom": "Héritage félon",
+    "espece": "Tieffelin",
+    "description": "Choisissez un héritage : Abyssal (résistance poison + sorts) / Chtonien (résistance nécrotique + sorts) / Infernal (résistance feu + sorts). Sorts niv 3 et 5 : 1 fois sans emplacement par Repos long.",
+    "mecanique": {
+      "type": "choix_heritage",
+      "options": {
+        "abyssal":   { "resistance": "poison",     "sorts": ["bouffee_de_poison", "rayon_empoisonne", "immobilisation_de_personne"] },
+        "chtonien":  { "resistance": "nécrotique", "sorts": ["contact_glacial",   "simulacre_de_vie",  "rayon_affaiblissant"] },
+        "infernal":  { "resistance": "feu",         "sorts": ["trait_de_feu",      "represailles_infernales", "tenebres"] }
+      },
+      "utilisations_sorts": 1,
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "resistance_naine",
+    "nom": "Résistance naine",
+    "espece": "Nain",
+    "description": "Résistance aux dégâts de poison. Avantage aux JS pour éviter ou mettre fin à l'état Empoisonné.",
+    "mecanique": {
+      "type": "resistance_degats",
+      "elements": ["poison"],
+      "bonus": {
+        "type": "avantage_js",
+        "contre_etats": ["empoisonné"]
+      }
+    }
+  },
+  {
+    "id": "tenacite_naine",
+    "nom": "Ténacité naine",
+    "espece": "Nain",
+    "description": "Maximum de PV augmenté de 1 par niveau.",
+    "mecanique": {
+      "type": "bonus_pv",
+      "par_niveau": 1
+    }
+  },
+  {
+    "id": "acharnement_orc",
+    "nom": "Acharnement",
+    "espece": "Orc",
+    "description": "Si vous tombez à 0 PV sans être tué sur le coup, vous vous retrouvez à 1 PV. 1 fois par Repos long.",
+    "mecanique": {
+      "type": "survie_zero_pv",
+      "utilisations": 1,
+      "recuperation": "repos_long"
+    }
+  },
+  {
+    "id": "poussee_d_adrenaline",
+    "nom": "Poussée d'adrénaline",
+    "espece": "Orc",
+    "description": "Action Bonus : Foulée. Vous gagnez un nombre de PV temporaires égal à votre bonus de maîtrise.",
+    "mecanique": {
+      "type": "action_bonus_combat",
+      "action": "foulee",
+      "effet": "pv_temporaires",
+      "valeur": "bonus_maitrise"
+    }
+  },
+  {
+    "id": "ruse_gnome",
+    "nom": "Ruse gnome",
+    "espece": "Gnome",
+    "description": "Avantage aux jets de sauvegarde d'Intelligence, Sagesse et Charisme contre les effets magiques.",
+    "mecanique": {
+      "type": "avantage_js",
+      "caracteristiques": ["intelligence", "sagesse", "charisme"],
+      "contre": "magie"
+    }
+  }
+]

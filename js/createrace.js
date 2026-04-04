@@ -47,7 +47,7 @@ toggleSection('allow_language_choice_fr', 'language_choice_count_container_fr');
 toggleSection('allow_skill_choice_fr', 'skill_choice_count_container_fr');
 toggleSection('show_save_adv_magic_fr', 'save_adv_magic_section_fr');
 toggleSection('show_racial_spells_fr', 'racial_spells_section_fr');
-toggleSection('show_custom_traits_fr', 'custom_traits_section_fr');
+// toggleSection('show_custom_traits_fr', 'custom_traits_section_fr'); // remplacé par traits dynamiques
 
 
 
@@ -353,6 +353,31 @@ function genererMenuDeroulantArmures() {
 
   container.appendChild(select);
 }
+async function chargerTraitsRaciaux() {
+  try {
+    const r = await fetch('/api/GetTraitsRaciaux2024');
+    const traits = await r.json();
+    genererCheckboxesTraits(traits);
+  } catch (err) {
+    console.error('❌ Erreur chargement traits raciaux :', err);
+  }
+}
+
+function genererCheckboxesTraits(traits) {
+  const container = document.getElementById('traits_raciaux_dynamiques');
+  if (!container) return;
+  container.innerHTML = traits.map(t => `
+    <label style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;cursor:pointer;">
+      <input type="checkbox" class="trait-racial-check" id="trait_${t.id}" data-id="${t.id}" style="margin-top:0.15rem;accent-color:#865dff;flex-shrink:0;" />
+      <span>
+        <strong style="color:#d5d1a9;font-size:0.85rem;">${t.nom}</strong>
+        <span style="font-size:0.75rem;color:#aaa;margin-left:0.4rem;">(${t.espece})</span>
+        <br><span style="font-size:0.75rem;color:#aaa;">${t.description}</span>
+      </span>
+    </label>
+  `).join('');
+}
+
 document.addEventListener("DOMContentLoaded", async function () {
   // Chargement dynamique
   await chargerArmesDepuisAPI();
@@ -364,6 +389,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   await chargerCompetencesDepuisAPI();
   await chargerConditionsDepuisAPI();
   await chargerSortsRaciauxDepuisAPI();
+  await chargerTraitsRaciaux();
 
   // Forcer affichage des menus au chargement
   genererMenuDeroulant();
@@ -460,22 +486,10 @@ function collecterDonnees() {
     cha: checked('save_adv_cha_fr'),
   } : null;
 
-  // Traits custom (liste des IDs cochés)
-  const TRAITS_CUSTOM = [
-    'trance_trait_fr','halfling_lucky_fr','relentless_endurance_fr','savage_attacks_fr',
-    'lucky_footwork_fr','can_fly_naturally_fr','talons_trait_fr','healing_hands_fr',
-    'hooves_attack_fr','equine_charge_fr','swimming_speed_fr','water_breathing_fr',
-    'aquatic_communication_fr','shifter_fury_fr','hidden_step_fr','unending_breath_fr',
-    'astral_knowledge_fr','svirfneblin_camouflage_fr','fury_of_the_small_fr',
-    'nimble_escape_fr','surprise_attack_fr','stones_endurance_fr','fey_gift_fr',
-    'fortune_from_the_many_fr','kenku_recall_fr','expert_duplication_fr','mimicry_fr',
-    'draconic_cry_fr','kobold_legacy_fr','goring_rush_fr','hammering_horns_fr',
-    'labyrinthine_recall_fr','adrenaline_rush_fr','lizardfolk_bite_fr','hungry_jaws_fr',
-    'hold_breath_15min_fr','hold_breath_1h_fr','natural_armor_fr','trance_srd_fr',
-    'trance_motm_fr','shell_defense_fr','tortle_natural_armor_fr','fearless_fr',
-    'kender_taunt_fr',
-  ];
-  const custom_traits = TRAITS_CUSTOM.filter(id => checked(id));
+  // Traits raciaux prédéfinis (cochés dynamiquement depuis l'API)
+  const traits_raciaux_selectionnes = Array.from(
+    document.querySelectorAll('#traits_raciaux_dynamiques .trait-racial-check:checked')
+  ).map(cb => cb.dataset.id);
 
   return {
     nom: document.getElementById('name_fr')?.value.trim(),
@@ -525,7 +539,7 @@ function collecterDonnees() {
     maitrise_etats: checked('show_condition_mastery_fr') ? condition_masteries : [],
     avantage_js_magie: save_adv_magic,
     resistances_degats: checked('show_damage_type_select_fr') ? damage_traits : [],
-    traits_custom: checked('show_custom_traits_fr') ? custom_traits : [],
+    traits_raciaux: traits_raciaux_selectionnes,
     traits_rp: checked('show_rp_traits_fr') ? rp_traits : [],
     statut: 'draft',
   };
