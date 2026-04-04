@@ -31,3 +31,9 @@ build/
 # Fichiers à usage temporaire
 *.bak
 *.swp
+
+# Scripts utilitaires locaux
+scripts/
+*.pdf
+checkpoint_traduction.json
+settings.local.json
