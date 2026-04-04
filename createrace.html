@@ -4,40 +4,124 @@
   <meta charset="UTF-8">
   <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Création de races</title>
-
-  <!-- Gestion du theme clair/sombre directement au chargement -->
+  <title>Créer une Race — La Table du Maître</title>
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
   </script>
-
-  <!-- Chargement des CSS globaux -->
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
-  <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/notifications.css">
-  <link rel="stylesheet" href="css/formulaire.css">
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .race-form-wrap { max-width: 860px; margin: 0 auto; padding-bottom: 3rem; }
+    .race-form-wrap > h2 { color: #c9a84c; font-size: 1.3rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .form-section {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-color, #e0d0ff);
+    }
+    details.form-section > summary {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: #865dff; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 0.5rem;
+      user-select: none;
+    }
+    details.form-section > summary::-webkit-details-marker { display: none; }
+    details.form-section > summary::after { content: '▸'; margin-left: auto; font-size: 0.62rem; color: #555; }
+    details.form-section[open] > summary::after { content: '▾'; }
+    .form-section h3 {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: #865dff; margin: 0 0 1rem;
+    }
+    .form-section label {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; color: #d5d1a9; margin-bottom: 0.5rem; font-weight: normal;
+    }
+    .form-section label.block { display: block; }
+
+    .form-section input[type="text"],
+    .form-section input[type="number"],
+    .form-section select,
+    .form-section textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      color: #e0d0ff;
+      padding: 0.4rem 0.7rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-section input:focus,
+    .form-section select:focus,
+    .form-section textarea:focus {
+      border-color: rgba(134,93,255,0.5);
+      outline: none;
+    }
+    .form-section textarea { resize: vertical; width: 100%; box-sizing: border-box; }
+    .form-section input[type="checkbox"] { accent-color: #865dff; cursor: pointer; width: 15px; height: 15px; flex-shrink: 0; }
+
+    .inline-field { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .inline-field label { margin-bottom: 0; white-space: nowrap; }
+
+    .weapon-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+    .weapon-item {
+      background: rgba(134,93,255,0.12); border: 1px solid rgba(134,93,255,0.25);
+      border-radius: 5px; padding: 0.2rem 0.5rem; font-size: 0.78rem; color: #c9b8ff;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .remove-weapon-btn { background: none; border: none; cursor: pointer; color: #f87171; font-size: 0.75rem; padding: 0; line-height: 1; }
+
+    .tooltip { color: #aaa; cursor: help; font-size: 0.8rem; }
+    .compact-input { width: 80px !important; }
+
+    .subsection { margin-left: 1.2rem; margin-top: 0.5rem; padding-left: 0.8rem; border-left: 2px solid rgba(134,93,255,0.2); }
+
+    button[type="submit"] {
+      margin-top: 1.5rem;
+      background: rgba(134,93,255,0.2);
+      border: 1px solid rgba(134,93,255,0.5);
+      color: #c9b8ff;
+      padding: 0.7rem 2rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button[type="submit"]:hover { background: rgba(134,93,255,0.35); }
+
+    .dropdown-style {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px; color: #e0d0ff; padding: 0.35rem 0.6rem; font-size: 0.83rem;
+    }
+  </style>
+</head>
 
 <body>
+<div class="page-container">
 
-  <!-- Sidebar -->
   <aside class="sidebar" id="sidebar"></aside>
 
-  
-
-  <!-- Contenu principal -->
   <main>
-      <!-- Bouton pour réafficher la sidebar quand elle est cachée -->
-     <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
+    <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
+
+    <div class="race-form-wrap">
+      <h2><i class="fa-solid fa-dna" style="color:#865dff"></i> Créer une Race Homebrew</h2>
+
 <form id="raceForm">
-  <div class="form-content">
-   <section class="form-section" style="color: #d5d1a9;">
-      <h1>Créer une nouvelle Race</h1>
+
+  <!-- ── INFOS DE BASE ── -->
+  <details class="form-section" open>
+    <summary><i class="fa-solid fa-circle-info"></i> Informations générales</summary>
+    <div style="margin-top:0.8rem">
         <div class="inline-field">
           <label for="version_fr">Version SRD :</label>
           <select id="version_fr" name="version_fr" style="width: auto;">
@@ -97,9 +181,14 @@
           <option value="M">Petite ou Moyenne (au choix du joueur)</option>
           </select>
         </div>
-          <textarea id="size_description_fr" name="size_description_fr" placeholder="Description sur la taille"></textarea><br />
+          <textarea id="size_description_fr" name="size_description_fr" placeholder="Description sur la taille"></textarea>
+    </div>
+  </details><!-- /infos de base -->
 
-        
+  <!-- ── TRAITS & CAPACITÉS ── -->
+  <details class="form-section">
+    <summary><i class="fa-solid fa-star" style="color:#865dff"></i> Traits &amp; Capacités</summary>
+    <div style="margin-top:0.8rem">
           <label>
             <input type="checkbox" class="trait-checkbox" id="darkvision_fr" /> 
               Vision dans le noir 
@@ -366,7 +455,14 @@
         </div>      
         <button type="button" id="add_damage_trait" style="margin-top: 0.5em;">+ Ajouter</button>
       </div>
-      <div id="damage_trait_list" class="weapon-list" ></div>
+      <div id="damage_trait_list" class="weapon-list"></div>
+    </div>
+  </details><!-- /traits & capacités -->
+
+  <!-- ── TRAITS RACIAUX PRÉDÉFINIS ── -->
+  <details class="form-section">
+    <summary><i class="fa-solid fa-wand-sparkles" style="color:#865dff"></i> Traits raciaux prédéfinis</summary>
+    <div style="margin-top:0.8rem">
       <label>
         <input type="checkbox" id="show_custom_traits_fr" class="trait-checkbox" />
         Traits raciaux personnalisés
@@ -593,53 +689,53 @@
         Provocation
         <span class="tooltip" title="En action bonus, vous pouvez provoquer une créature à 18 m. Elle doit réussir un jet de sauvegarde de Sagesse (DD = 8 + bonus de maîtrise + votre modificateur de INT/SAG/CHA), ou elle a désavantage pour attaquer toute cible autre que vous jusqu’à votre prochain tour. Utilisable un nombre de fois égal à votre bonus de maîtrise par repos long.">❔</span>
       </label>
-      </div>     
+      </div>
+    </div>
+  </details><!-- /traits prédéfinis -->
 
+  <!-- ── TRAITS RP ── -->
+  <details class="form-section">
+    <summary><i class="fa-solid fa-feather" style="color:#865dff"></i> Traits RP &amp; déplacement</summary>
+    <div style="margin-top:0.8rem">
       <label>
         <input type="checkbox" class="trait-checkbox" id="show_rp_traits_fr" />
-        Traits RP ou de déplacement
+        Ajouter des traits RP ou de déplacement
         <span class="tooltip" title="Ajouter des traits sans effet direct en jeu (ex : agilité halfeline, instincts, etc.)">❔</span>
       </label>
       <div id="rp_traits_section_fr" style="margin-left: 20px; display: none;">
-        <label for="rp_trait_name_fr">Nom du trait :</label>
-        <input type="text" id="rp_trait_name_fr" style="width: auto; min-width: 150px;" />
-
-        <label for="rp_trait_desc_fr">Description :</label>
+        <div class="inline-field" style="margin-top:0.5rem;">
+          <label for="rp_trait_name_fr" style="white-space:nowrap;">Nom :</label>
+          <input type="text" id="rp_trait_name_fr" style="width: auto; min-width: 150px;" />
+        </div>
+        <label for="rp_trait_desc_fr" class="block">Description :</label>
         <textarea id="rp_trait_desc_fr" rows="3" placeholder="Décrivez le trait..."></textarea>
-
-        <button type="button" id="add_rp_trait_fr">+ Ajouter le trait</button>
+        <button type="button" id="add_rp_trait_fr" style="margin-top:0.5rem;">+ Ajouter le trait</button>
         <div id="rp_traits_list_fr" class="weapon-list"></div>
       </div>
-</div>
+    </div>
+  </details><!-- /traits RP -->
 
-        <!-- Tu peux ajouter d'autres champs ici selon tes besoins -->
+  <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Créer la race</button>
 
-        <button type="submit">Créer la race</button>
-     
-    
-</form>  
+</form>
+    </div><!-- /.race-form-wrap -->
   </main>
 
-  <!-- Bouton de changement de thème (lanterne) -->
-  <div class="theme-toggle-container">
-    <button id="theme-toggle" class="lanterne-btn">
-      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
-    </button>
-  </div>
+</div><!-- /.page-container -->
 
-  <!-- Chargement des JS globaux -->
-  <script type="module" src="js/sidebar.js"></script>
-  <script src="js/theme.js"></script>
-  <script type="module" src="js/authGuard.js"></script> <!-- seulement si besoin de protéger la page -->
-  <script type="module" src="js/createrace.js"></script>
-  <!-- Fix pour rendre la fonction toggleSidebar disponible globalement -->
-  <script type="module">
-    import { toggleSidebar } from './js/sidebar.js';
-    window.toggleSidebar = toggleSidebar;
-  </script>
+<div class="theme-toggle-container">
+  <button id="theme-toggle" class="lanterne-btn">
+    <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
+  </button>
+</div>
 
-  <!-- Ton JS spécifique si besoin (ex: profil.js, etc) -->
-  <!--<script type="module" src="js/TONFICHIERSPECIFIQUE.js"></script>-->
+<script type="module">
+  import { toggleSidebar } from './js/sidebar.js';
+  window.toggleSidebar = toggleSidebar;
+</script>
+<script src="js/theme.js"></script>
+<script type="module" src="js/authGuard.js"></script>
+<script type="module" src="js/createrace.js"></script>
 <script src="js/notifications.js"></script>
 </body>
 </html>
