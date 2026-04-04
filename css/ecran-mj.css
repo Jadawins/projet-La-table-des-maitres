@@ -734,6 +734,48 @@ body {
   cursor: pointer;
 }
 
+/* ─── AVANTAGE TOGGLE ───────────────────────────────────────── */
+.btn-advantage-toggle {
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: #aaa;
+  transition: all 0.15s;
+}
+.btn-advantage-toggle[data-state="avantage"]   { background: rgba(74,222,128,0.18); border-color: #4ade80; color: #4ade80; }
+.btn-advantage-toggle[data-state="desavantage"]{ background: rgba(248,113,113,0.18); border-color: #f87171; color: #f87171; }
+
+/* ─── ATTAQUE PRÉDÉFINIE BADGE ──────────────────────────────── */
+.atk-preset-btn {
+  padding: 0.22rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.72rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  background: rgba(134,93,255,0.12);
+  border: 1px solid rgba(134,93,255,0.3);
+  color: #c4b5fd;
+  transition: background 0.12s;
+}
+.atk-preset-btn:hover { background: rgba(134,93,255,0.25); }
+.atk-preset-btn.selected { background: rgba(134,93,255,0.35); border-color: #865dff; }
+
+/* ─── ACTIONS MONSTRE SUR CARTE ─────────────────────────────── */
+.monstre-actions-zone { margin-top: 0.35rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.35rem; }
+.monstre-actions-row  { display: flex; flex-wrap: wrap; gap: 0.28rem; margin-bottom: 0.28rem; }
+.action-label { font-size: 0.62rem; color: #555; text-transform: uppercase; letter-spacing: 0.06em; width: 100%; margin-bottom: 0.15rem; }
+.btn-action-type { padding: 0.2rem 0.55rem; border-radius: 4px; font-size: 0.69rem; font-family: 'Georgia', serif; cursor: pointer; transition: all 0.12s; }
+.btn-action-type.texte    { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #888; }
+.btn-action-type.texte:hover { color: #ccc; background: rgba(255,255,255,0.1); }
+.btn-action-type.atk      { background: rgba(139,0,0,0.15); border: 1px solid rgba(200,50,50,0.35); color: #fca5a5; }
+.btn-action-type.atk:hover{ background: rgba(139,0,0,0.28); }
+.reaction-used { opacity: 0.35; text-decoration: line-through; }
+.leg-pool { font-size: 0.68rem; color: #c9a84c; margin-left: 0.25rem; }
+
 /* ─── SÉLECTEUR CONDITIONS ───────────────────────────────────── */
 .cond-picker {
   display: flex;

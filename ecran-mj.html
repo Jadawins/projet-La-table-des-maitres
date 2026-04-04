@@ -307,7 +307,7 @@
 
   <!-- MODAL : ATTAQUE MONSTRE → JOUEUR -->
   <div class="modal-overlay hidden" id="modal-attaque-mj">
-    <div class="modal-box">
+    <div class="modal-box" style="max-width:480px;">
       <button class="modal-close" onclick="document.getElementById('modal-attaque-mj').classList.add('hidden')">✕</button>
       <p class="modal-title">⚔️ Attaque monstre</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
@@ -320,12 +320,25 @@
           <div class="cibles-list" id="mj-atk-target-list"></div>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-top:0.6rem;">
-        <div class="form-group"><label>d20</label><input type="number" id="mj-atk-d20" min="1" max="20" value="10" /></div>
+      <!-- Attaques prédéfinies du monstre sélectionné -->
+      <div id="mj-atk-predefined" style="display:none;margin-top:0.6rem;">
+        <div style="font-size:0.72rem;color:#888;margin-bottom:0.28rem;">Attaques disponibles :</div>
+        <div id="mj-atk-predefined-list" style="display:flex;flex-wrap:wrap;gap:0.3rem;"></div>
+      </div>
+      <!-- Avantage / Désavantage -->
+      <div style="display:flex;gap:0.4rem;align-items:center;margin-top:0.65rem;">
+        <span style="font-size:0.72rem;color:#888;">d20 :</span>
+        <button id="mj-atk-avantage-btn" class="btn-advantage-toggle" data-state="normal" onclick="cycleAvantage()">Normal</button>
+        <div id="mj-atk-d20-result" style="font-size:0.72rem;color:#c9a84c;margin-left:auto;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-top:0.5rem;">
+        <div class="form-group"><label>Résultat d20</label><input type="number" id="mj-atk-d20" min="1" max="20" value="" placeholder="—" /></div>
         <div class="form-group"><label>Dégâts</label><input type="number" id="mj-atk-degats" min="0" value="0" /></div>
         <div class="form-group"><label>Type</label><input type="text" id="mj-atk-type" placeholder="perçants" /></div>
       </div>
+      <div id="mj-atk-formule-hint" style="font-size:0.68rem;color:#865dff;margin-top:0.1rem;"></div>
       <div class="modal-actions" style="margin-top:0.75rem;">
+        <button class="btn-sm-secondary" style="margin-right:auto;" onclick="lancerD20Avantage()">🎲 Lancer d20</button>
         <button class="btn-sm-secondary" onclick="document.getElementById('modal-attaque-mj').classList.add('hidden')">Annuler</button>
         <button class="btn-sm-primary" style="background:#6b0f0f;border-color:#991b1b;" onclick="confirmerAttaqueMJ()">Attaquer</button>
       </div>

@@ -168,6 +168,8 @@ function renderInitiativeList() {
           </div>
         </div>
 
+        ${p.type !== 'joueur' ? renderActionsZone(p) : ''}
+
         <textarea class="notes-input" rows="1" placeholder="Notes…"
           onchange="majNotes('${p.id}', this.value)">${p.notes || ''}</textarea>
       </div>`;
@@ -298,6 +300,10 @@ async function tourSuivant() {
     const data = await res.json();
     combatData.round = data.round;
     combatData.tour_actuel = data.tour_actuel;
+    // Reset réaction du participant qui vient de commencer son tour
+    const sorted = [...combatData.participants].sort((a, b) => b.initiative - a.initiative);
+    const actifNow = sorted[data.tour_actuel];
+    if (actifNow) resetReactionsTour(actifNow.id);
     renderInitiativeList();
     await chargerMessages();
 
@@ -382,9 +388,14 @@ function selectionnerMonstre(m) {
   document.getElementById('p-xp').value   = m.xp  || 0;
   document.getElementById('monstre-search').value = '';
   document.getElementById('monstre-results').style.display = 'none';
-  // Stocker les attaques du monstre pour usage éventuel
-  document.getElementById('p-nom')._attaques   = m.attaques || [];
-  document.getElementById('p-nom')._monstreId  = m._id;
+  const nomEl = document.getElementById('p-nom');
+  nomEl._attaques            = m.attaques            || [];
+  nomEl._monstreId           = m._id;
+  nomEl._actions_bonus       = m.actions_bonus        || [];
+  nomEl._reactions           = m.reactions            || [];
+  nomEl._actions_legendaires = m.actions_legendaires  || [];
+  nomEl._actions_leg_nb      = m.actions_leg_nb       || 0;
+  nomEl._resistances_leg_nb  = m.resistances_leg_nb   || 0;
 }
 window.selectionnerMonstre = selectionnerMonstre;
 
@@ -398,13 +409,23 @@ async function ajouterParticipant() {
     pv_max:          parseInt(document.getElementById('p-pv').value)    || 10,
     ca:              parseInt(document.getElementById('p-ca').value)    || 10,
     xp:              parseInt(document.getElementById('p-xp').value)    || 0,
-    attaques:        nomEl._attaques  || [],
-    monstre_id:      nomEl._monstreId || null,
+    attaques:            nomEl._attaques            || [],
+    actions_bonus:       nomEl._actions_bonus       || [],
+    reactions:           nomEl._reactions           || [],
+    actions_legendaires: nomEl._actions_legendaires || [],
+    actions_leg_nb:      nomEl._actions_leg_nb      || 0,
+    resistances_leg_nb:  nomEl._resistances_leg_nb  || 0,
+    monstre_id:          nomEl._monstreId           || null,
     visible_joueurs: document.getElementById('p-visible').value !== 'false'
   };
   // Réinitialiser les données cachées
-  nomEl._attaques  = [];
-  nomEl._monstreId = null;
+  nomEl._attaques            = [];
+  nomEl._monstreId           = null;
+  nomEl._actions_bonus       = [];
+  nomEl._reactions           = [];
+  nomEl._actions_legendaires = [];
+  nomEl._actions_leg_nb      = 0;
+  nomEl._resistances_leg_nb  = 0;
   try {
     const res = await fetch(`${API}/Combats/${combatId}/participant`, {
       method: 'POST',
@@ -1119,20 +1140,200 @@ async function confirmerSoin() {
 }
 window.confirmerSoin = confirmerSoin;
 
+// ─── ZONE ACTIONS MONSTRE (carte initiative) ──────────────────
+
+function renderActionsZone(p) {
+  const ab  = p.actions_bonus || [];
+  const rct = p.reactions      || [];
+  const leg = p.actions_legendaires || [];
+  const legNb = p.actions_leg_nb || 0;
+  const resLeg = p.resistances_leg_nb || 0;
+
+  if (!ab.length && !rct.length && !leg.length && !resLeg) return '';
+
+  const usedRct = p._react_used || false;
+  const legPool = p._leg_pool != null ? p._leg_pool : legNb;
+  const resPool = p._res_pool != null ? p._res_pool : resLeg;
+
+  let html = '<div class="monstre-actions-zone">';
+
+  // Actions bonus
+  if (ab.length) {
+    html += '<div class="monstre-actions-row"><span class="action-label">🌟 Actions bonus</span>';
+    ab.forEach((a, i) => {
+      const isAtk = a.type_action === 'attaque';
+      html += `<button class="btn-action-type ${isAtk ? 'atk' : 'texte'}"
+        onclick="afficherActionInfo('${p.id}','ab',${i})"
+        title="${isAtk ? `+${a.bonus_atk||0} · ${escapeHtml(a.degats||'')} ${escapeHtml(a.type_degats||'')}` : escapeHtml(a.desc||'')}"
+      >${escapeHtml(a.nom)}</button>`;
+    });
+    html += '</div>';
+  }
+
+  // Réactions
+  if (rct.length) {
+    html += '<div class="monstre-actions-row"><span class="action-label">⚡ Réactions</span>';
+    rct.forEach((a, i) => {
+      const isAtk = a.type_action === 'attaque';
+      html += `<button class="btn-action-type ${isAtk ? 'atk' : 'texte'} ${usedRct ? 'reaction-used' : ''}"
+        onclick="utiliserReaction('${p.id}',${i})"
+        title="${escapeHtml(a.desc||'')}"
+      >${escapeHtml(a.nom)}</button>`;
+    });
+    html += '</div>';
+  }
+
+  // Légendaires
+  if (leg.length || legNb) {
+    html += `<div class="monstre-actions-row"><span class="action-label">👑 Légendaires <span class="leg-pool" id="leg-pool-${p.id}">${legPool}/${legNb}</span></span>`;
+    leg.forEach((a, i) => {
+      const cout = a.cout || 1;
+      const disabled = legPool < cout;
+      const isAtk = a.type_action === 'attaque';
+      html += `<button class="btn-action-type ${isAtk ? 'atk' : 'texte'}" ${disabled ? 'disabled style="opacity:0.3;"' : ''}
+        onclick="utiliserLegendaire('${p.id}',${i},${cout})"
+        title="${cout > 1 ? `Coût : ${cout} actions. ` : ''}${escapeHtml(a.desc||'')}"
+      >${escapeHtml(a.nom)} ${cout > 1 ? `<small>(×${cout})</small>` : ''}</button>`;
+    });
+    html += `<button class="btn-action-type texte" style="margin-left:auto;" onclick="resetLegendaires('${p.id}')">↺</button>`;
+    html += '</div>';
+  }
+
+  // Résistances légendaires
+  if (resLeg) {
+    html += `<div class="monstre-actions-row"><span class="action-label">🛡️ Rés. légendaires <span class="leg-pool" id="res-pool-${p.id}">${resPool}/${resLeg}</span></span>
+      <button class="btn-action-type texte" ${resPool <= 0 ? 'disabled style="opacity:0.3;"' : ''} onclick="utiliserResLeg('${p.id}')">Utiliser</button>
+      <button class="btn-action-type texte" style="margin-left:auto;" onclick="resetResLeg('${p.id}')">↺</button>
+    </div>`;
+  }
+
+  html += '</div>';
+  return html;
+}
+
+function afficherActionInfo(pid, type, idx) {
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  const arr = type === 'ab' ? (p.actions_bonus||[]) : [];
+  const a = arr[idx];
+  if (!a) return;
+  const msg = a.type_action === 'attaque'
+    ? `${a.nom} : +${a.bonus_atk||0} · ${a.degats||'—'} ${a.type_degats||''} · ${a.portee||''}\n${a.desc||''}`
+    : `${a.nom}\n${a.desc||''}`;
+  envoyerMsgSysteme(`📣 ${escapeHtml(p.nom)} — ${msg}`);
+}
+window.afficherActionInfo = afficherActionInfo;
+
+function utiliserReaction(pid, idx) {
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  const a = (p.reactions||[])[idx];
+  if (!a) return;
+  p._react_used = true;
+  const msg = a.type_action === 'attaque'
+    ? `⚡ ${p.nom} utilise sa réaction : ${a.nom} (+${a.bonus_atk||0} · ${a.degats||'—'} ${a.type_degats||''})`
+    : `⚡ ${p.nom} utilise sa réaction : ${a.nom}`;
+  envoyerMsgSysteme(msg);
+  renderInitiativeList();
+}
+window.utiliserReaction = utiliserReaction;
+
+function utiliserLegendaire(pid, idx, cout) {
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  const legNb = p.actions_leg_nb || 0;
+  if (p._leg_pool == null) p._leg_pool = legNb;
+  if (p._leg_pool < cout) return;
+  p._leg_pool -= cout;
+  const a = (p.actions_legendaires||[])[idx];
+  const msg = a.type_action === 'attaque'
+    ? `👑 ${p.nom} — ${a.nom} (+${a.bonus_atk||0} · ${a.degats||'—'} ${a.type_degats||''})`
+    : `👑 ${p.nom} — ${a.nom}`;
+  envoyerMsgSysteme(msg);
+  renderInitiativeList();
+}
+window.utiliserLegendaire = utiliserLegendaire;
+
+function resetLegendaires(pid) {
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  p._leg_pool = p.actions_leg_nb || 0;
+  renderInitiativeList();
+}
+window.resetLegendaires = resetLegendaires;
+
+function utiliserResLeg(pid) {
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  if (p._res_pool == null) p._res_pool = p.resistances_leg_nb || 0;
+  if (p._res_pool <= 0) return;
+  p._res_pool--;
+  envoyerMsgSysteme(`🛡️ ${p.nom} utilise une résistance légendaire (${p._res_pool}/${p.resistances_leg_nb} restantes)`);
+  renderInitiativeList();
+}
+window.utiliserResLeg = utiliserResLeg;
+
+function resetResLeg(pid) {
+  const p = trouverParticipant(pid);
+  if (!p) return;
+  p._res_pool = p.resistances_leg_nb || 0;
+  renderInitiativeList();
+}
+window.resetResLeg = resetResLeg;
+
+// Reset réaction au changement de tour (appelé dans tourSuivant)
+function resetReactionsTour(pid) {
+  const p = trouverParticipant(pid);
+  if (p) p._react_used = false;
+}
+
 // ─── ATTAQUE MONSTRE → JOUEUR (depuis MJ) ─────────────────────
 
 let _mjAtkSource = null;
 let _mjAtkTarget = null;
+let _mjAtkAvantage = 'normal'; // 'normal' | 'avantage' | 'desavantage'
 
-function ouvrirModalAttaqueMJ() {
+function cycleAvantage() {
+  const states = ['normal', 'avantage', 'desavantage'];
+  const labels = { normal: 'Normal', avantage: '✅ Avantage', desavantage: '❌ Désavantage' };
+  const idx = states.indexOf(_mjAtkAvantage);
+  _mjAtkAvantage = states[(idx + 1) % 3];
+  const btn = document.getElementById('mj-atk-avantage-btn');
+  if (btn) { btn.textContent = labels[_mjAtkAvantage]; btn.dataset.state = _mjAtkAvantage; }
+}
+window.cycleAvantage = cycleAvantage;
+
+function lancerD20Avantage() {
+  const r1 = Math.ceil(Math.random() * 20);
+  const r2 = Math.ceil(Math.random() * 20);
+  let result, detail;
+  if (_mjAtkAvantage === 'avantage') {
+    result = Math.max(r1, r2);
+    detail = `[${r1}, ${r2}] → ${result}`;
+  } else if (_mjAtkAvantage === 'desavantage') {
+    result = Math.min(r1, r2);
+    detail = `[${r1}, ${r2}] → ${result}`;
+  } else {
+    result = r1;
+    detail = `[${r1}]`;
+  }
+  document.getElementById('mj-atk-d20').value = result;
+  const hint = document.getElementById('mj-atk-d20-result');
+  if (hint) hint.textContent = detail;
+}
+window.lancerD20Avantage = lancerD20Avantage;
+
+function ouvrirModalAttaqueMJ(sourcePid) {
   if (!combatData) return;
-  _mjAtkSource = null; _mjAtkTarget = null;
+  _mjAtkSource = sourcePid || null;
+  _mjAtkTarget = null;
+  _mjAtkAvantage = 'normal';
 
   const monstres = combatData.participants.filter(p => p.type !== 'joueur');
   const joueurs  = combatData.participants.filter(p => p.type === 'joueur');
 
   document.getElementById('mj-atk-source-list').innerHTML = monstres.length
-    ? monstres.map(p => `<div class="cible-item" data-pid="${p.id}" onclick="selMJAtkSource('${p.id}')">${escapeHtml(p.nom)}</div>`).join('')
+    ? monstres.map(p => `<div class="cible-item ${p.id === _mjAtkSource ? 'selected' : ''}" data-pid="${p.id}" onclick="selMJAtkSource('${p.id}')">${escapeHtml(p.nom)}</div>`).join('')
     : '<div style="color:#555;font-size:0.78rem;">Aucun monstre</div>';
 
   document.getElementById('mj-atk-target-list').innerHTML = joueurs.length
@@ -1142,6 +1343,17 @@ function ouvrirModalAttaqueMJ() {
   document.getElementById('mj-atk-d20').value = '';
   document.getElementById('mj-atk-degats').value = '';
   document.getElementById('mj-atk-type').value = '';
+  const hint = document.getElementById('mj-atk-d20-result');
+  if (hint) hint.textContent = '';
+  const formHint = document.getElementById('mj-atk-formule-hint');
+  if (formHint) formHint.textContent = '';
+  const btn = document.getElementById('mj-atk-avantage-btn');
+  if (btn) { btn.textContent = 'Normal'; btn.dataset.state = 'normal'; }
+
+  // Pré-afficher les attaques si source déjà connue
+  if (_mjAtkSource) renderAtkPredefined(_mjAtkSource);
+  else { const z = document.getElementById('mj-atk-predefined'); if (z) z.style.display = 'none'; }
+
   document.getElementById('modal-attaque-mj').classList.remove('hidden');
 }
 window.ouvrirModalAttaqueMJ = ouvrirModalAttaqueMJ;
@@ -1149,6 +1361,7 @@ window.ouvrirModalAttaqueMJ = ouvrirModalAttaqueMJ;
 function selMJAtkSource(pid) {
   _mjAtkSource = pid;
   document.querySelectorAll('#mj-atk-source-list .cible-item').forEach(el => el.classList.toggle('selected', el.dataset.pid === pid));
+  renderAtkPredefined(pid);
 }
 window.selMJAtkSource = selMJAtkSource;
 
@@ -1157,6 +1370,46 @@ function selMJAtkTarget(pid) {
   document.querySelectorAll('#mj-atk-target-list .cible-item').forEach(el => el.classList.toggle('selected', el.dataset.pid === pid));
 }
 window.selMJAtkTarget = selMJAtkTarget;
+
+function renderAtkPredefined(pid) {
+  const p = trouverParticipant(pid);
+  const zone = document.getElementById('mj-atk-predefined');
+  const list = document.getElementById('mj-atk-predefined-list');
+  if (!zone || !list) return;
+  const atks = p?.attaques || [];
+  if (!atks.length) { zone.style.display = 'none'; return; }
+  zone.style.display = '';
+  list.innerHTML = atks.map((a, i) =>
+    `<button class="atk-preset-btn" data-i="${i}"
+      title="+${a.bonus||0} · ${escapeHtml(a.degats||'')} ${escapeHtml(a.type||'')}"
+      onclick="selAtkPreset(${i})"
+    >${escapeHtml(a.nom)}</button>`
+  ).join('');
+}
+
+function selAtkPreset(idx) {
+  const p = trouverParticipant(_mjAtkSource);
+  if (!p) return;
+  const a = (p.attaques||[])[idx];
+  if (!a) return;
+  document.querySelectorAll('#mj-atk-predefined-list .atk-preset-btn').forEach((b, i) => b.classList.toggle('selected', i === idx));
+  // Ne pas pré-remplir le d20 — le MJ le lance lui-même ou clique 🎲
+  document.getElementById('mj-atk-type').value = a.type || '';
+  const formHint = document.getElementById('mj-atk-formule-hint');
+  if (formHint) formHint.textContent = `Formule dégâts : ${a.degats||'—'} · Bonus atk : +${a.bonus||0}`;
+  // Pré-remplir dégâts avec la valeur moyenne arrondie de la formule
+  const avg = evalDiceAvg(a.degats||'0');
+  document.getElementById('mj-atk-degats').value = avg;
+}
+window.selAtkPreset = selAtkPreset;
+
+function evalDiceAvg(formula) {
+  // Ex: "2d6+3" → avg = 2*3.5 + 3 = 10
+  const m = String(formula).match(/^(\d+)d(\d+)(?:([+-])(\d+))?/i);
+  if (!m) return parseInt(formula)||0;
+  const avg = parseInt(m[1]) * (parseInt(m[2]) + 1) / 2 + (m[3] === '+' ? parseInt(m[4]||0) : -(parseInt(m[4]||0)));
+  return Math.round(avg);
+}
 
 async function confirmerAttaqueMJ() {
   if (!combatId) return;
@@ -1172,7 +1425,8 @@ async function confirmerAttaqueMJ() {
         attaquant_id: _mjAtkSource || 'mj',
         cible_id: _mjAtkTarget,
         d20, degats,
-        type_degats: type
+        type_degats: type,
+        avantage: _mjAtkAvantage !== 'normal' ? _mjAtkAvantage : undefined
       })
     });
     const data = await r.json();

@@ -153,6 +153,12 @@
     .btn-del-monstre  { background: rgba(139,0,0,0.11); border: 1px solid rgba(139,0,0,0.23); color: #f08080; border-radius: 5px; padding: 0.25rem 0.6rem; font-size: 0.73rem; cursor: pointer; font-family: inherit; }
     .btn-del-monstre:hover { background: rgba(139,0,0,0.28); }
 
+    /* Action type selector */
+    .action-type-sel { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 5px; padding: 0.3rem 0.48rem; color: #f0f0f0; font-size: 0.77rem; font-family: inherit; max-width: 130px; flex-shrink: 0; }
+    .action-type-sel option { background: #1a1a2e; }
+    .action-atk-fields { margin-top: 0.4rem; padding: 0.55rem 0.65rem; background: rgba(134,93,255,0.05); border: 1px dashed rgba(134,93,255,0.2); border-radius: 6px; }
+    .action-atk-badge { font-size: 0.65rem; background: rgba(134,93,255,0.18); border: 1px solid rgba(134,93,255,0.35); border-radius: 3px; padding: 1px 6px; color: #c4b5fd; flex-shrink: 0; }
+
     @media (max-width: 600px) {
       .g6, .saves-grid { grid-template-columns: repeat(3,1fr); }
       .g5 { grid-template-columns: repeat(2,1fr); }
@@ -432,9 +438,19 @@
         <div class="dyn-add-form">
           <div class="dyn-add-row">
             <input type="text" id="ab-nom" placeholder="Nom de l'action bonus" style="flex:1" />
+            <select id="ab-type-action" class="action-type-sel">
+              <option value="texte">📝 Texte</option>
+              <option value="attaque">⚔️ Attaque</option>
+            </select>
             <button class="btn-add-dyn" id="btn-add-ab">+ Ajouter</button>
           </div>
           <textarea id="ab-desc" placeholder="Description…"></textarea>
+          <div id="ab-atk-fields" class="action-atk-fields g4" style="display:none;">
+            <div class="form-group"><label>Dégâts</label><input type="text" id="ab-degats" placeholder="1d6+2" /></div>
+            <div class="form-group"><label>Bonus atk</label><input type="number" id="ab-bonus-atk" value="3" /></div>
+            <div class="form-group"><label>Type dégâts</label><input type="text" id="ab-type-degats" placeholder="perçants" /></div>
+            <div class="form-group"><label>Portée</label><input type="text" id="ab-portee" placeholder="1,5 m" /></div>
+          </div>
         </div>
       </details>
 
@@ -445,9 +461,19 @@
         <div class="dyn-add-form">
           <div class="dyn-add-row">
             <input type="text" id="react-nom" placeholder="Nom de la réaction" style="flex:1" />
+            <select id="react-type-action" class="action-type-sel">
+              <option value="texte">📝 Texte</option>
+              <option value="attaque">⚔️ Attaque</option>
+            </select>
             <button class="btn-add-dyn" id="btn-add-react">+ Ajouter</button>
           </div>
           <textarea id="react-desc" placeholder="Description…"></textarea>
+          <div id="react-atk-fields" class="action-atk-fields g4" style="display:none;">
+            <div class="form-group"><label>Dégâts</label><input type="text" id="react-degats" placeholder="1d6+2" /></div>
+            <div class="form-group"><label>Bonus atk</label><input type="number" id="react-bonus-atk" value="3" /></div>
+            <div class="form-group"><label>Type dégâts</label><input type="text" id="react-type-degats" placeholder="perçants" /></div>
+            <div class="form-group"><label>Portée</label><input type="text" id="react-portee" placeholder="1,5 m" /></div>
+          </div>
         </div>
       </details>
 
@@ -468,9 +494,20 @@
         <div class="dyn-add-form">
           <div class="dyn-add-row">
             <input type="text" id="leg-nom" placeholder="Nom de l'action légendaire" style="flex:1" />
+            <input type="number" id="leg-cout" placeholder="Coût" value="1" min="1" max="3" style="max-width:56px;" title="Coût en actions légendaires" />
+            <select id="leg-type-action" class="action-type-sel">
+              <option value="texte">📝 Texte</option>
+              <option value="attaque">⚔️ Attaque</option>
+            </select>
             <button class="btn-add-dyn" id="btn-add-leg">+ Ajouter</button>
           </div>
-          <textarea id="leg-desc" placeholder="Description (coût en actions, effets…)"></textarea>
+          <textarea id="leg-desc" placeholder="Description (effets, conditions…)"></textarea>
+          <div id="leg-atk-fields" class="action-atk-fields g4" style="display:none;">
+            <div class="form-group"><label>Dégâts</label><input type="text" id="leg-degats" placeholder="1d6+2" /></div>
+            <div class="form-group"><label>Bonus atk</label><input type="number" id="leg-bonus-atk" value="3" /></div>
+            <div class="form-group"><label>Type dégâts</label><input type="text" id="leg-type-degats" placeholder="perçants" /></div>
+            <div class="form-group"><label>Portée</label><input type="text" id="leg-portee" placeholder="1,5 m" /></div>
+          </div>
         </div>
       </details>
 
@@ -680,11 +717,24 @@ const PROF_PAR_FP = {
 
 const DYN_CONFIGS = [
   {listId:'traits-list',   nomId:'trait-nom',    descId:'trait-desc',    btnId:'btn-add-trait',    emptyId:'traits-empty',  arr:traits},
-  {listId:'ab-list',       nomId:'ab-nom',        descId:'ab-desc',       btnId:'btn-add-ab',       emptyId:'ab-empty',      arr:actionsBonus},
-  {listId:'react-list',    nomId:'react-nom',     descId:'react-desc',    btnId:'btn-add-react',    emptyId:'react-empty',   arr:reactions},
-  {listId:'leg-list',      nomId:'leg-nom',       descId:'leg-desc',      btnId:'btn-add-leg',      emptyId:'leg-empty',     arr:actionsLeg},
   {listId:'repaire-list',  nomId:'repaire-nom',   descId:'repaire-desc',  btnId:'btn-add-repaire',  emptyId:'repaire-empty', arr:actionsRepaire},
   {listId:'myth-list',     nomId:'myth-nom',      descId:'myth-desc',     btnId:'btn-add-myth',     emptyId:'myth-empty',    arr:actionsMythiques},
+];
+
+// Actions bonus / réactions / légendaires — supportent type texte | attaque
+const ACTION_CONFIGS = [
+  { listId:'ab-list',    nomId:'ab-nom',    descId:'ab-desc',    btnId:'btn-add-ab',    emptyId:'ab-empty',
+    typeId:'ab-type-action', atkFieldsId:'ab-atk-fields',
+    degatsId:'ab-degats', bonusId:'ab-bonus-atk', typeDegId:'ab-type-degats', porteeId:'ab-portee',
+    arr: actionsBonus },
+  { listId:'react-list', nomId:'react-nom', descId:'react-desc', btnId:'btn-add-react', emptyId:'react-empty',
+    typeId:'react-type-action', atkFieldsId:'react-atk-fields',
+    degatsId:'react-degats', bonusId:'react-bonus-atk', typeDegId:'react-type-degats', porteeId:'react-portee',
+    arr: reactions },
+  { listId:'leg-list',   nomId:'leg-nom',   descId:'leg-desc',   btnId:'btn-add-leg',   emptyId:'leg-empty',
+    typeId:'leg-type-action', atkFieldsId:'leg-atk-fields', coutId:'leg-cout',
+    degatsId:'leg-degats', bonusId:'leg-bonus-atk', typeDegId:'leg-type-degats', porteeId:'leg-portee',
+    arr: actionsLeg },
 ];
 
 // ═══════════════════════════════════════════════════════════════════
@@ -927,6 +977,78 @@ function initDynList(cfg) {
 }
 
 // ═══════════════════════════════════════════════════════════════════
+//  LISTES ACTIONS (bonus / réactions / légendaires) — type texte|attaque
+// ═══════════════════════════════════════════════════════════════════
+function renderActionList(cfg) {
+  const list  = document.getElementById(cfg.listId);
+  const empty = document.getElementById(cfg.emptyId);
+  list.querySelectorAll('.dyn-item').forEach(el => el.remove());
+  empty.style.display = cfg.arr.length ? 'none' : '';
+  cfg.arr.forEach((item, i) => {
+    const isAtk = item.type_action === 'attaque';
+    const div = document.createElement('div');
+    div.className = 'dyn-item';
+    div.innerHTML = `
+      <div class="dyn-body">
+        <div class="dyn-nom" style="display:flex;align-items:center;gap:0.4rem;">
+          ${isAtk ? '<span class="action-atk-badge">⚔️ attaque</span>' : ''}
+          ${item.cout ? `<span class="action-atk-badge" style="background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.3);color:#c9a84c;">${item.cout} action${item.cout>1?'s':''}</span>` : ''}
+          ${escHtml(item.nom)}
+        </div>
+        ${item.desc ? `<div class="dyn-desc">${escHtml(item.desc)}</div>` : ''}
+        ${isAtk ? `<div class="dyn-desc" style="color:#c4b5fd;">+${item.bonus_atk||0} · ${escHtml(item.degats||'—')} ${escHtml(item.type_degats||'')}${item.portee ? ' · '+escHtml(item.portee) : ''}</div>` : ''}
+      </div>
+      <button class="dyn-remove" data-i="${i}">✕</button>`;
+    list.insertBefore(div, empty);
+  });
+  list.querySelectorAll('.dyn-remove').forEach(btn => {
+    btn.addEventListener('click', () => { cfg.arr.splice(parseInt(btn.dataset.i),1); renderActionList(cfg); });
+  });
+}
+
+function initActionList(cfg) {
+  const btn     = document.getElementById(cfg.btnId);
+  const typeEl  = document.getElementById(cfg.typeId);
+  const atkEl   = document.getElementById(cfg.atkFieldsId);
+  if (!btn) return;
+
+  // Afficher/masquer les champs attaque selon le type sélectionné
+  typeEl?.addEventListener('change', () => {
+    if (atkEl) atkEl.style.display = typeEl.value === 'attaque' ? '' : 'none';
+  });
+
+  btn.addEventListener('click', () => {
+    const nom  = document.getElementById(cfg.nomId)?.value.trim();
+    const desc = document.getElementById(cfg.descId)?.value.trim();
+    const type = typeEl?.value || 'texte';
+    if (!nom) return;
+
+    const item = { nom, desc, type_action: type };
+    if (cfg.coutId) item.cout = parseInt(document.getElementById(cfg.coutId)?.value)||1;
+    if (type === 'attaque') {
+      item.degats     = document.getElementById(cfg.degatsId)?.value.trim()||'';
+      item.bonus_atk  = parseInt(document.getElementById(cfg.bonusId)?.value)||0;
+      item.type_degats= document.getElementById(cfg.typeDegId)?.value.trim()||'';
+      item.portee     = document.getElementById(cfg.porteeId)?.value.trim()||'';
+    }
+    cfg.arr.push(item);
+
+    // Reset
+    document.getElementById(cfg.nomId).value  = '';
+    document.getElementById(cfg.descId).value = '';
+    if (typeEl) typeEl.value = 'texte';
+    if (atkEl)  atkEl.style.display = 'none';
+    if (cfg.coutId) document.getElementById(cfg.coutId).value = 1;
+    if (cfg.degatsId)  document.getElementById(cfg.degatsId).value  = '';
+    if (cfg.bonusId)   document.getElementById(cfg.bonusId).value   = 3;
+    if (cfg.typeDegId) document.getElementById(cfg.typeDegId).value = '';
+    if (cfg.porteeId)  document.getElementById(cfg.porteeId).value  = '';
+    renderActionList(cfg);
+  });
+  document.getElementById(cfg.nomId)?.addEventListener('keydown', e => { if(e.key==='Enter'){e.preventDefault();btn.click();} });
+}
+
+// ═══════════════════════════════════════════════════════════════════
 //  SORTS
 // ═══════════════════════════════════════════════════════════════════
 function renderSorts() {
@@ -1139,6 +1261,7 @@ function resetForm() {
 
   refreshAllStats(); updateFpDependents(); initChips();
   DYN_CONFIGS.forEach(cfg => renderDynList(cfg));
+  ACTION_CONFIGS.forEach(cfg => renderActionList(cfg));
   renderAttaques(); renderSorts();
 }
 
@@ -1189,6 +1312,7 @@ function chargerEdition(m) {
 
   initChips(); refreshAllStats(); updateFpDependents();
   DYN_CONFIGS.forEach(cfg => renderDynList(cfg));
+  ACTION_CONFIGS.forEach(cfg => renderActionList(cfg));
   renderAttaques(); renderSorts();
 
   document.getElementById('form-error').style.display = 'none';
@@ -1261,6 +1385,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSkillsGrid();
   initChips();
   DYN_CONFIGS.forEach(cfg => { initDynList(cfg); renderDynList(cfg); });
+  ACTION_CONFIGS.forEach(cfg => { initActionList(cfg); renderActionList(cfg); });
 
   document.getElementById('fp').addEventListener('change', updateFpDependents);
   document.getElementById('pv').addEventListener('input', updateIdEstime);
