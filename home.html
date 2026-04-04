@@ -89,9 +89,41 @@
       <p>Le site est en construction... 🚰</p>
       <section class="project-edito">
   <h2>📖 Édito du Maître</h2>
+
+  <div style="background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.2rem;">
+    <p style="color:#c9a84c;font-weight:bold;font-size:0.9rem;margin:0 0 0.5rem;">🧪 Appel aux aventuriers — Phase de test !</p>
+    <p style="font-size:0.82rem;color:#ccc;margin:0 0 0.75rem;">La Table du Maître grandit vite, et avant d'aller plus loin, on a besoin de vous ! Si vous avez quelques minutes, voici les points prioritaires à tester :</p>
+    <ul style="font-size:0.8rem;color:#bbb;margin:0 0 0.75rem;line-height:1.7;">
+      <li>⚔️ <strong>Écran MJ — Combat</strong> : ajout d'un monstre custom, actions bonus / réactions / légendaires sur sa carte, avantage/désavantage sur le d20, attaques prédéfinies dans la modal</li>
+      <li>👹 <strong>Création de monstre</strong> : remplir une fiche complète (stats, actions de type attaque, sorts, traits), prévisualiser le bloc de stats, sauvegarder et retrouver le monstre dans la liste</li>
+      <li>📖 <strong>Éditeur de campagne</strong> : recherche de monstre dans la modal Rencontre, recherche d'objet magique dans la modal Loot, sauvegarde des chapitres</li>
+      <li>🎲 <strong>Fiche personnage</strong> : dés de vie, repos, combat en temps réel depuis la session</li>
+      <li>🧙 <strong>Création de personnage</strong> : wizard complet (espèce → équipement → résumé), vérifier que tout se retrouve bien sur la fiche</li>
+    </ul>
+    <p style="font-size:0.8rem;color:#ccc;margin:0 0 0.5rem;">Un grand merci à <strong style="color:#c9a84c;">Stéphane</strong> et <strong style="color:#c9a84c;">Gautier</strong>, nos deux premiers béta-testeurs, qui ont déjà bien bossé pour dénicher les premiers bugs — vous êtes dans les légendes de la campagne. 🏆</p>
+    <p style="font-size:0.8rem;color:#ccc;margin:0 0 0.6rem;">Vous avez un retour, un bug, une idée ? Envoyez-moi ça à <a href="mailto:S0wh4@hotmail.fr" style="color:#c9a84c;text-decoration:none;">S0wh4@hotmail.fr</a> — chaque retour compte vraiment.</p>
+    <p style="font-size:0.78rem;color:#865dff;font-style:italic;margin:0;">✨ <em>La prochaine session commence quand vous êtes prêts — et le MJ l'est toujours.</em></p>
+  </div>
+
   <p><strong>✅ Fait récemment :</strong></p>
   <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 02/04/2026</summary>
+    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 04/04/2026</summary>
+    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
+    <ul style="margin-top:0;">
+      <li>👹 <strong>Refonte complète de la création de monstre</strong> — formulaire en 16 sections (identité, stats avec modificateurs auto, 5 vitesses, sauvegardes, compétences, immunités/résistances/vulnérabilités en chips cliquables, 5 types de vision, traits, actions bonus/réactions/légendaires/repaire/mythiques supportant le mode texte <em>ou</em> attaque avec dégâts/bonus/portée, sorts avec DD auto, lore complet, méta avec FP estimé automatique)</li>
+      <li>👁️ <strong>Prévisualisation bloc de stats</strong> — bouton "Prévisualiser" génère un bloc de stats style D&D directement dans la page</li>
+      <li>⚔️ <strong>Écran MJ — actions des monstres sur les cartes</strong> — actions bonus (clic → journal), réactions (indicateur utilisé/disponible, reset au prochain tour), légendaires (compteur ⭐ N/N avec coût par action, reset manuel), résistances légendaires (pool journalier)</li>
+      <li>🎲 <strong>Modal attaque MJ améliorée</strong> — bouton avantage/désavantage cyclique, bouton 🎲 Lancer d20 (tire 2 dés si avantage/désavantage), attaques prédéfinies du monstre cliquables (pré-remplit dégâts moyens + type)</li>
+    </ul>
+    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
+    <ul style="margin-top:0;">
+      <li>✅ <strong>Sidebar creer-objet-magique.html</strong> — lien "Mes Monstres" manquant ajouté</li>
+      <li>✅ <strong>Sidebar createrace.html</strong> — structure HTML corrigée (sidebar-nav-area + sidebar-footer manquants), lien createrace retiré du menu</li>
+      <li>✅ <strong>API MonstresCustom</strong> — route créée côté serveur (GET/POST/PUT/DELETE) avec recherche par nom, type, taille et plage de FP</li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;" id="entry-02042026">
+    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 02/04/2026 ▶</summary>
     <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
     <ul style="margin-top:0;">
       <li>⚔️ <strong>Recherche monstres DB dans la modal Rencontre</strong> — champ de recherche avec filtres (type, taille, plage de FP), résultats live depuis la base de données, clic → auto-remplit PV/CA, FP affiché dans la liste</li>
