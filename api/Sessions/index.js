@@ -4,17 +4,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 const crypto = require('crypto');
 
 // ─── UTILITAIRES ──────────────────────────────────────────────
-
-function getUserId(req) {
-  const auth = req.headers.authorization || '';
-  if (!auth.startsWith('Bearer ')) return null;
-  try {
-    const payload = JSON.parse(Buffer.from(auth.slice(7).split('.')[1], 'base64url').toString());
-    return payload.sub || null;
-  } catch {
-    return null;
-  }
-}
+const { getUserId } = require('../auth');
 
 function hashPassword(password) {
   const salt = crypto.randomBytes(16).toString('hex');

@@ -6,15 +6,7 @@ const router  = express.Router();
 const { MongoClient } = require('mongodb');
 
 const ADMIN_ID = process.env.ADMIN_USER_ID; // UUID Supabase de l'admin
-
-function getUserId(req) {
-  const auth = req.headers.authorization || '';
-  if (!auth.startsWith('Bearer ')) return null;
-  try {
-    const payload = JSON.parse(Buffer.from(auth.slice(7).split('.')[1], 'base64url').toString());
-    return payload.sub || null;
-  } catch { return null; }
-}
+const { getUserId } = require('../auth');
 
 async function withDb(fn) {
   const client = new MongoClient(process.env.MONGO_URI);

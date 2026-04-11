@@ -3,15 +3,7 @@ const router = express.Router();
 const { MongoClient, ObjectId } = require('mongodb');
 
 const MONGO_URI = process.env.MONGO_URI;
-
-function getUserId(req) {
-  const auth = req.headers.authorization || '';
-  if (!auth.startsWith('Bearer ')) return null;
-  try {
-    const payload = JSON.parse(Buffer.from(auth.slice(7).split('.')[1], 'base64url').toString());
-    return payload.sub || null;
-  } catch { return null; }
-}
+const { getUserId } = require('../auth');
 
 async function withDb(fn) {
   const client = new MongoClient(MONGO_URI);

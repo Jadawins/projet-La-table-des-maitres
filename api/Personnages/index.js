@@ -3,15 +3,7 @@ const router = express.Router();
 const { MongoClient, ObjectId } = require('mongodb');
 
 const ADMIN_ID = process.env.ADMIN_USER_ID;
-
-function getUserId(req) {
-  const auth = req.headers.authorization || '';
-  if (!auth.startsWith('Bearer ')) return null;
-  try {
-    const payload = JSON.parse(Buffer.from(auth.slice(7).split('.')[1], 'base64url').toString());
-    return payload.sub || null;
-  } catch { return null; }
-}
+const { getUserId } = require('../auth');
 
 function isAdmin(req) {
   return ADMIN_ID && getUserId(req) === ADMIN_ID;

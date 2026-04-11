@@ -10,8 +10,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // CORS
+const ALLOWED_ORIGINS = ['https://myrpgtable.fr', 'https://www.myrpgtable.fr'];
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   if (req.method === 'OPTIONS') return res.sendStatus(200);
@@ -34,4 +38,4 @@ fs.readdirSync(__dirname).forEach(dir => {
 
 app.get('/', (req, res) => res.json({ status: 'API La Table du Maître en ligne' }));
 
-app.listen(PORT, () => console.log(`API démarrée sur le port ${PORT}`));
+app.listen(PORT, '127.0.0.1', () => console.log(`API démarrée sur le port ${PORT}`));
