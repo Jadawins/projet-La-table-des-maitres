@@ -32,8 +32,10 @@ build/
 *.bak
 *.swp
 
-# Scripts utilitaires locaux
+# Scripts utilitaires locaux (migrations one-shot, etc.)
 scripts/
+# Sauf les tests d'intégration
+!scripts/test-*.js
 *.pdf
 checkpoint_traduction.json
 settings.local.json

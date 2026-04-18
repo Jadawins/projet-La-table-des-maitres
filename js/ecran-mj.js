@@ -203,7 +203,7 @@ async function sauvegarderParticipants() {
 async function majInitiative(pid, val) {
   const p = trouverParticipant(pid);
   if (!p) return;
-  p.initiative = parseInt(val) || 0;
+  p.initiative = +val || 0;
   renderInitiativeList();
   await sauvegarderParticipants();
 }
@@ -405,10 +405,10 @@ async function ajouterParticipant() {
   const body = {
     nom:             nomEl.value || 'Inconnu',
     type:            document.getElementById('p-type').value,
-    initiative:      parseInt(document.getElementById('p-init').value) || 0,
-    pv_max:          parseInt(document.getElementById('p-pv').value)    || 10,
-    ca:              parseInt(document.getElementById('p-ca').value)    || 10,
-    xp:              parseInt(document.getElementById('p-xp').value)    || 0,
+    initiative:      +document.getElementById('p-init').value || 0,
+    pv_max:          +document.getElementById('p-pv').value  || 10,
+    ca:              +document.getElementById('p-ca').value  || 10,
+    xp:              +document.getElementById('p-xp').value  || 0,
     attaques:            nomEl._attaques            || [],
     actions_bonus:       nomEl._actions_bonus       || [],
     reactions:           nomEl._reactions           || [],

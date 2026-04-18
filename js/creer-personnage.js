@@ -990,7 +990,7 @@ function renderPVStep() {
   const niv = W.niveau;
   const dvMax = isDvMax(getDv(W.classe_data));
   const dvType = getDv(W.classe_data);
-  const conMod = mod(W.stats.CON);
+  const conMod = mod(W.stats.CON ?? 10);
   const fixed = Math.max(1, Math.floor(dvMax / 2) + 1 + conMod);
   let html = '<div class="pv-list">';
   // Niveau 1 — auto
@@ -1049,7 +1049,7 @@ function pvSetMethode(lv, methode) {
   W.pv_methode[lv] = methode;
   if (methode === 'fixe') {
     const dvMax = isDvMax(getDv(W.classe_data));
-    const conMod = mod(W.stats.CON);
+    const conMod = mod(W.stats.CON ?? 10);
     W.pv_resultats[lv] = Math.max(1, Math.floor(dvMax / 2) + 1 + conMod);
   }
   renderPVStep();
@@ -1058,7 +1058,7 @@ function pvSetMethode(lv, methode) {
 function lancerDePV(lv) {
   W.pv_methode[lv] = 'de';
   const dvMax = isDvMax(getDv(W.classe_data));
-  const conMod = mod(W.stats.CON);
+  const conMod = mod(W.stats.CON ?? 10);
   const roll = Math.floor(Math.random() * dvMax) + 1;
   W.pv_resultats[lv] = Math.max(1, roll + conMod);
   renderPVStep();
@@ -1066,7 +1066,7 @@ function lancerDePV(lv) {
 
 function pvSaisir(lv, rawVal) {
   const dvMax = isDvMax(getDv(W.classe_data));
-  const conMod = mod(W.stats.CON);
+  const conMod = mod(W.stats.CON ?? 10);
   const roll = Math.max(1, Math.min(dvMax, parseInt(rawVal) || 1));
   W.pv_methode[lv] = 'de';
   W.pv_resultats[lv] = Math.max(1, roll + conMod);
