@@ -15,6 +15,45 @@ async function withDb(fn) {
   finally { await client.close(); }
 }
 
+// ─── GET /Combats/by-id/:id — combat par son _id ──────────────
+router.get('/by-id/:id', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+
+  try {
+    await withDb(async (db) => {
+      let oid;
+      try { oid = new ObjectId(req.params.id); }
+      catch { return res.status(400).json({ error: 'ID invalide' }); }
+
+      const combat = await db.collection('combats').findOne({ _id: oid });
+      if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+
+      const isMj = combat.mj_id === userId;
+      const filteredParticipants = isMj
+        ? combat.participants
+        : combat.participants.filter(p => p.visible_joueurs || p.user_id === userId);
+
+      const filteredMessages = (combat.messages || []).filter(m =>
+        m.destinataire === 'tous' ||
+        m.destinataire === userId ||
+        m.expediteur_id === userId ||
+        isMj
+      );
+
+      res.status(200).json({
+        ...combat,
+        participants: filteredParticipants,
+        messages: filteredMessages,
+        est_mj: isMj,
+        notes_mj: isMj ? combat.notes_mj : undefined
+      });
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // ─── GET /Combats/:session_id — combat actif d'une session ────
 router.get('/:session_id', async (req, res) => {
   const userId = getUserId(req);
@@ -33,13 +72,11 @@ router.get('/:session_id', async (req, res) => {
 
       if (!combat) return res.status(404).json({ error: 'Aucun combat actif' });
 
-      // Filtrer les participants selon le rôle
       const isMj = combat.mj_id === userId;
       const filteredParticipants = isMj
         ? combat.participants
         : combat.participants.filter(p => p.visible_joueurs || p.user_id === userId);
 
-      // Filtrer messages selon destinataire
       const filteredMessages = (combat.messages || []).filter(m =>
         m.destinataire === 'tous' ||
         m.destinataire === userId ||
@@ -71,7 +108,6 @@ router.post('/', async (req, res) => {
 
   try {
     await withDb(async (db) => {
-      // Vérifier que l'utilisateur est MJ de la session
       let sessionOid;
       try { sessionOid = new ObjectId(session_id); }
       catch { return res.status(400).json({ error: 'session_id invalide' }); }
@@ -80,7 +116,6 @@ router.post('/', async (req, res) => {
       if (!session) return res.status(404).json({ error: 'Session introuvable' });
       if (session.mj_id !== userId) return res.status(403).json({ error: 'Seul le MJ peut créer un combat' });
 
-      // Archiver les combats actifs précédents
       await db.collection('combats').updateMany(
         { session_id: sessionOid, statut: 'actif' },
         { $set: { statut: 'termine' } }
@@ -88,7 +123,6 @@ router.post('/', async (req, res) => {
 
       const now = new Date();
 
-      // Pré-remplir avec les joueurs de la session
       const participants = (session.joueurs || []).map(j => ({
         id: uid(),
         nom: j.personnage_nom || j.pseudo,
@@ -98,6 +132,9 @@ router.post('/', async (req, res) => {
         pv_max: 10,
         pv_actuels: 10,
         ca: 10,
+        resistances: [],
+        immunites: [],
+        xp: 0,
         conditions: [],
         notes: '',
         visible_joueurs: true
@@ -177,8 +214,9 @@ router.post('/:id/participant', async (req, res) => {
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
       if (combat.mj_id !== userId) return res.status(403).json({ error: 'MJ uniquement' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
-      const { nom, type, initiative, pv_max, ca, notes, visible_joueurs } = req.body;
+      const { nom, type, initiative, pv_max, ca, notes, visible_joueurs, resistances, immunites, xp } = req.body;
       const participant = {
         id: uid(),
         nom: nom || 'Inconnu',
@@ -188,6 +226,9 @@ router.post('/:id/participant', async (req, res) => {
         pv_max: parseInt(pv_max) || 10,
         pv_actuels: parseInt(pv_max) || 10,
         ca: parseInt(ca) || 10,
+        resistances: Array.isArray(resistances) ? resistances.map(r => r.toLowerCase()) : [],
+        immunites:   Array.isArray(immunites)   ? immunites.map(i => i.toLowerCase())   : [],
+        xp:          parseInt(xp) || 0,
         conditions: [],
         notes: notes || '',
         visible_joueurs: visible_joueurs !== false
@@ -297,7 +338,6 @@ router.get('/:id/messages', async (req, res) => {
         isMj
       );
 
-      // Retourner seulement les 50 derniers
       res.status(200).json(messages.slice(-50));
     });
   } catch (err) {
@@ -350,6 +390,7 @@ router.post('/:id/attaque', async (req, res) => {
 
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
       const attaquant = combat.participants.find(p => p.id === attaquant_id);
       const cible    = combat.participants.find(p => p.id === cible_id);
@@ -358,7 +399,6 @@ router.post('/:id/attaque', async (req, res) => {
       const d20n = parseInt(d20);
       const caC  = cible.ca || 10;
 
-      // Coup critique / raté auto
       let touche = false;
       let critique = false;
       if (d20n === 1)  { touche = false; }
@@ -374,7 +414,6 @@ router.post('/:id/attaque', async (req, res) => {
       } else {
         let dmg = parseInt(degats) || 0;
 
-        // Vérifier résistances/immunités
         const resistances = cible.resistances || [];
         const immunites    = cible.immunites   || [];
         const typeLower    = (type_degats || '').toLowerCase();
@@ -399,7 +438,6 @@ router.post('/:id/attaque', async (req, res) => {
           logMsg += ` — PV : ${cible.pv_actuels}/${cible.pv_max}`;
         }
 
-        // Vérifier concentration si cible concentrée
         let alerteConc = null;
         if ((cible.conditions || []).includes('concentre') && dmg > 0) {
           const dd = Math.max(10, Math.floor(dmg / 2));
@@ -440,6 +478,7 @@ router.post('/:id/soin', async (req, res) => {
 
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
       const cible = combat.participants.find(p => p.id === cible_id);
       if (!cible) return res.status(404).json({ error: 'Participant introuvable' });
@@ -485,6 +524,7 @@ router.post('/:id/sauvegarde', async (req, res) => {
 
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
       const participant = combat.participants.find(p => p.id === participant_id);
       if (!participant) return res.status(404).json({ error: 'Participant introuvable' });
@@ -497,13 +537,11 @@ router.post('/:id/sauvegarde', async (req, res) => {
 
       let logMsg = `🎲 ${participant.nom} — JS ${caracteristique} : d20(${d20n}) + ${modif >= 0 ? '+' : ''}${modif} = ${total} vs DD ${seuil} — ${reussi ? '✅ Réussi !' : '❌ Raté !'}`;
 
-      // Concentration brisée si CON et raté
       let concBrise = false;
       if (caracteristique.toUpperCase() === 'CON' && !reussi && (participant.conditions || []).includes('concentre')) {
         concBrise = true;
         logMsg += ` 💨 Concentration brisée !`;
 
-        // Retirer la condition
         participant.conditions = participant.conditions.filter(c => c !== 'concentre');
         const participants = combat.participants.map(p => p.id === participant_id ? participant : p);
         const now = new Date();
@@ -545,6 +583,7 @@ router.put('/:id/participant/:pid/conditions', async (req, res) => {
 
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
       const pid = req.params.pid;
       const participants = combat.participants.map(p =>
@@ -568,7 +607,7 @@ router.post('/:id/mort', async (req, res) => {
   const userId = getUserId(req);
   if (!userId) return res.status(401).json({ error: 'Non authentifié' });
 
-  const { participant_id, resultat } = req.body; // 'succes'|'echec'|'nat20'|'nat1'
+  const { participant_id, resultat } = req.body;
   if (!participant_id || !resultat) return res.status(400).json({ error: 'participant_id et resultat requis' });
 
   try {
@@ -579,6 +618,7 @@ router.post('/:id/mort', async (req, res) => {
 
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
       const participant = combat.participants.find(p => p.id === participant_id);
       if (!participant) return res.status(404).json({ error: 'Participant introuvable' });
@@ -647,6 +687,7 @@ router.post('/:id/sort', async (req, res) => {
 
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
       const lanceur = combat.participants.find(p => p.id === lanceur_id);
       const cible   = cible_id ? combat.participants.find(p => p.id === cible_id) : null;
@@ -675,11 +716,7 @@ router.post('/:id/sort', async (req, res) => {
       }
 
       if (concentration) {
-        // Retirer concentration précédente si elle existe
         participants = participants.map(p => {
-          if (p.id === lanceur_id && (p.conditions || []).includes('concentre')) {
-            return { ...p, sort_concentration: sort_nom };
-          }
           if (p.id === lanceur_id) {
             return { ...p, conditions: [...(p.conditions || []).filter(c => c !== 'concentre'), 'concentre'], sort_concentration: sort_nom };
           }
@@ -716,6 +753,7 @@ router.put('/:id/tour', async (req, res) => {
       const combat = await db.collection('combats').findOne({ _id: oid });
       if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
       if (combat.mj_id !== userId) return res.status(403).json({ error: 'MJ uniquement' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé — action refusée' });
 
       const nbParticipants = (combat.participants || []).length;
       if (!nbParticipants) return res.status(400).json({ error: 'Aucun participant' });
@@ -750,5 +788,80 @@ router.put('/:id/tour', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+// ─── POST /Combats/:id/fin — terminer le combat + XP ─────────
+// XP table D&D 5e 2024
+const XP_SEUILS = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
+
+router.post('/:id/fin', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+
+  try {
+    await withDb(async (db) => {
+      let oid;
+      try { oid = new ObjectId(req.params.id); }
+      catch { return res.status(400).json({ error: 'ID invalide' }); }
+
+      const combat = await db.collection('combats').findOne({ _id: oid });
+      if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.mj_id !== userId) return res.status(403).json({ error: 'MJ uniquement' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat déjà terminé' });
+
+      // Calcul XP — somme des monstres vaincus (pv_actuels === 0)
+      const xpTotal = combat.participants
+        .filter(p => p.type === 'monstre' && p.pv_actuels === 0)
+        .reduce((sum, p) => sum + (p.xp || 0), 0);
+
+      // Joueurs vivants = ceux qui ont un user_id et pv > 0
+      const joueurs = combat.participants.filter(p => p.user_id && p.type === 'joueur');
+      const nbJoueurs = joueurs.length || 1;
+      const xpParJoueur = Math.floor(xpTotal / nbJoueurs);
+
+      // Distribuer XP dans la collection personnages
+      const xpResults = [];
+      for (const j of joueurs) {
+        try {
+          const perso = await db.collection('personnages').findOne({ user_id: j.user_id });
+          if (!perso) continue;
+
+          const xpAvant   = perso.experience || 0;
+          const xpApres   = xpAvant + xpParJoueur;
+          const niveauAvant = perso.niveau || 1;
+          const niveauApres = _niveauDepuisXP(xpApres);
+          const levelUp = niveauApres > niveauAvant;
+
+          await db.collection('personnages').updateOne(
+            { _id: perso._id },
+            { $set: { experience: xpApres, niveau: niveauApres, derniere_modification: new Date() } }
+          );
+
+          xpResults.push({ user_id: j.user_id, nom: j.nom, xp_gagne: xpParJoueur, xp_total: xpApres, niveau: niveauApres, level_up: levelUp });
+        } catch {}
+      }
+
+      const now = new Date();
+      const logMsg = `🏆 Combat terminé ! ${xpTotal} XP au total — ${xpParJoueur} XP par joueur (${joueurs.length} joueur(s))`;
+      const msgFin = { id: uid(), expediteur_id: userId, expediteur_nom: 'Système', destinataire: 'tous', contenu: logMsg, type: 'systeme', timestamp: now };
+
+      await db.collection('combats').updateOne(
+        { _id: oid },
+        { $set: { statut: 'termine', date_fin: now, derniere_activite: now }, $push: { messages: msgFin } }
+      );
+
+      res.status(200).json({ success: true, xp_total: xpTotal, xp_par_joueur: xpParJoueur, joueurs: xpResults, log: logMsg });
+    });
+  } catch (err) {
+    console.error('Erreur POST /Combats/:id/fin:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+function _niveauDepuisXP(xp) {
+  for (let i = XP_SEUILS.length - 1; i >= 0; i--) {
+    if (xp >= XP_SEUILS[i]) return Math.min(i + 1, 20);
+  }
+  return 1;
+}
 
 module.exports = router;
