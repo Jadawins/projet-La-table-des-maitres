@@ -71,14 +71,29 @@
       <li>🎲 <strong>Fiche personnage</strong> : dés de vie, repos, combat en temps réel depuis la session</li>
       <li>🧙 <strong>Création de personnage</strong> : wizard complet (espèce → équipement → résumé), vérifier que tout se retrouve bien sur la fiche</li>
     </ul>
-    <p style="font-size:0.8rem;color:#ccc;margin:0 0 0.5rem;">Un grand merci à <strong style="color:#c9a84c;">Stéphane</strong> et <strong style="color:#c9a84c;">Gautier</strong>, nos deux premiers béta-testeurs, qui ont déjà bien bossé pour dénicher les premiers bugs — vous êtes dans les légendes de la campagne. 🏆</p>
+    <p style="font-size:0.8rem;color:#ccc;margin:0 0 0.5rem;">Un grand merci à <strong style="color:#c9a84c;">Stéphane</strong>, <strong style="color:#c9a84c;">Gautier</strong> et <strong style="color:#c9a84c;">Ludo</strong> pour leurs retours de béta-test qui font vraiment avancer le projet — vous êtes dans les légendes de la campagne. 🏆</p>
     <p style="font-size:0.8rem;color:#ccc;margin:0 0 0.6rem;">Vous avez un retour, un bug, une idée ? Envoyez-moi ça à <a href="mailto:S0wh4@hotmail.fr" style="color:#c9a84c;text-decoration:none;">S0wh4@hotmail.fr</a> — chaque retour compte vraiment.</p>
     <p style="font-size:0.78rem;color:#865dff;font-style:italic;margin:0;">✨ <em>La prochaine session commence quand vous êtes prêts — et le MJ l'est toujours.</em></p>
   </div>
 
   <p><strong>✅ Fait récemment :</strong></p>
   <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 04/04/2026</summary>
+    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 19/04/2026</summary>
+    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
+    <ul style="margin-top:0;">
+      <li>📚 <strong>Bibliothèque — Recherche par onglet</strong> — champ de recherche intégré dans chaque onglet (sorts, classes, espèces, dons, équipement…) pour filtrer instantanément sans quitter l'onglet</li>
+      <li>➕ <strong>Bibliothèque — Ajouter à un personnage</strong> — dans la modal de détail, sélectionnez un personnage et ajoutez directement un sort, une arme ou un objet magique à sa fiche</li>
+      <li>🌙 <strong>Repos court / long pour le MJ</strong> — deux boutons dans le panneau MJ du salon permettent de proposer un repos avec choix du mode de validation (vote / auto / forcer) et d'un timer</li>
+    </ul>
+    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
+    <ul style="margin-top:0;">
+      <li>✅ <strong>Montée de niveau — sous-classes</strong> — les suffixes de fichiers JSON pour guerrier, magicien, moine, occultiste, rôdeur et roublard étaient tous faux : corrigés, le wizard de niveau 3 charge maintenant les vraies sous-classes</li>
+      <li>✅ <strong>Création de race — dropdowns armes/armures/outils</strong> — les trois menus déroulants appelaient une route API inexistante (<code>GetCategories</code>) ; remplacés par <code>GetArmes2024</code>, <code>GetArmures2024</code> et <code>GetEquipements2024</code></li>
+      <li>✅ <strong>Pages check-email / confirm / reset</strong> — <code>authGuard.js</code> était chargé sur ces pages publiques et redirigeait vers login avant que l'utilisateur puisse confirmer son compte ou réinitialiser son mot de passe</li>
+    </ul>
+  </details>
+  <details style="margin-bottom:0.4rem;">
+    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 04/04/2026 ▶</summary>
     <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
     <ul style="margin-top:0;">
       <li>👹 <strong>Refonte complète de la création de monstre</strong> — formulaire en 16 sections (identité, stats avec modificateurs auto, 5 vitesses, sauvegardes, compétences, immunités/résistances/vulnérabilités en chips cliquables, 5 types de vision, traits, actions bonus/réactions/légendaires/repaire/mythiques supportant le mode texte <em>ou</em> attaque avec dégâts/bonus/portée, sorts avec DD auto, lore complet, méta avec FP estimé automatique)</li>
