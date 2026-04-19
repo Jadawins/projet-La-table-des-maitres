@@ -134,10 +134,63 @@ async function afficherInfosPerso() {
     .eq("id", user.id)
     .single();
 
+  const pseudo = profile?.username || user.user_metadata?.full_name || user.user_metadata?.preferred_username || '';
   if (profile) {
-    document.getElementById("pseudo").value = profile.username || "";
+    document.getElementById("pseudo").value = pseudo;
     document.getElementById("discord").value = profile.discord_username || "";
   }
+
+  // Avatar
+  const avatarUrl = user.user_metadata?.avatar_url;
+  const img = document.getElementById('profil-avatar-img');
+  const initEl = document.getElementById('profil-initiales');
+  if (avatarUrl && img) {
+    img.src = avatarUrl;
+    img.style.display = 'block';
+    if (initEl) initEl.style.display = 'none';
+  } else if (initEl) {
+    initEl.textContent = (pseudo || user.email || '?')[0].toUpperCase();
+  }
+
+  // Pseudo affiché
+  const pseudoDisplay = document.getElementById('profil-pseudo-display');
+  if (pseudoDisplay) pseudoDisplay.textContent = pseudo || user.email;
+
+  // Provider badge
+  const provider = user.app_metadata?.provider || 'email';
+  const badgeEl = document.getElementById('profil-provider-badge');
+  if (badgeEl) {
+    const labels = { google: ['🌐 Google', '#4285f4'], discord: ['🎮 Discord', '#5865f2'], email: ['✉️ Email', '#888'] };
+    const [label, color] = labels[provider] || ['Email', '#888'];
+    badgeEl.innerHTML = `<span style="font-size:.72rem;padding:.15rem .5rem;border-radius:10px;border:1px solid ${color}44;color:${color};background:${color}18;">${label}</span>`;
+  }
+
+  // Stats
+  chargerStatsProf(user);
+}
+
+async function chargerStatsProf(user) {
+  try {
+    const token = (await supabase.auth.getSession()).data.session?.access_token;
+    const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` };
+    const API = 'https://myrpgtable.fr/api';
+
+    const [persoRes, sessRes] = await Promise.all([
+      fetch(`${API}/Personnages`, { headers }),
+      fetch(`${API}/Sessions`, { headers })
+    ]);
+
+    if (persoRes.ok) {
+      const persos = await persoRes.json();
+      document.getElementById('stat-personnages').textContent = persos.length;
+    }
+
+    if (sessRes.ok) {
+      const sessions = await sessRes.json();
+      document.getElementById('stat-sessions-mj').textContent = sessions.filter(s => s.est_mj).length;
+      document.getElementById('stat-sessions-joueur').textContent = sessions.filter(s => s.est_joueur && !s.est_mj).length;
+    }
+  } catch(e) { console.warn('Stats profil:', e); }
 }
 
 // Sauvegarder le pseudo + discord dans public.profiles et MongoDB

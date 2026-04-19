@@ -287,6 +287,39 @@ async function supprimerParticipant(pid) {
   });
 }
 
+// ─── TIMER DE TOUR ────────────────────────────────────────────
+
+let _tourTimerInterval = null;
+
+function demarrerTimerTour() {
+  clearInterval(_tourTimerInterval);
+  const el = document.getElementById('timer-tour-display');
+  if (!el) return;
+  const dur = parseInt(document.getElementById('timer-tour-sel')?.value) || 0;
+  if (dur === 0) { el.textContent = ''; el.style.color = '#c9a84c'; return; }
+  let restant = dur;
+  el.style.color = '#c9a84c';
+  el.textContent = _formatTimerTour(restant);
+  _tourTimerInterval = setInterval(() => {
+    restant--;
+    if (restant <= 0) {
+      clearInterval(_tourTimerInterval);
+      el.textContent = '⏰ Temps écoulé !';
+      el.style.color = '#ef4444';
+    } else {
+      el.textContent = _formatTimerTour(restant);
+      el.style.color = restant <= 10 ? '#f97316' : '#c9a84c';
+    }
+  }, 1000);
+}
+window.demarrerTimerTour = demarrerTimerTour;
+
+function _formatTimerTour(s) {
+  const m = Math.floor(s / 60);
+  const ss = String(s % 60).padStart(2, '0');
+  return m > 0 ? `⏱ ${m}:${ss}` : `⏱ ${s}s`;
+}
+
 // ─── TOUR SUIVANT ─────────────────────────────────────────────
 
 async function tourSuivant() {
@@ -305,6 +338,7 @@ async function tourSuivant() {
     const actifNow = sorted[data.tour_actuel];
     if (actifNow) resetReactionsTour(actifNow.id);
     renderInitiativeList();
+    demarrerTimerTour();
     await chargerMessages();
 
     // Notifier le joueur dont c'est le tour

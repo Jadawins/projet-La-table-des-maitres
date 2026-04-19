@@ -35,6 +35,35 @@
 
       <div class="tab-content" id="infos" style="display: block;">
         <h1 class="profil-title">Mon Profil</h1>
+
+        <!-- Avatar + provider -->
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
+          <div id="profil-avatar-wrap" style="width:64px;height:64px;border-radius:50%;overflow:hidden;background:rgba(134,93,255,.25);border:2px solid rgba(134,93,255,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img id="profil-avatar-img" src="" alt="" style="width:100%;height:100%;object-fit:cover;display:none;" />
+            <span id="profil-initiales" style="font-size:1.4rem;font-weight:700;color:#c4b5fd;"></span>
+          </div>
+          <div>
+            <div id="profil-pseudo-display" style="font-size:1rem;font-weight:600;color:#e2dfc8;"></div>
+            <div id="profil-provider-badge" style="margin-top:.25rem;"></div>
+          </div>
+        </div>
+
+        <!-- Stats rapides -->
+        <div id="profil-stats" style="display:flex;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+          <div style="flex:1;min-width:100px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.6rem .9rem;text-align:center;">
+            <div id="stat-personnages" style="font-size:1.4rem;font-weight:700;color:#c9a84c;">—</div>
+            <div style="font-size:.72rem;color:#888;margin-top:.2rem;">Personnages</div>
+          </div>
+          <div style="flex:1;min-width:100px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.6rem .9rem;text-align:center;">
+            <div id="stat-sessions-mj" style="font-size:1.4rem;font-weight:700;color:#865dff;">—</div>
+            <div style="font-size:.72rem;color:#888;margin-top:.2rem;">Sessions MJ</div>
+          </div>
+          <div style="flex:1;min-width:100px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.6rem .9rem;text-align:center;">
+            <div id="stat-sessions-joueur" style="font-size:1.4rem;font-weight:700;color:#4ade80;">—</div>
+            <div style="font-size:.72rem;color:#888;margin-top:.2rem;">Sessions joueur</div>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="pseudo">Pseudo</label>
           <input type="text" id="pseudo" placeholder="Votre pseudo">

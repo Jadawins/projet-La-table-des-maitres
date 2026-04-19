@@ -11,6 +11,7 @@ const SIDEBAR_HTML = `
     <ul class="sidebar-menu">
       <li><a href="dashboard-mj.html"><i class="fa-solid fa-gauge-high"></i> Dashboard MJ</a></li>
       <li><a href="sessions.html?role=mj"><i class="fa-solid fa-scroll"></i> Mes Sessions (MJ)</a></li>
+      <li><a href="sessions.html?statut=terminee"><i class="fa-solid fa-clock-rotate-left"></i> Historique</a></li>
       <li><a href="campagne.html"><i class="fa-solid fa-book-skull"></i> Mes Campagnes</a></li>
       <li><a href="creer-objet-magique.html"><i class="fa-solid fa-hat-wizard"></i> Créer un objet magique</a></li>
       <li><a href="creer-monstre.html"><i class="fa-solid fa-skull-crossbones"></i> Mes Monstres</a></li>

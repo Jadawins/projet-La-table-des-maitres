@@ -52,6 +52,16 @@
         </div>
       </div>
       <div class="mj-col-footer">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+          <div id="timer-tour-display" style="flex:1;text-align:center;font-size:1rem;font-weight:700;color:#c9a84c;min-height:1.4rem;transition:color .3s;"></div>
+          <select id="timer-tour-sel" title="Durée du timer de tour" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#aaa;padding:.2rem .4rem;border-radius:5px;font-size:.72rem;cursor:pointer;">
+            <option value="0">⏱ Off</option>
+            <option value="30">30 s</option>
+            <option value="60">1 min</option>
+            <option value="90">1 min 30</option>
+            <option value="120">2 min</option>
+          </select>
+        </div>
         <button class="btn-tour-suivant" onclick="tourSuivant()">
           <i class="fa-solid fa-forward-step"></i> Tour suivant
         </button>

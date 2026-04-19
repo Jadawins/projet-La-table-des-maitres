@@ -119,6 +119,15 @@ function waitForAuth(callback, tries = 0) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Lire le statut initial depuis l'URL (?statut=terminee)
+  const urlStatut = new URLSearchParams(window.location.search).get('statut');
+  if (urlStatut) {
+    currentStatut = urlStatut;
+    document.querySelectorAll('.filter-pill').forEach(p => {
+      p.classList.toggle('active', p.dataset.statut === urlStatut);
+    });
+  }
+
   // Filtres statut
   document.querySelectorAll('.filter-pill').forEach(pill => {
     pill.addEventListener('click', () => {
