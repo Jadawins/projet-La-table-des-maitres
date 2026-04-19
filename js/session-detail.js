@@ -109,6 +109,19 @@ function renderSession() {
     document.getElementById('mon-perso-nom').textContent = persoNom
       ? `Personnage : ${persoNom}`
       : 'Aucun personnage associé.';
+
+    // Bouton salon si session active
+    const existingBtn = document.getElementById('btn-salon-joueur');
+    if (existingBtn) existingBtn.remove();
+    if (s.statut === 'en_cours' || s.statut === 'active') {
+      document.getElementById('block-mon-perso').insertAdjacentHTML('afterbegin',
+        `<a id="btn-salon-joueur" href="salon.html?session=${SESSION_ID}"
+          class="btn-primary"
+          style="width:100%;justify-content:center;display:flex;text-decoration:none;margin-bottom:.75rem;">
+          <i class="fa-solid fa-door-open"></i>&nbsp; Rejoindre le salon
+        </a>`
+      );
+    }
   }
 }
 

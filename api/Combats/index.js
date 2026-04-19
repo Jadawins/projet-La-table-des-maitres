@@ -162,6 +162,12 @@ router.post('/', async (req, res) => {
       };
 
       const result = await db.collection('combats').insertOne(combat);
+
+      await db.collection('sessions').updateOne(
+        { _id: sessionOid },
+        { $set: { combat_actif: result.insertedId, date_derniere_activite: now } }
+      );
+
       res.status(201).json({ _id: result.insertedId, ...combat });
     });
   } catch (err) {

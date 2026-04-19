@@ -538,4 +538,93 @@ router.post('/:id/terminer', async (req, res) => {
   }
 });
 
+// ─── GET /:id/salon — messages du salon ───────────────────────
+router.get('/:id/salon', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne(
+        { _id: new ObjectId(req.params.id) },
+        { projection: { salon_messages: 1, mj_id: 1, joueurs: 1 } }
+      );
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      const isMember = session.mj_id === userId || (session.joueurs || []).some(j => j.user_id === userId);
+      if (!isMember) return res.status(403).json({ error: 'Accès refusé' });
+      res.json(session.salon_messages || []);
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ─── POST /:id/salon — envoyer un message dans le salon ───────
+router.post('/:id/salon', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { contenu, auteur } = req.body;
+  if (!contenu?.trim()) return res.status(400).json({ error: 'contenu requis' });
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne(
+        { _id: new ObjectId(req.params.id) },
+        { projection: { mj_id: 1, joueurs: 1 } }
+      );
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      const isMember = session.mj_id === userId || (session.joueurs || []).some(j => j.user_id === userId);
+      if (!isMember) return res.status(403).json({ error: 'Accès refusé' });
+      const msg = { auteur_id: userId, auteur: auteur || 'Joueur', contenu: contenu.trim(), timestamp: new Date() };
+      await db.collection('sessions').updateOne(
+        { _id: new ObjectId(req.params.id) },
+        { $push: { salon_messages: { $each: [msg], $slice: -200 } }, $set: { date_derniere_activite: new Date() } }
+      );
+      res.status(201).json({ ok: true, msg });
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ─── GET /:id/pm — mes messages privés ────────────────────────
+router.get('/:id/pm', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { avec } = req.query;
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne(
+        { _id: new ObjectId(req.params.id) },
+        { projection: { pm_messages: 1, mj_id: 1, joueurs: 1 } }
+      );
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      const isMember = session.mj_id === userId || (session.joueurs || []).some(j => j.user_id === userId);
+      if (!isMember) return res.status(403).json({ error: 'Accès refusé' });
+      let pms = (session.pm_messages || []).filter(m => m.de === userId || m.a === userId);
+      if (avec) pms = pms.filter(m => m.de === avec || m.a === avec);
+      res.json(pms);
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ─── POST /:id/pm — envoyer un message privé ─────────────────
+router.post('/:id/pm', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { destinataire_id, contenu, auteur } = req.body;
+  if (!destinataire_id || !contenu?.trim()) return res.status(400).json({ error: 'destinataire_id et contenu requis' });
+  try {
+    await withDb(async (db) => {
+      const session = await db.collection('sessions').findOne(
+        { _id: new ObjectId(req.params.id) },
+        { projection: { mj_id: 1, joueurs: 1 } }
+      );
+      if (!session) return res.status(404).json({ error: 'Session introuvable' });
+      const isMember = session.mj_id === userId || (session.joueurs || []).some(j => j.user_id === userId);
+      if (!isMember) return res.status(403).json({ error: 'Accès refusé' });
+      const pm = { de: userId, a: destinataire_id, auteur: auteur || 'Joueur', contenu: contenu.trim(), timestamp: new Date() };
+      await db.collection('sessions').updateOne(
+        { _id: new ObjectId(req.params.id) },
+        { $push: { pm_messages: { $each: [pm], $slice: -500 } }, $set: { date_derniere_activite: new Date() } }
+      );
+      res.status(201).json({ ok: true, pm });
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
 module.exports = router;

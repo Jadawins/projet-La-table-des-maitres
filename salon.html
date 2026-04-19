@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon — La Table du Maître</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ecran-mj.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .salon-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      grid-template-rows: 100vh;
+      height: 100vh;
+      overflow: hidden;
+      padding-top: 48px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 800px) {
+      .salon-layout { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
+    }
+    .salon-col {
+      display: flex; flex-direction: column;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .salon-col-header {
+      padding: .6rem .85rem; font-size: .72rem; text-transform: uppercase;
+      letter-spacing: .07em; color: #c9a84c; border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; gap: .5rem; flex-shrink: 0;
+    }
+    .salon-col-body { flex: 1; overflow-y: auto; padding: .6rem .7rem; }
+
+    /* ── Infos session ── */
+    .session-info-block {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; padding: .75rem 1rem; margin-bottom: .75rem;
+    }
+    .session-nom { font-size: 1rem; font-weight: 600; color: #e2dfc8; margin-bottom: .25rem; }
+    .session-mj  { font-size: .78rem; color: #c9a84c; margin-bottom: .15rem; }
+    .session-statut { font-size: .7rem; color: #888; }
+
+    /* ── Joueurs ── */
+    .joueur-row {
+      display: flex; align-items: center; gap: .5rem; padding: .4rem .5rem;
+      border-radius: 6px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06); margin-bottom: .3rem; cursor: pointer;
+      transition: all .15s;
+    }
+    .joueur-row:hover { background: rgba(134,93,255,0.1); border-color: rgba(134,93,255,0.3); }
+    .joueur-row.mj-row { border-color: rgba(201,168,76,0.25); }
+    .joueur-pseudo { flex: 1; font-size: .82rem; color: #e2dfc8; }
+    .joueur-perso  { font-size: .68rem; color: #888; }
+    .joueur-pm-btn { font-size: .68rem; color: #865dff; padding: .15rem .4rem; border: 1px solid rgba(134,93,255,0.3); border-radius: 4px; background: transparent; cursor: pointer; }
+    .joueur-pm-btn:hover { background: rgba(134,93,255,0.2); }
+
+    /* ── MJ actions ── */
+    .mj-action-block {
+      background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px; padding: .75rem 1rem; margin-bottom: .75rem;
+    }
+    .mj-action-title { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: #c9a84c; margin-bottom: .5rem; }
+
+    /* ── Tabs chat ── */
+    .tabs-row-salon {
+      display: flex; border-bottom: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; padding: 0 .7rem;
+    }
+    .tab-salon {
+      padding: .5rem .9rem; border: none; background: transparent; color: #888;
+      font-size: .78rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all .15s;
+    }
+    .tab-salon.active { color: #c9a84c; border-bottom-color: #c9a84c; }
+    .tab-salon .badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #865dff; color: #fff; border-radius: 10px; font-size: .6rem;
+      width: 16px; height: 16px; margin-left: .3rem;
+    }
+    .tab-salon-content { display: none; flex: 1; flex-direction: column; overflow: hidden; }
+    .tab-salon-content.active { display: flex; }
+
+    /* ── Messages ── */
+    .messages-feed { flex: 1; overflow-y: auto; padding: .5rem .7rem; }
+    .msg-bubble {
+      margin-bottom: .5rem; padding: .4rem .6rem;
+      background: rgba(255,255,255,0.04); border-radius: 6px;
+      border-left: 2px solid rgba(255,255,255,0.08);
+    }
+    .msg-bubble.moi { border-left-color: #865dff; background: rgba(134,93,255,0.07); }
+    .msg-bubble.mj  { border-left-color: #c9a84c; background: rgba(201,168,76,0.07); }
+    .msg-meta { display: flex; justify-content: space-between; margin-bottom: .15rem; }
+    .msg-auteur { font-size: .68rem; font-weight: 600; color: #c9a84c; }
+    .msg-auteur.moi { color: #c4b5fd; }
+    .msg-heure  { font-size: .62rem; color: #555; }
+    .msg-texte  { font-size: .8rem; color: #d5d1a9; line-height: 1.4; }
+
+    /* ── Input message ── */
+    .msg-input-row {
+      display: flex; gap: .4rem; padding: .5rem .7rem;
+      border-top: 1px solid rgba(255,255,255,0.07); flex-shrink: 0;
+    }
+    .msg-input-row input { flex: 1; }
+    .msg-input-row button { padding: .4rem .75rem; white-space: nowrap; }
+
+    /* ── PM ── */
+    .pm-select-row {
+      display: flex; align-items: center; gap: .5rem; padding: .5rem .7rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07); flex-shrink: 0;
+    }
+    .pm-select-row select { flex: 1; font-size: .78rem; }
+    .pm-dest-label { font-size: .72rem; color: #888; white-space: nowrap; }
+
+    /* ── Banner combat ── */
+    .combat-banner {
+      background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4);
+      border-radius: 8px; padding: .75rem 1rem; margin: .6rem .7rem;
+      display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+      animation: pulse-red 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse-red {
+      0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+      50%      { box-shadow: 0 0 12px 3px rgba(239,68,68,0.2); }
+    }
+    .combat-banner-text { font-size: .88rem; font-weight: 600; color: #fca5a5; }
+
+    /* ── Connexion indicateur ── */
+    .online-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; margin-right: .3rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ TOPBAR ════════════════════════════════════════════════ -->
+  <div class="mj-topbar">
+    <div class="topbar-left">
+      <a id="btn-retour" href="sessions.html" class="btn-retour">
+        <i class="fa-solid fa-arrow-left"></i> Sessions
+      </a>
+      <span class="topbar-session-nom" id="topbar-session-nom">Chargement…</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="synchro-indicator" id="synchro-indicator"><i class="fa-solid fa-rotate fa-spin"></i> Synchro</span>
+    </div>
+    <div class="topbar-right" id="topbar-user" style="font-size:.75rem;color:#aaa;"></div>
+  </div>
+
+  <!-- ═══ LAYOUT 2 COLONNES ════════════════════════════════════ -->
+  <div class="salon-layout">
+
+    <!-- ─── COL GAUCHE : Info + Joueurs ────────────────────── -->
+    <div class="salon-col">
+      <div class="salon-col-header">
+        <i class="fa-solid fa-users"></i> Participants
+      </div>
+      <div class="salon-col-body">
+
+        <!-- Infos session -->
+        <div class="session-info-block" id="session-info">
+          <div style="text-align:center;color:#c9a84c;"><i class="fa-solid fa-spinner fa-spin"></i></div>
+        </div>
+
+        <!-- Banner combat actif -->
+        <div id="combat-banner" style="display:none;" class="combat-banner">
+          <span class="combat-banner-text"><i class="fa-solid fa-swords"></i> Combat en cours !</span>
+          <a id="btn-rejoindre-combat" href="#" class="btn-sm-primary" style="white-space:nowrap;">
+            <i class="fa-solid fa-play"></i> Rejoindre
+          </a>
+        </div>
+
+        <!-- Actions MJ -->
+        <div class="mj-action-block" id="mj-actions" style="display:none;">
+          <div class="mj-action-title"><i class="fa-solid fa-crown"></i> Panneau MJ</div>
+          <a id="btn-ecran-mj" href="#" class="btn-primary" style="display:flex;justify-content:center;text-decoration:none;margin-bottom:.4rem;">
+            <i class="fa-solid fa-display"></i> Ouvrir l'écran MJ
+          </a>
+          <button class="btn-sm-secondary" style="width:100%;justify-content:center;" onclick="lancerCombat()">
+            <i class="fa-solid fa-plus"></i> Nouveau combat
+          </button>
+        </div>
+
+        <!-- Liste joueurs -->
+        <div style="font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:#aaa;opacity:.6;margin-bottom:.4rem;">
+          Joueurs
+        </div>
+        <div id="joueurs-list"></div>
+
+      </div>
+    </div>
+
+    <!-- ─── COL DROITE : Chat ────────────────────────────────── -->
+    <div class="salon-col" style="border-right:none;">
+
+      <div class="tabs-row-salon">
+        <button class="tab-salon active" onclick="switchTab(this,'tab-salon')" id="btn-tab-salon">
+          <i class="fa-solid fa-comments"></i> Salon
+        </button>
+        <button class="tab-salon" onclick="switchTab(this,'tab-pm')" id="btn-tab-pm">
+          <i class="fa-solid fa-envelope"></i> Messages privés
+          <span class="badge" id="pm-badge" style="display:none;"></span>
+        </button>
+      </div>
+
+      <!-- TAB SALON -->
+      <div class="tab-salon-content active" id="tab-salon">
+        <div class="messages-feed" id="salon-messages"></div>
+        <div class="msg-input-row">
+          <input type="text" id="salon-input" placeholder="Message au groupe…"
+            onkeydown="if(event.key==='Enter')envoyerSalon()" />
+          <button class="btn-sm-primary" onclick="envoyerSalon()">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB PM -->
+      <div class="tab-salon-content" id="tab-pm">
+        <div class="pm-select-row">
+          <span class="pm-dest-label">À :</span>
+          <select id="pm-dest" onchange="chargerPM()">
+            <option value="">Choisir un joueur…</option>
+          </select>
+        </div>
+        <div class="messages-feed" id="pm-messages">
+          <div style="text-align:center;padding:2rem;color:#555;font-size:.82rem;">Sélectionnez un joueur pour voir vos échanges.</div>
+        </div>
+        <div class="msg-input-row">
+          <input type="text" id="pm-input" placeholder="Message privé…"
+            onkeydown="if(event.key==='Enter')envoyerPM()" />
+          <button class="btn-sm-primary" onclick="envoyerPM()">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AUTH -->
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+    const res = await fetch("https://myrpgtable.fr/api/GetSupabaseKey");
+    const { url, key } = await res.json();
+    const supabase = createClient(url, key);
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) { window.location.href = "login.html"; }
+    else {
+      window.SUPABASE_TOKEN = session.access_token;
+      window.USER_ID = session.user.id;
+      window.USER_PSEUDO = session.user.user_metadata?.full_name
+        || session.user.user_metadata?.preferred_username
+        || session.user.email || 'Joueur';
+      window.dispatchEvent(new Event('supabase-ready'));
+    }
+  </script>
+
+  <script src="js/notifications.js"></script>
+  <script src="js/salon.js"></script>
+</body>
+</html>
