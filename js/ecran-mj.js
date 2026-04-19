@@ -746,28 +746,17 @@ const LABELS_FIN = {
 };
 
 function ouvrirModalFinCombat() {
-  const radios = document.querySelectorAll('input[name="fin-raison"]');
-  radios.forEach(r => { r.checked = r.value === 'victoire'; });
+  document.querySelectorAll('input[name="fin-raison"]').forEach(r => { r.checked = r.value === 'victoire'; });
+  document.querySelectorAll('input[name="fin-mode"]').forEach(r => { r.checked = r.value === 'egal'; });
   document.getElementById('fin-combat-autre-wrap').style.display = 'none';
   document.getElementById('fin-combat-xp-wrap').style.display = 'block';
 
-  // Calculer XP automatique depuis les monstres du combat
-  const monstres = (combatData?.participants || []).filter(p => p.type === 'monstre' && p.xp > 0);
-  const xpAuto   = monstres.reduce((sum, m) => sum + (m.xp || 0), 0);
-  const nbJoueurs = (combatData?.participants || []).filter(p => p.type === 'joueur').length;
+  const monstres  = (combatData?.participants || []).filter(p => p.type === 'monstre' && p.xp > 0);
+  const xpAuto    = monstres.reduce((sum, m) => sum + (m.xp || 0), 0);
 
   document.getElementById('fin-combat-xp').value = xpAuto || '';
-  if (xpAuto > 0) {
-    document.getElementById('fin-combat-xp-auto').textContent = `(calculé depuis les monstres)`;
-    if (nbJoueurs > 0) {
-      const parJoueur = Math.floor(xpAuto / nbJoueurs);
-      document.getElementById('fin-combat-xp-repartition').textContent =
-        `→ ${parJoueur} XP / joueur (${nbJoueurs} joueur${nbJoueurs > 1 ? 's' : ''})`;
-    }
-  } else {
-    document.getElementById('fin-combat-xp-auto').textContent = '';
-    document.getElementById('fin-combat-xp-repartition').textContent = '';
-  }
+  document.getElementById('fin-combat-xp-auto').textContent = xpAuto > 0 ? '(depuis les monstres vaincus)' : '';
+  majFinModePreview();
 
   document.getElementById('modal-fin-combat').classList.remove('hidden');
 }
@@ -776,8 +765,25 @@ window.ouvrirModalFinCombat = ouvrirModalFinCombat;
 function majFinCombatUI(val) {
   document.getElementById('fin-combat-autre-wrap').style.display = val === 'autre' ? 'block' : 'none';
   document.getElementById('fin-combat-xp-wrap').style.display   = val === 'victoire' ? 'block' : 'none';
+  if (val === 'victoire') majFinModePreview();
 }
 window.majFinCombatUI = majFinCombatUI;
+
+function majFinModePreview() {
+  const xp        = parseInt(document.getElementById('fin-combat-xp').value) || 0;
+  const mode      = document.querySelector('input[name="fin-mode"]:checked')?.value || 'egal';
+  const nbJoueurs = (combatData?.participants || []).filter(p => p.type === 'joueur').length || 1;
+  const el        = document.getElementById('fin-combat-xp-repartition');
+  if (mode === 'jalon') {
+    el.textContent = `→ Chaque joueur monte d'un niveau (${nbJoueurs} joueur${nbJoueurs > 1 ? 's' : ''})`;
+  } else if (mode === 'total') {
+    el.textContent = xp > 0 ? `→ ${xp} XP × ${nbJoueurs} joueur${nbJoueurs > 1 ? 's' : ''} = ${xp * nbJoueurs} XP total distribués` : '';
+  } else {
+    const parJoueur = nbJoueurs > 0 ? Math.floor(xp / nbJoueurs) : 0;
+    el.textContent = xp > 0 ? `→ ${parJoueur} XP / joueur (${nbJoueurs} joueur${nbJoueurs > 1 ? 's' : ''})` : '';
+  }
+}
+window.majFinModePreview = majFinModePreview;
 
 async function confirmerFinCombat() {
   if (!combatId) return;
@@ -817,23 +823,26 @@ async function confirmerFinCombat() {
       }
     }
 
-    // Distribuer XP via la route /fin (calcule aussi XP auto depuis monstres)
-    if (raison === 'victoire') {
+    // Distribuer XP selon le mode choisi
+    const mode = document.querySelector('input[name="fin-mode"]:checked')?.value || 'egal';
+    if (raison === 'victoire' || mode === 'jalon') {
       try {
         const finRes = await fetch(`${API}/Combats/${combatId}/fin`, {
           method: 'POST',
           headers: authHeaders(),
-          body: JSON.stringify({ raison, xp_total: xpADistribuer || 0 })
+          body: JSON.stringify({ raison, xp_total: xpADistribuer || 0, mode })
         });
         if (finRes.ok) {
           const finData = await finRes.json();
-          const xpEffectif = finData.xp_total || xpADistribuer;
-          if (xpEffectif > 0) {
-            const msg = finData.xp_par_joueur > 0
-              ? `🌟 ${xpEffectif} XP distribués — ${finData.xp_par_joueur} XP/joueur !`
-              : `🌟 ${xpEffectif} XP distribués !`;
-            envoyerMsgSysteme(msg);
+          let msg = '';
+          if (mode === 'jalon') {
+            msg = `🎉 Montée de niveau (jalon) pour ${finData.joueurs?.length || 0} joueur(s) !`;
+          } else if (finData.xp_total > 0) {
+            msg = mode === 'total'
+              ? `🌟 ${finData.xp_total} XP distribués à chaque joueur !`
+              : `🌟 ${finData.xp_total} XP — ${finData.xp_par_joueur} XP/joueur !`;
           }
+          if (msg) envoyerMsgSysteme(msg);
         }
       } catch (e) { console.warn('Distribution XP échouée', e); }
     }

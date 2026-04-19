@@ -67,6 +67,12 @@ async function chargerTout() {
     monPerso   = await persoRes.json();
     combatId   = combatData._id;
 
+    if (combatData.statut !== 'actif') {
+      clearInterval(refreshTimer);
+      afficherEcranFin();
+      return;
+    }
+
     if (!slotsInitialises) initSlotsLocaux();
 
     renderAll();
@@ -697,6 +703,46 @@ async function jetDeMort(type) {
   });
 
   renderActionsPanel();
+}
+
+// ─── ÉCRAN FIN DE COMBAT ──────────────────────────────────────
+
+function afficherEcranFin() {
+  const resultats = combatData.fin_resultats || [];
+  const moi = resultats.find(r => r.user_id === window.USER_ID);
+  const mode = combatData.fin_mode || 'egal';
+
+  let xpHtml = '';
+  if (mode === 'jalon' && moi?.level_up) {
+    xpHtml = `<div style="margin:1rem 0;padding:.75rem 1.25rem;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);border-radius:8px;">
+      <div style="font-size:1.5rem;margin-bottom:.25rem;">🎉</div>
+      <div style="font-size:1rem;font-weight:700;color:#fbbf24;">Montée de niveau !</div>
+      <div style="font-size:.85rem;color:#aaa;">Niveau ${moi.niveau}</div>
+    </div>`;
+  } else if (moi?.xp_gagne > 0) {
+    xpHtml = `<div style="margin:1rem 0;padding:.75rem 1.25rem;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.3);border-radius:8px;">
+      <div style="font-size:1.3rem;font-weight:700;color:#4ade80;">+${moi.xp_gagne} XP</div>
+      <div style="font-size:.8rem;color:#aaa;margin-top:.2rem;">Total : ${moi.xp_total} XP · Niveau ${moi.niveau}</div>
+      ${moi.level_up ? '<div style="color:#fbbf24;font-size:.85rem;margin-top:.3rem;">🎉 Montée de niveau !</div>' : ''}
+    </div>`;
+  }
+
+  const panel = document.getElementById('actions-panel');
+  panel.innerHTML = `<div style="text-align:center;padding:2rem 1rem;">
+    <div style="font-size:2.5rem;margin-bottom:.75rem;">🏁</div>
+    <div style="font-size:1.1rem;font-weight:600;color:#e2dfc8;margin-bottom:.25rem;">Combat terminé</div>
+    <div style="font-size:.8rem;color:#888;margin-bottom:1rem;">${escHtml(monPerso?.nom || '')}</div>
+    ${xpHtml}
+    <a href="salon.html?session=${sessionId}"
+       style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1.25rem;padding:.5rem 1.25rem;
+              background:rgba(134,93,255,0.2);border:1px solid rgba(134,93,255,0.4);border-radius:7px;
+              color:#c4b5fd;text-decoration:none;font-size:.85rem;">
+      <i class="fa-solid fa-door-open"></i> Retour au salon
+    </a>
+  </div>`;
+
+  document.getElementById('participants-list').innerHTML =
+    '<div style="text-align:center;padding:2rem;color:#555;font-size:.82rem;">Le combat est terminé.</div>';
 }
 
 // ─── UTILITAIRES ──────────────────────────────────────────────

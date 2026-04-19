@@ -376,13 +376,31 @@
       </div>
       <!-- XP automatique si victoire -->
       <div id="fin-combat-xp-wrap" style="margin-top:0.75rem;">
-        <label style="font-size:0.72rem;color:#aaa;display:block;margin-bottom:0.25rem;">XP à distribuer :</label>
+        <label style="font-size:0.72rem;color:#aaa;display:block;margin-bottom:0.25rem;">XP total des monstres vaincus :</label>
         <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
           <input type="number" id="fin-combat-xp" min="0" placeholder="0"
-            style="width:100px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:0.3rem 0.5rem;border-radius:5px;font-size:0.8rem;" />
+            style="width:100px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:0.3rem 0.5rem;border-radius:5px;font-size:0.8rem;"
+            oninput="majFinModePreview()" />
           <span id="fin-combat-xp-auto" style="font-size:0.72rem;color:#c9a84c;"></span>
         </div>
-        <p id="fin-combat-xp-repartition" style="font-size:0.72rem;color:#aaa;margin:0.25rem 0 0;"></p>
+        <div style="margin-top:.6rem;">
+          <label style="font-size:.72rem;color:#aaa;display:block;margin-bottom:.3rem;">Distribution :</label>
+          <div style="display:flex;flex-direction:column;gap:.3rem;">
+            <label style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#d5d1a9;cursor:pointer;">
+              <input type="radio" name="fin-mode" value="egal" checked onchange="majFinModePreview()" />
+              Partage égal <em style="color:#888;font-size:.7rem;">(XP ÷ nb joueurs)</em>
+            </label>
+            <label style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#d5d1a9;cursor:pointer;">
+              <input type="radio" name="fin-mode" value="total" onchange="majFinModePreview()" />
+              XP complète à tous <em style="color:#888;font-size:.7rem;">(chacun reçoit le total)</em>
+            </label>
+            <label style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#d5d1a9;cursor:pointer;">
+              <input type="radio" name="fin-mode" value="jalon" onchange="majFinModePreview()" />
+              Jalon <em style="color:#888;font-size:.7rem;">(montée de niveau, sans XP)</em>
+            </label>
+          </div>
+        </div>
+        <p id="fin-combat-xp-repartition" style="font-size:0.72rem;color:#c9a84c;margin:.4rem 0 0;font-weight:600;min-height:1rem;"></p>
       </div>
       <div class="modal-actions" style="margin-top:1rem;">
         <button class="btn-sm-secondary" onclick="document.getElementById('modal-fin-combat').classList.add('hidden')">Annuler</button>

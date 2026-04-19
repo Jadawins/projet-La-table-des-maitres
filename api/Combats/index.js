@@ -814,48 +814,73 @@ router.post('/:id/fin', async (req, res) => {
       if (combat.mj_id !== userId) return res.status(403).json({ error: 'MJ uniquement' });
       if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat déjà terminé' });
 
-      // Calcul XP — somme des monstres vaincus (pv_actuels === 0)
+      const mode = req.body.mode || 'egal'; // 'egal' | 'total' | 'jalon'
+
       const xpTotal = combat.participants
         .filter(p => p.type === 'monstre' && p.pv_actuels === 0)
         .reduce((sum, p) => sum + (p.xp || 0), 0);
 
-      // Joueurs vivants = ceux qui ont un user_id et pv > 0
       const joueurs = combat.participants.filter(p => p.user_id && p.type === 'joueur');
       const nbJoueurs = joueurs.length || 1;
-      const xpParJoueur = Math.floor(xpTotal / nbJoueurs);
 
-      // Distribuer XP dans la collection personnages
+      let xpParJoueur = 0;
+      if (mode === 'egal')  xpParJoueur = Math.floor(xpTotal / nbJoueurs);
+      if (mode === 'total') xpParJoueur = xpTotal;
+
       const xpResults = [];
       for (const j of joueurs) {
         try {
           const perso = await db.collection('personnages').findOne({ user_id: j.user_id });
           if (!perso) continue;
 
-          const xpAvant   = perso.experience || 0;
-          const xpApres   = xpAvant + xpParJoueur;
+          const xpAvant     = perso.experience || 0;
           const niveauAvant = perso.niveau || 1;
-          const niveauApres = _niveauDepuisXP(xpApres);
-          const levelUp = niveauApres > niveauAvant;
+          let update = { derniere_modification: new Date() };
+          let levelUp = false;
+          let niveauApres = niveauAvant;
 
-          await db.collection('personnages').updateOne(
-            { _id: perso._id },
-            { $set: { experience: xpApres, niveau: niveauApres, derniere_modification: new Date() } }
-          );
+          if (mode === 'jalon') {
+            if (niveauAvant < 20) {
+              niveauApres = niveauAvant + 1;
+              update.niveau = niveauApres;
+              levelUp = true;
+            }
+          } else {
+            const xpApres = xpAvant + xpParJoueur;
+            niveauApres   = _niveauDepuisXP(xpApres);
+            levelUp       = niveauApres > niveauAvant;
+            update.experience = xpApres;
+            update.niveau     = niveauApres;
+          }
 
-          xpResults.push({ user_id: j.user_id, nom: j.nom, xp_gagne: xpParJoueur, xp_total: xpApres, niveau: niveauApres, level_up: levelUp });
+          await db.collection('personnages').updateOne({ _id: perso._id }, { $set: update });
+          xpResults.push({
+            user_id: j.user_id, nom: j.nom,
+            xp_gagne: mode === 'jalon' ? 0 : xpParJoueur,
+            xp_total: mode === 'jalon' ? (perso.experience || 0) : (perso.experience || 0) + xpParJoueur,
+            niveau: niveauApres, level_up: levelUp
+          });
         } catch {}
       }
 
       const now = new Date();
-      const logMsg = `🏆 Combat terminé ! ${xpTotal} XP au total — ${xpParJoueur} XP par joueur (${joueurs.length} joueur(s))`;
+      let logMsg;
+      if (mode === 'jalon') {
+        logMsg = `🎉 Jalon — ${joueurs.length} joueur(s) montent de niveau !`;
+      } else {
+        logMsg = `🏆 Combat terminé ! ${xpTotal} XP — ${xpParJoueur} XP/joueur (mode : ${mode})`;
+      }
       const msgFin = { id: uid(), expediteur_id: userId, expediteur_nom: 'Système', destinataire: 'tous', contenu: logMsg, type: 'systeme', timestamp: now };
 
       await db.collection('combats').updateOne(
         { _id: oid },
-        { $set: { statut: 'termine', date_fin: now, derniere_activite: now }, $push: { messages: msgFin } }
+        {
+          $set: { statut: 'termine', date_fin: now, derniere_activite: now, fin_mode: mode, fin_resultats: xpResults },
+          $push: { messages: msgFin }
+        }
       );
 
-      res.status(200).json({ success: true, xp_total: xpTotal, xp_par_joueur: xpParJoueur, joueurs: xpResults, log: logMsg });
+      res.status(200).json({ success: true, xp_total: xpTotal, xp_par_joueur: xpParJoueur, mode, joueurs: xpResults, log: logMsg });
     });
   } catch (err) {
     console.error('Erreur POST /Combats/:id/fin:', err.message);
