@@ -12,8 +12,15 @@ const state = {
   filtres: {},
   data: [],
   page: 1,
-  correspondances: []
+  correspondances: [],
+  mesPersonnages: [],
+  modalItem: null,
 };
+
+// ─── UTILS ───────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
 
 // ─── DEBOUNCE ────────────────────────────────────────────────
 function debounce(fn, delay) {
@@ -57,6 +64,7 @@ function changerOnglet(onglet) {
 function renderFiltres() {
   const zone = document.getElementById('biblio-filters');
   zone.innerHTML = '';
+  // Recherche inline ajoutée à la fin de la fonction via insertBefore
 
   if (state.onglet === 'sorts') {
     zone.innerHTML = `
@@ -201,6 +209,20 @@ function renderFiltres() {
     `;
     document.getElementById('f-rarete-hb').addEventListener('change', e => { state.filtres.rarete = e.target.value; state.page = 1; chargerDonnees(); });
   }
+
+  // ─── Recherche inline (toujours en tête des filtres) ───────
+  const searchEl = document.createElement('input');
+  searchEl.type = 'text';
+  searchEl.className = 'biblio-inline-search';
+  searchEl.placeholder = 'Rechercher…';
+  searchEl.value = state.recherche;
+  searchEl.autocomplete = 'off';
+  searchEl.addEventListener('input', debounce(e => {
+    state.recherche = e.target.value.trim();
+    state.page = 1;
+    chargerDonnees();
+  }, 300));
+  zone.insertBefore(searchEl, zone.firstChild);
 }
 
 // ─── ATTENTE DU TOKEN AUTH ────────────────────────────────────
@@ -536,6 +558,7 @@ function modalObjetMagique(o) {
     </div>
     ${o.effets?.length ? `<div class="modal-section"><h3>Effets</h3><ul>${o.effets.map(ef => `<li>${typeof ef === 'string' ? ef : JSON.stringify(ef)}</li>`).join('')}</ul></div>` : ''}
     ${o.poids != null ? `<div class="modal-section"><p>Poids : ${o.poids} kg${o.prix_estime ? ' &nbsp;|&nbsp; Prix estimé : ' + o.prix_estime + ' po' : ''}</p></div>` : ''}
+    ${sectionAjouterAuPersonnage()}
   `;
 }
 
@@ -578,6 +601,7 @@ function modalHomebrew(o) {
     </div>
     ${o.effets?.length ? `<div class="modal-section"><h3>Effets</h3><ul>${o.effets.map(ef => `<li>${typeof ef === 'string' ? ef : JSON.stringify(ef)}</li>`).join('')}</ul></div>` : ''}
     ${o.poids != null ? `<div class="modal-section"><p>Poids : ${o.poids} kg${o.prix_estime ? ' &nbsp;|&nbsp; Prix estimé : ' + o.prix_estime + ' po' : ''}</p></div>` : ''}
+    ${sectionAjouterAuPersonnage()}
     <div class="modal-section hb-modal-actions">
       <a href="creer-objet-magique.html?slug=${encodeURIComponent(o.slug)}" class="btn-hb-edit">
         <i class="fa-solid fa-pen"></i> Modifier
@@ -632,6 +656,7 @@ window.goPage = function(p) {
 
 // ─── MODAL ────────────────────────────────────────────────────
 async function ouvrirModal(item) {
+  state.modalItem = item;
   const overlay = document.getElementById('modal-overlay');
   const body = document.getElementById('modal-body');
   overlay.classList.remove('hidden');
@@ -651,6 +676,7 @@ async function ouvrirModal(item) {
     try {
       const res = await fetch(`${API}/objets-magiques/${item.slug}`);
       const full = await res.json();
+      state.modalItem = full;
       body.innerHTML = modalObjetMagique(full);
     } catch { body.innerHTML = '<p style="color:#f44">Erreur de chargement.</p>'; }
     return;
@@ -663,6 +689,7 @@ async function ouvrirModal(item) {
         headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}` }
       });
       const full = await res.json();
+      state.modalItem = full;
       body.innerHTML = modalHomebrew(full);
     } catch { body.innerHTML = '<p style="color:#f44">Erreur de chargement.</p>'; }
     return;
@@ -713,6 +740,7 @@ function modalSort(s) {
     ${degatsHtml ? `<div class="modal-section"><h3>Dégâts</h3><p>${degatsHtml}</p></div>` : ''}
     <div class="modal-section"><h3>Description</h3><p>${appliquerTooltips(s.description) || '—'}</p></div>
     ${s.description_superieur ? `<div class="modal-section"><h3>Aux niveaux supérieurs</h3><p>${s.description_superieur}</p></div>` : ''}
+    ${sectionAjouterAuPersonnage()}
   `;
 }
 
@@ -816,6 +844,7 @@ function modalEquipement(e) {
     </div>
     ${isArme && e.proprietes?.length ? `<div class="modal-section"><h3>Propriétés</h3><p>${e.proprietes.join(', ')}</p></div>` : ''}
     ${isArme && e.botte ? `<div class="modal-section"><h3>Botte</h3><p>${e.botte}</p></div>` : ''}
+    ${sectionAjouterAuPersonnage()}
   `;
 }
 
@@ -944,6 +973,121 @@ function modalMonstre(m) {
   `;
 }
 
+// ─── MES PERSONNAGES ──────────────────────────────────────────
+async function chargerMesPersonnages() {
+  try {
+    const res = await fetch(`${API}/Personnages`, {
+      headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}` }
+    });
+    if (res.ok) state.mesPersonnages = await res.json();
+  } catch { /* silencieux si non connecté */ }
+}
+
+// ─── TOAST ────────────────────────────────────────────────────
+function showToast(msg, type = 'success') {
+  const el = document.getElementById('biblio-toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.className = `biblio-toast biblio-toast-${type}`;
+  clearTimeout(el._timer);
+  el._timer = setTimeout(() => { el.className = 'biblio-toast hidden'; }, 3500);
+}
+
+// ─── SECTION "AJOUTER À UN PERSONNAGE" ────────────────────────
+function sectionAjouterAuPersonnage() {
+  if (!state.mesPersonnages.length) return '';
+  const opts = state.mesPersonnages.map(p => {
+    const cls = p.classe ? p.classe.charAt(0).toUpperCase() + p.classe.slice(1) : '';
+    return `<option value="${p._id}">${escHtml(p.nom)} — Niv.${p.niveau}${cls ? ' ' + cls : ''}</option>`;
+  }).join('');
+  return `
+    <div class="modal-add-to-char">
+      <h3>Ajouter à un personnage</h3>
+      <div class="modal-add-row">
+        <select id="modal-add-perso"><option value="">— Choisir —</option>${opts}</select>
+        <button id="btn-ajouter-perso" class="btn-ajouter-perso" onclick="ajouterAuPersonnage()">Ajouter</button>
+      </div>
+    </div>`;
+}
+
+// ─── AJOUTER AU PERSONNAGE ────────────────────────────────────
+window.ajouterAuPersonnage = async function() {
+  const sel = document.getElementById('modal-add-perso');
+  if (!sel?.value) { showToast('Choisissez un personnage', 'warn'); return; }
+  const persoId = sel.value;
+  const item = state.modalItem;
+  if (!item) return;
+
+  const btn = document.getElementById('btn-ajouter-perso');
+  if (btn) btn.disabled = true;
+
+  try {
+    const rp = await fetch(`${API}/Personnages/${persoId}`, {
+      headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}` }
+    });
+    if (!rp.ok) throw new Error('Personnage introuvable');
+    const perso = await rp.json();
+
+    let updateBody = null;
+
+    if (state.onglet === 'sorts') {
+      const sorts = JSON.parse(JSON.stringify(perso.sorts || { caracteristique_incantation: null, dd_sorts: null, bonus_attaque_sort: null, emplacements: [], sorts_connus: [] }));
+      if (!sorts.sorts_connus) sorts.sorts_connus = [];
+      if (sorts.sorts_connus.some(x => x.nom === item.nom)) {
+        showToast(`${item.nom} est déjà dans la liste`, 'warn');
+        if (btn) btn.disabled = false;
+        return;
+      }
+      sorts.sorts_connus.push({
+        nom: item.nom, niveau: item.niveau, ecole: item.ecole,
+        description: item.description, concentration: !!item.concentration,
+        rituel: !!item.rituel, temps_incantation: item.temps_incantation,
+        portee: item.portee, duree: item.duree, classes: item.classes || []
+      });
+      updateBody = { sorts };
+
+    } else if (state.onglet === 'equipement') {
+      const isArme = state.filtres.typeEquip !== 'armures';
+      if (isArme) {
+        const attaques = JSON.parse(JSON.stringify(perso.attaques || []));
+        attaques.push({
+          nom: item.nom,
+          degats: item.degats?.de || '1d6',
+          bonus_attaque: 0,
+          portee: item.portee_normale ? `${item.portee_normale}/${item.portee_longue} m` : 'contact',
+          type: item.degats?.type || '',
+          action_type: 'action'
+        });
+        updateBody = { attaques };
+      } else {
+        const equipement = JSON.parse(JSON.stringify(perso.equipement || []));
+        equipement.push({ nom: item.nom, quantite: 1, description: '', poids: item.poids || 0 });
+        updateBody = { equipement };
+      }
+
+    } else if (state.onglet === 'objets-magiques' || state.onglet === 'mes-homebrew') {
+      const equipement = JSON.parse(JSON.stringify(perso.equipement || []));
+      equipement.push({ nom: item.nom, quantite: 1, description: item.description || '', poids: item.poids || 0 });
+      updateBody = { equipement };
+    }
+
+    if (!updateBody) { if (btn) btn.disabled = false; return; }
+
+    const res = await fetch(`${API}/Personnages/${persoId}`, {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${window.SUPABASE_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(updateBody)
+    });
+    if (!res.ok) throw new Error('Erreur lors de la mise à jour');
+
+    showToast(`Ajouté à ${perso.nom} !`);
+    sel.value = '';
+  } catch (e) {
+    showToast(e.message || 'Erreur', 'error');
+  }
+  if (btn) btn.disabled = false;
+};
+
 // ─── ÉTATS UI ─────────────────────────────────────────────────
 function afficherLoading() {
   document.getElementById('biblio-grille').innerHTML = '<div class="biblio-loading" style="grid-column:1/-1"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>';
@@ -964,14 +1108,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     tab.addEventListener('click', () => changerOnglet(tab.dataset.tab));
   });
 
-  // Recherche globale (debounced)
-  const searchInput = document.getElementById('recherche-globale');
-  searchInput.addEventListener('input', debounce(e => {
-    state.recherche = e.target.value.trim();
-    state.page = 1;
-    chargerDonnees();
-  }, 300));
-
   // Modal fermeture
   document.getElementById('modal-close').addEventListener('click', fermerModal);
   document.getElementById('modal-overlay').addEventListener('click', e => {
@@ -982,4 +1118,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Charger l'onglet par défaut
   changerOnglet('sorts');
   renderFiltres();
+
+  // Charger les personnages dès que l'auth est prête
+  if (window.SUPABASE_TOKEN) {
+    chargerMesPersonnages();
+  } else {
+    window.addEventListener('supabase-ready', chargerMesPersonnages, { once: true });
+    let n = 0;
+    const poll = setInterval(() => {
+      if (window.SUPABASE_TOKEN) { clearInterval(poll); chargerMesPersonnages(); }
+      else if (++n > 150) clearInterval(poll);
+    }, 100);
+  }
 });

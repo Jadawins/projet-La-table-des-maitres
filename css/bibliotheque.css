@@ -768,6 +768,102 @@
 }
 .btn-homebrew-creer:hover { background: rgba(134,93,255,0.3); }
 
+/* ─── Recherche inline dans la barre de filtres ──────────────── */
+.biblio-inline-search {
+  width: 100%;
+  max-width: 320px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 0.42rem 0.85rem;
+  color: var(--color-text, #f0f0f0);
+  font-size: 0.83rem;
+  font-family: inherit;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.biblio-inline-search:focus {
+  outline: none;
+  border-color: rgba(134,93,255,0.55);
+}
+[data-theme="light"] .biblio-inline-search {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.15);
+  color: #1a1a2e;
+}
+
+/* ─── Section "Ajouter à un personnage" dans la modal ────────── */
+.modal-add-to-char {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.modal-add-to-char h3 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #865dff;
+  margin: 0 0 0.65rem;
+}
+.modal-add-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.modal-add-row select {
+  flex: 1;
+  min-width: 160px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 0.38rem 0.65rem;
+  color: var(--color-text, #f0f0f0);
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+.modal-add-row select option { background: #1a1a2e; }
+.btn-ajouter-perso {
+  background: rgba(134,93,255,0.18);
+  border: 1px solid rgba(134,93,255,0.4);
+  color: #c4b5fd;
+  border-radius: 6px;
+  padding: 0.38rem 0.9rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.12s;
+}
+.btn-ajouter-perso:hover  { background: rgba(134,93,255,0.3); }
+.btn-ajouter-perso:disabled { opacity: 0.5; cursor: default; }
+[data-theme="light"] .modal-add-row select {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.15);
+  color: #1a1a2e;
+}
+[data-theme="light"] .modal-add-row select option { background: #fff; }
+
+/* ─── Toast bibliothèque ─────────────────────────────────────── */
+.biblio-toast {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  padding: 0.52rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: #fff;
+  z-index: 3000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.22s, transform 0.22s;
+}
+.biblio-toast.hidden { display: none; }
+.biblio-toast-success { background: #2d5a27; opacity: 1; transform: translateY(0); }
+.biblio-toast-warn    { background: #7a5c00; opacity: 1; transform: translateY(0); }
+.biblio-toast-error   { background: #8B0000; opacity: 1; transform: translateY(0); }
+
 /* Actions dans la modal homebrew */
 .hb-modal-actions {
   display: flex;
