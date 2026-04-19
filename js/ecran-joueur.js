@@ -18,6 +18,7 @@ let slotsLocaux      = {};
 let ressourcesLocales = {};
 let trackingTour     = { action: false, bonus: false, reaction: false };
 let jetsMort         = { succes: 0, echec: 0 };
+let desVieRestants   = null;
 
 // ─── AUTH ─────────────────────────────────────────────────────
 
@@ -86,14 +87,30 @@ async function chargerTout() {
 let slotsInitialises = false;
 
 function initSlotsLocaux() {
-  const empl = monPerso?.sorts?.emplacements || {};
+  // emplacements = tableau [{ niveau, total, utilises }]
+  const emplacements = monPerso?.sorts?.emplacements || [];
   slotsLocaux = {};
-  for (const [niv, total] of Object.entries(empl)) {
-    slotsLocaux[niv] = parseInt(total, 10);
+  emplacements.forEach(e => {
+    slotsLocaux[String(e.niveau)] = (e.total || 0) - (e.utilises || 0);
+  });
+
+  // Override avec l'état persistant du participant dans le combat
+  const moi = combatData?.participants?.find(p => p.perso_id === monPersoId || p.user_id === window.USER_ID);
+  if (moi?.slots_restants) {
+    Object.assign(slotsLocaux, Object.fromEntries(
+      Object.entries(moi.slots_restants).map(([k, v]) => [String(k), v])
+    ));
   }
+
   const res = monPerso?.ressources_classe || [];
   ressourcesLocales = {};
   res.forEach(r => { ressourcesLocales[r.nom] = { total: r.total, utilises: 0 }; });
+
+  const dv = monPerso?.combat?.des_vie;
+  if (desVieRestants === null) {
+    desVieRestants = dv?.restants ?? dv?.total ?? (monPerso?.niveau || 1);
+  }
+
   slotsInitialises = true;
 }
 
@@ -229,10 +246,12 @@ function renderActionsPanel() {
 
   // Initiative
   const monInit = moi?.initiative;
+  const modDex = monPerso?.caracteristiques?.DEX?.modificateur ?? 0;
   if (monInit == null || monInit === 0) {
     html += `<div class="initiative-panel">
       <label><i class="fa-solid fa-bolt"></i> Initiative</label>
       <input type="number" id="init-val" min="1" max="30" placeholder="—" style="width:56px;" />
+      <button class="btn-sm-secondary" onclick="lancerDInitiative()" style="padding:.3rem .5rem;font-size:.75rem;" title="d20 + DEX (${modDex >= 0 ? '+' : ''}${modDex})">🎲</button>
       <button class="btn-sm-primary" onclick="soumettreInitiative()">OK</button>
     </div>`;
   } else {
@@ -371,30 +390,63 @@ function renderSorts() {
 }
 
 function renderSlotBadges(niv) {
-  const total  = monPerso?.sorts?.emplacements?.[niv] ?? 0;
-  const restants = slotsLocaux[niv] ?? 0;
+  const empl     = (monPerso?.sorts?.emplacements || []).find(e => e.niveau === niv);
+  const total    = empl?.total ?? 0;
+  const restants = slotsLocaux[String(niv)] ?? total;
   return Array.from({ length: total }, (_, i) =>
-    `<span class="slot-badge${i >= restants ? ' vide' : ''}" title="Emplacement niv.${niv}" onclick="recupererSlot(event,${niv})">${i < restants ? niv : '·'}</span>`
+    `<span class="slot-badge${i >= restants ? ' vide' : ''}" title="Emplacement niv.${niv}" onclick="recupererSlot(event,${niv},${total})">${i < restants ? niv : '·'}</span>`
   ).join('');
 }
 
-function recupererSlot(e, niv) {
+async function recupererSlot(e, niv, max) {
   e.stopPropagation();
-  const max = monPerso?.sorts?.emplacements?.[niv] ?? 0;
-  if ((slotsLocaux[niv] ?? 0) < max) {
-    slotsLocaux[niv] = (slotsLocaux[niv] ?? 0) + 1;
-    renderActionsPanel();
-    switchTabJ(document.querySelector('.tab-btn-j:nth-child(2)'), 'tab-sorts');
+  const actuel = slotsLocaux[String(niv)] ?? 0;
+  if (actuel >= max) return;
+  const nouveau = actuel + 1;
+  slotsLocaux[String(niv)] = nouveau;
+  if (combatId) {
+    fetch(`${API}/Combats/${combatId}/recuperer-slot`, {
+      method: 'POST', headers: authHeaders(),
+      body: JSON.stringify({ niveau: niv, restants: nouveau })
+    }).catch(() => {});
   }
+  renderActionsPanel();
+  setTimeout(() => switchToTab('tab-sorts'), 0);
 }
+
+// ─── DÉ D'INITIATIVE ──────────────────────────────────────────
+
+function lancerDInitiative() {
+  const modDex = monPerso?.caracteristiques?.DEX?.modificateur ?? 0;
+  const d20    = Math.ceil(Math.random() * 20);
+  const total  = Math.max(1, d20 + modDex);
+  const input  = document.getElementById('init-val');
+  if (input) input.value = total;
+}
+window.lancerDInitiative = lancerDInitiative;
 
 // ─── RESSOURCES DE CLASSE ──────────────────────────────────────
 
 function renderRessources() {
   const res = monPerso?.ressources_classe || [];
-  if (!res.length) return '<p style="color:#555;font-size:.78rem;text-align:center;padding:.5rem;">Aucune ressource définie.</p>';
+  const dv    = monPerso?.combat?.des_vie;
+  const dvType = dv?.type || 'd8';
+  const dvMax  = dv?.total ?? (monPerso?.niveau || 1);
+  const dvRest = desVieRestants ?? dvMax;
+  const conMod = monPerso?.caracteristiques?.CON?.modificateur ?? 0;
+  const dieSize = parseInt(dvType.replace('d', ''), 10) || 8;
 
-  return res.map(r => {
+  const dvHtml = `<div class="ressource-item" style="margin-bottom:.5rem;border-color:rgba(74,222,128,0.2);">
+    <span class="ressource-nom"><i class="fa-solid fa-heart-pulse" style="color:#4ade80;font-size:.7rem;"></i> Dés de vie (${dvType})</span>
+    <span style="font-size:.72rem;color:#aaa;margin-right:.35rem;">${dvRest}/${dvMax}</span>
+    <button class="btn-sm-secondary" style="padding:.2rem .5rem;font-size:.7rem;" onclick="utiliserDeDeVie()" ${dvRest <= 0 ? 'disabled style="opacity:.4;"' : ''}>
+      🎲 +${Math.max(1, Math.ceil(dieSize / 2) + conMod)} moy.
+    </button>
+  </div>`;
+
+  if (!res.length) return dvHtml + '<p style="color:#555;font-size:.78rem;text-align:center;padding:.3rem;">Aucune ressource définie.</p>';
+
+  return dvHtml + res.map(r => {
     const etat = ressourcesLocales[r.nom] || { total: r.total, utilises: 0 };
     const restants = etat.total - etat.utilises;
     const dots = Array.from({ length: etat.total }, (_, i) =>
@@ -604,11 +656,12 @@ function ouvrirModalSort(sort) {
   } else {
     wrap.style.display = '';
     const cont = document.getElementById('modal-sort-niveaux');
-    const empl = monPerso?.sorts?.emplacements || {};
+    const emplacements = monPerso?.sorts?.emplacements || [];
     let btns = '';
     for (let n = niv; n <= 9; n++) {
-      if (!empl[n] && !slotsLocaux[n]) continue;
-      const dispo = slotsLocaux[n] ?? 0;
+      const empl = emplacements.find(e => e.niveau === n);
+      if (!empl) continue;
+      const dispo = slotsLocaux[String(n)] ?? 0;
       btns += `<button class="btn-niveau-sort${n === niv ? ' selected' : ''}"
         onclick="selectNiveauSort(this,${n})"
         ${dispo <= 0 ? 'disabled' : ''}
@@ -642,7 +695,7 @@ async function confirmerSort() {
 
   if (niv > 0) {
     niveauUtilise = document.getElementById('modal-sort-niveaux')._niveauChoisi ?? niv;
-    if ((slotsLocaux[niveauUtilise] ?? 0) <= 0) {
+    if ((slotsLocaux[String(niveauUtilise)] ?? 0) <= 0) {
       showNotif('Aucun emplacement disponible', 'warning');
       return;
     }
@@ -662,7 +715,14 @@ async function confirmerSort() {
   });
 
   if (res.ok) {
-    if (niv > 0) slotsLocaux[niveauUtilise] = Math.max(0, (slotsLocaux[niveauUtilise] ?? 0) - 1);
+    if (niv > 0) {
+      const nouveau = Math.max(0, (slotsLocaux[String(niveauUtilise)] ?? 0) - 1);
+      slotsLocaux[String(niveauUtilise)] = nouveau;
+      fetch(`${API}/Combats/${combatId}/depenser-slot`, {
+        method: 'POST', headers: authHeaders(),
+        body: JSON.stringify({ niveau: niveauUtilise, restants: nouveau })
+      }).catch(() => {});
+    }
     fermerModalSort();
     trackingTour.action = true;
     showNotif(`Sort lancé — niv.${niveauUtilise}`, 'success');
@@ -672,6 +732,44 @@ async function confirmerSort() {
     showNotif(err.error || 'Erreur sort', 'error');
   }
 }
+
+// ─── DÉS DE VIE ───────────────────────────────────────────────
+
+async function utiliserDeDeVie() {
+  if (!combatId || !monPerso) return;
+  if ((desVieRestants ?? 0) <= 0) { showNotif('Plus de dés de vie', 'warning'); return; }
+
+  const dv      = monPerso?.combat?.des_vie;
+  const dvType  = dv?.type || 'd8';
+  const dieSize = parseInt(dvType.replace('d', ''), 10) || 8;
+  const conMod  = monPerso?.caracteristiques?.CON?.modificateur ?? 0;
+
+  const roll = Math.ceil(Math.random() * dieSize);
+  const soin = Math.max(1, roll + conMod);
+
+  desVieRestants = Math.max(0, (desVieRestants ?? 1) - 1);
+
+  const moi = combatData?.participants?.find(p => p.perso_id === monPersoId || p.user_id === window.USER_ID);
+  const res = await fetch(`${API}/Combats/${combatId}/soin`, {
+    method: 'POST',
+    headers: authHeaders(),
+    body: JSON.stringify({
+      soigneur_id: moi?.id || monPersoId,
+      cible_id:    moi?.id || monPersoId,
+      points:      soin
+    })
+  });
+
+  if (res.ok) {
+    showNotif(`Dé de vie : +${soin} PV (🎲${roll}${conMod >= 0 ? '+' : ''}${conMod} CON)`, 'success');
+    await chargerTout();
+  } else {
+    desVieRestants++;
+    const err = await res.json().catch(() => ({}));
+    showNotif(err.error || 'Erreur soin', 'error');
+  }
+}
+window.utiliserDeDeVie = utiliserDeDeVie;
 
 // ─── JETS DE MORT (actions) ─────────────────────────────────────
 

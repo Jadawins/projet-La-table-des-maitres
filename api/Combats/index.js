@@ -895,4 +895,52 @@ function _niveauDepuisXP(xp) {
   return 1;
 }
 
+// ─── POST /:id/depenser-slot — décrémenter un emplacement ────
+router.post('/:id/depenser-slot', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { niveau, restants } = req.body;
+  if (niveau == null || restants == null) return res.status(400).json({ error: 'niveau et restants requis' });
+  try {
+    await withDb(async (db) => {
+      let oid;
+      try { oid = new ObjectId(req.params.id); } catch { return res.status(400).json({ error: 'ID invalide' }); }
+      const combat = await db.collection('combats').findOne({ _id: oid });
+      if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé' });
+      const pIdx = combat.participants.findIndex(p => p.user_id === userId);
+      if (pIdx === -1) return res.status(403).json({ error: 'Participant introuvable' });
+      await db.collection('combats').updateOne(
+        { _id: oid },
+        { $set: { [`participants.${pIdx}.slots_restants.${niveau}`]: Math.max(0, restants), derniere_activite: new Date() } }
+      );
+      res.json({ ok: true, niveau, restants: Math.max(0, restants) });
+    });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// ─── POST /:id/recuperer-slot — récupérer un emplacement ─────
+router.post('/:id/recuperer-slot', async (req, res) => {
+  const userId = getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Non authentifié' });
+  const { niveau, restants } = req.body;
+  if (niveau == null || restants == null) return res.status(400).json({ error: 'niveau et restants requis' });
+  try {
+    await withDb(async (db) => {
+      let oid;
+      try { oid = new ObjectId(req.params.id); } catch { return res.status(400).json({ error: 'ID invalide' }); }
+      const combat = await db.collection('combats').findOne({ _id: oid });
+      if (!combat) return res.status(404).json({ error: 'Combat introuvable' });
+      if (combat.statut !== 'actif') return res.status(409).json({ error: 'Combat terminé' });
+      const pIdx = combat.participants.findIndex(p => p.user_id === userId);
+      if (pIdx === -1) return res.status(403).json({ error: 'Participant introuvable' });
+      await db.collection('combats').updateOne(
+        { _id: oid },
+        { $set: { [`participants.${pIdx}.slots_restants.${niveau}`]: Math.max(0, restants), derniere_activite: new Date() } }
+      );
+      res.json({ ok: true, niveau, restants: Math.max(0, restants) });
+    });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
 module.exports = router;
