@@ -572,6 +572,39 @@
       </details>
 
       <!-- ══ 16. Méta ══════════════════════════════════════════════ -->
+      <!-- PHASES -->
+      <details class="form-section">
+        <summary>💀 Phases de combat</summary>
+        <p style="font-size:0.75rem;color:#888;margin:0 0 0.75rem;">Déclenchées automatiquement dans l'écran MJ quand les PV passent sous le seuil.</p>
+        <div id="phases-list"></div>
+        <div style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:0.5rem;align-items:end;margin-top:0.5rem;">
+          <div class="form-group"><label>Seuil %</label><input type="number" id="phase-seuil" min="1" max="99" value="50" /></div>
+          <div class="form-group"><label>Nom</label><input type="text" id="phase-nom" placeholder="Phase 2 — Fureur" /></div>
+          <div class="form-group"><label>Description</label><input type="text" id="phase-desc" placeholder="Actions modifiées, nouvelles capacités…" /></div>
+          <button type="button" onclick="ajouterPhase()" style="margin-bottom:0.6rem;background:rgba(134,93,255,.18);border:1px solid rgba(134,93,255,.35);color:#c4b5fd;border-radius:6px;padding:.35rem .6rem;cursor:pointer;font-size:.78rem;white-space:nowrap;">+ Ajouter</button>
+        </div>
+      </details>
+
+      <!-- LOOT -->
+      <details class="form-section">
+        <summary>💰 Tableau de loot</summary>
+        <p style="font-size:0.75rem;color:#888;margin:0 0 0.75rem;">Affiché dans l'écran MJ quand le monstre tombe à 0 PV.</p>
+        <div class="g4" style="margin-bottom:0.6rem;">
+          <div class="form-group"><label>PO</label><input type="number" id="loot-po" min="0" value="0" /></div>
+          <div class="form-group"><label>PA</label><input type="number" id="loot-pa" min="0" value="0" /></div>
+          <div class="form-group"><label>PC</label><input type="number" id="loot-pc" min="0" value="0" /></div>
+          <div class="form-group"><label>PE</label><input type="number" id="loot-pe" min="0" value="0" /></div>
+        </div>
+        <div class="form-group">
+          <label>Monnaie variable <span class="form-hint">ex : 2d6 po, 1d4 pa</span></label>
+          <input type="text" id="loot-variable" placeholder="2d6 po, 1d4 pa" />
+        </div>
+        <div class="form-group">
+          <label>Objets <span class="form-hint">(un par ligne)</span></label>
+          <textarea id="loot-objets" rows="4" placeholder="Épée longue +1&#10;Potion de soins&#10;Clé de la tour nord…"></textarea>
+        </div>
+      </details>
+
       <details class="form-section">
         <summary>🔧 Méta / informations de création</summary>
         <div class="g3">
@@ -653,6 +686,7 @@ const actionsLeg       = [];
 const actionsRepaire   = [];
 const actionsMythiques = [];
 const sorts            = [];
+const phases           = [];
 
 // Chips (Sets)
 const immDegats = new Set(), resDegats = new Set(), vulDegats = new Set(), immEtats = new Set();
@@ -1173,6 +1207,12 @@ async function sauvegarder() {
     source: g('source').trim()||'homebrew',
     auteur: g('auteur').trim(),
     notes_createur: g('notes_createur').trim(),
+    phases: phases.map(x => ({...x})),
+    loot: {
+      monnaie: { po: gi('loot-po'), pa: gi('loot-pa'), pc: gi('loot-pc'), pe: gi('loot-pe') },
+      monnaie_variable: g('loot-variable').trim(),
+      objets: (document.getElementById('loot-objets')?.value||'').split('\n').map(l=>l.trim()).filter(Boolean)
+    },
   };
 
   try {
@@ -1187,6 +1227,39 @@ async function sauvegarder() {
   btn.disabled = false;
 }
 window.sauvegarder = sauvegarder;
+
+// ═══════════════════════════════════════════════════════════════════
+//  PHASES
+// ═══════════════════════════════════════════════════════════════════
+function renderPhases() {
+  const list = document.getElementById('phases-list');
+  if (!list) return;
+  if (!phases.length) { list.innerHTML = '<p style="color:#555;font-size:0.75rem;margin:0 0 0.4rem;">Aucune phase définie.</p>'; return; }
+  list.innerHTML = phases.map((ph, i) => `
+    <div style="display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0.6rem;background:rgba(255,255,255,.04);border-radius:6px;margin-bottom:0.3rem;font-size:0.8rem;">
+      <span style="color:#f97316;font-weight:700;min-width:42px;">≤${ph.seuil}%</span>
+      <span style="color:#e2dfc8;flex:1;">${escHtml(ph.nom)}</span>
+      <span style="color:#888;font-size:0.72rem;flex:2;">${escHtml(ph.desc||'')}</span>
+      <button type="button" onclick="supprimerPhase(${i})" style="background:none;border:none;color:#f87171;cursor:pointer;font-size:0.9rem;padding:0;">✕</button>
+    </div>`).join('');
+}
+window.renderPhases = renderPhases;
+
+function ajouterPhase() {
+  const seuil = parseInt(document.getElementById('phase-seuil')?.value) || 50;
+  const nom   = document.getElementById('phase-nom')?.value.trim();
+  const desc  = document.getElementById('phase-desc')?.value.trim() || '';
+  if (!nom) { alert('Le nom de la phase est requis.'); return; }
+  phases.push({ seuil, nom, desc });
+  phases.sort((a, b) => b.seuil - a.seuil);
+  document.getElementById('phase-nom').value = '';
+  document.getElementById('phase-desc').value = '';
+  renderPhases();
+}
+window.ajouterPhase = ajouterPhase;
+
+function supprimerPhase(i) { phases.splice(i, 1); renderPhases(); }
+window.supprimerPhase = supprimerPhase;
 
 // ═══════════════════════════════════════════════════════════════════
 //  SUPPRIMER
@@ -1205,7 +1278,7 @@ window.supprimerMonstre = supprimerMonstre;
 // ═══════════════════════════════════════════════════════════════════
 function resetForm() {
   editId = null;
-  [attaques, traits, actionsBonus, reactions, actionsLeg, actionsRepaire, actionsMythiques, sorts].forEach(a => a.splice(0));
+  [attaques, traits, actionsBonus, reactions, actionsLeg, actionsRepaire, actionsMythiques, sorts, phases].forEach(a => a.splice(0));
   immDegats.clear(); resDegats.clear(); vulDegats.clear(); immEtats.clear();
 
   const fields = {
@@ -1230,10 +1303,14 @@ function resetForm() {
   document.getElementById('btn-label').textContent = 'Créer le monstre';
   document.getElementById('preview-container').style.display = 'none';
 
+  ['loot-po','loot-pa','loot-pc','loot-pe'].forEach(id => { const el = document.getElementById(id); if (el) el.value = 0; });
+  ['loot-variable','loot-objets','phase-nom','phase-desc'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  document.getElementById('phase-seuil').value = 50;
+
   refreshAllStats(); updateFpDependents(); initChips();
   DYN_CONFIGS.forEach(cfg => renderDynList(cfg));
   ACTION_CONFIGS.forEach(cfg => renderActionList(cfg));
-  renderAttaques(); renderSorts();
+  renderAttaques(); renderSorts(); renderPhases();
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -1247,7 +1324,7 @@ function chargerEdition(m) {
   fill(attaques, m.attaques); fill(traits, m.traits); fill(actionsBonus, m.actions_bonus);
   fill(reactions, m.reactions); fill(actionsLeg, m.actions_legendaires);
   fill(actionsRepaire, m.actions_repaire); fill(actionsMythiques, m.actions_mythiques);
-  fill(sorts, m.sorts);
+  fill(sorts, m.sorts); fill(phases, m.phases);
 
   // Chips
   immDegats.clear(); (m.immunites_degats||[]).forEach(v=>immDegats.add(v));
@@ -1280,6 +1357,13 @@ function chargerEdition(m) {
     const el = document.getElementById('skill-cb-'+s.nom.replace(/\s/g,'-'));
     if (el) el.checked = (m.competences_maitrisees||[]).some(c => (typeof c === 'string' ? c : c.nom) === s.nom);
   });
+
+  if (m.loot) {
+    ['po','pa','pc','pe'].forEach(k => { const el = document.getElementById('loot-'+k); if (el) el.value = m.loot.monnaie?.[k] || 0; });
+    const lv = document.getElementById('loot-variable'); if (lv) lv.value = m.loot.monnaie_variable || '';
+    const lo = document.getElementById('loot-objets'); if (lo) lo.value = (m.loot.objets || []).join('\n');
+  }
+  renderPhases();
 
   initChips(); refreshAllStats(); updateFpDependents();
   DYN_CONFIGS.forEach(cfg => renderDynList(cfg));

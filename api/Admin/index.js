@@ -19,7 +19,7 @@ async function withDb(fn) {
 router.get('/stats', async (req, res) => {
   const userId = getUserId(req);
   if (!userId) return res.status(401).json({ error: 'Non authentifié' });
-  if (ADMIN_ID && userId !== ADMIN_ID) return res.status(403).json({ error: 'Accès refusé' });
+  if (!ADMIN_ID || userId !== ADMIN_ID) return res.status(403).json({ error: 'Accès refusé' });
 
   try {
     const data = await withDb(async (db) => {

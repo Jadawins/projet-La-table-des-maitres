@@ -208,15 +208,68 @@ async function majInitiative(pid, val) {
   await sauvegarderParticipants();
 }
 
+// ─── PHASES & LOOT ───────────────────────────────────────────────
+
+function verifierPhases(p, pvAvant) {
+  if (!p.phases?.length || !p.pv_max) return;
+  const pctAvant = (pvAvant / p.pv_max) * 100;
+  const pctApres = (p.pv_actuels / p.pv_max) * 100;
+  p.phases.forEach(ph => {
+    const seuil = ph.seuil || 0;
+    if (pctAvant > seuil && pctApres <= seuil) {
+      afficherBannerPhase(p, ph);
+    }
+  });
+}
+
+function afficherBannerPhase(p, ph) {
+  envoyerMsgSysteme(`💀 PHASE — ${p.nom} : ${ph.nom || 'Nouvelle phase'} (≤${ph.seuil}% PV)${ph.description ? ' — ' + ph.description : ''}`);
+  const banner = document.createElement('div');
+  banner.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(20,0,0,0.95);border:2px solid #ef4444;border-radius:12px;padding:1.5rem 2rem;z-index:9000;text-align:center;max-width:460px;box-shadow:0 0 40px rgba(239,68,68,0.4);';
+  banner.innerHTML = `<div style="font-size:1.4rem;color:#ef4444;margin-bottom:0.5rem;">💀 Nouvelle Phase !</div>
+    <div style="font-size:1.1rem;color:#f0f0f0;margin-bottom:0.3rem;font-weight:bold;">${escHtml(p.nom)}</div>
+    <div style="font-size:1rem;color:#c9a84c;margin-bottom:0.5rem;">${escHtml(ph.nom || '')}</div>
+    ${ph.description ? `<div style="font-size:0.85rem;color:#aaa;margin-bottom:0.8rem;">${escHtml(ph.description)}</div>` : ''}
+    <button onclick="this.parentElement.remove()" style="background:#865dff;border:none;border-radius:6px;padding:0.4rem 1.2rem;color:#fff;cursor:pointer;font-size:0.85rem;">OK</button>`;
+  document.body.appendChild(banner);
+  setTimeout(() => banner.remove(), 10000);
+}
+
+function afficherLootMonstre(p) {
+  const loot = p.loot;
+  if (!loot) return;
+  const monnaie = loot.monnaie || {};
+  const lignes = [];
+  if (monnaie.po) lignes.push(`${monnaie.po} PO`);
+  if (monnaie.pa) lignes.push(`${monnaie.pa} PA`);
+  if (monnaie.pc) lignes.push(`${monnaie.pc} PC`);
+  if (monnaie.pe) lignes.push(`${monnaie.pe} PE`);
+  if (loot.monnaie_variable) lignes.push(`<span style="color:#888;font-style:italic">${escHtml(loot.monnaie_variable)}</span>`);
+  const objetsList = (loot.objets || []).map(o => `<li style="margin:0.2rem 0;font-size:0.85rem;">${escHtml(o)}</li>`).join('');
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9000;display:flex;align-items:center;justify-content:center;';
+  overlay.innerHTML = `<div style="background:#1a1a2e;border:2px solid #c9a84c;border-radius:12px;padding:1.5rem 2rem;min-width:280px;max-width:420px;box-shadow:0 0 40px rgba(201,168,76,0.3);">
+    <div style="font-size:1.2rem;color:#c9a84c;margin-bottom:0.8rem;">💰 Loot — ${escHtml(p.nom)}</div>
+    ${lignes.length ? `<div style="margin-bottom:0.7rem;font-size:0.95rem;color:#f0f0f0;">${lignes.join(' · ')}</div>` : ''}
+    ${objetsList ? `<ul style="margin:0 0 0.8rem;padding-left:1.2rem;color:#d5d1a9;">${objetsList}</ul>` : '<p style="color:#555;font-size:0.8rem;margin-bottom:0.8rem;">Aucun objet.</p>'}
+    <button onclick="this.closest('[style*=fixed]').remove()" style="background:#865dff;border:none;border-radius:6px;padding:0.4rem 1.2rem;color:#fff;cursor:pointer;font-size:0.85rem;">Fermer</button>
+  </div>`;
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
 async function majPvDirect(pid, val) {
   const p = trouverParticipant(pid);
   if (!p) return;
+  const avant = p.pv_actuels;
   p.pv_actuels = Math.max(0, Math.min(p.pv_max * 2, parseInt(val) || 0));
   renderInitiativeList();
   renderJoueursPv();
   await sauvegarderParticipants();
+  if (p.type === 'monstre') verifierPhases(p, avant);
   if (p.pv_actuels === 0) {
     envoyerMsgSysteme(`${p.nom} tombe à 0 PV !`);
+    if (p.type === 'monstre' && avant > 0) afficherLootMonstre(p);
     if (p.type === 'joueur' && p.user_id && typeof createNotification === 'function') {
       createNotification({ user_id: p.user_id, session_id: sessionId, type: 'mort', titre: '💀 Vous êtes à 0 PV !', message: `${p.nom} est à 0 PV ! Jets de mort.`, lien: p.personnage_id ? `/fiche-personnage.html?id=${p.personnage_id}` : null });
     }
@@ -233,8 +286,10 @@ async function appliquerDelta(pid, delta) {
   await sauvegarderParticipants();
   const verbe = delta < 0 ? `subit ${Math.abs(delta)} dégâts` : `récupère ${delta} PV`;
   envoyerMsgSysteme(`${p.nom} ${verbe}. PV : ${p.pv_actuels}/${p.pv_max}`);
+  if (p.type === 'monstre') verifierPhases(p, avant);
   if (avant > 0 && p.pv_actuels === 0) {
     envoyerMsgSysteme(`${p.nom} tombe à 0 PV !`);
+    if (p.type === 'monstre') afficherLootMonstre(p);
     if (p.type === 'joueur' && p.user_id && typeof createNotification === 'function') {
       createNotification({ user_id: p.user_id, session_id: sessionId, type: 'mort', titre: '💀 Vous êtes à 0 PV !', message: `${p.nom} est à 0 PV ! Jets de mort.`, lien: p.personnage_id ? `/fiche-personnage.html?id=${p.personnage_id}` : null });
     }
@@ -430,6 +485,8 @@ function selectionnerMonstre(m) {
   nomEl._actions_legendaires = m.actions_legendaires  || [];
   nomEl._actions_leg_nb      = m.actions_leg_nb       || 0;
   nomEl._resistances_leg_nb  = m.resistances_leg_nb   || 0;
+  nomEl._phases              = m.phases               || [];
+  nomEl._loot                = m.loot                 || null;
 }
 window.selectionnerMonstre = selectionnerMonstre;
 
@@ -450,6 +507,8 @@ async function ajouterParticipant() {
     actions_leg_nb:      nomEl._actions_leg_nb      || 0,
     resistances_leg_nb:  nomEl._resistances_leg_nb  || 0,
     monstre_id:          nomEl._monstreId           || null,
+    phases:              nomEl._phases              || [],
+    loot:                nomEl._loot                || null,
     visible_joueurs: document.getElementById('p-visible').value !== 'false'
   };
   // Réinitialiser les données cachées
@@ -460,6 +519,8 @@ async function ajouterParticipant() {
   nomEl._actions_legendaires = [];
   nomEl._actions_leg_nb      = 0;
   nomEl._resistances_leg_nb  = 0;
+  nomEl._phases              = [];
+  nomEl._loot                = null;
   try {
     const res = await fetch(`${API}/Combats/${combatId}/participant`, {
       method: 'POST',

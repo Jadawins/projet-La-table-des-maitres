@@ -87,6 +87,9 @@
       <li>⏱️ <strong>Timer de tour en combat</strong> — sélecteur de durée (30 s / 1 min / 1 min 30 / 2 min) dans le tracker d'initiative ; le compte à rebours se relance automatiquement à chaque tour et vire au rouge dans les 10 dernières secondes</li>
       <li>👤 <strong>Profil utilisateur enrichi</strong> — la page Paramètres affiche maintenant l'avatar OAuth (ou les initiales), le badge du provider (Google / Discord / Email), et un bloc de stats rapides (nombre de personnages, sessions MJ et sessions joueur)</li>
       <li>📜 <strong>Historique des sessions</strong> — lien direct dans la sidebar vers les sessions terminées ; la page Sessions lit désormais le paramètre <code>?statut=</code> dans l'URL pour ouvrir directement le bon filtre</li>
+      <li>💀 <strong>Phases de combat pour les monstres homebrew</strong> — définissez des phases déclenchées automatiquement dans l'écran MJ quand les PV du monstre passent sous un seuil (% PV) ; une bannière d'alerte s'affiche et le message est posté dans le journal</li>
+      <li>💰 <strong>Tableau de loot par monstre</strong> — associez une récompense (PO/PA/PC/PE + formule variable + liste d'objets) à chaque monstre homebrew ; l'écran MJ ouvre automatiquement la fenêtre de loot quand le monstre tombe à 0 PV</li>
+      <li>📊 <strong>Dashboard admin</strong> — page de supervision réservée à l'administrateur du site : totaux globaux (personnages, sessions, combats…), tableau des utilisateurs actifs avec leur nombre de personnages, liste des créations récentes</li>
     </ul>
     <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
     <ul style="margin-top:0;">
@@ -299,19 +302,11 @@
     <li>🧱 <strong>Bloc Image dans l'éditeur</strong> — insérer une image (URL ou upload) directement dans un chapitre de campagne</li>
     <li>📡 <strong>Affichage temps réel</strong> — clic sur le bloc → l'image s'affiche en plein écran chez tous les joueurs de la session via WebSocket</li>
   </ul>
-  <p><strong>👹 Création de monstre homebrew :</strong></p>
-  <ul>
-    <li>📋 <strong>Fiche complète</strong> — stats, résistances, immunités, vulnérabilités, traits, actions</li>
-    <li>💀 <strong>Système de phases</strong> — événement déclenché automatiquement sous X% PV</li>
-    <li>💰 <strong>Tableau de loot</strong> — monnaie variable + objets associés au monstre</li>
-  </ul>
   <p><strong>⚙️ Technique :</strong></p>
   <ul>
-    <li>👤 Page de profil utilisateur complète</li>
     <li>📴 Mode hors ligne / PWA complète</li>
     <li>🔔 <strong>Discord webhook</strong> — compte rendu automatique de session envoyé sur un serveur Discord</li>
     <li>☁️ <strong>Backup Google Drive</strong> — sauvegarde automatique des données de campagne</li>
-    <li>📊 <strong>Dashboard admin</strong> — stats globales (utilisateurs, activité…) + outils de modération</li>
   </ul>
   <p><strong>📦 Contenu :</strong></p>
   <ul>
