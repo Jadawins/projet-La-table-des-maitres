@@ -302,6 +302,45 @@ function switchTab(btn, tabId) {
 }
 window.switchTab = switchTab;
 
+// ─── REPOS (MJ) ───────────────────────────────────────────────
+
+let _reposTypeSalon = null;
+
+function ouvrirModalReposSalon(type) {
+  _reposTypeSalon = type;
+  document.getElementById('repos-salon-titre').textContent =
+    type === 'court' ? '🌙 Proposer un Repos Court' : '💤 Proposer un Repos Long';
+  document.getElementById('repos-salon-result').textContent = '';
+  document.getElementById('modal-repos-salon').classList.remove('hidden');
+}
+window.ouvrirModalReposSalon = ouvrirModalReposSalon;
+
+async function confirmerReposSalon() {
+  const mode  = document.getElementById('repos-salon-mode').value;
+  const timer = parseInt(document.getElementById('repos-salon-timer').value) || 0;
+  document.getElementById('modal-repos-salon').classList.add('hidden');
+  try {
+    const r = await fetch(`${API}/Repos`, {
+      method: 'POST', headers: authHeaders(),
+      body: JSON.stringify({
+        session_id: sessionId,
+        type: _reposTypeSalon,
+        demandeur_nom: window.USER_PSEUDO || 'MJ',
+        mode_validation: mode,
+        timer_secondes: timer
+      })
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || 'Erreur');
+    document.getElementById('repos-salon-result').innerHTML =
+      `<span style="color:#4ade80;">✅ Repos ${_reposTypeSalon} proposé !</span>`;
+  } catch(e) {
+    document.getElementById('repos-salon-result').innerHTML =
+      `<span style="color:#f87171;">❌ ${escHtml(e.message)}</span>`;
+  }
+}
+window.confirmerReposSalon = confirmerReposSalon;
+
 // ─── UTILITAIRES ──────────────────────────────────────────────
 
 function formatHeure(ts) {

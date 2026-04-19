@@ -173,9 +173,18 @@
           <a id="btn-ecran-mj" href="#" class="btn-primary" style="display:flex;justify-content:center;text-decoration:none;margin-bottom:.4rem;">
             <i class="fa-solid fa-display"></i> Ouvrir l'écran MJ
           </a>
-          <button class="btn-sm-secondary" style="width:100%;justify-content:center;" onclick="lancerCombat()">
+          <button class="btn-sm-secondary" style="width:100%;justify-content:center;margin-bottom:.3rem;" onclick="lancerCombat()">
             <i class="fa-solid fa-plus"></i> Nouveau combat
           </button>
+          <div style="display:flex;gap:.3rem;margin-top:.2rem;">
+            <button class="btn-sm-secondary" style="flex:1;justify-content:center;" onclick="ouvrirModalReposSalon('court')">
+              🌙 Repos court
+            </button>
+            <button class="btn-sm-secondary" style="flex:1;justify-content:center;" onclick="ouvrirModalReposSalon('long')">
+              💤 Repos long
+            </button>
+          </div>
+          <div id="repos-salon-result" style="font-size:.72rem;margin-top:.4rem;min-height:1rem;"></div>
         </div>
 
         <!-- Liste joueurs -->
@@ -232,6 +241,31 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- MODAL REPOS MJ -->
+  <div class="modal-overlay hidden" id="modal-repos-salon" style="position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:1000;">
+    <div class="modal-box" style="background:#1a1a2e;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:1.5rem;width:320px;max-width:90vw;">
+      <button onclick="document.getElementById('modal-repos-salon').classList.add('hidden')" style="float:right;background:none;border:none;color:#aaa;font-size:1.1rem;cursor:pointer;">✕</button>
+      <div id="repos-salon-titre" style="font-size:1rem;font-weight:600;color:#e2dfc8;margin-bottom:1rem;"></div>
+      <label style="font-size:.78rem;color:#aaa;display:block;margin-bottom:.25rem;">Mode de validation</label>
+      <select id="repos-salon-mode" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#ccc;padding:.35rem;border-radius:6px;font-size:.82rem;margin-bottom:.75rem;">
+        <option value="vote">Vote des joueurs</option>
+        <option value="auto">Automatique</option>
+        <option value="force">Forcer (MJ)</option>
+      </select>
+      <label style="font-size:.78rem;color:#aaa;display:block;margin-bottom:.25rem;">Durée du vote</label>
+      <select id="repos-salon-timer" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#ccc;padding:.35rem;border-radius:6px;font-size:.82rem;margin-bottom:1rem;">
+        <option value="0">Pas de limite</option>
+        <option value="30">30 secondes</option>
+        <option value="60">1 minute</option>
+        <option value="120">2 minutes</option>
+      </select>
+      <div style="display:flex;gap:.5rem;justify-content:flex-end;">
+        <button onclick="document.getElementById('modal-repos-salon').classList.add('hidden')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:#aaa;padding:.4rem .9rem;cursor:pointer;font-size:.82rem;">Annuler</button>
+        <button onclick="confirmerReposSalon()" style="background:rgba(134,93,255,.25);border:1px solid rgba(134,93,255,.4);border-radius:6px;color:#c4b5fd;padding:.4rem .9rem;cursor:pointer;font-size:.82rem;font-weight:600;">Proposer</button>
+      </div>
     </div>
   </div>
 
