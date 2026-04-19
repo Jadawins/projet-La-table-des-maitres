@@ -1,0 +1,19 @@
+{
+  "objectif": "Créer la vue joueur en combat complète (ecran-joueur.html + js/ecran-joueur.js)",
+  "statut": "termine",
+  "derniere_mise_a_jour": "2026-04-19T00:00:00",
+  "etapes": {
+    "1_ecran_joueur_html": "termine",
+    "2_ecran_joueur_js_base": "termine",
+    "3_chargement_combat_live": "termine",
+    "4_boutons_attaques": "termine",
+    "5_boutons_sorts": "termine",
+    "6_emplacements_sorts": "termine",
+    "7_ressources_classe": "termine",
+    "8_initiative_joueur": "termine",
+    "9_jets_de_mort": "termine",
+    "10_tracking_action_bonus_reaction": "termine",
+    "11_selection_cible": "termine",
+    "12_commit_push": "a_faire"
+  }
+}
