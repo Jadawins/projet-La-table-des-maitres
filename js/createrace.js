@@ -210,15 +210,11 @@ function genererMenuCompetences() {
 
 async function chargerOutilsDepuisAPI() {
   try {
-    const response = await fetch('/api/GetCategories/');
+    const response = await fetch('/api/GetEquipements2024');
     if (!response.ok) throw new Error('Erreur API outils');
 
     const data = await response.json();
-    const outils = data.find(d => d.index === "tools")?.equipment || [];
-
-    tousLesOutils = outils.map(o => ({
-      nom: o.name?.fr || o.name?.en || o.index
-    }));
+    tousLesOutils = data.map(o => ({ nom: o.nom || o.name?.fr || o.name?.en || o.index })).filter(o => o.nom);
 
     console.log('✅ Outils chargés :', tousLesOutils);
   } catch (err) {
@@ -281,15 +277,11 @@ function genererMenuConditions() {
 
 async function chargerArmesDepuisAPI() {
   try {
-    const response = await fetch('/api/GetCategories/');
+    const response = await fetch('/api/GetArmes2024');
     if (!response.ok) throw new Error('Erreur API');
 
     const data = await response.json();
-    const armes = data.find(d => d.index === "weapon")?.equipment || [];
-
-    toutesLesArmes = armes.map(a => ({
-      nom: a.name?.fr || a.name?.en || a.index
-    }));
+    toutesLesArmes = data.map(a => ({ nom: a.nom || a.name?.fr || a.name?.en || a.index })).filter(a => a.nom);
 
     console.log('✅ Armes chargées depuis la BDD :', toutesLesArmes);
   } catch (err) {
@@ -318,15 +310,11 @@ window.genererMenuDeroulant = function genererMenuDeroulant() {
 }
 async function chargerArmuresDepuisAPI() {
   try {
-    const response = await fetch('/api/GetCategories/');
+    const response = await fetch('/api/GetArmures2024');
     if (!response.ok) throw new Error('Erreur API armures');
 
     const data = await response.json();
-    const armures = data.find(d => d.index === "armor")?.equipment || [];
-
-    toutesLesArmures = armures.map(a => ({
-      nom: a.name?.fr || a.name?.en || a.index
-    }));
+    toutesLesArmures = data.map(a => ({ nom: a.nom || a.name?.fr || a.name?.en || a.index })).filter(a => a.nom);
 
     console.log('✅ Armures chargées :', toutesLesArmures);
   } catch (err) {

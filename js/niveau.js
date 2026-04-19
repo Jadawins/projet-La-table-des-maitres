@@ -228,11 +228,7 @@ async function lancerWizardNiveau(perso) {
 
   // Charger sous-classes si niveau 3
   if (_wizardNouveauNiv === 3) {
-    try {
-      const r = await fetch('/Json/2024/SousClasse/');
-      // On va lister les fichiers via une heuristique connue
-      _sousClassesData = await _chargerSousClasses(classe);
-    } catch { _sousClassesData = []; }
+    _sousClassesData = await _chargerSousClasses(classe);
   }
 
   _construireEtapes(perso, classe);
@@ -249,13 +245,13 @@ async function _chargerSousClasses(classe) {
     clerc:   ['domaine_guerre','domaine_lumiere','domaine_ruse','domaine_vie'],
     druide:  ['cercle_astres','cercle_lune','cercle_mers','cercle_terre'],
     ensorceleur:['sorcellerie_aberrante','sorcellerie_draconique','sorcellerie_mecanique','sorcellerie_sauvage'],
-    guerrier:['champion','chevalier_occulte','maitre_de_guerre','soldat_psi'],
-    magicien:['ecole_abjuration','ecole_evocation','ecole_illusion','ecole_invocation'],
-    moine:   ['voie_elements','voie_main_ouverte','voie_ombre','voie_misericorde'],
-    occultiste:['archifee','grand_ancien','seigneur_immonde','souverain_lames'],
+    guerrier:['champion','chevalier_occulte','maitre_guerre','soldat_psi'],
+    magicien:['abjurateur','devin','evocateur','illusionniste'],
+    moine:   ['credo_elements','credo_misericorde','credo_ombre','credo_paume'],
+    occultiste:['protecteur_archifee','protecteur_celeste','protecteur_fielon','protecteur_grand_ancien'],
     paladin: ['serment_anciens','serment_devotion','serment_vengeance','serment_gloire'],
-    rodeur:  ['chasseur','chasseur_betes','rodeur_epines','rôdeur_sombres'],
-    roublard:['archetyipe_assassin','filou','investigateur','voleur_arcaniste']
+    rodeur:  ['belluaire','chasseur','traqueur_tenebres','vagabond_feerique'],
+    roublard:['ame_aceree','arnaqueur_arcanique','assassin','voleur']
   };
   const noms = suffixes[classe] || [];
   const resultats = [];
