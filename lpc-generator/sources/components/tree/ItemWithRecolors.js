@@ -1,6 +1,6 @@
 // Item with recolors component
 import classNames from "classnames";
-import { state, getSelectionGroup, selectItem } from "../../state/state.js";
+import { state, getSelectionGroup, selectItem, selectItemCustom } from "../../state/state.js";
 import { drawRecolorPreview } from "../../canvas/palette-recolor.js";
 import { getPaletteOptions } from "../../state/palettes.js";
 import { PaletteSelectModal } from "./PaletteSelectModal.js";
@@ -45,13 +45,17 @@ export const ItemWithRecolors = {
         onSelect: (recolor) => {
           const subSelectGroup =
             opt.type_name !== meta.type_name ? opt.type_name : null;
-          selectItem(
-            itemId,
-            recolor,
-            isSelected &&
-              selectedColors[subSelectGroup ?? meta.type_name] === recolor,
-            opt.type_name ? idx : null,
-          );
+          if (Array.isArray(recolor)) {
+            selectItemCustom(itemId, recolor, opt.type_name ? idx : null);
+          } else {
+            selectItem(
+              itemId,
+              recolor,
+              isSelected &&
+                selectedColors[subSelectGroup ?? meta.type_name] === recolor,
+              opt.type_name ? idx : null,
+            );
+          }
         },
       });
     }

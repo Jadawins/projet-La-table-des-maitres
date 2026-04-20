@@ -4,6 +4,8 @@ import { drawRecolorPreview } from "../../canvas/palette-recolor.js";
 import { state, getSelectionGroup } from "../../state/state.js";
 import { ucwords } from "../../utils/helpers.js";
 import { COMPACT_FRAME_SIZE, FRAME_SIZE } from "../../state/constants.js";
+import { getBasePalette } from "../../state/palettes.js";
+import { ColorWheelPicker } from "./ColorWheelPicker.js";
 
 export const PaletteSelectModal = {
   view: function (vnode) {
@@ -48,6 +50,37 @@ export const PaletteSelectModal = {
               },
               "x",
             ),
+          ]),
+          m("section", [
+            // Custom color wheel section
+            m(".color-wheel-section", [
+              m(
+                ".color-wheel-toggle.tree-label",
+                {
+                  onclick: () => {
+                    const key = `custom-${itemId}-${opt.idx}`;
+                    state.expandedNodes[key] = !state.expandedNodes[key];
+                    m.redraw();
+                  },
+                },
+                [
+                  m("span.tree-arrow", {
+                    class: state.expandedNodes[`custom-${itemId}-${opt.idx}`]
+                      ? "expanded"
+                      : "collapsed",
+                  }),
+                  m("span", "Couleur personnalisée"),
+                ],
+              ),
+              state.expandedNodes[`custom-${itemId}-${opt.idx}`]
+                ? m(ColorWheelPicker, {
+                    basePalette: getBasePalette(opt.material)[2],
+                    onSelect: (palette) => {
+                      onSelect(palette);
+                    },
+                  })
+                : null,
+            ]),
           ]),
           m(
             "section",

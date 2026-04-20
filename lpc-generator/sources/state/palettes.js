@@ -70,6 +70,16 @@ export function getMultiRecolors(itemId, selections) {
     )
       continue;
 
+    // Custom palette — bypass metadata lookup
+    if (selection.customPalette) {
+      if (selection.subId) {
+        recolors[typeName] = selection.customPalette;
+      } else {
+        recolors[subMeta.type_name] = selection.customPalette;
+      }
+      continue;
+    }
+
     // Process Each Item
     const verifiedRecolor = fixMissingRecolor(
       itemId,

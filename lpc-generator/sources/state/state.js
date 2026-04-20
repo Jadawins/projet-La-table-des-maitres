@@ -206,6 +206,26 @@ export async function initState() {
   }
 }
 
+// Select Item Asset with Custom Palette
+export function selectItemCustom(itemId, customPalette, subId = null) {
+  const selectionGroup = getSelectionGroup(itemId);
+  const subSelect =
+    subId !== null ? getSubSelectionGroup(itemId, subId) : selectionGroup;
+
+  const meta = stateDeps.getItemMetadata(itemId);
+  const subMeta = subId !== null ? meta.recolors?.[subId] : null;
+  const displayName = subMeta?.type_name ? subMeta.label : meta.name;
+
+  state.selections[subSelect] = {
+    itemId: itemId,
+    subId: subMeta?.type_name ? subId : null,
+    variant: null,
+    recolor: "custom",
+    customPalette: customPalette,
+    name: `${displayName} (custom)`,
+  };
+}
+
 // Select Item Asset
 export function selectItem(itemId, variant, isSelected = false, subId = null) {
   const selectionGroup = getSelectionGroup(itemId);
