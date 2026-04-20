@@ -1,0 +1,13 @@
+_universal/
+node_modules/
+test-results-*.html
+test-results/
+playwright-report/
+blob-report/
+.idea/
+.eslintcache
+tmp/
+computed-style-diff-output/
+/dist/
+**/__screenshots__/
+/.vitest-attachments/

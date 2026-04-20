@@ -1,0 +1,434 @@
+import { state, selectDefaults } from "./state.js";
+import { parseRecolorKey } from "./palettes.js";
+import { debugWarn } from "../utils/debug.js";
+
+// Dependency injection for testability
+export function getState() {
+  return state;
+}
+
+export function updateState(updates) {
+  Object.assign(state, updates);
+}
+
+export function resetState() {
+  state.bodyType = "male";
+  state.selections = {};
+}
+
+// window.location.hash is immutable in tests, this is so we can use a stub to manage it
+let _hash = "";
+let _setHashCalledTimes = 0;
+
+export function getHash() {
+  if (window.isTesting) return "#" + _hash;
+  return window.location.hash;
+}
+
+export function setHash(hash) {
+  if (window.isTesting) {
+    _hash = hash[0] === "#" ? hash.substring(1) : hash;
+    _setHashCalledTimes++;
+    return;
+  }
+  window.location.hash = hash;
+}
+
+export function resetHashCalledTimes() {
+  _setHashCalledTimes = 0;
+}
+
+export function getSetHashCalledTimes() {
+  return _setHashCalledTimes;
+}
+
+// URL hash parameter management
+export function getHashParams() {
+  let hash = getHash().substring(1); // Remove '#'
+
+  // Handle case where hash starts with '?' (some old URLs might have this)
+  if (hash.startsWith("?")) {
+    hash = hash.substring(1);
+  }
+
+  if (!hash) return {};
+
+  return getHashParamsFromString(hash);
+}
+
+export function getHashParamsFromString(hashString) {
+  const params = {};
+  hashString.split("&").forEach((pair) => {
+    const [key, value] = pair.split("=");
+    if (key && value) {
+      // Remove leading '?' from key if present
+      const cleanKey = key.startsWith("?") ? key.substring(1) : key;
+      params[decodeURIComponent(cleanKey)] = decodeURIComponent(value);
+    }
+  });
+  return params;
+}
+
+export function createHashStringFromParams(params) {
+  return Object.entries(params)
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+    )
+    .join("&");
+}
+
+export function setHashParams(params) {
+  const hash = createHashStringFromParams(params);
+  setHash(hash);
+}
+
+export function buildNewSelection(
+  foundItemId,
+  matchedVariant,
+  matchedRecolor,
+  subId = null,
+) {
+  // Get Meta Data for Item ID
+  const meta = window.itemMetadata[foundItemId];
+  const subMeta = meta.recolors?.[subId ?? 0];
+
+  // Build New Selection
+  let newSelection = {
+    itemId: foundItemId,
+    subId,
+    variant:
+      matchedVariant || (matchedRecolor != "" ? "" : meta.variants?.[0] || ""),
+    recolor:
+      matchedRecolor ||
+      ((meta.variants?.length ?? 0) === 0 ? subMeta?.variants[0] || "" : ""),
+    name: subId ? subMeta?.label : meta.name,
+  };
+
+  if (newSelection.variant || newSelection.recolor) {
+    let recolorLabel = newSelection.recolor;
+    if (recolorLabel) {
+      const [, ver, recolor] = parseRecolorKey(newSelection.recolor, subMeta);
+      recolorLabel = ver !== subMeta?.default ? `${ver} ${recolor}` : recolor;
+    }
+    newSelection.name +=
+      " (" +
+      (newSelection.variant ? `${newSelection.variant}` : "") +
+      (newSelection.variant && newSelection.recolor ? " | " : "") +
+      (newSelection.recolor ? `${recolorLabel}` : "") +
+      ")";
+  }
+  return newSelection;
+}
+
+export function getHashParamsforSelections(selections) {
+  const params = {};
+
+  // Add body type (using 'sex' for backwards compatibility with old URLs)
+  params.sex = state.bodyType;
+
+  // Add selections - use old format: type_name=Name_variant
+  // Format: "body=Body_color_light", "shoes=Sara_sara"
+  for (const [typeName, selection] of Object.entries(selections)) {
+    const meta = window.itemMetadata?.[selection.itemId];
+    if (!meta || !meta.type_name) {
+      // Check if an alias is overriding this entry (e.g., "sash=Waistband_rose" instead of "waistband=Waistband_rose")
+      const name = selection.name.split(" (")[0]; // Get base name without variant (e.g., "Waistband" from "Waistband (rose)")
+      const nameAndVariant =
+        name.replaceAll(" ", "_") +
+        (selection.variant ? `_${selection.variant}` : "");
+      const aliasType = window.aliasMetadata?.[typeName];
+      if (!aliasType) continue;
+
+      // Check Name and Variant
+      const aliasMeta = aliasType?.[nameAndVariant];
+      if (aliasMeta && aliasMeta.typeName) {
+        params[aliasMeta.typeName] = `${aliasMeta.name}_${aliasMeta.variant}`;
+      } else {
+        // If no exact match, check if there's a type-name wildcard alias entry (aliasType["*"]) that applies to any name+variant
+        const anyAliasMeta = aliasType?.[`*`];
+        if (!anyAliasMeta || !anyAliasMeta.typeName) {
+          continue;
+        }
+        params[anyAliasMeta.typeName] = nameAndVariant; // Use the original name and variant if a type-name wildcard alias exists
+      }
+    } else {
+      // Get Subcolor Metadata if applicable
+      const subMeta = meta.recolors?.[selection.subId];
+
+      // Use type_name as key (selection group)
+      const key = subMeta?.type_name ?? meta.type_name;
+
+      // Build name part for URL: use full name with underscores
+      // "Body color" -> "Body_color", "Sara Shoes" -> "Sara_Shoes", "Waistband" -> "Waistband"
+      const namePart = (subMeta?.label ?? meta.name).replaceAll(" ", "_");
+
+      const variantPart = selection.variant ?? "";
+      const recolorPart = selection.recolor ?? "";
+      const uscorePart = variantPart || recolorPart ? "_" : "";
+      const splitPart = variantPart && recolorPart ? "|" : "";
+      const value =
+        namePart + uscorePart + variantPart + splitPart + recolorPart;
+
+      params[key] = value;
+    }
+  }
+
+  return params;
+}
+
+export function syncSelectionsToHash() {
+  const params = getHashParamsforSelections(state.selections);
+  setHashParams(params);
+}
+
+export function loadSelectionsFromHash(hashString = null) {
+  const profiler = window.profiler;
+  if (profiler) {
+    profiler.mark("hash-loadSelectionsFromHash:start");
+  }
+
+  const params = hashString
+    ? getHashParamsFromString(hashString)
+    : getHashParams();
+
+  // Build new selections object without mutating state yet
+  const newSelections = {};
+  const skippedEntries = {};
+
+  // Load selections
+  // Old format: type_name=Name_variant (e.g., "body=Body_color_light", "sash=Waistband_rose")
+  for (let [typeName, nameAndVariant] of Object.entries(params)) {
+    // Handle special parameters
+    if (typeName === "bodyType" || typeName === "sex") {
+      state.bodyType = nameAndVariant;
+      continue;
+    }
+
+    // Check Name and Variant
+    const aliasType = window.aliasMetadata?.[typeName];
+    const aliasMeta = aliasType?.[nameAndVariant];
+    if (aliasMeta) {
+      typeName = aliasMeta.typeName;
+      nameAndVariant = `${aliasMeta.name}_${aliasMeta.variant}`;
+    } else {
+      // If no exact match, check if there's a type name alias
+      const anyAliasMeta = aliasType?.[`*`];
+      if (anyAliasMeta) {
+        typeName = anyAliasMeta.typeName;
+        // Keep the original nameAndVariant since the wildcard alias can match any variant
+      }
+    }
+
+    // Skip "none" selections
+    if (nameAndVariant === "none") continue;
+
+    // Parse the Name_variant format by trying different split positions
+    // Try from left to right to find a valid name+variant combination
+    // e.g., "Tiara_tiara_silver" -> try "Tiara" + "tiara_silver" ✓
+    // e.g., "Human_female_light" -> try "Human_female" + "light" ✓
+    // e.g., "Human_female_light|light" -> try "Human_female" + "light" + "light" ✓
+
+    let foundItemId = null;
+    let matchedVariant = "";
+    let matchedRecolor = "";
+
+    // Split on underscores and try different combinations
+    const parts = nameAndVariant.split("_");
+
+    // Try each possible split point (from left to right)
+    for (let i = 1; i <= parts.length; i++) {
+      const nameToMatch = parts.slice(0, i).join("_");
+      const variants = parts.slice(i).join("_");
+      const variantToMatch = variants.split("|")[0];
+      const recolorToMatch = variants.split("|")[1] || "";
+
+      // Search for item with this name and variant
+      for (const [itemId, meta] of Object.entries(window.itemMetadata || {})) {
+        if (meta.type_name !== typeName) continue;
+
+        const metaNameNormalized = meta.name.replaceAll(" ", "_");
+
+        // Check if name matches and variant exists (or no variant required)
+        if (metaNameNormalized.toLowerCase() === nameToMatch.toLowerCase()) {
+          if (meta.variants?.length > 0) {
+            for (const variant of meta.variants) {
+              if (variant.toLowerCase() === variantToMatch.toLowerCase()) {
+                foundItemId = itemId;
+                matchedVariant = variant;
+                matchedRecolor = "";
+                break;
+              }
+            }
+          }
+          if (meta.recolors?.[0]?.variants.length > 0) {
+            for (const variant of meta.recolors[0].variants) {
+              if (
+                (recolorToMatch !== "" &&
+                  variant.toLowerCase() === recolorToMatch.toLowerCase()) ||
+                (recolorToMatch === "" &&
+                  variant.toLowerCase() === variantToMatch.toLowerCase())
+              ) {
+                foundItemId = itemId;
+                matchedVariant = "";
+                matchedRecolor = variant;
+                break;
+              }
+            }
+          }
+          if (variantToMatch === "") {
+            // No variants for this item, so we can match just on name
+            foundItemId = itemId;
+            matchedVariant = "";
+            matchedRecolor = "";
+            break;
+          }
+        }
+
+        if (foundItemId) break;
+      }
+
+      if (foundItemId) break;
+    }
+
+    if (!foundItemId) {
+      skippedEntries[typeName] = nameAndVariant;
+      debugWarn(
+        `No item found with type_name "${typeName}" and nameAndVariant "${nameAndVariant}"`,
+      );
+      continue;
+    }
+
+    // Use type_name as selection group
+    newSelections[typeName] = buildNewSelection(
+      foundItemId,
+      matchedVariant,
+      matchedRecolor,
+    );
+  }
+
+  // Check if Skipped Entries Are Sub-Items!
+  if (profiler) {
+    profiler.mark("hash-loadSelectionsFromHash:subitems:start");
+  }
+
+  const subItemKeySeparator = "\u0000";
+  const subItemLookup = new Map();
+  for (const selection of Object.values(newSelections)) {
+    const recolors = window.itemMetadata?.[selection.itemId]?.recolors;
+    if (!Array.isArray(recolors)) continue;
+
+    for (let recolorIndex = 0; recolorIndex < recolors.length; recolorIndex++) {
+      const recolor = recolors[recolorIndex];
+      if (!recolor?.type_name || !Array.isArray(recolor.variants)) continue;
+
+      for (const recolorVariant of recolor.variants) {
+        const lookupKey = `${recolor.type_name}${subItemKeySeparator}${recolorVariant}`;
+        if (!subItemLookup.has(lookupKey)) {
+          subItemLookup.set(lookupKey, {
+            itemId: selection.itemId,
+            subId: recolorIndex,
+          });
+        }
+      }
+    }
+  }
+
+  // Insert Selections for Skipped Entries That Might Be Sub-Items
+  for (const [subType, nameAndVariant] of Object.entries(skippedEntries)) {
+    // Handle sub-items logic here
+    const parts = nameAndVariant.split("_");
+    for (let i = 1; i <= parts.length; i++) {
+      const variants = parts.slice(i).join("_");
+      const recolorToMatch = variants.split("|")[1] ?? variants.split("|")[0];
+      const lookupKey = `${subType}${subItemKeySeparator}${recolorToMatch}`;
+      const subItem = subItemLookup.get(lookupKey);
+
+      // Build New Selection
+      if (subItem) {
+        newSelections[subType] = buildNewSelection(
+          subItem.itemId,
+          null,
+          recolorToMatch,
+          subItem.subId,
+        );
+      }
+    }
+  }
+
+  if (profiler) {
+    profiler.mark("hash-loadSelectionsFromHash:subitems:end");
+    profiler.measure(
+      "hash-loadSelectionsFromHash:subitems",
+      "hash-loadSelectionsFromHash:subitems:start",
+      "hash-loadSelectionsFromHash:subitems:end",
+    );
+  }
+
+  // Now update state once with complete new selections
+  state.selections = newSelections;
+
+  // Load body type
+  if (params.bodyType) {
+    state.bodyType = params.bodyType;
+  }
+
+  syncSelectionsToHash(); // Ensure hash is in sync with loaded selections (handles any normalization)
+
+  if (profiler) {
+    profiler.mark("hash-loadSelectionsFromHash:end");
+    profiler.measure(
+      "hash-loadSelectionsFromHash",
+      "hash-loadSelectionsFromHash:start",
+      "hash-loadSelectionsFromHash:end",
+    );
+  }
+}
+
+// Initialize hash change listener
+export function initHashChangeListener(listener) {
+  if (listener) {
+    window.addEventListener("hashchange", listener);
+    return;
+  }
+
+  // Listen for browser back/forward navigation
+  window.addEventListener("hashchange", async function () {
+    const currentHash = getHash();
+
+    // Check if this is an external change (browser navigation) vs our own update
+    // Our afterStateChange() will update the hash, but we don't want to reload from it
+    // We can detect external changes by checking if the hash is different from what we expect
+    const expectedHash =
+      "#" +
+      Object.entries({
+        bodyType: state.bodyType,
+        ...Object.fromEntries(
+          Object.values(state.selections).map((s) => [
+            s.itemId,
+            s.subId,
+            s.variant || "",
+            s.recolor || "",
+          ]),
+        ),
+      })
+        .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+        .join("&");
+
+    // If the hash matches what we expect from current state, ignore (it's our own update)
+    if (currentHash === expectedHash) {
+      return;
+    }
+
+    // Load from hash (updates state once)
+    loadSelectionsFromHash();
+
+    // If nothing loaded from hash, use defaults
+    if (Object.keys(state.selections).length === 0) {
+      await selectDefaults();
+    }
+
+    // Trigger redraw which calls App.onupdate (syncs hash and renders canvas)
+    m.redraw();
+  });
+}
