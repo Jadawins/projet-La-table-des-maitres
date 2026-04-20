@@ -78,7 +78,8 @@ router.post('/custom', async (req, res) => {
   if (!userId) return res.status(401).json({ error: 'Non authentifié' });
 
   const { nom, categorie, rarete, harmonisation, harmonisation_detail,
-          description, effets, poids, prix_estime, image } = req.body;
+          description, effets, poids, prix_estime, image,
+          type_arme, bonus_attaque, type_armure, bonus_ca, charges_max, recharge } = req.body;
 
   if (!nom) return res.status(400).json({ error: 'Le nom est obligatoire' });
 
@@ -98,6 +99,12 @@ router.post('/custom', async (req, res) => {
     poids: poids ? parseFloat(poids) : null,
     prix_estime: prix_estime ? parseFloat(prix_estime) : null,
     image: image || null,
+    type_arme: type_arme || null,
+    bonus_attaque: bonus_attaque != null ? parseInt(bonus_attaque) : 0,
+    type_armure: type_armure || null,
+    bonus_ca: bonus_ca != null ? parseInt(bonus_ca) : 0,
+    charges_max: charges_max ? parseInt(charges_max) : null,
+    recharge: recharge || null,
     source: 'homebrew',
     mj_id: userId,
     partage_session: false,
@@ -140,7 +147,8 @@ router.put('/custom/:id', async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) return res.status(400).json({ error: 'ID invalide' });
 
   const { nom, categorie, rarete, harmonisation, harmonisation_detail,
-          description, effets, poids, prix_estime, image } = req.body;
+          description, effets, poids, prix_estime, image,
+          type_arme, bonus_attaque, type_armure, bonus_ca, charges_max, recharge } = req.body;
   if (!nom) return res.status(400).json({ error: 'Le nom est obligatoire' });
 
   const update = {
@@ -155,6 +163,12 @@ router.put('/custom/:id', async (req, res) => {
     poids: poids ? parseFloat(poids) : null,
     prix_estime: prix_estime ? parseFloat(prix_estime) : null,
     image: image || null,
+    type_arme: type_arme || null,
+    bonus_attaque: bonus_attaque != null ? parseInt(bonus_attaque) : 0,
+    type_armure: type_armure || null,
+    bonus_ca: bonus_ca != null ? parseInt(bonus_ca) : 0,
+    charges_max: charges_max ? parseInt(charges_max) : null,
+    recharge: recharge || null,
     updated_at: new Date()
   };
 

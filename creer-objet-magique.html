@@ -231,6 +231,89 @@
         </div>
       </div>
 
+      <!-- Bloc arme magique -->
+      <div id="bloc-arme" style="display:none;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="type_arme">Type d'arme</label>
+            <select id="type_arme" name="type_arme">
+              <option value="">— choisir —</option>
+              <option value="dague">Dague</option>
+              <option value="epee_courte">Épée courte</option>
+              <option value="epee_longue">Épée longue</option>
+              <option value="epee_large">Épée large</option>
+              <option value="rapiere">Rapière</option>
+              <option value="hache_main">Hache de main</option>
+              <option value="hache_guerre">Hache de guerre</option>
+              <option value="hache_double">Hache à deux lames</option>
+              <option value="marteau_guerre">Marteau de guerre</option>
+              <option value="masse">Masse d'armes</option>
+              <option value="lance">Lance</option>
+              <option value="javeline">Javeline</option>
+              <option value="arc_court">Arc court</option>
+              <option value="arc_long">Arc long</option>
+              <option value="arbalete_legere">Arbalète légère</option>
+              <option value="arbalete_lourde">Arbalète lourde</option>
+              <option value="autre_arme">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bonus_attaque">Bonus d'attaque / dégâts</label>
+            <select id="bonus_attaque" name="bonus_attaque">
+              <option value="0">Aucun (+0)</option>
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc armure magique -->
+      <div id="bloc-armure" style="display:none;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="type_armure">Type d'armure</label>
+            <select id="type_armure" name="type_armure">
+              <option value="">— choisir —</option>
+              <option value="cuir">Cuir</option>
+              <option value="cuir_cloute">Cuir clouté</option>
+              <option value="ecailles">Armure d'écailles</option>
+              <option value="broigne">Broigne</option>
+              <option value="cotte_mailles">Cotte de mailles</option>
+              <option value="cuirasse">Cuirasse</option>
+              <option value="demi_plaque">Demi-plaque</option>
+              <option value="plaque">Armure de plates</option>
+              <option value="bouclier">Bouclier</option>
+              <option value="autre_armure">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bonus_ca">Bonus de CA</label>
+            <select id="bonus_ca" name="bonus_ca">
+              <option value="0">Aucun (+0)</option>
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc bâton -->
+      <div id="bloc-baton" style="display:none;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="charges_max">Nombre de charges</label>
+            <input type="number" id="charges_max" name="charges_max" min="1" max="50" placeholder="Ex : 10" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+          </div>
+          <div class="form-group">
+            <label for="recharge">Règle de recharge</label>
+            <input type="text" id="recharge" name="recharge" placeholder="Ex : Recharge 1d6+4 charges à l'aube" />
+          </div>
+        </div>
+      </div>
+
       <!-- Harmonisation -->
       <div class="form-group">
         <div class="form-check">
@@ -356,6 +439,13 @@
       document.getElementById('image').value = obj.image || '';
       (obj.effets || []).forEach(ef => ajouterEffet(typeof ef === 'string' ? ef : JSON.stringify(ef)));
 
+      if (obj.type_arme)           document.getElementById('type_arme').value     = obj.type_arme;
+      if (obj.bonus_attaque != null) document.getElementById('bonus_attaque').value = obj.bonus_attaque;
+      if (obj.type_armure)         document.getElementById('type_armure').value   = obj.type_armure;
+      if (obj.bonus_ca != null)    document.getElementById('bonus_ca').value      = obj.bonus_ca;
+      if (obj.charges_max != null) document.getElementById('charges_max').value   = obj.charges_max;
+      if (obj.recharge)            document.getElementById('recharge').value      = obj.recharge;
+
       document.getElementById('page-titre').innerHTML = '<i class="fa-solid fa-pen"></i> Modifier un objet magique';
       document.getElementById('page-sous-titre').textContent = 'Modification de : ' + obj.nom;
       document.getElementById('btn-save').innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Enregistrer les modifications';
@@ -364,6 +454,16 @@
       showToast(`Impossible de charger l'objet : ${err.message}`, true);
     }
   }
+
+  // ─── Catégorie → blocs conditionnels ─────────────────────
+  function updateBlocsCategorie() {
+    const cat = document.getElementById('categorie').value;
+    document.getElementById('bloc-arme').style.display   = cat === 'arme_magique'  ? 'block' : 'none';
+    document.getElementById('bloc-armure').style.display = cat === 'armure_magique' ? 'block' : 'none';
+    document.getElementById('bloc-baton').style.display  = cat === 'baton'          ? 'block' : 'none';
+  }
+  document.getElementById('categorie').addEventListener('change', updateBlocsCategorie);
+  updateBlocsCategorie();
 
   // ─── Harmonisation toggle ─────────────────────────────────
   document.getElementById('harmonisation').addEventListener('change', e => {
@@ -409,7 +509,13 @@
       effets:                getEffets(),
       poids:                 document.getElementById('poids').value || null,
       prix_estime:           document.getElementById('prix_estime').value || null,
-      image:                 document.getElementById('image').value.trim() || null
+      image:                 document.getElementById('image').value.trim() || null,
+      type_arme:             document.getElementById('type_arme').value || null,
+      bonus_attaque:         document.getElementById('bonus_attaque').value,
+      type_armure:           document.getElementById('type_armure').value || null,
+      bonus_ca:              document.getElementById('bonus_ca').value,
+      charges_max:           document.getElementById('charges_max').value || null,
+      recharge:              document.getElementById('recharge').value.trim() || null
     };
 
     try {
