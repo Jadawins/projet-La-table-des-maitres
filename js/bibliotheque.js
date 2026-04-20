@@ -289,6 +289,7 @@ async function chargerDonnees() {
         if (state.filtres.rarete)       params.set('rarete', state.filtres.rarete);
         if (state.filtres.harmonisation !== undefined && state.filtres.harmonisation !== '')
           params.set('harmonisation', state.filtres.harmonisation);
+        params.set('page', 'all');
         url = `${API}/objets-magiques?${params}`;
         break;
       case 'mes-homebrew':

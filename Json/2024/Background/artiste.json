@@ -2,7 +2,7 @@
   "id": "artiste",
   "bonus_caracteristiques": {
     "suggerees": [
-      "STR",
+      "FOR",
       "DEX",
       "CHA"
     ]

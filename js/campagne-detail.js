@@ -1007,7 +1007,19 @@ async function init() {
 
   // Migration : ancien format blocs → nouveau format chapitres
   if (campagne.chapitres && campagne.chapitres.length) {
-    chapitres = campagne.chapitres;
+    // Migration contenu_prive (string) → contenu (TipTap JSON) si absent
+    chapitres = campagne.chapitres.map(ch => {
+      if (!ch.contenu && ch.contenu_prive) {
+        ch.contenu = {
+          type: 'doc',
+          content: ch.contenu_prive.split('\n\n').filter(p => p.trim()).map(text => ({
+            type: 'paragraph',
+            content: [{ type: 'text', text: text.trim() }]
+          }))
+        };
+      }
+      return ch;
+    });
   } else if (campagne.blocs && campagne.blocs.length) {
     chapitres = [{
       id:     `chap_${uid()}`,

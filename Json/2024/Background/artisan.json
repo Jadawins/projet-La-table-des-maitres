@@ -2,7 +2,7 @@
   "id": "artisan",
   "bonus_caracteristiques": {
     "suggerees": [
-      "STR",
+      "FOR",
       "DEX",
       "INT"
     ]

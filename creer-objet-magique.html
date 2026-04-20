@@ -266,7 +266,7 @@
         </div>
         <div class="form-group">
           <label for="prix_estime">Prix estimé (po)</label>
-          <input type="number" id="prix_estime" name="prix_estime" min="0" step="1" placeholder="Ex : 500" />
+          <input type="number" id="prix_estime" name="prix_estime" min="0" step="1" placeholder="Ex : 500" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
         </div>
       </div>
 
