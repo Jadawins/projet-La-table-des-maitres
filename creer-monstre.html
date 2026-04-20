@@ -164,6 +164,9 @@
       .g5 { grid-template-columns: repeat(2,1fr); }
       .skills-grid { grid-template-columns: 1fr; }
     }
+    main { margin-left: 260px; transition: margin-left 0.3s ease; padding: 2rem; box-sizing: border-box; }
+    #sidebar.collapsed ~ main { margin-left: 64px; }
+    @media (max-width: 768px) { main { margin-left: 0 !important; } }
   </style>
 </head>
 <body>

@@ -100,6 +100,9 @@
       background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
       border-radius: 6px; color: #e0d0ff; padding: 0.35rem 0.6rem; font-size: 0.83rem;
     }
+    main { margin-left: 260px; transition: margin-left 0.3s ease; padding: 2rem; box-sizing: border-box; }
+    #sidebar.collapsed ~ main { margin-left: 64px; }
+    @media (max-width: 768px) { main { margin-left: 0 !important; } }
   </style>
 </head>
 
