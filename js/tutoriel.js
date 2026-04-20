@@ -45,7 +45,7 @@ const GUIDES = {
     { title: 'Terminer le combat',   selector: '#btn-terminer',                   tip: 'Choisissez l\'issue du combat et distribuez les XP en un clic.' },
   ],
   'campagne': [
-    { title: 'Dashboard MJ',         selector: 'a[href="dashboard-mj.html"]',     tip: 'Accédez au Dashboard MJ depuis la barre latérale.' },
+    { title: 'Tableau de bord MJ',         selector: 'a[href="dashboard-mj.html"]',     tip: 'Accédez au Tableau de bord MJ depuis la barre latérale.' },
     { title: 'Nouvelle campagne',    selector: '.db-btn-new',                     tip: 'Cliquez + pour créer une nouvelle campagne.' },
     { title: 'Éditeur de blocs',     selector: '#editeur-blocs, .db-editeur',     tip: 'Utilisez les blocs (Rencontre, PNJ, Lieu…) pour structurer votre contenu.' },
     { title: 'Barre d\'outils',      selector: '.db-toolbar',                     tip: 'Choisissez le type de bloc à ajouter depuis la barre d\'outils.' },
