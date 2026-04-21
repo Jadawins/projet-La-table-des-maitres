@@ -346,8 +346,41 @@
     </div>
   </div>
 
-  <!-- ÉTAPE 12 — Récapitulatif -->
+  <!-- ÉTAPE 12 — Apparence (LPC) -->
   <div class="wizard-panel" data-step="12">
+    <div class="step-title"><i class="fa-solid fa-person"></i> Apparence du personnage</div>
+    <div class="step-subtitle" style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <span>Personnalisez l'apparence de votre personnage. Cette étape est optionnelle.</span>
+      <button class="btn-wiz-skip" onclick="passerSpriteStep()" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#aaa;padding:0.3rem 0.8rem;cursor:pointer;font-size:0.78rem;white-space:nowrap;">
+        <i class="fa-solid fa-forward-step"></i> Passer cette étape
+      </button>
+    </div>
+
+    <!-- Suggestions contextuelles -->
+    <div id="sprite-suggestions" style="margin-bottom:1rem;"></div>
+
+    <!-- État de validation -->
+    <div id="sprite-validated" class="hidden" style="background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.3);border-radius:8px;padding:0.6rem 1rem;margin-bottom:0.75rem;font-size:0.82rem;color:#4ade80;display:flex;align-items:center;gap:0.75rem;">
+      <i class="fa-solid fa-check-circle"></i>
+      <span style="flex:1;">Apparence capturée avec succès.</span>
+      <button onclick="reinitialiserSprite()" style="background:none;border:1px solid rgba(74,222,128,0.4);border-radius:5px;color:#4ade80;padding:0.2rem 0.6rem;cursor:pointer;font-size:0.75rem;">Modifier</button>
+    </div>
+
+    <!-- Iframe LPC (lazy-loaded) -->
+    <div id="sprite-iframe-container" style="width:100%;height:680px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
+      <!-- Rempli par initSpriteStep() -->
+    </div>
+
+    <!-- Bouton capture -->
+    <div style="margin-top:0.75rem;text-align:center;">
+      <button class="btn-wiz-next" onclick="capturerSprite()">
+        <i class="fa-solid fa-floppy-disk"></i> Valider cette apparence
+      </button>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 13 — Récapitulatif -->
+  <div class="wizard-panel" data-step="13">
     <div class="step-title"><i class="fa-solid fa-check-circle"></i> Récapitulatif</div>
     <div class="step-subtitle">Vérifiez votre personnage avant de le créer.</div>
     <div id="recap-content"></div>

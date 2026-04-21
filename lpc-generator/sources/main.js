@@ -41,8 +41,9 @@ window.setPaletteRecolorMode = setPaletteRecolorMode;
 window.getPaletteRecolorConfig = getPaletteRecolorConfig;
 
 // Import state management
-import { initState } from "./state/state.js";
+import { initState, state } from "./state/state.js";
 import { initHashChangeListener } from "./state/hash.js";
+import { exportStateAsJSON } from "./state/json.js";
 
 // Import components
 import { App } from "./components/App.js";
@@ -68,6 +69,9 @@ window.profiler = profiler;
 
 // Expose canvas renderer to global scope for compatibility
 window.canvasRenderer = canvasRenderer;
+
+// Expose state export for external integrations (creer-personnage wizard)
+window.lpcGetState = () => exportStateAsJSON(state, []);
 
 // Expose initialization function to be called after canvas is ready
 window.setDefaultSelections = async function () {

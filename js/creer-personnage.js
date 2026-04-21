@@ -25,7 +25,7 @@ function normalizeComp(s) {
 
 const W = {
   step: 1,
-  totalSteps: 12,
+  totalSteps: 13,
   // Données chargées
   _especes: [], _classes: [], _sousclasses: [], _backgrounds: [],
   _sortsParNiveau: {},    // cache : { 0:[...], 1:[...], 2:[...], ... }
@@ -53,11 +53,12 @@ const W = {
   panier: [],                // { nom, type, categorie, prix_po, quantite }
   sorts_choisis: {},      // { 0:[ids cantrips], 1:[ids niv1], 2:[...], ... }
   traits: '', ideaux: '', liens: '', defauts: '',
-  apparence: '', historique_perso: '', notes: ''
+  apparence: '', historique_perso: '', notes: '',
+  sprite: null            // objet JSON LPC complet, ou null si étape passée
 };
 
 const STEPS_LABELS = ['Infos', 'Espèce', 'Classe', 'Historique',
-  'Stats', 'PV', 'Compétences', 'Équipement', 'Boutique', 'Sorts', 'Traits', 'Récap'];
+  'Stats', 'PV', 'Compétences', 'Équipement', 'Boutique', 'Sorts', 'Traits', 'Sprite', 'Récap'];
 
 // ─── UTILITAIRES ──────────────────────────────────────────────
 
@@ -241,6 +242,7 @@ function validateStep(n) {
       alert('Choisissez une option d\'équipement pour votre classe.'); return false;
     }
   }
+  if (n === 12) return true;  // Optionnelle, toujours valide
   if (n === 10) {
     if (!isCaster(W.classe_data, W.sc_data)) return true;
     if (typeof getNiveauxSortsDisponibles !== 'function') return true;
@@ -327,6 +329,7 @@ async function onStepEnter(n) {
   if (n === 9) renderBoutiqueStep();
   if (n === 10) await loadSorts();
   if (n === 11) renderTraitsSuggestions();
+  if (n === 12) initSpriteStep();
 }
 
 // ─── ÉTAPE 1 — Alignement & Niveau ───────────────────────────
@@ -2246,7 +2249,8 @@ async function creerPersonnage() {
     maitrise_armures: W.classe_data?.maitrises_armures || [],
     notes: W.notes,
     apparence: W.apparence,
-    historique_perso: W.historique_perso
+    historique_perso: W.historique_perso,
+    sprite: W.sprite || null
   };
 
   const btn = document.getElementById('btn-submit');
@@ -2275,6 +2279,93 @@ async function creerPersonnage() {
     btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Créer le personnage !';
   }
 }
+
+// ─── ÉTAPE 12 — SPRITE LPC ────────────────────────────────────
+
+function initSpriteStep() {
+  renderSpriteSuggestions();
+  const container = document.getElementById('sprite-iframe-container');
+  if (container.querySelector('iframe')) return; // lazy-load : une seule fois
+  const iframe = document.createElement('iframe');
+  iframe.id = 'lpc-iframe';
+  iframe.src = '/lpc-generator/dist/index.html';
+  iframe.style.cssText = 'width:100%;height:100%;border:none;';
+  iframe.loading = 'lazy';
+  container.appendChild(iframe);
+}
+
+function renderSpriteSuggestions() {
+  const el = document.getElementById('sprite-suggestions');
+  if (!el) return;
+
+  const classe = (W.classe_data?.nom || W.classe || '').toLowerCase();
+  let armorHint = '';
+  if (['roublard','moine','rôdeur','rodeur'].some(k => classe.includes(k))) {
+    armorHint = '🛡️ Armures légères recommandées (cuir, mailles légères)';
+  } else if (['guerrier','paladin','barbare'].some(k => classe.includes(k))) {
+    armorHint = '🛡️ Armures lourdes/intermédiaires recommandées (plate, chainmail)';
+  } else if (['mage','sorcier','druide','clerc','ensorceleur'].some(k => classe.includes(k))) {
+    armorHint = '🪄 Robes et tenues de tissu recommandées';
+  }
+
+  const ARME_LPC = {
+    'épée longue': 'longsword', 'epee longue': 'longsword',
+    'épée courte': 'shortsword', 'epee courte': 'shortsword',
+    'dague': 'dagger', 'rapière': 'rapier', 'rapiere': 'rapier',
+    'cimeterre': 'scimitar', 'sabre': 'saber', 'katana': 'katana',
+    'masse': 'mace', 'marteau de guerre': 'waraxe', 'fléau': 'flail',
+    'hache': 'waraxe', 'lance': 'spear', 'hallebarde': 'halberd',
+    'arc': 'bow', 'arbalète': 'crossbow', 'fronde': 'slingshot',
+    'bâton': 'simple', 'baton': 'simple', 'baguette': 'wand',
+  };
+  const tousItems = [...(W.equipement || []), ...(W.panier || [])];
+  const armes = tousItems.filter(i => i.type === 'arme' || i.categorie === 'arme');
+  const armeHints = armes.map(a => {
+    const nom = (a.nom || '').toLowerCase();
+    const lpc = Object.entries(ARME_LPC).find(([k]) => nom.includes(k));
+    return lpc ? `<code>${lpc[1]}</code>` : `<code>${esc(a.nom)}</code>`;
+  });
+
+  el.innerHTML = `
+    <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:0.75rem 1rem;font-size:0.8rem;">
+      <div style="color:#c9a84c;font-weight:600;margin-bottom:0.4rem;"><i class="fa-solid fa-lightbulb"></i> Suggestions pour ${esc(W.classe_data?.nom || W.classe || '?')}</div>
+      ${armorHint ? `<div style="color:#ccc;margin-bottom:0.3rem;">${armorHint}</div>` : ''}
+      ${armeHints.length ? `<div style="color:#ccc;">⚔️ Armes dans votre inventaire — cherchez dans le générateur : ${armeHints.join(', ')}</div>` : ''}
+    </div>`;
+}
+
+function capturerSprite() {
+  const iframe = document.getElementById('lpc-iframe');
+  if (!iframe || !iframe.contentWindow?.lpcGetState) {
+    showNotif('Générateur non chargé — attendez quelques secondes', 'warning');
+    return;
+  }
+  try {
+    const json = iframe.contentWindow.lpcGetState();
+    W.sprite = JSON.parse(json);
+    document.getElementById('sprite-validated').classList.remove('hidden');
+    showNotif('Apparence sauvegardée !', 'success');
+  } catch(e) {
+    showNotif('Erreur lors de la capture', 'error');
+  }
+}
+
+function reinitialiserSprite() {
+  W.sprite = null;
+  document.getElementById('sprite-validated').classList.add('hidden');
+}
+
+function passerSpriteStep() {
+  W.sprite = null;
+  collectStep(W.step);
+  if (W.step === W.totalSteps - 1) buildRecap();
+  if (W.step < W.totalSteps) showStep(W.step + 1);
+  saveWizardDraft();
+}
+
+window.passerSpriteStep    = passerSpriteStep;
+window.capturerSprite      = capturerSprite;
+window.reinitialiserSprite = reinitialiserSprite;
 
 // ─── RAPPORT RACE HOMEBREW ────────────────────────────────────
 
