@@ -139,8 +139,42 @@ function renderAll() {
   }
   document.getElementById('bonus-maitrise-display').textContent = '+' + getBM();
   renderArmureEquipee();
+  renderSpriteLPC();
   initSectionsCollapsibles();
 }
+
+// ─── SPRITE LPC ───────────────────────────────────────────────
+
+function renderSpriteLPC() {
+  const img = document.getElementById('fiche-sprite-img');
+  const placeholder = document.getElementById('fiche-sprite-placeholder');
+  const btn = document.getElementById('fiche-sprite-btn');
+  if (!img) return;
+  const url = perso.sprite_url || '';
+  if (url) {
+    img.src = url;
+    img.style.display = '';
+    placeholder.style.display = 'none';
+    btn.style.display = '';
+  } else {
+    img.style.display = 'none';
+    placeholder.style.display = '';
+    btn.style.display = 'none';
+  }
+}
+
+function importerSpriteLPC() {
+  const dataUrl = localStorage.getItem('lpc_avatar');
+  if (!dataUrl) {
+    alert('Aucun avatar trouvé.\nOuvre le générateur LPC, crée ton personnage, puis clique sur « 🧙 Avatar → Fiche personnage ».');
+    return;
+  }
+  perso.sprite_url = dataUrl;
+  markDirty('sprite_url', dataUrl);
+  renderSpriteLPC();
+  localStorage.removeItem('lpc_avatar');
+}
+window.importerSpriteLPC = importerSpriteLPC;
 
 // ─── HEADER : TAGS ────────────────────────────────────────────
 

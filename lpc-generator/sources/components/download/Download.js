@@ -60,6 +60,17 @@ export const Download = {
       downloadAsPNG("character-spritesheet.png");
     };
 
+    // Save front frame as avatar for La Table du Maître
+    const saveAsAvatar = () => {
+      const previewEl = document.querySelector('#mithril-preview canvas');
+      if (!previewEl) { alert('Prévisualisation non disponible, attendez le chargement.'); return; }
+      const tmp = document.createElement('canvas');
+      tmp.width = 64; tmp.height = 64;
+      tmp.getContext('2d').drawImage(previewEl, 0, 0, 64, 64, 0, 0, 64, 64);
+      localStorage.setItem('lpc_avatar', tmp.toDataURL('image/png'));
+      alert('✅ Avatar sauvegardé !\nRetournez sur votre fiche personnage et cliquez « Importer sprite LPC ».');
+    };
+
     return m(
       CollapsibleSection,
       {
@@ -69,6 +80,11 @@ export const Download = {
       },
       [
         m("div.buttons.is-flex.is-flex-wrap-wrap", { id: "download-buttons" }, [
+          m(
+            "button.button.is-small.is-success",
+            { onclick: saveAsAvatar, title: "Sauvegarder le frame avant comme avatar de personnage" },
+            "🧙 Avatar → Fiche personnage",
+          ),
           m(
             "button.button.is-small.is-primary",
             { onclick: saveAsPNG },

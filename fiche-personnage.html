@@ -33,6 +33,17 @@
 
 <!-- HEADER FICHE -->
 <div class="fiche-header" id="fiche-header">
+
+  <!-- SPRITE LPC -->
+  <div class="fiche-sprite-zone" id="fiche-sprite-zone" title="Sprite du personnage (LPC Generator)">
+    <img id="fiche-sprite-img" src="" alt="" style="display:none;width:128px;height:128px;image-rendering:pixelated;image-rendering:crisp-edges;" />
+    <div id="fiche-sprite-placeholder" style="width:128px;height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:1px dashed rgba(201,168,76,0.3);border-radius:8px;cursor:pointer;gap:0.3rem;" onclick="importerSpriteLPC()">
+      <span style="font-size:2rem;">🧙</span>
+      <span style="font-size:0.6rem;color:#888;text-align:center;">Importer<br>sprite LPC</span>
+    </div>
+    <button id="fiche-sprite-btn" onclick="importerSpriteLPC()" style="display:none;position:absolute;bottom:0;right:0;font-size:0.6rem;background:rgba(0,0,0,0.7);border:1px solid rgba(201,168,76,0.4);border-radius:4px;color:#c9a84c;padding:0.15rem 0.35rem;cursor:pointer;">↺</button>
+  </div>
+
   <div class="fiche-nom-section">
     <input class="fiche-nom" id="p-nom" type="text" placeholder="Nom du personnage…" onchange="markDirty('nom',this.value)" />
     <div class="fiche-tags" id="fiche-tags"></div>
