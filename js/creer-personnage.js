@@ -275,6 +275,12 @@ function renderSpriteSuggestions() {
 
 function onShowStep12() {
   renderSpriteSuggestions();
+  // Lazy-load l'iframe une seule fois
+  const iframe = document.getElementById('lpc-iframe');
+  if (iframe && !iframe.src) {
+    iframe.onload = onLpcIframeLoad;
+    iframe.src = '/lpc-generator/';
+  }
   const preview = document.getElementById('wizard-sprite-preview');
   const img = document.getElementById('wizard-sprite-img');
   if (W.sprite_url && img && preview) { img.src = W.sprite_url; preview.style.display = ''; }
