@@ -279,7 +279,7 @@ function onShowStep12() {
   const iframe = document.getElementById('lpc-iframe');
   if (iframe && !iframe.src) {
     iframe.onload = onLpcIframeLoad;
-    iframe.src = '/lpc-generator/';
+    iframe.src = '/lpc-generator/dist/index.html';
   }
   const preview = document.getElementById('wizard-sprite-preview');
   const img = document.getElementById('wizard-sprite-img');
