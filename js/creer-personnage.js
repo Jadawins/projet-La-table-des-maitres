@@ -25,7 +25,8 @@ function normalizeComp(s) {
 
 const W = {
   step: 1,
-  totalSteps: 12,
+  totalSteps: 13,
+  sprite_url: '',
   // Données chargées
   _especes: [], _classes: [], _sousclasses: [], _backgrounds: [],
   _sortsParNiveau: {},    // cache : { 0:[...], 1:[...], 2:[...], ... }
@@ -185,6 +186,44 @@ function prevStep() {
   saveWizardDraft();
 }
 
+// ─── ÉTAPE 12 — SPRITE LPC ────────────────────────────────────
+
+function wizardImporterSprite() {
+  const dataUrl = localStorage.getItem('lpc_avatar');
+  if (!dataUrl) {
+    alert('Aucun avatar trouvé.\n\n1. Ouvre le générateur LPC\n2. Crée ton personnage\n3. Clique sur « 🧙 Avatar → Fiche personnage » dans la section Download\n4. Reviens ici et clique Importer');
+    return;
+  }
+  W.sprite_url = dataUrl;
+  const img = document.getElementById('wizard-sprite-img');
+  const placeholder = document.getElementById('wizard-sprite-placeholder');
+  if (img) { img.src = dataUrl; img.style.display = ''; }
+  if (placeholder) placeholder.style.display = 'none';
+  localStorage.removeItem('lpc_avatar');
+}
+window.wizardImporterSprite = wizardImporterSprite;
+
+// Rafraîchir la zone sprite quand on arrive à l'étape 12
+function onShowStep12() {
+  const dataUrl = localStorage.getItem('lpc_avatar');
+  const img = document.getElementById('wizard-sprite-img');
+  const placeholder = document.getElementById('wizard-sprite-placeholder');
+  if (!img) return;
+  const url = W.sprite_url || dataUrl || '';
+  if (url) {
+    img.src = url;
+    img.style.display = '';
+    if (placeholder) placeholder.style.display = 'none';
+    if (dataUrl && !W.sprite_url) {
+      W.sprite_url = dataUrl;
+      localStorage.removeItem('lpc_avatar');
+    }
+  } else {
+    img.style.display = 'none';
+    if (placeholder) placeholder.style.display = '';
+  }
+}
+
 function validateStep(n) {
   if (n === 1) {
     const nom = document.getElementById('p-nom').value.trim();
@@ -327,6 +366,7 @@ async function onStepEnter(n) {
   if (n === 9) renderBoutiqueStep();
   if (n === 10) await loadSorts();
   if (n === 11) renderTraitsSuggestions();
+  if (n === 12) onShowStep12();
 }
 
 // ─── ÉTAPE 1 — Alignement & Niveau ───────────────────────────
@@ -2246,7 +2286,8 @@ async function creerPersonnage() {
     maitrise_armures: W.classe_data?.maitrises_armures || [],
     notes: W.notes,
     apparence: W.apparence,
-    historique_perso: W.historique_perso
+    historique_perso: W.historique_perso,
+    sprite_url: W.sprite_url || ''
   };
 
   const btn = document.getElementById('btn-submit');

@@ -346,8 +346,43 @@
     </div>
   </div>
 
-  <!-- ÉTAPE 12 — Récapitulatif -->
+  <!-- ÉTAPE 12 — Sprite LPC -->
   <div class="wizard-panel" data-step="12">
+    <div class="step-title"><i class="fa-solid fa-person"></i> Apparence du personnage</div>
+    <div class="step-subtitle">Créez le sprite de votre personnage avec le générateur LPC. Cette étape est optionnelle et peut être faite plus tard depuis votre fiche.</div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;margin-top:1rem;">
+
+      <!-- Zone sprite -->
+      <div id="wizard-sprite-zone" style="position:relative;cursor:pointer;" onclick="wizardImporterSprite()" title="Cliquer pour importer depuis le générateur LPC">
+        <img id="wizard-sprite-img" src="" alt="" style="display:none;width:128px;height:128px;image-rendering:pixelated;image-rendering:crisp-edges;border:2px solid rgba(201,168,76,0.5);border-radius:8px;" />
+        <div id="wizard-sprite-placeholder" style="width:128px;height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:2px dashed rgba(201,168,76,0.4);border-radius:8px;gap:0.4rem;">
+          <span style="font-size:3rem;">🧙</span>
+          <span style="font-size:0.65rem;color:#888;text-align:center;">Aucun sprite<br>importé</span>
+        </div>
+      </div>
+
+      <p style="font-size:0.82rem;color:#aaa;text-align:center;max-width:400px;margin:0;">
+        Ouvre le générateur LPC, crée ton personnage pixel art, puis clique sur <strong style="color:#c9a84c;">«&nbsp;🧙 Avatar → Fiche personnage&nbsp;»</strong> dans la section Download. Reviens ici et clique sur le sprite pour l'importer.
+      </p>
+
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+        <a href="/lpc-generator/" target="_blank" style="padding:0.5rem 1.1rem;background:rgba(134,93,255,0.15);border:1px solid #865dff;border-radius:8px;color:#865dff;font-size:0.85rem;text-decoration:none;cursor:pointer;">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Ouvrir le générateur LPC
+        </a>
+        <button type="button" onclick="wizardImporterSprite()" style="padding:0.5rem 1.1rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.5);border-radius:8px;color:#c9a84c;font-size:0.85rem;cursor:pointer;">
+          <i class="fa-solid fa-file-import"></i> Importer le sprite
+        </button>
+      </div>
+
+      <p style="font-size:0.72rem;color:#555;text-align:center;margin:0;">
+        Tu peux aussi <button type="button" onclick="nextStep()" style="background:none;border:none;color:#c9a84c;cursor:pointer;font-size:0.72rem;text-decoration:underline;">passer cette étape</button> et ajouter ton sprite plus tard depuis ta fiche personnage.
+      </p>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 13 — Récapitulatif -->
+  <div class="wizard-panel" data-step="13">
     <div class="step-title"><i class="fa-solid fa-check-circle"></i> Récapitulatif</div>
     <div class="step-subtitle">Vérifiez votre personnage avant de le créer.</div>
     <div id="recap-content"></div>
