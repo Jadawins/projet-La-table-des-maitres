@@ -1,16 +1,29 @@
 {
   "slug": "spell-disruptor-horn",
-  "nom": "Spell Disruptor Horn",
+  "nom": "Cor Perturbateur de Sort",
   "nom_original": "Spell Disruptor Horn",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This horn is carved with images of a Spellhound (see Tome of Beasts 2) and invokes the antimagic properties of the hound's howl. You use an action to blow this horn, which emits a high-pitched, multiphonic sound that disrupts all magical effects within 30 feet of you. Any spell of 3rd level or lower in the area ends. For each spell of 4th-level or higher in the area, the horn makes a check with a +3 bonus. The DC equals 10 + the spell's level. On a success, the spell ends. In addition, each spellcaster within 30 feet of you and that can hear the horn must succeed on a DC 15 Constitution saving throw or be stunned until the end of its next turn. Once used, the horn can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce cor émet un son perturbant qui annule les sorts de niveau 3 ou inférieur dans un rayon de 30 pieds et affaiblit les lanceurs de sorts d'un niveau supérieur. Il ne peut être utilisé qu'une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Annule les sorts de niveau 3 ou inférieur dans un rayon de 30 pieds",
+      "Test +3 pour annuler les sorts de niveau 4+",
+      "Les lanceurs de sorts dans le rayon doivent réussir un jet de sauvegarde CON DC 15 ou être étourdi jusqu'à la fin de son prochain tour"
+    ]
+  }
 }

@@ -1,17 +1,28 @@
 {
   "slug": "captains-flag",
-  "nom": "Captain's Flag",
+  "nom": "Pavillon du Capitaine",
   "nom_original": "Captain's Flag",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This red and white flag adorned with a white anchor is made of velvet that never seems to fray in strong wings. When mounted and flown on a ship, the flag changes to the colors and symbol of the ship's captain and crew. While this flag is mounted on a ship, the captain and its allies have advantage on saving throws against being charmed or frightened. In addition, when the captain is reduced to 0 hit points while on the ship where this flag flies, each ally of the captain has advantage on its attack rolls until the end of its next turn.",
-  "description_fr": "Ce drapeau rouge et blanc orné d'une ancre blanche est fait de velours qui ne semble jamais s'effilocher dans les vents forts. Lorsqu'il est hissé sur un navire, il prend les couleurs et le symbole du capitaine et de son équipage. Tant que ce pavillon flotte sur un navire, le capitaine et ses alliés ont l'avantage aux jets de sauvegarde contre les états charmé et effrayé. De plus, lorsque le capitaine est réduit à 0 point de vie à bord du navire sur lequel ce pavillon flotte, chacun de ses alliés bénéficie de l'avantage à ses jets d'attaque jusqu'à la fin de son prochain tour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un drapeau magique qui prend les couleurs de son capitaine et confère l'avantage aux jets de sauvegarde contre le charme et la peur à l'équipage. Donne aussi l'avantage aux attaques si le capitaine est réduit à 0 PV.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux JS contre charmé et effrayé pour le capitaine et alliés",
+      "Avantage aux attaques des alliés si le capitaine à 0 PV (jusqu'à fin du prochain tour)"
+    ]
+  }
 }

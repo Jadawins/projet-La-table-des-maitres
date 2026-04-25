@@ -1,6 +1,6 @@
 {
   "slug": "sea-horse",
-  "nom": "Sea Horse",
+  "nom": "Hippocampe",
   "nom_original": "Sea Horse",
   "taille": "TP",
   "type": "Beast",
@@ -58,7 +58,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Water Breathing",
+      "nom": "Respiration aquatique",
       "description": "The sea horse can breathe only underwater.",
       "bonus_attaque": null,
       "degats_de": null,

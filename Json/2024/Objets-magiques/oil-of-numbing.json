@@ -1,16 +1,28 @@
 {
   "slug": "oil-of-numbing",
-  "nom": "Oil of Numbing",
+  "nom": "Huile d'Engourdissement",
   "nom_original": "Oil of Numbing",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This astringent-smelling oil stings slightly when applied to flesh, but the feeling quickly fades. The oil can cover a Medium or smaller creature (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. For 1 hour, the affected creature has advantage on Constitution saving throws to maintain its concentration on a spell when it takes damage, and it has advantage on ability checks and saving throws made to endure pain. However, the affected creature's flesh is slightly numbed and senseless, and it has disadvantage on ability checks that require fine motor skills or a sense of touch.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Confère l'avantage aux jets de sauvegarde de Constitution pour la concentration et aux tests contre la douleur, mais inflige le désavantage aux tests de motricité fine pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de concentration et de douleur",
+      "Désavantage aux tests de motricité fine"
+    ]
+  }
 }

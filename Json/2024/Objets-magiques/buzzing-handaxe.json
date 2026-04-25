@@ -1,17 +1,29 @@
 {
   "slug": "buzzing-handaxe",
-  "nom": "Buzzing Handaxe",
+  "nom": "Hachette bourdonnante",
   "nom_original": "Buzzing Handaxe",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You can use a bonus action to speak this weapon's command word, causing the blade to emit a loud buzzing sound. The buzzing noise is audible out to 100 feet. While the sword is buzzing, it deals an extra 2d6 thunder damage to any target it hits. The buzzing lasts until you use a bonus action to speak the command word again or until you drop or sheathe the weapon.",
-  "description_fr": "Vous pouvez utiliser une action bonus pour prononcer le mot de commande de cette arme, ce qui fait émettre à la lame un puissant bourdonnement. Ce bourdonnement est audible jusqu'à 30 mètres (100 pieds). Tant que l'arme bourdonne, elle inflige 2d6 dégâts de tonnerre supplémentaires à toute cible qu'elle touche. Le bourdonnement cesse lorsque vous utilisez à nouveau une action bonus pour prononcer le mot de commande, ou lorsque vous lâchez ou rengainez l'arme.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une hachette magique qui émet un puissant bourdonnement audible à 30 mètres, infligeant 2d6 dégâts de tonnerre supplémentaires tant qu'elle bourdonne.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "tonnerre",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bourdonnement activable par action bonus",
+      "Dégâts de tonnerre supplémentaires tant qu'active",
+      "Audible jusqu'à 30 mètres"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "labrys-of-the-raging-bull-greataxe",
-  "nom": "Labrys of the Raging Bull (Greataxe)",
+  "nom": "Labrys du Taureau Déchaîné",
   "nom_original": "Labrys of the Raging Bull (Greataxe)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. While you wield the axe, you have advantage on Strength (Athletics) checks to shove a creature, and you can shove a creature up to two sizes larger than you.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Grande hache magique +1 qui renforce les tentatives de projection. Vous avez l'avantage aux tests d'Athlétisme pour projeter et pouvez projeter des créatures deux catégories de taille plus grandes.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests d'Athlétisme (projection)",
+      "Peut projeter des créatures jusqu'à 2 catégories de taille plus grandes"
+    ]
+  }
 }

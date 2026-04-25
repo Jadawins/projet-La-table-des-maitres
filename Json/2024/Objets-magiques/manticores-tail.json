@@ -1,16 +1,28 @@
 {
   "slug": "manticores-tail",
-  "nom": "Manticore's Tail",
+  "nom": "Queue de Manticore",
   "nom_original": "Manticore's Tail",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "Ten spikes stick out of the head of this magic weapon. While holding the morningstar, you can fire one of the spikes as a ranged attack, using your Strength modifier for the attack and damage rolls. This attack has a normal range of 100 feet and a long range of 200 feet. On a hit, the spike deals 1d8 piercing damage. Once all of the weapon's spikes have been fired, the morningstar deals bludgeoning damage instead of the piercing damage normal for a morningstar until the next dawn, at which time the spikes regrow.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une massue de guerre magique équipée de dix pics qui peuvent être tirés comme projectiles avant de repousser à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "perçant",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Pics amovibles : attaque à distance 100/200 ft avec 1d8 dégâts perçants",
+      "Après épuisement des pics, inflige des dégâts contondants jusqu'à l'aube"
+    ]
+  }
 }

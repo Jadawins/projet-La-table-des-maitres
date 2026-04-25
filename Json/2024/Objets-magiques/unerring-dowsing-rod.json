@@ -1,16 +1,28 @@
 {
   "slug": "unerring-dowsing-rod",
-  "nom": "Unerring Dowsing Rod",
+  "nom": "Baguette de Sourcier Infaillible",
   "nom_original": "Unerring Dowsing Rod",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This dark, gnarled willow root is worn and smooth. When you hold this rod in both hands by its short, forked branches, you feel it gently tugging you toward the closest source of fresh water. If the closest source of fresh water is located underground, the dowsing rod directs you to a spot above the source then dips its tip down toward the ground. When you use this dowsing rod on the Material Plane, it directs you to bodies of water, such as creeks and ponds. When you use it in areas where fresh water is much more difficult to find, such as a desert or the Plane of Fire, it directs you to bodies of water, but it might also direct you toward homes with fresh water barrels or to creatures with containers of fresh water on them.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une baguette de sourcier qui guide infailliblement vers la source d'eau douce la plus proche, y compris les réserves d'eau domestiques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Localise la source d'eau douce la plus proche",
+      "Fonctionne même pour les réserves d'eau domestiques en désert"
+    ]
+  }
 }

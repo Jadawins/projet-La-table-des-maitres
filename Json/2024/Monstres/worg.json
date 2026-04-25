@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "neutral evil",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 26,
   "pv_formule": "4d10+4",
   "vitesse": {
@@ -54,8 +54,8 @@
     "tremblements": null
   },
   "langues": [
-    "Goblin",
-    "Worg"
+    "gobelin",
+    "worg"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -63,7 +63,7 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,7 +72,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
       "bonus_attaque": 5,
       "degats_de": "2d6",

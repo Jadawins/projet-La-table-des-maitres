@@ -1,6 +1,6 @@
 {
   "slug": "giant-eagle",
-  "nom": "Giant Eagle",
+  "nom": "Aigle géant",
   "nom_original": "Giant Eagle",
   "taille": "G",
   "type": "Beast",
@@ -54,7 +54,7 @@
     "tremblements": null
   },
   "langues": [
-    "Giant Eagle",
+    "aigle géant",
     "understands Common and Auran but can't speak"
   ],
   "fp": "1",
@@ -63,7 +63,7 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Keen Sight",
+      "nom": "Vue aiguisée",
       "description": "The eagle has advantage on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,21 +72,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The eagle makes two attacks: one with its beak and one with its talons.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Beak",
+      "nom": "Bec",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d6",
       "degats_bonus": 3
     },
     {
-      "nom": "Talons",
+      "nom": "Serres",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "2d6",

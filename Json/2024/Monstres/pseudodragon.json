@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "neutral good",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 7,
   "pv_formule": "2d4+2",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -63,28 +63,28 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Keen Senses",
+      "nom": "Sens aiguisés",
       "description": "The pseudodragon has advantage on Wisdom (Perception) checks that rely on sight, hearing, or smell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The pseudodragon has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Limited Telepathy",
+      "nom": "Télépathie limitée",
       "description": "The pseudodragon can magically communicate simple ideas, emotions, and images telepathically with any creature within 100 ft. of it that can understand a language.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Variant: Familiar",
+      "nom": "Variante : Familier",
       "description": "The pseudodragon can serve another creature as a familiar, forming a magic, telepathic bond with that willing companion. While the two are bonded, the companion can sense what the pseudodragon senses as long as they are within 1 mile of each other. While the pseudodragon is within 10 feet of its companion, the companion shares the pseudodragon's Magic Resistance trait. At any time and for any reason, the pseudodragon can end its service as a familiar, ending the telepathic bond.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -93,14 +93,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d4",
       "degats_bonus": 2
     },
     {
-      "nom": "Sting",
+      "nom": "Dard",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. If the saving throw fails by 5 or more, the target falls unconscious for the same duration, or until it takes damage or another creature uses an action to shake it awake.",
       "bonus_attaque": 4,
       "degats_de": "1d4",

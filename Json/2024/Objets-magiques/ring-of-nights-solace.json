@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-nights-solace",
-  "nom": "Anneau de Night's Solace",
+  "nom": "Anneau du Réconfort nocturne",
   "nom_original": "Ring of Night's Solace",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "A disc of black onyx sits within an encompassing band of white chalcedony, set into fittings on this pewter ring. While wearing this ring in bright light, you are draped in a comforting cloak of shadow, protecting you from the harshest glare. If you have the Sunlight Sensitivity trait or a similar trait that causes you to have disadvantage on attack rolls or Wisdom (Perception) checks while in bright light or sunlight, you don't suffer those effects while wearing this ring. In addition, you have advantage on saving throws against being blinded.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Annule la sensibilité au soleil et procure l'avantage aux jets de sauvegarde contre l'éblouissement en lumière vive.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Annule la sensibilité au soleil",
+      "Avantage aux jets de sauvegarde contre l'éblouissement"
+    ]
+  }
 }

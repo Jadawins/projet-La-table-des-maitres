@@ -1,17 +1,29 @@
 {
   "slug": "clockwork-mace-of-divinity",
-  "nom": "Clockwork Mace of Divinity",
+  "nom": "Masse d'Horlogerie de Divinité",
   "nom_original": "Clockwork Mace of Divinity",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This clockwork mace is composed of several different metals. While attuned to this magic weapon, you have proficiency with it. As a bonus action, you can command the mace to transform into a trident. When you hit with an attack using this weapon's trident form, the target takes an extra 1d6 radiant damage.",
-  "description_fr": "Cette masse mécanique est composée de plusieurs métaux différents. Tant que vous êtes harmonisé à cette arme magique, vous avez la maîtrise de celle-ci. En tant qu'action bonus, vous pouvez ordonner à la masse de se transformer en trident. Lorsque vous touchez avec une attaque utilisant la forme de trident de cette arme, la cible subit 1d6 dégâts radiants supplémentaires.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Masse mécanique transformable en trident par action bonus, infligeant des dégâts radiants supplémentaires sous forme de trident.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Transformable en trident par action bonus",
+      "Dégâts radiants supplémentaires en forme de trident",
+      "Maîtrise accordée quand harmonisé"
+    ]
+  }
 }

@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 19,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 123,
   "pv_formule": "13d10+52",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 5,
-    "stealth": 9
+    "discrétion": 9
   },
   "resistances": [],
   "immunites_degats": [],
@@ -55,8 +55,8 @@
     "tremblements": null
   },
   "langues": [
-    "Elvish",
-    "Undercommon"
+    "elfique",
+    "commun des profondeurs"
   ],
   "fp": "6",
   "fp_numerique": 6,
@@ -64,35 +64,35 @@
   "experience": 2300,
   "traits": [
     {
-      "nom": "Fey Ancestry",
+      "nom": "Ascendance féerique",
       "description": "The drider has advantage on saving throws against being charmed, and magic can't put the drider to sleep.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Innate Spellcasting",
+      "nom": "Incantation innée",
       "description": "The drider's innate spellcasting ability is Wisdom (spell save DC 13). The drider can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Spider Climb",
+      "nom": "Escalade araignée",
       "description": "The drider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Sunlight Sensitivity",
+      "nom": "Sensibilité à la lumière du soleil",
       "description": "While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Web Walker",
+      "nom": "Marcheur de toile",
       "description": "The drider ignores movement restrictions caused by webbing.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -101,28 +101,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The drider makes three attacks, either with its longsword or its longbow. It can replace one of those attacks with a bite attack.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 2 (1d4) piercing damage plus 9 (2d8) poison damage.",
       "bonus_attaque": 6,
       "degats_de": "1d4",
       "degats_bonus": 2
     },
     {
-      "nom": "Longsword",
+      "nom": "Épée longue",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.",
       "bonus_attaque": 6,
       "degats_de": "1d8",
       "degats_bonus": 3
     },
     {
-      "nom": "Longbow",
+      "nom": "Arc long",
       "description": "Ranged Weapon Attack: +6 to hit, range 150/600 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 4 (1d8) poison damage.",
       "bonus_attaque": 6,
       "degats_de": "1d8",

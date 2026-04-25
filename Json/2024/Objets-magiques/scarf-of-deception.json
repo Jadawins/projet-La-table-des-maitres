@@ -1,16 +1,29 @@
 {
   "slug": "scarf-of-deception",
-  "nom": "Scarf of Deception",
+  "nom": "Écharpe de déception",
   "nom_original": "Scarf of Deception",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this scarf, you appear different to everyone who looks upon you for less than 1 minute. In addition, you smell, sound, feel, and taste different to every creature that perceives you. Creatures with truesight or blindsight can see your true form, but their other senses are still confounded. If a creature studies you for 1 minute, it can make a DC 15 Wisdom (Perception) check. On a success, it perceives your real form.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vêtement modifiant l'apparence et tous les sens (odeur, son, toucher, goût) du porteur pendant moins d'1 minute d'observation, détectable par une vérification de Sagesse (Perception) DC 15 après 1 minute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Modifie l'apparence et tous les sens du porteur",
+      "Les créatures ayant la vision véritable voient la vraie forme mais leurs autres sens restent confondus",
+      "Perception DC 15 après 1 minute d'observation attentive pour voir la vraie forme"
+    ]
+  }
 }

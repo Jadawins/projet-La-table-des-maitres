@@ -1,16 +1,28 @@
 {
   "slug": "talisman-of-the-sphere",
-  "nom": "Talisman of the Sphere",
+  "nom": "Talisman de la Sphère",
   "nom_original": "Talisman of the Sphere",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "When you make an Intelligence (Arcana) check to control a _sphere of annihilation_ while you are holding this talisman, you double your proficiency bonus on the check. In addition, when you start your turn with control over a _sphere of annihilation_, you can use an action to levitate it 10 feet plus a number of additional feet equal to 10 × your Intelligence modifier.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un talisman doublant le bonus de maîtrise pour contrôler une sphère d'annihilation et permettant de la faire léviter jusqu'à 10 pieds plus des pieds supplémentaires basés sur le modificateur d'Intelligence.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Double le bonus de maîtrise aux tests d'Arcane pour contrôler une sphère d'annihilation",
+      "Permet de faire léviter la sphère de 10 + (10 × modificateur d'Intelligence) pieds"
+    ]
+  }
 }

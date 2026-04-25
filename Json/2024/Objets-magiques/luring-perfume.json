@@ -1,16 +1,29 @@
 {
   "slug": "luring-perfume",
-  "nom": "Luring Perfume",
+  "nom": "Parfum Séducteur",
   "nom_original": "Luring Perfume",
   "categorie": "potion",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This pungent perfume has a woodsy and slightly musky scent. As an action, you can splash or spray the contents of this vial on yourself or another creature within 5 feet of you. For 1 minute, the perfumed creature attracts nearby humanoids and beasts. Each humanoid and beast within 60 feet of the perfumed creature and that can smell the perfume must succeed on a DC 15 Wisdom saving throw or be charmed by the perfumed creature until the perfume fades or is washed off with at least 1 gallon of water. While charmed, a creature is incapacitated, and, if the creature is more than 5 feet away from the perfumed creature, it must move on its turn toward the perfumed creature by the most direct route, trying to get within 5 feet. It doesn't avoid opportunity attacks, but before moving into damaging terrain, such as lava or a pit, and whenever it takes damage, the target can repeat the saving throw. A charmed target can also repeat the saving throw at the end of each of its turns. If the saving throw is successful, the effect ends on it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un parfum qui charme les humanoïdes et créatures proches (jet de sauvegarde de Sagesse DD 15) pendant 1 minute, les poussant à se rapprocher de la créature parfumée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Charme humanoïdes et créatures (rayon 60 pieds, DD Sag 15)",
+      "Créatures charmées incapacitées et attirées vers la cible",
+      "Durée 1 minute ou nettoyage avec 4,5 litres d'eau"
+    ]
+  }
 }

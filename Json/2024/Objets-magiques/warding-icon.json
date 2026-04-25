@@ -1,16 +1,28 @@
 {
   "slug": "warding-icon",
-  "nom": "Warding Icon",
+  "nom": "Icône de protection",
   "nom_original": "Warding Icon",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This carved piece of semiprecious stone typically takes the form of an angelic figure or a shield carved with a protective rune, and it is commonly worn attached to clothing or around the neck on a chain or cord. While wearing the stone, you have brief premonitions of danger and gain a +2 bonus to initiative if you aren't incapacitated.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pierre sculptée conférant des premonitions de danger et augmentant l'initiative de +2.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'initiative si vous n'êtes pas incapacité",
+      "Doit être porté pour bénéficier de l'effet"
+    ]
+  }
 }

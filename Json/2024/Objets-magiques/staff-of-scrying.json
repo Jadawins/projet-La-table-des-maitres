@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-scrying",
-  "nom": "Bâton de Scrying",
+  "nom": "Bâton de scrutation",
   "nom_original": "Staff of Scrying",
   "categorie": "baton",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This is a graceful, highly polished wooden staff crafted from willow. A crystal ball tops the staff, and smooth gold bands twist around its shaft. This staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: detect thoughts (2 charges), locate creature (4 charges), locate object (2 charges), scrying (5 charges), or true seeing (6 charges). The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, a bright flash of light erupts from the crystal ball, and the staff vanishes.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Élégant bâton de saule avec boule de cristal permettant de lancer des sorts de détection et scrutation en dépensant des charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Sorts: detect thoughts (2 charges), locate creature (4 charges), locate object (2 charges), scrying (5 charges), true seeing (6 charges)",
+      "Régain de 1d6+4 charges à l'aube",
+      "Disparition en éclair lumineux sur critique d'échec (d20=1)"
+    ]
+  }
 }

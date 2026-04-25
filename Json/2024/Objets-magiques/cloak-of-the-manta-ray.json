@@ -1,17 +1,29 @@
 {
   "slug": "cloak-of-the-manta-ray",
-  "nom": "Cape de la raie manta",
+  "nom": "Cape de la Raie Manta",
   "nom_original": "Cloak of the Manta Ray",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this cloak with its hood up, you can breathe underwater, and you have a swimming speed of 60 feet. Pulling the hood up or down requires an action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant cette cape avec sa capuche relevée, vous pouvez respirer sous l'eau et vous disposez d'une vitesse de nage de 18 mètres. Relever ou baisser la capuche nécessite une action."
+  "resume": "Cape permettant de respirer sous l'eau et de nager à grande vitesse. Capuche relevée : respiration aquatique et vitesse de nage 18 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Respiration sous l'eau avec capuche relevée",
+      "Vitesse de nage 18 mètres",
+      "Relever/baisser la capuche nécessite une action"
+    ]
+  }
 }

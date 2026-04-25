@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 16,
-  "ca_detail": "chain mail",
+  "ca_detail": "cotte de mailles",
   "pv": 110,
   "pv_formule": "13d10+39",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": 5
   },
   "competences": {
-    "arcana": 5,
-    "deception": 8,
+    "arcanes": 5,
+    "tromperie": 8,
     "perception": 4
   },
   "resistances": [],
@@ -56,8 +56,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Giant"
+    "commun",
+    "géant"
   ],
   "fp": "7",
   "fp_numerique": 7,
@@ -65,21 +65,21 @@
   "experience": 2900,
   "traits": [
     {
-      "nom": "Innate Spellcasting",
+      "nom": "Incantation innée",
       "description": "The oni's innate spellcasting ability is Charisma (spell save DC 13). The oni can innately cast the following spells, requiring no material components:\n\nAt will: darkness, invisibility\n1/day each: charm person, cone of cold, gaseous form, sleep",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Weapons",
+      "nom": "Armes magiques",
       "description": "The oni's weapon attacks are magical.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Regeneration",
+      "nom": "Régénération",
       "description": "The oni regains 10 hit points at the start of its turn if it has at least 1 hit point.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -88,14 +88,14 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The oni makes two attacks, either with its claws or its glaive.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Claw (Oni Form Only)",
+      "nom": "Griffe (forme oni uniquement)",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "1d8",
@@ -109,7 +109,7 @@
       "degats_bonus": 4
     },
     {
-      "nom": "Change Shape",
+      "nom": "Changement de forme",
       "description": "The oni magically polymorphs into a Small or Medium humanoid, into a Large giant, or back into its true form. Other than its size, its statistics are the same in each form. The only equipment that is transformed is its glaive, which shrinks so that it can be wielded in humanoid form. If the oni dies, it reverts to its true form, and its glaive reverts to its normal size.",
       "bonus_attaque": null,
       "degats_de": null,

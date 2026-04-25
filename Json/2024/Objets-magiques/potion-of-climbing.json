@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this potion, you gain a climbing speed equal to your walking speed for 1 hour. During this time, you have advantage on Strength (Athletics) checks you make to climb. The potion is separated into brown, silver, and gray layers resembling bands of stone. Shaking the bottle fails to mix the colors.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous gagnez une vitesse d'escalade égale à votre vitesse de marche pendant 1 heure avec avantage aux tests d'escalade.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse d'escalade égale à la vitesse de marche",
+      "Avantage aux tests d'Athlétisme (escalade)",
+      "Durée 1 heure"
+    ]
+  }
 }

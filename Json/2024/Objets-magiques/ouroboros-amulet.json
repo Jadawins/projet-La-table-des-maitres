@@ -1,16 +1,29 @@
 {
   "slug": "ouroboros-amulet",
-  "nom": "Ouroboros Amulet",
+  "nom": "Amulette Ouroboros",
   "nom_original": "Ouroboros Amulet",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Carved in the likeness of a serpent swallowing its own tail, this circular jade amulet is frequently worn by serpentfolk mystics and the worshippers of dark and forgotten gods. While wearing this amulet, you have advantage on saving throws against being charmed. In addition, you can use an action to cast the suggestion spell (save DC 13). The amulet can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Amulette de jade représentant un serpent se mordant la queue, conférant une résistance aux envoûtements et permettant de lancer le sort suggestion une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Avantage : aux jets de sauvegarde contre l'état charmé",
+      "Suggestion : lancer une fois par jour (save DC 13)",
+      "Affinité serpentaire : prisée par les mystiques serpentaires"
+    ]
+  }
 }

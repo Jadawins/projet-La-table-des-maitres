@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any non-lawful alignment",
   "ca": 12,
-  "ca_detail": "leather armor",
+  "ca_detail": "armure de cuir",
   "pv": 11,
   "pv_formule": "2d8+2",
   "vitesse": {
@@ -61,14 +61,14 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Scimitar",
+      "nom": "Cimeterre",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d6",
       "degats_bonus": 1
     },
     {
-      "nom": "Light Crossbow",
+      "nom": "Arbalète légère",
       "description": "Ranged Weapon Attack: +3 to hit, range 80/320 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d8",

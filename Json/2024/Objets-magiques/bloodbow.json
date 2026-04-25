@@ -1,17 +1,29 @@
 {
   "slug": "bloodbow",
-  "nom": "Bloodbow",
+  "nom": "Arc de Sang",
   "nom_original": "Bloodbow",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This longbow is carved of a light, sturdy wood such as hickory or yew, and it is almost always stained a deep maroon hue, lacquered and aged under layers of sundried blood. The bow is sometimes decorated with reptilian teeth, centaur tails, or other battle trophies. The bow is designed to harm the particular type of creature whose blood most recently soaked the weapon. When you make a ranged attack roll with this magic weapon against a creature of that type, you have a +1 bonus to the attack and damage rolls. If the attack hits, the target must succeed on a DC 15 Wisdom saving throw or become enraged until the end of your next turn. While enraged, the target suffers a random short-term madness.",
-  "description_fr": "Cet arc long est taillé dans un bois léger et résistant, tel que le caryer ou l'if, et il est presque toujours teinté d'une profonde teinte bordeaux, laqué et patiné sous des couches de sang séché au soleil. L'arc est parfois orné de dents de reptiles, de queues de centaures ou d'autres trophées de guerre. L'arc est conçu pour blesser le type particulier de créature dont le sang a le plus récemment imbibé l'arme. Lorsque vous effectuez un jet d'attaque à distance avec cette arme magique contre une créature de ce type, vous bénéficiez d'un bonus de +1 aux jets d'attaque et de dégâts. Si l'attaque touche, la cible doit réussir un jet de sauvegarde de Sagesse DD 15 ou devenir enragée jusqu'à la fin de votre prochain tour. Lorsqu'elle est enragée, la cible subit une folie passagère aléatoire.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arc long magique qui gagne +1 aux attaques contre un type de créature spécifique et peut enrager sa cible.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets d'attaque et de dégâts contre le type de créature du sang récent",
+      "Cible doit réussir sauvegarde Sagesse DD 15 ou devient enragée jusqu'à fin de votre prochain tour",
+      "Cible souffre de folie passagère aléatoire si enragée"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "sanctuary-shell",
-  "nom": "Sanctuary Shell",
+  "nom": "Coquille de Sanctuaire",
   "nom_original": "Sanctuary Shell",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This seashell is intricately carved with protective runes. If you are carrying the shell and are reduced to 0 hit points or incapacitated, the shell activates, creating a bubble of force that expands to surround you and forces any other creatures out of your space. This sphere works like the wall of force spell, except that any creature intent on aiding you can pass through it. The protective sphere lasts for 10 minutes, or until you regain at least 1 hit point or are no longer incapacitated. When the protective sphere ends, the shell crumbles to dust.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Coquille magique qui crée une bulle de force protectrice quand vous êtes réduit à 0 PV ou incapacité, durant 10 minutes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "S'active quand vous êtes réduit à 0 PV ou incapacité",
+      "Crée une bulle de force fonctionnant comme mur de force",
+      "Les créatures voulant vous aider peuvent la traverser"
+    ]
+  }
 }

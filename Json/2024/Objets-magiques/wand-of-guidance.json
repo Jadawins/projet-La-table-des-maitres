@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This slim, metal wand is topped with a cage shaped like a three-sided pyramid. An eye of glass sits within the pyramid. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to cast the guidance spell from it. The wand regains all expended charges at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Resistance.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette permettant de lancer le sort de guidance jusqu'à 3 fois par jour. Se transforme en Baguette de Résistance si sa dernière charge est utilisée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lancer guidance (1 charge)",
+      "Récupère toutes les charges à l'aube",
+      "Transformation aléatoire sur dernière charge"
+    ]
+  }
 }

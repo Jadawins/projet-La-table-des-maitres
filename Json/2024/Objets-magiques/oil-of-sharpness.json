@@ -7,10 +7,22 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This clear, gelatinous oil sparkles with tiny, ultrathin silver shards. The oil can coat one slashing or piercing weapon or up to 5 pieces of slashing or piercing ammunition. Applying the oil takes 1 minute. For 1 hour, the coated item is magical and has a +3 bonus to attack and damage rolls.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Huile magique qui confère un bonus de +3 aux jets d'attaque et de dégâts d'une arme tranchante ou perçante pendant 1 heure.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +3 aux attaques et dégâts pendant 1 heure",
+      "S'applique à une arme ou 5 munitions tranchantes/perçantes"
+    ]
+  }
 }

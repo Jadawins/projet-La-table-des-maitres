@@ -1,16 +1,27 @@
 {
   "slug": "grasping-shield",
-  "nom": "Grasping Shield",
+  "nom": "Bouclier Préhensile",
   "nom_original": "Grasping Shield",
   "categorie": "autre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "The boss at the center of this shield is a hand fashioned of metal. While wielding this shield, you gain a +1 bonus to AC. This bonus is in addition to the shield's normal bonus to AC.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bouclier dont le centre est une main métallique. Accorde un bonus de +1 à la CA en sus du bonus normal du bouclier.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 à la CA (en plus du bouclier)"
+    ]
+  }
 }

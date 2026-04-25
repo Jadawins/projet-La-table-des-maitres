@@ -1,17 +1,29 @@
 {
   "slug": "circlet-of-holly",
-  "nom": "Circlet of Holly",
+  "nom": "Cerclet de houx",
   "nom_original": "Circlet of Holly",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this circlet, you gain the following benefits: - **Language of the Fey**. You can speak and understand Sylvan. - **Friend of the Fey.** You have advantage on ability checks to interact socially with fey creatures.\n- **Poison Sense.** You know if any food or drink you are holding contains poison.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant ce cerclet, vous bénéficiez des avantages suivants : - **Langue des fées**. Vous pouvez parler et comprendre le sylvain. - **Ami des fées.** Vous avez l'avantage aux tests de caractéristique pour interagir socialement avec les créatures féeriques.\n- **Sens du poison.** Vous savez si la nourriture ou la boisson que vous tenez contient du poison."
+  "resume": "Cerclet conférant la compréhension du sylvain, l'avantage aux interactions sociales avec les créatures féeriques, et la détection du poison.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Parler et comprendre le sylvain",
+      "Avantage aux tests de Charisme avec les créatures féeriques",
+      "Détection du poison dans la nourriture et la boisson"
+    ]
+  }
 }

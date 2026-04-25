@@ -1,17 +1,28 @@
 {
   "slug": "cloak-of-protection",
-  "nom": "Cape de protection",
+  "nom": "Cape de Protection",
   "nom_original": "Cloak of Protection",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "You gain a +1 bonus to AC and saving throws while you wear this cloak.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous obtenez un bonus de +1 à la CA et aux jets de sauvegarde tant que vous portez cette cape."
+  "resume": "Cape conférant un bonus de +1 à la CA et aux jets de sauvegarde.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 à la classe d'armure",
+      "+1 aux jets de sauvegarde"
+    ]
+  }
 }

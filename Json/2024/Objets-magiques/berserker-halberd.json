@@ -1,17 +1,29 @@
 {
   "slug": "berserker-halberd",
-  "nom": "Berserker Halberd",
+  "nom": "Hallebarde du berserker",
   "nom_original": "Berserker Halberd",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your Hit Point maximum increases by 1 for each level you have attained. Curse. This weapon is cursed, and becoming attuned to it extends the curse to you. As long as you remain cursed, you are unwilling to part with the weapon, keeping it within reach at all times. You also have Disadvantage on attack rolls with weapons other than this one. Whenever another creature damages you while the weapon is in your possession, you must succeed on a DC 15 Wisdom saving throw or go berserk. This berserk state ends when you start your turn and there are no creatures within 60 feet of you that you can see or hear. While berserk, you regard the creature nearest to you that you can see or hear as your enemy. If there are multiple possible creatures, choose one at random. On each of your turns, you must move as close to the creature as possible and take the Attack action, targeting the creature. If you're unable to get close enough to the creature to attack it with the weapon, your turn ends after you've used up all your available movement. If the creature dies or can no longer be seen or heard by you, the next nearest creature that you can see or hear becomes your new target.",
-  "description_fr": "Vous gagnez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. De plus, tant que vous êtes harmonisé avec cette arme, votre maximum de points de vie augmente de 1 pour chaque niveau que vous avez atteint. Malédiction. Cette arme est maudite, et vous harmoniser avec elle vous transmet la malédiction. Tant que vous demeurez maudit, vous refusez de vous séparer de l'arme, la gardant toujours à portée de main. Vous avez également le désavantage aux jets d'attaque avec toute autre arme. Chaque fois qu'une créature vous blesse tandis que vous êtes en possession de l'arme, vous devez réussir un jet de sauvegarde de Sagesse DD 15 ou entrer en état de berserk. Cet état berserk prend fin lorsque vous commencez votre tour sans aucune créature à moins de 18 mètres que vous puissiez voir ou entendre. En état de berserk, vous considérez la créature la plus proche de vous que vous pouvez voir ou entendre comme votre ennemi. S'il y en a plusieurs, choisissez-en une au hasard. À chacun de vos tours, vous devez vous approcher le plus possible de cette créature et utiliser l'action Attaquer en la ciblant. Si vous ne parvenez pas à vous rapprocher suffisamment pour l'attaquer avec l'arme, votre tour se termine après avoir épuisé tout votre mouvement disponible. Si la créature meurt ou ne peut plus être vue ou entendue par vous, la prochaine créature la plus proche que vous pouvez voir ou entendre devient votre nouvelle cible.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique +1 qui augmente vos PV max (+1 par niveau). Maudite : vous force en état berserk après chaque blessure (sauv. Sag. DD 15).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets d'attaque et de dégâts",
+      "PV max augmentés de 1 par niveau",
+      "Malédiction : berserk sur blessure (sauv. Sag. DD 15)"
+    ]
+  }
 }

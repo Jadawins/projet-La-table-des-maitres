@@ -1,16 +1,29 @@
 {
   "slug": "ring-of-the-frost-knight",
-  "nom": "Anneau de the Frost Knight",
+  "nom": "Anneau du Chevalier de Givre",
   "nom_original": "Ring of the Frost Knight",
   "categorie": "anneau",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This white gold ring is covered in a thin sheet of ice and always feels cold to the touch. The ring has 3 charges and regains 1d3 expended charges daily at dawn. While wearing the ring, you can use an action to expend 1 charge to surround yourself in a suit of enchanted ice that resembles plate armor. For 1 hour, your AC can't be less than 16, regardless of what kind of armor you are wearing, and you have resistance to cold damage. The icy armor melts, ending the effect early, if you take 20 fire damage or more.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Crée une armure de glace enchantée pour 1 heure, garantissant une CA minimale de 16 et conférant une résistance au froid, jusqu'à 20 dégâts de feu.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "CA minimale 16 pendant 1 heure (1 charge)",
+      "Résistance aux dégâts de froid",
+      "Rompu par 20 dégâts de feu ou plus"
+    ]
+  }
 }

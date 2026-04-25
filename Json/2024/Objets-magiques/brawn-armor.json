@@ -1,17 +1,29 @@
 {
   "slug": "brawn-armor",
-  "nom": "Brawn Armor",
+  "nom": "Armure de Force",
   "nom_original": "Brawn Armor",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor was crafted from the hide of an ancient grizzly bear. While wearing it, you gain a +1 bonus to AC, and you have advantage on grapple checks. The armor has 3 charges. You can use a bonus action to expend 1 charge to deal your unarmed strike damage to a creature you are grappling. The armor regains all expended charges daily at dawn.",
   "effets": [],
   "poids": "12.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette armure a été façonnée à partir de la peau d'un ancien ours brun. Tant que vous la portez, vous obtenez un bonus de +1 à la CA et avez l'avantage aux tests de lutte. L'armure possède 3 charges. Vous pouvez utiliser une action bonus pour dépenser 1 charge et infliger vos dégâts d'attaque à mains nues à une créature que vous maintenez en prise. L'armure récupère toutes ses charges dépensées chaque jour à l'aube."
+  "resume": "Armure en peau d'ours ancien conférant +1 à la CA et l'avantage aux luttes, avec 3 charges pour infliger des dégâts à mains nues.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "+1 à la CA",
+      "Avantage aux tests de lutte",
+      "Dépense 1 charge pour infliger ses dégâts à mains nues sur une créature maintenue"
+    ]
+  }
 }

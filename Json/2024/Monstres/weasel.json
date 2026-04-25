@@ -1,6 +1,6 @@
 {
   "slug": "weasel",
-  "nom": "Weasel",
+  "nom": "Belette",
   "nom_original": "Weasel",
   "taille": "TP",
   "type": "Beast",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 5
+    "discrétion": 5
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,7 +61,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -70,7 +70,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.",
       "bonus_attaque": 5,
       "degats_de": null,

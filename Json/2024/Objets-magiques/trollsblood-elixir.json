@@ -1,16 +1,29 @@
 {
   "slug": "trollsblood-elixir",
-  "nom": "Trollsblood Elixir",
+  "nom": "Élixir de Sang de Troll",
   "nom_original": "Trollsblood Elixir",
   "categorie": "potion",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This thick, pink liquid sloshes and moves even when the bottle is still. When you drink this potion, you regenerate lost hit points for 1 hour. At the start of your turn, you regain 5 hit points. If you take acid or fire damage, the potion doesn't function at the start of your next turn. If you lose a limb, you can reattach it by holding it in place for 1 minute. For the duration, you can die from damage only by being reduced to 0 hit points and not regenerating on your turn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Potion de régénération 1 heure : 5 PV récupérés au début de chaque tour. La régénération s'interrompt si vous subissez des dégâts acide ou feu.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "5",
+    "charges": 1,
+    "effets": [
+      "Régénération 5 PV par tour pendant 1 heure",
+      "Régénération bloquée 1 tour après dégâts acide/feu",
+      "Réattachement de membres en 1 minute pendant la durée"
+    ]
+  }
 }

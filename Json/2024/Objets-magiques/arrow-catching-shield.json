@@ -1,17 +1,28 @@
 {
   "slug": "arrow-catching-shield",
-  "nom": "Arrow-Catching Shield",
+  "nom": "Bouclier d'interception de projectiles",
   "nom_original": "Arrow-Catching Shield",
   "categorie": "autre",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "You gain a +2 bonus to AC against ranged attacks while you wield this shield. This bonus is in addition to the shield's normal bonus to AC. In addition, whenever an attacker makes a ranged attack against a target within 5 feet of you, you can use your reaction to become the target of the attack instead.",
-  "description_fr": "Lorsque vous maniez ce bouclier, vous gagnez un bonus de +2 à la CA contre les attaques à distance. Ce bonus s'ajoute au bonus normal du bouclier à la CA. De plus, chaque fois qu'un attaquant effectue une attaque à distance contre une cible se trouvant à 1,50 mètre (5 cases) ou moins de vous, vous pouvez utiliser votre réaction pour devenir la cible de cette attaque à sa place.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bouclier magique offrant un bonus à la CA contre les attaques à distance et permettant de devenir la cible des attaques à distance proches.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 2,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 à la CA contre les attaques à distance",
+      "Réaction : devenir la cible d'une attaque à distance contre une cible à 1,5 m ou moins"
+    ]
+  }
 }

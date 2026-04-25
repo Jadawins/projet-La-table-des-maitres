@@ -1,17 +1,28 @@
 {
   "slug": "burglars-lock-and-key",
-  "nom": "Burglar's Lock and Key",
+  "nom": "Serrure et clé du cambrioleur",
   "nom_original": "Burglar's Lock and Key",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This heavy iron lock bears a stout, pitted key permanently fixed in the keyhole. As an action, you can twist the key counterclockwise to instantly open one door, chest, bag, bottle, or container of your choice within 30 feet. Any container or portal weighing more than 30 pounds or restrained in any way (latched, bolted, tied, or the like) automatically resists this effect.",
-  "description_fr": "Ce lourd cadenas de fer porte une robuste clé piquetée, fixée en permanence dans le trou de serrure. Par une action, vous pouvez tourner la clé dans le sens antihoraire pour ouvrir instantanément une porte, un coffre, un sac, une bouteille ou un récipient de votre choix situé à moins de 9 mètres (30 pieds). Tout récipient ou portail pesant plus de 13,5 kg ou maintenu fermé de quelque façon que ce soit (loqueté, verrouillé, attaché, etc.) résiste automatiquement à cet effet.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cadenas magique permettant d'ouvrir instantanément portes, coffres et récipients à distance (max 9 m), sauf ceux pesant plus de 13,5 kg ou solidement fermés.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Action : ouvre portes/récipients à moins de 9 m",
+      "Inefficace contre les objets > 13,5 kg ou verrouillés physiquement"
+    ]
+  }
 }

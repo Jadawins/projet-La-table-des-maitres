@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 15,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 45,
   "pv_formule": "7d8+14",
   "vitesse": {
@@ -64,14 +64,14 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The hound has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The hound has advantage on an attack roll against a creature if at least one of the hound's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -80,14 +80,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 7 (2d6) fire damage.",
       "bonus_attaque": 5,
       "degats_de": "1d8",
       "degats_bonus": 3
     },
     {
-      "nom": "Fire Breath (Recharge 5-6)",
+      "nom": "Souffle de feu (Recharge 5-6)",
       "description": "The hound exhales fire in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "6d6",

@@ -1,16 +1,29 @@
 {
   "slug": "knockabout-billet",
-  "nom": "Knockabout Billet",
+  "nom": "Gourdin Bagarreur",
   "nom_original": "Knockabout Billet",
   "categorie": "arme_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This stout, oaken cudgel helps you knock your opponents to the ground or away from you. When you hit a creature with this magic weapon, you can shove the target as part of the same attack, using your attack roll in place of a Strength (Athletics) check. The weapon deals damage as normal, regardless of the result of the shove. This property of the club can be used no more than once per hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce massue magique en chêne vous permet de projeter vos adversaires au sol ou loin de vous lors de votre attaque, en utilisant votre jet d'attaque à la place d'un test de Force (Athlétisme).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bousculade automatique intégrée à l'attaque (jet d'attaque remplace Athlétisme)",
+      "Les dégâts normaux sont infligés indépendamment du résultat de la bousculade",
+      "Utilisable une fois par heure"
+    ]
+  }
 }

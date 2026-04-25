@@ -7,10 +7,21 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "You have advantage on saving throws against spells while you wear this cloak.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce manteau confère l'avantage aux jets de sauvegarde contre les sorts.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux jets de sauvegarde contre les sorts"
+    ]
+  }
 }

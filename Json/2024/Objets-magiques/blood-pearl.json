@@ -1,17 +1,29 @@
 {
   "slug": "blood-pearl",
-  "nom": "Blood Pearl",
+  "nom": "Perle de Sang",
   "nom_original": "Blood Pearl",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This crimson pearl feels slick to the touch and contains a mote of blood imbued with malign purpose. As an action, you can break the pearl, destroying it, and conjure a Blood Elemental (see Creature Codex) for 1 hour. The elemental is friendly to you and your companions for the duration. Roll initiative for the elemental, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don't issue any commands to the elemental, it defends itself from hostile creatures but otherwise takes no actions.",
-  "description_fr": "Cette perle cramoisie est glissante au toucher et renferme une parcelle de sang animée d'une volonté malfaisante. En utilisant une action, vous pouvez briser la perle, la détruisant, et invoquer un Élémentaire de Sang (voir le Creature Codex) pendant 1 heure. L'élémentaire est favorable envers vous et vos compagnons pour toute la durée. Lancez l'initiative pour l'élémentaire, qui agit lors de ses propres tours. Il obéit à tout ordre verbal que vous lui donnez (sans nécessiter d'action de votre part). Si vous ne lui donnez aucun ordre, il se défend contre les créatures hostiles mais n'entreprend aucune autre action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Perle cramoisie à usage unique qui invoque un Élémentaire de Sang amical pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Invoque un Élémentaire de Sang (allié) pendant 1 heure",
+      "L'élémentaire obéit aux ordres verbaux",
+      "La perle est détruite après utilisation"
+    ]
+  }
 }

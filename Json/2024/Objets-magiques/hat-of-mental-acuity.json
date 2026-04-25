@@ -1,16 +1,28 @@
 {
   "slug": "hat-of-mental-acuity",
-  "nom": "Hat of Mental Acuity",
+  "nom": "Chapeau de Perspicacité Mentale",
   "nom_original": "Hat of Mental Acuity",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This well-crafted cap appears to be standard wear for academics. Embroidered on the edge of the inside lining in green thread are sigils. If you cast comprehend languages on them, they read, “They that are guided go not astray.” While wearing the hat, you have advantage on all Intelligence and Wisdom checks. If you are proficient in an Intelligence or Wisdom-based skill, you double your proficiency bonus for the skill.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Casquette académique octroyant l'avantage aux tests d'Intelligence et Sagesse, et doublant le bonus de maîtrise pour les compétences correspondantes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage à tous les tests d'Intelligence et Sagesse",
+      "Double le bonus de maîtrise pour les compétences Int/Sag"
+    ]
+  }
 }

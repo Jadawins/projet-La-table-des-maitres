@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This book contains health and diet tips, and its words are charged with magic. If you spend 48 hours over a period of 6 days or fewer studying the book's contents and practicing its guidelines, your Constitution score increases by 2, as does your maximum for that score. The manual then loses its magic, but regains it in a century.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Livre magique augmentant la Constitution de +2 après 48 heures d'étude sur 6 jours.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Constitution +2 (après 48 heures d'étude en 6 jours)",
+      "Maximum de Constitution augmenté de +2",
+      "Magie consommée, regagne ses propriétés après 100 ans"
+    ]
+  }
 }

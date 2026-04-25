@@ -1,16 +1,28 @@
 {
   "slug": "royal-jelly",
-  "nom": "Royal Jelly",
+  "nom": "Gelée royale",
   "nom_original": "Royal Jelly",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This oil is distilled from the pheromones of queen bees and smells faintly of bananas. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying. For larger creatures, one additional vial is required for each size category above Medium. Applying the oil takes 10 minutes. The affected creature then has advantage on Charisma (Persuasion) checks for 1 hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une huile distillée des phéromones de reines abeilles qui confère l'avantage aux tests de Persuasion en Charisme pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Persuasion (Charisme) pendant 1 heure",
+      "Couvre une créature de taille M ou inférieure et son équipement"
+    ]
+  }
 }

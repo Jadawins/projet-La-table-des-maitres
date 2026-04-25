@@ -1,16 +1,29 @@
 {
   "slug": "pick-of-ice-breaking",
-  "nom": "Pick of Ice Breaking",
+  "nom": "Pic de Brisage de Glace",
   "nom_original": "Pick of Ice Breaking",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The metal head of this war pick is covered in tiny arcane runes. You gain a +1 bonus to attack and damage rolls made with this magic weapon. The bonus increases to +3 when you use the war pick to attack a construct, elemental, fey, or other creature made almost entirely of ice or snow. When you roll a 20 on an attack roll made with this weapon against such a creature, the target takes an extra 2d8 piercing damage. When you hit an object made of ice or snow with this weapon, the object doesn't have a damage threshold when determining the damage you deal to it with this weapon.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pic de guerre magique octroyant un bonus d'attaque et de dégâts, amélioré contre les créatures de glace et pouvant briser la glace sans seuil de dégâts.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d8",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +3 contre les créatures élémentaires, de glace ou de neige",
+      "Dégâts supplémentaires 2d8 sur coup critique contre ces créatures",
+      "Ignore le seuil de dégâts des objets de glace ou neige"
+    ]
+  }
 }

@@ -1,17 +1,28 @@
 {
   "slug": "brawlers-leather",
-  "nom": "Brawler's Leather",
+  "nom": "Lanières du Bagarreur",
   "nom_original": "Brawler's Leather",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These rawhide straps have lines of crimson runes running along their length. They require 10 minutes of bathing them in salt water before carefully wrapping them around your forearms. Once fitted, you gain a +1 bonus to attack and damage rolls made with unarmed strikes. The straps become brittle with use. After you have dealt damage with unarmed strike attacks 10 times, the straps crumble away.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ces lanières de peau brute sont ornées de lignes de runes cramoisies sur toute leur longueur. Elles nécessitent 10 minutes de trempage dans de l'eau salée avant d'être soigneusement enroulées autour de vos avant-bras. Une fois ajustées, vous obtenez un bonus de +1 aux jets d'attaque et de dégâts avec les attaques à mains nues. Les lanières deviennent cassantes à l'usage. Après avoir infligé des dégâts avec des attaques à mains nues 10 fois, elles s'effritent."
+  "resume": "Lanières de cuir ornées de runes qui octroient un bonus de +1 aux attaques et dégâts à mains nues, mais s'effritent après 10 impacts.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Bonus +1 aux attaques et dégâts à mains nues",
+      "S'effrite après 10 dégâts infligés à mains nues"
+    ]
+  }
 }

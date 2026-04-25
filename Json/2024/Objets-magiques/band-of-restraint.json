@@ -1,17 +1,29 @@
 {
   "slug": "band-of-restraint",
-  "nom": "Band of Restraint",
+  "nom": "Bracelet de Chaînes",
   "nom_original": "Band of Restraint",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These simple leather straps are nearly unbreakable when used as restraints. If you spend 1 minute tying a Small or Medium creature's limbs with these straps, the creature is restrained (escape DC 17) until it escapes or until you speak a command word to release the straps. While restrained by these straps, the target has disadvantage on Strength checks.",
-  "description_fr": "Ces simples lanières de cuir sont presque indestructibles lorsqu'elles servent d'entraves. Si vous passez 1 minute à lier les membres d'une créature de taille Petite ou Moyenne avec ces lanières, la créature est entravée (DD d'évasion 17) jusqu'à ce qu'elle s'échappe ou que vous prononciez un mot de commande pour libérer les lanières. Tant qu'elle est entravée par ces lanières, la cible a le désavantage aux tests de Force.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lanières de cuir presque indestructibles qui entravent une créature Petite ou Moyenne avec un DD d'évasion de 17 et lui imposent le désavantage aux tests de Force.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Entrave une créature Petite ou Moyenne (DD 17)",
+      "Désavantage aux tests de Force pour la créature entravée",
+      "Libération possible par mot de commande ou évasion"
+    ]
+  }
 }

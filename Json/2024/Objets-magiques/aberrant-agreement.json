@@ -1,17 +1,29 @@
 {
   "slug": "aberrant-agreement",
-  "nom": "Aberrant Agreement",
+  "nom": "Accord Aberrant",
   "nom_original": "Aberrant Agreement",
   "categorie": "parchemin",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "parchemin",
-  "description": "This long scroll bears strange runes and seals of eldritch powers. When you use an action to present this scroll to an aberration whose Challenge Rating is equal to or less than your level, the binding powers of the scroll compel it to listen to you. You can then attempt to strike a bargain with the aberration, negotiating a service from it in exchange for a reward. The aberration is under no compulsion to strike the bargain; it is compelled only to parley long enough for you to present a bargain and allow for negotiations. If you or your allies attack or otherwise attempt to harm the aberration, the truce is broken, and the creature can act normally. If the aberration refuses the offer, it is free to take any actions it wishes. Should you and the aberration reach an agreement that is satisfactory to both parties, you must sign the agreement and have the aberration do likewise (or make its mark, if it has no form of writing). The writing on the scroll changes to reflect the terms of the agreement struck. The magic of the charter holds both you and the aberration to the agreement until its service is rendered and the reward paid, at which point the scroll blackens and crumbles to dust. An aberration's thinking is alien to most humanoids, and vaguely worded contracts may result in unintended consequences, as the creature may have different thoughts as to how to best meet the goal. If either party breaks the bargain, that creature immediately takes 10d6 psychic damage, and the charter is destroyed, ending the contract.",
-  "description_fr": "Ce long parchemin est couvert de runes étranges et de sceaux émanant de puissances eldritch. Lorsque vous utilisez une action pour présenter ce parchemin à une aberration dont l'Indice de Dangerosité est égal ou inférieur à votre niveau, les forces contraignantes du parchemin la forcent à vous écouter. Vous pouvez alors tenter de conclure un marché avec l'aberration, en négociant un service en échange d'une récompense. L'aberration n'est nullement obligée d'accepter le marché ; elle est seulement contrainte de parlementer suffisamment longtemps pour que vous puissiez lui soumettre une offre et entamer les négociations. Si vous ou vos alliés attaquez ou tentez de nuire à l'aberration, la trêve est rompue et la créature peut agir normalement. Si l'aberration refuse l'offre, elle est libre d'agir à sa guise. Si vous et l'aberration parvenez à un accord satisfaisant pour les deux parties, vous devez signer le pacte et faire de même à l'aberration (ou lui faire apposer sa marque, si elle ne maîtrise aucune écriture). Le texte sur le parchemin se modifie pour refléter les termes de l'accord conclu. La magie du contrat lie alors vous et l'aberration jusqu'à ce que le service soit rendu et la récompense versée, après quoi le parchemin noircit et tombe en poussière. La pensée d'une aberration est étrangère à la plupart des humanoïdes, et des termes vagues peuvent entraîner des conséquences imprévues, la créature pouvant interpréter les objectifs à sa façon. Si l'une ou l'autre des parties rompt le marché, cette créature subit immédiatement 10d6 dégâts psychiques, et le contrat est détruit, mettant fin à l'accord.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Parchemin magique permettant de forcer une aberration à négocier un marché. Un contrat magique lie les deux parties jusqu'à son accomplissement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Force une aberration (FP ≤ niveau) à parlementer",
+      "Contrat magique liant les parties (10d6 dégâts psychiques en cas de rupture)",
+      "Le parchemin est détruit après accomplissement du marché"
+    ]
+  }
 }

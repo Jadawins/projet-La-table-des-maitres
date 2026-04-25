@@ -1,16 +1,28 @@
 {
   "slug": "mantle-of-blood-vengeance",
-  "nom": "Mantle of Blood Vengeance",
+  "nom": "Manteau de Vengeance Sanglante",
   "nom_original": "Mantle of Blood Vengeance",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This red silk cloak has 3 charges and regains 1d3 expended charges daily at dawn. While wearing it, you can visit retribution on any creature that dares spill your blood. When you take piercing, slashing, or necrotic damage from a creature, you can use a reaction to expend 1 charge to turn your blood into a punishing spray. The creature that damaged you must make a DC 13 Dexterity saving throw, taking 2d10 acid damage on a failed save, or half as much damage on a successful one.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un manteau rouge qui permet de riposter sur une créature vous ayant blessé avec une attaque acide, rechargeant ses charges chaque aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d10",
+    "type_degats_bonus": "acide",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Réaction : dépense 1 charge quand vous prenez dégâts perçants, tranchants ou nécrotiques",
+      "Créature responsable effectue jet de Dextérité DC 13 ou subit 2d10 dégâts acides"
+    ]
+  }
 }

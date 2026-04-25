@@ -1,16 +1,29 @@
 {
   "slug": "windwalker-boots",
-  "nom": "Windwalker Boots",
+  "nom": "Bottes du marcheur des vents",
   "nom_original": "Windwalker Boots",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These lightweight boots are made of soft leather. While you wear these boots, you can walk on air as if it were solid ground. Your speed is halved when ascending or descending on the air. Otherwise, you can walk on air at your walking speed. You can use the Dash action as normal to increase your movement during your turn. If you don't end your movement on solid ground, you fall at the end of your turn unless otherwise supported, such as by gripping a ledge or hanging from a rope.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bottes légères permettant de marcher sur l'air comme terrain solide, avec vitesse réduite en montée/descente.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Marche sur l'air comme terrain solide",
+      "Vitesse réduite de moitié en montée/descente",
+      "Chute si pas de support à la fin du tour"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "rod-of-sanguine-mastery",
-  "nom": "Sceptre de Sanguine Mastery",
+  "nom": "Sceptre de Maîtrise Sanguine",
   "nom_original": "Rod of Sanguine Mastery",
   "categorie": "sceptre",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This rod is topped with a red ram's skull with two backswept horns. As an action, you can spend one or more Hit Dice, up to half of your maximum Hit Dice. For each Hit Die spent in this way, you roll the die and add your Constitution modifier to it. You lose hit points equal to the total, and a target within 60 feet of you must make a DC 17 Dexterity saving throw, taking necrotic damage equal to the total on a failed save, or half as much damage on a successful one. You can't use this feature if you don't have blood. Hit Dice spent on this feature can't be used to regain hit points during a short rest. You regain spent Hit Dice as normal.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton surmonté d'un crâne de bélier rouge permettant de dépenser vos dés de vie pour infliger des dégâts de nécromanie dans un rayon de 18 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "variable",
+    "type_degats_bonus": "nécromanie",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dépenser jusqu'à la moitié de vos dés de vie pour infliger des dégâts de nécromanie (sauvegarde Dextérité DD 17, demi-dégâts en cas de réussite)",
+      "Les dés dépensés ne peuvent pas être utilisés pour la récupération lors d'un repos court",
+      "Nécessite d'avoir du sang pour fonctionner"
+    ]
+  }
 }

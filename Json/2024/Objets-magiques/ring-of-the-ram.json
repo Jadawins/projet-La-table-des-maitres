@@ -1,16 +1,29 @@
 {
   "slug": "ring-of-the-ram",
-  "nom": "Anneau de the Ram",
+  "nom": "Anneau du Bélier",
   "nom_original": "Ring of the Ram",
   "categorie": "anneau",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This ring has 3 charges, and it regains 1d3 expended charges daily at dawn. While wearing the ring, you can use an action to expend 1 to 3 of its charges to attack one creature you can see within 60 feet of you. The ring produces a spectral ram's head and makes its attack roll with a +7 bonus. On a hit, for each charge you spend, the target takes 2d10 force damage and is pushed 5 feet away from you.\n\nAlternatively, you can expend 1 to 3 of the ring's charges as an action to try to break an object you can see within 60 feet of you that isn't being worn or carried. The ring makes a Strength check with a +5 bonus for each charge you spend.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau à 3 charges permettant de lancer des attaques de force spectrale à distance ou de briser des objets. Récupère 1d3 charges à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d10",
+    "type_degats_bonus": "force",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Attaque à distance (+7) : 2d10 dégâts de force par charge dépensée, repoussement de 5 pieds",
+      "Briser des objets : test de Force +5 par charge dépensée",
+      "Récupère 1d3 charges à l'aube"
+    ]
+  }
 }

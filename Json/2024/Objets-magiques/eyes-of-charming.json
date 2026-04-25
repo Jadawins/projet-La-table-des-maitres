@@ -1,16 +1,28 @@
 {
   "slug": "eyes-of-charming",
-  "nom": "Eyes of Charming",
+  "nom": "Yeux de Charme",
   "nom_original": "Eyes of Charming",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These crystal lenses fit over the eyes. They have 3 charges. While wearing them, you can expend 1 charge as an action to cast the _charm person_ spell (save DC 13) on a humanoid within 30 feet of you, provided that you and the target can see each other. The lenses regain all expended charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lentilles de cristal permettant de lancer charme-personne 3 fois par jour (régénération à l'aube).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lancer charme-personne (DD 13) à 30 pieds",
+      "3 charges régénérées à l'aube"
+    ]
+  }
 }

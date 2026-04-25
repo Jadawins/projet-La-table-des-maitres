@@ -1,16 +1,27 @@
 {
   "slug": "vicious-weapon-warhammer",
-  "nom": "Vicious Weapon (Warhammer)",
+  "nom": "Arme Vicieuse (Marteau de Guerre)",
   "nom_original": "Vicious Weapon (Warhammer)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you roll a 20 on your attack roll with this magic weapon, your critical hit deals an extra 2d6 damage of the weapon's type.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce marteau de guerre magique inflige 2d6 dégâts supplémentaires du type de l'arme lors d'un coup critique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts supplémentaires sur coup critique (20)"
+    ]
+  }
 }

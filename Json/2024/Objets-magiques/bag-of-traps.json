@@ -1,17 +1,29 @@
 {
   "slug": "bag-of-traps",
-  "nom": "Bag of Traps",
+  "nom": "Sac de pièges",
   "nom_original": "Bag of Traps",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Anyone reaching into this apparently empty bag feels a small coin, which resembles no known currency. Removing the coin and placing or tossing it up to 20 feet creates a random mechanical trap that remains for 10 minutes or until discharged or disarmed, whereupon it disappears. The coin returns to the bag only after the trap disappears. You may draw up to 10 traps from the bag each week. The GM has the statistics for mechanical traps.",
-  "description_fr": "Toute personne plongeant la main dans ce sac apparemment vide touche une petite pièce de monnaie ne ressemblant à aucune devise connue. En retirant la pièce et en la déposant ou la lançant jusqu'à 6 mètres (20 pieds), un piège mécanique aléatoire se crée, qui persiste 10 minutes ou jusqu'à ce qu'il se déclenche ou soit désamorcé, après quoi il disparaît. La pièce ne retourne dans le sac qu'une fois le piège disparu. Vous pouvez tirer jusqu'à 10 pièges par semaine du sac. Le MJ dispose des statistiques des pièges mécaniques.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Sac contenant des pièces magiques qui, une fois lancées, créent des pièges mécaniques aléatoires persistant 10 minutes. Limité à 10 pièges par semaine.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Piège mécanique aléatoire créé au lancer",
+      "Persistance 10 minutes ou déclenchement",
+      "Maximum 10 utilisations par semaine"
+    ]
+  }
 }

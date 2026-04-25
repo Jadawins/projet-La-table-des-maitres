@@ -1,6 +1,6 @@
 {
   "slug": "flying-snake",
-  "nom": "Flying Snake",
+  "nom": "Serpent volant",
   "nom_original": "Flying Snake",
   "taille": "TP",
   "type": "Beast",
@@ -58,7 +58,7 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Flyby",
+      "nom": "Passage en vol",
       "description": "The snake doesn't provoke opportunity attacks when it flies out of an enemy's reach.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -67,7 +67,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1 piercing damage plus 7 (3d4) poison damage.",
       "bonus_attaque": 6,
       "degats_de": null,

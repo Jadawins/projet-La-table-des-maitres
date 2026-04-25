@@ -1,16 +1,29 @@
 {
   "slug": "recondite-shield",
-  "nom": "Recondite Shield",
+  "nom": "Anneau du Bouclier Occulte",
   "nom_original": "Recondite Shield",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this ring, you can use a bonus action to create a weightless, magic shield that shimmers with arcane energy. You must be proficient with shields to wield this semitranslucent shield, and you wield it in the same hand that wears the ring. The shield lasts for 1 hour or until you dismiss it (no action required). Once used, you can't use the ring in this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Action bonus pour créer un bouclier magique semi-transparent et immatériel qui dure 1 heure, utilisable une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Action bonus pour créer un bouclier magique immatériel",
+      "Bouclier dure 1 heure ou jusqu'à révocation",
+      "Réutilisable à l'aube suivante"
+    ]
+  }
 }

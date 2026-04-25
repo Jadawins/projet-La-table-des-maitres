@@ -1,16 +1,29 @@
 {
   "slug": "wisp-of-the-void",
-  "nom": "Wisp of the Void",
+  "nom": "Volute du Néant",
   "nom_original": "Wisp of the Void",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "The interior of this bottle is pitch black, and it feels empty. When opened, it releases a black vapor. When you inhale this vapor, your eyes go completely black. For 1 minute, you have darkvision out to a range of 60 feet, and you have resistance to necrotic damage. In addition, you gain a +1 bonus to damage rolls made with a weapon.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une bouteille contenant une vapeur noire. En l'inhalant, vous obtenez la vision dans le noir 60 pieds, une résistance aux dégâts de nécrotique et un bonus de +1 aux dégâts d'armes pendant 1 minute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vision dans le noir 60 pieds pendant 1 minute",
+      "Résistance aux dégâts de nécrotique pendant 1 minute",
+      "Bonus de +1 aux dégâts d'armes pendant 1 minute"
+    ]
+  }
 }

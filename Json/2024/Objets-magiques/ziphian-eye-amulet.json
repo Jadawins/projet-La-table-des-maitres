@@ -1,16 +1,29 @@
 {
   "slug": "ziphian-eye-amulet",
-  "nom": "Ziphian Eye Amulet",
+  "nom": "Amulette de l'Œil Ziphien",
   "nom_original": "Ziphian Eye Amulet",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This gold amulet holds a preserved eye from a Ziphius (see Creature Codex). It has 3 charges, and it regains all expended charges daily at dawn. While wearing this amulet, you can use a bonus action to speak its command word and expend 1 of its charges to create a brief magical bond with a creature you can see within 60 feet of you. The target must succeed on a DC 15 Wisdom saving throw or be magically bonded with you until the end of your next turn. While bonded in this way, you can choose to have advantage on attack rolls against the target or cause the target to have disadvantage on attack rolls against you.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Amulette magique permettant de créer un lien avec une créature pour obtenir l'avantage contre elle ou lui imposer le désavantage. Possède 3 charges quotidiennes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lien magique avec créature (sauvegarde Sagesse DC 15)",
+      "Avantage aux attaques contre la cible ou désavantage de la cible contre vous",
+      "Durée jusqu'à la fin de votre prochain tour"
+    ]
+  }
 }

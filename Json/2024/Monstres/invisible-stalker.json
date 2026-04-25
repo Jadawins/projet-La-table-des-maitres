@@ -1,6 +1,6 @@
 {
   "slug": "invisible-stalker",
-  "nom": "Invisible Stalker",
+  "nom": "Rôdeur invisible",
   "nom_original": "Invisible Stalker",
   "taille": "M",
   "type": "Elemental",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 8,
-    "stealth": 10
+    "discrétion": 10
   },
   "resistances": [
     "bludgeoning",
@@ -70,7 +70,7 @@
     "tremblements": null
   },
   "langues": [
-    "Auran",
+    "aérien",
     "understands Common but doesn't speak it"
   ],
   "fp": "6",
@@ -79,14 +79,14 @@
   "experience": 2300,
   "traits": [
     {
-      "nom": "Invisibility",
+      "nom": "Invisibilité",
       "description": "The stalker is invisible.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Faultless Tracker",
+      "nom": "Pisteur infaillible",
       "description": "The stalker is given a quarry by its summoner. The stalker knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The stalker also knows the location of its summoner.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -95,14 +95,14 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The stalker makes two slam attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.",
       "bonus_attaque": 6,
       "degats_de": "2d6",

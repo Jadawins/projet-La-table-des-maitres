@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this potion, you gain the \"enlarge\" effect of the _enlarge/reduce_ spell for 1d4 hours (no concentration required). The red in the potion's liquid continuously expands from a tiny bead to color the clear liquid around it and then contracts. Shaking the bottle fails to interrupt this process.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous gagnez l'effet d'agrandissement du sort agrandissement/rétrécissement pendant 1d4 heures sans nécessiter de concentration.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Agrandissement pendant 1d4 heures",
+      "Pas de concentration requise",
+      "Avantage aux jets d'attaque et dégâts augmentés"
+    ]
+  }
 }

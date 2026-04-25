@@ -1,16 +1,29 @@
 {
   "slug": "frost-brand-shortsword",
-  "nom": "Frost Brand (Shortsword)",
+  "nom": "Épée Courte Marque du Gel",
   "nom_original": "Frost Brand (Shortsword)",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you hit with an attack using this magic sword, the target takes an extra 1d6 cold damage. In addition, while you hold the sword, you have resistance to fire damage.\n\nIn freezing temperatures, the blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.\n\nWhen you draw this weapon, you can extinguish all nonmagical flames within 30 feet of you. This property can be used no more than once per hour.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette épée courte magique inflige 1d6 dégâts de froid supplémentaires et confère une résistance aux dégâts de feu. Elle brille dans le froid et peut éteindre les flammes non magiques.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "froid",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de feu",
+      "Émet une lumière vive de 3 m et une lumière faible de 3 m supplémentaires en températures glaciales",
+      "Peut éteindre les flammes non magiques dans un rayon de 9 m (recharge 1h)"
+    ]
+  }
 }

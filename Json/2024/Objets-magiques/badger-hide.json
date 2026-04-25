@@ -1,17 +1,28 @@
 {
   "slug": "badger-hide",
-  "nom": "Badger Hide",
+  "nom": "Fourrure de blaireau",
   "nom_original": "Badger Hide",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this hairy, black and white armor, you have a burrowing speed of 20 feet, and you have advantage on Wisdom (Perception) checks that rely on smell.",
-  "description_fr": "Lorsque vous portez cette armure poilue noir et blanc, vous disposez d'une vitesse de fouissement de 6 mètres (20 pieds) et vous avez l'avantage aux tests de Sagesse (Perception) basés sur l'odorat.",
   "effets": [],
   "poids": "12.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette armure poilue noire et blanche vous confère une vitesse de fouissement et l'avantage à la perception par l'odorat.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de fouissement 6 m",
+      "Avantage à la perception par l'odorat"
+    ]
+  }
 }

@@ -1,17 +1,29 @@
 {
   "slug": "commanders-helm",
-  "nom": "Commander's Helm",
+  "nom": "Heaume du Commandeur",
   "nom_original": "Commander's Helm",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This helmet sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The type of light given off by the helm depends on the aesthetic desired by its creator. Some are surrounded in a wreath of hellish (though illusory) flames, while others give off a soft, warm halo of white or golden light. You can use an action to start or stop the light. While wearing the helm, you can use an action to make your voice loud enough to be heard clearly by anyone within 300 feet of you until the end of your next turn.",
-  "description_fr": "Ce heaume diffuse une lumière vive dans un rayon de 3 mètres (10 pieds) et une lumière faible sur 3 mètres supplémentaires. Le type de lumière émis par le heaume dépend de l'esthétique souhaitée par son créateur. Certains sont entourés d'une couronne de flammes infernales (bien qu'illusoires), tandis que d'autres diffusent un doux halo chaleureux de lumière blanche ou dorée. Vous pouvez utiliser une action pour allumer ou éteindre la lumière. Lorsque vous portez le heaume, vous pouvez utiliser une action pour que votre voix soit assez forte pour être clairement entendue par quiconque se trouve dans un rayon de 90 mètres (300 pieds) jusqu'à la fin de votre prochain tour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un heaume émettant une lumière contrôlable et permettant d'amplifier sa voix pour être entendu à grande distance.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lumière vive 3m, faible 6m (action pour allumer/éteindre)",
+      "Amplification vocale jusqu'à 90m (1 round)",
+      "Esthétique variable de la lumière"
+    ]
+  }
 }

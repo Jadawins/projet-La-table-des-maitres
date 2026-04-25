@@ -1,16 +1,28 @@
 {
   "slug": "scimitar-of-life-stealing",
-  "nom": "Scimitar of Life Stealing",
+  "nom": "Cimeterre Voleur de Vie",
   "nom_original": "Scimitar of Life Stealing",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un cimeterre qui vole la vie ennemie. Au coup critique, la cible non-Artificielle ni Morte subit 15 dégâts nécrotiques et vous gagnez autant de PV temporaires.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "15",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "15",
+    "charges": null,
+    "effets": [
+      "Au coup critique : 15 dégâts nécrotiques supplémentaires (créatures non-Artificielles/Mortes)",
+      "Gain de PV temporaires égal aux dégâts nécrotiques infligés"
+    ]
+  }
 }

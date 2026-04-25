@@ -1,17 +1,29 @@
 {
   "slug": "baba-yagas-cinderskull",
-  "nom": "Baba Yaga's Cinderskull",
+  "nom": "Crâne de cendre de Baba Yaga",
   "nom_original": "Baba Yaga's Cinderskull",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Warm to the touch, this white, dry skull radiates dim, orange light from its eye sockets in a 30-foot radius. While attuned to the skull, you only require half of the daily food and water a creature of your size and type normally requires. In addition, you can withstand extreme temperatures indefinitely, and you automatically succeed on saving throws against extreme temperatures.",
-  "description_fr": "Chaude au toucher, ce crâne blanc et sec irradie une faible lumière orange depuis ses orbites dans un rayon de 9 mètres (30 pieds). Tant que vous êtes harmonisé au crâne, vous n'avez besoin que de la moitié de la nourriture et de l'eau quotidiennes normalement requises pour une créature de votre taille et de votre type. De plus, vous pouvez supporter des températures extrêmes indéfiniment, et vous réussissez automatiquement les jets de sauvegarde contre les températures extrêmes.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce crâne irradiant une faible lumière orange réduit vos besoins en nourriture et eau de moitié et vous confère une immunité aux températures extrêmes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Besoins alimentaires réduits de moitié",
+      "Résistance aux températures extrêmes",
+      "Lumière faible 9 m"
+    ]
+  }
 }

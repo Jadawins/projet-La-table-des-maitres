@@ -1,16 +1,28 @@
 {
   "slug": "song-saddle-of-the-khan",
-  "nom": "Song-Saddle of the Khan",
+  "nom": "Selle Chantante du Khan",
   "nom_original": "Song-Saddle of the Khan",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Made from enchanted leather and decorated with songs lyrics written in calligraphy, this well-crafted saddle is enchanted with the impossible speed of a great horseman. While this saddle is attached to a horse, that horse's speed is increased by 10 feet. In addition, the horse can Disengage as a bonus action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une selle magique qui augmente la vitesse du cheval de 10 pieds et lui permet d'utiliser Désengagement en action bonus.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Augmente la vitesse du cheval de 10 pieds",
+      "Le cheval peut Désengager en action bonus"
+    ]
+  }
 }

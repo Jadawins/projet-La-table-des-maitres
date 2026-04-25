@@ -1,16 +1,29 @@
 {
   "slug": "saddle-of-the-cavalry-casters",
-  "nom": "Saddle of the Cavalry Casters",
+  "nom": "Selle des Lanceurs de Cavalerie",
   "nom_original": "Saddle of the Cavalry Casters",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This magic saddle adjusts its size and shape to fit the animal to which it is strapped. While a mount wears this saddle, creatures have disadvantage on opportunity attacks against the mount or its rider. While you sit astride this saddle, you have advantage on any checks to remain mounted and on Constitution saving throws to maintain concentration on a spell when you take damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Selle magique qui s'ajuste à toute monture et confère des avantages au cavalier et à sa monture en combat et lors du maintien de concentration.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Désavantage sur les attaques d'opportunité contre la monture ou le cavalier",
+      "Avantage aux tests pour rester en selle",
+      "Avantage aux jets de sauvegarde de Constitution pour maintenir la concentration quand vous prenez des dégâts"
+    ]
+  }
 }

@@ -1,17 +1,29 @@
 {
   "slug": "book-shroud",
-  "nom": "Book Shroud",
+  "nom": "Voile de Livre",
   "nom_original": "Book Shroud",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "When not bound to a book, this red leather book cover is embossed with images of eyes on every inch of its surface. When you wrap this cover around a tome, it shifts the book's appearance to a plain red cover with a title of your choosing and blank pages on which you can write. When viewing the wrapped book, other creatures see the plain red version with any contents you've written. A creature succeeding on a DC 15 Wisdom (Perception) check sees the real book and can remove the shroud.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Lorsqu'il n'est pas lié à un livre, ce recouvrement de cuir rouge est gaufré d'images d'yeux sur chaque centimètre de sa surface. Lorsque vous enveloppez ce recouvrement autour d'un tome, il transforme l'apparence du livre en une simple couverture rouge avec un titre de votre choix et des pages vierges sur lesquelles vous pouvez écrire. En regardant le livre ainsi enveloppé, les autres créatures ne voient que la version rouge ordinaire avec tout contenu que vous y avez écrit. Une créature qui réussit un test de Sagesse (Perception) DD 15 voit le vrai livre et peut retirer le recouvrement."
+  "resume": "Un recouvrement de cuir qui déguise un livre en simple tome rouge avec pages vierges. Camoufle le véritable contenu sauf avec un test de Perception DD 15.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Déguise un livre magique en tome ordinaire",
+      "Autres créatures voient seulement la version camouflée",
+      "Peut être découvert avec test Sagesse (Perception) DD 15"
+    ]
+  }
 }

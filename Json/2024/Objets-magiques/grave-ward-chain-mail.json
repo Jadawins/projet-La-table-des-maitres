@@ -1,16 +1,29 @@
 {
   "slug": "grave-ward-chain-mail",
-  "nom": "Grave Ward Chain Mail",
+  "nom": "Cotte de Mailles de Garde Funèbre",
   "nom_original": "Grave Ward Chain Mail",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor bears gold or brass symbols of sunlight and sun deities and never tarnishes or rusts. The armor is immune to necrotic damage and rusting attacks such as those of a rust monster. While wearing this armor, your maximum hit points can't be reduced. As an action, you can speak a command word to gain the effect of a protection from evil and good spell for 1 minute (no concentration required). While the spell is active, if you are reduced to 0 hit points, you drop to 1 hit point instead. Once you use this property, it can't be used again until the next dawn.",
   "effets": [],
   "poids": "55.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure sacrée ornée de symboles solaires qui protège contre les dégâts nécrotiques et la réduction des PV max. Peut activer une protection contre le mal et le bien une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Immunité aux dégâts nécrotiques et aux attaques de rouille",
+      "Les PV max ne peuvent pas être réduits",
+      "Protection contre le mal et le bien (1 min, 1x/jour) : réduit à 1 PV au lieu de 0 si KO"
+    ]
+  }
 }

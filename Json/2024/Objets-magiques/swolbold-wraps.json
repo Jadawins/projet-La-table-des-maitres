@@ -1,16 +1,29 @@
 {
   "slug": "swolbold-wraps",
-  "nom": "Swolbold Wraps",
+  "nom": "Bandeaux de Swolbold",
   "nom_original": "Swolbold Wraps",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "When wearing these cloth wraps, your forearms and hands swell to half again their normal size without negatively impacting your fine motor skills. You gain a +1 bonus to attack and damage rolls made with unarmed strikes while wearing these wraps. In addition, your unarmed strike uses a d4 for damage and counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. When you hit a target with an unarmed strike and the target is no more than one size larger than you, you can use a bonus action to automatically grapple the target. Once this special bonus action has been used three times, it can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces bandeaux gonflent vos avant-bras et mains sans affecter votre dextérité, offrant +1 aux jets d'attaque et de dégâts des frappes à mains nues (d4) et permettant de grappler automatiquement trois fois par jour.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Frappes à mains nues comptent comme magiques",
+      "Bonus action pour grappler automatiquement (3 fois/jour)",
+      "Les frappes à mains nues utilisent un d4"
+    ]
+  }
 }

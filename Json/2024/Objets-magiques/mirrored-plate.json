@@ -1,16 +1,28 @@
 {
   "slug": "mirrored-plate",
-  "nom": "Mirrored Plate",
+  "nom": "Armure de plaques à miroir",
   "nom_original": "Mirrored Plate",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This metal armor is always polished to a mirror sheen, highly reflective, and can't be dulled. If a creature has an action or trait that requires it to gaze at you to affect you, such as a basilisk's Petrifying Gaze or a lich's Frightening Gaze, it sees its reflection in the armor and is also affected by the gaze.",
   "effets": [],
   "poids": "65.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure complète en plaques qui réfléchit les regards magiques vers celui qui les projette, l'affectant aussi.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Réfléchit les regards magiques (pétrification, regard effrayant, etc.)",
+      "L'utilisateur du regard magique est aussi affecté par son propre pouvoir"
+    ]
+  }
 }

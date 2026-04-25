@@ -1,17 +1,29 @@
 {
   "slug": "binding-oath",
-  "nom": "Binding Oath",
+  "nom": "Serment Contraignant",
   "nom_original": "Binding Oath",
   "categorie": "parchemin",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "parchemin",
-  "description": "This lengthy scroll is the testimony of a pious individual's adherence to their faith. The author has emphatically rewritten these claims many times, and its two slim, metal rollers are wrapped in yards of parchment. When you attune to the item, you rewrite certain passages to align with your own religious views. You can use an action to throw the scroll at a Huge or smaller creature you can see within 30 feet of you. Make a ranged attack roll. On a hit, the scroll unfurls and wraps around the creature. The target is restrained until you take a bonus action to command the scroll to release the creature. If you command it to release the creature or if you miss with the attack, the scroll curls back into a rolled-up scroll. If the restrained target's alignment is the opposite of yours along the law/chaos or good/evil axis, you can use a bonus action to cause the writing to blaze with light, dealing 2d6 radiant damage to the target. A creature, including the restrained target, can use an action to make a DC 17 Strength check to tear apart the scroll. On a success, the scroll is destroyed. Such an attempt causes the writing to blaze with light, dealing 2d6 radiant damage to both the creature making the attempt and the restrained target, whether or not the attempt is successful. Alternatively, the restrained creature can use an action to make a DC 17 Dexterity check to slip free of the scroll. This action also triggers the damage effect, but it doesn't destroy the scroll. Once used, the scroll can't be used again until the next dawn.",
-  "description_fr": "Ce long parchemin est le témoignage de la dévotion d'un individu pieux à sa foi. Son auteur a maintes fois réécrit ces affirmations avec ferveur, et ses deux fins rouleaux de métal sont enveloppés de mètres de parchemin. Lorsque vous vous harmonisez avec l'objet, vous réécrivez certains passages pour les aligner à vos propres convictions religieuses. Vous pouvez utiliser une action pour lancer le parchemin sur une créature de taille Très grande ou plus petite que vous pouvez voir dans un rayon de 9 mètres. Effectuez un jet d'attaque à distance. En cas de succès, le parchemin se déroule et enveloppe la créature. La cible est entravée jusqu'à ce que vous utilisiez une action bonus pour ordonner au parchemin de la libérer. Si vous lui ordonnez de la libérer ou si vous ratez l'attaque, le parchemin se renroule. Si l'alignement de la cible entravée est opposé au vôtre sur l'axe loi/chaos ou bien/mal, vous pouvez utiliser une action bonus pour faire flamboyer les écrits de lumière, infligeant 2d6 dégâts radiants à la cible. Une créature, y compris la cible entravée, peut utiliser une action pour effectuer un test de Force DD 17 afin de déchirer le parchemin. En cas de succès, le parchemin est détruit. Une telle tentative fait flamboyer les écrits, infligeant 2d6 dégâts radiants à la fois à la créature qui tente de le déchirer et à la cible entravée, que la tentative réussisse ou non. La créature entravée peut également utiliser une action pour effectuer un test de Dextérité DD 17 afin de se dégager du parchemin. Cette action déclenche également l'effet de dégâts, mais ne détruit pas le parchemin. Une fois utilisé, le parchemin ne peut l'être de nouveau qu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Parchemin qui entrave une créature touchée et inflige 2d6 dégâts radiants si son alignement s'oppose au vôtre. Peut être déchiré (DD 17 Force) ou esquivé (DD 17 Dextérité).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Entrave la cible jusqu'à libération",
+      "Dégâts radiants si alignement opposé",
+      "Destruction possible (DD 17 Force)"
+    ]
+  }
 }

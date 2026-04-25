@@ -1,16 +1,29 @@
 {
   "slug": "nameless-cults",
-  "nom": "Nameless Cults",
+  "nom": "Les Cultes sans nom",
   "nom_original": "Nameless Cults",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This dubious old book, bound in heavy leather with iron hasps, details the forbidden secrets and monstrous blasphemy of a multitude of nightmare cults that worship nameless and ghastly entities. It reads like the monologue of a maniac, illustrated with unsettling glyphs and filled with fluctuating moments of vagueness and clarity. The tome is a spellbook that contains the following spells, all of which can be found in the Mythos Magic Chapter of Deep Magic for 5th Edition: black goat's blessing, curse of Yig, ectoplasm, eldritch communion, emanation of Yoth, green decay, hunger of Leng, mind exchange, seed of destruction, semblance of dread, sign of Koth, sleep of the deep, summon eldritch servitor, summon avatar, unseen strangler, voorish sign, warp mind and matter, and yellow sign. At the GM's discretion, the tome can contain other spells similarly related to the Great Old Ones. While attuned to the book, you can reference it whenever you make an Intelligence check to recall information about any aspect of evil or the occult, such as lore about Great Old Ones, mythos creatures, or the cults that worship them. When doing so, your proficiency bonus for that check is doubled.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un grimoire ancien détaillant les secrets interdits de cultes adorant les Anciens, fonctionnant comme un grimoire contenant des sorts liés aux Grands Anciens et doublant le bonus de compétence pour les tests d'Intelligence sur l'occulte.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Contient 18 sorts liés aux Grands Anciens (à discrétion du MJ)",
+      "Doublement du bonus de compétence pour les tests d'Intelligence sur les cultes maléfiques et l'occulte",
+      "Accorde l'accès à des sorts de magie de Mythos"
+    ]
+  }
 }

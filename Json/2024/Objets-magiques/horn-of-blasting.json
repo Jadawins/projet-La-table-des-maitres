@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "You can use an action to speak the horn's command word and then blow the horn, which emits a thunderous blast in a 30-foot cone that is audible 600 feet away. Each creature in the cone must make a DC 15 Constitution saving throw. On a failed save, a creature takes 5d6 thunder damage and is deafened for 1 minute. On a successful save, a creature takes half as much damage and isn't deafened. Creatures and objects made of glass or crystal have disadvantage on the saving throw and take 10d6 thunder damage instead of 5d6.\r\n\r\nEach use of the horn's magic has a 20 percent chance of causing the horn to explode. The explosion deals 10d6 fire damage to the blower and destroys the horn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Souffle un cône de tonnerre infligeant 5d6 dégâts de tonnerre (10d6 contre le verre/cristal) avec risque d'explosion du cor.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "5d6",
+    "type_degats_bonus": "tonnerre",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Cône de 30 pieds, sauvegarde Constitution DD 15",
+      "Créatures sourdes 1 min en cas d'échec",
+      "20% de risque d'explosion (10d6 feu au porteur)"
+    ]
+  }
 }

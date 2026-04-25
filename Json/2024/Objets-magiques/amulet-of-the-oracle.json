@@ -1,17 +1,29 @@
 {
   "slug": "amulet-of-the-oracle",
-  "nom": "Amulet of the Oracle",
+  "nom": "Amulette de l'oracle",
   "nom_original": "Amulet of the Oracle",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "When you finish a long rest while wearing this amulet, you can choose one cantrip from the cleric spell list. You can cast that cantrip from the amulet at will, using Wisdom as your spellcasting ability for it.",
-  "description_fr": "Lorsque vous terminez un repos long en portant cette amulette, vous pouvez choisir un tour de magie parmi la liste de sorts du clerc. Vous pouvez lancer ce tour de magie depuis l'amulette à volonté, en utilisant la Sagesse comme caractéristique d'incantation.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chaque jour après un repos long, choisissez un tour de magie du clerc à lancer à volonté avec la Sagesse comme caractéristique d'incantation.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "1 tour de magie du clerc choisi par jour",
+      "Lancé à volonté via l'amulette",
+      "Utilise la Sagesse pour l'incantation"
+    ]
+  }
 }

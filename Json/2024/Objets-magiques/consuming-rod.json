@@ -1,17 +1,29 @@
 {
   "slug": "consuming-rod",
-  "nom": "Consuming Rod",
+  "nom": "Masse Dévorante",
   "nom_original": "Consuming Rod",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This bone mace is crafted from a humanoid femur. One end is carved to resemble a ghoulish face, its mouth open wide and full of sharp fangs. The mace has 8 charges, and it recovers 1d6 + 2 charges daily at dawn. You gain a +1 bonus to attack and damage rolls made with this magic mace. When it hits a creature, the mace's mouth stretches gruesomely wide and bites the target, adding 3 (1d6) piercing damage to the attack. As a reaction, you can expend 1 charge to regain hit points equal to the piercing damage dealt. Alternatively, you can use your reaction to expend 5 charges when you hit a Medium or smaller creature and force the mace to swallow the target. The target must succeed on a DC 15 Dexterity saving throw or be swallowed into an extra-dimensional space within the mace. While swallowed, the target is blinded and restrained, and it has total cover against attacks and other effects outside the mace. The target can still breathe. As an action, you can force the mace to regurgitate the creature, which falls prone in a space within 5 feet of the mace. The mace automatically regurgitates a trapped creature at dawn when it regains charges.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette masse en os est taillée dans un fémur humanoïde. Une extrémité est sculptée pour ressembler à un visage macabre à la gueule grande ouverte, garnie de crocs acérés. La masse possède 8 charges et en récupère 1d6 + 2 chaque jour à l'aube. Vous obtenez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette masse magique. Lorsqu'elle frappe une créature, la gueule de la masse s'étire démesurément et mord la cible, infligeant 3 (1d6) dégâts perforants supplémentaires. En réaction, vous pouvez dépenser 1 charge pour récupérer des points de vie égaux aux dégâts perforants infligés. Alternativement, en réaction, vous pouvez dépenser 5 charges lorsque vous touchez une créature de taille M ou inférieure pour forcer la masse à l'avaler. La cible doit réussir un jet de sauvegarde de Dextérité DD 15 ou être engloutie dans un espace extra-dimensionnel à l'intérieur de la masse. Tant qu'elle est avalée, la cible est aveuglée et entravée, et bénéficie d'un abri total contre les attaques et effets venant de l'extérieur. La cible peut toutefois continuer à respirer. Par une action, vous pouvez forcer la masse à régurgiter la créature, qui tombe à terre dans un espace situé à 1,50 mètre de la masse. La masse régurgite automatiquement toute créature prisonnière à l'aube lorsqu'elle récupère ses charges."
+  "resume": "Masse magique +1 infligeant 1d6 dégâts perforants supplémentaires avec possibilité de regain de PV ou d'engloutissement extradimensionnel via dépense de charges.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "1d6",
+    "charges": 8,
+    "effets": [
+      "Récupère 1d6+2 charges à l'aube",
+      "Dépenser 1 charge (réaction) : récupère PV égaux aux dégâts perforants infligés",
+      "Dépenser 5 charges : engloutit créature M ou inférieure (sauv. Dex DD 15)"
+    ]
+  }
 }

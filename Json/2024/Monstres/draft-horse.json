@@ -1,6 +1,6 @@
 {
   "slug": "draft-horse",
-  "nom": "Draft Horse",
+  "nom": "Cheval de trait",
   "nom_original": "Draft Horse",
   "taille": "G",
   "type": "Beast",
@@ -59,7 +59,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) bludgeoning damage.",
       "bonus_attaque": 6,
       "degats_de": "2d4",

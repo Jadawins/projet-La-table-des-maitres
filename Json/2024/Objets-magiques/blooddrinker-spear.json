@@ -1,17 +1,29 @@
 {
   "slug": "blooddrinker-spear",
-  "nom": "Blooddrinker Spear",
+  "nom": "Lance Vidangeur de Sang",
   "nom_original": "Blooddrinker Spear",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "Prized by gnolls, the upper haft of this spear is decorated with tiny animal skulls, feathers, and other adornments. You gain a +1 bonus to attack and damage rolls with this magic weapon. When you hit a creature with this spear, you mark that creature for 1 hour. Until the mark ends, you deal an extra 1d6 damage to the target whenever you hit it with the spear, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find the target. If the target drops to 0 hit points, the mark ends. This property can't be used on a different creature until you spend a short rest cleaning the previous target's blood from the spear.",
-  "description_fr": "Très prisée des gnolls, la partie supérieure du manche de cette lance est ornée de petits crânes d'animaux, de plumes et d'autres décorations. Vous bénéficiez d'un bonus de +1 aux jets d'attaque et de dégâts avec cette arme magique. Lorsque vous touchez une créature avec cette lance, vous la marquez pendant 1 heure. Tant que la marque dure, vous infligez 1d6 dégâts supplémentaires à la cible chaque fois que vous la touchez avec la lance, et vous avez l'avantage à tout test de Sagesse (Perception) ou de Sagesse (Survie) effectué pour retrouver la cible. Si la cible tombe à 0 points de vie, la marque prend fin. Cette propriété ne peut pas être utilisée sur une autre créature tant que vous n'avez pas passé un repos court à nettoyer le sang de la cible précédente sur la lance.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lance magique +1 qui marque sa cible pendant 1 heure, infligeant 1d6 dégâts bonus supplémentaires à chaque coup.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "physique",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Marque la cible pendant 1 heure au premier coup",
+      "Inflige 1d6 dégâts supplémentaires à la cible marquée à chaque coup",
+      "Avantage aux tests de Perception/Survie pour retrouver la cible marquée"
+    ]
+  }
 }

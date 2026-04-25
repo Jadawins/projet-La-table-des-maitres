@@ -67,14 +67,14 @@
   ],
   "actions": [
     {
-      "nom": "Ram",
+      "nom": "Bélier",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one prone creature. Hit: 8 (2d4 + 3) bludgeoning damage.",
       "bonus_attaque": null,
       "degats_de": null,

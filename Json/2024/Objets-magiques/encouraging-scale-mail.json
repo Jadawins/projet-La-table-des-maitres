@@ -1,16 +1,28 @@
 {
   "slug": "encouraging-scale-mail",
-  "nom": "Encouraging Scale Mail",
+  "nom": "Armure d'écailles encourageante",
   "nom_original": "Encouraging Scale Mail",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to AC. In addition, each friendly creature within 10 feet of you that can see you gains a +1 bonus to attack rolls and saving throws. If you are a paladin with the Aura of Courage feature, this bonus increases to +2.",
   "effets": [],
   "poids": "45.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous gagnez +1 CA. Les créatures amies à 10 pieds gagnent +1 aux jets d'attaque et sauvegarde (+2 si vous êtes paladin avec Aura de Courage).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Créatures amies à 10 pieds: +1 jets d'attaque et sauvegarde",
+      "Paladin avec Aura de Courage: bonus augmenté à +2"
+    ]
+  }
 }

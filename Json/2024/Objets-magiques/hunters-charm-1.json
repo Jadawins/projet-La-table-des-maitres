@@ -1,16 +1,28 @@
 {
   "slug": "hunters-charm-1",
-  "nom": "Hunter's Charm (+1)",
+  "nom": "Amulette du Chasseur (+1)",
   "nom_original": "Hunter's Charm (+1)",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small fetish is made out of bones, feathers, and semi-precious gems. Typically worn around the neck, this charm can also be wrapped around your brow or wrist or affixed to a weapon. While wearing or carrying this charm, you have a bonus to attack and damage rolls made against your favored enemies. The bonus is determined by the charm's rarity.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petit fétiche offrant un bonus de +1 aux jets d'attaque et de dégâts contre vos ennemis jurés.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 aux attaques contre ennemis jurés",
+      "Bonus +1 aux dégâts contre ennemis jurés"
+    ]
+  }
 }

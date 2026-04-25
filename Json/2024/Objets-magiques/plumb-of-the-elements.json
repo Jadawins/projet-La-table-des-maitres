@@ -1,16 +1,29 @@
 {
   "slug": "plumb-of-the-elements",
-  "nom": "Plumb of the Elements",
+  "nom": "Plomb des Éléments",
   "nom_original": "Plumb of the Elements",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This four-faceted lead weight is hung on a long leather strip, which can be wound around the haft or handle of any melee weapon. You can remove the plumb and transfer it to another weapon whenever you wish. Weapons with the plumb attached to it deal additional force damage equal to your proficiency bonus (up to a maximum of 3). As an action, you can activate the plumb to change this additional damage type to fire, cold, lightning, or back to force.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce poids de plomb s'attache à une arme de mêlée et inflige des dégâts supplémentaires de force égaux à votre bonus de maîtrise. Peut être changé en dégâts de feu, froid ou foudre en tant qu'action.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "+prof",
+    "type_degats_bonus": "force (changeant à action)",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts supplémentaires de force égaux à votre bonus de maîtrise (max +3)",
+      "Changement de type de dégâts à feu, froid, foudre ou force (action)",
+      "Transfert possible entre armes de mêlée"
+    ]
+  }
 }

@@ -1,17 +1,29 @@
 {
   "slug": "belt-of-the-wilds",
-  "nom": "Ceinture de the Wilds",
+  "nom": "Ceinture des terres sauvages",
   "nom_original": "Belt of the Wilds",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This thin cord is made from animal sinew. While wearing the cord, you have advantage on Wisdom (Survival) checks to follow tracks left by beasts, giants, and humanoids. While wearing the belt, you can use a bonus action to speak the belt's command word. If you do, you leave tracks of the animal of your choice instead of your regular tracks. These tracks can be those of a Large or smaller beast with a CR of 1 or lower, such as a pony, rabbit, or lion. If you repeat the command word, you end the effect.",
-  "description_fr": "Cette fine corde est tressée à partir de tendons d'animaux. Tant que vous la portez, vous avez l'avantage aux tests de Sagesse (Survie) pour suivre des traces laissées par des bêtes, des géants et des humanoïdes. Tant que vous portez la ceinture, vous pouvez utiliser une action bonus pour prononcer son mot de commande. Ce faisant, vous laissez des empreintes de l'animal de votre choix à la place de vos traces habituelles. Ces empreintes peuvent être celles d'une bête de taille Grande ou plus petite avec un FP de 1 ou inférieur, comme un poney, un lapin ou un lion. Si vous répétez le mot de commande, vous mettez fin à l'effet.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Accordez-vous l'avantage aux tests de Survie pour suivre des traces animales et pouvez imiter les empreintes d'une bête au moyen d'une action bonus.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Sagesse (Survie) pour suivre des traces",
+      "Imiter les empreintes d'une bête (action bonus)",
+      "Bêtes taille Grande ou plus petite avec FP ≤ 1"
+    ]
+  }
 }

@@ -7,7 +7,7 @@
   "sous_type": "gnoll",
   "alignement": "chaotic evil",
   "ca": 15,
-  "ca_detail": "hide armor, shield",
+  "ca_detail": "armure en peau, bouclier",
   "pv": 22,
   "pv_formule": "5d8",
   "vitesse": {
@@ -52,7 +52,7 @@
     "tremblements": null
   },
   "langues": [
-    "Gnoll"
+    "gnoll"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -60,7 +60,7 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Rampage",
+      "nom": "Ruée",
       "description": "When the gnoll reduces a creature to 0 hit points with a melee attack on its turn, the gnoll can take a bonus action to move up to half its speed and make a bite attack.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,21 +69,21 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d4",
       "degats_bonus": 2
     },
     {
-      "nom": "Spear",
+      "nom": "Pique",
       "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Longbow",
+      "nom": "Arc long",
       "description": "Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d8",

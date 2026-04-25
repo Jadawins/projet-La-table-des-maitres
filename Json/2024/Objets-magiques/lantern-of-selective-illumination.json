@@ -1,16 +1,29 @@
 {
   "slug": "lantern-of-selective-illumination",
-  "nom": "Lantern of Selective Illumination",
+  "nom": "Lanterne d'Illumination sélective",
   "nom_original": "Lantern of Selective Illumination",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This brass lantern is fitted with round panels of crown glass and burns for 6 hours on one 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet. During a short rest, you can choose up to three creatures to be magically linked by the lantern. When the lantern is lit, its light can be perceived only by you and those linked creatures. To anyone else, the lantern appears dark and provides no illumination.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une lanterne de laiton dont la lumière n'est visible que par vous et jusqu'à trois créatures liées magiquement, apparaissant sombre aux autres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Éclairage brillant 30 pieds visible uniquement par vous et 3 créatures liées",
+      "Apparaît sombre et n'illumine pas pour les autres créatures",
+      "Les liens magiques se créent pendant un repos court"
+    ]
+  }
 }

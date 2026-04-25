@@ -1,16 +1,28 @@
 {
   "slug": "mail-of-the-sword-master",
-  "nom": "Mail of the Sword Master",
+  "nom": "Armure du Maître d'Épée",
   "nom_original": "Mail of the Sword Master",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, the maximum Dexterity modifier you can add to determine your Armor Class is 4, instead of 2. While wearing this armor, if you are wielding a sword and no other weapons, you gain a +2 bonus to damage rolls with that sword.",
   "effets": [],
   "poids": "40.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure qui augmente le modificateur de Dextérité maximum applicable à la CA et confère un bonus aux dégâts si vous maniez une épée seule.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Modificateur de Dextérité maximum +4 au lieu de +2",
+      "Bonus de +2 aux dégâts avec une épée si aucune autre arme n'est maniée"
+    ]
+  }
 }

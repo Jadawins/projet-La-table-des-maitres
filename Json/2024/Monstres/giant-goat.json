@@ -1,13 +1,13 @@
 {
   "slug": "giant-goat",
-  "nom": "Giant Goat",
+  "nom": "Chèvre géante",
   "nom_original": "Giant Goat",
   "taille": "G",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 11,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 19,
   "pv_formule": "3d10+3",
   "vitesse": {
@@ -65,7 +65,7 @@
       "degats_bonus": null
     },
     {
-      "nom": "Sure-Footed",
+      "nom": "Sûr de ses pas",
       "description": "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Ram",
+      "nom": "Bélier",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
       "bonus_attaque": 5,
       "degats_de": "2d4",

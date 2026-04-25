@@ -60,7 +60,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Keen Sight",
+      "nom": "Vue aiguisée",
       "description": "The eagle has advantage on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Talons",
+      "nom": "Serres",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d4",

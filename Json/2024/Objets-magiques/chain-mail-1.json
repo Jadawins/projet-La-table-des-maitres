@@ -1,17 +1,27 @@
 {
   "slug": "chain-mail-1",
-  "nom": "Chain Mail (+1)",
+  "nom": "Cotte de Mailles +1",
   "nom_original": "Chain Mail (+1)",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
   "effets": [],
   "poids": "55.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous bénéficiez d'un bonus à la CA tant que vous portez cette armure. Ce bonus est déterminé par sa rareté."
+  "resume": "Armure magique offrant un bonus de +1 à la CA.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 à la CA"
+    ]
+  }
 }

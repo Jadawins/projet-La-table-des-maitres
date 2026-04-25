@@ -1,16 +1,28 @@
 {
   "slug": "spear-of-the-north",
-  "nom": "Spear of the North",
+  "nom": "Épée du Nord",
   "nom_original": "Spear of the North",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This spear has an ivory haft, and tiny snowflakes occasionally fall from its tip. You gain a +2 bonus to attack and damage rolls made with this magic weapon. When you hit with an attack using this magic spear, the target takes an extra 1d6 cold damage. You can use an action to transform the spear into a pair of snow skis. While wearing the snow skis, you have a walking speed of 40 feet when you walk across snow or ice, and you can walk across icy surfaces without needing to make an ability check. You can use a bonus action to transform the skis back into the spear. While the spear is transformed into a pair of skis, you can't make attacks with it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une pique de glace qui inflige des dégâts supplémentaires de froid et peut se transformer en skis pour se déplacer rapidement sur la neige et la glace.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "froid",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Transformation en skis (vitesse 40 pieds sur neige/glace)",
+      "Marche sur surfaces gelées sans test"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "ring-of-jumping",
-  "nom": "Anneau de saut",
+  "nom": "Anneau de Saut",
   "nom_original": "Ring of Jumping",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this ring, you can cast the _jump_ spell from it as a bonus action at will, but can target only yourself when you do so.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Permet de lancer le sort de Saut à volonté sur soi-même en utilisant une action bonus.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lance Saut à volonté (action bonus)",
+      "Cible seulement le porteur",
+      "Multiplicateur de saut x3 pendant 1 minute"
+    ]
+  }
 }

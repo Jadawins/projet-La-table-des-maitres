@@ -1,17 +1,29 @@
 {
   "slug": "bone-skeleton-key",
-  "nom": "Bone Skeleton Key",
+  "nom": "Clé Squelette en Os",
   "nom_original": "Bone Skeleton Key",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This arcane master key is the prized possession of many an intrepid thief. Several types of skeleton key exist, each type made from a distinct material. Bone (Rare). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. The key has 3 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it: arcane lock (2 charges), detect poison and disease (1 charge), or knock (1 charge). When you cast these spells, they are silent. The key regains 1d3 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the key crumbles into dust and is destroyed. Copper (Common). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. Crystal (Very Rare). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. The key has 5 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it: arcane lock (2 charges), detect magic (1 charge), dimension door (3 charges), or knock (1 charge). When you cast these spells, they are silent. The key regains 1d3 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the key shatters and is destroyed. Silver (Uncommon). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. In addition, while holding the key, you can use an action to cast the knock spell. When you cast the spell, it is silent. The key can’t be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette clé passe-partout arcanique est le bien le plus précieux de nombreux voleurs intrépides. Il en existe plusieurs types, chacun fabriqué dans un matériau distinct. En os (Rare) : tant que cette clé est sur vous, vous avez l'avantage aux tests de caractéristique effectués pour désamorcer des pièges ou ouvrir des serrures. La clé possède 3 charges. En la tenant, vous pouvez utiliser une action pour dépenser 1 charge ou plus afin de lancer l'un des sorts suivants : verrou magique (2 charges), détection du poison et des maladies (1 charge) ou déblocage (1 charge). Ces sorts sont silencieux. La clé récupère 1d3 charges dépensées chaque jour à l'aube. Si vous dépensez la dernière charge, lancez un d20 : sur un 1, la clé s'effrite en poussière et est détruite. En cuivre (Commun) : tant que cette clé est sur vous, vous avez l'avantage aux tests pour désamorcer des pièges ou ouvrir des serrures. En cristal (Très rare) : tant que cette clé est sur vous, vous avez l'avantage à ces tests. La clé a 5 charges. En la tenant, vous pouvez dépenser 1 charge ou plus pour lancer : verrou magique (2 charges), détection de la magie (1 charge), porte dimensionnelle (3 charges) ou déblocage (1 charge). Ces sorts sont silencieux. La clé récupère 1d3 charges à l'aube. Sur un 1 au d20, elle se fracasse. En argent (Peu commun) : tant que cette clé est sur vous, vous avez l'avantage à ces tests. En la tenant, vous pouvez utiliser une action pour lancer déblocage, en silence. Cette propriété ne peut plus être utilisée avant l'aube suivante."
+  "resume": "Clé passe-partout arcanique en os donnant l'avantage aux tests de serrures/pièges et permettant de lancer des sorts silencieux (3 charges).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Avantage aux tests de serrure et désamorçage",
+      "Verrou magique (2 charges), déblocage (1 charge), détection du poison (1 charge)",
+      "Récupère 1d3 charges à l'aube, détruite sur échec critique"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "sturdy-crawling-cloak",
-  "nom": "Sturdy Crawling Cloak",
+  "nom": "Cape rampante robuste",
   "nom_original": "Sturdy Crawling Cloak",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This unusual cloak is made of many overlapping, broad strips of thick cloth.\nCrawling Cloak (Common). When you are prone, you can animate the cloak and have it pull you along the ground, allowing you to ignore the extra movement cost for crawling. You can still only move up to your normal movement rate and can’t stand up from prone unless you still have at least half your movement remaining after moving.\n\nSturdy Crawling Cloak (Uncommon). This more powerful version of the crawling cloak also allows you to use the prehensile strips of the cloak to climb, giving you a climbing speed of 20 feet. If you already have a climbing speed, the cloak increases that speed by 10 feet. When using the cloak, you can keep your hands free while climbing.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cape qui permet de se déplacer en rampant sans pénalité et d'avoir une vitesse d'escalade de 20 pieds (ou +10 pieds si vous en avez déjà une).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Annule la pénalité de mouvement en position à terre",
+      "Vitesse d'escalade de 20 pieds (+10 si déjà présente)",
+      "Mains libres en escaladant"
+    ]
+  }
 }

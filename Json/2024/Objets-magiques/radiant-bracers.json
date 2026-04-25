@@ -1,16 +1,29 @@
 {
   "slug": "radiant-bracers",
-  "nom": "Radiant Bracers",
+  "nom": "Brassards Radiants",
   "nom_original": "Radiant Bracers",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These bronze bracers are engraved with the image of an ankh with outstretched wings. While wearing these bracers, you have resistance to necrotic damage, and you can use an action to speak the command word while crossing the bracers over your chest. If you do so, each undead that can see you within 30 feet of you must make a Wisdom saving throw. The DC is equal to 8 + your proficiency bonus + your Wisdom modifier. On a failure, an undead creature is turned for 1 minute or until it takes any damage. This feature works like the cleric's Turn Undead class feature, except it can't be used to destroy undead. The bracers can't be used to turn undead again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Brassards en bronze conférant une résistance aux dégâts nécrotiques et permettant de détourner les morts-vivants une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Résistance aux dégâts nécrotiques",
+      "Détournement morts-vivants (30 pieds, Sag DC 8 + Prof + Sag)",
+      "Une utilisation par jour (aube)"
+    ]
+  }
 }

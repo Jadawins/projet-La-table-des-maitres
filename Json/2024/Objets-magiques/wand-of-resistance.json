@@ -1,16 +1,29 @@
 {
   "slug": "wand-of-resistance",
-  "nom": "Baguette de Resistance",
+  "nom": "Baguette de Résistance",
   "nom_original": "Wand of Resistance",
   "categorie": "baguette",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This slim, wooden wand is topped with a small, spherical cage, which holds a pyramid-shaped piece of hematite. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to cast the resistance spell. The wand regains all expended charges at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Guidance .",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette en bois surmontée d'une cage sphérique contenant de l'hématite. Permet de lancer le sort Résistance 3 fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Permet de lancer le sort Résistance",
+      "Se régénère à l'aube",
+      "Se transforme en Baguette de Guidance sur un résultat de 1 au d20 si dernière charge dépensée"
+    ]
+  }
 }

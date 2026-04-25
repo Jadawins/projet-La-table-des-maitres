@@ -1,16 +1,28 @@
 {
   "slug": "heat-stone",
-  "nom": "Heat Stone",
+  "nom": "Pierre de chaleur",
   "nom_original": "Heat Stone",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Prized by reptilian humanoids, this magic stone is warm to the touch. While carrying this stone, you are comfortable in and can tolerate temperatures as low as –20 degrees Fahrenheit without any additional protection. If you wear heavy clothes, you can tolerate temperatures as low as –50 degrees Fahrenheit.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette pierre magique garde une chaleur constante et rend le porteur résistant au froid extrême, tolérant jusqu'à -20°F sans protection supplémentaire.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance au froid extrême",
+      "Tolérance jusqu'à -20°F sans équipement"
+    ]
+  }
 }

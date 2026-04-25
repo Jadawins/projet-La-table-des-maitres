@@ -1,16 +1,28 @@
 {
   "slug": "oracle-charm",
-  "nom": "Oracle Charm",
+  "nom": "Talisman de l'oracle",
   "nom_original": "Oracle Charm",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small charm resembles a human finger bone engraved with runes and complicated knotwork patterns. As you contemplate a specific course of action that you plan to take within the next 30 minutes, you can use an action to snap the charm in half to gain the benefit of an augury spell. Once used, the charm is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petit talisman en os gravé permettant une seule utilisation pour obtenir les bénéfices d'un sort d'augure avant une action envisagée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Casse le talisman pour bénéficier d'un sort d'augure",
+      "Détruit après utilisation"
+    ]
+  }
 }

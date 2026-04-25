@@ -1,6 +1,6 @@
 {
   "slug": "giant-frog",
-  "nom": "Giant Frog",
+  "nom": "Grenouille géante",
   "nom_original": "Giant Frog",
   "taille": "M",
   "type": "Beast",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 2,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,14 +61,14 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The frog can breathe air and water",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Standing Leap",
+      "nom": "Saut sur place",
       "description": "The frog's long jump is up to 20 ft. and its high jump is up to 10 ft., with or without a running start.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -77,14 +77,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage, and the target is grappled (escape DC 11). Until this grapple ends, the target is restrained, and the frog can't bite another target.",
       "bonus_attaque": 3,
       "degats_de": "1d6",
       "degats_bonus": 1
     },
     {
-      "nom": "Swallow",
+      "nom": "Avaler",
       "description": "The frog makes one bite attack against a Small or smaller target it is grappling. If the attack hits, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the frog, and it takes 5 (2d4) acid damage at the start of each of the frog's turns. The frog can have only one target swallowed at a time. If the frog dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 ft. of movement, exiting prone.",
       "bonus_attaque": null,
       "degats_de": null,

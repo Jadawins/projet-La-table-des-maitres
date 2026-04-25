@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-the-frog",
-  "nom": "Anneau de the Frog",
+  "nom": "Anneau de la Grenouille",
   "nom_original": "Ring of the Frog",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "A pale chrysoprase cut into the shape of a frog is the centerpiece of this tarnished copper ring. While wearing this ring, you have a swimming speed of 20 feet, and you can jump three times the normal distance, though you can't jump farther than your remaining movement would allow.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Confère une vitesse de nage de 20 pieds et permet de sauter trois fois plus loin que la normale.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de nage 20 pieds",
+      "Portée de saut triplée"
+    ]
+  }
 }

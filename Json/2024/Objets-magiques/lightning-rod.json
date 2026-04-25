@@ -1,16 +1,29 @@
 {
   "slug": "lightning-rod",
-  "nom": "Lightning Rod",
+  "nom": "Baguette de foudre",
   "nom_original": "Lightning Rod",
   "categorie": "sceptre",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This rod is made from the blackened wood of a lightning-struck tree and topped with a spike of twisted iron. It functions as a magic javelin that grants a +1 bonus to attack and damage rolls made with it. While holding it, you are immune to lightning damage, and each creature within 5 feet of you has resistance to lightning damage. The rod can hold up to 6 charges, but it has 0 charges when you first attune to it. Whenever you are subjected to lightning damage, the rod gains 1 charge. While the rod has 6 charges, you have resistance to lightning damage instead of immunity. The rod loses 1d6 charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Javelot magique +1 octroyant l'immunité aux dégâts de foudre et accumulent des charges quand vous en subissez, jusqu'à 6 charges pour une résistance.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 6,
+    "effets": [
+      "Immunité aux dégâts de foudre",
+      "Les créatures à 5 pieds ont une résistance aux dégâts de foudre",
+      "Accumule 1 charge par dégât de foudre subi (max 6, perd 1d6 charges à l'aube)"
+    ]
+  }
 }

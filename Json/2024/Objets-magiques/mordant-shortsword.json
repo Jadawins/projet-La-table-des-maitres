@@ -1,16 +1,29 @@
 {
   "slug": "mordant-shortsword",
-  "nom": "Mordant Shortsword",
+  "nom": "Épée courte mordante",
   "nom_original": "Mordant Shortsword",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You can use a bonus action to speak this magic weapon's command word, causing the blade to weep a caustic, green acid. While weeping acid, the weapon deals an extra 2d6 acid damage to any target it hits. The weapon continues to weep acid until you use a bonus action to speak the command word again or you sheathe or drop the weapon.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique dont la lame peut pleurer un acide caustique vert, infligeant 2d6 dégâts d'acide supplémentaires aux coups portés.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "acide",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Activation par action bonus avec parole de commande",
+      "Dégâts d'acide supplémentaires jusqu'à désactivation",
+      "Effet désactivé au fourreau ou à la chute"
+    ]
+  }
 }

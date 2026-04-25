@@ -1,17 +1,29 @@
 {
   "slug": "clockwork-pendant",
-  "nom": "Clockwork Pendant",
+  "nom": "Pendentif d'Horlogerie",
   "nom_original": "Clockwork Pendant",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This pendant resembles an ornate, miniature clock and has 3 charges. While holding this pendant, you can expend 1 charge as an action to cast the blur, haste, or slow spell (save DC 15) from it. The spell's duration changes to 3 rounds, and it doesn't require concentration. You can have only one spell active at a time. If you cast another, the previous spell effect ends. It regains 1d3 expended charges daily at dawn. If the pendant is destroyed (AC 14, 15 hit points) while it has 3 charges, it creates a temporal distortion for 1d4 rounds. For the duration, each creature and object that enters or starts its turn within 10 feet of the pendant has immunity to all damage, all spells, and all other physical or magical effects but is otherwise able to move and act normally. If a creature moves further than 10 feet from the pendant, these effects end for it. At the end of the duration, the pendant crumbles to dust.",
-  "description_fr": "Ce pendentif ressemble à une horloge miniature ornée et possède 3 charges. Lorsque vous tenez ce pendentif, vous pouvez dépenser 1 charge en tant qu'action pour lancer les sorts flou, rapidité ou lenteur (DD de sauvegarde 15) depuis celui-ci. La durée du sort passe à 3 rounds et ne nécessite pas de concentration. Vous ne pouvez avoir qu'un seul sort actif à la fois ; si vous en lancez un autre, l'effet du précédent prend fin. Il récupère 1d3 charges dépensées chaque jour à l'aube. Si le pendentif est détruit (CA 14, 15 points de vie) alors qu'il possède 3 charges, il crée une distorsion temporelle pendant 1d4 rounds. Pendant cette durée, chaque créature et objet qui entre dans un rayon de 3 mètres (10 pieds) du pendentif ou y commence son tour est immunisé contre tous les dégâts, tous les sorts et tous les autres effets physiques ou magiques, mais peut sinon se déplacer et agir normalement. Si une créature s'éloigne de plus de 3 mètres du pendentif, ces effets prennent fin pour elle. À la fin de la durée, le pendentif tombe en poussière.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pendentif magique permettant de lancer flou, rapidité ou lenteur sans concentration pendant 3 rounds. Récupère 1d3 charges chaque aube et crée une bulle temporelle d'immunité lors de sa destruction.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lance flou, rapidité ou lenteur sans concentration (3 rounds)",
+      "Un seul sort actif à la fois",
+      "Distorsion temporelle (immunité tous dégâts/effets dans 3m) si détruit avec 3 charges"
+    ]
+  }
 }

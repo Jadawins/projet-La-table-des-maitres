@@ -1,17 +1,28 @@
 {
   "slug": "chalice-of-forbidden-ecstasies",
-  "nom": "Chalice of Forbidden Ecstasies",
+  "nom": "Calice des Extases Interdites",
   "nom_original": "Chalice of Forbidden Ecstasies",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The cup of this garnet chalice is carved in the likeness of a human skull. When the chalice is filled with blood, the dark red gemstone pulses with a scintillating crimson light that sheds dim light in a 5-foot radius. Each creature that drinks blood from this chalice has disadvantage on enchantment spells you cast for the next 24 hours. In addition, you can use an action to cast the suggestion spell, using your spell save DC, on a creature that has drunk blood from the chalice within the past 24 hours. You need to concentrate on this suggestion to maintain it during its duration. Once used, the suggestion power of the chalice can't be used again until the next dusk.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "La coupe de ce calice en grenat est sculptée à l'effigie d'un crâne humain. Lorsque le calice est rempli de sang, la pierre précieuse rouge foncé pulse d'une lumière écarlate scintillante qui éclaire faiblement dans un rayon de 1,5 mètre. Toute créature qui boit du sang dans ce calice a le désavantage aux jets de sauvegarde contre vos sorts d'enchantement pendant les 24 heures suivantes. De plus, vous pouvez utiliser une action pour lancer le sort _suggestion_, en utilisant votre DD de jet de sauvegarde de sort, sur une créature qui a bu du sang dans le calice au cours des 24 dernières heures. Vous devez maintenir la concentration pour conserver cet effet pendant sa durée. Une fois utilisé, le pouvoir de suggestion du calice ne peut plus être utilisé jusqu'au prochain crépuscule."
+  "resume": "Un calice en forme de crâne qui affaiblit la résistance magique des buveurs de sang et permet de lancer suggestion une fois par jour sur eux.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Buveurs de sang ont désavantage aux jets de sauvegarde contre vos sorts d'enchantement (24h)",
+      "Lancer suggestion sur un buveur de sang (1/jour jusqu'au crépuscule suivant)"
+    ]
+  }
 }

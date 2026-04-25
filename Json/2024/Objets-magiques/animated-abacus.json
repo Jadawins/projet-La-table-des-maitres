@@ -1,17 +1,28 @@
 {
   "slug": "animated-abacus",
-  "nom": "Animated Abacus",
+  "nom": "Abaque Animé",
   "nom_original": "Animated Abacus",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "If you speak a mathematical equation within 5 feet of this abacus, it calculates the equation and displays the solution. If you are touching the abacus, it calculates only the equations you speak, ignoring all other spoken equations.",
-  "description_fr": "Si vous énoncez une équation mathématique à moins de 1,50 mètre de cet abaque, celui-ci calcule l'équation et affiche la solution. Si vous êtes en contact avec l'abaque, il ne calcule que les équations que vous prononcez, ignorant toutes les autres équations prononcées à voix haute.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Abaque magique calculant automatiquement les équations mathématiques énoncées à proximité.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Calcule les équations énoncées à moins de 1,50 m et affiche la solution",
+      "En contact avec l'objet, ne calcule que les équations du propriétaire"
+    ]
+  }
 }

@@ -1,17 +1,28 @@
 {
   "slug": "buckle-of-blasting",
-  "nom": "Buckle of Blasting",
+  "nom": "Boucle de déflagration",
   "nom_original": "Buckle of Blasting",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This soot-colored steel buckle has an exploding flame etched into its surface. It can be affixed to any common belt. While wearing this buckle, you have resistance to force damage. In addition, the buckle has 5 charges, and it regains 1d4 + 1 charges daily at dawn. It has the following properties.",
-  "description_fr": "Cette boucle d'acier couleur suie porte une flamme explosive gravée en sa surface. Elle peut être fixée à n'importe quelle ceinture ordinaire. Tant que vous la portez, vous êtes résistant aux dégâts de force. De plus, la boucle possède 5 charges et en récupère 1d4 + 1 chaque jour à l'aube. Elle possède les propriétés suivantes.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Boucle d'acier conférant la résistance aux dégâts de force et possédant 5 charges (récupération 1d4+1 chaque aube) pour activer des effets explosifs.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Résistance aux dégâts de force",
+      "Récupère 1d4+1 charges à l'aube"
+    ]
+  }
 }

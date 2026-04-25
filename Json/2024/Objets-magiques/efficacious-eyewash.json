@@ -1,16 +1,28 @@
 {
   "slug": "efficacious-eyewash",
-  "nom": "Efficacious Eyewash",
+  "nom": "Collyre efficace",
   "nom_original": "Efficacious Eyewash",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This clear liquid glitters with miniscule particles of light. A bottle of this potion contains 6 doses, and its lid comes with a built-in dropper. You can use an action to apply 1 dose to the eyes of a blinded creature. The blinded condition is suppressed for 2d4 rounds. If the blinded condition has a duration, subtract those rounds from the total duration; if doing so reduces the overall duration to 0 rounds or less, then the condition is removed rather than suppressed. This eyewash doesn't work on creatures that are naturally blind, such as grimlocks, or creatures blinded by severe damage or removal of their eyes.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une potion en 6 doses qui supprime temporairement la cécité pendant 2d4 rounds. Inefficace contre la cécité naturelle ou due à des dégâts graves.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 6,
+    "effets": [
+      "Supprime la cécité pour 2d4 rounds",
+      "N'affecte pas la cécité naturelle ou irréversible"
+    ]
+  }
 }

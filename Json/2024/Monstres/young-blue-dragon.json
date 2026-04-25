@@ -1,13 +1,13 @@
 {
   "slug": "young-blue-dragon",
-  "nom": "Young Blue Dragon",
+  "nom": "Jeune dragon bleu",
   "nom_original": "Young Blue Dragon",
   "taille": "G",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 18,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 152,
   "pv_formule": "16d10+64",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 9,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [
@@ -57,8 +57,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "9",
   "fp_numerique": 9,
@@ -67,28 +67,28 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The dragon makes three attacks: one with its bite and two with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage plus 5 (1d10) lightning damage.",
       "bonus_attaque": 9,
       "degats_de": "2d10+1d10",
       "degats_bonus": 5
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
       "bonus_attaque": 9,
       "degats_de": "2d6",
       "degats_bonus": 5
     },
     {
-      "nom": "Lightning Breath (Recharge 5-6)",
+      "nom": "Souffle de foudre (Recharge 5-6)",
       "description": "The dragon exhales lightning in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "10d10",

@@ -1,16 +1,29 @@
 {
   "slug": "quill-of-scribing",
-  "nom": "Quill of Scribing",
+  "nom": "Plume de transcription",
   "nom_original": "Quill of Scribing",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This quill is fashioned from the feather of some exotic beast, often a giant eagle, griffon, or hippogriff. When you take an action to speak the command word, the quill animates, transcribing each word spoken by you, and up to three other creatures you designate, onto whatever material is placed before it until the command word is spoken again, or it has scribed 250 words. Once used, the quill can't be used again for 8 hours.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Plume magique qui transcrit automatiquement jusqu'à 250 mots parlés par vous et trois créatures désignées.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Transcrit parole jusqu'à 250 mots",
+      "Enregistre jusqu'à 4 locuteurs",
+      "Recharge après 8 heures"
+    ]
+  }
 }

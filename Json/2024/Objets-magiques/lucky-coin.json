@@ -1,16 +1,29 @@
 {
   "slug": "lucky-coin",
-  "nom": "Lucky Coin",
+  "nom": "Pièce de Chance",
   "nom_original": "Lucky Coin",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This worn, clipped copper piece has 6 charges. You can use a reaction to expend 1 charge and gain a +1 bonus on your next ability check. The coin regains 1d6 charges daily at dawn. If you expend the last charge, roll a 1d20. On a 1, the coin runs out of luck and becomes nonmagical.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une pièce magique usée qui confère un bonus de +1 à votre prochain test de caractéristique en dépensant une charge (6 charges, récupération 1d6 quotidienne).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 6,
+    "effets": [
+      "+1 au prochain test de caractéristique (1 charge)",
+      "Récupère 1d6 charges à l'aube",
+      "Devient non-magique si la dernière charge est dépensée et un 1 est obtenu"
+    ]
+  }
 }

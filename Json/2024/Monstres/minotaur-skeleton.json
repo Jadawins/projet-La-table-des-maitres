@@ -1,13 +1,13 @@
 {
   "slug": "minotaur-skeleton",
-  "nom": "Minotaur Skeleton",
+  "nom": "Squelette de minotaure",
   "nom_original": "Minotaur Skeleton",
   "taille": "G",
   "type": "Undead",
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 67,
   "pv_formule": "9d10+18",
   "vitesse": {
@@ -76,14 +76,14 @@
   ],
   "actions": [
     {
-      "nom": "Greataxe",
+      "nom": "Hache d'armes",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d12",
       "degats_bonus": 4
     },
     {
-      "nom": "Gore",
+      "nom": "Encornure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d8",

@@ -1,16 +1,29 @@
 {
   "slug": "mountaineers-light-crossbow",
-  "nom": "Mountaineer's Light Crossbow ",
+  "nom": "Arbalète légère du montagnard",
   "nom_original": "Mountaineer's Light Crossbow ",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This crossbow has a weathered look, and scenes of mountains are etched across its stock. An adamantine grappling hook and cable are built into this magic crossbow. While no ammunition is loaded in the crossbow, you can use an action to fire the grappling hook at a surface, structure, precipice, or other similar location that you can see within 60 feet of you. The grappling hook magically attaches to the surface and connects to the crossbow via an adamantine cable. While the grappling hook is attached to a surface and you are holding the crossbow, you can use an action to speak a command word to reel yourself and up to 1,000 pounds of willing creatures and objects connected to you to the surface. Speaking a second command word as a bonus action releases the grappling hook from the surface, reattaching it to the crossbow, and winds the cable back into a tiny pocket dimension inside the crossbow. This cable has AC 12, 20 hit points, and immunity to all damage except acid, lightning, and slashing damage from adamantine weapons. If the cable drops to 0 hit points, the crossbow can't be used in this way again until 24 hours have passed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une arbalète magique équipée d'un grappin adamantite et d'un câble permettant de se hisser jusqu'à 60 pieds pour escalader des surfaces ou remonter des créatures.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Grappin magique portée 60 pieds, attache automatiquement",
+      "Remonte jusqu'à 1000 livres de créatures consentantes et objets",
+      "Câble : CA 12, 20 PV, immunité acide/foudre/tranchant adamantite"
+    ]
+  }
 }

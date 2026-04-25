@@ -1,16 +1,29 @@
 {
   "slug": "ghost-barding-chain-mail",
-  "nom": "Ghost Barding Chain Mail",
+  "nom": "Barde-cotte de mailles fantômale",
   "nom_original": "Ghost Barding Chain Mail",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor is blue-green and translucent. It weighs only 1 pound, and if the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, this version of the armor doesn't. The armor's base Armor Class applies only against attacks by undead creatures and doesn't provide protection against any other attacks. When a beast wears this armor, the beast gains a +1 bonus to AC against attacks by undead creatures, and it has advantage on saving throws against the spells and special abilities of undead creatures.",
   "effets": [],
   "poids": "55.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure translucide légère (1 lb) ne conférant une protection en CA que contre les créatures mortes-vivantes.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 CA contre les attaques des créatures mortes-vivantes uniquement",
+      "Avantage aux sauvegardes contre les sorts et capacités spéciales des morts-vivants",
+      "Pas de pénalité Dextérité (Discrétion), pas d'exigence de Force"
+    ]
+  }
 }

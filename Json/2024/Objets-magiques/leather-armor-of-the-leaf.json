@@ -1,16 +1,29 @@
 {
   "slug": "leather-armor-of-the-leaf",
-  "nom": "Leather Armure de the Leaf",
+  "nom": "Armure de cuir de la Feuille",
   "nom_original": "Leather Armor of the Leaf",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This suit of armor always has a forest or leaf motif and is usually green or brown in color. While wearing this armor in forest terrain, you have advantage on\nStrength (Athletics) and Dexterity (Stealth) checks. You can use an action to transform the armor into a cloud of swirling razor-sharp leaves, and each creature within 10 feet of you must succeed on a DC 13 Dexterity saving throw or take 2d8 slashing damage. For 1 minute, the cloud of leaves spreads out in a 10-foot radius from you, making the area lightly obscured for creatures other than you. The cloud moves with you, remaining centered on you. A wind of at least 10 miles per hour disperses the cloud and ends the effect. While the armor is transformed, you don't gain a base Armor Class from the armor. The armor can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "10.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure ornée de motifs forestiers accordant l'avantage aux tests d'Athlétisme et de Discrétion en forêt. Peut se transformer en nuage de feuilles tranchantes infligeant 2d8 dégâts de tranchant (1/jour).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d8",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Avantage aux tests d'Athlétisme et Discrétion en forêt",
+      "Transformation en nuage de feuilles (rayon 10 pieds, obscurité légère, 1 min)",
+      "Dissipé par vent de 10+ mph"
+    ]
+  }
 }

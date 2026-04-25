@@ -1,17 +1,28 @@
 {
   "slug": "arrow-of-unpleasant-herbs",
-  "nom": "Arrow of Unpleasant Herbs",
+  "nom": "Flèche d'Herbes Désagréables",
   "nom_original": "Arrow of Unpleasant Herbs",
   "categorie": "autre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "This arrow's tip is filled with magically preserved, poisonous herbs. When a creature takes damage from the arrow, the arrowhead breaks, releasing the herbs. The creature must succeed on a DC 15 Constitution saving throw or be incapacitated until the end of its next turn as it retches and reels from the poison.",
-  "description_fr": "La pointe de cette flèche est remplie d'herbes vénéneuses magiquement préservées. Lorsqu'une créature subit des dégâts de la flèche, la pointe se brise et libère les herbes. La créature doit réussir un jet de sauvegarde de Constitution DD 15 ou être neutralisée jusqu'à la fin de son prochain tour, terrassée par les haut-le-cœur et les vertiges provoqués par le poison.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Flèche empoisonnée dont la pointe libère des herbes toxiques à l'impact, neutralisant la cible si elle échoue un jet de sauvegarde de Constitution DD 15.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Jet de sauvegarde Constitution DD 15 ou neutralisé jusqu'à fin du prochain tour",
+      "Haut-le-cœur et vertiges"
+    ]
+  }
 }

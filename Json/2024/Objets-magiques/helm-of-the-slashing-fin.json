@@ -1,16 +1,28 @@
 {
   "slug": "helm-of-the-slashing-fin",
-  "nom": "Heaume de the Slashing Fin",
+  "nom": "Heaume de la Nageoire Tranchante",
   "nom_original": "Helm of the Slashing Fin",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this helm, you can use an action to speak its command word to gain the ability to breathe underwater, but you lose the ability to breathe air. You can speak its command word again or remove the helm as an action to end this effect.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce heaume permet de respirer sous l'eau au lieu de l'air en prononçant un mot de commande.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Respiration aquatique (mot de commande)",
+      "Perte de respiration aérienne lors de l'activation"
+    ]
+  }
 }

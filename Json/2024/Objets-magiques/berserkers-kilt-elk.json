@@ -1,17 +1,28 @@
 {
   "slug": "berserkers-kilt-elk",
-  "nom": "Berserker's Kilt (Elk)",
+  "nom": "Kilt du Berserker (Élan)",
   "nom_original": "Berserker's Kilt (Elk)",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This kilt is made from bear, elk, or wolf fur. While wearing this kilt, your Unarmored Defense increases by 1, and you gain additional benefits while raging, depending on the type of kilt you are wearing. Bear Fur (Very Rare). This kilt empowers your rage with the vigor of a bear. When you enter a rage, you gain 20 temporary hit points. These temporary hit points last until your rage ends. Elk Fur (Rare). This kilt empowers your rage with the nimble ferocity of an elk. While raging, if you move at least 30 feet straight toward a target and then hit it with a melee weapon attack on the same turn, the target takes an extra 1d6 damage of the weapon’s type. Wolf Fur (Uncommon). This kilt empowers your rage with the speed of a wolf. While raging, your walking speed increases by 10 feet.",
-  "description_fr": "Ce kilt est confectionné en fourrure d’ours, d’élan ou de loup. Tant que vous portez ce kilt, votre Défense sans armure augmente de 1, et vous gagnez des avantages supplémentaires lorsque vous êtes en rage, selon le type de kilt que vous portez. Fourrure d’ours (Très rare). Ce kilt renforce votre rage de la vigueur d’un ours. Lorsque vous entrez en rage, vous gagnez 20 points de vie temporaires. Ces points de vie temporaires durent jusqu’à la fin de votre rage. Fourrure d’élan (Rare). Ce kilt renforce votre rage de la férocité agile d’un élan. En état de rage, si vous vous déplacez d’au moins 9 mètres en ligne droite vers une cible puis la touchez avec une attaque d’arme de corps à corps lors du même tour, la cible subit 1d6 dégâts supplémentaires du type de l’arme. Fourrure de loup (Peu commun). Ce kilt renforce votre rage de la rapidité d’un loup. En état de rage, votre vitesse de déplacement augmente de 3 mètres.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Kilt en fourrure d'élan augmentant la CA sans armure de 1. En rage, après vous déplacer de 9 m en ligne droite vers une cible et la toucher au corps à corps, elle subit 1d6 dégâts bonus.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "du type de l'arme",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "En rage : dégâts bonus après charge de 9 m minimum",
+      "La cible doit être touchée au combat rapproché le même tour"
+    ]
+  }
 }

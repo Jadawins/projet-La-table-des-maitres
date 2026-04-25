@@ -1,16 +1,28 @@
 {
   "slug": "weapon-of-warning-mace",
-  "nom": "Weapon of Warning (Mace)",
+  "nom": "Masse d'Avertissement",
   "nom_original": "Weapon of Warning (Mace)",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "As long as this weapon is within your reach and you are attuned to it, you and allies within 30 feet of you gain the following benefits.\n\n**Alarm.** The weapon magically awakens each subject who is sleeping naturally when combat begins. This benefit doesn't wake a subject from magically induced sleep.\n\n**Supernatural Readiness.** Each subject has Advantage on its Initiative rolls.",
   "effets": [],
   "poids": "4.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique qui réveille les alliés endormis au combat et leur confère l'avantage aux jets d'initiative dans un rayon de 30 pieds.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Réveille les alliés endormis naturellement au début du combat",
+      "Les alliés dans un rayon de 30 pieds ont l'avantage aux jets d'initiative"
+    ]
+  }
 }

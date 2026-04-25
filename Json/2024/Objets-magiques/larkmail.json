@@ -1,16 +1,29 @@
 {
   "slug": "larkmail",
-  "nom": "Larkmail",
+  "nom": "Cotte de mailles du Merle",
   "nom_original": "Larkmail",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to AC. The links of this mail have been stained to create the optical illusion that you are wearing a brown-and-russet feathered tunic. While you wear this armor, you have advantage on Charisma (Performance) checks made with an instrument. In addition, while playing an instrument, you can use a bonus action and choose any number of creatures within 30 feet of you that can hear your song. Each target must succeed on a DC 15 Charisma saving throw or be charmed by you for 1 minute. Once used, this property can't be used again until the next dawn.",
   "effets": [],
   "poids": "55.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure de mailles +1 avec l'apparence visuelle de plumes brunes et rouille, donnant l'avantage aux tests de Performance et permettant un charme musical une fois par aube.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Bonus +1 à la CA",
+      "Avantage aux tests de Charisme (Performance) avec instrument",
+      "Charme jusqu'à 3 créatures dans un rayon de 30 pieds (sauvegarde Charisme DC 15) pendant 1 minute, 1 utilisation par aube"
+    ]
+  }
 }

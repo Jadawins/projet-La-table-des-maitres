@@ -1,17 +1,28 @@
 {
   "slug": "crossbow-heavy-2",
-  "nom": "Crossbow-Heavy (+2)",
+  "nom": "Arbalète lourde +2",
   "nom_original": "Crossbow-Heavy (+2)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You have a bonus to attack and damage rolls made with this magic weapon. The bonus is determined by the weapon's rarity.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous bénéficiez d'un bonus aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Le bonus est déterminé par la rareté de l'arme."
+  "resume": "Arbalète magique conférant un bonus de +2 aux jets d'attaque et de dégâts.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'attaque",
+      "+2 aux jets de dégâts"
+    ]
+  }
 }

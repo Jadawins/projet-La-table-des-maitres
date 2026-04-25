@@ -1,13 +1,13 @@
 {
   "slug": "tribal-warrior",
-  "nom": "Tribal Warrior",
+  "nom": "Guerrier tribal",
   "nom_original": "Tribal Warrior",
   "taille": "M",
   "type": "Humanoid",
   "sous_type": "any race",
   "alignement": "any alignment",
   "ca": 12,
-  "ca_detail": "hide armor",
+  "ca_detail": "armure en peau",
   "pv": 11,
   "pv_formule": "2d8+2",
   "vitesse": {
@@ -60,7 +60,7 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The warrior has advantage on an attack roll against a creature if at least one of the warrior's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Spear",
+      "nom": "Pique",
       "description": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

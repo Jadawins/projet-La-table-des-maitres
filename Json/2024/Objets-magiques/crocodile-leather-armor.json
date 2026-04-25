@@ -1,17 +1,28 @@
 {
   "slug": "crocodile-leather-armor",
-  "nom": "Crocodile Leather Armor",
+  "nom": "Armure de cuir de crocodile",
   "nom_original": "Crocodile Leather Armor",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor fashioned from crocodile skin, you gain a +1 bonus to AC. In addition, you can hold your breath for 15 minutes, and you have a swimming speed equal to your walking speed.",
   "effets": [],
   "poids": "10.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez cette armure fabriquée en peau de crocodile, vous obtenez un bonus de +1 à la CA. De plus, vous pouvez retenir votre souffle pendant 15 minutes et vous disposez d'une vitesse de nage égale à votre vitesse de déplacement."
+  "resume": "Armure légère conforme à la peau de crocodile accordant +1 à la CA, permettant de retenir son souffle 15 minutes et d'avoir une vitesse de nage.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Retenue du souffle pendant 15 minutes",
+      "Vitesse de nage égale à la vitesse de déplacement"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-frost",
-  "nom": "Bâton de givre",
+  "nom": "Bâton de Givre",
   "nom_original": "Staff of Frost",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "You have resistance to cold damage while you hold this staff.\n\nThe staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: _cone of cold_ (5 charges), _fog cloud_ (1 charge), _ice storm_ (4 charges), or _wall of ice_ (4 charges).\n\nThe staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff turns to water and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton conférant une résistance au froid et permettant de lancer des sorts de froid comme Cône de Froid, Nuage de Brouillard ou Tempête de Grêle.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Résistance aux dégâts de froid",
+      "Lance Cône de Froid (5 charges), Nuage de Brouillard (1 charge), Tempête de Grêle (4 charges), Mur de Glace (4 charges)",
+      "Récupère 1d6+4 charges à l'aube"
+    ]
+  }
 }

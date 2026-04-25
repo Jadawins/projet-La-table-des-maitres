@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-bad-taste",
-  "nom": "Potion de Bad Taste",
+  "nom": "Potion de mauvais goût",
   "nom_original": "Potion of Bad Taste",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This brown, sludgy potion tastes extremely foul. When you drink this potion, the taste of your flesh is altered to be unpalatable for 1 hour. During this time, if a creature hits you with a bite attack, it must succeed on a DC 10 Constitution saving throw or spend its next action gagging and retching. A creature with an Intelligence of 4 or lower avoids biting you again unless compelled or commanded by an outside force or if you attack it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Rend la chair répugnante pour 1 heure, forçant les créatures qui mordent à effectuer un jet de Constitution ou être incapacitées.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Chair répugnante pendant 1 heure",
+      "Créature qui mord : jet de CON DD 10 ou incapacitée action suivante",
+      "Créatures INT ≤4 évitent vous mordre"
+    ]
+  }
 }

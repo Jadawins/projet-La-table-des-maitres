@@ -1,16 +1,29 @@
 {
   "slug": "defender-longsword",
-  "nom": "Defender (Longsword)",
+  "nom": "Épée longue du Défenseur",
   "nom_original": "Defender (Longsword)",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack and damage rolls made with this magic weapon.\n\nThe first time you attack with the sword on each of your turns, you can transfer some or all of the sword's bonus to your Armor Class, instead of using the bonus on any attacks that turn. For example, you could reduce the bonus to your attack and damage rolls to +1 and gain a +2 bonus to AC. The adjusted bonuses remain in effect until the start of your next turn, although you must hold the sword to gain a bonus to AC from it.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée magique +3 permettant de transférer tout ou partie de son bonus à la CA au lieu de l'utiliser pour les attaques.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus transférable entre attaque/dégâts et CA (max +3 total)",
+      "Transfer effectué au premier coup du tour",
+      "Bonus ajusté jusqu'au début du tour suivant"
+    ]
+  }
 }

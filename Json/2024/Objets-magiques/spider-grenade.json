@@ -1,16 +1,29 @@
 {
   "slug": "spider-grenade",
-  "nom": "Spider Grenade",
+  "nom": "Grenade-Araignée",
   "nom_original": "Spider Grenade",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Silver runes decorate the hairy legs and plump abdomen of this fist-sized preserved spider. You can use an action to throw the spider up to 30 feet. It explodes on impact and is destroyed. Each creature within a 20-foot radius of where the spider landed must succeed on a DC 13 Dexterity saving throw or be restrained by sticky webbing. A creature restrained by the webs can use its action to make a DC 13 Strength check. If it succeeds, it is no longer restrained. In addition, the webs are flammable. Any 5-foot cube of webs exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire. The webs also naturally unravel after 1 hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une araignée préservée qui explose au contact, recouvrant une zone de 20 pieds de toiles gluantes qui immobilisent les créatures. Les toiles peuvent être brûlées et se dissolvent naturellement après 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d4",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Jet de sauvegarde Dextérité DC 13 ou restrain dans un rayon de 20 pieds",
+      "Les créatures restantes peuvent utiliser une action pour un jet de Force DC 13 pour se libérer",
+      "Les toiles brûlent en 1 round si exposées au feu"
+    ]
+  }
 }

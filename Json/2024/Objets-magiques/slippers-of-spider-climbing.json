@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these light shoes, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free. You have a climbing speed equal to your walking speed. However, the slippers don't allow you to move this way on a slippery surface, such as one covered by ice or oil.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chaussures légères permettant de se déplacer sur les surfaces verticales et les plafonds avec une vitesse d'escalade égale à votre vitesse de marche.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse d'escalade égale à la vitesse de marche",
+      "Permet de se déplacer sur surfaces verticales et plafonds",
+      "Inefficace sur surfaces glissantes"
+    ]
+  }
 }

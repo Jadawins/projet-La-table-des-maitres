@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "chaotic good",
   "ca": 16,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 138,
   "pv_formule": "12d12+60",
   "vitesse": {
@@ -57,10 +57,10 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
+    "commun",
     "Druidic",
-    "Elvish",
-    "Sylvan"
+    "elfique",
+    "sylvestre"
   ],
   "fp": "9",
   "fp_numerique": 9,
@@ -68,14 +68,14 @@
   "experience": 5000,
   "traits": [
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the treant remains motionless, it is indistinguishable from a normal tree.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Siege Monster",
+      "nom": "Monstre de siège",
       "description": "The treant deals double damage to objects and structures.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -84,28 +84,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The treant makes two slam attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage.",
       "bonus_attaque": 10,
       "degats_de": "3d6",
       "degats_bonus": 6
     },
     {
-      "nom": "Rock",
+      "nom": "Rocher",
       "description": "Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.",
       "bonus_attaque": 10,
       "degats_de": "4d10",
       "degats_bonus": 6
     },
     {
-      "nom": "Animate Trees (1/Day)",
+      "nom": "Animer les arbres (1/jour)",
       "description": "The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as a treant, except they have Intelligence and Charisma scores of 1, they can't speak, and they have only the Slam action option. An animated tree acts as an ally of the treant. The tree remains animate for 1 day or until it dies; until the treant dies or is more than 120 feet from the tree; or until the treant takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible.",
       "bonus_attaque": null,
       "degats_de": null,

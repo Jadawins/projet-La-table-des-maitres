@@ -1,6 +1,6 @@
 {
   "slug": "swarm-of-quippers",
-  "nom": "Swarm of Quippers",
+  "nom": "Nuée de piranhas",
   "nom_original": "Swarm of Quippers",
   "taille": "M",
   "type": "Beast",
@@ -71,21 +71,21 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Blood Frenzy",
+      "nom": "Frénésie sanguinaire",
       "description": "The swarm has advantage on melee attack rolls against any creature that doesn't have all its hit points.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Swarm",
+      "nom": "Nuée",
       "description": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny quipper. The swarm can't regain hit points or gain temporary hit points.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Water Breathing",
+      "nom": "Respiration aquatique",
       "description": "The swarm can breathe only underwater.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -94,7 +94,7 @@
   ],
   "actions": [
     {
-      "nom": "Bites",
+      "nom": "Morsures",
       "description": "Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing damage if the swarm has half of its hit points or fewer.",
       "bonus_attaque": 5,
       "degats_de": "4d6",

@@ -1,16 +1,28 @@
 {
   "slug": "periapt-of-proof-against-lies",
-  "nom": "Periapt of Proof Against Lies",
+  "nom": "Périapte de protection contre les mensonges",
   "nom_original": "Periapt of Proof Against Lies",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "A pendant fashioned from the claw or horn of a Pact Drake (see Creature Codex) is affixed to a thin gold chain. While you wear it, you know if you hear a lie, but this doesn't apply to evasive statements that remain within the boundaries of the truth. If you lie while wearing this pendant, you become poisoned for 10 minutes.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pendentif confectionné à partir de griffe de Drake du Pacte permettant de détecter les mensonges mais infligeant l'empoisonnement si vous mentez.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Détecte les mensonges entendus",
+      "Inflige empoisonné (10 min) si vous mentez en le portant"
+    ]
+  }
 }

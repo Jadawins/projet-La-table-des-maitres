@@ -1,16 +1,27 @@
 {
   "slug": "vicious-warhammer",
-  "nom": "Vicious Warhammer",
+  "nom": "Marteau de guerre vicieux",
   "nom_original": "Vicious Warhammer",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This magic weapon deals an extra 2d6 damage to any creature it hits. This extra damage is of the same type as the weapon's normal damage.",
   "effets": [],
   "poids": "5.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette arme magique inflige 2d6 dégâts supplémentaires du même type que ses dégâts normaux à chaque créature touchée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Inflige 2d6 dégâts supplémentaires à chaque coup"
+    ]
+  }
 }

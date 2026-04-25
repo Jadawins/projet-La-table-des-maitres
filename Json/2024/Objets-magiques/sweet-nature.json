@@ -1,16 +1,28 @@
 {
   "slug": "sweet-nature",
-  "nom": "Sweet Nature",
+  "nom": "Douce Nature",
   "nom_original": "Sweet Nature",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You have a +1 bonus to attack and damage rolls made with this magic weapon. When you hit a humanoid with this weapon, the humanoid takes an extra 1d6 slashing damage. If you use the axe to damage a plant creature or an object made of wood, the axe's blade liquifies into harmless honey, and it can't be used again until 24 hours have passed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Hachette magique conférant un bonus de +1 aux jets d'attaque et de dégâts, infligeant 1d6 dégâts supplémentaires aux humanoïdes. Son lame se liquéfie en miel inoffensif contre les créatures végétales.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts supplémentaires contre les humanoïdes",
+      "Lame se liquéfie en miel contre les créatures végétales ou objets en bois (indisponible 24h)"
+    ]
+  }
 }

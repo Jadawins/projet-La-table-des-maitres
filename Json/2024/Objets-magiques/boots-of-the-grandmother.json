@@ -1,17 +1,29 @@
 {
   "slug": "boots-of-the-grandmother",
-  "nom": "Bottes de the Grandmother",
+  "nom": "Bottes de la Grand-mère",
   "nom_original": "Boots of the Grandmother",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing these boots, you have proficiency in the Stealth skill if you don't already have it, and you double your proficiency bonus on Dexterity (Stealth) checks. As an action, you can drip three drops of fresh blood onto the boots to ease your passage through the world. For 1d6 hours, you and your allies within 30 feet of you ignore difficult terrain. Once used, this property can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces bottes, vous avez la maîtrise de la compétence Discrétion si vous ne l'avez pas déjà, et vous doublez votre bonus de maîtrise aux tests de Dextérité (Discrétion). En tant qu'action, vous pouvez verser trois gouttes de sang frais sur les bottes pour faciliter votre passage dans le monde. Pendant 1d6 heures, vous et vos alliés dans un rayon de 9 mètres ignorez le terrain difficile. Une fois utilisée, cette propriété ne peut plus l'être avant l'aube suivante."
+  "resume": "Maîtrise Discrétion avec bonus de maîtrise doublé. Peut utiliser 3 gouttes de sang pour ignorer le terrain difficile dans un rayon de 9 mètres pendant 1d6 heures (1/jour).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Maîtrise Discrétion, bonus de maîtrise doublé",
+      "Terrain difficile ignoré en rayon 9 m pendant 1d6 heures",
+      "Réutilisable à l'aube"
+    ]
+  }
 }

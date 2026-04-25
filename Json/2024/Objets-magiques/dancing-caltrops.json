@@ -1,17 +1,29 @@
 {
   "slug": "dancing-caltrops",
-  "nom": "Dancing Caltrops",
+  "nom": "Chausse-trapes Dansantes",
   "nom_original": "Dancing Caltrops",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "After you pour these magic caltrops out of the bag into an area, you can use a bonus action to animate them and command them to move up to 10 feet to occupy a different square area that is 5 feet on a side.",
-  "description_fr": "Après avoir versé ces chausse-trapes magiques hors du sac dans une zone, vous pouvez utiliser une action bonus pour les animer et leur ordonner de se déplacer jusqu'à 3 mètres (10 pieds) pour occuper une autre zone carrée de 1,5 mètre (5 pieds) de côté.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chausse-trapes magiques pouvant être animées pour se déplacer jusqu'à 3 mètres et occuper une nouvelle zone.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Peuvent être animées par action bonus",
+      "Se déplacent jusqu'à 3 mètres pour occuper une nouvelle zone",
+      "Effet mécanique et terrain difficile"
+    ]
+  }
 }

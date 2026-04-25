@@ -1,6 +1,6 @@
 {
   "slug": "blink-dog",
-  "nom": "Blink Dog",
+  "nom": "Chien éclair",
   "nom_original": "Blink Dog",
   "taille": "M",
   "type": "Fey",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 5
+    "discrétion": 5
   },
   "resistances": [],
   "immunites_degats": [],
@@ -55,7 +55,7 @@
     "tremblements": null
   },
   "langues": [
-    "Blink Dog",
+    "chien clignotant",
     "understands Sylvan but can't speak it"
   ],
   "fp": "1/4",
@@ -64,7 +64,7 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The dog has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -73,14 +73,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d6",
       "degats_bonus": 1
     },
     {
-      "nom": "Teleport (Recharge 4-6)",
+      "nom": "Téléportation (Récupération 4-6)",
       "description": "The dog magically teleports, along with any equipment it is wearing or carrying, up to 40 ft. to an unoccupied space it can see. Before or after teleporting, the dog can make one bite attack.",
       "bonus_attaque": null,
       "degats_de": null,

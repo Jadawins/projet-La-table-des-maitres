@@ -1,16 +1,28 @@
 {
   "slug": "valkyries-bite",
-  "nom": "Valkyrie's Bite",
+  "nom": "Morsure de Valkyrie",
   "nom_original": "Valkyrie's Bite",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This black-bladed scimitar has a guard that resembles outstretched raven wings, and a polished amethyst sits in its pommel. You have a +2 bonus to attack and damage rolls made with this magic weapon. While attuned to the scimitar, you have advantage on initiative rolls. While you hold the scimitar, it sheds dim purple light in a 10-foot radius.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cimeterre magique +2 donnant avantage à l'initiative et émettant une lumière violette dans un rayon de 3 mètres.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux jets d'initiative",
+      "Émission de lumière violette (10 pieds)"
+    ]
+  }
 }

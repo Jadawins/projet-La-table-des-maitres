@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 11,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 11,
   "pv_formule": "2d8+2",
   "vitesse": {
@@ -65,7 +65,7 @@
       "degats_bonus": null
     },
     {
-      "nom": "Relentless (Recharges after a Short or Long Rest)",
+      "nom": "Implacable (Récupération après un repos court ou long)",
       "description": "If the boar takes 7 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Tusk",
+      "nom": "Défense",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

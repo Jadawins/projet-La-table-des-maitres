@@ -1,13 +1,13 @@
 {
   "slug": "giant-fire-beetle",
-  "nom": "Giant Fire Beetle",
+  "nom": "Scarabée du feu géant",
   "nom_original": "Giant Fire Beetle",
   "taille": "P",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 4,
   "pv_formule": "1d6+1",
   "vitesse": {
@@ -67,7 +67,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d6 - 1) slashing damage.",
       "bonus_attaque": 1,
       "degats_de": "1d6",

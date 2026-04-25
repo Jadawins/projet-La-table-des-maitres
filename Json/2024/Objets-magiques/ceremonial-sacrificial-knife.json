@@ -1,17 +1,29 @@
 {
   "slug": "ceremonial-sacrificial-knife",
-  "nom": "Ceremonial Sacrificial Knife",
+  "nom": "Poignard Sacrificiel Cérémoniel",
   "nom_original": "Ceremonial Sacrificial Knife",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "Runes dance along the blade of this keen knife. Sacrificial Knife (Common). While attuned to it, you can use this magic, rune-inscribed dagger as a spellcasting focus. Ceremonial Sacrificial Knife (Uncommon). More powerful versions of this blade also exist. While holding the greater version of this dagger, you can use it to perform a sacrificial ritual during a short rest. If you sacrifice a Tiny or Small creature, you regain one expended 1st-level spell slot. If you sacrifice a Medium or larger creature, you regain one expended 2nd-level spell slot.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Des runes dansent le long de la lame de ce couteau acéré. Couteau sacrificiel (commun) : lorsque vous êtes harmonisé avec lui, vous pouvez utiliser cette dague magique gravée de runes comme focalisateur d'incantation. Couteau sacrificiel cérémoniel (peu commun) : des versions plus puissantes de cette lame existent également. En tenant la version supérieure de cette dague, vous pouvez l'utiliser pour accomplir un rituel sacrificiel lors d'un repos court. Si vous sacrifiez une créature de taille TP ou P, vous récupérez un emplacement de sort de niveau 1 dépensé. Si vous sacrifiez une créature de taille M ou plus grande, vous récupérez un emplacement de sort de niveau 2 dépensé."
+  "resume": "Dague magique servant de focalisateur d'incantation, capable de récupérer des emplacements de sort (niveau 1 ou 2) par sacrifice rituel lors d'un repos court.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Focalisateur d'incantation",
+      "Sacrifice TP/P = emplacement sort niveau 1",
+      "Sacrifice M+ = emplacement sort niveau 2"
+    ]
+  }
 }

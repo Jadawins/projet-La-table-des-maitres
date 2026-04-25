@@ -7,11 +7,22 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "A thick, rubbery sole covers the bottoms and sides of these stout leather boots. They are useful for maneuvering in cluttered alleyways, slick sewers, and the occasional patch of ice or gravel. While you wear these boots, you can use a bonus action to speak the command word. If you do, nonmagical difficult terrain doesn't cost you extra movement when you walk across it wearing these boots. If you speak the command word again as a bonus action, you end the effect. When the boots' property has been used for a total of 1 minute, the magic ceases to function until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Une semelle épaisse et caoutchouteuse recouvre le dessous et les côtés de ces solides bottes en cuir, utiles pour se déplacer dans des ruelles encombrées, des égouts glissants ou des plaques de glace. Tant que vous portez ces bottes, vous pouvez utiliser une action bonus pour prononcer le mot de commande. Ce faisant, les terrains difficiles non magiques ne vous coûtent pas de mouvement supplémentaire. En prononçant à nouveau le mot de commande en action bonus, vous mettez fin à l'effet. Lorsque la propriété des bottes a été utilisée pour un total de 1 minute, la magie cesse de fonctionner jusqu'à l'aube suivante."
+  "resume": "Neutralisent les terrains difficiles non magiques pendant 1 minute cumulée par jour en utilisant une action bonus.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 60,
+    "effets": [
+      "Terrains difficiles ignorés (1 min cumulée/jour)",
+      "Activation en action bonus"
+    ]
+  }
 }

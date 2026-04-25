@@ -1,17 +1,28 @@
 {
   "slug": "blackguards-handaxe",
-  "nom": "Blackguard's Handaxe",
+  "nom": "Hache de Poing du Renégat",
   "nom_original": "Blackguard's Handaxe",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you draw this weapon, you can use a bonus action to cast the thaumaturgy spell from it. You can have only one of the spell's effects active at a time when you cast it in this way.",
-  "description_fr": "Vous gagnez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Lorsque vous dégainez cette arme, vous pouvez utiliser une action bonus pour lancer le sort thaumaturgie depuis celle-ci. Vous ne pouvez avoir qu'un seul des effets du sort actif à la fois lorsque vous le lancez de cette manière.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Hache magique +1 capable de lancer Thaumaturgie via une action bonus au dégainage.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux attaques et dégâts",
+      "Lancer Thaumaturgie en action bonus au dégainage (un seul effet actif)"
+    ]
+  }
 }

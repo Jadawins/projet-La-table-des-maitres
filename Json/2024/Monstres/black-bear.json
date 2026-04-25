@@ -1,13 +1,13 @@
 {
   "slug": "black-bear",
-  "nom": "Black Bear",
+  "nom": "Ours noir",
   "nom_original": "Black Bear",
   "taille": "M",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 11,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 19,
   "pv_formule": "3d8+6",
   "vitesse": {
@@ -58,7 +58,7 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The bear has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -67,21 +67,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The bear makes two attacks: one with its bite and one with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.",
       "bonus_attaque": 3,
       "degats_de": "2d4",

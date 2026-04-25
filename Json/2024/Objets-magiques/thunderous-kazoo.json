@@ -1,16 +1,29 @@
 {
   "slug": "thunderous-kazoo",
-  "nom": "Thunderous Kazoo",
+  "nom": "Kazou Tonitruant",
   "nom_original": "Thunderous Kazoo",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "You can use an action to speak the kazoo's command word and then hum into it, which emits a thunderous blast, audible out to 1 mile, at one Large or smaller creature you can see within 30 feet of you. The target must make a DC 13 Constitution saving throw. On a failure, a creature is pushed away from you and is deafened and frightened of you until the start of your next turn. A Small creature is pushed up to 30 feet, a Medium creature is pushed up to 20 feet, and a Large creature is pushed up to 10 feet. On a success, a creature is pushed half the distance and isn't deafened or frightened. The kazoo can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Kazou magique produisant une onde de choc qui repousse une créature dans un rayon de 30 pieds, la rendant sourde et effrayée à moins d'un jet de sauvegarde (réutilisable à l'aube).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Jet de sauvegarde Constitution DC 13 ou repousse la créature (10-30 pieds selon la taille)",
+      "En cas d'échec : créature rendue sourde et effrayée jusqu'au début du prochain tour",
+      "En cas de succès : repousse réduite de moitié sans effets supplémentaires"
+    ]
+  }
 }

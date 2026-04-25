@@ -1,16 +1,29 @@
 {
   "slug": "necromantic-ink",
-  "nom": "Necromantic Ink",
+  "nom": "Encre nécromantique",
   "nom_original": "Necromantic Ink",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The scent of death and decay hangs around this grey ink. It is typically found in 1d4 pots, and each pot contains 2 doses. If you spend 1 minute using one dose of the ink to draw symbols of death on a dead creature that has been dead no longer than 10 days, you can imbue the creature with the ink's magic. The creature rises 24 hours later as a skeleton or zombie (your choice), unless the creature is restored to life or its body is destroyed. You have no control over the undead creature.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Encre grise imbue de magie nécromantique permettant de transformer un cadavre en squelette ou zombi après 24 heures. Se présente en 1d4 pots contenant chacun 2 doses.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 8,
+    "effets": [
+      "Ramène un cadavre à la vie sous forme de squelette ou zombi après 24 heures",
+      "Crée une créature non contrôlée",
+      "Nécessite 1 minute pour appliquer sur un cadavre mort depuis au maximum 10 jours"
+    ]
+  }
 }

@@ -7,10 +7,22 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "When you fall while wearing this ring, you descend 60 feet per round and take no damage from falling.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cet anneau vous permet de descendre lentement en chute libre (60 pieds par round) sans subir aucun dégât de chute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Descente à 60 pieds par round en cas de chute",
+      "Aucun dégât de chute"
+    ]
+  }
 }

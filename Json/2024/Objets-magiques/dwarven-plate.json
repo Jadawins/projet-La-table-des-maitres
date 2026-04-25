@@ -1,16 +1,28 @@
 {
   "slug": "dwarven-plate",
-  "nom": "Dwarven Plate",
+  "nom": "Plate naine",
   "nom_original": "Dwarven Plate",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +2 bonus to AC. In addition, if an effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by up to 10 feet.",
   "effets": [],
   "poids": "65.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure magique octroyant un bonus de +2 à la CA et réduisant les mouvements forcés de 3 m.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 2,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus de +2 à la CA",
+      "Réduction de 3 m des mouvements forcés au sol"
+    ]
+  }
 }

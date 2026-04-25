@@ -7,11 +7,21 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing these bracers, you gain a +2 bonus to AC if you are wearing no armor and using no shield.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces brassards, vous obtenez un bonus de +2 à la CA si vous ne portez pas d'armure et n'utilisez pas de bouclier."
+  "resume": "Ces brassards confèrent un bonus de +2 à la CA si vous ne portez ni armure ni bouclier.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 2,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus CA +2 sans armure ni bouclier"
+    ]
+  }
 }

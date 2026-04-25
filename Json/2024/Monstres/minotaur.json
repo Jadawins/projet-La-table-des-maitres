@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 14,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 76,
   "pv_formule": "9d10+27",
   "vitesse": {
@@ -54,7 +54,7 @@
     "tremblements": null
   },
   "langues": [
-    "Abyssal"
+    "abyssal"
   ],
   "fp": "3",
   "fp_numerique": 3,
@@ -69,14 +69,14 @@
       "degats_bonus": null
     },
     {
-      "nom": "Labyrinthine Recall",
+      "nom": "Mémoire du labyrinthe",
       "description": "The minotaur can perfectly recall any path it has traveled.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Reckless",
+      "nom": "Attaque téméraire",
       "description": "At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -85,14 +85,14 @@
   ],
   "actions": [
     {
-      "nom": "Greataxe",
+      "nom": "Hache d'armes",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d12",
       "degats_bonus": 4
     },
     {
-      "nom": "Gore",
+      "nom": "Encornure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d8",

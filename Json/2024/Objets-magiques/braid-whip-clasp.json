@@ -1,17 +1,29 @@
 {
   "slug": "braid-whip-clasp",
-  "nom": "Braid Whip Clasp",
+  "nom": "Agrafe à fouet tressé",
   "nom_original": "Braid Whip Clasp",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This intricately carved ivory clasp can be wrapped around or woven into braided hair 3 feet or longer. While the clasp is attached to your braided hair, you can speak its command word as a bonus action and transform your braid into a dangerous whip. If you speak the command word again, you end the effect. You gain a +1 bonus to attack and damage rolls made with this magic whip. When the clasp's property has been used for a total of 10 minutes, you can't use it to transform your braid into a whip again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette agrafe en ivoire finement sculptée peut être enroulée ou tressée dans des cheveux nattés d'au moins 90 centimètres de long. Tant que l'agrafe est attachée à vos cheveux nattés, vous pouvez prononcer son mot de commande en action bonus pour transformer votre natte en un fouet redoutable. En prononçant à nouveau le mot de commande, vous mettez fin à l'effet. Vous obtenez un bonus de +1 aux jets d'attaque et de dégâts effectués avec ce fouet magique. Lorsque la propriété de l'agrafe a été utilisée pour un total de 10 minutes, vous ne pouvez plus l'utiliser pour transformer votre natte en fouet avant l'aube suivante."
+  "resume": "Agrafe magique transformant une tresse en fouet avec +1 aux attaques et dégâts, utilisable 10 minutes par jour.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets d'attaque et de dégâts",
+      "10 minutes d'utilisation quotidienne",
+      "Fouet magique transformable par action bonus"
+    ]
+  }
 }

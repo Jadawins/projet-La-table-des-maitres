@@ -1,17 +1,28 @@
 {
   "slug": "amulet-of-sustaining-health",
-  "nom": "Amulet of Sustaining Health",
+  "nom": "Amulette de vitalité",
   "nom_original": "Amulet of Sustaining Health",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this amulet, you need to eat and drink only once every 7 days. In addition, you have advantage on saving throws against effects that would cause you to suffer a level of exhaustion.",
-  "description_fr": "Tant que vous portez cette amulette, vous n'avez besoin de manger et de boire qu'une fois tous les 7 jours. De plus, vous avez l'avantage aux jets de sauvegarde contre les effets qui vous feraient subir un niveau d'épuisement.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Réduit vos besoins en nourriture et boisson à une fois tous les 7 jours et confère l'avantage aux jets de sauvegarde contre l'épuisement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Réduit les besoins alimentaires à 1 fois/7 jours",
+      "Avantage aux jets de sauvegarde contre l'épuisement"
+    ]
+  }
 }

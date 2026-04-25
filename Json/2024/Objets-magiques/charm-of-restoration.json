@@ -1,17 +1,27 @@
 {
   "slug": "charm-of-restoration",
-  "nom": "Charm of Restoration",
+  "nom": "Amulette de Restauration",
   "nom_original": "Charm of Restoration",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This fist-sized ball of tightly-wound green fronds contains the bark of a magical plant with curative properties. A natural loop is formed from one of the fronds, allowing the charm to be hung from a pack, belt, or weapon pommel. As long as you carry this charm, whenever you are targeted by a spell or magical effect that restores your hit points, you regain an extra 1 hit point.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette boule de la taille d'un poing, formée de frondes vertes étroitement enroulées, contient l'écorce d'une plante magique aux propriétés curatives. Une boucle naturelle formée par l'une des frondes permet de suspendre le charme à un sac, une ceinture ou un pommeau d'arme. Tant que vous portez ce charme, chaque fois que vous êtes ciblé par un sort ou un effet magique qui restaure vos points de vie, vous récupérez 1 point de vie supplémentaire."
+  "resume": "Amulette verte qui augmente de 1 les points de vie récupérés lors d'un soin magique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "+1",
+    "charges": null,
+    "effets": [
+      "Récupère 1 PV supplémentaire lors de tout effet ou sort de restauration des PV"
+    ]
+  }
 }

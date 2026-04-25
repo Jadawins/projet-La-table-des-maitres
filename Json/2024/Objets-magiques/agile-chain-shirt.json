@@ -1,17 +1,27 @@
 {
   "slug": "agile-chain-shirt",
-  "nom": "Agile Chain Shirt",
+  "nom": "Chemise de Mailles Agile",
   "nom_original": "Agile Chain Shirt",
   "categorie": "armure_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This magically enhanced armor is less bulky than its nonmagical version. While wearing a suit of medium agile armor, the maximum Dexterity modifier you can add to determine your Armor Class is 3, instead of 2. While wearing a suit of heavy agile armor, the maximum Dexterity modifier you can add to determine your Armor Class is 1, instead of 0.",
-  "description_fr": "Cette armure magiquement améliorée est moins encombrante que sa version non magique. Lorsque vous portez une armure intermédiaire agile, le modificateur de Dextérité maximum que vous pouvez ajouter pour déterminer votre CA est de 3, au lieu de 2. Lorsque vous portez une armure lourde agile, le modificateur de Dextérité maximum que vous pouvez ajouter pour déterminer votre CA est de 1, au lieu de 0.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure intermédiaire magiquement allégée permettant un meilleur modifier de Dextérité pour la CA (+3 au lieu de +2).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Modificateur de Dextérité max +3 pour la CA au lieu de +2"
+    ]
+  }
 }

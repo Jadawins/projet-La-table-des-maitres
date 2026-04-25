@@ -1,13 +1,13 @@
 {
   "slug": "bronze-dragon-wyrmling",
-  "nom": "Bronze Dragon Wyrmling",
+  "nom": "Dragonnet de bronze",
   "nom_original": "Bronze Dragon Wyrmling",
   "taille": "M",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful good",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 32,
   "pv_formule": "5d8+10",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 4,
-    "stealth": 2
+    "discrétion": 2
   },
   "resistances": [],
   "immunites_degats": [
@@ -57,7 +57,7 @@
     "tremblements": null
   },
   "langues": [
-    "Draconic"
+    "draconique"
   ],
   "fp": "2",
   "fp_numerique": 2,
@@ -65,7 +65,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The dragon can breathe air and water.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,14 +74,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d10",
       "degats_bonus": 3
     },
     {
-      "nom": "Breath Weapons (Recharge 5-6)",
+      "nom": "Armes de souffle (Recharge 5-6)",
       "description": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 16 (3d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 12 Strength saving throw. On a failed save, the creature is pushed 30 feet away from the dragon.",
       "bonus_attaque": 0,
       "degats_de": "3d10",

@@ -59,7 +59,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.",
       "bonus_attaque": 4,
       "degats_de": "2d4",

@@ -1,16 +1,29 @@
 {
   "slug": "ogres-pot",
-  "nom": "Ogre's Pot",
+  "nom": "Chaudron d'Ogre",
   "nom_original": "Ogre's Pot",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This cauldron boils anything placed inside it, whether venison or timber, to a vaguely edible paste. A spoonful of the paste provides enough nourishment to sustain a creature for one day. As a bonus action, you can speak the pot's command word and force it to roll directly to you at a speed of 40 feet per round as long as you and the pot are on the same plane of existence. It follows the shortest possible path, stopping when it moves to within 5 feet of you, and it bowls over or knocks down any objects or creatures in its path. A creature in its path must succeed on a DC 13 Dexterity saving throw or take 2d6 bludgeoning damage and be knocked prone. When this magic pot comes into contact with an object or structure, it deals 4d6 bludgeoning damage. If the damage doesn't destroy or create a path through the object or structure, the pot continues to deal damage at the end of each round, carving a path through the obstacle.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chaudron magique qui fournit de la nourriture et peut foncer vers le lanceur en écrasant les obstacles sur son passage.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Créatures dans le chemin effectuent un jet de sauvegarde Dextérité DD 13 ou prennent 2d6 dégâts contondants et tombent à terre",
+      "Lors du contact avec un obstacle : 4d6 dégâts contondants renouvelés chaque round",
+      "Vitesse de 40 pieds par round jusqu'à 5 pieds du lanceur"
+    ]
+  }
 }

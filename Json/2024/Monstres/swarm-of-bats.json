@@ -1,6 +1,6 @@
 {
   "slug": "swarm-of-bats",
-  "nom": "Swarm of Bats",
+  "nom": "Nuée de chauve-souris",
   "nom_original": "Swarm of Bats",
   "taille": "M",
   "type": "Beast",
@@ -71,21 +71,21 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Echolocation",
+      "nom": "Écholocalisation",
       "description": "The swarm can't use its blindsight while deafened.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Keen Hearing",
+      "nom": "Ouïe aiguisée",
       "description": "The swarm has advantage on Wisdom (Perception) checks that rely on hearing.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Swarm",
+      "nom": "Nuée",
       "description": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny bat. The swarm can't regain hit points or gain temporary hit points.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -94,7 +94,7 @@
   ],
   "actions": [
     {
-      "nom": "Bites",
+      "nom": "Morsures",
       "description": "Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing damage if the swarm has half of its hit points or fewer.",
       "bonus_attaque": 4,
       "degats_de": "2d4",

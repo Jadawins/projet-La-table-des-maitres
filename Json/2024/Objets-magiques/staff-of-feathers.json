@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-feathers",
-  "nom": "Bâton de Feathers",
+  "nom": "Bâton de Plumes",
   "nom_original": "Staff of Feathers",
   "categorie": "baton",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "Several eagle feathers line the top of this long, thin staff. The staff has 10 charges for the following properties. It regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff explodes into a mass of eagle feathers and is destroyed. Feather Travel. When you are targeted by a ranged attack while holding the staff, you can use a reaction to teleport up to 10 feet to an unoccupied space that you can see. When you do, you briefly transform into a mass of feathers, and the attack misses. Once used, this property can’t be used again until the next dawn. Spells. While holding the staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: conjure animals (2 giant eagles only, 3 charges), fly (3 charges), or gust of wind (2 charges).",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton orné de plumes d'aigle permettant de se téléporter pour esquiver les attaques à distance et de lancer des sorts de vol et de convocation.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Voyage de Plumes : téléportation de 10 pieds en réaction pour esquiver attaque (1/jour)",
+      "Lance Convocation d'animaux (2 aigles géants, 3 charges), Vol (3 charges), Rafales de vent (2 charges)",
+      "Récupère 1d6+4 charges à l'aube"
+    ]
+  }
 }

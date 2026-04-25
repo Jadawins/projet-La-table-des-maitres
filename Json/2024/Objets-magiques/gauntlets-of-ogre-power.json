@@ -1,16 +1,27 @@
 {
   "slug": "gauntlets-of-ogre-power",
-  "nom": "Gantelets de puissance d'ogre",
+  "nom": "Gantelets de Puissance d'Ogre",
   "nom_original": "Gauntlets of Ogre Power",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Your Strength score is 19 while you wear these gauntlets. They have no effect on you if your Strength is already 19 or higher.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Gantelets fixant la Force à 19 tant qu'ils sont portés, sauf si la Force du porteur est déjà égale ou supérieure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Force fixée à 19 (aucun effet si FOR ≥ 19)"
+    ]
+  }
 }

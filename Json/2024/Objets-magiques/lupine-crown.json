@@ -1,16 +1,29 @@
 {
   "slug": "lupine-crown",
-  "nom": "Lupine Crown",
+  "nom": "Couronne Lupine",
   "nom_original": "Lupine Crown",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This grisly helm is made from the leather-reinforced skull and antlers of a deer with a fox skull and hide stretched over it. It is secured by a strap made from a magically preserved length of deer entrails. While wearing this helm, you gain a +1 bonus to AC, and you have advantage on Dexterity (Stealth) and Wisdom (Survival) checks.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un heaume macabre fabriqué à partir de crânes d'animaux qui confère un bonus de +1 à la CA et l'avantage aux tests de Discrétion et de Survie.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 à la CA",
+      "Avantage aux tests de Dextérité (Discrétion)",
+      "Avantage aux tests de Sagesse (Survie)"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "odorless-oil",
-  "nom": "Odorless Oil",
+  "nom": "Huile Inodore",
   "nom_original": "Odorless Oil",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This odorless, colorless oil can cover a Medium or smaller object or creature, along with the equipment the creature is wearing or carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. For 1 hour, the affected target gives off no scent, can't be tracked by scent, and can't be detected with Wisdom (Perception) checks that rely on smell.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Huile magique éliminant toute odeur pendant 1 heure, rendant invisible aux sens olfactifs.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Élimine toute odeur émise par la cible",
+      "Empêche le suivi à la trace par l'odorat",
+      "Durée : 1 heure"
+    ]
+  }
 }

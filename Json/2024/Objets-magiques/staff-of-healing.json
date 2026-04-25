@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-healing",
-  "nom": "Bâton de guérison",
+  "nom": "Bâton de Guérison",
   "nom_original": "Staff of Healing",
   "categorie": "baton",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spellcasting ability modifier: _cure wounds_ (1 charge per spell level, up to 4th), _lesser restoration_ (2 charges), or _mass cure wounds_ (5 charges).\n\nThe staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff vanishes in a flash of light, lost forever.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bâton magique permettant de lancer soin des blessures, restauration inférieure et soin des blessures de masse en dépensant des charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "variable selon sort",
+    "charges": 10,
+    "effets": [
+      "Lance soin des blessures (1 charge par niveau jusqu'à 4)",
+      "Lance restauration inférieure (2 charges)",
+      "Lance soin des blessures de masse (5 charges)"
+    ]
+  }
 }

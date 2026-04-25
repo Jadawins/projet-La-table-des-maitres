@@ -7,10 +7,22 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing these gloves, climbing and swimming don't cost you extra movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces gants permettent de grimper et nager sans coût de mouvement supplémentaire et accordent un bonus de +5 aux tests d'Athlétisme pour ces actions.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Escalade et nage sans coût de mouvement supplémentaire",
+      "+5 aux tests d'Athlétisme (escalade/nage)"
+    ]
+  }
 }

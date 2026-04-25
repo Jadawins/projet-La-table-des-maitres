@@ -1,16 +1,29 @@
 {
   "slug": "ring-of-ursa",
-  "nom": "Anneau de Ursa",
+  "nom": "Anneau d'Ursa",
   "nom_original": "Ring of Ursa",
   "categorie": "anneau",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This wooden ring is set with a strip of fossilized honey. While wearing this ring, you gain the following benefits: - Your Strength score increases by 2, to a maximum of 20.\n- You have advantage on Charisma (Persuasion) checks made to interact with bearfolk. In addition, while attuned to the ring, your hair grows thick and abundant. Your facial features grow more snout-like, and your teeth elongate. If you aren't a bearfolk, you gain the following benefits while wearing the ring:\n- You can now make a bite attack as an unarmed strike. When you hit with it, your bite deals piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike. - You gain a powerful build and count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau en bois conférant +2 en Force, avantage aux tests de Persuasion avec les Oursffolk, et capacité à mordre (1d6+Force). Transforme l'apparence du porteur vers des traits ursins.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 à la Force (max 20)",
+      "Attaque de morsure : 1d6 + Mod Force en dégâts perforants",
+      "Morphologie puissante : comptage comme taille supérieure pour port/traînage"
+    ]
+  }
 }

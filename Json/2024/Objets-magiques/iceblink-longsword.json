@@ -1,16 +1,29 @@
 {
   "slug": "iceblink-longsword",
-  "nom": "Iceblink Longsword",
+  "nom": "Épée Longue Éclair de Glace",
   "nom_original": "Iceblink Longsword",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The blade of this weapon is cool to the touch and gives off a yellow-white radiance, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. In temperatures above freezing, vapor wafts off the chilled blade. When you hit with an attack using this magic sword, the target takes an extra 1d6 cold damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée longue magique émettant une lumière blanc-jaune et infligeant 1d6 dégâts supplémentaires de froid à chaque coup.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "froid",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "1d6 dégâts de froid supplémentaires",
+      "Émet une lumière vive sur 3 m et faible sur 3 m supplémentaires",
+      "Dégaze en températures au-dessus de 0°C"
+    ]
+  }
 }

@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any alignment",
   "ca": 16,
-  "ca_detail": "studded leather, shield",
+  "ca_detail": "armure de cuir clouté, bouclier",
   "pv": 112,
   "pv_formule": "15d8+45",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "athletics": 10,
+    "athlétisme": 10,
     "intimidation": 5
   },
   "resistances": [],
@@ -63,7 +63,7 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "Brave",
+      "nom": "Courageux",
       "description": "The gladiator has advantage on saving throws against being frightened.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -79,21 +79,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The gladiator makes three melee attacks or two ranged attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Spear",
+      "nom": "Pique",
       "description": "Melee or Ranged Weapon Attack: +7 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 11 (2d6 + 4) piercing damage, or 13 (2d8 + 4) piercing damage if used with two hands to make a melee attack.",
       "bonus_attaque": 7,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Shield Bash",
+      "nom": "Coup de bouclier",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 9 (2d4 + 4) bludgeoning damage. If the target is a Medium or smaller creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
       "bonus_attaque": 7,
       "degats_de": "2d4",
@@ -103,7 +103,7 @@
   "actions_bonus": [],
   "reactions": [
     {
-      "nom": "Parry",
+      "nom": "Parade",
       "description": "The gladiator adds 3 to its AC against one melee attack that would hit it. To do so, the gladiator must see the attacker and be wielding a melee weapon.",
       "bonus_attaque": null,
       "degats_de": null,

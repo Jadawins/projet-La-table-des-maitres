@@ -1,16 +1,29 @@
 {
   "slug": "hammer-of-thunderbolts",
-  "nom": "Marteau du tonnerre",
+  "nom": "Marteau du Tonnerre",
   "nom_original": "Hammer of Thunderbolts",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon.\n\n**_Giant's Bane (Requires Attunement)_**. You must be wearing a _belt of giant strength_ (any variety) and _gauntlets of ogre power_ to attune to this weapon. The attunement ends if you take off either of those items. While you are attuned to this weapon and holding it, your Strength score increases by 4 and can exceed 20, but not 30. When you roll a 20 on an attack roll made with this weapon against a giant, the giant must succeed on a DC 17 Constitution saving throw or die.\n\nThe hammer also has 5 charges. While attuned to it, you can expend 1 charge and make a ranged weapon attack with the hammer, hurling it as if it had the thrown property with a normal range of 20 feet and a long range of 60 feet. If the attack hits, the hammer unleashes a thunderclap audible out to 300 feet. The target and every creature within 30 feet of it must succeed on a DC 17 Constitution saving throw or be stunned until the end of your next turn. The hammer regains 1d4 + 1 expended charges daily at dawn.",
   "effets": [],
   "poids": "10.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Marteau magique +1 qui se lance à distance et inflige des dégâts de tonnerre. Nécessite un attunement avec une ceinture de force de géant et des gantelets de puissance d'ogre pour obtenir des bonus de Force accrus et un pouvoir d'exécution contre les géants.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Force +4 (attuné, max 30) contre les géants avec équipement requis",
+      "Mort automatique si critique contre géant (sauvegarde CON DC 17)",
+      "Projectile tonnerre: 20-60 ft, cible et créatures dans 30 ft étourdies (sauvegarde CON DC 17)"
+    ]
+  }
 }

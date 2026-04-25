@@ -1,16 +1,28 @@
 {
   "slug": "headscarf-of-the-oasis",
-  "nom": "Headscarf of the Oasis",
+  "nom": "Voile de l'oasis",
   "nom_original": "Headscarf of the Oasis",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This dun-colored, well-worn silk wrap is long enough to cover the face and head of a Medium or smaller humanoid, barely revealing the eyes. While wearing this headscarf over your mouth and nose, you have advantage on ability checks and saving throws against being blinded and against extended exposure to hot weather and hot environments. Pulling the headscarf on or off your mouth and nose requires an action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Foulard de soie qui couvre la tête et le visage, accordant l'avantage aux tests et jets de sauvegarde contre l'éblouissement et l'exposition à la chaleur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage contre l'éblouissement",
+      "Avantage contre la chaleur extrême"
+    ]
+  }
 }

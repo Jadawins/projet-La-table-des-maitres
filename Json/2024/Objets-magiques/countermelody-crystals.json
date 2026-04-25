@@ -1,17 +1,29 @@
 {
   "slug": "countermelody-crystals",
-  "nom": "Countermelody Crystals",
+  "nom": "Cristaux de contremélodie",
   "nom_original": "Countermelody Crystals",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This golden bracelet is set with ten glistening crystal bangles that tinkle when they strike one another. When you must make a saving throw against being charmed or frightened, the crystals vibrate, creating an eerie melody, and you have advantage on the saving throw. If you fail the saving throw, you can choose to succeed instead by forcing one of the crystals to shatter. Once all ten crystals have shattered, the bracelet loses its magic and crumbles to powder.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce bracelet doré est orné de dix breloques de cristal scintillantes qui tintinnabulent lorsqu'elles se heurtent. Lorsque vous devez effectuer un jet de sauvegarde contre un effet de charme ou de frayeur, les cristaux vibrent en produisant une mélodie envoûtante, et vous avez l'avantage à ce jet de sauvegarde. Si vous échouez malgré tout, vous pouvez choisir de réussir à la place en brisant l'un des cristaux. Une fois les dix cristaux brisés, le bracelet perd sa magie et se désagrège en poussière."
+  "resume": "Bracelet doré orné de 10 cristaux offrant l'avantage aux jets de sauvegarde contre le charme et la frayeur, avec possibilité de réussir en brisant un cristal.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Avantage aux JS contre charme/frayeur",
+      "Réussir automatiquement en dépensant une charge",
+      "Perte de magie après 10 utilisations"
+    ]
+  }
 }

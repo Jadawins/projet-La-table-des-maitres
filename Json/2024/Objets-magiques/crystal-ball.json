@@ -7,11 +7,21 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The typical crystal ball, a very rare item, is about 6 inches in diameter. While touching it, you can cast the scrying spell (save DC 17) with it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "La boule de cristal ordinaire, un objet très rare, mesure environ 15 cm de diamètre. En la touchant, vous pouvez lancer le sort scrutation (DD de sauvegarde 17) grâce à elle."
+  "resume": "Boule de cristal permettant de lancer le sort scrutation avec un DD de sauvegarde de 17.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lancer scrutation (DD 17)"
+    ]
+  }
 }

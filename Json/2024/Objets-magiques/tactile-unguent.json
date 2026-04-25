@@ -1,16 +1,28 @@
 {
   "slug": "tactile-unguent",
-  "nom": "Tactile Unguent",
+  "nom": "Onguent Tactile",
   "nom_original": "Tactile Unguent",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Cat burglars, gearworkers, locksmiths, and even street performers use this gooey substance to increase the sensitivity of their hands. When found, a container contains 1d4 + 1 doses. As an action, one dose can be applied to a creature's hands. For 1 hour, that creature has advantage on Dexterity (Sleight of Hand) checks and on tactile Wisdom (Perception) checks.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un produit gluant appliqué sur les mains pour améliorer la sensibilité tactile pendant 1 heure, conférant l'avantage aux tests de Dextérité (Escamotage) et de Sagesse (Perception) tactile.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Dextérité (Escamotage) pendant 1 heure",
+      "Avantage aux tests de Sagesse (Perception) tactile pendant 1 heure"
+    ]
+  }
 }

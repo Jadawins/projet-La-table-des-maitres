@@ -1,16 +1,29 @@
 {
   "slug": "slick-cuirass",
-  "nom": "Slick Cuirass",
+  "nom": "Cuirasse Luisante",
   "nom_original": "Slick Cuirass",
   "categorie": "armure_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This suit of leather armor has a shiny, greasy look to it. While wearing the armor, you have advantage on ability checks and saving throws made to escape a grapple. In addition, while squeezing through a smaller space, you don't have disadvantage on attack rolls and Dexterity saving throws.",
   "effets": [],
   "poids": "10.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure de cuir grasse et brillante conférant l'avantage aux tests d'évasion et supprimant le désavantage en espaces confinés.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de sauvegarde pour échapper à une saisie",
+      "Pas de désavantage en espaces confinés sur attaques et sauvegardes DEX",
+      "Aucun bonus de CA"
+    ]
+  }
 }

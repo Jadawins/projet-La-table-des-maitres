@@ -1,16 +1,27 @@
 {
   "slug": "leather-armor-of-warding-1",
-  "nom": "Leather Armure de Warding (+1)",
+  "nom": "Armure de cuir de Protection +1",
   "nom_original": "Leather Armor of Warding (+1)",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "Charms and wards made of claws, feathers, scales, or similar objects adorn this armor, which is etched with the likenesses of the creatures that contributed the adornments. The armor provides protection against a specific type of foe, indicated by its adornments. While wearing this armor, you have a bonus to AC against attacks from creatures of the type the armor wards against. The bonus is determined by its rarity. The armor provides protection against one of the following creature types: aberration, beast, celestial, construct, dragon, elemental, fey, fiend, giant, humanoid, monstrosity, ooze, plant, or undead.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure ornée de charmes et amulettes conférant un bonus de +1 à la CA contre un type de créature spécifique (au choix du MJ).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 CA contre un type de créature spécifique (aberration, bête, céleste, etc.)"
+    ]
+  }
 }

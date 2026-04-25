@@ -1,13 +1,13 @@
 {
   "slug": "iron-golem",
-  "nom": "Iron Golem",
+  "nom": "Golem de fer",
   "nom_original": "Iron Golem",
   "taille": "G",
   "type": "Construct",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 20,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 210,
   "pv_formule": "20d10+100",
   "vitesse": {
@@ -73,28 +73,28 @@
   "experience": 15000,
   "traits": [
     {
-      "nom": "Fire Absorption",
+      "nom": "Absorption du feu",
       "description": "Whenever the golem is subjected to fire damage, it takes no damage and instead regains a number of hit points equal to the fire damage dealt.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Immutable Form",
+      "nom": "Forme immuable",
       "description": "The golem is immune to any spell or effect that would alter its form.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The golem has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Weapons",
+      "nom": "Armes magiques",
       "description": "The golem's weapon attacks are magical.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -103,28 +103,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The golem makes two melee attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.",
       "bonus_attaque": 13,
       "degats_de": "3d8",
       "degats_bonus": 7
     },
     {
-      "nom": "Sword",
+      "nom": "Épée",
       "description": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 23 (3d10 + 7) slashing damage.",
       "bonus_attaque": 13,
       "degats_de": "3d10",
       "degats_bonus": 7
     },
     {
-      "nom": "Poison Breath (Recharge 5-6)",
+      "nom": "Souffle de poison (Recharge 5-6)",
       "description": "The golem exhales poisonous gas in a 15-foot cone. Each creature in that area must make a DC 19 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "10d8",

@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "A gray crystal floats in the crook of this twisted staff. The crystal breaks into fragments as it slowly revolves, and those fragments break into smaller pieces then into clouds of dust. In spite of this, the crystal never seems to reduce in size. You have resistance to necrotic damage while you hold this staff. The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: blight (4 charges), disintegrate (6 charges), or shatter (2 charges). The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff crumbles to dust.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton de cristal gris conférant une résistance aux dégâts nécrotiques et permettant de lancer des sorts de destruction comme Flétrissement ou Désintégration.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Résistance aux dégâts nécrotiques",
+      "Lance Flétrissement (4 charges), Désintégration (6 charges), ou Fracassement (2 charges)",
+      "Récupère 1d6+4 charges à l'aube"
+    ]
+  }
 }

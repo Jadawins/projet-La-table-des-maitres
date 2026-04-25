@@ -1,16 +1,29 @@
 {
   "slug": "slatelight-ring",
-  "nom": "Slatelight Ring",
+  "nom": "Anneau de Lumière d'Ardoise",
   "nom_original": "Slatelight Ring",
   "categorie": "anneau",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This decorated thick gold band is adorned with a single polished piece of slate. While wearing this ring, you have darkvision out to a range of 60 feet. If you already have darkvision, wearing this ring increases its range by 60 feet. In addition, you can use an action to cast the faerie fire spell (DC 15) from it. The ring can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un anneau doré qui octroie la vision dans le noir jusqu'à 60 pieds et permet de lancer feu féerique une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Darkvision 60 pieds (ou +60 si déjà possédée)",
+      "Lancer feu féerique (DC 15) une fois par jour",
+      "Aucun bonus de combat"
+    ]
+  }
 }

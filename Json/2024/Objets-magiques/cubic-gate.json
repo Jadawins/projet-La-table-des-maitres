@@ -1,17 +1,29 @@
 {
   "slug": "cubic-gate",
-  "nom": "Cubic Gate",
+  "nom": "Portail cubique",
   "nom_original": "Cubic Gate",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This cube is 3 inches across and radiates palpable magical energy. The six sides of the cube are each keyed to a different plane of existence, one of which is the Material Plane. The other sides are linked to planes determined by the GM.\r\n\r\nYou can use an action to press one side of the cube to cast the _gate_ spell with it, opening a portal to the plane keyed to that side. Alternatively, if you use an action to press one side twice, you can cast the _plane shift_ spell (save DC 17) with the cube and transport the targets to the plane keyed to that side.\r\n\r\nThe cube has 3 charges. Each use of the cube expends 1 charge. The cube regains 1d3 expended charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce cube de 7,5 cm de côté irradie une énergie magique palpable. Ses six faces sont chacune liée à un plan d'existence différent, dont le Plan Matériel. Les autres faces sont reliées à des plans choisis par le MD. Vous pouvez utiliser une action pour appuyer sur une face afin de lancer le sort portail et ouvrir un passage vers le plan correspondant. Alternativement, en appuyant deux fois sur une même face par une action, vous pouvez lancer le sort changement de plan (DD 17) pour transporter des cibles vers le plan correspondant. Le cube possède 3 charges ; chaque utilisation en dépense 1. Il récupère 1d3 charges dépensées chaque jour à l'aube."
+  "resume": "Cube magique permettant de lancer portail vers différents plans d'existence ou changement de plan (DD 17). Dispose de 3 charges se régénérant de 1d3 à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lancer portail vers un plan (1 charge)",
+      "Lancer changement de plan DD 17 (1 charge)",
+      "Récupération de 1d3 charges à l'aube"
+    ]
+  }
 }

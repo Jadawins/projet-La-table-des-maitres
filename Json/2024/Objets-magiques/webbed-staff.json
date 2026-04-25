@@ -1,16 +1,29 @@
 {
   "slug": "webbed-staff",
-  "nom": "Webbed Staff",
+  "nom": "Bâton Entoilé",
   "nom_original": "Webbed Staff",
   "categorie": "baton",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This staff is carved of ebony and wrapped in a net of silver wire. While holding it, you can't be caught in webs of any sort and can move through webs as if they were difficult terrain. This staff has 10 charges for the following properties. It regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a 1d20. On a 1, spidersilk surrounds the staff in a cocoon then quickly unravels itself and the staff, destroying the staff.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton en ébène empêchant l'utilisateur d'être entravé par les toiles et lui permettant de les traverser facilement ; possède 10 charges magiques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Immunité aux entraves de toiles",
+      "Traverse les toiles comme terrain difficile",
+      "Risque de destruction si dernière charge dépensée"
+    ]
+  }
 }

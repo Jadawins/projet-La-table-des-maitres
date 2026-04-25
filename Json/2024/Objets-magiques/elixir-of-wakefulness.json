@@ -1,16 +1,29 @@
 {
   "slug": "elixir-of-wakefulness",
-  "nom": "Elixir of Wakefulness",
+  "nom": "Élixir de Vigilance",
   "nom_original": "Elixir of Wakefulness",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This effervescent, crimson liquid is commonly held in a thin, glass vial capped in green wax. When you drink this elixir, its effects last for 8 hours. While the elixir is in effect, you can't fall asleep by normal means. You have advantage on saving throws against effects that would put you to sleep. If you are affected by the sleep spell, your current hit points are considered 10 higher when determining the effects of the spell.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous ne pouvez pas dormir normalement pendant 8 heures et avez l'avantage contre l'assoupissement. Contre le sort sleep, vos PV comptent comme 10 points plus élevés.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Immunité au sommeil normal (8 heures)",
+      "Avantage aux jets contre effets d'assoupissement",
+      "PV considérés +10 contre le sort sleep"
+    ]
+  }
 }

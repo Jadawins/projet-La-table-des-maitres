@@ -1,13 +1,13 @@
 {
   "slug": "gorgon",
-  "nom": "Gorgon",
+  "nom": "Gorgone",
   "nom_original": "Gorgon",
   "taille": "G",
   "type": "Monstrosity",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 19,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 114,
   "pv_formule": "12d10+48",
   "vitesse": {
@@ -62,7 +62,7 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "Trampling Charge",
+      "nom": "Charge piétinante",
       "description": "If the gorgon moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the gorgon can make one attack with its hooves against it as a bonus action.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -71,21 +71,21 @@
   ],
   "actions": [
     {
-      "nom": "Gore",
+      "nom": "Encornure",
       "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 18 (2d12 + 5) piercing damage.",
       "bonus_attaque": 8,
       "degats_de": "2d12",
       "degats_bonus": 5
     },
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 16 (2d10 + 5) bludgeoning damage.",
       "bonus_attaque": 8,
       "degats_de": "2d10",
       "degats_bonus": 5
     },
     {
-      "nom": "Petrifying Breath (Recharge 5-6)",
+      "nom": "Souffle pétrifiant (Recharge 5-6)",
       "description": "The gorgon exhales petrifying gas in a 30-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw. On a failed save, a target begins to turn to stone and is restrained. The restrained target must repeat the saving throw at the end of its next turn. On a success, the effect ends on the target. On a failure, the target is petrified until freed by the greater restoration spell or other magic.",
       "bonus_attaque": null,
       "degats_de": null,

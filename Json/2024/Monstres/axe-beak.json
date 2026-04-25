@@ -1,6 +1,6 @@
 {
   "slug": "axe-beak",
-  "nom": "Axe Beak",
+  "nom": "Bec-de-hache",
   "nom_original": "Axe Beak",
   "taille": "G",
   "type": "Beast",
@@ -59,7 +59,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Beak",
+      "nom": "Bec",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d8",

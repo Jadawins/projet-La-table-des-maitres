@@ -7,10 +7,21 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "If the stone is touching the ground, you can use an action to speak its command word and summon an earth elemental, as if you had cast the _conjure elemental_ spell. The stone can't be used this way again until the next dawn. The stone weighs 5 pounds.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Invoque un élémentaire de terre une fois par jour en utilisant l'action et le mot de commande, tant que la pierre touche le sol.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Invoque un élémentaire de terre une fois par jour"
+    ]
+  }
 }

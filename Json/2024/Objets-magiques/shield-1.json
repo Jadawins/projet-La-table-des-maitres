@@ -1,16 +1,27 @@
 {
   "slug": "shield-1",
-  "nom": "Shield (+1)",
+  "nom": "Bouclier +1",
   "nom_original": "Shield (+1)",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While holding this Shield, you have a bonus to Armor Class determined by the Shield's rarity, in addition to the Shield's normal bonus to AC.",
   "effets": [],
   "poids": "6.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bouclier magique qui confère un bonus +1 à la classe d'armure en addition du bonus normal du bouclier.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 à la CA en sus du bonus normal du bouclier"
+    ]
+  }
 }

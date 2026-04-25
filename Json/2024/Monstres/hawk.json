@@ -60,7 +60,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Keen Sight",
+      "nom": "Vue aiguisée",
       "description": "The hawk has advantage on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Talons",
+      "nom": "Serres",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
       "bonus_attaque": 5,
       "degats_de": null,

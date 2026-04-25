@@ -7,7 +7,7 @@
   "sous_type": "demon",
   "alignement": "chaotic evil",
   "ca": 16,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 136,
   "pv_formule": "13d10+65",
   "vitesse": {
@@ -62,8 +62,8 @@
     "tremblements": null
   },
   "langues": [
-    "Abyssal",
-    "telepathy 120 ft."
+    "abyssal",
+    "télépathie 36 m"
   ],
   "fp": "8",
   "fp_numerique": 8,
@@ -71,14 +71,14 @@
   "experience": 3900,
   "traits": [
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The hezrou has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Stench",
+      "nom": "Puanteur",
       "description": "Any creature that starts its turn within 10 feet of the hezrou must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. On a successful saving throw, the creature is immune to the hezrou's stench for 24 hours.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -87,28 +87,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The hezrou makes three attacks: one with its bite and two with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d10",
       "degats_bonus": 4
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Variant: Summon Demon (1/Day)",
+      "nom": "Variante : Invoquer un démon (1/jour)",
       "description": "The demon chooses what to summon and attempts a magical summoning.\nA hezrou has a 30 percent chance of summoning 2d6 dretches or one hezrou.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
       "bonus_attaque": null,
       "degats_de": null,

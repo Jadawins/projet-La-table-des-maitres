@@ -1,16 +1,29 @@
 {
   "slug": "second-wind",
-  "nom": "Second Wind",
+  "nom": "Souffle Nouveau",
   "nom_original": "Second Wind",
   "categorie": "anneau",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This plain, copper band holds a clear, spherical crystal. When you run out of breath or are choking, you can use a reaction to activate the ring. The crystal shatters and air fills your lungs, allowing you to continue to hold your breath for a number of minutes equal to 1 + your Constitution modifier (minimum 30 seconds). A shattered crystal magically reforms at the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un anneau de cuivre avec cristal qui permet de continuer à retenir son souffle quand on s'étouffe.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Utilisation en réaction pour remplir les poumons d'air",
+      "Permet de retenir son souffle 1 + modificateur de Constitution minutes (min 30 sec)",
+      "Cristal se reforme à l'aube"
+    ]
+  }
 }

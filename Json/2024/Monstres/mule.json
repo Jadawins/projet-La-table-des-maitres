@@ -58,14 +58,14 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Beast of Burden",
+      "nom": "Bête de somme",
       "description": "The mule is considered to be a Large animal for the purpose of determining its carrying capacity.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Sure-Footed",
+      "nom": "Sûr de ses pas",
       "description": "The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
       "bonus_attaque": 4,
       "degats_de": "1d4",

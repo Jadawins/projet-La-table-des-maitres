@@ -1,17 +1,29 @@
 {
   "slug": "cloak-of-the-bat",
-  "nom": "Cape de la chauve-souris",
+  "nom": "Cape de la Chauve-souris",
   "nom_original": "Cloak of the Bat",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this cloak, you have advantage on Dexterity (Stealth) checks. In an area of dim light or darkness, you can grip the edges of the cloak with both hands and use it to fly at a speed of 40 feet. If you ever fail to grip the cloak's edges while flying in this way, or if you are no longer in dim light or darkness, you lose this flying speed.\r\n\r\nWhile wearing the cloak in an area of dim light or darkness, you can use your action to cast _polymorph_ on yourself, transforming into a bat. While you are in the form of the bat, you retain your Intelligence, Wisdom, and Charisma scores. The cloak can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant cette cape, vous avez l'avantage aux tests de Dextérité (Discrétion). Dans une zone de lumière faible ou d'obscurité, vous pouvez saisir les bords de la cape des deux mains et l'utiliser pour voler à une vitesse de 12 mètres. Si jamais vous relâchez les bords de la cape en volant de cette façon, ou si vous n'êtes plus en lumière faible ou dans l'obscurité, vous perdez cette vitesse de vol.\n\nEn portant la cape dans une zone de lumière faible ou d'obscurité, vous pouvez utiliser votre action pour lancer _métamorphose_ sur vous-même, vous transformant en chauve-souris. Sous forme de chauve-souris, vous conservez vos valeurs d'Intelligence, de Sagesse et de Charisme. Le cape ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
+  "resume": "Cape conférant l'avantage à la Discrétion, permettant de voler à 12 m en lumière faible/obscurité ou de se transformer en chauve-souris une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Discrétion",
+      "Vol à 12 m en lumière faible/obscurité",
+      "Métamorphose en chauve-souris (1/jour à l'aube)"
+    ]
+  }
 }

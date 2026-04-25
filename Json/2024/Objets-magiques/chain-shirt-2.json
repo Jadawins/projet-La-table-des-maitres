@@ -1,17 +1,25 @@
 {
   "slug": "chain-shirt-2",
-  "nom": "Chain Shirt (+2)",
+  "nom": "Chemise de Mailles +2",
   "nom_original": "Chain Shirt (+2)",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
   "effets": [],
   "poids": "20.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous bénéficiez d'un bonus à la CA tant que vous portez cette armure. Ce bonus est déterminé par sa rareté."
+  "resume": "Armure magique offrant un bonus de +2 à la classe d'armure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 2,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": []
+  }
 }

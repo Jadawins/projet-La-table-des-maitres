@@ -1,6 +1,6 @@
 {
   "slug": "lizard",
-  "nom": "Lizard",
+  "nom": "Lézard",
   "nom_original": "Lizard",
   "taille": "TP",
   "type": "Beast",
@@ -59,7 +59,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
       "bonus_attaque": null,
       "degats_de": null,

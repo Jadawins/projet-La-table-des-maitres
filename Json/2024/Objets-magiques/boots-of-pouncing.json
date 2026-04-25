@@ -7,11 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These soft leather boots have a collar made of Albino Death Weasel fur (see Creature Codex). While you wear these boots, your walking speed becomes 40 feet, unless your walking speed is higher. Your speed is still reduced if you are encumbered or wearing heavy armor. If you move at least 20 feet straight toward a creature and hit it with a melee weapon attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, you can make one melee weapon attack against it as a bonus action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ces bottes en cuir souple ont un col en fourrure de Belette de la mort albinos. Tant que vous les portez, votre vitesse de déplacement à pied devient 12 mètres, sauf si elle est déjà supérieure. Votre vitesse reste réduite si vous êtes surchargé ou portez une armure lourde. Si vous vous déplacez d'au moins 6 mètres en ligne droite vers une créature et la touchez avec une attaque d'arme de mêlée au même tour, la cible doit réussir un jet de sauvegarde de Force DD 13 ou être mise à terre. Si la cible est à terre, vous pouvez effectuer une attaque d'arme de mêlée supplémentaire contre elle en tant qu'action bonus."
+  "resume": "Augmentent votre vitesse à 12 m et permettent de mettre à terre une créature après un déplacement de 6 m minimum en ligne droite, avec une attaque bonus si elle est déjà au sol.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de déplacement 12 m",
+      "Mise à terre au terme d'une charge (Force DD 13)",
+      "Attaque bonus contre créature au sol"
+    ]
+  }
 }

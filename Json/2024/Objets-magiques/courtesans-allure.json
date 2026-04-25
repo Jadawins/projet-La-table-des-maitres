@@ -1,17 +1,29 @@
 {
   "slug": "courtesans-allure",
-  "nom": "Courtesan's Allure",
+  "nom": "Allure de courtisane",
   "nom_original": "Courtesan's Allure",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This perfume has a sweet, floral scent and captivates those with high social standing. The perfume can cover one Medium or smaller creature, and applying it takes 1 minute. For 1 hour, the affected creature gains a +5 bonus to Charisma checks made to socially interact with or influence nobles, politicians, or other individuals with high social standing.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce parfum au doux parfum floral charme ceux qui occupent une position sociale élevée. Le parfum peut couvrir une créature de taille M ou inférieure, et son application prend 1 minute. Pendant 1 heure, la créature affectée obtient un bonus de +5 aux tests de Charisme effectués pour interagir socialement ou exercer une influence sur des nobles, des personnalités politiques ou d'autres individus de haut rang."
+  "resume": "Parfum floral augmentant les tests de Charisme de +5 vis-à-vis des nobles et personnalités de haut rang pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+5 aux tests de Charisme envers les nobles et personnalités",
+      "Durée 1 heure",
+      "S'applique en 1 minute"
+    ]
+  }
 }

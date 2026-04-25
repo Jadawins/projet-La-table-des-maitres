@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-empowering-truth",
-  "nom": "Potion de Empowering Truth",
+  "nom": "Potion de Vérité Renforcée",
   "nom_original": "Potion of Empowering Truth",
   "categorie": "potion",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "A withered snake's tongue floats in the shimmering gold liquid within this crystalline vial. When you drink this potion, you regain one expended spell slot or one expended use of a class feature, such as Divine Sense, Rage, Wild Shape, or other feature with limited uses. Until you finish a long rest, you can't speak a deliberate lie. You are aware of this effect after drinking the potion. Your words can be evasive, as long as they remain within the boundaries of the truth.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous retrouvez un emplacement de sort ou une utilisation de capacité de classe dépensée. Jusqu'à votre prochain repos long, vous ne pouvez pas prononcer de mensonge délibéré, bien que vos paroles puissent rester évasives.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Retrouvez 1 emplacement de sort ou utilisation de capacité",
+      "Impossible de mentir délibérément jusqu'au repos long",
+      "Vous êtes conscient de cet effet"
+    ]
+  }
 }

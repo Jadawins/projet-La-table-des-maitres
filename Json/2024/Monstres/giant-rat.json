@@ -1,6 +1,6 @@
 {
   "slug": "giant-rat",
-  "nom": "Giant Rat",
+  "nom": "Rat géant",
   "nom_original": "Giant Rat",
   "taille": "P",
   "type": "Beast",
@@ -58,14 +58,14 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The rat has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d4",

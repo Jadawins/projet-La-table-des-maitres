@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-dire-cleansing",
-  "nom": "Potion de Dire Cleansing",
+  "nom": "Potion de Nettoyage Terrible",
   "nom_original": "Potion of Dire Cleansing",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "For 1 hour after drinking this potion, you have resistance to poison damage, and you have advantage on saving throws against being blinded, deafened, paralyzed, and poisoned. In addition, if you are poisoned, this potion neutralizes the poison. Known for its powerful, somewhat burning smell, this potion is difficult to drink, requiring a successful DC 13 Constitution saving throw to drink it. On a failure, you are poisoned for 10 minutes and don't gain the benefits of the potion.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pendant 1 heure, vous avez une résistance aux dégâts de poison et l'avantage aux jets de sauvegarde contre l'aveuglement, la surdité, la paralysie et l'empoisonnement. Le poison existant est neutralisé, mais boire la potion nécessite un test de Constitution DD 13 ou vous êtes empoisonné pendant 10 minutes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Résistance aux dégâts de poison pendant 1 heure",
+      "Avantage aux JS contre aveuglement, surdité, paralysie, poison",
+      "Neutralise le poison existant"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "scrolls-of-correspondence",
-  "nom": "Scrolls of Correspondence",
+  "nom": "Parchemins de Correspondance",
   "nom_original": "Scrolls of Correspondence",
   "categorie": "parchemin",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "parchemin",
-  "description": "These vellum scrolls always come in pairs. Anything written on one scroll also appears on the matching scroll, as long as they are both on the same plane of existence. Each scroll can hold up to 75 words at a time. While writing on one scroll, you are aware that the words are appearing on a paired scroll, and you know if no creature bears the paired scroll. The scrolls don't translate words written on them, and the reader and writer must be able to read and write the same language to understanding the writing on the scrolls. While holding one of the scrolls, you can use an action to tap it three times with a quill and speak a command word, causing both scrolls to go blank. If one of the scrolls in the pair is destroyed, the other scroll becomes nonmagical.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Paire de parchemins magiquement liés où tout texte écrit sur l'un apparaît instantanément sur l'autre. Capacité de 75 mots par parchemin.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Communication écrite instantanée entre deux parchemins",
+      "Capacité 75 mots par parchemin",
+      "Nécessite même langue, détection si un parchemin manque"
+    ]
+  }
 }

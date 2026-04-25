@@ -7,10 +7,21 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Your Intelligence score is 19 while you wear this headband. It has no effect on you if your Intelligence is already 19 or higher.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Fixe votre score d'Intelligence à 19 pendant que vous le portez, sans effet si votre Intelligence est déjà 19 ou plus.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Intelligence fixée à 19"
+    ]
+  }
 }

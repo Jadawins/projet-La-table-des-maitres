@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-malleability",
-  "nom": "Potion de Malleability",
+  "nom": "Potion de Flexibilité",
   "nom_original": "Potion of Malleability",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "The glass bottle holding this thick, red liquid is strangely pliable, and compresses in your hand under the slightest pressure while it still holds the magical liquid. When you drink this potion, your body becomes extremely flexible and adaptable to pressure. For 1 hour, you have resistance to bludgeoning damage, can squeeze through a space large enough for a creature two sizes smaller than you, and have advantage on Dexterity (Acrobatics) checks made to escape a grapple.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Rend votre corps extrêmement flexible pendant 1 heure. Vous gagnez une résistance aux dégâts contondants, pouvez vous faufiler dans des espaces très étroits et avez l'avantage aux tests d'Acrobaties pour échapper à une saisie.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts contondants (1 h)",
+      "Peut se faufiler dans des espaces très étroits",
+      "Avantage aux tests d'Acrobaties pour échapper à une saisie"
+    ]
+  }
 }

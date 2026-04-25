@@ -58,10 +58,10 @@
     "tremblements": null
   },
   "langues": [
-    "Celestial",
-    "Elvish",
-    "Sylvan",
-    "telepathy 60 ft."
+    "céleste",
+    "elfique",
+    "sylvestre",
+    "télépathie 18 m"
   ],
   "fp": "5",
   "fp_numerique": 5,
@@ -76,21 +76,21 @@
       "degats_bonus": null
     },
     {
-      "nom": "Innate Spellcasting",
+      "nom": "Incantation innée",
       "description": "The unicorn's innate spellcasting ability is Charisma (spell save DC 14). The unicorn can innately cast the following spells, requiring no components:\n\nAt will: detect evil and good, druidcraft, pass without trace\n1/day each: calm emotions, dispel evil and good, entangle",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The unicorn has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Weapons",
+      "nom": "Armes magiques",
       "description": "The unicorn's weapon attacks are magical.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -99,35 +99,35 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The unicorn makes two attacks: one with its hooves and one with its horn.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
       "bonus_attaque": 7,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Horn",
+      "nom": "Coup de corne",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
       "bonus_attaque": 7,
       "degats_de": "1d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Healing Touch (3/Day)",
+      "nom": "Toucher de guérison (3/jour)",
       "description": "The unicorn touches another creature with its horn. The target magically regains 11 (2d8 + 2) hit points. In addition, the touch removes all diseases and neutralizes all poisons afflicting the target.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Teleport (1/Day)",
+      "nom": "Téléportation (1/jour)",
       "description": "The unicorn magically teleports itself and up to three willing creatures it can see within 5 ft. of it, along with any equipment they are wearing or carrying, to a location the unicorn is familiar with, up to 1 mile away.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -138,21 +138,21 @@
   "reactions": [],
   "actions_legendaires": [
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "The unicorn makes one attack with its hooves.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Shimmering Shield (Costs 2 Actions)",
+      "nom": "Bouclier scintillant (Coûte 2 actions)",
       "description": "The unicorn creates a shimmering, magical field around itself or another creature it can see within 60 ft. of it. The target gains a +2 bonus to AC until the end of the unicorn's next turn.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Heal Self (Costs 3 Actions)",
+      "nom": "Se soigner (Coûte 3 actions)",
       "description": "The unicorn magically regains 11 (2d8 + 2) hit points.",
       "bonus_attaque": null,
       "degats_de": null,

@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any alignment",
   "ca": 12,
-  "ca_detail": "15 with _mage armor_",
+  "ca_detail": "15 with _armure du mage_",
   "pv": 99,
   "pv_formule": "18d8+18",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": null
   },
   "competences": {
-    "arcana": 13,
-    "history": 13
+    "arcanes": 13,
+    "histoire": 13
   },
   "resistances": [
     "damage from spells; non magical bludgeoning",
@@ -67,14 +67,14 @@
   "experience": 8400,
   "traits": [
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The archmage has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Spellcasting",
+      "nom": "Incantation",
       "description": "The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:\n\n* Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp\n* 1st level (4 slots): detect magic, identify, mage armor*, magic missile\n* 2nd level (3 slots): detect thoughts, mirror image, misty step\n* 3rd level (3 slots): counterspell,fly, lightning bolt\n* 4th level (3 slots): banishment, fire shield, stoneskin*\n* 5th level (3 slots): cone of cold, scrying, wall of force\n* 6th level (1 slot): globe of invulnerability\n* 7th level (1 slot): teleport\n* 8th level (1 slot): mind blank*\n* 9th level (1 slot): time stop\n* The archmage casts these spells on itself before combat.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -83,7 +83,7 @@
   ],
   "actions": [
     {
-      "nom": "Dagger",
+      "nom": "Poignard",
       "description": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "1d4",

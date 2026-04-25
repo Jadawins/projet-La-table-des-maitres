@@ -1,13 +1,13 @@
 {
   "slug": "bandit-captain",
-  "nom": "Bandit Captain",
+  "nom": "Capitaine des bandits",
   "nom_original": "Bandit Captain",
   "taille": "M",
   "type": "Humanoid",
   "sous_type": "any race",
   "alignement": "any non-lawful alignment",
   "ca": 15,
-  "ca_detail": "studded leather",
+  "ca_detail": "armure de cuir clouté",
   "pv": 65,
   "pv_formule": "10d8+20",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": null
   },
   "competences": {
-    "athletics": 4,
-    "deception": 4
+    "athlétisme": 4,
+    "tromperie": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -64,21 +64,21 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The captain makes three melee attacks: two with its scimitar and one with its dagger. Or the captain makes two ranged attacks with its daggers.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Scimitar",
+      "nom": "Cimeterre",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d6",
       "degats_bonus": 3
     },
     {
-      "nom": "Dagger",
+      "nom": "Poignard",
       "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 5 (1d4 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d4",
@@ -88,7 +88,7 @@
   "actions_bonus": [],
   "reactions": [
     {
-      "nom": "Parry",
+      "nom": "Parade",
       "description": "The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.",
       "bonus_attaque": null,
       "degats_de": null,

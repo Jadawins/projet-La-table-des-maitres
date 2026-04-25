@@ -1,16 +1,28 @@
 {
   "slug": "rod-of-warning",
-  "nom": "Sceptre de Warning",
+  "nom": "Sceptre de Vigilance",
   "nom_original": "Rod of Warning",
   "categorie": "sceptre",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This plain, wooden rod is topped with an orb of clear, polished crystal. You can use an action activate it with a command word while designating a particular kind of creature (orcs, wolves, etc.). When such a creature comes within 120 feet of the rod, the crystal glows, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. You can use an action to deactivate the rod's light or change the kind of creature it detects. The rod doesn't need to be in your possession to function, but you must have it in hand to activate it, deactivate it, or change the kind of creature it detects.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Détecte un type de créature choisi dans un rayon de 120 pieds et émet une lumière brillante. Fonctionne sans être tenu en main une fois activé.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Détection de créature à 120 pieds",
+      "Émission de lumière (10 pieds brillante, 10 pieds faible)"
+    ]
+  }
 }

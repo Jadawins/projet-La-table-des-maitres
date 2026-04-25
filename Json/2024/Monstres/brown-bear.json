@@ -1,13 +1,13 @@
 {
   "slug": "brown-bear",
-  "nom": "Brown Bear",
+  "nom": "Ours brun",
   "nom_original": "Brown Bear",
   "taille": "G",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 11,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 34,
   "pv_formule": "4d10+12",
   "vitesse": {
@@ -60,7 +60,7 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The bear has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,21 +69,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The bear makes two attacks: one with its bite and one with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "2d6",

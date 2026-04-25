@@ -7,7 +7,7 @@
   "sous_type": "demon",
   "alignement": "chaotic evil",
   "ca": 11,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 18,
   "pv_formule": "4d6+4",
   "vitesse": {
@@ -60,8 +60,8 @@
     "tremblements": null
   },
   "langues": [
-    "Abyssal",
-    "telepathy 60 ft. (works only with creatures that understand Abyssal)"
+    "abyssal",
+    "télépathie 18 m"
   ],
   "fp": "1/4",
   "fp_numerique": 0.25,
@@ -70,28 +70,28 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The dretch makes two attacks: one with its bite and one with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage.",
       "bonus_attaque": 2,
       "degats_de": "1d6",
       "degats_bonus": null
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 5 (2d4) slashing damage.",
       "bonus_attaque": 2,
       "degats_de": "2d4",
       "degats_bonus": null
     },
     {
-      "nom": "Fetid Cloud (1/Day)",
+      "nom": "Nuage fétide (1/jour)",
       "description": "A 10-foot radius of disgusting green gas extends out from the dretch. The gas spreads around corners, and its area is lightly obscured. It lasts for 1 minute or until a strong wind disperses it. Any creature that starts its turn in that area must succeed on a DC 11 Constitution saving throw or be poisoned until the start of its next turn. While poisoned in this way, the target can take either an action or a bonus action on its turn, not both, and can't take reactions.",
       "bonus_attaque": null,
       "degats_de": null,

@@ -1,16 +1,29 @@
 {
   "slug": "mapping-ink",
-  "nom": "Mapping Ink",
+  "nom": "Encre de Cartographie",
   "nom_original": "Mapping Ink",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This viscous ink is typically found in 1d4 pots, and each pot contains 3 doses. You can use an action to pour one dose of the ink onto parchment, vellum, or cloth then fold the material. As long as the ink-stained material is folded and on your person, the ink captures your footsteps and surroundings on the material, mapping out your travels with great precision. You can unfold the material to pause the mapping and refold it to begin mapping again. Deduct the time the ink maps your travels in increments of 1 hour from the total mapping time. Each dose of ink can map your travels for 8 hours.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Encre magique qui enregistre automatiquement vos déplacements et votre environnement sur un matériau plié. Chaque dose cartographie 8 heures de voyage.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Enregistrement automatique des déplacements et environnement",
+      "8 heures de cartographie par dose",
+      "Pause et reprise de l'enregistrement en repliant le matériau"
+    ]
+  }
 }

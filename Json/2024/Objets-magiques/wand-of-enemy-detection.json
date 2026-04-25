@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This wand has 7 charges. While holding it, you can use an action and expend 1 charge to speak its command word. For the next minute, you know the direction of the nearest creature hostile to you within 60 feet, but not its distance from you. The wand can sense the presence of hostile creatures that are ethereal, invisible, disguised, or hidden, as well as those in plain sight. The effect ends if you stop holding the wand.\n\nThe wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette révélant la direction de la créature ennemie la plus proche dans un rayon de 60 pieds pendant 1 minute. 7 charges regagnées chaque jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 7,
+    "effets": [
+      "Détecte l'ennemi le plus proche dans 60 pieds (direction seulement)",
+      "Fonctionne avec créatures invisibles, déguisées ou cachées",
+      "Détruit sur un coup de 1 au d20 si dernière charge dépensée"
+    ]
+  }
 }

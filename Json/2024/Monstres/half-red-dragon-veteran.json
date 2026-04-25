@@ -1,6 +1,6 @@
 {
   "slug": "half-red-dragon-veteran",
-  "nom": "Half-Red Dragon Veteran",
+  "nom": "Vétéran demi-dragon rouge",
   "nom_original": "Half-Red Dragon Veteran",
   "taille": "M",
   "type": "Humanoid",
@@ -54,8 +54,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "5",
   "fp_numerique": 5,
@@ -64,35 +64,35 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Longsword",
+      "nom": "Épée longue",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.",
       "bonus_attaque": 5,
       "degats_de": "1d8",
       "degats_bonus": 3
     },
     {
-      "nom": "Shortsword",
+      "nom": "Épée courte",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d6",
       "degats_bonus": 3
     },
     {
-      "nom": "Heavy Crossbow",
+      "nom": "Arbalète lourde",
       "description": "Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d10",
       "degats_bonus": 1
     },
     {
-      "nom": "Fire Breath (Recharge 5-6)",
+      "nom": "Souffle de feu (Recharge 5-6)",
       "description": "The veteran exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 24 (7d6) fire damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "7d6",

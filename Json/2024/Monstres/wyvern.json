@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 110,
   "pv_formule": "13d10+39",
   "vitesse": {
@@ -61,28 +61,28 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The wyvern makes two attacks: one with its bite and one with its stinger. While flying, it can use its claws in place of one other attack.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Stinger",
+      "nom": "Dard",
       "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage. The target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 7,
       "degats_de": "2d6",

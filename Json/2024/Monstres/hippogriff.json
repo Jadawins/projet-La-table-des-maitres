@@ -60,7 +60,7 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Keen Sight",
+      "nom": "Vue aiguisée",
       "description": "The hippogriff has advantage on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,21 +69,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The hippogriff makes two attacks: one with its beak and one with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Beak",
+      "nom": "Bec",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d10",
       "degats_bonus": 3
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "2d6",

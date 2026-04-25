@@ -1,16 +1,28 @@
 {
   "slug": "mantle-of-the-void",
-  "nom": "Mantle of the Void",
+  "nom": "Manteau du néant",
   "nom_original": "Mantle of the Void",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this midnight-blue mantle covered in writhing runes, you gain a +1 bonus to saving throws, and if you succeed on a saving throw against a spell that allows you to make a saving throw to take only half the damage or suffer partial effects, you instead take no damage and suffer none of the spell's effects.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Manteau bleu nuit couvert de runes qui octroie +1 aux jets de sauvegarde et réduit les dégâts des sorts.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets de sauvegarde",
+      "Succès au jet de sauvegarde contre un sort = aucun dégât ni effet (au lieu de dégâts réduits)"
+    ]
+  }
 }

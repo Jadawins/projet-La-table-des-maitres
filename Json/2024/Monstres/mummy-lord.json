@@ -1,13 +1,13 @@
 {
   "slug": "mummy-lord",
-  "nom": "Mummy Lord",
+  "nom": "Seigneur momie",
   "nom_original": "Mummy Lord",
   "taille": "M",
   "type": "Undead",
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 97,
   "pv_formule": "13d8+39",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": 8
   },
   "competences": {
-    "history": 5,
+    "histoire": 5,
     "religion": 5
   },
   "resistances": [],
@@ -76,21 +76,21 @@
   "experience": 13000,
   "traits": [
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The mummy lord has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Rejuvenation",
+      "nom": "Rajeunissement",
       "description": "A destroyed mummy lord gains a new body in 24 hours if its heart is intact, regaining all its hit points and becoming active again. The new body appears within 5 feet of the mummy lord's heart.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Spellcasting",
+      "nom": "Incantation",
       "description": "The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:\n\n* Cantrips (at will): sacred flame, thaumaturgy\n* 1st level (4 slots): command, guiding bolt, shield of faith\n* 2nd level (3 slots): hold person, silence, spiritual weapon\n* 3rd level (3 slots): animate dead, dispel magic\n* 4th level (3 slots): divination, guardian of faith\n* 5th level (2 slots): contagion, insect plague\n* 6th level (1 slot): harm",
       "bonus_attaque": null,
       "degats_de": null,
@@ -99,21 +99,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The mummy can use its Dreadful Glare and makes one attack with its rotting fist.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Rotting Fist",
+      "nom": "Poing pourrissant",
       "description": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 14 (3d6 + 4) bludgeoning damage plus 21 (6d6) necrotic damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic.",
       "bonus_attaque": 9,
       "degats_de": "3d6+6d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Dreadful Glare",
+      "nom": "Regard terrifiant",
       "description": "The mummy lord targets one creature it can see within 60 feet of it. If the target can see the mummy lord, it must succeed on a DC 16 Wisdom saving throw against this magic or become frightened until the end of the mummy's next turn. If the target fails the saving throw by 5 or more, it is also paralyzed for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies and mummy lords for the next 24 hours.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -124,35 +124,35 @@
   "reactions": [],
   "actions_legendaires": [
     {
-      "nom": "Attack",
+      "nom": "Attaque",
       "description": "The mummy lord makes one attack with its rotting fist or uses its Dreadful Glare.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Blinding Dust",
+      "nom": "Poussière aveuglante",
       "description": "Blinding dust and sand swirls magically around the mummy lord. Each creature within 5 feet of the mummy lord must succeed on a DC 16 Constitution saving throw or be blinded until the end of the creature's next turn.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Blasphemous Word (Costs 2 Actions)",
+      "nom": "Parole blasphématoire (coûte 2 actions)",
       "description": "The mummy lord utters a blasphemous word. Each non-undead creature within 10 feet of the mummy lord that can hear the magical utterance must succeed on a DC 16 Constitution saving throw or be stunned until the end of the mummy lord's next turn.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Channel Negative Energy (Costs 2 Actions)",
+      "nom": "Canaliser l'énergie négative (coûte 2 actions)",
       "description": "The mummy lord magically unleashes negative energy. Creatures within 60 feet of the mummy lord, including ones behind barriers and around corners, can't regain hit points until the end of the mummy lord's next turn.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Whirlwind of Sand (Costs 2 Actions)",
+      "nom": "Tourbillon de sable (coûte 2 actions)",
       "description": "The mummy lord magically transforms into a whirlwind of sand, moves up to 60 feet, and reverts to its normal form. While in whirlwind form, the mummy lord is immune to all damage, and it can't be grappled, petrified, knocked prone, restrained, or stunned. Equipment worn or carried by the mummy lord remain in its possession.",
       "bonus_attaque": null,
       "degats_de": null,

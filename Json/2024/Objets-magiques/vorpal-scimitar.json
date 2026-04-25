@@ -1,16 +1,29 @@
 {
   "slug": "vorpal-scimitar",
-  "nom": "Vorpal Scimitar",
+  "nom": "Cimeterre Vorpal",
   "nom_original": "Vorpal Scimitar",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. In addition, the weapon ignores Resistance to Slashing damage.\n\nWhen you use this weapon to attack a creature that has at least one head and roll a 20 on the d20 for the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it has Immunity to Slashing damage, if it doesn't have or need a head, or if the GM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 30 Slashing damage from the hit. If the creature has Legendary Resistance, it can expend one daily use of that trait to avoid losing its head, taking the extra damage instead.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cimeterre magique +3 ignorant les résistances aux dégâts tranchants. Sur un 20 au d20, tranche la tête d'une créature (mort si elle ne peut pas survivre sans, sinon 30 dégâts supplémentaires).",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Ignore les résistances aux dégâts tranchants",
+      "Coup critique (20) : tranche une tête ou inflige 30 dégâts tranchants supplémentaires",
+      "Peut être annulé par une résistance légendaire"
+    ]
+  }
 }

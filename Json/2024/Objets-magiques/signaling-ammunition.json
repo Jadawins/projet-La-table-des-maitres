@@ -1,16 +1,29 @@
 {
   "slug": "signaling-ammunition",
-  "nom": "Signaling Ammunition",
+  "nom": "Munitions Signalisantes",
   "nom_original": "Signaling Ammunition",
   "categorie": "autre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "This magic ammunition creates a trail of light behind it as it flies through the air. If the ammunition flies through the air and doesn't hit a creature, it releases a burst of light that can be seen for up to 1 mile. If the ammunition hits a creature, the creature must succeed on a DC 13 Dexterity saving throw or be outlined in golden light until the end of its next turn. While the creature is outlined in light, it can't benefit from being invisible and any attack against it has advantage if the attacker can see the outlined creature.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Munitions magiques créant une traînée lumineuse en vol et dévoilant les créatures touchées jusqu'à 1 mile de portée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crée une traînée de lumière visible jusqu'à 1 mile",
+      "Cible touchée illuminée en or, désavantage d'invisibilité",
+      "Attaques contre la cible ont avantage si visible"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "mug-of-merry-drinking",
-  "nom": "Mug of Merry Drinking",
+  "nom": "Chope de Joyeuse Boisson",
   "nom_original": "Mug of Merry Drinking",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you hold this broad, tall mug, any liquid placed inside it warms or cools to exactly the temperature you want it, though the mug can't freeze or boil the liquid. If you drop the mug or it is knocked from your hand, it always lands upright without spilling its contents.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chope magique qui régule la température de tout liquide à votre convenance et ne renverse jamais son contenu même si elle tombe.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Ajuste la température du liquide exactement comme souhaité",
+      "Retombe toujours à l'endroit sans renverser son contenu"
+    ]
+  }
 }

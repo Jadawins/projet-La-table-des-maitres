@@ -1,17 +1,29 @@
 {
   "slug": "butter-of-disbelief",
-  "nom": "Butter of Disbelief",
+  "nom": "Beurre de l'incrédulité",
   "nom_original": "Butter of Disbelief",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This stick of magical butter is carved with arcane runes and never melts or spoils. It has 3 charges. While holding this butter, you can use an action to slice off a piece and expend 1 charge to cast the grease spell (save DC 13) from it. The grease that covers the ground looks like melted butter. The butter regains all expended charges daily at dawn. If you expend the last charge, the butter disappears.",
-  "description_fr": "Ce bâton de beurre magique est gravé de runes arcaniques et ne fond ni ne se gâte jamais. Il possède 3 charges. Tant que vous le tenez en main, vous pouvez utiliser une action pour en couper un morceau et dépenser 1 charge afin de lancer le sort graisse (DD de sauvegarde 13). La graisse qui recouvre le sol ressemble à du beurre fondu. Le beurre récupère toutes ses charges dépensées chaque jour à l'aube. Si vous dépensez la dernière charge, le beurre disparaît.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton de beurre magique indestructible possédant 3 charges permettant de lancer graisse (DD 13) en dépensant 1 charge, régénérant chaque aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Dépense 1 charge : lance graisse (DD sauvegarde 13)",
+      "Récupère toutes les charges à l'aube",
+      "Disparaît après la dernière charge dépensée"
+    ]
+  }
 }

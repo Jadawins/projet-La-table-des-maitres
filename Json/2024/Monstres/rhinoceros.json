@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 11,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 45,
   "pv_formule": "6d10+12",
   "vitesse": {
@@ -67,7 +67,7 @@
   ],
   "actions": [
     {
-      "nom": "Gore",
+      "nom": "Encornure",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.",
       "bonus_attaque": 7,
       "degats_de": "2d8",

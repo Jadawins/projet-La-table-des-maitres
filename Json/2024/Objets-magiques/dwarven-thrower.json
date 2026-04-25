@@ -1,16 +1,29 @@
 {
   "slug": "dwarven-thrower",
-  "nom": "Dwarven Thrower",
+  "nom": "Lance-pierres nain",
   "nom_original": "Dwarven Thrower",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack and damage rolls made with this magic weapon. It has the thrown property with a normal range of 20 feet and a long range of 60 feet. When you hit with a ranged attack using this weapon, it deals an extra 1d8 damage or, if the target is a giant, 2d8 damage. Immediately after the attack, the weapon flies back to your hand.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique +3 dotée de la propriété de lancer qui revient après chaque attaque et inflige des dégâts supplémentaires contre les géants.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "supplémentaire",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus de +3 aux jets d'attaque et aux dégâts",
+      "Dégâts supplémentaires 2d8 contre les géants",
+      "Revient à votre main après chaque attaque"
+    ]
+  }
 }

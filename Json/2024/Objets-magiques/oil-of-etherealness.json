@@ -1,16 +1,28 @@
 {
   "slug": "oil-of-etherealness",
-  "nom": "Huile d'éthéréalité",
+  "nom": "Huile d'Éthéréalité",
   "nom_original": "Oil of Etherealness",
   "categorie": "potion",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "Beads of this cloudy gray oil form on the outside of its container and quickly evaporate. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of the _etherealness_ spell for 1 hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Confère l'effet du sort d'éthéréalité pendant 1 heure à une créature de taille Moyenne ou inférieure et son équipement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Accès au plan éthéré pendant 1 heure",
+      "Incorporéité et vision du plan matériel"
+    ]
+  }
 }

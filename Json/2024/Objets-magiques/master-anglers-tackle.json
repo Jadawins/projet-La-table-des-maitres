@@ -1,16 +1,28 @@
 {
   "slug": "master-anglers-tackle",
-  "nom": "Master Angler's Tackle",
+  "nom": "Attirail du Maître Pêcheur",
   "nom_original": "Master Angler's Tackle",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This is a set of well-worn but finely crafted fishing gear. You have advantage on any Wisdom (Survival) checks made to catch fish or other seafood when using it. If you ever roll a 1 on your check while using the tackle, roll again. If the second roll is a 20, you still fail to catch anything edible, but you pull up something interesting or valuable—a bottle with a note in it, a fragment of an ancient tablet carved in ancient script, a mermaid in need of help, or similar. The GM decides what you pull up and its value, if it has one.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Équipement de pêche bien usé offrant l'avantage aux tests de Survie pour pêcher et permettant de relancer les 1 (sur 20, découverte intéressante).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Survie (pêche)",
+      "Relance les 1 (critique 20 : découverte intéressante)"
+    ]
+  }
 }

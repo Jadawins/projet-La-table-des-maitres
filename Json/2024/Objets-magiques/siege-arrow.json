@@ -1,16 +1,28 @@
 {
   "slug": "siege-arrow",
-  "nom": "Siege Arrow",
+  "nom": "Flèche de Siège",
   "nom_original": "Siege Arrow",
   "categorie": "autre",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "This magic arrow's tip is enchanted to soften stone and warp wood. When this arrow hits an object or structure, it deals double damage then becomes a nonmagical arrow.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Flèche magique infligeant des dégâts doublés contre les objets et structures avant de devenir non-magique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts doublés contre les objets et structures",
+      "Ramollit la pierre et déforme le bois"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "shadow-tome",
-  "nom": "Shadow Tome",
+  "nom": "Tome d'Ombre",
   "nom_original": "Shadow Tome",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This unassuming book possesses powerful illusory magics. When you write on its pages while attuned to it, you can choose for the contents to appear to be something else entirely. A shadow tome used as a spellbook could be made to look like a cookbook, for example. To read the true text, you must speak a command word. A second speaking of the word hides the true text once more. A true seeing spell can see past the shadow tome’s magic and reveals the true text to the reader. Most shadow tomes already contain text, and it is rare to find one filled with blank pages. When you first attune to the book, you can choose to keep or remove the book’s previous contents.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce grimoire magique permet de dissimuler son vrai contenu sous l'apparence d'un autre texte. La magie peut être révélée par un mot de commande ou un sort de vision suprême.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dissimule le vrai contenu du livre",
+      "Révélable par mot de commande ou vision suprême"
+    ]
+  }
 }

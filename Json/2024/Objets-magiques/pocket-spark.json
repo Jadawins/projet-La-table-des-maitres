@@ -1,16 +1,29 @@
 {
   "slug": "pocket-spark",
-  "nom": "Pocket Spark",
+  "nom": "Étincelle de Poche",
   "nom_original": "Pocket Spark",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "What looks like a simple snuff box contains a magical, glowing ember. Though warm to the touch, the ember can be handled without damage. It can be used to ignite flammable materials quickly. Using it to light a torch, lantern, or anything else with abundant, exposed fuel takes a bonus action. Lighting any other fire takes an action. The ember is consumed when used. If the ember is consumed, the box creates a new ember at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une boîte contenant une braise magique qui peut enflammer rapidement des matériaux inflammables et se régénère à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Action bonus pour allumer une torche ou lanterne",
+      "Braise consommée après utilisation",
+      "Nouvelle braise créée à l'aube"
+    ]
+  }
 }

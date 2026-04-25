@@ -1,17 +1,29 @@
 {
   "slug": "bonebreaker-mace",
-  "nom": "Bonebreaker Mace",
+  "nom": "Masse Brise-Os",
   "nom_original": "Bonebreaker Mace",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus on attack and damage rolls made with this magic weapon. The bonus increases to +3 when you use it to attack an undead creature. Often given to the grim enforcers of great necropolises, these weapons can reduce the walking dead to splinters with a single strike. When you hit an undead creature with this magic weapon, treat that creature as if it is vulnerable to bludgeoning damage. If it is already vulnerable to bludgeoning damage, your attack deals an additional 1d6 radiant damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous obtenez un bonus de +1 aux jets d'attaque et de dégâts effectués avec cette arme magique. Le bonus passe à +3 lorsque vous l'utilisez pour attaquer une créature morte-vivante. Souvent confiées aux sombres exécuteurs des grandes nécropoles, ces armes peuvent réduire les morts-vivants en éclats d'un seul coup. Lorsque vous touchez une créature morte-vivante avec cette arme magique, traitez cette créature comme si elle était vulnérable aux dégâts contondants. Si elle est déjà vulnérable à ce type de dégâts, votre attaque inflige 1d6 dégâts radiants supplémentaires."
+  "resume": "Masse +1 devenant +3 contre les morts-vivants, les traitant comme vulnérables aux dégâts contondants et infligeant 1d6 radiants supplémentaires.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "radiants (vs morts-vivants)",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 attaque et dégâts (normal)",
+      "Bonus +3 contre morts-vivants",
+      "Cibles morts-vivantes traitées comme vulnérables aux contondants, +1d6 radiants"
+    ]
+  }
 }

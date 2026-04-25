@@ -1,16 +1,29 @@
 {
   "slug": "devils-barb",
-  "nom": "Devil's Barb",
+  "nom": "Épine diabolique",
   "nom_original": "Devil's Barb",
   "categorie": "baguette",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This thin wand is fashioned from the fiendish quill of a barbed devil. While attuned to it, you have resistance to cold damage. The wand has 6 charges for the following properties. It regains 1d6 expended charges daily at dusk. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into cinders and is destroyed. Hurl Flame. While holding the wand, you can expend 2 charges as an action to hurl a ball of devilish flame at a target you can see within 150 feet of you. The target must succeed on a DC 15 Dexterity check or take 3d6 fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire. Devil's Sight. While holding the wand, you can expend 1 charge as an action to cast the darkvision spell on yourself. Magical darkness doesn't impede this darkvision.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une baguette accordée qui confère une résistance au froid et permet de lancer des boules de feu ou la vision dans le noir magique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "3d6",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": 6,
+    "effets": [
+      "Résistance aux dégâts de froid",
+      "Projectile de feu (2 charges) : sauve CD 15 Dex ou 3d6 feu",
+      "Vision diabolique (1 charge) : darkvision immuable à la magie"
+    ]
+  }
 }

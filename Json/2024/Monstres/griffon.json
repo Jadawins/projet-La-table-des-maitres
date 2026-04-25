@@ -60,7 +60,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Keen Sight",
+      "nom": "Vue aiguisée",
       "description": "The griffon has advantage on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,21 +69,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The griffon makes two attacks: one with its beak and one with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Beak",
+      "nom": "Bec",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "1d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d6",

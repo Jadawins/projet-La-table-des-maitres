@@ -1,16 +1,29 @@
 {
   "slug": "ghost-barding-padded",
-  "nom": "Ghost Barding Padded",
+  "nom": "Armure de Bête Fantôme : Matelassée",
   "nom_original": "Ghost Barding Padded",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor is blue-green and translucent. It weighs only 1 pound, and if the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, this version of the armor doesn't. The armor's base Armor Class applies only against attacks by undead creatures and doesn't provide protection against any other attacks. When a beast wears this armor, the beast gains a +1 bonus to AC against attacks by undead creatures, and it has advantage on saving throws against the spells and special abilities of undead creatures.",
   "effets": [],
   "poids": "8.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure translucide et légère pour montures, offrant une CA +1 contre les créatures mortes-vivantes avec avantage aux sauvegardes contre leurs pouvoirs.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "CA +1 uniquement contre les créatures mortes-vivantes",
+      "Avantage aux sauvegardes contre les sorts et pouvoirs des morts-vivants",
+      "Poids réduit à 1 livre, aucune pénalité à la Discrétion"
+    ]
+  }
 }

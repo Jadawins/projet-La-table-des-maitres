@@ -1,16 +1,27 @@
 {
   "slug": "swashing-plumage",
-  "nom": "Swashing Plumage",
+  "nom": "Plume Flamboyante",
   "nom_original": "Swashing Plumage",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This plumage, a colorful bouquet of tropical hat feathers, has a small pin at its base and can be affixed to any hat or headband. Due to its distracting, ostentatious appearance, creatures hostile to you have disadvantage on opportunity attacks against you.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette plume de chapeau colorée et ostentatoire distrait vos ennemis, leur donnant un désavantage aux attaques d'opportunité contre vous.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les créatures hostiles ont un désavantage aux attaques d'opportunité contre vous"
+    ]
+  }
 }

@@ -7,11 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These furred boots are snug and feel quite warm. While you wear them, you gain the following benefits:\r\n\r\n* You have resistance to cold damage.\r\n* You ignore difficult terrain created by ice or snow.\r\n* You can tolerate temperatures as low as -50 degrees Fahrenheit without any additional protection. If you wear heavy clothes, you can tolerate temperatures as low as -100 degrees Fahrenheit.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ces bottes fourrées sont douillettes et semblent bien chaudes. Tant que vous les portez, vous bénéficiez des avantages suivants :\n\n* Vous avez la résistance aux dégâts de froid.\n* Vous ignorez le terrain difficile créé par la glace ou la neige.\n* Vous pouvez tolérer des températures jusqu'à -45 degrés Celsius sans protection supplémentaire. Si vous portez des vêtements chauds, vous pouvez tolérer des températures jusqu'à -73 degrés Celsius."
+  "resume": "Résistance aux dégâts de froid, ignore le terrain difficile de glace/neige, tolère -45°C (-73°C avec vêtements chauds).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de froid",
+      "Terrain difficile (glace/neige) ignoré",
+      "Résistance au froid extrême"
+    ]
+  }
 }

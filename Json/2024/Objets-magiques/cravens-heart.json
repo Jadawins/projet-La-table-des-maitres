@@ -1,17 +1,29 @@
 {
   "slug": "cravens-heart",
-  "nom": "Craven's Heart",
+  "nom": "Cœur du Couard",
   "nom_original": "Craven's Heart",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This leathery mass of dried meat was once a humanoid heart, taken from an individual that died while experiencing great terror. You can use an action to whisper a command word and hurl the heart to the ground, where it revitalizes and begins to beat rapidly and loudly for 1 minute. Each creature withing 30 feet of the heart has disadvantage on saving throws against being frightened. At the end of the duration, the heart bursts from the strain and is destroyed. The heart can be attacked and destroyed (AC 11; hp 3; resistance to bludgeoning damage). If the heart is destroyed before the end if its duration, each creature within 30 feet of the heart must succeed on a DC 15 Wisdom saving throw or be frightened for 1 minute. This bugbear necromancer was once the henchman of an accomplished practitioner of the dark arts named Varrus. She started as a bodyguard and tough, but her keen intellect caught her master's attention. He eventually took her on as an apprentice. Moxug is fascinated with fear, and some say she doesn't eat but instead sustains herself on the terror of her victims. She eventually betrayed Varrus, sabotaging his attempt to become a lich, and luxuriated in his fear as he realized he would die rather than achieve immortality. According to rumor, the first craven's heart she crafted came from the body of her former master.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette masse de chair séchée et coriace est un ancien cœur humanoïde, arraché à quelqu'un mort dans une terreur absolue. Vous pouvez utiliser une action pour chuchoter un mot de commande et lancer le cœur au sol, où il se revitalise et se met à battre rapidement et bruyamment pendant 1 minute. Chaque créature dans un rayon de 9 mètres autour du cœur a le désavantage aux jets de sauvegarde contre les effets de frayeur. À la fin de la durée, le cœur éclate sous la pression et est détruit. Le cœur peut être attaqué et détruit (CA 11 ; pv 3 ; résistance aux dégâts contondants). S'il est détruit avant la fin de la durée, chaque créature dans un rayon de 9 mètres doit réussir un jet de sauvegarde de Sagesse DD 15 ou être effrayée pendant 1 minute. Cette nécromancienne gobeline-ours fut jadis la lieutenante d'un éminent praticien des arts obscurs nommé Varrus. Elle commença comme garde du corps avant que son intelligence aiguisée n'attire l'attention de son maître, qui en fit son apprentie. Moxug est fascinée par la peur ; certains disent même qu'elle ne se nourrit pas mais se sustente de la terreur de ses victimes. Elle trahit finalement Varrus, sabotant sa tentative de devenir un liche, et se délecta de sa peur lorsqu'il comprit qu'il allait mourir plutôt qu'atteindre l'immortalité. Selon la rumeur, le premier cœur du couard qu'elle fabriqua provenait du cadavre de son ancien maître."
+  "resume": "Un cœur desséché qui, une fois activé, affaiblit la résistance des créatures à la frayeur dans un rayon de 9 mètres pendant 1 minute avant d'exploser.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Désavantage aux jets de sauvegarde contre la frayeur pour les créatures dans un rayon de 9 m",
+      "Explosion possible : jet de sauvegarde de Sagesse DD 15 ou effroi pendant 1 minute",
+      "Le cœur peut être détruit (CA 11, 3 PV, résistance aux dégâts contondants)"
+    ]
+  }
 }

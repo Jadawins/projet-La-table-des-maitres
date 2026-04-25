@@ -1,13 +1,13 @@
 {
   "slug": "barbed-devil",
-  "nom": "Barbed Devil",
+  "nom": "Diable barbelé",
   "nom_original": "Barbed Devil",
   "taille": "M",
   "type": "Fiend",
   "sous_type": "devil",
   "alignement": "lawful evil",
   "ca": 15,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 110,
   "pv_formule": "13d8+52",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": 5
   },
   "competences": {
-    "deception": 5,
-    "insight": 5,
+    "tromperie": 5,
+    "perspicacité": 5,
     "perception": 8
   },
   "resistances": [
@@ -65,8 +65,8 @@
     "tremblements": null
   },
   "langues": [
-    "Infernal",
-    "telepathy 120 ft."
+    "infernal",
+    "télépathie 36 m"
   ],
   "fp": "5",
   "fp_numerique": 5,
@@ -74,21 +74,21 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "Barbed Hide",
+      "nom": "Peau hérissée de barbes",
       "description": "At the start of each of its turns, the barbed devil deals 5 (1d10) piercing damage to any creature grappling it.",
       "bonus_attaque": 0,
       "degats_de": "1d10",
       "degats_bonus": null
     },
     {
-      "nom": "Devil's Sight",
+      "nom": "Vision du diable",
       "description": "Magical darkness doesn't impede the devil's darkvision.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The devil has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -97,28 +97,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The devil makes three melee attacks: one with its tail and two with its claws. Alternatively, it can use Hurl Flame twice.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "1d6",
       "degats_bonus": 3
     },
     {
-      "nom": "Tail",
+      "nom": "Queue",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d6",
       "degats_bonus": 3
     },
     {
-      "nom": "Hurl Flame",
+      "nom": "Projection de flammes",
       "description": "Ranged Spell Attack: +5 to hit, range 150 ft., one target. Hit: 10 (3d6) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire.",
       "bonus_attaque": 5,
       "degats_de": "3d6",

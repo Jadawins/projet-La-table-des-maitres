@@ -1,6 +1,6 @@
 {
   "slug": "giant-owl",
-  "nom": "Giant Owl",
+  "nom": "Hibou géant",
   "nom_original": "Giant Owl",
   "taille": "G",
   "type": "Beast",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 5,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -57,7 +57,7 @@
   "langues": [
     "Giant Owl",
     "understands Common",
-    "Elvish",
+    "elfique",
     "and Sylvan but can't speak"
   ],
   "fp": "1/4",
@@ -66,14 +66,14 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Flyby",
+      "nom": "Passage en vol",
       "description": "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Keen Hearing and Sight",
+      "nom": "Ouïe et vue aiguës",
       "description": "The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -82,7 +82,7 @@
   ],
   "actions": [
     {
-      "nom": "Talons",
+      "nom": "Serres",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 8 (2d6 + 1) slashing damage.",
       "bonus_attaque": 3,
       "degats_de": "2d6",

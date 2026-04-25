@@ -1,13 +1,13 @@
 {
   "slug": "young-white-dragon",
-  "nom": "Young White Dragon",
+  "nom": "Jeune dragon blanc",
   "nom_original": "Young White Dragon",
   "taille": "G",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 133,
   "pv_formule": "14d10+56",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 6,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [
@@ -57,8 +57,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "6",
   "fp_numerique": 6,
@@ -66,7 +66,7 @@
   "experience": 2300,
   "traits": [
     {
-      "nom": "Ice Walk",
+      "nom": "Marche sur glace",
       "description": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra movement.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -75,28 +75,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The dragon makes three attacks: one with its bite and two with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) cold damage.",
       "bonus_attaque": 7,
       "degats_de": "2d10+1d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Cold Breath (Recharge 5-6)",
+      "nom": "Souffle de froid (Recharge 5-6)",
       "description": "The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 45 (10d8) cold damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "10d8",

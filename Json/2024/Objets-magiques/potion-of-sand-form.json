@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-sand-form",
-  "nom": "Potion de Sand Form",
+  "nom": "Potion de Forme de Sable",
   "nom_original": "Potion of Sand Form",
   "categorie": "potion",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This potion's container holds a gritty liquid that moves and pours like water filled with fine particles of sand. When you drink this potion, you gain the effect of the gaseous form spell for 1 hour (no concentration required) or until you end the effect as a bonus action. While in this gaseous form, your appearance is that of a vortex of spiraling sand instead of a misty cloud. In addition, you have advantage on Dexterity (Stealth) checks while in a sandy environment, and, while motionless in a sandy environment, you are indistinguishable from an ordinary swirl of sand.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous confère l'effet du sort forme gazeuse pendant 1 heure sans concentration. Vous prenez l'apparence d'un vortex de sable et bénéficiez d'avantages en environnement sableux.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Effet du sort forme gazeuse (pas de concentration)",
+      "Apparence de vortex de sable au lieu de nuage",
+      "Avantage aux tests de Discrétion en environnement sableux"
+    ]
+  }
 }

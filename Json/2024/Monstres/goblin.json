@@ -7,7 +7,7 @@
   "sous_type": "goblinoid",
   "alignement": "neutral evil",
   "ca": 15,
-  "ca_detail": "leather armor, shield",
+  "ca_detail": "armure de cuir, bouclier",
   "pv": 7,
   "pv_formule": "2d6",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 6
+    "discrétion": 6
   },
   "resistances": [],
   "immunites_degats": [],
@@ -54,8 +54,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Goblin"
+    "commun",
+    "gobelin"
   ],
   "fp": "1/4",
   "fp_numerique": 0.25,
@@ -63,7 +63,7 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Nimble Escape",
+      "nom": "Échappatoire agile",
       "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,14 +72,14 @@
   ],
   "actions": [
     {
-      "nom": "Scimitar",
+      "nom": "Cimeterre",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Shortbow",
+      "nom": "Arc court",
       "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

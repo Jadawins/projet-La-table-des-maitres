@@ -1,16 +1,29 @@
 {
   "slug": "odd-bodkin",
-  "nom": "Odd Bodkin",
+  "nom": "Poignard Tordu",
   "nom_original": "Odd Bodkin",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This dagger has a twisted, jagged blade. You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit a creature other than a construct or an undead with this weapon, it loses 1d4 hit points at the start of each of its turns from a jagged wound. Each time you successfully hit the wounded target with this dagger, the damage dealt by the wound increases by 1d4. Any creature can take an action to stanch the wound with a successful DC 11 Wisdom (Medicine) check. The wound also closes if the wounded creature receives magical healing.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Poignard magique +1 qui inflige des blessures déchirées causant des dégâts supplémentaires chaque round.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "lacération",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Blessure déchirée infligeant 1d4 dégâts au début de chaque tour de la cible",
+      "Dégâts de la blessure augmentent de 1d4 à chaque coup réussi",
+      "Blessure stanchée par un test de Médecine DD 11 ou soignée par magie"
+    ]
+  }
 }

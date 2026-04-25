@@ -1,16 +1,29 @@
 {
   "slug": "spearbiter",
-  "nom": "Spearbiter",
+  "nom": "Morsure de Pique",
   "nom_original": "Spearbiter",
   "categorie": "autre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "The front of this shield is fashioned in the shape of a snarling wolf ’s head. Spearbiter (Uncommon). When a creature you can see within 5 feet of you makes a melee weapon attack against you, you can use a reaction to attack the attacker’s weapon, the wolf ’s head animating and snapping its jaws at the weapon. Make a melee weapon attack with the shield. You have proficiency with this attack if you are proficient with shields. If the result is higher than the attacker’s attack roll against you, the attacker’s attack misses you. You can’t use this property of the shield again until the next dawn. Adamantine Spearbiter (Rare). A more powerful version of this shield exists. Its wolf ’s head is fitted with adamantine fangs and appears larger and more menacing. When you use your reaction and animate the wolf ’s head to snap at the attacker’s weapon, you have advantage on the attack roll. In addition, there is no longer a limit to the number of times you can use this property of the shield.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bouclier en forme de tête de loup qui permet de contre-attaquer les armes ennemies en réaction, version adamantine sans limite d'utilisation.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Réaction : attaquer l'arme ennemie si résultat > à son test d'attaque",
+      "Version adamantine : avantage à l'attaque, utilisation illimitée",
+      "Proficiency si proficient avec les boucliers"
+    ]
+  }
 }

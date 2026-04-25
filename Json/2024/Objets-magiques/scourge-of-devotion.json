@@ -1,16 +1,29 @@
 {
   "slug": "scourge-of-devotion",
-  "nom": "Scourge of Devotion",
+  "nom": "Fouet de la Dévotion",
   "nom_original": "Scourge of Devotion",
   "categorie": "arme_magique",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This cat o' nine tails is used primarily for self-flagellation, and its tails have barbs of silver woven into them. You gain a +1 bonus to attack and damage rolls made with this magic weapon, and the weapon deals slashing damage instead of bludgeoning damage. You can spend 10 minutes using the scourge in a self-flagellating ritual, which can be done during a short rest. If you do so, your hit point maximum is reduced by 2d8. In addition, you have advantage on Constitution saving throws that you make to maintain your concentration on a spell when you take damage while your hit point maximum is reduced. This hit point maximum reduction can't be removed with the greater restoration spell or similar magic and lasts until you finish a long rest.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Fouet magique +1 causant des dégâts de tranchant, offrant un avantage aux sauvegardes de concentration au coût de points de vie maximums temporaires.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 aux attaques et dégâts",
+      "Dégâts de tranchant au lieu de contondant",
+      "Avantage aux sauvegardes de concentration si max PV réduit"
+    ]
+  }
 }

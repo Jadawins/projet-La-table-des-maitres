@@ -1,16 +1,29 @@
 {
   "slug": "wand-of-revealing",
-  "nom": "Baguette de Revealing",
+  "nom": "Baguette de Révélation",
   "nom_original": "Wand of Revealing",
   "categorie": "baguette",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "Crystal beads decorate this wand, and a silver hand, index finger extended, caps it. The wand has 3 charges and regains all expended charges daily at dawn. While holding it, you can use an action to expend 1 of the wand's charges to reveal one creature or object within 120 feet of you that is either invisible or ethereal. This works like the see invisibility spell, except it allows you to see only that one creature or object. That creature or object remains visible as long as it remains within 120 feet of you. If more than one invisible or ethereal creature or object is in range when you use the wand, it reveals the nearest creature or object, revealing invisible creatures or objects before ethereal ones.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette décorée de perles de cristal et d'une main argentée. Révèle les créatures ou objets invisibles ou éthérés dans un rayon de 120 pieds.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Révèle une créature ou un objet invisible/éthéré dans 120 pieds",
+      "Révèle la cible la plus proche en priorité",
+      "Se régénère complètement à l'aube"
+    ]
+  }
 }

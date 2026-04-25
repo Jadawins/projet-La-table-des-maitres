@@ -1,16 +1,28 @@
 {
   "slug": "hardening-polish",
-  "nom": "Hardening Polish",
+  "nom": "Vernis de Durcissement",
   "nom_original": "Hardening Polish",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This gray polish is viscous and difficult to spread. The polish can coat one metal weapon or up to 10 pieces of ammunition. Applying the polish takes 1 minute. For 1 hour, the coated item hardens and becomes stronger, and it counts as an adamantine weapon for the purpose of overcoming resistance and immunity to attacks and damage not made with adamantine weapons.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un vernis gris qui durcit une arme ou des munitions pendant 1 heure, les rendant équivalentes à l'adamantite pour surmonter les résistances.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "L'arme/munitions traitées comme adamantite pendant 1 heure",
+      "Surpasse les résistances et immunités non-adamantite"
+    ]
+  }
 }

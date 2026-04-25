@@ -1,6 +1,6 @@
 {
   "slug": "riding-horse",
-  "nom": "Riding Horse",
+  "nom": "Cheval de selle",
   "nom_original": "Riding Horse",
   "taille": "G",
   "type": "Beast",
@@ -59,7 +59,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
       "bonus_attaque": 5,
       "degats_de": "2d4",

@@ -1,16 +1,28 @@
 {
   "slug": "elixir-of-spike-skin",
-  "nom": "Elixir of Spike Skin",
+  "nom": "Élixir de Peau Hérissée",
   "nom_original": "Elixir of Spike Skin",
   "categorie": "potion",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "Slivers of bone float in the viscous, gray liquid inside this vial. When you drink this potion, bone-like spikes protrude from your skin for 1 hour. Each time a creature hits you with a melee weapon attack while within 5 feet of you, it must succeed on a DC 15 Dexterity saving throw or take 1d4 piercing damage from the spikes. In addition, while you are grappling a creature or while a creature is grappling you, it takes 1d4 piercing damage at the start of your turn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Des pics osseux sortent de votre peau pendant 1 heure, infligeant 1d4 dégâts de perçage à tout attaquant au contact ou créature vous saisissant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "perçage",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Attaquant au contact (5 pieds) : jet de Dextérité DD 15 ou 1d4 perçage",
+      "Créature en lutte : 1d4 perçage au début de votre tour"
+    ]
+  }
 }

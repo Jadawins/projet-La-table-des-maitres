@@ -7,11 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This cube is about an inch across. Each face has a distinct marking on it that can be pressed. The cube starts with 36 charges, and it regains 1d20 expended charges daily at dawn.\r\n\r\nYou can use an action to press one of the cube's faces, expending a number of charges based on the chosen face, as shown in the Cube of Force Faces table. Each face has a different effect. If the cube has insufficient charges remaining, nothing happens. Otherwise, a barrier of invisible force springs into existence, forming a cube 15 feet on a side. The barrier is centered on you, moves with you, and lasts for 1 minute, until you use an action to press the cube's sixth face, or the cube runs out of charges. You can change the barrier's effect by pressing a different face of the cube and expending the requisite number of charges, resetting the duration.\r\n\r\nIf your movement causes the barrier to come into contact with a solid object that can't pass through the cube, you can't move any closer to that object as long as the barrier remains.\r\n\r\n**Cube of Force Faces (table)**\r\n\r\n| Face | Charges | Effect                                                                                                            |\r\n|------|---------|-------------------------------------------------------------------------------------------------------------------|\r\n| 1    | 1       | Gases, wind, and fog can't pass through the barrier.                                                              |\r\n| 2    | 2       | Nonliving matter can't pass through the barrier. Walls, floors, and ceilings can pass through at your discretion. |\r\n| 3    | 3       | Living matter can't pass through the barrier.                                                                     |\r\n| 4    | 4       | Spell effects can't pass through the barrier.                                                                     |\r\n| 5    | 5       | Nothing can pass through the barrier. Walls, floors, and ceilings can pass through at your discretion.            |\r\n| 6    | 0       | The barrier deactivates.                                                                                          |\r\n\r\nThe cube loses charges when the barrier is targeted by certain spells or comes into contact with certain spell or magic item effects, as shown in the table below.\r\n\r\n| Spell or Item    | Charges Lost |\r\n|------------------|--------------|\r\n| Disintegrate     | 1d12         |\r\n| Horn of blasting | 1d10         |\r\n| Passwall         | 1d6          |\r\n| Prismatic spray  | 1d20         |\r\n| Wall of fire     | 1d4          |",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce cube mesure environ 2,5 cm de côté. Chaque face porte une marque distincte pouvant être pressée. Le cube commence avec 36 charges et en récupère 1d20 chaque jour à l'aube. Par une action, vous pouvez appuyer sur l'une des faces du cube en dépensant un nombre de charges selon la face choisie (voir le tableau des faces). Chaque face a un effet différent. Si le cube ne possède pas suffisamment de charges, rien ne se passe. Sinon, une barrière de force invisible apparaît, formant un cube de 4,5 mètres de côté centré sur vous, se déplaçant avec vous pendant 1 minute. La barrière prend fin si vous appuyez sur la sixième face ou si le cube manque de charges. Vous pouvez changer l'effet en appuyant sur une autre face. Si votre déplacement amène la barrière en contact avec un objet solide qui ne peut la traverser, vous ne pouvez pas vous rapprocher davantage. **Faces du Cube de Force :** Face 1 (1 charge) : les gaz, le vent et le brouillard ne peuvent traverser. Face 2 (2 charges) : la matière non vivante ne peut traverser (les murs, sols et plafonds peuvent le faire à votre discrétion). Face 3 (3 charges) : la matière vivante ne peut traverser. Face 4 (4 charges) : les effets de sorts ne peuvent traverser. Face 5 (5 charges) : rien ne peut traverser (murs/sols/plafonds à votre discrétion). Face 6 (0 charge) : la barrière se désactive. Le cube perd des charges si la barrière est ciblée par certains sorts : Désintégration (1d12), Cor de souffle (1d10), Traversée des murs (1d6), Vaporisation prismatique (1d20), Mur de feu (1d4)."
+  "resume": "Cube créant une barrière de force cubique de 4,5 m centrée sur vous selon la face activée, bloquant gaz, matière non vivante, créatures vivantes, sorts ou tout.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 36,
+    "effets": [
+      "Barrière de force cubique 4,5 m (durée 1 min, se déplace avec vous)",
+      "6 faces : gaz (1), matière inanimée (2), créatures vivantes (3), sorts (4), tout (5), désactivation (0)",
+      "Récupère 1d20 charges à l'aube; perte charges face à certains sorts"
+    ]
+  }
 }

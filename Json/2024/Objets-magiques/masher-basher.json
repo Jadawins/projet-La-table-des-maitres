@@ -1,16 +1,29 @@
 {
   "slug": "masher-basher",
-  "nom": "Masher Basher",
+  "nom": "Écrabouille-Fracasse",
   "nom_original": "Masher Basher",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "A favored weapon of hill giants, this greatclub appears to be little more than a thick tree branch. When you hit a giant with this magic weapon, the giant takes an extra 1d8 bludgeoning damage. When you roll a 20 on an attack roll made with this weapon, the target is stunned until the end of its next turn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Massue magique favori des géants des collines causant 1d8 dégâts bludgeonnants bonus contre les géants, et étourdit la cible sur un coup critique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "1d8 dégâts contondants bonus contre les géants",
+      "Cible étourdie jusqu'à la fin de son prochain tour sur 20",
+      "Arme magique"
+    ]
+  }
 }

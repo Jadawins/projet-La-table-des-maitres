@@ -1,16 +1,29 @@
 {
   "slug": "shortsword-of-life-stealing",
-  "nom": "Shortsword of Life Stealing",
+  "nom": "Épée courte de vol de vie",
   "nom_original": "Shortsword of Life Stealing",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lors d'un coup critique, inflige 15 dégâts nécrotiques supplémentaires et vous récupérez des points de vie temporaires égaux aux dégâts infligés.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "15",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "15",
+    "charges": null,
+    "effets": [
+      "Effet au coup critique (d20 = 20)",
+      "Pas d'effet sur Construits ou Morts-vivants",
+      "Soins en points de vie temporaires"
+    ]
+  }
 }

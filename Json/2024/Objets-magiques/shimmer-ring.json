@@ -1,16 +1,29 @@
 {
   "slug": "shimmer-ring",
-  "nom": "Shimmer Ring",
+  "nom": "Anneau de Chatoiement",
   "nom_original": "Shimmer Ring",
   "categorie": "anneau",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This ring is crafted of silver with an inlay of mother-of-pearl. While wearing the ring, you can use an action to speak a command word and cause the ring to shed white and sparkling bright light in a 20-foot radius and dim light for an additional 20 feet. The light lasts until you use a bonus action to repeat the command word. The ring has 6 charges for the following properties. It regains 1d6 charges daily at dawn. Bestow Shimmer. While wearing the ring, you can use a bonus action to expend 1 of its charges to charge a weapon you wield with silvery energy until the start of your next turn. When you hit with an attack using the charged weapon, the target takes an extra 1d6 radiant damage. Shimmering Aura. While wearing the ring, you can use an action to expend 1 of its charges to surround yourself with a silvery, shimmering aura of light for 1 minute. This bright light extends from you in a 5-foot radius and is sunlight. While you are surrounded in this light, you have resistance to radiant damage. Shimmering Bolt. While wearing the ring, you can use an action to expend 1 to 3 of its charges to attack one creature you can see within 60 feet of you. The ring produces a bolt of silvery light and makes its attack roll with a +7 bonus. On a hit, the target takes 2d6 radiant damage for each charge you expend.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau d'argent émettant une lumière brillante et octroyant des pouvoirs de radiance, notamment charger une arme ou lancer des traits de lumière argentée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "radiance",
+    "pv_soins": "",
+    "charges": 6,
+    "effets": [
+      "Charger une arme : +1d6 radiance jusqu'au prochain tour",
+      "Aura Scintillante : crée une lumière de 5 pieds équivalente à la lumière du soleil, résistance radiance",
+      "Trait Scintillant : attaque à +7, 2d6 radiance par charge dépensée (1-3 charges)"
+    ]
+  }
 }

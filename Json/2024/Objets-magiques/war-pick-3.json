@@ -1,16 +1,25 @@
 {
   "slug": "war-pick-3",
-  "nom": "War-Pick (+3)",
+  "nom": "Pic de guerre (+3)",
   "nom_original": "War-Pick (+3)",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You have a bonus to attack and damage rolls made with this magic weapon. The bonus is determined by the weapon's rarity.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique conférant un bonus de +3 aux jets d'attaque et de dégâts.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": []
+  }
 }

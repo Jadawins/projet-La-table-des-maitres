@@ -1,16 +1,27 @@
 {
   "slug": "dragon-slayer-rapier",
-  "nom": "Dragon Slayer (Rapier)",
+  "nom": "Rapière Tue-Dragon",
   "nom_original": "Dragon Slayer (Rapier)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon.\n\nWhen you hit a dragon with this weapon, the dragon takes an extra 3d6 damage of the weapon's type. For the purpose of this weapon, \"dragon\" refers to any creature with the dragon type, including dragon turtles and wyverns.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique infligeant +1 bonus et 3d6 dégâts supplémentaires contre les créatures de type dragon.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "3d6",
+    "type_degats_bonus": "arme",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts supplémentaires contre les créatures de type dragon (dragons, dragon des eaux, vouivres)"
+    ]
+  }
 }

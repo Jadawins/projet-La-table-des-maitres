@@ -1,17 +1,29 @@
 {
   "slug": "censer-of-dark-shadows",
-  "nom": "Censer of Dark Shadows",
+  "nom": "Encensoir des ombres sombres",
   "nom_original": "Censer of Dark Shadows",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This enchanted censer paints the air with magical, smoky shadow. While holding the censer, you can use an action to speak its command word, causing the censer to emit shadow in a 30-foot radius for 1 hour. Bright light and sunlight within this area is reduced to dim light, and dim light within this area is reduced to magical darkness. The shadow spreads around corners, and nonmagical light can't illuminate this shadow. The shadow emanates from the censer and moves with it. Completely enveloping the censer within another sealed object, such as a lidded pot or a leather bag, blocks the shadow. If any of this effect's area overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled. Once the censer is used to emit shadow, it can't do so again until the next dusk.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cet encensoir enchanté teinte l'air d'une ombre fumée et magique. En le tenant en main, vous pouvez utiliser une action pour prononcer son mot de commande, ce qui lui fait émettre de l'ombre dans un rayon de 9 mètres pendant 1 heure. La lumière vive et la lumière du soleil dans cette zone sont réduites à une lumière faible, et la lumière faible est réduite à une obscurité magique. L'ombre se propage autour des coins, et aucune lumière non magique ne peut l'illuminer. Elle émane de l'encensoir et se déplace avec lui. Envelopper entièrement l'encensoir dans un objet hermétiquement fermé, comme une marmite avec couvercle ou un sac en cuir, bloque l'ombre. Si une partie de cette zone se superpose à une zone de lumière créée par un sort de niveau 2 ou inférieur, ce sort est dissipé. Une fois utilisé pour émettre de l'ombre, l'encensoir ne peut plus le faire jusqu'au prochain crépuscule."
+  "resume": "Un encensoir qui crée une zone d'obscurité magique de 9m de rayon pendant 1 heure, dissipant les sorts de lumière de niveau 2 ou inférieur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Crée une zone d'ombre magique de 9m de rayon pendant 1 heure",
+      "Dissipe les sorts de lumière de niveau 2 ou inférieur dans la zone",
+      "Utilisable une fois par jour au crépuscule"
+    ]
+  }
 }

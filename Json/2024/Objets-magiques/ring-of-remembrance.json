@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-remembrance",
-  "nom": "Anneau de Remembrance",
+  "nom": "Anneau de Remémoration",
   "nom_original": "Ring of Remembrance",
   "categorie": "anneau",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This ring is a sturdy piece of string, tied at the ends to form a circle. While wearing it, you can use an action to invoke its power by twisting it on your finger. If you do so, you have advantage on the next Intelligence check you make to recall information. The ring can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau permettant d'obtenir l'avantage sur un jet d'Intelligence pour se souvenir d'informations, une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Action : avantage sur le prochain jet d'Intelligence (se souvenir)",
+      "Réutilisable à l'aube"
+    ]
+  }
 }

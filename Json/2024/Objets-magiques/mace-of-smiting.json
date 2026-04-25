@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. The bonus increases to +3 when you use the mace to attack a construct.\n\nWhen you roll a 20 on an attack roll made with this weapon, the target takes an extra 2d6 bludgeoning damage, or 4d6 bludgeoning damage if it's a construct. If a construct has 25 hit points or fewer after taking this damage, it is destroyed.",
   "effets": [],
   "poids": "4.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bonus +1 aux attaques et dégâts (+3 contre les créatures de pierre), inflige 2d6 dégâts supplémentaires au-dessus de 20, ou 4d6 contre les créatures de pierre (destructrices si ≤25 PV).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus augmenté à +3 contre les créatures de pierre",
+      "Dégâts doublés (4d6) sur les créatures de pierre au critique",
+      "Destruction des créatures de pierre à ≤25 PV"
+    ]
+  }
 }

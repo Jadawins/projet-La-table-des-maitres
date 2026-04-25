@@ -1,16 +1,29 @@
 {
   "slug": "recording-book",
-  "nom": "Recording Book",
+  "nom": "Livre d'Enregistrement",
   "nom_original": "Recording Book",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This book, which hosts a dormant Bookkeeper (see Creature Codex), appears to be a journal filled with empty pages. You can use an action to place the open book on a surface and speak its command word to activate it. It remains active until you use an action to speak the command word again. The book records all things said within 60 feet of it. It can distinguish voices and notes those as it records. The book can hold up to 12 hours' worth of conversation. You can use an action to speak a second command word to remove up to 1 hour of recordings in the book, while a third command word removes all the book's recordings. Any creature, other than you or targets you designate, that peruses the book finds the pages blank.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Journal magique contenant un Archiviste endormi, capable d'enregistrer les conversations jusqu'à 60 pieds de distance pendant 12 heures maximum.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Enregistre les paroles dans un rayon de 60 pieds (jusqu'à 12 heures)",
+      "Distingue les voix lors de l'enregistrement",
+      "Pages illisibles pour quiconque sauf vous et vos designataires"
+    ]
+  }
 }

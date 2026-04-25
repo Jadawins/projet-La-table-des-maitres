@@ -1,16 +1,28 @@
 {
   "slug": "sheeshah-of-revelations",
-  "nom": "Sheeshah of Revelations",
+  "nom": "Narguilé des Révélations",
   "nom_original": "Sheeshah of Revelations",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This finely crafted water pipe is made from silver and glass. Its vase is etched with arcane symbols. When you spend 1 minute using the sheeshah to smoke normal or flavored tobacco, you enter a dreamlike state and are granted a cryptic or surreal vision giving you insight into your current quest or a significant event in your near future. This effect works like the divination spell. Once used, you can't use the sheeshah in this way again until 7 days have passed or until the events hinted at in your vision have come to pass, whichever happens first.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un narguilé magique qui accorde une vision divinatoire sur votre quête ou un événement futur proche après 1 minute d'utilisation. Réutilisable après 7 jours ou lorsque les événements de la vision se réalisent.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vision divinatoire (sort divination) une fois par 7 jours",
+      "Perspective surréaliste sur la quête actuelle ou futur proche"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "eversmoking-bottle",
-  "nom": "Eversmoking Bottle",
+  "nom": "Flacon qui fume sans cesse",
   "nom_original": "Eversmoking Bottle",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Smoke leaks from the lead-stoppered mouth of this brass bottle, which weighs 1 pound. When you use an action to remove the stopper, a cloud of thick smoke pours out in a 60-foot radius from the bottle. The cloud's area is heavily obscured. Each minute the bottle remains open and within the cloud, the radius increases by 10 feet until it reaches its maximum radius of 120 feet.\r\n\r\nThe cloud persists as long as the bottle is open. Closing the bottle requires you to speak its command word as an action. Once the bottle is closed, the cloud disperses after 10 minutes. A moderate wind (11 to 20 miles per hour) can also disperse the smoke after 1 minute, and a strong wind (21 or more miles per hour) can do so after 1 round.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Flacon de laiton qui libère un nuage de fumée épaisse d'un rayon jusqu'à 120 pieds, créant une zone très obscurcie. Le nuage persiste tant que le flacon reste ouvert.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crée un nuage de fumée épaisse (rayon initial 60 pieds, max 120 pieds)",
+      "Zone très obscurcie",
+      "Le rayon augmente de 10 pieds par minute"
+    ]
+  }
 }

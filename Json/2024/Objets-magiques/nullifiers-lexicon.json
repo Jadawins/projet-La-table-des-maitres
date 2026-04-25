@@ -1,16 +1,29 @@
 {
   "slug": "nullifiers-lexicon",
-  "nom": "Nullifier's Lexicon",
+  "nom": "Lexique du Néant",
   "nom_original": "Nullifier's Lexicon",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This book has a black leather cover with silver bindings and a silver front plate. Void Speech glyphs adorn the front plate, which is pitted and tarnished. The pages are thin sheets of corrupted brass and are inscribed with more blasphemous glyphs. While you are attuned to the lexicon, you can speak, read, and write Void Speech, and you know the crushing curse* cantrip. At the GM's discretion, you know the chill touch cantrip instead.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Livre magique conférant la capacité de parler le Vide et de lancer le sort de malédiction écrasante.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Parler, lire et écrire le Langage du Vide",
+      "Connaître le tour de magie malédiction écrasante (ou contact glacial)",
+      "Nécessite l'attunement"
+    ]
+  }
 }

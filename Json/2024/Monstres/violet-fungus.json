@@ -1,6 +1,6 @@
 {
   "slug": "violet-fungus",
-  "nom": "Violet Fungus",
+  "nom": "Champignon violet",
   "nom_original": "Violet Fungus",
   "taille": "M",
   "type": "Plant",
@@ -62,7 +62,7 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -71,14 +71,14 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The fungus makes 1d4 Rotting Touch attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Rotting Touch",
+      "nom": "Toucher pourrissant",
       "description": "Melee Weapon Attack: +2 to hit, reach 10 ft., one creature. Hit: 4 (1d8) necrotic damage.",
       "bonus_attaque": 2,
       "degats_de": "1d8",

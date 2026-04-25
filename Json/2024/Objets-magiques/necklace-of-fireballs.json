@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This necklace has 1d6 + 3 beads hanging from it. You can use an action to detach a bead and throw it up to 60 feet away. When it reaches the end of its trajectory, the bead detonates as a 3rd-level _fireball_ spell (save DC 15).\r\n\r\nYou can hurl multiple beads, or even the whole necklace, as one action. When you do so, increase the level of the _fireball_ by 1 for each bead beyond the first.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Collier contenant 1d6+3 perles détachables qui explosent en boule de feu (niveau 3, DD 15). Augmente le niveau de sort pour chaque perle supplémentaire lancée simultanément.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "8d6 (minimum)",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "1d6+3 perles lancées jusqu'à 60 pieds",
+      "Chaque perle explose en boule de feu (niveau 3)",
+      "Augmentation du niveau pour chaque perle au-delà de la première"
+    ]
+  }
 }

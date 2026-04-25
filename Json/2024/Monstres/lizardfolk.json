@@ -7,7 +7,7 @@
   "sous_type": "lizardfolk",
   "alignement": "neutral",
   "ca": 15,
-  "ca_detail": "natural armor, shield",
+  "ca_detail": "armure naturelle, bouclier",
   "pv": 22,
   "pv_formule": "4d8+4",
   "vitesse": {
@@ -41,8 +41,8 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 4,
-    "survival": 5
+    "discrétion": 4,
+    "survie": 5
   },
   "resistances": [],
   "immunites_degats": [],
@@ -56,7 +56,7 @@
     "tremblements": null
   },
   "langues": [
-    "Draconic"
+    "draconique"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -64,7 +64,7 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Hold Breath",
+      "nom": "Retenir son souffle",
       "description": "The lizardfolk can hold its breath for 15 minutes.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -73,35 +73,35 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The lizardfolk makes two melee attacks, each one with a different weapon.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Heavy Club",
+      "nom": "Massue lourde",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Javelin",
+      "nom": "Javelot",
       "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Spiked Shield",
+      "nom": "Bouclier à pointes",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

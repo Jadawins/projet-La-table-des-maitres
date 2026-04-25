@@ -1,17 +1,28 @@
 {
   "slug": "broken-fang-talisman",
-  "nom": "Broken Fang Talisman",
+  "nom": "Talisman de la Croc Brisée",
   "nom_original": "Broken Fang Talisman",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This talisman is a piece of burnished copper, shaped into a curved fang with a large crack through the middle. While wearing the talisman, you can use an action to cast the encrypt / decrypt (see Deep Magic for 5th Edition) spell. The talisman can't be used this way again until 1 hour has passed.",
-  "description_fr": "Ce talisman est une pièce de cuivre poli, façonnée en forme de croc recourbé traversé d'une large fissure en son milieu. Tant que vous portez ce talisman, vous pouvez utiliser une action pour lancer le sort chiffrer/déchiffrer (voir Deep Magic pour la 5e édition). Le talisman ne peut être utilisé de cette façon à nouveau qu'après qu'une heure se soit écoulée.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Talisman en cuivre en forme de croc fêlé permettant de lancer le sort Chiffrer/Déchiffrer une fois par heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Action : lancer le sort Chiffrer/Déchiffrer",
+      "Réutilisable après 1 heure"
+    ]
+  }
 }

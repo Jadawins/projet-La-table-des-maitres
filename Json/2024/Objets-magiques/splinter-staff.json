@@ -1,16 +1,29 @@
 {
   "slug": "splinter-staff",
-  "nom": "Splinter Staff",
+  "nom": "Bâton d'Échardes",
   "nom_original": "Splinter Staff",
   "categorie": "baton",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This roughly made staff has cracked and splintered ends and can be wielded as a magic quarterstaff. When you roll a 20 on an attack roll made with this weapon, you embed a splinter in the target's body, and the pain and discomfort of the splinter is distracting. While the splinter remains embedded, the target has disadvantage on Dexterity, Intelligence, and Wisdom checks, and, if it is concentrating on a spell, it must succeed on a DC 10 Constitution saving throw at the start of each of its turns to maintain concentration on the spell. A creature, including the target, can take its action to remove the splinter by succeeding on a DC 13 Wisdom (Medicine) check.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton magique aux extrémités écaillées qui enfonce une écharde débilitante dans la cible lors d'un coup critique, causant du désavantage et pouvant briser la concentration.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Sur 20 au d20: implante une écharde",
+      "Désavantage sur les tests de DEX, INT, SAG tant que l'écharde reste",
+      "Peut rompre la concentration (sauvegarde CON DD 10 au début du tour)"
+    ]
+  }
 }

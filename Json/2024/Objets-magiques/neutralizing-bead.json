@@ -1,16 +1,29 @@
 {
   "slug": "neutralizing-bead",
-  "nom": "Neutralizing Bead",
+  "nom": "Perle de neutralisation",
   "nom_original": "Neutralizing Bead",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This hard, gritty, flavorless bead can be dissolved in liquid or powdered between your fingers and sprinkled over food. Doing so neutralizes any poisons that may be present. If the food or liquid is poisoned, it takes on a brief reddish hue where it makes contact with the bead as the bead dissolves. Alternatively, you can chew and swallow the bead and gain the effects of an antitoxin.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Perle magique qui neutralise les poisons au contact d'une nourriture ou boisson, ou qui agit comme antitoxine si ingérée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Neutralise tous les poisons au contact",
+      "Agit comme antitoxine si ingérée",
+      "Prend une teinte rougeâtre au contact du poison"
+    ]
+  }
 }

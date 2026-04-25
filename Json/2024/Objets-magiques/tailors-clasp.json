@@ -1,16 +1,28 @@
 {
   "slug": "tailors-clasp",
-  "nom": "Tailor's Clasp",
+  "nom": "Agrafe de Tailleur",
   "nom_original": "Tailor's Clasp",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This ornate brooch is shaped like a jeweled weaving spider or scarab beetle. While it is attached to a piece of fabric, it can be activated as an action. When activated, it skitters across the fabric, mending any tears, adjusting frayed hems, and reinforcing seams. This item works only on nonmagical objects made out of fibrous material, such as clothing, rope, and rugs. It continues repairing the fabric for up to 10 minutes or until the repairs are complete. Once used, it can't be used again until 1 hour has passed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une broche ornée qui se déplace sur les tissus pour réparer les déchirures et renforcer les coutures jusqu'à 10 minutes après activation, réutilisable après 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Répare les tissus non-magiques pendant jusqu'à 10 minutes",
+      "Réutilisable après 1 heure"
+    ]
+  }
 }

@@ -1,17 +1,29 @@
 {
   "slug": "chronomancers-pocket-clock",
-  "nom": "Chronomancer's Pocket Clock",
+  "nom": "Montre de poche du chronomancien",
   "nom_original": "Chronomancer's Pocket Clock",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This golden pocketwatch has 3 charges and regains 1d3 expended charges daily at midnight. While holding it, you can use an action to wind it and expend 1 charge to cast the haste spell from it. If the pendant is destroyed (AC 14, 15 hit points) while it has 3 charges, the creature that broke it gains the effects of the time stop spell.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette montre de poche en or possède 3 charges et récupère 1d3 charges dépensées quotidiennement à minuit. En la tenant en main, vous pouvez utiliser une action pour la remonter et dépenser 1 charge afin de lancer le sort _célérité_. Si le pendentif est détruit (CA 14, 15 points de vie) alors qu'il possède 3 charges, la créature qui l'a brisé obtient les effets du sort _arrêt du temps_."
+  "resume": "Une montre de poche en or dotée de 3 charges permettant de lancer le sort célérité. Sa destruction avec 3 charges crée un effet arrêt du temps.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lancer célérité (1 charge)",
+      "Récupère 1d3 charges à minuit",
+      "Explosion destructive : arrêt du temps si détruit avec 3 charges"
+    ]
+  }
 }

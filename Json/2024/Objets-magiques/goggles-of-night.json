@@ -7,10 +7,21 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing these dark lenses, you have darkvision out to a range of 60 feet. If you already have darkvision, wearing the goggles increases its range by 60 feet.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces lentilles sombres vous accordent une vision dans le noir à 18 mètres. Si vous avez déjà la vision dans le noir, portée augmentée de 18 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vision dans le noir 18 mètres (augmentation de 18 m si déjà possédée)"
+    ]
+  }
 }

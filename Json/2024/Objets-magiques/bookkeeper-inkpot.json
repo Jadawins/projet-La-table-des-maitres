@@ -1,17 +1,29 @@
 {
   "slug": "bookkeeper-inkpot",
-  "nom": "Bookkeeper Inkpot",
+  "nom": "Encrier du Bibliothécaire",
   "nom_original": "Bookkeeper Inkpot",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This glass vessel looks like an ordinary inkpot. A quill fashioned from an ostrich feather accompanies the inkpot. You can use an action to speak the inkpot's command word, targeting a Bookkeeper (see Creature Codex) that you can see within 10 feet of you. An unwilling bookkeeper must succeed on a DC 13 Charisma saving throw or be transferred to the inkpot, making you the bookkeeper's new “creator.” While the bookkeeper is contained within the inkpot, it suffers no harm due to being away from its bound book, but it can't use any of its actions or traits that apply to it being in a bound book. Dipping the quill in the inkpot and writing in a book binds the bookkeeper to the new book. If the inkpot is found as treasure, there is a 50 percent chance it contains a bookkeeper. An identify spell reveals if a bookkeeper is inside the inkpot before using the inkpot's ink.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce récipient en verre ressemble à un encrier ordinaire. Une plume faite d'une plume d'autruche l'accompagne. Vous pouvez utiliser une action pour prononcer le mot de commande de l'encrier en ciblant un Bibliothécaire (voir Creature Codex) que vous pouvez voir dans un rayon de 3 mètres. Un bibliothécaire non consentant doit réussir un jet de sauvegarde de Charisme DD 13 ou être transféré dans l'encrier, faisant de vous son nouveau « créateur ». Tant que le bibliothécaire est contenu dans l'encrier, il ne souffre d'aucun mal d'être séparé de son livre lié, mais il ne peut utiliser aucune de ses actions ou capacités liées à son livre. Tremper la plume dans l'encrier et écrire dans un livre lie le bibliothécaire à ce nouveau livre. Si l'encrier est trouvé comme trésor, il y a 50 % de chances qu'il contienne un bibliothécaire. Un sort d'identification révèle la présence d'un bibliothécaire avant d'utiliser l'encre de l'encrier."
+  "resume": "Un encrier magique permettant de capturer et de lier des Bibliothécaires à de nouveaux livres. Peut contenir une créature Bibliothécaire.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Capture un Bibliothécaire (jet sauvegarde Charisme DD 13)",
+      "Lie le Bibliothécaire à un nouveau livre via l'encre",
+      "50 % de chances de contenir un Bibliothécaire si trouvé"
+    ]
+  }
 }

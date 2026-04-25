@@ -1,17 +1,29 @@
 {
   "slug": "broom-of-flying",
-  "nom": "Broom of Flying",
+  "nom": "Balai Volant",
   "nom_original": "Broom of Flying",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This wooden broom, which weighs 3 pounds, functions like a mundane broom until you stand astride it and speak its command word. It then hovers beneath you and can be ridden in the air. It has a flying speed of 50 feet. It can carry up to 400 pounds, but its flying speed becomes 30 feet while carrying over 200 pounds. The broom stops hovering when you land.\r\n\r\nYou can send the broom to travel alone to a destination within 1 mile of you if you speak the command word, name the location, and are familiar with that place. The broom comes back to you when you speak another command word, provided that the broom is still within 1 mile of you.",
-  "description_fr": "Ce balai de bois, pesant environ 1,5 kg, fonctionne comme un balai ordinaire jusqu'à ce que vous l'enfourchiez et prononciez son mot de commande. Il se met alors à léviter sous vous et peut être chevauché dans les airs. Sa vitesse de vol est de 15 mètres (50 pieds). Il peut transporter jusqu'à 180 kg, mais sa vitesse de vol tombe à 9 mètres (30 pieds) s'il transporte plus de 90 kg. Le balai cesse de léviter lorsque vous atterrissez.\n\nVous pouvez envoyer le balai voyager seul vers une destination située à moins de 1,5 km de vous en prononçant le mot de commande, en nommant l'endroit et en connaissant ce lieu. Le balai revient vers vous lorsque vous prononcez un autre mot de commande, à condition qu'il se trouve encore à moins de 1,5 km de vous.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Balai magique permettant le vol à 15 m/round (ou 9 m/round si surchargé), capable de transporter jusqu'à 180 kg.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vol à 15 m/round (charge normale) ou 9 m/round (surcharge)",
+      "Peut voyager seul vers un lieu connu à -1,5 km",
+      "Capacité de charge jusqu'à 180 kg"
+    ]
+  }
 }

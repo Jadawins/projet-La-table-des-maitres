@@ -1,17 +1,28 @@
 {
   "slug": "bountiful-cauldron",
-  "nom": "Bountiful Cauldron",
+  "nom": "Chaudron d'Abondance",
   "nom_original": "Bountiful Cauldron",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "If this small, copper cauldron is filled with water and a half pound of meat, vegetables, or other foodstuffs then placed over a fire, it produces a simple, but hearty stew that provides one creature with enough nourishment to sustain it for one day. As long as the food is kept within the cauldron with the lid on, the food remains fresh and edible for up to 24 hours, though it grows cold unless reheated.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Si ce petit chaudron en cuivre est rempli d'eau et de 225 grammes de viande, légumes ou autres vivres, puis placé sur le feu, il produit un ragoût simple mais nourrissant qui apporte à une créature assez de nourriture pour subvenir à ses besoins pendant une journée. Tant que la nourriture est conservée dans le chaudron avec le couvercle, elle reste fraîche et comestible jusqu'à 24 heures, bien qu'elle refroidisse si elle n'est pas réchauffée."
+  "resume": "Ce petit chaudron en cuivre produit un ragoût nourrissant capable de sustenter une créature pour une journée entière. La nourriture reste fraîche jusqu'à 24 heures si conservée dans le chaudron couvert.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Produit un ragoût nourrissant pour 1 créature/jour",
+      "Conserve la nourriture fraîche 24h avec le couvercle"
+    ]
+  }
 }

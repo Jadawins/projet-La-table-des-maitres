@@ -1,16 +1,27 @@
 {
   "slug": "vicious-weapon-sickle",
-  "nom": "Vicious Weapon (Sickle)",
+  "nom": "Arme Cruelle (Faucille)",
   "nom_original": "Vicious Weapon (Sickle)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you roll a 20 on your attack roll with this magic weapon, your critical hit deals an extra 2d6 damage of the weapon's type.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette faucille magique inflige 2d6 dégâts supplémentaires du type de l'arme lors d'un coup critique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Coup critique : 2d6 dégâts supplémentaires"
+    ]
+  }
 }

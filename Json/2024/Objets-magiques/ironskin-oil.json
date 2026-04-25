@@ -1,16 +1,28 @@
 {
   "slug": "ironskin-oil",
-  "nom": "Ironskin Oil",
+  "nom": "Huile de Peau de Fer",
   "nom_original": "Ironskin Oil",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This grayish fluid is cool to the touch and slightly gritty. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature has resistance to piercing and slashing damage for 1 hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Huile grisâtre qui confère une résistance aux dégâts perçants et tranchants pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts perçants et tranchants pendant 1 heure",
+      "Couvre une créature de taille M ou inférieure et son équipement"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "greatsword-of-sharpness",
-  "nom": "Greatsword of Sharpness",
+  "nom": "Grande Épée de l'Acuité",
   "nom_original": "Greatsword of Sharpness",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target.\n\nWhen you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
   "effets": [],
   "poids": "6.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette arme magique maximise les dégâts contre les objets et inflige des dégâts supplémentaires avec épuisement au critique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "14",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts maximisés contre les objets",
+      "Au critique (20) : 14 dégâts tranchants supplémentaires et 1 niveau d'épuisement"
+    ]
+  }
 }

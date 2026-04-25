@@ -1,17 +1,29 @@
 {
   "slug": "cloak-of-the-ram",
-  "nom": "Cape de the Ram",
+  "nom": "Cape du Bélier",
   "nom_original": "Cloak of the Ram",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this cloak, you can use an action to transform into a mountain ram (use the statistics of a giant goat). This effect works like the polymorph spell, except you retain your Intelligence, Wisdom, and Charisma scores. You can use an action to transform back into your original form. Each time you transform into a ram in a single day, you retain the hit points you had the last time you transformed. If you were reduced to 0 hit points the last time you were a ram, you can't become a ram again until the next dawn.",
-  "description_fr": "Lorsque vous portez cette cape, vous pouvez utiliser une action pour vous transformer en bélier de montagne (utilisez les caractéristiques d'une chèvre géante). Cet effet fonctionne comme le sort de métamorphose, sauf que vous conservez vos valeurs d'Intelligence, de Sagesse et de Charisme. Vous pouvez utiliser une action pour retrouver votre forme originelle. Chaque fois que vous vous transformez en bélier au cours d'une même journée, vous conservez les points de vie que vous aviez lors de votre dernière transformation. Si vous avez été réduit à 0 point de vie lors de votre dernière métamorphose en bélier, vous ne pouvez redevenir un bélier qu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cape permettant de se transformer en bélier de montagne (chèvre géante) avec conservation des capacités mentales. Conserve les PV lors des transformations successives.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Action : transformation en bélier de montagne (stats chèvre géante)",
+      "Conservation Int/Sag/Cha lors de la transformation",
+      "Conservation des PV entre transformations successives du jour"
+    ]
+  }
 }

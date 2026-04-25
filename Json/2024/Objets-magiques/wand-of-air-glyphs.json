@@ -1,16 +1,28 @@
 {
   "slug": "wand-of-air-glyphs",
-  "nom": "Baguette de Air Glyphs",
+  "nom": "Baguette des Glyphes Aériens",
   "nom_original": "Wand of Air Glyphs",
   "categorie": "baguette",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "While holding this thin, metal wand, you can use action to cause the tip to glow. When you wave the glowing wand in the air, it leaves a trail of light behind it, allowing you to write or draw on the air. Whatever letters or images you make hang in the air for 1 minute before fading away.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette permettant d'écrire et dessiner dans l'air avec des traces lumineuses persistant 1 minute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Écrit ou dessine dans l'air avec une traînée lumineuse",
+      "Les tracés restent visibles 1 minute avant de s'effacer"
+    ]
+  }
 }

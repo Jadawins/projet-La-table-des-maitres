@@ -1,16 +1,28 @@
 {
   "slug": "sturdy-scroll-tube",
-  "nom": "Sturdy Scroll Tube",
+  "nom": "Tube à parchemins robuste",
   "nom_original": "Sturdy Scroll Tube",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This ornate scroll case is etched with arcane symbology. Scrolls inside this case are immune to damage and are protected from the elements, as long as the scroll case remains closed and intact. The scroll case itself has immunity to all forms of damage, except force damage and thunder damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Étui de parchemin magique offrant une immunité aux dégâts aux parchemins stockés et à l'étui lui-même (sauf dégâts de force ou tonnerre).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Immunité aux dégâts pour les parchemins stockés",
+      "Immunité de l'étui sauf force et tonnerre"
+    ]
+  }
 }

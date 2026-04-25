@@ -1,16 +1,28 @@
 {
   "slug": "dawn-shard-longsword",
-  "nom": "Dawn Shard Longsword",
+  "nom": "Épée Longue d'Éclat de l'Aube",
   "nom_original": "Dawn Shard Longsword",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The blade of this magic weapon gleams with a faint golden shine, and the pommel is etched with a sunburst. As a bonus action, you can command the weapon to shed dim light out to 5 feet, to shed bright light out to 20 feet and dim light for an additional 20 feet, or to douse the light. The weapon deals an extra 1d6 radiant damage to any creature it hits. This increases to 2d6 radiant damage if the target is undead or a creature of shadow.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée infligeant 1d6 dégâts radiants supplémentaires (2d6 contre les morts-vivants ou créatures d'ombre) et pouvant émettre de la lumière magiquement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "2d6 dégâts radiants contre morts-vivants ou créatures d'ombre",
+      "Émission de lumière contrôlable par action bonus"
+    ]
+  }
 }

@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,7 +61,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The cat has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -70,7 +70,7 @@
   ],
   "actions": [
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
       "bonus_attaque": null,
       "degats_de": null,

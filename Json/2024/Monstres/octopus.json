@@ -1,6 +1,6 @@
 {
   "slug": "octopus",
-  "nom": "Octopus",
+  "nom": "Pieuvre",
   "nom_original": "Octopus",
   "taille": "P",
   "type": "Beast",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 2,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,21 +61,21 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Hold Breath",
+      "nom": "Retenir son souffle",
       "description": "While out of water, the octopus can hold its breath for 30 minutes.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Underwater Camouflage",
+      "nom": "Camouflage aquatique",
       "description": "The octopus has advantage on Dexterity (Stealth) checks made while underwater.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Water Breathing",
+      "nom": "Respiration aquatique",
       "description": "The octopus can breathe only underwater.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -84,14 +84,14 @@
   ],
   "actions": [
     {
-      "nom": "Tentacles",
+      "nom": "Tentacules",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage, and the target is grappled (escape DC 10). Until this grapple ends, the octopus can't use its tentacles on another target.",
       "bonus_attaque": 4,
       "degats_de": null,
       "degats_bonus": 1
     },
     {
-      "nom": "Ink Cloud (Recharges after a Short or Long Rest)",
+      "nom": "Nuage d'encre (Recharge après un repos court ou long)",
       "description": "A 5-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.",
       "bonus_attaque": null,
       "degats_de": null,

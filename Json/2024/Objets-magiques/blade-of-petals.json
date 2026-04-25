@@ -1,17 +1,29 @@
 {
   "slug": "blade-of-petals",
-  "nom": "Blade of Petals",
+  "nom": "Épée de Pétales",
   "nom_original": "Blade of Petals",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +2 bonus to attack and damage rolls made with this magic weapon. This brightly-colored shortsword is kept in a wooden scabbard with eternally blooming flowers. The blade is made of dull green steel, and its pommel is fashioned from hard rosewood. As a bonus action, you can conjure a flowery mist which fills a 20-foot area around you with pleasant-smelling perfume. The scent dissipates after 1 minute. A creature damaged by the blade must succeed on a DC 15 Charisma saving throw or be charmed by you until the end of its next turn. A creature can't be charmed this way more than once every 24 hours.",
-  "description_fr": "Vous gagnez un bonus de +2 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Cette épée courte aux couleurs vives est rangée dans un fourreau de bois orné de fleurs en éternelle floraison. La lame est en acier vert terne et le pommeau est taillé dans un bois de rose dur. En guise d'action bonus, vous pouvez invoquer une brume fleurie qui emplit une zone de 6 mètres autour de vous d'un agréable parfum. Ce parfum se dissipe après 1 minute. Une créature blessée par la lame doit réussir un jet de sauvegarde de Charisme DD 15 ou être charmée par vous jusqu'à la fin de son prochain tour. Une créature ne peut être charmée de cette façon qu'une fois toutes les 24 heures.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée courte magique +2 invoquant une brume fleurie et charment les créatures blessées (jet de sauvegarde Charisme DD 15).",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux attaques et dégâts",
+      "Invoquer brume fleurie (6m de rayon, 1min) en action bonus",
+      "Cible blessée : jet de sauvegarde Charisme DD 15 ou charmée jusqu'à fin du prochain tour (1/24h)"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "rod-of-the-infernal-realms",
-  "nom": "Sceptre de the Infernal Realms",
+  "nom": "Sceptre des Royaumes infernaux",
   "nom_original": "Rod of the Infernal Realms",
   "categorie": "sceptre",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "The withered, clawed hand of a demon or devil tops this iron rod. While holding this rod, you gain a +2 bonus to spell attack rolls, and the save DC for your spells increases by 2. Frightful Eyes. While holding this rod, you can use a bonus action to cause your eyes to glow with infernal fire for 1 minute. While your eyes are glowing, a creature that starts its turn or enters a space within 10 feet of you must succeed on a Wisdom saving throw against your spell save DC or become frightened of you until your eyes stop glowing. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Once used, you can’t use this property again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Améliore les attaques de sort de +2 et les DD de sauvegarde de +2. Permet de terrifier les créatures proches.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'attaque de sort",
+      "+2 aux DD de sauvegarde des sorts",
+      "Terreur infernale (10 pieds) recharge à l'aube"
+    ]
+  }
 }

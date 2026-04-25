@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "neutral evil",
   "ca": 14,
-  "ca_detail": "studded leather",
+  "ca_detail": "armure de cuir clouté",
   "pv": 45,
   "pv_formule": "6d8+18",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [
@@ -69,7 +69,7 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Sunlight Sensitivity",
+      "nom": "Sensibilité à la lumière du soleil",
       "description": "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -78,28 +78,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The wight makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Life Drain",
+      "nom": "Drain de Vie",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.\nA humanoid slain by this attack rises 24 hours later as a zombie under the wight's control, unless the humanoid is restored to life or its body is destroyed. The wight can have no more than twelve zombies under its control at one time.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Longsword",
+      "nom": "Épée longue",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage, or 7 (1d10 + 2) slashing damage if used with two hands.",
       "bonus_attaque": 4,
       "degats_de": "1d8",
       "degats_bonus": 2
     },
     {
-      "nom": "Longbow",
+      "nom": "Arc long",
       "description": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d8",

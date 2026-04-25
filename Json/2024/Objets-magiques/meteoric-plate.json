@@ -1,16 +1,29 @@
 {
   "slug": "meteoric-plate",
-  "nom": "Meteoric Plate",
+  "nom": "Armure de Plaques Météorique",
   "nom_original": "Meteoric Plate",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This plate armor was magically crafted from plates of interlocking stone. Tiny rubies inlaid in the chest create a glittering mosaic of flames. When you fall while wearing this armor, you can tuck your knees against your chest and curl into a ball. While falling in this way, flames form around your body. You take half the usual falling damage when you hit the ground, and fire explodes from your form in a 20-foot-radius sphere. Each creature in this area must make a DC 15 Dexterity saving throw. On a failed save, a target takes fire damage equal to the falling damage you took, or half as much on a successful saving throw. The fire spreads around corners and ignites flammable objects in the area that aren't being worn or carried.",
   "effets": [],
   "poids": "65.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure de plaques en pierre magique. En chute, vous pouvez vous recroqueviller pour prendre la moitié des dégâts de chute et créer une explosion de feu autour de vous.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Réduit les dégâts de chute de moitié",
+      "Crée une explosion de feu dans une sphère de 6 mètres (dégâts = moitié des dégâts de chute, Dex DD 15)",
+      "Le feu se propage et embrase les objets non portés"
+    ]
+  }
 }

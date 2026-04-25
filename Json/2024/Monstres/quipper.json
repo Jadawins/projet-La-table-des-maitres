@@ -1,6 +1,6 @@
 {
   "slug": "quipper",
-  "nom": "Quipper",
+  "nom": "Piranha",
   "nom_original": "Quipper",
   "taille": "TP",
   "type": "Beast",
@@ -58,14 +58,14 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Blood Frenzy",
+      "nom": "Frénésie sanguinaire",
       "description": "The quipper has advantage on melee attack rolls against any creature that doesn't have all its hit points.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Water Breathing",
+      "nom": "Respiration aquatique",
       "description": "The quipper can breathe only underwater.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
       "bonus_attaque": 5,
       "degats_de": null,

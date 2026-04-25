@@ -1,16 +1,28 @@
 {
   "slug": "root-of-the-world-tree",
-  "nom": "Root of the World Tree",
+  "nom": "Racine de l'Arbre-Monde",
   "nom_original": "Root of the World Tree",
   "categorie": "sceptre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "Crafted from the root burl of a sacred tree, this rod is 2 feet long with a spiked, knobby end. Runes inlaid with gold decorate the full length of the rod. This rod functions as a magic mace. Blood Anointment. You can perform a 1-minute ritual to anoint the rod in your blood. If you do, your hit point maximum is reduced by 2d4 until you finish a long rest. While your hit point maximum is reduced in this way, you gain a +1 bonus to attack and damage rolls made with this magic weapon, and, when you hit a fey or giant with this weapon, that creature takes an extra 2d6 necrotic damage. Holy Anointment. If you spend 1 minute anointing the rod with a flask of holy water, you can cast the augury spell from it. The runes carved into the rod glow and move, forming an answer to your query.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Massue magique permettant deux rituels d'onction : l'onction de sang accorde +1 à l'attaque et dégâts plus 2d6 nécromanciens contre fées/géants, l'onction d'eau bénite permet de lancer augury.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "nécromancien",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Onction de sang : réduit max PV de 2d4, +1 attaque/dégâts contre fées/géants (2d6 nécro supplémentaires)",
+      "Onction d'eau bénite : permet augury"
+    ]
+  }
 }

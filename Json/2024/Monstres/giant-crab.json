@@ -1,13 +1,13 @@
 {
   "slug": "giant-crab",
-  "nom": "Giant Crab",
+  "nom": "Crabe géant",
   "nom_original": "Giant Crab",
   "taille": "M",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 15,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 13,
   "pv_formule": "3d8",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -60,7 +60,7 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The crab can breathe air and water.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage, and the target is grappled (escape DC 11). The crab has two claws, each of which can grapple only one target.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

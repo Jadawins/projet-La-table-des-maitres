@@ -1,16 +1,28 @@
 {
   "slug": "granny-wax",
-  "nom": "Granny Wax",
+  "nom": "Cire de Grand-mère",
   "nom_original": "Granny Wax",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Normally found in a small glass jar containing 1d3 doses, this foul-smelling, greasy yellow substance is made by hags in accordance with an age-old secret recipe. You can use an action to rub one dose of the wax onto an ordinary broom or wooden stick and transform it into a broom of flying for 1 hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Substance jaune malodorante contenue dans un petit flacon. Une dose frottée sur un balai ordinaire le transforme en balai volant pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Transforme un balai ordinaire en balai volant (1 heure)",
+      "Contient 1d3 doses"
+    ]
+  }
 }

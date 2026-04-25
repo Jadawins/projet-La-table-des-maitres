@@ -1,16 +1,29 @@
 {
   "slug": "giant-slayer-rapier",
-  "nom": "Giant Slayer (Rapier)",
+  "nom": "Rapière Tueuse de Géants",
   "nom_original": "Giant Slayer (Rapier)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon.\n\nWhen you hit a giant with it, the giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or fall prone. For the purpose of this weapon, \"giant\" refers to any creature with the giant type, including ettins and trolls.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique +1 qui inflige 2d6 dégâts supplémentaires aux créatures de type Géant et les force à un jet de sauvegarde pour ne pas être jetées à terre.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "arme",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Contre les Géants (type créature) : 2d6 dégâts bonus du type d'arme",
+      "Géant en coup : sauvegarde Force DC 15 ou condition À terre",
+      "Inclut ettins et trolls"
+    ]
+  }
 }

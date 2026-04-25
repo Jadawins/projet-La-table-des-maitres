@@ -1,17 +1,29 @@
 {
   "slug": "crystal-staff",
-  "nom": "Crystal Staff",
+  "nom": "Bâton de cristal",
   "nom_original": "Crystal Staff",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "Carved from a single piece of solid crystal, this staff has numerous reflective facets that produce a strangely hypnotic effect. The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spellcasting ability: color spray (1 charge), confound senses* (3 charges), confusion (4 charges), hypnotic pattern (3 charges), jeweled fissure* (3 charges), prismatic ray* (5 charges), or prismatic spray (7 charges). Spells marked with an asterisk (*) can be found in Deep Magic for 5th Edition. At the GM's discretion, spells from Deep Magic for 5th Edition can be replaced with other spells of similar levels and similarly related to light or confusion. The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the crystal shatters, destroying the staff and dealing 2d6 piercing damage to each creature within 10 feet of it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Taillé dans un seul bloc de cristal massif, ce bâton présente de nombreuses facettes réfléchissantes qui produisent un effet étrangement hypnotique. Il possède 10 charges. En le tenant, vous pouvez utiliser une action pour dépenser 1 charge ou plus afin de lancer l'un des sorts suivants, en utilisant votre DD de sauvegarde et votre caractéristique d'incantation : gerbe chromatique (1 charge), confusion des sens* (3 charges), confusion (4 charges), motif hypnotique (3 charges), fissure de joyaux* (3 charges), rayon prismatique* (5 charges) ou vaporisation prismatique (7 charges). Les sorts marqués d'un astérisque (*) proviennent de Deep Magic for 5th Edition. Le bâton récupère 1d6 + 4 charges dépensées chaque jour à l'aube. Si vous dépensez la dernière charge, lancez un d20. Sur un 1, le cristal vole en éclats, détruisant le bâton et infligeant 2d6 dégâts perforants à chaque créature dans un rayon de 3 mètres."
+  "resume": "Bâton de cristal permettant de lancer des sorts prismatiques et d'illusion en dépensant des charges, avec risque de destruction à la dernière charge.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Gerbe chromatique, confusion, motif hypnotique, rayon prismatique, vaporisation prismatique et autres sorts",
+      "Récupère 1d6+4 charges à l'aube",
+      "Destruction possible avec dégâts en rayon de 3 m si dernière charge"
+    ]
+  }
 }

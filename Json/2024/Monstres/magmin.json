@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "chaotic neutral",
   "ca": 14,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 9,
   "pv_formule": "2d6+2",
   "vitesse": {
@@ -58,7 +58,7 @@
     "tremblements": null
   },
   "langues": [
-    "Ignan"
+    "igné"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -66,14 +66,14 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Death Burst",
+      "nom": "Explosion mortelle",
       "description": "When the magmin dies, it explodes in a burst of fire and magma. Each creature within 10 ft. of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one. Flammable objects that aren't being worn or carried in that area are ignited.",
       "bonus_attaque": 0,
       "degats_de": "2d6",
       "degats_bonus": null
     },
     {
-      "nom": "Ignited Illumination",
+      "nom": "Illumination enflammée",
       "description": "As a bonus action, the magmin can set itself ablaze or extinguish its flames. While ablaze, the magmin sheds bright light in a 10-foot radius and dim light for an additional 10 ft.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -82,7 +82,7 @@
   ],
   "actions": [
     {
-      "nom": "Touch",
+      "nom": "Contact",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) fire damage. If the target is a creature or a flammable object, it ignites. Until a target takes an action to douse the fire, the target takes 3 (1d6) fire damage at the end of each of its turns.",
       "bonus_attaque": 4,
       "degats_de": "2d6",

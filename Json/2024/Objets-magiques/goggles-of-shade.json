@@ -1,16 +1,28 @@
 {
   "slug": "goggles-of-shade",
-  "nom": "Goggles of Shade",
+  "nom": "Lunettes d'ombre",
   "nom_original": "Goggles of Shade",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing these dark lenses, you have advantage on Charisma (Deception) checks. If you have the Sunlight Sensitivity trait and wear these goggles, you no longer suffer the penalties of Sunlight Sensitivity while in sunlight.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces lentilles sombres vous donnent l'avantage aux tests de Supercherie (Charisme). Elles annulent les pénalités de la sensibilité au soleil.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Charisma (Supercherie)",
+      "Annule la Sensibilité au soleil en lumière directe"
+    ]
+  }
 }

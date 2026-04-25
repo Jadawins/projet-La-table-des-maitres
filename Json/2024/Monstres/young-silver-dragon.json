@@ -1,13 +1,13 @@
 {
   "slug": "young-silver-dragon",
-  "nom": "Young Silver Dragon",
+  "nom": "Jeune dragon d'argent",
   "nom_original": "Young Silver Dragon",
   "taille": "G",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful good",
   "ca": 18,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 168,
   "pv_formule": "16d10+80",
   "vitesse": {
@@ -40,10 +40,10 @@
     "CHA": 8
   },
   "competences": {
-    "arcana": 6,
-    "history": 6,
+    "arcanes": 6,
+    "histoire": 6,
     "perception": 8,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [
@@ -59,8 +59,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "9",
   "fp_numerique": 9,
@@ -69,28 +69,28 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The dragon makes three attacks: one with its bite and two with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.",
       "bonus_attaque": 10,
       "degats_de": "2d10",
       "degats_bonus": 6
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.",
       "bonus_attaque": 10,
       "degats_de": "2d6",
       "degats_bonus": 6
     },
     {
-      "nom": "Breath Weapons (Recharge 5-6)",
+      "nom": "Armes de souffle (Recharge 5-6)",
       "description": "The dragon uses one of the following breath weapons.\n**Cold Breath.** The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.\n**Paralyzing Breath.** The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
       "bonus_attaque": 0,
       "degats_de": "12d8",

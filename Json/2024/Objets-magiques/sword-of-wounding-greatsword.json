@@ -1,16 +1,29 @@
 {
   "slug": "sword-of-wounding-greatsword",
-  "nom": "Épée de Wounding (Greatsword)",
+  "nom": "Épée de Blessure (Épée à deux mains)",
   "nom_original": "Sword of Wounding (Greatsword)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "Hit points lost to this weapon's damage can be regained only through a short or long rest, rather than by regeneration, magic, or any other means.\n\nOnce per turn, when you hit a creature with an attack using this magic weapon, you can wound the target. At the start of each of the wounded creature's turns, it takes 1d4 necrotic damage for each time you've wounded it, and it can then make a DC 15 Constitution saving throw, ending the effect of all such wounds on itself on a success. Alternatively, the wounded creature, or a creature within 5 feet of it, can use an action to make a DC 15 Wisdom (Medicine) check, ending the effect of such wounds on it on a success.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette grande épée inflige des blessures qui causent 1d4 dégâts nécrotiques chaque tour et ne peuvent être soignées que par un repos, pas par la magie.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Blessure (1/tour) : 1d4 dégâts nécrotiques au début du tour de la cible par blessure",
+      "Les PV perdus ne peuvent être regagnés que par repos (court ou long)",
+      "Sauvegarde Constitution DD 15 ou action Sagesse (Médecine) DD 15 pour guérir"
+    ]
+  }
 }

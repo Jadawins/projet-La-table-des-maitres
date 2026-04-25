@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 14,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 68,
   "pv_formule": "8d10+24",
   "vitesse": {
@@ -58,7 +58,7 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Tail Spike Regrowth",
+      "nom": "Régénération des pics de la queue",
       "description": "The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -67,28 +67,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d8",
       "degats_bonus": 3
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d6",
       "degats_bonus": 3
     },
     {
-      "nom": "Tail Spike",
+      "nom": "Pic de la queue",
       "description": "Ranged Weapon Attack: +5 to hit, range 100/200 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d8",

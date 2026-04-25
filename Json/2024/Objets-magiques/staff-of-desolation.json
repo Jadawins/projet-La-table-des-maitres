@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-desolation",
-  "nom": "Bâton de Desolation",
+  "nom": "Bâton de Désolation",
   "nom_original": "Staff of Desolation",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This staff can be wielded as a magic quarterstaff that grants a +1 bonus to attack and damage rolls made with it. When you hit an object or structure with a melee attack using the staff, you deal double damage (triple damage on a critical hit). The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: thunderwave (1 charge), shatter (2 charges), circle of death (6 charges), disintegrate (6 charges), or earthquake (8 charges). The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff crumbles to dust and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton de mage +1 infligeant dégâts doublés aux objets et structures, capable de lancer des sorts de destruction massive.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Dégâts doublés contre objets/structures (triplés aux coups critiques)",
+      "Lance thunderwave, shatter, circle of death, disintegrate, earthquake (coûts variables)",
+      "Récupère 1d6+4 charges à l'aube"
+    ]
+  }
 }

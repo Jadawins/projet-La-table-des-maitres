@@ -1,16 +1,28 @@
 {
   "slug": "glaive-of-wounding",
-  "nom": "Glaive of Wounding",
+  "nom": "Glaive de Blessure",
   "nom_original": "Glaive of Wounding",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
   "effets": [],
   "poids": "6.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette arme magique inflige 2d6 dégâts nécrotiques supplémentaires et empêche la cible de récupérer des points de vie pendant 1 heure si elle échoue un JS de Constitution DC 15.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "La cible ne peut pas récupérer de PV pendant 1 heure (JS Constitution DC 15)",
+      "La cible peut relancer le JS à la fin de chacun de ses tours"
+    ]
+  }
 }

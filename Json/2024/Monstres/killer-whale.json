@@ -1,13 +1,13 @@
 {
   "slug": "killer-whale",
-  "nom": "Killer Whale",
+  "nom": "Orque",
   "nom_original": "Killer Whale",
   "taille": "TG",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 90,
   "pv_formule": "12d12+12",
   "vitesse": {
@@ -60,21 +60,21 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Echolocation",
+      "nom": "Écholocalisation",
       "description": "The whale can't use its blindsight while deafened.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Hold Breath",
+      "nom": "Retenir son souffle",
       "description": "The whale can hold its breath for 30 minutes",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Keen Hearing",
+      "nom": "Ouïe aiguisée",
       "description": "The whale has advantage on Wisdom (Perception) checks that rely on hearing.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -83,7 +83,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 21 (5d6 + 4) piercing damage.",
       "bonus_attaque": null,
       "degats_de": null,

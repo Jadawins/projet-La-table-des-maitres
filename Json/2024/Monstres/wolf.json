@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 11,
   "pv_formule": "2d8+2",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,14 +61,14 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -77,7 +77,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
       "bonus_attaque": 4,
       "degats_de": "2d4",

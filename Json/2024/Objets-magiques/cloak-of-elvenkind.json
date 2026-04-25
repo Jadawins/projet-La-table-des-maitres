@@ -1,17 +1,28 @@
 {
   "slug": "cloak-of-elvenkind",
-  "nom": "Cape de discrétion elfique",
+  "nom": "Cape de Discrétion Elfique",
   "nom_original": "Cloak of Elvenkind",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear this cloak with its hood up, Wisdom (Perception) checks made to see you have disadvantage, and you have advantage on Dexterity (Stealth) checks made to hide, as the cloak's color shifts to camouflage you. Pulling the hood up or down requires an action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez cette cape avec sa capuche relevée, les tests de Sagesse (Perception) effectués pour vous voir ont le désavantage, et vous avez l'avantage aux tests de Dextérité (Discrétion) effectués pour vous cacher, car la couleur de la cape se modifie pour vous camoufler. Relever ou baisser la capuche nécessite une action."
+  "resume": "Capuche relevée : avantage aux tests de Discrétion et désavantage aux tests de Perception pour vous voir.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Désavantage aux tests de Sagesse (Perception) pour vous voir",
+      "Avantage aux tests de Dextérité (Discrétion) pour vous cacher"
+    ]
+  }
 }

@@ -40,10 +40,10 @@
     "CHA": null
   },
   "competences": {
-    "deception": 4,
-    "insight": 3,
+    "tromperie": 4,
+    "perspicacité": 3,
     "persuasion": 4,
-    "stealth": 5
+    "discrétion": 5
   },
   "resistances": [
     "cold; bludgeoning",
@@ -66,8 +66,8 @@
     "tremblements": null
   },
   "langues": [
-    "Infernal",
-    "Common"
+    "infernal",
+    "commun"
   ],
   "fp": "1",
   "fp_numerique": 1,
@@ -75,28 +75,28 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Shapechanger",
+      "nom": "Métamorphe",
       "description": "The imp can use its action to polymorph into a beast form that resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Devil's Sight",
+      "nom": "Vision du diable",
       "description": "Magical darkness doesn't impede the imp's darkvision.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The imp has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Variant: Familiar",
+      "nom": "Variante : Familier",
       "description": "The imp can serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the imp senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the imp's Magic Resistance trait. At any time and for any reason, the imp can end its service as a familiar, ending the telepathic bond.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -105,14 +105,14 @@
   ],
   "actions": [
     {
-      "nom": "Sting (Bite in Beast Form)",
+      "nom": "Piqûre (Morsure sous forme de bête)",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must make on a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 5,
       "degats_de": "1d4",
       "degats_bonus": 3
     },
     {
-      "nom": "Invisibility",
+      "nom": "Invisibilité",
       "description": "The imp magically turns invisible until it attacks, or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.",
       "bonus_attaque": null,
       "degats_de": null,

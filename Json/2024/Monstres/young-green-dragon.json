@@ -1,13 +1,13 @@
 {
   "slug": "young-green-dragon",
-  "nom": "Young Green Dragon",
+  "nom": "Jeune dragon vert",
   "nom_original": "Young Green Dragon",
   "taille": "G",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 18,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 136,
   "pv_formule": "16d10+48",
   "vitesse": {
@@ -40,9 +40,9 @@
     "CHA": 5
   },
   "competences": {
-    "deception": 5,
+    "tromperie": 5,
     "perception": 7,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [
@@ -60,8 +60,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "8",
   "fp_numerique": 8,
@@ -69,7 +69,7 @@
   "experience": 3900,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The dragon can breathe air and water.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -78,28 +78,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The dragon makes three attacks: one with its bite and two with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 7 (2d6) poison damage.",
       "bonus_attaque": 7,
       "degats_de": "2d10+2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Poison Breath (Recharge 5-6)",
+      "nom": "Souffle de poison (Recharge 5-6)",
       "description": "The dragon exhales poisonous gas in a 30-foot cone. Each creature in that area must make a DC 14 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "12d6",

@@ -1,16 +1,29 @@
 {
   "slug": "draught-of-the-black-owl",
-  "nom": "Draught of the Black Owl",
+  "nom": "Trait de la Chouette Noire",
   "nom_original": "Draught of the Black Owl",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this potion, you transform into a black-feathered owl for 1 hour. This effect works like the polymorph spell, except you can take only the form of an owl. While you are in the form of an owl, you retain your Intelligence, Wisdom, and Charisma scores. If you are a druid with the Wild Shape feature, you can transform into a giant owl instead. Drinking this potion doesn't expend a use of Wild Shape.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Potion permettant de se transformer en chouette noire pendant 1 heure, en conservant ses caractéristiques mentales.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Transformation en chouette noire pendant 1 heure",
+      "Conservation de l'Intelligence, Sagesse et Charisme",
+      "Druides : transformation en chouette géante sans dépenser Wild Shape"
+    ]
+  }
 }

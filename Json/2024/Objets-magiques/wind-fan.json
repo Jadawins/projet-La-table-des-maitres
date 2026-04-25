@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While holding this fan, you can use an action to cast the _gust of wind_ spell (save DC 13) from it. Once used, the fan shouldn't be used again until the next dawn. Each time it is used again before then, it has a cumulative 20 percent chance of not working and tearing into useless, nonmagical tatters.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Éventail magique permettant de lancer rafales de vent une fois par jour, avec risque croissant de destruction en cas de surutilisation.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Rafales de vent (DD sauvegarde 13, 1 action)",
+      "Récharge à l'aube",
+      "Risque de destruction en surutilisation (+20% cumulatif)"
+    ]
+  }
 }

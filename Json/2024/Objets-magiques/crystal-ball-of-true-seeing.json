@@ -1,17 +1,28 @@
 {
   "slug": "crystal-ball-of-true-seeing",
-  "nom": "Crystal Ball of True Seeing",
+  "nom": "Boule de cristal de vision véritable",
   "nom_original": "Crystal Ball of True Seeing",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The typical crystal ball, a very rare item, is about 6 inches in diameter. While touching it, you can cast the scrying spell (save DC 17) with it.\r\n\r\nWhile scrying with the crystal ball, you have truesight with a radius of 120 feet centered on the spell's sensor.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "La boule de cristal ordinaire, un objet très rare, mesure environ 15 cm de diamètre. En la touchant, vous pouvez lancer le sort scrutation (DD 17) grâce à elle. Pendant que vous scrutez avec la boule, vous disposez de la vision parfaite dans un rayon de 36 mètres centré sur le capteur du sort."
+  "resume": "Boule de cristal permettant de lancer scrutation (DD 17) avec vision parfaite dans un rayon de 36 mètres autour du capteur du sort.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lancer scrutation (DD 17)",
+      "Vision parfaite dans un rayon de 36 m autour du capteur"
+    ]
+  }
 }

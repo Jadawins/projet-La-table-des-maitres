@@ -1,16 +1,29 @@
 {
   "slug": "frost-brand-scimitar",
-  "nom": "Frost Brand (Scimitar)",
+  "nom": "Cimeterre Marque du Gel",
   "nom_original": "Frost Brand (Scimitar)",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you hit with an attack roll using this magic weapon, the target takes an extra 1d6 Cold damage. In addition, while you hold the weapon, you have Resistance to Fire damage. In freezing temperatures, the weapon sheds Bright Light in a 10-foot radius and Dim Light for an additional 10 feet. When you draw this weapon, you can extinguish all nonmagical flames within 30 feet of yourself. Once used, this property can't be used again for 1 hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette arme magique inflige 1d6 dégâts de froid supplémentaires et confère une résistance aux dégâts de feu. Elle brille dans le froid et peut éteindre les flammes non magiques.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "froid",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de feu",
+      "Émet une lumière vive de 3 m et une lumière faible de 3 m supplémentaires en températures glaciales",
+      "Peut éteindre les flammes non magiques dans un rayon de 9 m (recharge 1h)"
+    ]
+  }
 }

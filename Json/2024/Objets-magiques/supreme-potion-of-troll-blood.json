@@ -1,16 +1,28 @@
 {
   "slug": "supreme-potion-of-troll-blood",
-  "nom": "Supreme Potion de Troll Blood",
+  "nom": "Potion suprême de sang de troll",
   "nom_original": "Supreme Potion of Troll Blood",
   "categorie": "potion",
   "rarete": "legendaire",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this potion, you regain 8 hit points at the start of each of your turns. After it has restored 80 hit points, the potion's effects end.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Restaure 8 PV au début de chacun de vos tours pendant une durée limitée. L'effet s'arrête après avoir restauré 80 PV au total.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "8",
+    "charges": null,
+    "effets": [
+      "Régénération de 8 PV au début de chaque tour",
+      "Durée : jusqu'à 80 PV restaurés au total"
+    ]
+  }
 }

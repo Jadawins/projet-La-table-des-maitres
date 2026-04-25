@@ -1,17 +1,29 @@
 {
   "slug": "bloodfuel-blowgun",
-  "nom": "Bloodfuel Blowgun",
+  "nom": "Sarbacane Soif-de-Sang",
   "nom_original": "Bloodfuel Blowgun",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. The first time you attack with the weapon on each of your turns, you can spend one or more Hit Dice, up to your maximum Hit Dice. For each Hit Die spent in this way, you roll the die and add your Constitution modifier to it. You lose hit points equal to the total, and the target takes extra necrotic damage equal to the total. You can't use this feature of the weapon if you don't have blood. Hit Dice spent using this weapon's feature can't be used to regain hit points during a short rest. You regain spent Hit Dice as normal.",
-  "description_fr": "Vous bénéficiez d'un bonus de +1 aux jets d'attaque et de dégâts effectués avec cette arme magique. La première fois que vous attaquez avec l'arme à chacun de vos tours, vous pouvez dépenser un ou plusieurs Dés de Vie, jusqu'à votre maximum de Dés de Vie. Pour chaque Dé de Vie dépensé de cette façon, vous lancez le dé et ajoutez votre modificateur de Constitution au résultat. Vous perdez un nombre de points de vie égal au total, et la cible subit des dégâts nécrotiques supplémentaires égaux au total. Vous ne pouvez pas utiliser cette propriété de l'arme si vous n'avez pas de sang. Les Dés de Vie dépensés grâce à la propriété de cette arme ne peuvent pas être utilisés pour récupérer des points de vie lors d'un repos court. Vous récupérez vos Dés de Vie dépensés normalement.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique +1 permettant de dépenser des Dés de Vie pour infliger des dégâts nécrotiques supplémentaires au prix de points de vie.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "Dé de Vie+CON",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Une fois par tour, dépensez des Dés de Vie pour ajouter des dégâts nécrotiques",
+      "Perdez des PV égaux aux dégâts nécrotiques infligés",
+      "Les Dés de Vie dépensés ne peuvent pas être utilisés pour les repos courts"
+    ]
+  }
 }

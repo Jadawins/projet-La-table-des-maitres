@@ -1,16 +1,28 @@
 {
   "slug": "giant-slayer-hand-crossbow",
-  "nom": "Giant Slayer (Hand Crossbow)",
+  "nom": "Arbalète de Poing Terreur des Géants",
   "nom_original": "Giant Slayer (Hand Crossbow)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique +1 qui inflige 2d6 dégâts supplémentaires aux géants et les force à un jet de Force pour ne pas tomber à terre.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "arme",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Contre les géants : 2d6 dégâts supplémentaires",
+      "Géant touché doit réussir un jet de Force (DC 15) ou tombe à terre"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "monkeys-paw-of-fortune",
-  "nom": "Monkey's Paw of Fortune",
+  "nom": "Patte de Singe de la Fortune",
   "nom_original": "Monkey's Paw of Fortune",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This preserved monkey's paw hangs on a simple leather thong. This paw helps you alter your fate. If you are wearing this paw when you fail an attack roll, ability check, or saving throw, you can use your reaction to reroll the roll with a +10 bonus. You must take the second roll. When you use this property of the paw, one of its fingers curls tight to the palm. When all five fingers are curled tightly into a fist, the monkey's paw loses its magic.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Amulette permettant de relancer un jet échoué (attaque, test de caractéristique, sauvegarde) avec un bonus de +10. Possède 5 utilisations avant de perdre sa magie.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Relancer un jet échoué en réaction avec +10",
+      "Utilisable une fois par doigt (5 utilisations max)"
+    ]
+  }
 }

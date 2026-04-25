@@ -1,17 +1,28 @@
 {
   "slug": "crusaders-shield",
-  "nom": "Crusader's Shield",
+  "nom": "Bouclier du Croisé",
   "nom_original": "Crusader's Shield",
   "categorie": "autre",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "A bronze boss is set in the center of this round shield. When you attune to the shield, the boss changes shape, becoming a symbol of your divine connection: a holy symbol for a cleric or paladin or an engraving of mistletoe or other sacred plant for a druid. You can use the shield as a spellcasting focus for your spells.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Un bossoir en bronze est serti au centre de ce bouclier rond. Lorsque vous vous harmonisez avec le bouclier, le bossoir change de forme pour devenir le symbole de votre connexion divine : un symbole sacré pour un clerc ou un paladin, ou une gravure de gui ou d'une autre plante sacrée pour un druide. Vous pouvez utiliser le bouclier comme focaliseur d'incantation pour vos sorts."
+  "resume": "Bouclier rond avec bossoir en bronze servant de focaliseur d'incantation pour les sorts du porteur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Fonctionne comme focaliseur d'incantation",
+      "Bossoir adapte sa forme au symbole sacré du porteur"
+    ]
+  }
 }

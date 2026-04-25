@@ -7,7 +7,7 @@
   "sous_type": "sahuagin",
   "alignement": "lawful evil",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 22,
   "pv_formule": "4d8+4",
   "vitesse": {
@@ -54,7 +54,7 @@
     "tremblements": null
   },
   "langues": [
-    "Sahuagin"
+    "sahuagin"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -62,21 +62,21 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Blood Frenzy",
+      "nom": "Frénésie sanguinaire",
       "description": "The sahuagin has advantage on melee attack rolls against any creature that doesn't have all its hit points.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Limited Amphibiousness",
+      "nom": "Amphibienneté Limitée",
       "description": "The sahuagin can breathe air and water, but it needs to be submerged at least once every 4 hours to avoid suffocating.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Shark Telepathy",
+      "nom": "Télépathie des Requins",
       "description": "The sahuagin can magically command any shark within 120 feet of it, using a limited telepathy.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -85,28 +85,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The sahuagin makes two melee attacks: one with its bite and one with its claws or spear.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d4",
       "degats_bonus": 1
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) slashing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d4",
       "degats_bonus": 1
     },
     {
-      "nom": "Spear",
+      "nom": "Pique",
       "description": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

@@ -1,16 +1,27 @@
 {
   "slug": "warlocks-aegis",
-  "nom": "Warlock's Aegis",
+  "nom": "Égide du Sorcier",
   "nom_original": "Warlock's Aegis",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "When you attune to this mundane-looking suit of leather armor, symbols related to your patron burn themselves into the leather, and the armor's colors change to those most closely associated with your patron. While wearing this armor, you can use an action and expend a spell slot to increase your AC by an amount equal to your Charisma modifier for the next 8 hours. The armor can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "10.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure de cuir qui change de couleur selon votre patron et vous permet de dépenser une place de sort pour augmenter votre CA d'un montant égal à votre modificateur de Charisme pendant 8 heures.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "1 utilisation par jour : action + emplacement de sort pour augmenter la CA de votre modificateur de Charisme pendant 8 heures"
+    ]
+  }
 }

@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this ring, you can use an action to speak its command word. When you do so, you can see into and through solid matter for 1 minute. This vision has a radius of 30 feet. To you, solid objects within that radius appear transparent and don't prevent light from passing through them. The vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances block the vision, as does a thin sheet of lead.\n\nWhenever you use the ring again before taking a long rest, you must succeed on a DC 15 Constitution saving throw or gain one level of exhaustion.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vision perçant la matière solide sur 30 pieds pendant 1 minute, avec risque d'épuisement à chaque utilisation.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vision perçant la matière solide (30 pieds, 1 minute)",
+      "Pénètre 1 pied de pierre, 1 pouce de métal ou 3 pieds de bois",
+      "Risque d'épuisement (jet de Constitution DD 15)"
+    ]
+  }
 }

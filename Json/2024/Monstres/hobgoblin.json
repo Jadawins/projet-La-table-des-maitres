@@ -7,7 +7,7 @@
   "sous_type": "goblinoid",
   "alignement": "lawful evil",
   "ca": 18,
-  "ca_detail": "chain mail, shield",
+  "ca_detail": "cotte de mailles, bouclier",
   "pv": 11,
   "pv_formule": "2d8+2",
   "vitesse": {
@@ -52,8 +52,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Goblin"
+    "commun",
+    "gobelin"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -61,7 +61,7 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Martial Advantage",
+      "nom": "Avantage martial",
       "description": "Once per turn, the hobgoblin can deal an extra 7 (2d6) damage to a creature it hits with a weapon attack if that creature is within 5 ft. of an ally of the hobgoblin that isn't incapacitated.",
       "bonus_attaque": 0,
       "degats_de": "2d6",
@@ -70,14 +70,14 @@
   ],
   "actions": [
     {
-      "nom": "Longsword",
+      "nom": "Épée longue",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage, or 6 (1d10 + 1) slashing damage if used with two hands.",
       "bonus_attaque": 3,
       "degats_de": "1d8",
       "degats_bonus": 1
     },
     {
-      "nom": "Longbow",
+      "nom": "Arc long",
       "description": "Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d8",

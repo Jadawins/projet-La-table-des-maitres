@@ -1,16 +1,29 @@
 {
   "slug": "fear-eaters-mask",
-  "nom": "Fear-Eater's Mask",
+  "nom": "Masque du Mangeur de Peur",
   "nom_original": "Fear-Eater's Mask",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This painted, wooden mask bears the visage of a snarling, fiendish face. While wearing the mask, you can use a bonus action to feed on the fear of a frightened creature within 30 feet of you. The target must succeed on a DC 13 Wisdom saving throw or take 2d6 psychic damage. You regain hit points equal to the damage dealt. If you are not injured, you gain temporary hit points equal to the damage dealt instead. Once a creature has failed this saving throw, it is immune to the effects of this mask for 24 hours.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce masque en bois peint vous permet de vous nourrir de la peur d'une créature effrayée à 30 pieds, infligeant 2d6 dégâts psychiques et vous soignant du même montant (ou octroyant des PV temporaires si vous êtes au maximum).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "psychique",
+    "pv_soins": "2d6",
+    "charges": null,
+    "effets": [
+      "Sauvegarde Sagesse CD 13 de la cible effrayée à 30 pieds",
+      "Soins ou PV temporaires égaux aux dégâts",
+      "Immunité de 24 heures après un échec de sauvegarde"
+    ]
+  }
 }

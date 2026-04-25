@@ -1,17 +1,29 @@
 {
   "slug": "crimson-carpet",
-  "nom": "Crimson Carpet",
+  "nom": "Tapis Cramoisé",
   "nom_original": "Crimson Carpet",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This rolled bundle of red felt is 3-feet long and 1-foot wide, and it weighs 10 pounds. You can use an action to speak the carpet's command word to cause it to unroll, creating a horizontal walking surface or bridge up to 10 feet wide, up to 60 feet long, and 1/4 inch thick. The carpet doesn't need to be anchored and can hover. The carpet has immunity to all damage and isn't affected by the dispel magic spell. The disintegrate spell destroys the carpet. The carpet remains unrolled until you use an action to repeat the command word, causing it to roll up again. When you do so, the carpet can't be unrolled again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce rouleau de feutre rouge mesure environ 90 cm de long et 30 cm de large, et pèse 4,5 kg. Vous pouvez utiliser une action pour prononcer le mot de commande du tapis et le faire se dérouler, créant ainsi une surface de marche horizontale ou un pont pouvant atteindre 3 mètres de large, 18 mètres de long et 6 mm d'épaisseur. Le tapis n'a pas besoin d'être ancré et peut léviter. Il est immunisé contre tous les dégâts et n'est pas affecté par le sort dissolution de la magie. Le sort désintégration détruit cependant le tapis. Celui-ci reste déroulé jusqu'à ce que vous utilisiez une action pour répéter le mot de commande, le faisant se rouler à nouveau. Une fois enroulé, il ne peut plus être déroulé avant l'aube suivante."
+  "resume": "Un tapis magique qui se déploie en une plate-forme flottante pouvant mesurer jusqu'à 3 m de large et 18 m de long, immune à la plupart des dégâts.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Crée une surface flottante de 3 m × 18 m",
+      "Immunisé à tous les dégâts sauf désintégration",
+      "Doit être enroulé et ne peut être redéployé qu'à l'aube suivante"
+    ]
+  }
 }

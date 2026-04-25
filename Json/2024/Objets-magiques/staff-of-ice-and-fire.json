@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-ice-and-fire",
-  "nom": "Bâton de Ice and Fire",
+  "nom": "Bâton de Glace et de Feu",
   "nom_original": "Staff of Ice and Fire",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "Made from the branch of a white ash tree, this staff holds a sapphire at one end and a ruby at the other. The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spellcasting ability: flaming sphere (2 charges), freezing sphere (6 charges), sleet storm (3 charges), or wall of fire (4 charges). The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff and its gems crumble into ash and snow and are destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bâton avec un saphir et un rubis permettant de lancer des sorts de feu et de glace en dépensant des charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Lance sphère de feu (2 charges) ou sphère de congélation (6 charges)",
+      "Lance tempête de neige (3 charges) ou mur de feu (4 charges)",
+      "Régénère 1d6+4 charges à l'aube"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "stonedrift-staff",
-  "nom": "Stonedrift Staff",
+  "nom": "Bâton du glissement de pierre",
   "nom_original": "Stonedrift Staff",
   "categorie": "baton",
   "rarete": "legendaire",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This staff is fashioned from petrified wood and crowned with a raw chunk of lapis lazuli veined with gold. The staff can be wielded as a magic quarterstaff. The staff has 10 charges for the following properties. It regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff crumbles to dust and is destroyed. Spells. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: animate objects (only stone objects, 5 charges), earthquake (8 charges), passwall (only stone surfaces, 5 charges), or stone shape (4 charges). Elemental Speech. You can speak and understand Primordial while holding this staff. Favor of the Earthborn. While holding the staff, you have advantage on Charisma checks made to influence earth elementals or other denizens of the Plane of Earth. Stone Glide. If the staff has at least 1 charge, you have a burrowing speed equal to your walking speed, and you can burrow through earth and stone while holding this staff. While doing so, you don’t disturb the material you move through.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bâton magique en bois pétrifié permettant de lancer des sorts de pierre, de communiquer avec les créatures terrestres et de creuser à travers la roche.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Permet de lancer des sorts de pierre (animate objects, earthquake, passwall, stone shape) en dépensant des charges",
+      "Accorde une vitesse de creusement égale à votre vitesse de déplacement et permet de creuser dans la terre et la roche sans les déranger",
+      "Confère l'avantage aux jets de Charisme pour influencer les élémentaires de terre"
+    ]
+  }
 }

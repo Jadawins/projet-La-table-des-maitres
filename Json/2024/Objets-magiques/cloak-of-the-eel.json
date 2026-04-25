@@ -1,17 +1,29 @@
 {
   "slug": "cloak-of-the-eel",
-  "nom": "Cape de the Eel",
+  "nom": "Cape de l'Anguille",
   "nom_original": "Cloak of the Eel",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this rough, blue-gray leather cloak, you have a swimming speed of 40 feet. When you are hit with a melee weapon attack while wearing this cloak, you can use your reaction to generate a powerful electric charge. The attacker must succeed on a DC 13 Dexterity saving throw or take 2d6 lightning damage. The attacker has disadvantage on the saving throw if it hits you with a metal weapon. The cloak can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant cette cape rugueuse en cuir bleu-gris, vous disposez d'une vitesse de nage de 12 mètres. Lorsque vous êtes touché par une attaque d'arme de mêlée en portant cette cape, vous pouvez utiliser votre réaction pour générer une puissante décharge électrique. L'attaquant doit réussir un jet de sauvegarde de Dextérité DD 13 ou subir 2d6 dégâts de foudre. L'attaquant a le désavantage au jet de sauvegarde s'il vous a touché avec une arme métallique. La cape ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
+  "resume": "Cape de cuir bleu-gris accordant une vitesse de nage et une décharge électrique en réaction quand on est touché au mêlée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "foudre",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de nage 12 m",
+      "Décharge électrique sur toucher (DD 13, 2d6 foudre)",
+      "Désavantage si arme métallique (1/jour à l'aube)"
+    ]
+  }
 }

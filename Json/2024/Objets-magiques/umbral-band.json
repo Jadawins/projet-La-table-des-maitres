@@ -1,16 +1,28 @@
 {
   "slug": "umbral-band",
-  "nom": "Umbral Band",
+  "nom": "Anneau d'Ombre",
   "nom_original": "Umbral Band",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This blackened steel ring is cold to the touch. While wearing this ring, you have darkvision out to a range of 30 feet, and you have advantage on Dexterity (Stealth) checks while in an area of dim light or darkness.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau magique offrant vision dans le noir 30 pieds et avantage aux tests de Discrétion en lumière faible ou ténèbres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vision dans le noir 30 pieds",
+      "Avantage aux tests de Discrétion (Dextérité) en lumière faible/ténèbres"
+    ]
+  }
 }

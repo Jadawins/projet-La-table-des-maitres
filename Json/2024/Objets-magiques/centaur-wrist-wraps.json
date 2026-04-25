@@ -1,17 +1,28 @@
 {
   "slug": "centaur-wrist-wraps",
-  "nom": "Centaur Wrist-Wraps",
+  "nom": "Bandeaux de Poignet de Centaure",
   "nom_original": "Centaur Wrist-Wraps",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These leather and fur wraps are imbued with centaur shamanic magic. The wraps are stained a deep amber color, and intricate motifs painted in blue seem to float above the surface of the leather. While wearing these wraps, you can call on their magic to reroll an attack made with a shortbow or longbow. You must use the new roll. Once used, the wraps must be held in wood smoke for 15 minutes before they can be used in this way again.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ces lanières de cuir et de fourrure sont imprégnées de magie chamanique centaurique. Elles sont teintées d'un ambre profond, et des motifs complexes peints en bleu semblent flotter au-dessus du cuir. En portant ces lanières, vous pouvez invoquer leur magie pour relancer un jet d'attaque effectué avec un arc court ou un arc long. Vous devez utiliser le nouveau résultat. Une fois utilisées, les lanières doivent être exposées à la fumée de bois pendant 15 minutes avant de pouvoir être réutilisées de cette façon."
+  "resume": "Ces lanières magiques permettent de relancer un jet d'attaque à l'arc court ou long une fois par repos (après une fumigation de 15 minutes).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Relancer un jet d'attaque à l'arc",
+      "Réutilisable après fumigation de bois (15 min)"
+    ]
+  }
 }

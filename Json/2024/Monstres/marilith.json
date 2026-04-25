@@ -7,7 +7,7 @@
   "sous_type": "demon",
   "alignement": "chaotic evil",
   "ca": 18,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 189,
   "pv_formule": "18d10+90",
   "vitesse": {
@@ -62,8 +62,8 @@
     "tremblements": null
   },
   "langues": [
-    "Abyssal",
-    "telepathy 120 ft."
+    "abyssal",
+    "télépathie 36 m"
   ],
   "fp": "16",
   "fp_numerique": 16,
@@ -71,21 +71,21 @@
   "experience": 15000,
   "traits": [
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The marilith has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Weapons",
+      "nom": "Armes magiques",
       "description": "The marilith's weapon attacks are magical.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Reactive",
+      "nom": "Réactif",
       "description": "The marilith can take one reaction on every turn in combat.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -94,35 +94,35 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The marilith can make seven attacks: six with its longswords and one with its tail.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Longsword",
+      "nom": "Épée longue",
       "description": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.",
       "bonus_attaque": 9,
       "degats_de": "2d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Tail",
+      "nom": "Queue",
       "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one creature. Hit: 15 (2d10 + 4) bludgeoning damage. If the target is Medium or smaller, it is grappled (escape DC 19). Until this grapple ends, the target is restrained, the marilith can automatically hit the target with its tail, and the marilith can't make tail attacks against other targets.",
       "bonus_attaque": 9,
       "degats_de": "2d10",
       "degats_bonus": 4
     },
     {
-      "nom": "Teleport",
+      "nom": "Téléportation",
       "description": "The marilith magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Variant: Summon Demon (1/Day)",
+      "nom": "Variante : Invoquer un démon (1/jour)",
       "description": "The demon chooses what to summon and attempts a magical summoning.\nA marilith has a 50 percent chance of summoning 1d6 vrocks, 1d4 hezrous, 1d3 glabrezus, 1d2 nalfeshnees, or one marilith.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -132,7 +132,7 @@
   "actions_bonus": [],
   "reactions": [
     {
-      "nom": "Parry",
+      "nom": "Parade",
       "description": "The marilith adds 5 to its AC against one melee attack that would hit it. To do so, the marilith must see the attacker and be wielding a melee weapon.",
       "bonus_attaque": null,
       "degats_de": null,

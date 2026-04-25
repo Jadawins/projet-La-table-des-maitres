@@ -1,17 +1,29 @@
 {
   "slug": "crown-of-the-pharaoh",
-  "nom": "Crown of the Pharaoh",
+  "nom": "Couronne du Pharaon",
   "nom_original": "Crown of the Pharaoh",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The swirling gold bands of this crown recall the shape of desert dunes, and dozens of tiny emeralds, rubies, and sapphires nest among the skillfully forged curlicues. While wearing the crown, you gain the following benefits: Your Intelligence score is 25. This crown has no effect on you if your Intelligence is already 25 or higher. You have a flying speed equal to your walking speed. While you are wearing no armor and not wielding a shield, your Armor Class equals 16 + your Dexterity modifier.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Les bandes d'or tourbillonnantes de cette couronne évoquent les dunes du désert, et des dizaines de petites émeraudes, rubis et saphirs sont nichés parmi les entrelacs habilement forgés. Tant que vous portez cette couronne, vous bénéficiez des avantages suivants : votre valeur d'Intelligence est portée à 25 (sans effet si elle est déjà de 25 ou plus) ; vous disposez d'une vitesse de vol égale à votre vitesse de déplacement ; si vous ne portez aucune armure et ne tenez pas de bouclier, votre CA est égale à 16 + votre modificateur de Dextérité."
+  "resume": "Couronne dorée augmentant l'Intelligence à 25, accordant une vitesse de vol et améliorant la CA sans armure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Intelligence portée à 25",
+      "Vitesse de vol égale à la vitesse de déplacement",
+      "CA = 16 + modificateur de Dextérité (sans armure ni bouclier)"
+    ]
+  }
 }

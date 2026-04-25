@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges to cause a thin blue ray to streak from the tip toward a creature you can see within 60 feet of you. The target must succeed on a DC 15 Constitution saving throw or be paralyzed for 1 minute. At the end of each of the target's turns, it can repeat the saving throw, ending the effect on itself on a success.\n\nThe wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette à 7 charges lançant un rayon qui paralyse la cible (sauvegarde CON DC 15) pendant 1 minute, avec possibilité de réduire l'effet à chaque tour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 7,
+    "effets": [
+      "Paralyse cible (sauvegarde CON DC 15, portée 60 pieds)",
+      "Durée 1 minute avec sauvegarde possible chaque tour",
+      "Régain 1d6+1 charges à l'aube"
+    ]
+  }
 }

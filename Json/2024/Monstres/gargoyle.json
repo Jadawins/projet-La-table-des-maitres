@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 15,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 52,
   "pv_formule": "7d8+21",
   "vitesse": {
@@ -62,7 +62,7 @@
     "tremblements": null
   },
   "langues": [
-    "Terran"
+    "terreux"
   ],
   "fp": "2",
   "fp_numerique": 2,
@@ -70,7 +70,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the gargoyle remains motion less, it is indistinguishable from an inanimate statue.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -79,21 +79,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The gargoyle makes two attacks: one with its bite and one with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

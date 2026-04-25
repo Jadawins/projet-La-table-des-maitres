@@ -1,16 +1,29 @@
 {
   "slug": "mountain-hewer",
-  "nom": "Mountain Hewer",
+  "nom": "Fendeur de Montagnes",
   "nom_original": "Mountain Hewer",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +2 bonus to attack and damage rolls made with this magic weapon. The massive head of this axe is made from chiseled stone lashed to its haft by thick rope and leather strands. Small chips of stone fall from its edge intermittently, though it shows no sign of damage or wear. You can use your action to speak the command word to cause small stones to float and swirl around the axe, shedding bright light in a 30-foot radius and dim light for an additional 30 feet. The light remains until you use a bonus action to speak the command word again or until you drop or sheathe the axe. As a bonus action, choose a creature you can see. For 1 minute, that creature must succeed on a DC 15 Wisdom saving throw each time it is damaged by the axe or become frightened until the end of your next turn. Creatures of Large size or greater have disadvantage on this save. Once used, this property of the axe can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Hache en pierre magique (+2) capable d'émettre de la lumière et d'infliger la peur aux créatures frappées.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Émission de lumière vive dans un rayon de 30 pieds",
+      "Jet de sauvegarde Sagesse DC 15 ou condition effrayé jusqu'à la fin de votre prochain tour",
+      "Désavantage pour les créatures de taille Grande ou supérieure"
+    ]
+  }
 }

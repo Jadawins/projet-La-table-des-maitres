@@ -1,16 +1,29 @@
 {
   "slug": "satchel-of-seawalking",
-  "nom": "Satchel of Seawalking",
+  "nom": "Sacoche de la Marche sur les Flots",
   "nom_original": "Satchel of Seawalking",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This eel-hide leather pouch is always filled with an unspeakably foul-tasting, coarse salt. You can use an action to toss a handful of the salt onto the surface of an unoccupied space of water. The water in a 5-foot cube becomes solid for 1 minute, resembling greenish-blue glass. This cube is buoyant and can support up to 750 pounds. When the duration expires, the hardened water cracks ominously and returns to a liquid state. If you toss the salt into an occupied space, the water congeals briefly then disperses harmlessly. If the satchel is opened underwater, the pouch is destroyed as its contents permanently harden. Once five handfuls of the salt have been pulled from the satchel, the satchel can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Sacoche contenant du sel magique permettant de solidifier temporairement l'eau en cubes transparents pouvant supporter jusqu'à 750 livres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Solidifie l'eau en cube de 5 pieds pendant 1 minute",
+      "Peut supporter jusqu'à 750 livres",
+      "5 poignées avant recharge à l'aube"
+    ]
+  }
 }

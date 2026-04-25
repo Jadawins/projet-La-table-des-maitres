@@ -1,16 +1,29 @@
 {
   "slug": "stonechewer-gauntlets",
-  "nom": "Stonechewer Gauntlets",
+  "nom": "Gantelets Ronge-pierre",
   "nom_original": "Stonechewer Gauntlets",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These impractically spiked gauntlets are made from adamantine, are charged with raw elemental earth magic, and limit the range of motion in your fingers. While wearing these gauntlets, you can't carry a weapon or object, and you can't climb or otherwise perform precise actions requiring the use of your hands. When you hit a creature with an unarmed strike while wearing these gauntlets, the unarmed strike deals an extra 1d4 piercing damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Des gantelets d'adamantine hérissés de pics qui ajoutent 1d4 de dégâts perforants aux attaques à mains nues, mais limitent les actions de précision.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les attaques à mains nues infligent 1d4 dégâts perforants supplémentaires",
+      "Impossibilité de porter une arme ou un objet",
+      "Impossibilité de grimper ou d'effectuer des actions nécessitant la précision des mains"
+    ]
+  }
 }

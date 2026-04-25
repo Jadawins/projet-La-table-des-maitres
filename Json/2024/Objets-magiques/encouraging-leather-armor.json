@@ -1,16 +1,28 @@
 {
   "slug": "encouraging-leather-armor",
-  "nom": "Encouraging Leather Armor",
+  "nom": "Armure de cuir encourageante",
   "nom_original": "Encouraging Leather Armor",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to AC. In addition, each friendly creature within 10 feet of you that can see you gains a +1 bonus to attack rolls and saving throws. If you are a paladin with the Aura of Courage feature, this bonus increases to +2.",
   "effets": [],
   "poids": "10.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure magique conférant +1 à la CA et accordant un bonus de +1 (ou +2 pour un paladin avec l'Aura de courage) aux jets d'attaque et aux jets de sauvegarde des créatures alliées à proximité.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Créatures alliées à 10 pieds gagnent +1 aux jets d'attaque et de sauvegarde",
+      "Bonus augmente à +2 si le porteur est un paladin avec Aura de courage"
+    ]
+  }
 }

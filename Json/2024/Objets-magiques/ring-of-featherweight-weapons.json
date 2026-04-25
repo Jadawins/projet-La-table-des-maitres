@@ -1,16 +1,27 @@
 {
   "slug": "ring-of-featherweight-weapons",
-  "nom": "Anneau de Featherweight Weapons",
+  "nom": "Anneau des armes légères",
   "nom_original": "Ring of Featherweight Weapons",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "If you normally have disadvantage on attack rolls made with weapons with the Heavy property due to your size, you don't have disadvantage on those attack rolls while you wear this ring. This ring has no effect on you if you are Medium or larger or if you don't normally have disadvantage on attack rolls with heavy weapons.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cet anneau élimine le désavantage aux jets d'attaque avec les armes lourdes dû à votre petite taille.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Élimination du désavantage aux armes lourdes pour créatures de petite taille"
+    ]
+  }
 }

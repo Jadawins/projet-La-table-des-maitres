@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this potion, you gain the effect of the _gaseous form_ spell for 1 hour (no concentration required) or until you end the effect as a bonus action. This potion's container seems to hold fog that moves and pours like water.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous gagnez les effets du sort forme gazeuse pendant 1 heure sans concentration requise.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Effet de sort forme gazeuse sans concentration",
+      "Durée : 1 heure ou jusqu'à arrêt volontaire",
+      "Vous pouvez mettre fin à l'effet en action bonus"
+    ]
+  }
 }

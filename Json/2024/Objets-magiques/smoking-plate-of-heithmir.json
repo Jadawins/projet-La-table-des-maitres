@@ -1,16 +1,29 @@
 {
   "slug": "smoking-plate-of-heithmir",
-  "nom": "Smoking Plate of Heithmir",
+  "nom": "Plaque Fumante d'Heithmir",
   "nom_original": "Smoking Plate of Heithmir",
   "categorie": "armure_magique",
   "rarete": "legendaire",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor is soot-colored plate with grim dwarf visages on the pauldrons. The pauldrons emit curling smoke and are warm to the touch. You gain a +3 bonus to AC and are resistant to cold damage while wearing this armor. In addition, when you are struck by an attack while wearing this armor, you can use a reaction to fill a 30-foot cone in front of you with dense smoke. The smoke spreads around corners, and its area is heavily obscured. Each creature in the smoke when it appears and each creature that ends its turn in the smoke must succeed on a DC 17 Constitution saving throw or be poisoned for 1 minute. A wind of at least 20 miles per hour disperses the smoke. Otherwise, the smoke lasts for 5 minutes. Once used, this property of the armor can't be used again until the next dawn.",
   "effets": [],
   "poids": "65.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure de plates naine qui confère +3 CA, résistance au froid, et peut créer une zone de fumée étouffante en réaction.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 3,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Bonus +3 à la CA",
+      "Résistance aux dégâts de froid",
+      "Réaction : cône de 30 pieds de fumée (DD 17 CON pour éviter poison 1 min)"
+    ]
+  }
 }

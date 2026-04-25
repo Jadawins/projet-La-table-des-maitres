@@ -1,16 +1,29 @@
 {
   "slug": "frost-pellet",
-  "nom": "Frost Pellet",
+  "nom": "Boulette de Gel",
   "nom_original": "Frost Pellet",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Fashioned from the stomach lining of a Devil Shark (see Creature Codex), this rubbery pellet is cold to the touch. When you consume the pellet, you feel bloated, and you are immune to cold damage for 1 hour. Once before the duration ends, you can expel a 30-foot cone of cold water. Each creature in the cone must make a DC 15 Constitution saving throw. On a failure, the creature takes 6d8 cold damage and is pushed 10 feet away from you. On a success, the creature takes half the damage and isn't pushed away.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "En consommant cette boulette, vous gagnez l'immunité aux dégâts de froid pendant 1 heure et pouvez expulser un cône d'eau glaciale infligeant 6d8 dégâts de froid.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "6d8",
+    "type_degats_bonus": "froid",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Immunité aux dégâts de froid pendant 1 heure après consommation",
+      "Expulsion d'un cône de 9 m d'eau glaciale (jet de sauvegarde CON DD 15)",
+      "Les créatures poussées de 3 m en cas d'échec du jet"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "troll-skin-hide",
-  "nom": "Troll Skin Hide",
+  "nom": "Armure de peau de troll",
   "nom_original": "Troll Skin Hide",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing troll skin armor, you gain a +1 bonus to AC, and you stabilize whenever you are dying at the start of your turn. In addition, you can use an action to regenerate for 1 minute. While regenerating, you regain 2 hit points at the start of each of your turns. The armor can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "12.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure conférant un bonus de +1 à la CA, stabilisation automatique et régénération 2 PV/tour (1 minute, une fois par jour).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "2",
+    "charges": null,
+    "effets": [
+      "Stabilisation automatique en début de tour si mourant",
+      "Régénération : 2 PV/tour (1 minute, une fois par jour)"
+    ]
+  }
 }

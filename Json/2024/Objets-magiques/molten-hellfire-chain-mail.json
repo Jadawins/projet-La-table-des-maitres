@@ -1,16 +1,29 @@
 {
   "slug": "molten-hellfire-chain-mail",
-  "nom": "Molten Hellfire Chain Mail",
+  "nom": "Cotte de Mailles d'Enfer Fondu",
   "nom_original": "Molten Hellfire Chain Mail",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This spiked armor is a dark, almost black crimson when inactive. This more powerful version of hellfire armor has 3 charges. It regains all expended charges daily at dawn. If you expend 1 charge as part of the action to make the armor glow, you can make the armor emit heat in addition to light for 1 minute. For the duration, when a creature touches you or hits you with a melee attack while within 5 feet of you, it takes 1d4 fire damage. You are immune to the armor’s heat while wearing it.",
   "effets": [],
   "poids": "55.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure à pointes aux reflets cramoisi foncé dotée de 3 charges. En dépensant 1 charge, elle émet de la chaleur pendant 1 minute, infligeant 1d4 dégâts de feu aux créatures qui vous touchent ou vous frappent au corps à corps.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Dégâts de feu quand créature touchée ou frappe au corps à corps (5 pieds)",
+      "Récupère 3 charges à l'aube",
+      "Porteur immunisé à la chaleur de l'armure"
+    ]
+  }
 }

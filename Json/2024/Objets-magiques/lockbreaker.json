@@ -1,16 +1,28 @@
 {
   "slug": "lockbreaker",
-  "nom": "Lockbreaker",
+  "nom": "Crochet-Dague",
   "nom_original": "Lockbreaker",
   "categorie": "arme_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You can use this stiletto-bladed dagger to open locks by using an action and making a Strength check. The DC is 5 less than the DC to pick the lock (minimum DC 10). On a success, the lock is broken.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Dague spécialisée permettant de forcer les serrures en effectuant un test de Force avec un DD réduit de 5.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Test de Force pour forcer les serrures (DD réduit de 5, minimum 10)",
+      "Détruit la serrure en cas de succès"
+    ]
+  }
 }

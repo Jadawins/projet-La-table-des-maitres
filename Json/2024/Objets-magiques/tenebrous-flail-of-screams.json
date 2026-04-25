@@ -1,16 +1,28 @@
 {
   "slug": "tenebrous-flail-of-screams",
-  "nom": "Tenebrous Flail of Screams",
+  "nom": "Fléau Ténébreux des Cris",
   "nom_original": "Tenebrous Flail of Screams",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The handle of this flail is made of mammoth bone wrapped in black leather made from bat wings. Its pommel is adorned with raven's claws, and the head of the flail dangles from a flexible, preserved braid of entrails. The head is made of petrified wood inlaid with owlbear and raven beaks. When swung, the flail lets out an otherworldly screech. You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit a creature with this flail, the target takes an extra 1d6 psychic damage. When you roll a 20 on an attack roll made with this weapon, the target must succeed on a DC 15 Wisdom saving throw or be incapacitated until the end of its next turn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce fléau horrible inflige des dégâts psychiques supplémentaires et peut incapaciter une créature lors d'un coup critique.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "psychique",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Coup critique (20) : cible doit réussir un jet de sagesse DC 15 ou être incapacitée jusqu'à la fin de son prochain tour",
+      "Émet un cri surnaturel lors du swing"
+    ]
+  }
 }

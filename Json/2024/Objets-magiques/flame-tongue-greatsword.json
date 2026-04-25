@@ -1,16 +1,29 @@
 {
   "slug": "flame-tongue-greatsword",
-  "nom": "Flame Tongue (Greatsword)",
+  "nom": "Épée Langue de Feu",
   "nom_original": "Flame Tongue (Greatsword)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée magique dont les flammes infligent 2d6 dégâts de feu supplémentaires et émettent de la lumière vive à 12 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Activation bonus action avec parole de commande",
+      "Émet lumière vive 40 pieds, lumière faible 40 pieds supplémentaires",
+      "Dégâts supplémentaires jusqu'à désactivation ou rangement"
+    ]
+  }
 }

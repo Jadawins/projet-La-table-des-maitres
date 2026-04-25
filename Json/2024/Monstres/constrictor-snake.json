@@ -1,6 +1,6 @@
 {
   "slug": "constrictor-snake",
-  "nom": "Constrictor Snake",
+  "nom": "Serpent constricteur",
   "nom_original": "Constrictor Snake",
   "taille": "G",
   "type": "Beast",
@@ -59,14 +59,14 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Constrict",
+      "nom": "Étreinte",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 14). Until this grapple ends, the creature is restrained, and the snake can't constrict another target.",
       "bonus_attaque": 4,
       "degats_de": "1d8",

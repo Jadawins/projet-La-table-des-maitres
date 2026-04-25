@@ -1,16 +1,28 @@
 {
   "slug": "last-chance-quiver",
-  "nom": "Last Chance Quiver",
+  "nom": "Carquois du Dernier Espoir",
   "nom_original": "Last Chance Quiver",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This quiver holds 20 arrows. However, when you draw and fire the last arrow from the quiver, it magically produces a 21st arrow. Once this arrow has been drawn and fired, the quiver doesn't produce another arrow until the quiver has been refilled and another 20 arrows have been drawn and fired.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce carquois contient 20 flèches et en génère magiquement une 21e après le tir de la dernière. Le cycle recommence une fois le carquois rempli.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 21,
+    "effets": [
+      "Génère une 21e flèche après le tir de la dernière",
+      "Cycle recommence après rechargement de 20 flèches"
+    ]
+  }
 }

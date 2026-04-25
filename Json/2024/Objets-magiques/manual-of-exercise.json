@@ -1,16 +1,28 @@
 {
   "slug": "manual-of-exercise",
-  "nom": "Manual of Exercise",
+  "nom": "Manuel d'exercice",
   "nom_original": "Manual of Exercise",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This book contains exercises and techniques to better perform a specific physical task, and its words are charged with magic. If you spend 24 hours over a period of 3 days or fewer studying the tome and practicing its instructions, you gain proficiency in the Strength or Dexterity-based skill (such as Athletics or Stealth) associated with the book. The manual then loses its magic, but regains it in ten years.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un tome magique permettant de maîtriser une compétence physique (Athlétisme ou Discrétion) après 24 heures d'étude sur 3 jours. Sa magie se restaure après 10 ans.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Confère la maîtrise d'une compétence basée sur la Force ou la Dextérité après 24h d'étude",
+      "Magie restaurée après 10 ans"
+    ]
+  }
 }

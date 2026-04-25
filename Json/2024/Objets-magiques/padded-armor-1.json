@@ -1,16 +1,29 @@
 {
   "slug": "padded-armor-1",
-  "nom": "Padded Armor (+1)",
+  "nom": "Armure Rembourrée +1",
   "nom_original": "Padded Armor (+1)",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
   "effets": [],
   "poids": "8.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure rembourrée magique conférant un bonus de +1 à la Classe d'Armure.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus CA +1 à tous les jets de défense",
+      "Confort magique : meilleure flexibilité sans encombrement",
+      "Armure magique mineure : reconnaissance des armes magiques"
+    ]
+  }
 }

@@ -1,17 +1,28 @@
 {
   "slug": "ash-of-the-ebon-birch",
-  "nom": "Ash of the Ebon Birch",
+  "nom": "Cendre du Bouleau d'Ébène",
   "nom_original": "Ash of the Ebon Birch",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This salve is created by burning bark from a rare ebon birch tree then mixing that ash with oil and animal blood to create a cerise pigment used to paint yourself or another creature with profane protections. Painting the pigment on a creature takes 1 minute, and you can choose to paint a specific sigil or smear the pigment on a specific part of the creature's body.",
-  "description_fr": "Ce baume est créé en brûlant l'écorce d'un rare bouleau d'ébène, puis en mélangeant cette cendre avec de l'huile et du sang animal pour obtenir un pigment cerise utilisé pour peindre des protections profanes sur soi ou sur une autre créature. L'application du pigment sur une créature prend 1 minute, et vous pouvez choisir de peindre un sigil précis ou d'enduire le pigment sur une partie spécifique du corps de la créature.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pigment protecteur créé à partir de cendre de bouleau d'ébène, appliqué en 1 minute pour peindre des protections profanes sur une créature.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Application en 1 minute",
+      "Peint des protections profanes"
+    ]
+  }
 }

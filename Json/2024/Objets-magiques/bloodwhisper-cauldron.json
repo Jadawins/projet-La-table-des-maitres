@@ -1,17 +1,29 @@
 {
   "slug": "bloodwhisper-cauldron",
-  "nom": "Bloodwhisper Cauldron",
+  "nom": "Chaudron du chuchottement sanguin",
   "nom_original": "Bloodwhisper Cauldron",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This ancient, oxidized cauldron sits on three stubby legs and has images of sacrifice and ritual cast into its iron sides. When filled with concoctions that contain blood, the bubbling cauldron seems to whisper secrets of ancient power to those bold enough to listen. While filled with blood, the cauldron has the following properties. Once filled, the cauldron can't be refilled again until the next dawn.",
-  "description_fr": "Ce chaudron ancien et oxydé repose sur trois courtes pattes et porte des images de sacrifice et de rituel moulées dans ses flancs de fer. Lorsqu'il est rempli de préparations contenant du sang, le chaudron bouillonnant semble murmurer les secrets d'un pouvoir ancestral à ceux qui osent l'écouter. Tant qu'il est empli de sang, le chaudron possède les propriétés suivantes. Une fois rempli, il ne peut être rechargé qu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce chaudron ancien possède des pouvoirs magiques quand il est rempli de sang, murmurrant les secrets d'un pouvoir ancestral. Il se recharge à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Nécessite d'être rempli de sang pour fonctionner",
+      "Se recharge à l'aube suivante",
+      "Murmure les secrets du pouvoir ancestral"
+    ]
+  }
 }

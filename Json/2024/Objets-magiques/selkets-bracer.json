@@ -1,16 +1,29 @@
 {
   "slug": "selkets-bracer",
-  "nom": "Selket's Bracer",
+  "nom": "Bracelet de Selkhet",
   "nom_original": "Selket's Bracer",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This bronze bracer is crafted in the shape of a scorpion, its legs curled around your wrist, tail raised and ready to strike. While wearing this bracer, you are immune to the poisoned condition. The bracer has 4 charges and regains 1d4 charges daily at dawn. You can expend 1 charge as a bonus action to gain tremorsense out to a range of 30 feet for 1 minute. In addition, you can expend 2 charges as a bonus action to coat a weapon you touch with venom. The poison remains for 1 minute or until an attack using the weapon hits a creature. That creature must succeed on a DC 15 Constitution saving throw or be poisoned until the end of its next turn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bracelet de bronze en forme de scorpion conférant immunité au poison et permettant de détecter les vibrations ou d'enduire une arme de venin.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 4,
+    "effets": [
+      "Immunité à l'état empoisonné",
+      "Dépense 1 charge : tremorsense 30 ft pendant 1 minute",
+      "Dépense 2 charges : enduit une arme de venin (jet de sauvegarde Constitution DC 15 ou empoisonné 1 tour)"
+    ]
+  }
 }

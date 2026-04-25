@@ -1,16 +1,29 @@
 {
   "slug": "pipes-of-madness",
-  "nom": "Pipes of Madness",
+  "nom": "Flûtes de la folie",
   "nom_original": "Pipes of Madness",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "You must be proficient with wind instruments to use these strange, pale ivory pipes. They have 5 charges. You can use an action to play them and expend 1 charge to emit a weird strain of alien music that is audible up to 600 feet away. Choose up to three creatures within 60 feet of you that can hear you play. Each target must succeed on a DC 15 Wisdom saving throw or be affected as if you had cast the confusion spell on it. The pipes regain 1d4 + 1 expended charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Flûtes d'ivoire émettant une musique étrange qui rend fous jusqu'à trois créatures dans un rayon de 60 pieds. Elles possèdent 5 charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Sauvegarde Sagesse DC 15 ou affecté par confusion (max 3 créatures)",
+      "Portée audible jusqu'à 600 pieds",
+      "Regain 1d4+1 charges à l'aube"
+    ]
+  }
 }

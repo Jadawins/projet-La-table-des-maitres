@@ -1,16 +1,28 @@
 {
   "slug": "scimitar-of-the-desert-winds",
-  "nom": "Scimitar of the Desert Winds",
+  "nom": "Cimeterre des Vents du Désert",
   "nom_original": "Scimitar of the Desert Winds",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. While holding or carrying this scimitar, you can tolerate temperatures as low as –50 degrees Fahrenheit or as high as 150 degrees Fahrenheit without any additional protection.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "+1 aux attaques et dégâts. Tolère les températures extrêmes de -50 à 150°F.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets d'attaque et de dégâts",
+      "Résistance aux températures extrêmes"
+    ]
+  }
 }

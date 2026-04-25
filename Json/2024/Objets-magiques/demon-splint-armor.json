@@ -1,16 +1,29 @@
 {
   "slug": "demon-splint-armor",
-  "nom": "Demon Splint Armor",
+  "nom": "Armure brisée de démon",
   "nom_original": "Demon Splint Armor",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
   "effets": [],
   "poids": "60.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure magique maudite conférant +1 CA, connaissance de l'abyssal et donnant à vos attaques à mains nues les caractéristiques de griffes (1d8 tranchant, +1 attaque et dégâts). Cependant, vous subissez un désavantage contre les démons.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Attaques à mains nues font 1d8 tranchant au lieu de contondant",
+      "+1 bonus aux jets d'attaque et dégâts des attaques à mains nues",
+      "Maudite : désavantage contre les démons (attaques et sauvegarde)"
+    ]
+  }
 }

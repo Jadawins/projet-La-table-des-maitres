@@ -1,6 +1,6 @@
 {
   "slug": "giant-ape",
-  "nom": "Giant Ape",
+  "nom": "Singe géant",
   "nom_original": "Giant Ape",
   "taille": "TG",
   "type": "Beast",
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "athletics": 9,
+    "athlétisme": 9,
     "perception": 4
   },
   "resistances": [],
@@ -62,21 +62,21 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The ape makes two fist attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Fist",
+      "nom": "Poing",
       "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 22 (3d10 + 6) bludgeoning damage.",
       "bonus_attaque": 9,
       "degats_de": "3d10",
       "degats_bonus": 6
     },
     {
-      "nom": "Rock",
+      "nom": "Rocher",
       "description": "Ranged Weapon Attack: +9 to hit, range 50/100 ft., one target. Hit: 30 (7d6 + 6) bludgeoning damage.",
       "bonus_attaque": 9,
       "degats_de": "7d6",

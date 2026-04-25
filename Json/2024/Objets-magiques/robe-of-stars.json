@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This black or dark blue robe is embroidered with small white or silver stars. You gain a +1 bonus to saving throws while you wear it.\r\n\r\nSix stars, located on the robe's upper front portion, are particularly large. While wearing this robe, you can use an action to pull off one of the stars and use it to cast _magic missile_ as a 5th-level spell. Daily at dusk, 1d6 removed stars reappear on the robe.\r\n\r\nWhile you wear the robe, you can use an action to enter the Astral Plane along with everything you are wearing and carrying. You remain there until you use an action to return to the plane you were on. You reappear in the last space you occupied, or if that space is occupied, the nearest unoccupied space.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Robe noire ou bleu foncé brodée d'étoiles offrant un bonus de +1 aux jets de sauvegarde. Permet de lancer projectile magique en dépensant une étoile et de se projeter sur le plan astral.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 6,
+    "effets": [
+      "+1 aux jets de sauvegarde",
+      "Lancer projectile magique niveau 5 en dépensant 1 étoile (6 étoiles max)",
+      "Se projeter sur le plan astral et revenir à volonté (action)"
+    ]
+  }
 }

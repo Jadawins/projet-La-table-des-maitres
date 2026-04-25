@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "lawful neutral",
   "ca": 17,
-  "ca_detail": "natural armor, shield",
+  "ca_detail": "armure naturelle, bouclier",
   "pv": 39,
   "pv_formule": "6d8+12",
   "vitesse": {
@@ -57,7 +57,7 @@
     "tremblements": null
   },
   "langues": [
-    "Ignan"
+    "igné"
   ],
   "fp": "2",
   "fp_numerique": 2,
@@ -65,14 +65,14 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Heated Body",
+      "nom": "Corps échauffé",
       "description": "A creature that touches the azer or hits it with a melee attack while within 5 ft. of it takes 5 (1d10) fire damage.",
       "bonus_attaque": 0,
       "degats_de": "1d10",
       "degats_bonus": null
     },
     {
-      "nom": "Heated Weapons",
+      "nom": "Armes échauffées",
       "description": "When the azer hits with a metal melee weapon, it deals an extra 3 (1d6) fire damage (included in the attack).",
       "bonus_attaque": null,
       "degats_de": null,
@@ -88,7 +88,7 @@
   ],
   "actions": [
     {
-      "nom": "Warhammer",
+      "nom": "Marteau de guerre",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage.",
       "bonus_attaque": 5,
       "degats_de": "1d8+1d6",

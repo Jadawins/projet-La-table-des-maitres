@@ -1,16 +1,29 @@
 {
   "slug": "leaf-bladed-scimitar",
-  "nom": "Leaf-Bladed Scimitar",
+  "nom": "Cimeterre à Lame de Feuille",
   "nom_original": "Leaf-Bladed Scimitar",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This thin, curved blade has a bell guard shaped like a curled, golden leaf. You gain a +1 bonus to attack and damage rolls with this magic weapon. When you hit an aberration or undead creature with it, that target takes an extra 1d8 damage of the weapon's type. You can use an action to cast the barkskin spell on yourself for 1 hour, requiring no concentration. Once used, this property can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée magique fine et courbe avec garde en feuille dorée. Inflige +1d8 de dégâts supplémentaires contre les aberrations et morts-vivants, et peut lancer peau écorchée une fois par jour.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Dégâts bonus contre aberrations et morts-vivants",
+      "Lancez peau écorchée sur vous-même (1h, sans concentration)",
+      "Recharge à l'aube"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "giant-slayer-warhammer",
-  "nom": "Giant Slayer (Warhammer)",
+  "nom": "Marteau de guerre Tueur de Géants",
   "nom_original": "Giant Slayer (Warhammer)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
   "effets": [],
   "poids": "5.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Marteau de guerre magique +1 infligeant 2d6 dégâts supplémentaires aux géants et les mettant à terre s'ils ratent un jet de Force.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Contre les géants : 2d6 dégâts supplémentaires",
+      "Géant à terre sauf jet de Force DC 15"
+    ]
+  }
 }

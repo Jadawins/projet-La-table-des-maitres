@@ -1,13 +1,13 @@
 {
   "slug": "swarm-of-spiders",
-  "nom": "Swarm of Spiders",
+  "nom": "Nuée d'araignées",
   "nom_original": "Swarm of Spiders",
   "taille": "M",
   "type": "Beast",
   "sous_type": "Swarm",
   "alignement": "unaligned",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 22,
   "pv_formule": "5d8",
   "vitesse": {
@@ -70,28 +70,28 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Swarm",
+      "nom": "Nuée",
       "description": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Spider Climb",
+      "nom": "Escalade araignée",
       "description": "The swarm can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Web Sense",
+      "nom": "Détection des toiles",
       "description": "While in contact with a web, the swarm knows the exact location of any other creature in contact with the same web.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Web Walker",
+      "nom": "Marcheur de toile",
       "description": "The swarm ignores movement restrictions caused by webbing.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -100,7 +100,7 @@
   ],
   "actions": [
     {
-      "nom": "Bites",
+      "nom": "Morsures",
       "description": "Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.",
       "bonus_attaque": 3,
       "degats_de": "4d4",

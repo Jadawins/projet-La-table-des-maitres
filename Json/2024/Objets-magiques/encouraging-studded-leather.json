@@ -1,16 +1,29 @@
 {
   "slug": "encouraging-studded-leather",
-  "nom": "Encouraging Studded Leather",
+  "nom": "Armure de cuir cloutée encourageante",
   "nom_original": "Encouraging Studded Leather",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to AC. In addition, each friendly creature within 10 feet of you that can see you gains a +1 bonus to attack rolls and saving throws. If you are a paladin with the Aura of Courage feature, this bonus increases to +2.",
   "effets": [],
   "poids": "13.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure conférant +1 à la CA et accordant un bonus de +1 aux jets d'attaque et aux sauvegardes des créatures alliées à proximité (+2 pour un paladin avec l'Aura de courage).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 à CA",
+      "Créatures alliées à 10 pieds : +1 aux jets d'attaque et sauvegardes",
+      "Paladin avec Aura de courage : bonus augmenté à +2"
+    ]
+  }
 }

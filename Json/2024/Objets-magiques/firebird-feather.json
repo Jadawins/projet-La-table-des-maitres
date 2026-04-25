@@ -1,16 +1,29 @@
 {
   "slug": "firebird-feather",
-  "nom": "Firebird Feather",
+  "nom": "Plume de Phénix",
   "nom_original": "Firebird Feather",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This feather sheds bright light in a 20-foot radius and dim light for an additional 20 feet, but it creates no heat and doesn't use oxygen. While holding the feather, you can tolerate temperatures as low as –50 degrees Fahrenheit. Druids and clerics and paladins who worship nature deities can use the feather as a spellcasting focus. If you use the feather in place of a holy symbol when using your Turn Undead feature, undead in the area have a –1 penalty on the saving throw.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Plume magique émettant une lumière vive sans chaleur, offrant résistance au froid extrême et servant de focalisateur d'incantation pour certains lanceurs de sorts.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Émet une lumière vive dans un rayon de 6 m et une lumière faible de 6 m supplémentaires",
+      "Tolère les températures jusqu'à -46°C",
+      "Compte comme un focalisateur d'incantation pour druides, prêtres et paladins de divinités naturelles"
+    ]
+  }
 }

@@ -7,7 +7,7 @@
   "sous_type": "human",
   "alignement": "chaotic evil",
   "ca": 11,
-  "ca_detail": "11 in humanoid form, 12 (natural armor) in wolf or hybrid form",
+  "ca_detail": "11 in humanoid form, 12 (armure naturelle) in wolf or hybrid form",
   "pv": 58,
   "pv_formule": "9d8+18",
   "vitesse": {
@@ -66,14 +66,14 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Shapechanger",
+      "nom": "Métamorphe",
       "description": "The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -82,28 +82,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack (Humanoid or Hybrid Form Only)",
+      "nom": "Attaques multiples (forme humanoïde ou hybride uniquement)",
       "description": "The werewolf makes two attacks: two with its spear (humanoid form) or one with its bite and one with its claws (hybrid form).",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite (Wolf or Hybrid Form Only)",
+      "nom": "Morsure (forme de loup ou hybride uniquement)",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy.",
       "bonus_attaque": 4,
       "degats_de": "1d8",
       "degats_bonus": 2
     },
     {
-      "nom": "Claws (Hybrid Form Only)",
+      "nom": "Griffes (forme hybride uniquement)",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4 + 2) slashing damage.",
       "bonus_attaque": 4,
       "degats_de": "2d4",
       "degats_bonus": 2
     },
     {
-      "nom": "Spear (Humanoid Form Only)",
+      "nom": "Pique (forme humanoïde uniquement)",
       "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

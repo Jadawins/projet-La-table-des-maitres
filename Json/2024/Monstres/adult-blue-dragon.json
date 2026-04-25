@@ -1,13 +1,13 @@
 {
   "slug": "adult-blue-dragon",
-  "nom": "Adult Blue Dragon",
+  "nom": "Dragon bleu adulte",
   "nom_original": "Adult Blue Dragon",
   "taille": "TG",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 19,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 225,
   "pv_formule": "18d12+108",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 12,
-    "stealth": 5
+    "discrétion": 5
   },
   "resistances": [],
   "immunites_degats": [
@@ -57,8 +57,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "16",
   "fp_numerique": 16,
@@ -66,7 +66,7 @@
   "experience": 15000,
   "traits": [
     {
-      "nom": "Legendary Resistance (3/Day)",
+      "nom": "Résistance légendaire (3/jour)",
       "description": "If the dragon fails a saving throw, it can choose to succeed instead.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -75,42 +75,42 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage plus 5 (1d10) lightning damage.",
       "bonus_attaque": 12,
       "degats_de": "2d10+1d10",
       "degats_bonus": 7
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 14 (2d6 + 7) slashing damage.",
       "bonus_attaque": 12,
       "degats_de": "2d6",
       "degats_bonus": 7
     },
     {
-      "nom": "Tail",
+      "nom": "Queue",
       "description": "Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit: 16 (2d8 + 7) bludgeoning damage.",
       "bonus_attaque": 12,
       "degats_de": "2d8",
       "degats_bonus": 7
     },
     {
-      "nom": "Frightful Presence",
+      "nom": "Présence terrifiante",
       "description": "Each creature of the dragon's choice that is within 120 ft. of the dragon and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Lightning Breath (Recharge 5-6)",
+      "nom": "Souffle de foudre (Recharge 5-6)",
       "description": "The dragon exhales lightning in a 90-foot line that is 5 ft. wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "12d10",
@@ -121,21 +121,21 @@
   "reactions": [],
   "actions_legendaires": [
     {
-      "nom": "Detect",
+      "nom": "Détection",
       "description": "The dragon makes a Wisdom (Perception) check.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Tail Attack",
+      "nom": "Attaque de queue",
       "description": "The dragon makes a tail attack.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Wing Attack (Costs 2 Actions)",
+      "nom": "Attaque d'aile (coûte 2 actions)",
       "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
       "bonus_attaque": null,
       "degats_de": null,

@@ -1,16 +1,28 @@
 {
   "slug": "shifting-shirt",
-  "nom": "Shifting Shirt",
+  "nom": "Chemise Polymorphe",
   "nom_original": "Shifting Shirt",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This nondescript, smock-like garment changes its appearance on command. While wearing this shirt, you can use a bonus action to speak the shirt's command word and cause it to assume the appearance of a different set of clothing. You decide what it looks like, including color, style, and accessories—from filthy beggar's clothes to glittering court attire. The illusory appearance lasts until you use this property again or remove the shirt.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vêtement discret qui change d'apparence sur commande. Utilisez une action bonus et parlez le mot de commande pour que la chemise prenne l'apparence de vêtements différents à votre convenance.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Action bonus : changer l'apparence des vêtements à volonté",
+      "Effet cosmétique (déguisement illusoire)"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "elk-horn-rod",
-  "nom": "Elk Horn Rod",
+  "nom": "Bâton de Bois de Cerf",
   "nom_original": "Elk Horn Rod",
   "categorie": "sceptre",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This rod is fashioned from elk or reindeer horn. As an action, you can grant a +1 bonus on saving throws against spells and magical effects to a target touched by the wand, including yourself. The bonus lasts 1 round. If you are holding the rod while performing the somatic component of a dispel magic spell or comparable magic, you have a +1 bonus on your spellcasting ability check.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton en bois de cerf ou de renne accordant un bonus temporaire aux jets de sauvegarde contre la magie, ou un bonus aux tests de dissipation.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets de sauvegarde contre les sorts pendant 1 round (action)",
+      "+1 aux tests de capacité de lancer pour dissipation magique"
+    ]
+  }
 }

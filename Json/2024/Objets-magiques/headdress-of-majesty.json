@@ -1,16 +1,28 @@
 {
   "slug": "headdress-of-majesty",
-  "nom": "Headdress of Majesty",
+  "nom": "Diadème de majesté",
   "nom_original": "Headdress of Majesty",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This elaborate headpiece is adorned with small gemstones and thin strips of gold that frame your head like a radiant halo. While you wear this headdress, you have advantage on Charisma (Intimidation) and Charisma (Persuasion) checks. The headdress has 5 charges for the following properties. It regains all expended charges daily at dawn. If you expend the last charge, roll a 1d20. On a 1, the headdress becomes a nonmagical, tawdry ornament of cheap metals and paste gems.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce diadème orné de gemmes vous confère l'avantage aux tests d'Intimidation et de Persuasion. Dispose de 5 charges quotidiennes pour des capacités supplémentaires.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Avantage aux tests de Charisma (Intimidation et Persuasion)",
+      "5 charges régénérées à l'aube"
+    ]
+  }
 }

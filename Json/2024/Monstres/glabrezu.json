@@ -7,7 +7,7 @@
   "sous_type": "demon",
   "alignement": "chaotic evil",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 157,
   "pv_formule": "15d10+75",
   "vitesse": {
@@ -62,8 +62,8 @@
     "tremblements": null
   },
   "langues": [
-    "Abyssal",
-    "telepathy 120 ft."
+    "abyssal",
+    "télépathie 36 m"
   ],
   "fp": "9",
   "fp_numerique": 9,
@@ -71,14 +71,14 @@
   "experience": 5000,
   "traits": [
     {
-      "nom": "Innate Spellcasting",
+      "nom": "Incantation innée",
       "description": "The glabrezu's spellcasting ability is Intelligence (spell save DC 16). The glabrezu can innately cast the following spells, requiring no material components:\nAt will: darkness, detect magic, dispel magic\n1/day each: confusion, fly, power word stun",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The glabrezu has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -87,28 +87,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The glabrezu makes four attacks: two with its pincers and two with its fists. Alternatively, it makes two attacks with its pincers and casts one spell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pincer",
+      "nom": "Pince",
       "description": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) bludgeoning damage. If the target is a Medium or smaller creature, it is grappled (escape DC 15). The glabrezu has two pincers, each of which can grapple only one target.",
       "bonus_attaque": 9,
       "degats_de": "2d10",
       "degats_bonus": 5
     },
     {
-      "nom": "Fist",
+      "nom": "Poing",
       "description": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.",
       "bonus_attaque": 9,
       "degats_de": "2d4",
       "degats_bonus": 2
     },
     {
-      "nom": "Variant: Summon Demon (1/Day)",
+      "nom": "Variante : Invoquer un démon (1/jour)",
       "description": "The demon chooses what to summon and attempts a magical summoning.\nA glabrezu has a 30 percent chance of summoning 1d3 vrocks, 1d2 hezrous, or one glabrezu.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
       "bonus_attaque": null,
       "degats_de": null,

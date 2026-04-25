@@ -1,17 +1,28 @@
 {
   "slug": "bowl-of-commanding-water-elementals",
-  "nom": "Bowl of Commanding Water Elementals",
+  "nom": "Bol de Commandement des Élémentaires d'Eau",
   "nom_original": "Bowl of Commanding Water Elementals",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While this bowl is filled with water, you can use an action to speak the bowl's command word and summon a water elemental, as if you had cast the _conjure elemental_ spell. The bowl can't be used this way again until the next dawn.\r\n\r\nThe bowl is about 1 foot in diameter and half as deep. It weighs 3 pounds and holds about 3 gallons.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Lorsque ce bol est rempli d'eau, vous pouvez utiliser une action pour prononcer le mot de commande du bol et invoquer un élémentaire de l'eau, comme si vous aviez lancé le sort convocation d'élémentaire. Le bol ne peut plus être utilisé de cette façon avant l'aube suivante.\n\nLe bol mesure environ 30 centimètres de diamètre pour une profondeur de moitié. Il pèse 1,5 kg et peut contenir environ 11 litres."
+  "resume": "Ce bol rempli d'eau permet d'invoquer un élémentaire d'eau comme si vous aviez lancé convocation d'élémentaire. Réutilisable à l'aube suivante.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Invoque un élémentaire d'eau 1/jour",
+      "Nécessite d'être rempli d'eau pour fonctionner"
+    ]
+  }
 }

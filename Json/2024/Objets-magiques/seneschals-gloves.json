@@ -1,16 +1,29 @@
 {
   "slug": "seneschals-gloves",
-  "nom": "Seneschal's Gloves",
+  "nom": "Gants du Sénéchal",
   "nom_original": "Seneschal's Gloves",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These white gloves have elegant tailoring and size themselves perfectly to fit your hands. The gloves must be attuned to a specific, habitable place with walls, a roof, and doors before you can attune to them. To attune the gloves to a location, you must leave the gloves in the location for 24 hours. Once the gloves are attuned to a location, you can attune to them. While you wear the gloves, you can unlock any nonmagical lock within the attuned location by touching the lock, and any mundane portal you open in the location while wearing these gloves opens silently. As an action, you can snap your fingers and every nonmagical portal within 30 feet of you immediately closes and locks (if possible) as long as it is unobstructed. (Obstructed portals remain open.) Once used, this property of the gloves can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces gants blancs élégants permettent de déverrouiller les serrures non magiques et de fermer silencieusement les portes du lieu d'attunement. Une fois par jour, vous pouvez fermer et verrouiller toutes les portes non magiques dans un rayon de 30 pieds.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Déverrouille les serrures non magiques du lieu attuné",
+      "Ouvre silencieusement les portes du lieu attuné",
+      "Ferme et verrouille toutes les portes non magiques dans un rayon de 30 pieds (1 fois/jour)"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "grasping-cap",
-  "nom": "Grasping Cap",
+  "nom": "Bonnet Préhensile",
   "nom_original": "Grasping Cap",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This cap is a simple, blue silk hat with a goose feather trim. While wearing this cap, you have advantage on Strength (Athletics) checks made to climb, and the cap deflects the first ranged attack made against you each round. In addition, when a creature attacks you while within 30 feet of you, it is illuminated and sheds red-hued dim light in a 50-foot radius until the end of its next turn. Any attack roll against an illuminated creature has advantage if the attacker can see it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bonnet de soie bleue qui accorde l'avantage aux tests d'escalade et dévie la première attaque à distance chaque round. Les créatures qui attaquent le porteur sont illuminées et donnent l'avantage à ceux qui les ciblent.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests d'escalade (Force)",
+      "Dévie la première attaque à distance chaque round",
+      "Illumine les attaquants, donnant l'avantage aux alliés"
+    ]
+  }
 }

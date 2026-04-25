@@ -1,16 +1,28 @@
 {
   "slug": "relocation-cable",
-  "nom": "Relocation Cable",
+  "nom": "Câble de Relocalisation",
   "nom_original": "Relocation Cable",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This 60-foot length of fine wire cable weighs 2 pounds. If you hold one end of the cable and use an action to speak its command word, the other end plunges into the ground, burrowing through dirt, sand, snow, mud, ice, and similar material to emerge from the ground at a destination you can see up to its maximum length away. The cable can't burrow through solid rock. On the turn it is activated, you can use a bonus action to magically travel from one end of the cable to the other, appearing in an unoccupied space within 5 feet of the other end. On subsequent turns, any creature in contact with one end of the cable can use an action to appear in an unoccupied space within 5 feet of the other end of it. A creature magically traveling from one end of the cable to the other doesn't provoke opportunity attacks. You can retract the cable by using a bonus action to speak the command word a second time.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Câble de 18 m permettant de créer un passage magique entre ses deux extrémités ; les créatures en contact peuvent se téléporter sans provoquer d'attaques d'opportunité.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Téléportation entre les deux extrémités du câble",
+      "Pas d'attaques d'opportunité lors du déplacement"
+    ]
+  }
 }

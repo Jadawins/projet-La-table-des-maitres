@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-swarming-insects",
-  "nom": "Bâton des essaims d'insectes",
+  "nom": "Bâton des Essaims d'Insectes",
   "nom_original": "Staff of Swarming Insects",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This staff has 10 charges and regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, a swarm of insects consumes and destroys the staff, then disperses.\n\n**_Spells_**. While holding the staff, you can use an action to expend some of its charges to cast one of the following spells from it, using your spell save DC: _giant insect_ (4 charges) or _insect plague_ (5 charges).\n\n**_Insect Cloud_**. While holding the staff, you can use an action and expend 1 charge to cause a swarm of harmless flying insects to spread out in a 30-foot radius from you. The insects remain for 10 minutes, making the area heavily obscured for creatures other than you. The swarm moves with you, remaining centered on you. A wind of at least 10 miles per hour disperses the swarm and ends the effect.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton magique permettant de lancer des sorts d'insectes et de créer un nuage d'insectes inoffensifs mais obscurcissant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Insecte géant (4 charges) ou Plaie d'insectes (5 charges)",
+      "Nuage d'insectes inoffensifs (1 charge, 30 pieds, 10 minutes)",
+      "Crée une zone fortement obscurcie"
+    ]
+  }
 }

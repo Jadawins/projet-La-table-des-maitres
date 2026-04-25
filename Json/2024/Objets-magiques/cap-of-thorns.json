@@ -1,17 +1,29 @@
 {
   "slug": "cap-of-thorns",
-  "nom": "Cap of Thorns",
+  "nom": "Couronne d'Épines",
   "nom_original": "Cap of Thorns",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Donning this thorny wooden circlet causes it to meld with your scalp. It can be removed only upon your death or by a remove curse spell. The cap ingests some of your blood, dealing 2d4 piercing damage. After this first feeding, the thorns feed once per day for 1d4 piercing damage. Once per day, you can sacrifice 1 hit point per level you possess to cast a special entangle spell made of thorny vines. Charisma is your spellcasting ability for this effect. Restrained creatures must make a successful Charisma saving throw or be affected by a charm person spell as thorns pierce their body. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target fails three consecutive saves, the thorns become deeply rooted and the charmed effect is permanent until remove curse or similar magic is cast on the target.",
-  "description_fr": "Lorsque vous coiffez ce cercle de bois épineux, il se fond dans votre cuir chevelu. Il ne peut être retiré qu'à votre mort ou par un sort de désenvoûtement. Le couvre-chef absorbe un peu de votre sang, vous infligeant 2d4 dégâts perforants. Après cette première absorption, les épines se nourrissent une fois par jour pour 1d4 dégâts perforants. Une fois par jour, vous pouvez sacrifier 1 point de vie par niveau que vous possédez pour lancer un sort spécial d'enchevêtrement fait de lianes épineuses. Le Charisme est votre caractéristique d'incantation pour cet effet. Les créatures entravées doivent réussir un jet de sauvegarde de Charisme ou être affectées par un sort de charme-personne tandis que les épines transpercent leur corps. La cible peut répéter le jet de sauvegarde à la fin de chacun de ses tours, mettant fin à l'effet en cas de succès. Si la cible échoue trois jets consécutifs, les épines s'enracinent profondément et l'effet de charme devient permanent jusqu'à ce qu'un sort de désenvoûtement ou une magie similaire soit lancé sur la cible.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cercle épineux qui se fusionne au cuir chevelu et inflige des dégâts réguliers, mais permet de lancer un sort d'enchevêtrement avec charme-personne une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d4 à la mise en place, 1d4 par jour",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Inflige 2d4 dégâts perforants à la mise en place, puis 1d4 chaque jour",
+      "1/jour : sacrifier 1 PV par niveau pour enchevêtrement + charme-personne (jet sauvegarde Charisme)",
+      "Charme permanent après 3 échecs consécutifs au jet de sauvegarde"
+    ]
+  }
 }

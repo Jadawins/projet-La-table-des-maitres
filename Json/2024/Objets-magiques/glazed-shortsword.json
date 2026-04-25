@@ -1,16 +1,27 @@
 {
   "slug": "glazed-shortsword",
-  "nom": "Glazed Shortsword",
+  "nom": "Épée courte glacée",
   "nom_original": "Glazed Shortsword",
   "categorie": "arme_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "A pleasant scent emerges from this weapon. While it is on your person, you have advantage on Charisma (Persuasion) checks made to interact with humanoids and fey.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette arme dégage un parfum agréable. Tant qu'elle est sur vous, vous avez l'avantage aux tests de Charisme (Persuasion) contre les humanoïdes et les fées.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Charisme (Persuasion) avec humanoïdes et fées"
+    ]
+  }
 }

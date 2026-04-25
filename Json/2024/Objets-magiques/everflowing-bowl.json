@@ -1,16 +1,29 @@
 {
   "slug": "everflowing-bowl",
-  "nom": "Everflowing Bowl",
+  "nom": "Coupe aux Eaux Inépuisables",
   "nom_original": "Everflowing Bowl",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This smooth, stone bowl feels especially cool to the touch. It holds up to 1 pint of water. When placed on the ground, the bowl magically draws water from the nearby earth and air, filling itself after 1 hour. In arid or desert environments, the bowl fills itself after 8 hours. The bowl never overflows itself.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Récipient en pierre capable de se remplir magiquement de 1 pinte d'eau en 1 heure (8 heures en zone aride).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Se remplit de 1 pinte d'eau magiquement",
+      "Remplissage en 1 heure (8 heures en désert)",
+      "Ne déborde jamais"
+    ]
+  }
 }

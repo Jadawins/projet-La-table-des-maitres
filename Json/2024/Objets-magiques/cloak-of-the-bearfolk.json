@@ -1,17 +1,28 @@
 {
   "slug": "cloak-of-the-bearfolk",
-  "nom": "Cape de the Bearfolk",
+  "nom": "Cape de Peuple-ours",
   "nom_original": "Cloak of the Bearfolk",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this cloak, your Constitution score is 15, and you have proficiency in the Athletics skill. The cloak has no effect if you already have proficiency in this skill or if your Constitution score is already 15 or higher.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant cette cape, votre valeur de Constitution est de 15 et vous avez la maîtrise de la compétence Athlétisme. La cape n'a aucun effet si vous avez déjà la maîtrise de cette compétence ou si votre valeur de Constitution est déjà de 15 ou plus."
+  "resume": "Cape augmentant la Constitution à 15 et conférant la maîtrise en Athlétisme si ces conditions n'étaient pas déjà remplies.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Constitution 15",
+      "Maîtrise en Athlétisme"
+    ]
+  }
 }

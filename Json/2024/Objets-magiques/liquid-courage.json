@@ -1,16 +1,28 @@
 {
   "slug": "liquid-courage",
-  "nom": "Liquid Courage",
+  "nom": "Courage Liquide",
   "nom_original": "Liquid Courage",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This magical cordial is deep red and smells strongly of fennel. You have advantage on the next saving throw against being frightened. The effect ends after you make such a saving throw or when 1 hour has passed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette potion magique confère un avantage aux jets de sauvegarde contre la peur pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux jets de sauvegarde contre la peur",
+      "Durée : 1 heure ou jusqu'au prochain jet de sauvegarde"
+    ]
+  }
 }

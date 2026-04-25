@@ -1,16 +1,28 @@
 {
   "slug": "fly-whisk-of-authority",
-  "nom": "Fly Whisk of Authority",
+  "nom": "Chasse-Mouche d'Autorité",
   "nom_original": "Fly Whisk of Authority",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "If you use an action to flick this fly whisk, you have advantage on Charisma (Intimidation) and Charisma (Persuasion) checks for 10 minutes. You can't use the fly whisk this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une brosse magique qui confère l'avantage aux tests d'Intimidation et de Persuasion pendant 10 minutes après utilisation.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Avantage aux tests d'Intimidation et Persuasion (10 min)",
+      "Recharge à l'aube"
+    ]
+  }
 }

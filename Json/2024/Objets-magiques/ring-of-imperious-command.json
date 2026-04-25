@@ -1,16 +1,29 @@
 {
   "slug": "ring-of-imperious-command",
-  "nom": "Anneau de Imperious Command",
+  "nom": "Anneau de Commandement Impérieux",
   "nom_original": "Ring of Imperious Command",
   "categorie": "anneau",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "Embossed in gold on this heavy iron ring is the image of a crown. The ring has 3 charges and regains 1d3 expended charges daily at dawn. While wearing this ring, you have advantage on Charisma (Intimidation) checks, and you can project your voice up to 300 feet with perfect clarity. In addition, you can use an action and expend 1 of the ring's charges to command a creature you can see within 30 feet of you to kneel before you. The target must make a DC 15 Charisma saving throw. On a failure, the target spends its next turn moving toward you by the shortest and most direct route then falls prone and ends its turn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau permettant d'effrayer et de commander autoritairement, avec la capacité de forcer une créature à s'agenouiller grâce à ses charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Avantage aux tests d'Intimidation (Charisme)",
+      "Projette la voix jusqu'à 300 pieds",
+      "Dépense 1 charge : force une créature dans 30 pieds à tomber à genoux (jet de sauvegarde Charisme DD 15)"
+    ]
+  }
 }

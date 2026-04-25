@@ -1,17 +1,28 @@
 {
   "slug": "burning-skull",
-  "nom": "Burning Skull",
+  "nom": "Crâne ardent",
   "nom_original": "Burning Skull",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This appallingly misshapen skull—though alien and monstrous in aspect—is undeniably human, and it is large and hollow enough to be worn as a helm by any Medium humanoid. The skull helm radiates an unholy spectral aura, which sheds dim light in a 10-foot radius. According to legends, gazing upon a burning skull freezes the blood and withers the brain of one who understands not its mystery.",
-  "description_fr": "Ce crâne effroyablement difforme — bien qu'étrange et monstrueux d'aspect — est indéniablement humain, et suffisamment grand et creux pour être porté comme un heaume par tout humanoïde de taille M. Ce heaume-crâne irradie une aura spectrale impie qui diffuse une lumière faible dans un rayon de 3 mètres (10 pieds). Selon les légendes, contempler un crâne ardent glace le sang et fane l'esprit de celui qui n'en comprend pas le mystère.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Heaume-crâne sinistre émettant une lumière faible dans un rayon de 3 mètres, conférant des propriétés intimidantes et mystérieuses au porteur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Émet une lumière faible dans un rayon de 3 m",
+      "Aura spectrale impie intimidante"
+    ]
+  }
 }

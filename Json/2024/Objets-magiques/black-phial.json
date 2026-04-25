@@ -1,17 +1,29 @@
 {
   "slug": "black-phial",
-  "nom": "Black Phial",
+  "nom": "Fiole noire",
   "nom_original": "Black Phial",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This black stone phial has a tightly fitting stopper and 3 charges. As an action, you can fill the phial with blood taken from a living, or recently deceased (dead no longer than 1 minute), humanoid and expend 1 charge. When you do so, the black phial transforms the blood into a potion of greater healing. A creature who drinks this potion must succeed on a DC 12 Constitution saving throw or be poisoned for 1 hour. The phial regains 1d3 expended charges daily at midnight. If you expend the phial's last charge, roll a d20: 1d20. On a 1, the phial crumbles into dust and is destroyed.",
-  "description_fr": "Cette fiole de pierre noire possède un bouchon bien ajusté et 3 charges. En utilisant une action, vous pouvez remplir la fiole avec du sang prélevé sur un humanoïde vivant ou récemment décédé (mort depuis moins d'1 minute) et dépenser 1 charge. Ce faisant, la fiole noire transforme le sang en une potion de soins supérieurs. Une créature qui boit cette potion doit réussir un jet de sauvegarde de Constitution DD 12 ou être empoisonnée pendant 1 heure. La fiole récupère 1d3 charges dépensées chaque jour à minuit. Si vous dépensez la dernière charge de la fiole, lancez un d20. Sur un résultat de 1, la fiole s'effrite en poussière et est détruite.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Fiole transformant le sang d'humanoïde en potion de soins supérieurs, mais empoisonnant le buveur sur un jet de sauvegarde échoué (DD 12).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "2d4+4",
+    "charges": 3,
+    "effets": [
+      "Transformation sang en potion supérieure (1 charge)",
+      "Con DD 12 ou empoisonnement 1h",
+      "Détruit sur dernier charge (1 sur d20)"
+    ]
+  }
 }

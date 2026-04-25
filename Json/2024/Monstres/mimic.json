@@ -1,13 +1,13 @@
 {
   "slug": "mimic",
-  "nom": "Mimic",
+  "nom": "Mime",
   "nom_original": "Mimic",
   "taille": "M",
   "type": "Monstrosity",
   "sous_type": "shapechanger",
   "alignement": "neutral",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 58,
   "pv_formule": "9d8+18",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 5
+    "discrétion": 5
   },
   "resistances": [],
   "immunites_degats": [
@@ -64,28 +64,28 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Shapechanger",
+      "nom": "Métamorphe",
       "description": "The mimic can use its action to polymorph into an object or back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Adhesive (Object Form Only)",
+      "nom": "Adhésif (forme d'objet uniquement)",
       "description": "The mimic adheres to anything that touches it. A Huge or smaller creature adhered to the mimic is also grappled by it (escape DC 13). Ability checks made to escape this grapple have disadvantage.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "False Appearance (Object Form Only)",
+      "nom": "Apparence trompeuse (forme d'objet uniquement)",
       "description": "While the mimic remains motionless, it is indistinguishable from an ordinary object.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Grappler",
+      "nom": "Lutteur",
       "description": "The mimic has advantage on attack rolls against any creature grappled by it.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -94,14 +94,14 @@
   ],
   "actions": [
     {
-      "nom": "Pseudopod",
+      "nom": "Pseudopode",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage. If the mimic is in object form, the target is subjected to its Adhesive trait.",
       "bonus_attaque": 5,
       "degats_de": "1d8",
       "degats_bonus": 3
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 4 (1d8) acid damage.",
       "bonus_attaque": 5,
       "degats_de": "1d8+1d8",

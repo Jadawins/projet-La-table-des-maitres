@@ -1,13 +1,13 @@
 {
   "slug": "stone-giant",
-  "nom": "Stone Giant",
+  "nom": "Géant de pierre",
   "nom_original": "Stone Giant",
   "taille": "TG",
   "type": "Giant",
   "sous_type": null,
   "alignement": "neutral",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 126,
   "pv_formule": "11d12+55",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "athletics": 12,
+    "athlétisme": 12,
     "perception": 4
   },
   "resistances": [],
@@ -55,7 +55,7 @@
     "tremblements": null
   },
   "langues": [
-    "Giant"
+    "géant"
   ],
   "fp": "7",
   "fp_numerique": 7,
@@ -63,7 +63,7 @@
   "experience": 2900,
   "traits": [
     {
-      "nom": "Stone Camouflage",
+      "nom": "Camouflage de pierre",
       "description": "The giant has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,21 +72,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The giant makes two greatclub attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Greatclub",
+      "nom": "Massue",
       "description": "Melee Weapon Attack: +9 to hit, reach 15 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.",
       "bonus_attaque": 9,
       "degats_de": "3d8",
       "degats_bonus": 6
     },
     {
-      "nom": "Rock",
+      "nom": "Rocher",
       "description": "Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.",
       "bonus_attaque": 9,
       "degats_de": "4d10",
@@ -96,7 +96,7 @@
   "actions_bonus": [],
   "reactions": [
     {
-      "nom": "Rock Catching",
+      "nom": "Attrape-rochers",
       "description": "If a rock or similar object is hurled at the giant, the giant can, with a successful DC 10 Dexterity saving throw, catch the missile and take no bludgeoning damage from it.",
       "bonus_attaque": null,
       "degats_de": null,

@@ -1,16 +1,29 @@
 {
   "slug": "farhealing-bandages",
-  "nom": "Farhealing Bandages",
+  "nom": "Bandages de Guérison à Distance",
   "nom_original": "Farhealing Bandages",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This linen bandage is yellowed and worn with age. You can use an action wrap it around the appendage of a willing creature and activate its magic for 1 hour. While the target is within 60 feet of you and the bandage's magic is active, you can use an action to trigger the bandage, and the target regains 2d4 hit points. The bandage becomes inactive after it has restored 15 hit points to a creature or when 1 hour has passed. Once the bandage becomes inactive, it can't be used again until the next dawn. You can be attuned to only one farhealing bandage at a time.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce vieux bandage de lin enroule une créature consentante et peut soigner 2d4 PV par action jusqu'à 60 pieds de distance, 1 heure max ou 15 PV total. Réutilisable à l'aube suivante.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "2d4",
+    "charges": null,
+    "effets": [
+      "Portée 60 pieds pour les soins",
+      "Maximum 15 PV ou 1 heure de durée",
+      "Réutilisable à l'aube suivante"
+    ]
+  }
 }

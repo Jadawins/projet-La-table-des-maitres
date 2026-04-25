@@ -1,17 +1,25 @@
 {
   "slug": "crook-of-the-flock",
-  "nom": "Crook of the Flock",
+  "nom": "Houlette du Troupeau",
   "nom_original": "Crook of the Flock",
   "categorie": "sceptre",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This plain crook is made of smooth, worn lotus wood and is warm to the touch.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette simple houlette est taillée dans du bois de lotus lisse et poli, et est chaude au toucher."
+  "resume": "Houlette en bois de lotus lisse et chaude au toucher, sans mécaniques de combat spécifiées.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": []
+  }
 }

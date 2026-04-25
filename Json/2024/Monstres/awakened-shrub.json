@@ -1,6 +1,6 @@
 {
   "slug": "awakened-shrub",
-  "nom": "Awakened Shrub",
+  "nom": "Arbuste animé",
   "nom_original": "Awakened Shrub",
   "taille": "P",
   "type": "Plant",
@@ -64,7 +64,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the shrub remains motionless, it is indistinguishable from a normal shrub.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -73,7 +73,7 @@
   ],
   "actions": [
     {
-      "nom": "Rake",
+      "nom": "Coup de griffes",
       "description": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) slashing damage.",
       "bonus_attaque": 1,
       "degats_de": "1d4",

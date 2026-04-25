@@ -1,6 +1,6 @@
 {
   "slug": "giant-hyena",
-  "nom": "Giant Hyena",
+  "nom": "Hyène géante",
   "nom_original": "Giant Hyena",
   "taille": "G",
   "type": "Beast",
@@ -60,7 +60,7 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Rampage",
+      "nom": "Ruée",
       "description": "When the hyena reduces a creature to 0 hit points with a melee attack on its turn, the hyena can take a bonus action to move up to half its speed and make a bite attack.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d6",

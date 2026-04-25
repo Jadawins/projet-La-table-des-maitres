@@ -1,17 +1,29 @@
 {
   "slug": "ankh-of-aten",
-  "nom": "Ankh of Aten",
+  "nom": "Ankh d'Aten",
   "nom_original": "Ankh of Aten",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This golden ankh is about 12 inches long and has 5 charges. While holding the ankh by the loop, you can expend 1 charge as an action to fire a beam of brilliant sunlight in a 5-foot-wide, 60-foot-line from the end. Each creature caught in the line must make a DC 15 Constitution saving throw. On a failed save, a creature takes a5d8 radiant damage and is blinded until the end of your next turn. On a successful save, it takes half damage and isn't blinded. Undead have disadvantage on this saving throw. The ankh regains 1d4 + 1 expended charges daily at dawn.",
-  "description_fr": "Cet ankh doré mesure environ 30 centimètres de longueur et possède 5 charges. Tant que vous tenez l'ankh par son anneau, vous pouvez dépenser 1 charge en utilisant une action pour projeter depuis son extrémité un rayon de lumière solaire éblouissante sous la forme d'une ligne de 1,50 mètre de large et 18 mètres de long. Chaque créature prise dans la ligne doit réussir un jet de sauvegarde de Constitution DD 15. En cas d'échec, la créature subit 5d8 dégâts radiants et est aveuglée jusqu'à la fin de votre prochain tour. En cas de succès, elle ne subit que la moitié des dégâts et n'est pas aveuglée. Les morts-vivants ont le désavantage à ce jet de sauvegarde. L'ankh récupère 1d4 + 1 charges dépensées chaque jour à l'aube.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ankh doré projetant un rayon de lumière solaire infligeant 5d8 dégâts radiants (moitié en cas de succès) et causant la cécité. Les morts-vivants ont le désavantage au jet de sauvegarde.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "5d8",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Rayon de 18 m de long et 1,5 m de large",
+      "Jet de sauvegarde Constitution DD 15",
+      "Cécité jusqu'à fin du prochain tour en cas d'échec"
+    ]
+  }
 }

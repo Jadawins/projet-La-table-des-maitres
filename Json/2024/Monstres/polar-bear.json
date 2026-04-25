@@ -1,13 +1,13 @@
 {
   "slug": "polar-bear",
-  "nom": "Polar Bear",
+  "nom": "Ours blanc",
   "nom_original": "Polar Bear",
   "taille": "G",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 42,
   "pv_formule": "5d10+15",
   "vitesse": {
@@ -60,7 +60,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The bear has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,21 +69,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The bear makes two attacks: one with its bite and one with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) piercing damage.",
       "bonus_attaque": 7,
       "degats_de": "1d8",
       "degats_bonus": 5
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d6",

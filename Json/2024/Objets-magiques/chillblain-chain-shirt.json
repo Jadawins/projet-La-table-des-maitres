@@ -1,17 +1,28 @@
 {
   "slug": "chillblain-chain-shirt",
-  "nom": "Chillblain Chain Shirt",
+  "nom": "Chemise de Mailles Gèle-Douleur",
   "nom_original": "Chillblain Chain Shirt",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor is forged from overlapping blue steel plates or blue rings and has a frosted appearance. While wearing this armor, you gain a +1 bonus to AC, and you have resistance to cold damage. In addition, when a creature hits you with a melee weapon attack, it must succeed on a DC 15 Constitution saving throw or become numbed by the supernatural cold radiating from the armor. A creature numbed by the cold can use either an action or bonus action on its turn, not both, and its movement speed is reduced by 10 feet until the end of its next turn.",
   "effets": [],
   "poids": "20.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette armure est forgée à partir de plaques ou d'anneaux d'acier bleu qui se chevauchent et présente un aspect givré. En portant cette armure, vous obtenez un bonus de +1 à la CA et vous avez la résistance aux dégâts de froid. De plus, lorsqu'une créature vous touche avec une attaque d'arme de mêlée, elle doit réussir un jet de sauvegarde de Constitution DD 15 ou être engourdie par le froid surnaturel émanant de l'armure. Une créature engourdie par le froid ne peut utiliser qu'une action ou une action bonus lors de son tour, pas les deux, et sa vitesse de déplacement est réduite de 3 mètres jusqu'à la fin de son prochain tour."
+  "resume": "Armure de chaîne légère d'acier bleu givré accordant +1 CA, résistance au froid, et engourdissement des assaillants.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de froid",
+      "Assaillant engourdi (dd 15 CON) : actions limitées et -3m vitesse"
+    ]
+  }
 }

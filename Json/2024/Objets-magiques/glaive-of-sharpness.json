@@ -1,16 +1,29 @@
 {
   "slug": "glaive-of-sharpness",
-  "nom": "Glaive of Sharpness",
+  "nom": "Hallebarde d'Acuité",
   "nom_original": "Glaive of Sharpness",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target.\n\nWhen you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
   "effets": [],
   "poids": "6.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Contre les objets, maximise les dégâts. Au coup critique contre une créature, inflige 14 dégâts tranchants supplémentaires et impose un niveau d'Épuisement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "14",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Maximise les dégâts contre les objets",
+      "Effet au coup critique (20)",
+      "Inflige 1 niveau d'Épuisement au coup critique"
+    ]
+  }
 }

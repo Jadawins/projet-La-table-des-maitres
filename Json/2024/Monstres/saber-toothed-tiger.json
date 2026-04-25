@@ -1,6 +1,6 @@
 {
   "slug": "saber-toothed-tiger",
-  "nom": "Saber-Toothed Tiger",
+  "nom": "Tigre à Dents de Sabre",
   "nom_original": "Saber-Toothed Tiger",
   "taille": "G",
   "type": "Beast",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 6
+    "discrétion": 6
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,14 +61,14 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The tiger has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pounce",
+      "nom": "Bond",
       "description": "If the tiger moves at least 20 ft. straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -77,14 +77,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (1d10 + 5) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "1d10",
       "degats_bonus": 5
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d6",

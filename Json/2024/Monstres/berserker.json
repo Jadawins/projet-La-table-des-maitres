@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any chaotic alignment",
   "ca": 13,
-  "ca_detail": "hide armor",
+  "ca_detail": "armure en peau",
   "pv": 67,
   "pv_formule": "9d8+27",
   "vitesse": {
@@ -60,7 +60,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Reckless",
+      "nom": "Attaque téméraire",
       "description": "At the start of its turn, the berserker can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Greataxe",
+      "nom": "Hache d'armes",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d12",

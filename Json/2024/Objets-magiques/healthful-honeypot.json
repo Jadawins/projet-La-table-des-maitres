@@ -1,16 +1,28 @@
 {
   "slug": "healthful-honeypot",
-  "nom": "Healthful Honeypot",
+  "nom": "Pot de miel bienfaisant",
   "nom_original": "Healthful Honeypot",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This clay honeypot weighs 10 pounds. A sweet aroma wafts constantly from it, and it produces enough honey to feed up to 12 humanoids. Eating the honey restores 1d8 hit points, and the honey provides enough nourishment to sustain a humanoid for one day. Once 12 doses of the honey have been consumed, the honeypot can't produce more honey until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce pot d'argile produit du miel magique qui restaure 1d8 PV et nourrit un humannoïde pour un jour. Il produit 12 doses par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "1d8",
+    "charges": 12,
+    "effets": [
+      "Restaure PV au moment de la consommation",
+      "Fournit la nourriture d'une journée"
+    ]
+  }
 }

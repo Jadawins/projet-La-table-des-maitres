@@ -1,17 +1,29 @@
 {
   "slug": "crawling-cloak",
-  "nom": "Crawling Cloak",
+  "nom": "Cape Rampante",
   "nom_original": "Crawling Cloak",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This unusual cloak is made of many overlapping, broad strips of thick cloth.\nCrawling Cloak (Common). When you are prone, you can animate the cloak and have it pull you along the ground, allowing you to ignore the extra movement cost for crawling. You can still only move up to your normal movement rate and can’t stand up from prone unless you still have at least half your movement remaining after moving.\n\nSturdy Crawling Cloak (Uncommon). This more powerful version of the crawling cloak also allows you to use the prehensile strips of the cloak to climb, giving you a climbing speed of 20 feet. If you already have a climbing speed, the cloak increases that speed by 10 feet. When using the cloak, you can keep your hands free while climbing.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette cape inhabituelle est composée de nombreuses lanières larges et épaisses en tissu superposées. Cape Rampante (Commune) : lorsque vous êtes à terre, vous pouvez animer la cape pour qu'elle vous tire le long du sol, vous permettant d'ignorer le coût de déplacement supplémentaire lié au fait de ramper. Vous ne pouvez toutefois vous déplacer qu'à votre vitesse de déplacement normale et ne pouvez pas vous relever à moins d'avoir encore au moins la moitié de votre déplacement restant. Cape Rampante Robuste (Peu commune) : cette version plus puissante vous permet également de grimper grâce aux lanières préhensiles, vous accordant une vitesse d'escalade de 6 mètres. Si vous possédez déjà une vitesse d'escalade, la cape l'augmente de 3 mètres. Lors de l'utilisation de la cape pour grimper, vous pouvez garder les mains libres."
+  "resume": "Une cape magique qui permet de ramper sans coût de mouvement supplémentaire et, en version robuste, d'escalader à une vitesse de 6 mètres (ou +3 m si une vitesse d'escalade existe déjà).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Permet de ramper à vitesse normale sans coût supplémentaire",
+      "Version Robuste : vitesse d'escalade de 6 m ou +3 m si existante",
+      "Mains libres lors de l'escalade"
+    ]
+  }
 }

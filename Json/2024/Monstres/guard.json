@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any alignment",
   "ca": 16,
-  "ca_detail": "chain shirt, shield",
+  "ca_detail": "chain shirt, bouclier",
   "pv": 11,
   "pv_formule": "2d8+2",
   "vitesse": {
@@ -63,7 +63,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Spear",
+      "nom": "Pique",
       "description": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

@@ -1,16 +1,29 @@
 {
   "slug": "rain-of-chaos",
-  "nom": "Rain of Chaos",
+  "nom": "Pluie de Chaos",
   "nom_original": "Rain of Chaos",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This magic weapon imbues arrows fired from it with random energies. When you hit with an attack using this magic bow, the target takes an extra 1d6 damage. Roll a 1d8. The number rolled determines the damage type of the extra damage. | d8 | Damage Type |\n| --- | ----------- |\n| 1 | Acid |\n| 2 | Cold |\n| 3 | Fire |\n| 4 | Lightning |\n| 5 | Necrotic |\n| 6 | Poison |\n| 7 | Radiant |\n| 8 | Thunder |",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arc magique dont les flèches infligent 1d6 dégâts supplémentaires d'un type aléatoire (8 types possibles).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "aléatoire",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "À chaque coup : 1d6 dégâts aléatoires",
+      "D8 : Acide, Froid, Feu, Foudre, Nécrotique, Poison, Radiant, Tonnerre",
+      "Recharge pas au repos"
+    ]
+  }
 }

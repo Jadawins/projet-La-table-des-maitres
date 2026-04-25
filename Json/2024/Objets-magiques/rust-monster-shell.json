@@ -1,16 +1,29 @@
 {
   "slug": "rust-monster-shell",
-  "nom": "Rust Monster Shell",
+  "nom": "Armure de monstre rouille",
   "nom_original": "Rust Monster Shell",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to AC. In addition, you can use an action to magically coat the armor in rusty flakes for 1 minute. While the armor is coated in rusty flakes, any nonmagical weapon made of metal that hits you corrodes. After dealing damage, the weapon takes a permanent and cumulative –1 penalty to damage rolls. If its penalty drops to –5, the weapon is destroyed. Nonmagical ammunition made of metal that hits you is destroyed after dealing damage. The armor can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "20.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure +1 qui peut corroder les armes métalliques non-magiques la frappant, réduisant leurs dégâts de -1 cumulatif jusqu'à destruction.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Les armes métalliques non-magiques subissent -1 aux dégâts après chaque coup (cumulatif)",
+      "Les munitions métalliques non-magiques sont détruites après avoir frappé",
+      "Effet utilisable une fois par jour (action)"
+    ]
+  }
 }

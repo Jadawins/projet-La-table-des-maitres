@@ -1,6 +1,6 @@
 {
   "slug": "warhorse-skeleton",
-  "nom": "Warhorse Skeleton",
+  "nom": "Squelette de destrier",
   "nom_original": "Warhorse Skeleton",
   "taille": "G",
   "type": "Undead",
@@ -66,7 +66,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
       "bonus_attaque": 6,
       "degats_de": "2d6",

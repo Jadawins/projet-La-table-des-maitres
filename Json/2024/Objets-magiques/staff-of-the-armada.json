@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-the-armada",
-  "nom": "Bâton de the Armada",
+  "nom": "Bâton de l'Armada",
   "nom_original": "Staff of the Armada",
   "categorie": "baton",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This gold-shod staff is constructed out of a piece of masting from a galleon. The staff can be wielded as a magic quarterstaff that grants you a +1 bonus to attack and damage rolls made with it. While you are on board a ship, this bonus increases to +2. The staff has 10 charges and regains 1d8 + 2 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff loses all of its magic and becomes a nonmagical quarterstaff. Spells. While holding the staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spellcasting ability: control water (4 charges), fog cloud (1 charge), gust of wind (2 charges), or water walk (3 charges). You can also use an action to cast the ray of frost cantrip from the staff without using any charges.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton magique +1 (+2 sur un navire) permettant de lancer des sorts liés à l'eau et au vent.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "+1 attaque et dégâts (+2 à bord d'un navire)",
+      "Sorts : Contrôle de l'eau (4), Nuage de brouillard (1), Rafale de vent (2), Marche sur l'eau (3)",
+      "Rayon de froid gratuit (sans charges)"
+    ]
+  }
 }

@@ -1,17 +1,28 @@
 {
   "slug": "cloak-of-sails",
-  "nom": "Cape de Sails",
+  "nom": "Cape de Toile",
   "nom_original": "Cloak of Sails",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The interior of this simple, black cloak looks like white sailcloth. While wearing this cloak, you gain a +1 bonus to AC and saving throws. You lose this bonus while using the cloak's Sailcloth property.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "L'intérieur de cette cape noire simple ressemble à de la toile de voile blanche. En portant cette cape, vous obtenez un bonus de +1 à la CA et aux jets de sauvegarde. Vous perdez ce bonus lorsque vous utilisez la propriété Toile de voile de la cape."
+  "resume": "Cape noire offrant un bonus de +1 à la CA et aux jets de sauvegarde, perdu lors de l'utilisation de sa propriété de vol.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 aux jets de sauvegarde",
+      "Permet de voler (propriété Toile de voile)"
+    ]
+  }
 }

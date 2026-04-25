@@ -1,13 +1,13 @@
 {
   "slug": "roper",
-  "nom": "Roper",
+  "nom": "Mangeur de cordes",
   "nom_original": "Roper",
   "taille": "G",
   "type": "Monstrosity",
   "sous_type": null,
   "alignement": "neutral evil",
   "ca": 20,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 93,
   "pv_formule": "11d10+33",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 6,
-    "stealth": 5
+    "discrétion": 5
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,21 +61,21 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the roper remains motionless, it is indistinguishable from a normal cave formation, such as a stalagmite.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Grasping Tendrils",
+      "nom": "Vrilles Étreintes",
       "description": "The roper can have up to six tendrils at a time. Each tendril can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying a tendril deals no damage to the roper, which can extrude a replacement tendril on its next turn. A tendril can also be broken if a creature takes an action and succeeds on a DC 15 Strength check against it.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Spider Climb",
+      "nom": "Escalade araignée",
       "description": "The roper can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -84,28 +84,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The roper makes four attacks with its tendrils, uses Reel, and makes one attack with its bite.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 22 (4d8 + 4) piercing damage.",
       "bonus_attaque": 7,
       "degats_de": "4d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Tendril",
+      "nom": "Vrille",
       "description": "Melee Weapon Attack: +7 to hit, reach 50 ft., one creature. Hit: The target is grappled (escape DC 15). Until the grapple ends, the target is restrained and has disadvantage on Strength checks and Strength saving throws, and the roper can't use the same tendril on another target.",
       "bonus_attaque": 7,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Reel",
+      "nom": "Enroulement",
       "description": "The roper pulls each creature grappled by it up to 25 ft. straight toward it.",
       "bonus_attaque": null,
       "degats_de": null,

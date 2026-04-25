@@ -1,16 +1,29 @@
 {
   "slug": "ring-of-dragons-discernment",
-  "nom": "Anneau de Dragon's Discernment",
+  "nom": "Anneau de Discernement du Dragon",
   "nom_original": "Ring of Dragon's Discernment",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "A large, orange cat's eye gem is held in the fittings of this ornate silver ring, looking as if it is grasped by scaled talons. While wearing this ring, your senses are sharpened. You have advantage on Intelligence (Investigation) and Wisdom (Perception) checks, and you can take the Search action as a bonus action. In addition, you are able to discern the value of any object made of precious metals or minerals or rare materials by handling it for 1 round.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau en argent avec oeil de chat orange conférant l'avantage aux tests d'Investigation et Perception, permettant les actions de Recherche en bonus.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests d'Investigation (Intelligence) et Perception (Sagesse)",
+      "Action Recherche réalisable en tant qu'action bonus",
+      "Évaluation des métaux précieux et minéraux rares après 1 round de contact"
+    ]
+  }
 }

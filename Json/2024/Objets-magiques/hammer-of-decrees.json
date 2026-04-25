@@ -1,16 +1,28 @@
 {
   "slug": "hammer-of-decrees",
-  "nom": "Hammer of Decrees",
+  "nom": "Marteau des Décrets",
   "nom_original": "Hammer of Decrees",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This adamantine hammer was part of a set of smith's tools used to create weapons of law for an ancient dwarven civilization. It is pitted and appears damaged, and its oak handle is split and bound with cracking hide. While attuned to this hammer, you have advantage on ability checks using smith's tools, and the time it takes you to craft an item with your smith's tools is halved.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Marteau d'adamantite qui confère l'avantage aux tests avec les outils de forgeron et réduit de moitié le temps de création d'objets.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests d'outils de forgeron",
+      "Temps de création d'objets réduit de moitié"
+    ]
+  }
 }

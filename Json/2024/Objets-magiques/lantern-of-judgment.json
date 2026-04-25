@@ -1,16 +1,29 @@
 {
   "slug": "lantern-of-judgment",
-  "nom": "Lantern of Judgment",
+  "nom": "Lanterne du Jugement",
   "nom_original": "Lantern of Judgment",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This mithral and gold lantern is emblazoned with a sunburst symbol. While holding the lantern, you have advantage on Wisdom (Insight) and Intelligence (Investigation) checks. As a bonus action, you can speak a command word to cause one of the following effects: - The lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. - The lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. - The lantern sheds dim light in a 5-foot radius.\n- Douse the lantern's light. When you cause the lantern to shed bright light, you can speak an additional command word to cause the light to become sunlight. The sunlight lasts for 1 minute after which the lantern goes dark and can't be used again until the next dawn. During this time, the lantern can function as a standard hooded lantern if provided with oil.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une lanterne de mithral et d'or donnant l'avantage aux tests de Sagesse (Perspicacité) et d'Intelligence (Investigation), avec plusieurs modes d'éclairage et capacité à projeter la lumière du soleil.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Avantage aux tests de Sagesse (Perspicacité) et Intelligence (Investigation)",
+      "Modes d'éclairage variables : 60 pieds cône, 30 pieds rayon, 5 pieds rayon, ou éteinte",
+      "Peut projeter la lumière du soleil pendant 1 minute (réutilisable au prochain aube)"
+    ]
+  }
 }

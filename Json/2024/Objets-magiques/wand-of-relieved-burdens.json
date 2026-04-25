@@ -1,16 +1,29 @@
 {
   "slug": "wand-of-relieved-burdens",
-  "nom": "Baguette de Relieved Burdens",
+  "nom": "Baguette des fardeaux allégés",
   "nom_original": "Wand of Relieved Burdens",
   "categorie": "baguette",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges and touch a creature with the wand. If the creature is blinded, charmed, deafened, frightened, paralyzed, poisoned, or stunned, the condition is removed from the creature and transferred to you. You suffer the condition for the remainder of its duration or until it is removed. The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand crumbles to dust and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette à 7 charges transférant une condition négative (cécité, charme, surdité, peur, paralysie, poison, étourdissement) de la cible au porteur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 7,
+    "effets": [
+      "Transfère condition négative de la cible au porteur",
+      "Porteur subit la condition pour sa durée restante",
+      "Régain 1d6+1 charges à l'aube"
+    ]
+  }
 }

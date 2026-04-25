@@ -1,16 +1,29 @@
 {
   "slug": "hangmans-noose",
-  "nom": "Hangman's Noose",
+  "nom": "Nœud du pendu",
   "nom_original": "Hangman's Noose",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Certain hemp ropes used in the execution of final justice can affect those beyond the reach of normal magics. This noose has 3 charges. While holding it, you can use an action to expend 1 of its charges to cast the hold monster spell from it. Unlike the standard version of this spell, though, the magic of the hangman's noose affects only undead. It regains 1d3 charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une corde magique pouvant lancer le sort de paralysie des monstres sur les créatures mortes-vivantes, avec 3 charges renouvelables.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lancer paralysie des monstres (créatures mortes-vivantes uniquement)",
+      "Récupère 1d3 charges à l'aube",
+      "Coût : 1 charge par utilisation"
+    ]
+  }
 }

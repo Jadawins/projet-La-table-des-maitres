@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-ebbing-strength",
-  "nom": "Potion de Ebbing Strength",
+  "nom": "Potion de Force Déclinante",
   "nom_original": "Potion of Ebbing Strength",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this potion, your Strength score changes to 25 for 1 hour. The potion has no effect on you if your Strength is equal to or greater than that score. The recipe for this potion is flawed and infused with dangerous Void energies. When you drink this potion, you are also poisoned. While poisoned, you take 2d4 poison damage at the end of each minute. If you are reduced to 0 hit points while poisoned, you have disadvantage on death saving throws. This bubbling, pale blue potion is commonly used by the derro and is almost always paired with a Potion of Dire Cleansing or Holy Verdant Bat Droppings (see page 147). Warriors who use this potion without a method of removing the poison don't intend to return home from battle.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Votre Force passe à 25 pendant 1 heure, mais vous êtes empoisonné et subissez 2d4 dégâts de poison à la fin de chaque minute. L'empoisonnement vous donne l'inconvénient aux jets de sauvegarde contre la mort si vous atteignez 0 PV.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d4",
+    "type_degats_bonus": "poison",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Force augmentée à 25 pendant 1 heure",
+      "Empoisonné : 2d4 dégâts de poison par minute",
+      "Inconvénient aux JS contre la mort mientras empoisonné"
+    ]
+  }
 }

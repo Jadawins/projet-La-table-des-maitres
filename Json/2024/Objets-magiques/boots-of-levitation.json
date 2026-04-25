@@ -7,11 +7,21 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these boots, you can use an action to cast the _levitate_ spell on yourself at will.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces bottes, vous pouvez utiliser une action pour lancer le sort lévitation sur vous-même à volonté."
+  "resume": "Vous pouvez lancer lévitation sur vous-même à volonté en utilisant une action.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lancer lévitation sur soi-même à volonté (action)"
+    ]
+  }
 }

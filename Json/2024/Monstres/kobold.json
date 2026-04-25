@@ -52,8 +52,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "1/8",
   "fp_numerique": 0.125,
@@ -61,14 +61,14 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Sunlight Sensitivity",
+      "nom": "Sensibilité à la lumière du soleil",
       "description": "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -77,14 +77,14 @@
   ],
   "actions": [
     {
-      "nom": "Dagger",
+      "nom": "Poignard",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d4",
       "degats_bonus": 2
     },
     {
-      "nom": "Sling",
+      "nom": "Fronde",
       "description": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
       "bonus_attaque": 4,
       "degats_de": "1d4",

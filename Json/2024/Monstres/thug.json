@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any non-good alignment",
   "ca": 11,
-  "ca_detail": "leather armor",
+  "ca_detail": "armure de cuir",
   "pv": 32,
   "pv_formule": "5d8+10",
   "vitesse": {
@@ -62,7 +62,7 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The thug has advantage on an attack roll against a creature if at least one of the thug's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -71,21 +71,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The thug makes two melee attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Mace",
+      "nom": "Masse",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) bludgeoning damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Heavy Crossbow",
+      "nom": "Arbalète lourde",
       "description": "Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5 (1d10) piercing damage.",
       "bonus_attaque": 2,
       "degats_de": "1d10",

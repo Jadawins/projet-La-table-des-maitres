@@ -40,9 +40,9 @@
     "CHA": null
   },
   "competences": {
-    "athletics": 6,
+    "athlétisme": 6,
     "perception": 3,
-    "survival": 3
+    "survie": 3
   },
   "resistances": [],
   "immunites_degats": [],
@@ -56,8 +56,8 @@
     "tremblements": null
   },
   "langues": [
-    "Elvish",
-    "Sylvan"
+    "elfique",
+    "sylvestre"
   ],
   "fp": "2",
   "fp_numerique": 2,
@@ -74,28 +74,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The centaur makes two attacks: one with its pike and one with its hooves or two with its longbow.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pike",
+      "nom": "Pique",
       "description": "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 9 (1d10 + 4) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "1d10",
       "degats_bonus": 4
     },
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
       "bonus_attaque": 6,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Longbow",
+      "nom": "Arc long",
       "description": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d8",

@@ -1,17 +1,29 @@
 {
   "slug": "book-of-ebon-tides",
-  "nom": "Book of Ebon Tides",
+  "nom": "Livre des Marées d'Ébène",
   "nom_original": "Book of Ebon Tides",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This strange, twilight-hued tome was written on pages of pure shadow weave, bound in traditional birch board covers wrapped with shadow goblin hide, and imbued with the memories of forests on the Plane of Shadow. Its covers often reflect light as if it were resting in a forest grove, and some owners swear that a goblin face appears on them now and again. The sturdy lock on one side opens only for wizards, elves, and Shadow Fey (see Tome of Beasts). The book has 15 charges, and it regains 2d6 + 3 expended charges daily in the twilight before dawn. If you expend the last charge, roll a 1d20. On a 1, the book retains its Ebon Tides and Shadow Lore properties but loses its Spells property. When the magic ritual completes, make an Intelligence (Arcana) check and consult the Terrain Changes table for the appropriate DCs. You can change the terrain in any one way listed at your result or lower. For example, if your result was 17, you could turn a small forest up to 30 feet across into a grassland, create a grove of trees up to 240 feet across, create a 6-foot-wide flowing stream, overgrow 1,500 feet of an existing road, or other similar option. Only natural terrain you can see can be affected; built structures, such as homes or castles, remain untouched, though roads and trails can be overgrown or hidden. On a failure, the terrain is unchanged. On a 1, an Overshadow (see Tome of Beasts 2) also appears and attacks you. On a 20, you can choose two options. Deities, Fey Lords and Ladies (see Tome of Beasts), archdevils, demon lords, and other powerful rulers in the Plane of Shadow can prevent these terrain modifications from happening in their presence or anywhere within their respective domains. Spells marked with an asterisk (*) can be found in Deep Magic for 5th Edition. At the GM's discretion, spells from Deep Magic for 5th Edition can be replaced with other spells of similar levels and similarly related to darkness, illusion, or shadows, such as invisibility or major image. | DC | Effect |\n| --- | --------------------------------------------------------------------------------------------------- |\n| 8 | Obscuring a path and removing all signs of passage (30 feet per point over 7) |\n| 10 | Creating a grove of trees (30 feet across per point over 9) |\n| 11 | Creating or drying up a lake or pond (up to 10 feet across per point over 10) |\n| 12 | Creating a flowing stream (1 foot wide per point over 11) |\n| 13 | Overgrowing an existing road with brush or trees (300 feet per point over 12) |\n| 14 | Shifting a river to a new course (300 feet per point over 13) |\n| 15 | Moving a forest (300 feet per point over 14) |\n| 16 | Creating a small hill, riverbank, or cliff (10 feet tall per point over 15) |\n| 17 | Turning a small forest into grassland or clearing, or vice versa (30 feet across per point over 16) |\n| 18 | Creating a new river (10 feet wide per point over 17) |\n| 19 | Turning a large forest into grassland, or vice versa (300 feet across per point over 19) |\n| 20 | Creating a new mountain (1,000 feet high per point over 19) |\n| 21 | Drying up an existing river (reducing width by 10 feet per point over 20) |\n| 22 | Shrinking an existing hill or mountain (reducing 1,000 feet per point over 21) | Written by an elvish princess at the Court of Silver Words, this volume encodes her understanding and mastery of shadow. Whimsical illusions suffuse every page, animating its illuminated capital letters and ornamental figures. The book is a famous work among the sable elves of that plane, and it opens to the touch of any elfmarked or sable elf character.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cet étrange tome aux teintes crépusculaires a été rédigé sur des pages de pure trame d'ombre, relié dans des couvertures de bouleau traditionnel enveloppées de peau de gobelin des ombres, et imprégné des souvenirs de forêts du Plan des Ombres. Ses couvertures reflètent souvent la lumière comme si le livre reposait dans une clairière forestière, et certains propriétaires jurent qu'un visage de gobelin y apparaît de temps à autre. La robuste serrure sur un côté ne s'ouvre que pour les magiciens, les elfes et les Fées des ombres. Le livre possède 15 charges et en récupère 2d6 + 3 chaque jour au crépuscule précédant l'aube. Si vous dépensez la dernière charge, lancez 1d20 : sur un 1, le livre conserve ses propriétés Marées d'ébène et Savoir des ombres, mais perd sa propriété Sorts. Lors du rituel magique, effectuez un test d'Intelligence (Arcanes) et consultez le tableau des modifications de terrain pour les DD appropriés. Vous pouvez modifier le terrain d'une des manières indiquées selon votre résultat ou en dessous. Seul le terrain naturel visible peut être affecté ; les structures bâties restent intactes, bien que routes et sentiers puissent être envahis par la végétation. En cas d'échec, le terrain reste inchangé. Sur un 1, une Ombre suprême apparaît et vous attaque. Sur un 20, vous pouvez choisir deux options. Les divinités, seigneurs et dames fées, archidiables, seigneurs démons et autres puissants souverains du Plan des Ombres peuvent empêcher ces modifications dans leur présence ou leurs domaines. Ce tome fut rédigé par une princesse elfique à la Cour des Mots d'argent, encodant sa maîtrise des ombres. Des illusions fantaisistes animent ses lettres enluminées et ses figures ornementales. L'ouvrage est célèbre parmi les elfes sombres de ce plan, et s'ouvre au contact de tout personnage elfe ou portant la marque elfique."
+  "resume": "Tome arcanique de 15 charges permettant de modifier le terrain naturel via rituels magiques et d'accéder à des savoirs ombragés, avec risques d'apparition d'Ombres surpuissantes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 15,
+    "effets": [
+      "Récupère 2d6+3 charges chaque crépuscule",
+      "Rituel: test Intelligence (Arcanes) pour modifier terrain naturel visible",
+      "Sur 1 critique: Ombre suprême apparaît et attaque; sur 20: choix de 2 options"
+    ]
+  }
 }

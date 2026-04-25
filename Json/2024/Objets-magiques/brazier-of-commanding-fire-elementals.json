@@ -1,17 +1,28 @@
 {
   "slug": "brazier-of-commanding-fire-elementals",
-  "nom": "Brazier of Commanding Fire Elementals",
+  "nom": "Brasero de Commandement des Élémentaires du Feu",
   "nom_original": "Brazier of Commanding Fire Elementals",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While a fire burns in this brass brazier, you can use an action to speak the brazier's command word and summon a fire elemental, as if you had cast the _conjure elemental_ spell. The brazier can't be used this way again until the next dawn.\r\n\r\nThe brazier weighs 5 pounds.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Lorsqu'un feu brûle dans ce brasero en laiton, vous pouvez utiliser une action pour prononcer le mot de commande du brasero et invoquer un élémentaire du feu, comme si vous aviez lancé le sort convocation d'élémentaire. Le brasero ne peut plus être utilisé de cette façon avant l'aube suivante.\n\nLe brasero pèse 2,5 kg."
+  "resume": "Brasero magique permettant d'invoquer un élémentaire du feu une fois par jour avec le sort de convocation d'élémentaire.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Invoque un élémentaire du feu comme convocation d'élémentaire",
+      "Réutilisable après l'aube suivante"
+    ]
+  }
 }

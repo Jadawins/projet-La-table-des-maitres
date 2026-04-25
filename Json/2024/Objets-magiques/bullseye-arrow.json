@@ -1,17 +1,29 @@
 {
   "slug": "bullseye-arrow",
-  "nom": "Bullseye Arrow",
+  "nom": "Flèche de mille-feu",
   "nom_original": "Bullseye Arrow",
   "categorie": "autre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "This arrow has bright red fletching and a blunt, red tip. You gain a +1 bonus to attack rolls made with this magic arrow. On a hit, the arrow deals no damage, but it paints a magical red dot on the target for 1 minute. While the dot lasts, the target takes an extra 1d4 damage of the weapon's type from any ranged attack that hits it. In addition, ranged weapon attacks against the target score a critical hit on a roll of 19 or 20. When this arrow hits a target, the arrow vanishes in a flash of red light and is destroyed.",
-  "description_fr": "Cette flèche est dotée d'un empennage rouge vif et d'une pointe rouge émoussée. Vous bénéficiez d'un bonus de +1 aux jets d'attaque effectués avec cette flèche magique. En cas de touche, la flèche n'inflige aucun dégât, mais peint un point rouge magique sur la cible pendant 1 minute. Tant que ce point persiste, la cible subit 1d4 dégâts supplémentaires du type de l'arme lors de toute attaque à distance qui la touche. De plus, les jets d'attaque à distance contre la cible sont des coups critiques sur un résultat de 19 ou 20. Lorsque cette flèche touche une cible, elle disparaît dans un éclair de lumière rouge et est détruite.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Flèche magique (+1 aux jets d'attaque) marquant la cible d'un point rouge magique infligeant 1d4 dégâts supplémentaires aux attaques ultérieures et augmentant les critiques (19-20).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "arme",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets d'attaque",
+      "Marque la cible : 1d4 dégâts supplémentaires aux attaques à distance",
+      "Critiques sur 19-20 contre la cible marquée"
+    ]
+  }
 }

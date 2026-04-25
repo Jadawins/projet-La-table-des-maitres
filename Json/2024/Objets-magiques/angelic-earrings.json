@@ -1,17 +1,28 @@
 {
   "slug": "angelic-earrings",
-  "nom": "Angelic Earrings",
+  "nom": "Boucles d'Oreilles Angéliques",
   "nom_original": "Angelic Earrings",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These earrings feature platinum loops from which hang bronzed claws from a Chamrosh (see Tome of Beasts 2), freely given by the angelic hound. While wearing these earrings, you have advantage on Wisdom (Insight) checks to determine if a creature is lying or if it has an evil alignment. If you cast detect evil and good while wearing these earrings, the range increases to 60 feet, and the spell lasts 10 minutes without requiring concentration.",
-  "description_fr": "Ces boucles d'oreilles sont ornées d'anneaux de platine auxquels pendent des griffes bronzées d'un Chamrosh (voir Tome of Beasts 2), offertes de plein gré par le chien angélique. Tant que vous portez ces boucles d'oreilles, vous avez l'avantage aux tests de Sagesse (Perspicacité) visant à déterminer si une créature ment ou si elle possède un alignement mauvais. Si vous lancez le sort détection du mal et du bien en portant ces boucles d'oreilles, la portée du sort passe à 18 mètres et il dure 10 minutes sans nécessiter de concentration.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Boucles d'oreilles octroyant l'avantage aux tests de Perspicacité et améliorant détection du mal et du bien.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Sagesse (Perspicacité) pour détecter les mensonges et l'alignement mauvais",
+      "Détection du mal et du bien : portée 18 m, durée 10 minutes sans concentration"
+    ]
+  }
 }

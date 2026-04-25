@@ -1,16 +1,29 @@
 {
   "slug": "gauntlet-of-the-iron-sphere",
-  "nom": "Gauntlet of the Iron Sphere",
+  "nom": "Gantelet de la Sphère de Fer",
   "nom_original": "Gauntlet of the Iron Sphere",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This heavy gauntlet is adorned with an onyx. While wearing this gauntlet, your unarmed strikes deal 1d8 bludgeoning damage, instead of the damage normal for an unarmed strike, and you gain a +1 bonus to attack and damage rolls with unarmed strikes. In addition, your unarmed strikes deal double damage to objects and structures. If you hold a pound of raw iron ore in your hand while wearing the gauntlet, you can use an action to speak the gauntlet's command word and conjure an Iron Sphere (see Creature Codex). The iron sphere remains for 1 hour or until it dies. It is friendly to you and your companions. Roll initiative for the iron sphere, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don't issue any commands to the iron sphere, it defends itself from hostile creatures but otherwise takes no actions. The gauntlet can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Gantelet renforçant les frappes à mains nues et permettant d'invoquer une Sphère de Fer pour combattre aux côtés du porteur.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Frappes à mains nues infligent 1d8 dégâts contondants au lieu de la normale",
+      "Double dégâts aux objets et structures",
+      "Invoque une Sphère de Fer alliée pendant 1 heure (réutilisable à l'aube)"
+    ]
+  }
 }

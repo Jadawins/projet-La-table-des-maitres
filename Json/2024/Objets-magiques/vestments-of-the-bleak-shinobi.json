@@ -1,16 +1,28 @@
 {
   "slug": "vestments-of-the-bleak-shinobi",
-  "nom": "Vestments of the Bleak Shinobi",
+  "nom": "Vêtements du Shinobi Sinistre",
   "nom_original": "Vestments of the Bleak Shinobi",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This padded black armor is fashioned in the furtive style of shinobi shōzoku garb. You have advantage on Dexterity (Stealth) checks while you wear this armor. Darkness. While wearing this armor, you can use an action to cast the darkness spell from it with a range of 30 feet. Once used, this property can’t be used again until the next dawn.",
   "effets": [],
   "poids": "8.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure rembourrée noire conférant l'avantage aux tests de Discrétion et permettant de lancer ténèbres une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Avantage aux tests de Discrétion",
+      "Sort ténèbres (30 pieds de portée, 1 recharge à l'aube)"
+    ]
+  }
 }

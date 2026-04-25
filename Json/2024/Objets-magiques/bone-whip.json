@@ -1,17 +1,29 @@
 {
   "slug": "bone-whip",
-  "nom": "Bone Whip",
+  "nom": "Fouet d'Os",
   "nom_original": "Bone Whip",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This whip is constructed of humanoid vertebrae with their edges magically sharpened and pointed. The bones are joined together into a coiled line by strands of steel wire. The handle is half a femur wrapped in soft leather of tanned humanoid skin. You gain a +1 bonus to attack and damage rolls with this weapon. You can use an action to cause fiendish energy to coat the whip. For 1 minute, you gain 5 temporary hit points the first time you hit a creature on each turn. In addition, when you deal damage to a creature with this weapon, the creature must succeed on a DC 17 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage dealt. This reduction lasts until the creature finishes a long rest. Once used, this property of the whip can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce fouet est constitué de vertèbres humanoïdes dont les bords ont été magiquement affûtés et pointus, reliées entre elles par des fils d'acier tressés. La poignée est faite d'un demi-fémur enveloppé de cuir souple tanné dans de la peau humanoïde. Vous obtenez un bonus de +1 aux jets d'attaque et de dégâts avec cette arme. Vous pouvez utiliser une action pour envelopper le fouet d'énergie infernale. Pendant 1 minute, vous gagnez 5 points de vie temporaires la première fois que vous touchez une créature à chacun de vos tours. De plus, lorsque vous infligez des dégâts avec cette arme, la créature doit réussir un jet de sauvegarde de Constitution DD 17 ou voir son maximum de points de vie réduit d'un montant égal aux dégâts subis. Cette réduction dure jusqu'à ce que la créature effectue un repos long. Cette propriété du fouet ne peut plus être utilisée avant l'aube suivante."
+  "resume": "Fouet magique +1 pouvant être enveloppé d'énergie infernale pour octroyer 5 PV temporaires et réduire le maximum de PV des cibles.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "5",
+    "charges": null,
+    "effets": [
+      "Bonus +1 attaque et dégâts",
+      "Action: envelopper d'énergie infernale (1 min), 5 PV temp. 1x/tour",
+      "Cible doit réussir Constitution DD17 ou perte max PV égale aux dégâts (jusqu'au repos long)"
+    ]
+  }
 }

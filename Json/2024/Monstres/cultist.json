@@ -1,13 +1,13 @@
 {
   "slug": "cultist",
-  "nom": "Cultist",
+  "nom": "Cultiste",
   "nom_original": "Cultist",
   "taille": "M",
   "type": "Humanoid",
   "sous_type": "any race",
   "alignement": "any non-good alignment",
   "ca": 12,
-  "ca_detail": "leather armor",
+  "ca_detail": "armure de cuir",
   "pv": 9,
   "pv_formule": "2d8",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "deception": 2,
+    "tromperie": 2,
     "religion": 2
   },
   "resistances": [],
@@ -63,7 +63,7 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Dark Devotion",
+      "nom": "Dévouement ténébreux",
       "description": "The cultist has advantage on saving throws against being charmed or frightened.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,7 +72,7 @@
   ],
   "actions": [
     {
-      "nom": "Scimitar",
+      "nom": "Cimeterre",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 4 (1d6 + 1) slashing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

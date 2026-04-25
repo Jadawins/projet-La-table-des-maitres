@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this helm, you can use an action to cast the _detect thoughts_ spell (save DC 13) from it. As long as you maintain concentration on the spell, you can use a bonus action to send a telepathic message to a creature you are focused on. It can reply-using a bonus action to do so-while your focus on it continues.\r\n\r\nWhile focusing on a creature with _detect thoughts_, you can use an action to cast the _suggestion_ spell (save DC 13) from the helm on that creature. Once used, the _suggestion_ property can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Heaume permettant de détecter les pensées et de communiquer télépathiquement avec une créature, et de lancer suggestion une fois par jour à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lancer détection des pensées (DD 13) à volonté",
+      "Télépathie en bonus action avec créature ciblée",
+      "Lancer suggestion (DD 13) une fois par jour à l'aube"
+    ]
+  }
 }

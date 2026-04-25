@@ -1,16 +1,29 @@
 {
   "slug": "demon-leather-armor",
-  "nom": "Demon Leather Armor",
+  "nom": "Armure de Cuir Démoniaque",
   "nom_original": "Demon Leather Armor",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
   "effets": [],
   "poids": "10.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure maudite conférant +1 CA, la compréhension de l'abyssal, et des coups à mains nues renforcés (1d8 tranchant, +1 attaque/dégâts). Impose désavantage contre les démons.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Coups à mains nues : 1d8 tranchant au lieu de contondant",
+      "+1 aux jets d'attaque et de dégâts des coups à mains nues",
+      "Maudit : désavantage contre les démons (attaques et jets de sauvegarde)"
+    ]
+  }
 }

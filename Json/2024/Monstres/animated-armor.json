@@ -1,13 +1,13 @@
 {
   "slug": "animated-armor",
-  "nom": "Animated Armor",
+  "nom": "Armure animée",
   "nom_original": "Animated Armor",
   "taille": "M",
   "type": "Construct",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 18,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 33,
   "pv_formule": "6d8+6",
   "vitesse": {
@@ -70,14 +70,14 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Antimagic Susceptibility",
+      "nom": "Vulnérabilité à l'antimagie",
       "description": "The armor is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the armor must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the armor remains motionless, it is indistinguishable from a normal suit of armor.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -86,14 +86,14 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The armor makes two melee attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

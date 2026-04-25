@@ -1,16 +1,28 @@
 {
   "slug": "scimitar-of-wounding",
-  "nom": "Scimitar of Wounding",
+  "nom": "Cimeterre de la Blessure",
   "nom_original": "Scimitar of Wounding",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Inflige 2d6 dégâts de nécromantie et empêche la récupération de PV pendant 1 heure (sauvegarde CON DD 15).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "nécromantie",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "2d6 dégâts de nécromantie supplémentaires",
+      "Sauvegarde CON DD 15 ou incapacité à récupérer les PV pendant 1 heure"
+    ]
+  }
 }

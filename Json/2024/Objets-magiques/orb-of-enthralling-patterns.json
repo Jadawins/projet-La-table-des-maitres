@@ -1,16 +1,29 @@
 {
   "slug": "orb-of-enthralling-patterns",
-  "nom": "Orb of Enthralling Patterns",
+  "nom": "Sphère des Motifs Fascinants",
   "nom_original": "Orb of Enthralling Patterns",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This plain, glass orb shimmers with iridescence. While holding this orb, you can use an action to speak its command word, which causes it to levitate and emit multicolored light. Each creature other than you within 10 feet of the orb must succeed on a DC 13 Wisdom saving throw or look at only the orb for 1 minute. For the duration, a creature looking at the orb has disadvantage on Wisdom (Perception) checks to perceive anything that is not the orb. Creatures that failed the saving throw have no memory of what happened while they were looking at the orb. Once used, the orb can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette sphère de verre iridescente émet une lumière multicolore qui captive l'attention des créatures à proximité. Une créature affectée ne peut regarder que la sphère et perd tout souvenir de l'expérience.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Charme : créatures à 10 pieds doivent réussir un save Sagesse DC 13 ou être captivées",
+      "Incapacité : regard fixe pendant 1 minute, désavantage aux Perception",
+      "Amnésie : la créature n'a aucun souvenir de la durée d'effet"
+    ]
+  }
 }

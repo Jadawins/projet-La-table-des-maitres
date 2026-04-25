@@ -1,13 +1,13 @@
 {
   "slug": "bone-devil",
-  "nom": "Bone Devil",
+  "nom": "Diable des os",
   "nom_original": "Bone Devil",
   "taille": "G",
   "type": "Fiend",
   "sous_type": "devil",
   "alignement": "lawful evil",
   "ca": 19,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 142,
   "pv_formule": "15d10+60",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": 7
   },
   "competences": {
-    "deception": 7,
-    "insight": 6
+    "tromperie": 7,
+    "perspicacité": 6
   },
   "resistances": [
     "cold; bludgeoning",
@@ -64,8 +64,8 @@
     "tremblements": null
   },
   "langues": [
-    "Infernal",
-    "telepathy 120 ft."
+    "infernal",
+    "télépathie 36 m"
   ],
   "fp": "9",
   "fp_numerique": 9,
@@ -73,14 +73,14 @@
   "experience": 5000,
   "traits": [
     {
-      "nom": "Devil's Sight",
+      "nom": "Vision du diable",
       "description": "Magical darkness doesn't impede the devil's darkvision.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The devil has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -89,21 +89,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The devil makes three attacks: two with its claws and one with its sting.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 8 (1d8 + 4) slashing damage.",
       "bonus_attaque": 8,
       "degats_de": "1d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Sting",
+      "nom": "Dard",
       "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 13 (2d8 + 4) piercing damage plus 17 (5d6) poison damage, and the target must succeed on a DC 14 Constitution saving throw or become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
       "bonus_attaque": 8,
       "degats_de": "2d8",

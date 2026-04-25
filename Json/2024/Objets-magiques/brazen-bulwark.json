@@ -1,17 +1,27 @@
 {
   "slug": "brazen-bulwark",
-  "nom": "Brazen Bulwark",
+  "nom": "Rempart de Laiton",
   "nom_original": "Brazen Bulwark",
   "categorie": "autre",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "This rectangular shield is plated with polished brass and resembles a crenelated tower. While wielding this shield, you gain a +1 bonus to AC. This bonus is in addition to the shield's normal bonus to AC.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce bouclier rectangulaire est plaqué de laiton poli et ressemble à une tour crénelée. Tant que vous maniez ce bouclier, vous obtenez un bonus de +1 à la CA, en plus du bonus normal conféré par le bouclier."
+  "resume": "Bouclier en laiton conférant un bonus additionnel de +1 à la CA en plus du bonus normal du bouclier.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 CA additionnel au bonus du bouclier"
+    ]
+  }
 }

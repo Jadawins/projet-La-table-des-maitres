@@ -7,7 +7,7 @@
   "sous_type": "human",
   "alignement": "neutral good",
   "ca": 10,
-  "ca_detail": "10 in humanoid form, 11 (natural armor) in bear and hybrid form",
+  "ca_detail": "10 in humanoid form, 11 (armure naturelle) in bear and hybrid form",
   "pv": 135,
   "pv_formule": "18d8+54",
   "vitesse": {
@@ -66,14 +66,14 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "Shapechanger",
+      "nom": "Métamorphe",
       "description": "The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it. is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The werebear has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -82,28 +82,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "In bear form, the werebear makes two claw attacks. In humanoid form, it makes two greataxe attacks. In hybrid form, it can attack like a bear or a humanoid.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite (Bear or Hybrid Form Only)",
+      "nom": "Morsure (forme d'ours ou hybride uniquement)",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with were bear lycanthropy.",
       "bonus_attaque": 7,
       "degats_de": "2d10",
       "degats_bonus": 4
     },
     {
-      "nom": "Claw (Bear or Hybrid Form Only)",
+      "nom": "Griffe (forme d'ours ou hybride uniquement)",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Greataxe (Humanoid or Hybrid Form Only)",
+      "nom": "Hache d'armes (forme humanoïde ou hybride uniquement)",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "1d12",

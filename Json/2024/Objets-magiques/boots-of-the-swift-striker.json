@@ -1,17 +1,28 @@
 {
   "slug": "boots-of-the-swift-striker",
-  "nom": "Bottes de the Swift Striker",
+  "nom": "Bottes du frappeur rapide",
   "nom_original": "Boots of the Swift Striker",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these boots, your walking speed increases by 10 feet. In addition, when you take the Dash action while wearing these boots, you can make a single weapon attack at the end of your movement. You can't continue moving after making this attack.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces bottes, votre vitesse de déplacement à pied augmente de 3 mètres. De plus, lorsque vous effectuez l'action Foncer en portant ces bottes, vous pouvez faire une unique attaque à l'arme à la fin de votre déplacement. Vous ne pouvez pas continuer à vous déplacer après avoir effectué cette attaque."
+  "resume": "Augmente votre vitesse de 3 mètres. L'action Foncer permet une unique attaque à l'arme à la fin du déplacement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de déplacement +3 mètres",
+      "Action Foncer : attaque unique possible en fin de mouvement"
+    ]
+  }
 }

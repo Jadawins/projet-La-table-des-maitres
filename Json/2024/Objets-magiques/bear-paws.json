@@ -1,17 +1,28 @@
 {
   "slug": "bear-paws",
-  "nom": "Bear Paws",
+  "nom": "Pattes d'ours",
   "nom_original": "Bear Paws",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These hand wraps are made of flexible beeswax that ooze sticky honey. While wearing these gloves, you have advantage on grapple checks. In addition, creatures grappled by you have disadvantage on any checks made to escape your grapple.",
-  "description_fr": "Ces bandeaux de mains sont confectionnés en cire d'abeille souple qui suinte un miel poisseux. Tant que vous portez ces gantelets, vous avez l'avantage aux tests d'empoignade. De plus, les créatures que vous avez empoignées ont le désavantage à tous les tests effectués pour s'échapper de votre emprise.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Gantelets qui accordent l'avantage aux tests d'empoignade et donnent le désavantage aux créatures empoignées pour s'échapper.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests d'empoignade",
+      "Créatures empoignées ont le désavantage pour s'échapper"
+    ]
+  }
 }

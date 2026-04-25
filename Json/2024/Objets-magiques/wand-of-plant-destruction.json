@@ -1,16 +1,29 @@
 {
   "slug": "wand-of-plant-destruction",
-  "nom": "Baguette de Plant Destruction",
+  "nom": "Baguette de destruction des plantes",
   "nom_original": "Wand of Plant Destruction",
   "categorie": "baguette",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This wand of petrified wood has 7 charges. While holding it, you can use an action to expend up to 3 of its charges to harm a plant or plant creature you can see within 30 feet of you. The target must make a DC 15 Constitution saving throw, taking 2d8 necrotic damage for each charge you expended on a failed save, or half as much damage on a successful one. The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand shatters and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette en bois pétrifié à 7 charges infligeant 2d8 dégâts nécrotiques par charge dépensée à une plante ou créature végétale (sauvegarde CON DC 15, portée 30 pieds).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d8 par charge",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "",
+    "charges": 7,
+    "effets": [
+      "Cible plante ou créature végétale jusqu'à 30 pieds",
+      "Dépense jusqu'à 3 charges, dégâts doublés si sauvegarde échouée",
+      "Régain 1d6+1 charges à l'aube"
+    ]
+  }
 }

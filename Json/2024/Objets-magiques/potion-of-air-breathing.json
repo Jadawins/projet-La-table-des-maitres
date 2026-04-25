@@ -1,16 +1,27 @@
 {
   "slug": "potion-of-air-breathing",
-  "nom": "Potion de Air Breathing",
+  "nom": "Potion de respiration aquatique",
   "nom_original": "Potion of Air Breathing",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This potion's pale blue fluid smells like salty air, and a seagull's feather floats in it. You can breathe air for 1 hour after drinking this potion. If you could already breathe air, this potion has no effect.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Permet de respirer l'air aquatique pendant 1 heure (sans effet si le buveur respire déjà air).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Permet de respirer sous l'eau pendant 1 heure"
+    ]
+  }
 }

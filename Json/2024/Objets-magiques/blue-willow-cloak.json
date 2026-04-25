@@ -1,17 +1,29 @@
 {
   "slug": "blue-willow-cloak",
-  "nom": "Blue Willow Cloak",
+  "nom": "Cape du Saule Bleu",
   "nom_original": "Blue Willow Cloak",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This light cloak of fey silk is waterproof. While wearing this cloak in the rain, you can use your action to pull up the hood and become invisible for up to 1 hour. The effect ends early if you attack or cast a spell, if you use an action to pull down the hood, or if the rain stops. The cloak can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette légère cape de soie féerique est imperméable. Lorsque vous portez cette cape sous la pluie, vous pouvez utiliser votre action pour relever la capuche et devenir invisible pendant jusqu'à 1 heure. L'effet prend fin prématurément si vous attaquez ou lancez un sort, si vous utilisez une action pour rabaisser la capuche, ou si la pluie s'arrête. La cape ne peut plus être utilisée de cette façon avant l'aube suivante."
+  "resume": "Cape de soie féerique imperméable offrant une invisibilité temporaire sous la pluie en utilisant une action, jusqu'à 1 heure ou jusqu'à attaque/sort.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Invisibilité sous la pluie (action, 1h max)",
+      "Annulée par attaque, sort ou rabattage de capuche",
+      "Réutilisable à l'aube suivante"
+    ]
+  }
 }

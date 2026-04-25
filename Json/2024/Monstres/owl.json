@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,14 +61,14 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Flyby",
+      "nom": "Passage en vol",
       "description": "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Keen Hearing and Sight",
+      "nom": "Ouïe et vue aiguës",
       "description": "The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -77,7 +77,7 @@
   ],
   "actions": [
     {
-      "nom": "Talons",
+      "nom": "Serres",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
       "bonus_attaque": 3,
       "degats_de": null,

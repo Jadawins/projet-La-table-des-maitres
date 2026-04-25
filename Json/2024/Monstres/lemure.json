@@ -1,6 +1,6 @@
 {
   "slug": "lemure",
-  "nom": "Lemure",
+  "nom": "Lémure",
   "nom_original": "Lemure",
   "taille": "M",
   "type": "Fiend",
@@ -69,14 +69,14 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Devil's Sight",
+      "nom": "Vision du diable",
       "description": "Magical darkness doesn't impede the lemure's darkvision.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Hellish Rejuvenation",
+      "nom": "Rajeunissement infernal",
       "description": "A lemure that dies in the Nine Hells comes back to life with all its hit points in 1d10 days unless it is killed by a good-aligned creature with a bless spell cast on that creature or its remains are sprinkled with holy water.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -85,7 +85,7 @@
   ],
   "actions": [
     {
-      "nom": "Fist",
+      "nom": "Poing",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
       "bonus_attaque": 3,
       "degats_de": "1d4",

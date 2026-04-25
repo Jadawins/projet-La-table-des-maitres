@@ -1,16 +1,29 @@
 {
   "slug": "tenebrous-mantle",
-  "nom": "Tenebrous Mantle",
+  "nom": "Manteau Ténébreux",
   "nom_original": "Tenebrous Mantle",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This black cloak appears to be made of pure shadow and shrouds you in darkness. While wearing it, you gain the following benefits: - You have advantage on Dexterity (Stealth) checks.\n- You have resistance to necrotic damage.\n- You can cast the darkness and misty step spells from it at will. Casting either spell from the cloak requires an action. Instead of a silvery mist when you cast misty step, you are engulfed in the darkness of the cloak and emerge from the cloak's darkness at your destination.\n- You can use an action to cast the black tentacles or living shadows (see Deep Magic for 5th Edition) spell from it. The cloak can't be used this way again until the following dusk.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce manteau d'ombre noir confère l'avantage aux tests de Discrétion, résistance aux dégâts nécrotiques, et permet de lancer ténèbres et pas brumeux à volonté.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Avantage sur Dextérité (Discrétion)",
+      "Résistance aux dégâts nécrotiques",
+      "Ténèbres et Pas brumeux à volonté (action)"
+    ]
+  }
 }

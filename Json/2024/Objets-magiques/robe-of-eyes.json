@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This robe is adorned with eyelike patterns. While you wear the robe, you gain the following benefits:\r\n\r\n* The robe lets you see in all directions, and you have advantage on Wisdom (Perception) checks that rely on sight.\r\n* You have darkvision out to a range of 120 feet.\r\n* You can see invisible creatures and objects, as well as see into the Ethereal Plane, out to a range of 120 feet.\r\n\r\nThe eyes on the robe can't be closed or averted. Although you can close or avert your own eyes, you are never considered to be doing so while wearing this robe.\r\n\r\nA _light_ spell cast on the robe or a _daylight_ spell cast within 5 feet of the robe causes you to be blinded for 1 minute. At the end of each of your turns, you can make a Constitution saving throw (DC 11 for _light_ or DC 15 for _daylight_), ending the blindness on a success.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Robe magique permettant de voir dans toutes les directions, y compris les créatures invisibles et le plan éthéré jusqu'à 120 pieds. Confère l'avantage aux tests de Perception basés sur la vue et la vision dans le noir.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Voir dans toutes les directions avec avantage aux tests de Perception",
+      "Vision dans le noir 120 pieds et vision des créatures invisibles",
+      "Vulnérable à light et daylight (cécité 1 minute, jet de Constitution DC 11 ou 15)"
+    ]
+  }
 }

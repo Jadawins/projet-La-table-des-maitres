@@ -1,16 +1,28 @@
 {
   "slug": "elemental-gem",
-  "nom": "Elemental Gem",
+  "nom": "Gemme élémentaire",
   "nom_original": "Elemental Gem",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This gem contains a mote of elemental energy. When you use an action to break the gem, an elemental is summoned as if you had cast the _conjure elemental_ spell, and the gem's magic is lost. The type of gem determines the elemental summoned by the spell.\r\n\r\n| Gem            | Summoned Elemental |\r\n|----------------|--------------------|\r\n| Blue sapphire  | Air elemental      |\r\n| Yellow diamond | Earth elemental    |\r\n| Red corundum   | Fire elemental     |\r\n| Emerald        | Water elemental    |",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une gemme contenant une énergie élémentaire qui, une fois brisée, invoque un élémentaire selon son type (air, terre, feu ou eau) via le sort Invocation d'élémentaire.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Casse pour invoquer un élémentaire",
+      "Saphir bleu = élémentaire d'air, diamant jaune = terre, corindon rouge = feu, émeraude = eau"
+    ]
+  }
 }

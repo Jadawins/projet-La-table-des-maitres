@@ -1,17 +1,29 @@
 {
   "slug": "crystal-skeleton-key",
-  "nom": "Crystal Skeleton Key",
+  "nom": "Passe-partout de cristal",
   "nom_original": "Crystal Skeleton Key",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This arcane master key is the prized possession of many an intrepid thief. Several types of skeleton key exist, each type made from a distinct material. Bone (Rare). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. The key has 3 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it: arcane lock (2 charges), detect poison and disease (1 charge), or knock (1 charge). When you cast these spells, they are silent. The key regains 1d3 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the key crumbles into dust and is destroyed. Copper (Common). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. Crystal (Very Rare). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. The key has 5 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it: arcane lock (2 charges), detect magic (1 charge), dimension door (3 charges), or knock (1 charge). When you cast these spells, they are silent. The key regains 1d3 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the key shatters and is destroyed. Silver (Uncommon). While this key is on your person, you have advantage on ability checks made to disarm traps or open locks. In addition, while holding the key, you can use an action to cast the knock spell. When you cast the spell, it is silent. The key can’t be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce passe-partout magique est le trésor chéri de bien des voleurs intrépides. Il en existe plusieurs variantes, chacune fabriquée dans un matériau distinct. En Os (Rare) : tant que cette clé est sur vous, vous avez l'avantage aux tests pour désamorcer des pièges ou crocheter des serrures. La clé possède 3 charges permettant de lancer : verrou magique (2 charges), détection du poison et des maladies (1 charge) ou déblocage (1 charge), silencieusement. Elle récupère 1d3 charges à l'aube. Sur un 1 au d20 après la dernière charge, elle se désagrège. En Cuivre (Commun) : avantage aux tests pour désamorcer des pièges ou crocheter des serrures. En Cristal (Très Rare) : même avantage aux tests. La clé possède 5 charges pour lancer : verrou magique (2 charges), détection de la magie (1 charge), porte dimensionnelle (3 charges) ou déblocage (1 charge), silencieusement. Elle récupère 1d3 charges à l'aube. Sur un 1 au d20 après la dernière charge, elle se fracasse. En Argent (Peu commun) : avantage aux mêmes tests. En tenant la clé, vous pouvez lancer déblocage silencieusement par une action, mais pas avant l'aube suivante."
+  "resume": "Clé magique variant selon le matériau : avantage aux tests de crochètage/désarmage, avec charges pour lancer déblocage, verrou magique et autres sorts selon la variante.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Avantage aux tests de crochètage et désarmage",
+      "Verrou magique (2 charges), déblocage (1 charge), détection de la magie (1 charge), porte dimensionnelle (3 charges)",
+      "Récupère 1d3 charges à l'aube"
+    ]
+  }
 }

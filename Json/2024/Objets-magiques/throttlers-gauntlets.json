@@ -1,16 +1,29 @@
 {
   "slug": "throttlers-gauntlets",
-  "nom": "Throttler's Gauntlets",
+  "nom": "Gantlets de l'Étrangleur",
   "nom_original": "Throttler's Gauntlets",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These durable leather gloves allow you to choke a creature you are grappling, preventing them from speaking. While you are grappling a creature, you can use a bonus action to throttle it. The creature takes damage equal to your proficiency bonus and can't speak coherently or cast spells with verbal components until the end of its next turn. You can choose to not damage the creature when you throttle it. A creature can still breathe, albeit uncomfortably, while throttled.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Gants en cuir permettant d'étouffer une créature saisie, infligeant des dégâts égaux au bonus de maîtrise et l'empêchant de parler ou lancer des sorts avec composante verbale.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "bonus de maîtrise",
+    "type_degats_bonus": "étouffement",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Inflige des dégâts égaux au bonus de maîtrise (peut être désactivé)",
+      "Rend la créature saisie muette et incapable de lancer des sorts verbaux",
+      "N'affecte pas la respiration de la créature"
+    ]
+  }
 }

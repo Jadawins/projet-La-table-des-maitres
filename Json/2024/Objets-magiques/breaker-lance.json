@@ -1,17 +1,29 @@
 {
   "slug": "breaker-lance",
-  "nom": "Breaker Lance",
+  "nom": "Lance Briseur",
   "nom_original": "Breaker Lance",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls with this magic weapon. When you attack an object or structure with this magic lance and hit, maximize your weapon damage dice against the target. The lance has 3 charges. As part of an attack action with the lance, you can expend a charge while striking a barrier created by a spell, such as a wall of fire or wall of force, or an entryway protected by the arcane lock spell. You must make a Strength check against a DC equal to 10 + the spell's level. On a successful check, the spell ends. The lance regains 1d3 expended charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous obtenez un bonus de +1 aux jets d'attaque et de dégâts avec cette arme magique. Lorsque vous attaquez un objet ou une structure avec cette lance magique et que vous touchez, maximisez les dés de dégâts de votre arme contre la cible. La lance possède 3 charges. Dans le cadre d'une action d'attaque avec la lance, vous pouvez dépenser une charge en frappant une barrière créée par un sort, comme un mur de feu ou un mur de force, ou une entrée protégée par le sort verrou magique. Vous devez réussir un test de Force contre un DD égal à 10 + le niveau du sort. En cas de réussite, le sort prend fin. La lance récupère 1d3 charges dépensées chaque jour à l'aube."
+  "resume": "Lance magique +1 qui maximise ses dégâts contre les objets et structures, et peut dissiper les barrières magiques en dépensant des charges (3 charges, récupération 1d3 à l'aube).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Maximise les dés de dégâts contre les objets et structures",
+      "Dissiper les barrières magiques (test de Force DD 10 + niveau du sort)",
+      "Récupère 1d3 charges à l'aube"
+    ]
+  }
 }

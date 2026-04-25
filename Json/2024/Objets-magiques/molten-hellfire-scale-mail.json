@@ -1,16 +1,29 @@
 {
   "slug": "molten-hellfire-scale-mail",
-  "nom": "Molten Hellfire Scale Mail",
+  "nom": "Armure d'Écailles de Feu Infernal Bouillonnant",
   "nom_original": "Molten Hellfire Scale Mail",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This spiked armor is a dark, almost black crimson when inactive. This more powerful version of hellfire armor has 3 charges. It regains all expended charges daily at dawn. If you expend 1 charge as part of the action to make the armor glow, you can make the armor emit heat in addition to light for 1 minute. For the duration, when a creature touches you or hits you with a melee attack while within 5 feet of you, it takes 1d4 fire damage. You are immune to the armor’s heat while wearing it.",
   "effets": [],
   "poids": "45.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure à pics qui émet une chaleur intense à la dépense d'une charge, infligeant 1d4 dégâts de feu aux créatures qui vous touchent.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Émet de la lumière et de la chaleur (1 min, 1 charge)",
+      "Dégâts de feu au contact ou attaque de mêlée à 5 pieds",
+      "Immunité du porteur à la chaleur"
+    ]
+  }
 }

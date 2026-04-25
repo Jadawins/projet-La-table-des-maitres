@@ -1,17 +1,28 @@
 {
   "slug": "chain-mail-of-warding-2",
-  "nom": "Chain Mail of Warding (+2)",
+  "nom": "Cotte de Mailles de Protection (+2)",
   "nom_original": "Chain Mail of Warding (+2)",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "Charms and wards made of claws, feathers, scales, or similar objects adorn this armor, which is etched with the likenesses of the creatures that contributed the adornments. The armor provides protection against a specific type of foe, indicated by its adornments. While wearing this armor, you have a bonus to AC against attacks from creatures of the type the armor wards against. The bonus is determined by its rarity. The armor provides protection against one of the following creature types: aberration, beast, celestial, construct, dragon, elemental, fey, fiend, giant, humanoid, monstrosity, ooze, plant, or undead.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Des charmes et des talismans faits de griffes, de plumes, d'écailles ou d'objets similaires ornent cette armure, gravée à l'effigie des créatures qui ont fourni ces décorations. L'armure offre une protection contre un type spécifique d'ennemi, indiqué par ses ornements. En portant cette armure, vous obtenez un bonus à la CA contre les attaques des créatures du type contre lequel l'armure vous protège. Ce bonus est déterminé par sa rareté. L'armure protège contre l'un des types de créatures suivants : aberration, bête, céleste, construction, dragon, élémentaire, fée, fiélon, géant, humanoïde, monstruosité, vase, plante ou mort-vivant."
+  "resume": "Une armure ornée de talismans protégeant contre un type de créature spécifique, avec un bonus de +2 à la CA contre ces ennemis.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 2,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus CA +2 contre un type de créature au choix",
+      "Types : aberration, bête, céleste, construction, dragon, élémentaire, fée, fiélon, géant, humanoïde, monstruosité, vase, plante, mort-vivant"
+    ]
+  }
 }

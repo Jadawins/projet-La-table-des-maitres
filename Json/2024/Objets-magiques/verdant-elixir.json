@@ -1,16 +1,29 @@
 {
   "slug": "verdant-elixir",
-  "nom": "Verdant Elixir",
+  "nom": "Élixir de verdure",
   "nom_original": "Verdant Elixir",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "Multi-colored streaks of light occasionally flash through the clear liquid in this container, like bottled lightning. As an action, you can pour the contents of the vial onto the ground. All normal plants in a 100-foot radius centered on the point where you poured the vial become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves. Alternatively, you can apply the contents of the vial to a plant creature within 5 feet of you. For 1 hour, the target gains 2d10 temporary hit points, and it gains the “enlarge” effect of the enlarge/reduce spell (no concentration required).",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une potion qui peut épaissir les plantes sur 30 mètres de rayon ou renforcer une créature végétale avec 2d10 PV temporaires.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "2d10",
+    "charges": 1,
+    "effets": [
+      "Peut créer un terrain difficile dans un rayon de 30 mètres (4 pieds de mouvement par 1 pied)",
+      "Ou accorder 2d10 PV temporaires et l'effet Agrandir à une créature végétale pendant 1 heure",
+      "Une utilisation par objet"
+    ]
+  }
 }

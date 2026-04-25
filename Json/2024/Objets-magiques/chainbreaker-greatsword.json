@@ -1,17 +1,28 @@
 {
   "slug": "chainbreaker-greatsword",
-  "nom": "Chainbreaker Greatsword",
+  "nom": "Grande épée Brisechaînes",
   "nom_original": "Chainbreaker Greatsword",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you use this weapon to attack or break chains, manacles, or similar metal objects restraining creatures, you have advantage on the attack roll or ability check. In addition, such items have vulnerability to this sword's weapon damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous gagnez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Lorsque vous utilisez cette arme pour attaquer ou briser des chaînes, des menottes ou des objets métalliques similaires qui immobilisent des créatures, vous avez l'avantage au jet d'attaque ou au test de caractéristique. De plus, ces objets ont la vulnérabilité aux dégâts de cette épée."
+  "resume": "Une grande épée magique +1 particulièrement efficace contre les chaînes et entraves métalliques, offrant l'avantage pour les briser et leur infligeant une vulnérabilité.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage contre les chaînes, menottes et objets métalliques immobilisants",
+      "Vulnérabilité aux dégâts pour ces objets"
+    ]
+  }
 }

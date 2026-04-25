@@ -1,16 +1,29 @@
 {
   "slug": "moon-through-the-trees",
-  "nom": "Moon Through the Trees",
+  "nom": "Lune à Travers les Arbres",
   "nom_original": "Moon Through the Trees",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This charm is comprised of six polished river stones bound into the shape of a star with glue made from the connective tissues of animals. The reflective surfaces of the stones shimmer with a magical iridescence. While you are within 20 feet of a living tree, you can use a bonus action to become invisible for 1 minute. While invisible, you can use a bonus action to become visible. If you do, each creature of your choice within 30 feet of you must succeed on a DC 15 Constitution saving throw or be blinded for 1 minute. A blinded creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to this charm's blinding feature for the next 24 hours.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Amulette permettant de devenir invisible près des arbres vivants et d'aveugler les créatures à proximité en se rendant visible. Les créatures aveuglées peuvent relancer leur sauvegarde à chaque tour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Invisibilité 1 min (action bonus) si près d'un arbre vivant",
+      "Sauvegarde Constitution DC 15 pour éviter l'aveuglement (1 min)",
+      "Immunité 24h après sauvegarde réussie"
+    ]
+  }
 }

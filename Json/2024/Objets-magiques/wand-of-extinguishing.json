@@ -1,16 +1,29 @@
 {
   "slug": "wand-of-extinguishing",
-  "nom": "Baguette de Extinguishing",
+  "nom": "Baguette d'extinction",
   "nom_original": "Wand of Extinguishing",
   "categorie": "baguette",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This charred and blackened wooden wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to extinguish a nonmagical flame within 10 feet of you that is no larger than a small campfire. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand transforms into a wand of ignition.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette éteignant les flammes non-magiques jusqu'à la taille d'un petit feu de camp dans un rayon de 10 pieds. 3 charges regagnées chaque jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Éteint les flammes non-magiques jusqu'à la taille d'un petit feu de camp",
+      "Portée de 10 pieds",
+      "Se transforme en Baguette d'embrasement sur un coup de 1 au d20 si dernière charge dépensée"
+    ]
+  }
 }

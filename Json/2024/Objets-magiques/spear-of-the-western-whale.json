@@ -1,16 +1,29 @@
 {
   "slug": "spear-of-the-western-whale",
-  "nom": "Spear of the Western Whale",
+  "nom": "Épée de la Baleine Occidentale",
   "nom_original": "Spear of the Western Whale",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. Fashioned in the style of a whaling spear, this long, barbed weapon is made from bone and heavy, yet pliant, ash wood. Its point is lined with decorative engravings of fish, clam shells, and waves. While you carry this spear, you have advantage on any Wisdom (Survival) checks to acquire food via fishing, and you have advantage on all Strength (Athletics) checks to swim. When set on the ground, the spear always spins to point west. When thrown in a westerly direction, the spear deals an extra 2d6 cold damage to the target.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une pique de baleinier qui accorde un bonus aux attaques et aux compétences de survie et de nage, avec dégâts de froid supplémentaires quand lancée vers l'ouest.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "froid",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Survie (pêche) et d'Athlétisme (nage)",
+      "Dégâts supplémentaires seulement si lancée vers l'ouest",
+      "S'oriente toujours vers l'ouest quand posée au sol"
+    ]
+  }
 }

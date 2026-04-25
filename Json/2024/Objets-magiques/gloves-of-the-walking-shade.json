@@ -1,16 +1,29 @@
 {
   "slug": "gloves-of-the-walking-shade",
-  "nom": "Gants de the Walking Shade",
+  "nom": "Gants de l'Ombre Mouvante",
   "nom_original": "Gloves of the Walking Shade",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Each glove is actually comprised of three, black ivory rings (typically fitting the thumb, middle finger, and pinkie) which are connected to each other. The rings are then connected to an intricately-engraved onyx wrist cuff by a web of fine platinum chains and tiny diamonds. While wearing these gloves, you gain the following benefits: - You have resistance to necrotic damage.\n- You can spend one Hit Die during a short rest to remove one level of exhaustion instead of regaining hit points.\n- You can use an action to become a living shadow for 1 minute. For the duration, you can move through a space as narrow as 1 inch wide without squeezing, and you can take the Hide action as a bonus action while you are in dim light or darkness. Once used, this property of the gloves can't be used again until the next nightfall.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces élégants gants accordent une résistance aux dégâts de nécromantie, permettent de convertir un dé de vie en récupération d'épuisement, et confèrent un pouvoir d'ombre vivante une fois par nuit.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de nécromantie",
+      "Dépenser un dé de vie pour retirer 1 niveau d'épuisement",
+      "Devenir une ombre vivante (1 min, 1/nuit) : passer par espaces étroits, action Furtivité en bonus en lumière faible"
+    ]
+  }
 }

@@ -1,16 +1,27 @@
 {
   "slug": "scouts-coat",
-  "nom": "Scout's Coat",
+  "nom": "Manteau du Éclaireur",
   "nom_original": "Scout's Coat",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This lightweight, woolen coat is typically left naturally colored or dyed in earth tones or darker shades of green. While wearing the coat, you can tolerate temperatures as low as –100 degrees Fahrenheit.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Manteau de laine légère permettant de tolérer des températures extrêmement basses jusqu'à -100°F.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux températures extrêmes (-100°F)"
+    ]
+  }
 }

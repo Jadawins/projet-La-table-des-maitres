@@ -7,7 +7,7 @@
   "sous_type": "orc",
   "alignement": "chaotic evil",
   "ca": 13,
-  "ca_detail": "hide armor",
+  "ca_detail": "armure en peau",
   "pv": 15,
   "pv_formule": "2d8+6",
   "vitesse": {
@@ -54,8 +54,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Orc"
+    "commun",
+    "orque"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -63,7 +63,7 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Aggressive",
+      "nom": "Agressivité",
       "description": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,14 +72,14 @@
   ],
   "actions": [
     {
-      "nom": "Greataxe",
+      "nom": "Hache d'armes",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d12",
       "degats_bonus": 3
     },
     {
-      "nom": "Javelin",
+      "nom": "Javelot",
       "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d6",

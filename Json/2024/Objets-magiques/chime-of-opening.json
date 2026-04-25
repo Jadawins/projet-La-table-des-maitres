@@ -1,17 +1,28 @@
 {
   "slug": "chime-of-opening",
-  "nom": "Chime of Opening",
+  "nom": "Carillon d'Ouverture",
   "nom_original": "Chime of Opening",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This hollow metal tube measures about 1 foot long and weighs 1 pound. You can strike it as an action, pointing it at an object within 120 feet of you that can be opened, such as a door, lid, or lock. The chime issues a clear tone, and one lock or latch on the object opens unless the sound can't reach the object. If no locks or latches remain, the object itself opens.\r\n\r\nThe chime can be used ten times. After the tenth time, it cracks and becomes useless.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce tube métallique creux mesure environ 30 cm de long et pèse 500 grammes. Vous pouvez le frapper en utilisant une action, en le pointant vers un objet pouvant être ouvert dans un rayon de 36 mètres, comme une porte, un couvercle ou une serrure. La cloche émet une tonalité claire, et un verrou ou un loquet de l'objet s'ouvre à moins que le son ne puisse atteindre l'objet. S'il ne reste plus aucun verrou ni loquet, l'objet lui-même s'ouvre.\n\nLa cloche peut être utilisée dix fois. Après la dixième utilisation, elle se fissure et devient inutilisable."
+  "resume": "Tube métallique qui ouvre magiquement portes, serrures et verrous dans un rayon de 36 mètres. Dispose de 10 utilisations avant de se fissurer.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Ouvre portes, verrous et loquets à distance (36m)",
+      "Utilisation : action"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "plate-armor-of-etherealness",
-  "nom": "Plate Armure de Etherealness",
+  "nom": "Armure de Plaques de l'Éthéréalité",
   "nom_original": "Plate Armor of Etherealness",
   "categorie": "armure_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While you're wearing this armor, you can speak its command word as an action to gain the effect of the _etherealness_ spell, which last for 10 minutes or until you remove the armor or use an action to speak the command word again. This property of the armor can't be used again until the next dawn.",
   "effets": [],
   "poids": "65.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous pouvez parler un mot de commande pour devenir éthéré pendant 10 minutes. Cette propriété se réinitialise à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Effet d'éthéréalité (10 minutes) - une utilisation par jour",
+      "Nécessite une action pour activer",
+      "Réinitialisation à l'aube"
+    ]
+  }
 }

@@ -7,10 +7,22 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This viscous, milky-white substance can form a permanent adhesive bond between any two objects. It must be stored in a jar or flask that has been coated inside with _oil of slipperiness._ When found, a container contains 1d6 + 1 ounces.\r\n\r\nOne ounce of the glue can cover a 1-foot square surface. The glue takes 1 minute to set. Once it has done so, the bond it creates can be broken only by the application of _universal solvent_ or _oil of etherealness_, or with a _wish_ spell.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Adhésif permanent unissant deux objets de façon indissoluble. 1 once couvre 1 carré de pied et se fixe en 1 minute. Ne peut être brisée que par solvant universel, huile d'éthéré ou souhait.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Adhésion permanente entre objets",
+      "Temps de fixation 1 minute"
+    ]
+  }
 }

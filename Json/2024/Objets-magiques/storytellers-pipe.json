@@ -1,16 +1,29 @@
 {
   "slug": "storytellers-pipe",
-  "nom": "Storyteller's Pipe",
+  "nom": "Pipe du conteur",
   "nom_original": "Storyteller's Pipe",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This long-shanked wooden smoking pipe is etched with leaves along the bowl. Although it is serviceable as a typical pipe, you can use an action to blow out smoke and shape the smoke into wispy images for 10 minutes. This effect works like the silent image spell, except its range is limited to a 10-foot cone in front of you, and the images can be no larger than a 5-foot cube. The smoky images last for 3 rounds before fading, but you can continue blowing smoke to create more images for the duration or until the pipe burns through the smoking material in it, whichever happens first.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une pipe en bois permettant de créer des images de fumée illusoires dans un cône de 10 pieds devant vous, similaire au sort d'image silencieuse.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crée des images illusoires de fumée dans un cône de 10 pieds de portée pendant 10 minutes",
+      "Les images de fumée disparaissent après 3 rounds mais peuvent être renouvelées",
+      "Fonctionne comme le sort image silencieuse avec les restrictions de portée et de taille"
+    ]
+  }
 }

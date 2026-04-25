@@ -1,16 +1,29 @@
 {
   "slug": "tracking-dart",
-  "nom": "Tracking Dart",
+  "nom": "Fléchette de Suivi",
   "nom_original": "Tracking Dart",
   "categorie": "arme_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you hit a Large or smaller creature with an attack using this colorful magic dart, the target is splattered with magical paint, which outlines the target in a dim glow (your choice of color) for 1 minute. Any attack roll against a creature outlined in the glow has advantage if the attacker can see the creature, and the creature can't benefit from being invisible. The creature outlined in the glow can end the effect early by using an action to wipe off the splatter of paint.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Fléchette magique colorée qui marque sa cible d'une lueur brillante, donnant l'avantage aux attaques contre celle-ci et l'empêchant de se rendre invisible.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Marque la cible d'une lueur (1 minute)",
+      "Les attaques contre la cible marquée ont l'avantage",
+      "Annule les bénéfices d'invisibilité de la cible"
+    ]
+  }
 }

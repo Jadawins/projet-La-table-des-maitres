@@ -1,6 +1,6 @@
 {
   "slug": "giant-wolf-spider",
-  "nom": "Giant Wolf Spider",
+  "nom": "Mygale géante",
   "nom_original": "Giant Wolf Spider",
   "taille": "M",
   "type": "Beast",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 3,
-    "stealth": 7
+    "discrétion": 7
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,21 +61,21 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Spider Climb",
+      "nom": "Escalade araignée",
       "description": "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Web Sense",
+      "nom": "Détection des toiles",
       "description": "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Web Walker",
+      "nom": "Marcheur de toile",
       "description": "The spider ignores movement restrictions caused by webbing.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -84,7 +84,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 4 (1d6 + 1) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 7 (2d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

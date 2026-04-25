@@ -1,13 +1,13 @@
 {
   "slug": "spirit-naga",
-  "nom": "Spirit Naga",
+  "nom": "Naga Spirituel",
   "nom_original": "Spirit Naga",
   "taille": "G",
   "type": "Monstrosity",
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 15,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 75,
   "pv_formule": "10d10+20",
   "vitesse": {
@@ -57,8 +57,8 @@
     "tremblements": null
   },
   "langues": [
-    "Abyssal",
-    "Common"
+    "abyssal",
+    "commun"
   ],
   "fp": "8",
   "fp_numerique": 8,
@@ -66,14 +66,14 @@
   "experience": 3900,
   "traits": [
     {
-      "nom": "Rejuvenation",
+      "nom": "Rajeunissement",
       "description": "If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Spellcasting",
+      "nom": "Incantation",
       "description": "The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\n\n* Cantrips (at will): mage hand, minor illusion, ray of frost\n* 1st level (4 slots): charm person, detect magic, sleep\n* 2nd level (3 slots): detect thoughts, hold person\n* 3rd level (3 slots): lightning bolt, water breathing\n* 4th level (3 slots): blight, dimension door\n* 5th level (2 slots): dominate person",
       "bonus_attaque": null,
       "degats_de": null,
@@ -82,7 +82,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 7 (1d6 + 4) piercing damage, and the target must make a DC 13 Constitution saving throw, taking 31 (7d8) poison damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 7,
       "degats_de": "1d6",

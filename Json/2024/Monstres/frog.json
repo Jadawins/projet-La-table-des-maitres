@@ -1,6 +1,6 @@
 {
   "slug": "frog",
-  "nom": "Frog",
+  "nom": "Grenouille",
   "nom_original": "Frog",
   "taille": "TP",
   "type": "Beast",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 1,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [],
@@ -61,14 +61,14 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The frog can breathe air and water",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Standing Leap",
+      "nom": "Saut sur place",
       "description": "The frog's long jump is up to 10 ft. and its high jump is up to 5 ft., with or without a running start.",
       "bonus_attaque": null,
       "degats_de": null,

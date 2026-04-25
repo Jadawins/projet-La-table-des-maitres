@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued.\r\n\r\nWhile wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table).\r\n\r\nAdditionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.\r\n\r\n| Dragon | Resistance |\r\n|--------|------------|\r\n| Black  | Acid       |\r\n| Blue   | Lightning  |\r\n| Brass  | Fire       |\r\n| Bronze | Lightning  |\r\n| Copper | Acid       |\r\n| Gold   | Fire       |\r\n| Green  | Poison     |\r\n| Red    | Fire       |\r\n| Silver | Cold       |\r\n| White  | Cold       |",
   "effets": [],
   "poids": "45.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure magique octroyant +1 CA et résistance à un type de dégâts selon l'espèce de dragon, avec avantage contre la Présence effrayante et les armes de souffle des dragons.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance à un type de dégâts (acide, feu, froid, foudre ou poison selon l'espèce)",
+      "Avantage aux jets de sauvegarde contre la Présence effrayante et les armes de souffle de dragons",
+      "Détection du dragon le plus proche du même type (1/jour)"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "rift-orb",
-  "nom": "Rift Orb",
+  "nom": "Orbe de Faille",
   "nom_original": "Rift Orb",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This orb is a sphere of obsidian 3 inches in diameter. When you speak the command word in Void Speech, you can throw the sphere as an action to a point within 60 feet. When the sphere reaches the point you choose or if it strikes a solid object on the way, it immediately stops and generates a tiny rift into the Void. The area within 20 feet of the rift orb becomes difficult terrain, and gravity begins drawing everything in the affected area toward the rift. Each creature in the area at the start of its turn, or when it enters the area for the first time on a turn, must succeed on a DC 15 Strength saving throw or be pulled 10 feet toward the rift. A creature that touches the rift takes 4d10 necrotic damage. Unattended objects in the area are pulled 10 feet toward the rift at the start of your turn. Nonmagical objects pulled into the rift are destroyed. The rift orb functions for 1 minute, after which time it becomes inert. It can't be used again until the following midnight.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lancez cette sphère d'obsidienne pour créer une faille vers le Vide qui attire les créatures et inflige des dégâts, fonctionnant pendant 1 minute avant de devenir inerte.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "4d10",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Zone difficile de 20 pieds avec gravité inversée",
+      "Sauvegarde Force DC 15 ou attiré de 10 pieds vers la faille",
+      "Durée 1 minute, réutilisable à minuit"
+    ]
+  }
 }

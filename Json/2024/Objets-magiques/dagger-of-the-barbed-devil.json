@@ -1,17 +1,29 @@
 {
   "slug": "dagger-of-the-barbed-devil",
-  "nom": "Dagger of the Barbed Devil",
+  "nom": "Poignard du Diable épineux",
   "nom_original": "Dagger of the Barbed Devil",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. You can use an action to cause sharp, pointed barbs to sprout from this blade. The barbs remain for 1 minute. When you hit a creature while the barbs are active, the creature must succeed on a DC 15 Dexterity saving throw or a barb breaks off into its flesh and the dagger loses its barbs. At the start of each of its turns, a creature with a barb in its flesh must make a DC 15 Constitution saving throw. On a failure, it has disadvantage on attack rolls and ability checks until the start of its next turn as it is wracked with pain. The barb remains until a creature uses its action to remove the barb, dealing 1d4 piercing damage to the barbed creature. Once you cause barbs to sprout from the dagger, you can't do so again until the next dawn.",
-  "description_fr": "Vous gagnez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Vous pouvez utiliser une action pour faire jaillir de la lame des crampons acérés et pointus. Ces crampons demeurent pendant 1 minute. Lorsque vous touchez une créature alors que les crampons sont actifs, la créature doit réussir un jet de sauvegarde de Dextérité DD 15 ou un crampon se brise dans sa chair et le poignard perd ses crampons. Au début de chacun de ses tours, une créature ayant un crampon dans la chair doit réussir un jet de sauvegarde de Constitution DD 15. En cas d'échec, elle subit le désavantage aux jets d'attaque et aux tests de caractéristique jusqu'au début de son prochain tour, terrassée par la douleur. Le crampon demeure jusqu'à ce qu'une créature utilise son action pour le retirer, infligeant 1d4 dégâts perforants à la créature empalée. Une fois que vous avez fait jaillir des crampons du poignard, vous ne pouvez le faire à nouveau qu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Poignard +1 pouvant faire jaillir des crampons acérés infligeant douleur et désavantage aux jets d'attaque des créatures touchées. Réutilisable à l'aube.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crampons acérés (1 min, action)",
+      "Création de crampons infligeant désavantage aux jets d'attaque (DD 15 Con)",
+      "Retrait du crampon inflige 1d4 dégâts perforants"
+    ]
+  }
 }

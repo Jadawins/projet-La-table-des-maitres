@@ -1,16 +1,29 @@
 {
   "slug": "decoy-card",
-  "nom": "Decoy Card",
+  "nom": "Carte de leurre",
   "nom_original": "Decoy Card",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small, thick, parchment card displays an accurate portrait of the person carrying it. You can use an action to toss the card on the ground at a point within 10 feet of you. An illusion of you forms over the card and remains until dispelled. The illusion appears real, but it can do no harm. While you are within 120 feet of the illusion and can see it, you can use an action to make it move and behave as you wish, as long as it moves no further than 10 feet from the card. Any physical interaction with your illusory double reveals it to be an illusion, because objects pass through it. Someone who uses an action to visually inspect your illusory double identifies it as illusory with a successful DC 15 Intelligence (Investigation) check. The illusion lasts until the card is moved or the illusion is dispelled. When the illusion ends, the card's face becomes blank, and the card becomes nonmagical.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Carte créant une illusion parfaite du porteur jusqu'à 120 pieds. Contrôlable dans 10 pieds de la carte, détectable par contact physique ou investigation (DC 15).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Illusion de soi-même inoffensive contrôlable à distance",
+      "Portée 120 pieds de vision, mobilité 10 pieds du sort",
+      "Révélée par contact physique ou test Investigation DC 15"
+    ]
+  }
 }

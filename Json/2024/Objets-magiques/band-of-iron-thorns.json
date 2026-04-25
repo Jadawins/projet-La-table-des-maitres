@@ -1,17 +1,29 @@
 {
   "slug": "band-of-iron-thorns",
-  "nom": "Band of Iron Thorns",
+  "nom": "Bracelet d'Épines de Fer",
   "nom_original": "Band of Iron Thorns",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This black iron armband bristles with long, needle-sharp iron thorns. When you attune to the armband, the thorns bite into your flesh. The armband doesn't function unless the thorns pierce your skin and are able to reach your blood. While wearing the band, after you roll a saving throw but before the GM reveals if the roll is a success or failure, you can use your reaction to expend one Hit Die. Roll the die, and add the number rolled to your saving throw.",
-  "description_fr": "Ce bracelet de fer noir est hérissé de longues épines de fer acérées comme des aiguilles. Lorsque vous vous harmonisez avec lui, les épines s'enfoncent dans votre chair. Le bracelet ne fonctionne pas si les épines ne percent pas votre peau et n'atteignent pas votre sang. Lorsque vous portez le bracelet, après avoir lancé un jet de sauvegarde mais avant que le MJ ne révèle s'il est réussi ou raté, vous pouvez utiliser votre réaction pour dépenser un Dé de vie. Lancez le dé et ajoutez le résultat à votre jet de sauvegarde.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bracelet de fer noir avec épines qui s'enfoncent dans la chair de celui qui le porte, permettant de dépenser un Dé de vie pour ajouter son résultat à un jet de sauvegarde après le lancer.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dépenser 1 Dé de vie après un jet de sauvegarde pour l'augmenter",
+      "Fonctionne uniquement si les épines percent la peau et atteignent le sang",
+      "Permet de modifier le résultat avant révélation du MJ"
+    ]
+  }
 }

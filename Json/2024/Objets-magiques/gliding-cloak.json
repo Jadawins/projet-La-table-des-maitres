@@ -1,16 +1,29 @@
 {
   "slug": "gliding-cloak",
-  "nom": "Gliding Cloak",
+  "nom": "Manteau de vol plané",
   "nom_original": "Gliding Cloak",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "By grasping the ends of the cloak while falling, you can glide up to 5 feet horizontally in any direction for every 1 foot you fall. You descend 60 feet per round but take no damage from falling while gliding in this way. A tailwind allows you to glide 10 feet per 1 foot descended, but a headwind forces you to only glide 5 feet per 2 feet descended.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "En saisissant les bords de ce manteau en tombant, vous pouvez planer horizontalement et descendre à 60 pieds par round sans dégâts de chute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Plané jusqu'à 5 pieds horizontaux par pied de chute (60 pieds/round)",
+      "Pas de dégâts de chute en plaçant",
+      "Modifié par vent favorable (10 pieds/pied) ou contraire (5 pieds/2 pieds)"
+    ]
+  }
 }

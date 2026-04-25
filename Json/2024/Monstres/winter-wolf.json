@@ -1,13 +1,13 @@
 {
   "slug": "winter-wolf",
-  "nom": "Winter Wolf",
+  "nom": "Loup d'hiver",
   "nom_original": "Winter Wolf",
   "taille": "G",
   "type": "Monstrosity",
   "sous_type": null,
   "alignement": "neutral evil",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 75,
   "pv_formule": "10d10+20",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 5,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [
@@ -57,9 +57,9 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Giant",
-    "Winter Wolf"
+    "commun",
+    "géant",
+    "loup des neiges"
   ],
   "fp": "3",
   "fp_numerique": 3,
@@ -67,21 +67,21 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Snow Camouflage",
+      "nom": "Camouflage dans la neige",
       "description": "The wolf has advantage on Dexterity (Stealth) checks made to hide in snowy terrain.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -90,14 +90,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
       "bonus_attaque": 6,
       "degats_de": "2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Cold Breath (Recharge 5-6)",
+      "nom": "Souffle de froid (Recharge 5-6)",
       "description": "The wolf exhales a blast of freezing wind in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "4d8",

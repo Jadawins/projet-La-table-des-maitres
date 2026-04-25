@@ -1,16 +1,29 @@
 {
   "slug": "potent-cure-all",
-  "nom": "Potent Cure-All",
+  "nom": "Potion puissante de guérison universelle",
   "nom_original": "Potent Cure-All",
   "categorie": "potion",
   "rarete": "legendaire",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "The milky liquid in this bottle shimmers when agitated, as small, glittering particles swirl within it. When you drink this potion, it reduces your exhaustion level by one, removes any reduction to one of your ability scores, removes the blinded, deafened, paralyzed, and poisoned conditions, and cures you of any diseases currently afflicting you.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Réduit l'épuisement d'un niveau, restaure les réductions de caractéristiques, élimine plusieurs conditions négatives et guérit les maladies.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Réduit l'épuisement d'1 niveau",
+      "Supprime cécité, surdité, paralysie, empoisonnement",
+      "Guérit les maladies et restaure les réductions de caractéristiques"
+    ]
+  }
 }

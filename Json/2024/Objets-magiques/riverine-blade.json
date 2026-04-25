@@ -1,16 +1,28 @@
 {
   "slug": "riverine-blade",
-  "nom": "Riverine Blade",
+  "nom": "Lame fluviale",
   "nom_original": "Riverine Blade",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The crossguard of this distinctive sword depicts a stylized Garroter Crab (see Tome of Beasts) with claws extended, and the pommel is set with a smooth, spherical, blue-black river rock. You gain a +2 bonus to attack and damage rolls made with this magic weapon. While on a boat or while standing in any depth of water, you have advantage on Dexterity checks and saving throws.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée magique +2 conférant l'avantage aux tests de Dextérité et jets de sauvegarde en bateau ou dans l'eau.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'attaque et dégâts",
+      "Avantage aux tests de Dextérité en bateau ou dans l'eau"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "vial-of-sunlight",
-  "nom": "Vial of Sunlight",
+  "nom": "Fiole de Lumière Solaire",
   "nom_original": "Vial of Sunlight",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This crystal vial is filled with water from a spring high in the mountains and has been blessed by priests of a deity of healing and light. You can use an action to cause the vial to emit bright light in a 30-foot radius and dim light for an additional 30 feet for 1 minute. This light is pure sunlight, causing harm or discomfort to vampires and other undead creatures that are sensitive to it. The vial can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Fiole contenant de l'eau bénite émettant une lumière de soleil pur nuisible aux morts-vivants sensibles à la lumière.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Lumière vive 30 pieds + lumière faible 30 pieds supplémentaires",
+      "Dégâts aux vampires et morts-vivants sensibles à la lumière solaire",
+      "Durée 1 minute, 1 recharge à l'aube"
+    ]
+  }
 }

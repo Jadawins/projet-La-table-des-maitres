@@ -1,16 +1,29 @@
 {
   "slug": "encouraging-breastplate",
-  "nom": "Encouraging Breastplate",
+  "nom": "Plastron Encourageant",
   "nom_original": "Encouraging Breastplate",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you gain a +1 bonus to AC. In addition, each friendly creature within 10 feet of you that can see you gains a +1 bonus to attack rolls and saving throws. If you are a paladin with the Aura of Courage feature, this bonus increases to +2.",
   "effets": [],
   "poids": "20.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cuirasse magique accordant +1 à la CA et conférant +1 aux jets d'attaque et de sauvegarde des alliés à proximité (+2 pour les paladins avec Aura de Courage).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 à la CA du porteur",
+      "+1 aux jets d'attaque et de sauvegarde des créatures amies à 10 ft",
+      "+2 si paladin avec Aura de Courage"
+    ]
+  }
 }

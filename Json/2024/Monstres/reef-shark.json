@@ -1,13 +1,13 @@
 {
   "slug": "reef-shark",
-  "nom": "Reef Shark",
+  "nom": "Requin de récif",
   "nom_original": "Reef Shark",
   "taille": "M",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 22,
   "pv_formule": "4d8+1",
   "vitesse": {
@@ -60,14 +60,14 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The shark has advantage on an attack roll against a creature if at least one of the shark's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Water Breathing",
+      "nom": "Respiration aquatique",
       "description": "The shark can breathe only underwater.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -76,7 +76,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d8",

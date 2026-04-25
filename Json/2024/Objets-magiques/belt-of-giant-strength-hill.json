@@ -1,17 +1,28 @@
 {
   "slug": "belt-of-giant-strength-hill",
-  "nom": "Ceinture de Giant Strength (Hill)",
+  "nom": "Ceinture de force du géant des collines",
   "nom_original": "Belt of Giant Strength (Hill)",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this belt, your Strength changes to a score granted by the belt. The type of giant determines the score (see the table below). The item has no effect on you if your Strength without the belt is equal to or greater than the belt's score.\n\n| Belt                                    | Str. | Rarity    |\n|-----------------------------------------|------|-----------|\n| Belt of Giant Strength (hill)           | 21   | Rare      |\n| Belt of Giant Strength (frost or stone) | 23   | Very Rare |\n| Belt of Giant Strength (fire)           | 25   | Very Rare |\n| Belt of Giant Strength (cloud)          | 27   | Legendary |\n| Belt of Giant Strength (storm)          | 29   | Legendary |",
-  "description_fr": "Tant que vous portez cette ceinture, votre valeur de Force devient celle accordée par la ceinture. Le type de géant détermine la valeur (voir le tableau ci-dessous). L'objet n'a aucun effet sur vous si votre Force sans la ceinture est égale ou supérieure à la valeur de celle-ci.\n\n| Ceinture                                           | For. | Rareté        |\n|----------------------------------------------------|------|---------------|\n| Ceinture de force de géant (collines)              | 21   | Rare          |\n| Ceinture de force de géant (givre ou pierre)       | 23   | Très rare     |\n| Ceinture de force de géant (feu)                   | 25   | Très rare     |\n| Ceinture de force de géant (nuages)                | 27   | Légendaire    |\n| Ceinture de force de géant (tempêtes)              | 29   | Légendaire    |",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Augmente votre Force à 21 tant que vous la portez, sauf si votre Force naturelle est déjà égale ou supérieure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Force porteur = 21",
+      "Aucun effet si Force naturelle ≥ 21"
+    ]
+  }
 }

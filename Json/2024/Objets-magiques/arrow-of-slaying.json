@@ -7,11 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "An _arrow of slaying_ is a magic weapon meant to slay a particular kind of creature. Some are more focused than others; for example, there are both _arrows of dragon slaying_ and _arrows of blue dragon slaying_. If a creature belonging to the type, race, or group associated with an _arrow of slaying_ takes damage from the arrow, the creature must make a DC 17 Constitution saving throw, taking an extra 6d10 piercing damage on a failed save, or half as much extra damage on a successful one.\\n\\nOnce an _arrow of slaying_ deals its extra damage to a creature, it becomes a nonmagical arrow.\\n\\nOther types of magic ammunition of this kind exist, such as _bolts of slaying_ meant for a crossbow, though arrows are most common.",
-  "description_fr": "Une _flèche de mise à mort_ est une arme magique conçue pour abattre un type de créature particulier. Certaines sont plus spécifiques que d'autres ; il existe par exemple à la fois des _flèches de mise à mort des dragons_ et des _flèches de mise à mort des dragons bleus_. Si une créature appartenant au type, à la race ou au groupe associé à la flèche subit des dégâts de celle-ci, elle doit effectuer un jet de sauvegarde de Constitution DD 17, subissant 6d10 dégâts perforants supplémentaires en cas d'échec, ou la moitié en cas de réussite.\\n\\nUne fois qu'une _flèche de mise à mort_ a infligé ses dégâts supplémentaires à une créature, elle devient une flèche non magique.\\n\\nD'autres types de munitions magiques de ce genre existent, tels que les _carreaux de mise à mort_ destinés aux arbalètes, bien que les flèches soient les plus répandues.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Flèche magique conçue pour abattre un type de créature spécifique, infligeant des dégâts supplémentaires massifs.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "6d10",
+    "type_degats_bonus": "perforants",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Jet de sauvegarde CON DD 17 pour la créature ciblée",
+      "Dégâts supplémentaires de 6d10 en cas d'échec (moitié en cas de réussite)",
+      "Devient non magique après utilisation"
+    ]
+  }
 }

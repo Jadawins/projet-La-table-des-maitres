@@ -1,16 +1,28 @@
 {
   "slug": "goggles-of-firesight",
-  "nom": "Goggles of Firesight",
+  "nom": "Lunettes de vision du feu",
   "nom_original": "Goggles of Firesight",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The lenses of these combination fleshy and plantlike goggles extend a few inches away from the goggles on a pair of tentacles. While wearing these lenses, you can see through lightly obscured and heavily obscured areas without your vision being obscured, if those areas are obscured by fire, smoke, or fog. Other effects that would obscure your vision, such as rain or darkness, affect you normally. When you fail a saving throw against being blinded, you can use a reaction to call on the power within the goggles. If you do so, you succeed on the saving throw instead. The goggles can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces lunettes vous permettent de voir à travers la fumée, le feu et le brouillard. Une fois par jour, vous pouvez utiliser votre réaction pour réussir automatiquement un jet de sauvegarde contre l'aveuglement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Vision à travers le feu, la fumée et le brouillard",
+      "Réaction: réussir automatiquement un jet de sauvegarde contre l'aveuglement (1/jour)"
+    ]
+  }
 }

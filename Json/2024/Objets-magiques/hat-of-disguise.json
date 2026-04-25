@@ -1,16 +1,28 @@
 {
   "slug": "hat-of-disguise",
-  "nom": "Hat of Disguise",
+  "nom": "Chapeau de Déguisement",
   "nom_original": "Hat of Disguise",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this hat, you can use an action to cast the _disguise self_ spell from it at will. The spell ends if the hat is removed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chapeau permettant de lancer le sort déguisement personnel à volonté. Le sort se termine si le chapeau est retiré.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lance déguisement personnel à volonté",
+      "Fin du sort si le chapeau est retiré"
+    ]
+  }
 }

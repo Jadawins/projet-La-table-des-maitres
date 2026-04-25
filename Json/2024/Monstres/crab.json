@@ -1,13 +1,13 @@
 {
   "slug": "crab",
-  "nom": "Crab",
+  "nom": "Crabe",
   "nom_original": "Crab",
   "taille": "TP",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 11,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 2,
   "pv_formule": "1d4",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 2
+    "discrétion": 2
   },
   "resistances": [],
   "immunites_degats": [],
@@ -60,7 +60,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The crab can breathe air and water.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage.",
       "bonus_attaque": null,
       "degats_de": null,

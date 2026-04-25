@@ -7,10 +7,22 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you hit a fiend or an undead with this magic weapon, that creature takes an extra 2d6 radiant damage. If the target has 25 hit points or fewer after taking this damage, it must succeed on a DC 15 Wisdom saving throw or be destroyed. On a successful save, the creature becomes frightened of you until the end of your next turn.\n\nWhile you hold this weapon, it sheds bright light in a 20-foot radius and dim light for an additional 20 feet.",
   "effets": [],
   "poids": "4.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Inflige 2d6 dégâts radiants supplémentaires contre les fiélons et morts-vivants, les détruisant s'ils passent à 25 PV ou moins, sinon les terrifiant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Destruction des fiélons/morts-vivants à ≤25 PV (ou terreur en cas de sauvegarde réussie)",
+      "Émite une lumière vive dans un rayon de 6m et une lumière faible de 6m supplémentaires"
+    ]
+  }
 }

@@ -1,13 +1,13 @@
 {
   "slug": "silver-dragon-wyrmling",
-  "nom": "Silver Dragon Wyrmling",
+  "nom": "Jeune Dragon Argent",
   "nom_original": "Silver Dragon Wyrmling",
   "taille": "M",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful good",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 45,
   "pv_formule": "6d8+18",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 4,
-    "stealth": 2
+    "discrétion": 2
   },
   "resistances": [],
   "immunites_degats": [
@@ -57,7 +57,7 @@
     "tremblements": null
   },
   "langues": [
-    "Draconic"
+    "draconique"
   ],
   "fp": "2",
   "fp_numerique": 2,
@@ -66,14 +66,14 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "1d10",
       "degats_bonus": 4
     },
     {
-      "nom": "Breath Weapons (Recharge 5-6)",
+      "nom": "Armes de souffle (Recharge 5-6)",
       "description": "The dragon uses one of the following breath weapons.\n**Cold Breath.** The dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.\n**Paralyzing Breath.** The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
       "bonus_attaque": 0,
       "degats_de": "4d8",

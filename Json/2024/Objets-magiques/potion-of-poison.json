@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-poison",
-  "nom": "Potion de poison",
+  "nom": "Potion de Poison",
   "nom_original": "Potion of Poison",
   "categorie": "potion",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This concoction looks, smells, and tastes like a _potion of healing_ or other beneficial potion. However, it is actually poison masked by illusion magic. An _identify_ spell reveals its true nature.\n\nIf you drink it, you take 3d6 poison damage, and you must succeed on a DC 13 Constitution saving throw or be poisoned. At the start of each of your turns while you are poisoned in this way, you take 3d6 poison damage. At the end of each of your turns, you can repeat the saving throw. On a successful save, the poison damage you take on your subsequent turns decreases by 1d6. The poison ends when the damage decreases to 0.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette potion ressemble à une potion de soin mais elle est en réalité du poison. Boire ce poison inflige 3d6 dégâts de poison et peut vous empoisonner de façon progressive.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "3d6",
+    "type_degats_bonus": "poison",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "3d6 dégâts de poison immédiats",
+      "Sauvegarde Constitution DD 13 ou empoisonnement",
+      "3d6 dégâts poison par tour jusqu'à guérison"
+    ]
+  }
 }

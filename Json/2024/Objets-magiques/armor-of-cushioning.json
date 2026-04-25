@@ -1,17 +1,28 @@
 {
   "slug": "armor-of-cushioning",
-  "nom": "Armure de Cushioning",
+  "nom": "Armure de coussinement",
   "nom_original": "Armor of Cushioning",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "While wearing this armor, you have resistance to bludgeoning damage. In addition, you can use a reaction when you fall to reduce any falling damage you take by an amount equal to twice your level.",
-  "description_fr": "Tant que vous portez cette armure, vous avez la résistance aux dégâts contondants. De plus, vous pouvez utiliser une réaction lorsque vous chutez pour réduire les dégâts de chute que vous subissez d'un montant égal au double de votre niveau.",
   "effets": [],
   "poids": "8.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette armure confère la résistance aux dégâts contondants et réduit les dégâts de chute de deux fois votre niveau.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts contondants",
+      "Réaction : réduire les dégâts de chute de 2 × niveau"
+    ]
+  }
 }

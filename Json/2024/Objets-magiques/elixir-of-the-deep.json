@@ -1,16 +1,28 @@
 {
   "slug": "elixir-of-the-deep",
-  "nom": "Elixir of the Deep",
+  "nom": "Élixir des Profondeurs",
   "nom_original": "Elixir of the Deep",
   "categorie": "potion",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This thick, green, swirling liquid tastes like salted mead. For 1 hour after drinking this elixir, you can breathe underwater, and you can see clearly underwater out to a range of 60 feet. The elixir doesn't allow you to see through magical darkness, but you can see through nonmagical clouds of silt and other sedimentary particles as if they didn't exist. For the duration, you also have advantage on saving throws against the spells and other magical effects of fey creatures native to water environments, such as a Lorelei (see Tome of Beasts) or Water Horse (see Creature Codex).",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Permet de respirer sous l'eau et de voir clairement jusqu'à 18 mètres pendant 1 heure. Vous avez l'avantage contre les effets des créatures féeriques aquatiques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Respiration aquatique et vision claire sous l'eau (60 pieds)",
+      "Avantage aux jets de sauvegarde contre créatures féeriques aquatiques"
+    ]
+  }
 }

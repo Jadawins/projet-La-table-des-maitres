@@ -1,16 +1,29 @@
 {
   "slug": "mnemonic-fob",
-  "nom": "Mnemonic Fob",
+  "nom": "Babiole Mnémonique",
   "nom_original": "Mnemonic Fob",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small bauble consists of a flat crescent, which binds a small disc that freely spins in its housing. Each side of the disc is intricately etched with an incomplete pillar and pyre. \nPillar of Fire. While holding this bauble, you can use an action to remove the disc, place it on the ground, and speak its command word to transform it into a 5-foot-tall flaming pillar of intricately carved stone. The pillar sheds bright light in a 20-foot radius and dim light for an additional 20 feet. It is warm to the touch, but it doesn’t burn. A second command word returns the pillar to its disc form. When the pillar has shed light for a total of 10 minutes, it returns to its disc form and can’t be transformed into a pillar again until the next dawn. \nRecall Magic. While holding this bauble, you can use an action to spin the disc and regain one expended 1st-level spell slot. Once used, this property can’t be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petit bijou permettant de transformer un disque en pilier de feu lumineux (10 minutes max) et de récupérer un emplacement de sort de niveau 1 une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Pilier de Feu : 20 pieds de lumière vive, 10 minutes maximum par jour",
+      "Récupération de magie : retrouve un emplacement de sort de niveau 1 par jour",
+      "Transformation réversible du disque en pilier et vice-versa"
+    ]
+  }
 }

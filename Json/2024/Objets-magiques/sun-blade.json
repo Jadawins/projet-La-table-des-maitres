@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This item appears to be a longsword hilt. While grasping the hilt, you can use a bonus action to cause a blade of pure radiance to spring into existence, or make the blade disappear. While the blade exists, this magic longsword has the finesse property. If you are proficient with shortswords or longswords, you are proficient with the _sun blade_.\n\nYou gain a +2 bonus to attack and damage rolls made with this weapon, which deals radiant damage instead of slashing damage. When you hit an undead with it, that target takes an extra 1d8 radiant damage.\n\nThe sword's luminous blade emits bright light in a 15-foot radius and dim light for an additional 15 feet. The light is sunlight. While the blade persists, you can use an action to expand or reduce its radius of bright and dim light by 5 feet each, to a maximum of 30 feet each or a minimum of 10 feet each.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée magique brillante qui projette la lumière du soleil, inflige des dégâts de rayonnement et cause des dégâts supplémentaires aux morts-vivants.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "1d8",
+    "type_degats_bonus": "rayonnement",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'attaque et de dégâts",
+      "Dégâts de rayonnement au lieu de tranchants",
+      "Lumière vive de 15 pieds + lumière faible 15 pieds (ajustable)"
+    ]
+  }
 }

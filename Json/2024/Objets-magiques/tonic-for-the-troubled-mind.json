@@ -1,16 +1,28 @@
 {
   "slug": "tonic-for-the-troubled-mind",
-  "nom": "Tonic for the Troubled Mind",
+  "nom": "Tonique pour l'esprit troublé",
   "nom_original": "Tonic for the Troubled Mind",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This potion smells and tastes of lavender and chamomile. When you drink it, it removes any short-term madness afflicting you, and it suppresses any long-term madness afflicting you for 8 hours.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette potion élimine la folie temporaire et supprime la folie permanente pendant 8 heures.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Élimine la folie temporaire",
+      "Supprime la folie permanente pendant 8 heures"
+    ]
+  }
 }

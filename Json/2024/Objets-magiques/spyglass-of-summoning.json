@@ -1,16 +1,28 @@
 {
   "slug": "spyglass-of-summoning",
-  "nom": "Spyglass of Summoning",
+  "nom": "Longue-vue d'Invocation",
   "nom_original": "Spyglass of Summoning",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Arcane runes encircle this polished brass spyglass. You can view creatures and objects as far as 600 feet away through the spyglass, and they are magnified to twice their size. You can magnify your view of a creature or object to up to four times its size by twisting the end of the spyglass.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Longue-vue magique permettant de voir des créatures et objets jusqu'à 180 mètres avec grossissement jusqu'à 4x la taille normale.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Voir jusqu'à 600 pieds (180 mètres)",
+      "Grossissement de base ×2, ajustable jusqu'à ×4"
+    ]
+  }
 }

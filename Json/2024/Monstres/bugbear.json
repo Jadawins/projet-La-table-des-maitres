@@ -7,7 +7,7 @@
   "sous_type": "goblinoid",
   "alignement": "chaotic evil",
   "ca": 16,
-  "ca_detail": "hide armor, shield",
+  "ca_detail": "armure en peau, bouclier",
   "pv": 27,
   "pv_formule": "5d8+5",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 6,
-    "survival": 2
+    "discrétion": 6,
+    "survie": 2
   },
   "resistances": [],
   "immunites_degats": [],
@@ -55,8 +55,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Goblin"
+    "commun",
+    "gobelin"
   ],
   "fp": "1",
   "fp_numerique": 1,
@@ -71,7 +71,7 @@
       "degats_bonus": null
     },
     {
-      "nom": "Surprise Attack",
+      "nom": "Attaque surprise",
       "description": "If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack.",
       "bonus_attaque": 0,
       "degats_de": "2d6",
@@ -80,14 +80,14 @@
   ],
   "actions": [
     {
-      "nom": "Morningstar",
+      "nom": "Étoile du matin",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 11 (2d8 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "2d8",
       "degats_bonus": 2
     },
     {
-      "nom": "Javelin",
+      "nom": "Javelot",
       "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 9 (2d6 + 2) piercing damage in melee or 5 (1d6 + 2) piercing damage at range.",
       "bonus_attaque": 4,
       "degats_de": "2d6",

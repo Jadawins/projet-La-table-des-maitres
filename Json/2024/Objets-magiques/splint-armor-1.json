@@ -1,16 +1,27 @@
 {
   "slug": "splint-armor-1",
-  "nom": "Splint Armor (+1)",
+  "nom": "Armure de Lames (+1)",
   "nom_original": "Splint Armor (+1)",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
   "effets": [],
   "poids": "60.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure de plates de qualité magique qui procure un bonus de +1 à la Classe d'Armure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus de +1 à la Classe d'Armure"
+    ]
+  }
 }

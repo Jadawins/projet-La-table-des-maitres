@@ -1,6 +1,6 @@
 {
   "slug": "shrieker",
-  "nom": "Shrieker",
+  "nom": "Crieur",
   "nom_original": "Shrieker",
   "taille": "M",
   "type": "Plant",
@@ -62,7 +62,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the shrieker remains motionless, it is indistinguishable from an ordinary fungus.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -71,7 +71,7 @@
   ],
   "actions": [
     {
-      "nom": "Shriek",
+      "nom": "Cri",
       "description": "When bright light or a creature is within 30 feet of the shrieker, it emits a shriek audible within 300 feet of it. The shrieker continues to shriek until the disturbance moves out of range and for 1d4 of the shrieker's turns afterward",
       "bonus_attaque": null,
       "degats_de": null,

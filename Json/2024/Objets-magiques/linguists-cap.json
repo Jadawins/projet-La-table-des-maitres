@@ -1,16 +1,27 @@
 {
   "slug": "linguists-cap",
-  "nom": "Linguist's Cap",
+  "nom": "Bonnet du linguiste",
   "nom_original": "Linguist's Cap",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this simple hat, you have the ability to speak and read a single language. Each cap has a specific language associated with it, and the caps often come in styles or boast features unique to the cultures where their associated languages are most prominent. The GM chooses the language or determines it randomly from the lists of standard and exotic languages.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chapeau magique permettant de parler et lire une langue spécifique choisie ou déterminée aléatoirement par le MJ.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vous pouvez parler et lire une langue spécifique"
+    ]
+  }
 }

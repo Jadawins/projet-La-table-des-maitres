@@ -1,16 +1,28 @@
 {
   "slug": "stinger",
-  "nom": "Stinger",
+  "nom": "Aiguillon",
   "nom_original": "Stinger",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit a creature with an attack using this weapon, you can use a bonus action to inject paralyzing venom in the target. The target must succeed on a DC 15 Constitution saving throw or become paralyzed for 1 minute. It can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Creatures immune to poison are also immune to this dagger's paralyzing venom. The dagger can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Poignard magique +1 qui peut injecter un venin paralysant une fois par jour, obligeant la cible à réussir un jet de sauvegarde CON DC 15 ou être paralysée pendant 1 minute.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Bonus +1 aux attaques et dégâts",
+      "Venin paralysant une fois par jour (sauvegarde CON DC 15)"
+    ]
+  }
 }

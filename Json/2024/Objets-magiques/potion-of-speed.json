@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this potion, you gain the effect of the _haste_ spell for 1 minute (no concentration required). The potion's yellow fluid is streaked with black and swirls on its own.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous gagnez les effets du sort accélération pendant 1 minute (sans concentration requise).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Effets du sort accélération",
+      "Pas de concentration requise",
+      "Durée : 1 minute"
+    ]
+  }
 }

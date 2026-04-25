@@ -1,16 +1,29 @@
 {
   "slug": "freerunner-rod",
-  "nom": "Freerunner Rod",
+  "nom": "Bâton du Coureur des Herbes",
   "nom_original": "Freerunner Rod",
   "categorie": "sceptre",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "Tightly intertwined lengths of grass, bound by additional stiff, knotted blades of grass, form this rod, which is favored by plains-dwelling druids and rangers. While holding it and in grasslands, you leave behind no tracks or other traces of your passing, and you can pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard. In addition, beasts with an Intelligence of 3 or lower that are native to grasslands must succeed on a DC 15 Charisma saving throw to attack you. The rod has 10 charges, and it regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the rod collapses into a pile of grass seeds and is destroyed. Among the grass seeds are 1d10 berries, consumable as if created by the goodberry spell.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton en herbes tressées conférant une discrétion parfaite en prairie, la traversée de végétation sans entrave, et l'intimidation des bêtes. Possède 10 charges se régénérant quotidiennement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "1d10 baies de guérison",
+    "charges": 10,
+    "effets": [
+      "Aucune trace en prairie",
+      "Traversée de plantes sans ralentissement",
+      "Bêtes indigènes (INT ≤3) doivent réussir un jet de Charisme DD 15 pour attaquer"
+    ]
+  }
 }

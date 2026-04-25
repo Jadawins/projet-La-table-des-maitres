@@ -1,6 +1,6 @@
 {
   "slug": "giant-bat",
-  "nom": "Giant Bat",
+  "nom": "Chauve-souris géante",
   "nom_original": "Giant Bat",
   "taille": "G",
   "type": "Beast",
@@ -58,14 +58,14 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Echolocation",
+      "nom": "Écholocalisation",
       "description": "The bat can't use its blindsight while deafened.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Keen Hearing",
+      "nom": "Ouïe aiguisée",
       "description": "The bat has advantage on Wisdom (Perception) checks that rely on hearing.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

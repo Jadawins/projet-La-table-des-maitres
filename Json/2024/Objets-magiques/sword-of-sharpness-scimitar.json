@@ -1,16 +1,29 @@
 {
   "slug": "sword-of-sharpness-scimitar",
-  "nom": "Épée de Sharpness (Scimitar)",
+  "nom": "Épée Tranchante (Cimeterre)",
   "nom_original": "Sword of Sharpness (Scimitar)",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack an object with this magic sword and hit, maximize your weapon damage dice against the target.\n\nWhen you attack a creature with this weapon and roll a 20 on the attack roll, that target takes an extra 4d6 slashing damage. Then roll another d20. If you roll a 20, you lop off one of the target's limbs, with the effect of such loss determined by the GM. If the creature has no limb to sever, you lop off a portion of its body instead.\n\nIn addition, you can speak the sword's command word to cause the blade to shed bright light in a 10* foot radius and dim light for an additional 10 feet. Speaking the command word again or sheathing the sword puts out the light.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Dégâts maximisés contre les objets, inflige 4d6 dégâts tranchants supplémentaires au coup critique avec risque de mutilation. Émet de la lumière à volonté.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "4d6",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts maximisés contre les objets",
+      "Au coup critique : 4d6 dégâts supplémentaires, puis chance de trancher un membre",
+      "Émet lumière vive (10 m) et faible (10 m supplémentaires) sur commande"
+    ]
+  }
 }

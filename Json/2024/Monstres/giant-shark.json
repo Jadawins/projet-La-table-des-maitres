@@ -1,13 +1,13 @@
 {
   "slug": "giant-shark",
-  "nom": "Giant Shark",
+  "nom": "Requin géant",
   "nom_original": "Giant Shark",
   "taille": "TG",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 126,
   "pv_formule": "11d12+55",
   "vitesse": {
@@ -60,14 +60,14 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "Blood Frenzy",
+      "nom": "Frénésie sanguinaire",
       "description": "The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Water Breathing",
+      "nom": "Respiration aquatique",
       "description": "The shark can breathe only underwater.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -76,7 +76,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 22 (3d10 + 6) piercing damage.",
       "bonus_attaque": 9,
       "degats_de": "3d10",

@@ -1,16 +1,29 @@
 {
   "slug": "language-pyramid",
-  "nom": "Language Pyramid",
+  "nom": "Pyramide des Langues",
   "nom_original": "Language Pyramid",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Script from dozens of languages flows across this sandstone pyramid's surface. While holding or carrying the pyramid, you understand the literal meaning of any spoken language that you hear. In addition, you understand any written language that you see, but you must be touching the surface on which the words are written. It takes 1 minute to read one page of text. The pyramid has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use an action to expend 1 of its charges to imbue yourself with magical speech for 1 hour. For the duration, any creature that knows at least one language and that can hear you understands any words you speak. In addition, you can use an action to expend 1 of the pyramid's charges to imbue up to six creatures within 30 feet of you with magical understanding for 1 hour. For the duration, each target can understand any spoken language that it hears.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pyramide de grès magique permettant de comprendre toutes les langues parlées et écrites. Elle possède 3 charges pour octroyer temporairement des capacités linguistiques magiques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Comprendre toute langue parlée et écrite",
+      "Dépenser 1 charge : rendre vos paroles compréhensibles à tous pendant 1 heure",
+      "Dépenser 1 charge : rendre 6 créatures capables de comprendre toute langue parlée pendant 1 heure"
+    ]
+  }
 }

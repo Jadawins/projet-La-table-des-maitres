@@ -1,17 +1,28 @@
 {
   "slug": "chieftains-axe",
-  "nom": "Chieftain's Axe",
+  "nom": "Hache du Chef",
   "nom_original": "Chieftain's Axe",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "Furs conceal the worn runes lining the haft of this oversized, silver-headed battleaxe. You gain a +2 bonus to attack and damage rolls made with this silvered, magic weapon.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Des fourrures dissimulent les runes usées qui ornent le manche de cette hache de guerre surdimensionnée à tête en argent. Vous gagnez un bonus de +2 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique argentée."
+  "resume": "Hache de guerre argentée ornée de runes usées, conférant un bonus de +2 aux attaques et dégâts.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'attaque et de dégâts",
+      "Arme en argent"
+    ]
+  }
 }

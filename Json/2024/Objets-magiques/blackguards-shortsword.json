@@ -1,17 +1,27 @@
 {
   "slug": "blackguards-shortsword",
-  "nom": "Blackguard's Shortsword",
+  "nom": "Épée Courte du Renégat",
   "nom_original": "Blackguard's Shortsword",
   "categorie": "arme_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You have advantage on attack rolls made with this weapon against a target if another enemy of the target is within 5 feet of it, and it has no allies within 5 feet of it.",
-  "description_fr": "Vous avez l'avantage aux jets d'attaque effectués avec cette arme contre une cible si un autre ennemi de la cible se trouve à 1,50 mètre ou moins d'elle, et qu'aucun allié de la cible n'est à 1,50 mètre ou moins d'elle.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée courte offrant l'avantage aux attaques contre une cible encerclée par un ennemi sans allié proche.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux attaques si un ennemi de la cible est à 1,5m ou moins et aucun allié à 1,5m ou moins"
+    ]
+  }
 }

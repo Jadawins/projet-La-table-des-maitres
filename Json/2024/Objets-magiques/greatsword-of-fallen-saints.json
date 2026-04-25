@@ -1,16 +1,28 @@
 {
   "slug": "greatsword-of-fallen-saints",
-  "nom": "Greatsword of Fallen Saints",
+  "nom": "Grande épée des Saints Tombés",
   "nom_original": "Greatsword of Fallen Saints",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This enchanted blade is infused with the spirits of fallen warriors who carried it in battle long ago. You gain a +1 bonus to attack and damage rolls made with this magic weapon. If you die while attuned to the sword, you gain the effect of the gentle repose spell. This effect lasts until another creature attunes to the sword.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une épée magique imprégnée des esprits de guerriers tombés au combat, conférant un bonus +1 et protégeant le porteur de la disparition après la mort.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 aux jets d'attaque et de dégâts",
+      "Si vous mourez, vous bénéficiez de repos éternel jusqu'à la syntonisation d'un autre"
+    ]
+  }
 }

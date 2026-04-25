@@ -1,16 +1,29 @@
 {
   "slug": "flame-tongue-shortsword",
-  "nom": "Flame Tongue (Shortsword)",
+  "nom": "Épée Courte Langue de Feu",
   "nom_original": "Flame Tongue (Shortsword)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée magique dont les lames enflammées infligent 2d6 dégâts de feu supplémentaires et émettent une lumière vive sur 40 pieds.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Activation par action bonus avec mot de commande",
+      "Émet lumière vive 40 pieds et lumière faible 40 pieds supplémentaires",
+      "Les dégâts bonus ne s'appliquent que lorsque les flammes sont actives"
+    ]
+  }
 }

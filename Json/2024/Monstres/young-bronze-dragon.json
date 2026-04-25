@@ -1,13 +1,13 @@
 {
   "slug": "young-bronze-dragon",
-  "nom": "Young Bronze Dragon",
+  "nom": "Jeune dragon de bronze",
   "nom_original": "Young Bronze Dragon",
   "taille": "G",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful good",
   "ca": 18,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 142,
   "pv_formule": "15d10+60",
   "vitesse": {
@@ -40,9 +40,9 @@
     "CHA": 6
   },
   "competences": {
-    "insight": 4,
+    "perspicacité": 4,
     "perception": 7,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [
@@ -58,8 +58,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Draconic"
+    "commun",
+    "draconique"
   ],
   "fp": "8",
   "fp_numerique": 8,
@@ -67,7 +67,7 @@
   "experience": 3900,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The dragon can breathe air and water.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -76,28 +76,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The dragon makes three attacks: one with its bite and two with its claws.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage.",
       "bonus_attaque": 8,
       "degats_de": "2d10",
       "degats_bonus": 5
     },
     {
-      "nom": "Claw",
+      "nom": "Griffe",
       "description": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
       "bonus_attaque": 8,
       "degats_de": "2d6",
       "degats_bonus": 5
     },
     {
-      "nom": "Breath Weapons (Recharge 5-6)",
+      "nom": "Armes de souffle (Recharge 5-6)",
       "description": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon.",
       "bonus_attaque": 0,
       "degats_de": "10d10",

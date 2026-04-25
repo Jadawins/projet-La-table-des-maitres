@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-deceivers-warning",
-  "nom": "Anneau de Deceiver's Warning",
+  "nom": "Anneau d'Avertissement du Trompeur",
   "nom_original": "Ring of Deceiver's Warning",
   "categorie": "anneau",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This copper ring is set with a round stone of blue quartz. While you wear the ring, the stone's color changes to red if a shapechanger comes within 30 feet of you. For the purpose of this ring, “shapechanger” refers to any creature with the Shapechanger trait.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau en cuivre avec pierre de quartz bleu qui vire au rouge si un créature avec le trait Changeforme se rapproche à 30 pieds.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Détecte la présence de changeforme à 30 pieds de distance",
+      "La pierre passe du bleu au rouge lors de la détection"
+    ]
+  }
 }

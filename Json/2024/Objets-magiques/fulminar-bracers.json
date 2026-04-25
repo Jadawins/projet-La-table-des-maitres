@@ -1,16 +1,29 @@
 {
   "slug": "fulminar-bracers",
-  "nom": "Fulminar Bracers",
+  "nom": "Bracelets de Fulminar",
   "nom_original": "Fulminar Bracers",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Stylized etchings of cat-like lightning elementals known as Fulminars (see Creature Codex) cover the outer surfaces of these solid silver bracers. While wearing these bracers, lightning crackles harmless down your hands, and you have resistance to lightning damage and thunder damage. The bracers have 3 charges. You can use an action to expend 1 charge to create lightning shackles that bind up to two creatures you can see within 60 feet of you. Each target must make a DC 15 Dexterity saving throw. On a failure, a target takes 4d6 lightning damage and is restrained for 1 minute. On a success, the target takes half the damage and isn't restrained. A restrained creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The bracers regain all expended charges daily at dawn. The bracers also regain 1 charge each time you take 10 lightning damage while wearing them.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bracelets d'argent conférant une résistance à la foudre et au tonnerre, avec la capacité de créer des chaînes de foudre pour entraver et blesser les ennemis.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "4d6",
+    "type_degats_bonus": "foudre",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Résistance aux dégâts de foudre et de tonnerre",
+      "Crée des chaînes de foudre (sauvegarde DEX DC 15, entrave jusqu'à 2 créatures)",
+      "Récupère 1 charge par 10 dégâts de foudre subis"
+    ]
+  }
 }

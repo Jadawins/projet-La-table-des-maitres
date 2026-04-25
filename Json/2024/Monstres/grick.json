@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "neutral",
   "ca": 14,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 27,
   "pv_formule": "6d8",
   "vitesse": {
@@ -62,7 +62,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Stone Camouflage",
+      "nom": "Camouflage de pierre",
       "description": "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -71,21 +71,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The grick makes one attack with its tentacles. If that attack hits, the grick can make one beak attack against the same target.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Tentacles",
+      "nom": "Tentacules",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage.",
       "bonus_attaque": 4,
       "degats_de": "2d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Beak",
+      "nom": "Bec",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

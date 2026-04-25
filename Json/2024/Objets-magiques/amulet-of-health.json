@@ -7,11 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution is already 19 or higher.",
-  "description_fr": "Votre valeur de Constitution est de 19 tant que vous portez cette amulette. Elle n'a aucun effet si votre Constitution est déjà de 19 ou supérieure.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Porte ta Constitution à 19 tant que tu la portes, si elle est inférieure à cette valeur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Constitution portée à 19 (si inférieure)",
+      "Modifie les jets de sauvegarde de Constitution",
+      "Affecte les PV maximaux"
+    ]
+  }
 }

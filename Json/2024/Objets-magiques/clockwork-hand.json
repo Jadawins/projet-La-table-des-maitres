@@ -1,17 +1,27 @@
 {
   "slug": "clockwork-hand",
-  "nom": "Clockwork Hand",
+  "nom": "Main d'Horlogerie",
   "nom_original": "Clockwork Hand",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "A beautiful work of articulate brass, this prosthetic clockwork hand (or hands) can't be worn if you have both of your hands. While wearing this hand, you gain a +2 bonus to damage with melee weapon attacks made with this hand or weapons wielded in this hand.",
-  "description_fr": "Magnifique ouvrage de laiton articulé, cette main mécanique prothétique ne peut être portée si vous possédez encore vos deux mains. Lorsque vous portez cette main, vous gagnez un bonus de +2 aux dégâts des attaques d'arme de mêlée effectuées avec cette main ou avec les armes que vous maniez dans cette main.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Prothèse mécanique en laiton qui ne peut être portée sans perdre ses deux mains naturelles, accordant un bonus aux dégâts des attaques de mêlée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus de +2 aux dégâts des attaques d'arme de mêlée avec cette main"
+    ]
+  }
 }

@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This staff of petrified wood is topped with a stylized carving of a bat with spread wings, a mouth baring great fangs, and a pair of ruby eyes. It has 10 charges and regains 1d6 + 4 charges daily at dawn. As long as the staff holds at least 1 charge, you can communicate with bats as if you shared a language. Bat and bat-like beasts and monstrosities never attack you unless magically forced to do so or unless you attack them first. While holding the staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: darkness (2 charges), dominate monster (8 charges), or flame strike (5 charges).",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton de bois pétrifié avec tête de chauve-souris qui permet la communication avec les chauves-souris et lance des sorts de ténèbres et domination.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Communique avec les chauves-souris et les crée amicales",
+      "Lance darkness, dominate monster, flame strike (coûts variables)",
+      "Récupère 1d6+4 charges à l'aube"
+    ]
+  }
 }

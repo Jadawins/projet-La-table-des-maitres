@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any alignment",
   "ca": 15,
-  "ca_detail": "breastplate",
+  "ca_detail": "cuirasse",
   "pv": 9,
   "pv_formule": "2d8",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": null
   },
   "competences": {
-    "deception": 5,
-    "insight": 4,
+    "tromperie": 5,
+    "perspicacité": 4,
     "persuasion": 5
   },
   "resistances": [],
@@ -65,7 +65,7 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Rapier",
+      "nom": "Rapière",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
       "bonus_attaque": 3,
       "degats_de": "1d8",
@@ -75,7 +75,7 @@
   "actions_bonus": [],
   "reactions": [
     {
-      "nom": "Parry",
+      "nom": "Parade",
       "description": "The noble adds 2 to its AC against one melee attack that would hit it. To do so, the noble must see the attacker and be wielding a melee weapon.",
       "bonus_attaque": null,
       "degats_de": null,

@@ -1,17 +1,29 @@
 {
   "slug": "cloak-of-squirrels",
-  "nom": "Cape de Squirrels",
+  "nom": "Cape des Écureuils",
   "nom_original": "Cloak of Squirrels",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This wool brocade cloak features a repeating pattern of squirrel heads and tree branches. It has 3 charges and regains all expended charges daily at dawn. While wearing this cloak, you can use an action to expend 1 charge to cast the legion of rabid squirrels spell (see Deep Magic for 5th Edition) from it. You don't need to be in a forest to cast the spell from this cloak, as the squirrels come from within the cloak. When the spell ends, the swarm vanishes back inside the cloak.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette cape en brocart de laine présente un motif répétitif de têtes d'écureuils et de branches d'arbres. Elle possède 3 charges et récupère toutes les charges dépensées quotidiennement à l'aube. En portant cette cape, vous pouvez utiliser une action pour dépenser 1 charge afin de lancer le sort _légion d'écureuils enragés_ (voir Deep Magic pour la 5e édition). Vous n'avez pas besoin d'être dans une forêt pour lancer ce sort depuis cette cape, car les écureuils viennent de l'intérieur de la cape. Lorsque le sort prend fin, l'essaim disparaît à l'intérieur de la cape."
+  "resume": "Cape en brocart permettant de lancer légion d'écureuils enragés 3 fois par jour, les écureuils provenant de l'intérieur de la cape.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lance légion d'écureuils enragés (1 charge, action)",
+      "Pas de forêt requise pour lancer le sort",
+      "Recharge à l'aube"
+    ]
+  }
 }

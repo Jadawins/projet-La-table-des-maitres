@@ -1,16 +1,28 @@
 {
   "slug": "living-juggernaut",
-  "nom": "Living Juggernaut",
+  "nom": "Jugernaut Vivant",
   "nom_original": "Living Juggernaut",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This broad, bulky suit of plate is adorned with large, blunt spikes and has curving bull horns affixed to its helm. While wearing this armor, you gain a +1 bonus to AC, and difficult terrain doesn't cost you extra movement.",
   "effets": [],
   "poids": "65.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure de plates magique avec pics et cornes qui augmente la CA de +1 et annule les pénalités de terrain difficile.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 à la CA",
+      "Le terrain difficile ne coûte pas de mouvement supplémentaire"
+    ]
+  }
 }

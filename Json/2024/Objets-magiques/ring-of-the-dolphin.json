@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-the-dolphin",
-  "nom": "Anneau de the Dolphin",
+  "nom": "Anneau du Dauphin",
   "nom_original": "Ring of the Dolphin",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "This gold ring bears a jade carving in the shape of a leaping dolphin. While wearing this ring, you have a swimming speed of 40 feet. In addition, you can hold your breath for twice as long while underwater.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Augmente la vitesse de nage à 40 pieds et permet de retenir son souffle deux fois plus longtemps sous l'eau.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de nage 40 pieds",
+      "Apnée doublée sous l'eau"
+    ]
+  }
 }

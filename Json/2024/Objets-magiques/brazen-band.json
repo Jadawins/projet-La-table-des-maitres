@@ -1,17 +1,28 @@
 {
   "slug": "brazen-band",
-  "nom": "Brazen Band",
+  "nom": "Bague de Laiton",
   "nom_original": "Brazen Band",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "Made by kobold clockwork mages, this brass clockwork ring is formed to look like a coiled dragon. When you speak or whisper the Draconic command word etched on the inside of the ring, the brass dragon uncoils and attempts to pick any lock within 10 feet of you. The dragon picks the lock using your proficiency bonus but with advantage. It is treated as having thieves' tools when attempting to pick locks. It uses your Dexterity (Stealth) bonus for purposes of not being spotted but with advantage due to its extremely small size. Whether successful or not, once you have used the ring to attempt to pick a lock, it can't be used again until the next sunset.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Fabriquée par des mages kobolds spécialistes des automates, cette bague en laiton est façonnée pour ressembler à un dragon lové. Lorsque vous prononcez ou chuchotez le mot de commande en draconique gravé à l'intérieur de la bague, le dragon de laiton se déroule et tente de crocheter toute serrure dans un rayon de 3 mètres de vous. Le dragon crochète la serrure en utilisant votre bonus de maîtrise mais avec l'avantage. Il est traité comme possédant des outils de voleur pour les tentatives de crochetage. Il utilise votre bonus de Dextérité (Discrétion) à des fins de dissimulation, mais avec l'avantage en raison de sa très petite taille. Que la tentative réussisse ou non, une fois que vous avez utilisé la bague pour tenter de crocheter une serrure, elle ne peut plus l'être avant le coucher du soleil suivant."
+  "resume": "Bague magique avec un petit dragon de laiton qui crochète les serrures dans un rayon de 3 mètres avec avantage, réutilisable après le coucher du soleil.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crochète les serrures à 3 m avec avantage",
+      "Utilisation limitée à une fois par jour jusqu'au coucher du soleil suivant"
+    ]
+  }
 }

@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "neutral evil",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 68,
   "pv_formule": "8d10+24",
   "vitesse": {
@@ -55,7 +55,7 @@
   },
   "langues": [
     "understands Abyssal",
-    "Common",
+    "commun",
     "and Infernal but can't speak"
   ],
   "fp": "3",
@@ -64,7 +64,7 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Confer Fire Resistance",
+      "nom": "Conférer la résistance au feu",
       "description": "The nightmare can grant resistance to fire damage to anyone riding it.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -80,14 +80,14 @@
   ],
   "actions": [
     {
-      "nom": "Hooves",
+      "nom": "Sabots",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) fire damage.",
       "bonus_attaque": 6,
       "degats_de": "2d8+2d6",
       "degats_bonus": 4
     },
     {
-      "nom": "Ethereal Stride",
+      "nom": "Foulée éthérée",
       "description": "The nightmare and up to three willing creatures within 5 feet of it magically enter the Ethereal Plane from the Material Plane, or vice versa.",
       "bonus_attaque": null,
       "degats_de": null,

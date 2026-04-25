@@ -1,17 +1,29 @@
 {
   "slug": "black-and-white-daggers",
-  "nom": "Black and White Daggers",
+  "nom": "Dagues noir et blanc",
   "nom_original": "Black and White Daggers",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "These matched daggers are identical except for the stones set in their pommels. One pommel is chalcedony (opaque white), the other is obsidian (opaque black). You gain a +1 bonus to attack and damage rolls with both magic weapons. The bonus increases to +3 when you use the white dagger to attack a monstrosity, and it increases to +3 when you use the black dagger to attack an undead. When you hit a monstrosity or undead with both daggers in the same turn, that creature takes an extra 1d6 piercing damage from the second attack.",
-  "description_fr": "Ces deux dagues assorties sont identiques, à l'exception des pierres enchâssées dans leurs pommeaux. L'une est en calcédoine (blanc opaque) et l'autre en obsidienne (noir opaque). Vous gagnez un bonus de +1 aux jets d'attaque et aux jets de dégâts avec ces deux armes magiques. Ce bonus passe à +3 lorsque vous utilisez la dague blanche pour attaquer une monstruosité, et il passe à +3 lorsque vous utilisez la dague noire pour attaquer un mort-vivant. Lorsque vous touchez une monstruosité ou un mort-vivant avec les deux dagues lors du même tour, cette créature subit 1d6 dégâts perforants supplémentaires de la seconde attaque.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Paire de dagues magiques +1 devenant +3 contre les monstruosités (blanche) ou morts-vivants (noire), infligeant 1d6 dégâts perforants supplémentaires si utilisées toutes deux au même tour.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "perforants",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 attaque et dégâts (attunement)",
+      "+3 dague blanche vs monstruosités",
+      "+3 dague noire vs morts-vivants"
+    ]
+  }
 }

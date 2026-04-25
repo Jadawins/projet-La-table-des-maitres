@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the _fireball_ spell (save DC 15) from it. For 1 charge, you cast the 3rd-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.\n\nThe wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette permettant de lancer des boules de feu de niveaux 3 à 9 en dépensant 1 à 7 charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "6d6",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": 7,
+    "effets": [
+      "Boule de feu niveau 3 (1 charge, DD 15)",
+      "+1 niveau de sort par charge supplémentaire",
+      "Régénère 1d6+1 charges à l'aube"
+    ]
+  }
 }

@@ -1,13 +1,13 @@
 {
   "slug": "shambling-mound",
-  "nom": "Shambling Mound",
+  "nom": "Masse Chancelante",
   "nom_original": "Shambling Mound",
   "taille": "G",
   "type": "Plant",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 15,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 136,
   "pv_formule": "16d10+48",
   "vitesse": {
@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 2
+    "discrétion": 2
   },
   "resistances": [
     "cold",
@@ -69,7 +69,7 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "Lightning Absorption",
+      "nom": "Absorption de la foudre",
       "description": "Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -78,21 +78,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The shambling mound makes two slam attacks. If both attacks hit a Medium or smaller target, the target is grappled (escape DC 14), and the shambling mound uses its Engulf on it.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.",
       "bonus_attaque": 7,
       "degats_de": "2d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Engulf",
+      "nom": "Engloutissement",
       "description": "The shambling mound engulfs a Medium or smaller creature grappled by it. The engulfed target is blinded, restrained, and unable to breathe, and it must succeed on a DC 14 Constitution saving throw at the start of each of the mound's turns or take 13 (2d8 + 4) bludgeoning damage. If the mound moves, the engulfed target moves with it. The mound can have only one creature engulfed at a time.",
       "bonus_attaque": null,
       "degats_de": null,

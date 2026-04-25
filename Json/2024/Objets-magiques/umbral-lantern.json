@@ -1,16 +1,28 @@
 {
   "slug": "umbral-lantern",
-  "nom": "Umbral Lantern",
+  "nom": "Lanterne Ombreuse",
   "nom_original": "Umbral Lantern",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This item looks like a typical hooded brass lantern, but shadowy forms crawl across its surface and it radiates darkness instead of light. The lantern can burn for up to 3 hours each day. While the lantern burns, it emits darkness as if the darkness spell were cast on it but with a 30-foot radius.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une lanterne qui crée une zone d'obscurité magique de 30 pieds de rayon au lieu de lumière, utilisable 3 heures par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crée une obscurité magique (30 pieds de rayon)",
+      "Durée : 3 heures par jour"
+    ]
+  }
 }

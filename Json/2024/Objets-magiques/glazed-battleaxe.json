@@ -1,16 +1,27 @@
 {
   "slug": "glazed-battleaxe",
-  "nom": "Glazed Battleaxe",
+  "nom": "Hache de Bataille Émaillée",
   "nom_original": "Glazed Battleaxe",
   "categorie": "arme_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "A pleasant scent emerges from this weapon. While it is on your person, you have advantage on Charisma (Persuasion) checks made to interact with humanoids and fey.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette arme dégageant une agréable odeur confère l'avantage aux tests de Charisme (Persuasion) envers les humanoïdes et les créatures féeriques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Charisme (Persuasion) avec humanoïdes et créatures féeriques"
+    ]
+  }
 }

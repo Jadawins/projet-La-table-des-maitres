@@ -1,16 +1,28 @@
 {
   "slug": "shoes-of-the-shingled-canopy",
-  "nom": "Shoes of the Shingled Canopy",
+  "nom": "Chaussures du Dais Bardelé",
   "nom_original": "Shoes of the Shingled Canopy",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These well-made, black leather shoes have brass buckles shaped like chimneys. While wearing the shoes, you have proficiency in the Acrobatics skill. In addition, while falling, you can use a reaction to cast the feather fall spell by holding your nose. The shoes can't be used this way again until the next dusk.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Chaussures noires en cuir conférant la maîtrise en Acrobatie et permettant de lancer chute plume une fois par jour en réaction lors d'une chute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Maîtrise en Acrobatie",
+      "Réaction en chute : lance chute plume (1x par jour au crépuscule)"
+    ]
+  }
 }

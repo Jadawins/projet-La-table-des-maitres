@@ -7,11 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This fine garment is made of black silk interwoven with faint silvery threads. While wearing it, you gain the following benefits:\r\n\r\n* You have resistance to poison damage.\r\n* You have a climbing speed equal to your walking speed.\r\n* You can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\r\n* You can't be caught in webs of any sort and can move through webs as if they were difficult terrain.\r\n* You can use an action to cast the _web_ spell (save DC 13). The web created by the spell fills twice its normal area. Once used, this property of the cloak can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce vêtement raffiné est confectionné en soie noire entrelacée de fils argentés à peine visibles. En le portant, vous bénéficiez des avantages suivants :\n\n* Vous avez la résistance aux dégâts de poison.\n* Vous disposez d'une vitesse d'escalade égale à votre vitesse de déplacement.\n* Vous pouvez vous déplacer verticalement sur les surfaces et à l'envers sur les plafonds tout en gardant les mains libres.\n* Vous ne pouvez pas être pris dans des toiles et pouvez vous déplacer à travers elles comme si c'était un terrain difficile.\n* Vous pouvez utiliser une action pour lancer le sort _toile d'araignée_ (DD de sauvegarde 13). La toile créée par le sort couvre deux fois sa zone normale. Une fois utilisée, cette propriété de la cape ne peut plus être utilisée jusqu'à l'aube suivante."
+  "resume": "Cape magique conférant résistance au poison, escalade rapide, déplacement sur surfaces verticales et plafonds, immunité aux toiles, et usage quotidien du sort toile d'araignée étendue.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de poison",
+      "Vitesse d'escalade égale à la vitesse de déplacement, marche sur plafonds",
+      "Immunité aux toiles ; 1/jour sort toile d'araignée (DD 13, zone doublée)"
+    ]
+  }
 }

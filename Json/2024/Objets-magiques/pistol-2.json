@@ -1,16 +1,28 @@
 {
   "slug": "pistol-2",
-  "nom": "Pistol (+2)",
+  "nom": "Pistolet (+2)",
   "nom_original": "Pistol (+2)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You have a bonus to attack rolls and damage rolls made with this magic weapon. The bonus is determined by the weapon's rarity.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pistolet magique conférant un bonus de +2 aux jets d'attaque et aux dégâts.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'attaque",
+      "+2 aux dégâts"
+    ]
+  }
 }

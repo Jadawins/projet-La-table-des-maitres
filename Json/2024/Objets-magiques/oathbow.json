@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you nock an arrow on this bow, it whispers in Elvish, \"Swift defeat to my enemies.\" When you use this weapon to make a ranged attack, you can, as a command phrase, say, \"Swift death to you who have wronged me.\" The target of your attack becomes your sworn enemy until it dies or until dawn seven days later. You can have only one such sworn enemy at a time. When your sworn enemy dies, you can choose a new one after the next dawn.\n\nWhen you make a ranged attack roll with this weapon against your sworn enemy, you have advantage on the roll. In addition, your target gains no benefit from cover, other than total cover, and you suffer no disadvantage due to long range. If the attack hits, your sworn enemy takes an extra 3d6 piercing damage.\n\nWhile your sworn enemy lives, you have disadvantage on attack rolls with all other weapons.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arc légendaire permettant de désigner un ennemi juré qui subit 3d6 dégâts supplémentaires et est frappé avec avantage, mais impose un désavantage sur les autres armes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "3d6",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Désigner un ennemi juré (durée : 7 jours)",
+      "Avantage contre l'ennemi juré, ignore demi-couvert et trois-quarts couvert",
+      "Désavantage sur les autres armes tant que l'ennemi juré vit"
+    ]
+  }
 }

@@ -1,17 +1,28 @@
 {
   "slug": "constant-dagger",
-  "nom": "Constant Dagger",
+  "nom": "Poignard Constant",
   "nom_original": "Constant Dagger",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you roll a 20 on an attack roll made with this weapon, the target loses its resistance to bludgeoning, piercing, and slashing damage until the start of your next turn. If it has immunity to bludgeoning, piercing, and slashing damage, its immunity instead becomes resistance to such damage until the start of your next turn. If the creature doesn't have resistance or immunity to such damage, you roll your damage dice three times, instead of twice.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous obtenez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Lorsque vous obtenez un 20 sur un jet d'attaque avec cette arme, la cible perd sa résistance aux dégâts contondants, perforants et tranchants jusqu'au début de votre prochain tour. Si elle bénéficie d'une immunité à ces types de dégâts, son immunité devient alors une résistance jusqu'au début de votre prochain tour. Si la créature ne possède ni résistance ni immunité à ces dégâts, vous lancez vos dés de dégâts trois fois au lieu de deux."
+  "resume": "Poignard magique +1 qui annule les résistances et immunités aux dégâts contondants, perforants et tranchants en cas de coup critique, ou triple les dégâts contre une cible sans protection.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Coup critique (20) : cible perd résistances/immunités aux dégâts contondants, perforants et tranchants jusqu'au début de votre prochain tour",
+      "Sans résistance/immunité : triple les dés de dégâts (3d au lieu de 2d)"
+    ]
+  }
 }

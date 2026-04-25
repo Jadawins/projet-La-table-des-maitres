@@ -1,16 +1,29 @@
 {
   "slug": "sword-of-life-stealing-longsword",
-  "nom": "Épée de Life Stealing (Longsword)",
+  "nom": "Épée Dérobante de Vie (Épée Longue)",
   "nom_original": "Sword of Life Stealing (Longsword)",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack a creature with this magic weapon and roll a 20 on the attack roll, that target takes an extra 3d6 necrotic damage, provided that the target isn't a construct or an undead. You gain temporary hit points equal to the extra damage dealt.",
   "effets": [],
   "poids": "3.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "À chaque coup critique (20 naturel), cette épée inflige 3d6 dégâts nécrotiques supplémentaires (sauf créatures construites ou mortes-vivantes) et vous octroyez des points de vie temporaires égaux aux dégâts infligés.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "3d6",
+    "type_degats_bonus": "necrotic",
+    "pv_soins": "3d6",
+    "charges": null,
+    "effets": [
+      "Déclenché uniquement sur 20 naturel",
+      "Dégâts nécrotiques supplémentaires",
+      "Vous gagnez des PV temporaires égaux aux dégâts bonus"
+    ]
+  }
 }

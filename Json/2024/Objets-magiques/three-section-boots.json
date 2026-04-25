@@ -1,16 +1,28 @@
 {
   "slug": "three-section-boots",
-  "nom": "Three-Section Boots",
+  "nom": "Bottes Tripartites",
   "nom_original": "Three-Section Boots",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These boots are often decorated with eyes, flames, or other bold patterns such as lightning bolts or wheels. When you step onto water, air, or stone, you can use a reaction to speak the boots' command word. For 1 hour, you gain the effects of the meld into stone, water walk, or wind walk spell, depending on the type of surface where you stepped. The boots can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bottes ornementées permettant de marcher sur l'eau, l'air ou la pierre en bénéficiant du sort correspondant pendant 1 heure (une utilisation par jour).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Fusion dans la pierre, Marche sur l'eau ou Vol selon la surface",
+      "Durée 1 heure (une utilisation par jour au maximum)"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "reef-splitter",
-  "nom": "Reef Splitter",
+  "nom": "Briseur de Récif",
   "nom_original": "Reef Splitter",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The head of this warhammer is constructed of undersea volcanic rock and etched with images of roaring flames and boiling water. You gain a +3 bonus to attack and damage rolls made with this magic weapon. When you roll a 20 on an attack roll made with this weapon, the hammer erupts with magma, and the target takes an extra 4d6 fire damage. In addition, if the target is underwater, the water around it begins to boil with the heat of your blow, and each creature other than you within 5 feet of the target takes 2d6 fire damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Marteau de guerre +3 en roche volcanique sous-marine qui explose en lave au coup critique, infligeant 4d6 dégâts de feu supplémentaires et 2d6 dégâts de feu aux créatures proches si la cible est sous l'eau.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "4d6",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Coup critique : 4d6 dégâts de feu supplémentaires",
+      "Sous l'eau : 2d6 dégâts de feu aux créatures à 1,5 m (sauf vous)"
+    ]
+  }
 }

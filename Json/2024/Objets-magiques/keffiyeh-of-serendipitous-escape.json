@@ -1,16 +1,29 @@
 {
   "slug": "keffiyeh-of-serendipitous-escape",
-  "nom": "Keffiyeh of Serendipitous Escape",
+  "nom": "Keffiyeh de l'Évasion Serendipine",
   "nom_original": "Keffiyeh of Serendipitous Escape",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This checkered cotton headdress is indistinguishable from the mundane scarves worn by the desert nomads. As an action, you can remove the headdress, spread it open on the ground, and speak the command word. The keffiyeh transforms into a 3-foot by 5-foot carpet of flying which moves according to your spoken directions provided that you are within 30 feet of it. Speaking the command word a second time transforms the carpet back into a headdress again.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Couvre-chef qui se transforme en tapis volant 3x5 pieds obéissant à vos ordres verbaux tant que vous êtes à 30 pieds.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Se transforme en tapis volant 3 x 5 pieds",
+      "Obéit aux ordres verbaux à 30 pieds",
+      "À usage de déplacement"
+    ]
+  }
 }

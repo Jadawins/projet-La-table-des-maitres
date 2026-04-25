@@ -1,17 +1,27 @@
 {
   "slug": "bloodthirsty-scimitar",
-  "nom": "Bloodthirsty Scimitar",
+  "nom": "Cimeterre assoiffé de sang",
   "nom_original": "Bloodthirsty Scimitar",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This magic weapon bears long, branching channels inscribed into its blade or head, and it gives off a coppery scent. When you damage a creature that has blood with this weapon, it loses an additional 2d6 hit points from blood loss.",
-  "description_fr": "Cette arme magique porte de longs sillons ramifiés gravés dans sa lame ou sa tête, et exhale un relent cuivré de sang frais. Lorsque vous infligez des dégâts à une créature dotée de sang avec cette arme, elle perd 2d6 points de vie supplémentaires dus à la perte de sang.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cimeterre magique qui inflige 2d6 points de vie supplémentaires sous forme de saignement à toute créature dotée de sang.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "saignement",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Inflige 2d6 dégâts supplémentaires contre les créatures dotées de sang"
+    ]
+  }
 }

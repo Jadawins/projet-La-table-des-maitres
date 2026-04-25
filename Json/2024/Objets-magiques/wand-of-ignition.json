@@ -1,16 +1,29 @@
 {
   "slug": "wand-of-ignition",
-  "nom": "Baguette de Ignition",
+  "nom": "Baguette d'Ignition",
   "nom_original": "Wand of Ignition",
   "categorie": "baguette",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "The cracks in this charred and blackened wooden wand glow like live coals, but the wand is merely warm to the touch. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to set fire to one flammable object or collection of material (a stack of paper, a pile of kindling, or similar) within 10 feet of you that is Small or smaller. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Extinguishing.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette permettant d'enflammer les objets combustibles Petits ou plus petits dans un rayon de 3 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Enflammer objet combustible à 3 m (1 charge)",
+      "Récupère toutes les charges à l'aube",
+      "Transformation aléatoire sur dernière charge"
+    ]
+  }
 }

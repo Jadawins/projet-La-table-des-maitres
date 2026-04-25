@@ -1,13 +1,13 @@
 {
   "slug": "ettin",
-  "nom": "Ettin",
+  "nom": "Éttin",
   "nom_original": "Ettin",
   "taille": "G",
   "type": "Giant",
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 85,
   "pv_formule": "10d10+30",
   "vitesse": {
@@ -54,8 +54,8 @@
     "tremblements": null
   },
   "langues": [
-    "Giant",
-    "Orc"
+    "géant",
+    "orque"
   ],
   "fp": "4",
   "fp_numerique": 4,
@@ -63,14 +63,14 @@
   "experience": 1100,
   "traits": [
     {
-      "nom": "Two Heads",
+      "nom": "Deux têtes",
       "description": "The ettin has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, and knocked unconscious.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Wakeful",
+      "nom": "Vigilance",
       "description": "When one of the ettin's heads is asleep, its other head is awake.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -79,21 +79,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The ettin makes two attacks: one with its battleaxe and one with its morningstar.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Battleaxe",
+      "nom": "Hache de bataille",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d8",
       "degats_bonus": 5
     },
     {
-      "nom": "Morningstar",
+      "nom": "Étoile du matin",
       "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) piercing damage.",
       "bonus_attaque": 7,
       "degats_de": "2d8",

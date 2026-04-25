@@ -1,13 +1,13 @@
 {
   "slug": "green-dragon-wyrmling",
-  "nom": "Green Dragon Wyrmling",
+  "nom": "Jeune dragon vert",
   "nom_original": "Green Dragon Wyrmling",
   "taille": "M",
   "type": "Dragon",
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 38,
   "pv_formule": "7d8+7",
   "vitesse": {
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 4,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [
@@ -59,7 +59,7 @@
     "tremblements": null
   },
   "langues": [
-    "Draconic"
+    "draconique"
   ],
   "fp": "2",
   "fp_numerique": 2,
@@ -67,7 +67,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Amphibious",
+      "nom": "Amphibie",
       "description": "The dragon can breathe air and water.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -76,14 +76,14 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 3 (1d6) poison damage.",
       "bonus_attaque": 4,
       "degats_de": "1d10+1d6",
       "degats_bonus": 3
     },
     {
-      "nom": "Poison Breath (Recharge 5-6)",
+      "nom": "Souffle de poison (Recharge 5-6)",
       "description": "The dragon exhales poisonous gas in a 15-foot cone. Each creature in that area must make a DC 11 Constitution saving throw, taking 21 (6d6) poison damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "6d6",

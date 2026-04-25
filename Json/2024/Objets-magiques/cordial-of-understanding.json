@@ -1,17 +1,28 @@
 {
   "slug": "cordial-of-understanding",
-  "nom": "Cordial of Understanding",
+  "nom": "Cordial de la Compréhension",
   "nom_original": "Cordial of Understanding",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this tangy, violet liquid, your mind opens to new forms of communication. For 1 hour, if you spend 1 minute listening to creatures speaking a particular language, you gain the ability to communicate in that language for the duration. This potion's magic can also apply to non-verbal languages, such as a hand signal-based or dance-based language, so long as you spend 1 minute watching it being used and have the appropriate anatomy and limbs to communicate in the language.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Lorsque vous buvez ce liquide violet au goût acidulé, votre esprit s'ouvre à de nouvelles formes de communication. Pendant 1 heure, si vous passez 1 minute à écouter des créatures s'exprimer dans une langue particulière, vous acquérez la capacité de communiquer dans cette langue pour la durée restante. La magie de cette potion s'applique également aux langages non verbaux, comme les langages gestuels ou chorégraphiques, à condition que vous passiez 1 minute à les observer et que vous possédiez l'anatomie et les membres nécessaires pour les pratiquer."
+  "resume": "Potion permettant de comprendre et communiquer dans une nouvelle langue ou langage après 1 minute d'écoute, pour 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Durée 1 heure après consommation",
+      "Apprentissage de langue/langage (verbal ou non-verbal) après 1 minute d'observation"
+    ]
+  }
 }

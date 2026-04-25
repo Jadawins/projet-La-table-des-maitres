@@ -1,16 +1,29 @@
 {
   "slug": "rod-of-the-mariner",
-  "nom": "Sceptre de the Mariner",
+  "nom": "Sceptre du Marin",
   "nom_original": "Rod of the Mariner",
   "categorie": "sceptre",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This thin bone rod is topped with the carved figurine of an albatross in flight. The rod has 5 charges. You can use an action to expend 1 or more of its charges and point the rod at one or more creatures you can see within 30 feet of you, expending 1 charge for each creature. Each target must succeed on a DC 15 Wisdom saving throw or be cursed for 1 minute. A cursed creature has disadvantage on attack rolls and saving throws while within 100 feet of a body of water that is at least 20 feet deep. The rod regains 1d4 + 1 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the rod crumbles to dust and is destroyed, and you must succeed on a DC 15 Wisdom saving throw or be cursed for 1 minute as if you had been the target of the rod's power.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton osseux maudissant les créatures pour 1 minute, les handicapant près des plans d'eau profonds. Dispose de 5 charges renouvelées chaque aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "Maudition DC 15 (Sag) : désavantage aux attaques et jets de sauvegarde à moins de 100 pieds d'eau profonde",
+      "Détruit en cas d'échec de renouvellement (d20 = 1)",
+      "Renouvellement : 1d4+1 charges à l'aube"
+    ]
+  }
 }

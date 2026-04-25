@@ -1,16 +1,29 @@
 {
   "slug": "wand-of-tears",
-  "nom": "Baguette de Tears",
+  "nom": "Baguette des Larmes",
   "nom_original": "Wand of Tears",
   "categorie": "baguette",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "The top half of this wooden wand is covered in thorns. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges and point the wand at a humanoid you can see within 30 feet of you. The target must succeed on a DC 10 Charisma saving throw or be forced to cry for 1 minute. Crying doesn't prevent a target from taking actions or moving. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Giggles  .",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette épineuse capable de forcer une humanoïde à pleurer pendant 1 minute en cas d'échec au jet de sauvegarde de Charisme.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Force une humanoïde à 30 pieds à pleurer pendant 1 minute (sauvegarde Charisme DD 10)",
+      "Le pleur ne gêne pas les actions ou les déplacements",
+      "Se transforme en Baguette des Rires sur un résultat de 1 au d20 si dernière charge dépensée"
+    ]
+  }
 }

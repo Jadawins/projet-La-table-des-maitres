@@ -1,16 +1,28 @@
 {
   "slug": "ward-against-wild-appetites",
-  "nom": "Ward Against Wild Appetites",
+  "nom": "Amulette contre les appétits sauvages",
   "nom_original": "Ward Against Wild Appetites",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Seventeen animal teeth of various sizes hang together on a simple leather thong, and each tooth is dyed a different color using pigments from plants native to old-growth forests. When a beast or monstrosity with an Intelligence of 4 or lower targets you with an attack, it has disadvantage on the attack roll if the attack is a bite. You must be wearing the necklace to gain this benefit.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Collier de dents animales teintées qui impose le désavantage aux morsures des bêtes et monstres peu intelligents vous ciblant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les bêtes et monstres (Intelligence ≤4) ont le désavantage aux attaques de morsure contre vous",
+      "Doit être porté comme collier pour fonctionner"
+    ]
+  }
 }

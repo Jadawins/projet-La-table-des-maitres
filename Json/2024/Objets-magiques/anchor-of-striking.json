@@ -1,17 +1,29 @@
 {
   "slug": "anchor-of-striking",
-  "nom": "Anchor of Striking",
+  "nom": "Ancre de Combat",
   "nom_original": "Anchor of Striking",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This small rusty iron anchor feels sturdy in spite of its appearance. You gain a +1 bonus to attack and damage rolls made with this magic war pick. When you roll a 20 on an attack roll made with this weapon, the target is wrapped in ethereal golden chains that extend from the bottom of the anchor. As an action, the chained target can make a DC 15 Strength or Dexterity check, freeing itself from the chains on a success. Alternatively, you can use a bonus action to command the chains to disappear, freeing the target. The chains are constructed of magical force and can't be damaged, though they can be destroyed with a disintegrate spell. While the target is wrapped in these chains, you and the target can't move further than 50 feet from each other.",
-  "description_fr": "Cette petite ancre de fer rouillée paraît solide malgré son apparence modeste. Vous obtenez un bonus de +1 aux jets d'attaque et aux jets de dégâts effectués avec ce pic de guerre magique. Lorsque vous obtenez un 20 sur un jet d'attaque avec cette arme, la cible est enveloppée de chaînes dorées éthérées qui s'étendent depuis le bas de l'ancre. En utilisant une action, la cible enchaînée peut effectuer un test de Force ou de Dextérité DD 15, et se libère des chaînes en cas de succès. Vous pouvez également utiliser une action bonus pour ordonner aux chaînes de disparaître, libérant ainsi la cible. Les chaînes sont composées de force magique et ne peuvent être endommagées, bien qu'elles puissent être détruites par un sort de désintégration. Tant que la cible est enchaînée, vous et elle ne pouvez pas vous éloigner l'un de l'autre de plus de 15 mètres.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pic de guerre +1 qui enveloppe la cible critique de chaînes dorées l'attachant au porteur (rayon 15 m).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +1 aux attaques et dégâts",
+      "Sur un 20 naturel, crée des chaînes de force enchaînant la cible (JS Force ou Dextérité DD 15 pour se libérer)",
+      "Porteur et cible enchaînée limités à 15 m de distance l'un de l'autre"
+    ]
+  }
 }

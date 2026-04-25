@@ -1,16 +1,29 @@
 {
   "slug": "scroll-of-treasure-finding",
-  "nom": "Parchemin de Treasure Finding",
+  "nom": "Parchemin de Détection de Trésor",
   "nom_original": "Scroll of Treasure Finding",
   "categorie": "parchemin",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "parchemin",
-  "description": "Each scroll of treasure finding works for a specific type of treasure. You can use an action to read the scroll and sense whether that type of treasure is present within 1 mile of you for 1 hour. This scroll reveals the treasure's general direction, but not its specific location or amount. The GM chooses the type of treasure or determines it by rolling a d100 and consulting the following table. | dice: 1d% | Treasure Type |\n| ----------- | ------------- |\n| 01-10 | Copper |\n| 11-20 | Silver |\n| 21-30 | Electrum |\n| 31-40 | Gold |\n| 41-50 | Platinum |\n| 51-75 | Gemstone |\n| 76-80 | Art objects |\n| 81-00 | Magic items |",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Parchemin permettant de détecter un type de trésor spécifique dans un rayon d'1 mile pendant 1 heure, indiquant la direction générale.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Détecte un type de trésor spécifique",
+      "Porte jusqu'à 1 mile, dure 1 heure",
+      "Indique la direction générale seulement"
+    ]
+  }
 }

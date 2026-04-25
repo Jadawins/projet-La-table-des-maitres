@@ -1,17 +1,29 @@
 {
   "slug": "air-seed",
-  "nom": "Air Seed",
+  "nom": "Graine d'Air",
   "nom_original": "Air Seed",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This plum-sized, nearly spherical sandstone is imbued with a touch of air magic. Typically, 1d4 + 4 air seeds are found together. You can use an action to throw the seed up to 60 feet. The seed explodes on impact and is destroyed. When it explodes, the seed releases a burst of fresh, breathable air, and it disperses gas or vapor and extinguishes candles, torches, and similar unprotected flames within a 10-foot radius of where the seed landed. Each suffocating or choking creature within a 10-foot radius of where the seed landed gains a lung full of air, allowing the creature to hold its breath for 5 minutes. If you break the seed while underwater, each creature within a 10-foot radius of where you broke the seed gains a lung full of air, allowing the creature to hold its breath for 5 minutes.",
-  "description_fr": "Ce grès de la taille d'une prune, presque sphérique, est imprégné d'une touche de magie de l'air. On trouve généralement 1d4 + 4 graines d'air ensemble. Vous pouvez utiliser une action pour lancer la graine jusqu'à 18 mètres. Elle explose à l'impact et est détruite. Lors de l'explosion, la graine libère une bouffée d'air frais et respirable, disperse gaz et vapeurs, et éteint bougies, torches et flammes non protégées similaires dans un rayon de 3 mètres autour du point d'impact. Chaque créature en train de suffoquer dans ce rayon reçoit une pleine inspiration, lui permettant de retenir son souffle pendant 5 minutes. Si vous brisez la graine sous l'eau, chaque créature dans un rayon de 3 mètres bénéficie également d'une pleine inspiration lui permettant de retenir son souffle pendant 5 minutes.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Graine magique lancée qui explose à l'impact pour disperser les gaz, éteindre les flammes et permettre aux créatures suffocantes de respirer.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Explose à l'impact dans un rayon de 3 mètres",
+      "Éteint les flammes non protégées",
+      "Restaure la respiration aux créatures suffocantes (5 minutes)"
+    ]
+  }
 }

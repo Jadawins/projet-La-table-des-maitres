@@ -1,17 +1,29 @@
 {
   "slug": "ammunition-of-giant-slaying",
-  "nom": "Ammunition of Giant Slaying",
+  "nom": "Munition d'Anéantissement de Géants",
   "nom_original": "Ammunition of Giant Slaying",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This magic ammunition is meant to slay creatures of a particular type, which the GM chooses or determines randomly by rolling on the table below. If a creature of that type takes damage from the ammunition, the creature makes a DC 17 Constitution saving throw, taking an extra 6d10 Force damage on a failed save or half as much extra damage on a successful one.\n\nAfter dealing its extra damage to a creature, the ammunition becomes nonmagical.\n\n| 1d100 | Creature Type |\n|-------|---------------|\n| 01–10 | Aberrations   |\n| 11–15 | Beasts        |\n| 16–20 | Celestials    |\n| 21–25 | Constructs    |\n| 26–35 | Dragons       |\n| 36–45 | Elementals    |\n| 46–50 | Humanoids     |\n| 51–60 | Fey           |\n| 61–70 | Fiends        |\n| 71–75 | Giants        |\n| 76–80 | Monstrosities |\n| 81–85 | Oozes         |\n| 86–90 | Plants        |\n| 91–00 | Undead        |",
-  "description_fr": "Cette munition magique est conçue pour terrasser les créatures d'un type particulier, que le MJ choisit ou détermine aléatoirement en lançant sur la table ci-dessous. Si une créature de ce type subit des dégâts de la munition, elle effectue un jet de sauvegarde de Constitution DD 17, subissant 6d10 dégâts de force supplémentaires en cas d'échec, ou la moitié en cas de réussite.\n\nAprès avoir infligé ses dégâts supplémentaires à une créature, la munition perd ses propriétés magiques.\n\n| 1d100 | Type de créature |\n|-------|------------------|\n| 01–10 | Aberrations      |\n| 11–15 | Bêtes            |\n| 16–20 | Célestes         |\n| 21–25 | Artificiels      |\n| 26–35 | Dragons          |\n| 36–45 | Élémentaires     |\n| 46–50 | Humanoïdes       |\n| 51–60 | Fées             |\n| 61–70 | Fiélons          |\n| 71–75 | Géants           |\n| 76–80 | Monstruosités    |\n| 81–85 | Vases            |\n| 86–90 | Plantes          |\n| 91–00 | Morts-vivants    |",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Munition magique conçue pour terrasser un type de créature spécifique. Inflige 6d10 dégâts de force supplémentaires (jet de sauvegarde de Constitution DD 17) à la créature ciblée, puis perd ses propriétés.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "6d10",
+    "type_degats_bonus": "force",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Jet de sauvegarde de Constitution DD 17 pour réduire les dégâts bonus de moitié",
+      "Ciblée contre un type de créature spécifique",
+      "Consommée après utilisation"
+    ]
+  }
 }

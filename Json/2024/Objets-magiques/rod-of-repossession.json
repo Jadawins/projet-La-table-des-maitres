@@ -1,16 +1,27 @@
 {
   "slug": "rod-of-repossession",
-  "nom": "Sceptre de Repossession",
+  "nom": "Sceptre de Reprise",
   "nom_original": "Rod of Repossession",
   "categorie": "sceptre",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This short, metal rod is engraved with arcane runes and images of open hands. The rod has 3 charges and regains all expended charges daily at dawn. While holding the rod, you can use an action to expend 1 of its charges and target an object within 30 feet of you that isn't being worn or carried. If the object weighs no more than 25 pounds, it floats to your open hand. If you have no hands free, the object sticks to the tip of the rod until the end of your next turn or until you remove it as a bonus action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton de métal gravé de runes qui permet de faire flotter un objet non porté de moins de 12 kg jusqu'à votre main dans un rayon de 9 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Faire flotter un objet de maximum 12 kg vers votre main (portée 9 m, 1 charge)"
+    ]
+  }
 }

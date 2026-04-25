@@ -1,17 +1,28 @@
 {
   "slug": "candied-axe",
-  "nom": "Candied Axe",
+  "nom": "Hache Confite",
   "nom_original": "Candied Axe",
   "categorie": "arme_magique",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This battleaxe bears a golden head spun from crystalized honey. Its wooden handle is carved with reliefs of bees. You gain a +2 bonus to attack and damage rolls made with this magic weapon.",
-  "description_fr": "Cette hache de guerre porte une tête dorée taillée dans du miel cristallisé. Son manche de bois est sculpté de reliefs d'abeilles. Vous obtenez un bonus de +2 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Hache de guerre magique à tête de miel cristallisé et manche gravé d'abeilles, offrant un bonus à l'attaque et aux dégâts.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+2 aux jets d'attaque",
+      "+2 aux dégâts"
+    ]
+  }
 }

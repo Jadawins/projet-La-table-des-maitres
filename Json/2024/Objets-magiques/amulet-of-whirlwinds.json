@@ -1,17 +1,29 @@
 {
   "slug": "amulet-of-whirlwinds",
-  "nom": "Amulet of Whirlwinds",
+  "nom": "Amulette des Trombes",
   "nom_original": "Amulet of Whirlwinds",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This amulet is strung on a brass necklace and holds a piece of djinn magic. The amulet has 9 charges. You can use an action to expend 1 of its charges to create a whirlwind on a point you can see within 60 feet of you. The whirlwind is a 5-foot-radius, 30-foot-tall cylinder of swirling air that lasts as long as you maintain concentration (as if concentrating on a spell). Any creature other than you that enters the whirlwind must succeed on a DC 15 Strength saving throw or be restrained by it. You can move the whirlwind up to 60 feet as an action, and creatures restrained by the whirlwind move with it. The whirlwind ends if you lose sight of it. A creature within 5 feet of the whirlwind can pull a creature out of it by taking an action to make a DC 15 Strength check and succeeding. A restrained creature can try to escape by taking an action to make a DC 15 Strength check. On a success, the creature escapes and enters a space of its choice within 5 feet of the whirlwind. When all of the amulet's charges are expended, the amulet becomes a nonmagical piece of jewelry worth 50 gp.",
-  "description_fr": "Cette amulette, suspendue à un collier de laiton, renferme un fragment de magie djinn. Elle possède 9 charges. Vous pouvez utiliser une action pour dépenser 1 de ses charges et créer une trombe d'air en un point que vous pouvez voir dans un rayon de 18 mètres. La trombe est un cylindre d'air tourbillonnant de 1,50 mètre de rayon et 9 mètres de hauteur, qui dure aussi longtemps que vous maintenez votre concentration (comme si vous vous concentriez sur un sort). Toute créature autre que vous qui pénètre dans la trombe doit réussir un jet de sauvegarde de Force DD 15 ou être entravée. Vous pouvez déplacer la trombe jusqu'à 18 mètres en utilisant une action, et les créatures entravées se déplacent avec elle. La trombe prend fin si vous la perdez de vue. Une créature à 1,50 mètre ou moins de la trombe peut en extraire une créature entravée en utilisant une action pour réussir un test de Force DD 15. Une créature entravée peut tenter de s'échapper en utilisant une action pour effectuer un test de Force DD 15. En cas de succès, elle s'échappe et se place dans un espace de son choix à 1,50 mètre ou moins de la trombe. Lorsque toutes les charges de l'amulette sont épuisées, elle devient un bijou non magique d'une valeur de 50 po.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Amulette djinn créant une trombe d'air tourbillonnante qui entrave les créatures. Possède 9 charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 9,
+    "effets": [
+      "Crée une trombe d'air en un point visible à 18 m",
+      "Les créatures pénétrant la trombe doivent réussir un JS de Force DD 15 ou être entravées",
+      "Peut se déplacer jusqu'à 18 m/action, les créatures entravées se déplacent avec"
+    ]
+  }
 }

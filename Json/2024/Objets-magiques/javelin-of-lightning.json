@@ -1,16 +1,29 @@
 {
   "slug": "javelin-of-lightning",
-  "nom": "Javelin of Lightning",
+  "nom": "Javeline de Foudre",
   "nom_original": "Javelin of Lightning",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This javelin is a magic weapon. When you hurl it and speak its command word, it transforms into a bolt of lightning, forming a line 5 feet wide that extends out from you to a target within 120 feet. Each creature in the line excluding you and the target must make a DC 13 Dexterity saving throw, taking 4d6 lightning damage on a failed save, and half as much damage on a successful one. The lightning bolt turns back into a javelin when it reaches the target. Make a ranged weapon attack against the target. On a hit, the target takes damage from the javelin plus 4d6 lightning damage.\n\nThe javelin's property can't be used again until the next dawn. In the meantime, the javelin can still be used as a magic weapon.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Javeline magique qui se transforme en éclair frappant une cible jusqu'à 120 pieds, infligeant des dégâts de foudre à la cible et aux créatures sur sa trajectoire. Rechargeable à l'aube.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "4d6",
+    "type_degats_bonus": "foudre",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Transforme en éclair (ligne 5 pieds de large, 120 pieds)",
+      "Les créatures sur la trajectoire font un JS Dextérité DC 13",
+      "Rechargeable à l'aube"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "elemental-wraps",
-  "nom": "Elemental Wraps",
+  "nom": "Bandeaux Élémentaires",
   "nom_original": "Elemental Wraps",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These cloth arm wraps are decorated with elemental symbols depicting flames, lightning bolts, snowflakes, and similar. You have resistance to acid, cold, fire, lightning, or thunder damage while you wear these arm wraps. You choose the type of damage when you first attune to the wraps, and you can choose a different type of damage at the end of a short or long rest. The wraps have 10 charges. When you hit with an unarmed strike while wearing these wraps, you can expend up to 3 of its charges. For each charge you expend, the target takes an extra 1d6 damage of the type to which you have resistance. The wraps regain 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a 1d20. On a 1, the wraps unravel and fall to the ground, becoming nonmagical.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bandeaux de tissu offrant une résistance à un type de dégâts élémentaires au choix, pouvant être changée au repos. Ils permettent d'ajouter jusqu'à 3d6 de dégâts du type choisi aux coups sans arme.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6 à 3d6",
+    "type_degats_bonus": "acide, froid, feu, foudre ou tonnerre (au choix)",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Résistance à un type de dégâts élémentaires au choix",
+      "Dégâts bonus jusqu'à 3d6 sur coups sans arme (1d6 par charge dépensée)",
+      "Risque d'être détruit si la dernière charge est dépensée (1 sur 1d20)"
+    ]
+  }
 }

@@ -1,17 +1,29 @@
 {
   "slug": "dancing-floret",
-  "nom": "Dancing Floret",
+  "nom": "Florette Dansante",
   "nom_original": "Dancing Floret",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This 2-inch-long plant has a humanoid shape, and a large purple flower sits at the top of the plant on a short, neck-like stalk. Small, serrated thorns on its arms and legs allow it to cling to your clothing, and it most often dances along your arm or across your shoulders. While attuned to the floret, you have proficiency in the Performance skill, and you double your proficiency bonus on Charisma (Performance) checks made while dancing. The floret has 3 charges for the following other properties. The floret regains 1d3 expended charges daily at dawn.",
-  "description_fr": "Cette plante de 5 centimètres (2 pouces) de long a une forme humanoïde, et une grande fleur violette trône au sommet de la plante sur une tige courte en guise de cou. De petites épines dentelées sur ses bras et ses jambes lui permettent de s'accrocher à vos vêtements, et elle danse le plus souvent le long de votre bras ou sur vos épaules. Tant que vous êtes harmonisé à la florette, vous avez la maîtrise de la compétence Représentation, et vous doublez votre bonus de maîtrise aux tests de Charisme (Représentation) effectués en dansant. La florette possède 3 charges pour les propriétés suivantes et récupère 1d3 charges dépensées chaque jour à l'aube.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petite plante magique de 5 cm conférant la maîtrise de Représentation et doublant le bonus de maîtrise aux tests de Charisme (Représentation) en dansant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Maîtrise de Représentation accordée",
+      "Double le bonus de maîtrise aux tests de Charisme (Représentation)",
+      "Récupère 1d3 charges à l'aube"
+    ]
+  }
 }

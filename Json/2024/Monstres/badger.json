@@ -1,6 +1,6 @@
 {
   "slug": "badger",
-  "nom": "Badger",
+  "nom": "Blaireau",
   "nom_original": "Badger",
   "taille": "TP",
   "type": "Beast",
@@ -58,7 +58,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Keen Smell",
+      "nom": "Odorat aiguisé",
       "description": "The badger has advantage on Wisdom (Perception) checks that rely on smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -67,7 +67,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
       "bonus_attaque": 2,
       "degats_de": null,

@@ -1,16 +1,29 @@
 {
   "slug": "enraging-ammunition",
-  "nom": "Enraging Ammunition",
+  "nom": "Munitions Exaspérantes",
   "nom_original": "Enraging Ammunition",
   "categorie": "autre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "When you hit a creature with a ranged attack using this magical ammunition, the target must succeed on a DC 13 Wisdom saving throw or become enraged for 1 minute. On its turn, an enraged creature moves toward you by the most direct route, trying to get within 5 feet of you. It doesn't avoid opportunity attacks, but it moves around or avoids damaging terrain, such as lava or a pit. If the enraged creature is within 5 feet of you, it attacks you. An enraged creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Munitions magiques forçant le touché à réussir un jet de sagesse (DD 13) ou devenir fou de rage, le chargeant vers le tireur pendant 1 minute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Jet de sagesse DD 13 ou condition Enragé",
+      "Cible se rapproche du tireur",
+      "Durée : 1 minute avec sauvegarde à la fin de chaque tour"
+    ]
+  }
 }

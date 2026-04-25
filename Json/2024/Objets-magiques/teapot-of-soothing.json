@@ -1,16 +1,29 @@
 {
   "slug": "teapot-of-soothing",
-  "nom": "Teapot of Soothing",
+  "nom": "Théière du Repos",
   "nom_original": "Teapot of Soothing",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This cast iron teapot is adorned with the simple image of fluffy clouds that seem to slowly shift and move across the pot as if on a gentle breeze. Any water placed inside the teapot immediately becomes hot tea at the perfect temperature, and when poured, it becomes the exact flavor the person pouring it prefers. The teapot can serve up to 6 creatures, and any creature that spends 10 minutes drinking a cup of the tea gains 2d6 temporary hit points for 24 hours. The creature pouring the tea has advantage on Charisma (Persuasion) checks for 10 minutes after pouring the first cup. Once used, the teapot can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette théière magique transforme l'eau en thé parfait et redonne des points de vie temporaires à ceux qui en boivent. Le verseur gagne l'avantage sur les tests de Persuasion.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "2d6",
+    "charges": 1,
+    "effets": [
+      "Avantage sur Charisme (Persuasion) pendant 10 min après le versement",
+      "Soigne 2d6 PV temp (24h) après 10 min de consommation",
+      "Peut servir jusqu'à 6 créatures"
+    ]
+  }
 }

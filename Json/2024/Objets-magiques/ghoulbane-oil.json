@@ -1,16 +1,29 @@
 {
   "slug": "ghoulbane-oil",
-  "nom": "Ghoulbane Oil",
+  "nom": "Huile Anti-Goule",
   "nom_original": "Ghoulbane Oil",
   "categorie": "potion",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This rusty-red gelatinous liquid glistens with tiny sparkling crystal flecks. The oil can coat one weapon or 5 pieces of ammunition. Applying the oil takes 1 minute. For 1 hour, if a ghoul, ghast, or Darakhul (see Tome of Beasts) takes damage from the coated item, it takes an extra 2d6 damage of the weapon's type.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une huile rouille-rouge qui enrobe une arme ou 5 munitions, infligeant 2d6 dégâts supplémentaires aux goules, ghasts et Darakhuls pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "du type de l'arme",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "1 heure de durée",
+      "Affecte goules, ghasts et Darakhuls uniquement",
+      "S'applique en 1 minute"
+    ]
+  }
 }

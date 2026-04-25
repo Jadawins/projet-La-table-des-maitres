@@ -1,17 +1,28 @@
 {
   "slug": "cloak-of-displacement",
-  "nom": "Cape de déplacement",
+  "nom": "Cape de Déplacement",
   "nom_original": "Cloak of Displacement",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear this cloak, it projects an illusion that makes you appear to be standing in a place near your actual location, causing any creature to have disadvantage on attack rolls against you. If you take damage, the property ceases to function until the start of your next turn. This property is suppressed while you are incapacitated, restrained, or otherwise unable to move.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez cette cape, elle projette une illusion qui vous fait paraître à un endroit légèrement différent de votre emplacement réel, ce qui amène toute créature à avoir le désavantage aux jets d'attaque contre vous. Si vous subissez des dégâts, cette propriété cesse de fonctionner jusqu'au début de votre prochain tour. Elle est également supprimée lorsque vous êtes neutralisé, entravé ou autrement incapable de vous déplacer."
+  "resume": "Vous paraissez à un endroit différent, donnant le désavantage aux attaques contre vous jusqu'à ce que vous subissiez des dégâts.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Désavantage aux jets d'attaque contre vous",
+      "Propriété désactivée si vous subissez des dégâts ou êtes neutralisé"
+    ]
+  }
 }

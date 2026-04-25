@@ -1,17 +1,29 @@
 {
   "slug": "cloak-of-petals",
-  "nom": "Cape de Petals",
+  "nom": "Cape de Pétales",
   "nom_original": "Cloak of Petals",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This delicate cloak is covered in an array of pink, purple, and yellow flowers. While wearing this cloak, you have advantage on Dexterity (Stealth) checks made to hide in areas containing flowering plants. The cloak has 3 charges. When a creature you can see targets you with an attack, you can use your reaction to expend 1 of its charges to release a shower of petals from the cloak. If you do so, the attacker has disadvantage on the attack roll. The cloak regains 1d3 expended charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette cape délicate est ornée d'une multitude de fleurs roses, violettes et jaunes. En la portant, vous avez l'avantage aux tests de Dextérité (Discrétion) effectués pour vous cacher dans des zones contenant des plantes en fleurs. La cape possède 3 charges. Lorsqu'une créature que vous pouvez voir vous cible avec une attaque, vous pouvez utiliser votre réaction pour dépenser 1 de ses charges afin de libérer une pluie de pétales. Dans ce cas, l'attaquant a le désavantage au jet d'attaque. La cape récupère 1d3 charges dépensées quotidiennement à l'aube."
+  "resume": "Cape fleurie offrant l'avantage en Discrétion parmi les plantes, avec 3 charges pour donner le désavantage à une attaque.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Avantage aux tests de Discrétion dans les zones fleuries",
+      "Dépenser 1 charge (réaction) : désavantage à une attaque contre vous",
+      "Récupère 1d3 charges à l'aube"
+    ]
+  }
 }

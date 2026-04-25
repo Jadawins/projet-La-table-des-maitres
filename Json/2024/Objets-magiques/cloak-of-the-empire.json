@@ -1,17 +1,28 @@
 {
   "slug": "cloak-of-the-empire",
-  "nom": "Cape de the Empire",
+  "nom": "Cape de l'Empire",
   "nom_original": "Cloak of the Empire",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This voluminous grey cloak has bright red trim and the sigil from an unknown empire on its back. The cloak is stiff and doesn't fold as easily as normal cloth. Whenever you are struck by a ranged weapon attack, you can use a reaction to reduce the damage from that attack by your Charisma modifier (minimum of 1).",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette cape grise volumineuse possède une bordure rouge vif et le symbole d'un empire inconnu dans le dos. La cape est rigide et ne se plie pas aussi facilement qu'un tissu ordinaire. Chaque fois que vous êtes touché par une attaque d'arme à distance, vous pouvez utiliser une réaction pour réduire les dégâts de cette attaque d'un montant égal à votre modificateur de Charisme (minimum 1)."
+  "resume": "Cape grise rigide offrant une protection contre les attaques à distance. Vous pouvez réduire les dégâts d'une attaque à distance d'un montant égal à votre modificateur de Charisme (minimum 1) en utilisant une réaction.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Réaction : réduire les dégâts des attaques à distance de votre modificateur de Charisme (min 1)",
+      "La cape est rigide et ne se plie pas comme un tissu ordinaire"
+    ]
+  }
 }

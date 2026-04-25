@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "medicine": 4,
+    "médecine": 4,
     "religion": 2
   },
   "resistances": [],
@@ -63,7 +63,7 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Spellcasting",
+      "nom": "Incantation",
       "description": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\n\n* Cantrips (at will): light, sacred flame, thaumaturgy\n* 1st level (3 slots): bless, cure wounds, sanctuary",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,7 +72,7 @@
   ],
   "actions": [
     {
-      "nom": "Club",
+      "nom": "Massue",
       "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
       "bonus_attaque": 2,
       "degats_de": "1d4",

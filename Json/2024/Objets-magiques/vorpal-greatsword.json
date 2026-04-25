@@ -1,16 +1,29 @@
 {
   "slug": "vorpal-greatsword",
-  "nom": "Vorpal Greatsword",
+  "nom": "Épée Vorpale Immense",
   "nom_original": "Vorpal Greatsword",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. In addition, the weapon ignores Resistance to Slashing damage.\n\nWhen you use this weapon to attack a creature that has at least one head and roll a 20 on the d20 for the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it has Immunity to Slashing damage, if it doesn't have or need a head, or if the GM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 30 Slashing damage from the hit. If the creature has Legendary Resistance, it can expend one daily use of that trait to avoid losing its head, taking the extra damage instead.",
   "effets": [],
   "poids": "6.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une arme magique +3 qui ignore la résistance aux dégâts tranchants et tranche la tête des créatures sur un coup critique (nat 20).",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "30",
+    "type_degats_bonus": "tranchant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +3 aux jets d'attaque et de dégâts",
+      "Ignore la résistance aux dégâts tranchants",
+      "Sur nat 20 : tranche une tête (mort si la créature ne peut survivre, sinon +30 dégâts)"
+    ]
+  }
 }

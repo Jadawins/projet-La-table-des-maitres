@@ -1,16 +1,29 @@
 {
   "slug": "rapier-of-life-stealing",
-  "nom": "Rapier of Life Stealing",
+  "nom": "Rapière du Vol de Vie",
   "nom_original": "Rapier of Life Stealing",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "À chaque coup critique, inflige 15 dégâts nécrotiques supplémentaires et vous gagnez autant de points de vie temporaires (sauf contre les Créations et les Morts-vivants).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "15",
+    "charges": null,
+    "effets": [
+      "Coup critique (20) : 15 dégâts nécrotiques supplémentaires",
+      "Vous gagnez des PV temporaires égaux aux dégâts infligés",
+      "Pas d'effet contre les Créations ou Morts-vivants"
+    ]
+  }
 }

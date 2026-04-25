@@ -1,16 +1,29 @@
 {
   "slug": "scrimshaw-parrot",
-  "nom": "Scrimshaw Parrot",
+  "nom": "Perroquet de Scrimshaw",
   "nom_original": "Scrimshaw Parrot",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This parrot is carved from bits of whalebone and decorated with bright feathers and tiny jewels. You can use an action to affix the parrot to your shoulder or arm. While the parrot is affixed, you gain the following benefits: - You have advantage on Wisdom (Perception) checks that rely on sight.\n- You can use an action to cast the comprehend languages spell from it at will.\n- You can use an action to speak the command word and activate the parrot. It records up to 2 minutes of sounds within 30 feet of it. You can touch the parrot at any time (no action required), stopping the recording. Commanding the parrot to record new sounds overwrites the previous recording. You can use a bonus action to speak a different command word, and the parrot repeats the sounds it heard. Effects that limit or block sound, such as a closed door or the silence spell, similarly limit or block the sounds the parrot records.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Perroquet en os d'ivoire qui s'affixe à l'épaule et confère avantage à la Perception visuelle, permet de lancer Comprendre les langues à volonté et d'enregistrer/rejouer des sons.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Perception (vue)",
+      "Lancer Comprendre les langues à volonté",
+      "Enregistrer et rejouer 2 minutes de sons dans 30 pieds"
+    ]
+  }
 }

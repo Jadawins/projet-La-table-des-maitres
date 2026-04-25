@@ -1,17 +1,28 @@
 {
   "slug": "bracers-of-archery",
-  "nom": "Brassards d'archerie",
+  "nom": "Brassards d'Archerie",
   "nom_original": "Bracers of Archery",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing these bracers, you have proficiency with the longbow and shortbow, and you gain a +2 bonus to damage rolls on ranged attacks made with such weapons.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces brassards, vous avez la maîtrise de l'arc long et de l'arc court, et vous obtenez un bonus de +2 aux jets de dégâts pour les attaques à distance effectuées avec ces armes."
+  "resume": "Ces brassards confèrent la maîtrise des arcs longs et courts, ainsi qu'un bonus de +2 aux dégâts des attaques à distance avec ces armes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "+2",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Maîtrise des arcs longs et courts",
+      "Bonus +2 aux dégâts (arcs longs et courts)"
+    ]
+  }
 }

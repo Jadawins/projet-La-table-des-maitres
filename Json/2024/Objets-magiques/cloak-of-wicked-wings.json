@@ -1,17 +1,29 @@
 {
   "slug": "cloak-of-wicked-wings",
-  "nom": "Cape de Wicked Wings",
+  "nom": "Cape des Ailes Maléfiques",
   "nom_original": "Cloak of Wicked Wings",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "From a distance, this long, black cloak appears to be in tatters, but a closer inspection reveals that it is sewn from numerous scraps of cloth and shaped like bat wings. While wearing this cloak, you can use your action to cast polymorph on yourself, transforming into a swarm of bats. While in the form of a swarm of bats, you retain your Intelligence, Wisdom, and Charisma scores. In addition, you don't need to maintain concentration on the spell, and the transformation lasts for 1 hour, until you use a bonus action to revert to your normal form, or until you drop to 0 hit points or die. If you are a druid with the Wild Shape feature, this transformation instead lasts as long as your Wild Shape lasts. The cloak can't be used this way again until the next dawn.",
-  "description_fr": "De loin, cette longue cape noire semble en lambeaux, mais un examen plus attentif révèle qu'elle est cousue de nombreuses pièces de tissu et façonnée en forme d'ailes de chauve-souris. Lorsque vous portez cette cape, vous pouvez utiliser votre action pour lancer métamorphose sur vous-même, vous transformant en nuée de chauves-souris. Sous cette forme, vous conservez vos valeurs d'Intelligence, de Sagesse et de Charisme. De plus, vous n'avez pas besoin de maintenir la concentration sur le sort, et la transformation dure 1 heure, jusqu'à ce que vous utilisiez une action bonus pour retrouver votre forme normale, ou jusqu'à ce que vous tombiez à 0 point de vie ou que vous mouriez. Si vous êtes un druide doté de la capacité Forme sauvage, cette transformation dure aussi longtemps que votre Forme sauvage. La cape ne peut être utilisée de cette façon à nouveau qu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cape noire permettant de se transformer en nuée de chauves-souris pendant 1 heure sans concentration, une fois par jour à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Transformation en nuée de chauves-souris (1 heure sans concentration)",
+      "Conserve les valeurs de Intelligence, Sagesse et Charisme",
+      "Utilisable une fois par jour à l'aube"
+    ]
+  }
 }

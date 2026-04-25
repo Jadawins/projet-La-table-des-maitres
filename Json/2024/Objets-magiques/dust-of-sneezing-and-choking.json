@@ -1,16 +1,29 @@
 {
   "slug": "dust-of-sneezing-and-choking",
-  "nom": "Dust of Sneezing and Choking",
+  "nom": "Poudre d'éternuement et d'asphyxie",
   "nom_original": "Dust of Sneezing and Choking",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Found in a small container, this powder resembles very fine sand. It appears to be _dust of disappearance_, and an _identify_ spell reveals it to be such. There is enough of it for one use.\r\n\r\nWhen you use an action to throw a handful of the dust into the air, you and each creature that needs to breathe within 30 feet of you must succeed on a DC 15 Constitution saving throw or become unable to breathe, while sneezing uncontrollably. A creature affected in this way is incapacitated and suffocating. As long as it is conscious, a creature can repeat the saving throw at the end of each of its turns, ending the effect on it on a success. The _lesser restoration_ spell can also end the effect on a creature.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Poudre à usage unique qui paralyse et asphyxie les créatures respirant à proximité (rayon 9 m, sauvegarde CON DD 15).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Incapacité et asphyxie des créatures dans un rayon de 9 m",
+      "Sauvegarde CON DD 15 pour résister",
+      "Répétition du jet à la fin de chaque tour"
+    ]
+  }
 }

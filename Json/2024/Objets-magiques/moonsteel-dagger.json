@@ -1,16 +1,29 @@
 {
   "slug": "moonsteel-dagger",
-  "nom": "Moonsteel Dagger",
+  "nom": "Poignard de Clair de Lune",
   "nom_original": "Moonsteel Dagger",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The blade of this magic weapon seems to shine from within with a pale, white light. The weapon deals an extra 1d6 radiant damage to any creature it hits. If the creature is a shapechanger or any other creature not in its true form, it becomes frightened until the start of your next turn. At the start of its turn, a creature frightened in this way must succeed on a DC 13 Charisma saving throw or immediately return to its true form. For the purpose of this weapon, “shapechanger” refers to any creature with the Shapechanger trait.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Dague infligeant 1d6 dégâts radiants supplémentaires et rendant effrayées les créatures métamorphes ou déguisées jusqu'au début de votre tour suivant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts radiants supplémentaires 1d6",
+      "Créature non-native effrayée jusqu'au début du tour suivant",
+      "Sauvegarde Charisme DC 13 pour retrouver vraie forme"
+    ]
+  }
 }

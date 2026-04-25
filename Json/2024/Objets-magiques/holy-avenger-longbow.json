@@ -1,16 +1,29 @@
 {
   "slug": "holy-avenger-longbow",
-  "nom": "Holy Avenger (Longbow)",
+  "nom": "Arc Long du Vengeur Sacré",
   "nom_original": "Holy Avenger (Longbow)",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. When you hit a Fiend or an Undead with it, that creature takes an extra 2d10 Radiant damage.\n\nWhile you hold the drawn weapon, it creates a 10-foot Emanation originating from you. You and all creatures Friendly to you in the Emanation have Advantage on saving throws against spells and other magical effects. If you have 17 or more levels in the Paladin class, the size of the Emanation increases to 30 feet.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arc long magique +3 infligeant 2d10 dégâts radiants supplémentaires contre les fiélons et morts-vivants. Crée une émanation conférant l'avantage aux sauvegardes magiques aux créatures alliées.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "2d10",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Émanation de 10 pieds (30 pieds avec 17+ niveaux de Paladin)",
+      "Avantage aux sauvegardes contre les sorts pour les alliés dans l'émanation",
+      "Dégâts bonus contre les fiélons et morts-vivants"
+    ]
+  }
 }

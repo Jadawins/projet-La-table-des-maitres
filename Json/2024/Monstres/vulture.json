@@ -1,6 +1,6 @@
 {
   "slug": "vulture",
-  "nom": "Vulture",
+  "nom": "Vautour",
   "nom_original": "Vulture",
   "taille": "M",
   "type": "Beast",
@@ -60,14 +60,14 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Keen Sight and Smell",
+      "nom": "Vue et odorat aiguës",
       "description": "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -76,7 +76,7 @@
   ],
   "actions": [
     {
-      "nom": "Beak",
+      "nom": "Bec",
       "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
       "bonus_attaque": 2,
       "degats_de": "1d4",

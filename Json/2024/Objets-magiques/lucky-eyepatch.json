@@ -1,16 +1,28 @@
 {
   "slug": "lucky-eyepatch",
-  "nom": "Lucky Eyepatch",
+  "nom": "Bandeau de Chance",
   "nom_original": "Lucky Eyepatch",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "You gain a +1 bonus to saving throws while you wear this simple, black eyepatch. In addition, if you are missing the eye that the eyepatch covers and you roll a 1 on the d20 for a saving throw, you can reroll the die and must use the new roll. The eyepatch can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bandeau noir qui confère un bonus de +1 aux jets de sauvegarde et permet de relancer un jet de sauvegarde échoué (1 sur d20) une fois par jour si l'œil manquant est couvert.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets de sauvegarde",
+      "Relancer un jet échoué (1) une fois par aube si œil manquant"
+    ]
+  }
 }

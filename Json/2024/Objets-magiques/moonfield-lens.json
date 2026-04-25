@@ -1,16 +1,29 @@
 {
   "slug": "moonfield-lens",
-  "nom": "Moonfield Lens",
+  "nom": "Lentille de Champ Lunaire",
   "nom_original": "Moonfield Lens",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This lens is rainbow-hued and protected by a sturdy leather case. It has 4 charges, and it regains 1d3 + 1 expended charges daily at dawn. As an action, you can hold the lens to your eye, speak its command word, and expend 2 charges to cause one of the following effects: - *** Find Loved One.** You know the precise location of one creature you love (platonic, familial, or romantic). This knowledge extends into other planes. - *** True Path.** For 1 hour, you automatically succeed on all Wisdom (Survival) checks to navigate in the wild. If you are underground, you automatically know the most direct route to reach the surface.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lentille magique avec 4 charges (récupère 1d3+1 à l'aube) permettant de localiser un être cher ou de naviguer automatiquement en wilderness pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 4,
+    "effets": [
+      "Localiser un être cher (2 charges)",
+      "Navigation automatique 1h ou trouver la surface (2 charges)",
+      "Récupère 1d3+1 charges à l'aube"
+    ]
+  }
 }

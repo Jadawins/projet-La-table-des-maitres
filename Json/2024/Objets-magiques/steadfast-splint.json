@@ -1,16 +1,28 @@
 {
   "slug": "steadfast-splint",
-  "nom": "Steadfast Splint",
+  "nom": "Écaille inébranlable",
   "nom_original": "Steadfast Splint",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor makes you difficult to manipulate both mentally and physically. While wearing this armor, you have advantage on saving throws against being charmed or frightened, and you have advantage on ability checks and saving throws against spells and effects that would move you against your will.",
   "effets": [],
   "poids": "60.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette armure vous rend difficile à manipuler mentalement et physiquement, vous donnant l'avantage contre les sorts de charme, de peur et les effets de déplacement forcé.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage contre être charmé ou effrayé",
+      "Avantage contre les sorts et effets de déplacement forcé"
+    ]
+  }
 }

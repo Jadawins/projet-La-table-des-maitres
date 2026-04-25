@@ -7,11 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these boots, your walking speed becomes 30 feet, unless your walking speed is higher, and your speed isn't reduced if you are encumbered or wearing heavy armor. In addition, you can jump three times the normal distance, though you can't jump farther than your remaining movement would allow.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces bottes, votre vitesse de déplacement à pied devient 9 mètres, sauf si elle est déjà supérieure, et votre vitesse n'est pas réduite si vous êtes surchargé ou portez une armure lourde. De plus, vous pouvez sauter trois fois la distance normale, sans toutefois pouvoir sauter plus loin que votre mouvement restant ne vous le permet."
+  "resume": "Augmente votre vitesse de déplacement à 9 mètres minimum et ignore les pénalités de surcharge/armure lourde. Permet de sauter trois fois la distance normale.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de déplacement à pied minimum 9 mètres",
+      "Ignore les pénalités de surcharge et armure lourde",
+      "Sauts à 3x la distance normale"
+    ]
+  }
 }

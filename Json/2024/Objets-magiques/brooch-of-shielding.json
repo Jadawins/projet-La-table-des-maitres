@@ -1,17 +1,28 @@
 {
   "slug": "brooch-of-shielding",
-  "nom": "Brooch of Shielding",
+  "nom": "Broche de Bouclier",
   "nom_original": "Brooch of Shielding",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this brooch, you have resistance to force damage, and you have immunity to damage from the _magic missile_ spell.",
-  "description_fr": "Tant que vous portez cette broche, vous êtes résistant aux dégâts de force et vous êtes immunisé aux dégâts infligés par le sort _projectile magique_.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous êtes résistant aux dégâts de force et immunisé aux dégâts du sort projectile magique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de force",
+      "Immunité aux dégâts de projectile magique"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "wand-of-the-war-mage-1",
-  "nom": "Baguette de the War Mage (+1)",
+  "nom": "Baguette du Mage de Guerre +1",
   "nom_original": "Wand of the War Mage (+1)",
   "categorie": "baguette",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baguette",
-  "description": "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity. In addition, you ignore half cover when making a spell attack.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Baguette conférant un bonus de +1 aux jets d'attaque de sort et ignorant les demi-couvertures lors de ces attaques.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+1 aux jets d'attaque de sort",
+      "Ignore la demi-couverture pour les attaques de sort"
+    ]
+  }
 }

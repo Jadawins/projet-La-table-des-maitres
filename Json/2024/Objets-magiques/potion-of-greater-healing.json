@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "You regain hit points when you drink this potion. The number of hit points depends on the potion's rarity, as shown in the Potions of Healing table. Whatever its potency, the potion's red liquid glimmers when agitated.\\n\\n**Potions of Healing (table)**\\n\\n| Potion of ...    | Rarity    | HP Regained |\\n|------------------|-----------|-------------|\\n| Healing          | Common    | 2d4 + 2     |\\n| Greater healing  | Uncommon  | 4d4 + 4     |\\n| Superior healing | Rare      | 8d4 + 8     |\\n| Supreme healing  | Very rare | 10d4 + 20   |",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous récupérez 4d4+4 points de vie en buvant cette potion.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "4d4+4",
+    "charges": null,
+    "effets": [
+      "Récupère 4d4+4 points de vie",
+      "Rareté : peu commune",
+      "Effet immédiat sans action requise"
+    ]
+  }
 }

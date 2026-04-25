@@ -1,17 +1,27 @@
 {
   "slug": "bracelet-of-the-fire-tender",
-  "nom": "Bracelet of the Fire Tender",
+  "nom": "Bracelet du Gardien du Feu",
   "nom_original": "Bracelet of the Fire Tender",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This bracelet is made of thirteen small, roasted pinecones lashed together with lengths of dried sinew. It smells of pine and woodsmoke. It is uncomfortable to wear over bare skin. While wearing this bracelet, you don't have disadvantage on Wisdom (Perception) checks that rely on sight when looking in areas lightly obscured by nonmagical smoke or fog.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce bracelet est composé de treize petites pommes de pin grillées liées ensemble par des lanières de nerfs séchés. Il sent le pin et la fumée de bois, et est inconfortable à porter à même la peau. Tant que vous portez ce bracelet, vous n'avez pas le désavantage aux tests de Sagesse (Perception) reposant sur la vue lorsque vous regardez dans des zones légèrement obscurcies par de la fumée ou du brouillard non magique."
+  "resume": "Ce bracelet composé de pommes de pin grillées améliore la perception visuelle en environnement enfumé ou brumeux non magique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Pas de désavantage en Sagesse (Perception) vision en fumée/brouillard"
+    ]
+  }
 }

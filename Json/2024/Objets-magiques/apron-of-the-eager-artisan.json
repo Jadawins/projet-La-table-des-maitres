@@ -1,17 +1,29 @@
 {
   "slug": "apron-of-the-eager-artisan",
-  "nom": "Apron of the Eager Artisan",
+  "nom": "Tablier de l'artisan empressé",
   "nom_original": "Apron of the Eager Artisan",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Created by dwarven artisans, this leather apron has narrow pockets, which hold one type of artisan's tools. If you are wearing the apron and you spend 10 minutes contemplating your next crafting project, the tools in the apron magically change to match those best suited to the task. Once you have changed the tools available, you can't change them again until the next dawn.",
-  "description_fr": "Conçu par des artisans nains, ce tablier de cuir est pourvu de poches étroites pouvant contenir un type d'outils d'artisan. Si vous portez le tablier et que vous consacrez 10 minutes à méditer sur votre prochain projet de fabrication, les outils contenus dans le tablier se transforment magiquement pour correspondre à ceux les mieux adaptés à la tâche. Une fois les outils disponibles changés, vous ne pouvez plus les modifier jusqu'à l'aube suivante.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce tablier de cuir nain contient des outils d'artisan qui se transforment magiquement après 10 minutes de méditation pour s'adapter à votre prochain projet.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les outils s'adaptent au projet de fabrication choisi",
+      "Transformation après 10 minutes de méditation",
+      "Reconfigurable à l'aube suivante"
+    ]
+  }
 }

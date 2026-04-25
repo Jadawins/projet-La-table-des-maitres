@@ -1,16 +1,29 @@
 {
   "slug": "flame-tongue-sickle",
-  "nom": "Flame Tongue Sickle",
+  "nom": "Faucille Langue de Feu",
   "nom_original": "Flame Tongue Sickle",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "While holding this magic weapon, you can take a Bonus Action and use a command word to cause flames to engulf the damage-dealing part of the weapon. These flames shed Bright Light in a 40 foot radius and Dim Light for an additional 40 feet. While the weapon is ablaze, it deals an extra 2d6 Fire damage on a hit. The flames last until you take a Bonus Action to issue the command again or until you drop, stow, or sheathe the weapon.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique dont les lames enflammées infligent 2d6 dégâts de feu supplémentaires et émettent une lumière vive sur 40 pieds.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Activation par action bonus avec mot de commande",
+      "Émet lumière vive 40 pieds et lumière faible 40 pieds supplémentaires",
+      "Les dégâts bonus ne s'appliquent que lorsque les flammes sont actives"
+    ]
+  }
 }

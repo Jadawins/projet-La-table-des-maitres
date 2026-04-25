@@ -1,16 +1,29 @@
 {
   "slug": "gorgon-scale",
-  "nom": "Gorgon Scale",
+  "nom": "Écaille de gorgone",
   "nom_original": "Gorgon Scale",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "The iron scales of this armor have a green-tinged iridescence. While wearing this armor, you gain a +1 bonus to AC, and you have immunity to the petrified condition. If you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack on the same turn, you can use a bonus action to imbue the hit with some of the armor's petrifying magic. The target must make a DC 15 Constitution saving throw. On a failed save, the target begins to turn to stone and is restrained. The restrained target must repeat the saving throw at the end of its next turn. On a success, the effect ends on the target. On a failure, the target is petrified until freed by the greater restoration spell or other magic. The armor can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "45.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure magique +1 qui vous rend immunisé à l'état pétrifié. Bonus action après une charge de 6 mètres pour forcer une sauvegarde de Constitution et pétrifier la cible (1/jour).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "+1 à la CA",
+      "Immunité à l'état pétrifié",
+      "Bonus action: pétrification (charge 6m + coup réussi, sauvegarde Constitution DD 15, 1/jour)"
+    ]
+  }
 }

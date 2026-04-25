@@ -7,10 +7,22 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While you wear this ring, difficult terrain doesn't cost you extra movement. In addition, magic can neither reduce your speed nor cause you to be paralyzed or restrained.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cet anneau rend les terrains difficiles gratuits en mouvement et vous immunise contre les réductions de vitesse, la paralysie et la retenue magiques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les terrains difficiles ne coûtent pas de mouvement supplémentaire",
+      "Immunité aux effets magiques réduisant la vitesse, à la paralysie et la retenue"
+    ]
+  }
 }

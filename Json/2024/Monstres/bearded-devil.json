@@ -1,13 +1,13 @@
 {
   "slug": "bearded-devil",
-  "nom": "Bearded Devil",
+  "nom": "Diable barbu",
   "nom_original": "Bearded Devil",
   "taille": "M",
   "type": "Fiend",
   "sous_type": "devil",
   "alignement": "lawful evil",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 52,
   "pv_formule": "8d8+16",
   "vitesse": {
@@ -61,8 +61,8 @@
     "tremblements": null
   },
   "langues": [
-    "Infernal",
-    "telepathy 120 ft."
+    "infernal",
+    "télépathie 36 m"
   ],
   "fp": "3",
   "fp_numerique": 3,
@@ -70,21 +70,21 @@
   "experience": 700,
   "traits": [
     {
-      "nom": "Devil's Sight",
+      "nom": "Vision du diable",
       "description": "Magical darkness doesn't impede the devil's darkvision.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The devil has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Steadfast",
+      "nom": "Inébranlable",
       "description": "The devil can't be frightened while it can see an allied creature within 30 feet of it.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -93,14 +93,14 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The devil makes two attacks: one with its beard and one with its glaive.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Beard",
+      "nom": "Barbe",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or be poisoned for 1 minute. While poisoned in this way, the target can't regain hit points. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
       "bonus_attaque": 5,
       "degats_de": "1d8",

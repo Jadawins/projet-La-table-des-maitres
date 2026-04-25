@@ -1,16 +1,28 @@
 {
   "slug": "pestilent-spear",
-  "nom": "Pestilent Spear",
+  "nom": "Lance pestilentielle",
   "nom_original": "Pestilent Spear",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "The head of this spear is deadly sharp, despite the rust and slimy residue on it that always accumulate no matter how well it is cleaned. When you hit a creature with this magic weapon, it must succeed on a DC 13 Constitution saving throw or contract the sewer plague disease.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette lance rouillée inflige la peste des égouts à ses victimes. Lorsque vous touchez une créature avec cette arme magique, celle-ci doit réussir un jet de sauvegarde de Constitution DD 13 ou contracter la maladie.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Jet de sauvegarde de Constitution DD 13 ou maladie (peste des égouts)",
+      "Rouille et résidu visqueux permanents"
+    ]
+  }
 }

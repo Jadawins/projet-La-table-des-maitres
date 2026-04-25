@@ -1,17 +1,29 @@
 {
   "slug": "crimson-starfall-arrow",
-  "nom": "Crimson Starfall Arrow",
+  "nom": "Flèche Écarlate de la Chute d'Étoiles",
   "nom_original": "Crimson Starfall Arrow",
   "categorie": "autre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "This arrow is a magic weapon powered by the sacrifice of your own life energy and explodes upon impact. If you hit a creature with this arrow, you can spend one or more Hit Dice, up to your maximum Hit Dice. For each Hit Die spent in this way, you roll the die and add your Constitution modifier to it. You lose hit points equal to the total, and each creature within 10 feet of the target, including the target, must make a DC 15 Dexterity saving throw, taking necrotic damage equal to the hit points you lost on a failed save, or half as much damage on a successful one. You can't use this feature of the arrow if you don't have blood. Hit Dice spent on this arrow's feature can't be used to regain hit points during a short rest. You regain spent Hit Dice as normal.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette flèche magique est alimentée par le sacrifice de votre propre énergie vitale et explose à l'impact. Si vous touchez une créature avec cette flèche, vous pouvez dépenser un ou plusieurs Dés de Vie, jusqu'à votre maximum. Pour chaque Dé de Vie dépensé, lancez le dé et ajoutez votre modificateur de Constitution. Vous perdez des points de vie égaux au total obtenu, et chaque créature dans un rayon de 3 mètres autour de la cible, y compris la cible elle-même, doit réussir un jet de sauvegarde de Dextérité DD 15 ; elle subit des dégâts nécrotiques égaux aux points de vie que vous avez perdus en cas d'échec, ou la moitié en cas de réussite. Vous ne pouvez pas utiliser ce pouvoir si vous n'avez pas de sang. Les Dés de Vie dépensés pour cette flèche ne peuvent pas être utilisés pour récupérer des points de vie lors d'un repos court. Vous récupérez les Dés de Vie dépensés normalement."
+  "resume": "Une flèche qui sacrifie les points de vie du lanceur pour infliger des dégâts nécrotiques à une créature et ses alliés dans un rayon de 3 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "variable selon Dés de Vie dépensés",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Dépenser 1+ Dés de Vie : perte de PV et dégâts nécrotiques aux créatures dans un rayon de 3 m",
+      "Jet de sauvegarde de Dextérité DD 15 pour réduire les dégâts de moitié",
+      "Les Dés de Vie dépensés ne peuvent pas servir à la récupération lors d'un repos court"
+    ]
+  }
 }

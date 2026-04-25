@@ -1,17 +1,29 @@
 {
   "slug": "brass-clockwork-staff",
-  "nom": "Brass Clockwork Staff",
+  "nom": "Bâton d'automate en laiton",
   "nom_original": "Brass Clockwork Staff",
   "categorie": "baton",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This curved staff is made of coiled brass and glass wire. You can use an action to speak one of three command words and throw the staff on the ground within 10 feet of you. The staff transforms into one of three wireframe creatures, depending on the command word: a unicorn, a hound, or a swarm of tiny beetles. The wireframe creature or swarm is under your control and acts on its own initiative count. On your turn, you can mentally command the wireframe creature or swarm if it is within 60 feet of you and you aren't incapacitated. You decide what action the creature takes and where it moves during its next turn, or you can issue it a general command, such as to attack your enemies or guard a location. The wireframe unicorn lasts for up to 1 hour, uses the statistics of a warhorse, and can be used as a mount. The wireframe hound lasts for up to 5 minutes, uses the statistics of a dire wolf, and has advantage to track any creature you damaged within the past hour. The wireframe beetle swarm lasts for up to 1 minute, uses the statistics of a swarm of beetles, and can destroy nonmagical objects that aren't being worn or carried and that aren't made of stone or metal (destruction happens at a rate of 1 pound of material per round, up to a maximum of 10 pounds). At the end of the duration, the wireframe creature or swarm reverts to its staff form. It reverts to its staff form early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. If it reverts to its staff form early by being reduced to 0 hit points, the staff becomes inert and unusable until the third dawn after the creature was killed. Otherwise, the wireframe creature or swarm has all of its hit points when you transform the staff into the creature again. When a wireframe creature or swarm becomes the staff again, this property of the staff can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce bâton courbé est fait de laiton enroulé et de fil de verre. Vous pouvez utiliser une action pour prononcer l'un des trois mots de commande et lancer le bâton à terre dans un rayon de 3 mètres. Le bâton se transforme en l'une des trois créatures en fil de fer selon le mot prononcé : une licorne, un chien ou un essaim de minuscules scarabées. La créature ou l'essaim est sous votre contrôle et agit selon son propre ordre d'initiative. À votre tour, vous pouvez lui donner des ordres mentaux si elle se trouve dans un rayon de 18 mètres et que vous n'êtes pas incapacité. La licorne en fil de fer dure jusqu'à 1 heure, utilise les statistiques d'un destrier et peut servir de monture. Le chien en fil de fer dure jusqu'à 5 minutes, utilise les statistiques d'un loup sinistre et a l'avantage pour traquer toute créature que vous avez blessée dans la dernière heure. L'essaim de scarabées dure jusqu'à 1 minute, utilise les statistiques d'un essaim de scarabées et peut détruire des objets non magiques non portés ni transportés et non faits de pierre ou de métal (destruction au rythme de 500 grammes par round, jusqu'à 5 kg maximum). À la fin de la durée, la créature reprend la forme du bâton. Si elle reprend cette forme après être tombée à 0 points de vie, le bâton devient inerte et inutilisable jusqu'au troisième aube suivant. Sinon, elle retrouve tous ses points de vie lors de la transformation suivante. Une fois qu'une créature redevient le bâton, cette propriété ne peut plus être utilisée avant l'aube suivante."
+  "resume": "Bâton magique se transformant en licorne (1h), chien (5min) ou essaim de scarabées (1min) sous votre contrôle.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Se transforme en créature controllée par action",
+      "Licorne (destrier), chien (loup) ou essaim de scarabées",
+      "Réutilisable à l'aube suivante"
+    ]
+  }
 }

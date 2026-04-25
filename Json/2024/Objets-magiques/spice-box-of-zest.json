@@ -1,16 +1,29 @@
 {
   "slug": "spice-box-of-zest",
-  "nom": "Spice Box of Zest",
+  "nom": "Boîte d'Épices de Saveur",
   "nom_original": "Spice Box of Zest",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small, square wooden box is carved with scenes of life in a busy city. Inside, the box is divided into six compartments, each holding a different magical spice. A small wooden spoon is also stored inside the box for measuring. A spice box of zest contains six spoonfuls of each spice when full. You can add one spoonful of a single spice per person to a meal that you or someone else is cooking. The magic of the spices is nullified if you add two or more spices together. If a creature consumes a meal cooked with a spice, it gains a benefit based on the spice used in the meal. The effects last for 1 hour unless otherwise noted.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Boîte contenant six types d'épices magiques. Ajouter une cuillerée à un repas confère au consommateur un bonus pendant 1 heure selon l'épice utilisée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 36,
+    "effets": [
+      "Six épices magiques différentes",
+      "Une cuillerée par personne nourrie",
+      "Effet utilitaire pendant 1 heure"
+    ]
+  }
 }

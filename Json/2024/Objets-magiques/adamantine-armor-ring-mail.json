@@ -1,17 +1,27 @@
 {
   "slug": "adamantine-armor-ring-mail",
-  "nom": "Adamantine Armor (Ring-Mail)",
+  "nom": "Armure d'Adamantite (Cotte de Mailles)",
   "nom_original": "Adamantine Armor (Ring-Mail)",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you're wearing it, any critical hit against you becomes a normal hit.",
-  "description_fr": "Cette armure est renforcée d'adamantium, l'une des substances les plus dures qui soit. Tant que vous la portez, tout coup critique porté contre vous devient un coup normal.",
   "effets": [],
   "poids": "40.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure renforcée d'adamantite qui annule les coups critiques en les transformant en coups normaux.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les coups critiques contre vous deviennent des coups normaux"
+    ]
+  }
 }

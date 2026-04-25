@@ -1,16 +1,28 @@
 {
   "slug": "parasol-of-temperate-weather",
-  "nom": "Parasol of Temperate Weather",
+  "nom": "Parasol de climat tempéré",
   "nom_original": "Parasol of Temperate Weather",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This fine, cloth-wrapped 2-foot-long pole unfolds into a parasol with a diameter of 3 feet, which is large enough to cover one Medium or smaller creature. While traveling under the parasol, you ignore the drawbacks of traveling in hot weather or a hot environment. Though it protects you from the sun's heat in the desert or geothermal heat in deep caverns, the parasol doesn't protect you from damage caused by super-heated environments or creatures, such as lava or an azer's Heated Body trait, or magic that deals fire damage, such as the fire bolt spell.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Parasol magique qui se déplie pour protéger du soleil intense et des environnements chauds extrêmes, sans néanmoins protéger contre les dégâts de chaleur directe ou la magie.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Ignore les malus des voyages par temps chaud",
+      "Ne protège pas contre les dégâts magiques ou les sources de chaleur (lave, créatures, sorts)"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "muffled-chain-mail",
-  "nom": "Muffled Chain Mail",
+  "nom": "Cotte de mailles étouffée",
   "nom_original": "Muffled Chain Mail",
   "categorie": "armure_magique",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This magical armor is laid with enchantments to mute its noise and ease movement, even muting and dulling its colors and shine when you attempt to conceal yourself. While wearing this armor, you don't have disadvantage on Dexterity (Stealth) checks as a result of wearing the armor, but you might still have disadvantage on such checks from other effects.",
   "effets": [],
   "poids": "55.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure magique enchantée pour étouffer les bruits et faciliter les mouvements furtifs sans désavantage aux tests de Discrétion.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Pas de désavantage Discrétion (Dextérité) dû à l'armure",
+      "Couleurs et brillance étouffées lors de dissimulation"
+    ]
+  }
 }

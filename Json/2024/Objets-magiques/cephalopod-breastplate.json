@@ -1,17 +1,29 @@
 {
   "slug": "cephalopod-breastplate",
-  "nom": "Cephalopod Breastplate",
+  "nom": "Cuirasse de Céphalopode",
   "nom_original": "Cephalopod Breastplate",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This bronze breastplate depicts two krakens fighting. While wearing this armor, you gain a +1 bonus to AC. You can use an action to speak the armor's command word to release a cloud of black mist (if above water) or black ink (if underwater). It billows out from you in a 20-foot-radius cloud of mist or ink. The area is heavily obscured for 1 minute, although a wind of moderate or greater speed (at least 10 miles per hour) or a significant current disperses it. The armor can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "20.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette cuirasse en bronze représente deux krakens en train de se battre. En portant cette armure, vous obtenez un bonus de +1 à la CA. Vous pouvez utiliser une action pour prononcer le mot de commande de l'armure afin de libérer un nuage de brume noire (si vous êtes hors de l'eau) ou d'encre noire (si vous êtes sous l'eau). Il se répand en un nuage de 6 mètres de rayon autour de vous. La zone est fortement obscurcie pendant 1 minute, bien qu'un vent de vitesse modérée ou supérieure (au moins 16 km/h) ou un courant significatif le dissipe. L'armure ne peut pas être utilisée de cette façon jusqu'à l'aube suivante."
+  "resume": "Cuirasse magique offrant +1 à la CA, capable de libérer un nuage de brume/encre obscurcissant une zone de 6 m de rayon pour 1 minute (réutilisable à l'aube).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "+1 à la CA",
+      "Nuage de brume/encre (rayon 6 m, 1 min, fortement obscurci)",
+      "Réutilisable à l'aube"
+    ]
+  }
 }

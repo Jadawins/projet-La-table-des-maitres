@@ -1,13 +1,13 @@
 {
   "slug": "solar",
-  "nom": "Solar",
+  "nom": "Solaire",
   "nom_original": "Solar",
   "taille": "G",
   "type": "Celestial",
   "sous_type": null,
   "alignement": "lawful good",
   "ca": 21,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 243,
   "pv_formule": "18d10+144",
   "vitesse": {
@@ -67,7 +67,7 @@
   },
   "langues": [
     "all",
-    "telepathy 120 ft."
+    "télépathie 36 m"
   ],
   "fp": "21",
   "fp_numerique": 21,
@@ -75,28 +75,28 @@
   "experience": 33000,
   "traits": [
     {
-      "nom": "Angelic Weapons",
+      "nom": "Armes angéliques",
       "description": "The solar's weapon attacks are magical. When the solar hits with any weapon, the weapon deals an extra 6d8 radiant damage (included in the attack).",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Divine Awareness",
+      "nom": "Conscience divine",
       "description": "The solar knows if it hears a lie.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Innate Spellcasting",
+      "nom": "Incantation innée",
       "description": "The solar's spell casting ability is Charisma (spell save DC 25). It can innately cast the following spells, requiring no material components:\nAt will: detect evil and good, invisibility (self only)\n3/day each: blade barrier, dispel evil and good, resurrection\n1/day each: commune, control weather",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The solar has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -105,35 +105,35 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The solar makes two greatsword attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Greatsword",
+      "nom": "Grande épée",
       "description": "Melee Weapon Attack: +15 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) slashing damage plus 27 (6d8) radiant damage.",
       "bonus_attaque": 15,
       "degats_de": "4d6+6d8",
       "degats_bonus": 8
     },
     {
-      "nom": "Slaying Longbow",
+      "nom": "Arc Long Meurtrier",
       "description": "Ranged Weapon Attack: +13 to hit, range 150/600 ft., one target. Hit: 15 (2d8 + 6) piercing damage plus 27 (6d8) radiant damage. If the target is a creature that has 190 hit points or fewer, it must succeed on a DC 15 Constitution saving throw or die.",
       "bonus_attaque": 13,
       "degats_de": "2d8+6d8",
       "degats_bonus": 6
     },
     {
-      "nom": "Flying Sword",
+      "nom": "Épée volante",
       "description": "The solar releases its greatsword to hover magically in an unoccupied space within 5 ft. of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 ft. and either make one attack against a target or return to the solar's hands. If the hovering sword is targeted by any effect, the solar is considered to be holding it. The hovering sword falls if the solar dies.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Healing Touch (4/Day)",
+      "nom": "Toucher de guérison (4/jour)",
       "description": "The solar touches another creature. The target magically regains 40 (8d8 + 4) hit points and is freed from any curse, disease, poison, blindness, or deafness.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -144,21 +144,21 @@
   "reactions": [],
   "actions_legendaires": [
     {
-      "nom": "Teleport",
+      "nom": "Téléportation",
       "description": "The solar magically teleports, along with any equipment it is wearing or carrying, up to 120 ft. to an unoccupied space it can see.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Searing Burst (Costs 2 Actions)",
+      "nom": "Explosion Brûlante (Coûte 2 Actions)",
       "description": "The solar emits magical, divine energy. Each creature of its choice in a 10 -foot radius must make a DC 23 Dexterity saving throw, taking 14 (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Blinding Gaze (Costs 3 Actions)",
+      "nom": "Regard Aveuglant (Coûte 3 Actions)",
       "description": "The solar targets one creature it can see within 30 ft. of it. If the target can see it, the target must succeed on a DC 15 Constitution saving throw or be blinded until magic such as the lesser restoration spell removes the blindness.",
       "bonus_attaque": null,
       "degats_de": null,

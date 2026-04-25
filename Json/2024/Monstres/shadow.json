@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [
     "acid",
@@ -82,21 +82,21 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Amorphous",
+      "nom": "Amorphe",
       "description": "The shadow can move through a space as narrow as 1 inch wide without squeezing.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Shadow Stealth",
+      "nom": "Discrétion Ombrale",
       "description": "While in dim light or darkness, the shadow can take the Hide action as a bonus action.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Sunlight Weakness",
+      "nom": "Faiblesse à la Lumière du Soleil",
       "description": "While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -105,7 +105,7 @@
   ],
   "actions": [
     {
-      "nom": "Strength Drain",
+      "nom": "Drain de Force",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) necrotic damage, and the target's Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.\nIf a non-evil humanoid dies from this attack, a new shadow rises from the corpse 1d4 hours later.",
       "bonus_attaque": 4,
       "degats_de": "2d6",

@@ -1,16 +1,28 @@
 {
   "slug": "deserters-boots",
-  "nom": "Deserter's Boots",
+  "nom": "Bottes du déserteur",
   "nom_original": "Deserter's Boots",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these boots, your walking speed increases by 10 feet, and you gain a +1 bonus to Dexterity saving throws.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces bottes augmentent votre vitesse de déplacement de 10 pieds et vous accordent +1 aux jets de sauvegarde de Dextérité.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de marche augmentée de 10 pieds",
+      "+1 aux jets de sauvegarde de Dextérité"
+    ]
+  }
 }

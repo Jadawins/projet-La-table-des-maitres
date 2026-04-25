@@ -1,16 +1,29 @@
 {
   "slug": "greatsword-of-life-stealing",
-  "nom": "Greatsword of Life Stealing",
+  "nom": "Grande épée de Vol de Vie",
   "nom_original": "Greatsword of Life Stealing",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
   "effets": [],
   "poids": "6.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une épée qui inflige des dégâts de nécromance supplémentaires au coup critique et transfère une partie des dégâts infligés en points de vie temporaires au porteur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "15",
+    "type_degats_bonus": "nécromantique",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Coup critique (20) : 15 dégâts de nécromantique supplémentaires",
+      "Gain de PV temporaires égal aux dégâts de nécromantique infligés",
+      "Pas d'effet sur Constructions ou Créatures mortes-vivantes"
+    ]
+  }
 }

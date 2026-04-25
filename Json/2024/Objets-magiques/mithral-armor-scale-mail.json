@@ -1,16 +1,29 @@
 {
   "slug": "mithral-armor-scale-mail",
-  "nom": "Mithral Armor (Scale-Mail)",
+  "nom": "Armure d'Écailles en Mithral",
   "nom_original": "Mithral Armor (Scale-Mail)",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "Mithral is a light, flexible metal. A mithral chain shirt or breastplate can be worn under normal clothes. If the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, the mithral version of the armor doesn't.",
   "effets": [],
   "poids": "45.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure d'écailles légère et flexible en mithral qui peut être portée sous des vêtements normaux et n'impose pas de désavantage aux tests de Discrétion ni ne requiert de Force.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Peut être portée sous des vêtements normaux",
+      "Pas de désavantage aux tests de Discrétion (Dextérité)",
+      "Pas de condition de Force requise"
+    ]
+  }
 }

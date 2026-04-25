@@ -1,16 +1,29 @@
 {
   "slug": "deadfall-arrow",
-  "nom": "Deadfall Arrow",
+  "nom": "Flèche de Débâcle",
   "nom_original": "Deadfall Arrow",
   "categorie": "autre",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "You gain a +1 bonus to attack and damage rolls made with this magic arrow. On a hit, the arrow transforms into a 10-foot-long wooden log centered on the target, destroying the arrow. The target and each creature in the log's area must make a DC 15 Dexterity saving throw. On a failure, a creature takes 3d6 bludgeoning damage and is knocked prone and restrained under the log. On a success, a creature takes half the damage and isn't knocked prone or restrained. A restrained creature can take its action to free itself by succeeding on a DC 15 Strength check. The log lasts for 1 minute then crumbles to dust, freeing those restrained by it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une flèche magique qui se transforme en tronc de 10 pieds à l'impact, infligeant 3d6 dégâts de contondant et renversant/entravant les créatures (sauvegarde Dextérité DC 15).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "3d6",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Se transforme en tronc de 10 pieds centré sur la cible et la détruit",
+      "Sauvegarde Dextérité DC 15 : échec = renversement et entrave sous le tronc, succès = demi-dégâts",
+      "Le tronc dure 1 minute avant de se désagréger"
+    ]
+  }
 }

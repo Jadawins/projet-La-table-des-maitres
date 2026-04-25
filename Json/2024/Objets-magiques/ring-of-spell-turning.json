@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-spell-turning",
-  "nom": "Anneau de renvoi des sorts",
+  "nom": "Anneau de Renvoi des Sorts",
   "nom_original": "Ring of Spell Turning",
   "categorie": "anneau",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this ring, you have advantage on saving throws against any spell that targets only you (not in an area of effect). In addition, if you roll a 20 for the save and the spell is 7th level or lower, the spell has no effect on you and instead targets the caster, using the slot level, spell save DC, attack bonus, and spellcasting ability of the caster.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau octroyant l'avantage aux jets de sauvegarde contre les sorts vous ciblant et renvoyant les sorts de niveau 7 ou inférieur vers le lanceur en cas de résultat naturel de 20.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux jets de sauvegarde contre les sorts vous ciblant",
+      "Renvoi au lanceur sur un 20 naturel (sorts de niveau 7 ou inférieur)"
+    ]
+  }
 }

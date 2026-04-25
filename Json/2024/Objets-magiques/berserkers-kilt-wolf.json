@@ -1,17 +1,27 @@
 {
   "slug": "berserkers-kilt-wolf",
-  "nom": "Berserker's Kilt (Wolf)",
+  "nom": "Kilt du Berserker (Loup)",
   "nom_original": "Berserker's Kilt (Wolf)",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This kilt is made from bear, elk, or wolf fur. While wearing this kilt, your Unarmored Defense increases by 1, and you gain additional benefits while raging, depending on the type of kilt you are wearing. Bear Fur (Very Rare). This kilt empowers your rage with the vigor of a bear. When you enter a rage, you gain 20 temporary hit points. These temporary hit points last until your rage ends. Elk Fur (Rare). This kilt empowers your rage with the nimble ferocity of an elk. While raging, if you move at least 30 feet straight toward a target and then hit it with a melee weapon attack on the same turn, the target takes an extra 1d6 damage of the weapon’s type. Wolf Fur (Uncommon). This kilt empowers your rage with the speed of a wolf. While raging, your walking speed increases by 10 feet.",
-  "description_fr": "Ce kilt est confectionné en fourrure d’ours, d’élan ou de loup. Tant que vous portez ce kilt, votre Défense sans armure augmente de 1, et vous gagnez des avantages supplémentaires lorsque vous êtes en rage, selon le type de kilt que vous portez. Fourrure d’ours (Très rare). Ce kilt renforce votre rage de la vigueur d’un ours. Lorsque vous entrez en rage, vous gagnez 20 points de vie temporaires. Ces points de vie temporaires durent jusqu’à la fin de votre rage. Fourrure d’élan (Rare). Ce kilt renforce votre rage de la férocité agile d’un élan. En état de rage, si vous vous déplacez d’au moins 9 mètres en ligne droite vers une cible puis la touchez avec une attaque d’arme de corps à corps lors du même tour, la cible subit 1d6 dégâts supplémentaires du type de l’arme. Fourrure de loup (Peu commun). Ce kilt renforce votre rage de la rapidité d’un loup. En état de rage, votre vitesse de déplacement augmente de 3 mètres.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Kilt en fourrure de loup augmentant la CA sans armure de 1. En rage, votre vitesse de déplacement augmente de 3 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 1,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "En rage : vitesse augmentée de 3 mètres"
+    ]
+  }
 }

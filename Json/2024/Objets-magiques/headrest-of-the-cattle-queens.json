@@ -1,16 +1,28 @@
 {
   "slug": "headrest-of-the-cattle-queens",
-  "nom": "Headrest of the Cattle Queens",
+  "nom": "Appui-tête des reines du bétail",
   "nom_original": "Headrest of the Cattle Queens",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This polished and curved wooden headrest is designed to keep the user's head comfortably elevated while sleeping. If you sleep at least 6 hours as part of a long rest while using the headrest, you regain 1 additional spent Hit Die, and your exhaustion level is reduced by 2 (rather than 1) when you finish the long rest.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Appui-tête en bois qui améliore le repos : regain d'1 dé de vie supplémentaire et réduction de 2 niveaux d'épuisement lors d'un repos long.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Regain d'1 dé de vie supplémentaire",
+      "Épuisement réduit de 2 niveaux au lieu de 1"
+    ]
+  }
 }

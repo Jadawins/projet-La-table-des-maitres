@@ -1,16 +1,28 @@
 {
   "slug": "mask-of-the-leaping-gazelle",
-  "nom": "Mask of the Leaping Gazelle",
+  "nom": "Masque de la Gazelle Bondissante",
   "nom_original": "Mask of the Leaping Gazelle",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This painted wooden animal mask is adorned with a pair of gazelle horns. While wearing this mask, your walking speed increases by 10 feet, and your long jump is up to 25 feet with a 10-foot running start.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ce masque en bois peint augmente votre vitesse de déplacement de 10 pieds et permet des sauts en longueur jusqu'à 25 pieds avec un élan de 10 pieds.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de marche +10 pieds",
+      "Saut en longueur jusqu'à 25 pieds (élan 10 pieds)"
+    ]
+  }
 }

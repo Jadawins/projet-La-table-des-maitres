@@ -1,16 +1,29 @@
 {
   "slug": "holy-avenger-battleaxe",
-  "nom": "Holy Avenger (Battleaxe)",
+  "nom": "Vengeur Sacré (Hache de Bataille)",
   "nom_original": "Holy Avenger (Battleaxe)",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. When you hit a Fiend or an Undead with it, that creature takes an extra 2d10 Radiant damage.\n\nWhile you hold the drawn weapon, it creates a 10-foot Emanation originating from you. You and all creatures Friendly to you in the Emanation have Advantage on saving throws against spells and other magical effects. If you have 17 or more levels in the Paladin class, the size of the Emanation increases to 30 feet.",
   "effets": [],
   "poids": "4.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique +3 qui inflige 2d10 dégâts radiants supplémentaires contre les fiélons et morts-vivants, avec une émanation protégeant les alliés contre la magie.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "2d10",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "2d10 dégâts radiants supplémentaires contre les fiélons et morts-vivants",
+      "Émanation 10 pieds : avantage aux jets de sauvegarde contre la magie (30 pieds avec 17 niveaux de Paladin)",
+      "Les créatures amies dans l'émanation ont avantage aux jets de sauvegarde contre les sorts et effets magiques"
+    ]
+  }
 }

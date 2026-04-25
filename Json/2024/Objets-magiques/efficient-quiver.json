@@ -1,16 +1,29 @@
 {
   "slug": "efficient-quiver",
-  "nom": "Efficient Quiver",
+  "nom": "Carquois efficace",
   "nom_original": "Efficient Quiver",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Each of the quiver's three compartments connects to an extradimensional space that allows the quiver to hold numerous items while never weighing more than 2 pounds. The shortest compartment can hold up to sixty arrows, bolts, or similar objects. The midsize compartment holds up to eighteen javelins or similar objects. The longest compartment holds up to six long objects, such as bows, quarterstaffs, or spears.\r\n\r\nYou can draw any item the quiver contains as if doing so from a regular quiver or scabbard.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un carquois extradimensionnel ne pesant que 2 livres qui peut contenir 60 flèches, 18 javelots ou 6 longs objets sans ajouter de poids.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Contient 60 flèches, 18 javelots ou 6 longs objets",
+      "Pèse toujours 2 livres",
+      "Accès instantané aux objets stockés"
+    ]
+  }
 }

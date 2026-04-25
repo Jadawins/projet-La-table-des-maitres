@@ -1,16 +1,27 @@
 {
   "slug": "maidens-tears",
-  "nom": "Maiden's Tears",
+  "nom": "Larmes de Demoiselle",
   "nom_original": "Maiden's Tears",
   "categorie": "potion",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This fruity mead is the color of liquid gold and is rumored to be brewed with a tear from the goddess of bearfolk herself. When you drink this mead, you regenerate lost hit points for 1 minute. At the start of your turn, you regain 10 hit points if you have at least 1 hit point.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un hydromel doré qui régénère vos points de vie pendant 1 minute, en récupérant 10 PV au début de chaque tour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "10",
+    "charges": null,
+    "effets": [
+      "Régénération : 10 PV/tour pendant 1 minute"
+    ]
+  }
 }

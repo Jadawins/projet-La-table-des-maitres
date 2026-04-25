@@ -7,10 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This fine black cloth, soft as silk, is folded up to the dimensions of a handkerchief. It unfolds into a circular sheet 6 feet in diameter.\r\n\r\nYou can use an action to unfold and place the _well of many worlds_ on a solid surface, whereupon it creates a two-way portal to another world or plane of existence. Each time the item opens a portal, the GM decides where it leads. You can use an action to close an open portal by taking hold of the edges of the cloth and folding it up. Once _well of many worlds_ has opened a portal, it can't do so again for 1d8 hours.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Tissu magique noir qui se déplie en un portail circulaire de 6 pieds de diamètre créant un passage vers un autre monde ou plan d'existence.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crée un portail bidirectionnel (action pour déplier/replier)",
+      "Délai de réutilisation de 1d8 heures après chaque ouverture",
+      "Destination déterminée par le MJ"
+    ]
+  }
 }

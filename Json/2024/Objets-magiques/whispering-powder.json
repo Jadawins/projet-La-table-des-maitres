@@ -1,16 +1,29 @@
 {
   "slug": "whispering-powder",
-  "nom": "Whispering Powder",
+  "nom": "Poudre Chuchotante",
   "nom_original": "Whispering Powder",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "A paper envelope contains enough of this fine dust for one use. You can use an action to sprinkle the dust on the ground in up to four contiguous spaces. When a Small or larger creature steps into one of these spaces, it must make a DC 13 Dexterity saving throw. On a failure, loud squeals, squeaks, and pops erupt with each footfall, audible out to 150 feet. The powder's creator dictates the manner of sounds produced. The first creature to enter the affected spaces sets off the alarm, consuming the powder's magic. Otherwise, the effect lasts as long as the powder coats the area.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Poudre magique à usage unique créant un piège sonore audible à 45 m quand une créature passe dessus (jet de sauvegarde DD 13 en Dextérité).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Piège sonore (bruits forts)",
+      "Rayon d'effet jusqu'à 4 espaces contigus",
+      "Sauvegarde DD 13 Dextérité, consommée au premier déclenchement"
+    ]
+  }
 }

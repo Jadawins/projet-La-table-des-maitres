@@ -1,16 +1,29 @@
 {
   "slug": "slippers-of-the-cat",
-  "nom": "Slippers of the Cat",
+  "nom": "Pantoufles du Chat",
   "nom_original": "Slippers of the Cat",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these fine, black cloth slippers, you have advantage on Dexterity (Acrobatics) checks to keep your balance. When you fall while wearing these slippers, you land on your feet, and if you succeed on a DC 13 Dexterity saving throw, you take only half the falling damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Des pantoufles noires qui vous donnent l'avantage aux tests d'acrobatie pour garder l'équilibre et vous permettent de retomber sur vos pieds en cas de chute.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Dextérité (Acrobaties) pour garder l'équilibre",
+      "Retomber sur ses pieds en cas de chute",
+      "Réduit les dégâts de chute de moitié (jet de sauvegarde DD 13)"
+    ]
+  }
 }

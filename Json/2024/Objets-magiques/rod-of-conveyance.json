@@ -1,16 +1,28 @@
 {
   "slug": "rod-of-conveyance",
-  "nom": "Sceptre de Conveyance",
+  "nom": "Sceptre de convoyance",
   "nom_original": "Rod of Conveyance",
   "categorie": "sceptre",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "The top of this rod is capped with a bronze horse head, and its foot is decorated with a horsehair plume. By placing the rod between your legs, you can use an action to temporarily transform the rod into a horse-like construct. This works like the phantom steed spell, except you can use a bonus action to end the effect early to use the rod again at a later time. Deduct the time the horse was active in increments of 1 minute from the spell's 1-hour duration. When the rod has been a horse for a total of 1 hour, the magic ceases to function until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Se transforme en cheval spectral pour 1 heure cumulative, fonctionnant comme _monture spectrale_.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Transforme le sceptre en monture spectrale (1 heure cumulative)",
+      "Utilisable à partir du prochain aube après épuisement"
+    ]
+  }
 }

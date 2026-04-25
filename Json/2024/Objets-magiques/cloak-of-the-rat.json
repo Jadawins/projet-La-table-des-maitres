@@ -1,17 +1,27 @@
 {
   "slug": "cloak-of-the-rat",
-  "nom": "Cape de the Rat",
+  "nom": "Cape du Rat",
   "nom_original": "Cloak of the Rat",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this gray garment, you have a +5 bonus to your passive Wisdom (Perception) score.",
-  "description_fr": "Lorsque vous portez ce vêtement gris, vous bénéficiez d'un bonus de +5 à votre score passif de Sagesse (Perception).",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cape grise octroyant une amélioration considérable à la perception passive. Bonus de +5 au score passif de Sagesse (Perception).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus de +5 au score passif de Sagesse (Perception)"
+    ]
+  }
 }

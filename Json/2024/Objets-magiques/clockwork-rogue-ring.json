@@ -1,17 +1,29 @@
 {
   "slug": "clockwork-rogue-ring",
-  "nom": "Clockwork Rogue Ring",
+  "nom": "Bague du Voleur d'Horlogerie",
   "nom_original": "Clockwork Rogue Ring",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "Made by kobold clockwork mages, this brass clockwork ring is formed to look like a coiled dragon. When you speak or whisper the Draconic command word etched on the inside of the ring, the brass dragon uncoils and attempts to pick any lock within 10 feet of you. The dragon picks the lock using your proficiency bonus but with advantage. It is treated as having thieves' tools when attempting to pick locks. It uses your Dexterity (Stealth) bonus for purposes of not being spotted but with advantage due to its extremely small size. Whether successful or not, once you have used the ring to attempt to pick a lock, it can't be used again until the next sunset.",
-  "description_fr": "Fabriquée par des mages mécanistes kobolds, cette bague mécanique en laiton est façonnée pour ressembler à un dragon enroulé sur lui-même. Lorsque vous prononcez ou chuchotez le mot de commande draconique gravé à l'intérieur de la bague, le dragon de laiton se déroule et tente de crocheter n'importe quelle serrure dans un rayon de 3 mètres (10 pieds) de vous. Le dragon crochète la serrure en utilisant votre bonus de maîtrise, mais avec l'avantage. Il est considéré comme possédant des outils de voleur lorsqu'il tente de crocheter des serrures. Il utilise votre bonus de Dextérité (Discrétion) pour passer inaperçu, avec l'avantage en raison de sa taille extrêmement réduite. Qu'il réussisse ou non, une fois que vous avez utilisé la bague pour tenter de crocheter une serrure, elle ne peut être utilisée à nouveau qu'au coucher du soleil suivant.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bague mécanique qui déplie un petit dragon de laiton capable de crocheter les serrures avec avantage et bonus de maîtrise, réutilisable au coucher du soleil suivant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dragon crochète les serrures dans 3m avec avantage et bonus de maîtrise",
+      "Utilise votre bonus de Dextérité (Discrétion) avec avantage",
+      "Réutilisable une fois par jour au coucher du soleil"
+    ]
+  }
 }

@@ -1,17 +1,29 @@
 {
   "slug": "clockwork-spider-cloak",
-  "nom": "Clockwork Spider Cloak",
+  "nom": "Cape d'Araignée d'Horlogerie",
   "nom_original": "Clockwork Spider Cloak",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This hooded cloak is made from black spider silk and has thin brass ribbing stitched on the inside. It has 3 charges. While wearing the cloak, you gain a +2 bonus on Dexterity (Stealth) checks. As an action, you can expend 1 charge to animate the brass ribs into articulated spider legs 1 inch thick and 6 feet long for 1 minute. You can use the charges in succession. The spider legs allow you to climb at your normal walking speed, and you double your proficiency bonus and gain advantage on any Strength (Athletics) checks made for slippery or difficult surfaces. The cloak regains 1d3 charges each day at sunset.",
-  "description_fr": "Cette cape à capuche est confectionnée en soie d'araignée noire et présente de fines nervures de laiton cousues à l'intérieur. Elle possède 3 charges. Lorsque vous portez la cape, vous gagnez un bonus de +2 aux tests de Dextérité (Discrétion). En tant qu'action, vous pouvez dépenser 1 charge pour animer les nervures de laiton en pattes d'araignée articulées de 2,5 cm d'épaisseur et 1,8 mètre de long pendant 1 minute. Vous pouvez utiliser les charges successivement. Les pattes d'araignée vous permettent de grimper à votre vitesse de marche normale, et vous doublez votre bonus de maîtrise tout en obtenant l'avantage à tous les tests de Force (Athlétisme) effectués sur des surfaces glissantes ou difficiles. La cape récupère 1d3 charges chaque jour au coucher du soleil.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cape en soie d'araignée dotée de pattes articulées de laiton permettant de grimper et augmentant la discrétion. Récupère 1d3 charges au coucher du soleil.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "+2 aux tests de Dextérité (Discrétion)",
+      "Pattes d'araignée permettent de grimper à vitesse normale avec avantage sur terrains glissants",
+      "Doublez votre bonus de maîtrise en tests de Force (Athlétisme)"
+    ]
+  }
 }

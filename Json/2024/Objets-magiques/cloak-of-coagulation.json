@@ -7,11 +7,22 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this rust red cloak, your blood quickly clots. When you are subjected to an effect that causes additional damage on subsequent rounds due to bleeding, blood loss, or continual necrotic damage, such as a horned devil's tail attack or a sword of wounding, the effect ceases after a single round of damage. For example, if a stirge hits you with its proboscis, you take the initial damage, plus the damage from blood loss on the following round, after which the wound clots, the stirge detaches, and you take no further damage. The cloak doesn't prevent a creature from using such an attack or effect again; a horned devil or a stirge can attack you again, though the cloak will continue to stop any recurring effects after a single round.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant cette cape rouge rouille, votre sang coagule rapidement. Lorsque vous êtes soumis à un effet qui inflige des dégâts supplémentaires lors des rounds suivants en raison d'une hémorragie, d'une perte de sang ou de dégâts nécrotiques continus, comme l'attaque de queue d'un diable cornu ou une épée des blessures, l'effet cesse après un seul round de dégâts. Par exemple, si une stirge vous touche avec sa trompe, vous subissez les dégâts initiaux, puis les dégâts de perte de sang au round suivant, après quoi la blessure se coagule, la stirge se détache et vous ne subissez plus de dégâts. La cape n'empêche pas une créature d'utiliser à nouveau une telle attaque ou un tel effet ; un diable cornu ou une stirge peut vous attaquer à nouveau, bien que la cape continue d'arrêter les effets récurrents après un seul round."
+  "resume": "Cette cape arrête les effets de dégâts récurrents dus aux saignements ou dégâts nécrotiques après un seul round.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les dégâts récurrents de saignement/nécrotiques cessent après 1 round",
+      "N'empêche pas les attaques répétées"
+    ]
+  }
 }

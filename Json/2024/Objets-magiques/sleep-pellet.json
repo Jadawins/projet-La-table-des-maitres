@@ -1,16 +1,29 @@
 {
   "slug": "sleep-pellet",
-  "nom": "Sleep Pellet",
+  "nom": "Bille de Sommeil",
   "nom_original": "Sleep Pellet",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small brass pellet measures 1/2 of an inch in diameter. Typically, 1d6 + 4 sleep pellets are found together. You can use the pellet as a sling bullet and shoot it at a creature using a sling. On a hit, the pellet is destroyed, and the target must succeed on a DC 13 Constitution saving throw or fall unconscious for 1 minute. Alternatively, you can use an action to swallow the pellet harmlessly. Once before 1 minute has passed, you can use an action to exhale a cloud of sleeping gas in a 15-foot cone. Each creature in the area must succeed on a DC 13 Constitution saving throw or fall unconscious for 1 minute. An unconscious creature awakens if it takes damage or if another creature uses an action to wake it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une petite bille de laiton pouvant être tirée comme projectile ou avalée pour créer un nuage de gaz soporifique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Projectile : Jet de sauvegarde CON DC 13 ou inconscience 1 minute",
+      "Gaz : Cône de 15 pieds, Jet de sauvegarde CON DC 13 ou inconscience 1 minute",
+      "Réveil par dégâts ou action d'une autre créature"
+    ]
+  }
 }

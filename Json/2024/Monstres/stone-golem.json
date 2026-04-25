@@ -1,13 +1,13 @@
 {
   "slug": "stone-golem",
-  "nom": "Stone Golem",
+  "nom": "Golem de pierre",
   "nom_original": "Stone Golem",
   "taille": "G",
   "type": "Construct",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 178,
   "pv_formule": "17d10+85",
   "vitesse": {
@@ -72,21 +72,21 @@
   "experience": 5900,
   "traits": [
     {
-      "nom": "Immutable Form",
+      "nom": "Forme immuable",
       "description": "The golem is immune to any spell or effect that would alter its form.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Resistance",
+      "nom": "Résistance à la magie",
       "description": "The golem has advantage on saving throws against spells and other magical effects.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Magic Weapons",
+      "nom": "Armes magiques",
       "description": "The golem's weapon attacks are magical.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -95,21 +95,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The golem makes two slam attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.",
       "bonus_attaque": 10,
       "degats_de": "3d8",
       "degats_bonus": 6
     },
     {
-      "nom": "Slow (Recharge 5-6)",
+      "nom": "Lenteur (Récupération 5-6)",
       "description": "The golem targets one or more creatures it can see within 10 ft. of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
       "bonus_attaque": null,
       "degats_de": null,

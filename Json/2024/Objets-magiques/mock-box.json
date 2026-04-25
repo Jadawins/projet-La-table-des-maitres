@@ -1,16 +1,29 @@
 {
   "slug": "mock-box",
-  "nom": "Mock Box",
+  "nom": "Boîte de Simulacre",
   "nom_original": "Mock Box",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you hold this small, square contraption, you can use an action to target a creature within 60 feet of you that can hear you. The target must succeed on a DC 13 Charisma saving throw or attack rolls against it have advantage until the start of its next turn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petite contraption permettant de désavantager un adversaire entendu à 60 pieds qui échoue un jet de Charisme, donnant l'avantage aux attaques contre lui jusqu'au début de son prochain tour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Action : cible une créature à 60 pieds pouvant vous entendre",
+      "Échec à un jet de Charisme DC 13 : avantage aux attaques contre la cible",
+      "Dure jusqu'au début du tour suivant de la cible"
+    ]
+  }
 }

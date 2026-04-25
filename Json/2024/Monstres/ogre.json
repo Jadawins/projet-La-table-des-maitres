@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 11,
-  "ca_detail": "hide armor",
+  "ca_detail": "armure en peau",
   "pv": 59,
   "pv_formule": "7d10+21",
   "vitesse": {
@@ -52,8 +52,8 @@
     "tremblements": null
   },
   "langues": [
-    "Common",
-    "Giant"
+    "commun",
+    "géant"
   ],
   "fp": "2",
   "fp_numerique": 2,
@@ -62,14 +62,14 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Greatclub",
+      "nom": "Massue",
       "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.",
       "bonus_attaque": 6,
       "degats_de": "2d8",
       "degats_bonus": 4
     },
     {
-      "nom": "Javelin",
+      "nom": "Javelot",
       "description": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
       "bonus_attaque": 6,
       "degats_de": "2d6",

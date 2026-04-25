@@ -1,16 +1,29 @@
 {
   "slug": "prayer-mat",
-  "nom": "Prayer Mat",
+  "nom": "Tapis de prière",
   "nom_original": "Prayer Mat",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small rug is woven with intricate patterns that depict religious iconography. When you attune to it, the iconography and the mat's colors change to the iconography and colors most appropriate for your deity. If you spend 10 minutes praying to your deity while kneeling on this mat, you regain one expended use of Channel Divinity. The mat can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petit tapis de prière qui s'adapte à la déité de l'utilisateur. Permet de récupérer une utilisation dépensée de Canaliser l'énergie divine après 10 minutes de prière (une fois par jour).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Récupère 1 usage de Canaliser l'énergie divine",
+      "Réutilisable à l'aube",
+      "Attunement requis"
+    ]
+  }
 }

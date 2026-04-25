@@ -40,12 +40,12 @@
     "CHA": null
   },
   "competences": {
-    "deception": 5,
-    "insight": 4,
+    "tromperie": 5,
+    "perspicacité": 4,
     "investigation": 5,
     "perception": 6,
     "persuasion": 5,
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -67,14 +67,14 @@
   "experience": 200,
   "traits": [
     {
-      "nom": "Cunning Action",
+      "nom": "Action Rusée",
       "description": "On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Sneak Attack (1/Turn)",
+      "nom": "Attaque sournoise (1/tour)",
       "description": "The spy deals an extra 7 (2d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of the spy that isn't incapacitated and the spy doesn't have disadvantage on the attack roll.",
       "bonus_attaque": 0,
       "degats_de": "2d6",
@@ -83,21 +83,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The spy makes two melee attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Shortsword",
+      "nom": "Épée courte",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",
       "degats_bonus": 2
     },
     {
-      "nom": "Hand Crossbow",
+      "nom": "Arbalète de poing",
       "description": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d6",

@@ -1,17 +1,29 @@
 {
   "slug": "blade-of-the-temple-guardian",
-  "nom": "Blade of the Temple Guardian",
+  "nom": "Épée du Gardien du Temple",
   "nom_original": "Blade of the Temple Guardian",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This simple but elegant shortsword is a magic weapon. When you are wielding it and use the Flurry of Blows class feature, you can make your bonus attacks with the sword rather than unarmed strikes. If you deal damage to a creature with this weapon and reduce it to 0 hit points, you absorb some of its energy, regaining 1 expended ki point.",
-  "description_fr": "Cette épée courte simple mais élégante est une arme magique. Lorsque vous la maniez et utilisez la capacité de classe Déluge de coups, vous pouvez effectuer vos attaques bonus avec l'épée plutôt qu'avec des attaques à mains nues. Si vous infligez des dégâts à une créature avec cette arme et la réduisez à 0 point de vie, vous absorbez une partie de son énergie et récupérez 1 point de ki dépensé.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée courte magique permettant d'utiliser ses attaques bonus avec cette arme au lieu d'attaques à mains nues lors d'un Déluge de coups. Récupère 1 point de ki quand elle réduit une créature à 0 PV.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Attaques bonus avec l'épée au lieu d'à mains nues (Déluge de coups)",
+      "Récupère 1 point de ki si tue une créature",
+      "Synergise avec les moines"
+    ]
+  }
 }

@@ -1,16 +1,29 @@
 {
   "slug": "dancing-ink",
-  "nom": "Dancing Ink",
+  "nom": "Encre Dansante",
   "nom_original": "Dancing Ink",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This ink is favored by merchants for eye-catching banners and by toy makers for scrolls and books for children. Typically found in 1d4 pots, this ink allows you to draw an illustration that moves about the page where it was drawn, whether that is an illustration of waves crashing against a shore along the bottom of the page or a rabbit leaping over the page's text. The ink wears away over time due to the movement and fades from the page after 2d4 weeks. The ink moves only when exposed to light, and some long-forgotten tomes have been opened to reveal small, moving illustrations drawn by ancient scholars. One pot can be used to fill 25 pages of a book or a similar total area for larger banners.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Encre magique créant des illustrations animées sur les pages qui se déplacent à la lumière et s'estompent après 2d4 semaines.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Crée des illustrations animées sur les pages",
+      "Les illustrations se déplacent uniquement à la lumière",
+      "S'estompe après 2d4 semaines"
+    ]
+  }
 }

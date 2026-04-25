@@ -1,16 +1,27 @@
 {
   "slug": "vigilant-mug",
-  "nom": "Vigilant Mug",
+  "nom": "Chope vigilante",
   "nom_original": "Vigilant Mug",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "An impish face sits carved into the side of this bronze mug, its eyes a pair of clear, blue crystals. The imp's eyes turn red when poison or poisonous material is placed or poured inside the mug.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Cette chope bronze détecte les poisons en changeant la couleur des yeux de l'imp gravé du bleu au rouge.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Détection des poisons par changement de couleur des yeux"
+    ]
+  }
 }

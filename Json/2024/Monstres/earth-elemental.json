@@ -1,13 +1,13 @@
 {
   "slug": "earth-elemental",
-  "nom": "Earth Elemental",
+  "nom": "Élémentaire de la terre",
   "nom_original": "Earth Elemental",
   "taille": "G",
   "type": "Elemental",
   "sous_type": null,
   "alignement": "neutral",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 126,
   "pv_formule": "12d10+60",
   "vitesse": {
@@ -66,7 +66,7 @@
     "tremblements": 18
   },
   "langues": [
-    "Terran"
+    "terreux"
   ],
   "fp": "5",
   "fp_numerique": 5,
@@ -74,14 +74,14 @@
   "experience": 1800,
   "traits": [
     {
-      "nom": "Earth Glide",
+      "nom": "Glissement terrestre",
       "description": "The elemental can burrow through nonmagical, unworked earth and stone. While doing so, the elemental doesn't disturb the material it moves through.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Siege Monster",
+      "nom": "Monstre de siège",
       "description": "The elemental deals double damage to objects and structures.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -90,14 +90,14 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The elemental makes two slam attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.",
       "bonus_attaque": 8,
       "degats_de": "2d8",

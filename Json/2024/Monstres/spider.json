@@ -40,7 +40,7 @@
     "CHA": null
   },
   "competences": {
-    "stealth": 4
+    "discrétion": 4
   },
   "resistances": [],
   "immunites_degats": [],
@@ -60,21 +60,21 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Spider Climb",
+      "nom": "Escalade araignée",
       "description": "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Web Sense",
+      "nom": "Détection des toiles",
       "description": "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Web Walker",
+      "nom": "Marcheur de toile",
       "description": "The spider ignores movement restrictions caused by webbing.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -83,7 +83,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 9 Constitution saving throw or take 2 (1d4) poison damage.",
       "bonus_attaque": 4,
       "degats_de": null,

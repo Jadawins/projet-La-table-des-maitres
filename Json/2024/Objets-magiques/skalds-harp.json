@@ -1,16 +1,29 @@
 {
   "slug": "skalds-harp",
-  "nom": "Skald's Harp",
+  "nom": "Harpe du Skalde",
   "nom_original": "Skald's Harp",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This ornate harp is fashioned from maple and engraved with heroic scenes of warriors battling trolls and dragons inlaid in bone. The harp is strung with fine silver wire and produces a sharp yet sweet sound. You must be proficient with stringed instruments to use this harp. When you play the harp, its music enhances some of your bard class features. Song of Rest. When you play this harp as part of your Song of Rest performance, each creature that spends one or more Hit Dice during the short rest gains 10 temporary hit points at the end of the short rest. The temporary hit points last for 1 hour. Countercharm. When you play this harp as part of your Countercharm performance, you and any friendly creatures within 30 feet of you also have resistance to thunder damage and have advantage on saving throws against being paralyzed. When this property has been used for a total of 10 minutes, this property can’t be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Harpe ornée renforçant les capacités de barde : Song of Rest accorde 10 PV temporaires et Countercharm octroie résistance au tonnerre et avantage contre paralysie.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "1d4+10 (temporaires)",
+    "charges": null,
+    "effets": [
+      "Song of Rest : +10 PV temporaires (1 heure) pour créatures dépensant Dés de Vie",
+      "Countercharm : résistance tonnerre et avantage vs paralysie (10 min/jour)",
+      "Nécessite maîtrise des instruments à cordes"
+    ]
+  }
 }

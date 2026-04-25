@@ -1,6 +1,6 @@
 {
   "slug": "fire-giant",
-  "nom": "Fire Giant",
+  "nom": "Géant du feu",
   "nom_original": "Fire Giant",
   "taille": "TG",
   "type": "Giant",
@@ -40,7 +40,7 @@
     "CHA": 5
   },
   "competences": {
-    "athletics": 11,
+    "athlétisme": 11,
     "perception": 6
   },
   "resistances": [],
@@ -57,7 +57,7 @@
     "tremblements": null
   },
   "langues": [
-    "Giant"
+    "géant"
   ],
   "fp": "9",
   "fp_numerique": 9,
@@ -66,21 +66,21 @@
   "traits": [],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The giant makes two greatsword attacks.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Greatsword",
+      "nom": "Grande épée",
       "description": "Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 28 (6d6 + 7) slashing damage.",
       "bonus_attaque": 11,
       "degats_de": "6d6",
       "degats_bonus": 7
     },
     {
-      "nom": "Rock",
+      "nom": "Rocher",
       "description": "Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit: 29 (4d10 + 7) bludgeoning damage.",
       "bonus_attaque": 11,
       "degats_de": "4d10",

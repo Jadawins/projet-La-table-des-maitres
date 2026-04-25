@@ -1,6 +1,6 @@
 {
   "slug": "rug-of-smothering",
-  "nom": "Rug of Smothering",
+  "nom": "Tapis d'Étouffement",
   "nom_original": "Rug of Smothering",
   "taille": "G",
   "type": "Construct",
@@ -69,21 +69,21 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "Antimagic Susceptibility",
+      "nom": "Vulnérabilité à l'antimagie",
       "description": "The rug is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the rug must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Damage Transfer",
+      "nom": "Transfert de dégâts",
       "description": "While it is grappling a creature, the rug takes only half the damage dealt to it, and the creature grappled by the rug takes the other half.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the rug remains motionless, it is indistinguishable from a normal rug.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -92,7 +92,7 @@
   ],
   "actions": [
     {
-      "nom": "Smother",
+      "nom": "Étouffer",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one Medium or smaller creature. Hit: The creature is grappled (escape DC 13). Until this grapple ends, the target is restrained, blinded, and at risk of suffocating, and the rug can't smother another target. In addition, at the start of each of the target's turns, the target takes 10 (2d6 + 3) bludgeoning damage.",
       "bonus_attaque": 0,
       "degats_de": "2d6",

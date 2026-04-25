@@ -1,16 +1,28 @@
 {
   "slug": "honeypot-of-awakening",
-  "nom": "Honeypot of Awakening",
+  "nom": "Pot de Miel d'Éveil",
   "nom_original": "Honeypot of Awakening",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "If you place 1 pound of honey inside this pot, the honey transforms into an ochre jelly after 24 hours. The jelly remains in a dormant state within the pot until you dump it out. You can use an action to dump the jelly from the pot in an unoccupied space within 5 feet of you. Once dumped, the ochre jelly is hostile to all creatures, including you. Only one ochre jelly can occupy the pot at a time.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Transforme 1 livre de miel en gélatine ocre hostile après 24 heures. La gélatine peut être libérée comme créature indépendante.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Transforme le miel en gélatine ocre en 24 heures",
+      "Créature hostility autonome une fois libérée"
+    ]
+  }
 }

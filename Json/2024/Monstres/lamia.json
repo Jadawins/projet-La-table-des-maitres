@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "chaotic evil",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 97,
   "pv_formule": "13d10+26",
   "vitesse": {
@@ -40,9 +40,9 @@
     "CHA": null
   },
   "competences": {
-    "deception": 7,
-    "insight": 4,
-    "stealth": 3
+    "tromperie": 7,
+    "perspicacité": 4,
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [],
@@ -56,8 +56,8 @@
     "tremblements": null
   },
   "langues": [
-    "Abyssal",
-    "Common"
+    "abyssal",
+    "commun"
   ],
   "fp": "4",
   "fp_numerique": 4,
@@ -65,7 +65,7 @@
   "experience": 1100,
   "traits": [
     {
-      "nom": "Innate Spellcasting",
+      "nom": "Incantation innée",
       "description": "The lamia's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components.\n\nAt will: disguise self (any humanoid form), major image\n3/day each: charm person, mirror image, scrying, suggestion\n1/day: geas",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,28 +74,28 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The lamia makes two attacks: one with its claws and one with its dagger or Intoxicating Touch.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "2d10",
       "degats_bonus": 3
     },
     {
-      "nom": "Dagger",
+      "nom": "Poignard",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d4",
       "degats_bonus": 3
     },
     {
-      "nom": "Intoxicating Touch",
+      "nom": "Contact enivrante",
       "description": "Melee Spell Attack: +5 to hit, reach 5 ft., one creature. Hit: The target is magically cursed for 1 hour. Until the curse ends, the target has disadvantage on Wisdom saving throws and all ability checks.",
       "bonus_attaque": null,
       "degats_de": null,

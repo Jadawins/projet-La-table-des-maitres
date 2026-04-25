@@ -1,16 +1,29 @@
 {
   "slug": "honey-trap",
-  "nom": "Honey Trap",
+  "nom": "Piège de Miel",
   "nom_original": "Honey Trap",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This jar is made of beaten metal and engraved with honeybees. It has 7 charges, and it regains 1d6 + 1 expended charges daily at dawn. If you expend the jar's last charge, roll a d20. On a 1, the jar shatters and loses all its magical properties. While holding the jar, you can use an action to expend 1 charge to hurl a glob of honey at a target within 30 feet of you. Make a ranged attack roll with an attack bonus equal to your Dexterity modifier plus your proficiency bonus. On a hit, the glob expands, and the creature is restrained. A creature restrained by the honey can use an action to make a DC 15 Strength (Athletics) or Dexterity (Acrobatics) check (target's choice). On a success, the creature is no longer restrained by the honey.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pot de miel avec 7 charges. Dépenser 1 charge pour lancer un glob de miel qui entrave une créature (DD 15 pour se libérer).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 7,
+    "effets": [
+      "Attaque à distance entravante (DD 15 Athletic ou Acrobatie)",
+      "Regagne 1d6+1 charges à l'aube",
+      "Destruction possible au dernier usage (DD20)"
+    ]
+  }
 }

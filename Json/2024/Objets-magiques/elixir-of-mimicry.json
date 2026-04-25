@@ -1,16 +1,28 @@
 {
   "slug": "elixir-of-mimicry",
-  "nom": "Elixir of Mimicry",
+  "nom": "Élixir de Mimétisme",
   "nom_original": "Elixir of Mimicry",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "When you drink this sweet, oily, black liquid, you can imitate the voice of a single creature that you have heard speak within the past 24 hours. The effects last for 3 minutes.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Potion permettant d'imiter la voix d'une créature entendue au cours des 24 dernières heures pendant 3 minutes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Imitation de voix de créature entendue dans les 24 dernières heures",
+      "Durée : 3 minutes"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "undine-plate",
-  "nom": "Undine Plate",
+  "nom": "Armure de Plaques Ondine",
   "nom_original": "Undine Plate",
   "categorie": "armure_magique",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This bright green plate armor is embossed with images of various marine creatures, such as octopuses and rays. While wearing this armor, you have a swimming speed of 40 feet, and you don't have disadvantage on Dexterity (Stealth) checks while underwater.",
   "effets": [],
   "poids": "65.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une armure de plaques vert vif qui confère une vitesse de nage de 40 pieds et élimine le désavantage aux tests de Discrétion sous l'eau.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Vitesse de nage : 40 pieds",
+      "Pas de désavantage en Discrétion sous l'eau"
+    ]
+  }
 }

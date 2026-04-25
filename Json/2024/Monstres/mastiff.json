@@ -1,6 +1,6 @@
 {
   "slug": "mastiff",
-  "nom": "Mastiff",
+  "nom": "Mâtin",
   "nom_original": "Mastiff",
   "taille": "M",
   "type": "Beast",
@@ -60,7 +60,7 @@
   "experience": 25,
   "traits": [
     {
-      "nom": "Keen Hearing and Smell",
+      "nom": "Odorat et ouïe aiguisés",
       "description": "The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
       "bonus_attaque": 3,
       "degats_de": "1d6",

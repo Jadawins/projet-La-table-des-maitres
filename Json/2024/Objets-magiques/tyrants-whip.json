@@ -1,16 +1,29 @@
 {
   "slug": "tyrants-whip",
-  "nom": "Tyrant's Whip",
+  "nom": "Fouet du Tyran",
   "nom_original": "Tyrant's Whip",
   "categorie": "arme_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This wicked whip has 3 charges and regains all expended charges daily at dawn. When you hit with an attack using this magic whip, you can use a bonus action to expend 1 of its charges to cast the command spell (save DC 13) from it on the creature you hit. If the attack is a critical hit, the target has disadvantage on the saving throw.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Fouet magique à 3 charges : en coup critique ou avec charge, lancez un sort commande sur la cible (CD 13), avec désavantage au jet de sauvegarde si coup critique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Bonus action (1 charge) : sort commande (CD 13) après touche",
+      "Coup critique : désavantage au jet de sauvegarde",
+      "Récupère toutes les charges à l'aube"
+    ]
+  }
 }

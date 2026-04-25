@@ -1,16 +1,29 @@
 {
   "slug": "potion-of-skating",
-  "nom": "Potion de Skating",
+  "nom": "Potion de patinage",
   "nom_original": "Potion of Skating",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "For 1 hour after you drink this potion, you can move across icy surfaces without needing to make an ability check, and difficult terrain composed of ice or snow doesn't cost you extra movement. This sparkling blue liquid contains tiny snowflakes that disappear when shaken.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pendant 1 heure, vous pouvez vous déplacer sur les surfaces glacées sans test de compétence et la glace/neige ne ralentit pas votre déplacement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Pas de test pour se déplacer sur la glace",
+      "La glace et la neige ne constituent plus un terrain difficile",
+      "Durée : 1 heure"
+    ]
+  }
 }

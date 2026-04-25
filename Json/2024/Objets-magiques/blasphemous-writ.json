@@ -1,17 +1,29 @@
 {
   "slug": "blasphemous-writ",
-  "nom": "Blasphemous Writ",
+  "nom": "Écrit Blasphématoire",
   "nom_original": "Blasphemous Writ",
   "categorie": "parchemin",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "parchemin",
-  "description": "The Infernal runes inscribed upon this vellum scroll radiate a faint, crimson glow. When you use this spell scroll of command, the save DC is 15 instead of 13, and you can also affect targets that are undead or that don't understand your language.",
-  "description_fr": "Les runes infernales gravées sur ce parchemin de vélin irradient une faible lueur cramoisie. Lorsque vous utilisez ce parchemin de sort d'injonction, le DD du jet de sauvegarde est de 15 au lieu de 13, et vous pouvez également affecter des cibles qui sont des morts-vivants ou qui ne comprennent pas votre langue.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Parchemin de sort d'injonction dont le DD de sauvegarde passe à 15. Affecte aussi les morts-vivants et les créatures ne comprenant pas la langue.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "DD de sauvegarde d'injonction augmenté à 15",
+      "Affecte les morts-vivants et créatures incomprehensifs",
+      "Parchemin de sort à usage limité"
+    ]
+  }
 }

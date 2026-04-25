@@ -1,16 +1,29 @@
 {
   "slug": "green-mantle",
-  "nom": "Green Mantle",
+  "nom": "Manteau Verdoyant",
   "nom_original": "Green Mantle",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This garment is made of living plants—mosses, vines, and grasses—interwoven into a light, comfortable piece of clothing. When you attune to this mantle, it forms a symbiotic relationship with you, sinking roots beneath your skin. While wearing the mantle, your hit point maximum is reduced by 5, and you gain the following benefits: - If you aren't wearing armor, your base Armor Class is 13 + your Dexterity modifier.\n- You have resistance to radiant damage.\n- You have immunity to the poisoned condition and poison damage that originates from a plant, moss, fungus, or plant creature.\n- As an action, you cause the mantle to produce 6 berries. It can have no more than 12 berries on it at one time. The berries have the same effect as berries produced by the goodberry spell. Unlike the goodberry spell, the berries retain their potency as long as they are not picked from the mantle. Once used, this property can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vêtement vivant accordant AC 13+DEX (sans armure), résistance au rayonnant, immunité aux poisons de plante, et baies curatives quotidiennes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 13,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "6 baies (1d4+4 PV chacune/jour)",
+    "charges": null,
+    "effets": [
+      "AC 13+DEX (sans armure)",
+      "Résistance aux dégâts de rayonnant",
+      "Immunité aux poisons et condition empoisonné d'origine végétale"
+    ]
+  }
 }

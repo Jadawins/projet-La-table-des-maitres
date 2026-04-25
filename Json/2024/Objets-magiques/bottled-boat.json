@@ -1,17 +1,28 @@
 {
   "slug": "bottled-boat",
-  "nom": "Bottled Boat",
+  "nom": "Bateau en bouteille",
   "nom_original": "Bottled Boat",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This clear glass bottle contains a tiny replica of a wooden rowboat down to the smallest detail, including two stout oars, a miniature coil of hemp rope, a fishing net, and a small cask. You can use an action to break the bottle, destroying the bottle and releasing its contents. The rowboat and all of the items emerge as full-sized, normal, and permanent items of their type, which includes 50 feet of hempen rope, a cask containing 20 gallons of fresh water, two oars, and a 12-foot-long rowboat.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Cette bouteille en verre transparent contient une minuscule réplique d'une barque en bois, jusque dans les moindres détails : deux solides avirons, un minuscule rouleau de corde de chanvre, un filet de pêche et un petit tonnelet. Vous pouvez utiliser une action pour briser la bouteille, la détruisant et libérant son contenu. La barque et tous les objets apparaissent à taille réelle, normaux et permanents : 15 mètres de corde de chanvre, un tonnelet contenant 75 litres d'eau fraîche, deux avirons et une barque de 3,6 mètres de long."
+  "resume": "Bouteille contenant une réplique miniature d'une barque. Briser la bouteille libère une barque de 3,6 m, 15 m de corde, 2 avirons et un tonneau de 75 L d'eau fraîche.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Libère une barque complète à taille réelle (3,6 m)",
+      "Inclut corde, avirons, filet et réserve d'eau"
+    ]
+  }
 }

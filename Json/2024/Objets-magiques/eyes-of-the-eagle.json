@@ -1,16 +1,28 @@
 {
   "slug": "eyes-of-the-eagle",
-  "nom": "Eyes of the Eagle",
+  "nom": "Yeux de l'Aigle",
   "nom_original": "Eyes of the Eagle",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These crystal lenses fit over the eyes. While wearing them, you have advantage on Wisdom (Perception) checks that rely on sight. In conditions of clear visibility, you can make out details of even extremely distant creatures and objects as small as 2 feet across.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lentilles conférant l'avantage aux tests de Perception et vision détaillée à grande distance.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests Perception (vue)",
+      "Voir les détails à très longue distance (créatures/objets 2 pieds)"
+    ]
+  }
 }

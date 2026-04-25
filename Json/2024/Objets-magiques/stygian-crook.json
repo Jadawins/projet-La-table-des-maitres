@@ -1,16 +1,29 @@
 {
   "slug": "stygian-crook",
-  "nom": "Stygian Crook",
+  "nom": "Crosse de Styx",
   "nom_original": "Stygian Crook",
   "categorie": "baton",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This staff of gnarled, rotted wood ends in a hooked curvature like a twisted shepherd's crook. The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: bestow curse (3 charges), blight (4 charges), contagion (5 charges), false life (1 charge), or hallow (5 charges). The staff regains 1d6 + 4 expended charges daily at dusk. If you expend the last charge, roll a d20. On a 1, the staff turns to live maggots and is destroyed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton nécromantique de 10 charges permettant de lancer des sorts de malédiction et de nécromancie au prix de charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Bestow Curse (3 charges), Blight (4 charges), Contagion (5 charges)",
+      "False Life (1 charge), Hallow (5 charges)",
+      "Récupère 1d6+4 charges quotidiennement"
+    ]
+  }
 }

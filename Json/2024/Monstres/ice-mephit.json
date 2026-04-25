@@ -1,6 +1,6 @@
 {
   "slug": "ice-mephit",
-  "nom": "Ice Mephit",
+  "nom": "Méphite de glace",
   "nom_original": "Ice Mephit",
   "taille": "P",
   "type": "Elemental",
@@ -41,7 +41,7 @@
   },
   "competences": {
     "perception": 2,
-    "stealth": 3
+    "discrétion": 3
   },
   "resistances": [],
   "immunites_degats": [
@@ -63,8 +63,8 @@
     "tremblements": null
   },
   "langues": [
-    "Aquan",
-    "Auran"
+    "aquatique",
+    "aérien"
   ],
   "fp": "1/2",
   "fp_numerique": 0.5,
@@ -72,21 +72,21 @@
   "experience": 100,
   "traits": [
     {
-      "nom": "Death Burst",
+      "nom": "Explosion mortelle",
       "description": "When the mephit dies, it explodes in a burst of jagged ice. Each creature within 5 ft. of it must make a DC 10 Dexterity saving throw, taking 4 (1d8) slashing damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": 0,
       "degats_de": "1d8",
       "degats_bonus": null
     },
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the mephit remains motionless, it is indistinguishable from an ordinary shard of ice.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Innate Spellcasting (1/Day)",
+      "nom": "Incantation innée (1/jour)",
       "description": "The mephit can innately cast _fog cloud_, requiring no material components. Its innate spellcasting ability is Charisma.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -95,21 +95,21 @@
   ],
   "actions": [
     {
-      "nom": "Claws",
+      "nom": "Griffes",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) cold damage.",
       "bonus_attaque": 3,
       "degats_de": "1d4",
       "degats_bonus": 1
     },
     {
-      "nom": "Frost Breath (Recharge 6)",
+      "nom": "Souffle de givre (Recharge 6)",
       "description": "The mephit exhales a 15-foot cone of cold air. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 5 (2d4) cold damage on a failed save, or half as much damage on a successful one.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Variant: Summon Mephits (1/Day)",
+      "nom": "Variante : Invoquer des méphistophélès (1/jour)",
       "description": "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
       "bonus_attaque": null,
       "degats_de": null,

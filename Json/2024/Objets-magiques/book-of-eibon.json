@@ -1,17 +1,29 @@
 {
   "slug": "book-of-eibon",
-  "nom": "Book of Eibon",
+  "nom": "Livre d'Eibon",
   "nom_original": "Book of Eibon",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This fragmentary black book is reputed to descend from the realms of Hyperborea. It contains puzzling guidelines for frightful necromantic rituals and maddening interdimensional travel. The book holds the following spells: semblance of dread*, ectoplasm*, animate dead, speak with dead, emanation of Yoth*, green decay*, yellow sign*, eldritch communion*, create undead, gate, harm, astral projection, and Void rift*. Spells marked with an asterisk (*) can be found in Deep Magic for 5th Edition. At the GM's discretion, the book can contain other spells similarly related to necromancy, madness, or interdimensional travel. If you are attuned to this book, you can use it as a spellbook and as an arcane focus. In addition, while holding the book, you can use a bonus action to cast a necromancy spell that is written in this tome without expending a spell slot or using any verbal or somatic components. Once used, this property of the book can't be used again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce livre noir fragmentaire serait originaire des royaumes d'Hyperborée. Il contient des instructions déconcertantes pour d'effroyables rituels nécromantiques et des voyages interdimensionnels qui font perdre la raison. Le livre renferme les sorts suivants : semblance de terreur, ectoplasme, animation des morts, dialogue avec les morts, émanation de Yoth, pourriture verte, signe jaune, communion eldritch, création de mort-vivant, porte, nuisance, projection astrale et déchirure du Vide. Si vous êtes harmonisé à ce livre, vous pouvez l'utiliser comme grimoire et comme focaliseur arcanique. De plus, en tenant le livre, vous pouvez utiliser une action bonus pour lancer un sort de nécromancie inscrit dans ce tome sans dépenser d'emplacement de sort ni utiliser de composantes verbales ou somatiques. Cette propriété ne peut plus être utilisée avant l'aube suivante."
+  "resume": "Un grimoire de nécromancie et de magie interdimensionnelle contenant 13 sorts puissants. Une fois par jour, vous pouvez lancer un sort de nécromancie inscrit sans dépenser d'emplacement ni composantes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Focaliseur arcanique pour les sorts de nécromancie",
+      "Lancer un sort de nécromancie sans emplacement (1/jour)",
+      "Contient 13 sorts puissants"
+    ]
+  }
 }

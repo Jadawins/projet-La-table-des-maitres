@@ -1,16 +1,29 @@
 {
   "slug": "stone-staff",
-  "nom": "Stone Staff",
+  "nom": "Bâton de pierre",
   "nom_original": "Stone Staff",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "Sturdy and smooth, this impressive staff is crafted from solid stone. Most stone staves are crafted by dwarf mages and few ever find their way into non-dwarven hands. The staff can be wielded as a magic quarterstaff that grants a +1 bonus to attack and damage rolls made with it. The staff has 10 charges. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spellcasting ability: earthskimmer* (4 charges), entomb* (6 charges), flesh to stone (6 charges), meld into stone (3 charges), stone shape (4 charges), stoneskin (4 charges), or wall of stone (5 charges). You can also use an action to cast the pummelstone* or true strike spell from the staff without using any charges. Spells marked with an asterisk (*) can be found in Deep Magic for 5th Edition. The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, hundreds of cracks appear across the staff 's surface and it crumbles into tiny bits of stone.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un bâton magique en pierre solide accordant un bonus de +1 aux attaques et dégâts. Il permet de lancer plusieurs sorts liés à la pierre en dépensant des charges.",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Accorde un bonus de +1 aux jets d'attaque et de dégâts",
+      "Permet de lancer des sorts liés à la terre en dépensant des charges (earthskimmer, entomb, flesh to stone, meld into stone, stone shape, stoneskin, wall of stone)",
+      "Peut lancer pummelstone et true strike sans dépenser de charges"
+    ]
+  }
 }

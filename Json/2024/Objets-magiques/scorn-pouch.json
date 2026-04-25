@@ -1,16 +1,27 @@
 {
   "slug": "scorn-pouch",
-  "nom": "Scorn Pouch",
+  "nom": "Sacoche du Dédain",
   "nom_original": "Scorn Pouch",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The heart of a lover scorned turns black and potent. Similarly, this small leather pouch darkens from brown to black when a creature hostile to you moves within 10 feet of you.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petite bourse en cuir qui noircit quand une créature hostile se rapproche à moins de 3 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Change de couleur à proximité d'ennemis"
+    ]
+  }
 }

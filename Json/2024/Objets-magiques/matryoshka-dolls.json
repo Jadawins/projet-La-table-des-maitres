@@ -1,16 +1,28 @@
 {
   "slug": "matryoshka-dolls",
-  "nom": "Matryoshka Dolls",
+  "nom": "Poupées Russes",
   "nom_original": "Matryoshka Dolls",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This antique set of four nesting dolls is colorfully painted though a bit worn from the years. When attuning to this item, you must give each doll a name, which acts as a command word to activate its properties. You must be within 30 feet of a doll to activate it. The dolls have a combined total of 5 charges, and the dolls regain all expended charges daily at dawn. The largest doll is lined with a thin sheet of lead. A spell or other effect that can sense the presence of magic, such as detect magic, reveals only the transmutation magic of the largest doll, and not any of the dolls or other small items that may be contained within it.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ensemble de quatre poupées emboîtées avec 5 charges au total régénérées à l'aube. La plus grande contient du plomb et masque la magie des autres dolls.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "4 poupées activables par mot de commande (30 pieds)",
+      "Masquage de magie : detect magic révèle uniquement la plus grande"
+    ]
+  }
 }

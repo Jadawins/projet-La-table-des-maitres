@@ -1,16 +1,29 @@
 {
   "slug": "defender-javelin",
-  "nom": "Defender (Javelin)",
+  "nom": "Défenseur (Javelot)",
   "nom_original": "Defender (Javelin)",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon.\n\nThe first time you attack with the weapon on each of your turns, you can transfer some or all of the weapon's bonus to your Armor Class. For example, you could reduce the bonus to your attack rolls and damage rolls to +1 and gain a +2 bonus to Armor Class. The adjusted bonuses remain in effect until the start of your next turn, although you must hold the weapon to gain a bonus to AC from it.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Arme magique octroyant un bonus de +3 aux jets d'attaque et de dégâts, dont une partie peut être transférée à la CA chaque tour.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Transfert flexible : réduire le bonus d'attaque/dégâts pour augmenter la CA (max +3 total)",
+      "Le transfert prend effet au premier coup du tour",
+      "Bonus de CA maintenu jusqu'au début du tour suivant en tenant l'arme"
+    ]
+  }
 }

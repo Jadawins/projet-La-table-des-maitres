@@ -1,13 +1,13 @@
 {
   "slug": "awakened-tree",
-  "nom": "Awakened Tree",
+  "nom": "Arbre animé",
   "nom_original": "Awakened Tree",
   "taille": "TG",
   "type": "Plant",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 13,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 59,
   "pv_formule": "7d12+14",
   "vitesse": {
@@ -65,7 +65,7 @@
   "experience": 450,
   "traits": [
     {
-      "nom": "False Appearance",
+      "nom": "Fausse apparence",
       "description": "While the tree remains motionless, it is indistinguishable from a normal tree.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Slam",
+      "nom": "Coup violent",
       "description": "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6 + 4) bludgeoning damage.",
       "bonus_attaque": 6,
       "degats_de": "3d6",

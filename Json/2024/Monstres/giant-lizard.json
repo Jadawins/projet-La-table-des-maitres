@@ -1,13 +1,13 @@
 {
   "slug": "giant-lizard",
-  "nom": "Giant Lizard",
+  "nom": "Lézard géant",
   "nom_original": "Giant Lizard",
   "taille": "G",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 19,
   "pv_formule": "3d10+3",
   "vitesse": {
@@ -58,14 +58,14 @@
   "experience": 50,
   "traits": [
     {
-      "nom": "Variant: Hold Breath",
+      "nom": "Variante : Retenir son souffle",
       "description": "The lizard can hold its breath for 15 minutes. (A lizard that has this trait also has a swimming speed of 30 feet.)",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Variant: Spider Climb",
+      "nom": "Variante : Escalade d'araignée",
       "description": "The lizard can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
       "bonus_attaque": 4,
       "degats_de": "1d8",

@@ -1,17 +1,28 @@
 {
   "slug": "captains-goggles",
-  "nom": "Captain's Goggles",
+  "nom": "Lunettes du Capitaine",
   "nom_original": "Captain's Goggles",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These copper and glass goggles are prized by air and sea captains across the world. The goggles are designed to repel water and never fog. After attuning to the goggles, your name (or preferred moniker) appears on the side of the goggles. While wearing the goggles, you can't suffer from exhaustion.",
-  "description_fr": "Ces lunettes de cuivre et de verre sont prisées des capitaines des airs et des mers à travers le monde. Conçues pour repousser l'eau, elles ne s'embuent jamais. Après vous être harmonisé avec elles, votre nom (ou votre surnom de prédilection) apparaît sur leur côté. Tant que vous portez ces lunettes, vous ne pouvez pas souffrir d'épuisement.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Des lunettes magiques imperméables qui affichent le nom du porteur et le rendent immunisé à l'épuisement.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Immunité à l'épuisement",
+      "Ne s'embue jamais, résiste à l'eau"
+    ]
+  }
 }

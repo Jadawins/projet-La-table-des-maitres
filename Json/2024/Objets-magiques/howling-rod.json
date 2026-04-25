@@ -1,16 +1,27 @@
 {
   "slug": "howling-rod",
-  "nom": "Howling Rod",
+  "nom": "Bâton du hurlement",
   "nom_original": "Howling Rod",
   "categorie": "sceptre",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This sturdy, iron rod is topped with the head of a howling wolf with red carnelians for eyes. The rod has 5 charges for the following properties, and it regains 1d4 + 1 expended charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton de fer surmonté d'une tête de loup hurlant avec des yeux en cornaline. Dispose de 5 charges renouvelables.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "5 charges (récupération 1d4+1 à l'aube)"
+    ]
+  }
 }

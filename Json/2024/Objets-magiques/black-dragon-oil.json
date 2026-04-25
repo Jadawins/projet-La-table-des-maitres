@@ -1,17 +1,28 @@
 {
   "slug": "black-dragon-oil",
-  "nom": "Black Dragon Oil",
+  "nom": "Huile de dragon noir",
   "nom_original": "Black Dragon Oil",
   "categorie": "potion",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "The viscous green-black oil within this magical ceramic pot bubbles slightly. The pot's stone stopper is sealed with greasy, dark wax. The pot contains 5 ounces of pure black dragon essence, obtained by slowly boiling the dragon in its own acidic secretions. You can use an action to apply 1 ounce of the oil to a weapon or single piece of ammunition. The next attack made with that weapon or ammunition deals an extra 2d8 acid damage to the target. A creature that takes the acid damage must succeed on a DC 15 Constitution saving throw at the start of its next turn or be burned for an extra 2d8 acid damage.",
-  "description_fr": "L'huile visqueuse vert-noirâtre contenue dans ce pot de céramique magique bouillonne légèrement. Le bouchon de pierre du pot est scellé avec une cire grasse et sombre. Il renferme 5 onces d'essence pure de dragon noir, obtenue en faisant lentement bouillir le dragon dans ses propres sécrétions acides. Vous pouvez utiliser une action pour appliquer 1 once de l'huile sur une arme ou une seule munition. La prochaine attaque effectuée avec cette arme ou munition inflige 2d8 dégâts acides supplémentaires à la cible. Une créature qui subit ces dégâts acides doit réussir un jet de sauvegarde de Constitution DD 15 au début de son prochain tour ou subir 2d8 dégâts acides supplémentaires par brûlure.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Huile à appliquer sur une arme (5 onces disponibles) infligeant 2d8 dégâts acides supplémentaires et potentiellement 2d8 dégâts acides par brûlure au tour suivant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d8",
+    "type_degats_bonus": "acides",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "2d8 dégâts acides (une attaque)",
+      "Brûlure : Con DD 15 ou 2d8 dégâts acides au début du tour suivant"
+    ]
+  }
 }

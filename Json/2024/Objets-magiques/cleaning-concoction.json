@@ -1,17 +1,29 @@
 {
   "slug": "cleaning-concoction",
-  "nom": "Cleaning Concoction",
+  "nom": "Potion nettoyante",
   "nom_original": "Cleaning Concoction",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "This fresh-smelling, clear green liquid can cover a Medium or smaller creature or object (or matched set of objects, such as a suit of clothes or pair of boots). Applying the liquid takes 1 minute. It removes soiling, stains, and residue, and it neutralizes and removes odors, unless those odors are particularly pungent, such as in skunks or creatures with the Stench trait. Once the potion has cleaned the target, it evaporates, leaving the creature or object both clean and dry.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce liquide vert clair et frais peut couvrir une créature ou un objet de taille Moyenne ou plus petite (ou un ensemble assorti d'objets, comme un costume ou une paire de bottes). L'application du liquide prend 1 minute. Il élimine la saleté, les taches et les résidus, et neutralise et supprime les odeurs, à moins qu'elles ne soient particulièrement fortes, comme chez les mouffettes ou les créatures dotées du trait Puanteur. Une fois que la potion a nettoyé la cible, elle s'évapore, laissant la créature ou l'objet propre et sec."
+  "resume": "Un liquide qui nettoie, élimine les taches et les odeurs sur une créature ou un objet Moyen en 1 minute, puis s'évapore.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Nettoie saleté, taches et résidus",
+      "Neutralise les odeurs (sauf très fortes)",
+      "Applicable sur créature Moyenne ou objets en 1 minute"
+    ]
+  }
 }

@@ -1,16 +1,28 @@
 {
   "slug": "grifters-deck",
-  "nom": "Grifter's Deck",
+  "nom": "Jeu de Cartes du Filou",
   "nom_original": "Grifter's Deck",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "When you deal a card from this slightly greasy, well-used deck, you can choose any specific card to be on top of the deck, assuming it hasn't already been dealt. Alternatively, you can choose a general card of a specific value or suit that hasn't already been dealt.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un jeu de cartes usagé permettant au lanceur de choisir n'importe quelle carte spécifique ou générale (valeur/couleur) à placer sur le dessus du paquet, à condition qu'elle n'ait pas déjà été distribuée.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Contrôle la carte distribuée (spécifique ou générale)",
+      "Nécessite que la carte n'ait pas été distribuée"
+    ]
+  }
 }

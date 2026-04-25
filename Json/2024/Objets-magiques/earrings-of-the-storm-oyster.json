@@ -1,16 +1,29 @@
 {
   "slug": "earrings-of-the-storm-oyster",
-  "nom": "Earrings of the Storm Oyster",
+  "nom": "Boucles d'Oreilles de l'Huître-Tempête",
   "nom_original": "Earrings of the Storm Oyster",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "The deep blue pearls forming the core of these earrings come from oysters that survive being struck by lightning. While wearing these earrings, you gain the following benefits:\n- You have resistance to lightning and thunder damage.\n- You can understand Primordial. When it is spoken, the pearls echo the words in a language you can understand, at a whisper only you can hear.\n- You can't be deafened.\n- You can breathe air and water. - As an action, you can cast the sleet storm spell (save DC 15) from the earrings. The earrings can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Boucles aux perles bleues confiant résistance à la foudre/tonnerre, respiration aquatique et incantation de tempête de grêle.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Résistance à la foudre et au tonnerre",
+      "Compréhension du Primordial, immunité à l'assurdissement",
+      "Action : incantation de Tempête de grêle (DD 15, 1 usage/jour)"
+    ]
+  }
 }

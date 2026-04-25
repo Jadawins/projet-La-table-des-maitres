@@ -1,16 +1,29 @@
 {
   "slug": "decanter-of-endless-water",
-  "nom": "Decanter of Endless Water",
+  "nom": "Carafe de l'eau infinie",
   "nom_original": "Decanter of Endless Water",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This stoppered flask sloshes when shaken, as if it contains water. The decanter weighs 2 pounds.\r\n\r\nYou can use an action to remove the stopper and speak one of three command words, whereupon an amount of fresh water or salt water (your choice) pours out of the flask. The water stops pouring out at the start of your next turn. Choose from the following options:\r\n\r\n* \"Stream\" produces 1 gallon of water.\r\n* \"Fountain\" produces 5 gallons of water.\r\n* \"Geyser\" produces 30 gallons of water that gushes forth in a geyser 30 feet long and 1 foot wide. As a bonus action while holding the decanter, you can aim the geyser at a creature you can see within 30 feet of you. The target must succeed on a DC 13 Strength saving throw or take 1d4 bludgeoning damage and fall prone. Instead of a creature, you can target an object that isn't being worn or carried and that weighs no more than 200 pounds. The object is either knocked over or pushed up to 15 feet away from you.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Flacon magique produisant de l'eau douce ou salée en quantités variables (1, 5 ou 30 gallons). Le mode Geyser inflige 1d4 dégâts d'écrasement et peut renverser créatures ou objets.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "écrasement",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Geyser : jet d'eau de 30 pieds canalisant via action bonus",
+      "Force de renversement jusqu'à 15 pieds ou coup au sol (sauvegarde Force DC 13)",
+      "Production d'eau (1, 5 ou 30 gallons selon commande)"
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 {
   "slug": "goat",
-  "nom": "Goat",
+  "nom": "Chèvre",
   "nom_original": "Goat",
   "taille": "M",
   "type": "Beast",
@@ -65,7 +65,7 @@
       "degats_bonus": null
     },
     {
-      "nom": "Sure-Footed",
+      "nom": "Sûr de ses pas",
       "description": "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Ram",
+      "nom": "Bélier",
       "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage.",
       "bonus_attaque": 3,
       "degats_de": "1d4",

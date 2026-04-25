@@ -1,16 +1,29 @@
 {
   "slug": "jungle-mess-kit",
-  "nom": "Jungle Mess Kit",
+  "nom": "Nécessaire de Cuisine Jungle",
   "nom_original": "Jungle Mess Kit",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This crucial piece of survival gear guarantees safe use of the most basic of consumables. The hinged metal container acts as a cook pot and opens to reveal a cup, plate, and eating utensils. This kit renders any spoiled, rotten, or even naturally poisonous food or drink safe to consume. It can purify only mundane, natural effects. It has no effect on food that is magically spoiled, rotted, or poisoned, and it can't neutralize brewed poisons, venoms, or similarly manufactured toxins. Once it has purified 3 cubic feet of food and drink, it can't be used to do so again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Boîte de rangement multifonction qui purifie la nourriture et les boissons gâtées, pourries ou naturellement toxiques jusqu'à 3 pieds cubes par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Purifie nourriture/boisson naturellement pourries ou toxiques",
+      "Limite : 3 pieds cubes par jour",
+      "À usage non-combattant"
+    ]
+  }
 }

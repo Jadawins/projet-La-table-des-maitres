@@ -1,17 +1,27 @@
 {
   "slug": "circlet-of-persuasion",
-  "nom": "Circlet of Persuasion",
+  "nom": "Cerclet de persuasion",
   "nom_original": "Circlet of Persuasion",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this circlet, you have advantage on Charisma (Persuasion) checks.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant ce cerclet, vous avez l'avantage aux tests de Charisme (Persuasion)."
+  "resume": "Cerclet conférant l'avantage aux tests de Charisme (Persuasion).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Charisme (Persuasion)"
+    ]
+  }
 }

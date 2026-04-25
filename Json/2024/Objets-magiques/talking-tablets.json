@@ -1,16 +1,29 @@
 {
   "slug": "talking-tablets",
-  "nom": "Talking Tablets",
+  "nom": "Tablettes Parlantes",
   "nom_original": "Talking Tablets",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These two enchanted brass tablets each have gold styli chained to them by small, silver chains. As long as both tablets are on the same plane of existence, any message written on one tablet with its gold stylus appears on the other tablet. If the writer writes words in a language the reader doesn't understand, the tablets translate the words into a language the reader can read. While holding a tablet, you know if no creature bears the paired tablet. When the tablets have transferred a total of 150 words between them, their magic ceases to function until the next dawn. If one of the tablets is destroyed, the other one becomes a nonmagical block of brass worth 25 gp.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Paire de tablettes enchantées permettant la communication écrite instantanée sur n'importe quelle distance du même plan, avec traduction automatique. Limité à 150 mots par cycle jour/nuit.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Communication écrite instantanée entre deux tablettes",
+      "Traduction automatique entre langues",
+      "150 mots max avant réinitialisation à l'aube"
+    ]
+  }
 }

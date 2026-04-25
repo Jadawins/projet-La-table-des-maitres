@@ -1,17 +1,29 @@
 {
   "slug": "bandana-of-bravado",
-  "nom": "Bandana of Bravado",
+  "nom": "Bandana de Bravade",
   "nom_original": "Bandana of Bravado",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this bright red bandana, you have advantage on Charisma (Intimidation) checks and on saving throws against being frightened.",
-  "description_fr": "Lorsque vous portez ce bandana rouge vif, vous avez l'avantage aux tests de Charisme (Intimidation) et aux jets de sauvegarde contre l'état effrayé.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bandana rouge vif procurant l'avantage aux tests de Charisme (Intimidation) et aux jets de sauvegarde contre l'état effrayé.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux tests de Charisme (Intimidation)",
+      "Avantage aux jets de sauvegarde contre l'état effrayé",
+      "Renforce la présence intimidante du porteur"
+    ]
+  }
 }

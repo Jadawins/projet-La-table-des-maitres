@@ -1,16 +1,28 @@
 {
   "slug": "eyes-of-the-portal-masters",
-  "nom": "Eyes of the Portal Masters",
+  "nom": "Yeux des Maîtres des Portails",
   "nom_original": "Eyes of the Portal Masters",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these crystal lenses over your eyes, you can sense the presence of any dimensional portal within 60 feet of you and whether the portal is one-way or two-way. Once you have worn the eyes for 10 minutes, their magic ceases to function until the next dawn. Putting the lenses on or off requires an action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Ces lentilles de cristal vous permettent de détecter la présence de tout portail dimensionnel à 60 pieds et de déterminer s'il est unidirectionnel ou bidirectionnel. La magie cesse après 10 minutes de port jusqu'à l'aube suivante.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Détection des portails dimensionnels à 60 pieds",
+      "Identification du type de portail (unidirectionnel/bidirectionnel)"
+    ]
+  }
 }

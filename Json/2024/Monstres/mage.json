@@ -7,7 +7,7 @@
   "sous_type": "any race",
   "alignement": "any alignment",
   "ca": 12,
-  "ca_detail": "15 with _mage armor_",
+  "ca_detail": "15 with _armure du mage_",
   "pv": 40,
   "pv_formule": "9d8",
   "vitesse": {
@@ -40,8 +40,8 @@
     "CHA": null
   },
   "competences": {
-    "arcana": 6,
-    "history": 6
+    "arcanes": 6,
+    "histoire": 6
   },
   "resistances": [],
   "immunites_degats": [],
@@ -63,7 +63,7 @@
   "experience": 2300,
   "traits": [
     {
-      "nom": "Spellcasting",
+      "nom": "Incantation",
       "description": "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:\n\n* Cantrips (at will): fire bolt, light, mage hand, prestidigitation\n* 1st level (4 slots): detect magic, mage armor, magic missile, shield\n* 2nd level (3 slots): misty step, suggestion\n* 3rd level (3 slots): counterspell, fireball, fly\n* 4th level (3 slots): greater invisibility, ice storm\n* 5th level (1 slot): cone of cold",
       "bonus_attaque": null,
       "degats_de": null,
@@ -72,7 +72,7 @@
   ],
   "actions": [
     {
-      "nom": "Dagger",
+      "nom": "Poignard",
       "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
       "bonus_attaque": 5,
       "degats_de": "1d4",

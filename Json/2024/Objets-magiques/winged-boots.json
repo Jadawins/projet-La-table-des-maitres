@@ -7,10 +7,23 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these boots, you have a flying speed equal to your walking speed. You can use the boots to fly for up to 4 hours, all at once or in several shorter flights, each one using a minimum of 1 minute from the duration. If you are flying when the duration expires, you descend at a rate of 30 feet per round until you land.\r\n\r\nThe boots regain 2 hours of flying capability for every 12 hours they aren't in use.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bottes magiques octroyant une vitesse de vol égale à la vitesse de marche pour 4 heures cumulées, se rechargeant de 2 heures par 12 heures de repos.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 4,
+    "effets": [
+      "Vol à vitesse de marche (4 heures cumulées)",
+      "Descente de 30 pieds/round si vol à l'expiration",
+      "Récupère 2 heures par 12 heures d'inutilisation"
+    ]
+  }
 }

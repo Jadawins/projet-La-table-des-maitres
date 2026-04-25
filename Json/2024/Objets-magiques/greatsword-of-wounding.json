@@ -1,16 +1,28 @@
 {
   "slug": "greatsword-of-wounding",
-  "nom": "Greatsword of Wounding",
+  "nom": "Grande Épée de Blessure",
   "nom_original": "Greatsword of Wounding",
   "categorie": "arme_magique",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
   "effets": [],
   "poids": "6.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Inflige 2d6 dégâts nécrotiques et empêche le regain de PV pendant 1 heure (jet de CON DC 15).",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "nécrotique",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Dégâts nécrotiques supplémentaires 2d6",
+      "Cible ne peut pas regagner des PV pendant 1 heure (sauvegarde CON DC 15, répétée à chaque tour)"
+    ]
+  }
 }

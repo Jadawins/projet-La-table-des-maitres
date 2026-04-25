@@ -1,17 +1,29 @@
 {
   "slug": "crab-gloves",
-  "nom": "Crab Gloves",
+  "nom": "Gants de crabe",
   "nom_original": "Crab Gloves",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "These gloves are shaped like crab claws but fit easily over your hands. While wearing these gloves, you can take the Attack action to make two melee weapon attacks with the claws. You are proficient with the claws. Each claw has a reach of 5 feet and deals bludgeoning damage equal to 1d6 + your Strength modifier on a hit. If you hit a creature of your size or smaller using a claw, you automatically grapple the creature with the claw. You can have no more than two creatures grappled in this way at a time. While grappling a target with a claw, you can't attack other creatures with that claw. While wearing the gloves, you have disadvantage on Charisma and Dexterity checks, but you have advantage on checks while operating an apparatus of the crab and on attack rolls with the apparatus' claws. In addition, you can't wield weapons or a shield, and you can't cast a spell that has a somatic component. A creature with an Intelligence of 8 or higher that has two claws can wear these gloves. If it does so, it has two appropriately sized humanoid hands instead of claws. The creature can wield weapons with the hands and has advantage on Dexterity checks that require fine manipulation. Pulling the gloves on or off requires an action.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ces gants ont la forme de pinces de crabe mais s'enfilent facilement sur les mains. Tant que vous les portez, vous pouvez effectuer l'action Attaquer pour réaliser deux attaques au corps à corps avec les pinces. Vous avez la maîtrise de ces pinces. Chacune a une allonge de 1,50 m et inflige des dégâts contondants égaux à 1d6 + votre modificateur de Force lors d'un coup. Si vous touchez une créature de votre taille ou plus petite avec une pince, vous la saisissez automatiquement. Vous ne pouvez pas avoir plus de deux créatures saisies simultanément. Tant que vous saisissez une cible avec une pince, vous ne pouvez pas attaquer d'autres créatures avec cette pince. Tant que vous portez ces gants, vous avez le désavantage aux tests de Charisme et de Dextérité, mais l'avantage aux tests pour manœuvrer un appareil de crabe et aux jets d'attaque avec ses pinces. De plus, vous ne pouvez pas manier d'armes ni de bouclier, et ne pouvez pas lancer de sort à composante somatique. Une créature dotée d'une Intelligence de 8 ou plus et possédant deux pinces peut également porter ces gants ; elle dispose alors de deux mains humanoïdes à la place de ses pinces, lui permettant de manier des armes et d'avoir l'avantage aux tests de Dextérité nécessitant une manipulation fine. Enfiler ou retirer les gants nécessite une action."
+  "resume": "Gants en forme de pinces permettant deux attaques de 1d6+FOR au corps à corps avec saisie automatique, mais imposant des malus à Charisme/Dextérité et restriction de composantes somatiques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "contondant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Deux attaques au corps à corps par action Attaquer",
+      "Saisie automatique des cibles de taille M ou inférieure",
+      "Désavantage aux tests de Charisme et Dextérité"
+    ]
+  }
 }

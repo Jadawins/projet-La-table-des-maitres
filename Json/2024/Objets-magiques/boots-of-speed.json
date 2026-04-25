@@ -7,11 +7,22 @@
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these boots, you can use a bonus action and click the boots' heels together. If you do, the boots double your walking speed, and any creature that makes an opportunity attack against you has disadvantage on the attack roll. If you click your heels together again, you end the effect.\r\n\r\nWhen the boots' property has been used for a total of 10 minutes, the magic ceases to function until you finish a long rest.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces bottes, vous pouvez utiliser une action bonus pour claquer les talons des bottes. Ce faisant, les bottes doublent votre vitesse de déplacement à pied, et toute créature qui effectue une attaque d'opportunité contre vous a le désavantage au jet d'attaque. En claquant à nouveau les talons, vous mettez fin à l'effet.\n\nLorsque la propriété des bottes a été utilisée pour un total de 10 minutes, la magie cesse de fonctionner jusqu'à ce que vous terminiez un repos long."
+  "resume": "Doublent votre vitesse de déplacement et donnent l'avantage contre les attaques d'opportunité. Utilisables 10 minutes cumulées par repos long.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 600,
+    "effets": [
+      "Vitesse doublée (action bonus)",
+      "Désavantage aux attaques d'opportunité contre vous"
+    ]
+  }
 }

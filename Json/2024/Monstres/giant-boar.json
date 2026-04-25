@@ -1,13 +1,13 @@
 {
   "slug": "giant-boar",
-  "nom": "Giant Boar",
+  "nom": "Sanglier géant",
   "nom_original": "Giant Boar",
   "taille": "G",
   "type": "Beast",
   "sous_type": null,
   "alignement": "unaligned",
   "ca": 12,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 42,
   "pv_formule": "5d10+15",
   "vitesse": {
@@ -65,7 +65,7 @@
       "degats_bonus": null
     },
     {
-      "nom": "Relentless (Recharges after a Short or Long Rest)",
+      "nom": "Implacable (Récupération après un repos court ou long)",
       "description": "If the boar takes 10 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -74,7 +74,7 @@
   ],
   "actions": [
     {
-      "nom": "Tusk",
+      "nom": "Défense",
       "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
       "bonus_attaque": 5,
       "degats_de": "2d6",

@@ -1,16 +1,28 @@
 {
   "slug": "ghoul-light",
-  "nom": "Ghoul Light",
+  "nom": "Lumière du Goule",
   "nom_original": "Ghoul Light",
   "categorie": "objet_merveilleux",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This bullseye lantern sheds light as normal when a lit candle is placed inside of it. If the light shines on meat, no matter how toxic or rotten, for at least 10 minutes, the meat is rendered safe to eat. The lantern's magic doesn't improve the meat's flavor, but the light does restore the meat's nutritional value and purify it, rendering it free of poison and disease. In addition, when an undead creature ends its turn in the light, it takes 1 radiant damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une lanterne qui purifie la viande avariée la rendant comestible et inflige 1 dégât radiant aux créatures mortes-vivantes finissant leur tour dans sa lumière.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Purifie la viande toxique ou pourrie en 10 minutes",
+      "1 dégât radiant aux morts-vivants en fin de tour dans la lumière"
+    ]
+  }
 }

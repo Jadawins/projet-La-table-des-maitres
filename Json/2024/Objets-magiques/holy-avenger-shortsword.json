@@ -1,16 +1,29 @@
 {
   "slug": "holy-avenger-shortsword",
-  "nom": "Holy Avenger (Shortsword)",
+  "nom": "L'Exterminateur sacré (Épée courte)",
   "nom_original": "Holy Avenger (Shortsword)",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "You gain a +3 bonus to attack and damage rolls made with this magic weapon. When you hit a fiend or an undead with it, that creature takes an extra 2d10 radiant damage.\n\nWhile you hold the drawn sword, it creates an aura in a 10-foot radius around you. You and all creatures friendly to you in the aura have advantage on saving throws against spells and other magical effects. If you have 17 or more levels in the paladin class, the radius of the aura increases to 30 feet.",
   "effets": [],
   "poids": "2.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Épée magique +3 infligeant 2d10 dégâts radiants supplémentaires contre les Fiélons et Morts-vivants. Crée une aura de 10 pieds (30 pieds pour les Paladins niveau 17+) accordant l'avantage aux sauvegardes contre la magie.",
+  "combat": {
+    "bonus": 3,
+    "bonus_ca": 0,
+    "degats_bonus": "2d10",
+    "type_degats_bonus": "radiant",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Bonus +3 aux jets d'attaque et de dégâts",
+      "Aura 10 pieds (30 pieds à partir du niveau 17 Paladin) : avantage aux sauvegardes contre la magie pour les créatures alliées",
+      "2d10 dégâts radiants supplémentaires contre Fiélons et Morts-vivants"
+    ]
+  }
 }

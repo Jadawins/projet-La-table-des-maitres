@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-fate",
-  "nom": "Bâton de Fate",
+  "nom": "Bâton du Destin",
   "nom_original": "Staff of Fate",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "One half of this staff is crafted of white ash and capped in gold, while the other is ebony and capped in silver. The staff has 10 charges for the following properties. It regains 1d6 + 4 charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff splits into two halves with a resounding crack and becomes nonmagical. Fortune. While holding the staff, you can use an action to expend 1 of its charges and touch a creature with the gold end of the staff, giving it good fortune. The target can choose to use its good fortune and have advantage on one ability check, attack roll, or saving throw. This effect ends after the target has used the good fortune three times or when 24 hours have passed. Misfortune. While holding the staff, you can use an action to touch a creature with the silver end of the staff. The target must succeed on a DC 15 Wisdom saving throw or have disadvantage on one of the following (your choice): ability checks, attack rolls, or saving throws. If the target fails the saving throw, the staff regains 1 expended charge. This effect lasts until removed by the remove curse spell or until you use an action to expend 1 of its charges and touch the creature with the gold end of the staff. Spells. While holding the staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: augury (2 charges), bane (1 charge), bless (1 charge), remove curse (3 charges), or divination (4 charges). You can also use an action to cast the guidance spell from the staff without using any charges.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton bipartite blanc et noir accordant la bonne ou mauvaise fortune aux créatures et permettant de lancer des sorts de divination et de malédiction.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Bonne Fortune : avantage sur 1 test, jet d'attaque ou sauvegarde (3 utilisations ou 24h)",
+      "Mauvaise Fortune : désavantage imposé (tir de sauvegarde DD 15)",
+      "Lance Augure, Malédiction, Bénédiction, Lève-malédiction, Divination, Guidance gratuit"
+    ]
+  }
 }

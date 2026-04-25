@@ -1,16 +1,29 @@
 {
   "slug": "sandals-of-the-desert-wanderer",
-  "nom": "Sandals of the Desert Wanderer",
+  "nom": "Sandales du Voyageur du Désert",
   "nom_original": "Sandals of the Desert Wanderer",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these soft leather sandals, you have resistance to fire damage. In addition, you ignore difficult terrain created by loose or deep sand, and you can tolerate temperatures of up to 150 degrees Fahrenheit.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Sandales de cuir souple accordant une résistance aux dégâts de feu et permettant de traverser sans peine le sable mouvant tout en tolérant des températures extrêmes.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts de feu",
+      "Ignore le terrain difficile créé par le sable",
+      "Tolère les températures jusqu'à 65°C"
+    ]
+  }
 }

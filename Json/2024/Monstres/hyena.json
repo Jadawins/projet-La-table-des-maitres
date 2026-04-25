@@ -1,6 +1,6 @@
 {
   "slug": "hyena",
-  "nom": "Hyena",
+  "nom": "Hyène",
   "nom_original": "Hyena",
   "taille": "M",
   "type": "Beast",
@@ -60,7 +60,7 @@
   "experience": 10,
   "traits": [
     {
-      "nom": "Pack Tactics",
+      "nom": "Tactiques de meute",
       "description": "The hyena has advantage on an attack roll against a creature if at least one of the hyena's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -69,7 +69,7 @@
   ],
   "actions": [
     {
-      "nom": "Bite",
+      "nom": "Morsure",
       "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage.",
       "bonus_attaque": 2,
       "degats_de": "1d6",

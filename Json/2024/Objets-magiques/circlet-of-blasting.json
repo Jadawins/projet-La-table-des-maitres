@@ -1,17 +1,28 @@
 {
   "slug": "circlet-of-blasting",
-  "nom": "Circlet of Blasting",
+  "nom": "Cerclet de déflagration",
   "nom_original": "Circlet of Blasting",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing this circlet, you can use an action to cast the _scorching ray_ spell with it. When you make the spell's attacks, you do so with an attack bonus of +5. The circlet can't be used this way again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "En portant ce cerclet, vous pouvez utiliser une action pour lancer le sort _rayon ardent_ grâce à lui. Lorsque vous effectuez les jets d'attaque du sort, vous le faites avec un bonus d'attaque de +5. Le cerclet ne peut pas être utilisé de cette façon jusqu'à l'aube suivante."
+  "resume": "Cerclet permettant de lancer rayon ardent avec un bonus d'attaque de +5, une fois par jour jusqu'à l'aube.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lancer rayon ardent (+5 aux jets d'attaque)",
+      "Utilisable une fois par jour jusqu'à l'aube"
+    ]
+  }
 }

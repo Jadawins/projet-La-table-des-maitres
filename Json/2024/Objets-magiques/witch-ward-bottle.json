@@ -1,16 +1,29 @@
 {
   "slug": "witch-ward-bottle",
-  "nom": "Witch Ward Bottle",
+  "nom": "Flacon de Protection Sorcière",
   "nom_original": "Witch Ward Bottle",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small pottery jug contains an odd assortment of pins, needles, and rosemary, all sitting in a small amount of wine. A bloody fingerprint marks the top of the cork that seals the jug. When placed within a building (as small as a shack or as large as a castle) or buried in the earth on a section of land occupied by humanoids (as small as a campsite or as large as an estate), the bottle's magic protects those within the building or on the land against the magic of fey and fiends. The humanoid that owns the building or land and any ally or invited guests within the building or on the land has advantage on saving throws against the spells and special abilities of fey and fiends. If a protected creature fails its saving throw against a spell with a duration other than instantaneous, that creature can choose to succeed instead. Doing so immediately drains the jug's magic, and it shatters.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Une jarre magique placée dans un bâtiment ou sur une terre protège ses habitants des sorts et pouvoirs de fées et de fiélons, accordant l'avantage aux jets de sauvegarde contre ceux-ci.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Avantage aux jets de sauvegarde contre les sorts et pouvoirs de fées et fiélons",
+      "Possibilité de réussir automatiquement si l'effet a une durée non instantanée (détruit le flacon)",
+      "Protection de tous les alliés et invités du bâtiment ou territoire"
+    ]
+  }
 }

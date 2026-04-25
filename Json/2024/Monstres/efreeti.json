@@ -7,7 +7,7 @@
   "sous_type": null,
   "alignement": "lawful evil",
   "ca": 17,
-  "ca_detail": "natural armor",
+  "ca_detail": "armure naturelle",
   "pv": 200,
   "pv_formule": "16d10+112",
   "vitesse": {
@@ -54,7 +54,7 @@
     "tremblements": null
   },
   "langues": [
-    "Ignan"
+    "igné"
   ],
   "fp": "11",
   "fp_numerique": 11,
@@ -62,21 +62,21 @@
   "experience": 7200,
   "traits": [
     {
-      "nom": "Elemental Demise",
+      "nom": "Mort élémentaire",
       "description": "If the efreeti dies, its body disintegrates in a flash of fire and puff of smoke, leaving behind only equipment the djinni was wearing or carrying.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Innate Spellcasting",
+      "nom": "Incantation innée",
       "description": "The efreeti's innate spell casting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n\nAt will: detect magic\n3/day each: enlarge/reduce, tongues\n1/day each: conjure elemental (fire elemental only), gaseous form, invisibility, major image, plane shift, wall of fire",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Variant: Genie Powers",
+      "nom": "Variante : Pouvoirs de génie",
       "description": "Genies have a variety of magical capabilities, including spells. A few have even greater powers that allow them to alter their appearance or the nature of reality.\n\n**Disguises.** Some genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the disguise self spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the true polymorph spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well.\n**Wishes.** The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year). and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.\nTo be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the wish spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit.",
       "bonus_attaque": null,
       "degats_de": null,
@@ -85,21 +85,21 @@
   ],
   "actions": [
     {
-      "nom": "Multiattack",
+      "nom": "Attaques multiples",
       "description": "The efreeti makes two scimitar attacks or uses its Hurl Flame twice.",
       "bonus_attaque": null,
       "degats_de": null,
       "degats_bonus": null
     },
     {
-      "nom": "Scimitar",
+      "nom": "Cimeterre",
       "description": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage plus 7 (2d6) fire damage.",
       "bonus_attaque": 10,
       "degats_de": "2d6+2d6",
       "degats_bonus": 6
     },
     {
-      "nom": "Hurl Flame",
+      "nom": "Projection de flammes",
       "description": "Ranged Spell Attack: +7 to hit, range 120 ft., one target. Hit: 17 (5d6) fire damage.",
       "bonus_attaque": 7,
       "degats_de": "5d6",

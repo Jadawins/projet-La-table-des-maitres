@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-thorns",
-  "nom": "Bâton de Thorns",
+  "nom": "Bâton d'épines",
   "nom_original": "Staff of Thorns",
   "categorie": "baton",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This gnarled and twisted oak staff has numerous thorns growing from its surface. Green vines tightly wind their way up along the shaft. The staff can be wielded as a magic quarterstaff that grants a +1 bonus to attack and damage rolls made with it. The staff has 10 charges for the following properties. It regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the thorns immediately fall from the staff and it becomes a nonmagical quarterstaff. Spells. While holding the staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC: barkskin (2 charges), entangle (1 charge), speak with plants (3 charges), spike growth (2 charges), or wall of thorns (6 charges). Thorned Strike. When you hit with a melee attack using the staff, you can expend up to 3 of its charges. For each charge you expend, the target takes an extra 1d6 piercing damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton magique +1 noueux couvert d'épines permettant de lancer des sorts de nature et d'ajouter des dégâts perforants. Régénère 1d6+4 charges par jour (max 10).",
+  "combat": {
+    "bonus": 1,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "perforant",
+    "pv_soins": "",
+    "charges": 10,
+    "effets": [
+      "Frapper épineux : dépenser jusqu'à 3 charges pour 1d6 dégâts perforants par charge",
+      "Lancer de sorts : écorce animée, enchevêtrement, parole aux plantes, croissance épineuse, mur d'épines",
+      "Dégâts bonus cumulatifs jusqu'à 3d6 perforants par coup"
+    ]
+  }
 }

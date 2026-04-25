@@ -1,16 +1,29 @@
 {
   "slug": "grave-ward-padded",
-  "nom": "Grave Ward Padded",
+  "nom": "Armure Matelassée de Protection contre la Mort",
   "nom_original": "Grave Ward Padded",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor bears gold or brass symbols of sunlight and sun deities and never tarnishes or rusts. The armor is immune to necrotic damage and rusting attacks such as those of a rust monster. While wearing this armor, your maximum hit points can't be reduced. As an action, you can speak a command word to gain the effect of a protection from evil and good spell for 1 minute (no concentration required). While the spell is active, if you are reduced to 0 hit points, you drop to 1 hit point instead. Once you use this property, it can't be used again until the next dawn.",
   "effets": [],
   "poids": "8.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure ornée de symboles solaires qui protège contre les dégâts nécromantiques et empêche la réduction des PV max. Peut activer une protection contre le mal et le bien une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Immunité aux dégâts nécromantiques et aux attaques de rouille",
+      "Les PV max ne peuvent pas être réduits",
+      "Protection contre le mal et le bien (1 min) : réduit les dégâts et empêche de tomber à 0 PV (1 charge/jour)"
+    ]
+  }
 }

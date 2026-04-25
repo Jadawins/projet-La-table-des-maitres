@@ -1,16 +1,28 @@
 {
   "slug": "shield-of-missile-attraction",
-  "nom": "Bouclier attire-projectiles",
+  "nom": "Bouclier Attire-Projectiles",
   "nom_original": "Shield of Missile Attraction",
   "categorie": "autre",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "autre",
-  "description": "While holding this shield, you have resistance to damage from ranged weapon attacks.\n\n**_Curse_**. This shield is cursed. Attuning to it curses you until you are targeted by the _remove curse_ spell or similar magic. Removing the shield fails to end the curse on you. Whenever a ranged weapon attack is made against a target within 10 feet of you, the curse causes you to become the target instead.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Vous avez une résistance aux dégâts des attaques d'armes à distance. Cependant, ce bouclier est maudit : les attaques de projectiles contre les créatures à 10 pieds de vous vous prennent pour cible à la place.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Résistance aux dégâts des attaques à distance",
+      "Malédiction : vous êtes pris pour cible à la place des créatures à 10 pieds de vous"
+    ]
+  }
 }

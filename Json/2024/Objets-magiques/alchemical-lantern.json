@@ -1,17 +1,29 @@
 {
   "slug": "alchemical-lantern",
-  "nom": "Alchemical Lantern",
+  "nom": "Lanterne Alchimique",
   "nom_original": "Alchemical Lantern",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This hooded lantern has 3 charges and regains all expended charges daily at dusk. While the lantern is lit, you can use an action to expend 1 charge to cause the lantern to spit gooey alchemical fire at a creature you can see in the lantern's bright light. The lantern makes its attack roll with a +5 bonus. On a hit, the target takes 2d6 fire damage, and it ignites. Until a creature takes an action to douse the fire, the target takes 1d6 fire damage at the start of each of its turns.",
-  "description_fr": "Cette lanterne à capote possède 3 charges et récupère toutes ses charges dépensées chaque soir au crépuscule. Tant que la lanterne est allumée, vous pouvez utiliser une action pour dépenser 1 charge afin qu'elle crache un feu alchimique visqueux sur une créature que vous pouvez voir dans la lumière vive de la lanterne. La lanterne effectue son jet d'attaque avec un bonus de +5. En cas de touche, la cible subit 2d6 dégâts de feu et s'embrase. Tant qu'une créature n'utilise pas une action pour éteindre le feu, la cible subit 1d6 dégâts de feu au début de chacun de ses tours.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Lanterne magique dotée de 3 charges qui crache du feu alchimique incendiaire sur les créatures visibles, infligeant des dégâts persistants.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "2d6",
+    "type_degats_bonus": "feu",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Crache du feu alchimique avec bonus +5 au jet d'attaque",
+      "Cible en feu subit 1d6 dégâts supplémentaires au début de ses tours",
+      "Récupère toutes ses charges au crépuscule"
+    ]
+  }
 }

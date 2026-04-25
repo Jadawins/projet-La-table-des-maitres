@@ -1,16 +1,27 @@
 {
   "slug": "half-plate-armor-3",
-  "nom": "Half Plate Armor (+3)",
+  "nom": "Demi-Plate (+3)",
   "nom_original": "Half Plate Armor (+3)",
   "categorie": "armure_magique",
   "rarete": "tres_rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "You have a bonus to Armor Class while wearing this armor. The bonus is determined by its rarity.",
   "effets": [],
   "poids": "40.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure magique octroyant un bonus de +3 à la classe d'armure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 3,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "+3 à la classe d'armure"
+    ]
+  }
 }

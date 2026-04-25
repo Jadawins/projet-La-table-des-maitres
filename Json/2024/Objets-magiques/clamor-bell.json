@@ -1,17 +1,29 @@
 {
   "slug": "clamor-bell",
-  "nom": "Clamor Bell",
+  "nom": "Cloche de vacarme",
   "nom_original": "Clamor Bell",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "You can affix this small, brass bell to an object with the leather cords tied to its top. If anyone other than you picks up, interacts with, or uses the object without first speaking the bell's command word, it rings for 5 minutes or until you touch it and speak the command word again. The ringing is audible 100 feet away. If a creature takes an action to cut the bindings holding the bell onto the object, the bell ceases ringing 1 round after being released from the object.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Vous pouvez fixer cette petite cloche en laiton à un objet à l'aide des cordons de cuir attachés à son sommet. Si quelqu'un d'autre que vous ramasse, interagit avec ou utilise l'objet sans prononcer au préalable le mot de commande de la cloche, celle-ci sonne pendant 5 minutes ou jusqu'à ce que vous la touchiez et prononciez à nouveau le mot de commande. La sonnerie est audible à 30 mètres de distance. Si une créature utilise une action pour couper les liens retenant la cloche à l'objet, la cloche cesse de sonner 1 round après avoir été détachée de l'objet."
+  "resume": "Une cloche d'alarme fixable aux objets qui sonne pendant 5 minutes si quelqu'un d'autre l'utilise sans le mot de commande, audible à 30 mètres.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Alarme audible à 30 mètres si accès non autorisé",
+      "Sonnerie dure 5 minutes ou jusqu'à toucher avec mot de commande",
+      "Peut être détachée (cesse de sonner 1 round après)"
+    ]
+  }
 }

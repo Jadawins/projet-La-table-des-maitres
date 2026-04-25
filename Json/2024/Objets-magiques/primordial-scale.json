@@ -1,16 +1,29 @@
 {
   "slug": "primordial-scale",
-  "nom": "Primordial Scale",
+  "nom": "Armure d'Écaille Primordiale",
   "nom_original": "Primordial Scale",
   "categorie": "armure_magique",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "armure_magique",
-  "description": "This armor is fashioned from the scales of a great, subterranean beast shunned by the gods. While wearing it, you have darkvision out to a range of 60 feet. If you already have darkvision, wearing the armor increases its range by 60 feet, but you have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you are in sunlight. In addition, while wearing this armor, you have advantage on saving throws against spells cast by agents of the gods, such as celestials, fiends, clerics, and cultists.",
   "effets": [],
   "poids": "45.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Armure de créature souterraine octroyant la vision dans le noir et une résistance contre les sorts des serviteurs des dieux.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Procure vision dans le noir 60 pieds (ou +60 pieds si déjà possession)",
+      "Désavantage en attaque et Perception à la lumière du soleil si vision dans le noir améliorée",
+      "Avantage aux jets de sauvegarde contre les sorts des célestes, fiélons, clercs et cultistes"
+    ]
+  }
 }

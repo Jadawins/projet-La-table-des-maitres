@@ -1,16 +1,28 @@
 {
   "slug": "oil-of-sharpening",
-  "nom": "Oil of Sharpening",
+  "nom": "Huile d'Aiguisage",
   "nom_original": "Oil of Sharpening",
   "categorie": "potion",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "potion",
-  "description": "You can apply this fine, silvery oil to one piercing or slashing weapon or up to 5 pieces of piercing or slashing ammunition. Applying the oil takes 1 minute. For 1 hour, any attack with the coated item scores a critical hit on a roll of 19 or 20.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Rend une arme tranchante ou perçante plus mortelle, permettant les coups critiques sur des résultats de 19 ou 20 pendant 1 heure.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Coup critique sur 19-20",
+      "Arme magique améliorée"
+    ]
+  }
 }

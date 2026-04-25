@@ -1,16 +1,29 @@
 {
   "slug": "rowdys-ring",
-  "nom": "Rowdy's Ring",
+  "nom": "Anneau du roublard",
   "nom_original": "Rowdy's Ring",
   "categorie": "anneau",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "The face of this massive ring is a thick slab of gold-plated lead, which is attached to twin rings that are worn over the middle and ring fingers. The slab covers your fingers from the first and second knuckles, and it often has a threatening word or image engraved on it. While wearing the ring, your unarmed strike uses a d4 for damage and attacks made with the ring hand count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Massif anneau avec poids de plomb doré augmentant les dégâts des attaques à mains nues (d4) et les rendant magiques.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d4",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Attaques à mains nues utilisent 1d4 de dégâts",
+      "Les attaques comptent comme magiques pour résister aux dégâts non-magiques",
+      "Fonctionne avec le Gourdin du roublard pour l'effet de terrification"
+    ]
+  }
 }

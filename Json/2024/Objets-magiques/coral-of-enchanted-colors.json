@@ -1,17 +1,29 @@
 {
   "slug": "coral-of-enchanted-colors",
-  "nom": "Coral of Enchanted Colors",
+  "nom": "Corail aux Couleurs Enchantées",
   "nom_original": "Coral of Enchanted Colors",
   "categorie": "objet_merveilleux",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This piece of dead, white brain coral glistens with a myriad of colors when placed underwater. While holding this coral underwater, you can use an action to cause a beam of colored light to streak from the coral toward a creature you can see within 60 feet of you. The target must make a DC 17 Constitution saving throw. The beam's color determines its effects, as described below. Each color can be used only once. The coral regains the use of all of its colors at the next dawn if it is immersed in water for at least 1 hour.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Ce morceau de corail cérébral mort et blanc miroite d'une multitude de couleurs lorsqu'il est plongé sous l'eau. En tenant ce corail sous l'eau, vous pouvez utiliser une action pour projeter un rayon de lumière colorée vers une créature que vous pouvez voir dans un rayon de 18 mètres. La cible doit effectuer un jet de sauvegarde de Constitution DD 17. La couleur du rayon détermine ses effets, tels que décrits ci-après. Chaque couleur ne peut être utilisée qu'une seule fois. Le corail récupère l'usage de toutes ses couleurs à l'aube suivante s'il est immergé dans l'eau pendant au moins 1 heure."
+  "resume": "Corail cérébral projetant des rayons lumineux colorés sous l'eau (sauv. Con DD 17), chaque couleur utilisable une fois par jour et renouvelée après immersion nocturne.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Projection de rayons colorés (portée 18m, sauv. Con DD 17)",
+      "Chaque couleur utilisable une fois par jour",
+      "Récupère toutes les couleurs après 1h d'immersion à l'aube"
+    ]
+  }
 }

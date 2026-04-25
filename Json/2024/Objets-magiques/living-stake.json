@@ -1,16 +1,29 @@
 {
   "slug": "living-stake",
-  "nom": "Living Stake",
+  "nom": "Pieu Vivant",
   "nom_original": "Living Stake",
   "categorie": "objet_merveilleux",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "Fashioned from mandrake root, this stake longs to taste the heart's blood of vampires. Make a melee attack against a vampire in range, treating the stake as an improvised weapon. On a hit, the stake attaches to a vampire's chest. At the end of the vampire's next turn, roots force their way into the vampire's heart, negating fast healing and preventing gaseous form. If the vampire is reduced to 0 hit points while the stake is attached to it, it is immobilized as if it had been staked. A creature can take its action to remove the stake by succeeding on a DC 17 Strength (Athletics) check. If it is removed from the vampire's chest, the stake is destroyed. The stake has no effect on targets other than vampires.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Pieu en racine de mandragore conçu pour combattre les vampires, s'attachant à leur poitrine et les immobilisant.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Efficace uniquement contre les vampires",
+      "Annule la guérison rapide et prévient la forme gazeuse du vampire",
+      "Immobilise le vampire si réduit à 0 PV (pieu attaché)"
+    ]
+  }
 }

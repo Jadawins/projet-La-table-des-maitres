@@ -7,10 +7,21 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this ring, you can stand on and move across any liquid surface as if it were solid ground.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Permet de marcher et se déplacer sur toute surface liquide comme si elle était solide.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Marche sur les surfaces liquides"
+    ]
+  }
 }

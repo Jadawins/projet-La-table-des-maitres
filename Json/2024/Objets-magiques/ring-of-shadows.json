@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-shadows",
-  "nom": "Anneau de Shadows",
+  "nom": "Anneau d'Ombres",
   "nom_original": "Ring of Shadows",
   "categorie": "anneau",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this ebony ring in dim light or darkness, you have advantage on Dexterity (Stealth) checks. When you roll a 20 on a Dexterity (Stealth) check, the ring's magic ceases to function until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau d'ébène accordant l'avantage aux tests de Discrétion en lumière faible ou ténèbres, jusqu'à un 20 critique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "En lumière faible/ténèbres : avantage aux tests de Discrétion (Dextérité)",
+      "20 au test : pouvoir désactivé jusqu'à l'aube"
+    ]
+  }
 }

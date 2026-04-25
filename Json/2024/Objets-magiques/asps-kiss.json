@@ -1,17 +1,29 @@
 {
   "slug": "asps-kiss",
-  "nom": "Asp's Kiss",
+  "nom": "Baiser du Serpent",
   "nom_original": "Asp's Kiss",
   "categorie": "arme_magique",
   "rarete": "legendaire",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "arme_magique",
-  "description": "This haladie features two short, slightly curved blades attached to a single hilt with a short, blue-sheened spike on the hand guard. You gain a +2 bonus to attack and damage rolls made with this magic weapon. While attuned to this sword, you have immunity to poison damage, and, when you take the Dash action, the extra movement you gain is double your speed instead of equal to your speed. When you use the Attack action with this sword, you can make one attack with its hand guard spike (treat as a dagger) as a bonus action. You can use an action to cause indigo poison to coat the blades of this sword. The poison remains for 1 minute or until two attacks using the blade of this weapon hit one or more creatures. The target must succeed on a DC 17 Constitution saving throw or take 2d10 poison damage and its hit point maximum is reduced by an amount equal to the poison damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. The sword can't be used this way again until the next dawn. When you kill a creature with this weapon, it sheds a single, blue tear as it takes its last breath.",
-  "description_fr": "Ce haladie est doté de deux courtes lames légèrement courbées fixées à une seule poignée, avec une courte pointe aux reflets bleutés sur la garde. Vous gagnez un bonus de +2 aux jets d'attaque et aux jets de dégâts effectués avec cette arme magique. Tant que vous êtes harmonisé à cette épée, vous êtes immunisé aux dégâts de poison, et lorsque vous effectuez l'action Foncer, le déplacement supplémentaire que vous gagnez est le double de votre vitesse au lieu d'être égal à votre vitesse. Lorsque vous utilisez l'action Attaquer avec cette épée, vous pouvez effectuer une attaque supplémentaire avec sa pointe de garde (traitée comme un poignard) en tant qu'action bonus. Vous pouvez utiliser une action pour enduire les lames de cette épée d'un poison indigo. Le poison reste actif pendant 1 minute ou jusqu'à ce que deux attaques utilisant la lame de cette arme touchent une ou plusieurs créatures. La cible doit réussir un jet de sauvegarde de Constitution DD 17 ou subir 2d10 dégâts de poison, et son maximum de points de vie est réduit d'un montant égal aux dégâts de poison subis. Cette réduction persiste jusqu'à ce que la cible termine un repos long. La cible meurt si cet effet réduit son maximum de points de vie à 0. L'épée ne peut plus être utilisée de cette façon jusqu'à l'aube suivante. Lorsque vous tuez une créature avec cette arme, elle verse une unique larme bleue en rendant son dernier souffle.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Hallebarde +2 avec lames courbées et pointe venimeuse, offrant immunité au poison et bonus de vitesse à la Charge, avec attaque bonus et poison utilisable une fois par jour.",
+  "combat": {
+    "bonus": 2,
+    "bonus_ca": 0,
+    "degats_bonus": "2d10",
+    "type_degats_bonus": "poison",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "+2 aux attaques et dégâts",
+      "Immunité au poison en attunement",
+      "Attaque bonus avec la pointe (traité comme poignard), charge à vitesse doublée"
+    ]
+  }
 }

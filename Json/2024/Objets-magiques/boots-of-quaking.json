@@ -7,11 +7,23 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While wearing these steel-toed boots, the earth itself shakes when you walk, causing harmless, but unsettling, tremors. If you move at least 15 feet in a single turn, all creatures within 10 feet of you at any point during your movement must make a DC 16 Strength saving throw or take 1d6 force damage and fall prone. In addition, while wearing these boots, you can cast earthquake, requiring no concentration, by speaking a command word and jumping on a point on the ground. The spell is centered on that point. Once you cast earthquake in this way, you can't do so again until the next dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces bottes à bouts en acier, la terre tremble sur votre passage, provoquant des secousses inoffensives mais inquiétantes. Si vous vous déplacez d'au moins 4,5 mètres en un seul tour, toutes les créatures dans un rayon de 3 mètres de vous à n'importe quel point de votre déplacement doivent réussir un jet de sauvegarde de Force DD 16 ou subir 1d6 dégâts de force et être mises à terre. De plus, en portant ces bottes, vous pouvez lancer tremblement de terre, sans concentration, en prononçant un mot de commande et en sautant sur un point du sol. Le sort est centré sur ce point. Une fois ce sort lancé de cette façon, vous ne pouvez plus le faire avant l'aube suivante."
+  "resume": "Provoquent des secousses causant 1d6 dégâts de force et mettant à terre les créatures à proximité lors d'un déplacement de 4,5 m+. Permettent de lancer tremblement de terre une fois par jour.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "1d6",
+    "type_degats_bonus": "force",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Dégâts de force en zone lors d'un déplacement de 4,5 m+ (Force DD 16)",
+      "Mise à terre dans rayon 3 m",
+      "Lancer tremblement de terre 1x/jour"
+    ]
+  }
 }

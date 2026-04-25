@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-three-wishes",
-  "nom": "Anneau des trois souhaits",
+  "nom": "Anneau des Trois Souhaits",
   "nom_original": "Ring of Three Wishes",
   "categorie": "anneau",
   "rarete": "legendaire",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this ring, you can use an action to expend 1 of its 3 charges to cast the _wish_ spell from it. The ring becomes nonmagical when you use the last charge.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": null,
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau légendaire permettant de lancer le sort Souhait jusqu'à 3 fois, après quoi il devient non magique.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Lancer le sort Souhait par charge dépensée",
+      "Anneau devient non magique après 3 utilisations"
+    ]
+  }
 }

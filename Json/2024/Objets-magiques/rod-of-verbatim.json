@@ -7,10 +7,22 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "Tiny runic script covers much of this thin brass rod. While holding the rod, you can use a bonus action to activate it. For 10 minutes, it translates any language spoken within 30 feet of it into Common. The translation can be auditory, or it can appear as glowing, golden script, a choice you make when you activate it. If the translation appears on a surface, the surface must be within 30 feet of the rod and each word remains for 1 round after it was spoken. The rod's translation is literal, and it doesn't replicate or translate emotion or other nuances in speech, body language, or culture. Once used, the rod can't be used again until 1 hour has passed.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Traduit littéralement tous les langages parlés à proximité en commun pendant 10 minutes. La traduction peut être audible ou apparaître sous forme de texte doré luminescent.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Traduction automatique des langages en commun (30 pieds)",
+      "Recharge après 1 heure d'utilisation"
+    ]
+  }
 }

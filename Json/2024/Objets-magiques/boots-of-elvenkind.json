@@ -7,11 +7,22 @@
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "While you wear these boots, your steps make no sound, regardless of the surface you are moving across. You also have advantage on Dexterity (Stealth) checks that rely on moving silently.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
   "image": null,
-  "description_fr": "Tant que vous portez ces bottes, vos pas ne font aucun bruit, quelle que soit la surface sur laquelle vous vous déplacez. Vous avez également l'avantage aux tests de Dextérité (Discrétion) reposant sur le déplacement silencieux."
+  "resume": "Vos pas ne font aucun bruit et vous avez l'avantage aux tests de Discrétion basés sur le déplacement silencieux.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Les pas ne produisent aucun bruit",
+      "Avantage aux tests Dextérité (Discrétion) en silence"
+    ]
+  }
 }

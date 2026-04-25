@@ -1,16 +1,29 @@
 {
   "slug": "jewelers-anvil",
-  "nom": "Jeweler's Anvil",
+  "nom": "Enclume de Joaillier",
   "nom_original": "Jeweler's Anvil",
   "categorie": "objet_merveilleux",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This small, foot-long anvil is engraved with images of jewelry in various stages of the crafting process. It weighs 10 pounds and can be mounted on a table or desk. You can use a bonus action to speak its command word and activate it, causing it to warm any nonferrous metals (including their alloys, such as brass or bronze). While you remain within 5 feet of the anvil, you can verbally command it to increase or decrease the temperature, allowing you to soften or melt any kind of nonferrous metal. While activated, the anvil remains warm to the touch, but its heat affects only nonferrous metal. You can use a bonus action to repeat the command word to deactivate the anvil. If you use the anvil while making any check with jeweler's tools or tinker's tools, you can double your proficiency bonus. If your proficiency bonus is already doubled, you have advantage on the check instead.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Petite enclume magique qui chauffe les métaux non ferreux et double le bonus de compétence pour les outils de joaillier ou d'artisan.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Double bonus de compétence avec outils de joaillier/artisan",
+      "Chauffe les métaux non ferreux",
+      "À usage non-combattant"
+    ]
+  }
 }

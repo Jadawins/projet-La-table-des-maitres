@@ -1,16 +1,29 @@
 {
   "slug": "rod-of-deflection",
-  "nom": "Sceptre de Deflection",
+  "nom": "Sceptre de déviation",
   "nom_original": "Rod of Deflection",
   "categorie": "sceptre",
   "rarete": "rare",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "sceptre",
-  "description": "This thin, flexible rod is made of braided silver and brass wire and topped with a spoon-like cup. While holding the rod, you can use a reaction to deflect a ranged weapon attack against you. You can simply cause the attack to miss, or you can attempt to redirect the attack against another target, even your attacker. The attack must have enough remaining range to reach the new target. If the additional distance between yourself and the new target is within the attack's long range, it is made at disadvantage as normal, using the original attack roll as the first roll. The rod has 3 charges. You can expend a charge as a reaction to redirect a ranged spell attack as if it were a ranged weapon attack, up to the spell's maximum range. The rod regains 1d3 expended charges daily at dawn.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Permet de dévier les attaques à distance ou les sorts en réaction, les faisant manquer ou les redirigeant vers une autre cible. Possède 3 charges.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 3,
+    "effets": [
+      "Déviation de réaction contre attaque à distance",
+      "Redirection vers autre cible possible",
+      "Redirection d'attaques de sort (1 charge)"
+    ]
+  }
 }

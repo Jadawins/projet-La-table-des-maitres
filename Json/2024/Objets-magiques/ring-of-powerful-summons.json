@@ -1,16 +1,28 @@
 {
   "slug": "ring-of-powerful-summons",
-  "nom": "Anneau de Powerful Summons",
+  "nom": "Anneau des Invocations puissantes",
   "nom_original": "Ring of Powerful Summons",
   "categorie": "anneau",
   "rarete": "rare",
   "harmonisation": true,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "When you summon a creature with a conjuration spell while wearing this ring, the creature gains a +1 bonus to attack and damage rolls and 1d4 + 4 temporary hit points.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Les créatures invoquées par magie de conjuration gagnent +1 aux attaques et dégâts, et 1d4+4 points de vie temporaires.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "1d4+4",
+    "charges": null,
+    "effets": [
+      "+1 aux attaques et dégâts des créatures invoquées",
+      "Les créatures invoquées gagnent 1d4+4 points de vie temporaires"
+    ]
+  }
 }

@@ -1,17 +1,28 @@
 {
   "slug": "breathing-reed",
-  "nom": "Breathing Reed",
+  "nom": "Roseau Respiratoire",
   "nom_original": "Breathing Reed",
   "categorie": "objet_merveilleux",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "objet_merveilleux",
-  "description": "This tiny river reed segment is cool to the touch. If you chew the reed while underwater, it provides you with enough air to breathe for up to 10 minutes. At the end of the duration, the reed loses its magic and can be harmlessly swallowed or spit out.",
-  "description_fr": "Ce petit segment de roseau de rivière est frais au toucher. Si vous le mâchez sous l'eau, il vous fournit suffisamment d'air pour respirer pendant 10 minutes. À la fin de cette durée, le roseau perd sa magie et peut être avalé ou craché sans danger.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Un segment de roseau magique qui, mâché sous l'eau, fournit de l'air pour respirer pendant 10 minutes avant de perdre sa magie.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 1,
+    "effets": [
+      "Permet de respirer sous l'eau pendant 10 minutes",
+      "Consommé après usage"
+    ]
+  }
 }

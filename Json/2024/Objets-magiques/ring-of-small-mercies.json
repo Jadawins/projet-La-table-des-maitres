@@ -1,16 +1,27 @@
 {
   "slug": "ring-of-small-mercies",
-  "nom": "Anneau de Small Mercies",
+  "nom": "Anneau de Petites Miséricordes",
   "nom_original": "Ring of Small Mercies",
   "categorie": "anneau",
   "rarete": "commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "anneau",
-  "description": "While wearing this plain, beaten pewter ring, you can use an action to cast the spare the dying spell from it at will.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Anneau de pewter usé permettant de lancer le sort Stabiliser à volonté en utilisant une action.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": null,
+    "effets": [
+      "Lancer Stabiliser à volonté"
+    ]
+  }
 }

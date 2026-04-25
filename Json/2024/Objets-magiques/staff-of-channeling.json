@@ -1,16 +1,29 @@
 {
   "slug": "staff-of-channeling",
-  "nom": "Bâton de Channeling",
+  "nom": "Bâton de Canalisation",
   "nom_original": "Staff of Channeling",
   "categorie": "baton",
   "rarete": "peu_commun",
   "harmonisation": false,
   "harmonisation_detail": null,
   "type": "baton",
-  "description": "This plain, wooden staff has 5 charges and regains 1d4 + 1 expended charges daily at dawn. When you cast a spell while holding this staff, you can expend 1 or more of its charges as part of the casting to increase the level of the spell. Expending 1 charge increases the spell's level by 1, expending 3 charges increases the spell's level by 2, and expending 5 charges increases the spell's level by 3. When you increase a spell's level using the staff, the spell casts as if you used a spell slot of a higher level, but you don't expend that higher-level spell slot. You can't use the magic of this staff to increase a spell to a slot level higher than the highest spell level you can cast. For example, if you are a 7th-level wizard, and you cast magic missile, expending a 2nd-level spell slot, you can expend 3 of the staff 's charges to cast the spell as a 4th-level spell, but you can't expend 5 of the staff 's charges to cast the spell as a 5th-level spell since you can't cast 5th-level spells.",
   "effets": [],
   "poids": "0.000",
   "prix_estime": "0.00",
   "source": "SRD",
-  "image": null
+  "image": null,
+  "resume": "Bâton simple permettant d'augmenter le niveau des sorts lancés en dépensant ses charges sans consommer d'emplacements de niveau supérieur.",
+  "combat": {
+    "bonus": 0,
+    "bonus_ca": 0,
+    "degats_bonus": "",
+    "type_degats_bonus": "",
+    "pv_soins": "",
+    "charges": 5,
+    "effets": [
+      "1 charge = +1 niveau de sort, 3 charges = +2 niveaux, 5 charges = +3 niveaux",
+      "N'augmente pas au-delà du plus haut niveau lanceable",
+      "Récupère 1d4+1 charges à l'aube"
+    ]
+  }
 }
