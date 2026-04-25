@@ -1106,6 +1106,11 @@
   min-width: 200px;
 }
 
+.fiche-sprite-zone {
+  position: relative;
+  flex-shrink: 0;
+}
+
 .fiche-nom {
   font-size: 1.6rem;
   font-weight: 700;

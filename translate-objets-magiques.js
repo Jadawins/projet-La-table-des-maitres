@@ -25,10 +25,13 @@ Pour chaque objet magique fourni, génère :
   - "bonus" (number) : bonus global +1/+2/+3 (attaque+dégâts pour armes, CA pour armures), 0 si aucun
   - "bonus_ca" (number) : bonus CA spécifique (armures magiques), 0 si aucun
   - "degats_bonus" (string) : formule de dégâts bonus ex "1d6", "" si aucun
-  - "type_degats_bonus" (string) : type des dégâts bonus ex "feu", "" si aucun
+  - "type_degats_bonus" (string) : type des dégâts bonus ex "feu", "acide", "foudre"..., "" si aucun
   - "pv_soins" (string) : formule PV soignés ex "2d4+2", "" si non applicable
   - "charges" (number|null) : charges max si l'objet en a, null sinon
   - "effets" (array of string) : liste des effets spéciaux en français, max 3 éléments courts
+  - "avantage" (array of string) : liste des types de jets pour lesquels l'objet accorde l'avantage, parmi : "attaque", "force", "dexterite", "constitution", "intelligence", "sagesse", "charisme", "sauvegarde", "initiative", "perception", "discrétion" — tableau vide si aucun
+  - "resistances" (array of string) : types de dégâts auxquels l'objet confère une résistance, ex ["feu","froid"] — tableau vide si aucun
+  - "immunites" (array of string) : types de dégâts auxquels l'objet confère une immunité — tableau vide si aucun
 
 Réponds UNIQUEMENT par un objet JSON valide de la forme :
 { "slug1": { "nom_fr": "...", "resume": "...", "combat": { ... } }, "slug2": { ... } }
@@ -100,7 +103,10 @@ async function main() {
             type_degats_bonus: r.combat.type_degats_bonus    || '',
             pv_soins:          r.combat.pv_soins             || '',
             charges:           r.combat.charges != null ? parseInt(r.combat.charges) || null : null,
-            effets:            Array.isArray(r.combat.effets) ? r.combat.effets.slice(0, 3) : [],
+            effets:            Array.isArray(r.combat.effets)      ? r.combat.effets.slice(0, 3)  : [],
+            avantage:          Array.isArray(r.combat.avantage)    ? r.combat.avantage             : [],
+            resistances:       Array.isArray(r.combat.resistances) ? r.combat.resistances          : [],
+            immunites:         Array.isArray(r.combat.immunites)   ? r.combat.immunites            : [],
           };
         }
 
