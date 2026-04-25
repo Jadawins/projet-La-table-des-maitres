@@ -187,42 +187,97 @@ function prevStep() {
   saveWizardDraft();
 }
 
-// ─── ÉTAPE 12 — SPRITE LPC ────────────────────────────────────
+// ─── ÉTAPE 12 — SPRITE LPC INTÉGRÉ ───────────────────────────
 
-function wizardImporterSprite() {
-  const dataUrl = localStorage.getItem('lpc_avatar');
+const LPC_HIDE_CSS = `
+  #header-left { display: none !important; }
+  #mithril-spritesheet-preview { display: none !important; }
+  body { background: transparent !important; margin: 0 !important; }
+  .section { padding: 0.5rem !important; }
+`;
+
+function onLpcIframeLoad() {
+  const iframe = document.getElementById('lpc-iframe');
+  if (!iframe) return;
+  try {
+    const doc = iframe.contentDocument;
+    const style = doc.createElement('style');
+    style.textContent = LPC_HIDE_CSS;
+    doc.head.appendChild(style);
+    // Masquer Download (Mithril rend en async)
+    setTimeout(() => {
+      try {
+        doc.querySelectorAll('.collapsible-title').forEach(h => {
+          if (h.textContent.trim() === 'Download') h.closest('.box').style.display = 'none';
+        });
+      } catch(e) {}
+    }, 800);
+  } catch(e) {}
+}
+window.onLpcIframeLoad = onLpcIframeLoad;
+
+function wizardValiderSprite() {
+  const iframe = document.getElementById('lpc-iframe');
+  let dataUrl = null;
+  try {
+    const previewEl = iframe.contentDocument.querySelector('#mithril-preview canvas');
+    if (previewEl) {
+      const tmp = document.createElement('canvas');
+      tmp.width = 64; tmp.height = 64;
+      tmp.getContext('2d').drawImage(previewEl, 0, 0, 64, 64, 0, 0, 64, 64);
+      dataUrl = tmp.toDataURL('image/png');
+    }
+  } catch(e) {}
   if (!dataUrl) {
-    alert('Aucun avatar trouvé.\n\n1. Ouvre le générateur LPC\n2. Crée ton personnage\n3. Clique sur « 🧙 Avatar → Fiche personnage » dans la section Download\n4. Reviens ici et clique Importer');
+    alert('Sprite non disponible — attendez que le générateur finisse de charger.');
     return;
   }
   W.sprite_url = dataUrl;
+  const preview = document.getElementById('wizard-sprite-preview');
   const img = document.getElementById('wizard-sprite-img');
-  const placeholder = document.getElementById('wizard-sprite-placeholder');
-  if (img) { img.src = dataUrl; img.style.display = ''; }
-  if (placeholder) placeholder.style.display = 'none';
-  localStorage.removeItem('lpc_avatar');
+  if (img) img.src = dataUrl;
+  if (preview) preview.style.display = '';
+  nextStep();
 }
-window.wizardImporterSprite = wizardImporterSprite;
+window.wizardValiderSprite = wizardValiderSprite;
 
-// Rafraîchir la zone sprite quand on arrive à l'étape 12
+function renderSpriteSuggestions() {
+  const el = document.getElementById('sprite-suggestions');
+  if (!el) return;
+  const classe = (W.classe_data?.nom || W.classe || '').toLowerCase();
+  let armorHint = '';
+  if (['roublard','moine','rôdeur','rodeur'].some(k => classe.includes(k)))
+    armorHint = '🛡️ Armures légères recommandées (cuir, mailles légères)';
+  else if (['guerrier','paladin','barbare'].some(k => classe.includes(k)))
+    armorHint = '🛡️ Armures lourdes/intermédiaires recommandées (plate, chainmail)';
+  else if (['druide','clerc','ensorceleur','magicien','barde','occultiste'].some(k => classe.includes(k)))
+    armorHint = '🪄 Robes et tenues de tissu recommandées';
+  const ARME_LPC = {
+    'épée longue':'longsword','epee longue':'longsword','épée courte':'shortsword',
+    'dague':'dagger','rapière':'rapier','cimeterre':'scimitar',
+    'masse':'mace','marteau de guerre':'waraxe','hache':'waraxe',
+    'lance':'spear','hallebarde':'halberd','arc':'bow','arbalète':'crossbow',
+    'bâton':'simple','baguette':'wand',
+  };
+  const armes = [...(W.equipement || []), ...(W.panier || [])].filter(i => i.type === 'arme' || i.categorie === 'arme');
+  const armeHints = armes.map(a => {
+    const nom = (a.nom || '').toLowerCase();
+    const lpc = Object.entries(ARME_LPC).find(([k]) => nom.includes(k));
+    return `<code>${lpc ? lpc[1] : esc(a.nom)}</code>`;
+  });
+  if (!armorHint && !armeHints.length) { el.innerHTML = ''; return; }
+  el.innerHTML = `<div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:0.6rem 1rem;font-size:0.8rem;">
+    <div style="color:#c9a84c;font-weight:600;margin-bottom:0.3rem;"><i class="fa-solid fa-lightbulb"></i> Suggestions pour ${esc(W.classe_data?.nom || W.classe || '?')}</div>
+    ${armorHint ? `<div style="color:#ccc;margin-bottom:0.2rem;">${armorHint}</div>` : ''}
+    ${armeHints.length ? `<div style="color:#ccc;">⚔️ Armes dans votre inventaire — cherchez : ${armeHints.join(', ')}</div>` : ''}
+  </div>`;
+}
+
 function onShowStep12() {
-  const dataUrl = localStorage.getItem('lpc_avatar');
+  renderSpriteSuggestions();
+  const preview = document.getElementById('wizard-sprite-preview');
   const img = document.getElementById('wizard-sprite-img');
-  const placeholder = document.getElementById('wizard-sprite-placeholder');
-  if (!img) return;
-  const url = W.sprite_url || dataUrl || '';
-  if (url) {
-    img.src = url;
-    img.style.display = '';
-    if (placeholder) placeholder.style.display = 'none';
-    if (dataUrl && !W.sprite_url) {
-      W.sprite_url = dataUrl;
-      localStorage.removeItem('lpc_avatar');
-    }
-  } else {
-    img.style.display = 'none';
-    if (placeholder) placeholder.style.display = '';
-  }
+  if (W.sprite_url && img && preview) { img.src = W.sprite_url; preview.style.display = ''; }
 }
 
 function validateStep(n) {
@@ -2318,93 +2373,6 @@ async function creerPersonnage() {
     btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Créer le personnage !';
   }
 }
-
-// ─── ÉTAPE 12 — SPRITE LPC ────────────────────────────────────
-
-function initSpriteStep() {
-  renderSpriteSuggestions();
-  const container = document.getElementById('sprite-iframe-container');
-  if (container.querySelector('iframe')) return; // lazy-load : une seule fois
-  const iframe = document.createElement('iframe');
-  iframe.id = 'lpc-iframe';
-  iframe.src = '/lpc-generator/dist/index.html';
-  iframe.style.cssText = 'width:100%;height:100%;border:none;';
-  iframe.loading = 'lazy';
-  container.appendChild(iframe);
-}
-
-function renderSpriteSuggestions() {
-  const el = document.getElementById('sprite-suggestions');
-  if (!el) return;
-
-  const classe = (W.classe_data?.nom || W.classe || '').toLowerCase();
-  let armorHint = '';
-  if (['roublard','moine','rôdeur','rodeur'].some(k => classe.includes(k))) {
-    armorHint = '🛡️ Armures légères recommandées (cuir, mailles légères)';
-  } else if (['guerrier','paladin','barbare'].some(k => classe.includes(k))) {
-    armorHint = '🛡️ Armures lourdes/intermédiaires recommandées (plate, chainmail)';
-  } else if (['mage','sorcier','druide','clerc','ensorceleur'].some(k => classe.includes(k))) {
-    armorHint = '🪄 Robes et tenues de tissu recommandées';
-  }
-
-  const ARME_LPC = {
-    'épée longue': 'longsword', 'epee longue': 'longsword',
-    'épée courte': 'shortsword', 'epee courte': 'shortsword',
-    'dague': 'dagger', 'rapière': 'rapier', 'rapiere': 'rapier',
-    'cimeterre': 'scimitar', 'sabre': 'saber', 'katana': 'katana',
-    'masse': 'mace', 'marteau de guerre': 'waraxe', 'fléau': 'flail',
-    'hache': 'waraxe', 'lance': 'spear', 'hallebarde': 'halberd',
-    'arc': 'bow', 'arbalète': 'crossbow', 'fronde': 'slingshot',
-    'bâton': 'simple', 'baton': 'simple', 'baguette': 'wand',
-  };
-  const tousItems = [...(W.equipement || []), ...(W.panier || [])];
-  const armes = tousItems.filter(i => i.type === 'arme' || i.categorie === 'arme');
-  const armeHints = armes.map(a => {
-    const nom = (a.nom || '').toLowerCase();
-    const lpc = Object.entries(ARME_LPC).find(([k]) => nom.includes(k));
-    return lpc ? `<code>${lpc[1]}</code>` : `<code>${esc(a.nom)}</code>`;
-  });
-
-  el.innerHTML = `
-    <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:0.75rem 1rem;font-size:0.8rem;">
-      <div style="color:#c9a84c;font-weight:600;margin-bottom:0.4rem;"><i class="fa-solid fa-lightbulb"></i> Suggestions pour ${esc(W.classe_data?.nom || W.classe || '?')}</div>
-      ${armorHint ? `<div style="color:#ccc;margin-bottom:0.3rem;">${armorHint}</div>` : ''}
-      ${armeHints.length ? `<div style="color:#ccc;">⚔️ Armes dans votre inventaire — cherchez dans le générateur : ${armeHints.join(', ')}</div>` : ''}
-    </div>`;
-}
-
-function capturerSprite() {
-  const iframe = document.getElementById('lpc-iframe');
-  if (!iframe || !iframe.contentWindow?.lpcGetState) {
-    showNotif('Générateur non chargé — attendez quelques secondes', 'warning');
-    return;
-  }
-  try {
-    const json = iframe.contentWindow.lpcGetState();
-    W.sprite = JSON.parse(json);
-    document.getElementById('sprite-validated').classList.remove('hidden');
-    showNotif('Apparence sauvegardée !', 'success');
-  } catch(e) {
-    showNotif('Erreur lors de la capture', 'error');
-  }
-}
-
-function reinitialiserSprite() {
-  W.sprite = null;
-  document.getElementById('sprite-validated').classList.add('hidden');
-}
-
-function passerSpriteStep() {
-  W.sprite = null;
-  collectStep(W.step);
-  if (W.step === W.totalSteps - 1) buildRecap();
-  if (W.step < W.totalSteps) showStep(W.step + 1);
-  saveWizardDraft();
-}
-
-window.passerSpriteStep    = passerSpriteStep;
-window.capturerSprite      = capturerSprite;
-window.reinitialiserSprite = reinitialiserSprite;
 
 // ─── RAPPORT RACE HOMEBREW ────────────────────────────────────
 

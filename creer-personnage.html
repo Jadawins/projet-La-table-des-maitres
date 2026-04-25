@@ -349,35 +349,31 @@
   <!-- ÉTAPE 12 — Sprite LPC -->
   <div class="wizard-panel" data-step="12">
     <div class="step-title"><i class="fa-solid fa-person"></i> Apparence du personnage</div>
-    <div class="step-subtitle">Créez le sprite de votre personnage avec le générateur LPC. Cette étape est optionnelle et peut être faite plus tard depuis votre fiche.</div>
+    <div class="step-subtitle">
+      Personnalisez l'apparence de votre personnage. Cette étape est optionnelle.
+      <button type="button" onclick="nextStep()" style="margin-left:1rem;background:none;border:1px solid rgba(201,168,76,0.4);border-radius:6px;color:#c9a84c;cursor:pointer;font-size:0.75rem;padding:0.2rem 0.7rem;">↪ Passer cette étape</button>
+    </div>
 
-    <div style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;margin-top:1rem;">
+    <!-- Aperçu du sprite validé -->
+    <div id="wizard-sprite-preview" style="display:none;text-align:center;margin:0.6rem 0;">
+      <img id="wizard-sprite-img" src="" alt="" style="width:128px;height:128px;image-rendering:pixelated;image-rendering:crisp-edges;border:2px solid rgba(201,168,76,0.5);border-radius:8px;" />
+      <p style="font-size:0.72rem;color:#6ddc6d;margin:0.3rem 0 0;">✓ Sprite enregistré</p>
+    </div>
 
-      <!-- Zone sprite -->
-      <div id="wizard-sprite-zone" style="position:relative;cursor:pointer;" onclick="wizardImporterSprite()" title="Cliquer pour importer depuis le générateur LPC">
-        <img id="wizard-sprite-img" src="" alt="" style="display:none;width:128px;height:128px;image-rendering:pixelated;image-rendering:crisp-edges;border:2px solid rgba(201,168,76,0.5);border-radius:8px;" />
-        <div id="wizard-sprite-placeholder" style="width:128px;height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:2px dashed rgba(201,168,76,0.4);border-radius:8px;gap:0.4rem;">
-          <span style="font-size:3rem;">🧙</span>
-          <span style="font-size:0.65rem;color:#888;text-align:center;">Aucun sprite<br>importé</span>
-        </div>
-      </div>
+    <!-- Suggestions armure/armes -->
+    <div id="sprite-suggestions" style="width:100%;margin-bottom:0.5rem;"></div>
 
-      <p style="font-size:0.82rem;color:#aaa;text-align:center;max-width:400px;margin:0;">
-        Ouvre le générateur LPC, crée ton personnage pixel art, puis clique sur <strong style="color:#c9a84c;">«&nbsp;🧙 Avatar → Fiche personnage&nbsp;»</strong> dans la section Download. Reviens ici et clique sur le sprite pour l'importer.
-      </p>
+    <!-- Iframe LPC generator -->
+    <iframe id="lpc-iframe" src="/lpc-generator/"
+      style="width:100%;height:600px;border:none;border-radius:8px;background:#fff;"
+      onload="onLpcIframeLoad()">
+    </iframe>
 
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
-        <a href="/lpc-generator/" target="_blank" style="padding:0.5rem 1.1rem;background:rgba(134,93,255,0.15);border:1px solid #865dff;border-radius:8px;color:#865dff;font-size:0.85rem;text-decoration:none;cursor:pointer;">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Ouvrir le générateur LPC
-        </a>
-        <button type="button" onclick="wizardImporterSprite()" style="padding:0.5rem 1.1rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.5);border-radius:8px;color:#c9a84c;font-size:0.85rem;cursor:pointer;">
-          <i class="fa-solid fa-file-import"></i> Importer le sprite
-        </button>
-      </div>
-
-      <p style="font-size:0.72rem;color:#555;text-align:center;margin:0;">
-        Tu peux aussi <button type="button" onclick="nextStep()" style="background:none;border:none;color:#c9a84c;cursor:pointer;font-size:0.72rem;text-decoration:underline;">passer cette étape</button> et ajouter ton sprite plus tard depuis ta fiche personnage.
-      </p>
+    <!-- Bouton valider -->
+    <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:0.75rem;">
+      <button type="button" onclick="wizardValiderSprite()" style="padding:0.6rem 1.5rem;background:linear-gradient(135deg,#c9a84c,#e6c96a);color:#1a1209;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;">
+        <i class="fa-solid fa-check"></i> Valider cette apparence
+      </button>
     </div>
   </div>
 
