@@ -421,12 +421,33 @@ function _hasBouclier() {
   return (perso.equipement || []).some(e => (e.nom||'').toLowerCase().includes('bouclier'));
 }
 
+function getResistancesMagiques() {
+  const res = new Set(), imm = new Set();
+  (perso.equipement || []).forEach(e => {
+    (e.resistances || []).forEach(r => res.add(r));
+    (e.immunites   || []).forEach(r => imm.add(r));
+  });
+  return { resistances: [...res], immunites: [...imm] };
+}
+
+function renderResistancesMagiques() {
+  const el = document.getElementById('resistances-magiques');
+  if (!el) return;
+  const { resistances, immunites } = getResistancesMagiques();
+  if (!resistances.length && !immunites.length) { el.style.display = 'none'; return; }
+  el.style.display = '';
+  el.innerHTML =
+    (resistances.length ? `<p style="font-size:0.72rem;color:#aaa;margin:0.2rem 0;">Résistances (objets) : <span style="color:#c9a84c;">${resistances.join(', ')}</span></p>` : '') +
+    (immunites.length   ? `<p style="font-size:0.72rem;color:#aaa;margin:0.2rem 0;">Immunités (objets) : <span style="color:#865dff;">${immunites.join(', ')}</span></p>` : '');
+}
+
 function calculerCA(armureKey) {
   const data = ARMURES_CA[armureKey] || ARMURES_CA['sans armure'];
   const dexMod = getMod('DEX');
   const dexBonus = Math.min(dexMod, data.dexMax === 99 ? dexMod : data.dexMax);
   const bouclier = _hasBouclier() ? BOUCLIER_BONUS : 0;
-  return data.base + dexBonus + bouclier;
+  const bonusMagique = (perso.equipement || []).reduce((sum, e) => sum + (parseInt(e.bonus_ca) || 0), 0);
+  return data.base + dexBonus + bouclier + bonusMagique;
 }
 
 function renderArmureEquipee() {
@@ -458,6 +479,7 @@ function renderArmureEquipee() {
     </div>
     ${bouclier ? `<div class="armure-bouclier-badge"><i class="fa-solid fa-shield"></i> Bouclier +2 inclus</div>` : ''}
   `;
+  renderResistancesMagiques();
 }
 
 function equiperArmure(key) {
@@ -967,14 +989,17 @@ function renderAttaques() {
     tbody.innerHTML = `<tr><td colspan="5" style="color:#555;font-size:0.78rem;text-align:center;padding:0.5rem;">Aucune attaque</td></tr>`;
     return;
   }
-  tbody.innerHTML = attacks.map((a, i) => `
-    <tr>
+  tbody.innerHTML = attacks.map((a, i) => {
+    const avt = (a.avantage || []).length ? `<span title="Avantage : ${a.avantage.join(', ')}" style="color:#c9a84c;font-size:0.65rem;margin-left:0.3rem;">AVT</span>` : '';
+    const db  = a.degats_bonus ? `<span style="color:#865dff;font-size:0.65rem;margin-left:0.3rem;">+${a.degats_bonus} ${a.type_degats_bonus||''}</span>` : '';
+    return `<tr>
       <td>${esc(a.nom)}</td>
-      <td class="atk-bonus">${esc(a.bonus_attaque)}</td>
-      <td class="atk-degats">${esc(a.degats)} <span style="color:#888;font-size:0.65rem;">${esc(a.type||'')}</span></td>
+      <td class="atk-bonus">${esc(a.bonus_attaque)}${avt}</td>
+      <td class="atk-degats">${esc(a.degats)} <span style="color:#888;font-size:0.65rem;">${esc(a.type||'')}</span>${db}</td>
       <td>${combatActif ? `<button class="atk-btn-attaquer" onclick="ouvrirAttaqueCombat(${i})">⚔️</button>` : ''}</td>
       <td><button class="btn-icon" style="color:#555;background:none;border:none;cursor:pointer;font-size:0.75rem;" onclick="supprimerAttaque(${i})">✕</button></td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 // ─── SORTS AMÉLIORÉS (avec bouton Lancer) ────────────────────
@@ -1309,6 +1334,16 @@ function ouvrirAttaqueCombat(atkIdx) {
   document.getElementById('atk-type-label').textContent = atk.type || '';
   document.getElementById('atk-result-box').style.display  = 'none';
   document.getElementById('atk-degats-row').style.display  = 'none';
+
+  // Infos dégâts bonus + avantage
+  const infoEl = document.getElementById('atk-combat-info');
+  if (infoEl) {
+    const parts = [];
+    if (atk.degats_bonus) parts.push(`+${atk.degats_bonus} ${atk.type_degats_bonus || ''} (bonus)`);
+    if ((atk.avantage || []).length) parts.push(`AVT : ${atk.avantage.join(', ')}`);
+    infoEl.textContent = parts.join(' · ');
+    infoEl.style.display = parts.length ? '' : 'none';
+  }
 
   // Peupler la liste des cibles (participants visibles hors joueur)
   const cibles = (combatData_fiche.participants || []).filter(p => p.id !== _joueurPartId);

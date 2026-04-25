@@ -544,6 +544,24 @@ function carteObjetMagique(o, idx) {
   </div>`;
 }
 
+function combatSection(o) {
+  const c = o.combat;
+  if (!c) return '';
+  const lignes = [];
+  if (c.bonus)             lignes.push(`Bonus : +${c.bonus}`);
+  if (c.bonus_ca)          lignes.push(`Bonus CA : +${c.bonus_ca}`);
+  if (c.degats_bonus)      lignes.push(`Dégâts bonus : ${c.degats_bonus}${c.type_degats_bonus ? ' ' + c.type_degats_bonus : ''}`);
+  if (c.pv_soins)          lignes.push(`Soins : ${c.pv_soins} PV`);
+  if (c.charges != null)   lignes.push(`Charges : ${c.charges}`);
+  const effets = (c.effets || []).filter(Boolean);
+  if (!lignes.length && !effets.length) return '';
+  return `<div class="modal-section">
+    <h3>Combat</h3>
+    ${lignes.length ? `<p>${lignes.join(' &nbsp;·&nbsp; ')}</p>` : ''}
+    ${effets.length ? `<ul>${effets.map(e => `<li>${escHtml(e)}</li>`).join('')}</ul>` : ''}
+  </div>`;
+}
+
 function modalObjetMagique(o) {
   return `
     <p class="modal-title">${o.nom || '—'}</p>
@@ -555,9 +573,9 @@ function modalObjetMagique(o) {
     </div>
     <div class="modal-section">
       <h3>Description</h3>
-      <p>${o.description || '—'}</p>
+      <p>${o.resume || o.description_fr || o.description || '—'}</p>
     </div>
-    ${o.effets?.length ? `<div class="modal-section"><h3>Effets</h3><ul>${o.effets.map(ef => `<li>${typeof ef === 'string' ? ef : JSON.stringify(ef)}</li>`).join('')}</ul></div>` : ''}
+    ${combatSection(o)}
     ${o.poids != null ? `<div class="modal-section"><p>Poids : ${o.poids} kg${o.prix_estime ? ' &nbsp;|&nbsp; Prix estimé : ' + o.prix_estime + ' po' : ''}</p></div>` : ''}
     ${sectionAjouterAuPersonnage()}
   `;
@@ -598,9 +616,9 @@ function modalHomebrew(o) {
     </div>
     <div class="modal-section">
       <h3>Description</h3>
-      <p>${o.description || '—'}</p>
+      <p>${o.resume || o.description || '—'}</p>
     </div>
-    ${o.effets?.length ? `<div class="modal-section"><h3>Effets</h3><ul>${o.effets.map(ef => `<li>${typeof ef === 'string' ? ef : JSON.stringify(ef)}</li>`).join('')}</ul></div>` : ''}
+    ${combatSection(o)}
     ${o.poids != null ? `<div class="modal-section"><p>Poids : ${o.poids} kg${o.prix_estime ? ' &nbsp;|&nbsp; Prix estimé : ' + o.prix_estime + ' po' : ''}</p></div>` : ''}
     ${sectionAjouterAuPersonnage()}
     <div class="modal-section hb-modal-actions">
@@ -1067,9 +1085,34 @@ window.ajouterAuPersonnage = async function() {
       }
 
     } else if (state.onglet === 'objets-magiques' || state.onglet === 'mes-homebrew') {
-      const equipement = JSON.parse(JSON.stringify(perso.equipement || []));
-      equipement.push({ nom: item.nom, quantite: 1, description: item.description || '', poids: item.poids || 0 });
-      updateBody = { equipement };
+      const c = item.combat || {};
+      if (item.categorie === 'arme_magique') {
+        const attaques = JSON.parse(JSON.stringify(perso.attaques || []));
+        attaques.push({
+          nom:              item.nom,
+          degats:           '—',
+          bonus_attaque:    c.bonus ? `+${c.bonus}` : '+0',
+          degats_bonus:     c.degats_bonus     || '',
+          type_degats_bonus: c.type_degats_bonus || '',
+          avantage:         c.avantage         || [],
+          portee:           'contact',
+          type:             '',
+          action_type:      'action'
+        });
+        updateBody = { attaques };
+      } else {
+        const equipement = JSON.parse(JSON.stringify(perso.equipement || []));
+        equipement.push({
+          nom:         item.nom,
+          quantite:    1,
+          description: item.resume || '',
+          poids:       item.poids || 0,
+          bonus_ca:    c.bonus_ca    || 0,
+          resistances: c.resistances || [],
+          immunites:   c.immunites   || [],
+        });
+        updateBody = { equipement };
+      }
     }
 
     if (!updateBody) { if (btn) btn.disabled = false; return; }

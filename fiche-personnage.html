@@ -215,6 +215,7 @@
     <div class="fiche-section">
       <div class="fiche-section-title"><i class="fa-solid fa-shield-halved"></i> Armure équipée</div>
       <div id="armure-section"></div>
+      <div id="resistances-magiques" style="display:none;margin-top:0.4rem;"></div>
     </div>
 
     <div class="fiche-section">
@@ -455,6 +456,7 @@ if (_savedTab) switchFicheTab(_savedTab);
     <button class="modal-close" onclick="document.getElementById('modal-attaque-combat').classList.add('hidden')">✕</button>
     <div class="modal-title">⚔️ Attaquer</div>
     <div style="font-size:0.78rem;color:#aaa;margin-bottom:0.4rem;">Arme : <strong id="atk-combat-nom" style="color:#c9a84c;"></strong> — Bonus : <span id="atk-combat-bonus"></span></div>
+    <div id="atk-combat-info" style="display:none;font-size:0.7rem;color:#865dff;margin-bottom:0.4rem;"></div>
 
     <div style="font-size:0.72rem;color:#aaa;margin-bottom:0.3rem;">Choisir une cible :</div>
     <div class="cibles-list" id="cibles-list"></div>
