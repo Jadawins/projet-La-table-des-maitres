@@ -258,12 +258,37 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="bonus_attaque">Bonus d'attaque / dégâts</label>
-            <select id="bonus_attaque" name="bonus_attaque">
+            <label for="combat_bonus">Bonus d'attaque / dégâts</label>
+            <select id="combat_bonus" name="combat_bonus">
               <option value="0">Aucun (+0)</option>
               <option value="1">+1</option>
               <option value="2">+2</option>
               <option value="3">+3</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="combat_degats_bonus">Dégâts bonus (formule)</label>
+            <input type="text" id="combat_degats_bonus" placeholder="Ex : 1d6" />
+          </div>
+          <div class="form-group">
+            <label for="combat_type_degats_bonus">Type de dégâts bonus</label>
+            <select id="combat_type_degats_bonus">
+              <option value="">— aucun —</option>
+              <option value="feu">Feu</option>
+              <option value="froid">Froid</option>
+              <option value="foudre">Foudre</option>
+              <option value="acide">Acide</option>
+              <option value="poison">Poison</option>
+              <option value="nécrotique">Nécrotique</option>
+              <option value="radieux">Radieux</option>
+              <option value="psychique">Psychique</option>
+              <option value="tonnerre">Tonnerre</option>
+              <option value="force">Force</option>
+              <option value="tranchant">Tranchant</option>
+              <option value="perforant">Perforant</option>
+              <option value="contondant">Contondant</option>
             </select>
           </div>
         </div>
@@ -289,8 +314,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="bonus_ca">Bonus de CA</label>
-            <select id="bonus_ca" name="bonus_ca">
+            <label for="combat_bonus_ca">Bonus de CA</label>
+            <select id="combat_bonus_ca" name="combat_bonus_ca">
               <option value="0">Aucun (+0)</option>
               <option value="1">+1</option>
               <option value="2">+2</option>
@@ -300,17 +325,19 @@
         </div>
       </div>
 
-      <!-- Bloc bâton -->
-      <div id="bloc-baton" style="display:none;">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="charges_max">Nombre de charges</label>
-            <input type="number" id="charges_max" name="charges_max" min="1" max="50" placeholder="Ex : 10" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
-          </div>
-          <div class="form-group">
-            <label for="recharge">Règle de recharge</label>
-            <input type="text" id="recharge" name="recharge" placeholder="Ex : Recharge 1d6+4 charges à l'aube" />
-          </div>
+      <!-- Bloc potion -->
+      <div id="bloc-potion" style="display:none;">
+        <div class="form-group">
+          <label for="combat_pv_soins">Formule de soins</label>
+          <input type="text" id="combat_pv_soins" placeholder="Ex : 2d4+2" />
+        </div>
+      </div>
+
+      <!-- Bloc charges (bâton, baguette, sceptre) -->
+      <div id="bloc-charges" style="display:none;">
+        <div class="form-group">
+          <label for="combat_charges">Nombre de charges</label>
+          <input type="number" id="combat_charges" min="1" max="50" placeholder="Ex : 10" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
         </div>
       </div>
 
@@ -326,10 +353,10 @@
         </div>
       </div>
 
-      <!-- Description -->
+      <!-- Résumé -->
       <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" name="description" placeholder="Décris l'apparence, l'origine et les propriétés de l'objet…"></textarea>
+        <label for="resume">Résumé <span style="opacity:.6;font-weight:normal">(1-2 phrases)</span></label>
+        <textarea id="resume" name="resume" style="min-height:80px;" placeholder="Décris l'effet principal en 1-2 phrases…"></textarea>
       </div>
 
       <!-- Effets -->
@@ -358,6 +385,30 @@
         <label for="image">URL de l'image <span style="opacity:.6;font-weight:normal">(optionnel)</span></label>
         <input type="url" id="image" name="image" placeholder="https://…" autocomplete="off" />
       </div>
+
+      <!-- Effets de combat -->
+      <details style="margin-bottom:1.25rem;">
+        <summary style="cursor:pointer;color:#c9a84c;font-size:.85rem;font-weight:600;padding:.4rem 0;">⚔️ Effets de combat <span style="opacity:.5;font-weight:normal">(optionnel)</span></summary>
+        <div style="margin-top:.75rem;">
+          <div class="form-group">
+            <label>Avantage accordé sur <span style="opacity:.6;font-weight:normal">(un par ligne)</span></label>
+            <ul class="effets-list" id="avantage-list"></ul>
+            <button type="button" class="btn-add-effet" id="btn-add-avantage"><i class="fa-solid fa-plus"></i> Ajouter</button>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Résistances conférées <span style="opacity:.6;font-weight:normal">(un par ligne)</span></label>
+              <ul class="effets-list" id="resistances-list"></ul>
+              <button type="button" class="btn-add-effet" id="btn-add-resistance"><i class="fa-solid fa-plus"></i> Ajouter</button>
+            </div>
+            <div class="form-group">
+              <label>Immunités conférées <span style="opacity:.6;font-weight:normal">(un par ligne)</span></label>
+              <ul class="effets-list" id="immunites-list"></ul>
+              <button type="button" class="btn-add-effet" id="btn-add-immunite"><i class="fa-solid fa-plus"></i> Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </details>
 
       <!-- Actions -->
       <div class="form-actions">
@@ -433,18 +484,24 @@
         document.getElementById('harmo-detail-zone').style.display = 'block';
         document.getElementById('harmonisation_detail').value = obj.harmonisation_detail || '';
       }
-      document.getElementById('description').value = obj.description || '';
+      document.getElementById('resume').value = obj.resume || obj.description || '';
       document.getElementById('poids').value = obj.poids ?? '';
       document.getElementById('prix_estime').value = obj.prix_estime ?? '';
       document.getElementById('image').value = obj.image || '';
       (obj.effets || []).forEach(ef => ajouterEffet(typeof ef === 'string' ? ef : JSON.stringify(ef)));
 
-      if (obj.type_arme)           document.getElementById('type_arme').value     = obj.type_arme;
-      if (obj.bonus_attaque != null) document.getElementById('bonus_attaque').value = obj.bonus_attaque;
-      if (obj.type_armure)         document.getElementById('type_armure').value   = obj.type_armure;
-      if (obj.bonus_ca != null)    document.getElementById('bonus_ca').value      = obj.bonus_ca;
-      if (obj.charges_max != null) document.getElementById('charges_max').value   = obj.charges_max;
-      if (obj.recharge)            document.getElementById('recharge').value      = obj.recharge;
+      const c = obj.combat || {};
+      if (obj.type_arme)          document.getElementById('type_arme').value          = obj.type_arme;
+      if (c.bonus != null)        document.getElementById('combat_bonus').value        = c.bonus;
+      if (c.degats_bonus)         document.getElementById('combat_degats_bonus').value = c.degats_bonus;
+      if (c.type_degats_bonus)    document.getElementById('combat_type_degats_bonus').value = c.type_degats_bonus;
+      if (obj.type_armure)        document.getElementById('type_armure').value         = obj.type_armure;
+      if (c.bonus_ca != null)     document.getElementById('combat_bonus_ca').value     = c.bonus_ca;
+      if (c.pv_soins)             document.getElementById('combat_pv_soins').value     = c.pv_soins;
+      if (c.charges != null)      document.getElementById('combat_charges').value      = c.charges;
+      (c.avantage    || []).forEach(v => ajouterLigneList('avantage-list',    v));
+      (c.resistances || []).forEach(v => ajouterLigneList('resistances-list', v));
+      (c.immunites   || []).forEach(v => ajouterLigneList('immunites-list',   v));
 
       document.getElementById('page-titre').innerHTML = '<i class="fa-solid fa-pen"></i> Modifier un objet magique';
       document.getElementById('page-sous-titre').textContent = 'Modification de : ' + obj.nom;
@@ -458,9 +515,10 @@
   // ─── Catégorie → blocs conditionnels ─────────────────────
   function updateBlocsCategorie() {
     const cat = document.getElementById('categorie').value;
-    document.getElementById('bloc-arme').style.display   = cat === 'arme_magique'  ? 'block' : 'none';
-    document.getElementById('bloc-armure').style.display = cat === 'armure_magique' ? 'block' : 'none';
-    document.getElementById('bloc-baton').style.display  = cat === 'baton'          ? 'block' : 'none';
+    document.getElementById('bloc-arme').style.display    = cat === 'arme_magique'  ? 'block' : 'none';
+    document.getElementById('bloc-armure').style.display  = cat === 'armure_magique' ? 'block' : 'none';
+    document.getElementById('bloc-potion').style.display  = cat === 'potion'         ? 'block' : 'none';
+    document.getElementById('bloc-charges').style.display = ['baton','baguette','sceptre'].includes(cat) ? 'block' : 'none';
   }
   document.getElementById('categorie').addEventListener('change', updateBlocsCategorie);
   updateBlocsCategorie();
@@ -482,6 +540,21 @@
   }
 
   document.getElementById('btn-add-effet').addEventListener('click', () => ajouterEffet());
+  document.getElementById('btn-add-avantage').addEventListener('click', () => ajouterLigneList('avantage-list'));
+  document.getElementById('btn-add-resistance').addEventListener('click', () => ajouterLigneList('resistances-list'));
+  document.getElementById('btn-add-immunite').addEventListener('click', () => ajouterLigneList('immunites-list'));
+
+  function ajouterLigneList(listId, valeur = '') {
+    const li = document.createElement('li');
+    li.innerHTML = `<input type="text" placeholder="Ex : feu, attaque, force…" value="${valeur.replace(/"/g, '&quot;')}" /><button type="button" class="btn-remove-effet" title="Supprimer">✕</button>`;
+    li.querySelector('.btn-remove-effet').addEventListener('click', () => li.remove());
+    document.getElementById(listId).appendChild(li);
+  }
+
+  function getList(listId) {
+    return [...document.querySelectorAll(`#${listId} li input`)]
+      .map(i => i.value.trim()).filter(Boolean);
+  }
 
   function getEffets() {
     return [...document.querySelectorAll('#effets-list li input')]
@@ -501,21 +574,32 @@
 
     const body = {
       nom,
-      categorie:             document.getElementById('categorie').value,
-      rarete:                document.getElementById('rarete').value,
-      harmonisation:         document.getElementById('harmonisation').checked,
-      harmonisation_detail:  document.getElementById('harmonisation_detail').value.trim() || null,
-      description:           document.getElementById('description').value.trim(),
-      effets:                getEffets(),
-      poids:                 document.getElementById('poids').value || null,
-      prix_estime:           document.getElementById('prix_estime').value || null,
-      image:                 document.getElementById('image').value.trim() || null,
-      type_arme:             document.getElementById('type_arme').value || null,
-      bonus_attaque:         document.getElementById('bonus_attaque').value,
-      type_armure:           document.getElementById('type_armure').value || null,
-      bonus_ca:              document.getElementById('bonus_ca').value,
-      charges_max:           document.getElementById('charges_max').value || null,
-      recharge:              document.getElementById('recharge').value.trim() || null
+      categorie:            document.getElementById('categorie').value,
+      rarete:               document.getElementById('rarete').value,
+      harmonisation:        document.getElementById('harmonisation').checked,
+      harmonisation_detail: document.getElementById('harmonisation_detail').value.trim() || null,
+      resume:               document.getElementById('resume').value.trim(),
+      effets:               getEffets(),
+      poids:                document.getElementById('poids').value || null,
+      prix_estime:          document.getElementById('prix_estime').value || null,
+      image:                document.getElementById('image').value.trim() || null,
+      type_arme:            document.getElementById('type_arme').value || null,
+      type_armure:          document.getElementById('type_armure').value || null,
+      bonus_attaque:        parseInt(document.getElementById('combat_bonus').value) || 0,
+      bonus_ca:             parseInt(document.getElementById('combat_bonus_ca').value) || 0,
+      charges_max:          document.getElementById('combat_charges').value || null,
+      combat: {
+        bonus:             parseInt(document.getElementById('combat_bonus').value) || 0,
+        bonus_ca:          parseInt(document.getElementById('combat_bonus_ca').value) || 0,
+        degats_bonus:      document.getElementById('combat_degats_bonus').value.trim(),
+        type_degats_bonus: document.getElementById('combat_type_degats_bonus').value,
+        pv_soins:          document.getElementById('combat_pv_soins').value.trim(),
+        charges:           document.getElementById('combat_charges').value ? parseInt(document.getElementById('combat_charges').value) : null,
+        effets:            getEffets(),
+        avantage:          getList('avantage-list'),
+        resistances:       getList('resistances-list'),
+        immunites:         getList('immunites-list'),
+      }
     };
 
     try {
