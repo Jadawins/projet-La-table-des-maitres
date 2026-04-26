@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes Campagnes — La Table du Maître</title>
+  <title>Mes campagnes — La Table du Maître</title>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/notifications.css">
   <link rel="stylesheet" href="css/campagne.css">
+  <link rel="stylesheet" href="css/campagne-v2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -20,28 +21,47 @@
 <body>
 <div class="page-container">
 
-  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar"></aside>
 
-  <!-- CONTENU -->
-  <main class="campagne-page">
+  <main class="camp-page">
     <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
 
-    <h1><i class="fa-solid fa-book-skull"></i> Mes Campagnes</h1>
-    <p class="page-subtitle">Créez et gérez vos campagnes de jeu de rôle</p>
+    <!-- Header -->
+    <div class="camp-header">
+      <div class="camp-header-label">📖 Atelier du Maître</div>
+      <div class="camp-header-content">
+        <div>
+          <h1 class="camp-title">Mes campagnes</h1>
+          <p class="camp-subtitle" id="campagnes-count">Chargement…</p>
+        </div>
+        <button class="btn btn--primary" onclick="ouvrirModalCreer()">
+          <i class="fa-solid fa-plus"></i> Nouvelle campagne
+        </button>
+      </div>
+    </div>
 
-    <div class="campagne-topbar">
-      <span id="campagnes-count" style="color:#aaa;font-size:0.82rem;"></span>
-      <button class="btn-primary" onclick="ouvrirModalCreer()">
-        <i class="fa-solid fa-plus"></i> Nouvelle campagne
+    <!-- Toolbar filters -->
+    <div class="camp-toolbar" id="camp-toolbar">
+      <button class="camp-filter-btn active" data-filter="toutes">
+        Toutes <span class="camp-filter-count" id="count-toutes">0</span>
+      </button>
+      <button class="camp-filter-btn" data-filter="en_cours">
+        En cours <span class="camp-filter-count" id="count-en_cours">0</span>
+      </button>
+      <button class="camp-filter-btn" data-filter="preparation">
+        Préparation <span class="camp-filter-count" id="count-preparation">0</span>
+      </button>
+      <button class="camp-filter-btn" data-filter="terminee">
+        Achevées <span class="camp-filter-count" id="count-terminee">0</span>
       </button>
     </div>
 
-    <div id="campagnes-grid" class="campagnes-grid">
-      <div class="empty-state">
-        <i class="fa-solid fa-spinner fa-spin"></i>
+    <!-- List -->
+    <div class="camp-list" id="campagnes-grid">
+      <div class="camp-empty">
+        <div class="camp-empty__icon"><i class="fa-solid fa-spinner fa-spin"></i></div>
         <p>Chargement…</p>
       </div>
     </div>
@@ -49,28 +69,30 @@
 </div>
 
 <!-- MODAL CRÉATION -->
-<div class="modal-overlay hidden" id="modal-creer">
-  <div class="modal-box">
-    <button class="modal-close" onclick="fermerModal()">✕</button>
-    <p class="modal-title"><i class="fa-solid fa-plus"></i> Nouvelle campagne</p>
-    <div class="form-group">
-      <label>Nom de la campagne</label>
-      <input type="text" id="c-nom" placeholder="La Malédiction de Strahd…" />
+<div class="camp-modal-overlay hidden" id="modal-creer">
+  <div class="camp-modal">
+    <button class="camp-modal-close" onclick="fermerModal()">✕</button>
+    <div class="camp-modal-title">
+      <i class="fa-solid fa-book-skull"></i> Nouvelle campagne
     </div>
-    <div class="form-group">
-      <label>Description</label>
-      <textarea id="c-desc" placeholder="Un résumé de la campagne…" rows="3"></textarea>
+    <div class="camp-form-group">
+      <label class="camp-form-label">Nom de la campagne</label>
+      <input class="camp-form-input" type="text" id="c-nom" placeholder="La Malédiction de Strahd…" />
     </div>
-    <div class="form-group">
-      <label>Statut initial</label>
-      <select id="c-statut">
+    <div class="camp-form-group">
+      <label class="camp-form-label">Description</label>
+      <textarea class="camp-form-textarea" id="c-desc" placeholder="Un résumé de la campagne…" rows="3"></textarea>
+    </div>
+    <div class="camp-form-group">
+      <label class="camp-form-label">Statut initial</label>
+      <select class="camp-form-select" id="c-statut">
         <option value="preparation">En préparation</option>
         <option value="en_cours">En cours</option>
       </select>
     </div>
-    <div class="modal-actions">
-      <button class="btn-secondary" onclick="fermerModal()">Annuler</button>
-      <button class="btn-primary" onclick="creerCampagne()">
+    <div class="camp-modal-actions">
+      <button class="btn btn--ghost" onclick="fermerModal()">Annuler</button>
+      <button class="btn btn--primary" onclick="creerCampagne()">
         <i class="fa-solid fa-plus"></i> Créer
       </button>
     </div>
