@@ -1,0 +1,375 @@
+/* ================================================================
+   SALON V2 — overrides visuels (tokens.css requis)
+   Chargé après ecran-mj.css. Ne touche pas aux IDs/JS.
+   ================================================================ */
+
+@keyframes slPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+@keyframes slShimmer {
+  0%, 100% { box-shadow: 0 0 24px rgba(201,168,76,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(201,168,76,0.55); }
+}
+
+/* ── Layout ───────────────────────────────────────────────────── */
+.salon-layout {
+  background: var(--bg);
+}
+
+.salon-col {
+  border-right-color: var(--border-muted);
+}
+
+.salon-col-header {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border-muted);
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface);
+}
+
+/* ── Session info block ───────────────────────────────────────── */
+.session-info-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+.session-nom {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+.session-mj {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: var(--space-1);
+}
+
+.session-statut {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* ── Joueur rows ──────────────────────────────────────────────── */
+.joueur-row {
+  background: var(--surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-1);
+  transition: background var(--duration) var(--ease),
+              border-color var(--duration) var(--ease);
+}
+
+.joueur-row:hover {
+  background: var(--purple-soft);
+  border-color: rgba(134, 93, 255, 0.3);
+}
+
+.joueur-row.mj-row {
+  border-color: rgba(201, 168, 76, 0.25);
+  background: var(--gold-soft);
+}
+
+.joueur-pseudo {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--text);
+}
+
+.joueur-perso {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.joueur-pm-btn {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  color: var(--purple);
+  border-color: rgba(134, 93, 255, 0.3);
+  border-radius: var(--radius-sm);
+  transition: background var(--duration) var(--ease);
+}
+
+.joueur-pm-btn:hover {
+  background: var(--purple-soft);
+}
+
+/* ── MJ action block ──────────────────────────────────────────── */
+.mj-action-block {
+  background: var(--gold-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+.mj-action-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ── Combat banner ────────────────────────────────────────────── */
+.combat-banner {
+  background: var(--blood-soft);
+  border: 1px solid rgba(196, 69, 61, 0.4);
+  border-radius: var(--radius);
+  margin: var(--space-2) var(--space-3);
+}
+
+.combat-banner-text {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-semibold);
+  color: #fca5a5;
+}
+
+/* ── Online dot ───────────────────────────────────────────────── */
+.online-dot {
+  background: var(--success);
+  box-shadow: 0 0 6px var(--success);
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────── */
+.tabs-row-salon {
+  border-bottom: 1px solid var(--border-muted);
+  padding: 0 var(--space-3);
+  background: var(--bg);
+}
+
+.tab-salon {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid transparent;
+  transition: color var(--duration) var(--ease),
+              border-color var(--duration) var(--ease);
+}
+
+.tab-salon:hover { color: var(--text); }
+
+.tab-salon.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.tab-salon .badge {
+  background: var(--purple);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+
+/* ── Messages ─────────────────────────────────────────────────── */
+.messages-feed {
+  background: var(--bg);
+}
+
+.msg-bubble {
+  background: var(--surface);
+  border-left: 2px solid var(--border-muted);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.msg-bubble.moi {
+  border-left-color: var(--purple);
+  background: var(--purple-soft);
+}
+
+.msg-bubble.mj {
+  border-left-color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.msg-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.msg-auteur {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.msg-auteur.moi { color: var(--purple); }
+
+.msg-heure {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-faint);
+}
+
+.msg-texte {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--text-soft);
+  line-height: var(--leading-normal);
+}
+
+/* ── Input message ────────────────────────────────────────────── */
+.msg-input-row {
+  border-top: 1px solid var(--border-muted);
+  background: var(--surface);
+  padding: var(--space-2) var(--space-3);
+}
+
+.msg-input-row input {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.msg-input-row input:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+.msg-input-row button {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+  background: var(--gold);
+  color: var(--text-on-gold);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+
+.msg-input-row button:hover { background: var(--gold-bright); }
+
+/* ── PM select row ────────────────────────────────────────────── */
+.pm-select-row {
+  border-bottom: 1px solid var(--border-muted);
+  background: var(--surface);
+  padding: var(--space-2) var(--space-3);
+}
+
+.pm-select-row select {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-2);
+}
+
+.pm-dest-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ── Topbar (override ecran-mj.css) ──────────────────────────── */
+.mj-topbar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.topbar-session-nom {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--text);
+  font-weight: var(--weight-semibold);
+}
+
+/* ── Modal repos (V2) ─────────────────────────────────────────── */
+.modal-repos-v2 {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg), var(--glow-gold);
+  padding: var(--space-6);
+  width: 340px;
+  max-width: 90vw;
+  position: relative;
+}
+
+.modal-repos-v2-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  margin-bottom: var(--space-4);
+}
+
+.modal-repos-v2-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.modal-repos-v2-select {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.modal-repos-v2-select:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+.modal-repos-v2-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  margin-top: var(--space-4);
+}
