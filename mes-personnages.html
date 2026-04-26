@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/ui-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/notifications.css">
-  <link rel="stylesheet" href="css/personnage.css">
+  <link rel="stylesheet" href="css/mes-personnages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -20,29 +20,57 @@
 <body>
 <div class="page-container">
 
-  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar"></aside>
 
-  <!-- CONTENU -->
-  <main class="perso-page">
+  <main class="mp-page">
     <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
       <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
     </button>
 
-    <h1><i class="fa-solid fa-user-shield"></i> Mes Personnages</h1>
-    <p style="color:#bbb;font-size:0.85rem;margin-bottom:2rem;">Gérez vos personnages D&D 2024</p>
-
-    <div class="perso-topbar">
-      <span id="perso-count" style="color:#aaa;font-size:0.82rem;"></span>
-      <a href="creer-personnage.html" class="btn-primary" style="text-decoration:none;">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> Créer un personnage
-      </a>
+    <!-- Header -->
+    <div class="mp-header">
+      <div class="mp-header-label">⚔ Votre compagnie</div>
+      <div class="mp-header-content">
+        <div>
+          <h1 class="mp-title">Mes héros</h1>
+          <p class="mp-subtitle" id="perso-count">Chargement…</p>
+        </div>
+        <a href="creer-personnage.html" class="btn btn--primary">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Nouveau héros
+        </a>
+      </div>
     </div>
 
-    <div class="perso-grid" id="perso-grid">
-      <div class="empty-state">
-        <i class="fa-solid fa-spinner fa-spin"></i>
-        <p>Chargement…</p>
+    <!-- Toolbar -->
+    <div class="mp-toolbar">
+      <div class="mp-filters" id="mp-filters">
+        <button class="mp-filter-btn active" data-filter="tous">
+          Tous <span class="mp-filter-count" id="count-tous">0</span>
+        </button>
+        <button class="mp-filter-btn" data-filter="vivants">
+          Vivants <span class="mp-filter-count" id="count-vivants">0</span>
+        </button>
+        <button class="mp-filter-btn" data-filter="morts">
+          † Tombés <span class="mp-filter-count" id="count-morts">0</span>
+        </button>
+      </div>
+      <div class="mp-sort-area">
+        <span>Trier par</span>
+        <select class="mp-sort-select" id="mp-sort">
+          <option value="recent">Plus récents</option>
+          <option value="niveau">Niveau ↓</option>
+          <option value="nom">Nom A-Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="mp-grid-container">
+      <div class="mp-grid" id="perso-grid">
+        <div class="mp-empty">
+          <div class="mp-empty__icon"><i class="fa-solid fa-spinner fa-spin"></i></div>
+          <p class="mp-empty__text">Chargement…</p>
+        </div>
       </div>
     </div>
   </main>
