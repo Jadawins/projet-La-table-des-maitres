@@ -1,0 +1,125 @@
+/* ================================================================
+   BOUTONS — composant unifié
+   Usage : <button class="btn btn--primary">Label</button>
+   ================================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+  text-decoration: none;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  pointer-events: none;
+}
+
+/* ── Variantes ────────────────────────────────────────────── */
+
+.btn--primary {
+  background: var(--gold);
+  color: var(--text-on-gold);
+  border-color: var(--gold);
+}
+.btn--primary:hover {
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.btn--secondary:hover {
+  background: var(--gold-muted);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-soft);
+  border-color: transparent;
+}
+.btn--ghost:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.btn--danger {
+  background: var(--error);
+  color: #fff;
+  border-color: var(--error);
+}
+.btn--danger:hover {
+  background: var(--blood);
+  border-color: var(--blood);
+}
+
+.btn--purple {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+}
+.btn--purple:hover {
+  background: #7350e0;
+}
+
+/* ── Tailles ─────────────────────────────────────────────── */
+
+.btn--sm {
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.btn--lg {
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-lg);
+}
+
+/* ── Icône seule ──────────────────────────────────────────── */
+
+.btn--icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+.btn--icon.btn--sm {
+  width: 32px;
+  height: 32px;
+}
+.btn--icon.btn--lg {
+  width: 48px;
+  height: 48px;
+}
+
+/* ── Pleine largeur ───────────────────────────────────────── */
+
+.btn--block {
+  width: 100%;
+}

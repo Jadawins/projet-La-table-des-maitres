@@ -1,0 +1,137 @@
+/* ================================================================
+   CARDS — composant unifié
+   Usage : <article class="card">…</article>
+   ================================================================ */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: border-color var(--duration) var(--ease),
+              transform var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+}
+
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  margin: 0;
+}
+
+.card__meta {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  white-space: nowrap;
+}
+
+.card__body {
+  color: var(--text-soft);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-muted);
+}
+
+/* ── Variantes ────────────────────────────────────────────── */
+
+.card--interactive {
+  cursor: pointer;
+}
+.card--interactive:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.card--gold {
+  border-color: var(--border-strong);
+  background: var(--gold-soft);
+}
+.card--gold .card__title {
+  color: var(--gold);
+}
+
+.card--elevated {
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+}
+
+.card--flat {
+  background: transparent;
+  border-color: var(--border-muted);
+}
+
+/* ── Card personnage ──────────────────────────────────────── */
+
+.card--character {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.card--character::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.card--character:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ── Card campagne ────────────────────────────────────────── */
+
+.card--campaign {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card--campaign .card__cover {
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ── Grilles de cards ─────────────────────────────────────── */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.cards-grid--sm {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.cards-grid--lg {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}

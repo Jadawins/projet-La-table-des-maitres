@@ -18,6 +18,29 @@
     width: 64px;
   }
 
+  #sidebar.collapsed .sidebar-label {
+    display: none;
+  }
+
+  #sidebar.collapsed .sidebar-content h2 {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #sidebar.collapsed .sidebar-menu a,
+  #sidebar.collapsed .sidebar-footer a {
+    justify-content: center;
+    padding: 0.4rem 0;
+  }
+
+  #sidebar.collapsed .sidebar-menu i,
+  #sidebar.collapsed .sidebar-footer i {
+    width: auto;
+    opacity: 1;
+  }
+
   #sidebar.collapsed .sidebar-settings-button,
   #sidebar.collapsed #notif-btn {
     display: none;

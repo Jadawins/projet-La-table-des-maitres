@@ -1,0 +1,179 @@
+/* ================================================================
+   DICE PROMPT — modale de jet de dés
+   ================================================================ */
+
+.dice-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+}
+
+.dice-prompt.hidden { display: none; }
+
+.dice-prompt__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.dice-prompt__panel {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), var(--glow-gold);
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+}
+
+.dice-prompt__header {
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  text-align: center;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.dice-prompt__header h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--gold);
+  margin: 0 0 var(--space-1);
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
+.dice-prompt__formula {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* ── Sélecteur de mode ───────────────────────────────────── */
+
+.dice-prompt__mode-switch {
+  display: flex;
+  padding: var(--space-3) var(--space-4);
+  gap: var(--space-2);
+  background: var(--bg);
+}
+
+.mode-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-muted);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+}
+
+.mode-btn--active {
+  background: var(--gold-muted);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Corps ───────────────────────────────────────────────── */
+
+.dice-prompt__body {
+  padding: var(--space-6);
+  text-align: center;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* Mode virtuel — icône du dé */
+.dice-prompt__die {
+  font-size: 4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform var(--duration-slow) var(--ease-elastic);
+  user-select: none;
+}
+
+.dice-prompt__die--rolling {
+  animation: diceRoll 600ms var(--ease-elastic);
+}
+
+@keyframes diceRoll {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(180deg) scale(1.2); }
+  75%  { transform: rotate(320deg) scale(0.9); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.dice-prompt__result {
+  font-family: var(--font-mono);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
+  color: var(--text);
+  line-height: 1;
+}
+
+.dice-prompt__result--crit {
+  color: var(--gold);
+  text-shadow: var(--glow-gold);
+  animation: critPulse 1s ease infinite alternate;
+}
+
+.dice-prompt__result--fumble {
+  color: var(--error);
+  text-shadow: 0 0 24px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes critPulse {
+  from { text-shadow: 0 0 12px rgba(201, 168, 76, 0.3); }
+  to   { text-shadow: 0 0 32px rgba(201, 168, 76, 0.7); }
+}
+
+.dice-prompt__breakdown {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Mode physique — input */
+.dice-prompt__input {
+  background: var(--bg);
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  color: var(--text);
+  text-align: center;
+  width: 120px;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.dice-prompt__input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-muted);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+.dice-prompt__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border-muted);
+  background: var(--bg-elevated);
+}
