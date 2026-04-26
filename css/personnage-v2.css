@@ -1,0 +1,707 @@
+/* ================================================================
+   PERSONNAGE V2 — Overrides visuels (tokens.css requis)
+   Chargé APRÈS personnage.css. Ne touche pas aux IDs JS.
+   ================================================================ */
+
+/* ── Base page ────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-ui);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── Topbar ───────────────────────────────────────────────────── */
+.fiche-topbar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-muted);
+  padding: var(--space-2) var(--space-6);
+}
+
+.btn-fiche-retour {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-color: var(--border);
+  background: none;
+  transition: color var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+
+.btn-fiche-retour:hover {
+  color: var(--gold-bright);
+  border-color: var(--border-strong);
+}
+
+.fiche-save-indicator {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
+
+.fiche-save-indicator.saved { color: var(--success); }
+.fiche-save-indicator.saving { color: var(--gold); }
+
+.btn-sm-danger {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  background: var(--blood-soft);
+  border-color: rgba(196, 69, 61, 0.35);
+  color: #fca5a5;
+  transition: background var(--duration) var(--ease);
+}
+
+.btn-sm-danger:hover { background: rgba(196, 69, 61, 0.25); }
+
+/* ── Hero (fiche-header) ──────────────────────────────────────── */
+.fiche-header {
+  background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-5) var(--space-8);
+  gap: var(--space-5);
+}
+
+/* Nom du personnage */
+.fiche-nom {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.01em;
+  line-height: var(--leading-tight);
+  padding-bottom: var(--space-1);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.fiche-nom:focus { border-bottom-color: var(--gold); }
+
+.fiche-tag {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--purple);
+  background: var(--purple-soft);
+  border-color: rgba(134, 93, 255, 0.25);
+}
+
+/* Inspiration */
+.inspire-row {
+  background: var(--surface-2);
+  border-color: var(--border-muted);
+}
+
+.inspire-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Bonus de maîtrise */
+.bonus-maitrise-display {
+  background: var(--surface-2);
+  border-color: var(--border-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--text-soft);
+}
+
+.bonus-val {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--purple);
+}
+
+/* PV section */
+.pv-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.pv-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  width: 60px;
+}
+
+.pv-input {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.pv-input:focus { border-color: var(--gold); outline: none; }
+
+.pv-bar-track {
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Combat quick stats (CA, Init, Vitesse, Maîtrise) */
+.fiche-stat-bubble {
+  background: var(--surface-2);
+  border-color: var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  min-width: 54px;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.fiche-stat-bubble:hover { border-color: var(--border-strong); }
+
+.bubble-val {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--text);
+}
+
+.bubble-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────── */
+.fiche-tabs {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 var(--space-8);
+  gap: 0;
+}
+
+.fiche-tab {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  letter-spacing: 0.02em;
+  border-radius: 0;
+  transition: color var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+
+.fiche-tab:hover { color: var(--text); }
+
+.fiche-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ── Body layout ──────────────────────────────────────────────── */
+.fiche-body {
+  grid-template-columns: 260px 1fr;
+  height: auto;
+  min-height: calc(100vh - 200px);
+  overflow: visible;
+}
+
+.fiche-col {
+  overflow-y: visible;
+  padding: var(--space-5);
+  border-right: 1px solid var(--border-muted);
+}
+
+.fiche-col:last-child { border-right: none; }
+
+/* ── Section ──────────────────────────────────────────────────── */
+.fiche-section {
+  background: var(--surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.fiche-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 1;
+  margin-bottom: 0;
+  cursor: default;
+  user-select: none;
+}
+
+.fiche-section-title::after {
+  display: none;
+}
+
+.fiche-section > *:not(.fiche-section-title) {
+  padding: var(--space-4);
+}
+
+.fiche-section.collapsed .fiche-section-title {
+  border-bottom: none;
+}
+
+/* Keep the collapse arrow for collapsible sections */
+.fiche-section-title[style*="cursor:pointer"],
+.fiche-section-title[onclick] {
+  cursor: pointer !important;
+}
+
+.fiche-section-title[onclick]::after {
+  display: inline-block;
+  content: ' ▾';
+  font-size: 0.6rem;
+  opacity: 0.5;
+  margin-left: auto;
+  transition: transform var(--duration) var(--ease);
+}
+
+.fiche-section.collapsed .fiche-section-title[onclick]::after {
+  transform: rotate(-90deg);
+}
+
+/* ── Caractéristiques ─────────────────────────────────────────── */
+.carac-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3);
+}
+
+.carac-box {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-2);
+  gap: var(--space-1);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.carac-box:hover { border-color: var(--border-strong); }
+
+.carac-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  width: auto;
+  text-align: center;
+}
+
+.carac-mod {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--text);
+  min-width: auto;
+  line-height: 1;
+}
+
+.carac-val-input {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  width: 38px;
+  text-align: center;
+  padding: 1px 0;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.carac-val-input:focus {
+  border-bottom-color: var(--gold);
+  outline: none;
+}
+
+/* ── Jets de sauvegarde ───────────────────────────────────────── */
+.save-list {
+  padding: var(--space-3);
+}
+
+.save-row {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background var(--duration) var(--ease);
+}
+
+.save-row:hover { background: rgba(201, 168, 76, 0.04); }
+
+.save-dot { border-color: var(--border-strong); }
+.save-dot.filled { background: var(--gold); border-color: var(--gold); }
+
+.save-name { color: var(--text-soft); }
+
+.save-bonus {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: var(--gold);
+  min-width: 32px;
+}
+
+/* ── Compétences ──────────────────────────────────────────────── */
+.comp-list {
+  padding: var(--space-3);
+}
+
+.comp-list-row {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  padding: 3px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.comp-list-row:hover { background: rgba(255, 255, 255, 0.03); }
+
+.comp-dot { border-color: var(--border-strong); }
+.comp-dot.maitrise { background: var(--purple); border-color: var(--purple); }
+.comp-dot.expertise { background: var(--gold); border-color: var(--gold); }
+
+.comp-list-name { color: var(--text-soft); }
+.comp-list-name.has-maitrise { color: var(--text); font-weight: var(--weight-semibold); }
+.comp-list-char {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-faint);
+}
+
+.comp-list-val {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-bold);
+  color: var(--purple);
+  font-size: var(--text-xs);
+}
+
+/* ── Dés de vie ───────────────────────────────────────────────── */
+.dv-actions { gap: var(--space-2); }
+
+.btn-dv-depenser {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  background: var(--purple-soft);
+  border-color: rgba(134, 93, 255, 0.4);
+  color: var(--purple);
+}
+
+.btn-repos-rapide {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+}
+
+/* ── Attaques ─────────────────────────────────────────────────── */
+.attacks-table {
+  font-family: var(--font-ui);
+}
+
+.attacks-table th {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  border-bottom-color: var(--border-muted);
+}
+
+.attacks-table td {
+  color: var(--text-soft);
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+.atk-bonus {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-bold);
+  color: var(--gold);
+}
+
+.atk-degats { color: var(--error); }
+
+.btn-add-attack {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  border-color: var(--border-muted);
+  color: var(--text-faint);
+  border-radius: var(--radius-sm);
+}
+
+.btn-add-attack:hover { border-color: var(--purple); color: var(--purple); }
+
+/* ── Sorts ────────────────────────────────────────────────────── */
+.sorts-niveau-header {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  color: var(--purple);
+  background: rgba(134, 93, 255, 0.06);
+}
+
+.sng-count {
+  font-family: var(--font-mono);
+  background: var(--purple-soft);
+  border-color: rgba(134, 93, 255, 0.35);
+  color: var(--purple);
+}
+
+.sort-chip {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--text-soft);
+  background: var(--surface-2);
+  border-color: var(--border-muted);
+}
+
+.slot-dot { border-color: rgba(134, 93, 255, 0.4); }
+.slot-dot.available { background: var(--purple); }
+
+/* ── Modales ──────────────────────────────────────────────────── */
+.modal-overlay { background: rgba(0, 0, 0, 0.75); }
+
+.modal-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg), var(--glow-gold);
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--gold);
+  margin-bottom: var(--space-4);
+}
+
+.modal-close {
+  color: var(--text-muted);
+  transition: color var(--duration) var(--ease);
+}
+
+.modal-close:hover { color: var(--text); }
+
+.form-field label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  border-radius: var(--radius-sm);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: rgba(201, 168, 76, 0.5);
+  outline: none;
+}
+
+.modal-actions { gap: var(--space-2); }
+
+.btn-sm-primary {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  background: var(--gold);
+  color: var(--text-on-gold);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+
+.btn-sm-primary:hover { background: var(--gold-bright); }
+
+/* ── Monnaie ──────────────────────────────────────────────────── */
+.monnaie-col {
+  gap: var(--space-1);
+}
+
+.monnaie-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+}
+
+.monnaie-input {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.monnaie-input:focus { border-color: var(--gold); outline: none; }
+
+/* ── Équipement ───────────────────────────────────────────────── */
+.equip-table th {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  border-bottom-color: var(--border-muted);
+}
+
+.equip-table td {
+  color: var(--text-soft);
+  border-bottom-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Traits / Notes ───────────────────────────────────────────── */
+.trait-textarea {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  background: var(--surface-2);
+  border-color: var(--border-muted);
+  color: var(--text-soft);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.trait-textarea:focus {
+  border-color: var(--border-strong);
+  outline: none;
+}
+
+.desc-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  color: var(--purple);
+}
+
+/* ── Armure ───────────────────────────────────────────────────── */
+.armure-select {
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  border-radius: var(--radius-sm);
+}
+
+.armure-ca-badge {
+  background: var(--gold-soft);
+  border-color: var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.armure-ca-val {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--gold);
+}
+
+.armure-ca-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+/* ── Level-up wizard modal ────────────────────────────────────── */
+.niv-wizard-header {
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.niv-wizard-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--gold);
+}
+
+.niv-step-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+}
+
+/* ── Cibles combat ────────────────────────────────────────────── */
+.cibles-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ── Ressources ───────────────────────────────────────────────── */
+.ressources-section {
+  padding: var(--space-3);
+}
+
+/* ── Sorts raciaux ────────────────────────────────────────────── */
+#sorts-raciaux-list {
+  padding: var(--space-3);
+}
+
+/* ── Inventaire onglet ────────────────────────────────────────── */
+.fiche-body-single {
+  padding: var(--space-5);
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .fiche-body { grid-template-columns: 1fr; height: auto; }
+  .fiche-col { border-right: none; border-bottom: 1px solid var(--border-muted); }
+  .carac-grid { grid-template-columns: repeat(6, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .carac-grid { grid-template-columns: repeat(3, 1fr); }
+  .fiche-header { padding: var(--space-4); gap: var(--space-3); }
+  .fiche-tabs { padding: 0 var(--space-4); }
+  .fiche-col { padding: var(--space-4); }
+}
