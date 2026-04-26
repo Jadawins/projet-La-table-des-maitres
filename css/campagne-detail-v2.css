@@ -1,0 +1,269 @@
+/* ================================================================
+   CAMPAGNE DETAIL V2 — overrides visuels (tokens.css requis)
+   Chargé après campagne-detail.css. Ne touche pas aux IDs/JS.
+   ================================================================ */
+
+/* ── Topbar ───────────────────────────────────────────────────── */
+.editor-topbar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.btn-retour {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.btn-retour:hover { color: var(--gold-bright); }
+
+.editor-topbar-nom {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+}
+
+.save-indicator {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.save-indicator.saved { color: var(--success); }
+.save-indicator.saving { color: var(--gold); }
+
+.statut-select {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-3);
+  transition: border-color var(--duration) var(--ease);
+  cursor: pointer;
+}
+
+.statut-select:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+/* ── Nav chapitres ────────────────────────────────────────────── */
+.campagne-nav {
+  background: var(--surface);
+  border-right: 1px solid var(--border-muted);
+}
+
+.campagne-nav-header {
+  border-bottom: 1px solid var(--border-muted);
+  background: var(--surface-2);
+  padding: var(--space-3) var(--space-4);
+}
+
+.campagne-nav-header h3 {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+.nav-add-btn {
+  background: transparent;
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--duration) var(--ease),
+              color var(--duration) var(--ease);
+}
+
+.nav-add-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Chapitre items */
+.chapitre-item {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  color: var(--text-soft);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  transition: background var(--duration) var(--ease),
+              color var(--duration) var(--ease);
+  margin-bottom: 2px;
+}
+
+.chapitre-item:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.chapitre-item.actif {
+  background: var(--gold-soft);
+  color: var(--gold);
+  border-left: 2px solid var(--gold);
+}
+
+/* ── Editor area ──────────────────────────────────────────────── */
+.campagne-editor-area {
+  background: var(--bg);
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Toolbar éditeur */
+.editor-toolbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-muted);
+  padding: var(--space-2) var(--space-4);
+  gap: var(--space-1);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tb-btn {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  background: var(--surface-2);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+  min-width: 28px;
+  text-align: center;
+}
+
+.tb-btn:hover {
+  background: var(--surface-3);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.tb-btn.active {
+  background: var(--gold-muted);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Blocs éditeur ────────────────────────────────────────────── */
+.bloc-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.bloc-wrapper:hover { border-color: var(--border); }
+
+.bloc-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bloc-body {
+  padding: var(--space-4);
+}
+
+/* Type-specific bloc colors */
+.bloc-rencontre .bloc-header { color: #f87171; border-left: 3px solid #f87171; }
+.bloc-jet       .bloc-header { color: var(--purple); border-left: 3px solid var(--purple); }
+.bloc-loot      .bloc-header { color: var(--gold); border-left: 3px solid var(--gold); }
+.bloc-pnj       .bloc-header { color: var(--success); border-left: 3px solid var(--success); }
+.bloc-lieu      .bloc-header { color: var(--info); border-left: 3px solid var(--info); }
+
+/* ── TipTap editor zone ───────────────────────────────────────── */
+.ProseMirror {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-soft);
+  outline: none;
+}
+
+.ProseMirror p { margin: 0 0 var(--space-2); }
+
+.ProseMirror h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.ProseMirror h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--gold);
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.ProseMirror strong { color: var(--text); }
+.ProseMirror em { color: var(--text-soft); font-style: italic; }
+
+.ProseMirror.ProseMirror-focused {
+  outline: none;
+}
+
+/* Placeholder */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: var(--text-faint);
+  float: left;
+  pointer-events: none;
+  height: 0;
+  font-style: italic;
+}
+
+/* ── Inputs généraux campagne-detail ──────────────────────────── */
+.campagne-detail-layout input,
+.campagne-detail-layout select,
+.campagne-detail-layout textarea {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.campagne-detail-layout input:focus,
+.campagne-detail-layout select:focus,
+.campagne-detail-layout textarea:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
