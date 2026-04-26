@@ -10,7 +10,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // CORS
-const ALLOWED_ORIGINS = ['https://myrpgtable.fr', 'https://www.myrpgtable.fr'];
+const ALLOWED_ORIGINS = [
+  'https://myrpgtable.fr',
+  'https://www.myrpgtable.fr',
+  'http://localhost:8080',
+  'http://localhost:3000',
+  'http://127.0.0.1:8080',
+  'http://127.0.0.1:5500',  // VS Code Live Server
+];
 app.use((req, res, next) => {
   const origin = req.headers.origin;
   if (origin && ALLOWED_ORIGINS.includes(origin)) {
