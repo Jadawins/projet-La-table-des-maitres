@@ -4,334 +4,528 @@
   <meta charset="UTF-8">
   <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil</title>
+  <title>Accueil — La Table du Maître</title>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/ui-clean.css">
-  <link rel="stylesheet" href="css/style-clean.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script>
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
   </script>
-  <style>
-    /* Fond semi-transparent + tailles spécifiques home */
-    main h1 {
-      font-size: 1.5rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      padding: 0.5rem 1rem;
-      display: inline-block;
-    }
-
-    main > p {
-      font-size: 0.9rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      padding: 0.4rem 0.9rem;
-      display: inline-block;
-    }
-
-    [data-theme="light"] main h1,
-    [data-theme="light"] main > p {
-      background: rgba(255, 255, 255, 0.6);
-    }
-
-    .project-edito h2 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-edito p {
-      font-size: 0.88rem;
-    }
-  </style>
 </head>
 <body>
   <div class="page-container">
     <aside class="sidebar" id="sidebar"></aside>
 
-    <main>
+    <main class="home-page">
       <button id="closed-book-button" onclick="toggleSidebar()" class="toggle-glow hidden" aria-label="Ouvrir Menu">
         <img src="assets/icone/livrefermer.png" alt="Icône Livre Fermé" class="icon-book" />
-      </button>      
-      <h1>Bienvenue sur La Table du Maître</h1>
-      <p>Le site est en construction... 🚰</p>
-      <section class="project-edito">
-  <h2>📖 Édito du Maître</h2>
+      </button>
 
-  <div style="background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.2rem;">
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.9rem;margin:0 0 0.5rem;">🧪 Appel aux aventuriers — Phase de test !</p>
-    <p style="font-size:0.82rem;color:#ccc;margin:0 0 0.75rem;">La Table du Maître grandit vite, et avant d'aller plus loin, on a besoin de vous ! Si vous avez quelques minutes, voici les points prioritaires à tester :</p>
-    <ul style="font-size:0.8rem;color:#bbb;margin:0 0 0.75rem;line-height:1.7;">
-      <li>⚔️ <strong>Écran MJ — Combat</strong> : ajout d'un monstre custom, actions bonus / réactions / légendaires sur sa carte, avantage/désavantage sur le d20, attaques prédéfinies dans la modal</li>
-      <li>👹 <strong>Création de monstre</strong> : remplir une fiche complète (stats, actions de type attaque, sorts, traits), prévisualiser le bloc de stats, sauvegarder et retrouver le monstre dans la liste</li>
-      <li>📖 <strong>Éditeur de campagne</strong> : recherche de monstre dans la modal Rencontre, recherche d'objet magique dans la modal Loot, sauvegarde des chapitres</li>
-      <li>🎲 <strong>Fiche personnage</strong> : dés de vie, repos, combat en temps réel depuis la session</li>
-      <li>🧙 <strong>Création de personnage</strong> : wizard complet (espèce → équipement → résumé), vérifier que tout se retrouve bien sur la fiche</li>
-    </ul>
-    <p style="font-size:0.8rem;color:#ccc;margin:0 0 0.5rem;">Un grand merci à <strong style="color:#c9a84c;">Stéphane</strong>, <strong style="color:#c9a84c;">Gautier</strong> et <strong style="color:#c9a84c;">Ludo</strong> pour leurs retours de béta-test qui font vraiment avancer le projet — vous êtes dans les légendes de la campagne. 🏆</p>
-    <p style="font-size:0.8rem;color:#ccc;margin:0 0 0.6rem;">Vous avez un retour, un bug, une idée ? Envoyez-moi ça à <a href="mailto:S0wh4@hotmail.fr" style="color:#c9a84c;text-decoration:none;">S0wh4@hotmail.fr</a> — chaque retour compte vraiment.</p>
-    <p style="font-size:0.78rem;color:#865dff;font-style:italic;margin:0;">✨ <em>La prochaine session commence quand vous êtes prêts — et le MJ l'est toujours.</em></p>
-  </div>
+      <!-- ── HERO ──────────────────────────────────────────────── -->
+      <header class="home-hero">
+        <div class="home-status-badge">
+          <span class="home-status-dot"></span>
+          <span id="hero-badge">Chargement…</span>
+        </div>
+        <h1>Bienvenue à la Table</h1>
+        <p class="home-hero__sub" id="hero-sub">Le Maître vous accueille dans sa bibliothèque.</p>
+      </header>
 
-  <p><strong>✅ Fait récemment :</strong></p>
-  <details open style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#c9a84c;cursor:pointer;list-style:none;">📅 20/04/2026</summary>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>✅ <strong>Bonus de background en création de PJ</strong> — 8 backgrounds (Garde, Artisan, Artiste, Fermier, Guide, Marin, Noble, Soldat) utilisaient la clé anglaise <code>STR</code> au lieu de <code>FOR</code> ; les bonus de caractéristiques n'étaient jamais appliqués ni affichés quand on sélectionnait la Force</li>
-      <li>✅ <strong>Champ prix estimé (objet magique)</strong> — il était possible de saisir des caractères non numériques ; le champ est désormais restreint aux chiffres uniquement</li>
-      <li>✅ <strong>Pagination objets magiques</strong> — la bibliothèque n'affichait que les 24 premiers résultats sans possibilité de naviguer ; tous les objets sont maintenant chargés avec la pagination complète</li>
-      <li>✅ <strong>Anglicismes</strong> — "Dashboard MJ" remplacé par "Tableau de bord MJ" partout dans l'interface (titres, menu, tutoriels) ; "sidebar" remplacé par "menu"</li>
-      <li>✅ <strong>Jet de dés — caractéristiques</strong> — en méthode "jet de dés", les champs acceptaient des valeurs jusqu'à 20 ; le maximum est désormais limité à 18 (maximum théorique de 4d6 en retirant le dé le plus bas)</li>
-      <li>✅ <strong>Zoom navigateur — Créer une race & Créer un monstre</strong> — en fort zoom, le menu de gauche chevauchait le formulaire ; le décalage de 260 px est maintenant correctement appliqué sur ces deux pages</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 19/04/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>📚 <strong>Bibliothèque — Recherche par onglet</strong> — champ de recherche intégré dans chaque onglet (sorts, classes, espèces, dons, équipement…) pour filtrer instantanément sans quitter l'onglet</li>
-      <li>➕ <strong>Bibliothèque — Ajouter à un personnage</strong> — dans la modal de détail, sélectionnez un personnage et ajoutez directement un sort, une arme ou un objet magique à sa fiche</li>
-      <li>🌙 <strong>Repos court / long pour le MJ</strong> — deux boutons dans le panneau MJ du salon permettent de proposer un repos avec choix du mode de validation (vote / auto / forcer) et d'un timer</li>
-      <li>⏱️ <strong>Timer de tour en combat</strong> — sélecteur de durée (30 s / 1 min / 1 min 30 / 2 min) dans le tracker d'initiative ; le compte à rebours se relance automatiquement à chaque tour et vire au rouge dans les 10 dernières secondes</li>
-      <li>👤 <strong>Profil utilisateur enrichi</strong> — la page Paramètres affiche maintenant l'avatar OAuth (ou les initiales), le badge du provider (Google / Discord / Email), et un bloc de stats rapides (nombre de personnages, sessions MJ et sessions joueur)</li>
-      <li>📜 <strong>Historique des sessions</strong> — lien direct dans la sidebar vers les sessions terminées ; la page Sessions lit désormais le paramètre <code>?statut=</code> dans l'URL pour ouvrir directement le bon filtre</li>
-      <li>💀 <strong>Phases de combat pour les monstres homebrew</strong> — définissez des phases déclenchées automatiquement dans l'écran MJ quand les PV du monstre passent sous un seuil (% PV) ; une bannière d'alerte s'affiche et le message est posté dans le journal</li>
-      <li>💰 <strong>Tableau de loot par monstre</strong> — associez une récompense (PO/PA/PC/PE + formule variable + liste d'objets) à chaque monstre homebrew ; l'écran MJ ouvre automatiquement la fenêtre de loot quand le monstre tombe à 0 PV</li>
-      <li>📊 <strong>Tableau de bord admin</strong> — page de supervision réservée à l'administrateur du site : totaux globaux (personnages, sessions, combats…), tableau des utilisateurs actifs avec leur nombre de personnages, liste des créations récentes</li>
-    </ul>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>✅ <strong>Montée de niveau — sous-classes</strong> — les suffixes de fichiers JSON pour guerrier, magicien, moine, occultiste, rôdeur et roublard étaient tous faux : corrigés, le wizard de niveau 3 charge maintenant les vraies sous-classes</li>
-      <li>✅ <strong>Création de race — dropdowns armes/armures/outils</strong> — les trois menus déroulants appelaient une route API inexistante (<code>GetCategories</code>) ; remplacés par <code>GetArmes2024</code>, <code>GetArmures2024</code> et <code>GetEquipements2024</code></li>
-      <li>✅ <strong>Pages check-email / confirm / reset</strong> — <code>authGuard.js</code> était chargé sur ces pages publiques et redirigeait vers login avant que l'utilisateur puisse confirmer son compte ou réinitialiser son mot de passe</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 04/04/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>👹 <strong>Refonte complète de la création de monstre</strong> — formulaire en 16 sections (identité, stats avec modificateurs auto, 5 vitesses, sauvegardes, compétences, immunités/résistances/vulnérabilités en chips cliquables, 5 types de vision, traits, actions bonus/réactions/légendaires/repaire/mythiques supportant le mode texte <em>ou</em> attaque avec dégâts/bonus/portée, sorts avec DD auto, lore complet, méta avec FP estimé automatique)</li>
-      <li>👁️ <strong>Prévisualisation bloc de stats</strong> — bouton "Prévisualiser" génère un bloc de stats style D&D directement dans la page</li>
-      <li>⚔️ <strong>Écran MJ — actions des monstres sur les cartes</strong> — actions bonus (clic → journal), réactions (indicateur utilisé/disponible, reset au prochain tour), légendaires (compteur ⭐ N/N avec coût par action, reset manuel), résistances légendaires (pool journalier)</li>
-      <li>🎲 <strong>Modal attaque MJ améliorée</strong> — bouton avantage/désavantage cyclique, bouton 🎲 Lancer d20 (tire 2 dés si avantage/désavantage), attaques prédéfinies du monstre cliquables (pré-remplit dégâts moyens + type)</li>
-    </ul>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>✅ <strong>Sidebar creer-objet-magique.html</strong> — lien "Mes Monstres" manquant ajouté</li>
-      <li>✅ <strong>Sidebar createrace.html</strong> — structure HTML corrigée (sidebar-nav-area + sidebar-footer manquants), lien createrace retiré du menu</li>
-      <li>✅ <strong>API MonstresCustom</strong> — route créée côté serveur (GET/POST/PUT/DELETE) avec recherche par nom, type, taille et plage de FP</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;" id="entry-02042026">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 02/04/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>⚔️ <strong>Recherche monstres DB dans la modal Rencontre</strong> — champ de recherche avec filtres (type, taille, plage de FP), résultats live depuis la base de données, clic → auto-remplit PV/CA, FP affiché dans la liste</li>
-      <li>💰 <strong>Recherche objets magiques DB dans la modal Loot</strong> — même principe : recherche + filtres catégorie (arme, potion, parchemin…) et rareté, type d'item déduit automatiquement</li>
-      <li>🔔 <strong>Cloche de notifications</strong> — ajoutée sur les pages Éditeur de campagne et Création de personnage</li>
-      <li>📄 <strong>Template mis à jour</strong> — sidebar complète avec icônes, tous les liens, structure correcte pour les futures pages</li>
-    </ul>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>✅ <strong>Chapitres de campagne ne se sauvegardaient pas</strong> — le <code>PUT /Campagnes/:id</code> ignorait le champ <code>chapitres</code> ; corrigé, les chapitres sont désormais persistés en base</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 31/03/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>📝 <strong>Éditeur de campagne inline — refonte complète</strong> — remplacement de Quill par TipTap (CDN esm.sh) ; l'éditeur fonctionne comme un traitement de texte où les blocs spéciaux sont intégrés directement dans le texte sous forme d'éléments colorés cliquables</li>
-      <li>⚔️ <strong>Bloc Rencontre</strong> — fond rouge bordeaux, modal avec nom/difficulté/description/liste de monstres (nom, quantité, PV, CA) ; en session active → bouton "🚀 Lancer le combat" redirige vers ecran-mj avec les monstres pré-chargés</li>
-      <li>🎲 <strong>Bloc Jet de compétence</strong> — fond violet, compétence + caractéristique auto-remplie + DD + contexte + texte succès/échec ; en session active → bouton "📢 Envoyer aux joueurs" crée une notification pour chaque joueur de la session</li>
-      <li>💰 <strong>Bloc Loot</strong> — fond doré, liste d'items dynamiques (nom, quantité, type : monnaie/équipement/consommable/autre) ; en session active → bouton "🎁 Distribuer"</li>
-      <li>👤 <strong>Bloc PNJ</strong> — fond vert forêt, description publique + notes secrètes MJ (en rouge) + attitude (Amical/Indifférent/Hostile)</li>
-      <li>📍 <strong>Bloc Lieu</strong> — fond bleu ardoise, description publique + notes MJ ; en session active → bouton "👁️ Partager aux joueurs" envoie la description via notifications</li>
-      <li>🖼️ <strong>Bloc Image</strong> — fond gris ardoise, champ URL + prévisualisation inline ; en session active → bouton "👁️ Montrer aux joueurs" envoie l'URL via notifications</li>
-      <li>📚 <strong>Chapitres avec drag &amp; drop</strong> — liste des chapitres dans la colonne gauche, réordonnables par glisser-déposer, création via prompt, auto-sélection du premier chapitre au chargement</li>
-      <li>💾 <strong>Auto-save 30s</strong> — sauvegarde automatique du contenu TipTap (JSON) dans MongoDB champ <code>chapitres</code> ; indicateur ✓/⏳/● dans la topbar</li>
-      <li>🔄 <strong>Migration ancien format</strong> — si une campagne a des données Quill (<code>blocs</code>), elles sont converties en un chapitre de compatibilité au chargement</li>
-      <li>💀 <strong>Monstres custom MJ</strong> — page <em>Mes Monstres</em> (Menu MJ) : créer/modifier/supprimer des monstres avec nom, type, FP, PV, CA, vitesse, formule de dés, attaques (nom/dégâts/bonus/type), XP, description ; XP auto-suggéré selon le FP (table D&D 2024) ; disponible depuis toutes les pages via la sidebar</li>
-      <li>🔍 <strong>Recherche BDD dans écran MJ</strong> — champ de recherche dans la modale "Ajouter un participant" : tape le nom → résultats live depuis <code>MonstresCustom</code>, clic → pré-remplit PV/CA/XP/attaques du monstre</li>
-      <li>⭐ <strong>XP automatique à la fin du combat</strong> — modale "Terminer le combat" : XP calculé automatiquement en additionnant l'XP de chaque monstre participant ; répartition affichée (XP total / nombre de joueurs) ; distribution via la route <code>POST /Combats/:id/fin</code> qui met à jour l'XP des personnages en BDD</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 30/03/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>🎮 <strong>Flow statut session recrutement → en_cours → terminée</strong> — création forcée à statut "recrutement" (champ select retiré du formulaire) ; dashboard MJ : bouton "▶ Démarrer" (statut recrutement) / "■ Terminer" (statut en_cours) ; badges ⏳/●/✓ dans la liste et l'entête de session</li>
-      <li>🛣️ <strong>Routes POST /Sessions/:id/demarrer et /terminer</strong> — demarrer passe à en_cours et notifie tous les joueurs de la session ; terminer passe à terminee</li>
-      <li>🔧 <strong>Filtre "pausée" retiré de sessions.html</strong> — ce statut n'existe plus dans le flow</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 29/03/2026 ▶</summary>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>✅ <strong>Équipement — choix A/B/C</strong> — l'étape équipement ne proposait que l'option A hardcodée. Corrigé : boutons radio pour chaque option de la classe (ex: Barde → Armure de cuir + dagues <em>ou</em> 90 po) ; l'or de départ (option "X po") est crédité dans la monnaie du personnage, pas ajouté comme item</li>
-      <li>✅ <strong>validateCharacter()</strong> — validation globale avant soumission finale : nom, espèce, lignage, classe, sous-classe, background, bonus stats, PV, compétences expertise, sorts — bloque la création si un champ est incomplet même en sautant des étapes</li>
-      <li>✅ <strong>Sorts soumission — lanceurs tiers</strong> — <code>creerPersonnage()</code> utilisait <code>W.classe</code> au lieu de <code>getCasterKey()</code> pour les emplacements et la liste de sorts</li>
-      <li>✅ <strong>Sorts — bouton Suivant toujours actif</strong> — sur l'étape Sorts, le bouton "Suivant" n'était jamais verrouillé dynamiquement</li>
-      <li>✅ <strong>Guerrier Chevalier occulte / Roublard Arnaqueur arcanique — aucun sort proposé</strong> — lanceurs tiers (1/3, PHB 2024) non détectés. Corrigé : <code>getCasterKey()</code> détecte si la sous-classe est lanceur et utilise sa propre table de progression</li>
-      <li>✅ <strong>Bonus background — 3 stats par background (PHB 2024)</strong> — chaque background propose maintenant 3 caractéristiques. +2/+1 : deux selects sur les 3 stats. +1/+1/+1 : appliqué automatiquement aux 3 stats</li>
-      <li>✅ <strong>JS cassé — apostrophes françaises</strong> — les apostrophes non échappées dans des strings JS (l'or, d'historique, etc.) cassaient toute la page. Corrigé + cache-busting ajouté</li>
-    </ul>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>✨ <strong>Étape 8 — Équipement</strong> — choix d'option A/B/C en premier, équipement background en dessous</li>
-      <li>✨ <strong>Étape 9 — Boutique</strong> — nouvelle étape dédiée à l'achat libre : budget issu du choix de classe, deux sections (équipement général + équipement de magie : focus, grimoire, baguette, cristal…), panier avec or restant en temps réel</li>
-      <li>💾 <strong>Sauvegarde automatique du wizard</strong> — progression du wizard de création persistée en localStorage ; bannière "Reprendre" à la reconnexion, bouton Recommencer</li>
-      <li>📑 <strong>Fiche — refonte avec onglets</strong> — 3 onglets : <em>Fiche</em> (carac, sauvegardes, compétences, combat, sorts), <em>Inventaire</em> (équipement, monnaie, repos, langues), <em>Description</em> (traits, idéaux, liens, défauts, apparence) ; onglet actif persisté en localStorage</li>
-      <li>💬 <strong>Tooltips sorts</strong> — survol d'un sort sur la fiche = popup (école, portée, durée, description) ; les nouveaux personnages ont la description stockée ; les anciens : lazy-fetch transparent depuis l'API</li>
-      <li>🗂️ <strong>Sections rétractables</strong> — clic sur n'importe quel titre de section (▾) pour réduire/agrandir ; état mémorisé par section en localStorage</li>
-      <li>🔮 <strong>Sorts en panneaux déroulants</strong> — la liste des sorts est désormais groupée par niveau avec un bandeau cliquable (▾, compteur de sorts) ; chaque niveau est dépliable/repliable indépendamment, état persisté en localStorage</li>
-      <li>👁️ <strong>Lisibilité fiche</strong> — champs de caractéristiques agrandis (46 px, 1.05 rem), modificateurs plus contrastés (violet clair), noms de compétences et jets de sauvegarde plus lisibles (blanc/gris clair), couleurs de valeur unifiées</li>
-      <li>🎲 <strong>Dés de vie — bouton Dépenser</strong> — accès direct sans passer par l'onglet Inventaire ; modal avec nombre de dés au choix, calcul PV moy. + modificateur CON</li>
-      <li>🌙 <strong>Repos rapides depuis l'onglet Fiche</strong> — boutons Repos Court et Repos Long dans la section Dés de vie, résultat affiché en temps réel sans changer d'onglet</li>
-      <li>🛡️ <strong>Armure équipée</strong> — nouvelle section dans Inventaire : auto-détecte les armures de l'équipement, sélection → CA recalculée (base armure + DEX limité selon type + bouclier +2 si présent)</li>
-      <li>🔄 <strong>Reset ressources</strong> — bouton sur la section Ressources pour remettre toutes les ressources de classe au maximum</li>
-      <li>📚 <strong>Page Classes bibliothèque</strong> — cartes corrigées (dé de vie, carac. principale, jets de sauvegarde), modal avec aptitudes listées par niveau</li>
-      <li>📱 <strong>Sidebar overlay mobile</strong> — clic en dehors de la sidebar la ferme automatiquement</li>
-      <li>🔮 <strong>Emplacements vides</strong> — texte "Aucun emplacement (sorts mineurs uniquement)" avec style lisible en violet</li>
-      <li>🪄 <strong>Section "Mes Homebrew" dans la bibliothèque</strong> — nouvel onglet dédié : liste les objets homebrew créés par le MJ (appel API avec token, filtre <code>homebrew_only=true</code>), cartes avec boutons Modifier (lien vers le formulaire) et Supprimer (DELETE API avec confirmation), modal détail complet</li>
-      <li>🔗 <strong>Lien "Créer un objet magique" dans le menu MJ</strong> — ajouté dans la sidebar de toutes les pages (sous "Mes Campagnes") pour un accès direct au formulaire homebrew</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 28/03/2026 ▶</summary>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>✅ <strong>Compétences — décocher réactivait pas les cases</strong> — après avoir atteint le maximum de compétences choisies, décocher une compétence ne dégrisait pas les autres options disponibles</li>
-      <li>✅ <strong>Barde — quota de compétences réduit à 1</strong> — les compétences du background étaient comptées dans le quota de classe, réduisant faussement les choix disponibles</li>
-      <li>✅ <strong>Bonus background — mode +2/+1 non conforme PHB 2024</strong> — le joueur pouvait choisir n'importe quelle stat, alors que le PHB 2024 fixe les deux stats selon le background (ex : Acolyte → INT/SAG uniquement). Corrigé : deux boutons radio seulement, joueur choisit l'ordre +2/+1 mais pas les stats</li>
-    </ul>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>❤️ <strong>Étape "Points de vie" dans le wizard</strong> — nouvelle étape 6 entre Caractéristiques et Compétences : niveau 1 automatique (DV max + CON), niveaux 2+ au choix entre valeur fixe (DV/2+1+CON) ou lancer de dé (aléatoire ou saisie manuelle), minimum 1 PV par niveau, récapitulatif en temps réel, bouton Suivant bloqué tant que tous les niveaux ne sont pas remplis</li>
-      <li>⚙️ <strong>Bonus de caractéristiques background PHB 2024</strong> — étape 4 du wizard : après avoir choisi son background, le joueur répartit +2/+1 (sur les 2 stats du background) ou +1/+1/+1 (3 stats libres). Stats finales appliquées partout : PV, compétences, DD de sort</li>
-    </ul>
-    <p style="color:#4ade80;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🗄️ Infrastructure :</p>
-    <ul style="margin-top:0;">
-      <li>🍃 <strong>Migration API → MongoDB</strong> — toutes les routes de données (sorts, classes, espèces, backgrounds, armes, armures, dons, sous-classes, monstres, glossaire, correspondances) lisent depuis MongoDB</li>
-      <li>📋 <strong>Compétences sans hardcodage</strong> — nouvelle route <code>/GetCompetences2024</code> → MongoDB ; correction Escamotage manquant + typo Athlétisme ; doublons espèce/background/classe gérés automatiquement avec badges visuels (BG violet / ESP bleu)</li>
-      <li>⚙️ <strong>Sous-classe dynamique</strong> — niveau de déverrouillage lu depuis le JSON de classe (<code>niveaux[n].verifier_sous_classe</code>) ; sous-classe obligatoire dans <code>validateStep(3)</code> dès le niveau requis ; titre de section mis à jour dynamiquement</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 27/03/2026 ▶</summary>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>🔮 <strong>Moteur de magie entièrement corrigé</strong> — les emplacements de sorts (PHB 2024) sont désormais correctement calculés à la création du personnage et mis à jour automatiquement lors des montées en niveau</li>
-      <li>🧙 <strong>Demi-lanceurs (Paladin, Rôdeur)</strong> — emplacements corrects (2 niv.1 au niveau 2, montée progressive jusqu'au niveau 5 max)</li>
-      <li>📜 <strong>Occultiste (Pacte)</strong> — emplacements de pacte dorés, reset sur repos court, progression indépendante (nombre et niveau) correctement affichée dans le wizard de level-up</li>
-      <li>🔁 <strong>Fiche de personnage</strong> — si un personnage existant n'a pas d'emplacements sauvegardés, ils sont recalculés automatiquement depuis la classe et le niveau</li>
-      <li>📈 <strong>Wizard de montée en niveau</strong> — l'étape "Sorts" affiche correctement l'évolution avant/après pour tous les types de lanceurs</li>
-      <li>📊 <strong>Tables PHB 2024 complètes</strong> — cantrips (Clerc, Druide, Magicien corrigés), sorts connus/préparés pour toutes les classes (Paladin et Rôdeur sur table fixe), Occultiste passe en mode "préparés", Paladin a ses 2 emplacements de niveau 1 dès le niveau 1</li>
-    </ul>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>🧬 <strong>Système de variantes d'espèces</strong> — Elfe (Drow / Sylvestre / Haut-elfe), Tieffelin (Abyssal / Chtonien / Infernal), Drakéide (10 types draconiques), Gnome (Forêts / Roches), Nain (Collinaire / Montagnes) : sélection obligatoire dans l'étape 2 du wizard de création</li>
-      <li>🔮 <strong>Sorts raciaux</strong> — chaque variante dispose de ses propres sorts innés (cantrips à volonté + sorts 1/repos long selon le niveau du personnage), stockés séparément des sorts de classe et affichés avec badge "Racial" sur la fiche</li>
-      <li>🪙 <strong>Achat de points PHB 2024</strong> — 3e méthode d'attribution des caractéristiques : budget de 27 pts, table de coûts officielle (14=7 pts, 15=9 pts), compteur coloré (vert/doré/rouge), bouton Suivant bloqué tant que les 27 points ne sont pas exactement dépensés</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 24/03/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>🎮 <strong>Tableau de bord MJ complet</strong> — hub central en 3 colonnes (navigation campagnes/sessions, éditeur de contenu, panneau contextuel), éditeur de blocs structurés (Rencontre, Jet de dés, Loot, PNJ, Lieu, Texte), tableau de bord session avec cartes joueurs, barres de PV en temps réel, journal de session, statistiques de campagne, historique des séances, lanceur de dés intégré, distribution XP & jalon depuis la sidebar contextuelle</li>
-      <li>🔔 <strong>Système de notifications complet</strong> — cloche dans la sidebar avec badge rouge animé, panneau déroulant des notifications non lues, toasts temps réel pour tous les événements (tour, level-up, repos, mort…)</li>
-      <li>📲 <strong>Notifications push navigateur</strong> — service worker, demande de permission discrète, notifications système même onglet en arrière-plan</li>
-      <li>🎵 <strong>Son discret</strong> — tonalité web audio au déclenchement d'une nouvelle notification</li>
-      <li>📦 <strong>Base PWA</strong> — manifest.json + service worker avec cache statique</li>
-      <li>📚 <strong>Page tutoriel complète (joueur + MJ)</strong> — index de navigation avec recherche, 8 guides détaillés (créer personnage, rejoindre session, bibliothèque, combat joueur, combat MJ, campagne, niveau, repos)</li>
-      <li>🎯 <strong>Guide interactif</strong> — spotlight sur les éléments de l'interface, tooltip avec navigation clavier, fallback sur les étapes du tutoriel si la vraie page n'est pas ouverte</li>
-      <li>⚔️ <strong>Gestion fin de combat avancée</strong> — menu ··· sur chaque participant (Tuer, Fuite, Neutraliser, Modifier PV), modal issue du combat (Victoire/Fuite/Défaite/Autre), bouton réinitialiser l'initiative</li>
-      <li>⚗️ <strong>Objets magiques — 1954 objets SRD importés</strong> dans MongoDB (anneau, potion, arme/armure magique, baguette, bâton, parchemin, objet merveilleux…)</li>
-      <li>📚 <strong>Onglet Objets magiques dans la bibliothèque</strong> — filtres par catégorie, rareté et harmonisation, cards avec badges colorés animés (commun→gris, peu commun→vert, rare→bleu, très rare→violet, légendaire→doré animé, artefact→rouge), modale détail complète</li>
-      <li>🪄 <strong>Page de création d'objets magiques homebrew</strong> — formulaire complet (nom, catégorie, rareté, harmonisation, description, effets dynamiques, poids, prix), sauvegarde MongoDB avec source homebrew, bouton "Partager à mes joueurs"</li>
-      <li>🎒 <strong>Intégration dans l'inventaire des personnages</strong> — bouton "Objet magique" dans l'onglet Équipement, modale de recherche dans la bibliothèque, badge ✨ sur les objets magiques, gestion harmonisation max 3 simultanées</li>
-    </ul>
-    <p style="color:#f97316;font-weight:bold;font-size:0.78rem;margin:0.6rem 0 0.2rem;">🔧 Corrections :</p>
-    <ul style="margin-top:0;">
-      <li>💄 <strong>Chevauchement sidebar corrigé</strong> — le contenu ne se cachait plus derrière la sidebar sur Mes Personnages, Campagnes, Tutoriel et Tableau de bord MJ ; toutes les pages ont désormais un décalage correct (260px)</li>
-      <li>🐛 <strong>Authentification</strong> — résolution d'un timeout silencieux qui empêchait le chargement des personnages, campagnes et sessions après connexion</li>
-      <li>🐛 <strong>Création de personnage</strong> — correction de l'affichage des classes (étape 3), des compétences du Barde, du bouton "Suivant" fantôme à l'étape 10</li>
-      <li>💄 <strong>Fiche de personnage</strong> — le nom du personnage s'affiche désormais correctement à l'ouverture de la fiche</li>
-      <li>🔧 <strong>Monnaie</strong> — les pièces présentes dans l'équipement (ex : "19 po", "Pièces d'or") sont automatiquement transférées vers la section Monnaie</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 23/03/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>⬆️ <strong>Montée en niveau</strong> — assistant wizard multi-étapes (PV, nouvelles capacités, sous-classe au niv.3, amélioration carac/don, emplacements de sorts), confettis au passage de niveau</li>
-      <li>🌟 <strong>Distribution XP</strong> — panneau MJ pour distribuer XP en parts égales ou individuelles, détection automatique du level-up, notification badge sur la fiche joueur</li>
-      <li>🏴 <strong>Système Jalon</strong> — montée en niveau directe (sans XP) pour toute la session ou joueurs sélectionnés</li>
-      <li>📊 <strong>Barre de progression XP</strong> — barre dorée sur la fiche personnage avec % vers le prochain niveau</li>
-      <li>🔄 <strong>Recalcul automatique</strong> — bonus de maîtrise, PV max, caractéristiques et ressources mis à jour au level up</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 22/03/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>🛌 <strong>Système de repos & ressources de classe</strong> — ressources de classe affichées en cases colorées sur la fiche (Rages, Ki, Channel Divinité, Second Souffle…), boutons Repos Court/Long avec vote joueurs temps réel, timer configurable, récupération PV/sorts/ressources, dépense de dés de vie au repos court. Côté MJ : panneau de vote, validation/refus/imposition directe du repos</li>
-      <li>⚔️ <strong>Système de combat complet</strong> — panneau combat en temps réel sur la fiche joueur, attaques avec calcul de touché/critique, sorts avec gestion de la concentration, jets de sauvegarde, flash dégâts/soin, interface jets de mort. Côté MJ : modal dégâts avec types & résistances, soin, attaque monstre→joueur, journal de combat partagé</li>
-    </ul>
-  </details>
-  <details style="margin-bottom:0.4rem;">
-    <summary style="font-size:0.82rem;color:#aaa;cursor:pointer;list-style:none;">📅 21/03/2026 ▶</summary>
-    <p style="color:#c9a84c;font-weight:bold;font-size:0.78rem;margin:0.5rem 0 0.2rem;">✨ Ajouts :</p>
-    <ul style="margin-top:0;">
-      <li>📚 <strong>Bibliothèque PHB 2024</strong> — 374 sorts, 12 classes, 48 sous-classes, 10 espèces, 16 historiques, 75 dons, équipement complet, glossaire et infobulles</li>
-      <li>💀 <strong>Bestiaire SRD</strong> — 322 monstres dans la Bibliothèque, filtres par FP, type et taille, fiche détaillée avec caractéristiques, actions, traits et résistances</li>
-      <li>🧙 <strong>Fiche de personnage PHB 2024</strong> — wizard de création 10 étapes (espèce, classe, historique, stats, sorts…), fiche éditable complète avec auto-save, barre de PV et gestion de l'équipement</li>
-      <li>📖 <strong>Gestion de campagnes</strong> — éditeur de campagne par chapitres, rencontres avec monstres & jets de compétences scénarisés, lieux & PNJ, lancement direct vers l'écran MJ</li>
-      <li>🗡️ <strong>Écran du MJ</strong> — tracker d'initiative, barres de PV, 15 conditions, lanceur de dés, messagerie temps réel MJ↔joueurs</li>
-      <li>🎲 <strong>Gestion de sessions</strong> — créer une partie publique ou privée, rejoindre avec mot de passe, associer son personnage, vue MJ avec gestion des joueurs</li>
-    </ul>
-  </details>
-  <hr style="border-color:rgba(255,255,255,0.08);margin:0.75rem 0;" />
-  <p><strong>🔜 Fonctionnel manquant :</strong></p>
-  <ul>
-    <li>🧬 <strong>Création de Races / Classes / Sous-classes Homebrew</strong> — page dédiée pour créer des races, classes et sous-classes personnalisées (homebrew)</li>
-    <li>🎒 Inventaire partagé de groupe</li>
-    <li>🗺️ Carte interactive (lieux de campagne)</li>
-  </ul>
-  <p><strong>🎭 Avatar animé :</strong></p>
-  <ul>
-    <li>🖼️ <strong>Création d'avatar (Universal LPC Spritesheet)</strong> — personnalisation peau, race, cheveux, armure… à la création de personnage</li>
-    <li>⚔️ <strong>Animations en jeu</strong> — sprites animés selon les actions (attaque, magie, dégâts, mort)</li>
-    <li>🐾 <strong>Sprite dans le tracker d'initiative</strong> — petit avatar animé affiché pour chaque combattant</li>
-  </ul>
-  <p><strong>🖼️ Partage d'images aux joueurs :</strong></p>
-  <ul>
-    <li>🧱 <strong>Bloc Image dans l'éditeur</strong> — insérer une image (URL ou upload) directement dans un chapitre de campagne</li>
-    <li>📡 <strong>Affichage temps réel</strong> — clic sur le bloc → l'image s'affiche en plein écran chez tous les joueurs de la session via WebSocket</li>
-  </ul>
-  <p><strong>⚙️ Technique :</strong></p>
-  <ul>
-    <li>🔔 <strong>Discord webhook</strong> — compte rendu automatique de session envoyé sur un serveur Discord</li>
-  </ul>
-  <p><strong>📦 Contenu :</strong></p>
-  <ul>
-    <li>✨ Objets magiques (descriptions et effets complets)</li>
-    <li>⚠️ Pièges et dangers environnementaux</li>
-    <li>🎲 Tables aléatoires (rencontres, météo, loot…)</li>
-  </ul>
-  <p>
-    Merci pour votre patience et votre enthousiasme. <br>
-    – Wiwi 🧙‍♂️
-  </p>
-</section>
+      <!-- ── ZONES JOUEUR / MJ ─────────────────────────────────── -->
+      <div class="home-grid">
+
+        <!-- Zone Joueur -->
+        <section class="home-zone home-zone--joueur">
+          <div class="home-zone__header">
+            <div class="home-zone__icon">🧝</div>
+            <div>
+              <div class="home-zone__label">Espace Joueur</div>
+              <h2 class="home-zone__title">Mes aventuriers</h2>
+              <p class="home-zone__subtitle">Vos personnages et vos parties en cours.</p>
+            </div>
+          </div>
+
+          <div class="char-cards" id="char-cards">
+            <!-- Skeleton -->
+            <div class="char-card" style="pointer-events:none">
+              <div class="char-avatar skeleton" style="width:40px;height:40px"></div>
+              <div class="char-info">
+                <div class="skeleton" style="height:12px;width:70%;margin-bottom:6px"></div>
+                <div class="skeleton" style="height:9px;width:50%"></div>
+              </div>
+            </div>
+            <div class="char-card" style="pointer-events:none">
+              <div class="char-avatar skeleton" style="width:40px;height:40px"></div>
+              <div class="char-info">
+                <div class="skeleton" style="height:12px;width:55%;margin-bottom:6px"></div>
+                <div class="skeleton" style="height:9px;width:40%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-zone__section-label">Actions joueur</div>
+          <div class="quick-links">
+            <a href="creer-personnage.html" class="quick-link">
+              <span class="quick-link__icon">➕</span> Créer un personnage
+            </a>
+            <a href="mes-personnages.html" class="quick-link">
+              <span class="quick-link__icon">📋</span> Mes personnages
+            </a>
+            <a href="sessions.html?role=joueur" class="quick-link">
+              <span class="quick-link__icon">🎲</span> Rejoindre une partie
+            </a>
+            <a href="bibliotheque.html" class="quick-link">
+              <span class="quick-link__icon">📚</span> Bibliothèque
+            </a>
+          </div>
+        </section>
+
+        <!-- Zone MJ -->
+        <section class="home-zone home-zone--mj">
+          <div class="home-zone__header">
+            <div class="home-zone__icon">🗡️</div>
+            <div>
+              <div class="home-zone__label">Espace Maître de Jeu</div>
+              <h2 class="home-zone__title">Table du Maître</h2>
+              <p class="home-zone__subtitle">Vos campagnes, sessions et outils de MJ.</p>
+            </div>
+          </div>
+
+          <!-- Session active -->
+          <div id="active-session-area">
+            <div class="no-session">Aucune session active pour le moment…</div>
+          </div>
+
+          <div class="home-zone__section-label">Outils MJ</div>
+          <div class="quick-links" style="margin-bottom:var(--space-3)">
+            <a href="dashboard-mj.html" class="quick-link quick-link--mj">
+              <span class="quick-link__icon">🗡️</span> Tableau de bord MJ
+            </a>
+            <a href="ecran-mj.html" class="quick-link quick-link--mj">
+              <span class="quick-link__icon">🖥️</span> Écran MJ (combat)
+            </a>
+            <a href="campagne.html" class="quick-link quick-link--mj">
+              <span class="quick-link__icon">📖</span> Mes campagnes
+            </a>
+            <a href="creer-monstre.html" class="quick-link quick-link--mj">
+              <span class="quick-link__icon">👹</span> Mes monstres
+            </a>
+            <a href="creer-objet-magique.html" class="quick-link quick-link--mj">
+              <span class="quick-link__icon">✨</span> Objets magiques
+            </a>
+            <a href="admin.html" class="quick-link quick-link--mj">
+              <span class="quick-link__icon">📊</span> Admin
+            </a>
+          </div>
+
+          <div class="home-stats">
+            <div class="home-stat">
+              <div class="home-stat__value" id="stat-campagnes">—</div>
+              <div class="home-stat__label">Campagnes</div>
+            </div>
+            <div class="home-stat">
+              <div class="home-stat__value" id="stat-sessions">—</div>
+              <div class="home-stat__label">Sessions</div>
+            </div>
+            <div class="home-stat">
+              <div class="home-stat__value" id="stat-personnages">—</div>
+              <div class="home-stat__label">Personnages</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ── ÉDITO ──────────────────────────────────────────────── -->
+      <section class="home-section home-edito">
+        <div class="home-section__ornament">✦</div>
+        <div class="home-section__label">
+          <span>📖</span> Édito du Maître
+        </div>
+        <h2>🧪 Appel aux aventuriers — Phase de test !</h2>
+
+        <p class="edito-body">
+          La Table du Maître grandit vite, et avant d'aller plus loin, on a besoin de vous !
+          Si vous avez quelques minutes, voici les points prioritaires à tester :
+        </p>
+        <ul class="edito-list">
+          <li>⚔️ <strong>Écran MJ — Combat</strong> : monstres custom, actions bonus/réactions, avantage/désavantage</li>
+          <li>👹 <strong>Création de monstre</strong> : fiche complète, prévisualisation du bloc de stats</li>
+          <li>📖 <strong>Éditeur de campagne</strong> : modals Rencontre & Loot, sauvegarde des chapitres</li>
+          <li>🎲 <strong>Fiche personnage</strong> : dés de vie, repos, combat en temps réel depuis la session</li>
+          <li>🧙 <strong>Création de personnage</strong> : wizard complet (espèce → équipement → résumé)</li>
+        </ul>
+
+        <div class="edito-quote">
+          Un grand merci à <strong>Stéphane</strong>, <strong>Gautier</strong> et <strong>Ludo</strong>
+          pour leurs retours de béta-test — vous êtes dans les légendes de la campagne. 🏆<br>
+          Vous avez un retour, un bug, une idée ? Envoyez-moi ça à
+          <a href="mailto:S0wh4@hotmail.fr" style="color:var(--gold);text-decoration:none">S0wh4@hotmail.fr</a>
+          — chaque retour compte vraiment.
+        </div>
+
+        <p class="edito-sign">✨ <em>La prochaine session commence quand vous êtes prêts — et le MJ l'est toujours.</em></p>
+      </section>
+
+      <!-- ── JOURNAL DES MISES À JOUR ───────────────────────────── -->
+      <section class="home-section home-changelog">
+        <div class="changelog-header">
+          <span style="font-size:1.1rem">✅</span>
+          <h2 style="margin:0">Journal des mises à jour</h2>
+          <span class="changelog-date-tag">Dernière : 20/04/2026</span>
+        </div>
+
+        <!-- Entrée 20/04/2026 — ouverte par défaut -->
+        <div class="changelog-entry">
+          <button class="changelog-toggle is-open" onclick="toggleChangelog(this)">
+            <span class="changelog-chevron">▸</span> 📅 20/04/2026
+          </button>
+          <div class="changelog-body is-open">
+            <p class="changelog-subtitle changelog-subtitle--fix">🔧 Corrections :</p>
+            <ul class="changelog-items">
+              <li><strong>Bonus de background en création de PJ</strong> — 8 backgrounds utilisaient la clé anglaise <code>STR</code> au lieu de <code>FOR</code> ; les bonus n'étaient jamais appliqués pour la Force</li>
+              <li><strong>Champ prix estimé (objet magique)</strong> — restreint aux chiffres uniquement</li>
+              <li><strong>Pagination objets magiques</strong> — tous les objets chargés avec la pagination complète</li>
+              <li><strong>Anglicismes</strong> — "Dashboard MJ" remplacé par "Tableau de bord MJ" partout</li>
+              <li><strong>Jet de dés — caractéristiques</strong> — maximum limité à 18 (4d6 sans le plus bas)</li>
+              <li><strong>Zoom navigateur</strong> — chevauchement corrigé sur Créer une race & Créer un monstre</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Entrée 19/04/2026 -->
+        <div class="changelog-entry">
+          <button class="changelog-toggle" onclick="toggleChangelog(this)">
+            <span class="changelog-chevron">▸</span> 📅 19/04/2026
+          </button>
+          <div class="changelog-body">
+            <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+            <ul class="changelog-items">
+              <li><strong>Bibliothèque — Recherche par onglet</strong> — filtre instantané dans chaque onglet</li>
+              <li><strong>Bibliothèque — Ajouter à un personnage</strong> — sorts, armes, objets magiques</li>
+              <li><strong>Repos court / long pour le MJ</strong> — vote, auto ou forcer, avec timer</li>
+              <li><strong>Timer de tour en combat</strong> — 30 s à 2 min, rouge dans les 10 dernières secondes</li>
+              <li><strong>Profil utilisateur enrichi</strong> — avatar OAuth, badge provider, stats rapides</li>
+              <li><strong>Historique des sessions</strong> — lien direct vers les sessions terminées</li>
+              <li><strong>Phases de combat — monstres homebrew</strong> — bannière automatique sous seuil de PV</li>
+              <li><strong>Tableau de loot par monstre</strong> — fenêtre automatique à 0 PV</li>
+              <li><strong>Tableau de bord admin</strong> — statistiques globales réservées à l'administrateur</li>
+            </ul>
+            <p class="changelog-subtitle changelog-subtitle--fix">🔧 Corrections :</p>
+            <ul class="changelog-items">
+              <li><strong>Montée de niveau — sous-classes</strong> — suffixes JSON corrigés pour 6 classes</li>
+              <li><strong>Création de race — dropdowns</strong> — routes API inexistantes remplacées</li>
+              <li><strong>Pages check-email / confirm / reset</strong> — authGuard supprimé (pages publiques)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Entrée 04/04/2026 -->
+        <div class="changelog-entry">
+          <button class="changelog-toggle" onclick="toggleChangelog(this)">
+            <span class="changelog-chevron">▸</span> 📅 04/04/2026
+          </button>
+          <div class="changelog-body">
+            <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+            <ul class="changelog-items">
+              <li><strong>Refonte complète de la création de monstre</strong> — 16 sections, FP estimé automatique</li>
+              <li><strong>Prévisualisation bloc de stats</strong> — style D&D directement dans la page</li>
+              <li><strong>Écran MJ — actions des monstres</strong> — actions bonus, réactions, légendaires avec compteur</li>
+              <li><strong>Modal attaque MJ améliorée</strong> — avantage/désavantage cyclique, attaques prédéfinies</li>
+            </ul>
+            <p class="changelog-subtitle changelog-subtitle--fix">🔧 Corrections :</p>
+            <ul class="changelog-items">
+              <li><strong>API MonstresCustom</strong> — route CRUD créée côté serveur</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Entrées plus anciennes cachées -->
+        <div class="changelog-older" id="changelog-older">
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 02/04/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Recherche monstres DB dans la modal Rencontre</strong> — filtres FP/type/taille, clic → auto-remplit</li>
+                <li><strong>Recherche objets magiques DB dans la modal Loot</strong> — filtres catégorie + rareté</li>
+                <li><strong>Cloche de notifications</strong> — ajoutée sur Éditeur de campagne et Création de personnage</li>
+              </ul>
+              <p class="changelog-subtitle changelog-subtitle--fix">🔧 Corrections :</p>
+              <ul class="changelog-items">
+                <li><strong>Chapitres de campagne</strong> — le PUT ignorait le champ <code>chapitres</code> ; corrigé</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 31/03/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Éditeur de campagne inline — refonte complète</strong> — TipTap, blocs structurés colorés</li>
+                <li><strong>Bloc Rencontre</strong> — fond bordeaux, lancer le combat depuis la campagne</li>
+                <li><strong>Bloc Jet de compétence</strong> — envoyer aux joueurs via notifications</li>
+                <li><strong>Bloc Loot</strong> — distribuer directement en session</li>
+                <li><strong>Blocs PNJ, Lieu, Image</strong> — partage en temps réel aux joueurs</li>
+                <li><strong>Chapitres drag & drop</strong> — réordonnables, auto-save 30s</li>
+                <li><strong>Monstres custom MJ</strong> — CRUD complet avec XP auto selon FP</li>
+                <li><strong>XP automatique à la fin du combat</strong> — répartition par joueur</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 30/03/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Flow statut session</strong> — recrutement → en_cours → terminée avec boutons MJ</li>
+                <li><strong>Routes /demarrer et /terminer</strong> — notification automatique aux joueurs</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 29/03/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--fix">🔧 Corrections :</p>
+              <ul class="changelog-items">
+                <li><strong>Équipement — choix A/B/C</strong> — options de classe correctement proposées</li>
+                <li><strong>validateCharacter()</strong> — validation globale avant soumission</li>
+                <li><strong>Sorts soumission — lanceurs tiers</strong> — emplacements corrigés pour guerrier occulte & roublard arcanique</li>
+              </ul>
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Étape Boutique</strong> — achat libre avec budget de classe en temps réel</li>
+                <li><strong>Sauvegarde automatique du wizard</strong> — bannière "Reprendre" à la reconnexion</li>
+                <li><strong>Fiche — refonte avec onglets</strong> — Fiche / Inventaire / Description</li>
+                <li><strong>Tooltips sorts</strong> — popup avec école, portée, durée, description</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 28/03/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Étape "Points de vie"</strong> — DV max niveau 1, lancer ou fixe pour les niveaux suivants</li>
+                <li><strong>Bonus background PHB 2024</strong> — +2/+1 ou +1/+1/+1 selon le background</li>
+              </ul>
+              <p class="changelog-subtitle changelog-subtitle--infra">🗄️ Infrastructure :</p>
+              <ul class="changelog-items">
+                <li><strong>Migration API → MongoDB</strong> — toutes les routes de données</li>
+                <li><strong>Compétences sans hardcodage</strong> — route <code>/GetCompetences2024</code></li>
+                <li><strong>Sous-classe dynamique</strong> — niveau déverrouillage lu depuis le JSON de classe</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 27/03/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--fix">🔧 Corrections :</p>
+              <ul class="changelog-items">
+                <li><strong>Moteur de magie entièrement corrigé</strong> — emplacements PHB 2024 corrects</li>
+                <li><strong>Demi-lanceurs (Paladin, Rôdeur)</strong> — emplacements progressifs corrects</li>
+                <li><strong>Occultiste (Pacte)</strong> — emplacements dorés, reset repos court</li>
+              </ul>
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Variantes d'espèces</strong> — Elfe/Tieffelin/Drakéide/Gnome/Nain avec sorts raciaux</li>
+                <li><strong>Achat de points PHB 2024</strong> — 27 pts, table officielle</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 24/03/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Tableau de bord MJ complet</strong> — hub 3 colonnes, éditeur de blocs structurés</li>
+                <li><strong>Système de notifications</strong> — cloche, toasts temps réel, push navigateur</li>
+                <li><strong>Base PWA</strong> — manifest.json + service worker</li>
+                <li><strong>Page tutoriel complète</strong> — 8 guides joueur + MJ</li>
+                <li><strong>1954 objets magiques SRD importés</strong> — filtres par catégorie, rareté, harmonisation</li>
+                <li><strong>Création d'objets magiques homebrew</strong> — formulaire complet</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="changelog-entry">
+            <button class="changelog-toggle" onclick="toggleChangelog(this)">
+              <span class="changelog-chevron">▸</span> 📅 23/03/2026 — 21/03/2026
+            </button>
+            <div class="changelog-body">
+              <p class="changelog-subtitle changelog-subtitle--add">✨ Ajouts :</p>
+              <ul class="changelog-items">
+                <li><strong>Montée en niveau</strong> — wizard multi-étapes, confettis au passage de niveau</li>
+                <li><strong>Distribution XP & Jalon</strong> — MJ, en parts égales ou individuelles</li>
+                <li><strong>Système de repos & ressources de classe</strong> — cases colorées, vote temps réel, dés de vie</li>
+                <li><strong>Système de combat complet</strong> — jet de touché/critique, sorts, jets de sauvegarde</li>
+                <li><strong>Bibliothèque PHB 2024</strong> — 374 sorts, 12 classes, 48 sous-classes, 322 monstres, équipement</li>
+                <li><strong>Fiche de personnage PHB 2024</strong> — wizard 10 étapes, fiche éditable, auto-save</li>
+                <li><strong>Gestion de campagnes</strong> — éditeur chapitres, rencontres scénarisées, lancement MJ</li>
+                <li><strong>Écran du MJ</strong> — tracker initiative, 15 conditions, messagerie temps réel</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /changelog-older -->
+
+        <button class="changelog-see-all" id="changelog-see-all-btn" onclick="toggleOlderChangelog()">
+          Voir tout l'historique →
+        </button>
+      </section>
+
+      <!-- ── ROADMAP ─────────────────────────────────────────────── -->
+      <section class="home-section home-roadmap">
+        <div class="home-section__ornament">✦</div>
+        <div class="home-section__label">
+          <span>🔜</span> À venir dans la campagne
+        </div>
+        <h2 style="margin-bottom:var(--space-5)">Feuille de route</h2>
+
+        <div class="roadmap-grid">
+
+          <div class="roadmap-group" style="border:1px solid rgba(134,93,255,0.2)">
+            <div class="roadmap-group__label" style="color:var(--purple)">Fonctionnel</div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🧬</span>
+                <div>
+                  <div class="roadmap-item__title">Création Homebrew avancée</div>
+                  <div class="roadmap-item__desc">Races, classes et sous-classes personnalisées</div>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🎒</span>
+                <div>
+                  <div class="roadmap-item__title">Inventaire partagé de groupe</div>
+                  <div class="roadmap-item__desc">Un sac pour toute la compagnie</div>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🗺️</span>
+                <div>
+                  <div class="roadmap-item__title">Carte interactive</div>
+                  <div class="roadmap-item__desc">Lieux de campagne épinglés</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-group" style="border:1px solid rgba(201,168,76,0.2)">
+            <div class="roadmap-group__label" style="color:var(--gold)">Avatar animé</div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🖼️</span>
+                <div>
+                  <div class="roadmap-item__title">Universal LPC Spritesheet</div>
+                  <div class="roadmap-item__desc">Peau, race, cheveux, armure</div>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">⚔️</span>
+                <div>
+                  <div class="roadmap-item__title">Animations en jeu</div>
+                  <div class="roadmap-item__desc">Attaque, magie, dégâts, mort</div>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🐾</span>
+                <div>
+                  <div class="roadmap-item__title">Sprites dans le tracker</div>
+                  <div class="roadmap-item__desc">Avatar animé par combattant</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-group" style="border:1px solid rgba(96,165,250,0.2)">
+            <div class="roadmap-group__label" style="color:#60a5fa">Partage d'images</div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🧱</span>
+                <div>
+                  <div class="roadmap-item__title">Bloc Image dans l'éditeur</div>
+                  <div class="roadmap-item__desc">URL ou upload dans un chapitre</div>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">📡</span>
+                <div>
+                  <div class="roadmap-item__title">Affichage temps réel</div>
+                  <div class="roadmap-item__desc">Plein écran chez tous les joueurs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-group" style="border:1px solid rgba(74,222,128,0.2)">
+            <div class="roadmap-group__label" style="color:var(--success)">Contenu & technique</div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">⚠️</span>
+                <div>
+                  <div class="roadmap-item__title">Pièges & dangers</div>
+                  <div class="roadmap-item__desc">Environnementaux en combat</div>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🎲</span>
+                <div>
+                  <div class="roadmap-item__title">Tables aléatoires</div>
+                  <div class="roadmap-item__desc">Rencontres, météo, loot…</div>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="roadmap-item__icon">🔔</span>
+                <div>
+                  <div class="roadmap-item__title">Webhook Discord</div>
+                  <div class="roadmap-item__desc">Compte-rendu auto de session</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="roadmap-contact">
+          Une idée, un bug, une envie ?
+          <a href="mailto:S0wh4@hotmail.fr">S0wh4@hotmail.fr →</a>
+        </div>
+      </section>
+
+      <p class="home-signature">
+        Merci pour votre patience et votre enthousiasme.<br>
+        — Wiwi 🧙‍♂️
+      </p>
     </main>
   </div>
+
+  <!-- ── Auth Supabase ──────────────────────────────────────────── -->
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
@@ -357,44 +551,179 @@
       }
     }
 
-    // Utilise onAuthStateChange pour attendre que Supabase traite
-    // le hash fragment OAuth (#access_token=...) avant de vérifier la session.
-    // Évite le race condition qui faisait échouer Discord (et parfois Google).
+    async function loadDashboard(session) {
+      const token = session.access_token;
+      const username = session.user.user_metadata?.full_name
+        || session.user.user_metadata?.name
+        || session.user.user_metadata?.preferred_username
+        || session.user.email?.split('@')[0]
+        || 'Aventurier';
+
+      // Mise à jour du hero
+      document.getElementById('hero-sub').textContent =
+        username + ' — le Maître vous accueille dans sa bibliothèque.';
+
+      const headers = { Authorization: `Bearer ${token}` };
+
+      // Fetch en parallèle
+      const [persosRes, sessionsMJRes, sessionsJoueurRes] = await Promise.allSettled([
+        fetch('/api/Personnages', { headers }),
+        fetch('/api/Sessions?role=mj', { headers }),
+        fetch('/api/Sessions?role=joueur', { headers }),
+      ]);
+
+      // Personnages
+      if (persosRes.status === 'fulfilled' && persosRes.value.ok) {
+        const persos = await persosRes.value.json();
+        renderCharCards(persos.slice(0, 3));
+        document.getElementById('stat-personnages').textContent = persos.length;
+        document.getElementById('hero-badge').textContent =
+          persos.length + ' personnage' + (persos.length > 1 ? 's' : '');
+      } else {
+        document.getElementById('char-cards').innerHTML =
+          '<div class="char-empty">Aucun personnage — commence ton aventure !</div>';
+        document.getElementById('hero-badge').textContent = 'Bienvenue !';
+      }
+
+      // Sessions MJ
+      let mjSessions = [];
+      if (sessionsMJRes.status === 'fulfilled' && sessionsMJRes.value.ok) {
+        mjSessions = await sessionsMJRes.value.json();
+      }
+
+      // Sessions joueur
+      let joueurSessions = [];
+      if (sessionsJoueurRes.status === 'fulfilled' && sessionsJoueurRes.value.ok) {
+        joueurSessions = await sessionsJoueurRes.value.json();
+      }
+
+      const allSessions = [...mjSessions, ...joueurSessions];
+      const active = allSessions.find(s => s.statut === 'en_cours');
+      renderActiveSession(active, mjSessions.some(s => s.statut === 'en_cours'));
+
+      document.getElementById('stat-sessions').textContent = allSessions.length;
+    }
+
+    const CLASS_COLORS = {
+      barbare: '#d97706', barde: '#d946ef', clerc: '#facc15', druide: '#65a30d',
+      guerrier: '#b91c1c', moine: '#06b6d4', paladin: '#fbbf24', rodeur: '#15803d',
+      roublard: '#6b7280', ensorceleur: '#f43f5e', occultiste: '#7c3aed', magicien: '#2563eb',
+    };
+
+    function classColor(classe) {
+      if (!classe) return '#865dff';
+      const k = classe.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+      return CLASS_COLORS[k] || '#865dff';
+    }
+
+    function hpColor(pct) {
+      if (pct > 60) return '#4ade80';
+      if (pct > 30) return '#fbbf24';
+      return '#f87171';
+    }
+
+    function renderCharCards(persos) {
+      const container = document.getElementById('char-cards');
+      if (!persos.length) {
+        container.innerHTML = '<div class="char-empty">Aucun personnage — commence ton aventure !</div>';
+        return;
+      }
+      const color = p => classColor(p.classe);
+      container.innerHTML = persos.map(p => {
+        const hp = parseInt(p.pv_actuels ?? p.pv_max ?? 0);
+        const maxHp = parseInt(p.pv_max ?? 1);
+        const pct = Math.min(100, Math.max(0, Math.round(hp / maxHp * 100)));
+        const initial = (p.nom || '?')[0].toUpperCase();
+        const c = color(p);
+        const avatarHtml = p.sprite_url
+          ? `<img class="char-avatar" src="${p.sprite_url}" style="border:1.5px solid ${c};image-rendering:pixelated" alt="${p.nom}">`
+          : `<div class="char-avatar" style="background:${c}22;border:1.5px solid ${c};color:${c}">${initial}</div>`;
+        return `<a href="fiche-personnage.html?id=${p._id}" class="char-card">
+          ${avatarHtml}
+          <div class="char-info">
+            <div class="char-name">${p.nom || '—'}
+              <span class="char-level" style="color:${c}">Niv. ${p.niveau || 1}</span>
+            </div>
+            <div class="char-sub">${p.espece || ''} · ${p.classe || ''}</div>
+            <div class="char-hp-bar-bg">
+              <div class="char-hp-bar" style="width:${pct}%;background:${hpColor(pct)}"></div>
+            </div>
+          </div>
+          <div class="char-hp-text">${hp}/${maxHp}</div>
+        </a>`;
+      }).join('');
+    }
+
+    function renderActiveSession(session, isMJ) {
+      const area = document.getElementById('active-session-area');
+      if (!session) {
+        area.innerHTML = '<div class="no-session">Aucune session active pour le moment…</div>';
+        return;
+      }
+      const href = isMJ ? `ecran-mj.html?session=${session._id}` : `session-joueur.html?id=${session._id}`;
+      area.innerHTML = `<div class="active-session">
+        <div class="active-session__dot"></div>
+        <div style="flex:1;min-width:0">
+          <div class="active-session__name">${session.nom || 'Session en cours'}</div>
+          <div class="active-session__meta">${session.campagne_nom || ''} · ${(session.joueurs||[]).length} joueurs</div>
+        </div>
+        <a href="${href}" class="active-session__btn">Reprendre →</a>
+      </div>`;
+    }
+
     supabase.auth.onAuthStateChange((event, session) => {
       if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
         if (!session) {
           window.location.href = "login.html";
         } else {
           syncOAuthUser(session.user);
+          loadDashboard(session).catch(console.warn);
         }
       } else if (event === 'SIGNED_OUT') {
         window.location.href = "login.html";
       }
     });
 
-    // Fallback immédiat pour les sessions déjà établies (email/password)
     const { data: { session } } = await supabase.auth.getSession();
     if (session) {
       syncOAuthUser(session.user);
+      loadDashboard(session).catch(console.warn);
     } else if (!window.location.hash.includes('access_token')) {
-      // Pas de hash OAuth et pas de session → rediriger
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) window.location.href = "login.html";
       else syncOAuthUser(user);
     }
   </script>
-  
+
   <script type="module">
     import { toggleSidebar } from './js/sidebar.js';
     window.toggleSidebar = toggleSidebar;
   </script>
+
+  <!-- ── Interactions changelog ────────────────────────────────── -->
+  <script>
+    function toggleChangelog(btn) {
+      btn.classList.toggle('is-open');
+      const body = btn.nextElementSibling;
+      body.classList.toggle('is-open');
+    }
+
+    function toggleOlderChangelog() {
+      const older = document.getElementById('changelog-older');
+      const btn = document.getElementById('changelog-see-all-btn');
+      older.classList.toggle('is-open');
+      btn.textContent = older.classList.contains('is-open')
+        ? 'Masquer l'historique ↑'
+        : 'Voir tout l\'historique →';
+    }
+  </script>
+
   <div class="theme-toggle-container">
     <button id="theme-toggle" class="lanterne-btn">
       <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
     </button>
   </div>
   <script src="js/theme.js"></script>
-  
-<script src="js/notifications.js"></script>
+  <script src="js/notifications.js"></script>
 </body>
 </html>
