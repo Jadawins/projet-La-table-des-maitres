@@ -1,0 +1,296 @@
+/* ================================================================
+   BIBLIOTHÈQUE V2 — overrides visuels (tokens.css requis)
+   ================================================================ */
+
+/* ── Header ───────────────────────────────────────────────────── */
+.biblio-header {
+  text-align: left;
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: var(--space-4);
+}
+
+.biblio-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-medium);
+  color: var(--text);
+  text-shadow: none;
+  margin: 0 0 var(--space-1);
+}
+
+.biblio-header p {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+/* ── Search bar ───────────────────────────────────────────────── */
+.biblio-search-bar input {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+  transition: border-color var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+}
+
+.biblio-search-bar input:focus {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 3px var(--gold-muted);
+  outline: none;
+}
+
+.biblio-search-bar input::placeholder { color: var(--text-faint); }
+
+/* ── Tabs ─────────────────────────────────────────────────────── */
+.biblio-tabs {
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 0;
+  justify-content: flex-start;
+  gap: 0;
+  margin-bottom: var(--space-5);
+}
+
+.biblio-tab {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--text-muted);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: -1px;
+  transition: color var(--duration) var(--ease),
+              border-color var(--duration) var(--ease);
+}
+
+.biblio-tab:hover { color: var(--text); }
+
+.biblio-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  background: transparent;
+}
+
+/* ── Filtres ──────────────────────────────────────────────────── */
+.biblio-filtres,
+.filtres-row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+  align-items: center;
+}
+
+.biblio-filtres select,
+.filtres-row select,
+.biblio-filtres input[type="text"],
+.filtres-row input[type="text"] {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.biblio-filtres select:focus,
+.filtres-row select:focus,
+.biblio-filtres input:focus,
+.filtres-row input:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+.biblio-count {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  margin-left: auto;
+  letter-spacing: 0.08em;
+}
+
+/* ── Cards résultats ──────────────────────────────────────────── */
+.biblio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+.biblio-card {
+  background: var(--surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease),
+              transform var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+}
+
+.biblio-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.biblio-card h3,
+.card-nom,
+.biblio-card-nom {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+.biblio-card p,
+.card-desc,
+.biblio-card-desc {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: var(--leading-normal);
+}
+
+/* Badges */
+.badge-ecole,
+.badge-niveau,
+.badge-type,
+.badge-rarete {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+/* ── Modal détail ─────────────────────────────────────────────── */
+.biblio-modal-overlay {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.biblio-modal {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg), var(--glow-gold);
+}
+
+.biblio-modal h2,
+.modal-sort-nom,
+.modal-monster-nom {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--gold);
+}
+
+.biblio-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--duration) var(--ease);
+}
+
+.biblio-modal-close:hover { color: var(--text); }
+
+.biblio-modal p,
+.biblio-modal .desc-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  color: var(--text-soft);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Pagination ───────────────────────────────────────────────── */
+.biblio-pagination {
+  display: flex;
+  gap: var(--space-1);
+  justify-content: center;
+  margin-top: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.biblio-pagination button,
+.page-btn {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  padding: var(--space-1) var(--space-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+}
+
+.biblio-pagination button:hover,
+.page-btn:hover {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.biblio-pagination button.active,
+.page-btn.active {
+  background: var(--gold-muted);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.biblio-pagination button:disabled,
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* ── Search inline dans les onglets ───────────────────────────── */
+.tab-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.tab-search-wrap input {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+  flex: 1;
+  max-width: 400px;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.tab-search-wrap input:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+/* ── Loading / empty ──────────────────────────────────────────── */
+.biblio-loading,
+.biblio-empty {
+  text-align: center;
+  padding: var(--space-12);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-style: italic;
+  grid-column: 1 / -1;
+}

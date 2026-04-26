@@ -1,0 +1,297 @@
+/* ================================================================
+   CRÉER PERSONNAGE V2 — overrides visuels (tokens.css requis)
+   Chargé après personnage.css. Ne touche pas aux IDs/JS.
+   ================================================================ */
+
+/* ── Wizard layout ────────────────────────────────────────────── */
+.wizard-layout {
+  max-width: 960px;
+  padding: var(--space-8) var(--space-6) var(--space-12);
+}
+
+/* ── Stepper ──────────────────────────────────────────────────── */
+.wizard-progress {
+  margin-bottom: var(--space-6);
+}
+
+.step-circle {
+  background: var(--surface-2);
+  border-color: var(--border-muted);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-bold);
+  transition: background var(--duration) var(--ease),
+              border-color var(--duration) var(--ease);
+}
+
+.wizard-step-dot.active .step-circle {
+  background: var(--purple-soft);
+  border-color: var(--purple);
+  color: var(--text);
+}
+
+.wizard-step-dot.done .step-circle {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
+}
+
+.step-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.wizard-step-dot.active .step-label { color: var(--purple); }
+.wizard-step-dot.done .step-label { color: var(--text-muted); }
+
+/* ── Step titles ──────────────────────────────────────────────── */
+.step-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  color: var(--gold);
+  margin-bottom: var(--space-1);
+}
+
+.step-subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Navigation wizard ────────────────────────────────────────── */
+.wizard-nav {
+  border-top-color: var(--border-muted);
+  padding-top: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.wizard-nav-info {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+}
+
+.btn-wiz-prev {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  border-radius: var(--radius);
+  transition: all var(--duration) var(--ease);
+}
+
+.btn-wiz-prev:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn-wiz-next {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  background: var(--purple);
+  border-radius: var(--radius);
+  transition: background var(--duration) var(--ease);
+}
+
+.btn-wiz-next:hover:not(:disabled) { background: #7350e0; }
+.btn-wiz-next:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-wiz-submit {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  background: var(--gold);
+  color: var(--text-on-gold);
+  border-radius: var(--radius);
+  transition: background var(--duration) var(--ease);
+}
+
+.btn-wiz-submit:hover { background: var(--gold-bright); }
+
+/* ── Select cards (espèces, classes) ──────────────────────────── */
+.select-card {
+  background: var(--surface);
+  border: 2px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration) var(--ease),
+              background var(--duration) var(--ease),
+              transform var(--duration) var(--ease);
+}
+
+.select-card:hover {
+  border-color: rgba(134, 93, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.select-card.selected {
+  border-color: var(--purple);
+  background: var(--purple-soft);
+}
+
+.card-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+}
+
+.card-sub { color: var(--text-faint); }
+
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  background: var(--gold-muted);
+  border-color: var(--border-strong);
+  color: var(--gold);
+}
+
+/* ── Detail panel ─────────────────────────────────────────────── */
+.detail-panel {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  border-radius: var(--radius-md);
+}
+
+.detail-panel h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--gold);
+}
+
+/* ── Form fields ──────────────────────────────────────────────── */
+.form-field label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: rgba(134, 93, 255, 0.5);
+}
+
+/* ── Method cards (stats) ──────────────────────────────────────── */
+.method-card {
+  background: var(--surface);
+  border: 2px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+}
+
+.method-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.1);
+}
+
+.method-card.selected {
+  border-color: var(--purple);
+  background: var(--purple-soft);
+}
+
+.method-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+}
+
+.method-card-desc {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* ── Recap blocks ──────────────────────────────────────────────── */
+.recap-block {
+  background: var(--surface);
+  border-color: var(--border);
+  border-radius: var(--radius-md);
+}
+
+.recap-block h3 {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.recap-label { color: var(--text-muted); }
+.recap-val { color: var(--text); font-weight: var(--weight-semibold); }
+
+/* ── PV step ───────────────────────────────────────────────────── */
+.pv-recap-section {
+  background: var(--surface-2);
+  border-color: var(--border-muted);
+  border-radius: var(--radius);
+}
+
+.pv-recap-label { color: var(--gold); font-family: var(--font-mono); font-size: var(--text-sm); }
+.pv-recap-total { font-family: var(--font-heading); color: var(--text); }
+
+/* ── Inventaire boutique ────────────────────────────────────────── */
+.equip-tab {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  transition: all var(--duration) var(--ease);
+}
+
+.equip-tab.active {
+  border-color: var(--purple);
+  color: var(--gold);
+  background: var(--purple-soft);
+}
+
+.equip-budget {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--gold);
+  background: var(--gold-muted);
+  border-color: var(--border-strong);
+}
+
+/* ── Sorts listing ───────────────────────────────────────────────── */
+.sorts-counter-badge {
+  font-family: var(--font-mono);
+  background: var(--gold-muted);
+  border-color: var(--border-strong);
+  color: var(--gold);
+}
+
+.sorts-counter-badge.done {
+  background: var(--success-soft);
+  border-color: rgba(74, 222, 128, 0.4);
+  color: var(--success);
+}

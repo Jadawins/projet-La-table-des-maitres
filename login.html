@@ -3,49 +3,595 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion - La Table du Maître</title>
+  <title>Connexion — La Table du Maître</title>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/ui-clean.css">
-  <link rel="stylesheet" href="css/style-clean.css">  
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-ui);
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(12,12,20,.5) 0%, rgba(12,12,20,.92) 100%),
+        url('assets/img/fond-bibliotheque-sombre.png') center / cover no-repeat fixed,
+        var(--bg);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    /* ── Mini topbar ──────────────────────────── */
+    .lg-topbar {
+      padding: var(--space-4) var(--space-8);
+      display: flex;
+      align-items: center;
+    }
+
+    .lg-logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-bold);
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .lg-back {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--duration) var(--ease);
+    }
+
+    .lg-back:hover { color: var(--gold); }
+
+    /* ── Layout 2 colonnes ────────────────────── */
+    .lg-layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: var(--space-5) var(--space-8) var(--space-10);
+      gap: var(--space-10);
+      align-items: center;
+    }
+
+    /* ── Colonne narration ────────────────────── */
+    .lg-narration {
+      padding-right: var(--space-6);
+    }
+
+    .lg-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 4px var(--space-3);
+      border-radius: var(--radius-full);
+      background: rgba(12,12,20,.6);
+      border: 1px solid rgba(201,168,76,.25);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-bold);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: var(--space-6);
+    }
+
+    .lg-headline {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: var(--weight-medium);
+      line-height: 1.05;
+      color: var(--text);
+      text-shadow: 0 2px 40px rgba(12,12,20,.9);
+      margin-bottom: var(--space-5);
+    }
+
+    .lg-headline em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .lg-pitch {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: var(--text-soft);
+      line-height: 1.6;
+      max-width: 440px;
+      margin-bottom: var(--space-8);
+      text-shadow: 0 1px 14px rgba(12,12,20,.9);
+    }
+
+    .lg-features {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      max-width: 420px;
+    }
+
+    .lg-feature {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+
+    .lg-feature-icon {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: var(--radius);
+      background: rgba(12,12,20,.6);
+      border: 1px solid rgba(201,168,76,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .lg-feature-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: var(--weight-semibold);
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .lg-feature-desc {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Card formulaire ──────────────────────── */
+    .lg-card {
+      background: rgba(19,19,30,.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-lg), 0 0 0 1px rgba(201,168,76,.08);
+    }
+
+    /* Mode toggle */
+    .lg-toggle {
+      display: flex;
+      padding: 4px;
+      background: rgba(12,12,20,.6);
+      border: 1px solid var(--border-muted);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-5);
+    }
+
+    .lg-toggle-btn {
+      flex: 1;
+      padding: var(--space-2) var(--space-3);
+      border: none;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-bold);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--duration) var(--ease);
+    }
+
+    .lg-toggle-btn.active {
+      background: var(--gold);
+      color: var(--text-on-gold);
+    }
+
+    .lg-card-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: var(--weight-semibold);
+      color: var(--text);
+      margin-bottom: var(--space-1);
+    }
+
+    .lg-card-sub {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      margin-bottom: var(--space-5);
+    }
+
+    /* Field */
+    .lg-field {
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+
+    .lg-field-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: var(--weight-bold);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      display: block;
+      margin-bottom: var(--space-1);
+      transition: color var(--duration) var(--ease);
+    }
+
+    .lg-field:focus-within .lg-field-label { color: var(--gold); }
+
+    .lg-input-wrap {
+      display: flex;
+      align-items: center;
+      background: rgba(12,12,20,.5);
+      border: 1px solid var(--border-muted);
+      border-radius: var(--radius);
+      padding: var(--space-2) var(--space-4);
+      transition: border-color var(--duration) var(--ease),
+                  box-shadow var(--duration) var(--ease);
+    }
+
+    .lg-input-wrap:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,.12);
+    }
+
+    .lg-input-icon {
+      color: var(--text-faint);
+      margin-right: var(--space-2);
+      font-size: 14px;
+      transition: color var(--duration) var(--ease);
+    }
+
+    .lg-input-wrap:focus-within .lg-input-icon { color: var(--gold); }
+
+    .lg-input-wrap input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+    }
+
+    .lg-input-wrap input::placeholder { color: var(--text-faint); }
+
+    .lg-pwd-toggle {
+      background: none;
+      border: none;
+      color: var(--text-faint);
+      cursor: pointer;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      transition: color var(--duration) var(--ease);
+    }
+
+    .lg-pwd-toggle:hover { color: var(--text-muted); }
+
+    /* Forgot password */
+    .lg-forgot {
+      text-align: right;
+      margin: calc(-1 * var(--space-2)) 0 var(--space-4);
+    }
+
+    .lg-forgot a {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: .06em;
+      color: var(--purple);
+      text-decoration: none;
+      transition: color var(--duration) var(--ease);
+    }
+
+    .lg-forgot a:hover { color: var(--text); }
+
+    /* Submit button */
+    .lg-submit {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      background: var(--gold);
+      color: var(--text-on-gold);
+      border: none;
+      border-radius: var(--radius);
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: var(--weight-semibold);
+      letter-spacing: .06em;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(201,168,76,.3);
+      transition: background var(--duration) var(--ease),
+                  box-shadow var(--duration) var(--ease);
+    }
+
+    .lg-submit:hover {
+      background: var(--gold-bright);
+      box-shadow: 0 10px 28px rgba(201,168,76,.45);
+    }
+
+    /* Divider */
+    .lg-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin: var(--space-5) 0 var(--space-4);
+    }
+
+    .lg-divider::before,
+    .lg-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,.15);
+    }
+
+    .lg-divider span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: .2em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+    }
+
+    /* Provider buttons */
+    .lg-providers {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .lg-provider-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      background: rgba(12,12,20,.5);
+      border: 1px solid;
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      cursor: pointer;
+      transition: all var(--duration) var(--ease);
+    }
+
+    .lg-provider-btn--google { border-color: rgba(66,133,244,.3); }
+    .lg-provider-btn--google:hover { border-color: #4285f4; background: rgba(66,133,244,.08); }
+
+    .lg-provider-btn--discord { border-color: rgba(88,101,242,.3); }
+    .lg-provider-btn--discord:hover { border-color: #5865f2; background: rgba(88,101,242,.08); }
+
+    .lg-provider-icon { width: 18px; height: 18px; object-fit: contain; }
+
+    /* Card footer */
+    .lg-card-footer {
+      margin-top: var(--space-5);
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(201,168,76,.1);
+      text-align: center;
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+
+    .lg-card-footer button {
+      background: none;
+      border: none;
+      color: var(--gold);
+      cursor: pointer;
+      font-weight: var(--weight-semibold);
+      font-size: var(--text-xs);
+      font-family: inherit;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    /* Footer page */
+    .lg-footer {
+      border-top: 1px solid rgba(201,168,76,.12);
+      padding: var(--space-4) var(--space-8);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--text-faint);
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .lg-layout { grid-template-columns: 1fr; padding: var(--space-4); gap: var(--space-8); }
+      .lg-narration { padding-right: 0; }
+      .lg-headline { font-size: 2.5rem; }
+      .lg-features { display: none; }
+    }
+  </style>
 </head>
 <body>
- <div class="container">
-   <div class="signup-box">
-      <h2>Connexion</h2>      
-       <form id="login-form" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%;">
-        <input type="email" name="email" placeholder="Adresse e-mail" required class="input-style">
-        <div class="pwd-wrapper">
-          <input type="password" name="password" placeholder="Mot de passe" required class="input-style">
-          <button type="button" class="pwd-toggle" onclick="togglePwd(this)" title="Afficher/masquer"><svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></button>
+
+  <!-- Topbar -->
+  <div class="lg-topbar">
+    <a href="index.html" class="lg-logo">⚔ La Table du Maître</a>
+    <a href="index.html" class="lg-back">← Retour à l'accueil</a>
+  </div>
+
+  <!-- 2 colonnes -->
+  <div class="lg-layout">
+
+    <!-- Narration -->
+    <div class="lg-narration" id="lg-narration">
+      <div class="lg-badge">✦ Retour à la table</div>
+      <h1 class="lg-headline">
+        Le grimoire<br>
+        <em>vous reconnaît.</em>
+      </h1>
+      <p class="lg-pitch">
+        Vos personnages vous attendent. Vos campagnes sont là où vous les avez laissées.
+        La prochaine session commence quand vous êtes prêts.
+      </p>
+      <div class="lg-features">
+        <div class="lg-feature">
+          <div class="lg-feature-icon">📖</div>
+          <div>
+            <div class="lg-feature-title">Vos campagnes & personnages</div>
+            <div class="lg-feature-desc">Reprenez exactement où vous vous êtes arrêté.</div>
+          </div>
         </div>
-        <button type="submit" class="btn-style">Se connecter </button>
-       
-       <p class="reset-link">
-        <a href="#" id="reset-password-link">Mot de passe oublié ?</a>
-       </p>
-       </form>
-       <div class="or-divider"><span>OU</span></div>
-       <div class="provider-buttons">
-        <button class="provider-btn" onclick="signInWithProvider('google')">
-          <img src="assets/icone/google-icon.png" alt="Google" class="provider-logo">
+        <div class="lg-feature">
+          <div class="lg-feature-icon">⚔</div>
+          <div>
+            <div class="lg-feature-title">Sessions en temps réel</div>
+            <div class="lg-feature-desc">Vos joueurs vous rejoignent en un clic.</div>
+          </div>
+        </div>
+        <div class="lg-feature">
+          <div class="lg-feature-icon">🎲</div>
+          <div>
+            <div class="lg-feature-title">Vos dés, vos notes, votre table</div>
+            <div class="lg-feature-desc">Rien ne se perd. Tout est sauvegardé.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="lg-card">
+      <div class="lg-toggle">
+        <button class="lg-toggle-btn active" id="btn-mode-login" onclick="setMode('login')">Connexion</button>
+        <button class="lg-toggle-btn" id="btn-mode-signup" onclick="setMode('signup')">Inscription</button>
+      </div>
+
+      <div class="lg-card-title" id="lg-title">Bienvenue à la table.</div>
+      <div class="lg-card-sub" id="lg-sub">Entrez votre email et votre mot de passe pour reprendre la partie.</div>
+
+      <form id="login-form">
+        <label class="lg-field" id="field-pseudo" style="display:none">
+          <span class="lg-field-label">Nom d'aventurier</span>
+          <div class="lg-input-wrap">
+            <span class="lg-input-icon">✦</span>
+            <input type="text" name="pseudo" placeholder="Thalindra, Elara, Brokk…" autocomplete="nickname" />
+          </div>
+        </label>
+
+        <label class="lg-field">
+          <span class="lg-field-label">Email</span>
+          <div class="lg-input-wrap">
+            <span class="lg-input-icon">✉</span>
+            <input type="email" name="email" placeholder="votre@email.fr" autocomplete="email" required />
+          </div>
+        </label>
+
+        <label class="lg-field">
+          <span class="lg-field-label">Mot de passe</span>
+          <div class="lg-input-wrap">
+            <span class="lg-input-icon">⚷</span>
+            <input type="password" name="password" id="pwd-input" placeholder="••••••••" autocomplete="current-password" required />
+            <button type="button" class="lg-pwd-toggle" onclick="togglePwd()" title="Afficher/masquer" id="pwd-toggle-btn">
+              <svg id="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg id="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+        </label>
+
+        <div class="lg-forgot" id="forgot-area">
+          <a href="#" id="reset-password-link">Mot de passe oublié ?</a>
+        </div>
+
+        <label class="lg-field" id="field-cgu" style="display:none;flex-direction:row;gap:var(--space-2);align-items:flex-start;font-size:var(--text-xs);color:var(--text-muted);cursor:pointer;line-height:1.5;">
+          <input type="checkbox" style="margin-top:2px;accent-color:var(--gold);flex-shrink:0" />
+          <span>J'accepte les <a href="#" style="color:var(--gold);text-decoration:none">mentions légales</a> et la <a href="#" style="color:var(--gold);text-decoration:none">politique de confidentialité</a>.</span>
+        </label>
+
+        <button type="submit" class="lg-submit" id="lg-submit-btn">Entrer à la table →</button>
+      </form>
+
+      <div class="lg-divider"><span>OU</span></div>
+
+      <div class="lg-providers">
+        <button class="lg-provider-btn lg-provider-btn--google" onclick="signInWithProvider('google')">
+          <img src="assets/icone/google-icon.png" alt="Google" class="lg-provider-icon">
           Continuer avec Google
         </button>
-
-        <button class="provider-btn" onclick="signInWithProvider('discord')">
-        <img src="assets/icone/discord-icon.png" alt="Discord" class="provider-logo">
-        Continuer avec Discord
+        <button class="lg-provider-btn lg-provider-btn--discord" onclick="signInWithProvider('discord')">
+          <img src="assets/icone/discord-icon.png" alt="Discord" class="lg-provider-icon">
+          Continuer avec Discord
         </button>
+      </div>
+
+      <div class="lg-card-footer" id="lg-card-footer">
+        Pas encore de compte ?
+        <button onclick="setMode('signup')">Créez-en un</button>
+      </div>
     </div>
+
   </div>
 
-  <div class="theme-toggle-container">
-    <button id="theme-toggle" class="lanterne-btn">
-      <img id="lanterne-icon" src="assets/img/sombre.png" alt="Changer de thème" />
-    </button>
-  </div>
+  <!-- Footer -->
+  <footer class="lg-footer">
+    © 2026 La Table du Maître · Projet indépendant, non affilié à Wizards of the Coast
+  </footer>
+
+  <script>
+    let _mode = 'login';
+
+    function setMode(mode) {
+      _mode = mode;
+      const isLogin = mode === 'login';
+      document.getElementById('btn-mode-login').classList.toggle('active', isLogin);
+      document.getElementById('btn-mode-signup').classList.toggle('active', !isLogin);
+      document.getElementById('field-pseudo').style.display = isLogin ? 'none' : 'block';
+      document.getElementById('field-cgu').style.display = isLogin ? 'none' : 'flex';
+      document.getElementById('forgot-area').style.display = isLogin ? 'block' : 'none';
+      document.getElementById('lg-title').textContent = isLogin ? 'Bienvenue à la table.' : 'Rejoignez la table.';
+      document.getElementById('lg-sub').textContent = isLogin
+        ? 'Entrez votre email et votre mot de passe pour reprendre la partie.'
+        : 'Quelques secondes suffisent. Aucune CB demandée.';
+      document.getElementById('lg-submit-btn').textContent = isLogin ? 'Entrer à la table →' : 'Franchir le seuil →';
+      document.getElementById('lg-card-footer').innerHTML = isLogin
+        ? 'Pas encore de compte ? <button onclick="setMode(\'signup\')">Créez-en un</button>'
+        : 'Déjà des personnages ? <button onclick="setMode(\'login\')">Connectez-vous</button>';
+      // Narration
+      const nBadge = document.querySelector('.lg-badge');
+      const nTitle = document.querySelector('.lg-headline');
+      const nPitch = document.querySelector('.lg-pitch');
+      if (nBadge) nBadge.textContent = isLogin ? '✦ Retour à la table' : '✦ Premier seuil';
+      if (nTitle) nTitle.innerHTML = isLogin
+        ? 'Le grimoire<br><em>vous reconnaît.</em>'
+        : 'Franchissez<br><em>le seuil.</em>';
+      if (nPitch) nPitch.textContent = isLogin
+        ? 'Vos personnages vous attendent. Vos campagnes sont là où vous les avez laissées.'
+        : 'Créez votre compte et la bibliothèque s\'ouvre. 374 sorts, 322 monstres, 1954 objets magiques — tout est à portée de main, gratuitement pendant la bêta.';
+    }
+
+    function togglePwd() {
+      const inp = document.getElementById('pwd-input');
+      const open = document.getElementById('eye-open');
+      const closed = document.getElementById('eye-closed');
+      if (inp.type === 'password') {
+        inp.type = 'text';
+        open.style.display = 'none';
+        closed.style.display = '';
+      } else {
+        inp.type = 'password';
+        open.style.display = '';
+        closed.style.display = 'none';
+      }
+    }
+  </script>
+
   <script src="js/theme.js"></script>
-  <script src="js/pwd-toggle.js"></script>
   <script type="module" src="js/login.js"></script>
 </body>
 </html>
