@@ -54,40 +54,46 @@ p  { font-size: 0.9rem; line-height: 1.6; }
     background: url("../assets/img/fond-bibliotheque-sombre.png") no-repeat center center fixed;
     background-size: cover;
     background-color: #141414;
-    color: #f9f9f9;
-    font-family: 'Georgia', serif;
+    color: var(--text, #e8e2d9);
+    font-family: var(--font-ui, 'DM Sans', system-ui, sans-serif);
     padding: 1rem;
   }
-  
+
   body[data-theme="dark"] h1,
-  body[data-theme="dark"] h2,
+  body[data-theme="dark"] h2 {
+    color: var(--gold, #c9a84c);
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+  }
+
   body[data-theme="dark"] p,
   body[data-theme="dark"] span,
   body[data-theme="dark"] label {
-    color: #d5d1a9;
-    text-shadow: 0 0 5px #f5e960;
+    color: var(--text, #e8e2d9);
   }
-  
+
   /* =============================================================
      ☀️ THÈME CLAIR : Styles spécifiques au mode clair
      ============================================================= */
-  
+
   body[data-theme="light"] {
     background: url("../assets/img/fond-bibliotheque-clair.png") no-repeat center center fixed;
     background-size: cover;
     background-color: #ffffff;
     color: #2b0040;
-    font-family: 'Georgia', serif;
+    font-family: var(--font-ui, 'DM Sans', system-ui, sans-serif);
     padding: 1rem;
   }
-  
+
   body[data-theme="light"] h1,
-  body[data-theme="light"] h2,
+  body[data-theme="light"] h2 {
+    color: #2b0040;
+    text-shadow: none;
+  }
+
   body[data-theme="light"] p,
   body[data-theme="light"] span,
   body[data-theme="light"] label {
     color: #2b0040;
-    text-shadow: 0 0 3px #ffffff;
   }
   
   body[data-theme="light"] input::placeholder {

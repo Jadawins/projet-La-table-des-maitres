@@ -1,0 +1,166 @@
+/* ================================================================
+   DESIGN TOKENS — La Table du Maître
+   Source unique de vérité. Importer EN PREMIER avant tous les autres CSS.
+   ================================================================ */
+
+/* Polices Google */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ── Fonds & surfaces ──────────────────────────────────────── */
+  --bg:           #0c0c14;
+  --bg-elevated:  #14141f;
+  --surface:      #1a1a2b;
+  --surface-2:    #20203a;
+  --surface-3:    #2a2a4a;
+
+  /* ── Bordures ──────────────────────────────────────────────── */
+  --border:        rgba(201, 168, 76, 0.15);
+  --border-strong: rgba(201, 168, 76, 0.35);
+  --border-muted:  rgba(255, 255, 255, 0.06);
+
+  /* ── Or — couleur signature ────────────────────────────────── */
+  --gold:        #c9a84c;
+  --gold-bright: #e6c567;
+  --gold-muted:  rgba(201, 168, 76, 0.15);
+  --gold-soft:   rgba(201, 168, 76, 0.07);
+
+  /* ── Pourpre — accent magie/MJ ─────────────────────────────── */
+  --purple:      #865dff;
+  --purple-soft: rgba(134, 93, 255, 0.15);
+
+  /* ── Rouge sang — combat, danger ───────────────────────────── */
+  --blood:       #c4453d;
+  --blood-soft:  rgba(196, 69, 61, 0.15);
+
+  /* ── Texte ─────────────────────────────────────────────────── */
+  --text:         #e8e2d9;
+  --text-soft:    #c0bba9;
+  --text-muted:   #7a8299;
+  --text-faint:   #4a5063;
+  --text-on-gold: #1a1a2b;
+
+  /* ── États sémantiques ─────────────────────────────────────── */
+  --success:      #4ade80;
+  --success-soft: rgba(74, 222, 128, 0.15);
+  --warning:      #f59e0b;
+  --warning-soft: rgba(245, 158, 11, 0.15);
+  --error:        #ef4444;
+  --error-soft:   rgba(239, 68, 68, 0.15);
+  --info:         #3b82f6;
+  --info-soft:    rgba(59, 130, 246, 0.15);
+
+  /* ── Classes D&D ───────────────────────────────────────────── */
+  --class-barbarian: #d97706;
+  --class-bard:      #d946ef;
+  --class-cleric:    #facc15;
+  --class-druid:     #65a30d;
+  --class-fighter:   #b91c1c;
+  --class-monk:      #06b6d4;
+  --class-paladin:   #fbbf24;
+  --class-ranger:    #15803d;
+  --class-rogue:     #6b7280;
+  --class-sorcerer:  #f43f5e;
+  --class-warlock:   #7c3aed;
+  --class-wizard:    #2563eb;
+
+  /* ── Raretés objets ────────────────────────────────────────── */
+  --rarity-common:    #9ca3af;
+  --rarity-uncommon:  #22c55e;
+  --rarity-rare:      #3b82f6;
+  --rarity-veryrare:  #a855f7;
+  --rarity-legendary: #f59e0b;
+  --rarity-artifact:  #dc2626;
+
+  /* ── Typographie ───────────────────────────────────────────── */
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-ui:      'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Menlo', monospace;
+
+  --text-xs:    0.75rem;
+  --text-sm:    0.875rem;
+  --text-base:  1rem;
+  --text-lg:    1.125rem;
+  --text-xl:    1.25rem;
+  --text-2xl:   1.5rem;
+  --text-3xl:   1.875rem;
+  --text-4xl:   2.25rem;
+  --text-5xl:   3rem;
+  --text-6xl:   3.75rem;
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.2;
+  --leading-snug:    1.4;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.8;
+
+  /* ── Espacements (base 4px) ────────────────────────────────── */
+  --space-0:  0;
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ── Radius ────────────────────────────────────────────────── */
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius:      8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ── Ombres ────────────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow:    0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+
+  --glow-gold:   0 0 24px rgba(201, 168, 76, 0.25);
+  --glow-purple: 0 0 24px rgba(134, 93, 255, 0.25);
+
+  --inset: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+
+  /* ── Animations ────────────────────────────────────────────── */
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  --duration-fast:   120ms;
+  --duration:        200ms;
+  --duration-slow:   400ms;
+  --duration-slower: 600ms;
+
+  /* ── Z-index ────────────────────────────────────────────────── */
+  --z-base:     0;
+  --z-sticky:   100;
+  --z-dropdown: 200;
+  --z-modal:    300;
+  --z-toast:    400;
+  --z-tooltip:  500;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}

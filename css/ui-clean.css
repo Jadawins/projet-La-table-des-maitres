@@ -46,7 +46,7 @@ textarea {
   padding: 0.6em 1em;
   border-radius: 8px;
   border: none;
-  font-family: 'Georgia', serif;
+  font-family: var(--font-ui, 'DM Sans', system-ui, sans-serif);
   font-size: 1em;
   background-color: #1e1e1e;
   color: #f0e6d2;
@@ -85,7 +85,7 @@ body[data-theme='light'] textarea:focus {
   padding: 1em 2em;
   border-radius: 12px;
   font-size: 1.1em;
-  font-family: 'Georgia', serif;
+  font-family: var(--font-ui, 'DM Sans', system-ui, sans-serif);
   border: 1px solid #865dff;
   text-decoration: none;
   cursor: pointer;
@@ -109,7 +109,7 @@ body[data-theme='light'] textarea:focus {
   border: none;
   padding: 0.6em 1.2em;
   border-radius: 8px;
-  font-family: 'Georgia', serif;
+  font-family: var(--font-ui, 'DM Sans', system-ui, sans-serif);
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: inline-flex;
