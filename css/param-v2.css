@@ -1,0 +1,218 @@
+/* ================================================================
+   PARAM / PROFIL V2 — overrides visuels (tokens.css requis)
+   ================================================================ */
+
+/* ── Page layout ──────────────────────────────────────────────── */
+main {
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+}
+
+#sidebar.hidden ~ main { margin-left: 0; }
+#sidebar.collapsed ~ main { margin-left: 64px; }
+
+/* ── Profil container ─────────────────────────────────────────── */
+.profil-container {
+  max-width: 600px;
+  margin: var(--space-8) auto;
+  padding: var(--space-8);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  text-align: left;
+  align-items: stretch;
+}
+
+.profil-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Avatar zone ──────────────────────────────────────────────── */
+#profil-avatar-wrap {
+  border-color: rgba(134, 93, 255, 0.4);
+  background: var(--purple-soft);
+}
+
+#profil-pseudo-display {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────── */
+.tab-buttons {
+  justify-content: flex-start;
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 0;
+  gap: 0;
+}
+
+.tab-btn {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--text-muted);
+  padding: var(--space-2) var(--space-5);
+  margin-bottom: -1px;
+  transition: color var(--duration) var(--ease),
+              border-color var(--duration) var(--ease);
+  transform: none !important;
+}
+
+.tab-btn:hover {
+  background: transparent;
+  color: var(--text);
+  box-shadow: none;
+}
+
+.tab-btn.active {
+  background: transparent;
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  box-shadow: none;
+}
+
+/* ── Form fields ──────────────────────────────────────────────── */
+.profil-container label,
+.profil-container .form-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.profil-container input[type="text"],
+.profil-container input[type="email"],
+.profil-container input[type="password"],
+.profil-container select,
+.profil-container textarea {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  width: 100%;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.profil-container input:focus,
+.profil-container select:focus,
+.profil-container textarea:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+/* ── Save button ──────────────────────────────────────────────── */
+.profil-container button[type="submit"],
+.profil-container .btn-save,
+#btn-save-profil {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-semibold);
+  background: var(--gold);
+  color: var(--text-on-gold);
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-6);
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+
+.profil-container button[type="submit"]:hover,
+#btn-save-profil:hover {
+  background: var(--gold-bright);
+}
+
+/* ── Stats rapides ────────────────────────────────────────────── */
+.profil-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.profil-stat {
+  background: var(--surface-2);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.profil-stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--gold);
+  line-height: 1;
+}
+
+.profil-stat-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: var(--space-1);
+}
+
+/* ── Provider badge ───────────────────────────────────────────── */
+#profil-provider-badge span,
+.provider-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+/* ── Password strength ────────────────────────────────────────── */
+.pwd-strength-bar {
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  margin-top: var(--space-2);
+  overflow: hidden;
+}
+
+.pwd-strength-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--duration) var(--ease);
+}
+
+/* ── Logout button ────────────────────────────────────────────── */
+#btn-logout,
+.btn-logout {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  background: var(--blood-soft);
+  border: 1px solid rgba(196, 69, 61, 0.35);
+  color: #fca5a5;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+
+#btn-logout:hover,
+.btn-logout:hover { background: rgba(196, 69, 61, 0.25); }
