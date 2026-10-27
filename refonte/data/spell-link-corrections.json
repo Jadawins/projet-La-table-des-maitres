@@ -1,0 +1,630 @@
+{
+  "id": "2026-10-27-cleric-links-v1",
+  "scope": "Corrections ciblées autorisées : noms, fiches absentes et rangs incohérents ; aucune révision générale des aptitudes.",
+  "changes": [
+    {
+      "sourceId": "clerc_domaine_guerre",
+      "before": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "bénédiction divine",
+              "faveur divine"
+            ],
+            "2": [
+              "aide",
+              "arme spirituelle"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maîtrises de guerre",
+              "description": "Tu obtiens la maîtrise des armures lourdes et des armes de guerre."
+            },
+            {
+              "nom": "Prêtre de la guerre",
+              "description": "Quand tu utilises l'action Attaquer, tu peux effectuer une attaque à la main ou avec une arme en action bonus (modificateur SAG fois/repos long)."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "3": [
+              "croissance d'épines",
+              "haste"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe guidée",
+              "description": "Réaction : quand toi ou un allié à 9 m rate un jet d'attaque, tu accordes un bonus de +10 à ce jet (avant de savoir si l'attaque touche). Utilisable 1 fois entre deux repos."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "gardien de la foi",
+              "liberté de mouvement"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts de tonnerre supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "colonne de flamme",
+              "domination de personne"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Avatar de la bataille",
+              "description": "Tu es immunisé aux dégâts perforants, tranchants et contondants des armes non-magiques. Les alliés à 9 m de toi bénéficient de la résistance à ces mêmes types de dégâts."
+            }
+          ]
+        }
+      },
+      "after": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "Rayon traçant",
+              "faveur divine"
+            ],
+            "2": [
+              "aide",
+              "arme spirituelle"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maîtrises de guerre",
+              "description": "Tu obtiens la maîtrise des armures lourdes et des armes de guerre."
+            },
+            {
+              "nom": "Prêtre de la guerre",
+              "description": "Quand tu utilises l'action Attaquer, tu peux effectuer une attaque à la main ou avec une arme en action bonus (modificateur SAG fois/repos long)."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "2": [
+              "croissance d'épines"
+            ],
+            "3": [
+              "Hâte"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe guidée",
+              "description": "Réaction : quand toi ou un allié à 9 m rate un jet d'attaque, tu accordes un bonus de +10 à ce jet (avant de savoir si l'attaque touche). Utilisable 1 fois entre deux repos."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "gardien de la foi",
+              "liberté de mouvement"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts de tonnerre supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "colonne de flamme",
+              "domination de personne"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Avatar de la bataille",
+              "description": "Tu es immunisé aux dégâts perforants, tranchants et contondants des armes non-magiques. Les alliés à 9 m de toi bénéficient de la résistance à ces mêmes types de dégâts."
+            }
+          ]
+        }
+      },
+      "notes": [
+        "bénédiction divine : intitulé absent remplacé par Rayon traçant (Guiding Bolt), sort de rang 1 du domaine Guerre 2024 confirmé par la présentation officielle ; le reste de la liste BDD reste inchangé.",
+        "haste → Hâte : intitulé anglais relié à la fiche française existante.",
+        "Croissance d’épines : rang 2 de la fiche existante, plutôt que rang 3 ; palier d’acquisition BDD conservé."
+      ],
+      "references": [
+        "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+        "https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new"
+      ]
+    },
+    {
+      "sourceId": "clerc_domaine_lumiere",
+      "before": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "lumière des fées",
+              "mains brûlantes"
+            ],
+            "2": [
+              "flambée",
+              "rayon ardent"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Sort mineur bonus",
+              "description": "Tu connais le sort mineur lumière si tu ne le connais pas déjà."
+            },
+            {
+              "nom": "Flash lumineux",
+              "description": "Réaction : quand une créature à 18 m est touchée par une attaque, dépense un emplacement de sort de niveau 1 ou supérieur pour que l'attaquant soit Aveuglé jusqu'à la fin de son prochain tour."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "3": [
+              "boule de feu",
+              "lenteur"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Aura de lumière solaire",
+              "description": "Action : émet une aura de lumière brillante sur 18 m (lumière faible sur 18 m supplémentaires). Les ténèbres magiques dans cette zone sont dissipées. Dure jusqu'à 1 minute ou jusqu'à ce que tu l'annules (concentration)."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "gardien de la foi",
+              "mur de feu"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts radiants supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "colonne de flamme",
+              "scrutation"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Couronne de lumière solaire",
+              "description": "Quand tu lances un sort de clerc du 1er niveau ou supérieur qui inflige des dégâts de feu ou radiants, ajoute ton modificateur de SAG aux dégâts d'un jet de dés."
+            }
+          ]
+        }
+      },
+      "after": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "Lueurs féeriques",
+              "mains brûlantes"
+            ],
+            "2": [
+              "Détection de l'invisibilité",
+              "rayon ardent"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Sort mineur bonus",
+              "description": "Tu connais le sort mineur lumière si tu ne le connais pas déjà."
+            },
+            {
+              "nom": "Flash lumineux",
+              "description": "Réaction : quand une créature à 18 m est touchée par une attaque, dépense un emplacement de sort de niveau 1 ou supérieur pour que l'attaquant soit Aveuglé jusqu'à la fin de son prochain tour."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "3": [
+              "boule de feu",
+              "lenteur"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Aura de lumière solaire",
+              "description": "Action : émet une aura de lumière brillante sur 18 m (lumière faible sur 18 m supplémentaires). Les ténèbres magiques dans cette zone sont dissipées. Dure jusqu'à 1 minute ou jusqu'à ce que tu l'annules (concentration)."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "gardien de la foi",
+              "mur de feu"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts radiants supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "colonne de flamme",
+              "scrutation"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Couronne de lumière solaire",
+              "description": "Quand tu lances un sort de clerc du 1er niveau ou supérieur qui inflige des dégâts de feu ou radiants, ajoute ton modificateur de SAG aux dégâts d'un jet de dés."
+            }
+          ]
+        }
+      },
+      "notes": [
+        "lumière des fées → Lueurs féeriques : nom de la fiche existante.",
+        "flambée → Détection de l’invisibilité : remplacement ciblé par le sort du domaine 2024 indiqué dans la présentation officielle."
+      ],
+      "references": [
+        "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+        "https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new"
+      ]
+    },
+    {
+      "sourceId": "clerc_domaine_ruse",
+      "before": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "charme-personne",
+              "déguisement"
+            ],
+            "2": [
+              "invisibilité",
+              "passe-sans-trace"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maîtrises de l'ombre",
+              "description": "Tu obtiens la maîtrise de la Discrétion et de la Tromperie si tu ne les as pas déjà. Tu obtiens également la maîtrise des rapières."
+            },
+            {
+              "nom": "Faveur des voleurs",
+              "description": "Tu peux utiliser l'action Esquiver ou Se cacher en action bonus."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "3": [
+              "déguisement de groupe",
+              "ennemis à foison"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Canal divin : tromperie",
+              "description": "Tu crées une illusion parfaite de toi-même dans un espace à 9 m. Les ennemis ne peuvent pas te distinguer de ton illusion (concentration, 1 minute)."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "localisation de créature",
+              "porte dimensionnelle"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts de poison supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "domination de personne",
+              "modification de mémoire"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maître de l'ombre",
+              "description": "Tu peux lancer non-détection sur toi-même sans dépenser d'emplacement ni matériaux (toujours actif). De plus, tu peux lancer passage sans trace en action bonus (1/repos long)."
+            }
+          ]
+        }
+      },
+      "after": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "charme-personne",
+              "déguisement"
+            ],
+            "2": [
+              "invisibilité",
+              "Passage sans trace"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maîtrises de l'ombre",
+              "description": "Tu obtiens la maîtrise de la Discrétion et de la Tromperie si tu ne les as pas déjà. Tu obtiens également la maîtrise des rapières."
+            },
+            {
+              "nom": "Faveur des voleurs",
+              "description": "Tu peux utiliser l'action Esquiver ou Se cacher en action bonus."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "3": [
+              "Antidétection",
+              "Motif hypnotique"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Canal divin : tromperie",
+              "description": "Tu crées une illusion parfaite de toi-même dans un espace à 9 m. Les ennemis ne peuvent pas te distinguer de ton illusion (concentration, 1 minute)."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "localisation de créature",
+              "porte dimensionnelle"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts de poison supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "domination de personne",
+              "modification de mémoire"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maître de l'ombre",
+              "description": "Tu peux lancer non-détection sur toi-même sans dépenser d'emplacement ni matériaux (toujours actif). De plus, tu peux lancer passage sans trace en action bonus (1/repos long)."
+            }
+          ]
+        }
+      },
+      "notes": [
+        "passe-sans-trace → Passage sans trace : nom de la fiche existante.",
+        "déguisement de groupe et ennemis à foison : remplacement ciblé par Antidétection et Motif hypnotique, les sorts de rang 3 indiqués officiellement pour la Ruse 2024. Le palier BDD 6 est conservé.",
+        "Porte dimensionnelle : ajout de la fiche SRD du rang 4 ; palier BDD 8 conservé."
+      ],
+      "references": [
+        "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+        "https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new"
+      ]
+    },
+    {
+      "sourceId": "clerc_domaine_vie",
+      "before": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "bénédiction",
+              "soin des blessures"
+            ],
+            "2": [
+              "aide",
+              "restauration partielle"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maîtrise des armures lourdes",
+              "description": "Tu obtiens la maîtrise des armures lourdes."
+            },
+            {
+              "nom": "Disciple de la vie",
+              "description": "Quand tu lances un sort de soin de niveau 1 ou supérieur, le bénéficiaire récupère un nombre de PV supplémentaire égal à 2 + le niveau du sort."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "3": [
+              "lumière du jour",
+              "revivification"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Guérison bénie",
+              "description": "Quand tu lances un sort qui restaure des PV à une autre créature, tu récupères toi-même 2 + le niveau du sort en PV."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "gardien de la foi",
+              "guérison de masse des blessures"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts radiants supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "régénération",
+              "résurrection"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Guérison suprême",
+              "description": "Quand tu utilises un sort pour restaurer des PV à une créature à 0 PV, traite tous les dés de guérison comme s'ils avaient obtenu leur valeur maximale."
+            }
+          ]
+        }
+      },
+      "after": {
+        "3": {
+          "sorts_domaine": {
+            "1": [
+              "bénédiction",
+              "soin des blessures"
+            ],
+            "2": [
+              "aide",
+              "restauration partielle"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Maîtrise des armures lourdes",
+              "description": "Tu obtiens la maîtrise des armures lourdes."
+            },
+            {
+              "nom": "Disciple de la vie",
+              "description": "Quand tu lances un sort de soin de niveau 1 ou supérieur, le bénéficiaire récupère un nombre de PV supplémentaire égal à 2 + le niveau du sort."
+            }
+          ]
+        },
+        "6": {
+          "sorts_domaine": {
+            "3": [
+              "lumière du jour",
+              "Retour à la vie"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Guérison bénie",
+              "description": "Quand tu lances un sort qui restaure des PV à une autre créature, tu récupères toi-même 2 + le niveau du sort en PV."
+            }
+          ]
+        },
+        "8": {
+          "sorts_domaine": {
+            "4": [
+              "gardien de la foi"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Frappe divine",
+              "description": "1/tour, tes attaques à la main ou avec une arme infligent 1d8 dégâts radiants supplémentaires (2d8 au niveau 14)."
+            }
+          ]
+        },
+        "9": {
+          "sorts_domaine": {
+            "5": [
+              "Soins de groupe"
+            ]
+          }
+        },
+        "17": {
+          "sorts_domaine": {
+            "5": [
+              "régénération",
+              "résurrection"
+            ]
+          },
+          "capacites": [
+            {
+              "nom": "Guérison suprême",
+              "description": "Quand tu utilises un sort pour restaurer des PV à une créature à 0 PV, traite tous les dés de guérison comme s'ils avaient obtenu leur valeur maximale."
+            }
+          ]
+        }
+      },
+      "notes": [
+        "revivification → Retour à la vie : fiche existante de rang 3.",
+        "guérison de masse des blessures → Soins de groupe : fiche existante de rang 5, déplacée au niveau de clerc 9 confirmé par le SRD. Les autres sorts et aptitudes restent inchangés."
+      ],
+      "references": [
+        "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf"
+      ]
+    }
+  ],
+  "addSpells": [
+    {
+      "id": "porte_dimensionnelle",
+      "nom": "Porte dimensionnelle",
+      "niveau": 4,
+      "ecole": "Invocation",
+      "classes": [
+        "Barde",
+        "Ensorceleur",
+        "Magicien",
+        "Occultiste"
+      ],
+      "temps_incantation": "action",
+      "portee": "150 m",
+      "composantes": {
+        "V": true,
+        "S": false,
+        "M": false
+      },
+      "duree": "instantanée",
+      "concentration": false,
+      "rituel": false,
+      "attaque": null,
+      "sauvegarde": null,
+      "degats": null,
+      "niveau_superieur": null,
+      "description": "Téléportez-vous à un emplacement situé à 150 m au maximum : un lieu visible, visualisé ou défini par sa direction et sa distance. Une créature consentante à 1,50 m de vous peut vous accompagner et arrive à 1,50 m de votre destination. Si un emplacement d’arrivée est occupé par une créature ou entièrement obstrué, la téléportation échoue et chaque voyageur subit 4d6 dégâts de force.",
+      "source": "SRD 5.2.1 français",
+      "reference": {
+        "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+        "page": 168,
+        "licence": "CC-BY-4.0",
+        "adaptation": "Résumé français ; consulter la source pour le texte intégral."
+      }
+    }
+  ],
+  "restoreSkills": [
+    {
+      "nom": "Escamotage",
+      "caracteristique": "DEX",
+      "source_refonte": "Json/2024/Régles/competences.json"
+    }
+  ]
+}

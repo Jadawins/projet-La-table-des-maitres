@@ -1,0 +1,82 @@
+{
+  "source": "MongoDB myrpgtable / classes",
+  "date": "2026-10-27",
+  "classes": [
+    {
+      "nom": "Barbare",
+      "principales": [
+        "FOR"
+      ]
+    },
+    {
+      "nom": "Barde",
+      "principales": [
+        "CHA"
+      ]
+    },
+    {
+      "nom": "Clerc",
+      "principales": [
+        "SAG"
+      ]
+    },
+    {
+      "nom": "Druide",
+      "principales": [
+        "SAG"
+      ]
+    },
+    {
+      "nom": "Ensorceleur",
+      "principales": [
+        "CHA"
+      ]
+    },
+    {
+      "nom": "Guerrier",
+      "principales": [
+        "FOR",
+        "DEX"
+      ]
+    },
+    {
+      "nom": "Magicien",
+      "principales": [
+        "INT"
+      ]
+    },
+    {
+      "nom": "Moine",
+      "principales": [
+        "DEX",
+        "SAG"
+      ]
+    },
+    {
+      "nom": "Occultiste",
+      "principales": [
+        "CHA"
+      ]
+    },
+    {
+      "nom": "Paladin",
+      "principales": [
+        "FOR",
+        "CHA"
+      ]
+    },
+    {
+      "nom": "Rôdeur",
+      "principales": [
+        "DEX",
+        "SAG"
+      ]
+    },
+    {
+      "nom": "Roublard",
+      "principales": [
+        "DEX"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+const fs=require('fs');const root='refonte/';const edit=(p,a,b)=>{let s=fs.readFileSync(root+p,'utf8');if(!s.includes(a))throw Error(p+' missing '+a.slice(0,70));fs.writeFileSync(root+p,s.replace(a,b));};
+edit('maquette/sheet-view.mjs',"f.choices.damageType,...(f.choices.rituals", "f.choices.damageType,...(f.choices.resistances||[]),c.spells.find(s=>s.id===f.choices.spell)?.nom,...(f.choices.rituals");
+edit('maquette/sheet-view.mjs',"${m.climb?`<div><dt>Escalade", "${m.effects.trueSight?`<div><dt>Vision lucide</dt><dd>${m.effects.trueSight} m</dd></div>`:''}${m.climb?`<div><dt>Escalade");
+edit('tests/feat-effects.test.mjs',"import {advancementInitial}", "import {advancementInitial,ADVANCEMENT_LEVELS,ORIGIN_SLOTS}");
+edit('tests/feat-effects.test.mjs',"['background','human','level4','level8']", "ORIGIN_SLOTS");
+edit('tests/feat-effects.test.mjs',"grantInitial,advancementInitial,featChoicesInitial,detailFields}", "grantInitial,advancementInitial,featChoicesInitial,detailFields,ADVANCEMENT_LEVELS,ORIGIN_SLOTS}");
+edit('audit/cleric-1-10.mjs',"import {advancementInitial}", "import {advancementInitial,improvementLevels}");
+edit('audit/cleric-1-10.mjs',"const p=clericProfile(state,c);", "for(const n of [12,16])if(level>=n)state.advancements[n]={...advancementInitial(),mode:'ability',abilities:['CON','INT']};\n  if(level>=19)state.advancements[19]={...advancementInitial(),mode:'feat',featId:'faveur_de_memoire_magique',featAbility:'SAG'};\n  const p=clericProfile(state,c);");
+edit('audit/cleric-1-10.mjs',"export function buildClericAudit(snapshot){", "export function buildClericAudit(snapshot,{maxLevel=10}={}){");
+edit('audit/cleric-1-10.mjs',"level<=10;level++", "level<=maxLevel;level++");
+edit('audit/cleric-1-10.mjs',"scope:'Ordinateur uniquement. Création et fiche du clerc 1–10, quatre domaines, deux vocations.'", "scope:`Ordinateur uniquement. Création et fiche du clerc 1–${maxLevel}, quatre domaines, deux vocations.`");
+edit('audit/build-audit.mjs','isCleric&&level<=10','isCleric&&level<=20');edit('audit/build-audit.mjs',"level>=3&&level<=10", "level>=3&&level<=20");
+edit('access/deploy-persistence.sh','20261027T150406Z','20261027T154005Z');

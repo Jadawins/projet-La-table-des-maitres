@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100f16">
+  <title>Personnages · La Table du Maître</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#content">Aller au contenu</a>
+  <aside class="sidebar">
+    <a class="brand" href="#personnages" aria-label="La Table du Maître, mes personnages"><span class="brand-mark">✧</span><span>La Table<br><strong>du Maître</strong></span></a>
+    <div class="nav-caption">VOTRE GRIMOIRE</div>
+    <nav aria-label="Navigation principale"><a class="nav-link active" href="#personnages"><span aria-hidden="true">♙</span> Mes personnages <span class="nav-arrow">↗</span></a></nav>
+    <div class="sidebar-note"><span class="tiny-star">✦</span><p>Chaque grande aventure<br>commence par un personnage.</p></div>
+    <div class="sidebar-bottom"><span class="edition">D&D · ÉDITION 2024</span><p>La Table du Maître<br><span>Votre table. Vos histoires.</span></p></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><span class="breadcrumb">Le grimoire <span>/</span> <strong id="breadcrumb">Mes personnages</strong></span><span class="preview-tag"><i></i> Maquette interactive · données d’exemple</span></header>
+    <main id="content" tabindex="-1"><div class="loading">Ouverture du grimoire…</div></main>
+    <footer class="site-footer"><span>LA TABLE DU MAÎTRE</span><span>Une nouvelle histoire vous attend.</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

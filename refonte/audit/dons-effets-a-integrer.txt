@@ -1,0 +1,53 @@
+bagarreur_de_tavernes | Attaque à mains nues : 1 + mod. FOR, relancer les 1 sur les dés de dégâts / Maîtrise des armes improvisées / Bourrade : après toucher au corps à corps, repousser la cible de 1,5 m (1×/tour)
+chanceux | 3 points de chance par repos long / Avantage : dépensez 1 point quand vous lancez un d20 pour lancer un 2e dé et choisir le meilleur / Désavantage : dépensez 1 point quand une créature vous attaque pour lui imposer Désavantage
+doue | Maîtrise de toute combinaison de 3 compétences ou outils au choix / Répétable : sélectionnable plusieurs fois
+faconneur | Maîtrise de 3 outils d'artisan choisis dans la table Façonnage rapide / Entretien : maintenez gratuitement un objet par repos long / Façonnage rapide : fabriquez un objet lié à vos outils en fin de repos long (valeur max selon outils) / Répétable : sélectionnable plusieurs fois
+guerisseur | Trousse de soins : soignez une créature pour 1d8 + bonus de maîtrise + nb de DV de la cible (1×/créature/repos court) / Stabilisation : stabilisez une créature à 0 PV sans dépenser de DV / Retrait des soins : après une action de soins, récupérez 1d6 + bonus de maîtrise PV
+initie_a_la_magie | 2 tours de magie de la liste choisie (INT, SAG ou CHA selon la liste) / 1 sort de niveau 1 de la liste choisie, lanceable 1×/repos long / Changement de sort : à chaque montée en niveau, remplacez un sort par un autre de la même liste / Répétable : choisissez une liste différente à chaque prise
+musicien | Maîtrise de 3 instruments de musique au choix / Soutien mélodique : après 1 repos long, jouez un morceau pour accorder Inspiration bardique à un nombre d'alliés égal à votre bonus de maîtrise
+robuste | PV max augmente de votre niveau actuel, puis de 1 par niveau supplémentaire
+sauvagerie_martiale | Quand vous réduisez une créature à 0 PV avec une attaque au corps à corps, utilisez votre Réaction pour attaquer une créature adjacente
+truand | Maîtrise des Outils de contrefaçon / Identité secrète : fausse identité avec papiers, vêtements et contacts / Contrefaçon : fabrication de documents officiels falsifiés
+vigilant | Vous ne pouvez pas être surpris au combat / Ajoutez votre bonus de maîtrise à vos jets d'Initiative
+adepte_elementaire | Choisissez un type de dégâts (acide, froid, feu, foudre, tonnerre) : les 1 sur les dés de dégâts de ce type comptent comme des 2 / Les sorts de ce type ignorent la Résistance (mais pas l'Immunité) / Répétable : choisissez un type différent à chaque prise
+affinite_feerique | Pas de magie : en zone de Lumière faible ou Ténèbres, devenez Invisible jusqu'à attaque, action Magie ou fin de Réaction / Forme ombreuse : en zone de Lumière faible ou Ténèbres, Résistance aux dégâts psychiques et radiants
+affinite_ombreuse | Sorts d'Illusion et Nécromancie : DD et modificateur d'attaque augmentent de 1 / Lancez un sort d'Illusion ou Nécromancie de votre liste de sorts à emplacement sans l'utiliser (1×/repos long)
+amelioration_de_caracteristique | Répétable : sélectionnable plusieurs fois
+athlete | Vitesse d'escalade égale à votre Vitesse / Rétablissement : se relever coûte seulement 1,5 m de déplacement / Saut sans élan : les sauts en longueur et en hauteur ne nécessitent pas d'élan
+broyeur | Critique contondant : infligez des dégâts contondants supplémentaires équivalents au bonus de maîtrise / Quand vous touchez avec une arme contondante, poussez la cible de 1,5 m ou abattez-la (1×/tour)
+chef_cuisinier | Maîtrise des ustensiles de cuisinier / Repas spécial : après un repos court, préparez un repas accordant 1d8 + bonus de maîtrise PV temporaires à un nb de créatures = bonus de maîtrise / Festin : après un repos long, le repas permet de récupérer des PV supplémentaires
+cogneur_lourd | Expert en armes lourdes : maîtrisez toutes les armes lourdes / Critique dévastateur : après un coup critique, infligez des dégâts supplémentaires égaux au bonus de maîtrise / Ablation : après un coup critique avec une arme lourde, effectuez une attaque au même type contre la même cible (1×/tour)
+combattant_a_deux_armes | Attaque à deux armes améliorée : ajoutez le modificateur de caract. aux dégâts de la seconde attaque / Dégainage rapide : rangez/sortez deux armes à une seule main simultanément
+combattant_monte | Avantage aux jets d'attaque contre toute créature non montée de taille inférieure à la monture / Pas de désavantage lié à la hauteur sur les attaques / Déviation : redirigez une attaque sur vous vers votre monture (Réaction)
+comedien | Imitation : imitez une personne connue, les observateurs font un test de SAG (Intuition) DD 8 + mod. CHA + bonus maîtrise pour détecter la supercherie / Maîtrise de Représentation ou Tromperie (au choix)
+discret | Vision obscure 18 m / Toujours furtif : vous pouvez tenter de vous cacher même si visible / Jamais désavantagé aux tests de Discrétion
+duelliste_defensif | Parade : Réaction quand une créature vous attaque au corps à corps — ajoutez votre bonus de maîtrise à la CA contre cette attaque
+empoisonneur | Maîtrise du matériel d'empoisonneur / Préparez des doses de poison : nombre = bonus de maîtrise; l'application est une action bonus / Résistance aux dégâts de poison / Le DD du poison infligé = 8 + bonus maîtrise + modificateur de caract.
+empoigneur | Attaque avec Avantage contre une créature que vous empoignez / Écrasement : infligez 1d6 + mod. FOR à une créature empoignée (action bonus)
+expert | Expertise : doublez le bonus de maîtrise sur une compétence déjà maîtrisée
+expert_de_la_charge | Vitesse +3 m dans le cadre de la charge / Attaque de foulée : foulée déclenchant une attaque sans pénalité
+figure_de_proue | Représentation galvanisante : à la fin d'un repos court, chantez ou harangue; les alliés qui vous écoutent reçoivent chacun 1d6 + modificateur de caract. PV temporaires
+formation_aux_armes_de_guerre | Maîtrise de toutes les armes de guerre
+gaillard | Résistance à la mort : Avantage aux jets de sauvegarde contre la mort / Récupération rapide : une fois par action Bonus, récupérez 1d6 + bonus de maîtrise PV
+incantateur_d_elite | Contournement des résistances : choisissez un type de dégâts — vos sorts ignorent la Résistance à ce type
+mage_de_guerre | Concentration avantage : Avantage aux jets de sauvegarde de Constitution pour maintenir la Concentration / Sort réactif : quand une créature vous attaque et vous rate, lancez un sort de niveau 0 ou 1 comme Réaction (1×/tour)
+magie_rituelle | Sorts rituels : choisissez deux sorts avec la propriété rituel de votre liste — lancez-les comme rituel sans dépenser d'emplacement / Les sorts rituels choisis sont toujours considérés comme préparés
+maitre_arbaletrier | Chargement rapide : ignorez la propriété Chargement des arbalètes légères et à main / Tir au corps à corps : tirez sans Désavantage dans un rayon de 1,5 m d'une créature / L'arbalète légère gagne les propriétés Légère et Allonge
+maitre_d_hast | Frappe double : si vous attaquez avec une arme Lourde et Allonge, effectuez une attaque supplémentaire au corps à corps avec la crosse (1d4 + mod.) / Frappe réactive : Réaction pour attaquer une créature entrant dans votre portée
+maitre_des_armures_intermediaires | Porteur agile : en armure intermédiaire, la CA inclut la DEX sans plafond (max DEX +3)
+maitre_des_armures_lourdes | Réduction des dégâts : quand une armure lourde vous protège, réduisez les dégâts contondants, perforants et tranchants d'un montant égal au bonus de maîtrise
+maitre_des_boucliers | Coup de bouclier : après une attaque réussie, poussez la cible de 1,5 m ou abattez-la (action bonus) / Interposition : Réaction pour appliquer le bonus CA du bouclier contre une attaque sur un allié adjacent
+mobile | Vitesse augmentée de 3 m / Terrain difficile ignoré quand vous Foncez / Déplacement agile : les attaques d'opportunité contre vous ont le Désavantage (1×/tour)
+observateur | Observateur attentif : choisissez une compétence parmi Perception, Investigation ou Perspicacité — doublez le bonus de maîtrise si vous la maîtrisez / Observation rapide : action Bonus pour tenter un test de Perception ou Investigation
+perforateur | Relancez les 1 sur les dés de dégâts perforants / Critique : infligez un dé de dégâts perforants supplémentaire
+preparateur_de_poison | Maîtrise du matériel d'empoisonneur / Préparez des doses de poison en fin de repos long (nb = bonus de maîtrise), application action Bonus / Résistance aux dégâts de poison et immunité à l'état Empoisonné de vos propres préparations
+protection_intermediaire | Formation aux armures intermédiaires
+protection_legere | Formation aux armures légères et aux boucliers
+protection_lourde | Formation aux armures lourdes
+resilient | Maîtrise du jet de sauvegarde correspondant à la caractéristique augmentée
+sentinelle | Immobilisation : toucher avec une attaque d'opportunité réduit la Vitesse de la cible à 0 jusqu'à la fin de son tour / Réaction protectrice : quand une créature attaque un allié adjacent, attaquez-la en Réaction
+telekinesiste | Télékinésie mineure : déplacez un objet verbal de 5 kg max à 9 m (action Magie) / Poussée télékinétique : action Bonus pour déplacer une créature de 1,5 m (JS STR DD = 8 + bonus maîtrise + mod. caract.)
+telepathe | Parole télépathique : communiquez avec toute créature dans un rayon de 18 m si elle comprend au moins une langue / Détection des personnes : repérez les créatures Charmées dans un rayon de 18 m
+tireur_d_elite | Tir au corps à corps : pas de Désavantage en tirant dans un rayon de 1,5 m d'une créature / Les arbalètes à distance gagnent les propriétés Légère et Allonge
+trancheur | Critique tranchant : la cible a Désavantage à son prochain jet d'attaque jusqu'au début de votre prochain tour / Coup en traîneau : en Coop, réduisez la Vitesse de la cible de 3 m jusqu'au début de votre tour suivant
+tueur_de_mages | Réaction : quand une créature lance un sort dans un rayon de 9 m, effectuez une attaque contre elle / Trouble de concentration : Désavantage aux jets de maintien de Concentration pour les créatures que vous touchez

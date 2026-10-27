@@ -1,0 +1,2 @@
+import {createRequire} from 'node:module';
+const {MongoClient}=createRequire('/var/www/myrpgtable/app/api/package.json')('mongodb');const client=new MongoClient(process.env.MONGO_URI);await client.connect();try{const db=client.db('myrpgtable');const p=await db.collection('personnages_refonte').findOne({client_id:'9b512c6b-25bc-4cc7-b1a9-048cb6e461ff'});console.log(JSON.stringify({character:p?.character?.name,level:p?.character?.level,revision:p?.revision,testRecords:await db.collection('refonte_controles').countDocuments()}));}finally{await client.close();}
