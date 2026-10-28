@@ -90,6 +90,6 @@ test('Compagnon : PV du MJ, amélioration de CA et absence de mutation du profil
   const m=sheetModel(s,c),original=c.shapeForms.find(f=>f.slug===s.classChoices.companion[0]);
   assert.equal(m.classEffects.companion.pv,44+m.mods.SAG+2);assert.equal(m.classEffects.companion.ca,original.ca+1);assert.notEqual(m.classEffects.companion,original);
 });
-test('Le paladin reste hors parcours complet et ne bénéficie pas de choix empruntés',()=>{
-  const s=classFixture(c,'barbare',1);s.classId='paladin';assert.equal(classProfile(s,c),null);assert.equal(validateSavedCharacter(s,c).status,'draft');
+test('Une classe inconnue est refusée sans bénéficier de choix empruntés',()=>{
+  const s=classFixture(c,'barbare',1);s.classId='inconnue';assert.equal(classProfile(s,c),null);assert.throws(()=>validateSavedCharacter(s,c));
 });

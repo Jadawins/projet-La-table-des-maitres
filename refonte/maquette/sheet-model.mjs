@@ -5,7 +5,7 @@ import {domainBenefits,selectedLevelFeats,evaluateProgression,sacredChoices} fro
 import {featEffects,weaponWithFeats,damageKey,epicGrantSpells} from './feat-effects.mjs';
 
 import {classChoiceEffects} from './class-profiles.mjs';
-import {classTraining} from './progression.mjs';
+import {classTraining,inheritedValue} from './progression.mjs';
 
 export function scaledCantripDamage(effect,text,level,explicit=null){
   if(explicit)return explicit;
@@ -36,7 +36,7 @@ export function sheetModel(state,c) {
   const benefits=domainBenefits(state,c),levelFeats=selectedLevelFeats(state,c),progression=evaluateProgression(state,c,finalScores(state,background));
   const effects=featEffects(state,c,mods,proficiency),classEffects=classChoiceEffects(state,c);
   for(const feature of classFeatures)if(feature.nom==='Rage'&&feature.utilisations)feature.utilisations.initial=profile?.rage;
-  if(state.classId==='guerrier')for(const feature of classFeatures)if(feature.utilisations){const resource=profile.resources.find(r=>r.nom===feature.nom);if(resource)feature.utilisations.initial=resource.valeur;}
+  if(['guerrier','paladin'].includes(state.classId))for(const feature of classFeatures)if(feature.utilisations){const resource=profile.resources.find(r=>r.nom===feature.nom);if(resource)feature.utilisations.initial=resource.valeur;}
   for(const feature of classFeatures)if(feature.nom==='Forme animale'&&feature.utilisations)feature.utilisations.initial=profile?.resources?.find(r=>r.nom==='Forme animale')?.valeur;
   if(state.classId==='druide'&&state.level>=7)for(const feature of classFeatures)if(feature.nom==='Élan élémentaire'){
     feature.options=(feature.options||[]).filter(o=>o.nom===state.classChoices?.elementalStrike?.[0]);
@@ -57,7 +57,8 @@ export function sheetModel(state,c) {
     }
     return {...s,ability,trained,expertise,value};
   }).sort((a,b)=>a.nom.localeCompare(b.nom,'fr'));
-  const savingThrows=[...(base.sauvegardes_maitrise||[]).map(mainAbility),...levelFeats.filter(g=>g.feat.id==='resilient').map(g=>g.choice.featAbility)];
+  const extraSaves=classFeatures.some(f=>(f.effets||[]).some(e=>e.type==='maitrise_tous_jets_sauvegarde'))?ABILITIES:classFeatures.flatMap(f=>(f.effets||[]).filter(e=>e.type==='maitrise_jets_sauvegarde').flatMap(e=>e.caracteristiques));
+  const savingThrows=[...extraSaves,...(base.sauvegardes_maitrise||[]).map(mainAbility),...levelFeats.filter(g=>g.feat.id==='resilient').map(g=>g.choice.featAbility)];
   const saves=ABILITIES.map(ability=>({ability,trained:savingThrows.includes(ability),value:mods[ability]===null?null:mods[ability]+(savingThrows.includes(ability)?proficiency:0)}));
   const inventory=[], money={pc:0,pa:0,pe:0,po:0,pp:0};
   function addItem(name,quantity,source) {
@@ -70,13 +71,13 @@ export function sheetModel(state,c) {
     if(existing){existing.quantity+=quantity;existing.source+=` / ${source}`;}
     else inventory.push({nom:name,quantity,source});
   }
-  const styles=(state.classId==='rodeur'&&state.level>=2||state.classId==='guerrier')?[...(state.classChoices?.combatStyle||[]),...(subclass?.id==='guerrier_champion'&&state.level>=10?state.classChoices?.combatStyle10||[]:[])]:[];
+  const styles=(['rodeur','paladin'].includes(state.classId)&&state.level>=2||state.classId==='guerrier')?[...(state.classChoices?.combatStyle||[]),...(subclass?.id==='guerrier_champion'&&state.level>=10?state.classChoices?.combatStyle10||[]:[])]:[];
   const style=styles[0];
   for(const id of styles){const styleFeat=c.feats.find(f=>f.id===id);if(styleFeat)classFeatures.push({...styleFeat,source:'Style de combat'});}
   if(subclass?.id==='guerrier_maitre_guerre')for(const id of state.classChoices?.maneuvers||[]){const m=c.fighterSupplements.maneuvers.find(x=>x.id===id);if(m)classFeatures.push({...m,source:'Manœuvre · complément ciblé'});}
   for(const mastery of classEffects.masteries){const weapon=c.weapons.find(w=>normalize(w.nom)===mastery),rule=c.masteries?.find(b=>normalize(b.nom)===normalize(weapon?.botte));if(weapon&&rule)classFeatures.push({...rule,nom:`Botte · ${weapon.nom} · ${weapon.botte}`,source:'Propriétés martiales'});}
   const equipment=cls?.equipment?.find(e=>e.choix===state.equipment);
-  (equipment?.contenu||[]).forEach(name=>addItem(name==='Instrument de musique au choix'?(classEffects.equipmentInstrument||name):name==='Focaliseur druidique (bâton de combat)'?'Bâton de combat':name,1,'Classe'));
+  (equipment?.contenu||[]).forEach(name=>addItem(name==='Instrument de musique au choix'?(classEffects.equipmentInstrument||name):name==="Outils d'artisan ou instrument de musique (maîtrise choisie)"?(classEffects.tools.at(-1)||name):name==='Focaliseur druidique (bâton de combat)'||name==='Focaliseur arcanique (bâton de combat)'?'Bâton de combat':name,1,'Classe'));
   (background?.equipement||[]).forEach(item=>addItem(item.nom,item.quantite??1,'Historique'));
   const armor=inventory.map(i=>c.armors.find(a=>normalize(a.nom)===normalize(i.nom))).filter(Boolean);
   const suits=armor.filter(a=>a.classe_armure?.base), shields=armor.filter(a=>a.categorie==='bouclier');
@@ -95,6 +96,8 @@ export function sheetModel(state,c) {
   }
   if(equipment&&!suits.length&&!shields.length&&subclass?.id==='barde_college_seduction'&&mods.CHA!==null&&mods.DEX!==null){ac=10+Math.max(mods.CHA,mods.DEX);acNote='Sans armure · meilleur de DEX ou CHA (Séduction magique)';}
   if(styles.includes('style_defense')&&suits.length===1&&ac!==null){ac++;acNote+=' · style Défense +1';}
+  if(state.classId==='moine'&&equipment&&!suits.length&&!shields.length){ac=mods.DEX===null||mods.SAG===null?null:10+mods.DEX+mods.SAG;acNote='Défense sans armure · DEX + SAG';}
+  if(subclass?.id==='ensorceleur_sorcellerie_draconique'&&equipment&&!suits.length&&mods.DEX!==null){ac=13+mods.DEX+(shields[0]?.classe_armure.bonus||0);acNote='Vigueur draconique · 13 + DEX';}
   const weaponTraining=[...classTraining(state,c).weapons,...(benefits.martial?['armes_de_guerre']:[]),...(benefits.rapier?['Rapière']:[]),...effects.weapons];
   const armorTraining=[...classTraining(state,c).armors,...(benefits.heavy?['armures_lourdes']:[]),...effects.armors];
   const attacks=inventory.flatMap(item=>{
@@ -114,6 +117,11 @@ export function sheetModel(state,c) {
     });
     return [{...weapon,ability,trained,criticalFrom:subclass?.id==='guerrier_champion'?(state.level>=15?18:19):20,botteActive:classEffects.masteries.includes(normalize(weapon.nom)),attack:mod===null||mod===undefined?null:mod+(trained?proficiency:0)+(styles.includes('style_archerie')&&ranged?2:0),damageBonus:mod??null}];
   });
+  if(state.classId==='paladin'&&state.level>=11)for(const attack of attacks)if(!attack.categorie.includes('distance'))attack.featRules.push('Attaque sacrée : +1d8 radiant sur une touche de corps à corps.');
+  if(state.classId==='moine'&&equipment&&!suits.length&&!shields.length){const die=inheritedValue(state,c,'arts_martiaux_de');for(const attack of attacks){if(attack.trained&&(attack.categorie==='arme_courante_corps_a_corps'||attack.categorie.includes('guerre')&&attack.proprietes.includes('legere'))){attack.ability=mods.DEX>mods.FOR?'DEX':'FOR';attack.attack=mods[attack.ability]+proficiency;attack.damageBonus=mods[attack.ability];attack.degats={...attack.degats,de:die};}}const ability=mods.DEX>mods.FOR?'DEX':'FOR';attacks.push({nom:'Mains nues',ability,trained:true,attack:mods[ability]===null?null:mods[ability]+proficiency,damageBonus:mods[ability],degats:{de:die,type:'contondants'},proprietes:[],criticalFrom:20,featRules:state.level>=6?['Dégâts de Force possibles, au choix sur chaque attaque.']:[]});}
+  const invocations=state.classId==='occultiste'?state.classChoices?.invocations||[]:[];
+  const pactWeapon=invocations.includes('blade')?state.classChoices?.pactWeapon?.[0]:null;
+  if(pactWeapon){const w=c.weapons.find(w=>normalize(w.nom)===pactWeapon);if(w){let attack=attacks.find(a=>a.nom===w.nom);if(!attack){attack={...structuredClone(w),featRules:[]};attacks.push(attack);}attack.ability=['FOR','DEX','CHA'].filter(a=>a!=='DEX'||w.proprietes.includes('finesse')).sort((a,b)=>(mods[b]??-99)-(mods[a]??-99))[0];attack.trained=true;attack.attack=mods[attack.ability]===null?null:mods[attack.ability]+proficiency;attack.damageBonus=mods[attack.ability];attack.featRules.push('Arme de pacte : focaliseur, dégâts nécrotiques/psychiques/radiants possibles. '+(invocations.includes('devouring')?'Trois':invocations.includes('thirsting')?'Deux':'Une')+' attaque(s) avec cette arme par action Attaquer.');}}
   const castingAbility=mainAbility(profile?.castingAbility||base.caracteristique_incantation), castMod=mods[castingAbility];
   const magic=castMod===null||castMod===undefined?{ability:castingAbility,dc:null,attack:null}:{ability:castingAbility,dc:8+proficiency+castMod,attack:proficiency+castMod};
   const spellChoices=[...(state.cantrips||[]),...(state.prepared||[])].map(id=>c.spells.find(s=>s.id===id)).filter(Boolean).map(s=>({...s,source:cls?.nom||'Classe',caracteristique:castingAbility}));
@@ -128,6 +136,8 @@ export function sheetModel(state,c) {
     if(state.classId==='druide'&&s.source===cls?.nom&&s.niveau===0&&state.level>=15&&state.classChoices?.elementalStrike?.[0]==='Magie puissante'&&Number(String(s.portee).match(/^(\d+(?:[.,]\d+)?)\s*m/)?.[1]?.replace(',','.'))>=3)featRules.push('Élan élémentaire amélioré : portée augmentée de 90 m.');
     if(state.classId==='druide'&&subclass?.id==='druide_cercle_mers'&&state.level>=14&&(s.degats||[]).some(d=>['froid','tonnerre'].includes(damageKey(d.type))))featRules.push('Maître des flots : résistance au froid et au tonnerre ignorée.');
     if(state.classId==='rodeur'&&state.level>=20&&s.id==='marque_du_chasseur')featRules.push('Prédateur suprême : les dégâts bonus de ce sort passent de 1d6 à 1d10.');
+    if(state.classId==='occultiste')for(const id of invocations.filter(i=>i.endsWith(':'+s.id))){if(id.startsWith('agonizing:'))featRules.push('Décharge agonisante : CHA ajouté aux dégâts, soit '+mods.CHA+'.');if(id.startsWith('spear:'))featRules.push('Lance occulte : portée augmentée de '+9*state.level+' m.');if(id.startsWith('repelling:'))featRules.push('Décharge répulsive : cible de taille G ou inférieure repoussée de 3 m maximum.');}
+    if(subclass?.id==='ensorceleur_sorcellerie_mecanique')featRules.push(state.level>=18?'Perfection mécanique : ignore résistances et immunités, sauf bouclier de force ou similaire.':'Tir réglé : ignore les résistances, pas les immunités.');
     if(schoolBonus)featRules.push('Affinité ombreuse : +1 au DD et aux attaques de ce sort.');
     return {...full,...s,ability,featRules,dc:mod===null||mod===undefined?null:8+proficiency+mod+schoolBonus,attackBonus:mod===null||mod===undefined?null:proficiency+mod+schoolBonus,damageAtLevel:damage,cantripBonus:s.niveau===0&&state.level>=7&&s.source===cls?.nom&&(state.classId==='clerc'&&state.sacredStrike==='Magie puissante'||state.classId==='druide'&&state.classChoices?.elementalStrike?.[0]==='Magie puissante')?mods.SAG:null};
   }).sort((a,b)=>(a.niveau??99)-(b.niveau??99)||a.nom.localeCompare(b.nom,'fr'));
@@ -138,17 +148,31 @@ export function sheetModel(state,c) {
   if(!equipment) errors.push('Équipement de classe à choisir.');
   if(!profile)errors.push('Les choix de classe de ce parcours restent à compléter (parcours détaillés : clerc, barbare, rôdeur, barde, druide et guerrier niveaux 1 à 20).');
   const perception=skills.find(s=>skillKey(s.nom)==='perception');
-  const variant=selectedVariant(state,c),speed=species?.vitesse===undefined?null:species.vitesse+effects.speedBonus+(variant?.vitesse_bonus||0)+((['barbare','rodeur'].includes(state.classId)&&state.level>=(state.classId==='barbare'?5:6))&&!suits.some(a=>a.categorie==='armure_lourde')?3:0);
+  const variant=selectedVariant(state,c),speed=species?.vitesse===undefined?null:species.vitesse+effects.speedBonus+(variant?.vitesse_bonus||0)+(state.classId==='moine'&&!suits.length&&!shields.length?parseFloat(String(inheritedValue(state,c,'deplacement_sans_armure_bonus')||'0').replace(',','.')):0)+(subclass?.id==='paladin_serment_gloire'&&state.level>=7?3:0)+((['barbare','rodeur'].includes(state.classId)&&state.level>=(state.classId==='barbare'?5:6))&&!suits.some(a=>a.categorie==='armure_lourde')?3:0);
   const resistances=[...new Set([...(species?.resistances||[]),...(variant?.resistances||[]),...effects.resistances])];
-  let darkvision=Math.max(effects.darkvision,species?.vision_dans_le_noir||0,variant?.vision_dans_le_noir||0,...(species?.traits||[]).filter(t=>normalize(t.nom)==='visiondanslenoir').map(t=>Number(t.description.match(/sur (\d+) m/)?.[1])||0));
+  let darkvision=Math.max(effects.darkvision,species?.vision_dans_le_noir||0,variant?.vision_dans_le_noir||0,...(species?.traits||[]).filter(t=>['visiondanslenoir','visiondanslanuit'].includes(normalize(t.nom))).map(t=>Number(t.description.match(/sur (\d+) m/)?.[1])||0));
   if(subclass?.id==='rodeur_traqueur_tenebres'){darkvision=darkvision?darkvision+18:18;if(state.level>=15)resistances.push('nécrotique');}
   const swim=subclass?.id==='druide_cercle_mers'?12:state.classId==='rodeur'&&state.level>=6&&!suits.some(a=>a.categorie==='armure_lourde')?speed:null;
   const immunities=subclass?.id==='druide_cercle_mers'&&state.level>=14?['froid','tonnerre']:subclass?.id==='druide_cercle_terre'&&state.level>=10?['poison','maladie']:[];
+  if(subclass?.id==='occultiste_protecteur_grand_ancien'&&state.level>=10)darkvision=darkvision?darkvision+9:9;
+  if(invocations.includes('devil'))darkvision=Math.max(darkvision,36);
+  if(invocations.includes('witch'))effects.trueSight=Math.max(effects.trueSight||0,9);
+  if(subclass?.id==='occultiste_protecteur_celeste'&&state.level>=10)resistances.push('nécrotique','radiant');
+  if(subclass?.id==='occultiste_protecteur_fielon'&&state.level>=6)resistances.push('feu');
+  if(subclass?.id==='ensorceleur_sorcellerie_draconique')resistances.push(...(state.classChoices?.dragonDamage||[]));
   const blindvision=Math.max(styles.includes('style_combat_en_aveugle')?3:0,state.classId==='rodeur'&&state.level>=18?9:0);
   if(classEffects.companion)classEffects.companion={...classEffects.companion,pv:4*state.level+(mods.SAG??0)+Number(state.classChoices?.companionHp?.[0]||0),note_pv:'4 × niveau + SAG + complément renseigné avec le MJ ; profil source ci-dessous.',pv_source:classEffects.companion.pv};
   if(classEffects.companion&&state.level>=11){const improvement=state.classChoices?.companion11?.[0];classEffects.companion.amelioration=improvement;if(improvement==='Armure naturelle')classEffects.companion.ca+=1;if(improvement==='Griffes perçantes')classEffects.companion.note_attaques='Griffes perçantes : +1d8 dégâts tranchants.';if(improvement==='Vitesse augmentée')classEffects.companion.note_vitesse='Vitesse augmentée : +9 m.';}
   if(subclass?.id==='guerrier_soldat_psi'&&state.level>=18)immunities.push('psychique','Charmé');
   if(subclass?.id==='guerrier_maitre_guerre'){const ability=state.classChoices?.maneuverAbility?.[0],mod=mods[ability];profile.resources.push({nom:'DD des manœuvres',valeur:mod===null||mod===undefined?'—':8+proficiency+mod,details:ability||'Caractéristique à choisir'});}
-  const classResources=(profile?.resources||[]).map(r=>({...r,valeur:r.ability?`${Math.max(r.minimum||0,mods[r.ability]??0)} utilisations · ${r.die}`:r.valeur}));
-  return {swim,blindvision,immunities,classEffects,classResources,attacksPerAction:profile?.attacks||1,effects,speed,darkvision,climb:effects.climb||state.classId==='rodeur'&&state.level>=6&&!suits.some(a=>a.categorie==='armure_lourde')?speed:null,resistances,cls,species,background,subclass,variant:selectedVariant(state,c),scores,mods,proficiency,skills,saves,inventory,money,attacks,ac,acNote,magic,spells,slots:profile?.slots||{},hp:hitPoints(state,c),initiative:mods.DEX===null?null:mods.DEX+bonuses.initiative+(subclass?.id==='guerrier_champion'&&state.level>=7?Math.floor(proficiency/2):0),passive:perception?.value===null||perception?.value===undefined?null:10+perception.value,classFeatures,subclassFeatures,feats:originFeats(state,c),tools:[...new Set([...originTools(state,c),...effects.tools,...classEffects.tools])],errors:[...new Set(errors)],base,weaponTraining,armorTraining,progression,levelFeats,channel:profile?.channel,sparkDice:profile?.sparkDice,sacredStrike:state.classId==='clerc'&&state.level>=7?state.sacredStrike:''};
+  if(state.classId==='paladin'){if(subclass?.id==='paladin_serment_anciens'&&state.level>=15)immunities.push('poison','maladie','Charmé');if(subclass?.id==='paladin_serment_devotion'&&state.level>=15)immunities.push('nécrotique','Effrayé');if(subclass?.id==='paladin_serment_gloire'&&state.level>=15)immunities.push('Charmé','Effrayé');}
+  if(subclass?.id==='moine_credo_paume'){if(state.level>=6)immunities.push('maladie');if(state.level>=17)immunities.push('nécrotique');}
+  for(const id of invocations){const rule=c.invocations.options.find(i=>i.id===id.split(':')[0]);if(rule)classFeatures.push({...rule,nom:c.invocations.options.find(i=>i.id===id.split(':')[0]).nom,source:'Manifestation occulte · complément ciblé'});}
+  if(state.classId==='ensorceleur')for(const id of state.classChoices?.metamagic||[]){const rule=c.remainingSupplements.metamagic.find(i=>i.id===id);if(rule)classFeatures.push({...rule,source:'Altération magique · complément ciblé'});}
+  if(state.classId==='roublard'&&state.level>=5)for(const option of c.remainingSupplements.rogueStrikes.filter(o=>state.level>=o.level))classFeatures.push({...option,source:'Frappe opportuniste · complément ciblé'});
+  classEffects.familiar=invocations.includes('chain')?[...c.shapeForms,...c.familiars].find(f=>f.slug===state.classChoices?.familiar?.[0]):null;
+  const dragon=state.classId==='ensorceleur'&&subclass?.id==='ensorceleur_sorcellerie_draconique'&&state.level>=18?c.dragonForms.find(f=>f.slug===state.classChoices?.dragonName?.[0]):null;
+  classEffects.dragonForm=dragon?{...structuredClone(dragon),ca:ac,pv:hitPoints(state,c),note:'Profil de transformation conditionnelle ; CA et PV du personnage conservés. Les valeurs du personnage hors transformation restent inchangées.'}:null;
+  const classResources=(profile?.resources||[]).map(r=>({...r,valeur:r.ability?r.kind==='dc'?8+proficiency+(mods[r.ability]??0):r.kind==='formula'?(r.base||0)+(mods[r.ability]??0):r.kind==='heal'?r.die+' + '+(mods[r.ability]??0):r.kind==='aura'?'+'+Math.max(r.minimum||0,mods[r.ability]??0):`${Math.max(r.minimum||0,mods[r.ability]??0)} utilisations · ${r.die}`:r.valeur}));
+  return {ruleNotices:[profile?.spellcastingNote,...grantedOriginSpells(state,c).filter(s=>s.unresolved).map(s=>`Espèce : fiche de sort à relier — ${s.nom}.`)].filter(Boolean).join(' '),swim,blindvision,immunities,classEffects,classResources,attacksPerAction:profile?.attacks||1,effects,speed,darkvision,climb:effects.climb||subclass?.id==='roublard_voleur'||state.classId==='rodeur'&&state.level>=6&&!suits.some(a=>a.categorie==='armure_lourde')?speed:null,resistances:[...new Set(resistances.filter(r=>!r.startsWith('variable_')).map(r=>({necrotique:'nécrotique',radiance:'radiant'}[damageKey(r)]||damageKey(r))))],cls,species,background,subclass,variant:selectedVariant(state,c),scores,mods,proficiency,skills,saves,inventory,money,attacks,ac,acNote,magic,spells,slots:profile?.slots||{},hp:hitPoints(state,c),initiative:mods.DEX===null?null:mods.DEX+bonuses.initiative+(subclass?.id==='guerrier_champion'&&state.level>=7?Math.floor(proficiency/2):0),passive:perception?.value===null||perception?.value===undefined?null:10+perception.value,classFeatures,subclassFeatures,feats:originFeats(state,c),tools:[...new Set([...originTools(state,c),...effects.tools,...classEffects.tools])],errors:[...new Set(errors)],base,weaponTraining,armorTraining,progression,levelFeats,channel:profile?.channel,sparkDice:profile?.sparkDice,sacredStrike:state.classId==='clerc'&&state.level>=7?state.sacredStrike:''};
 }

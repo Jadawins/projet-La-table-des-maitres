@@ -3,7 +3,7 @@ import {originErrors,grantInitial} from './origin-rules.mjs';
 import {detailFields} from './sheet-model.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial} from './cleric-progression.mjs';
 import {featChoicesInitial} from './feat-effects.mjs';
-const strings=['name','classId','speciesId','backgroundId','equipment','statsMethod','bonusMode','bonusTwo','bonusOne','divineOrder','subclassId','hpMode','variantId','speciesSize','speciesSkill','originFeatId','backgroundTool','sacredStrike'];
+const strings=['name','classId','speciesId','backgroundId','equipment','statsMethod','bonusMode','bonusTwo','bonusOne','divineOrder','subclassId','hpMode','variantId','speciesSize','speciesSkill','speciesAncestry','speciesCastingAbility','originFeatId','backgroundTool','sacredStrike'];
 export function characterSnapshot(state){
   const out={schemaVersion:2};
   for(const key of strings)out[key]=state[key]??'';
@@ -24,7 +24,7 @@ export function validateSavedCharacter(input,catalogue){
   out.scores={};for(const key of ABILITIES){const value=input.scores?.[key];if(value!==null&&(!Number.isInteger(value)||value<3||value>18))fail('Les caractéristiques de base doivent être comprises entre 3 et 18.');out.scores[key]=value;}
   out.step=Number.isInteger(input.step)&&input.step>=0&&input.step<=7?input.step:0;
   for(const key of ['classSkills','cantrips','prepared']){
-    const values=input[key]??[];if(!Array.isArray(values)||values.length>40||values.some(v=>typeof v!=='string'||v.length>150))fail('Une sélection est invalide.');out[key]=[...new Set(values)];
+    const values=input[key]??[];if(!Array.isArray(values)||values.length>200||values.some(v=>typeof v!=='string'||v.length>150))fail('Une sélection est invalide.');out[key]=[...new Set(values)];
   }
   const rolls=input.rolls??[];if(!Array.isArray(rolls)||![0,6].includes(rolls.length)||rolls.some(r=>!Array.isArray(r)||r.length!==4||r.some(n=>!Number.isInteger(n)||n<1||n>6)))fail('Les jets de dés sont invalides.');out.rolls=rolls;
   out.hpRolls={};for(const [level,value]of Object.entries(input.hpRolls??{})){if(!/^([2-9]|1\d|20)$/.test(level)||(value!==null&&(!Number.isInteger(value)||value<1||value>12)))fail('Un jet de points de vie est invalide.');out.hpRolls[level]=value;}
@@ -43,7 +43,7 @@ export function validateSavedCharacter(input,catalogue){
     for(const key of ['proficiencies','cantrips']){if(!Array.isArray(raw[key])||raw[key].length>(key==='cantrips'?2:3)||raw[key].some(v=>typeof v!=='string'||v.length>150))fail('Un choix de don est invalide.');grant[key]=[...new Set(raw[key])];}
     out.originGrants[slot]=grant;
   }
-  out.classChoices={};for(const [key,values]of Object.entries(input.classChoices||{})){if(!/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)||!Array.isArray(values)||values.length>40||values.some(v=>typeof v!=='string'||!v.trim()||v.length>150))fail('Un choix de classe est invalide.');out.classChoices[key]=[...values];}
+  out.classChoices={};for(const [key,values]of Object.entries(input.classChoices||{})){if(!/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)||!Array.isArray(values)||values.length>200||values.some(v=>typeof v!=='string'||!v.trim()||v.length>150))fail('Un choix de classe est invalide.');out.classChoices[key]=[...values];}
   out.details={};for(const key of Object.keys(detailFields)){const value=input.details?.[key];if(value===undefined)continue;if(typeof value!=='string'||value.length>6000)fail('Un texte du personnage est trop long.');out.details[key]=value;}
   for(const [key,list]of [['classId',catalogue.classes],['speciesId',catalogue.species],['backgroundId',catalogue.backgrounds],['subclassId',catalogue.subclasses],['originFeatId',catalogue.feats]])if(out[key]&&!list.some(v=>v.id===out[key]))fail('Un choix ne figure plus dans le catalogue.');
   const issues=[...originErrors(out,catalogue),...aptitudeErrors(out,catalogue),...spellErrors(out,catalogue)];

@@ -70,6 +70,7 @@ export function spellErrors(state, catalogue) {
   }
   for(const name of profile.missingSpells||[])errors.push(`Fiche de sort à relier : ${name}.`);
   if (state.level >= 3 && !profile.domain) errors.push('Choisissez une sous-classe de votre catalogue.');
+  errors.push(...invocationErrors(state,catalogue,{spells:true}));
   return errors;
 }
 export function classSkills(state,catalogue) {
@@ -91,7 +92,7 @@ export function hitPoints(state,catalogue) {
     if (!Number.isInteger(roll) || roll < 1 || roll > die) return null;
     total += Math.max(1,roll + con);
   }
-  return total+originBonuses(state,catalogue).hp+(selectedLevelFeats(state,catalogue).some(r=>r.feat.id==='faveur_de_vigueur')?40:0);
+  return total+(catalogue.species.find(s=>s.id===state.speciesId)?.traits?.some(t=>t.id==='tenacite_naine')?state.level:0)+(state.classId==='ensorceleur'&&state.subclassId==='ensorceleur_sorcellerie_draconique'&&state.level>=3?state.level:0)+originBonuses(state,catalogue).hp+(selectedLevelFeats(state,catalogue).some(r=>r.feat.id==='faveur_de_vigueur')?40:0);
 }
 export function aptitudeErrors(state,catalogue) {
   if (!classProfile(state,catalogue)) return [];
@@ -102,7 +103,7 @@ export function aptitudeErrors(state,catalogue) {
   if ((state.classSkills || []).length !== skills.count || new Set((state.classSkills || []).map(skillKey)).size !== skills.count || (state.classSkills || []).some(name => !skills.options.some(allowed => skillKey(name) === skillKey(allowed)))) errors.push(`Choisissez ${skills.count} compétences de classe distinctes.`);
   if (hitPoints(state,catalogue) === null) errors.push('Renseignez les points de vie de chaque niveau.');
   errors.push(...evaluateProgression(state,catalogue,finalScores(state,catalogue.backgrounds.find(b=>b.id===state.backgroundId))).issues);
-  errors.push(...originGrantErrors(state,catalogue,originFeats(state,catalogue).filter(g=>g.slot.startsWith('level'))));
+  errors.push(...originGrantErrors(state,catalogue,originFeats(state,catalogue).filter(g=>g.slot.startsWith('level')||g.slot.startsWith('invocation'))));
   errors.push(...featChoiceErrors(state,catalogue),...classChoiceErrors(state,catalogue));
   const sacred=sacredChoices(state,catalogue);
   if(sacred.length&&!sacred.some(option=>option.nom===state.sacredStrike))errors.push('Choisissez votre option de Frappe consacrée au niveau 7.');
@@ -114,3 +115,4 @@ import {ritualGrantSpells,featChoiceErrors} from './feat-effects.mjs';
 
 import {buildClassProfile,classChoiceErrors} from './class-profiles.mjs';
 import {classMagic} from './class-magic.mjs';
+import {invocationErrors} from './warlock-options.mjs';

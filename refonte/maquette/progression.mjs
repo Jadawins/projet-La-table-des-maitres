@@ -1,7 +1,7 @@
 const key=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 import {classMagic} from './class-magic.mjs';
 export const ADVANCEMENT_LEVELS=Array.from({length:20},(_,i)=>i+1);
-export const ORIGIN_SLOTS=['background','human',...ADVANCEMENT_LEVELS.map(n=>`level${n}`)];
+export const ORIGIN_SLOTS=['background','human',...ADVANCEMENT_LEVELS.map(n=>`level${n}`),...ADVANCEMENT_LEVELS.map(n=>`invocation${n}`)];
 const abilities=['FOR','DEX','CON','INT','SAG','CHA'];
 export const advancementInitial=()=>({mode:'',abilities:[],featId:'',featAbility:'',notes:'',choices:{skill:'',expertise:'',damageType:'',rituals:[],resistances:[],spell:''}});
 export function improvementLevels(state,c){
@@ -21,8 +21,8 @@ export function inheritedValue(state,c,field,level=state.level){
 }
 function originFeatIds(state,c){
   const bg=c.backgrounds.find(b=>b.id===state.backgroundId),name=bg?.don?.replace(/\s*\([^)]*\)\s*$/,'');
-  const id=c.feats.find(f=>key(f.nom)===key(name))?.id;
-  return [id,state.speciesId==='humain'?state.originFeatId:''].filter(Boolean);
+  const id=c.feats.find(f=>key(f.nom)===key(name)||f.id===c.originCorrections?.backgroundFeats?.[key(name)])?.id;
+  return [id,state.speciesId==='humain'?state.originFeatId:'',...(state.classId==='occultiste'?state.classChoices?.invocations||[]:[]).filter(i=>i.startsWith('lesson:')).map(i=>i.split(':')[1])].filter(Boolean);
 }
 export function eligibleLevelFeats(state,c,level,scores,taken=[]){
   const training=classTraining({...state,level},c);
@@ -30,12 +30,17 @@ export function eligibleLevelFeats(state,c,level,scores,taken=[]){
     const p=f.prerequis||{};if((p.niveau||1)>level||p.classe)return false;
     if(taken.includes(f.id)&&!(f.effets||[]).some(e=>key(e.valeur).includes('repetable')))return false;
     if(f.id==='initie_a_la_magie'&&taken.filter(id=>id===f.id).length>=3)return false;
+    if(['magie_rituelle','faveur_du_destin'].includes(f.id)){
+      const magic=classMagic(state,c,level),rank=Math.max(0,...Object.entries(magic.row.emplacements_de_sort||{}).filter(([,n])=>n>0).map(([r])=>+r));
+      const pool=c.spells.filter(s=>s.niveau<=rank&&s.classes?.some(n=>key(n)===key(magic.spellClass)));
+      if(!magic.enabled||(f.id==='magie_rituelle'?pool.filter(s=>s.rituel&&s.niveau>=1).length<2:!pool.length))return false;
+    }
     const required=p.caracteristique;if(!required)return true;
     if(required==='aptitude Sorts')return classMagic(state,c,level).enabled;
     const thresholds=[...required.matchAll(/(FOR|DEX|CON|INT|SAG|CHA)\s+(\d+)/g)];
     if(thresholds.length)return thresholds.some(([,a,n])=>Number.isFinite(scores[a])&&scores[a]>=+n);
     if(key(required)==='foroudex')return true;
-    if(key(required)==='formationauxarmureslegeres')return training.armors.includes('armures_legeres');
+    if(key(required)==='formationauxarmureslegeres')return training.armors.includes('armures_legeres')||taken.includes('protection_legere');
     if(key(required)==='formationauxarmuresintermediaires')return training.armors.includes('armures_intermediaires')||taken.includes('protection_intermediaire');
     if(key(required)==='formationauxboucliers')return training.armors.includes('boucliers')||taken.includes('protection_legere');
     if(key(required)==='formationauxarmureslourdes')return training.heavy||taken.includes('protection_lourde');
@@ -98,6 +103,8 @@ export function activeFeatures(state,c){
 export function classTraining(state,c){
   const base=c.classes.find(x=>x.id===state.classId)?.niveaux?.[0]||{};
   const armors=[...(base.maitrises_armures||[])],weapons=[...(base.maitrises_armes||[])];
+  const variant=c.species.find(s=>s.id===state.speciesId)?.variantes?.find(v=>v.id===state.variantId);
+  if(variant?.traits_speciaux?.some(t=>t.id==='maitrise_armures_naines'))armors.push('armures_legeres','armures_intermediaires');
   for(const feature of activeFeatures(state,c)){
     const selected=(feature.options||[]).find(o=>o.nom===state.divineOrder||o.nom===state.classChoices?.[key(feature.nom)]?.[0]);
     for(const e of selected?.effets||[]){if(e.type==='ajout_formation_armures')armors.push(e.valeur);if(e.type==='ajout_maitrise_armes')weapons.push(e.valeur);}

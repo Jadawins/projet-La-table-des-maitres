@@ -1,0 +1,38 @@
+{
+  "gloryFirstSpells": {
+    "before": ["hâte partielle","grâce"],
+    "after": ["rayon_tracant","heroisme"],
+    "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231",
+    "authorization": "Remplacement des deux noms introuvables explicitement autorisé par l’utilisateur le 28 octobre 2026. Les autres sorts du serment restent ceux de la BDD."
+  },
+  "rogueStrikes": [
+    {"nom":"Croc-en-jambe","level":5,"cout":"1d6","description":"Taille G maximum ; JS DEX ou À terre."},
+    {"nom":"Poison","level":5,"cout":"1d6","description":"Matériel d’empoisonneur requis ; JS CON ou Empoisonné 1 minute, nouveau JS en fin de tour."},
+    {"nom":"Repli","level":5,"cout":"1d6","description":"Déplacement immédiat de demi-vitesse sans attaque d’opportunité."},
+    {"nom":"Hébéter","level":14,"cout":"2d6","description":"JS CON ; prochain tour limité à déplacement, action ou action bonus."},
+    {"nom":"Aveugler","level":14,"cout":"3d6","description":"JS DEX ou Aveuglé jusqu’à la fin du prochain tour de la cible."},
+    {"nom":"Assommer","level":14,"cout":"6d6","description":"JS CON ou Inconscient 1 minute ; fin sur dégâts, nouveau JS en fin de tour."}
+  ],
+  "rogueStrikesSource":"https://roll20.net/compendium/dnd5e/Classes:Rogue?expansion=33335&iframe=true",
+  "metamagic":[
+    {"id":"prudent","nom":"Sort prudent","cout":1,"description":"Protège CHA créatures minimum 1 : JS réussi, aucun dégât si demi-dégâts prévus."},
+    {"id":"distant","nom":"Sort distant","cout":1,"description":"Portée≥1,5m doublée ; contact devient 9m."},
+    {"id":"puissant","nom":"Sort puissant","cout":1,"description":"Relance CHA dés de dégâts minimum 1, nouveaux résultats obligatoires ; combinable."},
+    {"id":"prolonge","nom":"Sort prolongé","cout":1,"description":"Durée≥1minute doublée, maximum 24h ; avantage aux JS de concentration."},
+    {"id":"intensifie","nom":"Sort intensifié","cout":2,"description":"Une cible : désavantage aux JS contre le sort."},
+    {"id":"accelere","nom":"Sort accéléré","cout":2,"description":"Action devient bonus ; aucun autre sort de niveau 1+ ce tour."},
+    {"id":"chercheur","nom":"Sort chercheur","cout":1,"description":"Attaque de sort ratée : relance d20 obligatoire ; combinable."},
+    {"id":"subtil","nom":"Sort subtil","cout":1,"description":"Supprime V/S/M, sauf matériaux consommés ou avec coût."},
+    {"id":"transmute","nom":"Sort transmuté","cout":1,"description":"Permute acide/froid/feu/foudre/poison/tonnerre."},
+    {"id":"jumele","nom":"Sort jumelé","cout":1,"description":"Sort gagnant une cible par surclassement : niveau effectif+1."}
+  ],
+  "metamagicSource":"https://roll20.net/compendium/dnd5e/Classes:Sorcerer?expansion=33335&iframe=true",
+  "unresolvedPolicy":"Libellés non identifiés : conserver la source avec avertissement et confirmation explicite du joueur, sans inventer de niveau, de DD ou d’effet.",
+  "spellcasting": {
+    "roublard_arnaqueur_arcanique": {
+      "tableRef": "guerrier_chevalier_occulte", "cantrips": 3, "cantripsFrom10": 4,
+      "source": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231&iframe=true",
+      "note": "Progression magique absente de la BDD, complétée avec la table PHB 2024 distribuée par Roll20. Trois sorts mineurs dont Main du mage ; quatrième au niveau 10. Les aptitudes et préférences Enchantement/Illusion de la BDD sont conservées."
+    }
+  }
+}

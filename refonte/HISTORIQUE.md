@@ -117,3 +117,19 @@ Version 20261028T074925Z déployée. Le guerrier est différé au profit du barb
 Compléments officiels limités aux données manquantes, autorisés et tracés dans audit/COMPLEMENTS-CLASSES.md et data/class-supplements.json. Les terrains de la Terre conservent la structure antérieure présente dans la BDD. Les ambiguïtés du compagnon restent à préciser avec le MJ. Aucune modification des collections de règles pour cette extension.
 
 Sauvegarde préalable de 3270 documents dans /root/backups/myrpgtable-persistence-20261028T074925Z/database.ejsonl.gz. Contrôle MongoDB réel des seize nouvelles sous-classes niveau 20, puis nettoyage de la collection temporaire. Youpi matin vérifié avant et après : niveau 3, révision 1. Accès authentifié et blocage des anciennes routes vérifiés après activation. Le téléphone reste hors périmètre.
+
+## 28 octobre 2026 — douze classes intégrées et déployées
+
+Version 20261028T133629Z. Ajout du guerrier, paladin, roublard, moine, ensorceleur, magicien et occultiste, quatre sous-classes chacune, niveaux 1–20. Choix propres aux classes, magie des sous-classes, grimoire, métamagies, pactes, invocations et arcanums intégrés au modèle, à la fiche et au contrat de sauvegarde. BDD conservée comme référence ; compléments absents uniquement, tracés dans les fichiers data et audit/COMPLEMENTS-CLASSES.md. Les noms non identifiés restent signalés sans effet inventé.
+
+1 105 tests de règles et 392 parcours Chromium réussis, sans échec, test ignoré ni résultat instable, en 34,7 minutes pour le navigateur avec deux exécutants. 1 040 scénarios d’intégration des classes couvrent les vingt niveaux. Contrôle MongoDB réel des 44 sous-classes supplémentaires niveau 20, contrôles antérieurs du clerc conservés, puis nettoyage temporaire.
+
+Sauvegarde complète préalable de 3 270 documents dans /root/backups/myrpgtable-persistence-20261028T133629Z/database.ejsonl.gz. Archive vérifiée par SHA-256. Youpi matin niveau 3, révision 1 avant et après. Accueil/connexion, protection de l’atelier et blocage des anciennes routes vérifiés. Téléphone hors périmètre ; toutes les combinaisons espèces/historiques/dons ne sont pas encore couvertes.
+
+## 28 octobre 2026 — origines, historiques et dons vérifiés
+
+Version 20261028T145508Z déployée. 2 360 tests de règles et 442 parcours Chromium réussis sans échec, test ignoré ni résultat instable. Matrice de 7 200 scénarios d’origine, 780 contrôles de dons, 332 combinaisons de don humain/historique/taille, styles et répartitions de bonus. Couverture exacte et limites dans audit/ORIGINES-DONS.md et E2E-PC.md.
+
+Corrections : PV nains, formations d’armure et chaîne de prérequis, lien du don du Marin, fiches et calculs des sorts de lignage, résistances et sens, conservation des choix d’ascendance géante et de caractéristique du tieffelin, choix de compétence au niveau d’acquisition. Prestidigitation et Illusion mineure ajoutées au catalogue, sans écriture des collections de règles ; liens tracés dans data/origin-link-corrections.json. Deux sorts du gnome restent non identifiés, les six noms de classes antérieurs restent signalés.
+
+Sauvegarde complète de 3 270 documents avant activation : /root/backups/myrpgtable-persistence-20261028T145508Z/database.ejsonl.gz. MongoDB réel : anciens contrôles et 44 sous-classes niveau 20, puis 30 origines et onze dons humains sauvegardés/relus, collection temporaire nettoyée. Youpi matin niveau 3, révision 1 avant et après. Routes HTTP et archive SHA-256 vérifiées.

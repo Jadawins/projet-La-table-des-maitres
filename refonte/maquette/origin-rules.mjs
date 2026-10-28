@@ -7,7 +7,7 @@ export function backgroundFeat(state,c) {
   const name=background(state,c)?.don;
   if(!name) return null;
   const base=name.replace(/\s*\([^)]*\)\s*$/,'');
-  const feat=c.feats.find(f=>key(f.nom)===key(base)||key(f.id)===key(base));
+  const feat=c.feats.find(f=>key(f.nom)===key(base)||key(f.id)===key(base)||f.id===c.originCorrections?.backgroundFeats?.[key(base)]);
   return {slot:'background',feat,name,forcedList:name.match(/\(([^)]+)\)/)?.[1]||''};
 }
 export function isRepeatable(feat){return (feat?.effets||[]).some(e=>key(e.valeur).includes('repetable'));}
@@ -22,11 +22,17 @@ export function originFeats(state,c) {
     if(feat) result.push({slot:'human',feat,name:feat.nom,forcedList:''});
   }
   for(const {level,feat}of selectedLevelFeats(state,c))if(feat.categorie==='origine')result.push({slot:`level${level}`,feat,name:feat.nom,forcedList:'',label:`Don du niveau ${level}`});
+  if(state.classId==='occultiste'&&state.level>=2)c.feats.filter(f=>f.categorie==='origine').forEach((feat,i)=>{if(state.classChoices?.invocations?.includes('lesson:'+feat.id))result.push({slot:'invocation'+(i+1),feat,name:feat.nom,forcedList:'',label:'Leçons des premiers êtres'});});
   return result;
 }
 export function originSizeOptions(state,c) {
   const category=species(state,c)?.taille?.categorie||'';
   return category.split('_ou_').filter(Boolean);
+}
+export function speciesChoiceSpecs(state,c){
+  if(state.speciesId==='goliath')return [{field:'speciesAncestry',label:'Votre ascendance géante',options:c.originCorrections?.goliathAncestries||[]}];
+  if(state.speciesId==='tieffelin')return [{field:'speciesCastingAbility',label:'Caractéristique de Présence d’outre-monde',options:['INT','SAG','CHA'].map(id=>({id,nom:id})),hint:'Ce choix s’applique à Thaumaturgie. Les autres sorts de votre héritage gardent leur caractéristique indiquée dans la bibliothèque.'}];
+  return [];
 }
 export function selectedVariant(state,c){return species(state,c)?.variantes?.find(v=>v.id===state.variantId);}
 export function toolOptions(c) {
@@ -102,13 +108,17 @@ export function magicFeatProfile(state,c,grant) {
   return {list,cantrips:pool.filter(s=>s.niveau===0),spells:pool.filter(s=>s.niveau===1),ability:cls?.niveaux?.['0']?.caracteristique_incantation||''};
 }
 export function innateSpells(state,c) {
-  const variant=selectedVariant(state,c);
-  const result=(variant?.sorts_raciaux||[]).filter(s=>(s.niveau_personnage_requis||1)<=state.level).map(s=>({...s,source:'Espèce',nom:s.nom,niveau:s.niveau_sort}));
+  const variant=selectedVariant(state,c),result=[];
+  const find=name=>c.spells.find(s=>key(s.id)===key(name)||key(s.nom)===key(name)||s.id===c.originCorrections?.spells?.[key(name)]);
+  for(const entry of (variant?.sorts_raciaux||[]).filter(s=>(s.niveau_personnage_requis||1)<=state.level)){
+    const full=find(entry.id)||find(entry.nom);
+    result.push({...full,...entry,id:full?.id||entry.id,sourceName:entry.nom,source:'Espèce',niveau:entry.niveau_sort,caracteristique:state.speciesId==='tieffelin'&&full?.id==='thaumaturgie'?state.speciesCastingAbility:entry.caracteristique,unresolved:!full});
+  }
   for(const name of species(state,c)?.sorts_innes||[]) {
-    if(String(name).startsWith('variable_')) continue;
-    if(result.some(s=>key(s.id)===key(name)||key(s.nom)===key(name))) continue;
-    const spell=c.spells.find(s=>key(s.id)===key(name)||key(s.nom)===key(name));
-    result.push(spell?{...spell,source:'Espèce'}:{id:name,nom:name,niveau:null,unresolved:true,source:'Espèce'});
+    if(String(name).startsWith('variable_'))continue;
+    const full=find(name);
+    if(result.some(s=>key(s.id)===key(full?.id||name)||key(s.nom)===key(name)))continue;
+    result.push(full?{...full,source:'Espèce',sourceName:name,caracteristique:state.speciesId==='aasimar'?'CHA':null,utilisation:'a_volonte'}:{id:name,nom:name,niveau:null,unresolved:true,source:'Espèce',sourceName:name});
   }
   return result;
 }
@@ -132,6 +142,7 @@ export function originBonuses(state,c) {
 }
 export function reconcileOrigins(state,c) {
   if(!state.originGrants) state.originGrants={};
+  for(const field of ['speciesAncestry','speciesCastingAbility'])if(!speciesChoiceSpecs(state,c).some(spec=>spec.field===field&&spec.options.some(o=>o.id===state[field])))state[field]='';
   for(const slot of ORIGIN_SLOTS) state.originGrants[slot]={...grantInitial(),...state.originGrants[slot]};
   if(!speciesSkillOptions(state,c).includes(state.speciesSkill)) state.speciesSkill='';
   if(!originSizeOptions(state,c).includes(state.speciesSize)) state.speciesSize='';
@@ -155,12 +166,13 @@ export function reconcileOrigins(state,c) {
 export function originErrors(state,c,{levelGrants=true}={}) {
   const errors=[];const s=species(state,c);
   if(!s||!background(state,c)) return ['Choisissez une espèce et un historique.'];
-  if(originSizeOptions(state,c).length>1&&!originSizeOptions(state,c).includes(state.speciesSize)) errors.push('Choisissez la taille de votre personnage.');
+  for(const spec of speciesChoiceSpecs(state,c))if(!spec.options.some(o=>o.id===state[spec.field]))errors.push('Choisissez : '+spec.label.toLocaleLowerCase('fr')+'.');
+  if((originSizeOptions(state,c).length>1||state.speciesSize)&&!originSizeOptions(state,c).includes(state.speciesSize)) errors.push('Choisissez la taille de votre personnage.');
   if(s.variantes?.length&&!selectedVariant(state,c)) errors.push('Choisissez un lignage ou un héritage.');
   if(speciesSkillOptions(state,c).length&&!speciesSkillOptions(state,c).includes(state.speciesSkill)) errors.push('Choisissez la compétence accordée par votre espèce.');
   if(state.speciesId==='humain'&&!humanFeats(state,c).some(f=>f.id===state.originFeatId)) errors.push('Choisissez le don d’origine de votre humain.');
   if(backgroundToolOptions(state,c).length&&!backgroundToolOptions(state,c).some(t=>t.id===state.backgroundTool)) errors.push('Choisissez l’outil accordé par votre historique.');
-  errors.push(...originGrantErrors(state,c,originFeats(state,c).filter(g=>levelGrants||!g.slot.startsWith('level'))));
+  errors.push(...originGrantErrors(state,c,originFeats(state,c).filter(g=>levelGrants||!g.slot.startsWith('level')&&!g.slot.startsWith('invocation'))));
   return errors;
 }
 import {selectedLevelFeats,ORIGIN_SLOTS} from './cleric-progression.mjs';

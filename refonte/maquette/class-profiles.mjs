@@ -2,14 +2,15 @@ import {activeFeatures,inheritedValue,classTraining} from './progression.mjs';
 import {originSkills,toolOptions} from './origin-rules.mjs';
 import {ritualGrantSpells} from './feat-effects.mjs';
 import {classMagic} from './class-magic.mjs';
+import {extraClassChoices,extraClassResources,extraClassGrants,extraClassErrors} from './extra-classes.mjs';
 const key=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const canonical=(name,c)=>c.skills.find(s=>key(s.nom)===key(name)||key(name)==='intuition'&&key(s.nom)==='perspicacite')?.nom||name;
-export const supportedClasses=['clerc','barbare','rodeur','barde','druide','guerrier'];
+export const supportedClasses=['clerc','barbare','rodeur','barde','druide','guerrier','paladin','roublard','moine','magicien','ensorceleur','occultiste'];
 const picked=(state,name)=>state.classChoices?.[name]||[];
 const subFor=(state,c)=>state.level>=3?c.subclasses.find(s=>s.id===state.subclassId&&s.classe_parente===state.classId):null;
 const maxRank=row=>Math.max(0,...Object.entries(row?.emplacements_de_sort||{}).filter(([,n])=>n>0).map(([n])=>+n));
 function lookupSpell(c,name){
-  const aliases={detectiondessorts:'detection_de_la_magie',infiltrationillusoire:'deguisement',lueurfeerique:'lueurs_feeriques',guidance:'assistance',etoilefilante:'rayon_tracant',augmentationdescaracteristiques:'amelioration_caracteristique',marchesurleau:'marche_sur_l_onde',vaguetonnante:'vague_tonnante'};
+  const aliases={flammecontinue:'flamme_eternelle',croissancedeplantes:'croissance_vegetale',protectioncontrelebienetlemal:'protection_contre_le_mal_et_le_bien',passesanstrace:'passage_sans_trace',soinsdesblessures:'soins',soindesblessures:'soins',agrandissementetretrecissement:'agrandissement_rapetissement',chatimentcourrouce:'chatiment_de_courroux',detectiondessorts:'detection_de_la_magie',infiltrationillusoire:'deguisement',lueurfeerique:'lueurs_feeriques',guidance:'assistance',etoilefilante:'rayon_tracant',augmentationdescaracteristiques:'amelioration_caracteristique',marchesurleau:'marche_sur_l_onde',vaguetonnante:'vague_tonnante'};
   return c.spells.find(s=>s.id===name||s.id===aliases[key(name)]||key(s.nom)===key(name));
 }
 export function shapePool(state,c){
@@ -26,12 +27,12 @@ function skillNames(state,c,through=state.level){
   if(state.classId==='barbare'&&through>=3)result.push(...picked(state,'wildSkill'));
   if(sub?.id==='barde_college_savoir')result.push(...picked(state,'loreSkills'));
   if(sub?.id==='barde_college_danse')result.push('Acrobaties','Représentation');
-  for(const [level,row]of Object.entries(state.advancements||{}))if(row.mode==='feat'&&+level<=through){if(row.featId==='comedien')result.push(row.choices?.skill);if(row.featId==='observateur')result.push(row.choices?.expertise);if(row.featId==='faveur_de_competence')result.push(...c.skills.map(s=>s.nom));}
+  for(const [level,row]of Object.entries(state.advancements||{}))if(row.mode==='feat'&&+level<=through){if(row.featId==='comedien')result.push(row.choices?.skill);if(row.featId==='faveur_de_competence')result.push(...c.skills.map(s=>s.nom));}
   return [...new Set(result.filter(Boolean).map(n=>canonical(n,c)))];
 }
 function weaponOptions(state,c){
   const allowed=classTraining(state,c).weapons;
-  return c.weapons.filter(w=>w.botte&&allowed.some(t=>t==='armes_courantes'&&w.categorie.includes('courante')||t==='armes_de_guerre'&&w.categorie.includes('guerre'))).map(w=>({id:key(w.nom),nom:w.nom,description:'Botte : '+w.botte}));
+  return c.weapons.filter(w=>w.botte&&allowed.some(t=>t==='armes_courantes'&&w.categorie.includes('courante')||t==='armes_de_guerre'&&w.categorie.includes('guerre')||t==='armes_de_guerre_finesse_ou_legeres'&&w.categorie.includes('guerre')&&w.proprietes.some(p=>['finesse','legere'].includes(p)))).map(w=>({id:key(w.nom),nom:w.nom,description:'Botte : '+w.botte}));
 }
 export function classChoiceSpecs(state,c){
   if(!supportedClasses.includes(state.classId)||state.classId==='clerc')return [];
@@ -39,7 +40,12 @@ export function classChoiceSpecs(state,c){
   const options=names=>names.map(n=>({id:canonical(n,c),nom:canonical(n,c)}));
   const add=(id,nom,count,opts,level=1,extra={})=>{if(state.level>=level)specs.push({key:id,nom,count,options:opts,level,...extra});};
   const languages=(id,nom,count,level)=>add(id,nom,count,[],level,{kind:'names'});
+  if(state.classId==='paladin'){
+    add('weaponMasteries','Vos bottes d’armes',2,weaponOptions(state,c));
+    add('combatStyle','Votre style de combat',1,[...c.feats.filter(f=>f.id.startsWith('style_')).map(f=>({id:f.id,nom:f.nom,description:f.effets.map(e=>e.valeur).join(' · ')})),{id:'divine',nom:'Combattant divin',description:'Deux sorts mineurs de Clerc, par le Charisme.'}],2);
+  }
   if(state.classId==='guerrier'){
+
     const styles=c.feats.filter(f=>f.id.startsWith('style_')).map(f=>({id:f.id,nom:f.nom,description:f.effets.map(e=>e.valeur).join(' · ')}));
     add('weaponMasteries','Vos techniques d’armes',inheritedValue(state,c,'techniques_arme_nombre')||0,weaponOptions(state,c));
     add('combatStyle','Votre style de combat',1,styles);
@@ -53,7 +59,7 @@ export function classChoiceSpecs(state,c){
   }
   if(state.classId==='barbare'){
     add('weaponMasteries','Vos bottes d’armes',inheritedValue(state,c,'bottes_armes')?.nombre||0,weaponOptions(state,c));
-    add('wildSkill','Connaissance sauvage · compétence supplémentaire',1,options((base.competences_choisies?.options||[]).filter(n=>!skillNames({...state,classChoices:{}},c).some(s=>key(s)===key(n)))),3);
+    add('wildSkill','Connaissance sauvage · compétence supplémentaire',1,options((base.competences_choisies?.options||[]).filter(n=>!skillNames({...state,classChoices:{}},c,3).some(s=>key(s)===key(n)))),3);
     if(sub?.id==='barbare_voie_arbre_monde')languages('treeLanguages','Langues de l’Arbre-Monde',2,3);
   }
   if(state.classId==='rodeur'){
@@ -92,6 +98,7 @@ export function classChoiceSpecs(state,c){
     if(sub?.id==='druide_cercle_terre')add('terrain','Votre terrain du Cercle de la Terre',1,Object.keys(c.classSupplements?.terrainSpells||{}).map(n=>({id:n,nom:n})),3,{description:'Les terrains de la BDD correspondent à l’ancienne version du cercle. Les listes manquantes ont été complétées depuis les références officielles correspondantes, sans remplacer les aptitudes de la BDD.'});
     if(state.level>=7){const feature=cls.niveaux[7]?.capacites?.find(f=>f.nom==='Élan élémentaire');add('elementalStrike','Votre Élan élémentaire',1,(feature?.options||[]).map(o=>({id:o.nom,nom:o.nom})),7);}
   }
+  extraClassChoices(state,c,{add,options,weaponOptions,skillNames,sub,languages,lookupSpell});
   return specs;
 }
 export function classChoiceErrors(state,c){
@@ -101,6 +108,7 @@ export function classChoiceErrors(state,c){
     const free=['names','number'].includes(spec.kind);
     if(!Array.isArray(selected)||selected.length<(spec.min??spec.count)||selected.length>spec.count||new Set(selected.map(key)).size!==selected.length||selected.some(v=>typeof v!=='string'||!v.trim()||!free&&!spec.options.some(o=>o.id===v)||spec.kind==='number'&&!/^[+-]?\d{1,4}$/.test(v)))errors.push(`${spec.nom} : choisissez ${spec.count} choix distinct${spec.count>1?'s':''} disponible${spec.count>1?'s':''}.`);
   }
+  errors.push(...extraClassErrors(state,c));
   return errors;
 }
 export function buildClassProfile(state,c){
@@ -110,11 +118,11 @@ export function buildClassProfile(state,c){
   const always=[],extraSpells=[],missing=[];
   function grant(name,source,ability=castingAbility,utilisation=null,prepared=true){
     const spell=lookupSpell(c,name);
-    if(!spell){missing.push(name);return;}
+    if(!spell){if(state.classChoices?.rulesToReview?.includes(name)){extraSpells.push({id:'unresolved:'+key(name),nom:name,niveau:null,description:'Fiche non reliée : niveau et effets à préciser avec le MJ. Aucune correspondance n’a été inventée.',source,caracteristique:null,unresolved:true,degats:[]});}else missing.push(name);return;}
     const value={...spell,source,grantSource:source,caracteristique:ability,utilisation,sourceName:spell.nom};
     (prepared?always:extraSpells).push(value);
   }
-  for(const f of features)for(const e of f.effets||[]){if(e.type==='sort_toujours_prepare')grant(e.sort,f.nom);if(e.type==='sorts_toujours_prepares')for(const id of e.sorts)grant(id,f.nom);if(e.type==='lancer_sort'&&e.sort)grant(e.sort,f.nom,castingAbility,e.cout?.options?.join(' ou ')||null,false);}
+  for(const f of features)for(const e of f.effets||[]){if(e.type==='sort_toujours_prepare')grant(e.sort,f.nom);if(e.type==='sorts_toujours_prepares')for(const id of e.sorts||[])grant(id,f.nom);if(e.type==='lancer_sort'&&e.sort)grant(e.sort,f.nom,castingAbility,e.cout?.options?.join(' ou ')||null,false);}
   for(const [n,data]of Object.entries(sub?.niveaux||{}))if(+n<=state.level)for(const name of data.sorts_connus_supplementaires||[])grant(name,sub.nom);
   if(sub?.id==='barbare_voie_arbre_monde'&&state.level>=14)grant('passage_par_les_arbres',sub.nom,'CON','1_repos_long',false);
   if(sub?.id==='rodeur_traqueur_tenebres')for(const id of ['detection_de_la_magie','tenebres','silence'])grant(id,'Magie des ténèbres','SAG','SAG fois/repos_long',false);
@@ -138,16 +146,34 @@ export function buildClassProfile(state,c){
     for(const id of ['vague_tonnante','nappe_de_brouillard'])grant(id,'Enfant des mers','SAG','SAG fois/repos_long',false);
     if(state.level>=6)for(const id of ['marche_sur_l_onde','respiration_aquatique'])grant(id,'Promenade des profondeurs','SAG','1_repos_long',false);
   }
+  if(state.classId==='paladin'){
+    for(const [n,data]of Object.entries(sub?.niveaux||{}))if(+n<=state.level)for(const [rank,names]of Object.entries(data.sorts_serment||{}))if(+rank<=maxRank(row)){
+      const values=sub.id==='paladin_serment_gloire'&&+rank===1?c.remainingSupplements.gloryFirstSpells.after:names;
+      for(const name of values)grant(name,sub.nom);
+    }
+    if(sub?.id==='paladin_serment_vengeance'&&state.level>=20)for(const name of ['fletrissement','tenebres'])grant(name,'Ange de la vengeance','CHA','Seulement pendant la transformation (1 heure)',false);
+  }
+  extraClassGrants(state,c,sub,grant);
+  if(state.classId==='occultiste')for(const [n,data]of Object.entries(sub?.niveaux||{}))if(+n<=state.level)for(const name of data.sorts_elargis||[])if(!lookupSpell(c,name))grant(name,'Liste élargie BDD',null,null,false);
   const ritual=ritualGrantSpells(state,c);
   always.push(...ritual);
   const uniqueAlways=always.filter((s,i,a)=>a.findIndex(x=>x.id===s.id)===i);
-  const bonusIds=[...uniqueAlways,...extraSpells].map(s=>s.id);
+  const automaticCantrips=sub?.id==='roublard_arnaqueur_arcanique'?c.spells.filter(s=>s.id==='main_du_mage'):[];
+  const bonusIds=[...uniqueAlways,...extraSpells,...automaticCantrips].map(s=>s.id);
   const lists=state.classId==='barde'&&state.level>=10?['barde','clerc','druide','magicien']:[magic.spellClass];
-  const pool=c.spells.filter(s=>s.classes?.some(n=>lists.includes(key(n))));
-  const cantripPool=state.classId==='rodeur'?c.spells.filter(s=>s.classes?.some(n=>key(n)==='druide')):c.spells.filter(s=>s.classes?.some(n=>key(n)===magic.spellClass));
-  const cantripCount=state.classId==='rodeur'?(state.level>=2&&picked(state,'combatStyle')[0]==='natural'?2:0):(row.sorts_mineurs||0)+(state.classId==='druide'&&picked(state,'vocationnaturelle')[0]==='Mage'?1:0)+(sub?.id==='druide_cercle_terre'?1:0);
+  const expanded=state.classId==='occultiste'?Object.entries(sub?.niveaux||{}).filter(([n])=>+n<=state.level).flatMap(([,r])=>r.sorts_elargis||[]).map(name=>lookupSpell(c,name)).filter(Boolean).map(x=>x.id):[];
+  const pool=c.spells.filter(s=>(s.classes?.some(n=>lists.includes(key(n)))||expanded.includes(s.id))&&(state.classId!=='magicien'||picked(state,'spellbook').includes(s.id)));
+  const cantripPool=state.classId==='paladin'?c.spells.filter(s=>s.classes?.some(n=>key(n)==='clerc')):state.classId==='rodeur'?c.spells.filter(s=>s.classes?.some(n=>key(n)==='druide')):c.spells.filter(s=>s.classes?.some(n=>key(n)===magic.spellClass));
+  const cantripCount=sub?.id==='roublard_arnaqueur_arcanique'?row.sorts_mineurs-1:state.classId==='paladin'?(state.level>=2&&picked(state,'combatStyle')[0]==='divine'?2:0):state.classId==='rodeur'?(state.level>=2&&picked(state,'combatStyle')[0]==='natural'?2:0):(row.sorts_mineurs||0)+(state.classId==='druide'&&picked(state,'vocationnaturelle')[0]==='Mage'?1:0)+(sub?.id==='druide_cercle_terre'?1:0);
   const rage=inheritedValue(state,c,'ragesParJour'),rageDamage=inheritedValue(state,c,'bonusDegatsDeRage');
-  const resources=[];
+  const resources=extraClassResources(state,c,sub);
+  if(state.classId==='paladin'){
+    resources.push({nom:'Toucher guérisseur',valeur:5*state.level,details:'PV du pool par repos long ; coût 5 par état supprimé.'});
+    if(state.level>=2)resources.push({nom:'Châtiment divin',valeur:1,details:'Utilisation sans emplacement par repos long.'});
+    if(state.level>=3)resources.push({nom:'Canalisation divine',valeur:inheritedValue(state,c,'conduit_divin'),details:'Repos court : +1 utilisation ; repos long : maximum.'});
+    if(state.level>=5)resources.push({nom:'Appel de destrier',valeur:1,details:'Utilisation sans emplacement par repos long.'});
+    if(state.level>=6)resources.push({nom:'Aura défensive',ability:'CHA',minimum:1,kind:'aura',details:(state.level>=18?'9':'3')+' m · bonus aux sauvegardes tant que non neutralisé.'});
+  }
   if(state.classId==='guerrier'){
     resources.push({nom:'Souffle vital',valeur:inheritedValue(state,c,'second_souffle_utilisations'),details:'Soin 1d10 + '+state.level+' · repos court : +1, repos long : maximum.'});
     if(state.level>=2)resources.push({nom:'Élan guerrier',valeur:state.level>=17?2:1,details:'Repos court/long · 1 par tour · action supplémentaire hors Magie.'});
@@ -159,10 +185,10 @@ export function buildClassProfile(state,c){
   if(state.classId==='rodeur')resources.push({nom:'Proie jurée',valeur:inheritedValue(state,c,'proie_juree_utilisations'),details:'Utilisations gratuites de Marque du chasseur par repos long.'});
   if(state.classId==='barde')resources.push({nom:'Élan artistique',ability:'CHA',minimum:1,die:inheritedValue(state,c,'de_inspiration'),details:state.level>=5?'Récupération au repos court ou long.':'Récupération au repos long.'});
   if(state.classId==='druide'&&state.level>=2)resources.push({nom:'Forme animale',valeur:inheritedValue(state,c,'forme_sauvage_utilisations'),details:`${inheritedValue(state,c,'forme_sauvage_formes_connues')} formes connues · durée ${state.level/2} heures · ${state.level} PV temporaires à l’adoption.`});
-  return {classId:state.classId,subclass:sub,domain:sub,row,castingAbility,hasMagic:magic.enabled,spellcastingNote:magic.note,spellcastingSource:magic.source,cantripCount,preparedCount:row.sorts_prepares||0,
+  return {classId:state.classId,subclass:sub,domain:sub,row,castingAbility,hasMagic:magic.enabled,spellcastingNote:[magic.note,...extraSpells.filter(s=>s.unresolved).map(s=>s.nom+' : entrée BDD non identifiée, à préciser avec le MJ.'),...uniqueAlways.filter(s=>s.niveau>maxRank(row)).map(s=>s.nom+' : niveau réel '+s.niveau+', aucun emplacement disponible actuellement (liste BDD conservée).')].filter(Boolean).join(' '),spellcastingSource:magic.source,cantripCount,preparedCount:row.sorts_prepares||0,
     cantrips:cantripPool.filter(s=>s.niveau===0&&!bonusIds.includes(s.id)),prepared:pool.filter(s=>s.niveau>=1&&s.niveau<=maxRank(row)&&!bonusIds.includes(s.id)),
-    slots:row.emplacements_de_sort||{},always:uniqueAlways,automaticCantrips:[],extraSpells,missingSpells:missing,domainFeatures:features.filter(f=>f.source.startsWith(sub?.nom+' ·')),maxSpellLevel:maxRank(row),proficiency:inheritedValue(state,c,'bonusMaitrise'),
-    attacks:state.classId==='guerrier'?Math.max(1,...features.flatMap(f=>(f.effets||[]).filter(e=>e.total_attaques).map(e=>e.total_attaques))):state.classId==='barbare'&&state.level>=5||state.classId==='rodeur'&&state.level>=5||sub?.id==='barde_college_vaillance'&&state.level>=6?2:1,rage,rageDamage,resources};
+    slots:row.emplacements_de_sort||{},always:uniqueAlways,automaticCantrips,extraSpells,missingSpells:missing,domainFeatures:features.filter(f=>f.source.startsWith(sub?.nom+' ·')),maxSpellLevel:maxRank(row),proficiency:inheritedValue(state,c,'bonusMaitrise'),
+    attacks:Math.max(1,...features.flatMap(f=>(f.effets||[]).filter(e=>e.total_attaques).map(e=>e.total_attaques)),state.classId==='barbare'&&state.level>=5||state.classId==='rodeur'&&state.level>=5||sub?.id==='barde_college_vaillance'&&state.level>=6?2:1),rage,rageDamage,resources};
 }
 export function classChoiceEffects(state,c){
   const specs=classChoiceSpecs(state,c),sub=subFor(state,c),skills=[],expertise=[],tools=[],languages=[],masteries=picked(state,'weaponMasteries');
@@ -172,6 +198,9 @@ export function classChoiceEffects(state,c){
   if(sub?.id==='barde_college_danse')skills.push('Acrobaties','Représentation');
   if(state.classId==='barde')for(const id of picked(state,'instruments')){const tool=toolOptions(c).find(t=>t.id===id);if(tool)tools.push(tool.name);}
   if(sub?.id==='guerrier_maitre_guerre')for(const id of picked(state,'artisanTool')){const tool=toolOptions(c).find(t=>t.id===id);if(tool)tools.push(tool.name);}
+  if(state.classId==='roublard'){expertise.push(...picked(state,'expertise1'));if(state.level>=6)expertise.push(...picked(state,'expertise6'));languages.push('Jargon des voleurs');if(sub?.id==='roublard_assassin')for(const tool of c.tools.filter(t=>/deguisement|empoisonneur/.test(key(t.id))))tools.push(tool.nom);}
+  if(state.classId==='magicien'&&state.level>=2)expertise.push(...picked(state,'scholar'));
+  if(state.classId==='moine')for(const id of picked(state,'monkTool')){const tool=toolOptions(c).find(t=>t.id===id);if(tool)tools.push(tool.name);}
   const cls=c.classes.find(x=>x.id===state.classId);
   if(Array.isArray(cls?.niveaux?.[0]?.maitrises_outils))for(const id of cls.niveaux[0].maitrises_outils)tools.push(c.tools.find(t=>key(t.id)===key(id)||key(id).includes('herboriste')&&key(t.nom).includes('herboriste'))?.nom||id.replaceAll('_',' '));
   for(const spec of specs.filter(s=>s.kind==='names'&&/Languages$/.test(s.key)))languages.push(...picked(state,spec.key));

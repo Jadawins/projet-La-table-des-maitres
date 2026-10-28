@@ -3,7 +3,9 @@ import {randomUUID} from 'node:crypto';
 import {createCharacterStore} from './character-store.mjs';
 import {validateSavedCharacter} from './atelier/character-storage.mjs';
 import {clericProfile,classProfile,classSkills} from './atelier/character-rules.mjs';
-import {classChoiceSpecs} from './atelier/class-profiles.mjs';
+import {classChoiceSpecs,supportedClasses} from './atelier/class-profiles.mjs';
+import {classFixture} from './check-class-fixture.mjs';
+import {originCases,originFixture} from './check-origin-fixture.mjs';
 import {advancementInitial} from './atelier/cleric-progression.mjs';
 import {readFile} from 'node:fs/promises';
 const {MongoClient}=createRequire('/var/www/myrpgtable/app/api/package.json')('mongodb');
@@ -49,20 +51,23 @@ try{
   const epicSaved=await store.save(owner,id,s,revision++),epicRead=await store.get(owner,id);
   if(epicSaved.status!=='ready'||epicRead.character.advancements[19].choices.spell!==s.advancements[19].choices.spell)throw Error('Epic spell roundtrip failed');
   console.log('Four cleric domains, both vocations at level 20 and epic choices saved and reloaded successfully.');
-  for(const classId of ['barbare','rodeur','barde','druide'])for(const sub of catalogue.subclasses.filter(x=>x.classe_parente===classId)){
-    const value={name:'Contrôle temporaire '+sub.nom,level:20,classId,subclassId:sub.id,speciesId:'orc',backgroundId:'charlatan',equipment:'A',statsMethod:'physical',scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:16,CHA:15},bonusMode:'three',hpMode:'fixed',hpRolls:{},rolls:[],details:{},classChoices:{},advancements:{},classSkills:[],cantrips:[],prepared:[]};
-    value.classSkills=classSkills(value,catalogue).options.slice(0,classSkills(value,catalogue).count);
-    for(const n of [4,8,12,16])value.advancements[n]={...advancementInitial(),mode:'ability',abilities:['FOR','CON']};
-    value.advancements[19]={...advancementInitial(),mode:'feat',featId:'faveur_de_vigueur',featAbility:'CON'};
-    for(let pass=0;pass<3;pass++)for(const spec of classChoiceSpecs(value,catalogue)){
-      if(value.classChoices[spec.key]?.length===spec.count&&(spec.kind||value.classChoices[spec.key].every(id=>spec.options.some(o=>o.id===id))))continue;
-      value.classChoices[spec.key]=spec.kind==='number'?['0']:spec.kind==='names'?Array.from({length:spec.count},(_,i)=>spec.key+' '+i):spec.options.slice(0,spec.count).map(x=>x.id);
-    }
-    const p=classProfile(value,catalogue);value.cantrips=p.cantrips.slice(0,p.cantripCount).map(x=>x.id);value.prepared=p.prepared.slice(0,p.preparedCount).map(x=>x.id);
+  for(const classId of supportedClasses.filter(id=>id!=='clerc'))for(const sub of catalogue.subclasses.filter(x=>x.classe_parente===classId)){
+    const value=classFixture(catalogue,classId,20,sub.id);
     const saved=await store.save(owner,id,value,revision++),read=await store.get(owner,id);
-    if(saved.status!=='ready'||read.character.classId!==classId||JSON.stringify(read.character.classChoices)!==JSON.stringify(value.classChoices))throw Error('New class roundtrip failed: '+sub.id);
+    if(saved.status!=='ready'||read.character.classId!==classId||JSON.stringify(read.character.classChoices)!==JSON.stringify(value.classChoices))throw Error('Class roundtrip failed: '+sub.id);
   }
-  console.log('Barbarian, ranger, bard and druid: all sixteen subclasses at level 20 saved and reloaded successfully.');
+  console.log('All eleven additional classes and forty-four subclasses at level 20 saved and reloaded successfully.');
+  for(const [i,origin]of originCases(catalogue).entries()){
+    const value=originFixture(catalogue,supportedClasses[i%supportedClasses.length],5,origin,catalogue.backgrounds[i%catalogue.backgrounds.length].id);
+    const saved=await store.save(owner,id,value,revision++),read=await store.get(owner,id);
+    if(saved.status!=='ready'||read.character.speciesId!==value.speciesId||read.character.variantId!==value.variantId||read.character.speciesAncestry!==(value.speciesAncestry||'')||read.character.speciesCastingAbility!==(value.speciesCastingAbility||'')||JSON.stringify(read.character.originGrants)!==JSON.stringify(value.originGrants))throw Error('Origin roundtrip failed: '+value.speciesId);
+  }
+  for(const feat of catalogue.feats.filter(f=>f.categorie==='origine')){
+    const value=originFixture(catalogue,'barde',1,{speciesId:'humain',speciesSize:'P'},feat.id==='truand'?'fermier':'charlatan',{originFeatId:feat.id});
+    const saved=await store.save(owner,id,value,revision++),read=await store.get(owner,id);
+    if(saved.status!=='ready'||read.character.originFeatId!==feat.id||JSON.stringify(read.character.originGrants)!==JSON.stringify(value.originGrants))throw Error('Human feat roundtrip failed: '+feat.id);
+  }
+  console.log('Thirty species/lineage/size origins and eleven human feats saved and reloaded successfully.');
   console.log('MongoDB create/read/update/retry/isolation checks passed.');
 }finally{
   // Ne supprimer que le document temporaire créé par ce contrôle.

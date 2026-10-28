@@ -9,7 +9,8 @@ export function classFixture(c,classId,level,subclassId,overrides={}){
   // Dependencies (instruments → instrument, skill bonus → expertise) are resolved in descriptor order.
   for(let pass=0;pass<3;pass++)for(const spec of classChoiceSpecs(s,c)){
     if(s.classChoices[spec.key]?.length===spec.count&&(spec.kind||s.classChoices[spec.key].every(id=>spec.options.some(o=>o.id===id))))continue;
-    s.classChoices[spec.key]=spec.kind==='number'?['0']:spec.kind==='names'?Array.from({length:spec.count},(_,i)=>`${spec.key} ${i+1}`):spec.options.slice(0,spec.count).map(o=>o.id);
+    s.classChoices[spec.key]=spec.kind==='number'?[spec.key==='psiDc'?'12':'0']:spec.kind==='names'?Array.from({length:spec.count},(_,i)=>`${spec.key} ${i+1}`):spec.options.slice(0,spec.count).map(o=>o.id);
+    if(spec.key==='spellbook'&&level>=18){const forced=[...c.spells.filter(x=>x.classes.includes('Magicien')&&x.niveau===2).slice(0,1),...(level>=20?c.spells.filter(x=>x.classes.includes('Magicien')&&x.niveau===3).slice(0,2):[])].map(x=>x.id);s.classChoices.spellbook=[...forced,...spec.options.map(o=>o.id).filter(id=>!forced.includes(id))].slice(0,spec.count);}
   }
   const p=classProfile(s,c);
   s.cantrips=p.cantrips.slice(0,p.cantripCount).map(x=>x.id);

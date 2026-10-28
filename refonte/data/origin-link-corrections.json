@@ -1,0 +1,72 @@
+{
+  "policy": "Liens vers les fiches déjà présentes uniquement ; paramètres BDD conservés, aucune écriture dans les collections de règles.",
+  "backgroundFeats": {
+    "habituedestavernes": "bagarreur_de_tavernes"
+  },
+  "spells": {
+    "lumieres": "lumiere",
+    "thaumaturge": "thaumaturgie",
+    "druidcraft": "druidisme",
+    "grandpas": "grande_foulee",
+    "passesanstraces": "passage_sans_trace",
+    "detectionmagie": "detection_de_la_magie",
+    "pasbrumeux": "foulee_brumeuse",
+    "communicationanimaux": "communication_avec_les_animaux",
+    "faussevie": "simulacre_de_vie",
+    "animationmorts": "animation_des_morts",
+    "immobilisationmonstre": "immobilisation_de_monstre",
+    "animationobjet": "animation_objets",
+    "rayonmaladie": "rayon_empoisonneur"
+  },
+  "sources": [
+    {
+      "case": "Marin : Habitué des tavernes → Bagarreur de tavernes",
+      "source": "https://roll20.net/compendium/dnd5e/Backgrounds%3ASailor?expansion=32231&iframe=true",
+      "note": "Le don Tavern Brawler confirme l'identité ; les effets de la fiche française BDD sont conservés."
+    },
+    {
+      "case": "Aasimar : lumieres → Lumière, CHA",
+      "source": "https://roll20.net/compendium/dnd5e/Races%3AAasimar?expansion=32231",
+      "note": "Seul le sort Porte-lumière est relié ; aucun autre paramètre d'Aasimar n'est révisé."
+    },
+    {
+      "case": "Rayon de maladie → Rayon empoisonneur",
+      "source": "https://roll20.net/compendium/dnd5e/Spells:Ray%20of%20Sickness?expansion=32231&iframe=true",
+      "note": "Rapprochement du même sort de nécromancie, attaque à 18 m, 2d8 poison. La fiche BDD et son JS de CON sont conservés malgré la différence avec la fiche 2024."
+    }
+  ],
+  "notes": [
+    "Ténacité naine : +1 PV par niveau, une seule application même si la variante collinaire répète le même bonus.",
+    "Le nain des montagnes acquiert les formations aux armures légères et intermédiaires décrites dans sa variante.",
+    "Les sorts de variante gardent leurs niveaux requis, utilisations et caractéristiques d'incantation BDD ; les fiches reconnues sont fusionnées avant les calculs.",
+    "Transmutation du bois et Croissance naturelle restent non identifiées : aucun effet n'est inventé.",
+    "Le choix INT/SAG/CHA du trait Présence d’outre-monde est appliqué à Thaumaturgie ; les autres sorts du lignage gardent la caractéristique BDD.",
+    "Les six ascendances du goliath reprennent les options du trait BDD, sans choix automatique."
+  ],
+  "goliathAncestries": [
+    {
+      "id": "feu",
+      "nom": "Bouliers ignés · géants du feu"
+    },
+    {
+      "id": "pierre",
+      "nom": "Endurance de la pierre · géants des pierres"
+    },
+    {
+      "id": "givre",
+      "nom": "Froid mordant · géants du givre"
+    },
+    {
+      "id": "collines",
+      "nom": "Renversement des coteaux · géants des collines"
+    },
+    {
+      "id": "nuages",
+      "nom": "Saut des nues · géants des nuages"
+    },
+    {
+      "id": "tempetes",
+      "nom": "Tonnerre des cieux · géants des tempêtes"
+    }
+  ]
+}

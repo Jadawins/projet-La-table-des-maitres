@@ -1,4 +1,4 @@
-# Compléments ciblés des classes prioritaires
+# Compléments ciblés des douze classes
 
 La BDD reste la référence. L’autorisation porte seulement sur les données manquantes ; aucune collection de règles MongoDB n’est modifiée par cette extension. Les compléments sont appliqués au catalogue et conservés dans `data/class-supplements.json`.
 
@@ -10,3 +10,23 @@ La BDD reste la référence. L’autorisation porte seulement sur les données m
 Sources : [SRD 5.1 français](https://media.wizards.com/2023/downloads/dnd/SRD_CC_v5.1_FR.pdf), [ancien Cercle de la Terre](https://www.dndbeyond.com/subclasses/20-circle-of-the-land), [Traqueur des ténèbres](https://www.dndbeyond.com/posts/888-ranger-101-gloom-stalker), [Cercle des Astres](https://www.dndbeyond.com/posts/927-druid-101-circle-of-stars-from-tashas-cauldron-of).
 
 Le compagnon du Belluaire reste soumis aux formulations de la BDD : les « propres modificateurs » de ses PV et le don/amélioration du niveau 7 ne sont pas quantifiés. Le joueur doit les préciser avec son MJ ; ils sont sauvegardés et affichés, sans valeur inventée. Les choix faits pendant une action en partie (aspect de Rage, forme stellaire, type de dégâts) restent des effets consultables, sans bonus actif permanent ni lancer automatique.
+
+## Extension des sept autres classes — 28 octobre 2026
+
+Les ajouts restent dans le catalogue de l’application ; les collections de règles ne sont pas réécrites. Les fichiers JSON conservent les sources et la politique d’application.
+
+- **Guerrier** : table de magie du Chevalier occulte et liste de vingt manœuvres absentes de la BDD, dans `data/fighter-supplements.json`. Les trois sorts mineurs, les dés de supériorité et les paliers existants de la BDD sont conservés malgré leurs différences avec la référence.
+- **Paladin de Gloire** : remplacement explicitement autorisé des deux noms introuvables « hâte partielle » et « grâce » par Rayon traçant et Héroïsme. Les autres lignes du serment restent inchangées. Valeurs avant/après et source dans `data/remaining-supplements.json`.
+- **Roublard** : table magique du Filou et six options chiffrées de Frappe rusée ; Main du mage appartient aux sorts mineurs accordés, distinct des choix libres.
+- **Ensorceleur** : dix métamagies avec coût et aide-mémoire, car leur liste détaillée est absente de la BDD. Les profils draconiques proviennent des monstres déjà présents dans la BDD.
+- **Occultiste** : vingt-huit invocations avec leurs prérequis, dépendances et choix, dans `data/invocations.json`. Les listes élargies restent des possibilités de sélection, conformément au texte BDD ; les arcanums restent séparés des emplacements de pacte. Les profils de familiers proposés sont ceux disponibles dans la BDD.
+- **Fiches absentes** : Protection contre le mal et le bien, Couronne de folie et Domination de monstre ajoutées au catalogue depuis les fiches officielles distribuées par Roll20, avec leur source dans `data/missing-spells.json`. Aucun autre sort existant n’est remplacé.
+- **Variantes de nom reliées aux fiches présentes** : Soins des blessures → Soins ; Agrandissement et rétrécissement → Agrandissement/Rapetissement ; Châtiment courroucé → Châtiment de courroux ; Croissance de plantes → Croissance végétale ; Protection contre le bien et le mal → Protection contre le mal et le bien ; Passe sans trace → Passage sans trace ; Flamme continue → Flamme éternelle. Les paramètres de la fiche cible sont conservés.
+
+Sources des listes manquantes : [Chevalier occulte](https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231&iframe=true), [Maître de guerre](https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231&iframe=true), [Gloire](https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231), [Filou](https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231&iframe=true), [Roublard](https://roll20.net/compendium/dnd5e/Classes:Rogue?expansion=33335&iframe=true), [Ensorceleur](https://roll20.net/compendium/dnd5e/Classes:Sorcerer?expansion=33335&iframe=true), [Occultiste](https://roll20.net/compendium/dnd5e/Classes:Warlock?expansion=33335&iframe=true), [SRD 5.2.1](https://media.dndbeyond.com/compendium-images/srd/5.2/SRD_CC_v5.2.1.pdf), [présentation officielle de l’occultiste](https://www.dndbeyond.com/posts/1756-2024-warlock-vs-2014-warlock-whats-new). Les aides-mémoire sont des adaptations courtes ; les références gardent les conditions détaillées.
+
+### Cas conservés et signalés
+
+Frayeur, désintégration partielle, image fantastique, planète végétale, lumière des fées et mort aux yeux rouges n’ont pas de fiche complète reliée avec certitude. Ces noms restent visibles avec avertissement et confirmation explicite, sans inventer leur niveau, leur DD ou leurs effets. Une ressemblance avec un sort d’une autre liste ne suffit pas pour les remplacer.
+
+Le DD psionique de l’Âme acérée, les disciplines élémentaires du moine et les paramètres non quantifiés du compagnon sont saisis avec le MJ. Leurs libellés et valeurs sont sauvegardés puis affichés. Les effets conditionnels restent décrits et chiffrés sans application permanente injustifiée ni lancer automatique. Les différences de versions déjà présentes dans la BDD ne sont pas silencieusement harmonisées.

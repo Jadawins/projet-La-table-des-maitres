@@ -18,13 +18,13 @@ Sur un agent Linux neuf, utiliser `playwright install --with-deps chromium`.
 ## Commandes
 
 ```sh
-# Les 244 parcours navigateur
+# Les 442 parcours navigateur
 pnpm --dir refonte/e2e test
 
-# Contrôles rapides, dont les seize nouvelles sous-classes niveau 20
+# Contrôles rapides, dont les sous-classes niveau 20
 pnpm --dir refonte/e2e test:quick
 
-# Vérification complète : 531 tests de règles puis les parcours navigateur
+# Vérification complète : tests de règles puis les parcours navigateur
 node refonte/e2e/verify.mjs
 
 # Consulter le rapport interactif de la dernière exécution
@@ -36,7 +36,8 @@ Les comptes de test sont créés uniquement dans le serveur local de test. Aucun
 ## Couverture
 
 - 160 créations : quatre domaines de clerc × vingt niveaux × deux vocations.
-- 80 créations : barbare, rôdeur, barde et druide × quatre sous-classes × niveaux 1, 3, 6, 10 et 20. Les 320 combinaisons de ces classes, sous-classes et vingt niveaux sont vérifiées par les tests de calcul et sauvegarde.
+- 228 créations : les onze autres classes × quatre sous-classes × niveaux 1, 3, 6, 10 et 20 ; le guerrier est aussi vérifié aux niveaux 7 et 14. Les tests de calcul et sauvegarde couvrent chaque niveau de 1 à 20.
+- 50 parcours supplémentaires pour les espèces/lignages/tailles, les onze dons humains, cinq interactions de dons et quatre origines au niveau 20.
 - Identité, origines, résultats physiques, bonus, améliorations, faveur, compétences, sorts et équipement saisis par l’interface.
 - Contrôle des valeurs affichées avec un calcul attendu indépendant, des paliers et de l’absence de choix incomplets.
 - Enregistrement, liste du compte, reprise après actualisation et ouverture dans un contexte de navigateur neuf sans brouillon local.
@@ -45,6 +46,8 @@ Les comptes de test sont créés uniquement dans le serveur local de test. Aucun
 Les identités Supabase et l’adaptateur de collection MongoDB sont simulés localement ; les vraies routes, les cookies, la vérification du propriétaire, les révisions et le contrat de sauvegarde sont utilisés. Le contrôle MongoDB réel reste séparé dans `access/check-persistence.mjs`, exécuté sur le serveur avant la bascule de production. Ces tests n’attestent pas le fonctionnement d’un fournisseur OAuth externe.
 
 ## Rapports et isolation
+
+La suite utilise deux navigateurs en parallèle, pour limiter la pression mémoire sur le poste et en CI. Aucun nouvel essai automatique ne masque un échec.
 
 Le serveur écoute exclusivement sur `127.0.0.1:4199`. Un service déjà présent sur ce port provoque un échec : les tests ne se rabattent pas sur un site existant. Les données et copies statiques de chaque exécution sont dans `.runtime/`, les captures et traces d’échec dans `test-results/`, et le rapport interactif dans `playwright-report/`. Ces dossiers sont exclus de Git et du paquet de production.
 

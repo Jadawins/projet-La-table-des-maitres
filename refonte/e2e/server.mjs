@@ -17,7 +17,7 @@ const appRoot=path.join(runtime,'atelier');
 await mkdir(appRoot);
 // Static files served by the same allowlist and account injection as production.
 const {copyFile}=await import('node:fs/promises');
-for(const file of ['index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','class-magic.mjs','feat-effects.mjs','sheet-model.mjs','sheet-view.mjs']){
+for(const file of ['index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','sheet-model.mjs','sheet-view.mjs']){
   await copyFile(path.join(here,'../maquette',file),path.join(appRoot,file));
 }
 await mkdir(path.join(appRoot,'assets'));

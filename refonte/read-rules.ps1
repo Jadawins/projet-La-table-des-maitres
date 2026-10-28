@@ -10,6 +10,8 @@ const script = `try {
  const snapshot = {source:'MongoDB myrpgtable',date:new Date().toISOString(),collections:{}};
  for(const name of collections) snapshot.collections[name] = d.getCollection(name).find({},{_id:0}).toArray();
  snapshot.collections.formes_animales = d.getCollection('monstres').find({type:/b[eê]te|beast|[eé]l[eé]mentaire|elemental/i},{_id:0}).toArray();
+ snapshot.collections.formes_draconiques = d.getCollection('monstres').find({nom_original:/^Young .*Dragon$/i},{_id:0}).toArray();
+ snapshot.collections.familiers = d.getCollection('monstres').find({nom_original:{$in:['Imp','Pseudodragon','Quasit','Skeleton','Slaad Tadpole','Sphinx of Wonder','Sprite','Venomous Snake']}},{_id:0}).toArray();
  print(JSON.stringify(snapshot));
 } catch(e) {print(JSON.stringify({erreur:e.codeName||e.name}));quit(1);}`;
 const r = require('child_process').spawnSync('mongosh',['--nodb','--quiet','--eval',script],{env:process.env,encoding:'utf8',timeout:30000,maxBuffer:10000000});

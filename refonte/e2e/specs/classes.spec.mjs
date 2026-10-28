@@ -6,7 +6,7 @@ import {classFixture} from '../../audit/class-fixtures.mjs';
 import {classChoiceSpecs} from '../../maquette/class-profiles.mjs';
 import {classProfile} from '../../maquette/character-rules.mjs';
 const c=buildCatalogue(JSON.parse(await readFile(new URL('../../data/rules-mongodb.json',import.meta.url))));
-const classes=['barbare','rodeur','barde','druide','guerrier'];
+const classes=['barbare','rodeur','barde','druide','guerrier','paladin','roublard','moine','ensorceleur','magicien','occultiste'];
 const next=page=>page.locator('#next').click();
 async function checkValues(page,kind,values){
   for(const id of values)await page.locator(`[data-class-select="${kind}"][data-class-value="${id}"]`).check();
@@ -40,25 +40,26 @@ async function build(page,s){
   await expect(page.locator('.sheet-incomplete')).toHaveCount(0);
 }
 async function assertNumbers(page,s){
-  const die={barbare:12,rodeur:10,barde:8,druide:8,guerrier:10}[s.classId];
-  const bumps=s.classId==='guerrier'?Math.min(5,[4,6,8,12,14,16].filter(n=>n<=s.level).length):[4,8,12,16].filter(n=>n<=s.level).length;
+  const die={barbare:12,rodeur:10,barde:8,druide:8,guerrier:10,paladin:10,roublard:8,moine:8,ensorceleur:6,magicien:6,occultiste:8}[s.classId];
+  const bumps=s.classId==='roublard'?[4,8,10,12,16].filter(n=>n<=s.level).length:s.classId==='guerrier'?Math.min(5,[4,6,8,12,14,16].filter(n=>n<=s.level).length):[4,8,12,16].filter(n=>n<=s.level).length;
   const con=15+bumps+(s.level>=19?1:0)+(s.classId==='barbare'&&s.level===20?4:0),mod=Math.floor((con-10)/2);
-  const hp=die+mod+(s.level-1)*(Math.floor(die/2)+1+mod)+(s.level>=19?40:0);
+  const hp=die+mod+(s.level-1)*(Math.floor(die/2)+1+mod)+(s.level>=19?40:0)+(s.subclassId==='ensorceleur_sorcellerie_draconique'&&s.level>=3?s.level:0);
   await expect(page.locator('.sheet-quickstats')).toContainText(`PV max. ${hp}`);
   if(classProfile(s,c).hasMagic){
     await page.locator('[data-sheet-tab="spells"]').click();
-    const castMod=s.classId==='guerrier'?2:3,pb=2+Math.floor((s.level-1)/4); // INT for Eldritch Knight, CHA/SAG for others.
+    const castMod=['guerrier','roublard','magicien'].includes(s.classId)?2:3,pb=2+Math.floor((s.level-1)/4); // INT for Eldritch Knight, CHA/SAG for others.
     await expect(page.locator('.spell-sheet-summary')).toContainText(`DD des sorts ${8+pb+castMod}`);
     await expect(page.locator('.spell-sheet-summary')).toContainText(`Attaque de sort +${pb+castMod}`);
-  }else await expect(page.locator('.sheet-quickstats')).toContainText(`CA ${s.classId==='guerrier'?16:11+mod}`);
+  }else if(s.classId==='barbare')await expect(page.locator('.sheet-quickstats')).toContainText(`CA ${11+mod}`);else if(s.classId==='guerrier')await expect(page.locator('.sheet-quickstats')).toContainText('CA 16');else if(s.classId==='moine')await expect(page.locator('.sheet-quickstats')).toContainText(`CA ${s.level===20?18:14}`);else if(s.classId==='roublard')await expect(page.locator('.sheet-quickstats')).toContainText('CA 12');
   await page.locator('[data-sheet-tab="abilities"]').click();
   if(s.classId==='barde')await expect(page.locator('#sheet-panel-abilities')).toContainText('3 utilisations');
   if(s.classId==='druide'&&s.level>=2)await expect(page.locator('#sheet-panel-abilities')).toContainText('Formes animales connues');
 }
-// All 320 class/subclass/level combinations are checked by unit tests.
+// All supported class/subclass/level combinations are checked by unit tests.
 // Real browser journeys cover starting levels and major transitions, plus save/reload/server readback.
 for(const id of classes)for(const sub of c.subclasses.filter(s=>s.classe_parente===id))for(const level of (id==='guerrier'?[1,3,6,7,10,14,20]:[1,3,6,10,20])){
   test(`${id} · ${sub.nom} · niveau ${level}${level===20?' @quick':''}`,async({page,browser,auth})=>{
+    if(id==='magicien')test.setTimeout(240000);
     const s=classFixture(c,id,level,sub.id);s.name=`E2E ${sub.id} ${level}`;
     await build(page,s);await assertNumbers(page,s);
     const href=await saveAndLocate(page,s.name);
@@ -68,7 +69,8 @@ for(const id of classes)for(const sub of c.subclasses.filter(s=>s.classe_parente
       const p=await fresh.newPage();await p.goto('/atelier/'+href);await expect(p.locator('.sheet-hero h1')).toHaveText(s.name);await assertNumbers(p,s);
       await p.locator('a[href="#creation"]').click();await p.locator('[data-step="4"]').click();
       const spec=classChoiceSpecs(s,c).find(x=>!x.kind&&x.options.length);
-      await expect(p.locator(`[data-class-select="${spec.key}"][data-class-value="${s.classChoices[spec.key][0]}"]`)).toBeChecked();
+      if(spec)await expect(p.locator(`[data-class-select="${spec.key}"][data-class-value="${s.classChoices[spec.key][0]}"]`)).toBeChecked();
+      else await expect(p.locator(`[data-class-skill="${s.classSkills[0]}"]`)).toBeChecked();
     }finally{await fresh.close();}
   });
 }
