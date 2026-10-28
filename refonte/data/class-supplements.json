@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "date": "2026-10-28",
+  "policy": "Compléments autorisés uniquement pour les données absentes. La structure actuelle de la BDD reste conservée.",
+  "terrainSpells": {
+    "Arctique": {
+      "3": [
+        "croissance_d_epines",
+        "immobilisation_de_personne"
+      ],
+      "5": [
+        "lenteur",
+        "tempete_de_neige"
+      ],
+      "7": [
+        "liberte_de_mouvement",
+        "tempete_de_grele"
+      ],
+      "9": [
+        "communion_avec_la_nature",
+        "cone_de_froid"
+      ]
+    },
+    "Côte": {
+      "3": [
+        "foulee_brumeuse",
+        "image_miroir"
+      ],
+      "5": [
+        "marche_sur_l_onde",
+        "respiration_aquatique"
+      ],
+      "7": [
+        "controle_de_leau",
+        "liberte_de_mouvement"
+      ],
+      "9": [
+        "invocation_d_elementaire",
+        "scrutation"
+      ]
+    },
+    "Désert": {
+      "3": [
+        "flou",
+        "silence"
+      ],
+      "5": [
+        "creation_de_nourriture_et_d_eau",
+        "protection_contre_l_energie"
+      ],
+      "7": [
+        "fletrissement",
+        "terrain_hallucinatoire"
+      ],
+      "9": [
+        "fleau_d_insectes",
+        "mur_de_pierre"
+      ]
+    },
+    "Forêt": {
+      "3": [
+        "pattes_d_araignees",
+        "peau_d_ecorce"
+      ],
+      "5": [
+        "appel_de_la_foudre",
+        "croissance_vegetale"
+      ],
+      "7": [
+        "divination",
+        "liberte_de_mouvement"
+      ],
+      "9": [
+        "communion_avec_la_nature",
+        "passage_par_les_arbres"
+      ]
+    },
+    "Marais": {
+      "3": [
+        "fleche_acide_de_melf",
+        "tenebres"
+      ],
+      "5": [
+        "marche_sur_l_onde",
+        "nuage_nauseabond"
+      ],
+      "7": [
+        "liberte_de_mouvement",
+        "localisation_de_creature"
+      ],
+      "9": [
+        "fleau_d_insectes",
+        "scrutation"
+      ]
+    },
+    "Montagne": {
+      "3": [
+        "croissance_d_epines",
+        "pattes_d_araignees"
+      ],
+      "5": [
+        "eclair",
+        "fusion_dans_la_pierre"
+      ],
+      "7": [
+        "facconnage_de_la_pierre",
+        "peau_de_pierre"
+      ],
+      "9": [
+        "mur_de_pierre",
+        "passe_muraille"
+      ]
+    },
+    "Prairie": {
+      "3": [
+        "invisibilite",
+        "passage_sans_trace"
+      ],
+      "5": [
+        "hate",
+        "lumiere_du_jour"
+      ],
+      "7": [
+        "divination",
+        "liberte_de_mouvement"
+      ],
+      "9": [
+        "fleau_d_insectes",
+        "songe"
+      ]
+    },
+    "Sous-terrain": {
+      "3": [
+        "pattes_d_araignees",
+        "toile_d_araignee"
+      ],
+      "5": [
+        "forme_gazeuse",
+        "nuage_nauseabond"
+      ],
+      "7": [
+        "invisibilite_supreme",
+        "facconnage_de_la_pierre"
+      ],
+      "9": [
+        "brume_mortelle",
+        "fleau_d_insectes"
+      ]
+    }
+  },
+  "references": [
+    {
+      "feature": "druide_cercle_terre",
+      "source": "https://media.wizards.com/2023/downloads/dnd/SRD_CC_v5.1_FR.pdf",
+      "pages": [
+        23,
+        24
+      ],
+      "note": "Les huit terrains décrits dans la BDD correspondent à la version antérieure du Cercle de la Terre. Compléter ces listes ne convertit pas la sous-classe en version 2024."
+    },
+    {
+      "feature": "druide_cercle_terre: Sous-terrain",
+      "source": "https://www.dndbeyond.com/subclasses/20-circle-of-the-land",
+      "note": "Table officielle correspondant au terrain BDD ; noms reliés aux fiches françaises déjà présentes."
+    },
+    {
+      "feature": "rodeur_traqueur_tenebres",
+      "source": "https://www.dndbeyond.com/posts/888-ranger-101-gloom-stalker",
+      "note": "Le nom absent infiltration illusoire est relié à Déguisement ; détection des sorts est relié à Détection de la magie, déjà explicite dans la description BDD."
+    },
+    {
+      "feature": "druide_cercle_astres",
+      "source": "https://www.dndbeyond.com/posts/927-druid-101-circle-of-stars-from-tashas-cauldron-of",
+      "note": "Les noms guidance et étoile filante de la description BDD sont reliés à Assistance et Rayon traçant. Les utilisations et les autres aptitudes de la BDD sont conservées."
+    }
+  ]
+}

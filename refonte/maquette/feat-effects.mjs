@@ -1,5 +1,6 @@
 import {selectedLevelFeats,domainBenefits} from './cleric-progression.mjs';
 import {originFeats,originSkills} from './origin-rules.mjs';
+import {classMagic} from './class-magic.mjs';
 const key=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const skillKey=v=>key(v)==='intuition'?'perspicacite':key(v);
 export const featChoicesInitial=()=>({skill:'',expertise:'',damageType:'',rituals:[],resistances:[],spell:''});
@@ -8,17 +9,19 @@ export const damageKey=v=>({radiance:'radiant',contondant:'contondants',perforan
 export function priorSkillNames(state,c,level){
   const before={...state,level:level-1};
   const values=[...originSkills(before,c),...(state.classSkills||[]),...domainBenefits(before,c).skills];
+  if(state.classId==='barbare'&&level>3)values.push(...(state.classChoices?.wildSkill||[]));
+  if(state.classId==='barde'&&level>3){if(state.subclassId==='barde_college_savoir')values.push(...(state.classChoices?.loreSkills||[]));if(state.subclassId==='barde_college_danse')values.push('Acrobaties','Représentation');}
   for(const row of selectedLevelFeats(before,c))if(row.feat.id==='comedien'&&row.choice.choices?.skill)values.push(row.choice.choices.skill);
   return values.filter((v,i)=>values.findIndex(x=>skillKey(x)===skillKey(v))===i).map(v=>c.skills.find(s=>skillKey(s.nom)===skillKey(v))?.nom||v);
 }
 export function classSpellPool(state,c,level){
- const cls=c.classes.find(x=>x.id===state.classId),slots=cls?.niveaux?.[level]?.emplacements_de_sort||{};const max=Math.max(0,...Object.entries(slots).filter(([,count])=>count>0).map(([rank])=>+rank));
- return c.spells.filter(s=>s.niveau>=0&&s.niveau<=max&&s.classes?.some(n=>key(n)===key(cls?.nom)));
+ const magic=classMagic(state,c,level),slots=magic.row.emplacements_de_sort||{};const max=Math.max(0,...Object.entries(slots).filter(([,count])=>count>0).map(([rank])=>+rank));
+ return c.spells.filter(s=>s.niveau>=0&&s.niveau<=max&&s.classes?.some(n=>key(n)===key(magic.spellClass)));
 }
 export function ritualPool(state,c,level){
-  const cls=c.classes.find(x=>x.id===state.classId),row=cls?.niveaux?.[level];
+  const magic=classMagic(state,c,level),row=magic.row;
   const max=Math.max(0,...Object.entries(row?.emplacements_de_sort||{}).filter(([,count])=>count>0).map(([rank])=>+rank));
-  return c.spells.filter(s=>s.rituel===true&&s.niveau>=1&&s.niveau<=max&&(s.classes||[]).some(name=>key(name)===key(cls?.nom)));
+  return c.spells.filter(s=>s.rituel===true&&s.niveau>=1&&s.niveau<=max&&(s.classes||[]).some(name=>key(name)===key(magic.spellClass)));
 }
 export function featChoiceSpec(state,c,row){
   const id=row.feat?.id,level=row.level;

@@ -2,7 +2,7 @@
 set -euo pipefail
 stamp="$1"
 [[ "$stamp" =~ ^[0-9]{8}T[0-9]{6}Z$ ]] || exit 2
-previous=/var/www/myrpgtable/refonte-access/20261027T154005Z
+previous=/var/www/myrpgtable/refonte-access/20261028T062037Z
 target="/var/www/myrpgtable/refonte-access/$stamp"
 backup="/root/backups/myrpgtable-persistence-$stamp"
 active=/etc/nginx/sites-enabled/myrpgtable.fr

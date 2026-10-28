@@ -1,0 +1,5600 @@
+{
+  "policy": "bdd-actuelle",
+  "scope": "Ordinateur uniquement. Création et fiche du clerc 1–20, quatre domaines, deux vocations.",
+  "snapshotDate": "2026-10-28T06:12:59.824Z",
+  "rows": [
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 1,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Sorts",
+        "Vocation divine"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 2,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Canal divin"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 3,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 4,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 5,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Destruction sacrée"
+      ],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 6,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 7,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée"
+      ],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 8,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 9,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 10,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine"
+      ],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 11,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 12,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 13,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 14,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée améliorée"
+      ],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 15,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 16,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 17,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine",
+        "Avatar de la bataille"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 18,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine",
+        "Avatar de la bataille"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 19,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine",
+        "Avatar de la bataille"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Guerre",
+      "domainId": "clerc_domaine_guerre",
+      "level": 20,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine suprême"
+      ],
+      "domainFeatures": [
+        "Maîtrises de guerre",
+        "Prêtre de la guerre",
+        "Frappe guidée",
+        "Frappe divine",
+        "Avatar de la bataille"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 1,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Sorts",
+        "Vocation divine"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 2,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Canal divin"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 3,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 4,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 5,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Destruction sacrée"
+      ],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 6,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 7,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée"
+      ],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 8,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 9,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 10,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine"
+      ],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 11,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 12,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 13,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 14,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée améliorée"
+      ],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 15,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 16,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 17,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine",
+        "Couronne de lumière solaire"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 18,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine",
+        "Couronne de lumière solaire"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 19,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine",
+        "Couronne de lumière solaire"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Lumière",
+      "domainId": "clerc_domaine_lumiere",
+      "level": 20,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine suprême"
+      ],
+      "domainFeatures": [
+        "Sort mineur bonus",
+        "Flash lumineux",
+        "Aura de lumière solaire",
+        "Frappe divine",
+        "Couronne de lumière solaire"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 1,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Sorts",
+        "Vocation divine"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 2,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Canal divin"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 3,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 4,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 5,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Destruction sacrée"
+      ],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 6,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 7,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée"
+      ],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 8,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 9,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 10,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine"
+      ],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 11,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 12,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 13,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 14,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée améliorée"
+      ],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 15,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 16,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 17,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine",
+        "Maître de l'ombre"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 18,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine",
+        "Maître de l'ombre"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 19,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine",
+        "Maître de l'ombre"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Ruse",
+      "domainId": "clerc_domaine_ruse",
+      "level": 20,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine suprême"
+      ],
+      "domainFeatures": [
+        "Maîtrises de l'ombre",
+        "Faveur des voleurs",
+        "Canal divin : tromperie",
+        "Frappe divine",
+        "Maître de l'ombre"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 1,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Sorts",
+        "Vocation divine"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 4,
+          "slots": {
+            "1": 2
+          },
+          "proficiency": 2,
+          "channel": 0,
+          "sparkDice": null,
+          "hp": 11,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 2,
+      "domainApplicable": false,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Canal divin"
+      ],
+      "domainFeatures": [],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 5,
+          "slots": {
+            "1": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 19,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 3,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 3,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 6,
+          "slots": {
+            "1": 4,
+            "2": 2
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 27,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 15,
+            "INT": 14,
+            "SAG": 18,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 4,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 7,
+          "slots": {
+            "1": 4,
+            "2": 3
+          },
+          "proficiency": 2,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 39,
+          "dc": 14,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 5,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Destruction sacrée"
+      ],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 9,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 2
+          },
+          "proficiency": 3,
+          "channel": 2,
+          "sparkDice": "1d8",
+          "hp": 48,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 6,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 10,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "1d8",
+          "hp": 57,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 7,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée"
+      ],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 11,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 1
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 66,
+          "dc": 15,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 16,
+            "INT": 14,
+            "SAG": 19,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 8,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 12,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 2
+          },
+          "proficiency": 3,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 75,
+          "dc": 16,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 9,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 4,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 14,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 84,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 10,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine"
+      ],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 15,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 93,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 11,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 102,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 17,
+            "INT": 14,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 12,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 16,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1
+          },
+          "proficiency": 4,
+          "channel": 3,
+          "sparkDice": "2d8",
+          "hp": 123,
+          "dc": 17,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 13,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 133,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 14,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Frappe consacrée améliorée"
+      ],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 17,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 143,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 15,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 153,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 18,
+            "INT": 15,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 16,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 18,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "proficiency": 5,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 163,
+          "dc": 18,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 17,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine",
+        "Guérison suprême"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 19,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 2,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 3,
+          "sparkDice": "3d8",
+          "hp": 173,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 18,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine",
+        "Guérison suprême"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 20,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 183,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 20,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 19,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine",
+        "Guérison suprême"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 21,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 193,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    },
+    {
+      "domain": "Domaine de la Vie",
+      "domainId": "clerc_domaine_vie",
+      "level": 20,
+      "domainApplicable": true,
+      "status": "integration_verifiee",
+      "unlinkedSpells": [],
+      "classFeatures": [
+        "Grâce divine suprême"
+      ],
+      "domainFeatures": [
+        "Maîtrise des armures lourdes",
+        "Disciple de la vie",
+        "Guérison bénie",
+        "Frappe divine",
+        "Guérison suprême"
+      ],
+      "variations": [
+        {
+          "vocation": "Protecteur",
+          "issues": [],
+          "cantrips": 5,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        },
+        {
+          "vocation": "Thaumaturge",
+          "issues": [],
+          "cantrips": 6,
+          "prepared": 22,
+          "slots": {
+            "1": 4,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 2,
+            "7": 2,
+            "8": 1,
+            "9": 1
+          },
+          "proficiency": 6,
+          "channel": 4,
+          "sparkDice": "4d8",
+          "hp": 203,
+          "dc": 19,
+          "scores": {
+            "FOR": 12,
+            "DEX": 12,
+            "CON": 19,
+            "INT": 16,
+            "SAG": 21,
+            "CHA": 10
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Vérification de l’intégration des données présentes, sans validation globale des règles ; compléments ciblés de sorts autorisés et tracés.",
+    "Les sorts non reliés conservent leur libellé source. Aucun remplacement n’est inventé.",
+    "Les choix des dons sont validés et conservés. Caractéristiques, maîtrises, expertise, sens, résistances, vitesse et CA sont calculés selon leurs conditions permanentes. Les effets en partie restent détaillés et chiffrés sur la fiche."
+  ]
+}

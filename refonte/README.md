@@ -1,99 +1,56 @@
-# Refonte — La Table du Maître
+# La Table du Maître — état actuel
 
-## Priorité actuelle : PC, clerc jusqu’au niveau 10
+Dernière mise à jour : 28 octobre 2026. Atelier : https://myrpgtable.fr/atelier/.
 
-Décision utilisateur : le téléphone et l’application installable sont hors périmètre tant que les espèces, classes et sous-classes ne sont pas fiables sur PC. Les notes plus anciennes évoquant un chantier mobile ne définissent plus la priorité.
+## Périmètre
 
-Le clerc est désormais pris en charge aux niveaux 1–10, pour les quatre domaines de la BDD actuelle. Voir [CLERC-1-10.md](audit/CLERC-1-10.md) pour les 40 lignes de contrôle et les limites, notamment les noms de sorts non reliés et les effets de dons qui restent décrits. 80 scénarios couvrent les deux vocations ; 125 tests passent au total. Le parcours PC complet de niveau 10 a aussi été vérifié dans le navigateur. Les choix des paliers 4/8, Frappe consacrée au niveau 7, les ressources et la maîtrise courante sont conservés dans la sauvegarde.
+La création et la fiche du **clerc, barbare, rôdeur, barde et druide du niveau 1 au niveau 20**, avec les quatre sous-classes présentes pour chacune dans la BDD, sont intégrées sur ordinateur. Le téléphone et l’application installable restent hors périmètre. Les sept autres classes restent à traiter.
 
-Livraison active : `/var/www/myrpgtable/refonte-access/20261027T150406Z`. Sauvegarde préalable de 3 267 documents : `/root/backups/myrpgtable-persistence-20261027T150406Z/`. Un contrôle réel MongoDB a enregistré puis relu les quatre domaines au niveau 10 dans la collection de tests avant de supprimer uniquement son document temporaire. Aucun personnage utilisateur n’est monté de niveau automatiquement.
+La **BDD actuelle sert de référence**. Les compléments ciblés sont tracés dans [data/spell-link-corrections.json](data/spell-link-corrections.json) et [audit/COMPLEMENTS-CLASSES.md](audit/COMPLEMENTS-CLASSES.md). Les huit terrains du Cercle de la Terre correspondent à une ancienne version conservée dans la BDD ; leurs listes manquantes sont complétées depuis les sources officielles correspondantes. L’intégration vérifiée ne signifie pas une conformité documentaire globale au Manuel 2024. Aucune correction supplémentaire de la BDD de règles n’a été faite pour cette extension.
 
-## Référence courante — décision utilisateur du 27 octobre 2026
+## Fonctionnement disponible
 
-Développer à partir de la **BDD actuelle**. La comparaison avec les publications externes et les errata est remise à plus tard. Les corrections de contenu ajoutées au catalogue local à partir de ces sources ont été retirées ; les observations sont conservées dans `audit/COMPARAISON-EXTERNE-DIFFEREE.md` comme historique, sans statut de correction obligatoire. Les notes plus anciennes ci-dessous décrivent les étapes précédentes et ne remplacent pas cette décision.
+- Création sans présélection d’identité, de classe, d’espèce ou d’historique ; choix des dés physiques, des jets explicites de l’application ou des valeurs standard.
+- Choix des paliers 4, 8, 12 et 16, puis don ou faveur épique au niveau 19. Prérequis évalués à leur palier et plafonds de caractéristiques propres à chaque don.
+- Sorts et emplacements jusqu’au rang 9 ; ressources actualisées ; Frappe consacrée améliorée au niveau 14 ; aptitudes des domaines au niveau 17 ; Grâce divine suprême au niveau 20.
+- Choix structurés et sauvegardés des dons et faveurs : compétences, expertise, éléments, résistances, rituels et sort supplémentaire. Les bonus permanents sont intégrés à la fiche ; les effets conditionnels restent détaillés et chiffrés, sans lancer de dés automatique.
+- Fiche en six rubriques, impression, brouillons locaux, sauvegarde dans le compte, réouverture et isolation entre comptes.
+- Moteur commun de progression : paliers lus depuis la BDD, prérequis au niveau d’acquisition, formations et augmentations permanentes. Le module du clerc conserve les particularités de ses domaines.
+- Barbare : bottes, compétence supplémentaire, Rage, défense sans armure, attaques et augmentation FOR/CON du niveau 20. Rôdeur : style, expertises, langues, options du Chasseur et compagnon. Barde : instruments, expertises, Polyvalence et sorts par CHA. Druide : vocation, formes connues et profils, terrain et Élan élémentaire.
+- Les choix pendant le combat restent décrits avec leurs conditions. Les ambiguïtés du compagnon exigent une précision du joueur avec le MJ ; aucun paramètre de règle manquant n’est inventé.
 
-Conserver les adaptations techniques explicites (identifiants, STR/FOR, libellés de compétences, liaison connue d'un nom de sort), sans inventer une règle, une compétence ou une fiche absente. Les quatre domaines du clerc sont sélectionnables à partir des données existantes. Les noms de sorts non reliés restent visibles comme tels.
+## Vérifications
 
-## Décisions du 27 octobre 2026
+Commande portable : `node refonte/e2e/verify.mjs`. Les tests de calcul et validation couvrent **531 cas**, dont chaque combinaison des quatre nouvelles classes, de leurs quatre sous-classes et des vingt niveaux. Voir le [rapport d’intégration](audit/CLASSES-PRIORITAIRES.md) et le [dernier rapport de parcours](audit/E2E-PC.md) pour les résultats d’exécution.
 
-- Refonte complète, module par module. Le site actuel n'a pas besoin d'être maintenu en parallèle.
-- Conserver la direction artistique sombre, violet et or, Supabase pour l'authentification et MongoDB pour les données.
-- D&D 2024 uniquement pour le premier module. Concevoir pour ordinateur et téléphone dès le départ.
-- L'utilisateur veut choisir la manière de lancer les dés : dés physiques avec saisie des résultats, ou dés dans l'application déclenchés explicitement. Il préfère personnellement les dés physiques. Conserver aussi les méthodes sans lancer pour les caractéristiques. Étendre ce choix aux futurs jets de la fiche ; ne rien lancer automatiquement.
-- Premier module : mes personnages, création, sauvegarde et fiche. Le niveau de départ se choisit dès l'identité (1 à 20), notamment pour les aventures commençant au niveau 3. Le moteur devra proposer tous les choix requis jusqu'au niveau retenu. L'implémentation pourra être progressive, avec un premier scénario de niveau 1 puis de niveau 3 ; ne pas figer l'interface au niveau 1.
-- Nouvelle création : aucun nom, classe, espèce ou historique présélectionné. Distinguer le bouton « Créer un personnage » de « Reprendre mon brouillon ». Le résumé affiche les choix seulement après sélection.
-- Ne pas développer campagnes, sessions, combat partagé, contenus personnalisés ou générateur LPC pendant ce module.
-- Une application installable est un objectif ultérieur, après validation de l'expérience mobile.
+L’[audit du clerc 1–20](audit/CLERC-1-20.md) couvre 80 lignes et 160 scénarios domaine/niveau/vocation. Régénération et Résurrection sont affichées au rang réel 7 de leurs fiches, malgré la rubrique 5 de la liste brute du domaine Vie ; le palier BDD 17 est conservé.
 
-## Livraison actuelle : maquette locale
+Le parcours PC a été vérifié jusqu’à une fiche complète niveau 20 : paliers 12/16/19, faveur avec deux résistances, conservation après actualisation, six sorts mineurs et vingt-deux sorts préparés dont un de rang 9. Les contrôles serveur ont sauvegardé et relu les quatre domaines niveau 20 avec les deux vocations, les résistances et le sort de faveur, dans une collection temporaire nettoyée après usage.
 
-Choix d'origine et dons : [ORIGINES.md](ORIGINES.md). Le parcours humain, les options structurées des dons et des lignages, les sorts d'origine et les effets Robuste/Vigilant sont intégrés à partir de la BDD. Cette note précise les limites restantes.
+Youpi matin a été vérifié avant et après déploiement : **niveau 3, révision 1, inchangé**.
 
-Mise à jour : un premier parcours de règles est intégré pour le clerc 1–3 / domaine de la Vie. Voir [REGLES-2024.md](REGLES-2024.md) pour les choix implémentés, les corrections locales, les tests et les limites. Les sections de cadrage initial ci-dessous décrivent le point de départ ; ce fichier de suivi précise l'état actuel.
+Les [tests de parcours navigateur](e2e/README.md) automatisent 160 créations clerc/domaine/niveau/vocation, 80 créations des nouvelles classes aux niveaux 1, 3, 6, 10 et 20, et quatre scénarios de régression. Ils couvrent l’enregistrement, l’actualisation, l’ouverture sans brouillon local, les erreurs réseau et l’isolation entre comptes. Le script de préparation d’un déploiement lance les suites avant de créer le paquet ; les rapports et traces d’échec sont conservés localement et publiés comme artefacts par le workflow GitHub une fois ces changements envoyés dans le dépôt.
 
-`maquette/` contient une proposition interactive à examiner avant de développer le module final. Aucun appel à l'API de production, aucune modification de Supabase ou MongoDB. Les exemples sont fictifs ; le catalogue provient des fichiers JSON locaux, dont la concordance avec MongoDB reste à vérifier.
+## Organisation
 
-Le parcours esquisse six sections : identité, classe, origines, caractéristiques, équipement, récapitulatif. Les caractéristiques proposent la saisie de dés physiques, six jets de 4d6 avec retrait du plus faible dans le navigateur (chaque dé est affiché ; génération par Web Crypto sans biais de modulo), ou les valeurs standard. Les résultats peuvent être répartis librement. Le mode physique est proposé en premier ; rien n'est lancé à l'ouverture. L'achat de points reste à intégrer dans la version complète. La fiche est un aperçu, pas un personnage complet ou validé. Les aptitudes, dons, maîtrises, langues, sorts et lignages devront être conçus dans les sections correspondantes avant toute sauvegarde réelle. Pas de moteur de règles complet dans cette maquette.
+- `maquette/character-rules.mjs` : caractéristiques, PV, sorts et validation du parcours.
+- `maquette/progression.mjs` : moteur commun de progression, paliers, prérequis et formations.
+- `maquette/cleric-progression.mjs` : compatibilité et particularités des domaines du clerc.
+- `maquette/class-profiles.mjs` : choix et ressources des quatre classes prioritaires.
+- `maquette/origin-rules.mjs` et `feat-effects.mjs` : origines et dons.
+- `maquette/sheet-model.mjs` / `sheet-view.mjs` : calcul et rendu de la fiche.
+- `maquette/character-storage.mjs` : contrat de sauvegarde partagé avec le serveur.
+- `access/` : accès authentifié, stockage, sauvegarde et déploiement.
+- `audit/` et `tests/` : rapports et vérifications. Les anciens noms de fichiers 1–10 sont conservés pour compatibilité ; le rapport 1–20 est la référence du périmètre courant.
 
-Lancer depuis la racine du dépôt : `node refonte/serve.mjs`, puis ouvrir l'adresse affichée. `/mobile.html` affiche la même interface dans un cadre de 390 × 844 pour vérifier l'adaptation à un petit écran. Le serveur écoute uniquement sur la boucle locale et ne sert que la maquette, le catalogue et son image de fond. Le brouillon est stocké uniquement dans ce navigateur, sous une clé propre à la maquette.
+## Production
 
-## Prochaines étapes, dans cet ordre
+Version active : `/var/www/myrpgtable/refonte-access/20261028T074925Z`.
 
-Suivi de l'audit exhaustif : [audit/SUIVI.md](audit/SUIVI.md). Vue interactive : `/audit.html` avec le serveur local. Régénérer après un nouvel extrait avec `node refonte/audit/run.mjs`. Les données brutes, les références, les tests numériques, l'état de l'interface et la validation complète sont distingués. Les cases ne deviennent pas vertes par simple présence de données.
+Service PM2 : `myrpgtable-refonte`. Une sauvegarde complète de MongoDB précède chaque déploiement, avec retour à la version précédente prévu par le script. L’ancienne application reste inaccessible. Les sessions en mémoire peuvent nécessiter une reconnexion après redémarrage ; leur persistance reste à traiter avant une ouverture publique plus large.
 
-1. Valider le parcours et la direction visuelle avec l'utilisateur.
-2. Vérifier les données et les contrats des routes existantes ; fixer le modèle d'un personnage 2024, les identifiants, unités et données sources.
-3. Préparer une sauvegarde vérifiée du code et de MongoDB avant les changements serveur. Ne pas supposer que Git sauvegarde la BDD.
-4. Construire l'enveloppe de l'application, la connexion et la liste réelle des personnages.
-5. Implémenter la création avec calculs indépendants de l'interface et validation serveur ; couvrir les choix de niveau 1, y compris les particularités des espèces et des classes.
-6. Enregistrer et relire une fiche cohérente ; tester le parcours sur ordinateur et téléphone.
-7. Remplacer l'ancienne interface, puis étudier l'installation sur téléphone.
+Le serveur local se lance avec `node refonte/serve.mjs` (port 4178 par défaut). Le test PC isolé utilise `REFONTE_PREVIEW_PORT=4188`. Pour relire les règles distantes, définir `MYRPGTABLE_SSH` puis exécuter `refonte/read-rules.ps1` ; aucun secret ne doit être exporté dans le projet.
 
-La technologie de la nouvelle application n'est pas encore arrêtée. Garder une séparation entre interface, règles/calculs et accès aux données ; choisir l'outillage après la validation du parcours.
+## Suite
 
-## Points repérés dans l'existant
-
-### Consultation de MongoDB le 27 octobre 2026
-
-Accès SSH et lecture de la base `myrpgtable` vérifiés. Aucune écriture dans MongoDB et aucun identifiant exporté. Comptages : 12 classes, 48 sous-classes, 10 espèces, 16 historiques, 374 sorts, 75 dons, 17 compétences, 37 armes et 13 armures. Les classes possèdent leurs données de niveaux 0 à 20. Ces nombres décrivent le contenu présent, pas sa conformité exhaustive aux règles.
-
-`data/classes-mongodb.json` est un extrait limité aux noms de classes et à `niveaux.0.caracteristique_principale`. La suggestion de caractéristiques utilise cet extrait réel de MongoDB ; les autres données de la maquette restent issues des fichiers JSON locaux. Ce n'est pas une connexion permanente du navigateur à la BDD.
-
-La suggestion est volontaire : elle conserve les six résultats, affecte les plus élevés aux caractéristiques principales, puis à CON, et conserve l'ordre relatif des autres caractéristiques. La priorité entre plusieurs principales est choisie par le joueur. Le choix de CON est une aide proposée par l'interface, pas un champ inventé dans MongoDB. Prévoir ultérieurement les profils comme guerrier Force ou Dextérité et les préférences secondaires plus fines. Répartition manuelle et annulation restent possibles ; aucun relancement.
-
-### À traiter pendant la reconstruction
-
-- Certains champs utilisent STR au lieu de FOR ; normaliser à la frontière des données et lors de la reprise d'un brouillon.
-- L'or d'historique peut figurer dans la liste d'équipement plutôt que dans `or_depart`. Éviter omissions et doubles comptages.
-- L'achat d'un objet peut remplacer le paquetage de classe dans le code existant.
-- Le bouclier décrit un bonus de CA, pas une CA de base.
-- Les étapes doivent dépendre des choix du personnage ; ne pas imposer une étape de sorts vide.
-- Vérifier le contenu des règles : l'affichage d'une donnée ne prouve pas son exactitude 2024.
-- Le serveur actuel accepte des calculs de personnage fournis par le navigateur ; déterminer les validations serveur nécessaires.
-- `api/auth.js` contient un repli qui décode un jeton sans vérifier sa signature lorsque les clés publiques sont indisponibles. Conserver Supabase, mais corriger ce comportement avant de brancher la nouvelle application : refuser l'accès si la vérification est impossible.
-
-## Critères de fin du premier module
-
-Créer, sauvegarder et rouvrir un personnage de niveau 1 avec tous ses choix obligatoires, retrouver exactement ses données et ses calculs, reprendre un brouillon, isoler les personnages de chaque compte et utiliser le parcours sur petit écran sans débordement. Tester au moins une classe martiale, une classe magique et les choix particuliers d'espèce. Prévoir erreurs réseau, expiration de session et validation côté serveur.
-
-## Fiche de personnage (27 octobre 2026)
-
-L’aperçu est accessible à tout moment depuis « Voir ma fiche en cours ». Il rassemble caractéristiques finales, sauvegardes, compétences, repères de partie, équipement et monnaies, aptitudes de classe/sous-classe, traits d’espèce, dons, sorts et détails de personnalité. Les champs libres (langues, apparence, histoire…) sont conservés dans le même brouillon local. Une mise en page d’impression A4 est fournie.
-
-Les valeurs calculées reprennent la BDD actuelle. La CA suppose que l’armure et le bouclier de départ sont portés. Les effets particuliers restent consultables dans les aptitudes ; leur automatisation n’est pas exhaustive. Une compétence sans caractéristique reliée dans la source reste affichée avec un tiret. Les choix détaillés de classe restent limités au clerc 1–3 ; la fiche ne valide pas les autres parcours. Aucune sauvegarde distante ni modification de MongoDB.
-
-Vérifications de la fiche : `node --test refonte/tests/sheet.test.mjs`.
-
-## Mise à jour déployée — sorts et dons (27 octobre 2026, 15:40 UTC)
-
-État courant : `/var/www/myrpgtable/refonte-access/20261027T154005Z`. La BDD reste la référence ; l’utilisateur a autorisé les références officielles uniquement pour les sorts manquants ou de rang incohérent. Le plan exact avec valeurs avant/après et références est dans `data/spell-link-corrections.json` ; ne pas le régénérer après migration. Une sauvegarde complète précède la correction, puis une autre précède le déploiement. L’historique serveur est dans `refonte_regles_corrections`.
-
-- Quatre listes de domaines corrigées de manière ciblée ; Porte dimensionnelle ajoutée depuis le SRD 5.2.1 français avec attribution. Escamotage/DEX restauré depuis le fichier JSON d’origine. Catalogue : 375 sorts et 18 compétences. Les autres écarts potentiels de règles et paliers restent différés.
-- Dons : choix structurés de compétence, expertise, élément et deux rituels, validation à leur niveau d’acquisition, conservation locale et distante. Intégration des bonus permanents de compétences, formations, outils, vitesse, escalade, vision, résistance au poison, plafond de DEX en armure intermédiaire et bonus par école de sort. Les effets conditionnels sont affichés et chiffrés sans modifier les valeurs permanentes. Aucun jet de dés automatique.
-- Correction de la reprise des brouillons comportant des choix d’origine aux niveaux 4/8 : les emplacements sont initialisés avant leur lecture, évitant une interruption avant la restauration du niveau et des scores.
-- Vérification : 136 tests, dont 80 scénarios clerc/domaine/vocation de niveau 1 à 10. Sauvegarde/relecture MongoDB vérifiées pour les quatre domaines niveau 10 ainsi que pour expertise et rituels ; collection temporaire vide après contrôle. Vérification visuelle sur PC du choix Expert, conservation après actualisation et expertise Escamotage +10 au niveau 10.
-- Youpi matin vérifié après déploiement : niveau 3, révision 1, aucune modification du personnage.
-
-Ces contrôles valident l’intégration du parcours clerc concerné ; ils ne valident pas toutes les règles du jeu ni les autres classes. Le téléphone reste hors périmètre.
-
-Sources ciblées : [présentation officielle du clerc 2024](https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new), [SRD 5.2.1 français](https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf).
+Utiliser les cinq parcours disponibles pour préparer les personnages de la table, puis traiter les sept autres classes. Le guerrier a été différé à la demande de l’utilisateur, au profit du barbare, du rôdeur, du barde et du druide. Le téléphone reste hors périmètre. L’historique est conservé dans [HISTORIQUE.md](HISTORIQUE.md).

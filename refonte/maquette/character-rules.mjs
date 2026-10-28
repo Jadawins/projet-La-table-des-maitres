@@ -21,7 +21,7 @@ export function finalScores(state, background, catalogue) {
   return catalogue?evaluateProgression(state,catalogue,base).scores:base;
 }
 export function classData(state, catalogue) { return catalogue.classes.find(c => c.id === state.classId); }
-export function isCaster(state, catalogue) { return Boolean(classData(state,catalogue)?.niveaux?.['0']?.incantation); }
+export function isCaster(state, catalogue) { return classMagic(state,catalogue).enabled; }
 export function visibleSteps(state, catalogue) { return [0,1,2,3,4,...(isCaster(state,catalogue) ? [5] : []),6,7]; }
 export function clericProfile(state, catalogue) {
   const cls = classData(state,catalogue);
@@ -52,29 +52,32 @@ export function clericProfile(state, catalogue) {
     proficiency:inheritedCleric(state,catalogue,'bonusMaitrise'),channel:inheritedCleric(state,catalogue,'canal_divin'),sparkDice:inheritedCleric(state,catalogue,'etincelle_divine_des'),
   };
 }
+export function classProfile(state,c){const p=state.classId==='clerc'?clericProfile(state,c):buildClassProfile(state,c);return p&&state.classId==='clerc'?{...p,castingAbility:'SAG',hasMagic:true}:p;}
 export function pruneSpellChoices(state, catalogue) {
-  const profile = clericProfile(state,catalogue);
+  const profile = classProfile(state,catalogue);
   const allowedCantrips = new Set(profile?.cantrips.map(s => s.id) || []);
   const allowedPrepared = new Set(profile?.prepared.map(s => s.id) || []);
   state.cantrips = [...new Set(state.cantrips || [])].filter(id => allowedCantrips.has(id)).slice(0,profile?.cantripCount || 0);
   state.prepared = [...new Set(state.prepared || [])].filter(id => allowedPrepared.has(id)).slice(0,profile?.preparedCount || 0);
 }
 export function spellErrors(state, catalogue) {
-  const profile = clericProfile(state,catalogue);
+  const profile = classProfile(state,catalogue);
   if (!profile) return [];
   const errors = [];
   for (const [selected, allowed, count, label] of [[state.cantrips,profile.cantrips,profile.cantripCount,'sorts mineurs'],[state.prepared,profile.prepared,profile.preparedCount,'sorts préparés']]) {
     const values = selected || [];
     if (new Set(values).size !== count || values.length !== count || values.some(id => !allowed.some(s => s.id === id))) errors.push(`Choisissez exactement ${count} ${label} disponibles.`);
   }
-  if (state.level >= 3 && !profile.domain) errors.push('Choisissez un domaine de votre catalogue.');
+  for(const name of profile.missingSpells||[])errors.push(`Fiche de sort à relier : ${name}.`);
+  if (state.level >= 3 && !profile.domain) errors.push('Choisissez une sous-classe de votre catalogue.');
   return errors;
 }
 export function classSkills(state,catalogue) {
   const background = catalogue.backgrounds.find(b => b.id === state.backgroundId);
   const automatic = new Set(originSkills(state,catalogue).map(skillKey));
   const data = classData(state,catalogue)?.niveaux?.['0']?.competences_choisies;
-  return {count:data?.nombre || 0, options:(data?.options || []).filter(name => !automatic.has(skillKey(name))).map(name => name === 'Intuition' ? 'Perspicacité' : name)};
+  const options=data?.options==='toutes'?catalogue.skills.map(s=>s.nom):data?.options||[];
+  return {count:data?.nombre||0,options:options.filter(name=>!automatic.has(skillKey(name))).map(name=>catalogue.skills.find(s=>skillKey(s.nom)===skillKey(name))?.nom||(name==='Intuition'?'Perspicacité':name))};
 }
 export function hitPoints(state,catalogue) {
   const cls = classData(state,catalogue);
@@ -91,16 +94,16 @@ export function hitPoints(state,catalogue) {
   return total+originBonuses(state,catalogue).hp+(selectedLevelFeats(state,catalogue).some(r=>r.feat.id==='faveur_de_vigueur')?40:0);
 }
 export function aptitudeErrors(state,catalogue) {
-  if (!clericProfile(state,catalogue)) return [];
+  if (!classProfile(state,catalogue)) return [];
   const errors = [];
-  if (!['Protecteur','Thaumaturge'].includes(state.divineOrder)) errors.push('Choisissez votre vocation divine.');
-  if (state.level >= 3 && !clericProfile(state,catalogue).domain) errors.push('Choisissez votre domaine.');
+  if (state.classId==='clerc'&&!['Protecteur','Thaumaturge'].includes(state.divineOrder)) errors.push('Choisissez votre vocation divine.');
+  if (state.level >= 3 && !classProfile(state,catalogue).domain) errors.push(state.classId==='clerc'?'Choisissez votre domaine.':'Choisissez votre sous-classe.');
   const skills = classSkills(state,catalogue);
   if ((state.classSkills || []).length !== skills.count || new Set((state.classSkills || []).map(skillKey)).size !== skills.count || (state.classSkills || []).some(name => !skills.options.some(allowed => skillKey(name) === skillKey(allowed)))) errors.push(`Choisissez ${skills.count} compétences de classe distinctes.`);
   if (hitPoints(state,catalogue) === null) errors.push('Renseignez les points de vie de chaque niveau.');
   errors.push(...evaluateProgression(state,catalogue,finalScores(state,catalogue.backgrounds.find(b=>b.id===state.backgroundId))).issues);
   errors.push(...originGrantErrors(state,catalogue,originFeats(state,catalogue).filter(g=>g.slot.startsWith('level'))));
-  errors.push(...featChoiceErrors(state,catalogue));
+  errors.push(...featChoiceErrors(state,catalogue),...classChoiceErrors(state,catalogue));
   const sacred=sacredChoices(state,catalogue);
   if(sacred.length&&!sacred.some(option=>option.nom===state.sacredStrike))errors.push('Choisissez votre option de Frappe consacrée au niveau 7.');
   return errors;
@@ -108,3 +111,6 @@ export function aptitudeErrors(state,catalogue) {
 import {originSkills,originBonuses,originGrantErrors,originFeats} from './origin-rules.mjs';
 import {evaluateProgression,inheritedCleric,domainBenefits,sacredChoices,selectedLevelFeats} from './cleric-progression.mjs';
 import {ritualGrantSpells,featChoiceErrors} from './feat-effects.mjs';
+
+import {buildClassProfile,classChoiceErrors} from './class-profiles.mjs';
+import {classMagic} from './class-magic.mjs';

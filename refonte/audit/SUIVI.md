@@ -1,6 +1,6 @@
 # Suivi de vérification des règles 2024
 
-Extrait MongoDB : 2026-10-27T15:35:08.716Z. Empreinte : 3e9654ef0eb610d23ecb5331ba07b94e5c6495d5764eb8d001005e8ce37ab347.
+Extrait MongoDB : 2026-10-28T06:12:59.824Z. Empreinte : 51e72bce0cc5bd3f5099e7d4f88824b991ecd9d80575eda0da9829265d578924.
 
 Périmètre : 12 classes, 48 sous-classes, 960 combinaisons sous-classe/niveau ; 1200 lignes avec les progressions des classes.
 

@@ -1,4 +1,4 @@
-import {ABILITIES,backgroundBonuses,clericProfile,aptitudeErrors,spellErrors} from './character-rules.mjs';
+import {ABILITIES,backgroundBonuses,clericProfile,aptitudeErrors,spellErrors,classProfile} from './character-rules.mjs';
 import {originErrors,grantInitial} from './origin-rules.mjs';
 import {detailFields} from './sheet-model.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial} from './cleric-progression.mjs';
@@ -9,6 +9,7 @@ export function characterSnapshot(state){
   for(const key of strings)out[key]=state[key]??'';
   for(const key of ['level','scores','rolls','step','classSkills','cantrips','prepared','hpRolls','originGrants','details','advancements'])out[key]=state[key]??({details:{},advancements:{},hpRolls:{},rolls:[],step:0,originGrants:{background:grantInitial(),human:grantInitial()}}[key]);
   out.originGrants=Object.fromEntries(ORIGIN_SLOTS.map(slot=>[slot,{...grantInitial(),...state.originGrants?.[slot]}]));
+  out.classChoices=state.classChoices||{};
   out.advancements=Object.fromEntries(Object.entries(out.advancements).map(([level,row])=>[level,{...advancementInitial(),...row,choices:{...featChoicesInitial(),...row.choices}}]));
   return JSON.parse(JSON.stringify(out));
 }
@@ -27,7 +28,7 @@ export function validateSavedCharacter(input,catalogue){
   }
   const rolls=input.rolls??[];if(!Array.isArray(rolls)||![0,6].includes(rolls.length)||rolls.some(r=>!Array.isArray(r)||r.length!==4||r.some(n=>!Number.isInteger(n)||n<1||n>6)))fail('Les jets de dés sont invalides.');out.rolls=rolls;
   out.hpRolls={};for(const [level,value]of Object.entries(input.hpRolls??{})){if(!/^([2-9]|1\d|20)$/.test(level)||(value!==null&&(!Number.isInteger(value)||value<1||value>12)))fail('Un jet de points de vie est invalide.');out.hpRolls[level]=value;}
-  out.advancements={};for(const level of ADVANCEMENT_LEVELS){
+  out.advancements={};for(const level of Object.keys(input.advancements||{}).filter(n=>/^(?:[1-9]|1\d|20)$/.test(n))){
     const raw=input.advancements?.[level];if(!raw)continue;
     if(typeof raw!=='object'||!['','ability','feat'].includes(raw.mode)||!Array.isArray(raw.abilities)||raw.abilities.length>2||raw.abilities.some(a=>a!==''&&!ABILITIES.includes(a)))fail('Un choix de progression est invalide.');
     for(const key of ['featId','featAbility','notes'])if(typeof raw[key]!=='string'||raw[key].length>(key==='notes'?6000:150))fail('Un choix de progression est invalide.');
@@ -42,6 +43,7 @@ export function validateSavedCharacter(input,catalogue){
     for(const key of ['proficiencies','cantrips']){if(!Array.isArray(raw[key])||raw[key].length>(key==='cantrips'?2:3)||raw[key].some(v=>typeof v!=='string'||v.length>150))fail('Un choix de don est invalide.');grant[key]=[...new Set(raw[key])];}
     out.originGrants[slot]=grant;
   }
+  out.classChoices={};for(const [key,values]of Object.entries(input.classChoices||{})){if(!/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)||!Array.isArray(values)||values.length>40||values.some(v=>typeof v!=='string'||!v.trim()||v.length>150))fail('Un choix de classe est invalide.');out.classChoices[key]=[...values];}
   out.details={};for(const key of Object.keys(detailFields)){const value=input.details?.[key];if(value===undefined)continue;if(typeof value!=='string'||value.length>6000)fail('Un texte du personnage est trop long.');out.details[key]=value;}
   for(const [key,list]of [['classId',catalogue.classes],['speciesId',catalogue.species],['backgroundId',catalogue.backgrounds],['subclassId',catalogue.subclasses],['originFeatId',catalogue.feats]])if(out[key]&&!list.some(v=>v.id===out[key]))fail('Un choix ne figure plus dans le catalogue.');
   const issues=[...originErrors(out,catalogue),...aptitudeErrors(out,catalogue),...spellErrors(out,catalogue)];
@@ -54,6 +56,6 @@ export function validateSavedCharacter(input,catalogue){
     const values=out.statsMethod==='standard'?[15,14,13,12,10,8]:out.rolls.map(r=>r.reduce((a,b)=>a+b,0)-Math.min(...r));
     if(values.slice().sort((a,b)=>a-b).join(',')!==ABILITIES.map(key=>out.scores[key]).sort((a,b)=>a-b).join(','))issues.push('Répartition des résultats à vérifier.');
   }
-  if(!clericProfile(out,catalogue))issues.push('Parcours de classe encore en cours de construction.');
+  if(!classProfile(out,catalogue))issues.push('Parcours de classe encore en cours de construction.');
   return {character:out,status:issues.length?'draft':'ready',issues:[...new Set(issues)]};
 }

@@ -1,0 +1,41 @@
+{
+  "policy": "Compléter les champs absents ; conserver les aptitudes et les trois sorts mineurs de la BDD.",
+  "spellcasting": {
+    "guerrier_chevalier_occulte": {
+      "spellClass": "magicien", "ability": "INT", "cantrips": 3,
+      "rows": {
+        "3": [3,2,0,0,0], "4": [4,3,0,0,0], "5": [4,3,0,0,0], "6": [4,3,0,0,0],
+        "7": [5,4,2,0,0], "8": [6,4,2,0,0], "9": [6,4,2,0,0], "10": [7,4,3,0,0],
+        "11": [8,4,3,0,0], "12": [8,4,3,0,0], "13": [9,4,3,2,0], "14": [10,4,3,2,0],
+        "15": [10,4,3,2,0], "16": [11,4,3,3,0], "17": [11,4,3,3,0], "18": [11,4,3,3,0],
+        "19": [12,4,3,3,1], "20": [13,4,3,3,1]
+      },
+      "source": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231&iframe=true",
+      "note": "Table PHB 2024 distribuée par Roll20 : sorts préparés puis emplacements 1/2/3/4. La BDD indique trois sorts mineurs au niveau 3, au lieu de deux dans la référence : trois sont conservés. Abjuration/Évocation restent des préférences, sans quota inventé."
+    }
+  },
+  "maneuvers": [
+    {"id":"embuscade","nom":"Embuscade","description":"Discrétion/initiative+dé, hors Neutralisé."},
+    {"id":"permutation","nom":"Permutation","description":"Allié consentant non-neutralisé≤1,5m : échange sans opportunité, coût 1,5m ; CA+dé jusqu’au prochain tour."},
+    {"id":"commandement","nom":"Attaque commandée","description":"Remplace attaque : allié voyant/entendant, réaction attaque, dégâts+dé."},
+    {"id":"presence","nom":"Présence imposante","description":"Intimidation/Représentation/Persuasion+dé."},
+    {"id":"desarmement","nom":"Désarmement","description":"Touche : dégâts+dé ; JS FOR, désarme."},
+    {"id":"diversion","nom":"Diversion","description":"Touche : dégâts+dé ; prochain allié avant prochain tour : avantage."},
+    {"id":"esquive","nom":"Jeu de jambes","description":"Bonus : Désengagement, CA+dé jusqu’au prochain tour."},
+    {"id":"feinte","nom":"Feinte","description":"Bonus, ≤1,5m : prochaine attaque avantagée ce tour, dégâts+dé."},
+    {"id":"provocation","nom":"Provocation","description":"Touche : dégâts+dé ; JS SAG, autres cibles désavantagées jusqu’au prochain tour."},
+    {"id":"fente","nom":"Fente","description":"Bonus : Foncer ; mêlée après 1,5m rectiligne : dégâts+dé."},
+    {"id":"manoeuvre","nom":"Attaque manœuvrante","description":"Touche : dégâts+dé ; allié voyant/entendant, réaction demi-vitesse, sans opportunité ciblée."},
+    {"id":"menace","nom":"Menace","description":"Touche : dégâts+dé ; JS SAG, Effrayé jusqu’au prochain tour."},
+    {"id":"parade","nom":"Parade","description":"Réaction : dégâts mêlée réduits de dé+FOR/DEX."},
+    {"id":"precision","nom":"Précision","description":"Attaque ratée : ajoute le dé."},
+    {"id":"poussee","nom":"Poussée","description":"Touche : dégâts+dé ; taille≤G, JS FOR, recul≤4,5m."},
+    {"id":"ralliement","nom":"Ralliement","description":"Bonus : allié voyant/entendant≤9m, PVtemporaires=dé+demi-niveau inférieur."},
+    {"id":"riposte","nom":"Riposte","description":"Mêlée adverse ratée : réaction attaque, dégâts+dé."},
+    {"id":"balayage","nom":"Balayage","description":"Touche mêlée : seconde cible à portée, ≤1,5m première, attaque suffisante : dégâts=dé."},
+    {"id":"analyse","nom":"Analyse tactique","description":"Histoire/Investigation/Perspicacité+dé."},
+    {"id":"croc","nom":"Croc-en-jambe","description":"Touche : dégâts+dé ; taille≤G, JS FOR, Àterre."}
+  ],
+  "maneuverSource": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231&iframe=true",
+  "maneuverNote": "Aide-mémoire adaptée ; coût : 1 dé, maximum 1 manœuvre/attaque. Consulter la référence pour les conditions détaillées. Quantités et paliers : BDD conservée."
+}

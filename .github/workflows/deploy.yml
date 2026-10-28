@@ -6,7 +6,10 @@ on:
       - master
 
 jobs:
+  tests:
+    uses: ./.github/workflows/refonte-tests.yml
   deploy:
+    needs: tests
     name: Deploy to myrpgtable.fr
     runs-on: ubuntu-latest
     timeout-minutes: 5

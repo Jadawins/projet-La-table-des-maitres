@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T15:40:00.895Z",
-  "snapshotDate": "2026-10-27T15:35:08.716Z",
-  "snapshotHash": "3e9654ef0eb610d23ecb5331ba07b94e5c6495d5764eb8d001005e8ce37ab347",
+  "generatedAt": "2026-10-28T06:18:02.817Z",
+  "snapshotDate": "2026-10-28T06:12:59.824Z",
+  "snapshotHash": "51e72bce0cc5bd3f5099e7d4f88824b991ecd9d80575eda0da9829265d578924",
   "sources": {
     "cleric": {
       "title": "Règles officielles 2024 : clerc",
@@ -2047,7 +2047,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2059,7 +2059,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2071,7 +2071,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2083,7 +2083,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2095,7 +2095,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2107,7 +2107,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2119,7 +2119,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2131,7 +2131,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2143,7 +2143,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         },
         {
@@ -2155,7 +2155,7 @@
             "checks": []
           },
           "featureReview": "a_verifier",
-          "integration": "non_implementee",
+          "integration": "partielle",
           "findingIds": []
         }
       ]
@@ -2252,7 +2252,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 12,
@@ -2260,7 +2260,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 13,
@@ -2268,7 +2268,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 14,
@@ -2276,7 +2276,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 15,
@@ -2284,7 +2284,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 16,
@@ -2292,7 +2292,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 17,
@@ -2300,7 +2300,7 @@
           "dataPresent": true,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 18,
@@ -2308,7 +2308,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 19,
@@ -2316,7 +2316,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 20,
@@ -2324,7 +2324,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         }
       ],
       "declaredFeatureLevels": [
@@ -2426,7 +2426,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 12,
@@ -2434,7 +2434,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 13,
@@ -2442,7 +2442,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 14,
@@ -2450,7 +2450,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 15,
@@ -2458,7 +2458,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 16,
@@ -2466,7 +2466,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 17,
@@ -2474,7 +2474,7 @@
           "dataPresent": true,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 18,
@@ -2482,7 +2482,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 19,
@@ -2490,7 +2490,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 20,
@@ -2498,7 +2498,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         }
       ],
       "declaredFeatureLevels": [
@@ -2600,7 +2600,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 12,
@@ -2608,7 +2608,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 13,
@@ -2616,7 +2616,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 14,
@@ -2624,7 +2624,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 15,
@@ -2632,7 +2632,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 16,
@@ -2640,7 +2640,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 17,
@@ -2648,7 +2648,7 @@
           "dataPresent": true,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 18,
@@ -2656,7 +2656,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 19,
@@ -2664,7 +2664,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 20,
@@ -2672,7 +2672,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         }
       ],
       "declaredFeatureLevels": [
@@ -2774,7 +2774,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 12,
@@ -2782,7 +2782,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 13,
@@ -2790,7 +2790,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 14,
@@ -2798,7 +2798,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 15,
@@ -2806,7 +2806,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 16,
@@ -2814,7 +2814,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 17,
@@ -2822,7 +2822,7 @@
           "dataPresent": true,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 18,
@@ -2830,7 +2830,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 19,
@@ -2838,7 +2838,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         },
         {
           "level": 20,
@@ -2846,7 +2846,7 @@
           "dataPresent": false,
           "findingIds": [],
           "featureReview": "a_verifier",
-          "integration": "non_implementee"
+          "integration": "partielle"
         }
       ],
       "declaredFeatureLevels": [

@@ -6,9 +6,10 @@ node <<'NODE'
 require('dotenv').config({path:'/var/www/myrpgtable/shared/.env',quiet:true});
 const script = `try {
  const d = new Mongo(process.env.MONGO_URI).getDB('myrpgtable');
- const collections = ['classes','sous_classes','especes','backgrounds','sorts','dons','competences','armures','armes','outils'];
+ const collections = ['classes','sous_classes','especes','backgrounds','sorts','dons','competences','armures','armes','outils','armes_bottes'];
  const snapshot = {source:'MongoDB myrpgtable',date:new Date().toISOString(),collections:{}};
  for(const name of collections) snapshot.collections[name] = d.getCollection(name).find({},{_id:0}).toArray();
+ snapshot.collections.formes_animales = d.getCollection('monstres').find({type:/b[eê]te|beast|[eé]l[eé]mentaire|elemental/i},{_id:0}).toArray();
  print(JSON.stringify(snapshot));
 } catch(e) {print(JSON.stringify({erreur:e.codeName||e.name}));quit(1);}`;
 const r = require('child_process').spawnSync('mongosh',['--nodb','--quiet','--eval',script],{env:process.env,encoding:'utf8',timeout:30000,maxBuffer:10000000});

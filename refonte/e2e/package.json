@@ -1,0 +1,1 @@
+{"name":"myrpgtable-e2e","private":true,"type":"module","packageManager":"pnpm@11.25.0","scripts":{"test":"playwright test","test:quick":"playwright test --grep @quick","report":"playwright show-report","verify":"node verify.mjs"},"devDependencies":{"@playwright/test":"1.64.1"}}
