@@ -1,0 +1,15 @@
+{
+  "type": "additional-levels",
+  "status": "passed",
+  "startedAt": "2026-10-28T17:23:59.611Z",
+  "completedAt": "2026-10-28T17:59:47.429Z",
+  "sourceHash": "0860d899a3fc79dc73cda336dcab0cd920664d6630cbfdb5a255c0003492a2a1",
+  "baselineSourceHash": "390f84e1ddcb95de7690b24319194a8a5c45a03c852fcab47c5614a575554943",
+  "baselineRelease": "20261028T145508Z",
+  "previousBrowserTests": 442,
+  "additionalBrowserTests": 652,
+  "combinedCoverage": 1094,
+  "unchangedProduct": true,
+  "unitTestsRerun": false,
+  "policy": "Deux exécutions sur la même application. Ce fichier ne remplace pas la preuve de vérification complète exigée par package.mjs."
+}

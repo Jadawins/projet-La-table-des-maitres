@@ -133,3 +133,39 @@ Version 20261028T145508Z déployée. 2 360 tests de règles et 442 parcours Chro
 Corrections : PV nains, formations d’armure et chaîne de prérequis, lien du don du Marin, fiches et calculs des sorts de lignage, résistances et sens, conservation des choix d’ascendance géante et de caractéristique du tieffelin, choix de compétence au niveau d’acquisition. Prestidigitation et Illusion mineure ajoutées au catalogue, sans écriture des collections de règles ; liens tracés dans data/origin-link-corrections.json. Deux sorts du gnome restent non identifiés, les six noms de classes antérieurs restent signalés.
 
 Sauvegarde complète de 3 270 documents avant activation : /root/backups/myrpgtable-persistence-20261028T145508Z/database.ejsonl.gz. MongoDB réel : anciens contrôles et 44 sous-classes niveau 20, puis 30 origines et onze dons humains sauvegardés/relus, collection temporaire nettoyée. Youpi matin niveau 3, révision 1 avant et après. Routes HTTP et archive SHA-256 vérifiées.
+
+## 28 octobre 2026 — couverture navigateur uniforme des vingt niveaux
+
+À la demande de l’utilisateur, seuls les 652 niveaux manquants des onze classes autres que le clerc ont été exécutés. Les 442 anciens parcours, le clerc, les origines/régressions et les 2 360 tests de règles inchangés ne sont pas relancés. Résultat : 652 réussites, aucun échec, test ignoré ou résultat instable ; 35,7 minutes à deux navigateurs, terminé à 18 h 59 (Europe/Paris).
+
+Les quatre sous-classes de chaque classe sont désormais couvertes aux vingt niveaux dans le navigateur. Total cumulé : 1 094 parcours sur deux exécutions du même produit. Application, accès et catalogue comparés au paquet 20261028T145508Z et vérifiés avant/après. Aucun changement applicatif ni nouveau déploiement. La suite complète conserve tous les anciens tests pour les futures régressions ; le filtre @complement et complete-levels.mjs permettent de reproduire cette sélection ciblée.
+
+Preuves et limites dans audit/E2E-PC.md, audit/e2e-complement-levels.json et le manifeste de référence. Le contrôle complet de préparation des déploiements reste inchangé. Suivi local actualisé : compteur des tests réellement réussis, 442 précédents séparés, classes sans clerc dans la sélection.
+
+## 28 octobre 2026 — stabilisation du catalogue autorisée
+
+La référence BDD est remplacée, pour le lot en cours, par PHB 2024 et errata officiels disponibles au 28 octobre 2026. L’utilisateur demande de fixer une limite et de figer cette version après vérification. Les évolutions futures seront distinctes. Premier lot local : 16 historiques comparés, 28 entrées corrigées partiellement ou complètement selon les champs journalisés ; 2 403 tests de calcul/validation réussis. Le registre complet reste ouvert et le déploiement est bloqué avant sa clôture. Aucun personnage ni règle de production n’est modifié par cette préparation.
+
+## Stabilisation — espèces et magie d’origine
+
+Les dix espèces ont été comparées à la référence 2024 : lignages, paliers, tailles, vitesses, sens, résistances, ressources et conditions. Les sous-espèces naines héritées sont retirées des nouvelles créations ; les textes sources sont conservés. Les ressources conditionnelles restent décrites sans appliquer un vol ou une transformation en permanence. Le choix INT/SAG/CHA de la magie d’origine est explicite et indépendant de la liste du don Initié à la magie. Le haut elfe peut remplacer son tour de magie selon la règle. Truand est archivé, absent de la liste officielle des dix dons d’origine.
+
+Résultat : 2 625 tests de calcul/validation et 68 parcours navigateur réussis, sans échec ni test ignoré. Les 68 parcours comprennent 47 origines et 21 scénarios ciblés de magie/ressources, avec sauvegarde et réouverture. Preuves : audit/species-verification.json et ses journaux. Le registre clôt 23 entrées sur 798 ; le journal comporte 51 entrées corrigées, dont des champs partiels qui ne valent pas validation complète. Aucun déploiement ni réécriture des personnages. Prochaine étape : choix équipement A ou 50 po des historiques, puis poursuite des classes et sous-classes encore ouvertes. Le versionnement des fiches existantes reste bloquant avant publication.
+
+## Stabilisation — choix d’équipement des historiques
+
+Chaque historique propose maintenant son matériel A ou 50 po B, séparément de l’équipement de classe et sans présélection. Le don et les maîtrises restent accordés dans les deux cas. Les outils et instruments choisis sont nommés dans le sac ; le Voyageur choisit sa boîte de jeux sans obtenir une maîtrise supplémentaire. Une ancienne fiche sans ce choix n’est ni modifiée ni déclarée complète avec une option implicite.
+
+Les 2 659 tests de calcul/validation et les 32 parcours navigateur des seize historiques en A/B réussissent sans échec ni test ignoré, avec sauvegarde et réouverture. Preuves : audit/background-equipment-verification.json et journaux associés. Le registre clôt 39 entrées sur 798. Les règles des dons et sorts accordés restent dans leurs propres modules d’audit. Aucune publication ; prochain lot : classes et sous-classes encore ouvertes, notamment le druide et les terrains 2024 de la Terre.
+
+## 29 octobre 2026 — quatre cercles du druide alignés
+
+Terre : quatre environnements, sorts accordés hors quota, Aval, Ressourcement, immunité à l’état Empoisonné et résistance du terrain, Sanctuaire conditionnel. Lune : FP, CA et PV temporaires sous forme animale, sorts par palier, attaques radiantes, JS CON, Pas de lune et amélioration finale. Mers : émanation et dégâts par SAG, nage au niveau 6, vol et résistances pendant l’aptitude seulement, don à un allié. Astres : carte tenue, constellations, présage explicite, améliorations 10 et résistances conditionnelles 14. Les profils de Bêtes restent à auditer ; la classe Druide n’est pas déclarée globalement vérifiée.
+
+Sorts : Tempête de grêle, Tempête de neige, Rayon empoisonné, Poussière d’étoile et Flux de lune corrigés. Rayon de lune était absent : ajout tracé avec avant null/après, source SRD et précondition d’absence. Construction sur copie, idempotence et refus d’une entrée contradictoire testés. Aucune écriture des règles en production. L’inventaire passe de 798 à 799 entrées pour cette dépendance manquante, sans nouveau livre ni nouvelle fonctionnalité.
+
+Preuves : audit/land-verification.json (2 743 tests et 80 parcours), audit/land-spells-verification.json (961 tests ciblés et deux parcours), audit/druid-circles-verification.json (2 807 tests et 60 parcours). Tous réussis, sans échec ni test ignoré. Les parcours sont des lots sur des versions successives ; aucun cumul n’est présenté comme contrôle complet de la version finale. Registre : 49/799 clôturées, 61 corrections et une addition. Production et personnages existants inchangés. Suite : profils des formes animales et paramètres de transformation, puis autres classes et catalogue restant.
+
+## 29 octobre 2026 — corrections regroupées avant tests
+
+Décision de regrouper les mises à jour du catalogue et adaptations avant les campagnes. Comparaisons préparées des profils animaux et des 48 sous-classes, dont quatre serments, quatre guerriers, trois moines restants, quatre traditions, quatre sorcelleries et quatre protecteurs dans le dernier passage. Ajouts strictement nécessaires : Rayon de lune, Mind Sliver et Quête. Les nouvelles préparations restent à tester ; les preuves anciennes ne certifient pas la version candidate. Production et personnages existants inchangés. Suite : classes de base, dons, sorts, équipement et profils, puis versionnement et campagne finale.

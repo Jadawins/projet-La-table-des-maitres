@@ -5,7 +5,7 @@ import {buildCatalogue} from '../catalogue.mjs';
 import {originCases,originFixture} from '../audit/origin-fixtures.mjs';
 import {characterSnapshot,validateSavedCharacter} from '../maquette/character-storage.mjs';
 import {sheetModel} from '../maquette/sheet-model.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url))));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url))));
 const origins=originCases(c);
 const key=s=>s==='Intuition'?'perspicacite':s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 function check(s){
@@ -21,7 +21,7 @@ function check(s){
   if(s.level===20&&s.classId==='moine'){expected.DEX+=4;expected.SAG+=4;}
   assert.deepEqual(m.scores,expected,label+' caractéristiques');
   const die=Number(c.classes.find(x=>x.id===s.classId).niveaux[0].de_vie.type.match(/d(\d+)/)[1]),con=Math.floor((expected.CON-10)/2);
-  const robust=(bg.don==='Robuste'||s.speciesId==='humain'&&s.originFeatId==='robuste')?s.level:0;
+  const robust=(bg.don==='Robuste'||s.speciesId==='humain'&&s.originFeatId==='robuste')?2*s.level:0;
   const vigor=Object.values(s.advancements).some(r=>r.featId==='faveur_de_vigueur')?40:0;
   const hp=die+con+(s.level-1)*(Math.floor(die/2)+1+con)+robust+vigor+(s.speciesId==='nain'?s.level:0);
   assert.equal(m.hp,hp,label+' PV');

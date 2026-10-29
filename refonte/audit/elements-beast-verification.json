@@ -1,0 +1,21 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "status": "batch-passed",
+  "recordedAt": "2026-10-28T22:23:27.294Z",
+  "sourceHash": "5513fd1a004eb497bfc667a5743fa92dcb671b03320aa26a348cdb59270f7f5a",
+  "unit": {
+    "passed": 2523,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Tous les tests de calcul, validation et stockage après corrections Éléments, Belluaire et bottes.",
+    "log": "refonte/audit/rules-full-unit-tests.txt"
+  },
+  "browser": {
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Niveaux 1–20 des deux sous-classes et profils Mer/Ciel aux paliers 3/7/11/15/20.",
+    "log": "refonte/audit/elements-beast-browser-tests.txt"
+  },
+  "fullRulesConformity": false
+}

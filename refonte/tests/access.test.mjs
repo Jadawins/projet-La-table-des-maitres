@@ -4,14 +4,14 @@ import {fileURLToPath} from 'node:url';
 import {createGateway} from '../access/server.mjs';
 const origin='https://myrpgtable.fr';
 const token=`x.${Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+3600})).toString('base64url')}.x`;
-async function setup(t,{rejectUser=false,unavailable=false,characters}={}){
+async function setup(t,{rejectUser=false,unavailable=false,characters,catalogueText}={}){
   const calls=[];
   const fetcher=async(url,options)=>{
     calls.push({url,options});if(unavailable)throw new Error('offline');
     if(url.includes('/user'))return {ok:!rejectUser,json:async()=>rejectUser?{}:{id:'test-user',is_anonymous:false}};
     return {ok:true,json:async()=>({access_token:token,refresh_token:'private-refresh'})};
   };
-  const server=createGateway({supabaseUrl:'https://auth.example.test',anonKey:'test-public-key',origin,appRoot:fileURLToPath(new URL('../maquette',import.meta.url)),fetcher,characters});
+  const server=createGateway({supabaseUrl:'https://auth.example.test',anonKey:'test-public-key',origin,appRoot:fileURLToPath(new URL('../maquette',import.meta.url)),fetcher,characters,catalogueText});
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
   t.after(()=>{server.closeAllConnections();return new Promise(resolve=>server.close(resolve));});
   const base=`http://127.0.0.1:${server.address().port}`;
@@ -24,6 +24,21 @@ test('Aucun fichier de la refonte ni catalogue sans connexion, y compris avec co
   for(const route of ['/atelier/','/atelier/app.js','/atelier/catalogue.json','/atelier/sheet-model.mjs']){
     const response=await request(route,{headers:{Cookie:'__Host-myrpgtable_session=forged'}});assert.equal(response.status,302);assert.equal(response.headers.get('location'),'/connexion.html');
   }
+});
+
+test('Le catalogue chargé en mémoire est servi après connexion, sans fichier catalogue.json',async t=>{
+  const catalogueText=JSON.stringify({version:'test-only',spells:[{id:'example'}]});
+  const {post,request}=await setup(t,{catalogueText});
+  const login=await post('/auth/login',{email:'test@example.test',password:'test-only'}),cookie=login.headers.get('set-cookie').split(';')[0];
+  const response=await request('/atelier/catalogue.json',{headers:{Cookie:cookie}});
+  assert.equal(response.status,200);assert.equal(await response.text(),catalogueText);assert.equal(response.headers.get('cache-control'),'no-store');
+  const head=await request('/atelier/catalogue.json',{method:'HEAD',headers:{Cookie:cookie}});assert.equal(head.status,200);assert.equal(await head.text(),'');
+});
+
+test('Un catalogue manquant ne déclenche jamais une lecture de secours sur disque',async t=>{
+  const {post,request}=await setup(t);
+  const login=await post('/auth/login',{email:'test@example.test',password:'test-only'}),cookie=login.headers.get('set-cookie').split(';')[0];
+  assert.equal((await request('/atelier/catalogue.json',{headers:{Cookie:cookie}})).status,503);
 });
 test('L’API des personnages exige la session et utilise son propriétaire, jamais celui du formulaire',async t=>{
   const calls=[];const characters={list:async owner=>{calls.push(owner);return [];},save:async(owner,id,character,revision)=>{calls.push(owner);return {id,revision:revision+1};}};

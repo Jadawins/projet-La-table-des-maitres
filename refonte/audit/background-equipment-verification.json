@@ -1,0 +1,37 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "status": "batch-passed",
+  "recordedAt": "2026-10-28T22:50:03.132Z",
+  "sourceHash": "85389a7dcde3d2d6bda823ef16bd11c3b93039e607c86f7ce1227dfbadb52f02",
+  "unit": {
+    "passed": 2659,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Suite entière de calcul, validation et stockage après ajout des choix d’équipement des historiques.",
+    "log": "refonte/audit/background-equipment-unit-tests.txt"
+  },
+  "browser": {
+    "passed": 32,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Seize historiques, options A et B séparément : argent, inventaire, choix explicites, sauvegarde, actualisation et contexte neuf.",
+    "log": "refonte/audit/background-equipment-browser-tests.txt"
+  },
+  "ruleSource": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87",
+  "applicationChanges": [
+    {
+      "before": "Le matériel A de l’historique est ajouté systématiquement.",
+      "after": "Choix explicite A ou 50 po B, indépendant du choix de classe ; sans choix, la fiche reste incomplète."
+    },
+    {
+      "before": "Les outils et instruments au choix restent génériques dans le sac.",
+      "after": "Le sac reprend l’outil maîtrisé choisi ; le Voyageur choisit sa boîte de jeux séparément, sans maîtrise supplémentaire."
+    }
+  ],
+  "fullRulesConformity": false,
+  "limitations": [
+    "L’audit du texte de chaque don et de chaque sort reste dans son propre module.",
+    "Aucun déploiement ni recalcul des personnages en production.",
+    "Versionnement des anciennes fiches toujours bloquant."
+  ]
+}

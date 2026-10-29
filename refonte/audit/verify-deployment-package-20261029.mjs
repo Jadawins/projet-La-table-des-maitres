@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+import {sourceFingerprint} from '../e2e/fingerprint.mjs';
+const refonte=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const target=process.argv[2];assert(path.isAbsolute(target??''));
+const read=file=>JSON.parse(fs.readFileSync(path.join(refonte,file),'utf8'));
+const freeze=read('audit/final-freeze-manifest.json'),verification=read('e2e/test-results/verification.json'),results=read('e2e/test-results/results.json');
+assert.equal(verification.status,'passed');assert.equal(verification.sourceHash,freeze.sourceHash);assert.equal(await sourceFingerprint(),freeze.sourceHash);
+assert.deepEqual([results.stats.expected,results.stats.unexpected,results.stats.flaky,results.stats.skipped],[1298,0,0,0]);
+const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const checks=[];
+const same=(source,destination)=>{assert.equal(sha(source),sha(destination),destination);checks.push({file:path.relative(target,destination).replaceAll('\\','/'),sha256:sha(destination)});};
+for(const f of freeze.product){const file=path.join(target,'atelier',f.file);assert.equal(sha(file),f.sha256);checks.push({file:'atelier/'+f.file,sha256:f.sha256});}
+for(const file of ['index.html','style.css'])same(path.join(refonte,'maquette',file),path.join(target,'atelier',file));
+for(const file of ['index.html','refonte.css','refonte.js','service-worker.js','connexion.html','connexion.js','nginx.conf'])same(path.join(refonte,'accueil',file),path.join(target,'public',file));
+for(const file of ['server.mjs','start.mjs','character-store.mjs','backup-db.mjs','check-persistence.mjs'])same(path.join(refonte,'access',file),path.join(target,file));
+same(path.join(refonte,'../assets/img/fond-bibliotheque-sombre.png'),path.join(target,'atelier/assets/fond-bibliotheque-sombre.png'));
+const catalogue=path.join(target,'atelier/catalogue.json');assert.equal(sha(catalogue),freeze.frozenCatalogueSha256);checks.push({file:'atelier/catalogue.json',sha256:sha(catalogue)});
+const manifest={releaseId:freeze.releaseId,sourceHash:freeze.sourceHash,verifiedAt:new Date().toISOString(),verification:{...verification,browserStats:results.stats},files:checks};
+fs.writeFileSync(path.join(target,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({status:'verified',files:checks.length,sourceHash:freeze.sourceHash}));

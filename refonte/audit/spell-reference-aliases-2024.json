@@ -1,0 +1,27 @@
+{
+  "status": "identity-links-only",
+  "note": "Noms génériques SRD, noms propres PHB ou libellés hérités ; ces liens ne certifient pas les champs de calcul.",
+  "aliases": {
+    "Aura magique de l’arcaniste": "aura_magique_de_nystul",
+    "Chien de garde": "chien_de_garde_de_mordenkainen",
+    "Coffre secret": "coffre_secret_de_leomund",
+    "Convocations instantanées": "convocations_instantanees_de_drawmij",
+    "Danse irrésistible": "danse_irresistible_d_otto",
+    "Disque flottant": "disque_flottant_de_tenser",
+    "Éclat du soleil": "eclair_du_soleil",
+    "Ennemi subconscient": "ennemi_surpuissant",
+    "Épée arcanique": "epee_de_mordenkainen",
+    "Flèche acide": "fleche_acide_de_melf",
+    "Force fantasmagorique": "force_fantaismagorique",
+    "Fou rire": "fou_rire_de_tasha",
+    "Frappe piégeuse": "frappe_enchevêtrante",
+    "Lien télépathique": "lien_telepathique_de_rary",
+    "Main arcanique": "main_de_bigby",
+    "Manoir somptueux": "manoir_somptueux_de_mordenkainen",
+    "Pattes d’araignée": "pattes_d_araignees",
+    "Sanctuaire privé": "sanctuaire_prive_de_mordenkainen",
+    "Sphère glacée": "sphere_glacee_d_otiluke",
+    "Sphère résiliente": "sphere_resiliente_d_otiluke",
+    "Tentacules noirs": "tentacules_noirs_d_evard"
+  }
+}

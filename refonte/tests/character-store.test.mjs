@@ -1,12 +1,13 @@
+import {CURRENT_RULES_VERSION} from '../maquette/character-version.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {buildCatalogue} from '../catalogue.mjs';
 import {validateSavedCharacter,characterSnapshot} from '../maquette/character-storage.mjs';
 import {createCharacterStore} from '../access/character-store.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8')));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8')));
 const id='12345678-1234-1234-1234-123456789abc';
-const state=()=>({schemaVersion:2,name:'Clerc test',classId:'clerc',speciesId:'humain',backgroundId:'charlatan',equipment:'A',level:3,scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},statsMethod:'physical',bonusMode:'three',bonusTwo:'',bonusOne:'',divineOrder:'Thaumaturge',subclassId:'clerc_domaine_vie',classSkills:['Médecine','Religion'],speciesSkill:'Perception',speciesSize:'M',originFeatId:'robuste',hpMode:'fixed',hpRolls:{},variantId:'',backgroundTool:'',cantrips:[],prepared:[],rolls:[],step:7,details:{story:'Une histoire à conserver'}});
+const state=()=>({schemaVersion:2,rulesVersion:CURRENT_RULES_VERSION,name:'Clerc test',classId:'clerc',speciesId:'humain',backgroundId:'charlatan',equipment:'A',backgroundEquipment:'A',level:3,scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},statsMethod:'physical',bonusMode:'three',bonusTwo:'',bonusOne:'',divineOrder:'Thaumaturge',subclassId:'clerc_domaine_vie',classSkills:['Médecine','Religion'],speciesSkill:'Perception',speciesSize:'M',originFeatId:'robuste',hpMode:'fixed',hpRolls:{},variantId:'',backgroundTool:'',cantrips:[],prepared:[],rolls:[],step:7,details:{story:'Une histoire à conserver'}});
 function setup(){
   const records=[];const matches=(doc,filter)=>Object.entries(filter).every(([k,v])=>doc[k]===v);
   const collection={

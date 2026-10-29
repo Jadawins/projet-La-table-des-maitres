@@ -1,6 +1,6 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {buildClericAudit} from './cleric-1-10.mjs';
-const snapshot=JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8'));
+const snapshot=JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8'));
 const report=buildClericAudit(snapshot);
 await writeFile(new URL('./clerc-1-10.json',import.meta.url),JSON.stringify(report,null,2));
 let text='# Clerc 1–10 — intégration de la BDD actuelle\n\nPérimètre : ordinateur uniquement. Quatre domaines, dix niveaux et deux vocations, soit 80 scénarios de création et de fiche. Ces contrôles ne constituent pas une validation documentaire de toutes les règles.\n\n| Domaine | Niveau | Mineurs Protecteur / Thaumaturge | Préparés | Maîtrise | Canal divin | Sorts à relier |\n|---|---:|---:|---:|---:|---:|---|\n';

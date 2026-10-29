@@ -1,34 +1,281 @@
 {
-  "sources":["https://roll20.net/compendium/dnd5e/Classes:Warlock?expansion=33335&iframe=true","https://media.dndbeyond.com/compendium-images/srd/5.2/SRD_CC_v5.2.1.pdf","https://www.dndbeyond.com/posts/1756-2024-warlock-vs-2014-warlock-whats-new"],
-  "note":"Complément de la liste absente de la BDD : aide-mémoire adaptée, prérequis et choix conservés ; références pour les conditions détaillées.",
-  "options":[
-    {"id":"blade","nom":"Pacte de la Lame","level":1,"description":"Arme liée maîtrisée, focaliseur ; CHA possible, dégâts nécrotiques/psychiques/radiants possibles."},
-    {"id":"chain","nom":"Pacte de la Chaîne","level":1,"spell":"appel_de_familier","description":"Familier sans emplacement ; formes spéciales ; renoncer à une attaque autorise sa réaction offensive."},
-    {"id":"tome","nom":"Pacte du Grimoire","level":1,"description":"Livre : trois sorts mineurs et deux rituels de niveau 1, toutes listes, par CHA."},
-    {"id":"armor","nom":"Armure d’ombres","level":1,"spell":"armure_du_mage","description":"Armure du mage sur soi, sans emplacement."},
-    {"id":"mind","nom":"Esprit occulte","level":1,"description":"Avantage aux JS CON de concentration."},
-    {"id":"devil","nom":"Vision du diable","level":2,"description":"Vision normale dans pénombre/ténèbres magiques ou non : 36m."},
-    {"id":"vigor","nom":"Vigueur fiélonne","level":2,"spell":"simulacre_de_vie","description":"Sur soi, sans emplacement ; PV temporaires maximisés."},
-    {"id":"mask","nom":"Masque aux mille visages","level":2,"spell":"deguisement","description":"Déguisement sans emplacement."},
-    {"id":"misty","nom":"Visions embrumées","level":2,"spell":"image_silencieuse","description":"Image silencieuse sans emplacement."},
-    {"id":"leap","nom":"Bond surnaturel","level":2,"spell":"saut","description":"Saut sur soi, sans emplacement."},
-    {"id":"step","nom":"Ascension","level":5,"spell":"levitation","description":"Lévitation sur soi, sans emplacement."},
-    {"id":"forms","nom":"Maître des formes","level":5,"spell":"modification_d_apparence","description":"Modification d’apparence sans emplacement."},
-    {"id":"shadows","nom":"Ombre parmi les ombres","level":5,"spell":"invisibilite","description":"Invisibilité sur soi, en pénombre/ténèbres, sans emplacement."},
-    {"id":"depths","nom":"Don des profondeurs","level":5,"spell":"respiration_aquatique","usage":"1_repos_long","description":"Respiration sous-marine ; nage=vitesse ; sort gratuit 1/repos long."},
-    {"id":"gaze","nom":"Regard des deux esprits","level":5,"description":"Bonus : sens d’un consentant touché, maintien bonus ; incantation via lui≤18m."},
-    {"id":"investment","nom":"Investissement du maître des chaînes","level":5,"requires":["chain"],"description":"Familier : vol/nage12m, attaque bonus, dégâts nécrotiques/radiants, DD personnel, résistance en réaction."},
-    {"id":"smite","nom":"Châtiment occulte","level":5,"requires":["blade"],"description":"1/tour, touche liée : emplacement, Force=(1+niveau)d8 ; taille≤TG : À terre."},
-    {"id":"thirsting","nom":"Lame assoiffée","level":5,"requires":["blade"],"description":"Deux attaques avec l’arme liée."},
-    {"id":"lifedrinker","nom":"Buveuse de vie","level":9,"requires":["blade"],"description":"1/tour, arme liée : +1d6 nécrotique/psychique/radiant ; dé de vie peut soigner dé+CON≥1."},
-    {"id":"protectors","nom":"Don des protecteurs","level":9,"requires":["tome"],"description":"Livre : CHA noms≥1 ; chute à 0PV devient 1PV, 1/repos long."},
-    {"id":"devouring","nom":"Lame dévorante","level":12,"requires":["thirsting"],"description":"Trois attaques avec l’arme liée."},
-    {"id":"eye","nom":"Visions des royaumes lointains","level":9,"spell":"oeil_du_mage","description":"Œil du mage sans emplacement."},
-    {"id":"grave","nom":"Murmures de la tombe","level":7,"spell":"communication_avec_les_morts","description":"Communication avec les morts sans emplacement."},
-    {"id":"witch","nom":"Vision de sorcière","level":15,"description":"Vision lucide : 9m."},
-    {"id":"agonizing","nom":"Décharge agonisante","level":2,"repeat":"cantrip","description":"CHA ajouté aux dégâts du sort mineur choisi."},
-    {"id":"spear","nom":"Lance occulte","level":2,"repeat":"range","description":"Sort mineur choisi : portée +9m×niveau, portée initiale≥3m."},
-    {"id":"repelling","nom":"Décharge répulsive","level":2,"repeat":"attack","description":"Sort mineur à attaque : repousse≤3m, taille≤G."},
-    {"id":"lesson","nom":"Leçons des premiers êtres","level":2,"repeat":"feat","description":"Un don d’origine distinct par prise."}
+  "sources": [
+    "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+    "https://roll20.net/compendium/dnd5e/Classes:Warlock?expansion=33335&iframe=true",
+    "https://media.dndbeyond.com/compendium-images/srd/5.2/SRD_CC_v5.2.1.pdf",
+    "https://www.dndbeyond.com/posts/1756-2024-warlock-vs-2014-warlock-whats-new"
+  ],
+  "note": "28 manifestations comparées au SRD 5.2.1 pp.70–73 : prérequis et paliers concordants, descriptions complétées. Adaptations de fiche préparées, tests finaux à faire.",
+  "options": [
+    {
+      "id": "blade",
+      "nom": "Pacte de la Lame",
+      "level": 1,
+      "description": "Action Bonus : invoquez une arme de corps à corps courante ou de guerre, ou liez une arme magique touchée si elle n’est ni harmonisée à autrui ni liée à un autre Occultiste. Maîtrise et focaliseur ; CHA possible pour attaque/dégâts, type normal ou nécrotique/psychique/radiant. Fin si nouveau lien, mort, ou arme à plus de 1,50 m pendant au moins une minute ; arme invoquée disparaît à la fin.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "chain",
+      "nom": "Pacte de la Chaîne",
+      "level": 1,
+      "spell": "appel_de_familier",
+      "description": "Appel de familier connu, lançable par action Magie sans emplacement. Forme normale ou Diablotin, esprit follet, pseudodragon, quasit, sphinx merveilleux, serpent venimeux ou squelette. En action Attaquer, abandonnez une attaque pour que le familier attaque en réaction. Les composantes ne sont pas supprimées par cette manifestation.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "Action Magie, sans emplacement ; composantes requises"
+    },
+    {
+      "id": "tome",
+      "nom": "Pacte du Grimoire",
+      "level": 1,
+      "description": "Au Repos court ou long, invoquez le Codex des Ombres. Choisissez trois sorts mineurs et deux sorts rituels de rang 1, de toute liste, que vous n’avez pas déjà préparés. Livre porté : ces sorts sont préparés et sont des sorts d’Occultiste par CHA ; le livre sert de focaliseur. Disparaît si nouveau livre ou mort.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "armor",
+      "nom": "Armure d’ombres",
+      "level": 1,
+      "spell": "armure_du_mage",
+      "description": "Armure du mage sur vous-même à volonté, sans emplacement ; conditions et Concentration éventuelle du sort conservées.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "mind",
+      "nom": "Esprit occulte",
+      "level": 1,
+      "description": "Avantage aux sauvegardes de Constitution pour maintenir la Concentration.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "devil",
+      "nom": "Vision du diable",
+      "level": 2,
+      "description": "Vision normale dans lumière faible et ténèbres magiques ou non, jusqu’à 36 m.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "vigor",
+      "nom": "Vigueur fiélonne",
+      "level": 2,
+      "spell": "simulacre_de_vie",
+      "description": "Simulacre de vie sur vous-même à volonté sans emplacement ; les dés de PV temporaires donnent leur maximum sans lancer.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "mask",
+      "nom": "Masque aux mille visages",
+      "level": 2,
+      "spell": "deguisement",
+      "description": "Déguisement à volonté, sans emplacement.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "misty",
+      "nom": "Visions embrumées",
+      "level": 2,
+      "spell": "image_silencieuse",
+      "description": "Image silencieuse à volonté, sans emplacement ; composantes et Concentration du sort conservées.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "leap",
+      "nom": "Bond surnaturel",
+      "level": 2,
+      "spell": "saut",
+      "description": "Saut sur vous-même à volonté, sans emplacement.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "step",
+      "nom": "Ascension",
+      "level": 5,
+      "spell": "levitation",
+      "description": "Lévitation sur vous-même à volonté, sans emplacement ; Concentration du sort conservée.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "forms",
+      "nom": "Maître des formes",
+      "level": 5,
+      "spell": "modification_d_apparence",
+      "description": "Modification d’apparence à volonté, sans emplacement.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "shadows",
+      "nom": "Ombre parmi les ombres",
+      "level": 5,
+      "spell": "invisibilite",
+      "description": "Dans lumière faible ou ténèbres, Invisibilité sur vous-même sans emplacement ; les autres règles du sort restent applicables.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "depths",
+      "nom": "Don des profondeurs",
+      "level": 5,
+      "spell": "respiration_aquatique",
+      "usage": "Une utilisation sans emplacement par Repos long",
+      "description": "Respiration sous l’eau et Vitesse de nage égale à votre Vitesse. Respiration aquatique sans emplacement une fois par Repos long.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "gaze",
+      "nom": "Regard des deux esprits",
+      "level": 5,
+      "description": "Action Bonus, créature consentante touchée : percevez ses sens jusqu’à fin de votre prochain tour. Maintien par Bonus à chaque tour si même plan, sinon fin. Ses sens spéciaux s’appliquent ; à 18 m maximum, vos sorts peuvent partir de votre espace ou du sien.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "investment",
+      "nom": "Investissement du maître des chaînes",
+      "level": 5,
+      "requires": [
+        "chain"
+      ],
+      "description": "Familier : vol ou nage 12 m ; ordre d’Attaquer en action Bonus ; ses dégâts contondants/perforants/tranchants peuvent devenir nécrotiques ou radiants ; utilise votre DD des sorts ; réaction pour lui donner Résistance à des dégâts qu’il subit.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "smite",
+      "nom": "Châtiment occulte",
+      "level": 5,
+      "requires": [
+        "blade"
+      ],
+      "description": "Une fois par tour, touche avec arme de pacte : dépensez un emplacement de Pacte, +1d8 force plus 1d8 par rang de l’emplacement. Cible de taille TG ou inférieure : À terre possible.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "thirsting",
+      "nom": "Lame assoiffée",
+      "level": 5,
+      "requires": [
+        "blade"
+      ],
+      "description": "Deux attaques au lieu d’une en action Attaquer, avec votre arme de pacte seulement.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "lifedrinker",
+      "nom": "Buveuse de vie",
+      "level": 9,
+      "requires": [
+        "blade"
+      ],
+      "description": "Une fois par tour, touche avec arme de pacte : +1d6 nécrotique, psychique ou radiant choisi. Vous pouvez aussi dépenser un dé de vie, le lancer et récupérer le résultat + CON en PV, minimum un PV.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "protectors",
+      "nom": "Don des protecteurs",
+      "level": 9,
+      "requires": [
+        "tome"
+      ],
+      "description": "Page du Codex des Ombres : jusqu’à CHA noms (minimum un), inscrits par action d’une créature avec votre permission. Une créature nommée tombant à 0 PV sans mort immédiate reste à 1 PV ; une seule activation totale par Repos long. Action Magie en touchant la page pour effacer un nom.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "devouring",
+      "nom": "Lame dévorante",
+      "level": 12,
+      "requires": [
+        "thirsting"
+      ],
+      "description": "L’Attaque supplémentaire de Lame assoiffée donne trois attaques en action Attaquer, avec votre arme de pacte seulement.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "eye",
+      "nom": "Visions des royaumes lointains",
+      "level": 9,
+      "spell": "oeil_du_mage",
+      "description": "Œil du mage à volonté, sans emplacement ; Concentration du sort conservée.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "grave",
+      "nom": "Murmures de la tombe",
+      "level": 7,
+      "spell": "communication_avec_les_morts",
+      "description": "Communication avec les morts à volonté, sans emplacement.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29",
+      "usage": "À volonté sans emplacement ; autres conditions du sort conservées"
+    },
+    {
+      "id": "witch",
+      "nom": "Vision de sorcière",
+      "level": 15,
+      "description": "Vision lucide dans un rayon de 9 m.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "agonizing",
+      "nom": "Décharge agonisante",
+      "level": 2,
+      "repeat": "cantrip",
+      "description": "Choisissez un de vos sorts mineurs d’Occultiste connus infligeant des dégâts : CHA ajouté à ses jets de dégâts. Répétable pour un autre sort mineur conforme.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "spear",
+      "nom": "Lance occulte",
+      "level": 2,
+      "repeat": "range",
+      "description": "Choisissez un de vos sorts mineurs d’Occultiste connus infligeant des dégâts avec portée initiale de 3 m minimum : portée augmentée de 9 m par niveau d’Occultiste. Répétable avec un autre sort conforme.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "repelling",
+      "nom": "Décharge répulsive",
+      "level": 2,
+      "repeat": "attack",
+      "description": "Choisissez un de vos sorts mineurs d’Occultiste connus infligeant des dégâts par attaque : chaque touche peut repousser une créature de taille G maximum de 3 m en ligne droite à l’écart de vous. Répétable pour un autre sort conforme.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "id": "lesson",
+      "nom": "Leçons des premiers êtres",
+      "level": 2,
+      "repeat": "feat",
+      "description": "Recevez un don d’origines au choix. Répétable : choisissez un don d’origines différent à chaque prise de cette manifestation.",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=70",
+      "checkedAt": "2026-10-29"
+    }
   ]
 }

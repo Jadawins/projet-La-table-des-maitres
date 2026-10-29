@@ -13,6 +13,7 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       if(!validCharacterId(id)||!Number.isInteger(revision)||revision<0)throw fault(400,'Référence de sauvegarde invalide.');
       const result=validate(input),contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
+      if(previous&&(previous.character?.rulesVersion??null)!==(result.character.rulesVersion??null))throw fault(409,'La version des règles a changé. Enregistrez une copie pour préserver la fiche d’origine.');
       if(previous?.content_hash===contentHash&&previous.catalogue_fingerprint===catalogueFingerprint)return expose(previous);
       if(previous&&previous.revision!==revision)throw fault(409,'Ce personnage a été modifié ailleurs. Rouvrez la version enregistrée avant de continuer. Votre brouillon local est conservé.');
       if(!previous&&revision!==0)throw fault(409,'La version enregistrée est introuvable. Votre brouillon local est conservé.');

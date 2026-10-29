@@ -1,6 +1,6 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {buildClericAudit} from './cleric-1-10.mjs';
-const snapshot=JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8'));
+const snapshot=JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8'));
 const report=buildClericAudit(snapshot,{maxLevel:20});
 await writeFile(new URL('./clerc-1-20.json',import.meta.url),JSON.stringify(report,null,2));
 const lines=[

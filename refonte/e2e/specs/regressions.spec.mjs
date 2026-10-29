@@ -11,8 +11,14 @@ test('Choix vides et validation sans lancer de dés @quick',async({page})=>{
   await page.locator('#next').click();await expect(page.locator('[data-step="1"]')).toHaveAttribute('aria-current','step');
   await page.locator('[data-choice="classId"][data-id="clerc"]').click();await page.locator('#next').click();
   await page.locator('[data-choice="speciesId"][data-id="orc"]').click();await page.locator('[data-choice="backgroundId"][data-id="charlatan"]').click();await page.locator('#next').click();
+  await expect(page.locator('[data-step="2"]')).toHaveAttribute('aria-current','step');
+  for(let i=0;i<3;i++)await page.locator('[data-grant-slot="background"][data-grant-choice]').nth(i).check();
+  await page.locator('#next').click();
+  await expect(page.locator('[data-step="3"]')).toHaveAttribute('aria-current','step');
+  await expect(page.locator('input[data-stat]')).toHaveCount(6);
   for(const field of await page.locator('input[data-stat]').all())await expect(field).toHaveValue('');
   await expect(page.locator('[data-method="physical"]')).toHaveAttribute('aria-pressed','true');
+  await expect(page.locator('.roll-grid .roll')).toHaveCount(0);
   await page.locator('#next').click();await expect(page.locator('[data-step="3"]')).toHaveAttribute('aria-current','step');
 });
 test('Faveur, modification et réouverture sans doublon @quick',async({page,browser,auth},info)=>{

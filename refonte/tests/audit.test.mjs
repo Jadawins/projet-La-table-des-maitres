@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {buildAudit as buildRawAudit} from '../audit/build-audit.mjs';
 const buildAudit = snapshot => buildRawAudit(snapshot,{externalComparisons:true});
-const snapshot=JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8'));
+const snapshot=JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8'));
 const copy=()=>structuredClone(snapshot);
 test('Chaque classe et sous-classe a exactement 20 cases, sans doublon',()=>{const r=buildAudit(snapshot);assert.equal(r.summary.classes,12);assert.equal(r.summary.subclasses,48);assert.equal(r.summary.combinations,960);assert.equal(r.summary.totalRows,1200);assert.equal(r.groups.length,60);assert.equal(new Set(r.groups.map(g=>g.id)).size,60);for(const g of r.groups){assert.deepEqual(g.rows.map(r=>r.level),Array.from({length:20},(_,i)=>i+1));}assert.deepEqual(r.unattached,[]);});
 test('100 contrôles chiffrés du clerc conformes sans validation globale abusive',()=>{const r=buildAudit(snapshot);const c=r.groups.find(g=>g.id==='clerc');assert.equal(c.rows.reduce((n,row)=>n+row.progression.checks.length,0),100);assert.ok(c.rows.every(row=>row.progression.status==='valide'));assert.ok(c.rows.every(row=>row.status==='a_verifier'));assert.equal(r.summary.valides,0);});

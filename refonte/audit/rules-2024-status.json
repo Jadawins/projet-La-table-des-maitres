@@ -1,0 +1,371 @@
+{
+  "status": "frozen",
+  "scope": "Tout le catalogue",
+  "reference": "PHB 2024 + errata officiels consultés au 28 octobre 2026",
+  "phase": "Version figée et publiée. Les règles sont chargées depuis MongoDB, sans catalogue sur disque. Transition :81 contrôles et8 parcours réussis ; catalogue strictement identique et personnages inchangés.",
+  "updatedAt": "2026-10-29T17:19:31.891Z",
+  "modules": [
+    {
+      "id": "classes",
+      "name": "Classes",
+      "total": 12,
+      "reviewed": 12,
+      "corrected": 0,
+      "status": "verified",
+      "prepared": 12,
+      "verified": 12
+    },
+    {
+      "id": "sous_classes",
+      "name": "Sous-classes",
+      "total": 48,
+      "reviewed": 48,
+      "corrected": 7,
+      "status": "verified",
+      "prepared": 48,
+      "verified": 48
+    },
+    {
+      "id": "especes",
+      "name": "Espèces",
+      "total": 10,
+      "reviewed": 10,
+      "corrected": 10,
+      "status": "verified",
+      "prepared": 10,
+      "verified": 10
+    },
+    {
+      "id": "backgrounds",
+      "name": "Historiques",
+      "total": 16,
+      "reviewed": 16,
+      "corrected": 16,
+      "status": "verified",
+      "prepared": 16,
+      "verified": 16
+    },
+    {
+      "id": "dons",
+      "name": "Dons",
+      "total": 77,
+      "reviewed": 77,
+      "corrected": 0,
+      "status": "verified",
+      "prepared": 77,
+      "verified": 77
+    },
+    {
+      "id": "sorts",
+      "name": "Sorts",
+      "total": 386,
+      "reviewed": 386,
+      "corrected": 2,
+      "status": "verified",
+      "prepared": 386,
+      "verified": 386
+    },
+    {
+      "id": "armes",
+      "name": "Armes",
+      "total": 38,
+      "reviewed": 38,
+      "corrected": 0,
+      "status": "verified",
+      "prepared": 38,
+      "verified": 38
+    },
+    {
+      "id": "armures",
+      "name": "Armures",
+      "total": 13,
+      "reviewed": 13,
+      "corrected": 0,
+      "status": "verified",
+      "prepared": 13,
+      "verified": 13
+    },
+    {
+      "id": "outils",
+      "name": "Outils",
+      "total": 25,
+      "reviewed": 25,
+      "corrected": 0,
+      "status": "verified",
+      "prepared": 25,
+      "verified": 25
+    },
+    {
+      "id": "armes_bottes",
+      "name": "Bottes d’armes",
+      "total": 8,
+      "reviewed": 8,
+      "corrected": 5,
+      "status": "verified",
+      "prepared": 8,
+      "verified": 8
+    },
+    {
+      "id": "competences",
+      "name": "Compétences",
+      "total": 18,
+      "reviewed": 18,
+      "corrected": 0,
+      "prepared": 18,
+      "status": "verified",
+      "verified": 18
+    },
+    {
+      "id": "formes_animales",
+      "name": "Formes animales",
+      "total": 113,
+      "reviewed": 108,
+      "corrected": 0,
+      "prepared": 113,
+      "status": "verified-with-documented-exclusions",
+      "verified": 108
+    },
+    {
+      "id": "formes_draconiques",
+      "name": "Formes draconiques",
+      "total": 10,
+      "reviewed": 10,
+      "corrected": 0,
+      "prepared": 10,
+      "status": "verified",
+      "verified": 10
+    },
+    {
+      "id": "familiers",
+      "name": "Familiers",
+      "total": 7,
+      "reviewed": 7,
+      "corrected": 0,
+      "prepared": 7,
+      "status": "verified",
+      "verified": 7
+    },
+    {
+      "id": "sorts_complements",
+      "name": "Sorts complémentaires",
+      "total": 5,
+      "reviewed": 5,
+      "corrected": 0,
+      "prepared": 5,
+      "status": "verified",
+      "verified": 5
+    },
+    {
+      "id": "invocations",
+      "name": "Invocations occultes",
+      "total": 28,
+      "reviewed": 28,
+      "corrected": 0,
+      "prepared": 28,
+      "status": "verified",
+      "verified": 28
+    }
+  ],
+  "policy": "Aucune entrée marquée vérifiée sans comparaison avec une source ; personnages existants non migrés automatiquement.",
+  "deployment": {
+    "status": "deployed",
+    "release": "20261029T190451Z",
+    "target": "/var/www/myrpgtable/refonte-access/20261029T190451Z",
+    "backup": "/root/backups/myrpgtable-persistence-20261029T190451Z",
+    "previous": "/var/www/myrpgtable/refonte-access/20261029T184824Z",
+    "completedAt": "2026-10-29T18:48:48.598Z",
+    "productionChanged": true,
+    "persistenceEvidence": "refonte/audit/deployment-20261029-persistence-after.json",
+    "rulesSource": "MongoDB myrpgtable.regles_catalogues"
+  },
+  "report": "refonte/audit/AVANT-MISE-A-JOUR-2024.md",
+  "confirmedProposals": 12,
+  "releaseId": "phb2024-2026-10-28",
+  "cutoff": "2026-10-28",
+  "freezePolicy": "refonte/REGLES-FIGEES.md",
+  "correctionsPrepared": 754,
+  "approval": "Utilisateur : effectuer les vérifications et corrections nécessaires, puis figer cette version.",
+  "inventory": {
+    "mainCatalogue": 633,
+    "additionalEntries": 181,
+    "total": 814
+  },
+  "blockers": [],
+  "verification": {
+    "unitFocused": {
+      "passed": 245,
+      "failed": 0,
+      "scope": "Premier lot, sept fichiers ciblés"
+    },
+    "browserFocused": {
+      "passed": 2,
+      "failed": 0,
+      "scope": "Doué humain ; clerc niveau 20 nain collinaire"
+    },
+    "fullRulesConformity": false,
+    "unitFull": {
+      "passed": 2840,
+      "failed": 0,
+      "skipped": 0,
+      "log": "refonte/audit/final-unit-tests.txt",
+      "sourceHash": "651a4fddbaff14fe72ab14c90b77f8e4b08849bf69e496ce732cd2607d849a77",
+      "scope": "Campagne complète de la candidate après corrections ;55 contrôles ciblés complémentaires réussis, dont2 cas distincts ajoutés."
+    },
+    "browserOrigins": {
+      "passed": 68,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "47 parcours Origines actualisés et 21 parcours magie d’origine : choix explicites, fiche, sauvegarde, réouverture dans un contexte neuf.",
+      "log": "refonte/audit/species-browser-tests.txt"
+    },
+    "sourceHash": "bcd4669495d08d62bbd30d5650fadda72c332ea1a4d0b9dbcdc87816e7596c12",
+    "browserJourneys": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Quatre voies du barbare et clerc Vie Thaumaturge niveau 20 : parcours de choix des maîtrises de Charlatan, sauvegarde et réouverture.",
+      "log": "refonte/audit/rules-journeys-tests.txt",
+      "sourceHash": "dbbaf2dadc44100be998f22cc345cd8d95d8fc5ff8ce5f02d7e5757c47b7ea65"
+    },
+    "browserPassed": 1298,
+    "unitLatest": {
+      "passed": 3948,
+      "failed": 0,
+      "skipped": 0,
+      "sourceHash": "f89b2ae98066bdca61deec50bfb1a89778b2d8b8774c0daf3dd32e42fa1183d7",
+      "log": "refonte/audit/deployment-20261029-validation.txt",
+      "scope": "Campagne complète avant publication sur les fichiers gelés."
+    },
+    "browserSoulknife": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Âme acérée niveaux 1 à 20, création, sauvegarde, actualisation et contexte neuf.",
+      "log": "refonte/audit/soulknife-browser-tests.txt"
+    },
+    "browserElementsBeast": {
+      "passed": 50,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Niveaux 1–20 des deux sous-classes et profils Mer/Ciel aux paliers 3/7/11/15/20.",
+      "log": "refonte/audit/elements-beast-browser-tests.txt"
+    },
+    "browserOriginMagic": {
+      "passed": 68,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "47 parcours Origines actualisés et 21 parcours magie d’origine : choix explicites, fiche, sauvegarde, réouverture dans un contexte neuf.",
+      "log": "refonte/audit/species-browser-tests.txt"
+    },
+    "browserPassedScope": "Campagne complète de la version publiée, sans échec ni ignoré.",
+    "browserBackgroundEquipment": {
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Seize historiques, options A et B séparément : argent, inventaire, choix explicites, sauvegarde, actualisation et contexte neuf.",
+      "log": "refonte/audit/background-equipment-browser-tests.txt"
+    },
+    "browserLand": {
+      "passed": 80,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Quatre terrains, chacun aux niveaux 1 à 20 : création, sauvegarde, actualisation et réouverture dans un contexte neuf.",
+      "log": "refonte/audit/land-browser-tests.txt"
+    },
+    "browserLandSpells": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Fiches Tempête de neige et Rayon empoisonné : rendu, sauvegarde et réouverture.",
+      "log": "refonte/audit/land-spells-browser-tests.txt"
+    },
+    "browserDruidCircles": {
+      "passed": 60,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Lune, Mers et Astres, chacun aux niveaux 1–20 : création, fiche, sauvegarde, actualisation et contexte neuf.",
+      "log": "refonte/audit/druid-circles-browser-tests.txt"
+    },
+    "finalCampaign": {
+      "startedAt": "2026-10-29T17:28:19.566Z",
+      "updatedAt": "2026-10-29T18:47:59.582Z",
+      "status": "completed",
+      "unit": {
+        "status": "completed",
+        "passed": 3948,
+        "failed": 0,
+        "total": 3948,
+        "log": "refonte/audit/deployment-20261029-validation.txt"
+      },
+      "browser": {
+        "status": "completed",
+        "passed": 1298,
+        "failed": 0,
+        "total": 1298,
+        "log": "refonte/audit/deployment-20261029-browser-results.json"
+      }
+    },
+    "catalogueFinal": {
+      "passed": 1106,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "log": "refonte/audit/final-catalogue-tests.txt"
+    },
+    "stabilizationCampaign": {
+      "startedAt": "2026-10-29T15:36:07.346Z",
+      "updatedAt": "2026-10-29T16:59:24.925Z",
+      "unit": {
+        "status": "completed",
+        "passed": 2840,
+        "failed": 0,
+        "total": 2840,
+        "log": "TEMP/myrpgtable-final-unit-pass2.txt"
+      },
+      "browser": {
+        "status": "completed",
+        "passed": 1296,
+        "failed": 2,
+        "total": 1298,
+        "log": "TEMP/myrpgtable-final-browser.txt"
+      },
+      "status": "passed-after-targeted-test-corrections",
+      "corrective": {
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "report": "refonte/audit/final-browser-corrective-results.json",
+        "repaired": [
+          "land-spells-2024.spec.mjs::Fiche corrigée · Tempête de neige",
+          "regressions.spec.mjs::Choix vides et validation sans lancer de dés @quick"
+        ]
+      },
+      "distinctJourneys": 1298,
+      "remainingFailed": 0,
+      "evidence": "refonte/audit/final-browser-verification.json"
+    }
+  },
+  "sourceDocuments": [
+    {
+      "title": "SRD français 5.2.1",
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "sha256": "480604d949a3bb77f639cf31c1e9e1e7ebb04ae481d943db662ba546828d94bf",
+      "publishedAt": "2025-12-08",
+      "publicationDateSource": "https://www.dndbeyond.com/srd",
+      "consultedAt": "2026-10-28"
+    }
+  ],
+  "workflow": {
+    "mode": "corrections-first-tests-afterwards",
+    "decidedAt": "2026-10-29",
+    "policy": "Pas de suite complète ni parcours navigateur à chaque lot. Comparaisons et adaptations d’abord ; tests de calcul/sauvegarde/navigateur regroupés ensuite. Aucune nouvelle clôture avant les preuves correspondantes."
+  },
+  "frozenAt": "2026-10-29T17:19:31.891Z",
+  "deploymentCampaign": {
+    "status": "deployed",
+    "browserPassed": 1298,
+    "browserTotal": 1298,
+    "productionChanged": true
+  }
+}

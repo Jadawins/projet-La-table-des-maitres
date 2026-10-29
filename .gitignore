@@ -39,3 +39,20 @@ scripts/
 *.pdf
 checkpoint_traduction.json
 settings.local.json
+
+# Preuves d'exécution et opérations locales, sans données de production dans Git
+/refonte/.local/
+/refonte/tests-latest.txt
+/refonte/audit/*-tests.txt
+/refonte/audit/*-unit-tests.txt
+/refonte/audit/*-browser-tests.txt
+/refonte/audit/deployment-*.json
+/refonte/audit/deployment-*.txt
+/refonte/audit/*-results.json
+/refonte/audit/*-persistence-*.json
+/refonte/audit/*deployment-plan.json
+/refonte/audit/*-backup-verification.json
+/refonte/audit/mongodb-runtime-verification.json
+/refonte/audit/mongodb-*.txt
+/refonte/audit/mongodb-deployment-result.json
+/refonte/audit/POINT-DE-REPRISE.md

@@ -1,8 +1,8 @@
 import {classFixture} from './class-fixtures.mjs';
 import {classSkills,classProfile} from '../maquette/character-rules.mjs';
 import {classChoiceSpecs} from '../maquette/class-profiles.mjs';
-import {grantInitial,reconcileOrigins,originFeats,grantOptions,magicFeatLists,magicFeatProfile,backgroundToolOptions,speciesSkillOptions,humanFeats,originSizeOptions,speciesChoiceSpecs} from '../maquette/origin-rules.mjs';
-import {featChoiceSpec} from '../maquette/feat-effects.mjs';
+import {grantInitial,reconcileOrigins,originFeats,grantOptions,magicFeatLists,magicFeatProfile,backgroundToolOptions,speciesSkillOptions,humanFeats,backgroundKitOptions,originSizeOptions,speciesChoiceSpecs} from '../maquette/origin-rules.mjs';
+import {featChoiceSpecs} from '../maquette/feat-effects.mjs';
 import {selectedLevelFeats} from '../maquette/progression.mjs';
 
 export function originCases(c){
@@ -10,8 +10,9 @@ export function originCases(c){
 }
 export function fillOrigins(s,c){
   s.originGrants||={};
+  if(backgroundKitOptions(s,c).length&&!s.backgroundKit)s.backgroundKit=backgroundKitOptions(s,c)[0].id;
   s.classSkills=[];
-  for(const spec of speciesChoiceSpecs(s,c))if(!spec.options.some(o=>o.id===s[spec.field]))s[spec.field]=spec.options[0]?.id||'';
+  for(const spec of speciesChoiceSpecs(s,c))if(!spec.options.some(o=>o.id===s[spec.field]))s[spec.field]=spec.optional?'':spec.options[0]?.id||'';
   s.speciesSkill='';
   s.backgroundTool=backgroundToolOptions(s,c)[0]?.id||'';
   s.speciesSkill=speciesSkillOptions(s,c)[0]||'';
@@ -23,7 +24,7 @@ export function fillOrigins(s,c){
     const options=grantOptions(s,c,grant);
     if(options.length)selected.proficiencies=options.slice(0,3).map(o=>o.id);
     if(grant.feat?.id==='initie_a_la_magie'){
-      selected.magicList=grant.forcedList||magicFeatLists(s,c,grant)[0];
+      selected.magicList=grant.forcedList||magicFeatLists(s,c,grant)[0];selected.magicAbility||='INT';
       const p=magicFeatProfile(s,c,grant);selected.cantrips=p.cantrips.slice(0,2).map(x=>x.id);selected.spell=p.spells[0]?.id||'';
     }
   }
@@ -36,11 +37,12 @@ export function finishChoices(s,c){
     s.classChoices[spec.key]=spec.kind==='number'?[spec.key==='psiDc'?'12':'0']:spec.kind==='names'?Array.from({length:spec.count},(_,i)=>`${spec.key} ${i+1}`):spec.options.slice(0,spec.count).map(o=>o.id);
   }
   for(const row of selectedLevelFeats(s,c)){
-    const spec=featChoiceSpec(s,c,row);if(!spec)continue;
-    if(['rituals','resistances'].includes(spec.field))row.choice.choices[spec.field]=spec.options.slice(0,2).map(x=>x.id||x);
+    for(const spec of featChoiceSpecs(s,c,row)){
+    if(['rituals','resistances'].includes(spec.field))row.choice.choices[spec.field]=spec.options.slice(0,spec.count||2).map(x=>x.id||x);
     else row.choice.choices[spec.field]=spec.options[0]?.id||spec.options[0]||'';
+    }
   }
-  const p=classProfile(s,c);s.cantrips=p.cantrips.slice(0,p.cantripCount).map(x=>x.id);s.prepared=p.prepared.slice(0,p.preparedCount).map(x=>x.id);
+  const p=classProfile(s,c);s.cantrips=p.cantrips.slice(0,p.cantripCount).map(x=>x.id);s.prepared=(s.classId==='barde'?[...p.prepared].sort((a,b)=>Number(b.classes.includes('Barde'))-Number(a.classes.includes('Barde'))):p.prepared).slice(0,p.preparedCount).map(x=>x.id);
   return s;
 }
 const fixtureCache=new WeakMap();

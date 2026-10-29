@@ -5,7 +5,7 @@ import {clericFixture} from './cleric-1-10.mjs';
 import {sheetModel} from '../maquette/sheet-model.mjs';
 import {classProfile} from '../maquette/character-rules.mjs';
 import {classChoiceSpecs} from '../maquette/class-profiles.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url))));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url))));
 const rows=[];
 for(const cls of c.classes)for(const sub of c.subclasses.filter(x=>x.classe_parente===cls.id))for(let level=1;level<=20;level++)for(const vocation of cls.id==='clerc'?['Protecteur','Thaumaturge']:['']){
   const s=cls.id==='clerc'?clericFixture(c,level,sub.id,vocation):classFixture(c,cls.id,level,sub.id),m=sheetModel(s,c),p=classProfile(s,c);

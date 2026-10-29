@@ -1,0 +1,21 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "recordedAt": "2026-10-29T04:53:56.188Z",
+  "status": "batch-passed",
+  "sourceHash": "fae1fb12840401f08b2543a4206b2bdbcd9bd453801b508c376a869c401d918e",
+  "unit": {
+    "passed": 961,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Tests ciblés Terre, sorts, classes, sous-classes additionnelles, révision et fiche après deux corrections de sorts.",
+    "log": "refonte/audit/land-spells-unit-tests.txt"
+  },
+  "browser": {
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Fiches Tempête de neige et Rayon empoisonné : rendu, sauvegarde et réouverture.",
+    "log": "refonte/audit/land-spells-browser-tests.txt"
+  },
+  "fullRulesConformity": false
+}

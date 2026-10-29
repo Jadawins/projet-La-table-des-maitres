@@ -1,0 +1,1625 @@
+{
+  "checkedAt": "2026-10-29",
+  "status": "data-compared-tests-pending",
+  "entries": [
+    {
+      "id": "style_archerie",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "effets": [
+          {
+            "type": "bonus_attaque",
+            "valeur": "+2 aux jets d’attaque avec des armes à distance."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_armes_a_deux_mains",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "effets": [
+          {
+            "type": "bonus_degats",
+            "valeur": "Arme de corps à corps tenue à deux mains, propriété Deux mains ou Polyvalente : les 1 et 2 des dés de dégâts de l’attaque peuvent compter comme des 3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_combat_a_deux_armes",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "effets": [
+          {
+            "type": "bonus_degats",
+            "valeur": "Ajoutez votre modificateur de caractéristique aux dégâts de l’attaque supplémentaire accordée par Légère, si ce modificateur n’est pas déjà ajouté."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_defense",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "+1 à la CA tant que vous portez une armure légère, intermédiaire ou lourde."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_duel",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Dueling?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "bonus_degats",
+            "valeur": "+2 aux dégâts d’une arme de corps à corps tenue à une main, si vous ne tenez aucune autre arme. Un bouclier reste compatible."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_armes_de_lancer",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Thrown%20Weapon%20Fighting?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "bonus_degats",
+            "valeur": "+2 aux dégâts sur une touche avec un jet d’attaque à distance utilisant une arme dotée de Lancer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_combat_a_mains_nues",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Unarmed%20Fighting?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "bonus_degats",
+            "valeur": "Dégâts contondants de mains nues : 1d6 + mod. FOR ; 1d8 si vous ne tenez ni arme ni bouclier au jet d’attaque."
+          },
+          {
+            "type": "autre",
+            "valeur": "Au début de chacun de vos tours : vous pouvez infliger 1d4 contondants à une créature que vous maintenez Agrippée."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_combat_en_aveugle",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Blind%20Fighting?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Vision aveugle sur 3 m ; les règles normales de ce sens s’appliquent, notamment l’Abri total."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_interception",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Interception?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Réaction lorsqu’une créature visible touche une autre créature à 1,50 m de vous par un jet d’attaque : dégâts réduits de 1d10 + bonus de maîtrise. Vous devez tenir un bouclier ou une arme courante ou de guerre."
+          }
+        ]
+      }
+    },
+    {
+      "id": "style_protection",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Protection?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Réaction, bouclier tenu : lorsqu’une créature visible attaque une cible autre que vous à 1,50 m de vous, imposez le Désavantage au jet déclencheur et aux autres attaques contre cette cible jusqu’au début de votre prochain tour, si vous restez à 1,50 m de la cible."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_d_attaque_irresistible",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "categorie": "epique",
+        "prerequis": {
+          "niveau": 19,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vos dégâts contondants, perforants et tranchants ignorent la Résistance."
+          },
+          {
+            "type": "autre",
+            "valeur": "Sur un 20 au d20 d’attaque, dégâts supplémentaires égaux à la valeur de caractéristique augmentée par ce don, du même type que l’attaque."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_deplacement_dimensionnel",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Immédiatement après l’action Attaque ou Magie : téléportation jusqu’à 9 m vers un espace inoccupé visible, sans action supplémentaire."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_l_esprit_nocturne",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "En Lumière faible ou Ténèbres : action Bonus pour devenir Invisible ; fin immédiatement après une action, action Bonus ou Réaction."
+          },
+          {
+            "type": "autre",
+            "valeur": "En Lumière faible ou Ténèbres : Résistance à tous les dégâts sauf psychiques et radiants."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_prowesse_martiale",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Lorsqu’un jet d’attaque échoue, vous pouvez décider que l’attaque touche. Réutilisation au début de votre prochain tour."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_memoire_magique",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Quand vous lancez un sort avec un emplacement de niveau 1 à 4, lancez 1d4 : si le résultat égale le niveau de l’emplacement, celui-ci n’est pas dépensé. Aucun lancer automatique."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_vision_lucide",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=94",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vision lucide sur 18 m."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_du_destin",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=94",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Lorsqu’une créature à 18 m ou vous-même réussissez ou échouez un Test d20, ajoutez ou retranchez 2d4 au résultat. Réutilisation après Initiative ou Repos court ou long."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_competence",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Boon%20of%20Skill?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "competence",
+            "valeur": "Maîtrise de toutes les compétences."
+          },
+          {
+            "type": "competence",
+            "valeur": "Expertise dans une compétence sans Expertise, à choisir."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_vitesse",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Boon%20of%20Speed?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vitesse augmentée de 9 m."
+          },
+          {
+            "type": "autre",
+            "valeur": "Action Bonus : Désengagement, qui met aussi fin à l’état Agrippé sur vous."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_vigueur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Boon%20of%20Fortitude?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Maximum de PV augmenté de 40."
+          },
+          {
+            "type": "autre",
+            "valeur": "Lorsque vous regagnez des PV : récupération supplémentaire égale à mod. CON. Une fois ce supplément reçu, il faut attendre le début de votre prochain tour pour le recevoir à nouveau."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_recuperation",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Boon%20of%20Recovery?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Lorsque vous devriez tomber à 0 PV : vous pouvez passer à 1 PV puis regagner la moitié de votre maximum de PV. Une fois par Repos long, sans Réaction requise."
+          },
+          {
+            "type": "autre",
+            "valeur": "Réserve de 10d10 : action Bonus pour dépenser et lancer les dés choisis et récupérer autant de PV. Tous les dés reviennent au Repos long. Aucun lancer automatique."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faveur_de_resistance_aux_energies",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Boon%20of%20Energy%20Resistance?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "epique",
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 30)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Résistance à deux types au choix : acide, feu, froid, foudre, nécrotique, poison, psychique, radiant ou tonnerre. Les deux choix peuvent changer après chaque Repos long."
+          },
+          {
+            "type": "autre",
+            "valeur": "Si vous subissez des dégâts d’un type choisi : Réaction pour viser une autre créature visible à 18 m sans Abri total. JS DEX DD 8 + bonus de maîtrise + mod. CON ; échec : 2d12 + mod. CON du même type."
+          }
+        ]
+      }
+    },
+    {
+      "id": "bagarreur_de_tavernes",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Tavern%20Brawler?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "bonus_degats",
+            "valeur": "Mains nues : 1d4 + mod. FOR contondants peut remplacer les dégâts normaux."
+          },
+          {
+            "type": "autre",
+            "valeur": "Dés de dégâts de mains nues : vous pouvez relancer un 1, nouveau résultat obligatoire."
+          },
+          {
+            "type": "autre",
+            "valeur": "Maîtrise des armes improvisées."
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois par tour, à votre tour dans l’action Attaque : une touche de mains nues peut aussi repousser la cible de 1,50 m."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chanceux",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Lucky?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Points de chance = bonus de maîtrise ; tous récupérés au Repos long."
+          },
+          {
+            "type": "autre",
+            "valeur": "Dépensez 1 point lorsque vous lancez le d20 d’un Test d20 : Avantage à ce jet."
+          },
+          {
+            "type": "autre",
+            "valeur": "Dépensez 1 point lorsqu’une créature lance le d20 d’une attaque contre vous : Désavantage à ce jet."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faconneur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Crafter?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "competence",
+            "valeur": "Maîtrise de trois outils au choix parmi : charpentier, tanneur, maçon, potier, forgeron, bricoleur, tisserand, menuisier."
+          },
+          {
+            "type": "autre",
+            "valeur": "Réduction de 20 % lors de l’achat d’un objet non magique."
+          },
+          {
+            "type": "autre",
+            "valeur": "À la fin d’un Repos long : fabriquez un objet de la table avec des outils possédés et maîtrisés. L’objet se désagrège à la fin de votre prochain Repos long."
+          },
+          {
+            "type": "autre",
+            "valeur": "Charpentier : échelle, torche ; tanneur : étui à cartes, étui à parchemins, bourse ; maçon : palan ; potier : cruche, lampe ; forgeron : billes, seau, chausse-trappes, grappin, marmite en fer ; bricoleur : cloche, pelle, boîte à amadou ; tisserand : panier, corde, filet, tente ; menuisier : gourdin, massue, bâton de combat."
+          }
+        ]
+      }
+    },
+    {
+      "id": "guerisseur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Healer?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Action Utilisation : dépensez une utilisation de trousse de soins pour une créature à 1,50 m. Elle peut dépenser un de ses dés de vie ; vous lancez ce dé et elle récupère le résultat + votre bonus de maîtrise PV."
+          },
+          {
+            "type": "autre",
+            "valeur": "Sur un dé de soins de votre sort ou de ce don : vous pouvez relancer un 1, nouveau résultat obligatoire."
+          }
+        ]
+      }
+    },
+    {
+      "id": "musicien",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Musician?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "competence",
+            "valeur": "Maîtrise de trois instruments de musique au choix."
+          },
+          {
+            "type": "autre",
+            "valeur": "À la fin d’un Repos court ou long : jouez d’un instrument maîtrisé pour accorder l’Inspiration héroïque à des alliés qui vous entendent, nombre maximal = bonus de maîtrise."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sauvagerie_martiale",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "fields": {
+        "description": "Vous pouvez choisir entre deux résultats de dégâts d’arme.",
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Une fois par tour, lorsque vous touchez une cible avec une arme : lancez deux fois les dés de dégâts de l’arme et choisissez le résultat utilisé contre la cible."
+          }
+        ]
+      }
+    },
+    {
+      "id": "doue",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "fields": {
+        "effets": [
+          {
+            "type": "competence",
+            "valeur": "Maîtrise d’une combinaison de trois compétences ou outils au choix."
+          },
+          {
+            "type": "autre",
+            "valeur": "Répétable : sélectionnable plusieurs fois."
+          }
+        ]
+      }
+    },
+    {
+      "id": "initie_a_la_magie",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Deux sorts mineurs d’une même liste, au choix : Clerc, Druide ou Magicien."
+          },
+          {
+            "type": "autre",
+            "valeur": "Un sort de niveau 1 de cette liste, toujours préparé : une incantation sans emplacement par Repos long ; lancement aussi possible avec vos emplacements."
+          },
+          {
+            "type": "autre",
+            "valeur": "Caractéristique d’incantation : INT, SAG ou CHA, choisie à l’acquisition."
+          },
+          {
+            "type": "autre",
+            "valeur": "À chaque gain de niveau : vous pouvez remplacer un sort de ce don par un autre de même niveau dans la liste choisie."
+          },
+          {
+            "type": "autre",
+            "valeur": "Répétable : une liste de sorts différente à chaque acquisition."
+          }
+        ]
+      }
+    },
+    {
+      "id": "vigilant",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Ajoutez votre bonus de maîtrise à l’Initiative."
+          },
+          {
+            "type": "autre",
+            "valeur": "Après le jet d’Initiative : échange possible avec un allié consentant, si aucun des deux n’est Neutralisé."
+          }
+        ]
+      }
+    },
+    {
+      "id": "robuste",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Tough?expansion=32231&iframe=true",
+      "fields": {
+        "effets": [
+          {
+            "type": "autre",
+            "valeur": "Maximum de PV augmenté de deux fois votre niveau de personnage ; encore +2 PV à chaque gain de niveau."
+          }
+        ]
+      }
+    },
+    {
+      "id": "comedien",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Actor?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "CHA 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Déguisé en une personne réelle ou fictive : Avantage à CHA (Tromperie ou Représentation) pour convaincre que vous êtes cette personne."
+          },
+          {
+            "type": "autre",
+            "valeur": "Vous imitez les sons d’autres créatures, y compris leur parole. Pour discerner l’imitation : test SAG (Perspicacité), DD 8 + mod. CHA + bonus de maîtrise."
+          }
+        ]
+      }
+    },
+    {
+      "id": "athlete",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Athlete?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "FOR 13 ou DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vitesse d’escalade égale à votre Vitesse."
+          },
+          {
+            "type": "autre",
+            "valeur": "Se relever de l’état À terre ne coûte que 1,50 m de déplacement."
+          },
+          {
+            "type": "autre",
+            "valeur": "Élan de seulement 1,50 m nécessaire pour un saut en longueur ou en hauteur."
+          }
+        ]
+      }
+    },
+    {
+      "id": "expert_de_la_charge",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Charger?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "FOR 13 ou DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Action Pointe : Vitesse augmentée de 3 m pour cette action."
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois à chacun de vos tours : après 3 m en ligne droite vers une cible immédiatement avant une touche de corps à corps dans l’action Attaque, +1d8 aux dégâts ou poussée jusqu’à 3 m si la cible ne dépasse pas votre taille de plus d’un cran."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chef_cuisinier",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Chef?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à CON ou SAG (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Maîtrise des ustensiles de cuisinier si vous ne l’avez pas."
+          },
+          {
+            "type": "autre",
+            "valeur": "Au Repos court avec ingrédients et ustensiles : repas pour 4 + bonus de maîtrise créatures. Celles qui mangent et dépensent au moins un dé de vie récupèrent 1d8 PV supplémentaires."
+          },
+          {
+            "type": "autre",
+            "valeur": "En une heure ou à la fin d’un Repos long, avec ingrédients et ustensiles : bonus de maîtrise friandises durant 8 heures. Action Bonus pour en manger une et gagner bonus de maîtrise PV temporaires."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maitre_arbaletrier",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Crossbow%20Expert?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Ignorez Chargement des arbalètes de poing, légères et lourdes ; une main libre n’est pas nécessaire pour les recharger si vous les tenez."
+          },
+          {
+            "type": "autre",
+            "valeur": "Un ennemi à 1,50 m n’impose pas le Désavantage aux attaques d’arbalète."
+          },
+          {
+            "type": "autre",
+            "valeur": "Attaque supplémentaire de Légère avec une arbalète Légère : ajoutez le modificateur de caractéristique aux dégâts si ce n’est pas déjà fait."
+          }
+        ]
+      }
+    },
+    {
+      "id": "broyeur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Crusher?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou CON (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois par tour sur une touche infligeant des dégâts contondants : déplacez la cible de 1,50 m vers un espace inoccupé si elle ne dépasse pas votre taille de plus d’un cran."
+          },
+          {
+            "type": "autre",
+            "valeur": "Sur un critique infligeant des dégâts contondants à une créature : Avantage aux attaques contre elle jusqu’au début de votre prochain tour."
+          }
+        ]
+      }
+    },
+    {
+      "id": "duelliste_defensif",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Defensive%20Duelist?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Arme Finesse tenue, autre créature vous touchant au corps à corps : Réaction pour ajouter le bonus de maîtrise à votre CA, potentiellement contre cette touche, puis contre les attaques de corps à corps jusqu’au début de votre prochain tour."
+          }
+        ]
+      }
+    },
+    {
+      "id": "combattant_a_deux_armes",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Dual%20Wielder?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "FOR 13 ou DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Après une attaque avec une arme Légère dans l’action Attaque à votre tour : attaque supplémentaire en action Bonus plus tard ce tour avec une autre arme de corps à corps sans Deux mains. Modificateur de caractéristique non ajouté aux dégâts sauf s’il est négatif."
+          },
+          {
+            "type": "autre",
+            "valeur": "Dégainer ou rengainer deux armes sans Deux mains lorsque vous pourriez normalement n’en manipuler qu’une."
+          }
+        ]
+      }
+    },
+    {
+      "id": "gaillard",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Durable?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à CON (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Avantage aux jets de sauvegarde contre la mort."
+          },
+          {
+            "type": "autre",
+            "valeur": "Action Bonus : dépensez un dé de vie, lancez-le et récupérez autant de PV que le résultat, sans ajout de CON."
+          }
+        ]
+      }
+    },
+    {
+      "id": "adepte_elementaire",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Elemental%20Adept?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "aptitude Sorts ou Magie de pacte"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Choisissez acide, froid, feu, foudre ou tonnerre : vos sorts ignorent la Résistance à ce type ; pour un sort infligeant ce type, les 1 sur les dés de dégâts peuvent compter comme des 2."
+          },
+          {
+            "type": "autre",
+            "valeur": "Répétable : un type différent à chaque acquisition."
+          }
+        ]
+      }
+    },
+    {
+      "id": "affinite_feerique",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Fey-Touched?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Choisissez un sort de niveau 1 de Divination ou Enchantement. Ce sort et Foulée brumeuse sont toujours préparés ; chacun peut être lancé une fois sans emplacement par Repos long, et aussi avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée par ce don."
+          }
+        ]
+      }
+    },
+    {
+      "id": "affinite_ombreuse",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Shadow-Touched?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Choisissez un sort de niveau 1 d’Illusion ou Nécromancie. Ce sort et Invisibilité sont toujours préparés ; chacun peut être lancé une fois sans emplacement par Repos long, et aussi avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée par ce don."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cogneur_lourd",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Great%20Weapon%20Master?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "FOR 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "À votre tour dans l’action Attaque : une touche contre une créature avec une arme Lourde peut ajouter le bonus de maîtrise aux dégâts de cette arme."
+          },
+          {
+            "type": "autre",
+            "valeur": "Immédiatement après un critique avec une arme de corps à corps ou après avoir réduit une créature à 0 PV avec elle : une attaque de la même arme en action Bonus."
+          }
+        ]
+      }
+    },
+    {
+      "id": "protection_lourde",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Heavily%20Armored?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "formation aux armures intermédiaires"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à CON ou FOR (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Formation aux armures lourdes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maitre_des_armures_lourdes",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Heavy%20Armor%20Master?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "formation aux armures lourdes"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à CON ou FOR (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Si une attaque vous touche pendant que vous portez une armure lourde : réduisez ses dégâts contondants, perforants et tranchants du bonus de maîtrise, même s’ils sont magiques."
+          }
+        ]
+      }
+    },
+    {
+      "id": "amelioration_de_caracteristique",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+2 à une caractéristique au choix ou +1 à deux caractéristiques au choix (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Répétable : sélectionnable plusieurs fois."
+          }
+        ]
+      }
+    },
+    {
+      "id": "empoigneur",
+      "source": "https://www.dndbeyond.com/sources/dnd/sae/players-handbook",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "FOR 13 ou DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois par tour, à votre tour dans l’action Attaque : sur une touche de mains nues, appliquez à la fois Dégâts et Lutte."
+          },
+          {
+            "type": "autre",
+            "valeur": "Avantage aux jets d’attaque contre une créature que vous maintenez Agrippée."
+          },
+          {
+            "type": "autre",
+            "valeur": "Aucun déplacement supplémentaire nécessaire pour déplacer une créature que vous maintenez Agrippée si elle est de votre taille ou plus petite."
+          }
+        ]
+      },
+      "supportingSources": [
+        "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92"
+      ]
+    },
+    {
+      "id": "figure_de_proue",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Inspiring%20Leader?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "SAG 13 ou CHA 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "À la fin d’un Repos court ou long : une prestation inspirante accorde des PV temporaires égaux à votre niveau + modificateur de la caractéristique augmentée par ce don, à six alliés au maximum, vous compris, à 9 m et témoins de la prestation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "protection_legere",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Lightly%20Armored?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Formation aux armures légères et aux boucliers."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tueur_de_mages",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Mage%20Slayer?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Une créature qui se concentre et subit vos dégâts a le Désavantage au JS de maintien de Concentration correspondant."
+          },
+          {
+            "type": "autre",
+            "valeur": "Si vous ratez un JS INT, SAG ou CHA : vous pouvez le réussir à la place, une fois par Repos court ou long."
+          }
+        ]
+      }
+    },
+    {
+      "id": "formation_aux_armes_de_guerre",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Martial%20Weapon%20Training?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Maîtrise des armes de guerre."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maitre_des_armures_intermediaires",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Medium%20Armor%20Master?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "formation aux armures intermédiaires"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "En armure intermédiaire, si votre DEX est de 16 ou plus : vous pouvez ajouter 3 à la CA au lieu de 2. Aucun retrait du Désavantage de Discrétion accordé."
+          }
+        ]
+      }
+    },
+    {
+      "id": "protection_intermediaire",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Moderately%20Armored?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "formation aux armures légères"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Formation aux armures intermédiaires."
+          }
+        ]
+      }
+    },
+    {
+      "id": "combattant_monte",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Mounted%20Combatant?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR, DEX ou SAG (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "En selle : Avantage aux jets d’attaque contre une créature non montée à 1,50 m de votre monture, d’au moins une taille inférieure à celle-ci."
+          },
+          {
+            "type": "autre",
+            "valeur": "Si aucun de vous n’est Neutralisé, votre monture subit zéro dégât sur un JS DEX réussi normalement pour moitié, et la moitié sur un échec."
+          },
+          {
+            "type": "autre",
+            "valeur": "En selle et non Neutralisé : une attaque touchant votre monture peut vous toucher à sa place."
+          }
+        ]
+      }
+    },
+    {
+      "id": "observateur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Observant?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "INT 13 ou SAG 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT ou SAG (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Choisissez Perspicacité, Investigation ou Perception : maîtrise si absente, Expertise si déjà maîtrisée."
+          },
+          {
+            "type": "autre",
+            "valeur": "Action Recherche possible en action Bonus."
+          }
+        ]
+      }
+    },
+    {
+      "id": "perforateur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Piercer?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois par tour, sur une touche infligeant des dégâts perforants à une créature : relancez un dé de dégâts de cette attaque, nouveau résultat obligatoire."
+          },
+          {
+            "type": "autre",
+            "valeur": "Sur un critique infligeant des dégâts perforants à une créature : un dé de dégâts perforants supplémentaire."
+          }
+        ]
+      }
+    },
+    {
+      "id": "empoisonneur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Poisoner?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à DEX ou INT (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vos jets de dégâts de poison ignorent la Résistance au poison."
+          },
+          {
+            "type": "autre",
+            "valeur": "Maîtrise du matériel d’empoisonneur. Une heure de travail avec ce matériel et 50 po de matériaux : bonus de maîtrise doses de poison."
+          },
+          {
+            "type": "autre",
+            "valeur": "Action Bonus pour appliquer une dose sur une arme ou munition ; elle reste active 1 minute ou jusqu’à infliger des dégâts avec cet objet. La cible blessée doit réussir un JS CON, DD = 8 + bonus maîtrise + mod. caract., sous peine de subir 2d8 poison et Empoisonné jusqu’à la fin de votre prochain tour."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maitre_d_hast",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Polearm%20Master?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "FOR 13 ou DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à DEX ou FOR (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Immédiatement après l’action Attaque avec un bâton de combat, une lance ou une arme Lourde et Allonge : action Bonus pour une attaque de corps à corps avec l’autre extrémité, dé d4 contondant."
+          },
+          {
+            "type": "autre",
+            "valeur": "En tenant une de ces armes : Réaction pour une attaque de corps à corps contre une créature entrant dans son allonge. Cette Réaction n’est pas présentée comme une attaque d’opportunité."
+          }
+        ]
+      }
+    },
+    {
+      "id": "resilient",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Resilient?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "La caractéristique choisie doit ne pas avoir de maîtrise de jet de sauvegarde. Vous recevez cette maîtrise."
+          }
+        ]
+      }
+    },
+    {
+      "id": "magie_rituelle",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Ritual%20Caster?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "INT 13 ou SAG 13 ou CHA 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Choisissez bonus de maîtrise sorts de niveau 1 avec Rituel, de toute liste : toujours préparés, lançables aussi avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée. À chaque augmentation ultérieure du bonus de maîtrise, ajoutez un tel sort."
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois par Repos long : un sort Rituel préparé peut être lancé sans emplacement avec son temps normal, sans les dix minutes supplémentaires du rituel."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tireur_d_elite",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Sharpshooter?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vos attaques à distance avec des armes ignorent les Abris partiels et importants."
+          },
+          {
+            "type": "autre",
+            "valeur": "Vos attaques avec des armes à distance n’ont pas le Désavantage dû à un ennemi à 1,50 m ou à la portée longue."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maitre_des_boucliers",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Shield%20Master?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "formation aux boucliers"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois à chacun de vos tours, sur une touche d’arme de corps à corps contre une cible à 1,50 m dans l’action Attaque : si bouclier équipé, JS FOR DD 8 + mod. FOR + bonus de maîtrise ; échec : poussée de 1,50 m ou À terre, à votre choix."
+          },
+          {
+            "type": "autre",
+            "valeur": "Bouclier tenu : si vous réussissez un JS DEX réduisant normalement les dégâts de moitié, Réaction pour ne subir aucun dégât."
+          }
+        ]
+      }
+    },
+    {
+      "id": "expert",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Skill%20Expert?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à une caractéristique au choix (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Maîtrise d’une compétence de votre choix."
+          },
+          {
+            "type": "autre",
+            "valeur": "Expertise dans une compétence maîtrisée sans Expertise, à choisir après cette nouvelle maîtrise."
+          }
+        ]
+      }
+    },
+    {
+      "id": "discret",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Skulker?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vision aveugle sur 3 m."
+          },
+          {
+            "type": "autre",
+            "valeur": "Avantage aux tests DEX (Discrétion) de l’action Furtivité pendant le combat."
+          },
+          {
+            "type": "autre",
+            "valeur": "Une attaque ratée pendant que vous êtes caché ne révèle pas votre position."
+          }
+        ]
+      }
+    },
+    {
+      "id": "trancheur",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Slasher?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Une fois par tour sur une touche infligeant des dégâts tranchants : Vitesse de la créature réduite de 3 m jusqu’au début de votre prochain tour."
+          },
+          {
+            "type": "autre",
+            "valeur": "Critique infligeant des dégâts tranchants à une créature : Désavantage à ses jets d’attaque jusqu’au début de votre prochain tour."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mobile",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Speedy?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "DEX 13 ou CON 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à DEX ou CON (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vitesse augmentée de 3 m."
+          },
+          {
+            "type": "autre",
+            "valeur": "À votre tour après l’action Pointe : le Terrain difficile ne coûte aucun déplacement supplémentaire pour le reste du tour."
+          },
+          {
+            "type": "autre",
+            "valeur": "Les attaques d’opportunité contre vous ont le Désavantage."
+          }
+        ]
+      }
+    },
+    {
+      "id": "incantateur_d_elite",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Spell%20Sniper?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "aptitude Sorts ou Magie de pacte"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vos jets d’attaque de sorts ignorent les Abris partiels et importants ; un ennemi à 1,50 m n’impose pas le Désavantage à ces jets."
+          },
+          {
+            "type": "autre",
+            "valeur": "À l’incantation d’un sort nécessitant un jet d’attaque et de portée initiale d’au moins 3 m : vous pouvez augmenter sa portée de 18 m."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telekinesiste",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Telekinetic?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Vous apprenez Main du mage : sans composantes V/S, main Invisible au choix, portée et distance maximale d’éloignement augmentées de 9 m. Caractéristique d’incantation = caractéristique augmentée."
+          },
+          {
+            "type": "autre",
+            "valeur": "Action Bonus : une créature visible à 9 m effectue un JS FOR, DD = 8 + bonus maîtrise + mod. caract. ; échec : déplacement de 1,50 m vers vous ou à l’opposé."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telepathe",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Telepathic?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": null
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Parole télépathique vers une créature visible à 18 m : une langue que vous connaissez et qu’elle doit comprendre ; aucune réponse télépathique accordée."
+          },
+          {
+            "type": "autre",
+            "valeur": "Détection des pensées toujours préparé ; une incantation sans emplacement ni composantes par Repos long, aussi lançable avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mage_de_guerre",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:War%20Caster?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "aptitude Sorts ou Magie de pacte"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à INT, SAG ou CHA (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Avantage aux JS CON pour maintenir votre Concentration."
+          },
+          {
+            "type": "autre",
+            "valeur": "Si une créature provoque votre attaque d’opportunité en quittant votre allonge : Réaction pour lancer à sa place un sort de temps d’incantation une action, ciblant cette seule créature."
+          },
+          {
+            "type": "autre",
+            "valeur": "Composantes somatiques possibles avec armes ou bouclier dans une ou deux mains."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sentinelle",
+      "source": "https://roll20.net/compendium/dnd5e/Feats:Sentinel?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "general",
+        "prerequis": {
+          "niveau": 4,
+          "classe": null,
+          "caracteristique": "FOR 13 ou DEX 13"
+        },
+        "effets": [
+          {
+            "type": "caracteristique",
+            "valeur": "+1 à FOR ou DEX (max 20)"
+          },
+          {
+            "type": "autre",
+            "valeur": "Immédiatement après qu’une créature à 1,50 m de vous entreprend Désengagement ou touche une autre cible que vous avec une attaque : vous pouvez faire une attaque d’opportunité contre elle."
+          },
+          {
+            "type": "autre",
+            "valeur": "Si votre attaque d’opportunité touche une créature : Vitesse 0 pour le reste du tour en cours."
+          }
+        ]
+      }
+    },
+    {
+      "id": "truand",
+      "source": "https://roll20.net/compendium/dnd5e/Rules:Feat%20Descriptions?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "archive",
+        "description": "Entrée héritée sans don distinct correspondant dans la liste PHB 2024. Conservée pour traçabilité, indisponible pour les nouvelles créations ; aucun effet de cette entrée ne doit être ajouté à une nouvelle fiche."
+      }
+    },
+    {
+      "id": "preparateur_de_poison",
+      "source": "https://roll20.net/compendium/dnd5e/Rules:Feat%20Descriptions?expansion=32231&iframe=true",
+      "fields": {
+        "categorie": "archive",
+        "description": "Entrée héritée sans don distinct correspondant dans la liste PHB 2024. Conservée pour traçabilité, indisponible pour les nouvelles créations ; aucun effet de cette entrée ne doit être ajouté à une nouvelle fiche."
+      }
+    }
+  ]
+}

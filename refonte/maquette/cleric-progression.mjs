@@ -4,16 +4,7 @@ export {ORIGIN_SLOTS,advancementInitial,improvementLevels,featAbilityOptions,eli
 const key=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 export function domainBenefits(state,c){
   if(state.classId!=='clerc')return {heavy:false,martial:false,rapier:false,skills:[],light:false};
-  const domain=c.subclasses.find(s=>s.id===state.subclassId&&s.classe_parente==='clerc'&&state.level>=3);
-  const features=Object.entries(domain?.niveaux||{}).filter(([n])=>+n<=state.level).flatMap(([,row])=>row.capacites||[]);
-  const text=key(features.map(f=>f.description).join(' '));
-  return {
-    heavy:state.divineOrder==='Protecteur'||/maitrise.*armureslourdes/.test(text),
-    martial:state.divineOrder==='Protecteur'||/maitrise.*armesdeguerre/.test(text),
-    rapier:/maitrisedesrapieres/.test(text),
-    skills:features.some(f=>key(f.nom)==='maitrisesdelombre')?['Discrétion','Tromperie']:[],
-    light:features.some(f=>key(f.nom)==='sortmineurbonus'&&key(f.description).includes('lumiere')),
-  };
+  return {heavy:state.divineOrder==='Protecteur',martial:state.divineOrder==='Protecteur',rapier:false,skills:[],light:false};
 }
 
 export function sacredChoices(state,c){

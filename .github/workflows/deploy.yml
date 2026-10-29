@@ -1,9 +1,9 @@
-name: Deploy to VPS
+name: Legacy deployment webhook (manual)
 
 on:
-  push:
-    branches:
-      - master
+  # The old webhook is closed while the versioned workshop is deployed separately.
+  # Pushing source code must not attempt to redeploy the archived application.
+  workflow_dispatch:
 
 jobs:
   tests:

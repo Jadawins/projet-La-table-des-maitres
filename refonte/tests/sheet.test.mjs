@@ -4,11 +4,11 @@ import {readFile} from 'node:fs/promises';
 import {buildCatalogue} from '../catalogue.mjs';
 import {sheetModel} from '../maquette/sheet-model.mjs';
 import {renderSheet} from '../maquette/sheet-view.mjs';
-const snapshot=JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8'));
+const snapshot=JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8'));
 const c=buildCatalogue(snapshot);
-const state=()=>({name:'Test',classId:'clerc',level:3,speciesId:'humain',backgroundId:'charlatan',equipment:'A',scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},bonusMode:'three',divineOrder:'Thaumaturge',subclassId:'clerc_domaine_vie',classSkills:['Médecine','Religion'],speciesSkill:'Perception',speciesSize:'M',originFeatId:'robuste',hpMode:'fixed',cantrips:['assistance'],prepared:[]});
+const state=()=>({name:'Test',classId:'clerc',level:3,speciesId:'humain',backgroundId:'charlatan',equipment:'A',backgroundEquipment:'A',scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},bonusMode:'three',divineOrder:'Thaumaturge',subclassId:'clerc_domaine_vie',classSkills:['Médecine','Religion'],speciesSkill:'Perception',speciesSize:'M',originFeatId:'robuste',hpMode:'fixed',cantrips:['assistance'],prepared:[]});
 test('Fiche du clerc 3 : valeurs finales, CA portée, PV et sauvegardes',()=>{
-  const m=sheetModel(state(),c);assert.equal(m.hp,27);assert.equal(m.ac,16);assert.equal(m.initiative,1);
+  const m=sheetModel(state(),c);assert.equal(m.hp,30);assert.equal(m.ac,16);assert.equal(m.initiative,1);
   assert.equal(m.saves.find(s=>s.ability==='SAG').value,6);assert.equal(m.saves.find(s=>s.ability==='CHA').value,2);
   assert.equal(m.magic.dc,14);assert.equal(m.magic.attack,6);
 });

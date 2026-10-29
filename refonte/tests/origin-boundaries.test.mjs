@@ -6,7 +6,7 @@ import {originFixture,finishChoices} from '../audit/origin-fixtures.mjs';
 import {backgroundBonuses} from '../maquette/character-rules.mjs';
 import {characterSnapshot,validateSavedCharacter} from '../maquette/character-storage.mjs';
 import {sheetModel} from '../maquette/sheet-model.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url))));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url))));
 for(const b of c.backgrounds)test(`${b.nom} · trois bonus ou chaque répartition +2/+1 autorisée`,()=>{
   const allowed=b.bonus_caracteristiques.suggerees.map(a=>({STR:'FOR',WIS:'SAG'}[a]||a));
   const three=backgroundBonuses({bonusMode:'three'},b);for(const a of allowed)assert.equal(three[a],1);

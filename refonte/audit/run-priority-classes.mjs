@@ -3,7 +3,7 @@ import {buildCatalogue} from '../catalogue.mjs';
 import {classFixture} from './class-fixtures.mjs';
 import {sheetModel} from '../maquette/sheet-model.mjs';
 import {classProfile} from '../maquette/character-rules.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url))));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url))));
 const rows=[];
 for(const id of ['barbare','rodeur','barde','druide'])for(const sub of c.subclasses.filter(s=>s.classe_parente===id))for(let level=1;level<=20;level++){
   const s=classFixture(c,id,level,sub.id),m=sheetModel(s,c),p=classProfile(s,c);

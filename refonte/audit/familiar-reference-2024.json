@@ -1,0 +1,560 @@
+{
+  "source": "SRD français 5.2.1",
+  "sourcePdfSha256": "480604d949a3bb77f639cf31c1e9e1e7ebb04ae481d943db662ba546828d94bf",
+  "inputSha256": "4d1bde1d0cf227cd2691a84602dd2bb3be1f35e90e33d079ed6b9f734aaef702",
+  "entries": [
+    {
+      "id": "imp",
+      "name": "Diablotin",
+      "page": 284,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=284",
+      "raw": "Diablotin\nFiélon (Diable) de taille TP, Loyal Mauvais\nCA 13 Initiative +3 (13)\nPv 21 (6d4 + 6)\nVitesse 6 m, vol 12 m\nMOD JS MOD JS MOD JS\nFor  6 -2 -2 Dex  17 +3 +3 Con  13 +1 +1\nInt  11 +0 +0 Sag  12 +1 +1 Cha  14 +2 +2\nCompétences Discrétion +5, Intuition +3, Tromperie +4\nRésistances froid\nImmunités feu, poison ; Empoisonné\nSens Vision dans le noir 36 m (perce les Ténèbres \nmagiques) ; Perception passive 11\nLangues commun, infernal\nFP 1 (200 PX ; BM +2)\nTraits\nRésistance à la magie. Le diablotin a l’Avantage aux jets \nde sauvegarde contre les sorts et autres effets magiques.\nActions\nDard. Corps à corps : +5, allonge 1,50 m. \nTouché : 6 (1d6 + 3) dégâts perforants plus \n7 (2d6) dégâts de poison.\nChangement d’aspect. Le diablotin se métamorphose \nen prenant l’aspect d’un rat (Vitesse 6 m), d’un corbeau \n(6 m, vol 18 m) ou d’une araignée (6 m, escalade 6 m) \nou reprend sa forme véritable. Son profil reste le même \nsous chaque forme, à l’exception de sa Vitesse. Rien de \nce qu’il porte n’est transformé.\nInvisibilité. Le diablotin lance invisibilité sur lui-même, \nsans composante matérielle, le Charisme étant sa carac-\ntéristique d’incantation.",
+      "parsed": {
+        "nom": "Diablotin",
+        "taille": "TP",
+        "type": "Fiend",
+        "sous_type": "Diable",
+        "alignement": "Loyal Mauvais",
+        "ca": 13,
+        "ca_detail": null,
+        "pv": 21,
+        "pv_formule": "6d4 + 6",
+        "vitesse": {
+          "marche": 6,
+          "nage": null,
+          "vol": 12,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 6,
+          "FOR_mod": -2,
+          "DEX": 17,
+          "DEX_mod": 3,
+          "CON": 13,
+          "CON_mod": 1,
+          "INT": 11,
+          "INT_mod": 0,
+          "SAG": 12,
+          "SAG_mod": 1,
+          "CHA": 14,
+          "CHA_mod": 2
+        },
+        "jets_sauvegarde": {
+          "FOR": -2,
+          "DEX": 3,
+          "CON": 1,
+          "INT": 0,
+          "SAG": 1,
+          "CHA": 2
+        },
+        "competences": {
+          "Discrétion": 5,
+          "Intuition": 3,
+          "Tromperie": 4
+        },
+        "resistances": [
+          "froid"
+        ],
+        "immunites_degats": [
+          "feu",
+          "poison"
+        ],
+        "immunites_etats": [
+          "Empoisonné"
+        ],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": null,
+          "vision_vraie": null,
+          "perception_passive": 11,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, infernal"
+        ],
+        "fp": "1",
+        "fp_numerique": 1,
+        "bonus_maitrise": 2,
+        "experience": 200,
+        "xp": 200,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Résistance à la magie. Le diablotin a l’Avantage aux jets \nde sauvegarde contre les sorts et autres effets magiques."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Dard. Corps à corps : +5, allonge 1,50 m. \nTouché : 6 (1d6 + 3) dégâts perforants plus \n7 (2d6) dégâts de poison.\nChangement d’aspect. Le diablotin se métamorphose \nen prenant l’aspect d’un rat (Vitesse 6 m), d’un corbeau \n(6 m, vol 18 m) ou d’une araignée (6 m, escalade 6 m) \nou reprend sa forme véritable. Son profil reste le même \nsous chaque forme, à l’exception de sa Vitesse. Rien de \nce qu’il porte n’est transformé.\nInvisibilité. Le diablotin lance invisibilité sur lui-même, \nsans composante matérielle, le Charisme étant sa caractéristique d’incantation."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 3
+    },
+    {
+      "id": "sprite",
+      "name": "Esprit follet",
+      "page": 309,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=309",
+      "raw": "Esprit follet\nFée de taille TP, Neutre Bonne\nCA 15 Initiative +4 (14)\nPv 10 (4d4)\nVitesse 3 m, vol 12 m\nMOD JS MOD JS MOD JS\nFor  3 -4 -4 Dex  18 +4 +4 Con  10 +0 +0\nInt  14 +2 +2 Sag  13 +1 +1 Cha  11 +0 +0\nCompétences Discrétion +8, Perception +3\nSens Perception passive 13\nLangues commun, elfique, sylvestre\nFP 1/4 (50 PX ; BM +2)\nActions\nÉpée-ingle. Corps à corps : +6, allonge 1,50 m. \nTouché : 6 (1d4 + 4) dégâts perforants.\nArc enchanté. À distance : +6, portée 12/48 m. \nTouché : 1 dégât perforant, et la cible subit l’état \nCharmé jusqu’au début du tour suivant de l’esprit follet.\nInvisibilité. L’esprit follet lance invisibilité sur lui-même, \nsans composante matérielle, le Charisme étant sa carac-\ntéristique d’incantation.\nPerception du for intérieur. JS Charisme : DD 10, une \ncréature que l’esprit follet voit dans un rayon de 1,50 m \n(Célestes, Fiélons et Morts-vivants ratent automatique-\nment ce JS). Échec : l’esprit follet perçoit l’alignement et \nl’affect actuel de la cible.",
+      "parsed": {
+        "nom": "Esprit follet",
+        "taille": "TP",
+        "type": "Fey",
+        "sous_type": null,
+        "alignement": "Neutre Bonne",
+        "ca": 15,
+        "ca_detail": null,
+        "pv": 10,
+        "pv_formule": "4d4",
+        "vitesse": {
+          "marche": 3,
+          "nage": null,
+          "vol": 12,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 3,
+          "FOR_mod": -4,
+          "DEX": 18,
+          "DEX_mod": 4,
+          "CON": 10,
+          "CON_mod": 0,
+          "INT": 14,
+          "INT_mod": 2,
+          "SAG": 13,
+          "SAG_mod": 1,
+          "CHA": 11,
+          "CHA_mod": 0
+        },
+        "jets_sauvegarde": {
+          "FOR": -4,
+          "DEX": 4,
+          "CON": 0,
+          "INT": 2,
+          "SAG": 1,
+          "CHA": 0
+        },
+        "competences": {
+          "Discrétion": 8,
+          "Perception": 3
+        },
+        "resistances": [],
+        "immunites_degats": [],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": null,
+          "vision_aveugle": null,
+          "vision_vraie": null,
+          "perception_passive": 13,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, elfique, sylvestre"
+        ],
+        "fp": "1/4",
+        "fp_numerique": 0.25,
+        "bonus_maitrise": 2,
+        "experience": 50,
+        "xp": 50,
+        "traits": [],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Épée-ingle. Corps à corps : +6, allonge 1,50 m. \nTouché : 6 (1d4 + 4) dégâts perforants.\nArc enchanté. À distance : +6, portée 12/48 m. \nTouché : 1 dégât perforant, et la cible subit l’état \nCharmé jusqu’au début du tour suivant de l’esprit follet.\nInvisibilité. L’esprit follet lance invisibilité sur lui-même, \nsans composante matérielle, le Charisme étant sa caractéristique d’incantation.\nPerception du for intérieur. JS Charisme : DD 10, une \ncréature que l’esprit follet voit dans un rayon de 1,50 m \n(Célestes, Fiélons et Morts-vivants ratent automatiquement ce JS). Échec : l’esprit follet perçoit l’alignement et \nl’affect actuel de la cible."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 4
+    },
+    {
+      "id": "pseudodragon",
+      "name": "Pseudodragon",
+      "page": 343,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=343",
+      "raw": "Pseudodragon\nDragon de taille TP, Neutre Bon\nCA 14 Initiative +2 (12)\nPv 10 (3d4 + 3)\nVitesse 4,50 m, vol 18 m\nMOD JS MOD JS MOD JS\nFor  6 -2 -2 Dex  15 +2 +2 Con  13 +1 +1\nInt  10 +0 +0 Sag  12 +1 +1 Cha  10 +0 +0\nCompétences Discrétion +4, Perception +5\nSens Vision aveugle 3 m, Vision dans le noir 18 m ; \nPerception passive 15\nLangues comprend le commun et le draconique, mais ne \nparle pas\nFP 1/4 (50 PX ; BM +2)\nTraits\nRésistance à la magie. Le pseudodragon a l’Avan-\ntage aux jets de sauvegarde contre les sorts et autres \neffets magiques.\nActions\nAttaques multiples. Le pseudodragon effectue deux \nattaques de Morsure.\nMorsure. Corps à corps : +4, allonge 1,50 m. \nTouché : 4 (1d4 + 2) dégâts perforants.\nDard. JS Constitution : DD 12, une créature que \nle pseudodragon voit dans un rayon de 1,50 m. \nÉchec : 5 (2d4) dégâts de poison, et la cible subit l’état \nEmpoisonné pendant 1 heure. Échec de 5 ou plus : \nTant qu’elle est Empoisonnée, la cible subit en outre \nl’état Inconscient, qui prend fin prématurément si la \ncible subit des dégâts ou si une créature dans un rayon \nde 1,50 m consacre une action à la réveiller.",
+      "parsed": {
+        "nom": "Pseudodragon",
+        "taille": "TP",
+        "type": "Dragon",
+        "sous_type": null,
+        "alignement": "Neutre Bon",
+        "ca": 14,
+        "ca_detail": null,
+        "pv": 10,
+        "pv_formule": "3d4 + 3",
+        "vitesse": {
+          "marche": 4.5,
+          "nage": null,
+          "vol": 18,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 6,
+          "FOR_mod": -2,
+          "DEX": 15,
+          "DEX_mod": 2,
+          "CON": 13,
+          "CON_mod": 1,
+          "INT": 10,
+          "INT_mod": 0,
+          "SAG": 12,
+          "SAG_mod": 1,
+          "CHA": 10,
+          "CHA_mod": 0
+        },
+        "jets_sauvegarde": {
+          "FOR": -2,
+          "DEX": 2,
+          "CON": 1,
+          "INT": 0,
+          "SAG": 1,
+          "CHA": 0
+        },
+        "competences": {
+          "Discrétion": 4,
+          "Perception": 5
+        },
+        "resistances": [],
+        "immunites_degats": [],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 18,
+          "vision_aveugle": 3,
+          "vision_vraie": null,
+          "perception_passive": 15,
+          "tremblements": null
+        },
+        "langues": [
+          "comprend le commun et le draconique, mais ne parle pas"
+        ],
+        "fp": "1/4",
+        "fp_numerique": 0.25,
+        "bonus_maitrise": 2,
+        "experience": 50,
+        "xp": 50,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Résistance à la magie. Le pseudodragon a l’Avantage aux jets de sauvegarde contre les sorts et autres \neffets magiques."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le pseudodragon effectue deux \nattaques de Morsure.\nMorsure. Corps à corps : +4, allonge 1,50 m. \nTouché : 4 (1d4 + 2) dégâts perforants.\nDard. JS Constitution : DD 12, une créature que \nle pseudodragon voit dans un rayon de 1,50 m. \nÉchec : 5 (2d4) dégâts de poison, et la cible subit l’état \nEmpoisonné pendant 1 heure. Échec de 5 ou plus : \nTant qu’elle est Empoisonnée, la cible subit en outre \nl’état Inconscient, qui prend fin prématurément si la \ncible subit des dégâts ou si une créature dans un rayon \nde 1,50 m consacre une action à la réveiller."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 2
+    },
+    {
+      "id": "quasit",
+      "name": "Quasit",
+      "page": 343,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=343",
+      "raw": "Quasit\nFiélon (Démon) de taille TP, Chaotique Mauvais\nCA 13 Initiative +3 (13)\nPv 25 (10d4)\nVitesse 12 m\nMOD JS MOD JS MOD JS\nFor  5 -3 -3 Dex  17 +3 +3 Con  10 +0 +0\nInt  7 -2 -2 Sag  10 +0 +0 Cha  10 +0 +0\nCompétences Discrétion +5\nRésistances feu, foudre, froid\nImmunités poison ; Empoisonné\nSens Vision dans le noir 36 m ; Perception passive 10\nLangues abyssal, commun\nFP 1 (200 PX ; BM +2)\nTraits\nRésistance à la magie. Le quasit a l’Avantage aux jets de \nsauvegarde contre les sorts et autres effets magiques.\nActions\nSaignée. Corps à corps : +5, allonge 1,50 m. Touché : \n5 (1d4 + 3) dégâts tranchants, et la cible subit l’état \nEmpoisonné jusqu’au début du tour suivant du quasit.\nChangement d’aspect. Le quasit se métamorphose \nen prenant l’aspect d’une chauve-souris (Vitesse 3 m, \nvol 12 m), d’un mille-pattes (12 m, escalade 12 m) ou \nd’un crapaud (12 m, nage 12 m) ou reprend sa forme \nvéritable. Son profil reste le même sous chaque forme, \nà l’exception de sa Vitesse. Rien de ce qu’il porte n’est \ntransformé.\nFrayeur (1/jour). JS Sagesse : DD 10, une créature dans \nun rayon de 6 m. Échec : la cible subit l’état Effrayé. \nLa cible réitère le JS à la fin de chacun de ses tours et \nmet un terme à l’effet sur elle-même en cas de réussite. \nAu bout de 1 minute, elle réussit automatiquement ce JS.\nInvisibilité. Le quasit lance invisibilité sur lui-même, \nsans composante matérielle, le Charisme étant sa carac-\ntéristique d’incantation.",
+      "parsed": {
+        "nom": "Quasit",
+        "taille": "TP",
+        "type": "Fiend",
+        "sous_type": "Démon",
+        "alignement": "Chaotique Mauvais",
+        "ca": 13,
+        "ca_detail": null,
+        "pv": 25,
+        "pv_formule": "10d4",
+        "vitesse": {
+          "marche": 12,
+          "nage": null,
+          "vol": null,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 5,
+          "FOR_mod": -3,
+          "DEX": 17,
+          "DEX_mod": 3,
+          "CON": 10,
+          "CON_mod": 0,
+          "INT": 7,
+          "INT_mod": -2,
+          "SAG": 10,
+          "SAG_mod": 0,
+          "CHA": 10,
+          "CHA_mod": 0
+        },
+        "jets_sauvegarde": {
+          "FOR": -3,
+          "DEX": 3,
+          "CON": 0,
+          "INT": -2,
+          "SAG": 0,
+          "CHA": 0
+        },
+        "competences": {
+          "Discrétion": 5
+        },
+        "resistances": [
+          "feu",
+          "foudre",
+          "froid"
+        ],
+        "immunites_degats": [
+          "poison"
+        ],
+        "immunites_etats": [
+          "Empoisonné"
+        ],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": null,
+          "vision_vraie": null,
+          "perception_passive": 10,
+          "tremblements": null
+        },
+        "langues": [
+          "abyssal, commun"
+        ],
+        "fp": "1",
+        "fp_numerique": 1,
+        "bonus_maitrise": 2,
+        "experience": 200,
+        "xp": 200,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Résistance à la magie. Le quasit a l’Avantage aux jets de \nsauvegarde contre les sorts et autres effets magiques."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Saignée. Corps à corps : +5, allonge 1,50 m. Touché : \n5 (1d4 + 3) dégâts tranchants, et la cible subit l’état \nEmpoisonné jusqu’au début du tour suivant du quasit.\nChangement d’aspect. Le quasit se métamorphose \nen prenant l’aspect d’une chauve-souris (Vitesse 3 m, \nvol 12 m), d’un mille-pattes (12 m, escalade 12 m) ou \nd’un crapaud (12 m, nage 12 m) ou reprend sa forme \nvéritable. Son profil reste le même sous chaque forme, \nà l’exception de sa Vitesse. Rien de ce qu’il porte n’est \ntransformé.\nFrayeur (1/jour). JS Sagesse : DD 10, une créature dans \nun rayon de 6 m. Échec : la cible subit l’état Effrayé. \nLa cible réitère le JS à la fin de chacun de ses tours et \nmet un terme à l’effet sur elle-même en cas de réussite. \nAu bout de 1 minute, elle réussit automatiquement ce JS.\nInvisibilité. Le quasit lance invisibilité sur lui-même, \nsans composante matérielle, le Charisme étant sa caractéristique d’incantation."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 3
+    },
+    {
+      "id": "sphinx-of-wonder",
+      "name": "Sphinx merveilleux",
+      "page": 349,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=349",
+      "raw": "Sphinx merveilleux\nCéleste de taille TP, Loyal Bon\nCA 13 Initiative +3 (13)\nPv 24 (7d4 + 7)\nVitesse 6 m, vol 12 m\nMOD JS MOD JS MOD JS\nFor  6 -2 -2 Dex  17 +3 +3 Con  13 +1 +1\nInt  15 +2 +2 Sag  12 +1 +1 Cha  11 +0 +0\nCompétences Arcanes +4, Discrétion +5, Religion +4\nRésistances nécrotiques, psychiques, radiants\nSens Vision dans le noir 18 m ; Perception passive 11\nLangues céleste, commun\nFP 1 (200 PX ; BM +2)\nTraits\nRésistance à la magie. Le sphinx a l’Avantage aux jets de \nsauvegarde contre les sorts et autres effets magiques.\nActions\nSaignée. Corps à corps : +5, allonge 1,50 m. \nTouché : 5 (1d4 + 3) dégâts tranchants plus 7 (2d6) \ndégâts radiants.\nRéactions\nAccès d’ingéniosité (2/jour). Déclencheur : le sphinx \nou une autre créature dans un rayon de 9 m effec-\ntue un jet de sauvegarde ou un test de caractéristique. \nConséquences : le sphinx ajoute 2 au jet.",
+      "parsed": {
+        "nom": "Sphinx merveilleux",
+        "taille": "TP",
+        "type": "Celestial",
+        "sous_type": null,
+        "alignement": "Loyal Bon",
+        "ca": 13,
+        "ca_detail": null,
+        "pv": 24,
+        "pv_formule": "7d4 + 7",
+        "vitesse": {
+          "marche": 6,
+          "nage": null,
+          "vol": 12,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 6,
+          "FOR_mod": -2,
+          "DEX": 17,
+          "DEX_mod": 3,
+          "CON": 13,
+          "CON_mod": 1,
+          "INT": 15,
+          "INT_mod": 2,
+          "SAG": 12,
+          "SAG_mod": 1,
+          "CHA": 11,
+          "CHA_mod": 0
+        },
+        "jets_sauvegarde": {
+          "FOR": -2,
+          "DEX": 3,
+          "CON": 1,
+          "INT": 2,
+          "SAG": 1,
+          "CHA": 0
+        },
+        "competences": {
+          "Arcanes": 4,
+          "Discrétion": 5,
+          "Religion": 4
+        },
+        "resistances": [
+          "nécrotiques",
+          "psychiques",
+          "radiants"
+        ],
+        "immunites_degats": [],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 18,
+          "vision_aveugle": null,
+          "vision_vraie": null,
+          "perception_passive": 11,
+          "tremblements": null
+        },
+        "langues": [
+          "céleste, commun"
+        ],
+        "fp": "1",
+        "fp_numerique": 1,
+        "bonus_maitrise": 2,
+        "experience": 200,
+        "xp": 200,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Résistance à la magie. Le sphinx a l’Avantage aux jets de \nsauvegarde contre les sorts et autres effets magiques."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Saignée. Corps à corps : +5, allonge 1,50 m. \nTouché : 5 (1d4 + 3) dégâts tranchants plus 7 (2d6) \ndégâts radiants."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [
+          {
+            "nom": "Réactions",
+            "description": "Accès d’ingéniosité (2/jour). Déclencheur : le sphinx \nou une autre créature dans un rayon de 9 m effectue un jet de sauvegarde ou un test de caractéristique. \nConséquences : le sphinx ajoute 2 au jet."
+          }
+        ],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 3
+    },
+    {
+      "id": "skeleton",
+      "name": "Squelette",
+      "page": 351,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=351",
+      "raw": "Squelette\nMort-vivant de taille M, Loyal Mauvais\nCA 14 Initiative +3 (13)\nPv 13 (2d8 + 4)\nVitesse 9 m\nMOD JS MOD JS MOD JS\nFor  10 +0 +0 Dex  16 +3 +3 Con  15 +2 +2\nInt  6 -2 -2 Sag  8 -1 -1 Cha  5 -3 -3\nVulnérabilités contondants\nImmunités poison ; Empoisonné, Épuisement\nÉquipement arc court, épée courte\nSens Vision dans le noir 18 m ; Perception passive 9\nLangues comprend le commun et une autre langue, mais \nne parle pas\nFP 1/4 (50 PX ; BM +2)\nActions\nÉpée courte. Corps à corps : +5, allonge 1,50 m. \nTouché : 6 (1d6 + 3) dégâts perforants.\nArc court. À distance : +5, portée 24/96 m. \nTouché : 6 (1d6 + 3) dégâts perforants.",
+      "parsed": {
+        "nom": "Squelette",
+        "taille": "M",
+        "type": "Undead",
+        "sous_type": null,
+        "alignement": "Loyal Mauvais",
+        "ca": 14,
+        "ca_detail": null,
+        "pv": 13,
+        "pv_formule": "2d8 + 4",
+        "vitesse": {
+          "marche": 9,
+          "nage": null,
+          "vol": null,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 10,
+          "FOR_mod": 0,
+          "DEX": 16,
+          "DEX_mod": 3,
+          "CON": 15,
+          "CON_mod": 2,
+          "INT": 6,
+          "INT_mod": -2,
+          "SAG": 8,
+          "SAG_mod": -1,
+          "CHA": 5,
+          "CHA_mod": -3
+        },
+        "jets_sauvegarde": {
+          "FOR": 0,
+          "DEX": 3,
+          "CON": 2,
+          "INT": -2,
+          "SAG": -1,
+          "CHA": -3
+        },
+        "competences": {},
+        "resistances": [],
+        "immunites_degats": [
+          "poison"
+        ],
+        "immunites_etats": [
+          "Empoisonné",
+          "Épuisement"
+        ],
+        "vulnerabilites": [
+          "contondants"
+        ],
+        "sens": {
+          "vision_dans_le_noir": 18,
+          "vision_aveugle": null,
+          "vision_vraie": null,
+          "perception_passive": 9,
+          "tremblements": null
+        },
+        "langues": [
+          "comprend le commun et une autre langue, mais ne parle pas"
+        ],
+        "fp": "1/4",
+        "fp_numerique": 0.25,
+        "bonus_maitrise": 2,
+        "experience": 50,
+        "xp": 50,
+        "traits": [],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Épée courte. Corps à corps : +5, allonge 1,50 m. \nTouché : 6 (1d6 + 3) dégâts perforants.\nArc court. À distance : +5, portée 24/96 m. \nTouché : 6 (1d6 + 3) dégâts perforants."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 3
+    }
+  ]
+}

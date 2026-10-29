@@ -1,0 +1,24 @@
+{
+  "release": "20261028T145508Z",
+  "manifest": {
+    "refonte/maquette/app.js": "8e8c8be2d8bddb8a1850fe4ea375a4ab1e938f4540034b24de08336820984c54",
+    "refonte/maquette/character-rules.mjs": "37579c87b26585f60eb3f6ecf19fe0ac03540de9172059581302b9d5813b10cc",
+    "refonte/maquette/character-storage.mjs": "5212fe1024cb90c60e30d53e95e9c41f2f189a90fc12f138d3ce90388442d968",
+    "refonte/maquette/class-magic.mjs": "84829c32057a34fc3f2b4b4d26c6d383e5d32cc3f3dc4e113066821e220c521d",
+    "refonte/maquette/class-profiles.mjs": "04a0652419ecee0e99cc5651dc6f5748e3ce595653c24de2f64efb6390565c45",
+    "refonte/maquette/cleric-progression.mjs": "8033f3ff4c944ca275b7544d12cb782d12af96b413c8b0c86b19693865959a42",
+    "refonte/maquette/extra-classes.mjs": "82a3977ab69627a6f910fd90342778ce5c9a3fff103f0c29060a994720f7cf93",
+    "refonte/maquette/feat-effects.mjs": "6f91d5d0dd0b028a0ab2cd444323f859b20d1d9c8599922190f6606579bc6bf8",
+    "refonte/maquette/index.html": "b6454b22ff446feb1dac1d65edb190937cd38c67415d82896cbb8546e1d1f5ec",
+    "refonte/maquette/origin-rules.mjs": "40591dfb27aecbbe3a387eb85f6224066d12ea6d40ac997d53266b7e7ad3d589",
+    "refonte/maquette/progression.mjs": "ed5123c7448abc653747853b66f2393719464c12e40f90b2e44b4dc717c74e7a",
+    "refonte/maquette/sheet-model.mjs": "4c4b6b892a674b553c56c959ff75b63bc36ab2a4a3fa9d107fc22c768b0f1574",
+    "refonte/maquette/sheet-view.mjs": "a6fd94902f1b42cdacc8e3086fdfea0717060d93bcd3271faf265df05202c48d",
+    "refonte/maquette/style.css": "b55f53546b431070881129a4521dae072479121905ff3ad3845b1ba26df6e9fb",
+    "refonte/maquette/warlock-options.mjs": "2e79594231cad31cf22e497717244811d415dcbc94565d05dff87e62a57e5324",
+    "refonte/access/server.mjs": "445931f6b114428a1f080ed97ea785b0bdbf88dda9ea1a94bd8232eea15a3120",
+    "refonte/access/start.mjs": "d80f923153979209443a420d1417473100c39883b00210c34801dd9b56e2c68b",
+    "refonte/access/character-store.mjs": "a943fd6436cc722b8052f780339748ebcbbf074c11c3f7a52d0bfb6d5790cc64",
+    "catalogue": "39f3cc85f971ed8c31e0d1f57f639a0cb15987c4e622bfbcd4353c93966501cb"
+  }
+}

@@ -1,6 +1,6 @@
 import {readFile} from 'node:fs/promises';
 import {expect} from '@playwright/test';
-const source=JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8'));
+const source=JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8'));
 export const cleric=source.collections.classes.find(c=>c.nom==='Clerc');
 export const domains=source.collections.sous_classes.filter(s=>s.classe_parente==='clerc');
 export const abilities=['FOR','DEX','CON','INT','SAG','CHA'];
@@ -16,7 +16,12 @@ export async function createThroughUI(page,{name,level,domain,vocation,boon='fav
   await expect(page.locator('[data-choice="speciesId"][aria-pressed="true"]')).toHaveCount(0);
   await expect(page.locator('[data-choice="backgroundId"][aria-pressed="true"]')).toHaveCount(0);
   await page.locator('[data-choice="speciesId"][data-id="orc"]').click();
-  await page.locator('[data-choice="backgroundId"][data-id="charlatan"]').click();await next(page);
+  await page.locator('[data-choice="backgroundId"][data-id="charlatan"]').click();
+  for(let i=0;i<3;i++){
+    const id=await page.locator('[data-grant-slot="background"][data-grant-choice^="tool:"]:not(:checked):not(:disabled)').first().getAttribute('data-grant-choice');
+    await page.locator(`[data-grant-slot="background"][data-grant-choice="${id}"]`).check();
+  }
+  await next(page);
   if(method==='standard')await page.locator('[data-method="standard"]').click();
   else for(const ability of abilities)await page.locator(`[data-stat="${ability}"]`).fill(String(baseScores[ability]));
   await page.locator('[data-bonus-mode="three"]').click();await next(page);
@@ -53,7 +58,7 @@ export async function createThroughUI(page,{name,level,domain,vocation,boon='fav
   await expect(page.locator('input[data-spell-kind="cantrips"]:checked')).toHaveCount(cantrips);
   await expect(page.locator('input[data-spell-kind="prepared"]:checked')).toHaveCount(row.sorts_prepares);
   await next(page);
-  await page.locator('[data-choice="equipment"][data-id="A"]').click();await next(page);
+  await page.locator('[data-choice="equipment"][data-id="A"]').click();await page.locator('[data-choice="backgroundEquipment"][data-id="A"]').click();await next(page);
   await expect(page.getByRole('heading',{name:'Le début d’une légende.'})).toBeVisible();
   await next(page);
   await expect(page.locator('.sheet-hero h1')).toHaveText(name);

@@ -17,13 +17,13 @@ const appRoot=path.join(runtime,'atelier');
 await mkdir(appRoot);
 // Static files served by the same allowlist and account injection as production.
 const {copyFile}=await import('node:fs/promises');
-for(const file of ['index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','sheet-model.mjs','sheet-view.mjs']){
+for(const file of ['index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','sheet-model.mjs','sheet-view.mjs']){
   await copyFile(path.join(here,'../maquette',file),path.join(appRoot,file));
 }
 await mkdir(path.join(appRoot,'assets'));
 await copyFile(path.join(here,'../../assets/img/fond-bibliotheque-sombre.png'),path.join(appRoot,'assets/fond-bibliotheque-sombre.png'));
-const catalogue=buildCatalogue(JSON.parse(await readFile(path.join(here,'../data/rules-mongodb.json'),'utf8')));
-await writeFile(path.join(appRoot,'catalogue.json'),JSON.stringify(catalogue));
+const catalogue=buildCatalogue(JSON.parse(await readFile(path.join(here,'../tests/fixtures/rules-2024.json'),'utf8')));
+
 const records=[];
 const matches=(doc,filter)=>Object.entries(filter).every(([key,value])=>doc[key]===value);
 let pendingWrite=Promise.resolve();
@@ -56,7 +56,7 @@ async function fakeSupabase(url,options){
   const user=tokens.get(options.headers.Authorization?.replace(/^Bearer /,''));
   return Response.json(user?{id:user}:{},{status:user?200:401});
 }
-const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,origin,fetcher:fakeSupabase});
+const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase});
 gateway.listen(0,'127.0.0.1');await once(gateway,'listening');
 const publicFiles={
  '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',

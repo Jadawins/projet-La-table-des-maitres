@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+import {buildCatalogue} from '../catalogue.mjs';
+import {sourceFingerprint} from '../e2e/fingerprint.mjs';
+const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=file=>JSON.parse(fs.readFileSync(path.join(base,file),'utf8'));
+const release=read('access/rules-release.json'),freeze=read('audit/final-freeze-manifest.json'),baseline=read('audit/deployment-20261029-verification.json');
+const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+assert.equal(baseline.status,'passed');assert.equal(baseline.sourceHash,freeze.sourceHash);assert.equal(baseline.browserTests,1298);
+// Reuse the complete rules baseline only when every player-facing module and every catalogue value is identical.
+for(const f of freeze.product)assert.equal(sha(path.join(base,'maquette',f.file)),f.sha256,f.file);
+const c=buildCatalogue(read('tests/fixtures/rules-2024.json'));
+assert.equal(createHash('sha256').update(JSON.stringify(c)).digest('hex'),release.sha256);
+assert.equal(release.sha256,freeze.frozenCatalogueSha256);
+const unit=fs.readFileSync(path.join(os.tmpdir(),'myrpgtable-mongo-runtime-unit.txt'),'utf8');
+for(const row of ['# tests 81','# pass 81','# fail 0','# skipped 0','# cancelled 0'])assert(unit.split(/\r?\n/).includes(row),row);
+const browser=read('e2e/test-results/results.json');assert.deepEqual([browser.stats.expected,browser.stats.unexpected,browser.stats.skipped,browser.stats.flaky],[8,0,0,0]);
+assert.equal(browser.errors.length,0);
+const proof={status:'passed',scope:'mongodb-runtime-with-unchanged-rules-baseline',sourceHash:await sourceFingerprint(),completedAt:new Date().toISOString(),failed:0,skipped:0,unitPassed:81,browserPassed:8,baseline:{sourceHash:baseline.sourceHash,unitPassed:3948,browserPassed:1298,unchangedPlayerModules:freeze.product.length,unchangedCatalogueSha256:release.sha256},qualification:'Rules and player-facing modules byte-identical to full deployed baseline; new MongoDB store, startup wiring and authenticated in-memory serving tested separately. Real MongoDB round-trip required before switching production.'};
+fs.writeFileSync(path.join(base,'audit/mongodb-runtime-verification.json'),JSON.stringify(proof,null,2)+'\n');
+console.log(JSON.stringify(proof));

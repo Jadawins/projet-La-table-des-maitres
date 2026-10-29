@@ -1,0 +1,27 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "status": "batch-passed",
+  "recordedAt": "2026-10-28T22:43:00.702Z",
+  "sourceHash": "94353d15744444f6a52b792c604d917d89e3231427feca883ba9ef19a75eed36",
+  "unit": {
+    "passed": 2625,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Tous les tests de calcul, validation et stockage après correction des espèces et de la magie d’origine.",
+    "log": "refonte/audit/species-unit-tests.txt"
+  },
+  "browser": {
+    "passed": 68,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "47 parcours Origines actualisés et 21 parcours magie d’origine : choix explicites, fiche, sauvegarde, réouverture dans un contexte neuf.",
+    "log": "refonte/audit/species-browser-tests.txt"
+  },
+  "fullRulesConformity": false,
+  "limitations": [
+    "Les fiches individuelles des sorts et les autres dons restent dans leurs propres lots de comparaison.",
+    "Le texte narratif des espèces ne constitue pas un audit de règles supplémentaire.",
+    "Le versionnement des anciennes fiches reste bloquant avant publication."
+  ],
+  "nextStep": "Proposer explicitement équipement A ou 50 po pour les historiques ; puis poursuivre les classes et sous-classes encore ouvertes."
+}

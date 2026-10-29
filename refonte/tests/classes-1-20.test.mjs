@@ -9,7 +9,7 @@ import {classProfile,finalScores,modifier} from '../maquette/character-rules.mjs
 import {classChoiceSpecs,classChoiceErrors,shapePool} from '../maquette/class-profiles.mjs';
 import {characterSnapshot,validateSavedCharacter} from '../maquette/character-storage.mjs';
 import {classTraining} from '../maquette/progression.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url))));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url))));
 const ids=['barbare','rodeur','barde','druide'];
 for(const id of ids)for(const sub of c.subclasses.filter(s=>s.classe_parente===id))for(let level=1;level<=20;level++)test(`${id} · ${sub.nom} · ${level} : fiche et sauvegarde`,()=>{
   const s=classFixture(c,id,level,sub.id),m=sheetModel(s,c),p=classProfile(s,c);
@@ -23,12 +23,12 @@ for(const id of ids)for(const sub of c.subclasses.filter(s=>s.classe_parente===i
   assert.ok(p.always.every(x=>!x.unresolved));
   assert.doesNotThrow(()=>renderSheet(s,c));
 });
-test('Les huit terrains sont reliés à tous les paliers et restent hors quota',()=>{
-  for(const terrain of Object.keys(c.classSupplements.terrainSpells))for(const level of [3,5,7,9,20]){
+test('Les quatre terrains 2024 sont reliés à tous les paliers et restent hors quota',()=>{
+  for(const terrain of Object.keys(c.classSupplements.land2024.terrains))for(const level of [3,5,7,9,20]){
     const s=classFixture(c,'druide',level,'druide_cercle_terre');s.classChoices.terrain=[terrain];
     const p=classProfile(s,c);
     assert.deepEqual(p.missingSpells,[]);
-    assert.equal(p.always.filter(x=>x.grantSource.startsWith('Sorts de terrain')).length,2*Math.min(4,(level-1)/2));
+    assert.equal(p.always.filter(x=>x.grantSource.startsWith('Sorts de terrain')).length,3+[5,7,9].filter(n=>n<=level).length);
     assert.ok(p.always.every(x=>!p.prepared.some(y=>y.id===x.id)));
   }
 });
@@ -55,16 +55,16 @@ test('Druide : vocation, formes autorisées, Mage et gardien ne se cumulent pas'
   assert.ok(!classTraining(s,c).weapons.includes('armes_de_guerre'));
   s.classChoices.vocationnaturelle=['Gardien'];assert.ok(classTraining(s,c).weapons.includes('armes_de_guerre'));
   assert.ok(shapePool(s,c).every(f=>f.fp_numerique<=.25&&!f.vitesse.vol));
-  const moon=classFixture(c,'druide',6,'druide_cercle_lune');assert.equal(shapePool(moon,c).filter(f=>f.type==='Elemental').length,4);
+  const moon=classFixture(c,'druide',6,'druide_cercle_lune');assert.equal(shapePool(moon,c).filter(f=>f.type==='Elemental').length,0);
 });
 test('Les choix manquants, doublés ou hors liste empêchent la fiche complète',()=>{
-  for(const id of ids){const sub=c.subclasses.find(s=>s.classe_parente===id),s=classFixture(c,id,20,sub.id);for(const spec of classChoiceSpecs(s,c)){
+  for(const id of ids){const sub=c.subclasses.find(s=>s.classe_parente===id),s=classFixture(c,id,20,sub.id);for(const spec of classChoiceSpecs(s,c).filter(spec=>(spec.min??spec.count)>0)){
     const bad=structuredClone(s);bad.classChoices[spec.key]=[];assert.ok(classChoiceErrors(bad,c).length);assert.equal(validateSavedCharacter(bad,c).status,'draft');
   }}
 });
 test('Sens, déplacements et immunités restent liés à leur niveau et sous-classe',()=>{
-  const sea=sheetModel(classFixture(c,'druide',14,'druide_cercle_mers'),c);assert.deepEqual(sea.immunities,['froid','tonnerre']);assert.equal(sea.swim,12);
-  const ranger=sheetModel(classFixture(c,'rodeur',18,'rodeur_traqueur_tenebres'),c);assert.equal(ranger.blindvision,9);assert.ok(ranger.resistances.includes('nécrotique'));assert.equal(ranger.swim,ranger.speed);
+  const sea=sheetModel(classFixture(c,'druide',14,'druide_cercle_mers'),c);assert.deepEqual(sea.immunities,[]);assert.equal(sea.swim,sea.speed);
+  const ranger=sheetModel(classFixture(c,'rodeur',18,'rodeur_traqueur_tenebres'),c);assert.equal(ranger.blindvision,9);assert.ok(!ranger.resistances.includes('nécrotique'));assert.equal(ranger.swim,ranger.speed);
   const bard=classFixture(c,'barde',6,'barde_college_vaillance');assert.equal(sheetModel(bard,c).attacksPerAction,2);assert.ok(classTraining(bard,c).weapons.includes('armes_de_guerre'));
 });
 test('Styles de combat : Archerie, Défense et Combattant naturel',()=>{
@@ -81,15 +81,17 @@ test('Le Mage et Magie puissante du druide chiffrent leurs bonus sans effet clé
   const cantrip=m.spells.find(x=>x.niveau===0&&x.source==='Druide');assert.equal(cantrip.cantripBonus,m.mods.SAG);
   assert.ok(m.spells.every(x=>!x.featRules.some(r=>r.startsWith('Frappe consacrée'))));
 });
-test('Séduction utilise le meilleur de CHA et DEX uniquement sans armure ni bouclier',()=>{
-  const s=classFixture(c,'barde',3,'barde_college_seduction',{equipment:'B'}),m=sheetModel(s,c);assert.equal(m.ac,13);
+test('Séduction ne reçoit pas de défense sans armure ; Danse possède sa défense propre',()=>{
+  const s=classFixture(c,'barde',3,'barde_college_seduction',{equipment:'B'}),m=sheetModel(s,c);assert.equal(m.ac,10+m.mods.DEX);
   s.equipment='A';assert.equal(sheetModel(s,c).ac,12);
 });
-test('Compagnon : PV du MJ, amélioration de CA et absence de mutation du profil source',()=>{
-  const s=classFixture(c,'rodeur',11,'rodeur_belluaire');s.classChoices.companionHp=['2'];s.classChoices.companion11=['Armure naturelle'];
-  const m=sheetModel(s,c),original=c.shapeForms.find(f=>f.slug===s.classChoices.companion[0]);
-  assert.equal(m.classEffects.companion.pv,44+m.mods.SAG+2);assert.equal(m.classEffects.companion.ca,original.ca+1);assert.notEqual(m.classEffects.companion,original);
+test('Compagnon primordial : PV et CA calculés, anciens compléments sans effet',()=>{
+  const s=classFixture(c,'rodeur',11,'rodeur_belluaire');s.classChoices.companionHp=['99'];s.classChoices.companion11=['Armure naturelle'];
+  const original=structuredClone(c.subclasses.find(x=>x.id==='rodeur_belluaire'));
+  const m=sheetModel(s,c);assert.equal(m.classEffects.companion.pv,60);assert.equal(m.classEffects.companion.ca,13+m.mods.SAG);
+  assert.deepEqual(c.subclasses.find(x=>x.id==='rodeur_belluaire'),original);
 });
+
 test('Une classe inconnue est refusée sans bénéficier de choix empruntés',()=>{
   const s=classFixture(c,'barbare',1);s.classId='inconnue';assert.equal(classProfile(s,c),null);assert.throws(()=>validateSavedCharacter(s,c));
 });

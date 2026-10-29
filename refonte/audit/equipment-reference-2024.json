@@ -1,0 +1,2284 @@
+{
+  "checkedAt": "2026-10-29",
+  "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+  "entries": [
+    {
+      "collection": "armes",
+      "id": "Bâton de combat",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Bâton de combat",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "1d6",
+          "polyvalente": "1d8"
+        },
+        "proprietes": [
+          "polyvalente"
+        ],
+        "botte": "renversement",
+        "poids": 2,
+        "prix": {
+          "quantite": 2,
+          "monnaie": "pa"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Dague",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Dague",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d4"
+        },
+        "proprietes": [
+          "finesse",
+          "lancer",
+          {
+            "lancer_portee": "6/18"
+          },
+          "legere"
+        ],
+        "botte": "coup_double",
+        "poids": 0.5,
+        "prix": {
+          "quantite": 2,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Gourdin",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Gourdin",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "1d4"
+        },
+        "proprietes": [
+          "legere"
+        ],
+        "botte": "ralentissement",
+        "poids": 1,
+        "prix": {
+          "quantite": 1,
+          "monnaie": "pa"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Hachette",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Hachette",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d6"
+        },
+        "proprietes": [
+          "lancer",
+          {
+            "lancer_portee": "6/18"
+          },
+          "legere"
+        ],
+        "botte": "ouverture",
+        "poids": 1,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Javeline",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Javeline",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d6"
+        },
+        "proprietes": [
+          "lancer",
+          {
+            "lancer_portee": "9/36"
+          }
+        ],
+        "botte": "ralentissement",
+        "poids": 1,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "pa"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Lance",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Lance",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d6",
+          "polyvalente": "1d8"
+        },
+        "proprietes": [
+          "lancer",
+          {
+            "lancer_portee": "6/18"
+          },
+          "polyvalente"
+        ],
+        "botte": "sape",
+        "poids": 1.5,
+        "prix": {
+          "quantite": 1,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Marteau léger",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Marteau léger",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "1d4"
+        },
+        "proprietes": [
+          "lancer",
+          {
+            "lancer_portee": "6/18"
+          },
+          "legere"
+        ],
+        "botte": "coup_double",
+        "poids": 1,
+        "prix": {
+          "quantite": 2,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Masse d'armes",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Masse d'armes",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "1d6"
+        },
+        "proprietes": [],
+        "botte": "sape",
+        "poids": 2,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Masse",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Masse",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "1d8"
+        },
+        "proprietes": [
+          "deux_mains"
+        ],
+        "botte": "poussee",
+        "poids": 5,
+        "prix": {
+          "quantite": 2,
+          "monnaie": "pa"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Serpe",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Serpe",
+        "categorie": "arme_courante_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d4"
+        },
+        "proprietes": [
+          "legere"
+        ],
+        "botte": "coup_double",
+        "poids": 1,
+        "prix": {
+          "quantite": 1,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Arbalète légère",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Arbalète légère",
+        "categorie": "arme_courante_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d8"
+        },
+        "proprietes": [
+          "chargement",
+          "deux_mains",
+          "munitions",
+          {
+            "portee": "24/96",
+            "type": "carreaux"
+          }
+        ],
+        "botte": "ralentissement",
+        "poids": 2.5,
+        "prix": {
+          "quantite": 25,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Arc court",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Arc court",
+        "categorie": "arme_courante_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d6"
+        },
+        "proprietes": [
+          "deux_mains",
+          "munitions",
+          {
+            "portee": "24/96",
+            "type": "flèches"
+          }
+        ],
+        "botte": "ouverture",
+        "poids": 1,
+        "prix": {
+          "quantite": 25,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Fléchette",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Fléchette",
+        "categorie": "arme_courante_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d4"
+        },
+        "proprietes": [
+          "finesse",
+          "lancer",
+          {
+            "lancer_portee": "6/18"
+          }
+        ],
+        "botte": "ouverture",
+        "poids": 0.125,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "pc"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Fronde",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Fronde",
+        "categorie": "arme_courante_distance",
+        "degats": {
+          "type": "contondants",
+          "de": "1d4"
+        },
+        "proprietes": [
+          "munitions",
+          {
+            "portee": "9/36",
+            "type": "billes"
+          }
+        ],
+        "botte": "ralentissement",
+        "poids": 0,
+        "prix": {
+          "quantite": 1,
+          "monnaie": "pa"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Cimeterre",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Cimeterre",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d6"
+        },
+        "proprietes": [
+          "finesse",
+          "legere"
+        ],
+        "botte": "coup_double",
+        "poids": 1.5,
+        "prix": {
+          "quantite": 25,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Coutille",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Coutille",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d10"
+        },
+        "proprietes": [
+          "allonge",
+          "deux_mains",
+          "lourde"
+        ],
+        "botte": "ecorchure",
+        "poids": 3,
+        "prix": {
+          "quantite": 20,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Épée à deux mains",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Épée à deux mains",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "2d6"
+        },
+        "proprietes": [
+          "deux_mains",
+          "lourde"
+        ],
+        "botte": "ecorchure",
+        "poids": 3,
+        "prix": {
+          "quantite": 50,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Épée courte",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Épée courte",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d6"
+        },
+        "proprietes": [
+          "finesse",
+          "legere"
+        ],
+        "botte": "ouverture",
+        "poids": 1,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Épée longue",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Épée longue",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d8",
+          "polyvalente": "1d10"
+        },
+        "proprietes": [
+          "polyvalente"
+        ],
+        "botte": "sape",
+        "poids": 1.5,
+        "prix": {
+          "quantite": 15,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Fléau d’armes",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Fléau d’armes",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "1d8"
+        },
+        "proprietes": [],
+        "botte": "sape",
+        "poids": 1,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Fouet",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Fouet",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d4"
+        },
+        "proprietes": [
+          "allonge",
+          "finesse"
+        ],
+        "botte": "ralentissement",
+        "poids": 1.5,
+        "prix": {
+          "quantite": 2,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Hache à deux mains",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Hache à deux mains",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d12"
+        },
+        "proprietes": [
+          "deux_mains",
+          "lourde"
+        ],
+        "botte": "enchaînement",
+        "poids": 3.5,
+        "prix": {
+          "quantite": 30,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Hache d’armes",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Hache d’armes",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d8",
+          "polyvalente": "1d10"
+        },
+        "proprietes": [
+          "polyvalente"
+        ],
+        "botte": "Renversement",
+        "poids": 2,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Hallebarde",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Hallebarde",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "tranchants",
+          "de": "1d10"
+        },
+        "proprietes": [
+          "allonge",
+          "deux_mains",
+          "lourde"
+        ],
+        "botte": "enchaînement",
+        "poids": 3,
+        "prix": {
+          "quantite": 20,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Lance d’arçon",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Lance d’arçon",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d10"
+        },
+        "proprietes": [
+          "allonge",
+          "deux_mains (sauf à cheval)",
+          "lourde"
+        ],
+        "botte": "renversement",
+        "poids": 3,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Maillet d’armes",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Maillet d’armes",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "2d6"
+        },
+        "proprietes": [
+          "deux_mains",
+          "lourde"
+        ],
+        "botte": "Renversement",
+        "poids": 5,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Marteau de guerre",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Marteau de guerre",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "contondants",
+          "de": "1d8",
+          "polyvalente": "1d10"
+        },
+        "proprietes": [
+          "polyvalente"
+        ],
+        "botte": "poussée",
+        "poids": 2.5,
+        "prix": {
+          "quantite": 15,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Morgenstern",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Morgenstern",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d8"
+        },
+        "proprietes": [],
+        "botte": "sape",
+        "poids": 2,
+        "prix": {
+          "quantite": 15,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Pique",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Pique",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d10"
+        },
+        "proprietes": [
+          "allonge",
+          "deux_mains",
+          "lourde"
+        ],
+        "botte": "poussée",
+        "poids": 9,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Rapière",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Rapière",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d8"
+        },
+        "proprietes": [
+          "finesse"
+        ],
+        "botte": "ouverture",
+        "poids": 1,
+        "prix": {
+          "quantite": 25,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Trident",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Trident",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d8",
+          "polyvalente": "1d10"
+        },
+        "proprietes": [
+          "lancer",
+          {
+            "lancer_portee": "6/18"
+          },
+          "polyvalente"
+        ],
+        "botte": "Renversement",
+        "poids": 2,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Mousquet",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Mousquet",
+        "categorie": "arme_de_guerre_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d12"
+        },
+        "proprietes": [
+          "chargement",
+          "deux_mains",
+          "munitions",
+          {
+            "portee": "12/36",
+            "type": "balles"
+          }
+        ],
+        "botte": "ralentissement",
+        "poids": 5,
+        "prix": {
+          "quantite": 500,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Pistolet",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Pistolet",
+        "categorie": "arme_de_guerre_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d10"
+        },
+        "proprietes": [
+          "chargement",
+          "munitions",
+          {
+            "portee": "9/27",
+            "type": "balles"
+          }
+        ],
+        "botte": "ouverture",
+        "poids": 1.5,
+        "prix": {
+          "quantite": 250,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Sarbacane",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Sarbacane",
+        "categorie": "arme_de_guerre_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1"
+        },
+        "proprietes": [
+          "chargement",
+          "munitions",
+          {
+            "portee": "7.5/30",
+            "type": "dards"
+          }
+        ],
+        "botte": "ouverture",
+        "poids": 0.5,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Arbalète de poing",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Arbalète de poing",
+        "categorie": "arme_de_guerre_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d6"
+        },
+        "proprietes": [
+          "chargement",
+          "legere",
+          "munitions",
+          {
+            "portee": "9/36",
+            "type": "carreaux"
+          }
+        ],
+        "botte": "ouverture",
+        "poids": 1.5,
+        "prix": {
+          "quantite": 75,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Arbalète lourde",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Arbalète lourde",
+        "categorie": "arme_de_guerre_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d10"
+        },
+        "proprietes": [
+          "chargement",
+          "deux_mains",
+          "lourde",
+          "munitions",
+          {
+            "portee": "30/120",
+            "type": "carreaux"
+          }
+        ],
+        "botte": "poussée",
+        "poids": 9,
+        "prix": {
+          "quantite": 50,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Arc long",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Arc long",
+        "categorie": "arme_de_guerre_distance",
+        "degats": {
+          "type": "perforants",
+          "de": "1d8"
+        },
+        "proprietes": [
+          "deux_mains",
+          "lourde",
+          "munitions",
+          {
+            "portee": "45/180",
+            "type": "flèches"
+          }
+        ],
+        "botte": "ralentissement",
+        "poids": 1,
+        "prix": {
+          "quantite": 50,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armes",
+      "id": "Pic de guerre",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=97",
+      "fields": {
+        "nom": "Pic de guerre",
+        "categorie": "arme_de_guerre_corps_a_corps",
+        "degats": {
+          "type": "perforants",
+          "de": "1d8",
+          "polyvalente": "1d10"
+        },
+        "proprietes": [
+          "polyvalente"
+        ],
+        "botte": "sape",
+        "poids": 1,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "po"
+        }
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_matelassee",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "armure_matelassee",
+        "nom": "Armure matelassée",
+        "categorie": "armure_legere",
+        "classe_armure": {
+          "base": 11,
+          "modificateur_dex": true
+        },
+        "force_min": null,
+        "discretion": "desavantage",
+        "poids": 4,
+        "prix": {
+          "quantite": 5,
+          "monnaie": "po"
+        },
+        "enfiler": "1 minute",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_de_cuir",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "armure_de_cuir",
+        "nom": "Armure de cuir",
+        "categorie": "armure_legere",
+        "classe_armure": {
+          "base": 11,
+          "modificateur_dex": true
+        },
+        "force_min": null,
+        "discretion": "aucun",
+        "poids": 5,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        },
+        "enfiler": "1 minute",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_de_cuir_cloute",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "armure_de_cuir_cloute",
+        "nom": "Armure de cuir clouté",
+        "categorie": "armure_legere",
+        "classe_armure": {
+          "base": 12,
+          "modificateur_dex": true
+        },
+        "force_min": null,
+        "discretion": "aucun",
+        "poids": 6.5,
+        "prix": {
+          "quantite": 45,
+          "monnaie": "po"
+        },
+        "enfiler": "1 minute",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_de_peaux",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "armure_de_peaux",
+        "nom": "Armure de peaux",
+        "categorie": "armure_intermediaire",
+        "classe_armure": {
+          "base": 12,
+          "modificateur_dex": true,
+          "modificateur_dex_max": 2
+        },
+        "force_min": null,
+        "discretion": "aucun",
+        "poids": 6,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        },
+        "enfiler": "5 minutes",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "chemise_de_mailles",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "chemise_de_mailles",
+        "nom": "Chemise de mailles",
+        "categorie": "armure_intermediaire",
+        "classe_armure": {
+          "base": 13,
+          "modificateur_dex": true,
+          "modificateur_dex_max": 2
+        },
+        "force_min": null,
+        "discretion": "aucun",
+        "poids": 10,
+        "prix": {
+          "quantite": 50,
+          "monnaie": "po"
+        },
+        "enfiler": "5 minutes",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_decailles",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "armure_decailles",
+        "nom": "Armure d'écailles",
+        "categorie": "armure_intermediaire",
+        "classe_armure": {
+          "base": 14,
+          "modificateur_dex": true,
+          "modificateur_dex_max": 2
+        },
+        "force_min": null,
+        "discretion": "desavantage",
+        "poids": 22.5,
+        "prix": {
+          "quantite": 50,
+          "monnaie": "po"
+        },
+        "enfiler": "5 minutes",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "cuirasse",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "cuirasse",
+        "nom": "Cuirasse",
+        "categorie": "armure_intermediaire",
+        "classe_armure": {
+          "base": 14,
+          "modificateur_dex": true,
+          "modificateur_dex_max": 2
+        },
+        "force_min": null,
+        "discretion": "aucun",
+        "poids": 10,
+        "prix": {
+          "quantite": 400,
+          "monnaie": "po"
+        },
+        "enfiler": "5 minutes",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "demi_plaque",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "demi_plaque",
+        "nom": "Demi-plaque",
+        "categorie": "armure_intermediaire",
+        "classe_armure": {
+          "base": 15,
+          "modificateur_dex": true,
+          "modificateur_dex_max": 2
+        },
+        "force_min": null,
+        "discretion": "desavantage",
+        "poids": 20,
+        "prix": {
+          "quantite": 750,
+          "monnaie": "po"
+        },
+        "enfiler": "5 minutes",
+        "retirer": "1 minute"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "broigne",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "broigne",
+        "nom": "Broigne",
+        "categorie": "armure_lourde",
+        "classe_armure": {
+          "base": 14,
+          "modificateur_dex": false
+        },
+        "force_min": null,
+        "discretion": "desavantage",
+        "poids": 20,
+        "prix": {
+          "quantite": 30,
+          "monnaie": "po"
+        },
+        "enfiler": "10 minutes",
+        "retirer": "5 minutes"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "clibanion",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "clibanion",
+        "nom": "Clibanion",
+        "categorie": "armure_lourde",
+        "classe_armure": {
+          "base": 17,
+          "modificateur_dex": false
+        },
+        "force_min": 15,
+        "discretion": "desavantage",
+        "poids": 30,
+        "prix": {
+          "quantite": 200,
+          "monnaie": "po"
+        },
+        "enfiler": "10 minutes",
+        "retirer": "5 minutes"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "harnois",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "harnois",
+        "nom": "Harnois",
+        "categorie": "armure_lourde",
+        "classe_armure": {
+          "base": 18,
+          "modificateur_dex": false
+        },
+        "force_min": 15,
+        "discretion": "desavantage",
+        "poids": 32.5,
+        "prix": {
+          "quantite": 1500,
+          "monnaie": "po"
+        },
+        "enfiler": "10 minutes",
+        "retirer": "5 minutes"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "cotte_de_mailles",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "cotte_de_mailles",
+        "nom": "Cotte de mailles",
+        "categorie": "armure_lourde",
+        "classe_armure": {
+          "base": 16,
+          "modificateur_dex": false
+        },
+        "force_min": 13,
+        "discretion": "desavantage",
+        "poids": 27.5,
+        "prix": {
+          "quantite": 75,
+          "monnaie": "po"
+        },
+        "enfiler": "10 minutes",
+        "retirer": "5 minutes"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "armures",
+      "id": "bouclier",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=98",
+      "fields": {
+        "id": "bouclier",
+        "nom": "Bouclier",
+        "categorie": "bouclier",
+        "classe_armure": {
+          "bonus": 2
+        },
+        "discretion": "aucun",
+        "poids": 3,
+        "prix": {
+          "quantite": 10,
+          "monnaie": "po"
+        },
+        "enfiler": "action Utilisation",
+        "retirer": "action Utilisation"
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_d_alchimiste",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "materiel_d_alchimiste",
+        "nom": "Matériel d’alchimiste",
+        "categorie": "artisan",
+        "prix": 50,
+        "poids": 4,
+        "caracteristique": "INT",
+        "utilisations": [
+          {
+            "action": "identifier_substance",
+            "dd": 15,
+            "avantage_si_double_maitrise": true
+          },
+          {
+            "action": "allumer_un_feu",
+            "dd": 15,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "acide",
+          "feu grégeois",
+          "huile",
+          "papier",
+          "parfum",
+          "sacoche à composants"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_brasseur",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "materiel_de_brasseur",
+        "nom": "Matériel de brasseur",
+        "categorie": "artisan",
+        "prix": 20,
+        "poids": 4.5,
+        "caracteristique": "INT",
+        "utilisations": [
+          {
+            "action": "detecter_poison_boisson",
+            "dd": 15,
+            "avantage_si_double_maitrise": true
+          },
+          {
+            "action": "identifier_alcool",
+            "dd": 10,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "antidote"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_calligraphe",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "materiel_de_calligraphe",
+        "nom": "Matériel de calligraphe",
+        "categorie": "artisan",
+        "prix": 10,
+        "poids": 2.5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "Écrire des textes ornés de fioritures qui les prémunissent contre la contrefaçon",
+            "dd": 15
+          }
+        ],
+        "artisanat": [
+          "encre",
+          "parchemin de sort"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_peintre",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "materiel_de_peintre",
+        "nom": "Matériel de peintre",
+        "categorie": "artisan",
+        "prix": 10,
+        "poids": 2.5,
+        "caracteristique": "SAG",
+        "utilisations": [
+          {
+            "action": "produire_image_ressemblante",
+            "dd": 10,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "focaliseur druidique",
+          "symbole sacré"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_bricoleur",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_bricoleur",
+        "nom": "Outils de bricoleur",
+        "categorie": "artisan",
+        "prix": 50,
+        "poids": 5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "Assembler en ferraille un objet TP qui se désagrège au bout de 1 minute",
+            "dd": 20
+          }
+        ],
+        "artisanat": [
+          "mousquet",
+          "pistolet",
+          "boîte à amadou",
+          "cloche",
+          "lanterne à capote",
+          "lanterne sourde",
+          "menottes",
+          "pelle",
+          "piège à mâchoires",
+          "serrure",
+          "sifflet"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_cartographe",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_cartographe",
+        "nom": "Outils de cartographe",
+        "categorie": "artisan",
+        "prix": 15,
+        "poids": 3,
+        "caracteristique": "SAG",
+        "utilisations": [
+          {
+            "action": "cartographier_region",
+            "dd": 15,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "carte"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_charpentier",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_charpentier",
+        "nom": "Outils de charpentier",
+        "categorie": "artisan",
+        "prix": 8,
+        "poids": 3,
+        "caracteristique": "FOR",
+        "utilisations": [
+          {
+            "action": "sceller_forcer_porte_contenant",
+            "dd": 20,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "bâton de combat",
+          "bélier portable",
+          "coffre",
+          "échelle",
+          "gourdin",
+          "massue",
+          "perche",
+          "tonneau",
+          "torche"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_cordonnier",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_cordonnier",
+        "nom": "Outils de cordonnier",
+        "categorie": "artisan",
+        "prix": 5,
+        "poids": 2.5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "Modifier des chaussures pour l’Avantage au prochain test DEX (Acrobaties) du porteur",
+            "dd": 10
+          }
+        ],
+        "artisanat": [
+          "matériel d'escalade"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_forgeron",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_forgeron",
+        "nom": "Outils de forgeron",
+        "categorie": "artisan",
+        "prix": 20,
+        "poids": 4,
+        "caracteristique": "FOR",
+        "utilisations": [
+          {
+            "action": "forcer_porte_ou_contenant",
+            "dd": 20,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "toute arme de corps à corps sauf bâton de combat, gourdin, massue et fouet",
+          "toute armure intermédiaire sauf armure de peaux",
+          "toute armure lourde",
+          "balles pour arme à feu",
+          "billes",
+          "billes de fronde",
+          "chaîne",
+          "chausse-trappes",
+          "grappin",
+          "pied-de-biche",
+          "pointes en fer",
+          "pot en fer",
+          "seau"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_joaillier",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_joaillier",
+        "nom": "Outils de joaillier",
+        "categorie": "artisan",
+        "prix": 25,
+        "poids": 1,
+        "caracteristique": "INT",
+        "utilisations": [
+          {
+            "action": "evaluer_valeur_gemme",
+            "dd": 15,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "focaliseur arcanique",
+          "symbole sacré"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_macon",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_macon",
+        "nom": "Outils de maçon",
+        "categorie": "artisan",
+        "prix": 10,
+        "poids": 4,
+        "caracteristique": "FOR",
+        "utilisations": [
+          {
+            "action": "ciseler_symbole_ou_creuser_pierre",
+            "dd": 10,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "palan"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_menuisier",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=99",
+      "fields": {
+        "id": "outils_de_menuisier",
+        "nom": "Outils de menuisier",
+        "categorie": "artisan",
+        "prix": 1,
+        "poids": 2.5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "sculpter_motif_bois",
+            "dd": 10,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "armes à distance (sauf fronde, mousquet et pistolet)",
+          "bâton de combat",
+          "carreaux d’arbalète",
+          "dards de sarbacane",
+          "flèches",
+          "focaliseur arcanique",
+          "focaliseur druidique",
+          "porte-plume"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_potier",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "outils_de_potier",
+        "nom": "Outils de potier",
+        "categorie": "artisan",
+        "prix": 10,
+        "poids": 1.5,
+        "caracteristique": "INT",
+        "utilisations": [
+          {
+            "action": "Déterminer le contenu d’un objet en céramique pendant les dernières 24 heures",
+            "dd": 15
+          }
+        ],
+        "artisanat": [
+          "cruche",
+          "lampe"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_souffleur_de_verre",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "outils_de_souffleur_de_verre",
+        "nom": "Outils de souffleur de verre",
+        "categorie": "artisan",
+        "prix": 30,
+        "poids": 2.5,
+        "caracteristique": "INT",
+        "utilisations": [
+          {
+            "action": "Déterminer le contenu d’un objet en verre pendant les dernières 24 heures",
+            "dd": 15
+          }
+        ],
+        "artisanat": [
+          "bouteille en verre",
+          "fiole",
+          "longue-vue",
+          "loupe"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_tanneur",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "outils_de_tanneur",
+        "nom": "Outils de tanneur",
+        "categorie": "artisan",
+        "prix": 5,
+        "poids": 2.5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "ajouter_motif_objet_cuir",
+            "dd": 10,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "fouet",
+          "fronde",
+          "armure de cuir",
+          "armure de cuir clouté",
+          "armure de peaux",
+          "carquois",
+          "étui à carreaux d’arbalète",
+          "étui à cartes ou à parchemins",
+          "outre",
+          "parchemin",
+          "sacoche",
+          "sac à dos"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_tisserand",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "outils_de_tisserand",
+        "nom": "Outils de tisserand",
+        "categorie": "artisan",
+        "prix": 1,
+        "poids": 2.5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "reparer_vetement",
+            "dd": 10,
+            "avantage_si_double_maitrise": true
+          },
+          {
+            "action": "coudre_motif_taille_tp",
+            "dd": 10,
+            "avantage_si_double_maitrise": true
+          }
+        ],
+        "artisanat": [
+          "armure matelassée",
+          "beaux habits",
+          "corde",
+          "couverture",
+          "ficelle",
+          "filet",
+          "panier",
+          "robe",
+          "sac",
+          "sac de couchage",
+          "tente",
+          "tenue de voyage"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "ustensiles_de_cuisinier",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "ustensiles_de_cuisinier",
+        "nom": "Ustensiles de cuisinier",
+        "categorie": "artisan",
+        "prix": 1,
+        "poids": 4,
+        "caracteristique": "SAG",
+        "utilisations": [
+          {
+            "action": "Améliorer la saveur des aliments",
+            "dd": 10
+          },
+          {
+            "action": "Détecter si un plat est avarié ou empoisonné",
+            "dd": 15
+          }
+        ],
+        "artisanat": [
+          "rations"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "accessoires_de_deguisement",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "accessoires_de_deguisement",
+        "nom": "Accessoires de déguisement",
+        "categorie": "autre",
+        "prix": 25,
+        "poids": 1.5,
+        "caracteristique": "CHA",
+        "utilisations": [
+          {
+            "action": "appliquer du maquillage",
+            "dd": 10
+          }
+        ],
+        "artisanat": [
+          "costume"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "boite_de_jeux",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "boite_de_jeux",
+        "nom": "Boîte de jeux",
+        "categorie": "autre",
+        "prix": null,
+        "poids": null,
+        "caracteristique": "SAG",
+        "utilisations": [
+          {
+            "action": "déterminer si quelqu’un triche",
+            "dd": 10
+          },
+          {
+            "action": "gagner la partie",
+            "dd": 20
+          }
+        ],
+        "variants": [
+          {
+            "nom": "cartes à jouer",
+            "prix": 0.5,
+            "poids": null,
+            "monnaie": "po"
+          },
+          {
+            "nom": "dés",
+            "prix": 0.1,
+            "poids": null,
+            "monnaie": "po"
+          },
+          {
+            "nom": "échecs draconiques",
+            "prix": 1,
+            "poids": null,
+            "monnaie": "po"
+          },
+          {
+            "nom": "jeu des dragons",
+            "prix": 1,
+            "poids": null,
+            "monnaie": "po"
+          }
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "instruments_de_musique",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "instruments_de_musique",
+        "nom": "Instruments de musique",
+        "categorie": "autre",
+        "prix": null,
+        "poids": null,
+        "caracteristique": "CHA",
+        "utilisations": [
+          {
+            "action": "jouer un air connu",
+            "dd": 10
+          },
+          {
+            "action": "improviser une chanson",
+            "dd": 15
+          }
+        ],
+        "variants": [
+          {
+            "nom": "chalemie",
+            "prix": 2,
+            "poids": 0.5,
+            "monnaie": "po"
+          },
+          {
+            "nom": "cor",
+            "prix": 3,
+            "poids": 1,
+            "monnaie": "po"
+          },
+          {
+            "nom": "cornemuse",
+            "prix": 30,
+            "poids": 3,
+            "monnaie": "po"
+          },
+          {
+            "nom": "flûte",
+            "prix": 2,
+            "poids": 0.5,
+            "monnaie": "po"
+          },
+          {
+            "nom": "flûte de pan",
+            "prix": 12,
+            "poids": 1,
+            "monnaie": "po"
+          },
+          {
+            "nom": "luth",
+            "prix": 35,
+            "poids": 1,
+            "monnaie": "po"
+          },
+          {
+            "nom": "lyre",
+            "prix": 30,
+            "poids": 1,
+            "monnaie": "po"
+          },
+          {
+            "nom": "tambour",
+            "prix": 6,
+            "poids": 1.5,
+            "monnaie": "po"
+          },
+          {
+            "nom": "tympanon",
+            "prix": 25,
+            "poids": 5,
+            "monnaie": "po"
+          },
+          {
+            "nom": "viole",
+            "prix": 30,
+            "poids": 0.5,
+            "monnaie": "po"
+          }
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "instruments_de_navigateur",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "instruments_de_navigateur",
+        "nom": "Instruments de navigateur",
+        "categorie": "autre",
+        "prix": 25,
+        "poids": 1,
+        "caracteristique": "SAG",
+        "utilisations": [
+          {
+            "action": "tracer un cap",
+            "dd": 10
+          },
+          {
+            "action": "déterminer sa position en observant les étoiles",
+            "dd": 15
+          }
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_contrefacon",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "materiel_de_contrefacon",
+        "nom": "Matériel de contrefaçon",
+        "categorie": "autre",
+        "prix": 15,
+        "poids": 2.5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "Imiter dix mots ou moins d’une écriture",
+            "dd": 15
+          },
+          {
+            "action": "Reproduire un cachet de cire",
+            "dd": 20
+          }
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_d_empoisonneur",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "materiel_d_empoisonneur",
+        "nom": "Matériel d’empoisonneur",
+        "categorie": "autre",
+        "prix": 50,
+        "poids": 1,
+        "caracteristique": "INT",
+        "utilisations": [
+          {
+            "action": "déterminer qu’un objet est empoisonné",
+            "dd": 10
+          }
+        ],
+        "artisanat": [
+          "poison standard"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_d_herboriste",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "materiel_d_herboriste",
+        "nom": "Matériel d’herboriste",
+        "categorie": "autre",
+        "prix": 5,
+        "poids": 1.5,
+        "caracteristique": "INT",
+        "utilisations": [
+          {
+            "action": "identifier une plante",
+            "dd": 10
+          }
+        ],
+        "artisanat": [
+          "antidote",
+          "bougie",
+          "trousse de soins",
+          "potion de guérison"
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_voleur",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=100",
+      "fields": {
+        "id": "outils_de_voleur",
+        "nom": "Outils de voleur",
+        "categorie": "autre",
+        "prix": 25,
+        "poids": 0.5,
+        "caracteristique": "DEX",
+        "utilisations": [
+          {
+            "action": "crocheter une serrure",
+            "dd": 15
+          },
+          {
+            "action": "désamorcer un piège",
+            "dd": 15
+          }
+        ],
+        "regle_maitrise": "Bonus de maîtrise si l’outil est maîtrisé ; Avantage en plus si une compétence maîtrisée s’applique au même test, selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Acrobaties",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Acrobaties",
+        "caracteristique": "DEX",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Arcanes",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Arcanes",
+        "caracteristique": "INT",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Athletisme",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Athletisme",
+        "caracteristique": "FOR",
+        "note_reference": "Athlétisme dans le SRD français ; ancienne clef conservée."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Discrétion",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Discrétion",
+        "caracteristique": "DEX",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Dressage",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Dressage",
+        "caracteristique": "SAG",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Histoire",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Histoire",
+        "caracteristique": "INT",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Intimidation",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Intimidation",
+        "caracteristique": "CHA",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Investigation",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Investigation",
+        "caracteristique": "INT",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Médecine",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Médecine",
+        "caracteristique": "SAG",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Nature",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Nature",
+        "caracteristique": "INT",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Perception",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Perception",
+        "caracteristique": "SAG",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Perspicacité",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Perspicacité",
+        "caracteristique": "SAG",
+        "note_reference": "Intuition dans le SRD français ; ancien libellé conservé pour compatibilité."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Persuasion",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Persuasion",
+        "caracteristique": "CHA",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Religion",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Religion",
+        "caracteristique": "INT",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Représentation",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Représentation",
+        "caracteristique": "CHA",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Survie",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Survie",
+        "caracteristique": "SAG",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Tromperie",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Tromperie",
+        "caracteristique": "CHA",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    },
+    {
+      "collection": "competences",
+      "id": "Escamotage",
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=9",
+      "fields": {
+        "nom": "Escamotage",
+        "caracteristique": "DEX",
+        "source_refonte": "Json/2024/Régles/competences.json",
+        "note_reference": "Caractéristique habituelle ; le MJ peut en choisir une autre selon la situation."
+      },
+      "status": "data-compared-tests-pending"
+    }
+  ]
+}

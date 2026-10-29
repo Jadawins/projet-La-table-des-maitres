@@ -173,5 +173,88 @@
       "source": "https://www.dndbeyond.com/posts/927-druid-101-circle-of-stars-from-tashas-cauldron-of",
       "note": "Les noms guidance et étoile filante de la description BDD sont reliés à Assistance et Rayon traçant. Les utilisations et les autres aptitudes de la BDD sont conservées."
     }
-  ]
+  ],
+  "land2024": {
+    "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48",
+    "cutoff": "2026-10-28",
+    "terrains": {
+      "Aride": {
+        "resistance": "feu",
+        "spells": {
+          "3": [
+            "flou",
+            "mains_brulantes",
+            "trait_de_feu"
+          ],
+          "5": [
+            "boule_de_feu"
+          ],
+          "7": [
+            "fletrissement"
+          ],
+          "9": [
+            "mur_de_pierre"
+          ]
+        }
+      },
+      "Polaire": {
+        "resistance": "froid",
+        "spells": {
+          "3": [
+            "immobilisation_de_personne",
+            "nappe_de_brouillard",
+            "rayon_de_givre"
+          ],
+          "5": [
+            "tempete_de_neige"
+          ],
+          "7": [
+            "tempete_de_grele"
+          ],
+          "9": [
+            "cone_de_froid"
+          ]
+        }
+      },
+      "Tempéré": {
+        "resistance": "foudre",
+        "spells": {
+          "3": [
+            "foulee_brumeuse",
+            "poigne_electrique",
+            "sommeil"
+          ],
+          "5": [
+            "eclair"
+          ],
+          "7": [
+            "liberte_de_mouvement"
+          ],
+          "9": [
+            "passage_par_les_arbres"
+          ]
+        }
+      },
+      "Tropical": {
+        "resistance": "poison",
+        "spells": {
+          "3": [
+            "aspersion_acide",
+            "rayon_empoisonneur",
+            "toile_d_araignee"
+          ],
+          "5": [
+            "nuage_nauseabond"
+          ],
+          "7": [
+            "metamorphose"
+          ],
+          "9": [
+            "fleau_d_insectes"
+          ]
+        }
+      }
+    },
+    "legacy": "terrainSpells conserve les anciens compléments pour traçabilité, sans les utiliser pour la version candidate 2024."
+  }
 }

@@ -35,12 +35,26 @@ export function clericProfile(state, catalogue) {
   const aliases = {soindesblessures:'soins'};
   const domainSpells = domainRows.flatMap(data=>Object.entries(data.sorts_domaine || {}).flatMap(([rank,names])=>names.map(name=>{
     const spell=spells.find(s=>normalize(s.nom)===normalize(name)||normalize(s.id)===normalize(name)||s.id===aliases[normalize(name)]);
-    return spell ? {...spell,sourceName:name} : {id:`unresolved:${domain.id}:${normalize(name)}`,nom:name,niveau:Number(rank),sourceName:name,unresolved:true};
+    return spell ? {...spell,sourceName:spell.nom} : {id:`unresolved:${domain.id}:${normalize(name)}`,nom:name,niveau:Number(rank),sourceName:name,unresolved:true};
   }))).filter((spell,index,list)=>list.findIndex(s=>s.id===spell.id)===index);
-  const always=[...domainSpells,...ritualGrantSpells(state,catalogue)].filter((spell,index,list)=>list.findIndex(s=>s.id===spell.id)===index);
+  const always=[...domainSpells,...featGrantSpells(state,catalogue)].filter((spell,index,list)=>list.findIndex(s=>s.id===spell.id)===index);
   const domainFeatures=domainRows.flatMap(data=>data.capacites || []);
   const maxSpellLevel = Math.max(0,...Object.entries(row.emplacements_de_sort || {}).filter(([,count]) => count > 0).map(([level]) => Number(level)));
   const clericSpells = spells.filter(s => (s.classes || []).some(name => normalize(name) === 'clerc'));
+  const resources=[];
+  if(state.level>=2)resources.push({nom:'Éclat sacré',ability:'SAG',kind:'heal',die:inheritedCleric(state,catalogue,'etincelle_divine_des'),details:'Soin ou dégâts nécrotiques/radiants à une autre créature visible à 9 m, jamais soi-même. Action Magie, un Canal divin ; JS CON pour les dégâts, moitié si réussite.'});
+  if(state.level>=5)resources.push({nom:'Destruction sacrée',ability:'SAG',kind:'diceCount',minimum:1,die:'d8',details:'Radiants sur les Morts-vivants ratant leur JS contre Bannissement. Ces dégâts ne mettent pas fin au renvoi.'});
+  if(state.level>=10)resources.push({nom:'Grâce divine',valeur:1,details:'Repos long ; action Magie, sort de Clerc de rang 5 maximum sans Réaction, sans emplacement ni M.'+(state.level>=20?' Souhait possible avec attente de 2d4 Repos longs avant toute réutilisation.':'')});
+  if(domain?.id==='clerc_domaine_vie')resources.push({nom:'Préserver la vie',valeur:5*state.level+' PV',details:'Action Magie et un Canal divin ; créatures En péril à 9 m, soi compris, sans dépasser la moitié de leur maximum.'});
+  if(domain?.id==='clerc_domaine_lumiere'){
+    resources.push({nom:'Radiance de l’aube',valeur:'2d10 + '+state.level,details:'Radiants sur JS CON raté, moitié si réussite ; action Magie, un Canal divin, émanation 9 m, créatures choisies.'},{nom:'Flash protecteur',ability:'SAG',kind:'quota',minimum:1,details:state.level>=6?'Repos court ou long ; réaction, attaquant visible à 9 m, Désavantage. Peut aussi donner 2d6 + SAG PV temporaires à la cible.':'Repos long ; réaction, attaquant visible à 9 m, Désavantage à l’attaque.'});
+    if(state.level>=17)resources.push({nom:'Couronne de lumière',ability:'SAG',kind:'quota',minimum:1,details:'Repos long ; action Magie, une minute, lumière vive 18 m et faible 9 m supplémentaires. Ennemis dans la lumière vive : Désavantage aux JS contre Radiance et sorts de feu/radiant.'});
+  }
+  if(domain?.id==='clerc_domaine_ruse'){
+    resources.push({nom:'Invocation de duplicité',valeur:'1 Canal divin',details:'Action Bonus ; une illusion une minute, sans Concentration. Sorts depuis sa position avec vos propres sens ; déplacement 9 m par action Bonus dans un rayon de 36 m.'});
+    if(state.level>=17)resources.push({nom:'Illusion guérisseuse',valeur:state.level+' PV',details:'À la fin de l’illusion, pour vous ou une créature choisie à 1,50 m de celle-ci.'});
+  }
+  if(domain?.id==='clerc_domaine_guerre')resources.push({nom:'Prêtre de la guerre',ability:'SAG',kind:'quota',minimum:1,details:'Repos court ou long ; action Bonus pour une attaque avec arme ou à mains nues.'},{nom:'Frappe guidée',valeur:'+10',details:'Un Canal divin après une attaque ratée, soi ou créature à 9 m ; réaction seulement pour aider autrui.'});
   const automaticCantrips=domainBenefits(state,catalogue).light?spells.filter(s=>s.id==='lumiere'):[];
   return {
     cantripCount: row.sorts_mineurs + (state.divineOrder === 'Thaumaturge' ? 1 : 0),
@@ -48,7 +62,7 @@ export function clericProfile(state, catalogue) {
     slots: row.emplacements_de_sort || {},
     cantrips: clericSpells.filter(s => s.niveau === 0&&!automaticCantrips.some(a=>a.id===s.id)),
     prepared: clericSpells.filter(s => s.niveau >= 1 && s.niveau <= maxSpellLevel && !always.some(a => a.id === s.id)),
-    always,domain,domainFeatures,maxSpellLevel,automaticCantrips,
+    always,domain,domainFeatures,maxSpellLevel,automaticCantrips,resources,
     proficiency:inheritedCleric(state,catalogue,'bonusMaitrise'),channel:inheritedCleric(state,catalogue,'canal_divin'),sparkDice:inheritedCleric(state,catalogue,'etincelle_divine_des'),
   };
 }
@@ -111,7 +125,7 @@ export function aptitudeErrors(state,catalogue) {
 }
 import {originSkills,originBonuses,originGrantErrors,originFeats} from './origin-rules.mjs';
 import {evaluateProgression,inheritedCleric,domainBenefits,sacredChoices,selectedLevelFeats} from './cleric-progression.mjs';
-import {ritualGrantSpells,featChoiceErrors} from './feat-effects.mjs';
+import {featGrantSpells,featChoiceErrors} from './feat-effects.mjs';
 
 import {buildClassProfile,classChoiceErrors} from './class-profiles.mjs';
 import {classMagic} from './class-magic.mjs';

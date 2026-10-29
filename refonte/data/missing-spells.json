@@ -23,8 +23,8 @@
     "rituel": false,
     "degats": [],
     "description": "Une créature consentante touchée est protégée contre les Aberrations, Célestes, Élémentaires, Fées, Fiélons et Morts-vivants. Leurs attaques contre elle ont le désavantage ; ils ne peuvent ni la posséder, ni la charmer, ni l’effrayer. Si elle subit déjà un de ces effets, ses nouveaux jets de sauvegarde contre lui ont l’avantage.",
-    "source": "Complément ciblé PHB 2024, distribution Roll20",
-    "source_url": "https://roll20.net/compendium/dnd5e/Spells:Protection%20from%20Evil%20and%20Good?expansion=32231"
+    "source": "SRD français 5.2.1",
+    "source_url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=170"
   },
   {
     "id": "couronne_de_folie",
@@ -53,7 +53,8 @@
     "degats": [],
     "description": "Une créature visible effectue un JS de SAG ; les non-humanoïdes réussissent automatiquement. Sur un échec, la cible est Charmée. Avant de se déplacer à chacun de ses tours, elle emploie son action pour attaquer au corps à corps une autre créature que vous désignez mentalement. Si vous ne désignez personne à sa portée, elle agit normalement. Nouveau JS en fin de chacun de ses tours, qui met fin au sort en cas de réussite. À vos tours suivants, l’action Magie est nécessaire au maintien, sinon le sort prend fin.",
     "source_url": "https://roll20.net/compendium/dnd5e/Spells:Crown%20of%20Madness?expansion=32231",
-    "source": "Complément ciblé PHB 2024, distribution Roll20"
+    "source": "Complément ciblé PHB 2024, distribution Roll20",
+    "aliasOf": "couronne_du_dement"
   },
   {
     "id": "domination_de_monstre",
@@ -82,8 +83,8 @@
     "degats": [],
     "description": "Une créature visible effectue un JS de SAG, avec avantage si vous ou vos alliés la combattez. Sur un échec, elle est Charmée. Elle réitère le JS chaque fois qu’elle subit des dégâts ; une réussite met fin au sort. Sur le même plan, un lien télépathique permet de lui transmettre des ordres à votre tour sans action. Sans nouvel ordre, elle se protège après avoir exécuté le dernier. Pour lui ordonner une réaction, vous dépensez la vôtre.",
     "niveau_superieur": "Avec un emplacement de niveau 9, concentration possible jusqu’à 8 heures.",
-    "source": "Complément ciblé PHB 2024, distribution Roll20",
-    "source_url": "https://roll20.net/compendium/dnd5e/Spells:Dominate%20Monster?expansion=32231"
+    "source": "SRD français 5.2.1",
+    "source_url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=138"
   },
   {
     "niveau": 0,
@@ -97,7 +98,7 @@
     "concentration": false,
     "rituel": false,
     "degats": [],
-    "source": "Complément ciblé PHB 2024, distribution Roll20",
+    "source": "SRD français 5.2.1",
     "id": "prestidigitation",
     "nom": "Prestidigitation",
     "ecole": "Transmutation",
@@ -108,8 +109,8 @@
       "M": false
     },
     "duree": "jusqu’à 1 heure",
-    "description": "Choisissez un effet mineur : sensation inoffensive instantanée ; allumer ou éteindre bougie, torche ou petit feu ; nettoyer ou salir un objet de 30 cm de côté maximum ; refroidir, réchauffer ou parfumer un volume inerte équivalent pendant 1 heure ; marque ou couleur pendant 1 heure ; petit objet sans valeur ni dégâts, ou image tenant dans la main, jusqu’à la fin de votre prochain tour. Trois effets non instantanés peuvent coexister.",
-    "source_url": "https://roll20.net/compendium/dnd5e/Spells:Prestidigitation?expansion=32231&iframe=true"
+    "description": "Choisissez un effet mineur : sensation inoffensive instantanée ; allumer ou éteindre bougie, torche ou petit feu ; nettoyer ou salir un objet de 30 litres maximum ; refroidir, réchauffer ou parfumer 30 litres de matière inerte au maximum pendant 1 heure ; marque ou couleur pendant 1 heure ; petit objet sans valeur ni dégâts, ou image tenant dans la main, jusqu’à la fin de votre prochain tour. Trois effets non instantanés peuvent coexister.",
+    "source_url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=169"
   },
   {
     "niveau": 0,
@@ -123,7 +124,7 @@
     "concentration": false,
     "rituel": false,
     "degats": [],
-    "source": "Complément ciblé PHB 2024, distribution Roll20",
+    "source": "SRD français 5.2.1",
     "id": "illusion_mineure",
     "nom": "Illusion mineure",
     "ecole": "Illusion",
@@ -131,10 +132,10 @@
     "composantes": {
       "V": false,
       "S": true,
-      "M": "Un peu de toison"
+      "M": "un peu de laine brute"
     },
     "duree": "1 minute",
     "description": "Créez un son, continu ou intermittent, ou l’image immobile d’un objet dans un cube de 1,5 m de côté maximum. L’image n’émet ni lumière, son, odeur ni autre sensation. Un contact la traverse et révèle sa nature. Une action Étude permet un test INT (Investigation) contre votre DD des sorts ; une réussite révèle l’illusion, qui paraît alors atténuée. Une nouvelle incantation met fin à la précédente.",
-    "source_url": "https://roll20.net/compendium/dnd5e/Spells:Minor%20Illusion?expansion=32231&iframe=true"
+    "source_url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=148"
   }
 ]

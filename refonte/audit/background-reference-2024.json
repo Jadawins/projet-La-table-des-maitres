@@ -1,0 +1,954 @@
+[
+  {
+    "id": "acolyte",
+    "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "INT",
+          "SAG",
+          "CHA"
+        ]
+      },
+      "don": "Initié à la magie (Clerc)",
+      "competences": [
+        "Intuition",
+        "Religion"
+      ],
+      "outils": [
+        "Matériel de calligraphe"
+      ],
+      "equipement": [
+        {
+          "nom": "Matériel de calligraphe",
+          "quantite": 1
+        },
+        {
+          "nom": "Livre de prières",
+          "quantite": 1
+        },
+        {
+          "nom": "Symbole sacré",
+          "quantite": 1
+        },
+        {
+          "nom": "Parchemin",
+          "quantite": 10
+        },
+        {
+          "nom": "Robe",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 8
+        }
+      ],
+      "aptitude": {
+        "nom": "Initié à la magie (Clerc)",
+        "description": "Le don Initié à la magie (Clerc) est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "artisan",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Artisan?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "STR",
+          "DEX",
+          "INT"
+        ]
+      },
+      "don": "Façonneur",
+      "competences": [
+        "Investigation",
+        "Persuasion"
+      ],
+      "outils": [
+        "Outils d'artisan (au choix)"
+      ],
+      "equipement": [
+        {
+          "nom": "Outils d'artisan (au choix)",
+          "quantite": 1
+        },
+        {
+          "nom": "Sachet",
+          "quantite": 2
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 32
+        }
+      ],
+      "aptitude": {
+        "nom": "Façonneur",
+        "description": "Le don Façonneur est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "artiste",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Entertainer?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "STR",
+          "DEX",
+          "CHA"
+        ]
+      },
+      "don": "Musicien",
+      "competences": [
+        "Acrobaties",
+        "Représentation"
+      ],
+      "outils": [
+        "Instrument de musique (au choix)"
+      ],
+      "equipement": [
+        {
+          "nom": "Instrument de musique (au choix)",
+          "quantite": 1
+        },
+        {
+          "nom": "Costume",
+          "quantite": 2
+        },
+        {
+          "nom": "Miroir",
+          "quantite": 1
+        },
+        {
+          "nom": "Parfum",
+          "quantite": 1
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 11
+        }
+      ],
+      "aptitude": {
+        "nom": "Musicien",
+        "description": "Le don Musicien est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "charlatan",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Charlatan?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "DEX",
+          "CON",
+          "CHA"
+        ]
+      },
+      "don": "Doué",
+      "competences": [
+        "Escamotage",
+        "Tromperie"
+      ],
+      "outils": [
+        "Matériel de contrefaçon"
+      ],
+      "equipement": [
+        {
+          "nom": "Matériel de contrefaçon",
+          "quantite": 1
+        },
+        {
+          "nom": "Costume",
+          "quantite": 1
+        },
+        {
+          "nom": "Beaux habits",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 15
+        }
+      ],
+      "aptitude": {
+        "nom": "Doué",
+        "description": "Le don Doué est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "criminel",
+    "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "DEX",
+          "CON",
+          "INT"
+        ]
+      },
+      "don": "Vigilant",
+      "competences": [
+        "Discrétion",
+        "Escamotage"
+      ],
+      "outils": [
+        "Outils de voleur"
+      ],
+      "equipement": [
+        {
+          "nom": "Dague",
+          "quantite": 2
+        },
+        {
+          "nom": "Outils de voleur",
+          "quantite": 1
+        },
+        {
+          "nom": "Bourse",
+          "quantite": 2
+        },
+        {
+          "nom": "Pied-de-biche",
+          "quantite": 1
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 16
+        }
+      ],
+      "aptitude": {
+        "nom": "Vigilant",
+        "description": "Le don Vigilant est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "ermite",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Hermit?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "CON",
+          "SAG",
+          "CHA"
+        ]
+      },
+      "don": "Guérisseur",
+      "competences": [
+        "Médecine",
+        "Religion"
+      ],
+      "outils": [
+        "Matériel d'herboriste"
+      ],
+      "equipement": [
+        {
+          "nom": "Bâton de combat",
+          "quantite": 1
+        },
+        {
+          "nom": "Matériel d'herboriste",
+          "quantite": 1
+        },
+        {
+          "nom": "Sac de couchage",
+          "quantite": 1
+        },
+        {
+          "nom": "Livre de philosophie",
+          "quantite": 1
+        },
+        {
+          "nom": "Lampe",
+          "quantite": 1
+        },
+        {
+          "nom": "Huile (flasque)",
+          "quantite": 3
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 16
+        }
+      ],
+      "aptitude": {
+        "nom": "Guérisseur",
+        "description": "Le don Guérisseur est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "fermier",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Farmer?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "STR",
+          "CON",
+          "SAG"
+        ]
+      },
+      "don": "Robuste",
+      "competences": [
+        "Dressage",
+        "Nature"
+      ],
+      "outils": [
+        "Outils de charpentier"
+      ],
+      "equipement": [
+        {
+          "nom": "Serpe",
+          "quantite": 1
+        },
+        {
+          "nom": "Outils de charpentier",
+          "quantite": 1
+        },
+        {
+          "nom": "Trousse de soins",
+          "quantite": 1
+        },
+        {
+          "nom": "Pot en fer",
+          "quantite": 1
+        },
+        {
+          "nom": "Pelle",
+          "quantite": 1
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 30
+        }
+      ],
+      "aptitude": {
+        "nom": "Robuste",
+        "description": "Le don Robuste est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "garde",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Guard?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "STR",
+          "INT",
+          "SAG"
+        ]
+      },
+      "don": "Vigilant",
+      "competences": [
+        "Athlétisme",
+        "Perception"
+      ],
+      "outils": [
+        "Boîte de jeux (au choix)"
+      ],
+      "equipement": [
+        {
+          "nom": "Lance",
+          "quantite": 1
+        },
+        {
+          "nom": "Arbalète légère",
+          "quantite": 1
+        },
+        {
+          "nom": "Carreaux d'arbalète",
+          "quantite": 20
+        },
+        {
+          "nom": "Boîte de jeux (au choix)",
+          "quantite": 1
+        },
+        {
+          "nom": "Lanterne à capote",
+          "quantite": 1
+        },
+        {
+          "nom": "Menottes",
+          "quantite": 1
+        },
+        {
+          "nom": "Carquois",
+          "quantite": 1
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 12
+        }
+      ],
+      "aptitude": {
+        "nom": "Vigilant",
+        "description": "Le don Vigilant est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "guide",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Guide?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "DEX",
+          "CON",
+          "SAG"
+        ]
+      },
+      "don": "Initié à la magie (Druide)",
+      "competences": [
+        "Discrétion",
+        "Survie"
+      ],
+      "outils": [
+        "Outils de cartographe"
+      ],
+      "equipement": [
+        {
+          "nom": "Arc court",
+          "quantite": 1
+        },
+        {
+          "nom": "Flèches",
+          "quantite": 20
+        },
+        {
+          "nom": "Outils de cartographe",
+          "quantite": 1
+        },
+        {
+          "nom": "Sac de couchage",
+          "quantite": 1
+        },
+        {
+          "nom": "Carquois",
+          "quantite": 1
+        },
+        {
+          "nom": "Tente",
+          "quantite": 1
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 3
+        }
+      ],
+      "aptitude": {
+        "nom": "Initié à la magie (Druide)",
+        "description": "Le don Initié à la magie (Druide) est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "marchand",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Merchant?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "CON",
+          "INT",
+          "CHA"
+        ]
+      },
+      "don": "Chanceux",
+      "competences": [
+        "Dressage",
+        "Persuasion"
+      ],
+      "outils": [
+        "Instruments de navigation"
+      ],
+      "equipement": [
+        {
+          "nom": "Instruments de navigateur",
+          "quantite": 1
+        },
+        {
+          "nom": "Sachet",
+          "quantite": 2
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 22
+        }
+      ],
+      "aptitude": {
+        "nom": "Chanceux",
+        "description": "Le don Chanceux est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "marin",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Sailor?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "STR",
+          "DEX",
+          "SAG"
+        ]
+      },
+      "don": "Bagarreur de tavernes",
+      "competences": [
+        "Acrobaties",
+        "Perception"
+      ],
+      "outils": [
+        "Instruments de navigation"
+      ],
+      "equipement": [
+        {
+          "nom": "Dague",
+          "quantite": 1
+        },
+        {
+          "nom": "Instruments de navigateur",
+          "quantite": 1
+        },
+        {
+          "nom": "Corde",
+          "quantite": 1
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 20
+        }
+      ],
+      "aptitude": {
+        "nom": "Bagarreur de tavernes",
+        "description": "Le don Bagarreur de tavernes est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "noble",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Noble?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "STR",
+          "INT",
+          "CHA"
+        ]
+      },
+      "don": "Doué",
+      "competences": [
+        "Histoire",
+        "Persuasion"
+      ],
+      "outils": [
+        "Boîte de jeux (au choix)"
+      ],
+      "equipement": [
+        {
+          "nom": "Boîte de jeux (au choix)",
+          "quantite": 1
+        },
+        {
+          "nom": "Beaux habits",
+          "quantite": 1
+        },
+        {
+          "nom": "Parfum",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 29
+        }
+      ],
+      "aptitude": {
+        "nom": "Doué",
+        "description": "Le don Doué est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "sage",
+    "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "CON",
+          "INT",
+          "SAG"
+        ]
+      },
+      "don": "Initié à la magie (Magicien)",
+      "competences": [
+        "Arcanes",
+        "Histoire"
+      ],
+      "outils": [
+        "Matériel de calligraphe"
+      ],
+      "equipement": [
+        {
+          "nom": "Bâton de combat",
+          "quantite": 1
+        },
+        {
+          "nom": "Matériel de calligraphe",
+          "quantite": 1
+        },
+        {
+          "nom": "Livre d'histoire",
+          "quantite": 1
+        },
+        {
+          "nom": "Parchemin",
+          "quantite": 8
+        },
+        {
+          "nom": "Robe",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 8
+        }
+      ],
+      "aptitude": {
+        "nom": "Initié à la magie (Magicien)",
+        "description": "Le don Initié à la magie (Magicien) est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "scribe",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Scribe?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "DEX",
+          "INT",
+          "SAG"
+        ]
+      },
+      "don": "Doué",
+      "competences": [
+        "Investigation",
+        "Perception"
+      ],
+      "outils": [
+        "Matériel de calligraphe"
+      ],
+      "equipement": [
+        {
+          "nom": "Matériel de calligraphe",
+          "quantite": 1
+        },
+        {
+          "nom": "Beaux habits",
+          "quantite": 1
+        },
+        {
+          "nom": "Lampe",
+          "quantite": 1
+        },
+        {
+          "nom": "Huile (flasque)",
+          "quantite": 3
+        },
+        {
+          "nom": "Parchemin",
+          "quantite": 12
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 23
+        }
+      ],
+      "aptitude": {
+        "nom": "Doué",
+        "description": "Le don Doué est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "soldat",
+    "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "STR",
+          "DEX",
+          "CON"
+        ]
+      },
+      "don": "Sauvagerie martiale",
+      "competences": [
+        "Athlétisme",
+        "Intimidation"
+      ],
+      "outils": [
+        "Boîte de jeux (au choix)"
+      ],
+      "equipement": [
+        {
+          "nom": "Arc court",
+          "quantite": 1
+        },
+        {
+          "nom": "Flèches",
+          "quantite": 20
+        },
+        {
+          "nom": "Carquois",
+          "quantite": 1
+        },
+        {
+          "nom": "Lance",
+          "quantite": 1
+        },
+        {
+          "nom": "Boîte de jeux (au choix)",
+          "quantite": 1
+        },
+        {
+          "nom": "Trousse de soins",
+          "quantite": 1
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 14
+        }
+      ],
+      "aptitude": {
+        "nom": "Sauvagerie martiale",
+        "description": "Le don Sauvagerie martiale est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  },
+  {
+    "id": "voyageur",
+    "source": "https://roll20.net/compendium/dnd5e/Backgrounds:Wayfarer?expansion=32231",
+    "checkedAt": "2026-10-28",
+    "fields": {
+      "bonus_caracteristiques": {
+        "suggerees": [
+          "DEX",
+          "SAG",
+          "CHA"
+        ]
+      },
+      "don": "Chanceux",
+      "competences": [
+        "Intuition",
+        "Discrétion"
+      ],
+      "outils": [
+        "Outils de voleur"
+      ],
+      "equipement": [
+        {
+          "nom": "Dague",
+          "quantite": 2
+        },
+        {
+          "nom": "Outils de voleur",
+          "quantite": 1
+        },
+        {
+          "nom": "Boîte de jeux (au choix)",
+          "quantite": 1
+        },
+        {
+          "nom": "Sac de couchage",
+          "quantite": 1
+        },
+        {
+          "nom": "Bourse",
+          "quantite": 2
+        },
+        {
+          "nom": "Tenue de voyage",
+          "quantite": 1
+        },
+        {
+          "nom": "Pièces d'or",
+          "quantite": 16
+        }
+      ],
+      "aptitude": {
+        "nom": "Chanceux",
+        "description": "Le don Chanceux est détaillé dans la section Dons de la fiche."
+      }
+    },
+    "equipmentChoice": {
+      "A": "fields.equipement",
+      "B": {
+        "po": 50
+      },
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=87"
+    }
+  }
+]

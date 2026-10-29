@@ -1,0 +1,25 @@
+{
+  "completedAt": "2026-10-29T15:41:20.269Z",
+  "status": "passed",
+  "sourceHash": "651a4fddbaff14fe72ab14c90b77f8e4b08849bf69e496ce732cd2607d849a77",
+  "unitFull": {
+    "passed": 2840,
+    "failed": 0,
+    "skipped": 0,
+    "log": "refonte/audit/final-unit-tests.txt"
+  },
+  "additional": {
+    "passed": 55,
+    "failed": 0,
+    "skipped": 0,
+    "uniqueAdditionalTests": [
+      "Les profils sans référence sont exclus des choix ; leur réserve documentée ne devient jamais une validation",
+      "Le Pacte de la Chaîne propose aussi le têtard de slaad sans imposer une forme"
+    ],
+    "log": "refonte/audit/final-additional-tests.txt"
+  },
+  "distinctUnitTests": 2842,
+  "scope": "Campagne complète après corrections ; contrôles ciblés supplémentaires pour le garde des réserves.19 fichiers applicatifs et catalogue comparés au serveur navigateur en cours.",
+  "browser": "running",
+  "frozen": false
+}

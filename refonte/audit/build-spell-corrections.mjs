@@ -1,5 +1,5 @@
 import {readFile,writeFile} from 'node:fs/promises';
-const snapshot=JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8'));
+const snapshot=JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8'));
 const originalSkills=JSON.parse(await readFile(new URL('../../Json/2024/Régles/competences.json',import.meta.url),'utf8'));
 const srd='https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf';
 const update='https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new';

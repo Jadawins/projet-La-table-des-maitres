@@ -1,0 +1,4323 @@
+{
+  "completedAt": "2026-10-29T17:17:48.918Z",
+  "status": "passed",
+  "catalogueTests": {
+    "passed": 1106,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "log": "refonte/audit/final-catalogue-tests.txt"
+  },
+  "distinctUnitTests": 3948,
+  "previousDistinctUnitTests": 2842,
+  "newUnitTests": 1106,
+  "newlyClosed": 713,
+  "verified": 809,
+  "excluded": [
+    {
+      "collection": "formes_animales",
+      "id": "giant-rat-diseased",
+      "note": "Variante héritée non retrouvée dans la référence ; conservée mais non proposée pour une nouvelle Forme animale. Aucun profil inventé."
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-beetles",
+      "note": "Variante héritée non retrouvée dans la référence ; conservée mais non proposée pour une nouvelle Forme animale. Aucun profil inventé."
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-centipedes",
+      "note": "Variante héritée non retrouvée dans la référence ; conservée mais non proposée pour une nouvelle Forme animale. Aucun profil inventé."
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-spiders",
+      "note": "Variante héritée non retrouvée dans la référence ; conservée mais non proposée pour une nouvelle Forme animale. Aucun profil inventé."
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-wasps",
+      "note": "Variante héritée non retrouvée dans la référence ; conservée mais non proposée pour une nouvelle Forme animale. Aucun profil inventé."
+    }
+  ],
+  "entries": [
+    {
+      "collection": "dons",
+      "id": "bagarreur_de_tavernes",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don bagarreur_de_tavernes"
+    },
+    {
+      "collection": "dons",
+      "id": "chanceux",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don chanceux"
+    },
+    {
+      "collection": "dons",
+      "id": "doue",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don doue"
+    },
+    {
+      "collection": "dons",
+      "id": "faconneur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faconneur"
+    },
+    {
+      "collection": "dons",
+      "id": "guerisseur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don guerisseur"
+    },
+    {
+      "collection": "dons",
+      "id": "initie_a_la_magie",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don initie_a_la_magie"
+    },
+    {
+      "collection": "dons",
+      "id": "musicien",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don musicien"
+    },
+    {
+      "collection": "dons",
+      "id": "robuste",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don robuste"
+    },
+    {
+      "collection": "dons",
+      "id": "sauvagerie_martiale",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don sauvagerie_martiale"
+    },
+    {
+      "collection": "dons",
+      "id": "truand",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don truand"
+    },
+    {
+      "collection": "dons",
+      "id": "vigilant",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don vigilant"
+    },
+    {
+      "collection": "dons",
+      "id": "adepte_elementaire",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don adepte_elementaire"
+    },
+    {
+      "collection": "dons",
+      "id": "affinite_feerique",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don affinite_feerique"
+    },
+    {
+      "collection": "dons",
+      "id": "affinite_ombreuse",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don affinite_ombreuse"
+    },
+    {
+      "collection": "dons",
+      "id": "amelioration_de_caracteristique",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don amelioration_de_caracteristique"
+    },
+    {
+      "collection": "dons",
+      "id": "athlete",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don athlete"
+    },
+    {
+      "collection": "dons",
+      "id": "broyeur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don broyeur"
+    },
+    {
+      "collection": "dons",
+      "id": "chef_cuisinier",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don chef_cuisinier"
+    },
+    {
+      "collection": "dons",
+      "id": "cogneur_lourd",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don cogneur_lourd"
+    },
+    {
+      "collection": "dons",
+      "id": "combattant_a_deux_armes",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don combattant_a_deux_armes"
+    },
+    {
+      "collection": "dons",
+      "id": "combattant_monte",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don combattant_monte"
+    },
+    {
+      "collection": "dons",
+      "id": "comedien",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don comedien"
+    },
+    {
+      "collection": "dons",
+      "id": "discret",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don discret"
+    },
+    {
+      "collection": "dons",
+      "id": "duelliste_defensif",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don duelliste_defensif"
+    },
+    {
+      "collection": "dons",
+      "id": "empoisonneur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don empoisonneur"
+    },
+    {
+      "collection": "dons",
+      "id": "empoigneur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don empoigneur"
+    },
+    {
+      "collection": "dons",
+      "id": "expert",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don expert"
+    },
+    {
+      "collection": "dons",
+      "id": "expert_de_la_charge",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don expert_de_la_charge"
+    },
+    {
+      "collection": "dons",
+      "id": "figure_de_proue",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don figure_de_proue"
+    },
+    {
+      "collection": "dons",
+      "id": "formation_aux_armes_de_guerre",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don formation_aux_armes_de_guerre"
+    },
+    {
+      "collection": "dons",
+      "id": "gaillard",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don gaillard"
+    },
+    {
+      "collection": "dons",
+      "id": "incantateur_d_elite",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don incantateur_d_elite"
+    },
+    {
+      "collection": "dons",
+      "id": "mage_de_guerre",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don mage_de_guerre"
+    },
+    {
+      "collection": "dons",
+      "id": "magie_rituelle",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don magie_rituelle"
+    },
+    {
+      "collection": "dons",
+      "id": "maitre_arbaletrier",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don maitre_arbaletrier"
+    },
+    {
+      "collection": "dons",
+      "id": "maitre_d_hast",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don maitre_d_hast"
+    },
+    {
+      "collection": "dons",
+      "id": "maitre_des_armures_intermediaires",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don maitre_des_armures_intermediaires"
+    },
+    {
+      "collection": "dons",
+      "id": "maitre_des_armures_lourdes",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don maitre_des_armures_lourdes"
+    },
+    {
+      "collection": "dons",
+      "id": "maitre_des_boucliers",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don maitre_des_boucliers"
+    },
+    {
+      "collection": "dons",
+      "id": "mobile",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don mobile"
+    },
+    {
+      "collection": "dons",
+      "id": "observateur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don observateur"
+    },
+    {
+      "collection": "dons",
+      "id": "perforateur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don perforateur"
+    },
+    {
+      "collection": "dons",
+      "id": "preparateur_de_poison",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don preparateur_de_poison"
+    },
+    {
+      "collection": "dons",
+      "id": "protection_intermediaire",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don protection_intermediaire"
+    },
+    {
+      "collection": "dons",
+      "id": "protection_legere",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don protection_legere"
+    },
+    {
+      "collection": "dons",
+      "id": "protection_lourde",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don protection_lourde"
+    },
+    {
+      "collection": "dons",
+      "id": "resilient",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don resilient"
+    },
+    {
+      "collection": "dons",
+      "id": "sentinelle",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don sentinelle"
+    },
+    {
+      "collection": "dons",
+      "id": "telekinesiste",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don telekinesiste"
+    },
+    {
+      "collection": "dons",
+      "id": "telepathe",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don telepathe"
+    },
+    {
+      "collection": "dons",
+      "id": "tireur_d_elite",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don tireur_d_elite"
+    },
+    {
+      "collection": "dons",
+      "id": "trancheur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don trancheur"
+    },
+    {
+      "collection": "dons",
+      "id": "tueur_de_mages",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don tueur_de_mages"
+    },
+    {
+      "collection": "dons",
+      "id": "style_archerie",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_archerie"
+    },
+    {
+      "collection": "dons",
+      "id": "style_armes_a_deux_mains",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_armes_a_deux_mains"
+    },
+    {
+      "collection": "dons",
+      "id": "style_armes_de_lancer",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_armes_de_lancer"
+    },
+    {
+      "collection": "dons",
+      "id": "style_combat_a_deux_armes",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_combat_a_deux_armes"
+    },
+    {
+      "collection": "dons",
+      "id": "style_combat_a_mains_nues",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_combat_a_mains_nues"
+    },
+    {
+      "collection": "dons",
+      "id": "style_combat_en_aveugle",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_combat_en_aveugle"
+    },
+    {
+      "collection": "dons",
+      "id": "style_defense",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_defense"
+    },
+    {
+      "collection": "dons",
+      "id": "style_duel",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_duel"
+    },
+    {
+      "collection": "dons",
+      "id": "style_interception",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_interception"
+    },
+    {
+      "collection": "dons",
+      "id": "style_protection",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don style_protection"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_d_attaque_irresistible",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_d_attaque_irresistible"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_competence",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_competence"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_deplacement_dimensionnel",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_deplacement_dimensionnel"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_l_esprit_nocturne",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_l_esprit_nocturne"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_memoire_magique",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_memoire_magique"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_prowesse_martiale",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_prowesse_martiale"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_recuperation",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_recuperation"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_resistance_aux_energies",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_resistance_aux_energies"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_vigueur",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_vigueur"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_vision_lucide",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_vision_lucide"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_de_vitesse",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_de_vitesse"
+    },
+    {
+      "collection": "dons",
+      "id": "faveur_du_destin",
+      "documentaryEvidence": "refonte/audit/feat-reference-2024.json",
+      "test": "Référence du don faveur_du_destin"
+    },
+    {
+      "collection": "sorts",
+      "id": "aspersion_acide",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aspersion_acide"
+    },
+    {
+      "collection": "sorts",
+      "id": "assistance",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort assistance"
+    },
+    {
+      "collection": "sorts",
+      "id": "bouffee_de_poison",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bouffee_de_poison"
+    },
+    {
+      "collection": "sorts",
+      "id": "contact_glacial",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort contact_glacial"
+    },
+    {
+      "collection": "sorts",
+      "id": "coup_au_but",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort coup_au_but"
+    },
+    {
+      "collection": "sorts",
+      "id": "coup_de_tonnerre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort coup_de_tonnerre"
+    },
+    {
+      "collection": "sorts",
+      "id": "crosse_des_druides",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort crosse_des_druides"
+    },
+    {
+      "collection": "sorts",
+      "id": "decharge_occulte",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort decharge_occulte"
+    },
+    {
+      "collection": "sorts",
+      "id": "druidisme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort druidisme"
+    },
+    {
+      "collection": "sorts",
+      "id": "elementalisme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort elementalisme"
+    },
+    {
+      "collection": "sorts",
+      "id": "eruption_ensorcelee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort eruption_ensorcelee"
+    },
+    {
+      "collection": "sorts",
+      "id": "faux_amis",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort faux_amis"
+    },
+    {
+      "collection": "sorts",
+      "id": "flamme_sacree",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort flamme_sacree"
+    },
+    {
+      "collection": "sorts",
+      "id": "flammes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort flammes"
+    },
+    {
+      "collection": "sorts",
+      "id": "frappe_epineuse",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort frappe_epineuse"
+    },
+    {
+      "collection": "sorts",
+      "id": "glas",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort glas"
+    },
+    {
+      "collection": "sorts",
+      "id": "lumiere",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lumiere"
+    },
+    {
+      "collection": "sorts",
+      "id": "lumieres_dansantes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lumieres_dansantes"
+    },
+    {
+      "collection": "sorts",
+      "id": "main_du_mage",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort main_du_mage"
+    },
+    {
+      "collection": "sorts",
+      "id": "message",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort message"
+    },
+    {
+      "collection": "sorts",
+      "id": "moquerie_cruelle",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort moquerie_cruelle"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_radiance",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_radiance"
+    },
+    {
+      "collection": "sorts",
+      "id": "poigne_electrique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort poigne_electrique"
+    },
+    {
+      "collection": "sorts",
+      "id": "poussiere_d_etoile",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort poussiere_d_etoile"
+    },
+    {
+      "collection": "sorts",
+      "id": "rayon_de_givre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort rayon_de_givre"
+    },
+    {
+      "collection": "sorts",
+      "id": "reparation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort reparation"
+    },
+    {
+      "collection": "sorts",
+      "id": "resistance",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort resistance"
+    },
+    {
+      "collection": "sorts",
+      "id": "stabilisation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort stabilisation"
+    },
+    {
+      "collection": "sorts",
+      "id": "thaumaturgie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort thaumaturgie"
+    },
+    {
+      "collection": "sorts",
+      "id": "trait_de_feu",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort trait_de_feu"
+    },
+    {
+      "collection": "sorts",
+      "id": "voile_defensif",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort voile_defensif"
+    },
+    {
+      "collection": "sorts",
+      "id": "alarme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort alarme"
+    },
+    {
+      "collection": "sorts",
+      "id": "amitie_animaux",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort amitie_animaux"
+    },
+    {
+      "collection": "sorts",
+      "id": "appel_de_familier",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort appel_de_familier"
+    },
+    {
+      "collection": "sorts",
+      "id": "armure_d_agathys",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort armure_d_agathys"
+    },
+    {
+      "collection": "sorts",
+      "id": "armure_du_mage",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort armure_du_mage"
+    },
+    {
+      "collection": "sorts",
+      "id": "baies_nourrieres",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort baies_nourrieres"
+    },
+    {
+      "collection": "sorts",
+      "id": "benediction",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort benediction"
+    },
+    {
+      "collection": "sorts",
+      "id": "blessure",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort blessure"
+    },
+    {
+      "collection": "sorts",
+      "id": "bouclier",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bouclier"
+    },
+    {
+      "collection": "sorts",
+      "id": "bouclier_de_la_foi",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bouclier_de_la_foi"
+    },
+    {
+      "collection": "sorts",
+      "id": "chatiment_de_tonnerre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chatiment_de_tonnerre"
+    },
+    {
+      "collection": "sorts",
+      "id": "charme_personne",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort charme_personne"
+    },
+    {
+      "collection": "sorts",
+      "id": "communication_avec_les_animaux",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort communication_avec_les_animaux"
+    },
+    {
+      "collection": "sorts",
+      "id": "comprehension_des_langues",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort comprehension_des_langues"
+    },
+    {
+      "collection": "sorts",
+      "id": "couleurs_dansantes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort couleurs_dansantes"
+    },
+    {
+      "collection": "sorts",
+      "id": "couteau_de_glace",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort couteau_de_glace"
+    },
+    {
+      "collection": "sorts",
+      "id": "creation_ou_destruction_d_eau",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort creation_ou_destruction_d_eau"
+    },
+    {
+      "collection": "sorts",
+      "id": "deguisement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort deguisement"
+    },
+    {
+      "collection": "sorts",
+      "id": "detection_de_la_magie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort detection_de_la_magie"
+    },
+    {
+      "collection": "sorts",
+      "id": "detection_du_mal_et_du_bien",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort detection_du_mal_et_du_bien"
+    },
+    {
+      "collection": "sorts",
+      "id": "detection_du_poison_et_des_maladies",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort detection_du_poison_et_des_maladies"
+    },
+    {
+      "collection": "sorts",
+      "id": "disque_flottant_de_tenser",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort disque_flottant_de_tenser"
+    },
+    {
+      "collection": "sorts",
+      "id": "duel_force",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort duel_force"
+    },
+    {
+      "collection": "sorts",
+      "id": "enchevetrement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort enchevetrement"
+    },
+    {
+      "collection": "sorts",
+      "id": "faveur_divine",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort faveur_divine"
+    },
+    {
+      "collection": "sorts",
+      "id": "feuille_morte",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort feuille_morte"
+    },
+    {
+      "collection": "sorts",
+      "id": "fou_rire_de_tasha",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fou_rire_de_tasha"
+    },
+    {
+      "collection": "sorts",
+      "id": "frappe_enchevêtrante",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort frappe_enchevêtrante"
+    },
+    {
+      "collection": "sorts",
+      "id": "graisse",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort graisse"
+    },
+    {
+      "collection": "sorts",
+      "id": "grande_foulee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort grande_foulee"
+    },
+    {
+      "collection": "sorts",
+      "id": "grele_d_epines",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort grele_d_epines"
+    },
+    {
+      "collection": "sorts",
+      "id": "guerison",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort guerison"
+    },
+    {
+      "collection": "sorts",
+      "id": "heroisme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort heroisme"
+    },
+    {
+      "collection": "sorts",
+      "id": "identification",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort identification"
+    },
+    {
+      "collection": "sorts",
+      "id": "image_silencieuse",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort image_silencieuse"
+    },
+    {
+      "collection": "sorts",
+      "id": "imprecation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort imprecation"
+    },
+    {
+      "collection": "sorts",
+      "id": "injonction",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort injonction"
+    },
+    {
+      "collection": "sorts",
+      "id": "lueurs_feeriques",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lueurs_feeriques"
+    },
+    {
+      "collection": "sorts",
+      "id": "mains_brulantes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mains_brulantes"
+    },
+    {
+      "collection": "sorts",
+      "id": "malefice",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort malefice"
+    },
+    {
+      "collection": "sorts",
+      "id": "marque_du_chasseur",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort marque_du_chasseur"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_guerison",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_guerison"
+    },
+    {
+      "collection": "sorts",
+      "id": "murmures_dissonants",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort murmures_dissonants"
+    },
+    {
+      "collection": "sorts",
+      "id": "nappe_de_brouillard",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort nappe_de_brouillard"
+    },
+    {
+      "collection": "sorts",
+      "id": "orbe_chromatique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort orbe_chromatique"
+    },
+    {
+      "collection": "sorts",
+      "id": "purification_de_la_nourriture_et_de_l_eau",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort purification_de_la_nourriture_et_de_l_eau"
+    },
+    {
+      "collection": "sorts",
+      "id": "rayon_empoisonneur",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort rayon_empoisonneur"
+    },
+    {
+      "collection": "sorts",
+      "id": "rayon_tracant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort rayon_tracant"
+    },
+    {
+      "collection": "sorts",
+      "id": "repli_expeditif",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort repli_expeditif"
+    },
+    {
+      "collection": "sorts",
+      "id": "represailles_infernales",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort represailles_infernales"
+    },
+    {
+      "collection": "sorts",
+      "id": "sanctuaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sanctuaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "saut",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort saut"
+    },
+    {
+      "collection": "sorts",
+      "id": "serviteur_invisible",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort serviteur_invisible"
+    },
+    {
+      "collection": "sorts",
+      "id": "simulacre_de_vie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort simulacre_de_vie"
+    },
+    {
+      "collection": "sorts",
+      "id": "soins",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort soins"
+    },
+    {
+      "collection": "sorts",
+      "id": "sommeil",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sommeil"
+    },
+    {
+      "collection": "sorts",
+      "id": "tentacules_de_hadar",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tentacules_de_hadar"
+    },
+    {
+      "collection": "sorts",
+      "id": "texte_illusoire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort texte_illusoire"
+    },
+    {
+      "collection": "sorts",
+      "id": "trait_ensorcele",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort trait_ensorcele"
+    },
+    {
+      "collection": "sorts",
+      "id": "vague_tonnante",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vague_tonnante"
+    },
+    {
+      "collection": "sorts",
+      "id": "agrandissement_rapetissement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort agrandissement_rapetissement"
+    },
+    {
+      "collection": "sorts",
+      "id": "aide",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aide"
+    },
+    {
+      "collection": "sorts",
+      "id": "amelioration_caracteristique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort amelioration_caracteristique"
+    },
+    {
+      "collection": "sorts",
+      "id": "apaisement_emotions",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort apaisement_emotions"
+    },
+    {
+      "collection": "sorts",
+      "id": "appel_de_destrier",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort appel_de_destrier"
+    },
+    {
+      "collection": "sorts",
+      "id": "arme_magique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort arme_magique"
+    },
+    {
+      "collection": "sorts",
+      "id": "arme_spirituelle",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort arme_spirituelle"
+    },
+    {
+      "collection": "sorts",
+      "id": "augure",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort augure"
+    },
+    {
+      "collection": "sorts",
+      "id": "aura_magique_de_nystul",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aura_magique_de_nystul"
+    },
+    {
+      "collection": "sorts",
+      "id": "bouche_magique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bouche_magique"
+    },
+    {
+      "collection": "sorts",
+      "id": "bourrasque",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bourrasque"
+    },
+    {
+      "collection": "sorts",
+      "id": "cecite_surdite",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cecite_surdite"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_de_bete",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_de_bete"
+    },
+    {
+      "collection": "sorts",
+      "id": "corde_enchantee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort corde_enchantee"
+    },
+    {
+      "collection": "sorts",
+      "id": "cordon_de_fleches",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cordon_de_fleches"
+    },
+    {
+      "collection": "sorts",
+      "id": "couronne_du_dement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort couronne_du_dement"
+    },
+    {
+      "collection": "sorts",
+      "id": "croissance_d_epines",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort croissance_d_epines"
+    },
+    {
+      "collection": "sorts",
+      "id": "deblocage",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort deblocage"
+    },
+    {
+      "collection": "sorts",
+      "id": "detection_de_l_invisibilite",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort detection_de_l_invisibilite"
+    },
+    {
+      "collection": "sorts",
+      "id": "detection_des_pensees",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort detection_des_pensees"
+    },
+    {
+      "collection": "sorts",
+      "id": "detection_des_pieges",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort detection_des_pieges"
+    },
+    {
+      "collection": "sorts",
+      "id": "discours_captivant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort discours_captivant"
+    },
+    {
+      "collection": "sorts",
+      "id": "doux_repos",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort doux_repos"
+    },
+    {
+      "collection": "sorts",
+      "id": "epine_mentale",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort epine_mentale"
+    },
+    {
+      "collection": "sorts",
+      "id": "flamme_eternelle",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort flamme_eternelle"
+    },
+    {
+      "collection": "sorts",
+      "id": "fleche_acide_de_melf",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fleche_acide_de_melf"
+    },
+    {
+      "collection": "sorts",
+      "id": "flou",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort flou"
+    },
+    {
+      "collection": "sorts",
+      "id": "foulee_brumeuse",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort foulee_brumeuse"
+    },
+    {
+      "collection": "sorts",
+      "id": "fracassement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fracassement"
+    },
+    {
+      "collection": "sorts",
+      "id": "force_fantaismagorique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort force_fantaismagorique"
+    },
+    {
+      "collection": "sorts",
+      "id": "image_miroir",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort image_miroir"
+    },
+    {
+      "collection": "sorts",
+      "id": "immobilisation_de_personne",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort immobilisation_de_personne"
+    },
+    {
+      "collection": "sorts",
+      "id": "invisibilite",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invisibilite"
+    },
+    {
+      "collection": "sorts",
+      "id": "lien_de_protection",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lien_de_protection"
+    },
+    {
+      "collection": "sorts",
+      "id": "localisation_d_animaux_ou_de_plantes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort localisation_d_animaux_ou_de_plantes"
+    },
+    {
+      "collection": "sorts",
+      "id": "localisation_d_objet",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort localisation_d_objet"
+    },
+    {
+      "collection": "sorts",
+      "id": "lame_de_feu",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lame_de_feu"
+    },
+    {
+      "collection": "sorts",
+      "id": "levitation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort levitation"
+    },
+    {
+      "collection": "sorts",
+      "id": "messager_animal",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort messager_animal"
+    },
+    {
+      "collection": "sorts",
+      "id": "metal_brulant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort metal_brulant"
+    },
+    {
+      "collection": "sorts",
+      "id": "modification_d_apparence",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort modification_d_apparence"
+    },
+    {
+      "collection": "sorts",
+      "id": "nuee_de_daggers",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort nuee_de_daggers"
+    },
+    {
+      "collection": "sorts",
+      "id": "passage_sans_trace",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort passage_sans_trace"
+    },
+    {
+      "collection": "sorts",
+      "id": "pattes_d_araignees",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort pattes_d_araignees"
+    },
+    {
+      "collection": "sorts",
+      "id": "peau_d_ecorce",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort peau_d_ecorce"
+    },
+    {
+      "collection": "sorts",
+      "id": "presence_bestiale",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort presence_bestiale"
+    },
+    {
+      "collection": "sorts",
+      "id": "presence_royale_de_yolane",
+      "documentaryEvidence": "refonte/audit/final-presence-reference-2024.json",
+      "test": "Référence complète du sort presence_royale_de_yolane"
+    },
+    {
+      "collection": "sorts",
+      "id": "priere_de_guerison",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort priere_de_guerison"
+    },
+    {
+      "collection": "sorts",
+      "id": "protection_contre_le_poison",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort protection_contre_le_poison"
+    },
+    {
+      "collection": "sorts",
+      "id": "rayon_affaiblissant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort rayon_affaiblissant"
+    },
+    {
+      "collection": "sorts",
+      "id": "rayon_ardent",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort rayon_ardent"
+    },
+    {
+      "collection": "sorts",
+      "id": "restauration_partielle",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort restauration_partielle"
+    },
+    {
+      "collection": "sorts",
+      "id": "silence",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort silence"
+    },
+    {
+      "collection": "sorts",
+      "id": "souffle_du_dragon",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort souffle_du_dragon"
+    },
+    {
+      "collection": "sorts",
+      "id": "sphere_de_feu",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sphere_de_feu"
+    },
+    {
+      "collection": "sorts",
+      "id": "suggestion",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort suggestion"
+    },
+    {
+      "collection": "sorts",
+      "id": "tenebres",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tenebres"
+    },
+    {
+      "collection": "sorts",
+      "id": "toile_d_araignee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort toile_d_araignee"
+    },
+    {
+      "collection": "sorts",
+      "id": "verrou_magique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort verrou_magique"
+    },
+    {
+      "collection": "sorts",
+      "id": "vigueur_arcanique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vigueur_arcanique"
+    },
+    {
+      "collection": "sorts",
+      "id": "vision_dans_le_noir",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vision_dans_le_noir"
+    },
+    {
+      "collection": "sorts",
+      "id": "zone_de_verite",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort zone_de_verite"
+    },
+    {
+      "collection": "sorts",
+      "id": "animation_des_morts",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort animation_des_morts"
+    },
+    {
+      "collection": "sorts",
+      "id": "antidetection",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort antidetection"
+    },
+    {
+      "collection": "sorts",
+      "id": "appel_de_la_foudre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort appel_de_la_foudre"
+    },
+    {
+      "collection": "sorts",
+      "id": "arme_elementaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort arme_elementaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "aura_du_croise",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aura_du_croise"
+    },
+    {
+      "collection": "sorts",
+      "id": "aura_de_vitalite",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aura_de_vitalite"
+    },
+    {
+      "collection": "sorts",
+      "id": "boule_de_feu",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort boule_de_feu"
+    },
+    {
+      "collection": "sorts",
+      "id": "caresse_du_vampire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort caresse_du_vampire"
+    },
+    {
+      "collection": "sorts",
+      "id": "cercle_magique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cercle_magique"
+    },
+    {
+      "collection": "sorts",
+      "id": "chatiment_de_cecite",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chatiment_de_cecite"
+    },
+    {
+      "collection": "sorts",
+      "id": "chatiment_de_courroux",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chatiment_de_courroux"
+    },
+    {
+      "collection": "sorts",
+      "id": "chatiment_divin",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chatiment_divin"
+    },
+    {
+      "collection": "sorts",
+      "id": "clairvoyance",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort clairvoyance"
+    },
+    {
+      "collection": "sorts",
+      "id": "clignotement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort clignotement"
+    },
+    {
+      "collection": "sorts",
+      "id": "communication_avec_les_morts",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort communication_avec_les_morts"
+    },
+    {
+      "collection": "sorts",
+      "id": "communication_avec_les_plantes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort communication_avec_les_plantes"
+    },
+    {
+      "collection": "sorts",
+      "id": "communication_a_distance",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort communication_a_distance"
+    },
+    {
+      "collection": "sorts",
+      "id": "contresort",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort contresort"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_de_fee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_de_fee"
+    },
+    {
+      "collection": "sorts",
+      "id": "creation_de_nourriture_et_d_eau",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort creation_de_nourriture_et_d_eau"
+    },
+    {
+      "collection": "sorts",
+      "id": "croissance_vegetale",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort croissance_vegetale"
+    },
+    {
+      "collection": "sorts",
+      "id": "delivrance_des_maledictions",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort delivrance_des_maledictions"
+    },
+    {
+      "collection": "sorts",
+      "id": "dissipation_de_la_magie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort dissipation_de_la_magie"
+    },
+    {
+      "collection": "sorts",
+      "id": "don_des_langues",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort don_des_langues"
+    },
+    {
+      "collection": "sorts",
+      "id": "eclair",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort eclair"
+    },
+    {
+      "collection": "sorts",
+      "id": "esprits_gardiens",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort esprits_gardiens"
+    },
+    {
+      "collection": "sorts",
+      "id": "etat_cadaverique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort etat_cadaverique"
+    },
+    {
+      "collection": "sorts",
+      "id": "fleche_de_foudre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fleche_de_foudre"
+    },
+    {
+      "collection": "sorts",
+      "id": "forme_gazeuse",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort forme_gazeuse"
+    },
+    {
+      "collection": "sorts",
+      "id": "fusion_dans_la_pierre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fusion_dans_la_pierre"
+    },
+    {
+      "collection": "sorts",
+      "id": "glyphe_de_garde",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort glyphe_de_garde"
+    },
+    {
+      "collection": "sorts",
+      "id": "hate",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort hate"
+    },
+    {
+      "collection": "sorts",
+      "id": "image_majeure",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort image_majeure"
+    },
+    {
+      "collection": "sorts",
+      "id": "invocation_d_animaux",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invocation_d_animaux"
+    },
+    {
+      "collection": "sorts",
+      "id": "lenteur",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lenteur"
+    },
+    {
+      "collection": "sorts",
+      "id": "lueur_d_espoir",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lueur_d_espoir"
+    },
+    {
+      "collection": "sorts",
+      "id": "lumiere_du_jour",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lumiere_du_jour"
+    },
+    {
+      "collection": "sorts",
+      "id": "malediction",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort malediction"
+    },
+    {
+      "collection": "sorts",
+      "id": "marche_sur_l_onde",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort marche_sur_l_onde"
+    },
+    {
+      "collection": "sorts",
+      "id": "monture_fantome",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort monture_fantome"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_guerison_de_groupe",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_guerison_de_groupe"
+    },
+    {
+      "collection": "sorts",
+      "id": "motif_hypnotique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort motif_hypnotique"
+    },
+    {
+      "collection": "sorts",
+      "id": "mur_de_vent",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mur_de_vent"
+    },
+    {
+      "collection": "sorts",
+      "id": "nuage_nauseabond",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort nuage_nauseabond"
+    },
+    {
+      "collection": "sorts",
+      "id": "protection_contre_l_energie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort protection_contre_l_energie"
+    },
+    {
+      "collection": "sorts",
+      "id": "respiration_aquatique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort respiration_aquatique"
+    },
+    {
+      "collection": "sorts",
+      "id": "retour_a_la_vie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort retour_a_la_vie"
+    },
+    {
+      "collection": "sorts",
+      "id": "tempete_de_grele",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tempete_de_grele"
+    },
+    {
+      "collection": "sorts",
+      "id": "terreur",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort terreur"
+    },
+    {
+      "collection": "sorts",
+      "id": "vie_carquois",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vie_carquois"
+    },
+    {
+      "collection": "sorts",
+      "id": "vol",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vol"
+    },
+    {
+      "collection": "sorts",
+      "id": "voracite_de_hadar",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort voracite_de_hadar"
+    },
+    {
+      "collection": "sorts",
+      "id": "tempete_de_neige",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tempete_de_neige"
+    },
+    {
+      "collection": "sorts",
+      "id": "assassin_imaginaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort assassin_imaginaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "aura_de_vie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aura_de_vie"
+    },
+    {
+      "collection": "sorts",
+      "id": "bannissement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bannissement"
+    },
+    {
+      "collection": "sorts",
+      "id": "bouclier_de_feu",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bouclier_de_feu"
+    },
+    {
+      "collection": "sorts",
+      "id": "charme_monstre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort charme_monstre"
+    },
+    {
+      "collection": "sorts",
+      "id": "chien_de_garde_de_mordenkainen",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chien_de_garde_de_mordenkainen"
+    },
+    {
+      "collection": "sorts",
+      "id": "coffre_secret_de_leomund",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort coffre_secret_de_leomund"
+    },
+    {
+      "collection": "sorts",
+      "id": "compulsion",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort compulsion"
+    },
+    {
+      "collection": "sorts",
+      "id": "confusion",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort confusion"
+    },
+    {
+      "collection": "sorts",
+      "id": "cone_de_froid",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cone_de_froid"
+    },
+    {
+      "collection": "sorts",
+      "id": "controle_de_leau",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort controle_de_leau"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_d_aberration",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_d_aberration"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_d_artificiel",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_d_artificiel"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_de_elementaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_de_elementaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "divination",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort divination"
+    },
+    {
+      "collection": "sorts",
+      "id": "domination_de_bete",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort domination_de_bete"
+    },
+    {
+      "collection": "sorts",
+      "id": "fabrication",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fabrication"
+    },
+    {
+      "collection": "sorts",
+      "id": "facconnage_de_la_pierre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort facconnage_de_la_pierre"
+    },
+    {
+      "collection": "sorts",
+      "id": "fletrissement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fletrissement"
+    },
+    {
+      "collection": "sorts",
+      "id": "gardien_de_la_foi",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort gardien_de_la_foi"
+    },
+    {
+      "collection": "sorts",
+      "id": "insecte_geant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort insecte_geant"
+    },
+    {
+      "collection": "sorts",
+      "id": "invisibilite_supreme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invisibilite_supreme"
+    },
+    {
+      "collection": "sorts",
+      "id": "invocation_d_elementaires_mineurs",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invocation_d_elementaires_mineurs"
+    },
+    {
+      "collection": "sorts",
+      "id": "invocation_d_etres_sylvestres",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invocation_d_etres_sylvestres"
+    },
+    {
+      "collection": "sorts",
+      "id": "lame_avide",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lame_avide"
+    },
+    {
+      "collection": "sorts",
+      "id": "liberte_de_mouvement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort liberte_de_mouvement"
+    },
+    {
+      "collection": "sorts",
+      "id": "localisation_de_creature",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort localisation_de_creature"
+    },
+    {
+      "collection": "sorts",
+      "id": "metamorphose",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort metamorphose"
+    },
+    {
+      "collection": "sorts",
+      "id": "mur_de_feu",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mur_de_feu"
+    },
+    {
+      "collection": "sorts",
+      "id": "oeil_du_mage",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort oeil_du_mage"
+    },
+    {
+      "collection": "sorts",
+      "id": "peau_de_pierre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort peau_de_pierre"
+    },
+    {
+      "collection": "sorts",
+      "id": "protection_contre_la_mort",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort protection_contre_la_mort"
+    },
+    {
+      "collection": "sorts",
+      "id": "sanctuaire_prive_de_mordenkainen",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sanctuaire_prive_de_mordenkainen"
+    },
+    {
+      "collection": "sorts",
+      "id": "sphere_de_vitriol",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sphere_de_vitriol"
+    },
+    {
+      "collection": "sorts",
+      "id": "sphere_resiliente_d_otiluke",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sphere_resiliente_d_otiluke"
+    },
+    {
+      "collection": "sorts",
+      "id": "tentacules_noirs_d_evard",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tentacules_noirs_d_evard"
+    },
+    {
+      "collection": "sorts",
+      "id": "terrain_hallucinatoire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort terrain_hallucinatoire"
+    },
+    {
+      "collection": "sorts",
+      "id": "animation_objets",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort animation_objets"
+    },
+    {
+      "collection": "sorts",
+      "id": "apparence_trompeuse",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort apparence_trompeuse"
+    },
+    {
+      "collection": "sorts",
+      "id": "brume_mortelle",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort brume_mortelle"
+    },
+    {
+      "collection": "sorts",
+      "id": "cercle_de_pouvoir",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cercle_de_pouvoir"
+    },
+    {
+      "collection": "sorts",
+      "id": "cercle_de_teleportation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cercle_de_teleportation"
+    },
+    {
+      "collection": "sorts",
+      "id": "chatiment_du_ban",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chatiment_du_ban"
+    },
+    {
+      "collection": "sorts",
+      "id": "colonne_de_flamme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort colonne_de_flamme"
+    },
+    {
+      "collection": "sorts",
+      "id": "communion",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort communion"
+    },
+    {
+      "collection": "sorts",
+      "id": "communion_avec_la_nature",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort communion_avec_la_nature"
+    },
+    {
+      "collection": "sorts",
+      "id": "contact_avec_les_plans",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort contact_avec_les_plans"
+    },
+    {
+      "collection": "sorts",
+      "id": "contagion",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort contagion"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_de_celeste",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_de_celeste"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_de_dragon",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_de_dragon"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_de_mort_vivant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_de_mort_vivant"
+    },
+    {
+      "collection": "sorts",
+      "id": "coquille_antivie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort coquille_antivie"
+    },
+    {
+      "collection": "sorts",
+      "id": "creation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort creation"
+    },
+    {
+      "collection": "sorts",
+      "id": "dissipation_du_mal_et_du_bien",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort dissipation_du_mal_et_du_bien"
+    },
+    {
+      "collection": "sorts",
+      "id": "domination_de_personne",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort domination_de_personne"
+    },
+    {
+      "collection": "sorts",
+      "id": "double_illusoire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort double_illusoire"
+    },
+    {
+      "collection": "sorts",
+      "id": "entrave_planaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort entrave_planaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "eveil",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort eveil"
+    },
+    {
+      "collection": "sorts",
+      "id": "fleau_d_insectes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort fleau_d_insectes"
+    },
+    {
+      "collection": "sorts",
+      "id": "frappe_du_vent_d_acier",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort frappe_du_vent_d_acier"
+    },
+    {
+      "collection": "sorts",
+      "id": "immobilisation_de_monstre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort immobilisation_de_monstre"
+    },
+    {
+      "collection": "sorts",
+      "id": "invocation_d_elementaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invocation_d_elementaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "invocation_de_volee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invocation_de_volee"
+    },
+    {
+      "collection": "sorts",
+      "id": "lien_telepathique_de_rary",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort lien_telepathique_de_rary"
+    },
+    {
+      "collection": "sorts",
+      "id": "main_de_bigby",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort main_de_bigby"
+    },
+    {
+      "collection": "sorts",
+      "id": "modification_de_memoire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort modification_de_memoire"
+    },
+    {
+      "collection": "sorts",
+      "id": "mur_de_force",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mur_de_force"
+    },
+    {
+      "collection": "sorts",
+      "id": "mur_de_pierre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mur_de_pierre"
+    },
+    {
+      "collection": "sorts",
+      "id": "mythes_et_legendes",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mythes_et_legendes"
+    },
+    {
+      "collection": "sorts",
+      "id": "passage_par_les_arbres",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort passage_par_les_arbres"
+    },
+    {
+      "collection": "sorts",
+      "id": "passe_muraille",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort passe_muraille"
+    },
+    {
+      "collection": "sorts",
+      "id": "perturbations_synaptiques",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort perturbations_synaptiques"
+    },
+    {
+      "collection": "sorts",
+      "id": "rappel_a_la_vie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort rappel_a_la_vie"
+    },
+    {
+      "collection": "sorts",
+      "id": "reincarnation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort reincarnation"
+    },
+    {
+      "collection": "sorts",
+      "id": "restauration_supreme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort restauration_supreme"
+    },
+    {
+      "collection": "sorts",
+      "id": "sanctification",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sanctification"
+    },
+    {
+      "collection": "sorts",
+      "id": "scrutation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort scrutation"
+    },
+    {
+      "collection": "sorts",
+      "id": "soins_de_groupe",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort soins_de_groupe"
+    },
+    {
+      "collection": "sorts",
+      "id": "songe",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort songe"
+    },
+    {
+      "collection": "sorts",
+      "id": "telekinesie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort telekinesie"
+    },
+    {
+      "collection": "sorts",
+      "id": "tempete_radieuse_de_jallarzi",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tempete_radieuse_de_jallarzi"
+    },
+    {
+      "collection": "sorts",
+      "id": "vague_destructrice",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vague_destructrice"
+    },
+    {
+      "collection": "sorts",
+      "id": "allie_planaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort allie_planaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "barriere_de_lames",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort barriere_de_lames"
+    },
+    {
+      "collection": "sorts",
+      "id": "cercle_de_mort",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cercle_de_mort"
+    },
+    {
+      "collection": "sorts",
+      "id": "chaine_d_eclairs",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chaine_d_eclairs"
+    },
+    {
+      "collection": "sorts",
+      "id": "chaudron_bouillonnant_de_tasha",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort chaudron_bouillonnant_de_tasha"
+    },
+    {
+      "collection": "sorts",
+      "id": "contamination",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort contamination"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocation_de_fielon",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocation_de_fielon"
+    },
+    {
+      "collection": "sorts",
+      "id": "convocations_instantanees_de_drawmij",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort convocations_instantanees_de_drawmij"
+    },
+    {
+      "collection": "sorts",
+      "id": "creation_de_mort_vivant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort creation_de_mort_vivant"
+    },
+    {
+      "collection": "sorts",
+      "id": "danse_irresistible_d_otto",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort danse_irresistible_d_otto"
+    },
+    {
+      "collection": "sorts",
+      "id": "desintegration",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort desintegration"
+    },
+    {
+      "collection": "sorts",
+      "id": "festin_des_heros",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort festin_des_heros"
+    },
+    {
+      "collection": "sorts",
+      "id": "glissement_de_terrain",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort glissement_de_terrain"
+    },
+    {
+      "collection": "sorts",
+      "id": "illusion_programmee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort illusion_programmee"
+    },
+    {
+      "collection": "sorts",
+      "id": "interdiction",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort interdiction"
+    },
+    {
+      "collection": "sorts",
+      "id": "invocation_de_fee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invocation_de_fee"
+    },
+    {
+      "collection": "sorts",
+      "id": "mauvais_oeil",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mauvais_oeil"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_retour",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_retour"
+    },
+    {
+      "collection": "sorts",
+      "id": "mur_d_epines",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mur_d_epines"
+    },
+    {
+      "collection": "sorts",
+      "id": "mur_de_glace",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mur_de_glace"
+    },
+    {
+      "collection": "sorts",
+      "id": "orientation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort orientation"
+    },
+    {
+      "collection": "sorts",
+      "id": "petrification",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort petrification"
+    },
+    {
+      "collection": "sorts",
+      "id": "portail_arcanique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort portail_arcanique"
+    },
+    {
+      "collection": "sorts",
+      "id": "possession",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort possession"
+    },
+    {
+      "collection": "sorts",
+      "id": "rayon_de_soleil",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort rayon_de_soleil"
+    },
+    {
+      "collection": "sorts",
+      "id": "sphere_glacee_d_otiluke",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort sphere_glacee_d_otiluke"
+    },
+    {
+      "collection": "sorts",
+      "id": "suggestion_de_groupe",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort suggestion_de_groupe"
+    },
+    {
+      "collection": "sorts",
+      "id": "vent_divin",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vent_divin"
+    },
+    {
+      "collection": "sorts",
+      "id": "vision_supreme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort vision_supreme"
+    },
+    {
+      "collection": "sorts",
+      "id": "voie_vegetale",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort voie_vegetale"
+    },
+    {
+      "collection": "sorts",
+      "id": "boule_de_feu_a_retardement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort boule_de_feu_a_retardement"
+    },
+    {
+      "collection": "sorts",
+      "id": "cage_de_force",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort cage_de_force"
+    },
+    {
+      "collection": "sorts",
+      "id": "changement_de_plan",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort changement_de_plan"
+    },
+    {
+      "collection": "sorts",
+      "id": "dissimulation_supreme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort dissimulation_supreme"
+    },
+    {
+      "collection": "sorts",
+      "id": "doigt_de_mort",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort doigt_de_mort"
+    },
+    {
+      "collection": "sorts",
+      "id": "embruns_prismatiques",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort embruns_prismatiques"
+    },
+    {
+      "collection": "sorts",
+      "id": "epee_de_mordenkainen",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort epee_de_mordenkainen"
+    },
+    {
+      "collection": "sorts",
+      "id": "forme_etheree",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort forme_etheree"
+    },
+    {
+      "collection": "sorts",
+      "id": "image_projetee",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort image_projetee"
+    },
+    {
+      "collection": "sorts",
+      "id": "inversion_de_la_gravite",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort inversion_de_la_gravite"
+    },
+    {
+      "collection": "sorts",
+      "id": "invocation_de_celeste",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort invocation_de_celeste"
+    },
+    {
+      "collection": "sorts",
+      "id": "manoir_somptueux_de_mordenkainen",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort manoir_somptueux_de_mordenkainen"
+    },
+    {
+      "collection": "sorts",
+      "id": "mirage",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mirage"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_pouvoir_fortifiant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_pouvoir_fortifiant"
+    },
+    {
+      "collection": "sorts",
+      "id": "parole_divine",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort parole_divine"
+    },
+    {
+      "collection": "sorts",
+      "id": "regeneration",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort regeneration"
+    },
+    {
+      "collection": "sorts",
+      "id": "resurrection",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort resurrection"
+    },
+    {
+      "collection": "sorts",
+      "id": "simulacre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort simulacre"
+    },
+    {
+      "collection": "sorts",
+      "id": "symbole",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort symbole"
+    },
+    {
+      "collection": "sorts",
+      "id": "teleportation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort teleportation"
+    },
+    {
+      "collection": "sorts",
+      "id": "tempete_de_feu",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tempete_de_feu"
+    },
+    {
+      "collection": "sorts",
+      "id": "alienation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort alienation"
+    },
+    {
+      "collection": "sorts",
+      "id": "aura_sacree",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aura_sacree"
+    },
+    {
+      "collection": "sorts",
+      "id": "aversion_attirance",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort aversion_attirance"
+    },
+    {
+      "collection": "sorts",
+      "id": "bagou",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort bagou"
+    },
+    {
+      "collection": "sorts",
+      "id": "champ_antimagie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort champ_antimagie"
+    },
+    {
+      "collection": "sorts",
+      "id": "clone",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort clone"
+    },
+    {
+      "collection": "sorts",
+      "id": "controle_du_climat",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort controle_du_climat"
+    },
+    {
+      "collection": "sorts",
+      "id": "dedale",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort dedale"
+    },
+    {
+      "collection": "sorts",
+      "id": "demi_plan",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort demi_plan"
+    },
+    {
+      "collection": "sorts",
+      "id": "eclair_du_soleil",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort eclair_du_soleil"
+    },
+    {
+      "collection": "sorts",
+      "id": "esprit_impenetrable",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort esprit_impenetrable"
+    },
+    {
+      "collection": "sorts",
+      "id": "metamorphose_animale",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort metamorphose_animale"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_pouvoir_etourdissant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_pouvoir_etourdissant"
+    },
+    {
+      "collection": "sorts",
+      "id": "nuage_incendiaire",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort nuage_incendiaire"
+    },
+    {
+      "collection": "sorts",
+      "id": "telepathie",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort telepathie"
+    },
+    {
+      "collection": "sorts",
+      "id": "tremblement_de_terre",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tremblement_de_terre"
+    },
+    {
+      "collection": "sorts",
+      "id": "tsunami",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tsunami"
+    },
+    {
+      "collection": "sorts",
+      "id": "arret_du_temps",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort arret_du_temps"
+    },
+    {
+      "collection": "sorts",
+      "id": "changement_de_forme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort changement_de_forme"
+    },
+    {
+      "collection": "sorts",
+      "id": "emprisonnement",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort emprisonnement"
+    },
+    {
+      "collection": "sorts",
+      "id": "ennemi_surpuissant",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort ennemi_surpuissant"
+    },
+    {
+      "collection": "sorts",
+      "id": "guerison_de_groupe",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort guerison_de_groupe"
+    },
+    {
+      "collection": "sorts",
+      "id": "metamorphose_supreme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort metamorphose_supreme"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_pouvoir_guerisseur",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_pouvoir_guerisseur"
+    },
+    {
+      "collection": "sorts",
+      "id": "mot_de_pouvoir_mortel",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mot_de_pouvoir_mortel"
+    },
+    {
+      "collection": "sorts",
+      "id": "nuee_de_meteores",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort nuee_de_meteores"
+    },
+    {
+      "collection": "sorts",
+      "id": "portail",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort portail"
+    },
+    {
+      "collection": "sorts",
+      "id": "premeditation",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort premeditation"
+    },
+    {
+      "collection": "sorts",
+      "id": "premonition",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort premonition"
+    },
+    {
+      "collection": "sorts",
+      "id": "projection_astrale",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort projection_astrale"
+    },
+    {
+      "collection": "sorts",
+      "id": "resurrection_supreme",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort resurrection_supreme"
+    },
+    {
+      "collection": "sorts",
+      "id": "mur_prismatique",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort mur_prismatique"
+    },
+    {
+      "collection": "sorts",
+      "id": "souhait",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort souhait"
+    },
+    {
+      "collection": "sorts",
+      "id": "tempete_vengeresse",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort tempete_vengeresse"
+    },
+    {
+      "collection": "sorts",
+      "id": "porte_dimensionnelle",
+      "documentaryEvidence": "refonte/audit/spell-comparisons-2024.json",
+      "test": "Référence complète du sort porte_dimensionnelle"
+    },
+    {
+      "collection": "armes",
+      "id": "Bâton de combat",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Bâton de combat"
+    },
+    {
+      "collection": "armes",
+      "id": "Dague",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Dague"
+    },
+    {
+      "collection": "armes",
+      "id": "Gourdin",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Gourdin"
+    },
+    {
+      "collection": "armes",
+      "id": "Hachette",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Hachette"
+    },
+    {
+      "collection": "armes",
+      "id": "Javeline",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Javeline"
+    },
+    {
+      "collection": "armes",
+      "id": "Lance",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Lance"
+    },
+    {
+      "collection": "armes",
+      "id": "Marteau léger",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Marteau léger"
+    },
+    {
+      "collection": "armes",
+      "id": "Masse d'armes",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Masse d'armes"
+    },
+    {
+      "collection": "armes",
+      "id": "Masse",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Masse"
+    },
+    {
+      "collection": "armes",
+      "id": "Serpe",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Serpe"
+    },
+    {
+      "collection": "armes",
+      "id": "Arbalète légère",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Arbalète légère"
+    },
+    {
+      "collection": "armes",
+      "id": "Arc court",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Arc court"
+    },
+    {
+      "collection": "armes",
+      "id": "Fléchette",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Fléchette"
+    },
+    {
+      "collection": "armes",
+      "id": "Fronde",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Fronde"
+    },
+    {
+      "collection": "armes",
+      "id": "Cimeterre",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Cimeterre"
+    },
+    {
+      "collection": "armes",
+      "id": "Coutille",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Coutille"
+    },
+    {
+      "collection": "armes",
+      "id": "Épée à deux mains",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Épée à deux mains"
+    },
+    {
+      "collection": "armes",
+      "id": "Épée courte",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Épée courte"
+    },
+    {
+      "collection": "armes",
+      "id": "Épée longue",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Épée longue"
+    },
+    {
+      "collection": "armes",
+      "id": "Fléau d’armes",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Fléau d’armes"
+    },
+    {
+      "collection": "armes",
+      "id": "Fouet",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Fouet"
+    },
+    {
+      "collection": "armes",
+      "id": "Hache à deux mains",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Hache à deux mains"
+    },
+    {
+      "collection": "armes",
+      "id": "Hache d’armes",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Hache d’armes"
+    },
+    {
+      "collection": "armes",
+      "id": "Hallebarde",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Hallebarde"
+    },
+    {
+      "collection": "armes",
+      "id": "Lance d’arçon",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Lance d’arçon"
+    },
+    {
+      "collection": "armes",
+      "id": "Maillet d’armes",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Maillet d’armes"
+    },
+    {
+      "collection": "armes",
+      "id": "Marteau de guerre",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Marteau de guerre"
+    },
+    {
+      "collection": "armes",
+      "id": "Morgenstern",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Morgenstern"
+    },
+    {
+      "collection": "armes",
+      "id": "Pique",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Pique"
+    },
+    {
+      "collection": "armes",
+      "id": "Rapière",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Rapière"
+    },
+    {
+      "collection": "armes",
+      "id": "Trident",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Trident"
+    },
+    {
+      "collection": "armes",
+      "id": "Mousquet",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Mousquet"
+    },
+    {
+      "collection": "armes",
+      "id": "Pistolet",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Pistolet"
+    },
+    {
+      "collection": "armes",
+      "id": "Sarbacane",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Sarbacane"
+    },
+    {
+      "collection": "armes",
+      "id": "Arbalète de poing",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Arbalète de poing"
+    },
+    {
+      "collection": "armes",
+      "id": "Arbalète lourde",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Arbalète lourde"
+    },
+    {
+      "collection": "armes",
+      "id": "Arc long",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armes/Arc long"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_matelassee",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/armure_matelassee"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_de_cuir",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/armure_de_cuir"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_de_cuir_cloute",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/armure_de_cuir_cloute"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_de_peaux",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/armure_de_peaux"
+    },
+    {
+      "collection": "armures",
+      "id": "chemise_de_mailles",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/chemise_de_mailles"
+    },
+    {
+      "collection": "armures",
+      "id": "armure_decailles",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/armure_decailles"
+    },
+    {
+      "collection": "armures",
+      "id": "cuirasse",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/cuirasse"
+    },
+    {
+      "collection": "armures",
+      "id": "demi_plaque",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/demi_plaque"
+    },
+    {
+      "collection": "armures",
+      "id": "broigne",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/broigne"
+    },
+    {
+      "collection": "armures",
+      "id": "clibanion",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/clibanion"
+    },
+    {
+      "collection": "armures",
+      "id": "harnois",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/harnois"
+    },
+    {
+      "collection": "armures",
+      "id": "cotte_de_mailles",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/cotte_de_mailles"
+    },
+    {
+      "collection": "armures",
+      "id": "bouclier",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement armures/bouclier"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_d_alchimiste",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/materiel_d_alchimiste"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_brasseur",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/materiel_de_brasseur"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_calligraphe",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/materiel_de_calligraphe"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_peintre",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/materiel_de_peintre"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_bricoleur",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_bricoleur"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_cartographe",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_cartographe"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_charpentier",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_charpentier"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_cordonnier",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_cordonnier"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_forgeron",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_forgeron"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_joaillier",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_joaillier"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_macon",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_macon"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_menuisier",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_menuisier"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_potier",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_potier"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_souffleur_de_verre",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_souffleur_de_verre"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_tanneur",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_tanneur"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_tisserand",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_tisserand"
+    },
+    {
+      "collection": "outils",
+      "id": "ustensiles_de_cuisinier",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/ustensiles_de_cuisinier"
+    },
+    {
+      "collection": "outils",
+      "id": "accessoires_de_deguisement",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/accessoires_de_deguisement"
+    },
+    {
+      "collection": "outils",
+      "id": "boite_de_jeux",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/boite_de_jeux"
+    },
+    {
+      "collection": "outils",
+      "id": "instruments_de_musique",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/instruments_de_musique"
+    },
+    {
+      "collection": "outils",
+      "id": "instruments_de_navigateur",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/instruments_de_navigateur"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_de_contrefacon",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/materiel_de_contrefacon"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_d_empoisonneur",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/materiel_d_empoisonneur"
+    },
+    {
+      "collection": "outils",
+      "id": "materiel_d_herboriste",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/materiel_d_herboriste"
+    },
+    {
+      "collection": "outils",
+      "id": "outils_de_voleur",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement outils/outils_de_voleur"
+    },
+    {
+      "collection": "competences",
+      "id": "Acrobaties",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Acrobaties"
+    },
+    {
+      "collection": "competences",
+      "id": "Arcanes",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Arcanes"
+    },
+    {
+      "collection": "competences",
+      "id": "Athletisme",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Athletisme"
+    },
+    {
+      "collection": "competences",
+      "id": "Discrétion",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Discrétion"
+    },
+    {
+      "collection": "competences",
+      "id": "Dressage",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Dressage"
+    },
+    {
+      "collection": "competences",
+      "id": "Histoire",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Histoire"
+    },
+    {
+      "collection": "competences",
+      "id": "Intimidation",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Intimidation"
+    },
+    {
+      "collection": "competences",
+      "id": "Investigation",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Investigation"
+    },
+    {
+      "collection": "competences",
+      "id": "Médecine",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Médecine"
+    },
+    {
+      "collection": "competences",
+      "id": "Nature",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Nature"
+    },
+    {
+      "collection": "competences",
+      "id": "Perception",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Perception"
+    },
+    {
+      "collection": "competences",
+      "id": "Perspicacité",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Perspicacité"
+    },
+    {
+      "collection": "competences",
+      "id": "Persuasion",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Persuasion"
+    },
+    {
+      "collection": "competences",
+      "id": "Religion",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Religion"
+    },
+    {
+      "collection": "competences",
+      "id": "Représentation",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Représentation"
+    },
+    {
+      "collection": "competences",
+      "id": "Survie",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Survie"
+    },
+    {
+      "collection": "competences",
+      "id": "Tromperie",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Tromperie"
+    },
+    {
+      "collection": "competences",
+      "id": "Escamotage",
+      "documentaryEvidence": "refonte/audit/equipment-reference-2024.json",
+      "test": "Référence équipement competences/Escamotage"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "ape",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/ape"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "axe-beak",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/axe-beak"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "baboon",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/baboon"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "badger",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/badger"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "bat",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/bat"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "black-bear",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/black-bear"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "blood-hawk",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/blood-hawk"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "boar",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/boar"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "brown-bear",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/brown-bear"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "camel",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/camel"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "cat",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/cat"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "constrictor-snake",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/constrictor-snake"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "crab",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/crab"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "crocodile",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/crocodile"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "deer",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/deer"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "dire-wolf",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/dire-wolf"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "draft-horse",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/draft-horse"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "eagle",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/eagle"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "elephant",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/elephant"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "elk",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/elk"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "flying-snake",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/flying-snake"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "frog",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/frog"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-ape",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-ape"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-badger",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-badger"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-bat",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-bat"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-boar",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-boar"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-centipede",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-centipede"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-constrictor-snake",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-constrictor-snake"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-crab",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-crab"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-crocodile",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-crocodile"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-eagle",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-eagle"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-elk",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-elk"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-fire-beetle",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-fire-beetle"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-frog",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-frog"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-goat",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-goat"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-hyena",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-hyena"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-lizard",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-lizard"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-octopus",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-octopus"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-owl",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-owl"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-poisonous-snake",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-poisonous-snake"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-rat",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-rat"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-scorpion",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-scorpion"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-sea-horse",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-sea-horse"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-shark",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-shark"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-spider",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-spider"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-toad",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-toad"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-vulture",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-vulture"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-wasp",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-wasp"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-weasel",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-weasel"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "giant-wolf-spider",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/giant-wolf-spider"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "goat",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/goat"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "hawk",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/hawk"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "hunter-shark",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/hunter-shark"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "hyena",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/hyena"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "jackal",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/jackal"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "killer-whale",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/killer-whale"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "lion",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/lion"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "lizard",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/lizard"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "mammoth",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/mammoth"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "mastiff",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/mastiff"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "mule",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/mule"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "octopus",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/octopus"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "owl",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/owl"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "panther",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/panther"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "plesiosaurus",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/plesiosaurus"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "poisonous-snake",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/poisonous-snake"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "polar-bear",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/polar-bear"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "pony",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/pony"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "quipper",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/quipper"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "rat",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/rat"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "raven",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/raven"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "reef-shark",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/reef-shark"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "rhinoceros",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/rhinoceros"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "riding-horse",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/riding-horse"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "saber-toothed-tiger",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/saber-toothed-tiger"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "scorpion",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/scorpion"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "sea-horse",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/sea-horse"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "spider",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/spider"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "stirge",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/stirge"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-bats",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/swarm-of-bats"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-insects",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/swarm-of-insects"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-poisonous-snakes",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/swarm-of-poisonous-snakes"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-quippers",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/swarm-of-quippers"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-rats",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/swarm-of-rats"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "swarm-of-ravens",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/swarm-of-ravens"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "tiger",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/tiger"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "triceratops",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/triceratops"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "tyrannosaurus-rex",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/tyrannosaurus-rex"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "vulture",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/vulture"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "warhorse",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/warhorse"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "weasel",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/weasel"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "wolf",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/wolf"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "air-elemental",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/air-elemental"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "azer",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/azer"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "djinni",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/djinni"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "dust-mephit",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/dust-mephit"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "earth-elemental",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/earth-elemental"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "efreeti",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/efreeti"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "fire-elemental",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/fire-elemental"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "gargoyle",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/gargoyle"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "ice-mephit",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/ice-mephit"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "invisible-stalker",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/invisible-stalker"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "magma-mephit",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/magma-mephit"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "magmin",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/magmin"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "salamander",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/salamander"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "steam-mephit",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/steam-mephit"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "water-elemental",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/water-elemental"
+    },
+    {
+      "collection": "formes_animales",
+      "id": "xorn",
+      "documentaryEvidence": "refonte/audit/animal-reference-2024.json",
+      "test": "Profil officiel formes_animales/xorn"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-black-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-black-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-blue-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-blue-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-brass-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-brass-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-bronze-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-bronze-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-copper-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-copper-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-gold-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-gold-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-green-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-green-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-red-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-red-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-silver-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-silver-dragon"
+    },
+    {
+      "collection": "formes_draconiques",
+      "id": "young-white-dragon",
+      "documentaryEvidence": "refonte/audit/dragon-reference-2024.json",
+      "test": "Profil officiel formes_draconiques/young-white-dragon"
+    },
+    {
+      "collection": "familiers",
+      "id": "imp",
+      "documentaryEvidence": "refonte/audit/familiar-reference-2024.json",
+      "test": "Profil officiel familiers/imp"
+    },
+    {
+      "collection": "familiers",
+      "id": "pseudodragon",
+      "documentaryEvidence": "refonte/audit/familiar-reference-2024.json",
+      "test": "Profil officiel familiers/pseudodragon"
+    },
+    {
+      "collection": "familiers",
+      "id": "quasit",
+      "documentaryEvidence": "refonte/audit/familiar-reference-2024.json",
+      "test": "Profil officiel familiers/quasit"
+    },
+    {
+      "collection": "familiers",
+      "id": "skeleton",
+      "documentaryEvidence": "refonte/audit/familiar-reference-2024.json",
+      "test": "Profil officiel familiers/skeleton"
+    },
+    {
+      "collection": "familiers",
+      "id": "sprite",
+      "documentaryEvidence": "refonte/audit/familiar-reference-2024.json",
+      "test": "Profil officiel familiers/sprite"
+    },
+    {
+      "collection": "sorts_complements",
+      "id": "protection_contre_le_mal_et_le_bien",
+      "documentaryEvidence": "refonte/audit/complementary-spells-2024-preparation.json",
+      "test": "Sort complémentaire protection_contre_le_mal_et_le_bien : référence et archivage"
+    },
+    {
+      "collection": "sorts_complements",
+      "id": "couronne_de_folie",
+      "documentaryEvidence": "refonte/audit/complementary-spells-2024-preparation.json",
+      "test": "Sort complémentaire couronne_de_folie : référence et archivage"
+    },
+    {
+      "collection": "sorts_complements",
+      "id": "domination_de_monstre",
+      "documentaryEvidence": "refonte/audit/complementary-spells-2024-preparation.json",
+      "test": "Sort complémentaire domination_de_monstre : référence et archivage"
+    },
+    {
+      "collection": "sorts_complements",
+      "id": "prestidigitation",
+      "documentaryEvidence": "refonte/audit/complementary-spells-2024-preparation.json",
+      "test": "Sort complémentaire prestidigitation : référence et archivage"
+    },
+    {
+      "collection": "sorts_complements",
+      "id": "illusion_mineure",
+      "documentaryEvidence": "refonte/audit/complementary-spells-2024-preparation.json",
+      "test": "Sort complémentaire illusion_mineure : référence et archivage"
+    },
+    {
+      "collection": "invocations",
+      "id": "blade",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation blade : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "chain",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation chain : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "tome",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation tome : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "armor",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation armor : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "mind",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation mind : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "devil",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation devil : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "vigor",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation vigor : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "mask",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation mask : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "misty",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation misty : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "leap",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation leap : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "step",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation step : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "forms",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation forms : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "shadows",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation shadows : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "depths",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation depths : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "gaze",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation gaze : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "investment",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation investment : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "smite",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation smite : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "thirsting",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation thirsting : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "lifedrinker",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation lifedrinker : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "protectors",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation protectors : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "devouring",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation devouring : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "eye",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation eye : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "grave",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation grave : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "witch",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation witch : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "agonizing",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation agonizing : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "spear",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation spear : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "repelling",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation repelling : référence"
+    },
+    {
+      "collection": "invocations",
+      "id": "lesson",
+      "documentaryEvidence": "refonte/audit/invocations-2024-preparation.json",
+      "test": "Manifestation lesson : référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "mind_sliver",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/mind_sliver : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "quete",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/quete : contenu de référence"
+    },
+    {
+      "collection": "familiers",
+      "id": "sphinx-of-wonder",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée familiers/sphinx-of-wonder : contenu de référence"
+    },
+    {
+      "collection": "dons",
+      "id": "keen_mind",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée dons/keen_mind : contenu de référence"
+    },
+    {
+      "collection": "dons",
+      "id": "weapon_master",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée dons/weapon_master : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "chatiment_de_fournaise",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/chatiment_de_fournaise : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "chatiment_de_revelation",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/chatiment_de_revelation : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "globe_d_invulnerabilite",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/globe_d_invulnerabilite : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "petite_hutte",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/petite_hutte : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "projectile_magique",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/projectile_magique : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "protections_et_sceaux",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/protections_et_sceaux : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "staggering_smite",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/staggering_smite : contenu de référence"
+    },
+    {
+      "collection": "sorts",
+      "id": "aura_de_purete",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée sorts/aura_de_purete : contenu de référence"
+    },
+    {
+      "collection": "familiers",
+      "id": "slaad-tadpole",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée familiers/slaad-tadpole : contenu de référence"
+    },
+    {
+      "collection": "armes",
+      "id": "Pic de guerre",
+      "documentaryEvidence": "refonte/data/rules-2024-corrections.json",
+      "test": "Absence complétée armes/Pic de guerre : contenu de référence"
+    }
+  ]
+}

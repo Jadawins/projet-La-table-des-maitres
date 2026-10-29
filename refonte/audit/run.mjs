@@ -1,6 +1,6 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {buildAudit} from './build-audit.mjs';
-const snapshot=JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url),'utf8'));
+const snapshot=JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8'));
 const report=buildAudit(snapshot);
 await writeFile(new URL('./report.json',import.meta.url),JSON.stringify(report,null,2)+'\n');
 const summary=report.summary;

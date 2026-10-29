@@ -8,10 +8,10 @@ const hash=s=>createHash('sha256').update(s).digest('hex');
 const cookie=(name,value,age=28800)=>`${name}=${value}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${age}`;
 const getCookie=(req,name)=>(req.headers.cookie||'').split(';').map(s=>s.trim()).find(s=>s.startsWith(name+'='))?.slice(name.length+1)||'';
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function createGateway({supabaseUrl,anonKey,appRoot,characters,origin='https://myrpgtable.fr',fetcher=fetch,now=Date.now}) {
+export function createGateway({supabaseUrl,anonKey,appRoot,characters,catalogueText=null,origin='https://myrpgtable.fr',fetcher=fetch,now=Date.now}) {
   if(!supabaseUrl||!anonKey)throw new Error('Configuration de connexion absente');
   const sessions=new Map(),pending=new Map(),attempts=new Map();
-  const files={'index.html':'text/html; charset=utf-8','app.js':'text/javascript; charset=utf-8','character-rules.mjs':'text/javascript; charset=utf-8','origin-rules.mjs':'text/javascript; charset=utf-8','character-storage.mjs':'text/javascript; charset=utf-8','cleric-progression.mjs':'text/javascript; charset=utf-8','progression.mjs':'text/javascript; charset=utf-8','class-profiles.mjs':'text/javascript; charset=utf-8','class-magic.mjs':'text/javascript; charset=utf-8','extra-classes.mjs':'text/javascript; charset=utf-8','warlock-options.mjs':'text/javascript; charset=utf-8','feat-effects.mjs':'text/javascript; charset=utf-8','sheet-model.mjs':'text/javascript; charset=utf-8','sheet-view.mjs':'text/javascript; charset=utf-8','style.css':'text/css; charset=utf-8','catalogue.json':'application/json; charset=utf-8','assets/fond-bibliotheque-sombre.png':'image/png'};
+  const files={'index.html':'text/html; charset=utf-8','app.js':'text/javascript; charset=utf-8','character-rules.mjs':'text/javascript; charset=utf-8','origin-rules.mjs':'text/javascript; charset=utf-8','character-version.mjs':'text/javascript; charset=utf-8','character-storage.mjs':'text/javascript; charset=utf-8','cleric-progression.mjs':'text/javascript; charset=utf-8','progression.mjs':'text/javascript; charset=utf-8','class-profiles.mjs':'text/javascript; charset=utf-8','beast-companion.mjs':'text/javascript; charset=utf-8','species-rules.mjs':'text/javascript; charset=utf-8','wild-shape.mjs':'text/javascript; charset=utf-8','class-magic.mjs':'text/javascript; charset=utf-8','extra-classes.mjs':'text/javascript; charset=utf-8','warlock-options.mjs':'text/javascript; charset=utf-8','feat-effects.mjs':'text/javascript; charset=utf-8','sheet-model.mjs':'text/javascript; charset=utf-8','sheet-view.mjs':'text/javascript; charset=utf-8','style.css':'text/css; charset=utf-8','assets/fond-bibliotheque-sombre.png':'image/png'};
   const json=(res,status,value,headers={})=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store',...headers});res.end(JSON.stringify(value));};
   const redirect=(res,to,headers={})=>{res.writeHead(302,{Location:to,'Cache-Control':'no-store',...headers});res.end();};
   async function body(req,max=32768){let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>max){const error=new Error('Le personnage est trop volumineux.');error.status=413;throw error;}}try{return JSON.parse(raw||'{}');}catch{const error=new Error('Le contenu envoyé est invalide.');error.status=400;throw error;}}
@@ -101,6 +101,11 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,origin='ht
         if(!['GET','HEAD'].includes(req.method))return json(res,405,{error:'Méthode indisponible.'});
         const session=await sessionFor(req);if(!session)return redirect(res,'/connexion.html');
         if(route==='/atelier')return redirect(res,'/atelier/');
+        if(route==='/atelier/catalogue.json'){
+          if(typeof catalogueText!=='string')return json(res,503,{error:'Le catalogue de règles est indisponible.'});
+          res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});
+          return res.end(req.method==='HEAD'?undefined:catalogueText);
+        }
         const file=route.slice('/atelier/'.length)||'index.html';if(!Object.hasOwn(files,file))return json(res,404,{error:'Page introuvable.'});
         let content=await readFile(path.join(appRoot,file));
         if(file==='index.html')content=Buffer.from(content.toString('utf8').replace('<head>',`<head><meta name="refonte-user" content="${esc(session.userId)}">`));

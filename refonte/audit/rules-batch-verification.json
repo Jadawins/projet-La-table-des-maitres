@@ -1,0 +1,30 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "status": "partial-batch-passed",
+  "recordedAt": "2026-10-28T18:42:57.966Z",
+  "sourceHash": "8f70691aa3eacff7f189783546120843def98d3de2a6a8fae7f190c8af0e5d51",
+  "unit": {
+    "passed": 2403,
+    "failed": 0,
+    "skipped": 0,
+    "log": "refonte/tests-latest.txt"
+  },
+  "browserOrigins": {
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "specs/origins.spec.mjs",
+    "duration": "3.1m",
+    "evidence": "Résultat de la commande observé et confirmé par sortie du processus (code 0).",
+    "rawLogRetained": false
+  },
+  "fullRulesConformity": false,
+  "browserJourneys": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Quatre voies du barbare et clerc Vie Thaumaturge niveau 20 : parcours de choix des maîtrises de Charlatan, sauvegarde et réouverture.",
+    "log": "refonte/audit/rules-journeys-tests.txt",
+    "sourceHash": "dbbaf2dadc44100be998f22cc345cd8d95d8fc5ff8ce5f02d7e5757c47b7ea65"
+  }
+}

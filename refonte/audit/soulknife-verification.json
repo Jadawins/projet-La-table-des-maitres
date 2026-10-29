@@ -1,0 +1,21 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "status": "subclass-batch-passed",
+  "recordedAt": "2026-10-28T18:53:36.339Z",
+  "sourceHash": "9fdae4846a67fa5b1589c0c82b3f56af4897605a3967d40580c4f2f1461e1540",
+  "unit": {
+    "passed": 566,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Révision, six classes restantes, fiche et Âme acérée ; 22 contrôles propres à la sous-classe.",
+    "log": "refonte/audit/soulknife-unit-tests.txt"
+  },
+  "browser": {
+    "passed": 20,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Âme acérée niveaux 1 à 20, création, sauvegarde, actualisation et contexte neuf.",
+    "log": "refonte/audit/soulknife-browser-tests.txt"
+  },
+  "fullRulesConformity": false
+}

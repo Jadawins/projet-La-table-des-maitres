@@ -1,0 +1,32 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "status": "batch-passed",
+  "recordedAt": "2026-10-29T04:51:46.206Z",
+  "sourceHash": "81af431cb30b19d7f2f81d5dbada12122e9ea6dc767a4e7f095ba198f7c64e8a",
+  "unit": {
+    "passed": 2743,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Suite entière après Cercle de la Terre 2024, durée de Forme animale et Tempête de grêle.",
+    "log": "refonte/audit/land-full-unit-tests.txt"
+  },
+  "browser": {
+    "passed": 80,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Quatre terrains, chacun aux niveaux 1 à 20 : création, sauvegarde, actualisation et réouverture dans un contexte neuf.",
+    "log": "refonte/audit/land-browser-tests.txt"
+  },
+  "focusedUnit": {
+    "passed": 84,
+    "failed": 0,
+    "skipped": 0,
+    "file": "refonte/tests/land-2024.test.mjs"
+  },
+  "fullRulesConformity": false,
+  "limitations": [
+    "Classe Druide non clôturée : les profils de transformation et les autres sous-classes restent à comparer.",
+    "La conformité des sorts de terrain se vérifie dans le module Sorts ; Tempête de neige et Rayon empoisonné présentent encore des écarts identifiés.",
+    "Aucune publication ni migration de personnages."
+  ]
+}

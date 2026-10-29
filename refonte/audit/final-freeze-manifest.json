@@ -1,0 +1,102 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "cutoff": "2026-10-28",
+  "status": "frozen-local-not-published",
+  "frozenAt": "2026-10-29T17:19:31.891Z",
+  "sourceHash": "f89b2ae98066bdca61deec50bfb1a89778b2d8b8774c0daf3dd32e42fa1183d7",
+  "testedCandidateSourceHash": "651a4fddbaff14fe72ab14c90b77f8e4b08849bf69e496ce732cd2607d849a77",
+  "testedCatalogueSha256": "014749e384c690faa357f785c50d56482258fc5d069c42df981a590d3f80dcd4",
+  "frozenCatalogueSha256": "b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697",
+  "catalogueDelta": "Only provenance.revision.status: candidate -> frozen; no functional rule or application change.",
+  "product": [
+    {
+      "file": "app.js",
+      "sha256": "9dc63b28ac4bd24881edcd71b0c2ed94c1bee752d2f9c9202cf7c72f015fda48"
+    },
+    {
+      "file": "beast-companion.mjs",
+      "sha256": "6c0ed1b3e70583586d0fa50286d0d014eae82d7923b18036151baef2b7de0386"
+    },
+    {
+      "file": "character-rules.mjs",
+      "sha256": "799b82624c67d9d8d8ac5d2555b0bb9444b1bcc34060e66b88d3e6e06ee2834c"
+    },
+    {
+      "file": "character-storage.mjs",
+      "sha256": "815fa1fc677c2b6fe3f6a9cda074dceaab9b858984d5a2f4c8d81dd6ef69959a"
+    },
+    {
+      "file": "character-version.mjs",
+      "sha256": "1317e2fcc57351ffa3351b306754713237eef9fe49eb343d84596b3299b51aa0"
+    },
+    {
+      "file": "class-magic.mjs",
+      "sha256": "84829c32057a34fc3f2b4b4d26c6d383e5d32cc3f3dc4e113066821e220c521d"
+    },
+    {
+      "file": "class-profiles.mjs",
+      "sha256": "67b4a53b24b5749df90812abfc9c4b971f5c8fcf6532c29354133ecb19334786"
+    },
+    {
+      "file": "cleric-progression.mjs",
+      "sha256": "b3b3dfeb636a153ba093baf01e5040fe33964fd37369ff0f74c1677b0cd7810c"
+    },
+    {
+      "file": "extra-classes.mjs",
+      "sha256": "01c2b0e5ff7eae211b0a58c8f4ccbbeb5cbbd8510d8cf9a4e8c17164b180c515"
+    },
+    {
+      "file": "feat-effects.mjs",
+      "sha256": "a5dc6b5654fdd6c1dab3cf11fb90a5a58cc84f3f454e73e0978ee2b44c70d400"
+    },
+    {
+      "file": "index.html",
+      "sha256": "b6454b22ff446feb1dac1d65edb190937cd38c67415d82896cbb8546e1d1f5ec"
+    },
+    {
+      "file": "origin-rules.mjs",
+      "sha256": "f8c4fcab2ee0bb28e09072fdab7fe4b622e150fa1c96aeb0406df2b3061709d2"
+    },
+    {
+      "file": "progression.mjs",
+      "sha256": "8273673d685297e7cc548b4796b7d90cad27514453eb5ee41b4d7aa716960535"
+    },
+    {
+      "file": "sheet-model.mjs",
+      "sha256": "f2ef1586578657b078006d43d443703e62504e7fc15f75a95381e13f27a55d94"
+    },
+    {
+      "file": "sheet-view.mjs",
+      "sha256": "ffb57424a32c32f153b7e8cd1f6f0678b0533a8c590ad72cf4e79b58a8924927"
+    },
+    {
+      "file": "species-rules.mjs",
+      "sha256": "8b341d6ec80f47c3002a60b459a9c57dc06576d0e74c1bb083122751077d6dcf"
+    },
+    {
+      "file": "style.css",
+      "sha256": "b55f53546b431070881129a4521dae072479121905ff3ad3845b1ba26df6e9fb"
+    },
+    {
+      "file": "warlock-options.mjs",
+      "sha256": "3aff4b0c2d52f8d02e01be0f996c9878b102a85fda6da52803de8482094b5cc9"
+    },
+    {
+      "file": "wild-shape.mjs",
+      "sha256": "64f2e31b1463ef931414902b9764c9c94718c3257f28eb9d0acbaa32bdf76bf9"
+    }
+  ],
+  "unitEvidence": "refonte/audit/final-unit-verification.json",
+  "browserEvidence": "refonte/audit/final-browser-verification.json",
+  "catalogueEvidence": "refonte/audit/final-catalogue-verification.json",
+  "report": "refonte/audit/BILAN-FINAL-2024.md",
+  "backupEvidence": "refonte/audit/final-backup-verification.json",
+  "summary": {
+    "verified": 809,
+    "documentedExclusions": 5,
+    "unitTestsDistinct": 3948,
+    "browserJourneysDistinct": 1298,
+    "remainingFailed": 0
+  },
+  "productionChanged": false
+}

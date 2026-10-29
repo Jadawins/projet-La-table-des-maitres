@@ -1,15 +1,17 @@
+import {CURRENT_RULES_VERSION} from '../maquette/character-version.mjs';
 import {buildCatalogue} from '../catalogue.mjs';
 import {clericProfile} from '../maquette/character-rules.mjs';
 import {sheetModel} from '../maquette/sheet-model.mjs';
 import {advancementInitial,improvementLevels} from '../maquette/cleric-progression.mjs';
+import {fillBackgroundFixture} from './background-fixture.mjs';
 export function clericFixture(c,level,subclassId,vocation='Thaumaturge'){
-  const state={schemaVersion:2,name:'Contrôle du clerc',classId:'clerc',speciesId:'humain',backgroundId:'charlatan',equipment:'A',level,scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},statsMethod:'physical',bonusMode:'three',divineOrder:vocation,subclassId:level>=3?subclassId:'',classSkills:['Médecine','Religion'],speciesSize:'M',speciesSkill:'Perception',originFeatId:'robuste',hpMode:'fixed',hpRolls:{},rolls:[],advancements:{},sacredStrike:level>=7?'Magie puissante':'',details:{},step:7};
+  const state={schemaVersion:2,rulesVersion:CURRENT_RULES_VERSION,name:'Contrôle du clerc',classId:'clerc',speciesId:'humain',backgroundId:'charlatan',equipment:'A',backgroundEquipment:'A',level,scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},statsMethod:'physical',bonusMode:'three',divineOrder:vocation,subclassId:level>=3?subclassId:'',classSkills:['Médecine','Religion'],speciesSize:'M',speciesSkill:'Perception',originFeatId:'robuste',hpMode:'fixed',hpRolls:{},rolls:[],advancements:{},sacredStrike:level>=7?'Magie puissante':'',details:{},step:7};
   for(const n of [4,8])if(level>=n)state.advancements[n]={...advancementInitial(),mode:'ability',abilities:['SAG','CON']};
   for(const n of [12,16])if(level>=n)state.advancements[n]={...advancementInitial(),mode:'ability',abilities:['CON','INT']};
   if(level>=19)state.advancements[19]={...advancementInitial(),mode:'feat',featId:'faveur_de_memoire_magique',featAbility:'SAG'};
   const p=clericProfile(state,c);
   state.cantrips=p.cantrips.slice(0,p.cantripCount).map(s=>s.id);state.prepared=p.prepared.slice(0,p.preparedCount).map(s=>s.id);
-  return state;
+  return fillBackgroundFixture(state,c);
 }
 export function buildClericAudit(snapshot,{maxLevel=10}={}){
   const c=buildCatalogue(snapshot),rows=[];

@@ -1,0 +1,33 @@
+{
+  "releaseId": "phb2024-2026-10-28",
+  "status": "batch-passed",
+  "recordedAt": "2026-10-29T05:05:31.429Z",
+  "sourceHash": "bcd4669495d08d62bbd30d5650fadda72c332ea1a4d0b9dbcdc87816e7596c12",
+  "unit": {
+    "passed": 2807,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Suite entière après correction des trois autres cercles et des sorts lunaires ; ajout contrôlé du sort absent.",
+    "log": "refonte/audit/druid-circles-full-unit-tests.txt"
+  },
+  "browser": {
+    "passed": 60,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Lune, Mers et Astres, chacun aux niveaux 1–20 : création, fiche, sauvegarde, actualisation et contexte neuf.",
+    "log": "refonte/audit/druid-circles-browser-tests.txt"
+  },
+  "fullRulesConformity": false,
+  "inventoryAddition": {
+    "id": "rayon_de_lune",
+    "reason": "Sort absent nécessaire au Cercle de la Lune PHB 2024 ; ajouté sur copie uniquement.",
+    "beforeTotal": 798,
+    "afterTotal": 799
+  },
+  "limitations": [
+    "Profils des formes animales encore à comparer : la classe Druide ne peut pas être clôturée globalement.",
+    "Les autres fiches de sorts et les autres classes restent dans le registre.",
+    "Les 80 parcours Terre et les deux parcours des fiches de sorts sont des preuves de leurs lots précédents, pas une exécution globale de la version courante.",
+    "Production inchangée ; versionnement des anciens personnages toujours bloquant."
+  ]
+}

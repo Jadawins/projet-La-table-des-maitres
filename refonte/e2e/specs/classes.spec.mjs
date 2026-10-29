@@ -5,7 +5,7 @@ import {buildCatalogue} from '../../catalogue.mjs';
 import {classFixture} from '../../audit/class-fixtures.mjs';
 import {classChoiceSpecs} from '../../maquette/class-profiles.mjs';
 import {classProfile} from '../../maquette/character-rules.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../../data/rules-mongodb.json',import.meta.url))));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../../tests/fixtures/rules-2024.json',import.meta.url))));
 const classes=['barbare','rodeur','barde','druide','guerrier','paladin','roublard','moine','ensorceleur','magicien','occultiste'];
 const next=page=>page.locator('#next').click();
 async function checkValues(page,kind,values){
@@ -16,7 +16,9 @@ async function build(page,s){
   await page.locator('#name').fill(s.name);await page.locator('#level').selectOption(String(s.level));await next(page);
   await page.locator(`[data-choice="classId"][data-id="${s.classId}"]`).click();await next(page);
   await page.locator('[data-choice="speciesId"][data-id="orc"]').click();
-  await page.locator('[data-choice="backgroundId"][data-id="charlatan"]').click();await next(page);
+  await page.locator('[data-choice="backgroundId"][data-id="charlatan"]').click();
+  for(const id of s.originGrants.background.proficiencies)await page.locator(`[data-grant-slot="background"][data-grant-choice="${id}"]`).check();
+  await next(page);
   for(const [id,value]of Object.entries(s.scores))await page.locator(`[data-stat="${id}"]`).fill(String(value));
   await page.locator('[data-bonus-mode="three"]').click();await next(page);
   if(s.level>=3)await page.locator(`[data-choice="subclassId"][data-id="${s.subclassId}"]`).click();
@@ -35,7 +37,7 @@ async function build(page,s){
     for(const kind of ['cantrips','prepared'])for(const id of s[kind])await page.locator(`[data-spell-kind="${kind}"][data-spell-id="${id}"]`).check();
     await next(page);
   }
-  await page.locator('[data-choice="equipment"][data-id="A"]').click();await next(page);await next(page);
+  await page.locator('[data-choice="equipment"][data-id="A"]').click();await page.locator('[data-choice="backgroundEquipment"][data-id="A"]').click();await next(page);await next(page);
   await expect(page.locator('.sheet-hero h1')).toHaveText(s.name);
   await expect(page.locator('.sheet-incomplete')).toHaveCount(0);
 }
@@ -56,9 +58,10 @@ async function assertNumbers(page,s){
   if(s.classId==='druide'&&s.level>=2)await expect(page.locator('#sheet-panel-abilities')).toContainText('Formes animales connues');
 }
 // All supported class/subclass/level combinations are checked by unit tests.
-// Real browser journeys cover starting levels and major transitions, plus save/reload/server readback.
-for(const id of classes)for(const sub of c.subclasses.filter(s=>s.classe_parente===id))for(const level of (id==='guerrier'?[1,3,6,7,10,14,20]:[1,3,6,10,20])){
-  test(`${id} · ${sub.nom} · niveau ${level}${level===20?' @quick':''}`,async({page,browser,auth})=>{
+// All twenty levels are covered. @complement selects only levels absent from the previous 442-test run.
+const previousLevels=id=>id==='guerrier'?[1,3,6,7,10,14,20]:[1,3,6,10,20];
+for(const id of classes)for(const sub of c.subclasses.filter(s=>s.classe_parente===id))for(const level of Array.from({length:20},(_,i)=>i+1)){
+  test(`${id} · ${sub.nom} · niveau ${level}${level===20?' @quick':''}${previousLevels(id).includes(level)?'':' @complement'}`,async({page,browser,auth})=>{
     if(id==='magicien')test.setTimeout(240000);
     const s=classFixture(c,id,level,sub.id);s.name=`E2E ${sub.id} ${level}`;
     await build(page,s);await assertNumbers(page,s);

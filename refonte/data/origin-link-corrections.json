@@ -1,5 +1,5 @@
 {
-  "policy": "Liens vers les fiches déjà présentes uniquement ; paramètres BDD conservés, aucune écriture dans les collections de règles.",
+  "policy": "Alias d’identités ; règles officielles 2024 corrigées dans rules-2024-corrections.json. Les anciennes interprétations BDD sont archivées.",
   "backgroundFeats": {
     "habituedestavernes": "bagarreur_de_tavernes"
   },
@@ -36,37 +36,48 @@
     }
   ],
   "notes": [
+    "Tous les sorts d’un lignage utilisent le choix INT/SAG/CHA ; Aasimar utilise CHA.",
+    "Le nain 2024 n’a pas de sous-espèces mécaniques ni de formation d’armure accordée par son espèce.",
+    "Les anciens sorts inventés de gnome et les anciennes listes contradictoires du tieffelin ne sont plus accordés."
+  ],
+  "goliathAncestries": [
+    {
+      "id": "feu",
+      "nom": "Brûlure ignée · géants du feu",
+      "description": "Sur une touche infligeant des dégâts : +1d10 feu."
+    },
+    {
+      "id": "pierre",
+      "nom": "Endurance de la pierre · géants des pierres",
+      "description": "Réaction aux dégâts subis : réduction de 1d12 + CON."
+    },
+    {
+      "id": "givre",
+      "nom": "Froid mordant · géants du givre",
+      "description": "Sur une touche infligeant des dégâts : +1d6 froid et vitesse de la cible -3 m jusqu’au début de votre prochain tour."
+    },
+    {
+      "id": "collines",
+      "nom": "Renversement des coteaux · géants des collines",
+      "description": "Sur une touche infligeant des dégâts à une créature G ou inférieure : À terre."
+    },
+    {
+      "id": "nuages",
+      "nom": "Saut des nuées · géants des nuages",
+      "description": "Action Bonus : téléportation de 9 m maximum vers un espace inoccupé visible."
+    },
+    {
+      "id": "tempetes",
+      "nom": "Tonnerre des cieux · géants des tempêtes",
+      "description": "Réaction aux dégâts d’une créature à 18 m : elle subit 1d8 tonnerre."
+    }
+  ],
+  "legacyNotes": [
     "Ténacité naine : +1 PV par niveau, une seule application même si la variante collinaire répète le même bonus.",
     "Le nain des montagnes acquiert les formations aux armures légères et intermédiaires décrites dans sa variante.",
     "Les sorts de variante gardent leurs niveaux requis, utilisations et caractéristiques d'incantation BDD ; les fiches reconnues sont fusionnées avant les calculs.",
     "Transmutation du bois et Croissance naturelle restent non identifiées : aucun effet n'est inventé.",
     "Le choix INT/SAG/CHA du trait Présence d’outre-monde est appliqué à Thaumaturgie ; les autres sorts du lignage gardent la caractéristique BDD.",
     "Les six ascendances du goliath reprennent les options du trait BDD, sans choix automatique."
-  ],
-  "goliathAncestries": [
-    {
-      "id": "feu",
-      "nom": "Bouliers ignés · géants du feu"
-    },
-    {
-      "id": "pierre",
-      "nom": "Endurance de la pierre · géants des pierres"
-    },
-    {
-      "id": "givre",
-      "nom": "Froid mordant · géants du givre"
-    },
-    {
-      "id": "collines",
-      "nom": "Renversement des coteaux · géants des collines"
-    },
-    {
-      "id": "nuages",
-      "nom": "Saut des nues · géants des nuages"
-    },
-    {
-      "id": "tempetes",
-      "nom": "Tonnerre des cieux · géants des tempêtes"
-    }
   ]
 }

@@ -11,7 +11,7 @@ import {characterSnapshot,validateSavedCharacter} from '../maquette/character-st
 import {spellErrors,hitPoints} from '../maquette/character-rules.mjs';
 import {originFeats} from '../maquette/origin-rules.mjs';
 import {invocationOptions,invocationErrors} from '../maquette/warlock-options.mjs';
-const c=buildCatalogue(JSON.parse(await readFile(new URL('../data/rules-mongodb.json',import.meta.url))));
+const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url))));
 for(const id of ['paladin','roublard','moine','ensorceleur','magicien','occultiste'].filter(id=>supportedClasses.includes(id)))for(const sub of c.subclasses.filter(s=>s.classe_parente===id))for(let level=1;level<=20;level++)test(`${id} · ${sub.nom} ${level} : intégration BDD et aller-retour`,()=>{
   const s=classFixture(c,id,level,sub.id),m=sheetModel(s,c),p=classProfile(s,c);
   assert.deepEqual(m.errors,[]);
@@ -27,8 +27,8 @@ test('Paladin : style divin, aura conditionnelle et deux remplacements autorisé
   const m=sheetModel(s,c);assert.equal(p.cantripCount,2);assert.ok(p.cantrips.every(x=>x.classes.includes('Clerc')));
   assert.equal(m.classResources.find(x=>x.nom==='Toucher guérisseur').valeur,90);
   assert.equal(m.classResources.find(x=>x.nom==='Aura défensive').valeur,'+3');assert.ok(m.classResources.find(x=>x.nom==='Aura défensive').details.startsWith('9 m'));
-  assert.ok(p.always.some(x=>x.id==='rayon_tracant'));assert.ok(p.always.some(x=>x.id==='heroisme'));assert.ok(p.always.some(x=>x.id==='passage_sans_trace'));
-  const d=classProfile(classFixture(c,'paladin',3,'paladin_serment_devotion'),c);assert.ok(d.always.some(x=>x.id==='sanctification'&&x.niveau===5));assert.match(d.spellcastingNote,/aucun emplacement/);
+  assert.ok(p.always.some(x=>x.id==='rayon_tracant'));assert.ok(p.always.some(x=>x.id==='heroisme'));assert.ok(p.always.some(x=>x.id==='hâte'||x.id==='hate'));
+  const d=classProfile(classFixture(c,'paladin',3,'paladin_serment_devotion'),c);assert.ok(!d.always.some(x=>x.id==='sanctification'));assert.ok(d.always.some(x=>x.id==='bouclier_de_la_foi'));
 });
 test('Roublard : expertises 1/6, paliers 10 et maîtrises de sauvegarde au niveau 15',()=>{
   const s=classFixture(c,'roublard',15,'roublard_assassin'),m=sheetModel(s,c);
@@ -40,11 +40,11 @@ test('Moine : progression du dé, DEX/SAG niveau 20, vitesse, CA et six sauvegar
   const s=classFixture(c,'moine',20,'moine_credo_paume'),m=sheetModel(s,c);
   assert.equal(m.scores.DEX,16);assert.equal(m.scores.SAG,20);assert.equal(m.ac,18);assert.equal(m.speed,18);
   assert.ok(m.saves.every(x=>x.trained));assert.equal(m.attacks.find(x=>x.nom==='Mains nues').degats.de,'1d12');assert.equal(m.attacksPerAction,2);
-  assert.ok(m.immunities.includes('nécrotique'));assert.equal(m.classResources.find(r=>r.nom==='Énergie martiale').valeur,20);
+  assert.ok(!m.immunities.includes('nécrotique'));assert.equal(m.classResources.find(r=>r.nom==='Énergie martiale').valeur,20);
 });
 test('Magicien : grimoire obligatoire, minimum de rangs antérieurs et préparés limités au livre',()=>{
   const s=classFixture(c,'magicien',20,'magicien_abjurateur'),p=classProfile(s,c),m=sheetModel(s,c);
-  assert.equal(s.classChoices.spellbook.length,44);assert.ok(p.prepared.every(x=>s.classChoices.spellbook.includes(x.id)));
+  assert.equal(s.classChoices.spellbook.length,44);assert.ok(p.prepared.every(x=>[...s.classChoices.spellbook,...Object.entries(s.classChoices).filter(([k])=>/^savant\d+$/.test(k)).flatMap(([,v])=>v)].includes(x.id)));
   assert.equal(m.classResources.find(x=>x.nom==='Bouclier arcanique').valeur,40+m.mods.INT);
   assert.equal(p.always.filter(x=>['Sort signature','Maîtrise arcanique'].includes(x.grantSource)).length,4);
   const bad=structuredClone(s);bad.classChoices.spellbook=c.spells.filter(x=>x.classes.includes('Magicien')&&x.niveau>=3).slice(0,44).map(x=>x.id);assert.equal(validateSavedCharacter(bad,c).status,'draft');
@@ -52,14 +52,14 @@ test('Magicien : grimoire obligatoire, minimum de rangs antérieurs et préparé
 test('Ensorceleur : résistance et PV draconiques, métamagies distinctes, Magie innée reste conditionnelle',()=>{
   const s=classFixture(c,'ensorceleur',20,'ensorceleur_sorcellerie_draconique'),m=sheetModel(s,c),plain={...s,subclassId:'ensorceleur_sorcellerie_sauvage'};
   assert.equal(hitPoints(s,c),hitPoints(plain,c)+20);assert.equal(m.ac,14);assert.equal(m.magic.dc,17);
-  assert.equal(s.classChoices.metamagic.length,6);assert.ok(m.resistances.includes(s.classChoices.dragonDamage[0]));assert.ok(m.classEffects.dragonForm);assert.equal(m.classEffects.dragonForm.pv,m.hp);
+  assert.equal(s.classChoices.metamagic.length,6);assert.ok(m.resistances.includes(s.classChoices.dragonDamage[0]));assert.equal(m.classEffects.dragonForm,undefined);assert.ok(m.spells.some(x=>x.id==='convocation_de_dragon'));
   s.classChoices.metamagic=Array(6).fill('subtil');assert.equal(validateSavedCharacter(s,c).status,'draft');
 });
-test('Les données non identifiées exigent confirmation et restent des avertissements sans statistiques inventées',()=>{
-  const s=classFixture(c,'ensorceleur',6,'ensorceleur_sorcellerie_mecanique'),m=sheetModel(s,c),unknown=m.spells.find(x=>x.unresolved);
-  assert.ok(unknown);assert.equal(unknown.niveau,null);assert.equal(unknown.dc,null);assert.match(m.ruleNotices,/non identifiée/);
-  s.classChoices.rulesToReview=[];assert.equal(validateSavedCharacter(s,c).status,'draft');
+test('Les sorts de la sorcellerie mécanique sont désormais reliés sans effet inventé',()=>{
+  const s=classFixture(c,'ensorceleur',6,'ensorceleur_sorcellerie_mecanique'),m=sheetModel(s,c);
+  assert.ok(m.spells.length);assert.ok(m.spells.every(x=>!x.unresolved));assert.equal(validateSavedCharacter(s,c).status,'ready');
 });
+
 test('Occultiste : pacte séparé des quatre arcanums, prérequis des manifestations et Tome sans doublon',()=>{
   const s=classFixture(c,'occultiste',20,'occultiste_protecteur_celeste'),p=classProfile(s,c);
   assert.deepEqual(p.slots,{5:4});assert.equal(p.extraSpells.filter(x=>x.source.startsWith('Secret arcanique')).length,4);
@@ -73,6 +73,6 @@ test('Décharge agonisante : le sort associé doit être connu, son bonus est at
 });
 test('Leçons des premiers êtres : don d’origine réel, bonus appliqué et sauvegarde stable',()=>{
   const s=classFixture(c,'occultiste',2),before=hitPoints(s,c);s.classChoices.invocations=['armor','mind','lesson:robuste'];const p=classProfile(s,c);s.cantrips=p.cantrips.slice(0,p.cantripCount).map(x=>x.id);s.prepared=p.prepared.slice(0,p.preparedCount).map(x=>x.id);
-  assert.ok(originFeats(s,c).some(g=>g.slot.startsWith('invocation')&&g.feat.id==='robuste'));assert.equal(hitPoints(s,c),before+2);
+  assert.ok(originFeats(s,c).some(g=>g.slot.startsWith('invocation')&&g.feat.id==='robuste'));assert.equal(hitPoints(s,c),before+4);
   assert.equal(validateSavedCharacter(s,c).status,'ready');const saved=validateSavedCharacter(s,c).character;assert.deepEqual(saved.classChoices,s.classChoices);
 });

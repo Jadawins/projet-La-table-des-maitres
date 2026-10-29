@@ -8,6 +8,7 @@ export function featFixture(c,classId,feat){
   const progression=evaluateProgression(s,c,Object.fromEntries(Object.keys(s.scores).map(k=>[k,13])));
   const eligible=progression.rows.find(r=>r.level===level).available.some(f=>f.id===feat.id);
   s.advancements[level]={...advancementInitial(),mode:'feat',featId:feat.id,featAbility:featAbilityOptions(feat)[0]||'',abilities:feat.id==='amelioration_de_caracteristique'?['FOR','DEX']:[]};
+  if(feat.id==='resilient'){const saves=c.classes.find(x=>x.id===classId).niveaux[0].sauvegardes_maitrise;s.advancements[level].featAbility=featAbilityOptions(feat).find(a=>!saves.includes(a))||'';}
   fillOrigins(s,c);finishChoices(s,c);
   return {state:s,eligible,level};
 }

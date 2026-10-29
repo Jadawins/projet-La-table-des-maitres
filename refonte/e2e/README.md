@@ -18,8 +18,11 @@ Sur un agent Linux neuf, utiliser `playwright install --with-deps chromium`.
 ## Commandes
 
 ```sh
-# Les 442 parcours navigateur
+# Les 1 094 parcours navigateur
 pnpm --dir refonte/e2e test
+
+# Uniquement les 652 niveaux absents du précédent rapport, sans clerc ni anciens paliers
+node refonte/e2e/complete-levels.mjs
 
 # Contrôles rapides, dont les sous-classes niveau 20
 pnpm --dir refonte/e2e test:quick
@@ -36,7 +39,7 @@ Les comptes de test sont créés uniquement dans le serveur local de test. Aucun
 ## Couverture
 
 - 160 créations : quatre domaines de clerc × vingt niveaux × deux vocations.
-- 228 créations : les onze autres classes × quatre sous-classes × niveaux 1, 3, 6, 10 et 20 ; le guerrier est aussi vérifié aux niveaux 7 et 14. Les tests de calcul et sauvegarde couvrent chaque niveau de 1 à 20.
+- 880 créations : les onze autres classes × quatre sous-classes × chaque niveau de 1 à 20.
 - 50 parcours supplémentaires pour les espèces/lignages/tailles, les onze dons humains, cinq interactions de dons et quatre origines au niveau 20.
 - Identité, origines, résultats physiques, bonus, améliorations, faveur, compétences, sorts et équipement saisis par l’interface.
 - Contrôle des valeurs affichées avec un calcul attendu indépendant, des paliers et de l’absence de choix incomplets.
@@ -58,3 +61,9 @@ Le test ne lit ni fichier `.env` de production ni clé SSH. Le serveur simulé n
 `access/package.mjs` appelle obligatoirement `verify.mjs` avant de créer le dossier du paquet. Un test en échec, un parcours navigateur ignoré ou marqué seul, ou une modification des sources pendant la vérification bloque la préparation. La vérification réussie produit `test-results/verification.json` avec l’empreinte des sources, la date et le nombre de parcours.
 
 Le workflow GitHub `refonte-tests.yml` prépare les dépendances, exécute les deux suites et conserve les rapports pendant quatorze jours. Le workflow de déploiement attend sa réussite. Ces contrôles GitHub s’activeront après l’envoi des fichiers dans le dépôt ; leur configuration locale ne constitue pas une exécution sur GitHub.
+
+## Exécution complémentaire sans doublons
+
+À la demande de l’utilisateur, la session complémentaire ne relance ni le clerc, ni les 228 anciens paliers des autres classes, ni les origines/régressions déjà réussies, ni les tests de règles inchangés. Le marqueur `@complement` sélectionne exactement 652 nouveaux parcours. La suite complète conserve tous les anciens tests pour les futures régressions.
+
+`complete-levels.mjs` vérifie que l’application, l’accès et le catalogue sont identiques au paquet de la version 20261028T145508Z ; le rapport précédent de 442 réussites est conservé dans `audit/e2e-baseline-20261028T145508Z.json`. Une réussite complémentaire est enregistrée dans `test-results/complement-verification.json` et `audit/e2e-complement-levels.json`. Elle rapporte deux exécutions de la même application et ne se présente pas comme une unique exécution complète de 1 094 tests. Si le produit change, les résultats anciens ne sont pas réutilisés. Le contrôle de déploiement complet reste inchangé.

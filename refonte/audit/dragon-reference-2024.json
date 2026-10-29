@@ -1,0 +1,901 @@
+{
+  "source": "SRD français 5.2.1",
+  "sourcePdfSha256": "480604d949a3bb77f639cf31c1e9e1e7ebb04ae481d943db662ba546828d94bf",
+  "inputSha256": "4d1bde1d0cf227cd2691a84602dd2bb3be1f35e90e33d079ed6b9f734aaef702",
+  "entries": [
+    {
+      "id": "young-white-dragon",
+      "name": "Jeune dragon blanc",
+      "page": 286,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=286",
+      "raw": "Jeune dragon blanc\nDragon (Chromatique) de taille G, Chaotique Mauvais\nCA 17 Initiative +3 (13)\nPv 123 (13d10 + 52)\nVitesse 12 m, fouissement 6 m, nage 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  18 +4 +4 Dex  10 +0 +3 Con  18 +4 +4\nInt  6 -2 2 Sag  11 +0 +3 Cha  12 +1 +1\nCompétences Discrétion +3, Perception +6\nImmunités froid\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 16\nLangues commun, draconique\nFP 6 (2 300 PX ; BM +3)\nTraits\nMarche sur la glace. Le dragon peut parcourir et gravir \ntoute surface gelée sans passer par le moindre test de \ncaractéristique. En outre, tout Terrain difficile composé \nde glace ou de neige ne lui demande aucune dépense \nde déplacement supplémentaire.\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 9 (2d4 + 4) dégâts tranchants plus \n2 (1d4) dégâts de froid.\nSouffle glacial (recharge 5-6). JS Constitution : DD 15, \nchaque créature dans un Cône de 9 m. Échec : 40 (9d8) \ndégâts de froid. Réussite : demi-dégâts.",
+      "parsed": {
+        "nom": "Jeune dragon blanc",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Chromatique",
+        "alignement": "Chaotique Mauvais",
+        "ca": 17,
+        "ca_detail": null,
+        "pv": 123,
+        "pv_formule": "13d10 + 52",
+        "vitesse": {
+          "marche": 12,
+          "nage": 12,
+          "vol": 24,
+          "fouissement": 6,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 18,
+          "FOR_mod": 4,
+          "DEX": 10,
+          "DEX_mod": 0,
+          "CON": 18,
+          "CON_mod": 4,
+          "INT": 6,
+          "INT_mod": -2,
+          "SAG": 11,
+          "SAG_mod": 0,
+          "CHA": 12,
+          "CHA_mod": 1
+        },
+        "jets_sauvegarde": {
+          "FOR": 4,
+          "DEX": 3,
+          "CON": 4,
+          "INT": 2,
+          "SAG": 3,
+          "CHA": 1
+        },
+        "competences": {
+          "Discrétion": 3,
+          "Perception": 6
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "froid"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 16,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "6",
+        "fp_numerique": 6,
+        "bonus_maitrise": 3,
+        "experience": 2300,
+        "xp": 2300,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Marche sur la glace. Le dragon peut parcourir et gravir \ntoute surface gelée sans passer par le moindre test de \ncaractéristique. En outre, tout Terrain difficile composé \nde glace ou de neige ne lui demande aucune dépense \nde déplacement supplémentaire."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 9 (2d4 + 4) dégâts tranchants plus \n2 (1d4) dégâts de froid.\nSouffle glacial (recharge 5-6). JS Constitution : DD 15, \nchaque créature dans un Cône de 9 m. Échec : 40 (9d8) \ndégâts de froid. Réussite : demi-dégâts."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 3
+    },
+    {
+      "id": "young-blue-dragon",
+      "name": "Jeune dragon bleu",
+      "page": 288,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=288",
+      "raw": "Jeune dragon bleu\nDragon (Chromatique) de taille G, Loyal Mauvais\nCA 18 Initiative +4 (14)\nPv 152 (16d10 + 64)\nVitesse 12 m, fouissement 6 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  21 +5 +5 Dex  10 +0 +4 Con  19 +4 +4\nInt  14 +2 +2 Sag  13 +1 +5 Cha  17 +3 +3\nCompétences Discrétion +4, Perception +9\nImmunités foudre\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 19\nLangues commun, draconique\nFP 9 (5 000 PX ; BM +4)\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +9, allonge 3 m. \nTouché : 12 (2d6 + 5) dégâts tranchants plus 5 (1d10) \ndégâts de foudre.\nSouffle de foudre (recharge 5-6). JS Dextérité : DD 16, \nchaque créature dans une Ligne de 18 m de long sur \n1,50 m de large. Échec : 55 (10d10) dégâts de foudre. \nRéussite : demi-dégâts.",
+      "parsed": {
+        "nom": "Jeune dragon bleu",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Chromatique",
+        "alignement": "Loyal Mauvais",
+        "ca": 18,
+        "ca_detail": null,
+        "pv": 152,
+        "pv_formule": "16d10 + 64",
+        "vitesse": {
+          "marche": 12,
+          "nage": null,
+          "vol": 24,
+          "fouissement": 6,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 21,
+          "FOR_mod": 5,
+          "DEX": 10,
+          "DEX_mod": 0,
+          "CON": 19,
+          "CON_mod": 4,
+          "INT": 14,
+          "INT_mod": 2,
+          "SAG": 13,
+          "SAG_mod": 1,
+          "CHA": 17,
+          "CHA_mod": 3
+        },
+        "jets_sauvegarde": {
+          "FOR": 5,
+          "DEX": 4,
+          "CON": 4,
+          "INT": 2,
+          "SAG": 5,
+          "CHA": 3
+        },
+        "competences": {
+          "Discrétion": 4,
+          "Perception": 9
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "foudre"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 19,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "9",
+        "fp_numerique": 9,
+        "bonus_maitrise": 4,
+        "experience": 5000,
+        "xp": 5000,
+        "traits": [],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +9, allonge 3 m. \nTouché : 12 (2d6 + 5) dégâts tranchants plus 5 (1d10) \ndégâts de foudre.\nSouffle de foudre (recharge 5-6). JS Dextérité : DD 16, \nchaque créature dans une Ligne de 18 m de long sur \n1,50 m de large. Échec : 55 (10d10) dégâts de foudre. \nRéussite : demi-dégâts."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 4
+    },
+    {
+      "id": "young-brass-dragon",
+      "name": "Jeune dragon d’airain",
+      "page": 289,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=289",
+      "raw": "Jeune dragon d’airain\nDragon (Métallique) de taille G, Chaotique Bon\nCA 17 Initiative +3 (13)\nPv 110 (13d10 + 39)\nVitesse 12 m, fouissement 6 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  19 +4 +4 Dex  10 +0 +3 Con  17 +3 +3\nInt  12 +1 +1 Sag  11 +0 +3 Cha  15 +2 +2\nCompétences Discrétion +3, Perception +6, Persuasion +5\nImmunités feu\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 16\nLangues commun, draconique\nFP 6 (2 300 PX ; BM +3)\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer deux de ces attaques par \nune utilisation de Souffle soporifique.\nSaignée. Corps à corps : +7 , allonge 3 m. Touché : \n15 (2d10 + 4) dégâts tranchants.\nSouffle de feu (recharge 5-6). JS Dextérité : DD 14, \nchaque créature dans une Ligne de 12 m de long \nsur 1,50 m de large. Échec : 38 (11d6) dégâts de feu. \nRéussite : demi-dégâts.\nSouffle soporifique. JS Constitution : DD 14, chaque \ncréature dans un Cône de 9 m. Échec : la cible subit \nl’état Neutralisé jusqu’à la fin de son tour suivant, et réi-\ntère alors son JS. Deuxième échec : la cible subit l’état \nInconscient pendant 1 minute. Cet effet prend fin pour la \ncible si celle-ci subit des dégâts ou si une créature dans \nun rayon de 1,50 m consacre une action à la réveiller.",
+      "parsed": {
+        "nom": "Jeune dragon d’airain",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Métallique",
+        "alignement": "Chaotique Bon",
+        "ca": 17,
+        "ca_detail": null,
+        "pv": 110,
+        "pv_formule": "13d10 + 39",
+        "vitesse": {
+          "marche": 12,
+          "nage": null,
+          "vol": 24,
+          "fouissement": 6,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 19,
+          "FOR_mod": 4,
+          "DEX": 10,
+          "DEX_mod": 0,
+          "CON": 17,
+          "CON_mod": 3,
+          "INT": 12,
+          "INT_mod": 1,
+          "SAG": 11,
+          "SAG_mod": 0,
+          "CHA": 15,
+          "CHA_mod": 2
+        },
+        "jets_sauvegarde": {
+          "FOR": 4,
+          "DEX": 3,
+          "CON": 3,
+          "INT": 1,
+          "SAG": 3,
+          "CHA": 2
+        },
+        "competences": {
+          "Discrétion": 3,
+          "Perception": 6,
+          "Persuasion": 5
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "feu"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 16,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "6",
+        "fp_numerique": 6,
+        "bonus_maitrise": 3,
+        "experience": 2300,
+        "xp": 2300,
+        "traits": [],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer deux de ces attaques par \nune utilisation de Souffle soporifique.\nSaignée. Corps à corps : +7 , allonge 3 m. Touché : \n15 (2d10 + 4) dégâts tranchants.\nSouffle de feu (recharge 5-6). JS Dextérité : DD 14, \nchaque créature dans une Ligne de 12 m de long \nsur 1,50 m de large. Échec : 38 (11d6) dégâts de feu. \nRéussite : demi-dégâts.\nSouffle soporifique. JS Constitution : DD 14, chaque \ncréature dans un Cône de 9 m. Échec : la cible subit \nl’état Neutralisé jusqu’à la fin de son tour suivant, et réitère alors son JS. Deuxième échec : la cible subit l’état \nInconscient pendant 1 minute. Cet effet prend fin pour la \ncible si celle-ci subit des dégâts ou si une créature dans \nun rayon de 1,50 m consacre une action à la réveiller."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 3
+    },
+    {
+      "id": "young-silver-dragon",
+      "name": "Jeune dragon d’argent",
+      "page": 291,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=291",
+      "raw": "Jeune dragon d’argent\nDragon (Métallique) de taille G, Loyal Bon\nCA 18 Initiative +4 (14)\nPv 168 (16d10 + 80)\nVitesse 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  23 +6 +6 Dex  10 +0 +4 Con  21 +5 +5\nInt  14 +2 +2 Sag  11 +0 +4 Cha  19 +4 +4\nCompétences Discrétion +4, Histoire +6, Perception +8\nImmunités froid\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 18\nLangues commun, draconique\nFP 9 (5 000 PX ; BM +4)\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle paralysant.\nSaignée. Corps à corps : +10, allonge 3 m. \nTouché : 15 (2d8 + 6) dégâts tranchants.\nSouffle glacial (recharge 5-6). JS Constitution : \nDD 17 , chaque créature dans un Cône de 9 m. \nÉchec : 49 (11d8) dégâts de froid. Réussite : 1/2 dégâts.\nSouffle paralysant. JS Constitution : DD 17 , chaque \ncréature dans un Cône de 9 m. Premier échec : la cible \nsubit l’état Neutralisé jusqu’à la fin de son tour suivant, \net réitère alors son JS. Deuxième échec : la cible subit \nl’état Paralysé et réitère le JS à la fin de chacun de ses \ntours ; elle met un terme à l’effet sur elle-même en cas \nde réussite. Au bout de 1 minute, elle réussit automati-\nquement ce JS.",
+      "parsed": {
+        "nom": "Jeune dragon d’argent",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Métallique",
+        "alignement": "Loyal Bon",
+        "ca": 18,
+        "ca_detail": null,
+        "pv": 168,
+        "pv_formule": "16d10 + 80",
+        "vitesse": {
+          "marche": 12,
+          "nage": null,
+          "vol": 24,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 23,
+          "FOR_mod": 6,
+          "DEX": 10,
+          "DEX_mod": 0,
+          "CON": 21,
+          "CON_mod": 5,
+          "INT": 14,
+          "INT_mod": 2,
+          "SAG": 11,
+          "SAG_mod": 0,
+          "CHA": 19,
+          "CHA_mod": 4
+        },
+        "jets_sauvegarde": {
+          "FOR": 6,
+          "DEX": 4,
+          "CON": 5,
+          "INT": 2,
+          "SAG": 4,
+          "CHA": 4
+        },
+        "competences": {
+          "Discrétion": 4,
+          "Histoire": 6,
+          "Perception": 8
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "froid"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 18,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "9",
+        "fp_numerique": 9,
+        "bonus_maitrise": 4,
+        "experience": 5000,
+        "xp": 5000,
+        "traits": [],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle paralysant.\nSaignée. Corps à corps : +10, allonge 3 m. \nTouché : 15 (2d8 + 6) dégâts tranchants.\nSouffle glacial (recharge 5-6). JS Constitution : \nDD 17 , chaque créature dans un Cône de 9 m. \nÉchec : 49 (11d8) dégâts de froid. Réussite : 1/2 dégâts.\nSouffle paralysant. JS Constitution : DD 17 , chaque \ncréature dans un Cône de 9 m. Premier échec : la cible \nsubit l’état Neutralisé jusqu’à la fin de son tour suivant, \net réitère alors son JS. Deuxième échec : la cible subit \nl’état Paralysé et réitère le JS à la fin de chacun de ses \ntours ; elle met un terme à l’effet sur elle-même en cas \nde réussite. Au bout de 1 minute, elle réussit automatiquement ce JS."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 4
+    },
+    {
+      "id": "young-gold-dragon",
+      "name": "Jeune dragon d’or",
+      "page": 293,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=293",
+      "raw": "Jeune dragon d’or\nDragon (Métallique) de taille G, Loyal Bon\nCA 18 Initiative +6 (16)\nPv 178 (17d10 + 85)\nVitesse 12 m, nage 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  23 +6 +6 Dex  14 +2 +6 Con  21 +5 +5\nInt  16 +3 +3 Sag  13 +1 +5 Cha  20 +5 +5\nCompétences Discrétion +6, Intuition +5, Perception +9, \nPersuasion +9\nImmunités feu\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 19\nLangues commun, draconique\nFP 10 (5 900 PX ; BM +4)\nTraits\nAmphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre.\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle affaiblissant.\nSaignée. Corps à corps : +10, allonge 3 m. \nTouché : 17 (2d10 + 6) dégâts tranchants.\nSouffle affaiblissant. JS Force : DD 17 , chaque créa-\nture non encore affectée par ce souffle dans un Cône \nde 9 m. Échec : la cible subit le Désavantage aux \nTests d20 basés sur la Force et soustrait 3 (1d6) à ses \njets de dégâts. Elle réitère le JS à la fin de chacun de ses \ntours, et met un terme à l’effet sur elle-même en cas de \nréussite. Au bout de 1 minute, elle réussit automatique-\nment ce JS.\nSouffle de feu (recharge 5-6). JS Dextérité : DD 17 , \nchaque créature dans un Cône de 9 m. Échec : \n55 (10d10) dégâts de feu. Réussite : demi-dégâts.",
+      "parsed": {
+        "nom": "Jeune dragon d’or",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Métallique",
+        "alignement": "Loyal Bon",
+        "ca": 18,
+        "ca_detail": null,
+        "pv": 178,
+        "pv_formule": "17d10 + 85",
+        "vitesse": {
+          "marche": 12,
+          "nage": 12,
+          "vol": 24,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 23,
+          "FOR_mod": 6,
+          "DEX": 14,
+          "DEX_mod": 2,
+          "CON": 21,
+          "CON_mod": 5,
+          "INT": 16,
+          "INT_mod": 3,
+          "SAG": 13,
+          "SAG_mod": 1,
+          "CHA": 20,
+          "CHA_mod": 5
+        },
+        "jets_sauvegarde": {
+          "FOR": 6,
+          "DEX": 6,
+          "CON": 5,
+          "INT": 3,
+          "SAG": 5,
+          "CHA": 5
+        },
+        "competences": {
+          "Discrétion": 6,
+          "Intuition": 5,
+          "Perception": 9,
+          "Persuasion": 9
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "feu"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 19,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "10",
+        "fp_numerique": 10,
+        "bonus_maitrise": 4,
+        "experience": 5900,
+        "xp": 5900,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Amphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle affaiblissant.\nSaignée. Corps à corps : +10, allonge 3 m. \nTouché : 17 (2d10 + 6) dégâts tranchants.\nSouffle affaiblissant. JS Force : DD 17 , chaque créature non encore affectée par ce souffle dans un Cône \nde 9 m. Échec : la cible subit le Désavantage aux \nTests d20 basés sur la Force et soustrait 3 (1d6) à ses \njets de dégâts. Elle réitère le JS à la fin de chacun de ses \ntours, et met un terme à l’effet sur elle-même en cas de \nréussite. Au bout de 1 minute, elle réussit automatiquement ce JS.\nSouffle de feu (recharge 5-6). JS Dextérité : DD 17 , \nchaque créature dans un Cône de 9 m. Échec : \n55 (10d10) dégâts de feu. Réussite : demi-dégâts."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 6
+    },
+    {
+      "id": "young-bronze-dragon",
+      "name": "Jeune dragon de bronze",
+      "page": 295,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=295",
+      "raw": "Jeune dragon de bronze\nDragon (Métallique) de taille G, Loyal Bon\nCA 17 Initiative +3 (13)\nPv 142 (15d10 + 60)\nVitesse 12 m, nage 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  21 +5 +5 Dex  10 +0 +3 Con  19 +4 +4\nInt  14 +2 +2 Sag  13 +1 +4 Cha  17 +3 +3\nCompétences Discrétion +3, Intuition +4, Perception +7\nImmunités foudre\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 17\nLangues commun, draconique\nFP 8 (3 900 PX ; BM +3)\nTraits\nAmphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre.\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle répulsif.\nSaignée. Corps à corps : +8, allonge 3 m. \nTouché : 16 (2d10 + 5) dégâts tranchants.\nSouffle de foudre (recharge 5-6). JS Dextérité : DD 15, \nchaque créature dans une Ligne de 18 m de long sur \n1,50 m de large. Échec : 49 (9d10) dégâts de foudre. \nRéussite : demi-dégâts.\nSouffle répulsif. JS Force : DD 15, chaque créature \ndans un Cône de 9 m. Échec : la cible est repoussée du \ndragon sur 12 m en ligne droite et subit l’état À terre.",
+      "parsed": {
+        "nom": "Jeune dragon de bronze",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Métallique",
+        "alignement": "Loyal Bon",
+        "ca": 17,
+        "ca_detail": null,
+        "pv": 142,
+        "pv_formule": "15d10 + 60",
+        "vitesse": {
+          "marche": 12,
+          "nage": 12,
+          "vol": 24,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 21,
+          "FOR_mod": 5,
+          "DEX": 10,
+          "DEX_mod": 0,
+          "CON": 19,
+          "CON_mod": 4,
+          "INT": 14,
+          "INT_mod": 2,
+          "SAG": 13,
+          "SAG_mod": 1,
+          "CHA": 17,
+          "CHA_mod": 3
+        },
+        "jets_sauvegarde": {
+          "FOR": 5,
+          "DEX": 3,
+          "CON": 4,
+          "INT": 2,
+          "SAG": 4,
+          "CHA": 3
+        },
+        "competences": {
+          "Discrétion": 3,
+          "Intuition": 4,
+          "Perception": 7
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "foudre"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 17,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "8",
+        "fp_numerique": 8,
+        "bonus_maitrise": 3,
+        "experience": 3900,
+        "xp": 3900,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Amphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle répulsif.\nSaignée. Corps à corps : +8, allonge 3 m. \nTouché : 16 (2d10 + 5) dégâts tranchants.\nSouffle de foudre (recharge 5-6). JS Dextérité : DD 15, \nchaque créature dans une Ligne de 18 m de long sur \n1,50 m de large. Échec : 49 (9d10) dégâts de foudre. \nRéussite : demi-dégâts.\nSouffle répulsif. JS Force : DD 15, chaque créature \ndans un Cône de 9 m. Échec : la cible est repoussée du \ndragon sur 12 m en ligne droite et subit l’état À terre."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 3
+    },
+    {
+      "id": "young-copper-dragon",
+      "name": "Jeune dragon de cuivre",
+      "page": 297,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=297",
+      "raw": "Jeune dragon de cuivre\nDragon (Métallique) de taille G, Chaotique Bon\nCA 17 Initiative +4 (14)\nPv 119 (14d10 + 42)\nVitesse 12 m, escalade 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  19 +4 +4 Dex  12 +1 +4 Con  17 +3 +3\nInt  16 +3 +3 Sag  13 +1 +4 Cha  15 +2 +2\nCompétences Discrétion +4, Perception +7 , Tromperie +5\nImmunités acide\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 17\nLangues commun, draconique\nFP 7 (2 900 PX ; BM +3)\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle ralentissant.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 15 (2d10 + 4) dégâts tranchants.\nSouffle d’acide (recharge 5-6). JS Dextérité : DD 14, \nchaque créature dans une Ligne de 12 m de long \nsur 1,50 m de large. Échec : 40 (9d8) dégâts d’acide. \nRéussite : demi-dégâts.\nSouffle ralentissant. JS Constitution : DD 14, chaque \ncréature dans un Cône de 9 m. Échec : la cible voit \nsa Vitesse réduite de moitié, ne peut pas jouer de \nRéaction et peut entreprendre une action ou une action \nBonus à son tour, mais pas les deux. L’effet persiste \njusqu’à la fin de son tour suivant.",
+      "parsed": {
+        "nom": "Jeune dragon de cuivre",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Métallique",
+        "alignement": "Chaotique Bon",
+        "ca": 17,
+        "ca_detail": null,
+        "pv": 119,
+        "pv_formule": "14d10 + 42",
+        "vitesse": {
+          "marche": 12,
+          "nage": null,
+          "vol": 24,
+          "fouissement": null,
+          "escalade": 12
+        },
+        "caracteristiques": {
+          "FOR": 19,
+          "FOR_mod": 4,
+          "DEX": 12,
+          "DEX_mod": 1,
+          "CON": 17,
+          "CON_mod": 3,
+          "INT": 16,
+          "INT_mod": 3,
+          "SAG": 13,
+          "SAG_mod": 1,
+          "CHA": 15,
+          "CHA_mod": 2
+        },
+        "jets_sauvegarde": {
+          "FOR": 4,
+          "DEX": 4,
+          "CON": 3,
+          "INT": 3,
+          "SAG": 4,
+          "CHA": 2
+        },
+        "competences": {
+          "Discrétion": 4,
+          "Perception": 7,
+          "Tromperie": 5
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "acide"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 17,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "7",
+        "fp_numerique": 7,
+        "bonus_maitrise": 3,
+        "experience": 2900,
+        "xp": 2900,
+        "traits": [],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée. Il peut remplacer l’une de ces attaques par \nune utilisation de Souffle ralentissant.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 15 (2d10 + 4) dégâts tranchants.\nSouffle d’acide (recharge 5-6). JS Dextérité : DD 14, \nchaque créature dans une Ligne de 12 m de long \nsur 1,50 m de large. Échec : 40 (9d8) dégâts d’acide. \nRéussite : demi-dégâts.\nSouffle ralentissant. JS Constitution : DD 14, chaque \ncréature dans un Cône de 9 m. Échec : la cible voit \nsa Vitesse réduite de moitié, ne peut pas jouer de \nRéaction et peut entreprendre une action ou une action \nBonus à son tour, mais pas les deux. L’effet persiste \njusqu’à la fin de son tour suivant."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 4
+    },
+    {
+      "id": "young-black-dragon",
+      "name": "Jeune dragon noir",
+      "page": 299,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=299",
+      "raw": "Jeune dragon noir\nDragon (Chromatique) de taille G, Chaotique Mauvais\nCA 18 Initiative +5 (15)\nPv 127 (15d10 + 45)\nVitesse 12 m, nage 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  19 +4 +4 Dex  14 +2 +5 Con  17 +3 +3\nInt  12 +1 +1 Sag  11 +0 +3 Cha  15 +2 +2\nCompétences Discrétion +5, Perception +6\nImmunités acide\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 16\nLangues commun, draconique\nFP 7 (2 900 PX ; BM +3)\nTraits\nAmphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre.\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 9 (2d4 + 4) dégâts tranchants plus 3 (1d6) \ndégâts d’acide.\nSouffle d’acide (recharge 5-6). JS Dextérité : DD 14, \nchaque créature dans une Ligne de 9 m de long sur \n1,50 m de large. Échec : 49 (14d6) dégâts d’acide. \nRéussite : demi-dégâts.",
+      "parsed": {
+        "nom": "Jeune dragon noir",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Chromatique",
+        "alignement": "Chaotique Mauvais",
+        "ca": 18,
+        "ca_detail": null,
+        "pv": 127,
+        "pv_formule": "15d10 + 45",
+        "vitesse": {
+          "marche": 12,
+          "nage": 12,
+          "vol": 24,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 19,
+          "FOR_mod": 4,
+          "DEX": 14,
+          "DEX_mod": 2,
+          "CON": 17,
+          "CON_mod": 3,
+          "INT": 12,
+          "INT_mod": 1,
+          "SAG": 11,
+          "SAG_mod": 0,
+          "CHA": 15,
+          "CHA_mod": 2
+        },
+        "jets_sauvegarde": {
+          "FOR": 4,
+          "DEX": 5,
+          "CON": 3,
+          "INT": 1,
+          "SAG": 3,
+          "CHA": 2
+        },
+        "competences": {
+          "Discrétion": 5,
+          "Perception": 6
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "acide"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 16,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "7",
+        "fp_numerique": 7,
+        "bonus_maitrise": 3,
+        "experience": 2900,
+        "xp": 2900,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Amphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 9 (2d4 + 4) dégâts tranchants plus 3 (1d6) \ndégâts d’acide.\nSouffle d’acide (recharge 5-6). JS Dextérité : DD 14, \nchaque créature dans une Ligne de 9 m de long sur \n1,50 m de large. Échec : 49 (14d6) dégâts d’acide. \nRéussite : demi-dégâts."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 5
+    },
+    {
+      "id": "young-red-dragon",
+      "name": "Jeune dragon rouge",
+      "page": 301,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=301",
+      "raw": "Jeune dragon rouge\nDragon (Chromatique) de taille G, Chaotique Mauvais\nCA 18 Initiative +4 (14)\nPv 178 (17d10 + 85)\nVitesse 12 m, escalade 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  23 +6 +6 Dex  10 +0 +4 Con  21 +5 +5\nInt  14 +2 +2 Sag  11 +0 +4 Cha  19 +4 +4\nCompétences Discrétion +4, Perception +8\nImmunités feu\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 18\nLangues commun, draconique\nFP 10 (5 900 PX ; BM +4)\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +10, allonge 3 m. \nTouché : 13 (2d6 + 6) dégâts tranchants plus 3 (1d6) \ndégâts de feu.\nSouffle de feu (recharge 5-6). JS Dextérité : DD 17 , \nchaque créature dans un Cône de 9 m. Échec : \n56 (16d6) dégâts de feu. Réussite : demi-dégâts.",
+      "parsed": {
+        "nom": "Jeune dragon rouge",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Chromatique",
+        "alignement": "Chaotique Mauvais",
+        "ca": 18,
+        "ca_detail": null,
+        "pv": 178,
+        "pv_formule": "17d10 + 85",
+        "vitesse": {
+          "marche": 12,
+          "nage": null,
+          "vol": 24,
+          "fouissement": null,
+          "escalade": 12
+        },
+        "caracteristiques": {
+          "FOR": 23,
+          "FOR_mod": 6,
+          "DEX": 10,
+          "DEX_mod": 0,
+          "CON": 21,
+          "CON_mod": 5,
+          "INT": 14,
+          "INT_mod": 2,
+          "SAG": 11,
+          "SAG_mod": 0,
+          "CHA": 19,
+          "CHA_mod": 4
+        },
+        "jets_sauvegarde": {
+          "FOR": 6,
+          "DEX": 4,
+          "CON": 5,
+          "INT": 2,
+          "SAG": 4,
+          "CHA": 4
+        },
+        "competences": {
+          "Discrétion": 4,
+          "Perception": 8
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "feu"
+        ],
+        "immunites_etats": [],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 18,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "10",
+        "fp_numerique": 10,
+        "bonus_maitrise": 4,
+        "experience": 5900,
+        "xp": 5900,
+        "traits": [],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +10, allonge 3 m. \nTouché : 13 (2d6 + 6) dégâts tranchants plus 3 (1d6) \ndégâts de feu.\nSouffle de feu (recharge 5-6). JS Dextérité : DD 17 , \nchaque créature dans un Cône de 9 m. Échec : \n56 (16d6) dégâts de feu. Réussite : demi-dégâts."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 4
+    },
+    {
+      "id": "young-green-dragon",
+      "name": "Jeune dragon vert",
+      "page": 302,
+      "url": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=302",
+      "raw": "Jeune dragon vert\nDragon (Chromatique) de taille G, Loyal Mauvais\nCA 18 Initiative +4 (14)\nPv 136 (16d10 + 48)\nVitesse 12 m, nage 12 m, vol 24 m\nMOD JS MOD JS MOD JS\nFor  19 +4 +4 Dex  12 +1 +4 Con  17 +3 +3\nInt  16 +3 +3 Sag  13 +1 +4 Cha  15 +2 +2\nCompétences Discrétion +4, Perception +7 , Tromperie +5\nImmunités poison ; Empoisonné\nSens Vision aveugle 9 m, Vision dans le noir 36 m ; \nPerception passive 17\nLangues commun, draconique\nFP 8 (3 900 PX ; BM +3)\nTraits\nAmphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre.\nActions\nAttaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 11 (2d6 + 4) dégâts tranchants plus \n7 (2d6) dégâts de poison.\nSouffle empoisonné (recharge 5-6). JS Constitution : \nDD 14, chaque créature dans un Cône de 9 m. Échec : \n42 (12d6) dégâts de poison. Réussite : demi-dégâts.",
+      "parsed": {
+        "nom": "Jeune dragon vert",
+        "taille": "G",
+        "type": "Dragon",
+        "sous_type": "Chromatique",
+        "alignement": "Loyal Mauvais",
+        "ca": 18,
+        "ca_detail": null,
+        "pv": 136,
+        "pv_formule": "16d10 + 48",
+        "vitesse": {
+          "marche": 12,
+          "nage": 12,
+          "vol": 24,
+          "fouissement": null,
+          "escalade": null
+        },
+        "caracteristiques": {
+          "FOR": 19,
+          "FOR_mod": 4,
+          "DEX": 12,
+          "DEX_mod": 1,
+          "CON": 17,
+          "CON_mod": 3,
+          "INT": 16,
+          "INT_mod": 3,
+          "SAG": 13,
+          "SAG_mod": 1,
+          "CHA": 15,
+          "CHA_mod": 2
+        },
+        "jets_sauvegarde": {
+          "FOR": 4,
+          "DEX": 4,
+          "CON": 3,
+          "INT": 3,
+          "SAG": 4,
+          "CHA": 2
+        },
+        "competences": {
+          "Discrétion": 4,
+          "Perception": 7,
+          "Tromperie": 5
+        },
+        "resistances": [],
+        "immunites_degats": [
+          "poison"
+        ],
+        "immunites_etats": [
+          "Empoisonné"
+        ],
+        "vulnerabilites": [],
+        "sens": {
+          "vision_dans_le_noir": 36,
+          "vision_aveugle": 9,
+          "vision_vraie": null,
+          "perception_passive": 17,
+          "tremblements": null
+        },
+        "langues": [
+          "commun, draconique"
+        ],
+        "fp": "8",
+        "fp_numerique": 8,
+        "bonus_maitrise": 3,
+        "experience": 3900,
+        "xp": 3900,
+        "traits": [
+          {
+            "nom": "Traits",
+            "description": "Amphibie. Le dragon peut respirer sous l’eau comme à \nl’air libre."
+          }
+        ],
+        "actions": [
+          {
+            "nom": "Actions",
+            "description": "Attaques multiples. Le dragon effectue trois attaques \nde Saignée.\nSaignée. Corps à corps : +7 , allonge 3 m. \nTouché : 11 (2d6 + 4) dégâts tranchants plus \n7 (2d6) dégâts de poison.\nSouffle empoisonné (recharge 5-6). JS Constitution : \nDD 14, chaque créature dans un Cône de 9 m. Échec : \n42 (12d6) dégâts de poison. Réussite : demi-dégâts."
+          }
+        ],
+        "actions_bonus": [],
+        "actions_legendaires": [],
+        "reactions": [],
+        "attaques": [],
+        "actions_leg_nb": 0,
+        "resistances_leg_nb": 0
+      },
+      "initiative": 4
+    }
+  ]
+}

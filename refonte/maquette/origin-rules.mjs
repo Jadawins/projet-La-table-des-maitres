@@ -1,6 +1,6 @@
 const key=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const skillKey=value=>key(value)==='intuition'?'perspicacite':key(value);
-export const grantInitial=()=>({proficiencies:[],magicList:'',cantrips:[],spell:''});
+export const grantInitial=()=>({proficiencies:[],magicList:'',magicAbility:'',cantrips:[],spell:''});
 const species=(state,c)=>c.species.find(s=>s.id===state.speciesId);
 const background=(state,c)=>c.backgrounds.find(b=>b.id===state.backgroundId);
 export function backgroundFeat(state,c) {
@@ -31,7 +31,10 @@ export function originSizeOptions(state,c) {
 }
 export function speciesChoiceSpecs(state,c){
   if(state.speciesId==='goliath')return [{field:'speciesAncestry',label:'Votre ascendance géante',options:c.originCorrections?.goliathAncestries||[]}];
-  if(state.speciesId==='tieffelin')return [{field:'speciesCastingAbility',label:'Caractéristique de Présence d’outre-monde',options:['INT','SAG','CHA'].map(id=>({id,nom:id})),hint:'Ce choix s’applique à Thaumaturgie. Les autres sorts de votre héritage gardent leur caractéristique indiquée dans la bibliothèque.'}];
+  if(['elfe','gnome','tieffelin'].includes(state.speciesId))return [
+    {field:'speciesCastingAbility',label:'Caractéristique des sorts de votre lignage',options:['INT','SAG','CHA'].map(id=>({id,nom:id})),hint:'La même caractéristique s’applique à tous les sorts de ce lignage.'},
+    ...(state.speciesId==='elfe'&&state.variantId==='haut_elfe'?[{field:'speciesCantrip',label:'Sort mineur après un Repos long (facultatif)',optional:true,options:c.spells.filter(s=>s.niveau===0&&s.classes?.includes('Magicien')).map(s=>({id:s.id,nom:s.nom})),hint:'Sans remplacement, vous conservez Prestidigitation.'}]:[]),
+  ];
   return [];
 }
 export function selectedVariant(state,c){return species(state,c)?.variantes?.find(v=>v.id===state.variantId);}
@@ -43,6 +46,18 @@ export function backgroundToolOptions(state,c) {
   if(!requested) return [];
   const normalized=key(requested);
   return toolOptions(c).filter(tool=>normalized.includes('instrument')?tool.category==='instruments_de_musique':normalized.includes('jeux')?tool.category==='boite_de_jeux':normalized.includes('artisan')?tool.category==='artisan':false);
+}
+export function backgroundKitOptions(state,c){
+  return state.backgroundEquipment==='A'&&state.backgroundId==='voyageur'?toolOptions(c).filter(t=>t.category==='boite_de_jeux'):[];
+}
+export function backgroundEquipmentErrors(state,c){
+  if(!['A','B'].includes(state.backgroundEquipment))return ['Équipement d’historique à choisir.'];
+  const options=backgroundKitOptions(state,c);
+  return options.length&&!options.some(t=>t.id===state.backgroundKit)?['Choisissez la boîte de jeux de votre équipement.']:[];
+}
+export function backgroundItemName(state,c,name){
+  if(!/au choix/i.test(name))return name;
+  return [...backgroundToolOptions(state,c),...backgroundKitOptions(state,c)].find(t=>t.id===(state.backgroundId==='voyageur'?state.backgroundKit:state.backgroundTool))?.name||name;
 }
 export function fixedOriginSkills(state,c) {
   return [...new Set([...(background(state,c)?.competences||[]),...(species(state,c)?.competences_maitrises||[]).filter(name=>!name.startsWith('au_choix'))])];
@@ -87,7 +102,7 @@ export function grantOptions(state,c,grant) {
   const chosenTool=backgroundToolOptions(state,c).find(t=>t.id===state.backgroundTool);if(chosenTool) baseTools.add(key(chosenTool.name));
   const other=new Set(originFeats(state,c).filter(g=>g.slot!==grant.slot).flatMap(g=>state.originGrants?.[g.slot]?.proficiencies||[]));
   const tools=toolOptions(c).filter(t=>!baseTools.has(key(t.name))&&!other.has(t.id));
-  if(id==='faconneur') return tools.filter(t=>t.category==='artisan');
+  if(id==='faconneur') return tools.filter(t=>['outils_de_charpentier','outils_de_tanneur','outils_de_macon','outils_de_potier','outils_de_forgeron','outils_de_bricoleur','outils_de_tisserand','outils_de_menuisier'].includes(t.source.id));
   if(id==='musicien') return tools.filter(t=>t.category==='instruments_de_musique');
   return [...c.skills.filter(s=>!baseSkills.has(skillKey(s.nom))).map(s=>({id:`skill:${skillKey(s.nom)}`,name:s.nom,type:'skill'})),...tools].filter(option=>!other.has(option.id));
 }
@@ -103,22 +118,23 @@ export function magicFeatProfile(state,c,grant) {
   const selection=state.originGrants?.[grant.slot]||grantInitial();
   const list=grant.forcedList||selection.magicList;
   if(!magicFeatLists(state,c,grant).includes(list)) return {list:'',cantrips:[],spells:[],ability:''};
-  const cls=c.classes.find(cls=>key(cls.nom)===key(list));
   const pool=c.spells.filter(s=>(s.classes||[]).some(name=>key(name)===key(list)));
-  return {list,cantrips:pool.filter(s=>s.niveau===0),spells:pool.filter(s=>s.niveau===1),ability:cls?.niveaux?.['0']?.caracteristique_incantation||''};
+  return {list,cantrips:pool.filter(s=>s.niveau===0),spells:pool.filter(s=>s.niveau===1),ability:['INT','SAG','CHA'].includes(selection.magicAbility)?selection.magicAbility:''};
 }
 export function innateSpells(state,c) {
   const variant=selectedVariant(state,c),result=[];
   const find=name=>c.spells.find(s=>key(s.id)===key(name)||key(s.nom)===key(name)||s.id===c.originCorrections?.spells?.[key(name)]);
   for(const entry of (variant?.sorts_raciaux||[]).filter(s=>(s.niveau_personnage_requis||1)<=state.level)){
-    const full=find(entry.id)||find(entry.nom);
-    result.push({...full,...entry,id:full?.id||entry.id,sourceName:entry.nom,source:'Espèce',niveau:entry.niveau_sort,caracteristique:state.speciesId==='tieffelin'&&full?.id==='thaumaturgie'?state.speciesCastingAbility:entry.caracteristique,unresolved:!full});
+    const replacement=state.variantId==='haut_elfe'&&entry.id==='prestidigitation'?c.spells.find(s=>s.id===state.speciesCantrip&&s.niveau===0&&s.classes?.includes('Magicien')):null;
+    const full=replacement||find(entry.id)||find(entry.nom);
+    const usage=entry.utilisation==='maitrise_repos_long'?`${originBonuses(state,c).proficiency} utilisations gratuites par Repos long ; emplacements possibles`:entry.utilisation==='1_repos_long'?'1 utilisation gratuite par Repos long ; emplacements possibles':entry.utilisation;
+    result.push({...full,...entry,id:full?.id||entry.id,nom:full?.nom||entry.nom,sourceName:full?.nom||entry.nom,source:'Espèce',niveau:entry.niveau_sort,utilisation:usage,always:entry.niveau_sort>0,caracteristique:state.speciesCastingAbility||null,unresolved:!full});
   }
   for(const name of species(state,c)?.sorts_innes||[]) {
     if(String(name).startsWith('variable_'))continue;
     const full=find(name);
     if(result.some(s=>key(s.id)===key(full?.id||name)||key(s.nom)===key(name)))continue;
-    result.push(full?{...full,source:'Espèce',sourceName:name,caracteristique:state.speciesId==='aasimar'?'CHA':null,utilisation:'a_volonte'}:{id:name,nom:name,niveau:null,unresolved:true,source:'Espèce',sourceName:name});
+    result.push(full?{...full,source:'Espèce',sourceName:name,caracteristique:state.speciesId==='aasimar'?'CHA':state.speciesId==='tieffelin'?state.speciesCastingAbility||null:null,utilisation:'a_volonte'}:{id:name,nom:name,niveau:null,unresolved:true,source:'Espèce',sourceName:name});
   }
   return result;
 }
@@ -129,7 +145,7 @@ export function grantedOriginSpells(state,c) {
     const selection=state.originGrants?.[grant.slot]||grantInitial();
     const cantrips=[...new Set(selection.cantrips)].map(id=>profile.cantrips.find(s=>s.id===id)).filter(Boolean);
     const spell=profile.spells.find(s=>s.id===selection.spell);
-    for(const entry of [...cantrips,...(spell?[spell]:[])]) result.push({...entry,source:grant.label||(grant.slot==='human'?'Don humain':'Don d’historique'),caracteristique:profile.ability,utilisation:entry.niveau===1?'1_repos_long':'a_volonte'});
+    for(const entry of [...cantrips,...(spell?[spell]:[])]) result.push({...entry,source:grant.label||(grant.slot==='human'?'Don humain':'Don d’historique'),caracteristique:profile.ability,always:entry.niveau===1,utilisation:entry.niveau===1?'1 utilisation gratuite par Repos long ; emplacements possibles':'a_volonte'});
   }
   return result;
 }
@@ -138,11 +154,11 @@ export function originBonuses(state,c) {
   const cls=c.classes.find(cls=>cls.id===state.classId);
   let proficiency=2;
   for(let n=1;n<=state.level;n++) if(cls?.niveaux?.[n]?.bonusMaitrise!==undefined) proficiency=cls.niveaux[n].bonusMaitrise;
-  return {hp:ids.includes('robuste')?state.level:0,initiative:ids.includes('vigilant')?proficiency:0,proficiency};
+  return {hp:ids.includes('robuste')?2*state.level:0,initiative:ids.includes('vigilant')?proficiency:0,proficiency};
 }
 export function reconcileOrigins(state,c) {
   if(!state.originGrants) state.originGrants={};
-  for(const field of ['speciesAncestry','speciesCastingAbility'])if(!speciesChoiceSpecs(state,c).some(spec=>spec.field===field&&spec.options.some(o=>o.id===state[field])))state[field]='';
+  for(const field of ['speciesAncestry','speciesCastingAbility','speciesCantrip'])if(!speciesChoiceSpecs(state,c).some(spec=>spec.field===field&&spec.options.some(o=>o.id===state[field])))state[field]='';
   for(const slot of ORIGIN_SLOTS) state.originGrants[slot]={...grantInitial(),...state.originGrants[slot]};
   if(!speciesSkillOptions(state,c).includes(state.speciesSkill)) state.speciesSkill='';
   if(!originSizeOptions(state,c).includes(state.speciesSize)) state.speciesSize='';
@@ -160,13 +176,13 @@ export function reconcileOrigins(state,c) {
     if(profile) {
       if(!profile.list) {selection.magicList='';selection.cantrips=[];selection.spell='';}
       else {selection.cantrips=[...new Set(selection.cantrips)].filter(id=>profile.cantrips.some(s=>s.id===id)).slice(0,2);if(!profile.spells.some(s=>s.id===selection.spell)) selection.spell='';}
-    } else {selection.magicList='';selection.cantrips=[];selection.spell='';}
+    } else {selection.magicList='';selection.magicAbility='';selection.cantrips=[];selection.spell='';}
   }
 }
 export function originErrors(state,c,{levelGrants=true}={}) {
   const errors=[];const s=species(state,c);
   if(!s||!background(state,c)) return ['Choisissez une espèce et un historique.'];
-  for(const spec of speciesChoiceSpecs(state,c))if(!spec.options.some(o=>o.id===state[spec.field]))errors.push('Choisissez : '+spec.label.toLocaleLowerCase('fr')+'.');
+  for(const spec of speciesChoiceSpecs(state,c))if(!(spec.optional&&!state[spec.field])&&!spec.options.some(o=>o.id===state[spec.field]))errors.push('Choisissez : '+spec.label.toLocaleLowerCase('fr')+'.');
   if((originSizeOptions(state,c).length>1||state.speciesSize)&&!originSizeOptions(state,c).includes(state.speciesSize)) errors.push('Choisissez la taille de votre personnage.');
   if(s.variantes?.length&&!selectedVariant(state,c)) errors.push('Choisissez un lignage ou un héritage.');
   if(speciesSkillOptions(state,c).length&&!speciesSkillOptions(state,c).includes(state.speciesSkill)) errors.push('Choisissez la compétence accordée par votre espèce.');
@@ -185,7 +201,7 @@ export function originGrantErrors(state,c,grants=originFeats(state,c)){
     const options=grantOptions(state,c,grant);
     if(['doue','faconneur','musicien'].includes(grant.feat.id)&&(selected.proficiencies.length!==3||new Set(selected.proficiencies).size!==3||selected.proficiencies.some(id=>!options.some(o=>o.id===id)))) errors.push(`${grant.name} : choisissez trois maîtrises distinctes disponibles.`);
     const profile=magicFeatProfile(state,c,grant);
-    if(profile&&(!profile.list||selected.cantrips.length!==2||new Set(selected.cantrips).size!==2||selected.cantrips.some(id=>!profile.cantrips.some(s=>s.id===id))||!profile.spells.some(s=>s.id===selected.spell))) errors.push(`${grant.name} : choisissez une liste, deux sorts mineurs distincts et un sort de niveau 1.`);
+    if(profile&&(!profile.list||!profile.ability||selected.cantrips.length!==2||new Set(selected.cantrips).size!==2||selected.cantrips.some(id=>!profile.cantrips.some(s=>s.id===id))||!profile.spells.some(s=>s.id===selected.spell))) errors.push(`${grant.name} : choisissez une liste, une caractéristique d’incantation, deux sorts mineurs distincts et un sort de niveau 1.`);
   }
   return errors;
 }

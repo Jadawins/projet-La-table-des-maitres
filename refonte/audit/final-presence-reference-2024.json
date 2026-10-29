@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-29",
+  "cutoff": "2026-10-28",
+  "id": "presence_royale_de_yolane",
+  "source": "https://roll20.net/compendium/dnd5e/Spells:Yolande%27s%20Regal%20Presence?expansion=32231&iframe=true",
+  "scope": "full-spell-comparison",
+  "note": "Dernière fiche dont le journal ne consignait que rang, listes et déclencheur. En-tête et autres champs désormais comparés à la publication PHB 2024 sous licence ; aucune correction supplémentaire nécessaire. Le texte français est une reformulation, pas une citation de la publication sous licence.",
+  "fields": {
+    "niveau": 5,
+    "ecole": "Enchantement",
+    "classes": ["Barde", "Magicien"],
+    "temps_incantation": "action",
+    "portee": "personnelle",
+    "composantes": {"V": true, "S": true, "M": "un diadème miniature"},
+    "duree": "concentration, jusqu'à 1 minute",
+    "concentration": true,
+    "rituel": false,
+    "zone": {"forme": "emanation", "rayon_m": 3},
+    "sauvegarde": "SAG",
+    "attaque": null,
+    "degats": [{"type": "psychique", "valeur": "4d6"}],
+    "niveau_superieur": null,
+    "invocation": null,
+    "table_effets": null,
+    "description": "Émanation de 3 m autour de vous. Quand elle atteint une créature visible, ou qu’une créature visible y entre ou y termine son tour, vous pouvez lui imposer un JS SAG : échec, 4d6 psychiques, À terre, et déplacement forcé de 3 m possible à l’écart de vous ; réussite, moitié des dégâts seulement. Un seul JS par créature et par tour."
+  }
+}

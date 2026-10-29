@@ -1,0 +1,133 @@
+{
+  "status": "data-compared-tests-pending",
+  "checkedAt": "2026-10-29",
+  "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=52",
+  "pages": [
+    52,
+    53
+  ],
+  "before": [
+    {
+      "id": "prudent",
+      "nom": "Sort prudent",
+      "cout": 1,
+      "description": "Protège CHA créatures minimum 1 : JS réussi, aucun dégât si demi-dégâts prévus."
+    },
+    {
+      "id": "distant",
+      "nom": "Sort distant",
+      "cout": 1,
+      "description": "Portée≥1,5m doublée ; contact devient 9m."
+    },
+    {
+      "id": "puissant",
+      "nom": "Sort puissant",
+      "cout": 1,
+      "description": "Relance CHA dés de dégâts minimum 1, nouveaux résultats obligatoires ; combinable."
+    },
+    {
+      "id": "prolonge",
+      "nom": "Sort prolongé",
+      "cout": 1,
+      "description": "Durée≥1minute doublée, maximum 24h ; avantage aux JS de concentration."
+    },
+    {
+      "id": "intensifie",
+      "nom": "Sort intensifié",
+      "cout": 2,
+      "description": "Une cible : désavantage aux JS contre le sort."
+    },
+    {
+      "id": "accelere",
+      "nom": "Sort accéléré",
+      "cout": 2,
+      "description": "Action devient bonus ; aucun autre sort de niveau 1+ ce tour."
+    },
+    {
+      "id": "chercheur",
+      "nom": "Sort chercheur",
+      "cout": 1,
+      "description": "Attaque de sort ratée : relance d20 obligatoire ; combinable."
+    },
+    {
+      "id": "subtil",
+      "nom": "Sort subtil",
+      "cout": 1,
+      "description": "Supprime V/S/M, sauf matériaux consommés ou avec coût."
+    },
+    {
+      "id": "transmute",
+      "nom": "Sort transmuté",
+      "cout": 1,
+      "description": "Permute acide/froid/feu/foudre/poison/tonnerre."
+    },
+    {
+      "id": "jumele",
+      "nom": "Sort jumelé",
+      "cout": 1,
+      "description": "Sort gagnant une cible par surclassement : niveau effectif+1."
+    }
+  ],
+  "after": [
+    {
+      "id": "prudent",
+      "nom": "Sort prudent",
+      "cout": 1,
+      "description": "Un PS : protégez jusqu’à CHA créatures (minimum une) des JS du sort ; réussite automatique, aucun dégât si une réussite les réduirait de moitié."
+    },
+    {
+      "id": "distant",
+      "nom": "Sort distant",
+      "cout": 1,
+      "description": "Un PS : portée initiale d’au moins 1,50 m doublée ; portée contact remplacée par 9 m."
+    },
+    {
+      "id": "puissant",
+      "nom": "Sort puissant",
+      "cout": 1,
+      "description": "Un PS lors des dégâts : relancez jusqu’à CHA dés de dégâts (minimum un) ; nouveaux résultats obligatoires. Combinable avec une autre Métamagie."
+    },
+    {
+      "id": "prolonge",
+      "nom": "Sort prolongé",
+      "cout": 1,
+      "description": "Un PS : durée initiale d’au moins une minute doublée, au maximum 24 heures. Avantage aux sauvegardes de Concentration pour ce sort."
+    },
+    {
+      "id": "intensifie",
+      "nom": "Sort intensifié",
+      "cout": 2,
+      "description": "Deux PS : une cible a Désavantage à ses sauvegardes contre ce sort."
+    },
+    {
+      "id": "accelere",
+      "nom": "Sort accéléré",
+      "cout": 2,
+      "description": "Deux PS : sort d’une action lancé en action Bonus. Impossible si un sort de rang 1+ a déjà été lancé ce tour ; interdit aussi un autre sort de rang 1+ après cette modification ce tour."
+    },
+    {
+      "id": "chercheur",
+      "nom": "Sort chercheur",
+      "cout": 1,
+      "description": "Un PS après une attaque de sort ratée : relancez le d20, nouveau résultat obligatoire. Combinable avec une autre Métamagie."
+    },
+    {
+      "id": "subtil",
+      "nom": "Sort subtil",
+      "cout": 1,
+      "description": "Un PS : supprime V/S/M, sauf composantes matérielles consommées ou à coût chiffré."
+    },
+    {
+      "id": "transmute",
+      "nom": "Sort transmuté",
+      "cout": 1,
+      "description": "Un PS : remplace un type de dégâts présent parmi acide, froid, feu, foudre, poison, tonnerre par un autre de cette même liste."
+    },
+    {
+      "id": "jumele",
+      "nom": "Sort jumelé",
+      "cout": 1,
+      "description": "Un PS : un sort qui gagne une cible supplémentaire par surclassement voit son rang effectif augmenté de un."
+    }
+  ]
+}

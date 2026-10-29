@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-10-28T14:55:10.304Z",
+  "completedAt": "2026-10-28T15:38:52.812Z",
+  "sourceHash": "390f84e1ddcb95de7690b24319194a8a5c45a03c852fcab47c5614a575554943",
+  "browserTests": 442,
+  "status": "passed",
+  "stats": {
+    "startTime": "2026-10-28T15:01:41.049Z",
+    "duration": 2229710.184,
+    "expected": 442,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "release": "20261028T145508Z",
+  "policy": "Historique conservé. Cette exécution complémentaire exclut le clerc, les paliers déjà réussis et les tests d’origine/régression inchangés."
+}
