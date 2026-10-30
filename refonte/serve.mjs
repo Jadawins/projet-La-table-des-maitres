@@ -8,6 +8,8 @@ const base = path.dirname(fileURLToPath(import.meta.url));
 const project = path.dirname(base);
 const port = Number(process.env.REFONTE_PREVIEW_PORT || 4178);
 const routes = {
+  '/favicon.png': [path.join(project,'assets/icone/favicon-192.png'),'image/png'],
+  '/favicon.ico': [path.join(project,'assets/icone/favicon-192.png'),'image/png'],
   '/inscription.html': [path.join(base,'accueil/inscription.html'),'text/html; charset=utf-8'],
   '/inscription.js': [path.join(base,'accueil/inscription.js'),'text/javascript; charset=utf-8'],
   '/maintenance.html': [path.join(base, 'accueil/index.html'), 'text/html; charset=utf-8'],

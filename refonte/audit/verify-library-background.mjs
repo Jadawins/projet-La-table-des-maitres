@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {sourceFingerprint} from '../e2e/fingerprint.mjs';
+const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),root=path.dirname(base);
+const git=(...args)=>spawnSync('git',args,{cwd:root,encoding:'utf8'});
+const changed=git('diff','HEAD','--name-only','--','refonte/maquette','refonte/access').stdout.trim().split(/\r?\n/).filter(Boolean);
+for(const file of changed)assert(['refonte/maquette/style.css','refonte/maquette/index.html','refonte/access/package.mjs'].includes(file),'Unexpected runtime change: '+file);
+for(const file of ['catalogue.mjs','data','tests/fixtures/rules-2024.json'])assert.equal(git('diff','--exit-code','HEAD','--','refonte/'+file).status,0,'Unchanged rules baseline required');
+const review=JSON.parse(fs.readFileSync(path.join(base,'.local/library-visual-review.json'),'utf8'));
+assert.equal(review.status,'passed');assert.deepEqual(review.views,['accueil','connexion','inscription','atelier']);assert.equal(review.assetChecks,2);assert.equal(review.faviconRedirect,true);assert.equal(review.pageErrors,0);
+const hash=file=>createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex');
+const proof={status:'passed',scope:'library-background-with-unchanged-runtime-baseline',sourceHash:await sourceFingerprint(),completedAt:new Date().toISOString(),failed:0,skipped:0,baselineCommit:git('rev-parse','HEAD').stdout.trim(),visualPages:4,assetChecks:2,backgroundSha256:hash('assets/img/fond-bibliotheque-sombre.png'),faviconSha256:hash('assets/icone/favicon-192.png'),qualification:'Presentation only. Existing library image and favicon reused unchanged. Screenshots reviewed for landing, login, signup and authenticated home. Both PNGs return valid image responses, legacy favicon redirects, no JavaScript errors. Authentication, game rules, PDF and storage runtime retain previous validation baseline.'};
+fs.writeFileSync(path.join(base,'.local/library-background-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

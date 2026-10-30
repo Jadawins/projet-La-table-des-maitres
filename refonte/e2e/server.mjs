@@ -80,6 +80,9 @@ const server=createServer(async(req,res)=>{
   if(route==='/_e2e/email'){const account=signupAccounts.get(new URL(req.url,origin).searchParams.get('email'));res.writeHead(account?200:404,{'Content-Type':'application/json'}).end(JSON.stringify(account?{link:origin+'/home.html?code='+account.code}:{}));return;}
   if(route==='/home.html'){const flow=signupCodes.get(new URL(req.url,origin).searchParams.get('code'));if(flow)signupAccounts.get(flow.email).confirmed=true;res.writeHead(302,{Location:'/connexion.html'+new URL(req.url,origin).search}).end();return;}
   if(route==='/_e2e/health'){res.writeHead(200,{'Content-Type':'application/json'}).end('{"ok":true,"isolated":true}');return;}
+  if(route==='/assets/fond-bibliotheque-sombre.png'){res.writeHead(200,{'Content-Type':'image/png'}).end(await readFile(path.join(here,'../../assets/img/fond-bibliotheque-sombre.png')));return;}
+  if(route==='/favicon.ico'){res.writeHead(302,{Location:'/favicon.png'}).end();return;}
+  if(route==='/favicon.png'){res.writeHead(200,{'Content-Type':'image/png'}).end(await readFile(path.join(here,'../../assets/icone/favicon-192.png')));return;}
   if(publicFiles[route]){
     const file=publicFiles[route],type=file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html';
     res.writeHead(200,{'Content-Type':type+'; charset=utf-8','Cache-Control':'no-store'}).end(await readFile(path.join(here,'../accueil',file)));return;
