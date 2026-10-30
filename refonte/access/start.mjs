@@ -7,6 +7,7 @@ import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {createCharacterStore} from './character-store.mjs';
 import {loadRulesCatalogue} from './rules-store.mjs';
+import {createAdminStore} from './admin-store.mjs';
 const base=path.dirname(fileURLToPath(import.meta.url));
 const appRoot=path.join(base,'atelier');
 const {MongoClient}=createRequire('/var/www/myrpgtable/app/api/package.json')('mongodb');
@@ -20,6 +21,7 @@ try{loaded=await loadRulesCatalogue(mongo.db('myrpgtable'),release);}catch(error
 const {text:catalogueText,catalogue}=loaded;
 const {validateSavedCharacter}=await import(pathToFileURL(path.join(appRoot,'character-storage.mjs')).href);
 const characters=createCharacterStore({collection,validate:input=>validateSavedCharacter(input,catalogue),catalogueFingerprint:createHash('sha256').update(catalogueText).digest('hex')});
-const server=createGateway({supabaseUrl:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,anonKey:process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_KEY,appRoot,characters,catalogueText});
+const admin=createAdminStore({db:mongo.db('myrpgtable'),rulesVersion:release.id});
+const server=createGateway({supabaseUrl:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,anonKey:process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_KEY,appRoot,characters,admin,adminEmails:(process.env.REFONTE_ADMIN_EMAILS||'').split(',').filter(Boolean),catalogueText});
 server.on('close',()=>mongo.close());
 server.listen(Number(process.env.REFONTE_ACCESS_PORT||4181),'127.0.0.1',()=>console.log('Accès refonte prêt sur la boucle locale.'));

@@ -1,3 +1,6 @@
+import {downloadCharacterPDF} from './character-pdf.mjs';
+import {renderHome,renderGrimoire,catalogueEntries,searchCatalogue,renderResults,renderCatalogueDetail} from './portal-view.mjs';
+import {mountAdmin} from './admin-view.mjs';
 import {CURRENT_RULES_VERSION,usesCurrentRules,upgradedCharacterCopy} from './character-version.mjs';
 import {backgroundAbilities,backgroundBonuses,finalScores,modifier,visibleSteps,classProfile,clericProfile,pruneSpellChoices,spellErrors,classSkills,hitPoints,aptitudeErrors} from './character-rules.mjs';
 import {renderSheet} from './sheet-view.mjs';
@@ -12,6 +15,7 @@ import {classChoiceSpecs} from './class-profiles.mjs';
 import {reconcilePrimalDamage} from './beast-companion.mjs';
 
 const root = document.getElementById('content');
+let printedCharacter=null;
 let printClosed=[];
 window.addEventListener('beforeprint',()=>{
   printClosed=[...root.querySelectorAll('.paper-panel details:not([open])')];
@@ -30,6 +34,7 @@ const initial = () => ({schemaVersion:2,rulesVersion:CURRENT_RULES_VERSION,name:
 const icons = { barbare: '⚒', barde: '♫', clerc: '✥', druide: '❧', ensorceleur: '✴', guerrier: '⚔', magicien: '✧', moine: '☯', occultiste: '☾', paladin: '♜', rodeur: '➶', roublard: '◇' };
 const descriptions = { barbare: 'La force à l’état brut.', barde: 'Le pouvoir des mots et de la musique.', clerc: 'Une vocation guidée par la foi.', druide: 'Une alliance avec le monde naturel.', ensorceleur: 'Une magie qui vient de l’intérieur.', guerrier: 'Votre arme, votre discipline.', magicien: 'L’étude ouvre toutes les portes.', moine: 'Le corps et l’esprit à l’unisson.', occultiste: 'Un pacte, un pouvoir, un prix.', paladin: 'Un serment pour guider vos pas.', rodeur: 'À l’aise au-delà des sentiers.', roublard: 'Toujours un coup d’avance.' };
 let catalogue;
+let isAdmin=false,grimoireEntries=[],grimoireQuery='',grimoireCategory='',grimoireLimit=24;
 let draft = initial();
 let storageAvailable = true;
 let timer;
@@ -406,6 +411,7 @@ function legacyCharacter(){return `<a class="back" href="#personnages">← Mes p
 
 function sheet(id) {
   const person = id === 'vaelen' ? { ...initial(), name:'Vaelen Forgebrume', classId:'guerrier', speciesId:'humain', backgroundId:'soldat', equipment:'A' } : id === 'selya' ? { ...initial(), name:'Sélya Aubétoile', classId:'magicien', speciesId:'elfe', backgroundId:'sage', equipment:'A' } : draft;
+  printedCharacter=person;
   return renderSheet(person,catalogue,{example:id!=='brouillon',activeTab:activeSheetTab,savingEnabled:Boolean(accountId),saveState:{saving:cloudBusy,error:cloudSaveError,saved:Boolean(person.cloudRevision),dirty:isDirty(person),updatedAt:person.cloudUpdatedAt}});
 }
 
@@ -438,6 +444,18 @@ function validStep() {
 function drawCreation() { root.innerHTML = creation(); bind(); }
 function route() {
   let hash = location.hash.slice(1);
+  document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+(hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+  if(!hash||hash==='accueil'||hash==='grimoire'||hash.startsWith('grimoire/')||hash==='admin'){
+    document.getElementById('breadcrumb').textContent=hash.startsWith('grimoire')?'Grimoire':hash==='admin'?'Administration':'Accueil';
+    if(hash==='admin'){if(isAdmin)mountAdmin(root);else root.innerHTML='<h1>Accès réservé</h1><p>Cette page est réservée à l’administration.</p>';}
+    else if(hash.startsWith('grimoire/')){const [,type,id]=hash.split('/');let decoded;try{decoded=decodeURIComponent(id);}catch{decoded='';}root.innerHTML=renderCatalogueDetail(grimoireEntries,type,decoded);}
+    else if(hash==='grimoire'){
+      root.innerHTML=renderGrimoire();const query=root.querySelector('#grimoire-query'),category=root.querySelector('#grimoire-category');query.value=grimoireQuery;category.value=grimoireCategory;
+      const results=()=>{const rows=searchCatalogue(grimoireEntries,{query:grimoireQuery,category:grimoireCategory});root.querySelector('#grimoire-results').innerHTML=renderResults(rows,grimoireLimit);root.querySelector('#grimoire-count').textContent=rows.length+' résultat'+(rows.length>1?'s':'');root.querySelector('#grimoire-more').hidden=rows.length<=grimoireLimit;};
+      root.querySelector('#grimoire-search').onsubmit=event=>event.preventDefault();query.oninput=()=>{grimoireQuery=query.value;grimoireLimit=24;results();};category.onchange=()=>{grimoireCategory=category.value;grimoireLimit=24;results();};root.querySelector('#grimoire-more').onclick=()=>{grimoireLimit+=24;results();};results();
+    }else root.innerHTML=renderHome();
+    window.scrollTo(0,0);return;
+  }
   if (hash === 'content') { root.focus(); return; }
   if (hash === 'nouveau') {
     save(true);
@@ -503,7 +521,7 @@ function bind() {
       if(target===null)return;event.preventDefault();sheetTabs[target].click();sheetTabs[target].focus();
     });
   });
-  document.getElementById('print-sheet')?.addEventListener('click',()=>window.print());
+  document.getElementById('print-sheet')?.addEventListener('click',async event=>{const button=event.currentTarget,person=structuredClone(printedCharacter);button.disabled=true;button.textContent='Préparation du PDF…';try{const result=await downloadCharacterPDF(person,catalogue);toast(result.warnings.length?'Fiche PDF téléchargée. Certains textes longs sont abrégés ; le détail reste sur le site.':'Votre fiche PDF est prête : ouvrez-la pour l’imprimer.');}catch(error){toast(error.message||'Impossible de préparer la fiche PDF. Réessayez.');}finally{button.disabled=false;button.textContent='Télécharger la fiche PDF';}});
   root.querySelectorAll('[data-sheet-detail]').forEach(input=>input.addEventListener('input',()=>{
     draft.details??={};draft.details[input.dataset.sheetDetail]=input.value;save(true);
   }));
@@ -643,6 +661,9 @@ async function init() {
     const response = await fetch('./catalogue.json');
     if (!response.ok) throw new Error('catalogue');
     catalogue = await response.json();
+    grimoireEntries=catalogueEntries(catalogue);
+    if(accountId){try{const response=await fetch('/auth/status');if(response.ok)isAdmin=Boolean((await response.json()).isAdmin);}catch{} }
+    const adminLink=document.querySelector('[data-admin-link]');if(adminLink)adminLink.hidden=!isAdmin;
     if(usesCurrentRules(draft)){
     if (!currentClass()) { draft.classId = ''; draft.equipment = ''; draft.step = Math.min(draft.step, 1); }
     if (!currentSpecies() || !currentBackground()) draft.step = Math.min(draft.step, 2);

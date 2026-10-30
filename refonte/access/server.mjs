@@ -8,10 +8,10 @@ const hash=s=>createHash('sha256').update(s).digest('hex');
 const cookie=(name,value,age=28800)=>`${name}=${value}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${age}`;
 const getCookie=(req,name)=>(req.headers.cookie||'').split(';').map(s=>s.trim()).find(s=>s.startsWith(name+'='))?.slice(name.length+1)||'';
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function createGateway({supabaseUrl,anonKey,appRoot,characters,catalogueText=null,origin='https://myrpgtable.fr',fetcher=fetch,now=Date.now}) {
+export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null,adminEmails=[],catalogueText=null,origin='https://myrpgtable.fr',fetcher=fetch,now=Date.now}) {
   if(!supabaseUrl||!anonKey)throw new Error('Configuration de connexion absente');
   const sessions=new Map(),pending=new Map(),attempts=new Map();
-  const files={'index.html':'text/html; charset=utf-8','app.js':'text/javascript; charset=utf-8','character-rules.mjs':'text/javascript; charset=utf-8','origin-rules.mjs':'text/javascript; charset=utf-8','character-version.mjs':'text/javascript; charset=utf-8','character-storage.mjs':'text/javascript; charset=utf-8','cleric-progression.mjs':'text/javascript; charset=utf-8','progression.mjs':'text/javascript; charset=utf-8','class-profiles.mjs':'text/javascript; charset=utf-8','beast-companion.mjs':'text/javascript; charset=utf-8','species-rules.mjs':'text/javascript; charset=utf-8','wild-shape.mjs':'text/javascript; charset=utf-8','class-magic.mjs':'text/javascript; charset=utf-8','extra-classes.mjs':'text/javascript; charset=utf-8','warlock-options.mjs':'text/javascript; charset=utf-8','feat-effects.mjs':'text/javascript; charset=utf-8','sheet-model.mjs':'text/javascript; charset=utf-8','sheet-view.mjs':'text/javascript; charset=utf-8','style.css':'text/css; charset=utf-8','assets/fond-bibliotheque-sombre.png':'image/png'};
+  const files={'portal-view.mjs':'text/javascript; charset=utf-8','admin-view.mjs':'text/javascript; charset=utf-8','character-pdf.mjs':'text/javascript; charset=utf-8','portal.css':'text/css; charset=utf-8','assets/fiche-personnage-2024.pdf':'application/pdf','assets/pdf-lib-1.17.1.mjs':'text/javascript; charset=utf-8','assets/pdf-lib-LICENSE.md':'text/plain; charset=utf-8','index.html':'text/html; charset=utf-8','app.js':'text/javascript; charset=utf-8','character-rules.mjs':'text/javascript; charset=utf-8','origin-rules.mjs':'text/javascript; charset=utf-8','character-version.mjs':'text/javascript; charset=utf-8','character-storage.mjs':'text/javascript; charset=utf-8','cleric-progression.mjs':'text/javascript; charset=utf-8','progression.mjs':'text/javascript; charset=utf-8','class-profiles.mjs':'text/javascript; charset=utf-8','beast-companion.mjs':'text/javascript; charset=utf-8','species-rules.mjs':'text/javascript; charset=utf-8','wild-shape.mjs':'text/javascript; charset=utf-8','class-magic.mjs':'text/javascript; charset=utf-8','extra-classes.mjs':'text/javascript; charset=utf-8','warlock-options.mjs':'text/javascript; charset=utf-8','feat-effects.mjs':'text/javascript; charset=utf-8','sheet-model.mjs':'text/javascript; charset=utf-8','sheet-view.mjs':'text/javascript; charset=utf-8','style.css':'text/css; charset=utf-8','assets/fond-bibliotheque-sombre.png':'image/png'};
   const json=(res,status,value,headers={})=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store',...headers});res.end(JSON.stringify(value));};
   const redirect=(res,to,headers={})=>{res.writeHead(302,{Location:to,'Cache-Control':'no-store',...headers});res.end();};
   async function body(req,max=32768){let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>max){const error=new Error('Le personnage est trop volumineux.');error.status=413;throw error;}}try{return JSON.parse(raw||'{}');}catch{const error=new Error('Le contenu envoyé est invalide.');error.status=400;throw error;}}
@@ -26,7 +26,10 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,catalogueT
     // Décodage uniquement APRÈS validation par Supabase, jamais comme repli de vérification.
     let exp;try{exp=JSON.parse(Buffer.from(tokens.access_token.split('.')[1],'base64url')).exp;}catch{return null;}
     if(!Number.isFinite(exp)||exp*1000<=now())return null;
-    return {userId:result.data.id,refreshToken:tokens.refresh_token||'',expires:exp*1000,until:now()+8*3600000};
+    const email=typeof result.data.email==='string'?result.data.email.toLowerCase():'';
+    const isAdmin=Boolean(email&&result.data.email_confirmed_at&&adminEmails.map(x=>x.toLowerCase().trim()).includes(email));
+    if(admin)await admin.recordAccount(result.data);
+    return {userId:result.data.id,isAdmin,refreshToken:tokens.refresh_token||'',expires:exp*1000,until:now()+8*3600000};
   }
   function createSession(res,session){
     if(sessions.size>=10000)throw new Error('sessions');
@@ -57,6 +60,15 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,catalogueT
     try{
       const url=new URL(req.url,origin),route=url.pathname;
       if(['POST','PUT','PATCH','DELETE'].includes(req.method)&&req.headers.origin!==origin)return json(res,403,{error:'Rechargez la page de connexion.'});
+      if(route.startsWith('/atelier/api/admin/')){
+        const session=await sessionFor(req);if(!session)return json(res,401,{error:'Reconnectez-vous.'});
+        if(!session.isAdmin)return json(res,403,{error:'Accès réservé à l’administration.'});
+        if(!admin)return json(res,503,{error:'Administration indisponible.'});
+        if(req.method==='GET'&&route==='/atelier/api/admin/metrics')return json(res,200,await admin.overview(session));
+        if(req.method==='GET'&&route==='/atelier/api/admin/directory')return json(res,200,await admin.directory(session));
+        if(req.method==='POST'&&route==='/atelier/api/admin/assign')return json(res,200,await admin.assign(session,await body(req)));
+        return json(res,405,{error:'Opération indisponible.'});
+      }
       if(route==='/atelier/api/personnages'||route.startsWith('/atelier/api/personnages/')){
         const session=await sessionFor(req);if(!session)return json(res,401,{error:'Reconnectez-vous pour enregistrer dans votre compte. Votre brouillon reste sur cet appareil.'});
         if(!characters)return json(res,503,{error:'L’enregistrement est temporairement indisponible. Votre brouillon est conservé.'});
@@ -68,7 +80,7 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,catalogueT
         return json(res,405,{error:'Cette opération est indisponible.'});
       }
       if(req.method==='GET'&&route==='/auth/status'){
-        const session=await sessionFor(req);return json(res,session?200:401,session?{ok:true}:{ok:false});
+        const session=await sessionFor(req);return json(res,session?200:401,session?{ok:true,isAdmin:Boolean(session.isAdmin)}:{ok:false});
       }
       if(req.method==='POST'&&route==='/auth/logout'){
         sessions.delete(hash(getCookie(req,COOKIE)));return json(res,200,{ok:true},{'Set-Cookie':cookie(COOKIE,'',0)});

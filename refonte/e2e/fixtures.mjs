@@ -7,6 +7,7 @@ export async function signIn(page,account='a'){
   await page.locator('#connect').click();
   await page.waitForURL(origin+'/atelier/');
   await expect(page.locator('meta[name="refonte-user"]')).toHaveAttribute('content',`e2e-account-${account}`);
+  await page.locator('.sidebar a[href="#personnages"]').click();
   await expect(page.getByRole('heading',{name:'Mes personnages',exact:true})).toBeVisible();
 }
 export const test=base.extend({

@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {buildCatalogue} from '../catalogue.mjs';
+import {catalogueEntries,searchCatalogue,renderHome,renderCatalogueDetail,readableData} from '../maquette/portal-view.mjs';
+import {renderSheet} from '../maquette/sheet-view.mjs';
+import {classFixture} from '../audit/class-fixtures.mjs';
+const catalogue=buildCatalogue(JSON.parse(readFileSync(new URL('fixtures/rules-2024.json',import.meta.url))));
+const entries=catalogueEntries(catalogue);
+test('Accueil multi-joueurs : vos aventures et vos personnages',()=>{assert.match(renderHome(),/vos aventures/);assert.match(renderHome(),/vos personnages/);assert.doesNotMatch(renderHome(),/nos aventures|nos personnages/);});
+test('Grimoire : toutes les catégories et recherche sans accents avec plusieurs termes',()=>{assert.equal(entries.filter(e=>e.type==='subclasses').length,48);assert.equal(entries.filter(e=>e.type==='classes').length,12);assert(searchCatalogue(entries,{query:'evocation acide',category:'spells'}).some(e=>e.item.nom==='Aspersion acide'));assert(searchCatalogue(entries,{query:'mains',category:'feats'}).length>0);assert.equal(searchCatalogue(entries,{query:'zzzzzzzz'}).length,0);});
+test('Une entrée inexistante et les contenus non fiables restent du texte',()=>{assert.match(renderCatalogueDetail(entries,'bad','bad'),/introuvable/);assert.doesNotMatch(readableData({description:'<script>alert(1)</script>'}),/<script>/);assert.doesNotMatch(readableData({_id:'secret',source:'internal',description:'Visible'}),/secret|internal/);});

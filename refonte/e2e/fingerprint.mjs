@@ -10,7 +10,7 @@ export async function sourceFingerprint(){
       if(['node_modules','.runtime','playwright-report','test-results'].includes(entry.name))continue;
       const name=path.posix.join(relative,entry.name);
       if(entry.isDirectory())await collect(name);
-      else if(/\.(mjs|js|json|css|html|yaml)$/.test(entry.name))files.push('refonte/audit/equipment-reference-2024.json',name);
+      else if(/\.(mjs|js|json|css|html|yaml|pdf)$/.test(entry.name))files.push('refonte/audit/equipment-reference-2024.json',name);
     }
   }
   for(const folder of ['refonte/maquette','refonte/accueil','refonte/access','refonte/tests','refonte/e2e'])await collect(folder);

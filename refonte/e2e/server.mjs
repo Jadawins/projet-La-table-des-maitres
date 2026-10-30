@@ -1,3 +1,5 @@
+import {createAdminStore} from '../access/admin-store.mjs';
+import {memoryCollection} from '../tests/admin-memory.mjs';
 // Local-only harness: production gateway, validator and character store; no VPS or real identity provider.
 import {createServer,request} from 'node:http';
 import {once} from 'node:events';
@@ -14,13 +16,13 @@ const origin='http://127.0.0.1:4199';
 const runtime=path.join(here,'.runtime',randomUUID());
 await mkdir(runtime,{recursive:true});
 const appRoot=path.join(runtime,'atelier');
-await mkdir(appRoot);
+await mkdir(path.join(appRoot,'assets'),{recursive:true});
 // Static files served by the same allowlist and account injection as production.
 const {copyFile}=await import('node:fs/promises');
-for(const file of ['index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','sheet-model.mjs','sheet-view.mjs']){
+for(const file of ['index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','sheet-model.mjs','sheet-view.mjs','portal-view.mjs','admin-view.mjs','character-pdf.mjs','portal.css','assets/fiche-personnage-2024.pdf','assets/pdf-lib-1.17.1.mjs','assets/pdf-lib-LICENSE.md']){
   await copyFile(path.join(here,'../maquette',file),path.join(appRoot,file));
 }
-await mkdir(path.join(appRoot,'assets'));
+
 await copyFile(path.join(here,'../../assets/img/fond-bibliotheque-sombre.png'),path.join(appRoot,'assets/fond-bibliotheque-sombre.png'));
 const catalogue=buildCatalogue(JSON.parse(await readFile(path.join(here,'../tests/fixtures/rules-2024.json'),'utf8')));
 
@@ -54,9 +56,11 @@ async function fakeSupabase(url,options){
     tokens.set(token,id);return Response.json({access_token:token});
   }
   const user=tokens.get(options.headers.Authorization?.replace(/^Bearer /,''));
-  return Response.json(user?{id:user}:{},{status:user?200:401});
+  return Response.json(user?{id:user,email:user==='e2e-account-a'?'joueur-a@example.test':'joueur-b@example.test',email_confirmed_at:'2026-10-30T00:00:00Z'}:{},{status:user?200:401});
 }
-const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase});
+const adminUsers=memoryCollection([{supabase_id:'e2e-account-a',email:'joueur-a@example.test'},{supabase_id:'e2e-account-b',email:'joueur-b@example.test'}]);
+const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e'});
+const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
 gateway.listen(0,'127.0.0.1');await once(gateway,'listening');
 const publicFiles={
  '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',

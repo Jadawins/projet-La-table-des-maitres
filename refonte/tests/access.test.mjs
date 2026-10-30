@@ -2,16 +2,30 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {createGateway} from '../access/server.mjs';
+test('Administration : identité vérifiée et adresse confirmée, jamais les champs du navigateur',async t=>{
+  for(const [user,expected]of [[{id:'admin',email:'ADMIN@example.test',email_confirmed_at:'2026-10-30'},200],[{id:'ordinary',email:'player@example.test',email_confirmed_at:'2026-10-30',user_metadata:{isAdmin:true}},403],[{id:'unconfirmed',email:'admin@example.test'},403]]){
+    const seen=[],admin={recordAccount:async()=>{},overview:async actor=>{seen.push(actor.userId);return {characters:2};},directory:async()=>({accounts:[]}),assign:async(actor,input)=>({by:actor.userId,...input})};
+    const {request,post}=await setup(t,{user,admin,adminEmails:['admin@example.test']});
+    assert.equal((await request('/atelier/api/admin/metrics')).status,401);
+    const response=await post('/auth/login',{email:'admin@example.test',password:'test-only',isAdmin:true});
+    const cookie=response.headers.get('set-cookie').split(';')[0],headers={Cookie:cookie};
+    assert.equal((await request('/atelier/api/admin/metrics',{headers})).status,expected);
+    assert.equal((await request('/atelier/api/admin/directory',{headers})).status,expected);
+    const status=await (await request('/auth/status',{headers})).json();assert.equal(status.isAdmin,expected===200);
+    assert.equal((await request('/atelier/api/admin/assign',{method:'POST',headers:{...headers,Origin:'https://evil.test','Content-Type':'application/json'},body:'{}'})).status,403);
+    const assign=await post('/atelier/api/admin/assign',{mode:'copy'},cookie);assert.equal(assign.status,expected);if(expected===200){assert.equal((await assign.json()).by,user.id);assert.deepEqual(seen,[user.id]);}
+  }
+});
 const origin='https://myrpgtable.fr';
 const token=`x.${Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+3600})).toString('base64url')}.x`;
-async function setup(t,{rejectUser=false,unavailable=false,characters,catalogueText}={}){
+async function setup(t,{rejectUser=false,unavailable=false,characters,catalogueText,admin,adminEmails=[],user}={}){
   const calls=[];
   const fetcher=async(url,options)=>{
     calls.push({url,options});if(unavailable)throw new Error('offline');
-    if(url.includes('/user'))return {ok:!rejectUser,json:async()=>rejectUser?{}:{id:'test-user',is_anonymous:false}};
+    if(url.includes('/user'))return {ok:!rejectUser,json:async()=>rejectUser?{}:(user||{id:'test-user',is_anonymous:false})};
     return {ok:true,json:async()=>({access_token:token,refresh_token:'private-refresh'})};
   };
-  const server=createGateway({supabaseUrl:'https://auth.example.test',anonKey:'test-public-key',origin,appRoot:fileURLToPath(new URL('../maquette',import.meta.url)),fetcher,characters,catalogueText});
+  const server=createGateway({supabaseUrl:'https://auth.example.test',anonKey:'test-public-key',origin,appRoot:fileURLToPath(new URL('../maquette',import.meta.url)),fetcher,characters,catalogueText,admin,adminEmails});
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
   t.after(()=>{server.closeAllConnections();return new Promise(resolve=>server.close(resolve));});
   const base=`http://127.0.0.1:${server.address().port}`;
