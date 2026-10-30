@@ -1,5 +1,7 @@
 # Sorts : appartenance au SRD et revue des 51 textes signalés
 
+Actualisation : l’édition `phb2024-2026-10-28-resumes-20261030` réécrit les 51 descriptions principales hors SRD et leurs huit profils convoqués. Les empreintes ci-dessous gardent la référence avant réécriture ; le journal du nouveau lot contient les valeurs avant/après.
+
 Contrôle du 30 octobre 2026 sur la référence avant édition de textes. **339 sorts figurent dans le SRD français 5.2.1 ; les 51 autres n’y figurent pas.** Le contrôle des noms et des 21 alias existants n’a pas révélé de faux manquant supplémentaire. Les 339 marqueurs de début de fiche dans le chapitre des sorts concordent avec les 339 fiches indexées ; chaque titre est retrouvé à la page annoncée du [PDF officiel](https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf).
 
 ## Lecture des descriptions

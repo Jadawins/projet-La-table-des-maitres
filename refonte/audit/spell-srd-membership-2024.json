@@ -5,6 +5,7 @@
   "pdfSha256": "480604d949a3bb77f639cf31c1e9e1e7ebb04ae481d943db662ba546828d94bf",
   "catalogueSha256": "b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697",
   "appliedEditorialEdition": "phb2024-2026-10-28-textes-20261030",
+  "currentProseEdition": "phb2024-2026-10-28-resumes-20261030",
   "scope": "Membership in the frozen French SRD 5.2.1 for all 390 catalogue spells; current text fields reviewed for the 51 non-SRD entries. Names/aliases and prose provenance remain separate. No redistribution permission is inferred from concise wording or public URLs.",
   "evidence": {
     "indexedSRDSpells": 339,
@@ -132,7 +133,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Thunderclap?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 27,
+              "words": 37,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -227,7 +228,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Friends?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 55,
+              "words": 80,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -298,7 +299,7 @@
             "source": null,
             "similarity": {
               "kind": "no-long-match",
-              "words": 30,
+              "words": 36,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -343,7 +344,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Toll%20the%20Dead?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 33,
+              "words": 53,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -450,7 +451,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Word%20of%20Radiance?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 20,
+              "words": 31,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -581,7 +582,7 @@
             "source": null,
             "similarity": {
               "kind": "no-long-match",
-              "words": 30,
+              "words": 24,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -652,7 +653,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Armor%20of%20Agathys?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 18,
+              "words": 20,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -664,7 +665,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Armor%20of%20Agathys?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 46,
+              "words": 54,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -783,7 +784,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Thunderous%20Smite?expansion=32231&iframe=true",
             "similarity": {
               "kind": "short-text",
-              "words": 8
+              "words": 9
             }
           },
           {
@@ -793,7 +794,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Thunderous%20Smite?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 39,
+              "words": 49,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -960,7 +961,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Compelled%20Duel?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 56,
+              "words": 73,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1101,7 +1102,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Hail%20of%20Thorns?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 25,
+              "words": 31,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1436,7 +1437,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Arms%20of%20Hadar?expansion=32231&iframe=true",
             "similarity": {
               "kind": "short-text",
-              "words": 8
+              "words": 9
             }
           },
           {
@@ -1446,7 +1447,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Arms%20of%20Hadar?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 28,
+              "words": 38,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1503,7 +1504,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Witch%20Bolt?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 13,
+              "words": 15,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1515,7 +1516,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Witch%20Bolt?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 46,
+              "words": 58,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1730,7 +1731,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Beast?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 68,
+              "words": 79,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1742,7 +1743,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Beast?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 97,
+              "words": 143,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1799,7 +1800,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Cordon%20of%20Arrows?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 68,
+              "words": 75,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -1834,7 +1835,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Crown%20of%20Madness?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 72,
+              "words": 75,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2179,7 +2180,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Cloud%20of%20Daggers?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 60,
+              "words": 66,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2250,7 +2251,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Beast%20Sense?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 20,
+              "words": 23,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2285,7 +2286,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Yolande%27s%20Regal%20Presence?expansion=32231",
             "similarity": {
               "kind": "no-long-match",
-              "words": 62,
+              "words": 63,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2476,7 +2477,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Arcane%20Vigor?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 28,
+              "words": 37,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2583,7 +2584,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Elemental%20Weapon?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 26,
+              "words": 42,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2618,7 +2619,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Crusader's%20Mantle?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 28,
+              "words": 33,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2653,7 +2654,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Aura%20of%20Vitality?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 35,
+              "words": 36,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2746,7 +2747,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Blinding%20Smite?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 31,
+              "words": 41,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2803,7 +2804,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Wrathful%20Smite?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 36,
+              "words": 40,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2944,7 +2945,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fey?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 68,
+              "words": 79,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -2956,7 +2957,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fey?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 111,
+              "words": 170,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3085,7 +3086,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Feign%20Death?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 41,
+              "words": 52,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3144,7 +3145,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Lightning%20Arrow?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 43,
+              "words": 54,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3441,7 +3442,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Swift%20Quiver?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 39,
+              "words": 51,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3512,7 +3513,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Hunger%20of%20Hadar?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 47,
+              "words": 58,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3715,7 +3716,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Aberration?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 70,
+              "words": 81,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3737,7 +3738,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Aberration?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 112,
+              "words": 159,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3794,7 +3795,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Construct?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 68,
+              "words": 79,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3806,7 +3807,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Construct?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 120,
+              "words": 166,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3865,7 +3866,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Elemental?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 64,
+              "words": 80,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -3877,7 +3878,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Elemental?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 93,
+              "words": 143,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4043,10 +4044,10 @@
             "provenance": "documented-other-field",
             "source": "https://roll20.net/compendium/dnd5e/Spells:Grasping%20Vine?expansion=32231&iframe=true",
             "similarity": {
-              "kind": "shared-span",
-              "words": 83,
-              "longestMatchingWords": 13,
-              "page": 123
+              "kind": "no-long-match",
+              "words": 104,
+              "longestMatchingWords": 0,
+              "page": null
             }
           }
         ],
@@ -4259,7 +4260,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Circle%20of%20Power?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 40,
+              "words": 46,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4318,7 +4319,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Banishing%20Smite?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 47,
+              "words": 61,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4435,7 +4436,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Celestial?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 62,
+              "words": 78,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4447,7 +4448,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Celestial?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 88,
+              "words": 128,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4506,7 +4507,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Undead?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 63,
+              "words": 79,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4518,7 +4519,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Undead?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 128,
+              "words": 198,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4659,7 +4660,7 @@
             "source": null,
             "similarity": {
               "kind": "no-long-match",
-              "words": 61,
+              "words": 57,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4730,7 +4731,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Conjure%20Volley?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 42,
+              "words": 52,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -4861,7 +4862,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Synaptic%20Static?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 46,
+              "words": 63,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5004,7 +5005,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Jallarzi's%20Storm%20of%20Radiance?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 65,
+              "words": 77,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5039,7 +5040,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Destructive%20Wave?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 29,
+              "words": 38,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5132,7 +5133,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Tasha's%20Bubbling%20Cauldron?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 75,
+              "words": 84,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5201,7 +5202,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fiend?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 63,
+              "words": 79,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5213,7 +5214,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fiend?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 109,
+              "words": 173,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5428,7 +5429,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Arcane%20Gate?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 66,
+              "words": 75,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5703,7 +5704,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Power%20Word%20Fortify?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 26,
+              "words": 30,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -5990,7 +5991,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Telepathy?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 51,
+              "words": 66,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -6097,7 +6098,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Fount%20of%20Moonlight?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 58,
+              "words": 64,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -6322,7 +6323,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Mind%20Sliver?expansion=32231",
             "similarity": {
               "kind": "no-long-match",
-              "words": 36,
+              "words": 37,
               "longestMatchingWords": 0,
               "page": null
             }
@@ -6462,10 +6463,10 @@
             "provenance": "documented-other-field",
             "source": "https://roll20.net/compendium/dnd5e/Spells:Staggering%20Smite?expansion=32231&iframe=true",
             "similarity": {
-              "kind": "no-long-match",
+              "kind": "shared-span",
               "words": 40,
-              "longestMatchingWords": 0,
-              "page": null
+              "longestMatchingWords": 12,
+              "page": 78
             }
           }
         ],
@@ -6498,7 +6499,7 @@
             "source": "https://roll20.net/compendium/dnd5e/Spells:Aura%20of%20Purity?expansion=32231&iframe=true",
             "similarity": {
               "kind": "no-long-match",
-              "words": 35,
+              "words": 45,
               "longestMatchingWords": 0,
               "page": null
             }

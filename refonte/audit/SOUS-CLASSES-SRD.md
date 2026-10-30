@@ -1,5 +1,7 @@
 # Sous-classes : appartenance au SRD et revue des textes
 
+Actualisation : l’édition `phb2024-2026-10-28-resumes-20261030` réécrit 179 textes d’aptitudes sur les 181 champs des 36 sous-classes hors SRD ; les deux textes RP déjà indépendants sont conservés. Les empreintes ci-dessous gardent la référence avant réécriture ; le journal du nouveau lot contient les valeurs avant/après.
+
 Contrôle du 30 octobre 2026. **12 sous-classes figurent dans le SRD 5.2.1, 36 n’y figurent pas.** Les 48 identifiants du catalogue sont rapprochés individuellement des douze titres du corps du [PDF officiel français](https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf). Les numéros ci-dessous sont les pages du PDF. Les noms et identifiants existants sont conservés.
 
 | Classe | Sous-classe du SRD | Page PDF | Trois autres sous-classes du site, hors SRD 5.2.1 |

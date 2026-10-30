@@ -1,12 +1,14 @@
 import revision from './data/editorial-description-corrections-20261030.json' with {type:'json'};
+import rewrite from './data/non-srd-description-rewrite-20261030.json' with {type:'json'};
 
 // Apply only the reviewed text fields, atomically, without mutating the source.
 export function applyEditorialRevision(catalogue,plan=revision){
   const result=structuredClone(catalogue),targets=[],seen=new Set();
   if(plan.status!=='frozen'||plan.rulesVersion!==result.provenance?.revision?.id)throw Error('Édition de textes incohérente.');
+  if(plan.previousEditorialRevision&&JSON.stringify(plan.previousEditorialRevision)!==JSON.stringify(result.provenance.editorialRevision))throw Error('Édition précédente différente.');
   for(const change of plan.corrections){
     const identity=JSON.stringify([change.collection,change.id,change.path]);
-    if(seen.has(identity)||!['spells','subclasses'].includes(change.collection)||!Array.isArray(change.path)||!change.path.length||!['description','niveau_superieur','temps_incantation','M','condition','choix'].includes(String(change.path.at(-1)))||change.path.some(k=>['__proto__','constructor','prototype'].includes(String(k))))throw Error('Champ éditorial invalide ou répété.');
+    if(seen.has(identity)||!['spells','subclasses'].includes(change.collection)||!Array.isArray(change.path)||!change.path.length||!['description','trait','niveau_superieur','temps_incantation','M','condition','choix'].includes(String(change.path.at(-1)))||change.path.some(k=>['__proto__','constructor','prototype'].includes(String(k))))throw Error('Champ éditorial invalide ou répété.');
     seen.add(identity);
     const rows=result[change.collection]?.filter(row=>row.id===change.id)||[];
     if(rows.length!==1)throw Error('Cible éditoriale absente ou ambiguë : '+change.id);
@@ -16,6 +18,10 @@ export function applyEditorialRevision(catalogue,plan=revision){
     targets.push({parent,key,value:change.after});
   }
   for(const {parent,key,value}of targets)parent[key]=value;
-  result.provenance.editorialRevision={id:plan.id,status:plan.status,rulesVersion:plan.rulesVersion,baseSha256:plan.baseCatalogueSha256,scope:'Reviewed prose and typography only; no mechanics or redistribution-rights clearance.'};
+  result.provenance.editorialRevision={id:plan.id,status:plan.status,rulesVersion:plan.rulesVersion,baseSha256:plan.baseCatalogueSha256,scope:plan.id===revision.id?'Reviewed prose and typography only; no mechanics or redistribution-rights clearance.':plan.scope};
   return result;
+}
+
+export function applyCurrentEditorialRevisions(catalogue){
+  return applyEditorialRevision(applyEditorialRevision(catalogue),rewrite);
 }
