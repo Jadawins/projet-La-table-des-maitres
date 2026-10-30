@@ -73,7 +73,7 @@ const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:mem
 const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
 gateway.listen(0,'127.0.0.1');await once(gateway,'listening');
 const publicFiles={
- '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/inscription.html':'inscription.html','/inscription.js':'inscription.js','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',
+ '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/inscription.html':'inscription.html','/inscription.js':'inscription.js','/sources.html':'sources.html','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',
 };
 const server=createServer(async(req,res)=>{
   const route=new URL(req.url,origin).pathname;

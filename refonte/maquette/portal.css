@@ -4,3 +4,5 @@
 @media(max-width:720px){.grimoire-reading .portal-detail{padding:22px}.grimoire-facts{gap:18px}.grimoire-reading .portal-data>div{grid-template-columns:1fr;gap:4px}.grimoire-levels>details>summary{flex-wrap:wrap;gap:10px}.grimoire-section p{font-size:14px}}
 
 .grimoire-effect{padding:7px 0}.grimoire-effect p{margin:7px 0;line-height:1.7}
+
+.grimoire-attribution{margin:30px 0 10px;padding-top:20px;border-top:1px solid #594566;max-width:1000px;font-size:11px;line-height:1.8;color:#c1b5ca}.grimoire-attribution p{margin:6px 0}.grimoire-attribution a{color:#e2c891;overflow-wrap:anywhere}

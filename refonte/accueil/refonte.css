@@ -4,3 +4,5 @@
 [hidden]{display:none!important}.signup-help{font-size:11px;color:var(--muted);margin-top:-9px}.signup-login{font-size:13px;line-height:1.6;margin-top:22px;color:var(--muted)}.signup-login a{color:var(--gold)}#signup-confirmation{margin-top:24px;line-height:1.7;outline:none}#signup-confirmation h2{font-size:26px}#signup-confirmation p{font-size:13px;margin:15px 0}
 
 .hero-copy{text-shadow:0 2px 14px #0009}
+
+.sources-main{max-width:940px;margin:48px auto}.sources-card{padding:34px;background:#211b2cf5;border:1px solid var(--line);border-radius:12px}.sources-card h1{font-size:38px}.sources-card section{margin-top:30px}.sources-card h2{font-size:25px}.sources-card p{font-size:14px;line-height:1.9}.sources-card a{color:var(--gold);overflow-wrap:anywhere}
