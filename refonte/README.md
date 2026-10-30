@@ -20,7 +20,7 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 - [Point de reprise](audit/POINT-DE-REPRISE.md)
 - [État détaillé de la stabilisation](audit/STABILISATION-2024.md)
 - [Bilan final et réserves](audit/BILAN-FINAL-2024.md)
-- [Provenance des descriptions](audit/DESCRIPTIONS-PROVENANCE.md) et [classement SRD des 48 sous-classes](audit/SOUS-CLASSES-SRD.md) : 12 présentes dans le SRD 5.2.1, 36 absentes. Ce contrôle ne vaut pas validation des droits sur les textes hors SRD.
+- [Provenance des descriptions](audit/DESCRIPTIONS-PROVENANCE.md) et [classement SRD des 48 sous-classes](audit/SOUS-CLASSES-SRD.md) : 12 présentes dans le SRD 5.2.1, 36 absentes. Ce contrôle ne vaut pas validation des droits sur les textes hors SRD. Le [classement des sorts](audit/SORTS-SRD.md) confirme 339 sorts SRD et 51 hors SRD ; les 110 champs des 51 sont examinés. Six retouches éditoriales sont préparées et non appliquées.
 - [Manifeste du gel](audit/final-freeze-manifest.json)
 
 ## Production

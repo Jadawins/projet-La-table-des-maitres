@@ -10,7 +10,7 @@ Le catalogue reconstruit pour l'audit a la même empreinte SHA-256 que la versio
 - L'inventaire couvre les **637 entrées du Grimoire**, puis les compétences et profils complémentaires : **785 entrées au total**, dont 734 avec du texte détecté.
 - **2 001 champs textuels** sont relevés, plus **95 champs** des fichiers complémentaires. Noms seuls, identifiants, chiffres isolés et métadonnées ne sont pas comptés comme descriptions.
 - Pour 1 267 champs, une correction, un ajout ou une source explicite renvoie au SRD ; pour 472, à une autre référence. Pour **262 champs hérités**, seule la source de comparaison de l'entrée est connue. Elle ne prouve pas l'origine de leur rédaction.
-- **339 des 390 sorts** figurent dans l'index documentaire SRD déjà établi ; **51 n'y figurent pas**. Cette absence est une priorité de recherche, pas une conclusion juridique.
+- Le contrôle du chapitre complet et des alias confirme **339 sorts dans le SRD 5.2.1 et 51 hors SRD**. Les 110 champs textuels des 51 sont examinés ; quatre propositions éditoriales sont prêtes, sans modification du catalogue. Voir le [bilan des sorts](SORTS-SRD.md). L'appartenance au SRD et les droits sur la rédaction actuelle restent distincts.
 - Le rapprochement des sous-classes est terminé : **12 présentes dans le SRD 5.2.1 et 36 absentes**. Onze des douze présentes avaient été comparées à une autre publication ; le classement ne dépend donc pas de cette source de comparaison. Le [tableau des 48 sous-classes](SOUS-CLASSES-SRD.md) donne les noms du site, les correspondances et les pages du SRD. Le rapprochement reste à faire pour les dons et historiques.
 
 ## Attribution livrée
@@ -29,7 +29,7 @@ L'inventaire détaillé [description-provenance-2024.json](description-provenanc
 
 ## Reste à faire avant de déclarer les textes prêts pour une diffusion plus large
 
-1. Vérifier les 51 sorts absents de l'index SRD, puis établir l'appartenance au SRD de chaque don, historique et profil référencé ailleurs. Le classement des 48 sous-classes est terminé ; les droits de redistribution de leurs textes restent distincts. Une référence Roll20 peut aussi décrire un élément du SRD.
+1. Établir l'appartenance au SRD de chaque don, historique et profil référencé ailleurs. Les classements des 48 sous-classes et des 390 sorts sont terminés ; les droits de redistribution de leurs textes restent distincts. Une référence Roll20 peut aussi décrire un élément du SRD.
 2. Retrouver la provenance des 262 champs hérités et des 95 champs complémentaires. Les sources de vérification des mécaniques ne suffisent pas à attribuer leur prose.
 3. Pour les descriptions effectivement hors SRD : examiner la rédaction, sa source et les conditions d'utilisation. Préparer des résumés indépendants centrés sur les informations nécessaires au jeu, puis contrôler la fidélité des mécaniques. Une paraphrase ou une traduction ne garantit pas à elle seule les droits de redistribution ; les cas non résolus doivent rester signalés et faire l'objet d'un choix explicite avant publication dans l'application.
 4. Revoir séparément les droits du PDF de fiche, des illustrations et les usages de marques : ce contrôle textuel ne les valide pas.
@@ -38,58 +38,8 @@ L'inventaire détaillé [description-provenance-2024.json](description-provenanc
 
 Références : [SRD officiel](https://www.dndbeyond.com/srd), [licence CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
 
-## Première liste de vérification : sorts absents de l’index SRD
+## Classements terminés et propositions éditoriales
 
-Les 51 noms ci-dessous sont des candidats à examiner, sans présumer de la provenance exacte de chaque champ ni d’une absence dans toutes les versions du SRD. Leurs références individuelles sont dans l’inventaire JSON.
-
-- Coup de tonnerre (`coup_de_tonnerre`)
-- Faux amis (`faux_amis`)
-- Frappe épineuse (`frappe_epineuse`)
-- Glas (`glas`)
-- Mot de radiance (`mot_de_radiance`)
-- Voile défensif (`voile_defensif`)
-- Armure d'Agathys (`armure_d_agathys`)
-- Châtiment de tonnerre (`chatiment_de_tonnerre`)
-- Duel forcé (`duel_force`)
-- Grêle d'épines (`grele_d_epines`)
-- Tentacules de Hadar (`tentacules_de_hadar`)
-- Trait ensorcelé (`trait_ensorcele`)
-- Convocation de bête (`convocation_de_bete`)
-- Cordon de flèches (`cordon_de_fleches`)
-- Couronne du dément (`couronne_du_dement`)
-- Nuée de daggers (`nuee_de_daggers`)
-- Présence bestiale (`presence_bestiale`)
-- Présence royale de Yolane (`presence_royale_de_yolane`)
-- Vigueur arcanique (`vigueur_arcanique`)
-- Arme élémentaire (`arme_elementaire`)
-- Aura du croisé (`aura_du_croise`)
-- Aura de vitalité (`aura_de_vitalite`)
-- Châtiment de cécité (`chatiment_de_cecite`)
-- Châtiment de courroux (`chatiment_de_courroux`)
-- Convocation de fée (`convocation_de_fee`)
-- État cadavérique (`etat_cadaverique`)
-- Flèche de foudre (`fleche_de_foudre`)
-- Vif carquois (`vie_carquois`)
-- Voracité de Hadar (`voracite_de_hadar`)
-- Convocation d'aberration (`convocation_d_aberration`)
-- Convocation d'artificiel (`convocation_d_artificiel`)
-- Convocation d'élémentaire (`convocation_de_elementaire`)
-- Grasping Vine (`lame_avide`)
-- Cercle de pouvoir (`cercle_de_pouvoir`)
-- Châtiment du ban (`chatiment_du_ban`)
-- Convocation de céleste (`convocation_de_celeste`)
-- Convocation de mort-vivant (`convocation_de_mort_vivant`)
-- Frappe du vent d'acier (`frappe_du_vent_d_acier`)
-- Invocation de volée (`invocation_de_volee`)
-- Perturbations synaptiques (`perturbations_synaptiques`)
-- Tempête radieuse de Jallarzi (`tempete_radieuse_de_jallarzi`)
-- Vague destructrice (`vague_destructrice`)
-- Chaudron bouillonnant de Tasha (`chaudron_bouillonnant_de_tasha`)
-- Convocation de fiélon (`convocation_de_fielon`)
-- Portail arcanique (`portail_arcanique`)
-- Mot de pouvoir fortifiant (`mot_de_pouvoir_fortifiant`)
-- Télépathie (`telepathie`)
-- Flux de lune (`flux_de_lune`)
-- Mind Sliver (`mind_sliver`)
-- Staggering Smite (`staggering_smite`)
-- Aura de pureté (`aura_de_purete`)
+- [48 sous-classes : 12 SRD et 36 hors SRD](SOUS-CLASSES-SRD.md).
+- [390 sorts : 339 SRD et 51 hors SRD](SORTS-SRD.md), avec lecture des 110 champs des 51 sorts.
+- [Six propositions de retouches](editorial-description-drafts-2024.json), avec valeurs avant/après et empreintes : deux passages RP de sous-classes et quatre descriptions de sorts. Toutes restent non appliquées et ne changent pas le statut des droits.
