@@ -3,6 +3,10 @@ const signed=v=>v===null||v===undefined?'':`${v>=0?'+':''}${v}`;
 const normalize=v=>String(v??'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const words=v=>String(v??'').replaceAll('_',' ');
 const list=values=>[...new Set(values.filter(Boolean))].map(words).join(', ');
+function weaponProperties(properties=[]){
+  const labels={deux_mains:'Deux mains',legere:'Légère',lourde:'Lourde',lancer:'Lancer',finesse:'Finesse',allonge:'Allonge',polyvalente:'Polyvalente',munitions:'Munitions',chargement:'Chargement',portee:'Portée',lancer_portee:'Portée de lancer',type:'Munitions'};
+  return properties.flatMap(property=>typeof property==='string'?[labels[property]||words(property)]:property&&typeof property==='object'?Object.entries(property).filter(([,value])=>typeof value==='string'||typeof value==='number').map(([key,value])=>`${labels[key]||words(key)} : ${value}${['portee','lancer_portee'].includes(key)?' m':''}`):[]);
+}
 const skillNames=['Athlétisme','Acrobaties','Discrétion','Escamotage','Arcanes','Histoire','Investigation','Nature','Religion','Dressage','Perspicacité','Médecine','Perception','Survie','Intimidation','Persuasion','Représentation','Tromperie'];
 export function pdfValues(state,c){
   const m=sheetModel(state,c),details=state.details||{},text={},checks={};
@@ -22,7 +26,7 @@ export function pdfValues(state,c){
   const middle=Math.ceil(features.length/2);text.features1=features.slice(0,middle).join('\n');text.features2=features.slice(middle).join('\n');
   for(const [coin,key]of Object.entries({pc:'cp',pa:'sp',pe:'ep',po:'gp',pp:'pp'}))text[key]=m.money[coin]??0;
   for(let level=1;level<=9;level++)text['slot'+level]=m.slots[level]||'';
-  const attacks=[...m.attacks.map(a=>({name:a.nom,bonus:signed(a.attack),damage:`${a.degats?.de||''} ${signed(a.damageBonus)} ${a.degats?.type||''}`,notes:list([a.botteActive?`Botte : ${a.botte}`:'',...(a.proprietes||[])])})),...m.spells.filter(s=>s.niveau===0).map(s=>({name:s.nom,bonus:s.sauvegarde?`DD ${s.dc??'—'}`:s.attaque?signed(s.attackBonus):'—',damage:s.damageAtLevel||'',notes:list([s.sauvegarde?`JS ${s.sauvegarde.caracteristique}`:'',s.portee])}))];
+  const attacks=[...m.attacks.map(a=>({name:a.nom,bonus:signed(a.attack),damage:`${a.degats?.de||''} ${signed(a.damageBonus)} ${a.degats?.type||''}`,notes:list([a.botteActive?`Botte : ${a.botte}`:'',...weaponProperties(a.proprietes)])})),...m.spells.filter(s=>s.niveau===0).map(s=>({name:s.nom,bonus:s.sauvegarde?`DD ${s.dc??'—'}`:s.attaque?signed(s.attackBonus):'—',damage:s.damageAtLevel||'',notes:list([s.sauvegarde?`JS ${s.sauvegarde.caracteristique}`:'',s.portee])}))];
   return {text,checks,attacks,spells:m.spells};
 }
 // Keep the supplied AcroForm interactive. Extra spell/weapon rows use a copy of
@@ -56,11 +60,13 @@ export async function createCharacterPDF(state,c,templateBytes){
     const name=field.getName();field.acroField.dict.delete(PDFName.of('AA'));
     if(field instanceof lib.PDFCheckBox){for(const widget of field.acroField.getWidgets()){widget.getOrCreateBorderStyle().setWidth(.6);const appearance=widget.getOrCreateAppearanceCharacteristics();appearance.setBorderColor([0,0,0]);appearance.setBackgroundColor([1,1,1]);}checks[name]?field.check():field.uncheck();field.updateAppearances();continue;}
     if(!(field instanceof lib.PDFTextField))continue;
-    if(/^(?:spell\d+(?:[crp])?|weapons\d[134])(?:__\w+)?$/.test(name))field.enableMultiline();
+    const weaponCell=/^weapons\d[1-4](?:__armes\d+)?$/.test(name);
+    if(weaponCell)field.disableMultiline();
+    else if(/^spell\d+(?:[crp])?(?:__\w+)?$/.test(name))field.enableMultiline();
     let value=clean(text[name]);const rect=field.acroField.getWidgets()[0].getRectangle(),width=Math.max(1,rect.width-4),height=Math.max(1,rect.height-2),multiline=field.isMultiline();
     field.removeMaxLength();
     const minSize=/^(?:spell|weapons)/.test(name)?6:7;
-    let size=Math.min(11,height/1.2);while(size>minSize&&!fits(value,width,height,size,multiline))size-=.5;
+    let size=Math.min(weaponCell?8:11,height/1.2);while(size>minSize&&!fits(value,width,height,size,multiline))size-=.5;
     if(!fits(value,width,height,size,multiline)){warnings.push(name);while(value.length&&!fits(value+'…',width,height,size,multiline))value=value.slice(0,-1);value+='…';}
     field.setText(multiline?value:value.replace(/\n/g,' · '));field.setFontSize(size);
   }

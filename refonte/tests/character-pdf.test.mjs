@@ -18,3 +18,22 @@ for(const level of [3,20])test(`Vrai formulaire PDF niveau ${level} : valeurs pe
   assert(doc.getPageCount()>=2);writeFileSync(new URL(`../.local/formulaire-niveau-${level}.pdf`,import.meta.url),result.bytes);
 });
 test('Dés physiques, sauvegardes et compétences utilisent les valeurs de la fiche sans aucun lancer',()=>{const state=classFixture(c,'barbare',3,'barbare_frenetique'),a=pdfValues(state,c),b=pdfValues(state,c);assert.deepEqual(a,b);assert.equal(a.text.str,state.scores.FOR);assert.equal(a.checks.s1,true);assert.equal(a.checks.s3,true);assert.equal(a.checks.s5,false);assert.equal(a.text['hp-current'],undefined);assert.equal(a.checks.inspiration,undefined);});
+test('Armes du barbare : noms visibles sur une ligne, police réduite et portée structurée lisible',async()=>{
+  const state=classFixture(c,'barbare',1,'',{backgroundId:'marin'}),expected=pdfValues(state,c);
+  const hatchet=expected.attacks.find(a=>a.name==='Hachette');
+  assert.match(hatchet.notes,/6\/18 m/);assert.doesNotMatch(hatchet.notes,/\[object Object\]/);
+  assert(expected.attacks.some(a=>a.name==='Hache à deux mains'));
+  const result=await createCharacterPDF(state,c,template),doc=await PDFDocument.load(result.bytes),form=doc.getForm();
+  for(let row=0;row<expected.attacks.length;row++){
+    const field=form.getTextField(`weapons${row+1}1`);
+    assert.equal(field.getText(),expected.attacks[row].name);
+    for(let col=1;col<=4;col++){
+      const cell=form.getTextField(`weapons${row+1}${col}`);
+      assert.equal(cell.isMultiline(),false);
+      const size=Number(cell.acroField.getDefaultAppearance().match(/([\d.]+) Tf/)[1]);
+      assert(size>=6&&size<=8,`${cell.getName()} : ${size} pt`);
+    }
+  }
+  for(const field of form.getFields())if(field.getText)assert.doesNotMatch(field.getText()||'',/\[object Object\]/);
+  writeFileSync(new URL('../.local/formulaire-armes-barbare.pdf',import.meta.url),result.bytes);
+});

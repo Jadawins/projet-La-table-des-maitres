@@ -1,5 +1,10 @@
 import {test,expect,signIn,origin} from '../fixtures.mjs';
 import {domains,createThroughUI,saveAndLocate} from '../journey.mjs';
+import {readFile} from 'node:fs/promises';
+import {buildCatalogue} from '../../catalogue.mjs';
+import {originFixture} from '../../audit/origin-fixtures.mjs';
+import {createOriginThroughUI} from '../origin-journey.mjs';
+import {PDFDocument} from '../../maquette/assets/pdf-lib-1.17.1.mjs';
 const domain=domains.find(d=>d._source==='clerc_domaine_vie');
 test('Accueil par défaut, grimoire et navigation retour avec recherche conservée',async({page},info)=>{
   await page.goto('/atelier/');await expect(page.getByRole('heading',{name:'Bienvenue à la Table du Maître'})).toBeVisible();await expect(page.locator('.portal-welcome')).toContainText('vos aventures');await page.screenshot({path:info.outputPath('accueil.png')});
@@ -16,3 +21,16 @@ test('Administration : copie confirmée puis transfert vers un compte existant',
   const originalOption=page.locator('#admin-source option').filter({hasText:name}).filter({hasText:'joueur-a@example.test'});await page.locator('#admin-source').selectOption(await originalOption.getAttribute('value'));await page.locator('#admin-target').selectOption('e2e-account-b');await page.locator('#admin-mode').selectOption('move');await page.getByRole('button',{name:'Vérifier l’attribution'}).click();await page.getByRole('button',{name:'Confirmer l’attribution'}).click();await expect(page.locator('#admin-feedback')).toHaveText('Attribution effectuée.');expect((await page.request.get('/atelier/api/personnages/'+id)).status()).toBe(404);
 });
 for(const level of [3,20])test(`PDF fourni rempli au niveau ${level}`,async({page},info)=>{await createThroughUI(page,{name:`E2E impression ${level}`,level,domain,vocation:'Protecteur'});const download=page.waitForEvent('download');await page.locator('#print-sheet').click();const file=await download;expect(file.suggestedFilename()).toBe(`E2E impression ${level}.pdf`);await file.saveAs(info.outputPath(`fiche-${level}.pdf`));await expect(page.locator('#print-sheet')).toBeEnabled();await expect(page.locator('#toast')).toContainText(/fiche PDF/i);});
+test('PDF armes du barbare : téléchargement avec noms et petite police',async({page},info)=>{
+  const c=buildCatalogue(JSON.parse(await readFile(new URL('../../tests/fixtures/rules-2024.json',import.meta.url))));
+  const state=originFixture(c,'barbare',1,{speciesId:'orc'},'marin');state.name='E2E armes du barbare';
+  await createOriginThroughUI(page,state,c);
+  const download=page.waitForEvent('download');await page.locator('#print-sheet').click();
+  const file=await download,path=info.outputPath('armes-barbare.pdf');await file.saveAs(path);
+  const doc=await PDFDocument.load(await readFile(path)),form=doc.getForm();
+  expect(form.getTextField('weapons11').getText()).toBe('Hache à deux mains');
+  expect(form.getTextField('weapons21').getText()).toBe('Hachette');
+  expect(form.getTextField('weapons11').isMultiline()).toBe(false);
+  expect(form.getTextField('weapons24').getText()).toContain('6/18 m');
+  expect(form.getTextField('weapons24').getText()).not.toContain('[object Object]');
+});

@@ -10,6 +10,8 @@ Le PDF contient les valeurs, noms d’aptitudes et ressources utiles pour jouer.
 
 Le formulaire reste modifiable après téléchargement. Le fichier d’origine possède 381 champs. Le champ combinant incantation et portée est séparé pour respecter les deux colonnes du dessin. Au-delà de six armes/sorts mineurs ou de trente sorts, le générateur réutilise la page correspondante avec des noms de champs distincts, inscrits dans l’AcroForm. Les champs longs qui ne tiennent pas à taille lisible sont abrégés avec des points de suspension et un message le signale. Tous les noms de sorts sont contrôlés dans le fichier exporté.
 
+Les lignes d’armes utilisent des champs sur une ligne, avec une police de 8 points maximum ajustée jusqu’à 6 points selon la largeur. Les propriétés structurées sont converties en libellés et portées lisibles.
+
 La génération se fait dans le navigateur. La bibliothèque pdf-lib 1.17.1 est livrée localement avec sa licence MIT : aucune donnée de personnage n’est envoyée à un prestataire PDF externe.
 
 ## Administration
