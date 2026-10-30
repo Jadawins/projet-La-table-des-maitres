@@ -3,7 +3,7 @@ import {randomBytes,createHash} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
 
-const COOKIE='__Host-myrpgtable_session', OAUTH='__Host-myrpgtable_oauth';
+const COOKIE='__Host-myrpgtable_session', OAUTH='__Host-myrpgtable_oauth', SIGNUP='__Host-myrpgtable_signup';
 const hash=s=>createHash('sha256').update(s).digest('hex');
 const cookie=(name,value,age=28800)=>`${name}=${value}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${age}`;
 const getCookie=(req,name)=>(req.headers.cookie||'').split(';').map(s=>s.trim()).find(s=>s.startsWith(name+'='))?.slice(name.length+1)||'';
@@ -19,10 +19,11 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null
     const response=await fetcher(`${supabaseUrl.replace(/\/$/,'')}/auth/v1/${endpoint}`,{method:data?'POST':'GET',headers:{apikey:anonKey,'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{})},...(data?{body:JSON.stringify(data)}:{}),signal:AbortSignal.timeout(12000)});
     const result=await response.json();return {ok:response.ok,data:result};
   }
-  async function verified(tokens){
+  async function verified(tokens,requireConfirmedEmail=false){
     if(typeof tokens?.access_token!=='string'||tokens.access_token.length>16000)return null;
     const result=await authFetch('user',null,tokens.access_token);
     if(!result.ok||typeof result.data?.id!=='string'||!result.data.id||result.data.is_anonymous)return null;
+    if(requireConfirmedEmail&&!result.data.email_confirmed_at)return null;
     // Décodage uniquement APRÈS validation par Supabase, jamais comme repli de vérification.
     let exp;try{exp=JSON.parse(Buffer.from(tokens.access_token.split('.')[1],'base64url')).exp;}catch{return null;}
     if(!Number.isFinite(exp)||exp*1000<=now())return null;
@@ -34,7 +35,7 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null
   function createSession(res,session){
     if(sessions.size>=10000)throw new Error('sessions');
     const id=randomBytes(32).toString('base64url');sessions.set(hash(id),session);
-    json(res,200,{ok:true},{'Set-Cookie':cookie(COOKIE,id)});
+    json(res,200,{ok:true},{'Set-Cookie':[cookie(COOKIE,id),cookie(SIGNUP,'',0),cookie(OAUTH,'',0)]});
   }
   async function sessionFor(req){
     const key=hash(getCookie(req,COOKIE)),session=sessions.get(key);if(!session)return null;
@@ -51,10 +52,10 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null
     }
     return session;
   }
-  function rateAllowed(req){
-    const ip=req.headers['x-real-ip']||req.socket.remoteAddress;
-    let record=attempts.get(ip);if(!record||record.until<=now()){record={count:0,until:now()+15*60000};attempts.set(ip,record);}
-    return ++record.count<=12;
+  function rateAllowed(req,bucket='login',limit=12,duration=15*60000){
+    const ip=bucket+':'+(req.headers['x-real-ip']||req.socket.remoteAddress);
+    let record=attempts.get(ip);if(!record||record.until<=now()){record={count:0,until:now()+duration};attempts.set(ip,record);}
+    return ++record.count<=limit;
   }
   const server=createServer(async(req,res)=>{
     try{
@@ -85,6 +86,29 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null
       if(req.method==='POST'&&route==='/auth/logout'){
         sessions.delete(hash(getCookie(req,COOKIE)));return json(res,200,{ok:true},{'Set-Cookie':cookie(COOKIE,'',0)});
       }
+      if(req.method==='POST'&&route==='/auth/signup'){
+        if(!rateAllowed(req,'signup',3,3600000))return json(res,429,{error:'Trop de demandes d’inscription. Réessayez dans une heure.'});
+        const input=await body(req),email=typeof input.email==='string'?input.email.trim().toLowerCase():'',username=typeof input.username==='string'?input.username.trim():'';
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||email.length>320)return json(res,400,{error:'Renseignez une adresse e-mail valide.'});
+        if(username.length<2||username.length>40)return json(res,400,{error:'Choisissez un pseudo de 2 à 40 caractères.'});
+        if(typeof input.password!=='string'||input.password.length<12||input.password.length>128)return json(res,400,{error:'Choisissez un mot de passe de 12 à 128 caractères.'});
+        if(input.passwordConfirmation!==input.password)return json(res,400,{error:'Les deux mots de passe doivent être identiques.'});
+        const verifier=randomBytes(48).toString('base64url');
+        const result=await authFetch('signup?redirect_to='+encodeURIComponent(origin+'/home.html'),{email,password:input.password,data:{username},code_challenge:createHash('sha256').update(verifier).digest('base64url'),code_challenge_method:'s256'});
+        const code=result.data?.code||result.data?.error_code;
+        // The same public reply covers existing accounts; never reveal membership.
+        if(!result.ok&&!['user_already_exists','email_exists'].includes(code)){
+          if(code==='weak_password')return json(res,400,{error:'Ce mot de passe est trop faible. Choisissez-en un autre.'});
+          if(['over_email_send_rate_limit','over_request_rate_limit'].includes(code))return json(res,429,{error:'Le service d’inscription a reçu trop de demandes. Patientez avant de réessayer.'});
+          return json(res,503,{error:'L’inscription est temporairement indisponible. Réessayez plus tard ou utilisez Google ou Discord.'});
+        }
+        if(result.ok&&result.data?.access_token){
+          const session=await verified(result.data,true);if(!session)return json(res,503,{error:'Votre connexion ne peut pas être vérifiée. Confirmez votre adresse puis réessayez depuis la page de connexion.'});
+          return createSession(res,session);
+        }
+        pending.delete(hash(getCookie(req,OAUTH)));
+        return json(res,202,{ok:true,confirmationRequired:true},{'Set-Cookie':[cookie(SIGNUP,verifier,86400),cookie(OAUTH,'',0)]});
+      }
       if(req.method==='GET'&&route==='/auth/oauth'){
         const provider=url.searchParams.get('provider');if(!['google','discord'].includes(provider))return json(res,400,{error:'Connexion indisponible.'});
         if(!rateAllowed(req))return json(res,429,{error:'Trop de tentatives. Réessayez plus tard.'});
@@ -97,17 +121,19 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null
       }
       if(req.method==='POST'&&['/auth/login','/auth/callback'].includes(route)){
         if(!rateAllowed(req))return json(res,429,{error:'Trop de tentatives. Réessayez dans quinze minutes.'});
-        const data=await body(req);let tokens;
+        const data=await body(req);let tokens,signupConfirmation=false;
         if(route==='/auth/login'){
           if(typeof data.email!=='string'||typeof data.password!=='string'||data.email.length>320||data.password.length>1024)return json(res,400,{error:'Renseignez votre adresse e-mail et votre mot de passe.'});
           tokens=await authFetch('token?grant_type=password',{email:data.email,password:data.password});
         }else{
           const key=hash(getCookie(req,OAUTH)),flow=pending.get(key);pending.delete(key);
-          if(!flow||flow.until<=now()||typeof data.code!=='string'||data.code.length>4096)return json(res,401,{error:'Cette connexion a expiré. Recommencez avec Google ou Discord.'});
-          tokens=await authFetch('token?grant_type=pkce',{auth_code:data.code,code_verifier:flow.verifier});
+          const signupVerifier=getCookie(req,SIGNUP),verifier=flow&&flow.until>now()?flow.verifier:/^[A-Za-z0-9_-]{64}$/.test(signupVerifier)?signupVerifier:null;
+          signupConfirmation=!(flow&&flow.until>now())&&Boolean(verifier);
+          if(!verifier||typeof data.code!=='string'||!data.code||data.code.length>4096)return json(res,401,{error:'Ce lien ne peut plus ouvrir votre session. Après confirmation de votre adresse, connectez-vous avec votre e-mail et votre mot de passe.'});
+          tokens=await authFetch('token?grant_type=pkce',{auth_code:data.code,code_verifier:verifier});
         }
         if(!tokens.ok)return json(res,401,{error:'Connexion impossible. Vérifiez vos identifiants ou recommencez la connexion.'});
-        const session=await verified(tokens.data);if(!session)return json(res,401,{error:'Votre connexion ne peut pas être vérifiée.'});
+        const session=await verified(tokens.data,signupConfirmation);if(!session)return json(res,401,{error:'Votre connexion ne peut pas être vérifiée.'});
         return createSession(res,session);
       }
       if(route==='/atelier'||route.startsWith('/atelier/')){

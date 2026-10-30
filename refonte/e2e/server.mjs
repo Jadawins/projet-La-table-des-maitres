@@ -6,7 +6,7 @@ import {once} from 'node:events';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
-import {randomUUID} from 'node:crypto';
+import {randomUUID,createHash} from 'node:crypto';
 import {createGateway} from '../access/server.mjs';
 import {createCharacterStore} from '../access/character-store.mjs';
 import {validateSavedCharacter} from '../maquette/character-storage.mjs';
@@ -46,27 +46,39 @@ const collection={
   },
 };
 const characters=createCharacterStore({collection,validate:s=>validateSavedCharacter(s,catalogue),catalogueFingerprint:'e2e-isolated'});
-const tokens=new Map();
+const tokens=new Map(),signupAccounts=new Map(),signupCodes=new Map();
+const identity=new Map([['e2e-account-a',{id:'e2e-account-a',email:'joueur-a@example.test',email_confirmed_at:'2026-10-30'}],['e2e-account-b',{id:'e2e-account-b',email:'joueur-b@example.test',email_confirmed_at:'2026-10-30'}]]);
+function issueToken(id){const token='e2e.'+Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+7200})).toString('base64url')+'.'+randomUUID();tokens.set(token,id);return Response.json({access_token:token});}
 async function fakeSupabase(url,options){
-  if(url.endsWith('/token?grant_type=password')){
-    const data=JSON.parse(options.body);
-    if(!['joueur-a@example.test','joueur-b@example.test'].includes(data.email)||data.password!=='test-only')return Response.json({}, {status:401});
-    const id=data.email==='joueur-a@example.test'?'e2e-account-a':'e2e-account-b';
-    const token=`e2e.${Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+7200})).toString('base64url')}.${randomUUID()}`;
-    tokens.set(token,id);return Response.json({access_token:token});
+  if(url.includes('/signup?')){
+    const input=JSON.parse(options.body);if(signupAccounts.has(input.email))return Response.json({id:'duplicate-obfuscated'});
+    const id='signup-'+randomUUID(),code=randomUUID();signupAccounts.set(input.email,{id,password:input.password,code,confirmed:false});signupCodes.set(code,{id,email:input.email,challenge:input.code_challenge});identity.set(id,{id,email:input.email,user_metadata:input.data,email_confirmed_at:'2026-10-30'});return Response.json({id});
   }
-  const user=tokens.get(options.headers.Authorization?.replace(/^Bearer /,''));
-  return Response.json(user?{id:user,email:user==='e2e-account-a'?'joueur-a@example.test':'joueur-b@example.test',email_confirmed_at:'2026-10-30T00:00:00Z'}:{},{status:user?200:401});
+  if(url.endsWith('/token?grant_type=pkce')){
+    const input=JSON.parse(options.body),flow=signupCodes.get(input.auth_code);
+    if(!flow||createHash('sha256').update(input.code_verifier).digest('base64url')!==flow.challenge)return Response.json({},{status:401});
+    signupCodes.delete(input.auth_code);signupAccounts.get(flow.email).confirmed=true;return issueToken(flow.id);
+  }
+  if(url.endsWith('/token?grant_type=password')){
+    const data=JSON.parse(options.body),registered=signupAccounts.get(data.email);
+    if(registered)return registered.confirmed&&registered.password===data.password?issueToken(registered.id):Response.json({},{status:401});
+    if(!['joueur-a@example.test','joueur-b@example.test'].includes(data.email)||data.password!=='test-only')return Response.json({}, {status:401});
+    return issueToken(data.email==='joueur-a@example.test'?'e2e-account-a':'e2e-account-b');
+  }
+  const user=identity.get(tokens.get(options.headers.Authorization?.replace(/^Bearer /,'')));
+  return Response.json(user||{},{status:user?200:401});
 }
 const adminUsers=memoryCollection([{supabase_id:'e2e-account-a',email:'joueur-a@example.test'},{supabase_id:'e2e-account-b',email:'joueur-b@example.test'}]);
 const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e'});
 const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
 gateway.listen(0,'127.0.0.1');await once(gateway,'listening');
 const publicFiles={
- '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',
+ '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/inscription.html':'inscription.html','/inscription.js':'inscription.js','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',
 };
 const server=createServer(async(req,res)=>{
   const route=new URL(req.url,origin).pathname;
+  if(route==='/_e2e/email'){const account=signupAccounts.get(new URL(req.url,origin).searchParams.get('email'));res.writeHead(account?200:404,{'Content-Type':'application/json'}).end(JSON.stringify(account?{link:origin+'/home.html?code='+account.code}:{}));return;}
+  if(route==='/home.html'){const flow=signupCodes.get(new URL(req.url,origin).searchParams.get('code'));if(flow)signupAccounts.get(flow.email).confirmed=true;res.writeHead(302,{Location:'/connexion.html'+new URL(req.url,origin).search}).end();return;}
   if(route==='/_e2e/health'){res.writeHead(200,{'Content-Type':'application/json'}).end('{"ok":true,"isolated":true}');return;}
   if(publicFiles[route]){
     const file=publicFiles[route],type=file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html';
