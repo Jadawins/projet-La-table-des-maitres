@@ -36,7 +36,18 @@ test('Sorts choisis et sorts du domaine séparés, aptitudes limitées au niveau
 test('Descriptions, personnalité et effets rendus sans interpréter du HTML utilisateur',()=>{
   const s=state();s.name='<img src=x onerror=alert(1)>';s.details={story:'<script>test</script>',languages:'Langue de test'};
   const html=renderSheet(s,c);assert.ok(html.includes('&lt;img'));assert.ok(html.includes('&lt;script&gt;test'));assert.ok(!html.includes('<script>'));
-  assert.ok(html.includes('Langue de test'));assert.ok(html.includes('Canal divin'));assert.ok(html.includes('Bannissement des morts-vivants'));assert.ok(html.includes('Composantes, effets et paramètres'));
+  assert.ok(html.includes('Langue de test'));assert.ok(html.includes('Canal divin'));assert.ok(html.includes('Bannissement des morts-vivants'));assert.ok(html.includes('Composantes : V, S'));assert.ok(!html.includes('Composantes, effets et paramètres'));
+});
+
+test('Les composantes matérielles restent lisibles et les profils utiles des sorts sont conservés',()=>{
+  const s=state(),catalogue=structuredClone(c);
+  s.prepared=['convocation_de_bete','reincarnation'];
+  catalogue.spells.find(x=>x.id==='assistance').composantes={V:false,S:true,M:'un diamant de 300 po, consommé <test>'};
+  const html=renderSheet(s,catalogue);
+  assert.ok(html.includes('Composantes : S, M (un diamant de 300 po, consommé &lt;test&gt;)'));
+  assert.ok(html.includes('Créature invoquée'));assert.ok(html.includes('CA11+rang'));
+  assert.ok(html.includes('Table des effets'));assert.ok(html.includes('Aasimar'));
+  assert.ok(!html.includes('Composantes, effets et paramètres'));
 });
 test('Construire et afficher une fiche ne modifie ni le personnage ni la BDD',()=>{
   const s=state(),before=JSON.stringify(s),data=JSON.stringify(c);renderSheet(s,c);assert.equal(JSON.stringify(s),before);assert.equal(JSON.stringify(c),data);
