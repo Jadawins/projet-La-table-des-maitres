@@ -25,10 +25,10 @@ Onze des douze sous-classes du SRD avaient été comparées à une autre publica
 
 ## Deux passages éditoriaux à remplacer
 
-Les listes d’exemples de Manifestations de l’Âme mécanique et du Don féerique du Vagabond féerique sont du texte d’ambiance. Deux propositions indépendantes remplacent ces listes par une personnalisation libre du joueur, sans ajouter de mécanique. Elles figurent, avec les valeurs précédentes et leurs empreintes, dans [subclass-srd-membership-2024.json](subclass-srd-membership-2024.json), section drafts. **Elles ne sont pas appliquées au catalogue ni en production.**
+Les listes d’exemples de Manifestations de l’Âme mécanique et du Don féerique du Vagabond féerique sont du texte d’ambiance. Deux propositions indépendantes remplacent ces listes par une personnalisation libre du joueur, sans ajouter de mécanique. Elles figurent, avec les valeurs précédentes et leurs empreintes, dans [subclass-srd-membership-2024.json](subclass-srd-membership-2024.json), section drafts (valeurs avant/après conservées). **Elles sont appliquées dans l’édition de textes du 30 octobre 2026.**
 
 ## Limite du contrôle et suite
 
 Ce classement est terminé pour les 48 sous-classes. La forme concise des résumés n’est pas une validation des droits : les textes hors SRD n’ont pas été comparés exhaustivement aux livres ni déclarés libres. Réécrire les deux listes ne règle donc pas à elle seule la diffusion des 36 sous-classes. Il reste à établir les conditions de réutilisation des textes et, si nécessaire, préparer une version de diffusion qui évite les éléments sans autorisation établie. La revue des 51 sorts signalés, des dons et des autres textes reste distincte.
 
-Aucune règle, donnée MongoDB, fiche existante ou version de production n’a changé. Les vérifications de ce lot portent sur les 48 identités, les douze titres/pages, les quatre options par classe et les 239 empreintes de texte. Une campagne de calcul ou de navigateur n’est pas relancée pour ce contrôle documentaire.
+Ce rapport conserve les empreintes de la référence avant édition ; les corrections de texte sont suivies séparément dans le journal éditorial. Les règles et les fiches existantes restent inchangées. Les vérifications de ce lot portent sur les 48 identités, les douze titres/pages, les quatre options par classe et les 239 empreintes de texte. Une campagne de calcul ou de navigateur n’est pas relancée pour ce contrôle documentaire.

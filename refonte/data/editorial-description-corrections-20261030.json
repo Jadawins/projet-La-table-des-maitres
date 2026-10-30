@@ -1,0 +1,446 @@
+{
+  "id": "phb2024-2026-10-28-textes-20261030",
+  "rulesVersion": "phb2024-2026-10-28",
+  "date": "2026-10-30",
+  "status": "frozen",
+  "baseCatalogueSha256": "b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697",
+  "scope": "Six reviewed text edits and spacing in the 349 reviewed spell/subclass fields. No mechanics change or redistribution permission inferred.",
+  "corrections": [
+    {
+      "collection": "spells",
+      "id": "coup_de_tonnerre",
+      "path": [
+        "description"
+      ],
+      "before": "Chaque créature dans une Émanation de1,50m issue de vous subit1d6 tonnerre si elle rate son JS CON. Le bruit porte à30m ; aucun recul n’est provoqué.",
+      "beforeSha256": "e966ddb2fbda153f9360992995399dfd673b7eab95c41c3c13f9ea8b18ea99b3",
+      "after": "Chaque créature dans une Émanation de 1,50 m issue de vous subit 1d6 tonnerre si elle rate son JS CON. Le bruit porte à 30 m ; aucun recul n’est provoqué.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "faux_amis",
+      "path": [
+        "description"
+      ],
+      "before": "Une créature visible à3m effectue un JS SAG : échec, Charmé. Réussite automatique pour une cible non Humanoïde, que vous combattez ou déjà visée par ce sort depuis24h. Le sort cesse si elle subit des dégâts, ou si vous effectuez une attaque, infligez des dégâts ou imposez un JS à quiconque. Elle reconnaît ensuite votre charme.",
+      "beforeSha256": "97aeffcc4af10de556fa186178f623d5b1d8f877db2472b999b8202a796b6134",
+      "after": "Une créature visible à 3 m effectue un JS SAG : échec, Charmé. Réussite automatique pour une cible non Humanoïde, que vous combattez ou déjà visée par ce sort depuis 24h. Le sort cesse si elle subit des dégâts, ou si vous effectuez une attaque, infligez des dégâts ou imposez un JS à quiconque. Elle reconnaît ensuite votre charme.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "glas",
+      "path": [
+        "description"
+      ],
+      "before": "Choisissez une créature visible à18m ; un glas s’entend à3m d’elle. Sur échec du JS SAG, elle subit1d8 nécrotique si ses PV sont au maximum, sinon1d12. Les deux dés sont des alternatives.",
+      "beforeSha256": "085437af75e40f023d6c6cc166b04910bfcdce06d8c8860a6425f3b2372f45aa",
+      "after": "Choisissez une créature visible à 18 m ; un glas s’entend à 3 m d’elle. Sur échec du JS SAG, elle subit 1d8 nécrotique si ses PV sont au maximum, sinon 1d12. Les deux dés sont des alternatives.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "mot_de_radiance",
+      "path": [
+        "description"
+      ],
+      "before": "Dans votre Émanation de1,50m, désignez les créatures que vous voyez. Chacune subit1d6 radiant si elle rate son JS CON.",
+      "beforeSha256": "5802403320291e53a35afd361ad637640e5b85c9e603649c167256c552a61f65",
+      "after": "Dans votre Émanation de 1,50 m, désignez les créatures que vous voyez. Chacune subit 1d6 radiant si elle rate son JS CON.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "voile_defensif",
+      "path": [
+        "description"
+      ],
+      "before": "Enveloppez-vous d'un voile protecteur. Chaque fois qu'une créature effectue un jet d'attaque contre vous avant la fin du sort, elle soustrait 1d4 au résultat du jet.",
+      "beforeSha256": "c66a8b8e609000fbb9bbda586769724e9aa9c4acda9d3944e3c6ae0d25c62797",
+      "after": "Pendant la durée du sort, chaque créature qui effectue un jet d’attaque contre vous retranche 1d4 au résultat de ce jet.",
+      "kind": "reviewed-prose",
+      "reason": "Use a technical summary without the introductory image of a protective veil."
+    },
+    {
+      "collection": "spells",
+      "id": "armure_d_agathys",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Les PV temporaires et les dégâts de froid augmentent chacun de5 par niveau d’emplacement au-delà du1er.",
+      "beforeSha256": "0edc21f7bb7484f6cc464933b461158bcccfad9f5d1bb9955480afa6b37608cd",
+      "after": "Les PV temporaires et les dégâts de froid augmentent chacun de 5 par niveau d’emplacement au-delà du 1er.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "armure_d_agathys",
+      "path": [
+        "description"
+      ],
+      "before": "Vous obtenez5 PV temporaires. Jusqu’à la fin du sort, toucher votre corps à corps avec un jet d’attaque inflige5 dégâts de froid à l’assaillant. Le sort cesse si vous n’avez plus aucun PV temporaire ; ceux-ci peuvent provenir d’une autre source.",
+      "beforeSha256": "5209be3632258e4bb266b17d5b337579328f989bfb1b2452275d48c0af445dfe",
+      "after": "Vous gagnez 5 PV temporaires. Pendant le sort, une créature qui vous touche avec une attaque au corps à corps subit 5 dégâts de froid. L’effet prend fin quand vous n’avez plus de PV temporaires. Les PV temporaires qui maintiennent cet effet peuvent venir d’une autre source.",
+      "kind": "reviewed-prose",
+      "reason": "Correct the awkward wording of the melee-hit trigger without changing temporary hit points, damage or the termination condition."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_tonnerre",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d6 par niveau d’emplacement au-delà du1er.",
+      "beforeSha256": "976da6354b826a179a897b5b2cd3313d3e6e3b90374cde078d03afd67a7bc3b0",
+      "after": "+1d6 par niveau d’emplacement au-delà du 1er.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_tonnerre",
+      "path": [
+        "description"
+      ],
+      "before": "Ajoutez2d6 tonnerre aux dégâts de l’attaque déclenchante. Le bruit porte à90m. Si la cible est une créature, un JS FOR raté la repousse de3m et la met À terre ; les dégâts supplémentaires ne dépendent pas de ce JS.",
+      "beforeSha256": "c84c2b8553996d83ee36f0fc9ff42168c42afe8833758e731313b9921f5fb1a7",
+      "after": "Ajoutez 2d6 tonnerre aux dégâts de l’attaque déclenchante. Le bruit porte à 90 m. Si la cible est une créature, un JS FOR raté la repousse de 3 m et la met À terre ; les dégâts supplémentaires ne dépendent pas de ce JS.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "duel_force",
+      "path": [
+        "description"
+      ],
+      "before": "Une créature visible effectue un JS SAG. Échec : Désavantage à ses attaques contre autrui et impossibilité de s’éloigner volontairement au-delà de9m de vous. Fin si vous attaquez une autre créature, lancez un sort sur un autre ennemi, si un allié blesse la cible ou si vous terminez votre tour au-delà de9m d’elle.",
+      "beforeSha256": "946978b7e908cddf512edc67e384272288f4ded6ab57c149b942d66902242a0a",
+      "after": "Une créature visible effectue un JS SAG. Échec : Désavantage à ses attaques contre autrui et impossibilité de s’éloigner volontairement au-delà de 9 m de vous. Fin si vous attaquez une autre créature, lancez un sort sur un autre ennemi, si un allié blesse la cible ou si vous terminez votre tour au-delà de 9 m d’elle.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "grele_d_epines",
+      "path": [
+        "description"
+      ],
+      "before": "La créature touchée par l’attaque et chacune de celles à1,50m d’elle effectuent un JS DEX :1d10 perforant sur échec, moitié sur réussite.",
+      "beforeSha256": "ae5b98981d974532b9ad404b9a156fae1217d44068ce3ec572bf75257528a479",
+      "after": "La créature touchée par l’attaque et chacune de celles à 1,50 m d’elle effectuent un JS DEX :1d10 perforant sur échec, moitié sur réussite.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "tentacules_de_hadar",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d6 par niveau d’emplacement au-delà du1er.",
+      "beforeSha256": "976da6354b826a179a897b5b2cd3313d3e6e3b90374cde078d03afd67a7bc3b0",
+      "after": "+1d6 par niveau d’emplacement au-delà du 1er.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "tentacules_de_hadar",
+      "path": [
+        "description"
+      ],
+      "before": "Chaque créature dans l’Émanation de3m effectue un JS FOR. Échec :2d6 nécrotiques et aucune Réaction jusqu’au début de son prochain tour. Réussite : moitié des dégâts seulement.",
+      "beforeSha256": "daa695c4c6fc22be28963f8223d998d58e0acc2ecfa3e3a61bc8600f3e351539",
+      "after": "Chaque créature dans l’Émanation de 3 m effectue un JS FOR. Échec :2d6 nécrotiques et aucune Réaction jusqu’au début de son prochain tour. Réussite : moitié des dégâts seulement.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "trait_ensorcele",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Seuls les dégâts initiaux augmentent de1d12 par niveau d’emplacement au-delà du1er.",
+      "beforeSha256": "09808e6bbc001293289d4d24a87f27e6ce337eae6c4e03a8512b1209e5fb7ddd",
+      "after": "Seuls les dégâts initiaux augmentent de 1d12 par niveau d’emplacement au-delà du 1er.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "trait_ensorcele",
+      "path": [
+        "description"
+      ],
+      "before": "Attaque de sort à distance contre une créature :2d12 foudre sur touche. À chaque tour suivant, une action Bonus peut lui infliger1d12 foudre sans attaque, même si la première a échoué. Le sort cesse si la cible sort de portée ou bénéficie d’un Abri total.",
+      "beforeSha256": "0c1833ca47805ccf1945f8cd52ac139bc2c83fba75056ac49b7455869f1405bf",
+      "after": "Attaque de sort à distance contre une créature :2d12 foudre sur touche. À chaque tour suivant, une action Bonus peut lui infliger 1d12 foudre sans attaque, même si la première a échoué. Le sort cesse si la cible sort de portée ou bénéficie d’un Abri total.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_bete",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : Air, Terre ou Eau. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "beforeSha256": "7cd46c57648ac5f2f444aefe4dfdc9270ee9a29f7dbe55076bd37c35c6701769",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : Air, Terre ou Eau. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_bete",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Bête P, Neutre. FOR18 DEX11 CON16 INT4 SAG14 CHA5. CA11+rang ; PV Air20, Terre/Eau30, +5 par rang au-delà de2. Vitesse9m ; Terre escalade9m, Air vol18m, Eau nage9m. Vision nocturne18m, Perception passive12 ; comprend vos langues ; BM identique au vôtre. Air : pas d’attaque d’opportunité provoquée en quittant une allonge en vol. Terre/Eau : Avantage aux attaques si un allié non Neutralisé est à1,50m de la cible. Eau : respire seulement sous l’eau. Nombre d’attaques = moitié du rang arrondie à l’inférieur. Déchirement : votre bonus d’attaque de sort, allonge1,50m, 1d8+4+rang perforants.",
+      "beforeSha256": "056f015965b9033ffc82d99d391c8db9b014195e6a5c0cf3ae242600b2b13e10",
+      "after": "Bête P, Neutre. FOR 18 DEX 11 CON 16 INT 4 SAG 14 CHA 5. CA 11+rang ; PV Air 20, Terre/Eau 30, +5 par rang au-delà de 2. Vitesse 9 m ; Terre escalade 9 m, Air vol 18 m, Eau nage 9 m. Vision nocturne 18 m, Perception passive 12 ; comprend vos langues ; BM identique au vôtre. Air : pas d’attaque d’opportunité provoquée en quittant une allonge en vol. Terre/Eau : Avantage aux attaques si un allié non Neutralisé est à 1,50 m de la cible. Eau : respire seulement sous l’eau. Nombre d’attaques = moitié du rang arrondie à l’inférieur. Déchirement : votre bonus d’attaque de sort, allonge 1,50 m, 1d8+4+rang perforants.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fee",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : furibonde, rieuse ou espiègle. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "beforeSha256": "4847e61e3afc0c00a17c8ea5bfa78156262c69d5ddc6f47345692b919aec33c2",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : furibonde, rieuse ou espiègle. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fee",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Fée P, Neutre. FOR13 DEX16 CON14 INT14 SAG11 CHA16. CA12+rang ; PV30+10 par rang au-delà de3. Marche/vol9m ; Immunité Charmé ; Vision nocturne18m, Perception passive10 ; sylvestre et comprend vos langues ; votre BM. Attaques = moitié du rang arrondie à l’inférieur ; lame : votre bonus d’attaque, allonge1,50m, 2d6+3+rang Force. Action Bonus : téléportation9m vers espace visible libre puis effet d’humeur. Furibonde : Avantage à sa prochaine attaque avant fin de tour. Rieuse : cible visible à3m, JS SAG contre votre DD ; échec, Charmée par vous et l’esprit1minute ou jusqu’à des dégâts. Espiègle : cube3m de Ténèbres magiques à1,50m maximum, jusqu’à fin du prochain tour de l’esprit.",
+      "beforeSha256": "bc5c2f350bc3d913981c6c50570eb4ca4b6d80cd065190d2e7f4d935108354bb",
+      "after": "Fée P, Neutre. FOR 13 DEX 16 CON 14 INT 14 SAG 11 CHA 16. CA 12+rang ; PV 30+10 par rang au-delà de 3. Marche/vol 9 m ; Immunité Charmé ; Vision nocturne 18 m, Perception passive 10 ; sylvestre et comprend vos langues ; votre BM. Attaques = moitié du rang arrondie à l’inférieur ; lame : votre bonus d’attaque, allonge 1,50 m, 2d6+3+rang Force. Action Bonus : téléportation 9 m vers espace visible libre puis effet d’humeur. Furibonde : Avantage à sa prochaine attaque avant fin de tour. Rieuse : cible visible à 3 m, JS SAG contre votre DD ; échec, Charmée par vous et l’esprit 1 minute ou jusqu’à des dégâts. Espiègle : cube 3 m de Ténèbres magiques à 1,50 m maximum, jusqu’à fin du prochain tour de l’esprit.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_aberration",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : tyrannœillié, flagelleur mental ou slaad. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "beforeSha256": "df2968b2df2cc4ef5efacc158fd5e1d56143ff16532065fd967c2a0e32c7fc36",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : tyrannœillié, flagelleur mental ou slaad. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_aberration",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Aberration M, Neutre. FOR16 DEX10 CON15 INT16 SAG10 CHA6. CA11+rang ; PV40+10 par rang au-delà de4 ; vitesse9m, tyrannœillié vol stationnaire9m. Immunité psychique ; Vision nocturne18m ; Perception passive10 ; profond et vos langues comprises ; votre BM. Attaques = moitié du rang arrondie à l’inférieur, votre bonus d’attaque. Slaad : griffe allonge1,50m,1d10+3+rang tranchants, cible sans récupération de PV jusqu’au tour suivant de l’esprit ; régénère5PV en début de tour s’il reste vivant. Tyrannœillié : rayon45m,1d8+3+rang psychiques. Flagelleur : impact allonge1,50m,1d8+3+rang psychiques ; début de tour si non Neutralisé, chaque autre créature sauf vous à1,50m fait JS SAG votre DD, échec2d6 psychiques.",
+      "beforeSha256": "80bba8a9e6c5539730335f89955b9dcaccce91880bed1058e52827605d0dc489",
+      "after": "Aberration M, Neutre. FOR 16 DEX 10 CON 15 INT 16 SAG 10 CHA 6. CA 11+rang ; PV 40+10 par rang au-delà de 4 ; vitesse 9 m, tyrannœillié vol stationnaire 9 m. Immunité psychique ; Vision nocturne 18 m ; Perception passive 10 ; profond et vos langues comprises ; votre BM. Attaques = moitié du rang arrondie à l’inférieur, votre bonus d’attaque. Slaad : griffe allonge 1,50 m,1d10+3+rang tranchants, cible sans récupération de PV jusqu’au tour suivant de l’esprit ; régénère 5 PV en début de tour s’il reste vivant. Tyrannœillié : rayon 45 m,1d8+3+rang psychiques. Flagelleur : impact allonge 1,50 m,1d8+3+rang psychiques ; début de tour si non Neutralisé, chaque autre créature sauf vous à 1,50 m fait JS SAG votre DD, échec 2d6 psychiques.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_artificiel",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : argile, métal ou pierre. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "beforeSha256": "85c517363b6a76d6241e3b3e9ecd6e248d996a7657a1e4a3252902b44768617e",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez sa forme : argile, métal ou pierre. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Les formules utilisent le rang de l’emplacement, pas le niveau du personnage.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_artificiel",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Artificiel M, Neutre. FOR18 DEX10 CON18 INT14 SAG11 CHA5. CA13+rang ; PV40+15 par rang au-delà de4 ; vitesse9m. Résistance poison ; Immunités Charmé, Épuisement, Effrayé, Paralysé, Empoisonné. Vision nocturne18m, Perception passive10 ; comprend vos langues ; votre BM. Attaques = moitié du rang arrondie à l’inférieur ; coup : votre bonus d’attaque, allonge1,50m,1d8+4+rang contondants. Métal : ennemi qui touche au corps à corps ou commence son tour agrippé à l’esprit subit1d10 feu. Pierre : début de tour d’une créature visible à3m, JS SAG votre DD ; échec, vitesse moitié et aucune attaque d’opportunité jusqu’au début de son prochain tour. Argile, Réaction après dégâts d’une créature : coup contre elle si possible, sinon demi-vitesse vers elle sans opportunité.",
+      "beforeSha256": "4e77995fc88232c073f90e88573337c454ca773194b62adcf26659785c7b02b2",
+      "after": "Artificiel M, Neutre. FOR 18 DEX 10 CON 18 INT 14 SAG 11 CHA 5. CA 13+rang ; PV 40+15 par rang au-delà de 4 ; vitesse 9 m. Résistance poison ; Immunités Charmé, Épuisement, Effrayé, Paralysé, Empoisonné. Vision nocturne 18 m, Perception passive 10 ; comprend vos langues ; votre BM. Attaques = moitié du rang arrondie à l’inférieur ; coup : votre bonus d’attaque, allonge 1,50 m,1d8+4+rang contondants. Métal : ennemi qui touche au corps à corps ou commence son tour agrippé à l’esprit subit 1d10 feu. Pierre : début de tour d’une créature visible à 3 m, JS SAG votre DD ; échec, vitesse moitié et aucune attaque d’opportunité jusqu’au début de son prochain tour. Argile, Réaction après dégâts d’une créature : coup contre elle si possible, sinon demi-vitesse vers elle sans opportunité.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_elementaire",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : Air, Terre, Feu ou Eau. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "beforeSha256": "e5629b57c978826f5996a09326eb460303bdb1f49ed6c341faed33a7aac3d81e",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : Air, Terre, Feu ou Eau. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_elementaire",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Élémentaire M, Neutre. FOR18 DEX15 CON17 INT4 SAG10 CHA16. CA11+rang ; PV50+10 par rang au-delà de4 ; vitesse12m ; Terre fouissement12m, Air vol stationnaire12m, Eau nage12m. Résistances : Eau acide ; Air foudre/tonnerre ; Terre perforant/tranchant. Immunité poison pour tous, feu pour Feu. Immunités Épuisement, Paralysé, Pétrifié, Empoisonné. Vision nocturne18m, Perception passive10 ; primordial et vos langues comprises ; votre BM. Air/Feu/Eau : passage dans2,5cm sans Terrain difficile. Attaques = moitié du rang arrondie à l’inférieur ; votre bonus d’attaque, allonge1,50m,1d10+4+rang, type Terre contondant, Eau froid, Air foudre, Feu feu.",
+      "beforeSha256": "dce1e07bb4ac894d4eaab6e5c97b3136b688a155593172b14ecbf178f2899e60",
+      "after": "Élémentaire M, Neutre. FOR 18 DEX 15 CON 17 INT 4 SAG 10 CHA 16. CA 11+rang ; PV 50+10 par rang au-delà de 4 ; vitesse 12 m ; Terre fouissement 12 m, Air vol stationnaire 12 m, Eau nage 12 m. Résistances : Eau acide ; Air foudre/tonnerre ; Terre perforant/tranchant. Immunité poison pour tous, feu pour Feu. Immunités Épuisement, Paralysé, Pétrifié, Empoisonné. Vision nocturne 18 m, Perception passive 10 ; primordial et vos langues comprises ; votre BM. Air/Feu/Eau : passage dans 2,5 cm sans Terrain difficile. Attaques = moitié du rang arrondie à l’inférieur ; votre bonus d’attaque, allonge 1,50 m,1d10+4+rang, type Terre contondant, Eau froid, Air foudre, Feu feu.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_celeste",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : vengeur ou protecteur. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "beforeSha256": "9740d38b19b3d57267ffa14cde51daaee47431961c4891107120dd53da440714",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : vengeur ou protecteur. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_celeste",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Céleste G, Neutre. FOR16 DEX14 CON16 INT10 SAG14 CHA16. CA11+rang, +2 protecteur ; PV40+10 par rang au-delà de5. Marche9m, vol12m. Résistance radiante ; Immunités Charmé/Effrayé ; Vision nocturne18m, Perception passive12 ; céleste et vos langues comprises ; votre BM. Attaques = moitié du rang arrondie à l’inférieur ; votre bonus d’attaque. Vengeur : arc180m,2d6+2+rang radiants. Protecteur : masse allonge1,50m,1d10+3+rang radiants ; lui-même ou une autre créature visible à3m de la cible reçoit1d10 PV temporaires. Soins1/jour : contact d’une autre créature,2d8+rang PV.",
+      "beforeSha256": "201314b63fb9e9020d70c0ac86b02cec9699031b8f173eb61a9f0e8df6f185d1",
+      "after": "Céleste G, Neutre. FOR 16 DEX 14 CON 16 INT 10 SAG 14 CHA 16. CA 11+rang, +2 protecteur ; PV 40+10 par rang au-delà de 5. Marche 9 m, vol 12 m. Résistance radiante ; Immunités Charmé/Effrayé ; Vision nocturne 18 m, Perception passive 12 ; céleste et vos langues comprises ; votre BM. Attaques = moitié du rang arrondie à l’inférieur ; votre bonus d’attaque. Vengeur : arc 180 m,2d6+2+rang radiants. Protecteur : masse allonge 1,50 m,1d10+3+rang radiants ; lui-même ou une autre créature visible à 3 m de la cible reçoit 1d10 PV temporaires. Soins 1/jour : contact d’une autre créature,2d8+rang PV.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_mort_vivant",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : fantomatique, putride ou squelettique. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "beforeSha256": "be812975592cbcc4a6ca0959fe408af7ed3536aa6226de86742ca96a7fba1a84",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : fantomatique, putride ou squelettique. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_mort_vivant",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Mort-vivant M, Neutre. FOR12 DEX16 CON15 INT4 SAG10 CHA9. CA11+rang ; PV30 fantôme/putride ou20 squelette, +10 par rang au-delà de3. Marche9m ; fantôme vol stationnaire12m. Immunités nécrotique, poison, Épuisement, Effrayé, Paralysé, Empoisonné. Vision nocturne18m, Perception passive10 ; comprend vos langues ; votre BM. Attaques = moitié du rang arrondie à l’inférieur, votre bonus d’attaque. Fantôme : contact1,50m,1d8+3+rang nécrotiques et Effrayé jusqu’à fin du prochain tour cible ; traverse objets/créatures en Terrain difficile, finit dedans : expulsé,1d10 Force par1,50m. Squelette : trait45m,2d4+3+rang nécrotiques. Putride : griffe1,50m,1d6+3+rang tranchants ; cible déjà Empoisonnée : Paralysée jusqu’à fin de son prochain tour. Aura putride : début de tour à1,50m, sauf vous, JS CON votre DD ; échec Empoisonné jusqu’au prochain tour cible.",
+      "beforeSha256": "079454e98fdac7c20d9775dafb228276c4a46c9083365c3bfb4eeaf87a2f8150",
+      "after": "Mort-vivant M, Neutre. FOR 12 DEX 16 CON 15 INT 4 SAG 10 CHA 9. CA 11+rang ; PV 30 fantôme/putride ou 20 squelette, +10 par rang au-delà de 3. Marche 9 m ; fantôme vol stationnaire 12 m. Immunités nécrotique, poison, Épuisement, Effrayé, Paralysé, Empoisonné. Vision nocturne 18 m, Perception passive 10 ; comprend vos langues ; votre BM. Attaques = moitié du rang arrondie à l’inférieur, votre bonus d’attaque. Fantôme : contact 1,50 m,1d8+3+rang nécrotiques et Effrayé jusqu’à fin du prochain tour cible ; traverse objets/créatures en Terrain difficile, finit dedans : expulsé,1d10 Force par 1,50 m. Squelette : trait 45 m,2d4+3+rang nécrotiques. Putride : griffe 1,50 m,1d6+3+rang tranchants ; cible déjà Empoisonnée : Paralysée jusqu’à fin de son prochain tour. Aura putride : début de tour à 1,50 m, sauf vous, JS CON votre DD ; échec Empoisonné jusqu’au prochain tour cible.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "frappe_du_vent_d_acier",
+      "path": [
+        "description"
+      ],
+      "before": "Brandissez l'arme utilisée comme composante, puis disparaissez et réapparaissez comme le vent. Choisissez jusqu'à 5 créatures visibles à portée. Effectuez une attaque de sort au corps à corps séparée contre chacune : si touche, 6d10 dégâts de force. À la fin, vous vous téléportez dans un espace inoccupé visible dans un rayon de 1,50 m d'une des cibles.",
+      "beforeSha256": "1898cd35dfaa3450fce2e2c1d522417d97b55df33126a970b5f59f4c02dd30fa",
+      "after": "Brandissez l’arme servant de composante. Désignez jusqu’à 5 créatures visibles à portée et résolvez une attaque de sort au corps à corps contre chacune. Chaque touche inflige 6d10 dégâts de force. Après ces attaques, vous vous téléportez vers un espace visible et inoccupé à 1,50 m ou moins d’une des cibles.",
+      "kind": "reviewed-prose",
+      "reason": "Replace the narrative introduction with technical instructions; retain the weapon component gesture, targets, attacks, damage and final placement."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fielon",
+      "path": [
+        "description"
+      ],
+      "before": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : démon, diable ou yugoloth. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à0PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "beforeSha256": "983a209733d872c15c505c473bf5a4c9487e8f0ee7980369c7d001420f45b9ab",
+      "after": "Un esprit apparaît dans un espace libre visible à portée. Choisissez : démon, diable ou yugoloth. Allié, il joue immédiatement après vous à la même initiative. Il obéit à vos ordres verbaux sans action de votre part ; sans ordre, il Esquive et évite le danger. Il disparaît à 0 PV ou à la fin du sort. Le rang dans son profil est celui de l’emplacement.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fielon",
+      "path": [
+        "invocation",
+        "description"
+      ],
+      "before": "Fiélon G, Neutre. FOR13 DEX16 CON15 INT10 SAG10 CHA16. CA12+rang ; PV démon50/diable40/yugoloth60, +15 par rang au-delà de6. Marche12m ; démon escalade12m ; diable vol18m. Résistance feu ; Immunités poison/Empoisonné ; Avantage JS contre magie. Vision nocturne18m, Perception passive10 ; abyssal/infernal, télépathie18m ; votre BM. Attaques = moitié du rang arrondie à l’inférieur, votre bonus d’attaque. Démon : morsure1,50m,1d12+3+rang nécrotiques ; à0PV ou fin du sort explosion3m, JS DEX votre DD,2d10+rang feu moitié sur réussite. Diable : ténèbres magiques traversées par vision nocturne ; frappe1,50m ou45m,2d6+3+rang feu. Yugoloth : griffes1,50m,1d8+3+rang tranchants ; après touche ou échec, téléportation9m vers espace visible libre.",
+      "beforeSha256": "dfee2fe541ed2386202948c01fc7b213899d02be2c581c6e7706db9124d269cc",
+      "after": "Fiélon G, Neutre. FOR 13 DEX 16 CON 15 INT 10 SAG 10 CHA 16. CA 12+rang ; PV démon 50/diable 40/yugoloth 60, +15 par rang au-delà de 6. Marche 12 m ; démon escalade 12 m ; diable vol 18 m. Résistance feu ; Immunités poison/Empoisonné ; Avantage JS contre magie. Vision nocturne 18 m, Perception passive 10 ; abyssal/infernal, télépathie 18 m ; votre BM. Attaques = moitié du rang arrondie à l’inférieur, votre bonus d’attaque. Démon : morsure 1,50 m,1d12+3+rang nécrotiques ; à 0 PV ou fin du sort explosion 3 m, JS DEX votre DD,2d10+rang feu moitié sur réussite. Diable : ténèbres magiques traversées par vision nocturne ; frappe 1,50 m ou 45 m,2d6+3+rang feu. Yugoloth : griffes 1,50 m,1d8+3+rang tranchants ; après touche ou échec, téléportation 9 m vers espace visible libre.",
+      "kind": "spacing-only",
+      "reason": "Add missing spaces around numbers and units without changing text tokens."
+    },
+    {
+      "collection": "spells",
+      "id": "mind_sliver",
+      "path": [
+        "description"
+      ],
+      "before": "Une créature visible à portée effectue un JS INT. Échec : 1d6 psychiques et retranche 1d4 à sa prochaine sauvegarde avant la fin de votre prochain tour. Nom anglais conservé pour éviter une traduction officielle non vérifiée.",
+      "beforeSha256": "86041902fa18c0a9bf17e0dfca99e4878b29d27860b1f388c03c3d7c269b7496",
+      "after": "Une créature visible à portée effectue un JS INT. Échec : 1d6 psychiques et retranche 1d4 à sa prochaine sauvegarde avant la fin de votre prochain tour.",
+      "kind": "reviewed-prose",
+      "reason": "Remove the internal note about the unverified French title from the player-facing description. Preserve it in documentary metadata instead."
+    },
+    {
+      "collection": "subclasses",
+      "id": "ensorceleur_sorcellerie_mecanique",
+      "path": [
+        "niveaux",
+        "3",
+        "capacites",
+        "1",
+        "description"
+      ],
+      "before": "Aspect visuel ou sonore choisi librement : rouages spectraux, horloge dans les yeux, éclat cuivré, équations flottantes, focaliseur mécanique miniature, ou cliquetis audible pour les créatures affectées. Aucun jet automatique.",
+      "beforeSha256": "700b42559a769e7647598f6adc0610e31aa5f591b73ae6a62deff2f1b9f3ebb5",
+      "after": "Décidez de l’apparence et des sons qui accompagnent votre magie. Cette personnalisation est descriptive : elle n’ajoute aucun effet de jeu et ne déclenche aucun lancer de dés.",
+      "kind": "reviewed-prose",
+      "reason": "Replace the source-specific list of cosmetic manifestations with an open player choice."
+    },
+    {
+      "collection": "subclasses",
+      "id": "rodeur_vagabond_feerique",
+      "path": [
+        "niveaux",
+        "3",
+        "capacites",
+        "2",
+        "description"
+      ],
+      "before": "Signe féerique d’apparence au choix : papillons illusoires au repos, fleurs dans les cheveux à l’aube, parfum d’épice agréable, ombre dansante à l’abri des regards, bois ou cornes, ou couleurs des cheveux et de la peau changeant à l’aube. Aucun jet automatique.",
+      "beforeSha256": "0697394091627652ffa7125c4b1d769efd65961dc0f04475b301935bc5eb8d09",
+      "after": "Imaginez un signe visible ou perceptible de votre lien féerique et décrivez-le à votre table. Il sert à personnaliser le personnage, sans effet mécanique ni lancer de dés.",
+      "kind": "reviewed-prose",
+      "reason": "Replace the source-specific list of fairy appearance examples with an open player choice."
+    }
+  ]
+}

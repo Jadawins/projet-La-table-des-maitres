@@ -13,8 +13,9 @@ const pdf=path.join(output,'SRD-fr-5.2.1.pdf'),textFile=path.join(output,'SRD-fr
 const hash=value=>createHash('sha256').update(value).digest('hex');
 const reference=read('audit/spell-reference-2024.json');assert.equal(hash(fs.readFileSync(pdf)),reference.sourcePdfSha256,'Official PDF must match the frozen documentary reference');
 const catalogue=buildCatalogue(read('tests/fixtures/rules-2024.json'));assert.equal(hash(JSON.stringify(catalogue)),read('access/rules-release.json').sha256,'Inventory must match production catalogue');
-const subclassMembership=read('audit/subclass-srd-membership-2024.json');assert.equal(subclassMembership.catalogueSha256,read('access/rules-release.json').sha256,'Subclass membership must match the inventoried catalogue');assert.equal(subclassMembership.pdfSha256,reference.sourcePdfSha256,'Subclass membership must use the same SRD');
-const spellMembership=read('audit/spell-srd-membership-2024.json');assert.equal(spellMembership.catalogueSha256,read('access/rules-release.json').sha256,'Spell membership must match the inventoried catalogue');assert.equal(spellMembership.pdfSha256,reference.sourcePdfSha256,'Spell membership must use the same SRD');
+const editorial=read('data/editorial-description-corrections-20261030.json');
+const subclassMembership=read('audit/subclass-srd-membership-2024.json');assert.equal(subclassMembership.catalogueSha256,editorial.baseCatalogueSha256,'Subclass membership must match the frozen mechanical baseline');assert.equal(subclassMembership.pdfSha256,reference.sourcePdfSha256,'Subclass membership must use the same SRD');
+const spellMembership=read('audit/spell-srd-membership-2024.json');assert.equal(spellMembership.catalogueSha256,editorial.baseCatalogueSha256,'Spell membership must match the frozen mechanical baseline');assert.equal(spellMembership.pdfSha256,reference.sourcePdfSha256,'Spell membership must use the same SRD');
 const revision=read('data/rules-2024-corrections.json'),ledger=read('audit/rules-2024-ledger.json').entries;
 const norm=value=>String(value).replace(/(\p{L})[-\u00ad]\s*\r?\n\s*(\p{L})/gu,'$1$2').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 const tokenPages=fs.readFileSync(textFile,'utf8').split('\f').filter(p=>p.trim()).map(p=>norm(p).split(' '));
@@ -48,7 +49,9 @@ for(const entry of rows){
     const changes=corrections.flatMap(c=>c.changes.filter(change=>prefix(change.path,path)||prefix(path,change.path)).map(change=>({source:c.source,path:change.path}))).sort((a,b)=>b.path.length-a.path.length);
     const direct=changes[0]?.source||addition?.source||item.source_url||null;
     const provenance=direct?/srd/i.test(direct)?'documented-srd-field':'documented-other-field':comparison?/srd/i.test(comparison.source||'')?'srd-comparison-only':'other-comparison-only':'not-traced';
-    return {path:path.join('.'),characters:text.length,sha256:hash(text),provenance,source:direct,comparisonSource:comparison?.source||null,similarity:similarity(text)};
+    const edit=editorial.corrections.find(c=>c.collection===entry.type&&c.id===entry.id&&c.path.join('.')===path.join('.'));
+    if(edit)assert.equal(text,edit.after,'Inventoried editorial text must match the approved correction');
+    return {path:path.join('.'),characters:text.length,sha256:hash(text),provenance,source:direct,comparisonSource:comparison?.source||null,...(edit?{editorialChange:{edition:editorial.id,kind:edit.kind,beforeSha256:edit.beforeSha256}}:{}),similarity:similarity(text)};
   });
   const subclass=entry.type==='subclasses'?subclassMembership.entries.find(e=>e.id===entry.id):null;
   if(entry.type==='subclasses')assert(subclass,'Subclass membership must cover '+entry.id);
@@ -64,5 +67,6 @@ const summary={catalogueSha256:read('access/rules-release.json').sha256,mainEntr
 summary.spellMembership=count(spell,e=>e.reviewGroup);
 summary.confirmedSpellMembership=count(spell,e=>e.srdMembership);
 summary.subclassMembership=count(inventory.filter(e=>e.type==='subclasses'),e=>e.srdMembership);
+summary.editorialEdition={id:editorial.id,changedFields:editorial.corrections.length,proseEdits:editorial.corrections.filter(c=>c.kind==='reviewed-prose').length,spacingEdits:editorial.corrections.filter(c=>c.kind==='spacing-only').length};
 const report={createdAt:new Date().toISOString(),scope:'Read-only text provenance and normalized comparison; no application/rule/database changes. Main catalogue and additional profiles inventoried. Supplemental JSON text inventoried separately. UI/generated labels and source books outside the supplied references are not exhaustively compared.',method:{reference:'Official FR SRD 5.2.1',pdfSha256:hash(fs.readFileSync(pdf)),pages:tokenPages.length,comparison:'PDF extracted in column order using PDFium. Case/accents/punctuation normalized; at least 12 consecutive matching words. This is a documentary similarity signal, not a plagiarism finding or a permission verdict. A source used to check a mechanic does not establish the origin of unchanged legacy prose. A paraphrase alone does not establish lawful reuse.'},summary,entries:inventory,supplements:extras};
 fs.writeFileSync(path.join(output,'inventory.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(summary,null,2));

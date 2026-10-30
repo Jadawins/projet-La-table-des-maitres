@@ -35,3 +35,21 @@ test('Un contenu concurrent différent ne remplace pas une version existante',as
   const changed=structuredClone(x.catalogue);changed.spells[0].description='nouveau contenu';
   await assert.rejects(importRulesCatalogue(x.db,changed,{...x.release,sha256:catalogueHash(changed)}),/incohérente/);assert.equal(x.writes(),1);
 });
+
+test('Une nouvelle édition conserve les règles des personnages et ne remplace pas le catalogue précédent',async()=>{
+  const x=setup();await importRulesCatalogue(x.db,x.catalogue,x.release);
+  const updated=structuredClone(x.catalogue),catalogueId=x.release.id+'-textes';
+  updated.spells[0].description='Résumé corrigé';updated.provenance.editorialRevision={id:catalogueId,status:'frozen',rulesVersion:x.release.id};
+  const release={...x.release,catalogueId,sha256:catalogueHash(updated)};
+  await importRulesCatalogue(x.db,updated,release);assert.equal(x.writes(),2);
+  assert.deepEqual((await loadRulesCatalogue(x.db,x.release)).catalogue,x.catalogue);
+  assert.deepEqual((await loadRulesCatalogue(x.db,release)).catalogue,updated);
+  assert.equal((await importRulesCatalogue(x.db,updated,release)).created,false);assert.equal(x.writes(),2);
+});
+
+test('Une édition incohérente ou un identifiant dangereux est refusé avant toute écriture',async()=>{
+  const x=setup();
+  await assert.rejects(importRulesCatalogue(x.db,x.catalogue,{...x.release,catalogueId:x.release.id+'-textes'}),/Édition/);
+  await assert.rejects(importRulesCatalogue(x.db,x.catalogue,{...x.release,catalogueId:'../escape'}),/invalide/);
+  assert.equal(x.writes(),0);
+});

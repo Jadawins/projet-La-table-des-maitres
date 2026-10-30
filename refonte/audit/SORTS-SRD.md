@@ -1,6 +1,6 @@
 # Sorts : appartenance au SRD et revue des 51 textes signalés
 
-Contrôle du 30 octobre 2026 sur le catalogue publié. **339 sorts figurent dans le SRD français 5.2.1 ; les 51 autres n’y figurent pas.** Le contrôle des noms et des 21 alias existants n’a pas révélé de faux manquant supplémentaire. Les 339 marqueurs de début de fiche dans le chapitre des sorts concordent avec les 339 fiches indexées ; chaque titre est retrouvé à la page annoncée du [PDF officiel](https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf).
+Contrôle du 30 octobre 2026 sur la référence avant édition de textes. **339 sorts figurent dans le SRD français 5.2.1 ; les 51 autres n’y figurent pas.** Le contrôle des noms et des 21 alias existants n’a pas révélé de faux manquant supplémentaire. Les 339 marqueurs de début de fiche dans le chapitre des sorts concordent avec les 339 fiches indexées ; chaque titre est retrouvé à la page annoncée du [PDF officiel](https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf).
 
 ## Lecture des descriptions
 
@@ -8,14 +8,14 @@ Les **110 champs textuels** des 51 sorts ont été parcourus : 51 descriptions p
 
 Pour 92 champs, une correction, un ajout ou une source explicite documente la référence. Pour 18, seule la référence de comparaison de l’entrée est connue : leur origine rédactionnelle n’est pas établie. Aucun de ces nombres ne prouve une autorisation. Les pages Roll20 échantillonnées renvoient un statut HTTP 200 mais présentent une invitation de connexion/déblocage : leur présence en ligne ne rend pas leur contenu libre. Les livres hors SRD ne sont pas comparés exhaustivement dans ce lot.
 
-## Corrections éditoriales préparées
+## Corrections éditoriales appliquées
 
 - **Frappe du vent d’acier** : remplacer l’introduction d’ambiance par une consigne technique, en conservant geste de composante, cibles, attaques, dégâts et téléportation.
 - **Mind Sliver** : retirer de la description joueur la note interne sur le nom français non vérifié ; la conserver dans l’audit.
 - **Voile défensif** : ramener la phrase d’introduction à l’effet sur le jet d’attaque.
 - **Armure d’Agathys** : corriger la formulation du déclencheur « attaque au corps à corps », sans changer PV temporaires, dégâts ou condition de fin.
 
-Les quatre valeurs avant/après sont dans [spell-srd-membership-2024.json](spell-srd-membership-2024.json), section drafts. Leurs valeurs numériques sont contrôlées à l’identique et les effets relus. **Elles ne sont pas appliquées au catalogue ni en production.** Ces retouches ne valent pas autorisation de redistribution des sorts hors SRD.
+Les quatre valeurs avant/après sont dans [spell-srd-membership-2024.json](spell-srd-membership-2024.json), section drafts. Leurs valeurs numériques sont contrôlées à l’identique et les effets relus. **Elles sont appliquées dans l’édition de textes du 30 octobre 2026.** Ces retouches ne valent pas autorisation de redistribution des sorts hors SRD.
 
 ## Liste complète des 51 sorts hors SRD 5.2.1
 
@@ -79,4 +79,4 @@ Les noms anglais identifient les sorts malgré les libellés historiques du site
 
 Le classement et la lecture des textes actuels de ces 51 entrées sont terminés. Leurs droits de redistribution restent **non établis** : une traduction, un résumé ou une reformulation n’est pas automatiquement libre. Les profils convoqués, composantes et noms liés au contenu hors SRD restent dans ce périmètre. Aucun texte n’est déclaré exempt de reprise sur la seule base d’une comparaison avec le SRD français.
 
-Les quatre propositions peuvent rejoindre les deux propositions RP des sous-classes dans un lot éditorial distinct. La vérification des dons, historiques et autres éléments reste à faire ; l’inventaire principal conserve cette distinction. Aucune règle, valeur de calcul, donnée MongoDB, fiche existante ou version publiée n’est modifiée. Les contrôles de ce lot vérifient le PDF, les 339 titres et identités SRD, les 390 identifiants, les 110 empreintes et les signatures numériques des quatre propositions. Aucune campagne de calcul/navigateur n’est relancée pour un contrôle documentaire.
+Les quatre retouches rejoignent les deux retouches RP des sous-classes dans l’édition de textes du 30 octobre 2026. La vérification des dons, historiques et autres éléments reste à faire ; l’inventaire principal conserve cette distinction. Le présent rapport conserve les empreintes avant édition. Le journal éditorial trace les textes appliqués ; les valeurs de calcul et les fiches existantes restent inchangées. Les contrôles de ce lot vérifient le PDF, les 339 titres et identités SRD, les 390 identifiants, les 110 empreintes et les signatures numériques des quatre propositions. Aucune campagne de calcul/navigateur n’est relancée pour un contrôle documentaire.

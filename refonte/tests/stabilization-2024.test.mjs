@@ -43,7 +43,7 @@ test('Glas conserve le bon type de dé pour chaque branche aux niveaux5/11/17',(
 
 test('Les huit convocations ont un profil utilisable et aucune attaque fictive du lanceur',()=>{
   const ids=['convocation_de_bete','convocation_de_fee','convocation_d_aberration','convocation_d_artificiel','convocation_de_elementaire','convocation_de_celeste','convocation_de_mort_vivant','convocation_de_fielon'];
-  for(const id of ids){const s=spell(id);assert.equal(s.attaque,null,id);assert.match(s.invocation.description,/CA\d+\+rang/,id);assert.match(s.invocation.source,/expansion=32231/);}
+  for(const id of ids){const s=spell(id);assert.equal(s.attaque,null,id);assert.match(s.invocation.description,/CA\s*\d+\+rang/,id);assert.match(s.invocation.source,/expansion=32231/);}
 });
 
 test('Le catalogue inclut les absences confirmées et les paramètres d’équipement corrigés',()=>{

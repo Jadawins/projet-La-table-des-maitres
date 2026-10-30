@@ -23,3 +23,9 @@ Les contrôles réels de persistance écrivent uniquement dans `refonte_controle
 ## Git et tests
 
 Git conserve le code, les migrations, le manifeste de version et les références nécessaires aux tests. `tests/fixtures/rules-2024.json` est la référence historique des règles pour la régression, sans comptes, personnages ou identifiants MongoDB ; elle n'alimente jamais la production et n'est pas déployée. Les comptes, personnages, identifiants de connexion, sauvegardes et rapports de données de production restent hors Git. Le relevé utilisé auparavant en production sous `data/rules-mongodb.json` a été retiré de ce rôle et de ce chemin.
+
+## Éditions de textes sans migration des personnages
+
+Le manifeste peut porter un `catalogueId` distinct de son `id` de règles. MongoDB conserve alors l’édition dans un nouveau document `_id=catalogueId` et garde le document précédent intact. Le chargement vérifie l’empreinte complète, la version de règles figée et la concordance de `provenance.editorialRevision`. Les personnages conservent `phb2024-2026-10-28` : un changement de rédaction seul ne demande pas de copie ni de remise à niveau de fiche. Une sauvegarde et une comparaison avec le catalogue réellement présent en base précèdent l’import.
+
+L’édition `phb2024-2026-10-28-textes-20261030` contient six retouches de rédaction et 29 corrections d’espacement. Le journal dans `data/editorial-description-corrections-20261030.json` conserve chaque valeur avant/après. Le SRD, les références et les statuts de droits ne sont pas révisés par cette édition.

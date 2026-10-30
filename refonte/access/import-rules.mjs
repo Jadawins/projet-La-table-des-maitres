@@ -11,5 +11,5 @@ try{
   const db=client.db('myrpgtable'),result=await importRulesCatalogue(db,catalogue,release);
   const loaded=await loadRulesCatalogue(db,release);
   if(JSON.stringify(loaded.catalogue)!==JSON.stringify(catalogue))throw Error('Le catalogue relu diffère de celui importé.');
-  console.log(JSON.stringify({status:'verified',version:release.id,...result}));
+  console.log(JSON.stringify({status:'verified',version:release.id,catalogueId:release.catalogueId||release.id,...result}));
 }finally{await client.close();}

@@ -1,16 +1,16 @@
 # Provenance des descriptions — 30 octobre 2026
 
-Ce contrôle porte sur les textes et leur provenance. Le gel des **règles de jeu** ne vaut pas validation des droits de redistribution. Aucun texte du catalogue, calcul ou personnage n'est modifié par ce lot.
+Ce contrôle porte sur les textes et leur provenance. Le gel des **règles de jeu** ne vaut pas validation des droits de redistribution. L’édition de textes du 30 octobre applique les six retouches approuvées et 29 corrections d’espacement ; les calculs et personnages restent inchangés.
 
 ## Résultats établis
 
-Le catalogue reconstruit pour l'audit a la même empreinte SHA-256 que la version MongoDB publiée : `b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697`.
+Le catalogue reconstruit pour l'audit a la même empreinte SHA-256 que la version MongoDB publiée : `60c30777c19fce5b10c5a2c47410f11a5ac98977a686a55859711ccd1a522826`.
 
 - Le journal contient **738 corrections**, dont **566** référencent le SRD français 5.2.1 et **172** d'autres références. Les 16 ajouts sont comptés séparément. Une correction n'est pas un texte ni une entrée unique.
 - L'inventaire couvre les **637 entrées du Grimoire**, puis les compétences et profils complémentaires : **785 entrées au total**, dont 734 avec du texte détecté.
 - **2 001 champs textuels** sont relevés, plus **95 champs** des fichiers complémentaires. Noms seuls, identifiants, chiffres isolés et métadonnées ne sont pas comptés comme descriptions.
 - Pour 1 267 champs, une correction, un ajout ou une source explicite renvoie au SRD ; pour 472, à une autre référence. Pour **262 champs hérités**, seule la source de comparaison de l'entrée est connue. Elle ne prouve pas l'origine de leur rédaction.
-- Le contrôle du chapitre complet et des alias confirme **339 sorts dans le SRD 5.2.1 et 51 hors SRD**. Les 110 champs textuels des 51 sont examinés ; quatre propositions éditoriales sont prêtes, sans modification du catalogue. Voir le [bilan des sorts](SORTS-SRD.md). L'appartenance au SRD et les droits sur la rédaction actuelle restent distincts.
+- Le contrôle du chapitre complet et des alias confirme **339 sorts dans le SRD 5.2.1 et 51 hors SRD**. Les 110 champs textuels des 51 sont examinés ; quatre retouches éditoriales sont appliquées dans l’édition de textes. Voir le [bilan des sorts](SORTS-SRD.md). L'appartenance au SRD et les droits sur la rédaction actuelle restent distincts.
 - Le rapprochement des sous-classes est terminé : **12 présentes dans le SRD 5.2.1 et 36 absentes**. Onze des douze présentes avaient été comparées à une autre publication ; le classement ne dépend donc pas de cette source de comparaison. Le [tableau des 48 sous-classes](SOUS-CLASSES-SRD.md) donne les noms du site, les correspondances et les pages du SRD. Le rapprochement reste à faire pour les dons et historiques.
 
 ## Attribution livrée
@@ -34,7 +34,7 @@ L'inventaire détaillé [description-provenance-2024.json](description-provenanc
 3. Pour les descriptions effectivement hors SRD : examiner la rédaction, sa source et les conditions d'utilisation. Préparer des résumés indépendants centrés sur les informations nécessaires au jeu, puis contrôler la fidélité des mécaniques. Une paraphrase ou une traduction ne garantit pas à elle seule les droits de redistribution ; les cas non résolus doivent rester signalés et faire l'objet d'un choix explicite avant publication dans l'application.
 4. Revoir séparément les droits du PDF de fiche, des illustrations et les usages de marques : ce contrôle textuel ne les valide pas.
 
-**Aucune réécriture globale ni validation juridique du contenu hors SRD n'a été effectuée.** La licence du SRD ne s'étend pas aux autres contenus du catalogue. Les sources, textes et personnages existants sont préservés.
+**Les six retouches éditoriales sont appliquées ; aucune réécriture globale ni validation juridique du contenu hors SRD n’a été effectuée.** La licence du SRD ne s'étend pas aux autres contenus du catalogue. Les sources, textes et personnages existants sont préservés.
 
 Références : [SRD officiel](https://www.dndbeyond.com/srd), [licence CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
 
@@ -42,4 +42,4 @@ Références : [SRD officiel](https://www.dndbeyond.com/srd), [licence CC BY 4.0
 
 - [48 sous-classes : 12 SRD et 36 hors SRD](SOUS-CLASSES-SRD.md).
 - [390 sorts : 339 SRD et 51 hors SRD](SORTS-SRD.md), avec lecture des 110 champs des 51 sorts.
-- [Six propositions de retouches](editorial-description-drafts-2024.json), avec valeurs avant/après et empreintes : deux passages RP de sous-classes et quatre descriptions de sorts. Toutes restent non appliquées et ne changent pas le statut des droits.
+- [Six retouches appliquées](editorial-description-drafts-2024.json), avec valeurs avant/après et empreintes : deux passages RP de sous-classes et quatre descriptions de sorts. Elles sont appliquées avec leurs contrôles d’empreinte ; 29 corrections d’espacement les accompagnent. Elles ne changent pas le statut des droits.

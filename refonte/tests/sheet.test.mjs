@@ -45,7 +45,7 @@ test('Les composantes matérielles restent lisibles et les profils utiles des so
   catalogue.spells.find(x=>x.id==='assistance').composantes={V:false,S:true,M:'un diamant de 300 po, consommé <test>'};
   const html=renderSheet(s,catalogue);
   assert.ok(html.includes('Composantes : S, M (un diamant de 300 po, consommé &lt;test&gt;)'));
-  assert.ok(html.includes('Créature invoquée'));assert.ok(html.includes('CA11+rang'));
+  assert.ok(html.includes('Créature invoquée'));assert.match(html,/CA\s*11\+rang/);
   assert.ok(html.includes('Table des effets'));assert.ok(html.includes('Aasimar'));
   assert.ok(!html.includes('Composantes, effets et paramètres'));
 });

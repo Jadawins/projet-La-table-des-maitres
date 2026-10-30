@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-30T13:27:48.686Z",
+  "createdAt": "2026-10-30T13:36:16.567Z",
   "scope": "Read-only text provenance and normalized comparison; no application/rule/database changes. Main catalogue and additional profiles inventoried. Supplemental JSON text inventoried separately. UI/generated labels and source books outside the supplied references are not exhaustively compared.",
   "method": {
     "reference": "Official FR SRD 5.2.1",
@@ -8,7 +8,7 @@
     "comparison": "PDF extracted in column order using PDFium. Case/accents/punctuation normalized; at least 12 consecutive matching words. This is a documentary similarity signal, not a plagiarism finding or a permission verdict. A source used to check a mechanic does not establish the origin of unchanged legacy prose. A paraphrase alone does not establish lawful reuse."
   },
   "summary": {
-    "catalogueSha256": "b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697",
+    "catalogueSha256": "60c30777c19fce5b10c5a2c47410f11a5ac98977a686a55859711ccd1a522826",
     "mainEntries": 637,
     "entriesIncludingProfiles": 785,
     "entriesWithText": 734,
@@ -146,6 +146,12 @@
     "subclassMembership": {
       "included-in-srd-5.2.1": 12,
       "not-included-in-srd-5.2.1": 36
+    },
+    "editorialEdition": {
+      "id": "phb2024-2026-10-28-textes-20261030",
+      "changedFields": 35,
+      "proseEdits": 6,
+      "spacingEdits": 29
     }
   },
   "entries": [
@@ -387,14 +393,19 @@
         },
         {
           "path": "description",
-          "characters": 149,
-          "sha256": "e966ddb2fbda153f9360992995399dfd673b7eab95c41c3c13f9ea8b18ea99b3",
+          "characters": 154,
+          "sha256": "09fcc7c39e6497ace97a8482b564cacce6b34372fd22ad07d21711be6c9aa47b",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Thunderclap?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Thunderclap?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "e966ddb2fbda153f9360992995399dfd673b7eab95c41c3c13f9ea8b18ea99b3"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 27,
+            "words": 32,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -597,14 +608,19 @@
       "fields": [
         {
           "path": "description",
-          "characters": 328,
-          "sha256": "97aeffcc4af10de556fa186178f623d5b1d8f877db2472b999b8202a796b6134",
+          "characters": 331,
+          "sha256": "590cd7201c7045ca29077e1a10abc380cf9ccf7c4a3e893895ff748e40f239c6",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Friends?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Friends?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "97aeffcc4af10de556fa186178f623d5b1d8f877db2472b999b8202a796b6134"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 55,
+            "words": 58,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -763,14 +779,19 @@
         },
         {
           "path": "description",
-          "characters": 187,
-          "sha256": "085437af75e40f023d6c6cc166b04910bfcdce06d8c8860a6425f3b2372f45aa",
+          "characters": 193,
+          "sha256": "01434364d9f0cce556a55c50d215ef0bb3bf68d61159774f5a06ff64df1c632a",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Toll%20the%20Dead?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Toll%20the%20Dead?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "085437af75e40f023d6c6cc166b04910bfcdce06d8c8860a6425f3b2372f45aa"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 33,
+            "words": 39,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -971,14 +992,19 @@
         },
         {
           "path": "description",
-          "characters": 118,
-          "sha256": "5802403320291e53a35afd361ad637640e5b85c9e603649c167256c552a61f65",
+          "characters": 121,
+          "sha256": "dd62c818e7fba1500eae1bf8ddc285a04e9aced7dc864ab1d9fad060e4f30bf3",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Word%20of%20Radiance?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Word%20of%20Radiance?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "5802403320291e53a35afd361ad637640e5b85c9e603649c167256c552a61f65"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 20,
+            "words": 23,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -1293,14 +1319,19 @@
       "fields": [
         {
           "path": "description",
-          "characters": 165,
-          "sha256": "c66a8b8e609000fbb9bbda586769724e9aa9c4acda9d3944e3c6ae0d25c62797",
+          "characters": 120,
+          "sha256": "bb59f1fd31110aee829d77cefec40a90814d7618668b7da65bdc42ffe996bef8",
           "provenance": "other-comparison-only",
           "source": null,
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Blade%20Ward?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "reviewed-prose",
+            "beforeSha256": "c66a8b8e609000fbb9bbda586769724e9aa9c4acda9d3944e3c6ae0d25c62797"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 30,
+            "words": 22,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -1433,28 +1464,38 @@
       "fields": [
         {
           "path": "niveau_superieur",
-          "characters": 103,
-          "sha256": "0edc21f7bb7484f6cc464933b461158bcccfad9f5d1bb9955480afa6b37608cd",
+          "characters": 105,
+          "sha256": "2640ba5f1c9686828505dc6137622e72679308e175fef36fc722f781e2d574e9",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Armor%20of%20Agathys?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Armor%20of%20Agathys?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "0edc21f7bb7484f6cc464933b461158bcccfad9f5d1bb9955480afa6b37608cd"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 18,
+            "words": 20,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "description",
-          "characters": 245,
-          "sha256": "5209be3632258e4bb266b17d5b337579328f989bfb1b2452275d48c0af445dfe",
+          "characters": 274,
+          "sha256": "05b9e9594eeb9518ca3f4d48677f7af3645fcb311df5b2dbbe8731cff00de3a3",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Armor%20of%20Agathys?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Armor%20of%20Agathys?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "reviewed-prose",
+            "beforeSha256": "5209be3632258e4bb266b17d5b337579328f989bfb1b2452275d48c0af445dfe"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 46,
+            "words": 50,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -1711,26 +1752,36 @@
         },
         {
           "path": "niveau_superieur",
-          "characters": 44,
-          "sha256": "976da6354b826a179a897b5b2cd3313d3e6e3b90374cde078d03afd67a7bc3b0",
+          "characters": 45,
+          "sha256": "216afe51e8e5e91d6e822b42629071fc24998ce9c8ff8a796970b1dada59f16e",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Thunderous%20Smite?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Thunderous%20Smite?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "976da6354b826a179a897b5b2cd3313d3e6e3b90374cde078d03afd67a7bc3b0"
+          },
           "similarity": {
             "kind": "short-text",
-            "words": 8
+            "words": 9
           }
         },
         {
           "path": "description",
-          "characters": 214,
-          "sha256": "c84c2b8553996d83ee36f0fc9ff42168c42afe8833758e731313b9921f5fb1a7",
+          "characters": 219,
+          "sha256": "4750825755bcf8df566c7ecdebc7ec33025d2cd7f6da988a21f66075a6105ef7",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Thunderous%20Smite?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Thunderous%20Smite?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "c84c2b8553996d83ee36f0fc9ff42168c42afe8833758e731313b9921f5fb1a7"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 39,
+            "words": 44,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -2113,14 +2164,19 @@
       "fields": [
         {
           "path": "description",
-          "characters": 314,
-          "sha256": "946978b7e908cddf512edc67e384272288f4ded6ab57c149b942d66902242a0a",
+          "characters": 318,
+          "sha256": "b2b03785cd0d6c3d90c265e034618ca2604061d6efd964a3aa08cc1f91cb9d6e",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Compelled%20Duel?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Compelled%20Duel?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "946978b7e908cddf512edc67e384272288f4ded6ab57c149b942d66902242a0a"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 56,
+            "words": 60,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -2433,14 +2489,19 @@
         },
         {
           "path": "description",
-          "characters": 137,
-          "sha256": "ae5b98981d974532b9ad404b9a156fae1217d44068ce3ec572bf75257528a479",
+          "characters": 139,
+          "sha256": "0aa24e75c9d4256fe4787d0c15beae224eb96ec2e448fe76cd13c74a699de331",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Hail%20of%20Thorns?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Hail%20of%20Thorns?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "ae5b98981d974532b9ad404b9a156fae1217d44068ce3ec572bf75257528a479"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 25,
+            "words": 27,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -3489,26 +3550,36 @@
       "fields": [
         {
           "path": "niveau_superieur",
-          "characters": 44,
-          "sha256": "976da6354b826a179a897b5b2cd3313d3e6e3b90374cde078d03afd67a7bc3b0",
+          "characters": 45,
+          "sha256": "216afe51e8e5e91d6e822b42629071fc24998ce9c8ff8a796970b1dada59f16e",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Arms%20of%20Hadar?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Arms%20of%20Hadar?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "976da6354b826a179a897b5b2cd3313d3e6e3b90374cde078d03afd67a7bc3b0"
+          },
           "similarity": {
             "kind": "short-text",
-            "words": 8
+            "words": 9
           }
         },
         {
           "path": "description",
-          "characters": 176,
-          "sha256": "daa695c4c6fc22be28963f8223d998d58e0acc2ecfa3e3a61bc8600f3e351539",
+          "characters": 178,
+          "sha256": "63e906eccfd8a3eb80710cef59b997b60662bfb74336961d07a514d1677f8a3a",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Arms%20of%20Hadar?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Arms%20of%20Hadar?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "daa695c4c6fc22be28963f8223d998d58e0acc2ecfa3e3a61bc8600f3e351539"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 28,
+            "words": 30,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -3583,28 +3654,38 @@
         },
         {
           "path": "niveau_superieur",
-          "characters": 83,
-          "sha256": "09808e6bbc001293289d4d24a87f27e6ce337eae6c4e03a8512b1209e5fb7ddd",
+          "characters": 85,
+          "sha256": "5b14398e6974128c5fec37c50085f50bdd35b19895d3f3b15745452d0da6af07",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Witch%20Bolt?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Witch%20Bolt?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "09808e6bbc001293289d4d24a87f27e6ce337eae6c4e03a8512b1209e5fb7ddd"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 13,
+            "words": 15,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "description",
-          "characters": 255,
-          "sha256": "0c1833ca47805ccf1945f8cd52ac139bc2c83fba75056ac49b7455869f1405bf",
+          "characters": 256,
+          "sha256": "0d26a398872fda52a3a742156c7ea43ed6f893511bbf57c5c4925a93f9176016",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Witch%20Bolt?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Witch%20Bolt?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "0c1833ca47805ccf1945f8cd52ac139bc2c83fba75056ac49b7455869f1405bf"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 46,
+            "words": 47,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -4157,28 +4238,38 @@
         },
         {
           "path": "description",
-          "characters": 378,
-          "sha256": "7cd46c57648ac5f2f444aefe4dfdc9270ee9a29f7dbe55076bd37c35c6701769",
+          "characters": 380,
+          "sha256": "59a4f392d9b39bc4fd866b2d6cf8fe85facaae01a33ccbf87c64d4f48f931bf8",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Beast?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Beast?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "7cd46c57648ac5f2f444aefe4dfdc9270ee9a29f7dbe55076bd37c35c6701769"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 68,
+            "words": 70,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "invocation.description",
-          "characters": 591,
-          "sha256": "056f015965b9033ffc82d99d391c8db9b014195e6a5c0cf3ae242600b2b13e10",
+          "characters": 616,
+          "sha256": "5351da161d1944524f59c4f4dabd35feeb9cc8a1d0a0edb4d4c705e0ba03490e",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Beast?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Beast?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "056f015965b9033ffc82d99d391c8db9b014195e6a5c0cf3ae242600b2b13e10"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 97,
+            "words": 122,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -6731,28 +6822,38 @@
         },
         {
           "path": "description",
-          "characters": 390,
-          "sha256": "4847e61e3afc0c00a17c8ea5bfa78156262c69d5ddc6f47345692b919aec33c2",
+          "characters": 392,
+          "sha256": "a1c8957de076f7ef65db7cae8d6681b99cf0d10adc40c0f621c0bd55da249eeb",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fey?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fey?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "4847e61e3afc0c00a17c8ea5bfa78156262c69d5ddc6f47345692b919aec33c2"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 68,
+            "words": 70,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "invocation.description",
-          "characters": 685,
-          "sha256": "bc5c2f350bc3d913981c6c50570eb4ca4b6d80cd065190d2e7f4d935108354bb",
+          "characters": 711,
+          "sha256": "45f674e70b0d6205dd240543a11ba8aaed0fdec30a5e20dda0dc240d5d1ec4f8",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fey?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fey?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "bc5c2f350bc3d913981c6c50570eb4ca4b6d80cd065190d2e7f4d935108354bb"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 111,
+            "words": 137,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -8499,14 +8600,19 @@
         },
         {
           "path": "description",
-          "characters": 401,
-          "sha256": "df2968b2df2cc4ef5efacc158fd5e1d56143ff16532065fd967c2a0e32c7fc36",
+          "characters": 403,
+          "sha256": "d3cea23075709c835ea0e1d5cacd225d5477f6d4525dea048ab71b3913be33f9",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Aberration?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Aberration?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "df2968b2df2cc4ef5efacc158fd5e1d56143ff16532065fd967c2a0e32c7fc36"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 70,
+            "words": 72,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -8525,14 +8631,19 @@
         },
         {
           "path": "invocation.description",
-          "characters": 712,
-          "sha256": "80bba8a9e6c5539730335f89955b9dcaccce91880bed1058e52827605d0dc489",
+          "characters": 739,
+          "sha256": "b2c8f57bad2beb763b2636834a1fa8f8cd0dda364dccfd96473261ebf5061aed",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Aberration?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Aberration?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "80bba8a9e6c5539730335f89955b9dcaccce91880bed1058e52827605d0dc489"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 112,
+            "words": 139,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -8579,28 +8690,38 @@
         },
         {
           "path": "description",
-          "characters": 384,
-          "sha256": "85c517363b6a76d6241e3b3e9ecd6e248d996a7657a1e4a3252902b44768617e",
+          "characters": 386,
+          "sha256": "07223212c9556a37b131ecf5425a412283431a71c955fff0392e0e9003b188bb",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Construct?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Construct?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "85c517363b6a76d6241e3b3e9ecd6e248d996a7657a1e4a3252902b44768617e"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 68,
+            "words": 70,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "invocation.description",
-          "characters": 768,
-          "sha256": "4e77995fc88232c073f90e88573337c454ca773194b62adcf26659785c7b02b2",
+          "characters": 787,
+          "sha256": "f2fd1c8de5b0c165f2cef67c7d6331d9a976b68463df6d79dcd9defdfaa8d5bc",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Construct?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Construct?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "4e77995fc88232c073f90e88573337c454ca773194b62adcf26659785c7b02b2"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 120,
+            "words": 139,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -8649,28 +8770,38 @@
         },
         {
           "path": "description",
-          "characters": 348,
-          "sha256": "e5629b57c978826f5996a09326eb460303bdb1f49ed6c341faed33a7aac3d81e",
+          "characters": 350,
+          "sha256": "b700ce426636d5dd74a92cc1e7a7ec00ff0401fd6ad626f0c59d624361915f1b",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Elemental?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Elemental?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "e5629b57c978826f5996a09326eb460303bdb1f49ed6c341faed33a7aac3d81e"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 64,
+            "words": 66,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "invocation.description",
-          "characters": 646,
-          "sha256": "dce1e07bb4ac894d4eaab6e5c97b3136b688a155593172b14ecbf178f2899e60",
+          "characters": 670,
+          "sha256": "ea7b7f8cb1a484354ad602f601fdf52d3a47b10864abbed840c072c2fea274f1",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Elemental?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Elemental?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "dce1e07bb4ac894d4eaab6e5c97b3136b688a155593172b14ecbf178f2899e60"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 93,
+            "words": 117,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -9985,28 +10116,38 @@
         },
         {
           "path": "description",
-          "characters": 347,
-          "sha256": "9740d38b19b3d57267ffa14cde51daaee47431961c4891107120dd53da440714",
+          "characters": 349,
+          "sha256": "0f35868323ee91d009ef4e5fab7f318e3434dee643b0a05101b3003e61070a2d",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Celestial?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Celestial?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "9740d38b19b3d57267ffa14cde51daaee47431961c4891107120dd53da440714"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 62,
+            "words": 64,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "invocation.description",
-          "characters": 573,
-          "sha256": "201314b63fb9e9020d70c0ac86b02cec9699031b8f173eb61a9f0e8df6f185d1",
+          "characters": 597,
+          "sha256": "bf8666ee4f72e5840edcf2c77f418267a73581d01c49e8d824d9abeae73932b8",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Celestial?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Celestial?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "201314b63fb9e9020d70c0ac86b02cec9699031b8f173eb61a9f0e8df6f185d1"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 88,
+            "words": 112,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -10111,28 +10252,38 @@
         },
         {
           "path": "description",
-          "characters": 363,
-          "sha256": "be812975592cbcc4a6ca0959fe408af7ed3536aa6226de86742ca96a7fba1a84",
+          "characters": 365,
+          "sha256": "9a7aa944a853625dff70768cb682a4c4a16db7a3580c33de80ba61e20b5fa597",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Undead?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Undead?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "be812975592cbcc4a6ca0959fe408af7ed3536aa6226de86742ca96a7fba1a84"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 63,
+            "words": 65,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "invocation.description",
-          "characters": 853,
-          "sha256": "079454e98fdac7c20d9775dafb228276c4a46c9083365c3bfb4eeaf87a2f8150",
+          "characters": 880,
+          "sha256": "faf7bfc77121f0f0163d5f2f311a98afeb25bda2a6cac9733ad99f4e43a20e45",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Undead?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Undead?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "079454e98fdac7c20d9775dafb228276c4a46c9083365c3bfb4eeaf87a2f8150"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 128,
+            "words": 155,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -10487,14 +10638,19 @@
         },
         {
           "path": "description",
-          "characters": 354,
-          "sha256": "1898cd35dfaa3450fce2e2c1d522417d97b55df33126a970b5f59f4c02dd30fa",
+          "characters": 308,
+          "sha256": "2309d90652d41290bc2db326cac33bca118f7c322e5f57696e5ed51c0a9fb8a5",
           "provenance": "other-comparison-only",
           "source": null,
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Steel%20Wind%20Strike?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "reviewed-prose",
+            "beforeSha256": "1898cd35dfaa3450fce2e2c1d522417d97b55df33126a970b5f59f4c02dd30fa"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 61,
+            "words": 55,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -11627,28 +11783,38 @@
         },
         {
           "path": "description",
-          "characters": 351,
-          "sha256": "983a209733d872c15c505c473bf5a4c9487e8f0ee7980369c7d001420f45b9ab",
+          "characters": 353,
+          "sha256": "e89d28d96cd3b9bc28d07737fde1e209093f6c2686192bb96ade8727a3389c15",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fiend?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fiend?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "983a209733d872c15c505c473bf5a4c9487e8f0ee7980369c7d001420f45b9ab"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 63,
+            "words": 65,
             "longestMatchingWords": 0,
             "page": null
           }
         },
         {
           "path": "invocation.description",
-          "characters": 743,
-          "sha256": "dfee2fe541ed2386202948c01fc7b213899d02be2c581c6e7706db9124d269cc",
+          "characters": 779,
+          "sha256": "bdf5b5bde27099470557afa7521ee43711b6a52679a72fa3b1ae3705c3f71086",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fiend?expansion=32231&iframe=true",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fiend?expansion=32231&iframe=true",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "spacing-only",
+            "beforeSha256": "dfee2fe541ed2386202948c01fc7b213899d02be2c581c6e7706db9124d269cc"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 109,
+            "words": 145,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -15061,14 +15227,19 @@
         },
         {
           "path": "description",
-          "characters": 225,
-          "sha256": "86041902fa18c0a9bf17e0dfca99e4878b29d27860b1f388c03c3d7c269b7496",
+          "characters": 152,
+          "sha256": "efa27dcecb833ae73b7b3dd178c700c4e207a14d0af6b52e578cbc429c2ee1c7",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Spells:Mind%20Sliver?expansion=32231",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Spells:Mind%20Sliver?expansion=32231",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "reviewed-prose",
+            "beforeSha256": "86041902fa18c0a9bf17e0dfca99e4878b29d27860b1f388c03c3d7c269b7496"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 36,
+            "words": 26,
             "longestMatchingWords": 0,
             "page": null
           }
@@ -19301,11 +19472,16 @@
         },
         {
           "path": "niveaux.3.capacites.1.description",
-          "characters": 226,
-          "sha256": "700b42559a769e7647598f6adc0610e31aa5f591b73ae6a62deff2f1b9f3ebb5",
+          "characters": 175,
+          "sha256": "106e02bd8a92cd752a5cbf19f26dea550f68790722e247c09d12cfafff3775e7",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "reviewed-prose",
+            "beforeSha256": "700b42559a769e7647598f6adc0610e31aa5f591b73ae6a62deff2f1b9f3ebb5"
+          },
           "similarity": {
             "kind": "no-long-match",
             "words": 29,
@@ -21467,14 +21643,19 @@
         },
         {
           "path": "niveaux.3.capacites.2.description",
-          "characters": 261,
-          "sha256": "0697394091627652ffa7125c4b1d769efd65961dc0f04475b301935bc5eb8d09",
+          "characters": 171,
+          "sha256": "153a78fbabf2906e5137acadc451f091c5f993602b45baf45f67eaec7083f560",
           "provenance": "documented-other-field",
           "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231",
           "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231",
+          "editorialChange": {
+            "edition": "phb2024-2026-10-28-textes-20261030",
+            "kind": "reviewed-prose",
+            "beforeSha256": "0697394091627652ffa7125c4b1d769efd65961dc0f04475b301935bc5eb8d09"
+          },
           "similarity": {
             "kind": "no-long-match",
-            "words": 46,
+            "words": 29,
             "longestMatchingWords": 0,
             "page": null
           }

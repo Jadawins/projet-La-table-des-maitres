@@ -1,8 +1,8 @@
 {
   "referenceDate": "2026-10-30",
   "catalogueSha256": "b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697",
-  "status": "draft-not-applied",
-  "scope": "Six editorial proposals, not runtime rules corrections. Before-value hashes must be checked before any later application. No rights clearance follows from applying them.",
+  "status": "applied-in-editorial-edition",
+  "scope": "Six approved editorial changes, applied by the versioned editorial plan. Original before/after values retained for traceability; no redistribution-rights clearance.",
   "drafts": [
     {
       "collection": "subclasses",
@@ -18,7 +18,7 @@
       "reason": "Replace the source-specific list of cosmetic manifestations with an open player choice.",
       "before": "Aspect visuel ou sonore choisi librement : rouages spectraux, horloge dans les yeux, éclat cuivré, équations flottantes, focaliseur mécanique miniature, ou cliquetis audible pour les créatures affectées. Aucun jet automatique.",
       "beforeSha256": "700b42559a769e7647598f6adc0610e31aa5f591b73ae6a62deff2f1b9f3ebb5",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     },
     {
@@ -35,7 +35,7 @@
       "reason": "Replace the source-specific list of fairy appearance examples with an open player choice.",
       "before": "Signe féerique d’apparence au choix : papillons illusoires au repos, fleurs dans les cheveux à l’aube, parfum d’épice agréable, ombre dansante à l’abri des regards, bois ou cornes, ou couleurs des cheveux et de la peau changeant à l’aube. Aucun jet automatique.",
       "beforeSha256": "0697394091627652ffa7125c4b1d769efd65961dc0f04475b301935bc5eb8d09",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     },
     {
@@ -48,7 +48,7 @@
       ],
       "before": "Brandissez l'arme utilisée comme composante, puis disparaissez et réapparaissez comme le vent. Choisissez jusqu'à 5 créatures visibles à portée. Effectuez une attaque de sort au corps à corps séparée contre chacune : si touche, 6d10 dégâts de force. À la fin, vous vous téléportez dans un espace inoccupé visible dans un rayon de 1,50 m d'une des cibles.",
       "beforeSha256": "1898cd35dfaa3450fce2e2c1d522417d97b55df33126a970b5f59f4c02dd30fa",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     },
     {
@@ -61,7 +61,7 @@
       ],
       "before": "Une créature visible à portée effectue un JS INT. Échec : 1d6 psychiques et retranche 1d4 à sa prochaine sauvegarde avant la fin de votre prochain tour. Nom anglais conservé pour éviter une traduction officielle non vérifiée.",
       "beforeSha256": "86041902fa18c0a9bf17e0dfca99e4878b29d27860b1f388c03c3d7c269b7496",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     },
     {
@@ -74,7 +74,7 @@
       ],
       "before": "Enveloppez-vous d'un voile protecteur. Chaque fois qu'une créature effectue un jet d'attaque contre vous avant la fin du sort, elle soustrait 1d4 au résultat du jet.",
       "beforeSha256": "c66a8b8e609000fbb9bbda586769724e9aa9c4acda9d3944e3c6ae0d25c62797",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     },
     {
@@ -87,8 +87,10 @@
       ],
       "before": "Vous obtenez5 PV temporaires. Jusqu’à la fin du sort, toucher votre corps à corps avec un jet d’attaque inflige5 dégâts de froid à l’assaillant. Le sort cesse si vous n’avez plus aucun PV temporaire ; ceux-ci peuvent provenir d’une autre source.",
       "beforeSha256": "5209be3632258e4bb266b17d5b337579328f989bfb1b2452275d48c0af445dfe",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     }
-  ]
+  ],
+  "appliedEdition": "phb2024-2026-10-28-textes-20261030",
+  "appliedCatalogueSha256": "60c30777c19fce5b10c5a2c47410f11a5ac98977a686a55859711ccd1a522826"
 }

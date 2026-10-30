@@ -4,6 +4,7 @@
   "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
   "pdfSha256": "480604d949a3bb77f639cf31c1e9e1e7ebb04ae481d943db662ba546828d94bf",
   "catalogueSha256": "b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697",
+  "appliedEditorialEdition": "phb2024-2026-10-28-textes-20261030",
   "scope": "SRD 5.2.1 membership for the 48 PHB 2024 subclasses in the current catalogue; current prose shape reviewed. Not a legal clearance or a comparison of every non-SRD phrase with the books.",
   "summary": {
     "classes": 12,
@@ -2329,7 +2330,7 @@
       "reason": "Replace the source-specific list of cosmetic manifestations with an open player choice.",
       "before": "Aspect visuel ou sonore choisi librement : rouages spectraux, horloge dans les yeux, éclat cuivré, équations flottantes, focaliseur mécanique miniature, ou cliquetis audible pour les créatures affectées. Aucun jet automatique.",
       "beforeSha256": "700b42559a769e7647598f6adc0610e31aa5f591b73ae6a62deff2f1b9f3ebb5",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     },
     {
@@ -2345,7 +2346,7 @@
       "reason": "Replace the source-specific list of fairy appearance examples with an open player choice.",
       "before": "Signe féerique d’apparence au choix : papillons illusoires au repos, fleurs dans les cheveux à l’aube, parfum d’épice agréable, ombre dansante à l’abri des regards, bois ou cornes, ou couleurs des cheveux et de la peau changeant à l’aube. Aucun jet automatique.",
       "beforeSha256": "0697394091627652ffa7125c4b1d769efd65961dc0f04475b301935bc5eb8d09",
-      "status": "draft-not-applied",
+      "status": "applied-in-editorial-edition",
       "mechanicsChanged": false
     }
   ]
