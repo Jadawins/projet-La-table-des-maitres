@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import {sourceFingerprint} from '../e2e/fingerprint.mjs';
+const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),root=path.dirname(base);
+const git=(...args)=>spawnSync('git',args,{cwd:root,encoding:'utf8'});
+const changed=git('diff','HEAD','--name-only','--','refonte/maquette','refonte/access','refonte/accueil').stdout.trim().split(/\r?\n/).filter(Boolean);
+for(const file of changed)assert(['refonte/maquette/portal-view.mjs','refonte/maquette/portal.css','refonte/accueil/index.html','refonte/access/package.mjs'].includes(file),'Unexpected runtime change: '+file);
+for(const file of ['catalogue.mjs','data','tests/fixtures/rules-2024.json'])assert.equal(git('diff','--exit-code','HEAD','--','refonte/'+file).status,0,'Unchanged rules baseline required');
+const read=file=>JSON.parse(fs.readFileSync(path.join(base,file),'utf8'));
+const log=fs.readFileSync(path.join(base,'.local/books-notice-unit-tests.txt'),'utf8');for(const line of ['tests 3','pass 3','fail 0','skipped 0'])assert(log.split(/\r?\n/).some(v=>v.endsWith(line)),line);
+const browser=read('e2e/test-results/results.json');assert.deepEqual([browser.stats.expected,browser.stats.unexpected,browser.stats.skipped,browser.stats.flaky],[3,0,0,0]);
+const review=read('.local/books-notice-review.json');assert.equal(review.status,'passed');assert.deepEqual(review.pages,['public','atelier']);assert.equal(review.sameText,true);assert.equal(review.pageErrors,0);
+const proof={status:'passed',scope:'books-notice-with-unchanged-rules-baseline',sourceHash:await sourceFingerprint(),completedAt:new Date().toISOString(),failed:0,skipped:0,baselineCommit:git('rev-parse','HEAD').stdout.trim(),unitPassed:3,browserPassed:3,visuallyReviewedPages:2,qualification:'User-requested book purchase/support notice on public and authenticated home pages. Same text verified in both pages. Existing navigation/search and account/admin isolation journeys pass. Rules, catalogue descriptions, PDF, character storage and authentication remain unchanged. Subclass documentary audit is separate and does not alter the runtime catalogue.'};
+fs.writeFileSync(path.join(base,'.local/books-notice-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

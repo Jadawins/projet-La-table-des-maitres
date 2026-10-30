@@ -20,11 +20,14 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 - [Point de reprise](audit/POINT-DE-REPRISE.md)
 - [État détaillé de la stabilisation](audit/STABILISATION-2024.md)
 - [Bilan final et réserves](audit/BILAN-FINAL-2024.md)
+- [Provenance des descriptions](audit/DESCRIPTIONS-PROVENANCE.md) et [classement SRD des 48 sous-classes](audit/SOUS-CLASSES-SRD.md) : 12 présentes dans le SRD 5.2.1, 36 absentes. Ce contrôle ne vaut pas validation des droits sur les textes hors SRD.
 - [Manifeste du gel](audit/final-freeze-manifest.json)
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261030T130341Z`, publiée le 30 octobre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261030T131634Z`, publiée le 30 octobre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261030T131634Z` ajoute sur l’accueil public et celui de l’atelier un encadré « Un complément à vos livres » : l’application accompagne les parties, ne remplace pas les livres et recommande d’acheter les ouvrages officiels pour soutenir leurs créateurs. Le même texte est contrôlé sur les deux pages ; trois tests ciblés et trois parcours navigateur passent. Les contrôles MongoDB avant/après réussissent et les personnages restent inchangés. Sauvegarde de 3 275 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261030T131634Z/`. Cette mention d’accueil ne constitue pas une autorisation de réutilisation des textes hors SRD.
 
 La livraison `20261030T130341Z` ajoute l’attribution officielle du SRD 5.2.1 au Grimoire et une page publique [Sources et licences](https://myrpgtable.fr/sources.html), avec les liens de licence et l’indication des adaptations. L’attribution SRD 5.1 est conservée. Les trois tests ciblés, trois parcours navigateur et contrôles visuels de la page publique et des vues du Grimoire passent ; les 637 entrées conservent leur attribution. Les contrôles MongoDB avant/après réussissent et les personnages restent inchangés ; sauvegarde de 3 275 documents dans `/root/backups/myrpgtable-persistence-20261030T130341Z/`. Le [bilan de provenance des descriptions](audit/DESCRIPTIONS-PROVENANCE.md) inventorie les champs et signale les cas à examiner ; il ne vaut pas validation des droits sur les textes hors SRD. Aucune description ni règle du catalogue n’est modifiée dans ce lot.
 

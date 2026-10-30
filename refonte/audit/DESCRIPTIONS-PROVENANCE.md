@@ -11,7 +11,7 @@ Le catalogue reconstruit pour l'audit a la même empreinte SHA-256 que la versio
 - **2 001 champs textuels** sont relevés, plus **95 champs** des fichiers complémentaires. Noms seuls, identifiants, chiffres isolés et métadonnées ne sont pas comptés comme descriptions.
 - Pour 1 267 champs, une correction, un ajout ou une source explicite renvoie au SRD ; pour 472, à une autre référence. Pour **262 champs hérités**, seule la source de comparaison de l'entrée est connue. Elle ne prouve pas l'origine de leur rédaction.
 - **339 des 390 sorts** figurent dans l'index documentaire SRD déjà établi ; **51 n'y figurent pas**. Cette absence est une priorité de recherche, pas une conclusion juridique.
-- Les 47 sous-classes comparées à une autre référence ne sont **pas** automatiquement 47 sous-classes hors SRD. Leur présence éventuelle dans le SRD reste à rapprocher individuellement. Même réserve pour les dons et historiques.
+- Le rapprochement des sous-classes est terminé : **12 présentes dans le SRD 5.2.1 et 36 absentes**. Onze des douze présentes avaient été comparées à une autre publication ; le classement ne dépend donc pas de cette source de comparaison. Le [tableau des 48 sous-classes](SOUS-CLASSES-SRD.md) donne les noms du site, les correspondances et les pages du SRD. Le rapprochement reste à faire pour les dons et historiques.
 
 ## Attribution livrée
 
@@ -29,7 +29,7 @@ L'inventaire détaillé [description-provenance-2024.json](description-provenanc
 
 ## Reste à faire avant de déclarer les textes prêts pour une diffusion plus large
 
-1. Vérifier les 51 sorts absents de l'index SRD, puis établir l'appartenance au SRD de chaque sous-classe, don, historique et profil référencé ailleurs. Une référence Roll20 peut aussi décrire un élément du SRD.
+1. Vérifier les 51 sorts absents de l'index SRD, puis établir l'appartenance au SRD de chaque don, historique et profil référencé ailleurs. Le classement des 48 sous-classes est terminé ; les droits de redistribution de leurs textes restent distincts. Une référence Roll20 peut aussi décrire un élément du SRD.
 2. Retrouver la provenance des 262 champs hérités et des 95 champs complémentaires. Les sources de vérification des mécaniques ne suffisent pas à attribuer leur prose.
 3. Pour les descriptions effectivement hors SRD : examiner la rédaction, sa source et les conditions d'utilisation. Préparer des résumés indépendants centrés sur les informations nécessaires au jeu, puis contrôler la fidélité des mécaniques. Une paraphrase ou une traduction ne garantit pas à elle seule les droits de redistribution ; les cas non résolus doivent rester signalés et faire l'objet d'un choix explicite avant publication dans l'application.
 4. Revoir séparément les droits du PDF de fiche, des illustrations et les usages de marques : ce contrôle textuel ne les valide pas.

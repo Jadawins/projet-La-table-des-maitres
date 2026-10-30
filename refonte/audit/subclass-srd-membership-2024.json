@@ -1,0 +1,2352 @@
+{
+  "schemaVersion": 1,
+  "referenceDate": "2026-10-30",
+  "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+  "pdfSha256": "480604d949a3bb77f639cf31c1e9e1e7ebb04ae481d943db662ba546828d94bf",
+  "catalogueSha256": "b2029d300c21ab5631e54d701b3506874f9253f7787c84cde324111c788a4697",
+  "scope": "SRD 5.2.1 membership for the 48 PHB 2024 subclasses in the current catalogue; current prose shape reviewed. Not a legal clearance or a comparison of every non-SRD phrase with the books.",
+  "summary": {
+    "classes": 12,
+    "subclasses": 48,
+    "srd": 12,
+    "nonSrd": 36,
+    "textFields": 239,
+    "nonSrdTextFields": 181,
+    "editorialDrafts": 2,
+    "runtimeChanges": 0
+  },
+  "entries": [
+    {
+      "id": "barbare_berserker",
+      "classId": "barbare",
+      "catalogueName": "Frénétique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Voie du Berserker",
+      "pdfPage": 32,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=32",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Berserker?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "1fe41c4f39dca78470e9b45b743fb2a80ef028bf5368f6f4349717825f9952f7",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Berserker?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "59312266fcc4d7d354d3e9d044cb416b2d3886a6f4b0b9e6c409a7ce18395a52",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Berserker?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "a536043afd8ba1b790cb23f311ef161ce5e2c06012296de1055c07f5af8e1094",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Berserker?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "92f81afe941a52429c676301e75833ec281eb826fe81f0212cf949ab00a913a7",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Berserker?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "barbare_voie_arbre_monde",
+      "classId": "barbare",
+      "catalogueName": "Voie de l'Arbre-Monde",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20World%20Tree?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "ad42d4818da5c688af76724f6b7bd26c52ec8861bb1ce2ae00e432aee9cefa03",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20World%20Tree?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "6d46357543beddd998c8defc50f55960cbe84df9c17a94a72515fd20f92c1dd4",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20World%20Tree?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "6b0cdc4f7133b5ee4695f3d87a11c0216e134ca44e5b88d098aa79699610b659",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20World%20Tree?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "48888d9da6446774872f7dfa9b88349e4163e33bfd0f81bc193b16598ab17539",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20World%20Tree?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "barbare_voie_coeur_sauvage",
+      "classId": "barbare",
+      "catalogueName": "Voie du Cœur Sauvage",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "9caca1e71d1afc6a839e4615b404d9085b5dd64cba22b090a3b62a6e7d6e4a3d",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "fb67a8dc95cbe14343dc32a6b3bf6a353d8a89e8bf13a455e0a28ac96e73d47e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "09ef6cf0f0c85c243f4bfe71f6a5592efd3d1d7b1157dd190862c95830b2d958",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.options.0.description",
+          "sha256": "d0c9e93d965073de6b0881cd822a27fbfb9936a807108bffd56c16a2e7908dbe",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.options.1.description",
+          "sha256": "d73f319fd463d4b924929fe85427d9f8db9de1d99fef0288b658b6bf55103dfe",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.options.2.description",
+          "sha256": "c775641820c45f4a02f347fda4b9e892449fe5f1ff7dffdd1393d36562c3f68e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "33506c63bcfea74f77fee6adcd6ddad9a002764facd76699c306dd3d07791c98",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "d4c126d2d5eab6918b9fec4659aff9364afc469d1b3073d0acdc332fca88cae8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "barbare_voie_zelateur",
+      "classId": "barbare",
+      "catalogueName": "Voie du Zélateur",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "7e0d6419307838e8564894f8459f1ff9db796e7cdb513c3401baf9b91182fb9b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "ee22f711118541992f08f8ecea05db6e4e734a5e40d41b4add0e9010a9b4b23e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "530944c22a6f1a87b9f9866bbe12366b4edfbccbe8da66cffb811a030af1729d",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "e9091352e84b88f4837c87d9b6651e2ba4f302a521d77f61a7e2f17258359063",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "85bf31b1bd7666b52b46a954ac0fe3144cffd187ecee4a2eb9cc9912195588c0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "barde_college_danse",
+      "classId": "barde",
+      "catalogueName": "Collège de la Danse",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Dance?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e41b17a1cf47f6c7b295f0bee6efaa51cc93b7abd0d9eccb76fb2f7dd22685e7",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Dance?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "9aba945961d39fea6c84cd85cb68ba2bb849181c0b18a25e9e983054624ab180",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Dance?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.1.description",
+          "sha256": "15459f4b8afc68d15a7e51cfe1e2c215e6c32811b0fb738336245dddb7083ab1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Dance?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "140f52eb8d6f8ffeba5d2c8fce531b09dd6c8acf306c5673118704cef94e6059",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Dance?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "barde_college_savoir",
+      "classId": "barde",
+      "catalogueName": "Collège du Savoir",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Collège du Savoir",
+      "pdfPage": 37,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=37",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Lore?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "f31628b4fb38b08d5a1d885ff1dd476129814a2825ed18dba1e356b1151fc0ba",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Lore?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "7f5eb95c73bfd5472d0b4d406af876c35f080f93c83e20bbad03727ef0f44fca",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Lore?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "f93136a8f87dd56c50ca3e16c5c6960fc6206f2844ba5a1093d029b91c69dd67",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Lore?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "6b3b8ab62e214fcd659ea7ab7d7e6198265d15f901e4e33bf7473b7c731d25d3",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Lore?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "barde_college_seduction",
+      "classId": "barde",
+      "catalogueName": "Collège de la Séduction",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Glamour?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "a9a32001f8d873c6527e1a2555d90a8bc5482ae4095c5fbd75b995e980af17c4",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Glamour?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "32a72c35984e727c76e265196e4544f45320a584f117a091b0dd6a5e3adb4fa9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Glamour?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "e606371e99cba8eeafbd253503fb14c8bb7b0fcfe11d7310c0dddce89d7e7280",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Glamour?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "df3e6532c98a6d9762a57592eb393ff300193aa595e01f230f3133a4413fd60c",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Glamour?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "barde_college_vaillance",
+      "classId": "barde",
+      "catalogueName": "Collège de la Vaillance",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Valor?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "6f150ae54f2dbc421ba18f75bc2d9d0c0343feb3eb25420b2c9c707924715e1b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Valor?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "6c4b0235f555c6490fa35c73eb73860724b0706e8f34cf9fb7cfade7482bb8ba",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Valor?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "83726ffc6fb2307f716cd761a2f69a536f4a17fbf3a71173a6029b94e41e2d53",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Valor?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "8477bfd19fce090976975ab97f9bedb872299fe5a22632bb29891e0241a5162f",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Valor?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "clerc_domaine_guerre",
+      "classId": "clerc",
+      "catalogueName": "Domaine de la Guerre",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:War%20Domain?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "d5f1b77d91bb9a35f7f2f317d3e74ee57c8892627b40cfe53062e39454a8f023",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:War%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "1b1b2b665caf155bb412b8d9eb671bb14f4b8b447f45eb6063423e2fc6e19590",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:War%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "a7b16c110f9556d7ea73c7b6e1b164007a9c2ea7e9cbf12a82fe3d850e39749a",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:War%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "28ed2e098a8df55eb610a9f17be22f0a2871009a2a6ffa54a9d417089c70cba0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:War%20Domain?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "clerc_domaine_lumiere",
+      "classId": "clerc",
+      "catalogueName": "Domaine de la Lumière",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Light%20Domain?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "70f817f080ce17fa80c8d29c18cf35341741cdfe526c72b1fbaf61be17c1c5c9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Light%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "91e3d0833237568f02e08e4812f60f2cbbb4d7994a63b7959e60796bef84bff8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Light%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "279efc24347b56097eb77acb33097b57124095750f062b83285e8a6d122fb3fa",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Light%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "df1e4ebbf635bfa24aba73d50ad6ab32f46a2c906f0b3f297ffcf3088160dc28",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Light%20Domain?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "clerc_domaine_ruse",
+      "classId": "clerc",
+      "catalogueName": "Domaine de la Ruse",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Trickery%20Domain?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "5c6ac81911051c48ba9afbae19d4bccee720c6330bfbf4def35a87de01174d66",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Trickery%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "9f763248f7170baf3968464508b5d394ac03d15429fefbbc629445f8beb8d931",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Trickery%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "4ba0668b8d1b6a285bfc3070328c1459f4c085b0d943c359f7b59e5605ff64b8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Trickery%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "9223a9301b0fe3a1cbd664e83cda2eea7ed5107087ee65961f46d2893902b532",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Trickery%20Domain?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "clerc_domaine_vie",
+      "classId": "clerc",
+      "catalogueName": "Domaine de la Vie",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Domaine de la Vie",
+      "pdfPage": 42,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=42",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Life%20Domain?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "ef5cc234e1151b096e45da051fa3841d094aea536cbdf8540578fb7bc823abb0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Life%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "8c9acf8dc1b107d7746c28a8b8390ff9336f20760fe7a4c8f750b0724911d484",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Life%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "182a70c80fb03df8eefa82e6e27cd38e425004dd0ad12e374f93d405fe05fcde",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Life%20Domain?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "bd0dc0ff72c0574953de5cb2ed70d737f7219ee850c484a1563421e6047012a6",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Life%20Domain?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "druide_cercle_astres",
+      "classId": "druide",
+      "catalogueName": "Cercle des Astres",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231&iframe=true",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "a51436909fd0f84a2e0299f8a157c7bedfc4667c1559b998bfa1a8ce0886b387",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "ffed3291dfa3ca189f135f4f8a5f98e4e8fa321523f52336528fddd37ef19fe0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "005e39e7c6e05dd399e16caa44367a9b2466956b7ea566e273940557eeea208e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "1c6f82425bf5d2b7b63cb5f6e41c393002135bcaa8ef87609d9751c30c274006",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "d062944db3cf8de82f6a76c5b3b6dcb9602614cb4112e85ca724af718e4b6738",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231&iframe=true"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "druide_cercle_lune",
+      "classId": "druide",
+      "catalogueName": "Cercle de la Lune",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "3fd626a389ff724a239605cdb206ec325e7fa66a8cbfdcebb42f718e4f146e08",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "964adbdb2f66fd86fa495fbea4c9c70e2cc0ba65e3f6cbc3735f4818e9c6a6f8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "a7376719939eaed1644b9975080a03a8c68fa5e3bccc0232f9e44c7fbde74593",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "ea4c369a479f52138834c604acfceced6c35baa7905bec752ac1d278f00946d1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "21717894b26310c41128ae0ea5e79f36319472f3c18687fe4886c371fb20359c",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "druide_cercle_mers",
+      "classId": "druide",
+      "catalogueName": "Cercle des Mers",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231&iframe=true",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "6ccbd3bb10f7a25dc2ac1b2a1b3a69c0265141c955f6ce4841ab50d81330645e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "c26448816cf24a5d225e5af59a20dd245e022fa079d23b801a86a8cdd5874d04",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "2106723e2b17b6799e992cd3cccbb190679b253a9a056b348118d1993ce7c38a",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "59c9f12043bf80faf1b0722398b7c333b19ec6a28831857a6e2ff4bb5ee21697",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231&iframe=true"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "eb9b581e59ce1e97fcb4304968a6a12600b1c51b283bf6f4f9d168821ebfd052",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231&iframe=true"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "druide_cercle_terre",
+      "classId": "druide",
+      "catalogueName": "Cercle de la Terre",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Cercle de la Terre",
+      "pdfPage": 48,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48",
+      "comparisonSource": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "3be25e57c969ab8baf4204267c45f5bd563355e256457197c2a424e2e5610965",
+          "provenance": "documented-srd-field",
+          "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "a9f772f57d9179ac79ffb03b1c0b7516ffd93d48115bc1ad501813ace4b6f682",
+          "provenance": "documented-srd-field",
+          "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "938c1e7bdc439f58741aeaf4319e0f644b0ee91d236a90fbfd04fc6dc7fc4f2e",
+          "provenance": "documented-srd-field",
+          "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "d9389780163e9314f5e4902843bd16fc3194b5f40545c35e35bee28d4367bb02",
+          "provenance": "documented-srd-field",
+          "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "49648903234d2c6cb9697129191fb294d76b5407f40cee5ea7d510ae037ff172",
+          "provenance": "documented-srd-field",
+          "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "ensorceleur_sorcellerie_aberrante",
+      "classId": "ensorceleur",
+      "catalogueName": "Esprit abyssal",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "bebe9a725ef3cd019c6b9e1c0a098c78b509028951bfbc3aa733d16e67da5c8c",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "76c1f4ad3132e5e80b672faea458452b120a1da4cbf46c8398c055a07b0c0ecb",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.1.description",
+          "sha256": "50ea8779e3436683334df3fed2994b6bf9e5208c549eb6afee900db8939ef309",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "b36fb078ec788c60044cedfe10d740d6d505e2c14df2c2e65fff5fe3659b2584",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "20e77146598b7f842e7230f8d9d20263f3b1c40c5b7cccef2489d0a05516a44f",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "ensorceleur_sorcellerie_draconique",
+      "classId": "ensorceleur",
+      "catalogueName": "Lignée draconique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Sorcellerie draconique",
+      "pdfPage": 55,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=55",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Draconic%20Sorcery?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "6f82f72acbc5ecf2f6ac684d25b4bf191dbfcc0b205784fe7eab6d8cf1984c97",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Draconic%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "d7c00a6ecbc57b77700ee3d6c892f2b21378e919635153dd4cf5e14fb908cbef",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Draconic%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "c8826d09f8cf639d7dc994fb1a7ffe3ee51b62fc65d01f441e261c08f01eeb60",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Draconic%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "78bf07a74f4873f5969d9031d7bbae76ed4157751d9319dd373527ed53b3591b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Draconic%20Sorcery?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "ensorceleur_sorcellerie_mecanique",
+      "classId": "ensorceleur",
+      "catalogueName": "Âme mécanique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "741d16fbf39216efd6507e448ca388bffee0dfddfe5e74aca1030de0df064453",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "700b42559a769e7647598f6adc0610e31aa5f591b73ae6a62deff2f1b9f3ebb5",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "aa5f5deccdd5a1bc0f009abf5e75c851628454b4b85ffed98cd5acb7f42d8b3a",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "ebdf664ba5ece01f3f9932969f675ff2e9b8fb10586483e8679153e523d6aeb8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "8e11d9f517a2aaa061bbcde12fb5a2a92aaee2dc15c0a2aa461d96d58ef7413e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "mechanical-summary-and-cosmetic-examples",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "ensorceleur_sorcellerie_sauvage",
+      "classId": "ensorceleur",
+      "catalogueName": "Magie sauvage",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "577c2d852b1f31c134d8266d354279fd591586b30badb5531cb715a76df9034a",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "04f2ed4c9a342c127290d1ae12d7751563be0f2e5ed82160477e6f729e478cc8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "29c7cc39f49f60e091ed7225d5d941c91015c799ebced29655a901aee2adc1a9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "38ac890d9cc919b50b788517cd69b23be0bf0fd0766598e72034e6dd54c6114c",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "1c1ec58230bac7d8484aa0a69f9f047658c6096a4908efcea8ba0c9828afc8c1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "guerrier_champion",
+      "classId": "guerrier",
+      "catalogueName": "Champion",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Champion",
+      "pdfPage": 58,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=58",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "fcb811267cede6e90ee58baaa817caa3bd7fe286b30fba01f6d5972a37562bda",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "59df3edf1aac9d31a4f54b175f9b6530e98ffb618c84571462b499c405274fce",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "a5544dc7dcb34662f455d01de24eb8437dac95b1f4ef88646058c9a119d2130f",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "d08921cb59b47f6cc645e155a13be2f52ee01c052f8821282ec2b207eaec4173",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "c7a3e6f6f3d098dc38756d5e4736e5e2f64d6026daa56368746252e7285ab841",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "77662dae17243df9a6b647a7a6a949f975236fa3d960a376a98185ed0d7a0135",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "guerrier_chevalier_occulte",
+      "classId": "guerrier",
+      "catalogueName": "Chevalier occulte",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "d625fdca1ac6a65d34b09d2ec8fe418be9178903cab72ddd64ea2701e920a63d",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "e9c85eb9abd2d6383496c0c7580c28564ac98e7d6bf6d331ab1df2f0766a87e1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "845e2fc5c34a8e437a1621d98fe83c0d6a22da8ca1e0d756f25dc00d3f48b8a7",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "bcb525f0dadd469c706565425c15cbed2a4a6764570ae97392d8df2119fe7b46",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "512800393850c045e097c1b1a78b9c4fe2b6ff663b0c2764b2918bb18e9741a5",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "d1b2308ee019f295b2b9dfe7892408278a42a6f1531c9a457173c93c40b09c8a",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "guerrier_maitre_guerre",
+      "classId": "guerrier",
+      "catalogueName": "Maître de guerre",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "eb07ec39a04b1abbd155b9013734370d6730d7f4a12e969f485f54bbbc7cd678",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "26355b9603cfc66890bd96ed1038deb578ff2a083eab629166f030dfb30f650e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "c7142f8a73d25b92478484fe3b0e5f827fe015c1e4ff0256d6d9472051d2883c",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "9785065fdd54b7f3a8a23b862edaf125ec94de3541d63c57c7f627d8caae2e28",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "1477a139c8c171bface561b87c4eee4253c9c12cb91abbf721f5a8d66a6ed31e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "aabe3347fce948873e13b9e95a791576b7650070f6ac79a04f1f1accf305d527",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "guerrier_soldat_psi",
+      "classId": "guerrier",
+      "catalogueName": "Soldat psychique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e11d5d6b08dcf3279a9a3d3d518d6766ec8d70421e9cb3fc29564ee59dd6f08c",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "af2ee8ec628f26d08f982fcb70aa23959e89efd5a23d405f5027df593e0fe539",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "4a1b8e1129f6e969447591e7f5c71683aab09a8370a6bad22d1ef62b1739bbe1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "f9b6273bbf705137bfc920b8da9130e127c86cc8149faecfc0497132229aeeb9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "3ef09cf332b67396bad15ba8f852bc3c527298f8f7c0f8395b50cdd4cd9faafb",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231"
+        },
+        {
+          "path": "niveaux.18.capacites.0.description",
+          "sha256": "44affdc835ab6b08201ed0ab539d76a11b2e82fd9d074fa765fd856947ece77e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "magicien_abjurateur",
+      "classId": "magicien",
+      "catalogueName": "École d'Abjuration",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e70a75f620426a69af189af8d71129ff8a32f76d4f72d15c9c1db5af7ecf0eaa",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "21574f46538dff142577e5bb6eb9c5a1e383eda44823160825e6880bd8262a74",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "7a380fa5c3b2af06ec01b71d325650daa21be2548ee2493f03c703ace9b1ca34",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "c91c427d4f052261115bc3284a98b297b33ccdf251a5dfcae05a8d4d959414f1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "ced47c248c4426e62c9e8e1443475190403fc422e7ac0078678b708c31e1993a",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "magicien_devin",
+      "classId": "magicien",
+      "catalogueName": "École de Divination",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e70a75f620426a69af189af8d71129ff8a32f76d4f72d15c9c1db5af7ecf0eaa",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "bf95cc70f5fa467a2d062a1d17dc1fe7e370758eb8966189d81da749c10731a1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "a80e1a1a07511b91a441b39eebbd3c410ccb063118b896eadc37e1833c57d618",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "c8ab2215b10813e3e4a5319932f815d10a2854e3a4e259de62b4fd5ba61f7bed",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "ea37a3177b480303e6914d109841f62a57380c6b137cb4761561c2eb82181f92",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "magicien_evocateur",
+      "classId": "magicien",
+      "catalogueName": "École d'Évocation",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Évocateur",
+      "pdfPage": 64,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=64",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Evoker?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e70a75f620426a69af189af8d71129ff8a32f76d4f72d15c9c1db5af7ecf0eaa",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Evoker?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "5201fa069f5ee25d18ea5b5508a32d5144e692c27d3759f2489f7bb4c0a3625e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Evoker?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "30bd6df2afd220dadc19123334cca9aa67c789a8c6a81d07fb6a215bac2e9f54",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Evoker?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "8ce0cc3fa43174bcabfad1a3da0b330fde75c87709bd9e9aa4b71d4cce8141e6",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Evoker?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "ca987dcb3f56d22fbffd7cb51fa595ed96880a9a1c401b2ad3e600e6aeb3c8d1",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Evoker?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "magicien_illusionniste",
+      "classId": "magicien",
+      "catalogueName": "École d'Illusion",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e70a75f620426a69af189af8d71129ff8a32f76d4f72d15c9c1db5af7ecf0eaa",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "2a9cdb77bdb4317a771960230e6e7cc2b792540ac4a527bc9c28d68239f104f9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "e041d937368e420b2334e1f897256e65b63b59ec7a76e2041e5b4367f716448b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "31526718f5214b6569770843290c3baca240f07aa7da5695010b5952147ca6e4",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "b6f1d2071cceacbec460c4cc669ab5c64c39806062bab0083d1e7a65cf3d5624",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "moine_credo_elements",
+      "classId": "moine",
+      "catalogueName": "Voie des Quatre Éléments",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "c3c7acf334a8f76da06e69feed27dbc8086ada2225af712ed7469dd7097a7dfb",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "db1bb029cc8263e306d9ba6877b054a2faae1854ac375406acff833394f93216",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "6deacd6ef33021d45479282be9186b01113ab29757558c14acd170b6bf5a3b38",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "de61820083a2d2272f6bde89726ec8d114767e63859ff07ef3e21d8f6f5671f7",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "8acfc053a019213db20749c8cb38d4fab73d12db42a3bec38988aaf7c84a0d56",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "moine_credo_misericorde",
+      "classId": "moine",
+      "catalogueName": "Voie de la Miséricorde",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "9a0702ee75a574d41e12cc576a164790ed80ebb9777130f54496b1b10a58b666",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "90b966980b189ab170b301ae399df4a0cc7c1ac256c669d2bd59ae5d4f7b5990",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.2.description",
+          "sha256": "f2fe7bfc063fd45f21e3d1567a4b9d3e7fea76b67242ae1b36c257c0a55e93b0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "7b04faf413043c5b3f2d9cd8a7a5c3b287967cec033703e0cc7991aedd3d1e25",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "4ab1eebb627529e376f581059254cfbd124f39598b01018ef3ee02140f4ed23b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "d643256477e03298199bd00b6313a9fd9d608806e07680243ceda6113c7d05b6",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "moine_credo_ombre",
+      "classId": "moine",
+      "catalogueName": "Voie de l'Ombre",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Shadow?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "939d2cd06b11a4ed45d9438123d4ae27e5d4c56f9e0be612c794dd5f97aaf22f",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Shadow?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "0eda43977509188196daf79524881a6b82ea7160028e34865dff051e17c23e43",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Shadow?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "f5814a04a34831e41fe5fe031a709eba2f5dcda545d89f1b079ac59375a8928e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Shadow?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "5913a1cce52d0045af12964df15eda2c84bf09afaba1f930c6ef9018c2139dce",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Shadow?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "moine_credo_paume",
+      "classId": "moine",
+      "catalogueName": "Voie de la Paume ouverte",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Credo de la Paume",
+      "pdfPage": 67,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=67",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Open%20Hand?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "7af8d09665816936593c130f0e2a950f2086fd3397c355fc3b7185ecaac92fd3",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Open%20Hand?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "246a90d07e4c651ca9d8b3a0b127aea78bad16e9d3f6946bf95f78997336b7f4",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Open%20Hand?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "68324cd05359cfb4ba22ea49d7d068013abcb85533643db820c77ce7baffc301",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Open%20Hand?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "208d2b95396146bb105c6f6d3e0e9a951aa8a70b82ef1f8df0fc7c6123628267",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Open%20Hand?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "occultiste_protecteur_archifee",
+      "classId": "occultiste",
+      "catalogueName": "Protecteur de l'Archifée",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Archfey%20Patron?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "90bada370ae43f3f33abe2c4dc322cefd42c35140d996ae56b5b7acd63e5f1ce",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Archfey%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "b5b8a69309f5ce3008deec87b17748c358d63c9a46f49db52b070a2e30099315",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Archfey%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "d8616057211222d41d55a1becd682cfe8ccb28f97442c0a8abd0ebc07a258006",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Archfey%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "55a06840872ed28933d8a03e0966ead9051c12c4f0c7e195ed7df2c763d7fde2",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Archfey%20Patron?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "occultiste_protecteur_celeste",
+      "classId": "occultiste",
+      "catalogueName": "Protecteur Céleste",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Celestial%20Patron?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e18e93e2b1893d9a55fa761c5b92d3a0fee86a0e486469edcf9af784b5a3a735",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Celestial%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "e22b2e3312f8e8833daa936ce531bc9c9c50bac424af200efb673937a6533e97",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Celestial%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "9213164f3f7a2db2b8a6f2178269fd453005a174a05806a0425940f370123614",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Celestial%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "ce357c8bb0a554533510358f53de7a372c4deeb31d6c6417fd5dbf6ed221c298",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Celestial%20Patron?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "occultiste_protecteur_fielon",
+      "classId": "occultiste",
+      "catalogueName": "Protecteur Fiélon",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Protecteur Fiélon",
+      "pdfPage": 74,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=74",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Fiend%20Patron?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "514db0b7f5f06a29e5e2990711e1152ee42358f0deca95b18c4c8a780eab35d0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fiend%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "ab8129b6fac1a441be3667ed0fe1e119199e5a93e5e598fe2916a09c89f51bc3",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fiend%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "241a1fe2164b4985905030ccd88fede9e6a0d3b3b6ba2b564a8794831d7130a8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fiend%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "44b15a3c6d580cc0090c49356f7fa90a195cbca6b41f81490e95cef24ecb6c11",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fiend%20Patron?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "occultiste_protecteur_grand_ancien",
+      "classId": "occultiste",
+      "catalogueName": "Protecteur du Grand Ancien",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "a6aadfd172388f2bf9c49a36fc67af7029bffd849d179b1c4f4b91f69ae3b065",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "e5eada40b4f9de12692475b5c75621279282380aae7efdc205f3b9fdc254b992",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.6.capacites.0.description",
+          "sha256": "8e7bc839202cc73aff65ba096225baa0931e75ba5166707a94a432492d5c608d",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.0.description",
+          "sha256": "a43770d4fdef7388bf20ed22b6b06e027c52722fd97cc01a6853c7916b64ec89",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.10.capacites.1.description",
+          "sha256": "7c2bafaf59d7d6344344153aa39ea53aa61a2ba8b86e0a7661e31d6ce121c292",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231"
+        },
+        {
+          "path": "niveaux.14.capacites.0.description",
+          "sha256": "8cb651a459a714209540ca64d737d73157a2ec2b52c72241e2952b4c31e972e6",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "paladin_serment_anciens",
+      "classId": "paladin",
+      "catalogueName": "Serment des Anciens",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20the%20Ancients?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "57e7bf95439984d25963fc3d195711f14f8ea3127dcd7d989d8eba83c5648af8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20the%20Ancients?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "0b304dc587d09c8bb186aa1a57d03ddb3e3df7c92dee841aff14ef8c6c234768",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20the%20Ancients?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "53f7b7d852da3f118926f6df3097f4ea88e6ca683181a3b0ff92edaa29699c19",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20the%20Ancients?expansion=32231"
+        },
+        {
+          "path": "niveaux.20.capacites.0.description",
+          "sha256": "252a22457a8775aa0bb3dfceaa1a361ea71efe5d82acee5e83c1f7c4986bc9bc",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20the%20Ancients?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "paladin_serment_devotion",
+      "classId": "paladin",
+      "catalogueName": "Serment de Dévotion",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Serment de Dévotion",
+      "pdfPage": 79,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=79",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Devotion?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "40b10cfc80e6448b7d3be2b68bff38a88daa66283e762da7426c8902d40f6c47",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Devotion?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "b94f56044db3b14fbd7f8695f98b49ffac4e95722ff7fd5e39ba324ef3963daf",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Devotion?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "f48a8b90a91a9daba5b431cb1ef43288dca88a4b3fce5d1f5c7f8a545f2e2c29",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Devotion?expansion=32231"
+        },
+        {
+          "path": "niveaux.20.capacites.0.description",
+          "sha256": "534de5a018ec7804a68bb9fdfba9ca65eb4653a98dcd6e5a5c35452c2cafb962",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Devotion?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "paladin_serment_gloire",
+      "classId": "paladin",
+      "catalogueName": "Serment de Gloire",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e4014ac57ff984255a5931cb8d7a9fd53de35a5287c4e4a006f9eb32a3c0cca9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "98886cd99fbd202e8a0c47110a1e8571a5cd647b3e33553749e9cc527bcd029b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "704e3616bb876570110d32c0660b73f8d12255ba97741b39b9a9e89ce5071c0b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "1b58e8c0c538a815b0739fa9304227873dc013c0e0cb24cf993ecd7eb48c3ec9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231"
+        },
+        {
+          "path": "niveaux.20.capacites.0.description",
+          "sha256": "f26eb2c45b29a55a36d8bfc006ae12e26250aca1709cf701b051e96ee039ae4d",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "paladin_serment_vengeance",
+      "classId": "paladin",
+      "catalogueName": "Serment de Vengeance",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Vengeance?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "ff4135b51469c3ea2ffd36948ac80b919210213d77092c6c4b5f0c1c02ac11b0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Vengeance?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "2fc5212cc4ae8c729bc9cca9ebf4f19a94f15dd073866cbf6f0d6ec645c197f5",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Vengeance?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "92e4a5bdb61cda3148702b119092a12c08786d606f62747e3d6f97112d870ada",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Vengeance?expansion=32231"
+        },
+        {
+          "path": "niveaux.20.capacites.0.description",
+          "sha256": "d0b2077357231d662b96c6d0dfcb17070520d82655c58837cea930ca7799999d",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Vengeance?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "rodeur_belluaire",
+      "classId": "rodeur",
+      "catalogueName": "Maître des bêtes",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.profils_compagnon.0.trait",
+          "sha256": "1848fd7f086b6e33c76e051710efa50c44b667f7bb46e2ac7567fb1b81f53189",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.profils_compagnon.1.trait",
+          "sha256": "0c6e790b50a1ffa0e6d2067826c04bb52a74153a8351c9e570e21dab9ef3c2b0",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.profils_compagnon.2.trait",
+          "sha256": "62a7224b9164bcfb6e9d54fbf70d134fbc87bc80f852c75c3bc6b843a7cd6e77",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "a371681cf0f920cf642ae9c215d0362eea99bcef9340fc8223c94ed70da6f76e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "2d68fb98b362e5bbbcc602970ff0ce21cdaddc32b378e12b82249d8127d49ec4",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "b85fa49a2538dddacd52ac7b19bf1a3b687f744d3fe2e9c2768d486fef26d637",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "11257a15110d7c434f26034bb7545e7d8f1905828f9f6cfaf5fe33034b0edc5f",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "77414f256828698653b30bb669a5456679acaba8ba88383f8561f49599eb202f",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "rodeur_chasseur",
+      "classId": "rodeur",
+      "catalogueName": "Chasseur",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Chasseur",
+      "pdfPage": 83,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=83",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "9d8098f2c2c959e2fe610c8cfbc13713cdf7d26cf840baffbd5c256a35ec8095",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "f497f76a127341ebc572c1a831728d92cd3a178d27b68008c5b3303dfad51525",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.options.0.description",
+          "sha256": "1ed123e94ba6b20f94d34e6e5172986fd03f2a5c56945470d17daaed5dbfc8fd",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.options.1.description",
+          "sha256": "0f23de92d6de2f2e9cd7b5f985478e6439fe53bf733222aa7b38b7cef011ddc3",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "f497f76a127341ebc572c1a831728d92cd3a178d27b68008c5b3303dfad51525",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.options.0.description",
+          "sha256": "69757565832be8297e3ef36175b2bd9df707ac75875236d087c77c264a2febc6",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.options.1.description",
+          "sha256": "a59e043022bf571447ca652a0dac7cb2b14fb9964ad44776439ca582cd8db6bd",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "c5eea4a78b73d1fe75b70930bcc5a49cf818664a9f92719caf8e6fef3072c5b9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "3cfa92e6e395ea650260bfd7821addf0432f15dbc0e6e54962acd14967fd8370",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    },
+    {
+      "id": "rodeur_traqueur_tenebres",
+      "classId": "rodeur",
+      "catalogueName": "Traqueur des ténèbres",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "c19c0b53e702daf8b0f3e27d27e6fc1b935bd630dd5856f0e9d38f312d80e9c8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "cc1b504d8d682acf0d04d54a2242e748d9ce6a1037f26b029057af8ed6488451",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "595369251abb1f173fb1a99bde52b32a147e6f5e5704558bfae541161c447fbf",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "1f695526e9c020ea158e23414dbd47568e743b6881ed7a4a2e9360324a16732e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "cd499e3b8da7a81c760b49e0d0ffd34e2889da06cef683fa0014e981a255598c",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "rodeur_vagabond_feerique",
+      "classId": "rodeur",
+      "catalogueName": "Vagabond féerique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "712aac08e1572faf1ed953784395b69fcaf9a30bdd2e85c1cfb65e61e01fbf30",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "8345eb2136aac7b2b98e3aecb8cd31412a437c9bad49353c488a4a59a0d7cd39",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.2.description",
+          "sha256": "0697394091627652ffa7125c4b1d769efd65961dc0f04475b301935bc5eb8d09",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231"
+        },
+        {
+          "path": "niveaux.7.capacites.0.description",
+          "sha256": "58b946e34966832da3e5137c5768d98fde287fe03639fd410e7d64171a58381b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231"
+        },
+        {
+          "path": "niveaux.11.capacites.0.description",
+          "sha256": "74e9b5205525e6b5953dfecae92f3a433d7165e2d57b37def2ca5c8e492106bb",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231"
+        },
+        {
+          "path": "niveaux.15.capacites.0.description",
+          "sha256": "4c4a27485dc76122bf94d58e9b1a3b987d94c4fd07cf3bd900001810ae5a60a9",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "mechanical-summary-and-cosmetic-examples",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "roublard_ame_aceree",
+      "classId": "roublard",
+      "catalogueName": "Âme acérée",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "e296c63c511b370c01781724344acc086bf9f2549ed4344f3fc963ce913e3cf7",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "f6cd676247ddd8172d2020246021719981fb2bc24968ac9a35bbadec0e22ba4d",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.2.description",
+          "sha256": "51bbb2041108f76a4d5650008df4762c31c35a71d5a18151b05a696ead61aeb8",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231"
+        },
+        {
+          "path": "niveaux.9.capacites.0.description",
+          "sha256": "44c07376c728150c2508222d3430e9e0e93ec049e7c081dde4fd43c1318c20d4",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231"
+        },
+        {
+          "path": "niveaux.13.capacites.0.description",
+          "sha256": "72913c621cb40e5ef759fb50db8b23814c27e1d44b7e70f986e63b71e764ad10",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "3803a5f36885e7b7a41dbf36ae680e9264555f91bd6550e6356eef62796fef1b",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "roublard_arnaqueur_arcanique",
+      "classId": "roublard",
+      "catalogueName": "Arnaqueur arcanique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "a22d61a69645ae245df890cc655a746787fb9f9e5ad6d5cbf341564f4d6d68e2",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "d385ebb45f591ec9484f6463e335d4cc4a27e11847824b07f03c67fc3ffb0cad",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231"
+        },
+        {
+          "path": "niveaux.9.capacites.0.description",
+          "sha256": "eef1b4003072c8a5c3593099b77705aed0f5396f67415e869af5f5cf8d90d893",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231"
+        },
+        {
+          "path": "niveaux.13.capacites.0.description",
+          "sha256": "c12b05dd210e21e3c03c8d2a7781bec302f3378ebbf43e6916e3d2ede664a021",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "6708c0d4aa9c9b0bfc3705ddc548f624fddd9954566e155aeced8d1891cd379e",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "roublard_assassin",
+      "classId": "roublard",
+      "catalogueName": "Assassin",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "3a3af1804e917cdeaf3f0994d1f48adc52b84fbae5944e85fd24fed110eed8d6",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "b3dff76d75866bdfa1dd9611f2434a3e6a35f1d2add526fb7dc3e6e35a5f5304",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231"
+        },
+        {
+          "path": "niveaux.9.capacites.0.description",
+          "sha256": "d95d8f3ee150276c00ac9ee33356c6e3587ddaa8bf6dcb5e0f434bcd76524520",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231"
+        },
+        {
+          "path": "niveaux.13.capacites.0.description",
+          "sha256": "0891a764b242c0368813a16778fff1fc3d0635e397fac5f69ff62de2fef83a79",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "a41010e7a778450c6ee281e2bc95fe1949febdebcce04c3ceb8d5a8d59dabd90",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "non-srd-redistribution-rights-unverified",
+        "requiredFollowUp": "Resolve the permission basis for redistribution; prose style alone does not establish it."
+      }
+    },
+    {
+      "id": "roublard_voleur",
+      "classId": "roublard",
+      "catalogueName": "Voleur",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Voleur",
+      "pdfPage": 86,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=86",
+      "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Thief?expansion=32231",
+      "textFields": [
+        {
+          "path": "niveaux.3.capacites.0.description",
+          "sha256": "4c43593dfc50ba87fa69332e681c3e4f8253059a648f8aa0c3e86a85e9153ef5",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Thief?expansion=32231"
+        },
+        {
+          "path": "niveaux.3.capacites.1.description",
+          "sha256": "fccb69076d8a39dcc672665597eb9e0b395ad20b19acfbeeb41048ee9e577881",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Thief?expansion=32231"
+        },
+        {
+          "path": "niveaux.9.capacites.0.description",
+          "sha256": "1ea685382848f901e3084357188143c483ed971dcde6d7593723749a3f5036fa",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Thief?expansion=32231"
+        },
+        {
+          "path": "niveaux.13.capacites.0.description",
+          "sha256": "f5b378539275ff60cfcc3a9a283b82a9133f9fa8440cd60342141f10bc416d89",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Thief?expansion=32231"
+        },
+        {
+          "path": "niveaux.17.capacites.0.description",
+          "sha256": "15e770abe776892880d5e9c7c7191499b45919a85b59406a83a4c3ac6294289a",
+          "provenance": "documented-other-field",
+          "source": "https://roll20.net/compendium/dnd5e/Subclasses:Thief?expansion=32231"
+        }
+      ],
+      "review": {
+        "scope": "Current prose inspected for technical summary versus narrative/example material; no exhaustive comparison against non-SRD books.",
+        "style": "concise-mechanical-summary",
+        "permissionStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+        "requiredFollowUp": "Do not extend SRD licensing to unrelated linked spells, profiles or legacy prose automatically."
+      }
+    }
+  ],
+  "drafts": [
+    {
+      "id": "ensorceleur_sorcellerie_mecanique",
+      "path": [
+        "niveaux",
+        "3",
+        "capacites",
+        1,
+        "description"
+      ],
+      "after": "Décidez de l’apparence et des sons qui accompagnent votre magie. Cette personnalisation est descriptive : elle n’ajoute aucun effet de jeu et ne déclenche aucun lancer de dés.",
+      "reason": "Replace the source-specific list of cosmetic manifestations with an open player choice.",
+      "before": "Aspect visuel ou sonore choisi librement : rouages spectraux, horloge dans les yeux, éclat cuivré, équations flottantes, focaliseur mécanique miniature, ou cliquetis audible pour les créatures affectées. Aucun jet automatique.",
+      "beforeSha256": "700b42559a769e7647598f6adc0610e31aa5f591b73ae6a62deff2f1b9f3ebb5",
+      "status": "draft-not-applied",
+      "mechanicsChanged": false
+    },
+    {
+      "id": "rodeur_vagabond_feerique",
+      "path": [
+        "niveaux",
+        "3",
+        "capacites",
+        2,
+        "description"
+      ],
+      "after": "Imaginez un signe visible ou perceptible de votre lien féerique et décrivez-le à votre table. Il sert à personnaliser le personnage, sans effet mécanique ni lancer de dés.",
+      "reason": "Replace the source-specific list of fairy appearance examples with an open player choice.",
+      "before": "Signe féerique d’apparence au choix : papillons illusoires au repos, fleurs dans les cheveux à l’aube, parfum d’épice agréable, ombre dansante à l’abri des regards, bois ou cornes, ou couleurs des cheveux et de la peau changeant à l’aube. Aucun jet automatique.",
+      "beforeSha256": "0697394091627652ffa7125c4b1d769efd65961dc0f04475b301935bc5eb8d09",
+      "status": "draft-not-applied",
+      "mechanicsChanged": false
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-30T12:57:38.223Z",
+  "createdAt": "2026-10-30T13:13:19.480Z",
   "scope": "Read-only text provenance and normalized comparison; no application/rule/database changes. Main catalogue and additional profiles inventoried. Supplemental JSON text inventoried separately. UI/generated labels and source books outside the supplied references are not exhaustively compared.",
   "method": {
     "reference": "Official FR SRD 5.2.1",
@@ -138,6 +138,10 @@
     "spellMembership": {
       "listed-in-srd-spell-index": 339,
       "not-listed-in-srd-spell-index": 51
+    },
+    "subclassMembership": {
+      "included-in-srd-5.2.1": 12,
+      "not-included-in-srd-5.2.1": 36
     }
   },
   "entries": [
@@ -16328,8 +16332,12 @@
       "id": "barbare_berserker",
       "name": "Frénétique",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Berserker?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=32",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Voie du Berserker",
+      "srdPdfPage": 32,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16395,7 +16403,11 @@
       "name": "Voie de l'Arbre-Monde",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20World%20Tree?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16461,7 +16473,11 @@
       "name": "Voie du Cœur Sauvage",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16575,7 +16591,11 @@
       "name": "Voie du Zélateur",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16655,7 +16675,11 @@
       "name": "Collège de la Danse",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Dance?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16720,8 +16744,12 @@
       "id": "barde_college_savoir",
       "name": "Collège du Savoir",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Lore?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=37",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Collège du Savoir",
+      "srdPdfPage": 37,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16785,7 +16813,11 @@
       "name": "Collège de la Séduction",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Glamour?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16851,7 +16883,11 @@
       "name": "Collège de la Vaillance",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Valor?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16917,7 +16953,11 @@
       "name": "Domaine de la Guerre",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:War%20Domain?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -16981,7 +17021,11 @@
       "name": "Domaine de la Lumière",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Light%20Domain?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17047,7 +17091,11 @@
       "name": "Domaine de la Ruse",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Trickery%20Domain?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17112,8 +17160,12 @@
       "id": "clerc_domaine_vie",
       "name": "Domaine de la Vie",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Life%20Domain?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=42",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Domaine de la Vie",
+      "srdPdfPage": 42,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17179,7 +17231,11 @@
       "name": "Cercle des Astres",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231&iframe=true",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17257,7 +17313,11 @@
       "name": "Cercle de la Lune",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17337,7 +17397,11 @@
       "name": "Cercle des Mers",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231&iframe=true",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17414,8 +17478,12 @@
       "id": "druide_cercle_terre",
       "name": "Cercle de la Terre",
       "comparisonSource": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48",
-      "srdNamedReference": null,
-      "reviewGroup": "srd-comparison-reference",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=48",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Cercle de la Terre",
+      "srdPdfPage": 48,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17495,7 +17563,11 @@
       "name": "Esprit abyssal",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17572,8 +17644,12 @@
       "id": "ensorceleur_sorcellerie_draconique",
       "name": "Lignée draconique",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Draconic%20Sorcery?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=55",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Sorcellerie draconique",
+      "srdPdfPage": 55,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17639,7 +17715,11 @@
       "name": "Âme mécanique",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17719,7 +17799,11 @@
       "name": "Magie sauvage",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17798,8 +17882,12 @@
       "id": "guerrier_champion",
       "name": "Champion",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Champion?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=58",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Champion",
+      "srdPdfPage": 58,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17891,7 +17979,11 @@
       "name": "Chevalier occulte",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -17985,7 +18077,11 @@
       "name": "Maître de guerre",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18075,7 +18171,11 @@
       "name": "Soldat psychique",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18169,7 +18269,11 @@
       "name": "École d'Abjuration",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18249,7 +18353,11 @@
       "name": "École de Divination",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18326,8 +18434,12 @@
       "id": "magicien_evocateur",
       "name": "École d'Évocation",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Evoker?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=64",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Évocateur",
+      "srdPdfPage": 64,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18407,7 +18519,11 @@
       "name": "École d'Illusion",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18487,7 +18603,11 @@
       "name": "Voie des Quatre Éléments",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18565,7 +18685,11 @@
       "name": "Voie de la Miséricorde",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18657,7 +18781,11 @@
       "name": "Voie de l'Ombre",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Shadow?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18722,8 +18850,12 @@
       "id": "moine_credo_paume",
       "name": "Voie de la Paume ouverte",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Open%20Hand?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=67",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Credo de la Paume",
+      "srdPdfPage": 67,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18789,7 +18921,11 @@
       "name": "Protecteur de l'Archifée",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Archfey%20Patron?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18855,7 +18991,11 @@
       "name": "Protecteur Céleste",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Celestial%20Patron?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18920,8 +19060,12 @@
       "id": "occultiste_protecteur_fielon",
       "name": "Protecteur Fiélon",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Fiend%20Patron?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=74",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Protecteur Fiélon",
+      "srdPdfPage": 74,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -18987,7 +19131,11 @@
       "name": "Protecteur du Grand Ancien",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19081,7 +19229,11 @@
       "name": "Serment des Anciens",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20the%20Ancients?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19146,8 +19298,12 @@
       "id": "paladin_serment_devotion",
       "name": "Serment de Dévotion",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Devotion?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=79",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Serment de Dévotion",
+      "srdPdfPage": 79,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19213,7 +19369,11 @@
       "name": "Serment de Gloire",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19293,7 +19453,11 @@
       "name": "Serment de Vengeance",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Vengeance?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19359,7 +19523,11 @@
       "name": "Maître des bêtes",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.profils_compagnon.0.trait",
@@ -19480,8 +19648,12 @@
       "id": "rodeur_chasseur",
       "name": "Chasseur",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Hunter?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=83",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Chasseur",
+      "srdPdfPage": 83,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19611,7 +19783,11 @@
       "name": "Traqueur des ténèbres",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19691,7 +19867,11 @@
       "name": "Vagabond féerique",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19785,7 +19965,11 @@
       "name": "Âme acérée",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19879,7 +20063,11 @@
       "name": "Arnaqueur arcanique",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -19959,7 +20147,11 @@
       "name": "Assassin",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231",
       "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdMembership": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "srdPdfPage": null,
+      "proseRightsStatus": "non-srd-redistribution-rights-unverified",
+      "reviewGroup": "not-included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
@@ -20038,8 +20230,12 @@
       "id": "roublard_voleur",
       "name": "Voleur",
       "comparisonSource": "https://roll20.net/compendium/dnd5e/Subclasses:Thief?expansion=32231",
-      "srdNamedReference": null,
-      "reviewGroup": "other-comparison-reference-membership-unresolved",
+      "srdNamedReference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=86",
+      "srdMembership": "included-in-srd-5.2.1",
+      "srdName": "Voleur",
+      "srdPdfPage": 86,
+      "proseRightsStatus": "srd-inclusion-confirmed-current-prose-origin-separate",
+      "reviewGroup": "included-in-srd-5.2.1",
       "fields": [
         {
           "path": "niveaux.3.capacites.0.description",
