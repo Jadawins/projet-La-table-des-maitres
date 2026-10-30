@@ -25,7 +25,7 @@ await copyFile(path.join(here,'../../assets/img/fond-bibliotheque-sombre.png'),p
 const catalogue=buildCatalogue(JSON.parse(await readFile(path.join(here,'../tests/fixtures/rules-2024.json'),'utf8')));
 
 const records=[];
-const matches=(doc,filter)=>Object.entries(filter).every(([key,value])=>doc[key]===value);
+const matches=(doc,filter)=>Object.entries(filter).every(([key,value])=>value&&typeof value==='object'&&'$exists' in value?Object.hasOwn(doc,key)===value.$exists:doc[key]===value);
 let pendingWrite=Promise.resolve();
 const persist=()=>{const snapshot=JSON.stringify(records,null,2);pendingWrite=pendingWrite.then(()=>writeFile(path.join(runtime,'characters.json'),snapshot));return pendingWrite;};
 const collection={

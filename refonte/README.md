@@ -1,6 +1,6 @@
 # La Table du Maître — état actuel
 
-Mise à jour : 29 octobre 2026.
+Mise à jour : 30 octobre 2026.
 
 La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le téléphone, le multiclasse, les nouveaux livres et la gestion du combat restent hors périmètre. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
 
@@ -24,7 +24,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261029T190451Z`, publiée le 29 octobre 2026. Les règles corrigées sont maintenant dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés ; le contrôle avant/après confirme notamment Youpi matin niveau 3, révision 1. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261030T064920Z`, publiée le 30 octobre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+Chaque personnage enregistré et chaque brouillon local disposent d'un bouton Supprimer avec confirmation. Les contrôles d'appartenance, de révision et le refus des sauvegardes d'anciens onglets évitent la suppression d'une autre fiche ou sa réapparition. Voir [la suppression des personnages](access/SUPPRESSION-PERSONNAGES.md). Cette livraison a passé 41 tests ciblés, neuf parcours navigateur et huit contrôles MongoDB avant/après bascule, uniquement sur des personnages de test. La sauvegarde de 3 272 documents et le retour arrière sont dans `/root/backups/myrpgtable-persistence-20261030T064920Z/`.
 
 La sauvegarde avant import de 3 270 documents, la livraison précédente et le retour arrière sont dans `/root/backups/myrpgtable-persistence-20261029T190451Z/`. L'import est idempotent et conserve le catalogue validé à l'identique. Les 81 contrôles ciblés et huit parcours navigateur de la transition ont réussi, ainsi que les contrôles de sauvegarde/réouverture sur MongoDB avant/après bascule pour barbare, rôdeur, barde et druide, niveaux 3 et 20. Le redémarrage demande une reconnexion ; les sessions en mémoire restent un chantier distinct avant une ouverture publique plus large.
 

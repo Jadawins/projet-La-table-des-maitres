@@ -64,6 +64,7 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,catalogueT
         if(req.method==='GET'&&route==='/atelier/api/personnages')return json(res,200,{characters:await characters.list(session.userId)});
         if(req.method==='GET'&&id)return json(res,200,await characters.get(session.userId,id));
         if(req.method==='PUT'&&id){const data=await body(req,131072);return json(res,200,await characters.save(session.userId,id,data.character,data.revision));}
+        if(req.method==='DELETE'&&id){const data=await body(req);return json(res,200,await characters.remove(session.userId,id,data.revision));}
         return json(res,405,{error:'Cette opération est indisponible.'});
       }
       if(req.method==='GET'&&route==='/auth/status'){

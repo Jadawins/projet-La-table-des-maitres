@@ -9,7 +9,7 @@ const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rule
 const id='12345678-1234-1234-1234-123456789abc';
 const state=()=>({schemaVersion:2,rulesVersion:CURRENT_RULES_VERSION,name:'Clerc test',classId:'clerc',speciesId:'humain',backgroundId:'charlatan',equipment:'A',backgroundEquipment:'A',level:3,scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},statsMethod:'physical',bonusMode:'three',bonusTwo:'',bonusOne:'',divineOrder:'Thaumaturge',subclassId:'clerc_domaine_vie',classSkills:['Médecine','Religion'],speciesSkill:'Perception',speciesSize:'M',originFeatId:'robuste',hpMode:'fixed',hpRolls:{},variantId:'',backgroundTool:'',cantrips:[],prepared:[],rolls:[],step:7,details:{story:'Une histoire à conserver'}});
 function setup(){
-  const records=[];const matches=(doc,filter)=>Object.entries(filter).every(([k,v])=>doc[k]===v);
+  const records=[];const matches=(doc,filter)=>Object.entries(filter).every(([k,v])=>v&&typeof v==='object'&&'$exists' in v?Object.hasOwn(doc,k)===v.$exists:doc[k]===v);
   const collection={
     async findOne(filter){return structuredClone(records.find(d=>matches(d,filter))||null);},
     async insertOne(doc){if(records.some(d=>d.user_id===doc.user_id&&d.client_id===doc.client_id)){const error=new Error();error.code=11000;throw error;}records.push(structuredClone(doc));},
@@ -45,4 +45,24 @@ test('Des types invalides, caractéristiques hors limites ou identifiants inconn
 });
 test('Le snapshot envoyé en ligne exclut les métadonnées locales et conserve dés physiques et détails',()=>{
   const s=state();s.cloudSnapshot='local-only';const copy=characterSnapshot(s);assert.equal(copy.cloudSnapshot,undefined);assert.equal(copy.statsMethod,'physical');assert.deepEqual(copy.details,s.details);assert.deepEqual(copy.scores,s.scores);
+});
+
+test('Supprimer masque le personnage de la liste et de la lecture, sans perdre son contenu',async()=>{
+  const {store,records}=setup();await store.save('a',id,state(),0);
+  assert.deepEqual(await store.remove('a',id,1),{id,deleted:true});
+  assert.deepEqual(await store.list('a'),[]);await assert.rejects(store.get('a',id),e=>e.status===404);
+  assert.ok(records[0].deleted_at instanceof Date);assert.equal(records[0].character.name,'Clerc test');
+});
+test('Suppression interdite aux autres comptes et aux révisions périmées',async()=>{
+  const {store,records}=setup();await store.save('a',id,state(),0);
+  await assert.rejects(store.remove('b',id,1),e=>e.status===404);
+  await assert.rejects(store.remove('a',id,2),e=>e.status===409);
+  await assert.rejects(store.remove('a',id,0),e=>e.status===400);
+  assert.equal(records[0].deleted_at,undefined);assert.equal((await store.list('a')).length,1);
+});
+test('Un ancien onglet ne peut pas recréer un personnage supprimé, et répéter la suppression est sans effet',async()=>{
+  const {store,records}=setup();await store.save('a',id,state(),0);await store.remove('a',id,1);
+  await store.remove('a',id,1);assert.equal(records[0].revision,2);
+  await assert.rejects(store.save('a',id,state(),1),e=>e.status===409);
+  await assert.rejects(store.save('a',id,state(),0),e=>e.status===409);assert.equal(records.length,1);
 });

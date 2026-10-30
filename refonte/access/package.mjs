@@ -13,7 +13,7 @@ assertRulesReady(rulesStatus,rulesLedger,rulesRevision);
 const proofPath=process.argv[3];
 if(proofPath){
   const proof=JSON.parse(await readFile(proofPath,'utf8'));
-  if(proof.status!=='passed'||proof.sourceHash!==await sourceFingerprint()||!['full','mongodb-runtime-with-unchanged-rules-baseline'].includes(proof.scope)||proof.failed!==0||proof.skipped!==0)throw Error('Preuve de vérification absente, périmée ou incomplète.');
+  if(proof.status!=='passed'||proof.sourceHash!==await sourceFingerprint()||!['full','mongodb-runtime-with-unchanged-rules-baseline','character-removal-with-unchanged-rules-baseline'].includes(proof.scope)||proof.failed!==0||proof.skipped!==0)throw Error('Preuve de vérification absente, périmée ou incomplète.');
 }else{
 const {spawn}=await import('node:child_process');
 const verifier=spawn(process.execPath,[path.join(refonte,'e2e/verify.mjs')],{stdio:'inherit'});

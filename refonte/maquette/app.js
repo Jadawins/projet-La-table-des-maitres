@@ -124,6 +124,31 @@ async function refreshCloudCharacters(){
   if(!accountId)return;cloudLoading=true;cloudError='';
   try{cloudCharacters=(await cloudRequest('')).characters;}catch(error){cloudError=error.message;}finally{cloudLoading=false;}
 }
+function confirmCharacterRemoval(name,local){
+  return new Promise(resolve=>{
+    const dialog=document.createElement('dialog');dialog.className='confirm-dialog';dialog.setAttribute('aria-labelledby','delete-character-title');
+    dialog.innerHTML=`<h2 id="delete-character-title">${local?'Supprimer ce brouillon ?':'Supprimer ce personnage ?'}</h2><p><strong>${esc(name||'Sans nom')}</strong></p><p>${local?'Ce brouillon sera retiré de cet appareil. Une éventuelle version enregistrée dans votre compte sera conservée.':'Ce personnage sera retiré de votre compte et de cet appareil.'}</p><form method="dialog"><button class="button secondary" value="cancel" autofocus>Annuler</button><button class="button danger" value="delete">${local?'Supprimer le brouillon':'Supprimer le personnage'}</button></form>`;
+    dialog.addEventListener('close',()=>{const confirmed=dialog.returnValue==='delete';dialog.remove();resolve(confirmed);},{once:true});
+    document.body.append(dialog);dialog.showModal();
+  });
+}
+function removeLocalCharacter(id){
+  const records=localCharacters();delete records[id];localStorage.setItem(localCharactersKey,JSON.stringify(records));
+  if(draft.cloudId===id){clearTimeout(timer);draft=initial();beforeSuggestion=null;localStorage.removeItem(draftKey);}
+}
+async function removeCharacter(id,local){
+  if(cloudBusy)return;
+  const person=local?localCharacters()[id]:cloudCharacters.find(p=>p.id===id);
+  if(!person||!await confirmCharacterRemoval(person.name,local))return;
+  cloudBusy=true;route();
+  try{
+    if(!local)await cloudRequest('/'+encodeURIComponent(id),{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:person.revision})});
+    removeLocalCharacter(id);openingSequence++;cloudSaveError='';
+    if(!local)await refreshCloudCharacters();
+    history.replaceState(null,'','#personnages');toast(local?'Brouillon supprimé de cet appareil.':'Personnage supprimé de votre compte.');
+  }catch(error){toast(error.message);}
+  finally{cloudBusy=false;route();}
+}
 async function saveCloudCharacter(){
   if(!accountId||cloudBusy)return;
   if(!usesCurrentRules(draft)){toast('Créez une copie à mettre à niveau avant de l’enregistrer.');return;}
@@ -170,7 +195,7 @@ function accountCharacters(){
   const formatDate=value=>new Date(value).toLocaleString('fr-FR',{dateStyle:'short',timeStyle:'short'});
   const card=(person,local=false)=>{
     const id=local?person.cloudId:person.id,cls=entry('classes',person.classId),species=entry('species',person.speciesId);
-    return `<a class="saved-character" href="#${local?'brouillon':'ouvrir'}/${esc(id)}"><span class="saved-glyph" aria-hidden="true">${icons[person.classId]||'✧'}</span><div><span class="saved-kind">${local?'SUR CET APPAREIL · À ENREGISTRER':'DANS VOTRE COMPTE'}</span><h3>${esc(person.name||'Sans nom')}</h3><p>${esc(cls?.nom||'Classe à choisir')} · Niveau ${person.level} · ${esc(species?.nom||'Espèce à choisir')}</p>${!local?`<small>${person.status==='draft'?'Choix à compléter · ':''}Enregistré le ${esc(formatDate(person.updatedAt))}</small>`:'<small>Vos modifications locales sont conservées ici.</small>'}</div><span class="saved-open">${local?'Reprendre':'Ouvrir'} →</span></a>`;
+    return `<div class="saved-character-row"><a class="saved-character" href="#${local?'brouillon':'ouvrir'}/${esc(id)}"><span class="saved-glyph" aria-hidden="true">${icons[person.classId]||'✧'}</span><div><span class="saved-kind">${local?'SUR CET APPAREIL · À ENREGISTRER':'DANS VOTRE COMPTE'}</span><h3>${esc(person.name||'Sans nom')}</h3><p>${esc(cls?.nom||'Classe à choisir')} · Niveau ${person.level} · ${esc(species?.nom||'Espèce à choisir')}</p>${!local?`<small>${person.status==='draft'?'Choix à compléter · ':''}Enregistré le ${esc(formatDate(person.updatedAt))}</small>`:'<small>Vos modifications locales sont conservées ici.</small>'}</div><span class="saved-open">${local?'Reprendre':'Ouvrir'} →</span></a><button class="button danger" type="button" data-delete-character="${esc(id)}" data-local="${local}" aria-label="${local?'Supprimer le brouillon de':'Supprimer'} ${esc(person.name||'Sans nom')}" ${cloudBusy?'disabled':''}>Supprimer</button></div>`;
   };
   return `<div class="heading-row"><div><div class="eyebrow">VOTRE GRIMOIRE</div><h1>Mes personnages</h1><p>Retrouvez vos personnages enregistrés et vos idées en cours.</p></div><a class="button primary" href="#nouveau">+ Créer un personnage</a></div>${draft.name&&isDirty(draft)?`<div class="draft-banner"><span>En cours : <strong>${esc(draft.name)}</strong></span><a class="button secondary" href="#fiche/brouillon">Revenir à ma fiche →</a></div>`:''}<div class="section-bar"><h2>Dans votre compte <span class="count">${cloudCharacters.length}</span></h2><button class="button quiet" id="refresh-characters" type="button">Actualiser</button></div>${cloudError?`<div class="notice" role="alert">${esc(cloudError)} <a href="/connexion.html">Se reconnecter</a></div>`:''}<div class="saved-character-list">${cloudLoading?'<p>Chargement de vos personnages…</p>':cloudCharacters.map(person=>card(person)).join('')||'<div class="empty"><h3>Votre premier personnage vous attend.</h3><p>Depuis sa fiche, cliquez sur « Enregistrer le personnage » pour le retrouver ici et sur vos autres appareils.</p></div>'}</div>${locals.length?`<div class="section-bar"><h2>Brouillons sur cet appareil</h2></div><div class="saved-character-list">${locals.map(([,person])=>card(person,true)).join('')}</div>`:''}`;
 }
@@ -439,6 +464,7 @@ function route() {
 }
 
 function bind() {
+  root.querySelectorAll('[data-delete-character]').forEach(button=>button.addEventListener('click',()=>removeCharacter(button.dataset.deleteCharacter,button.dataset.local==='true')));
   root.querySelector('[data-upgrade-copy]')?.addEventListener('click',()=>{save(true);draft=upgradedCharacterCopy(draft,crypto.randomUUID());beforeSuggestion=null;save(true);history.replaceState(null,'','#creation');route();toast('Copie créée : vérifiez les choix avec les nouvelles règles. L’original est conservé.');});
   root.querySelectorAll('[data-class-select]').forEach(input=>input.addEventListener('change',()=>{draft.classChoices??={};const key=input.dataset.classSelect,values=draft.classChoices[key]||[];draft.classChoices[key]=input.checked?[...values,input.dataset.classValue]:values.filter(v=>v!==input.dataset.classValue);if(key==='companion')reconcilePrimalDamage(draft,catalogue);pruneSpellChoices(draft,catalogue);save(true);drawCreation();}));
   root.querySelectorAll('[data-class-free]').forEach(input=>input.addEventListener('input',()=>{draft.classChoices??={};draft.classChoices[input.dataset.classFree]??=[];draft.classChoices[input.dataset.classFree][+input.dataset.classIndex]=input.value;save(true);}));

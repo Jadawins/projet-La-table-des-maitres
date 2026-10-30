@@ -35,6 +35,16 @@ test('Le catalogue chargé en mémoire est servi après connexion, sans fichier 
   const head=await request('/atelier/catalogue.json',{method:'HEAD',headers:{Cookie:cookie}});assert.equal(head.status,200);assert.equal(await head.text(),'');
 });
 
+test('Supprimer exige la session et la bonne origine ; le propriétaire vient du serveur',async t=>{
+  const calls=[];const {request,post}=await setup(t,{characters:{remove:async(...args)=>{calls.push(args);return {deleted:true};}}});
+  const id='12345678-1234-1234-1234-123456789abc';
+  const remove=cookie=>request('/atelier/api/personnages/'+id,{method:'DELETE',headers:{Origin:origin,'Content-Type':'application/json',Cookie:cookie},body:JSON.stringify({revision:3,user_id:'victim'})});
+  assert.equal((await remove('')).status,401);
+  const login=await post('/auth/login',{email:'test@example.test',password:'test-only'}),cookie=login.headers.get('set-cookie').split(';')[0];
+  assert.equal((await request('/atelier/api/personnages/'+id,{method:'DELETE',headers:{Origin:'https://foreign.invalid',Cookie:cookie}})).status,403);
+  assert.equal((await remove(cookie)).status,200);assert.deepEqual(calls,[['test-user',id,3]]);
+});
+
 test('Un catalogue manquant ne déclenche jamais une lecture de secours sur disque',async t=>{
   const {post,request}=await setup(t);
   const login=await post('/auth/login',{email:'test@example.test',password:'test-only'}),cookie=login.headers.get('set-cookie').split(';')[0];
