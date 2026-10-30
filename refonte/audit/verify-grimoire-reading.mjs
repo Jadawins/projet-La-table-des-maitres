@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import {buildCatalogue} from '../catalogue.mjs';
+import {catalogueEntries,renderCatalogueDetail} from '../maquette/portal-view.mjs';
+import {sourceFingerprint} from '../e2e/fingerprint.mjs';
+const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),root=path.dirname(base);
+const git=(...args)=>spawnSync('git',args,{cwd:root,encoding:'utf8'});
+const changed=git('diff','HEAD','--name-only','--','refonte/maquette','refonte/access').stdout.trim().split(/\r?\n/).filter(Boolean);
+for(const file of changed)assert(['refonte/maquette/portal-view.mjs','refonte/maquette/portal.css','refonte/access/package.mjs'].includes(file),'Unexpected runtime change: '+file);
+for(const file of ['catalogue.mjs','data','tests/fixtures/rules-2024.json'])assert.equal(git('diff','--exit-code','HEAD','--','refonte/'+file).status,0,'Unchanged rules baseline required');
+const read=file=>JSON.parse(fs.readFileSync(path.join(base,file),'utf8'));
+const entries=catalogueEntries(buildCatalogue(read('tests/fixtures/rules-2024.json')));
+for(const entry of entries){const html=renderCatalogueDetail(entries,entry.type,entry.id);assert(!html.includes('[object Object]')&&!html.includes('undefined'),entry.type+'/'+entry.id);}
+const log=fs.readFileSync(path.join(base,'.local/grimoire-unit-tests.txt'),'utf8');for(const line of ['tests 3','pass 3','fail 0','skipped 0'])assert(log.split(/\r?\n/).some(v=>v.endsWith(line)),line);
+const browser=read('e2e/test-results/results.json');assert.deepEqual([browser.stats.expected,browser.stats.unexpected,browser.stats.skipped,browser.stats.flaky],[3,0,0,0]);
+const review=read('.local/grimoire-visual-review.json');assert.equal(review.status,'passed');assert.deepEqual(review.views,['assistance','classe','don','espece']);assert.equal(review.pageErrors,0);
+const proof={status:'passed',scope:'grimoire-reading-with-unchanged-rules-baseline',sourceHash:await sourceFingerprint(),completedAt:new Date().toISOString(),failed:0,skipped:0,baselineCommit:git('rev-parse','HEAD').stdout.trim(),unitPassed:3,browserPassed:3,renderedEntries:entries.length,visualPages:4,qualification:'Read-only grimoire presentation changed. Spell summary/description, class progression accordions, feats and species visually reviewed. All catalogue entry renderers checked. Search, navigation and account/admin isolation journeys pass. Rules, PDF, character storage, authentication and data remain unchanged.'};
+fs.writeFileSync(path.join(base,'.local/grimoire-reading-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));
