@@ -1,9 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createHash} from 'node:crypto';
+import {createHash,randomBytes} from 'node:crypto';
 import {createGateway} from '../access/server.mjs';
 const origin='https://myrpgtable.fr';
-const valid={username:'Aventurier',email:'NEW@example.test',password:'Une phrase de passe 2026',passwordConfirmation:'Une phrase de passe 2026'};
+// Generated fixtures only: these values never identify a real account.
+const testPassword=randomBytes(24).toString('base64url'),shortPassword=randomBytes(2).toString('hex');
+const valid={username:'Aventurier',email:'NEW@example.test',password:testPassword,passwordConfirmation:testPassword};
 const token=`x.${Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+3600})).toString('base64url')}.x`;
 async function setup(t,{signupStatus=200,signupData={id:'new-user'},denyUser=false,unconfirmed=false,fetcher:custom}={}){
   const calls=[],accounts=[];
@@ -40,7 +42,7 @@ test('Confirmation : vérificateur lié au navigateur, jeton revérifié puis se
 });
 test('La confirmation par e-mail survit à un redémarrage du serveur',async t=>{const first=await setup(t),response=await first.post('/auth/signup',valid),cookie=response.headers.get('set-cookie').split(';')[0];const restarted=await setup(t,{fetcher:first.fetcher});assert.equal((await restarted.post('/auth/callback',{code:'test-email-code'},cookie)).status,200);});
 test('Une tentative OAuth abandonnée ne détourne pas la confirmation d’inscription',async t=>{const {post,request}=await setup(t);const oauth=await request('/auth/oauth?provider=google'),old=oauth.headers.get('set-cookie').split(';')[0];const signup=await post('/auth/signup',valid,old);const cookies=signup.headers.getSetCookie();assert(cookies.some(c=>c.startsWith('__Host-myrpgtable_oauth=;')&&c.includes('Max-Age=0')));const response=await post('/auth/callback',{code:'test-email-code'},old+'; '+cookies[0].split(';')[0]);assert.equal(response.status,200);assert(response.headers.getSetCookie().some(c=>c.startsWith('__Host-myrpgtable_signup=;')&&c.includes('Max-Age=0')));});
-for(const [name,patch]of [['pseudo vide',{username:''}],['adresse invalide',{email:'bad'}],['mot de passe court',{password:'court',passwordConfirmation:'court'}],['confirmation différente',{passwordConfirmation:'autre'}]])test('Validation serveur : '+name,async t=>{const {post,calls}=await setup(t);assert.equal((await post('/auth/signup',{...valid,...patch})).status,400);assert.equal(calls.length,0);});
+for(const [name,patch]of [['pseudo vide',{username:''}],['adresse invalide',{email:'bad'}],['mot de passe court',{password:shortPassword,passwordConfirmation:shortPassword}],['confirmation différente',{passwordConfirmation:testPassword.repeat(2)}]])test('Validation serveur : '+name,async t=>{const {post,calls}=await setup(t);assert.equal((await post('/auth/signup',{...valid,...patch})).status,400);assert.equal(calls.length,0);});
 test('Inscription : origine du site obligatoire',async t=>{const {post,calls}=await setup(t);assert.equal((await post('/auth/signup',valid,'','https://evil.example')).status,403);assert.equal(calls.length,0);});
 test('Adresse existante : même réponse publique, aucun cookie de session',async t=>{const {post}=await setup(t,{signupStatus:422,signupData:{code:'user_already_exists'}});const response=await post('/auth/signup',valid);assert.equal(response.status,202);assert.deepEqual(await response.json(),{ok:true,confirmationRequired:true});assert(!response.headers.get('set-cookie').includes('session='));});
 test('Inscription : limitation indépendante des connexions et échec du fournisseur sans fuite',async t=>{const {post}=await setup(t,{signupStatus:500,signupData:{message:'private upstream detail'}});for(let i=0;i<3;i++){const r=await post('/auth/signup',valid);assert.equal(r.status,503);assert(!JSON.stringify(await r.json()).includes('private'));}assert.equal((await post('/auth/signup',valid)).status,429);assert.equal((await post('/auth/login',{email:valid.email,password:valid.password})).status,401);});
