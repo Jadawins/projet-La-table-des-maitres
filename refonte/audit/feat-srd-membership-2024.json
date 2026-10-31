@@ -1,0 +1,1247 @@
+{
+  "referenceDate": "2026-10-31",
+  "catalogueSha256": "7938ed5423f84d3301566923d55f8c8d69095adc715009f7fb27a3d38f4659a6",
+  "baselineEdition": "phb2024-2026-10-28-resumes-20261030",
+  "currentCatalogueSha256": "6b37cbdff5f0ba1c4c7822c620d66134545dde13eeb915be503037870fe25b9d",
+  "appliedEdition": "phb2024-2026-10-28-dons-20261031",
+  "pdfSha256": "480604d949a3bb77f639cf31c1e9e1e7ebb04ae481d943db662ba546828d94bf",
+  "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+  "scope": "All 77 feat records mapped to the complete feat chapter (PDF pages 92-94). 75 active feats and two legacy archives distinguished. All 58 non-SRD active feat descriptions and their non-ability-increase effect strings rewritten. Membership and wording are not rights clearance. Mechanical rules remain fixed to the 28 October 2026 reference.",
+  "summary": {
+    "entries": 77,
+    "active": 75,
+    "srd": 17,
+    "nonSrdActive": 58,
+    "archived": 2
+  },
+  "entries": [
+    {
+      "id": "bagarreur_de_tavernes",
+      "name": "Bagarreur de tavernes",
+      "category": "origine",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "chanceux",
+      "name": "Chanceux",
+      "category": "origine",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "doue",
+      "name": "Doué",
+      "category": "origine",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Doué",
+      "pdfPage": 92,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "faconneur",
+      "name": "Façonneur",
+      "category": "origine",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "guerisseur",
+      "name": "Guérisseur",
+      "category": "origine",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "initie_a_la_magie",
+      "name": "Initié à la magie",
+      "category": "origine",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Initié à la magie",
+      "pdfPage": 92,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "musicien",
+      "name": "Musicien",
+      "category": "origine",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "robuste",
+      "name": "Robuste",
+      "category": "origine",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur"
+      ]
+    },
+    {
+      "id": "sauvagerie_martiale",
+      "name": "Sauvagerie martiale",
+      "category": "origine",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Sauvagerie martiale",
+      "pdfPage": 92,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "truand",
+      "name": "Truand",
+      "category": "archive",
+      "status": "legacy-archive-not-current-feat",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "legacy-archive-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "vigilant",
+      "name": "Vigilant",
+      "category": "origine",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Vigilant",
+      "pdfPage": 92,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "adepte_elementaire",
+      "name": "Adepte élémentaire",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "affinite_feerique",
+      "name": "Affinité féerique",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "affinite_ombreuse",
+      "name": "Affinité ombreuse",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "amelioration_de_caracteristique",
+      "name": "Amélioration de caractéristique",
+      "category": "general",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Amélioration de caractéristique",
+      "pdfPage": 92,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "athlete",
+      "name": "Athlète",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "broyeur",
+      "name": "Broyeur",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "chef_cuisinier",
+      "name": "Chef cuisinier",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "cogneur_lourd",
+      "name": "Cogneur lourd",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "combattant_a_deux_armes",
+      "name": "Combattant à deux armes",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "combattant_monte",
+      "name": "Combattant monté",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "comedien",
+      "name": "Comédien",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "discret",
+      "name": "Discret",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "duelliste_defensif",
+      "name": "Duelliste défensif",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "empoisonneur",
+      "name": "Empoisonneur",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "empoigneur",
+      "name": "Empoigneur",
+      "category": "general",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Empoigneur",
+      "pdfPage": 92,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=92",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "expert",
+      "name": "Expert",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "expert_de_la_charge",
+      "name": "Expert de la charge",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "figure_de_proue",
+      "name": "Figure de proue",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "formation_aux_armes_de_guerre",
+      "name": "Formation aux armes de guerre",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "gaillard",
+      "name": "Gaillard",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "incantateur_d_elite",
+      "name": "Incantateur d'élite",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "mage_de_guerre",
+      "name": "Mage de guerre",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "magie_rituelle",
+      "name": "Magie rituelle",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "maitre_arbaletrier",
+      "name": "Maître arbalétrier",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "maitre_d_hast",
+      "name": "Maître d'hast",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "maitre_des_armures_intermediaires",
+      "name": "Maître des armures intermédiaires",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "maitre_des_armures_lourdes",
+      "name": "Maître des armures lourdes",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "maitre_des_boucliers",
+      "name": "Maître des boucliers",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur",
+        "effets.3.valeur"
+      ]
+    },
+    {
+      "id": "observateur",
+      "name": "Observateur",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "perforateur",
+      "name": "Perforateur",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "preparateur_de_poison",
+      "name": "Préparateur de poison",
+      "category": "archive",
+      "status": "legacy-archive-not-current-feat",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "legacy-archive-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "protection_intermediaire",
+      "name": "Protection intermédiaire",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "protection_legere",
+      "name": "Protection légère",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "protection_lourde",
+      "name": "Protection lourde",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "resilient",
+      "name": "Résilient",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "sentinelle",
+      "name": "Sentinelle",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "telekinesiste",
+      "name": "Télékinésiste",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "telepathe",
+      "name": "Télépathe",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "tireur_d_elite",
+      "name": "Tireur d'élite",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "trancheur",
+      "name": "Trancheur",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "tueur_de_mages",
+      "name": "Tueur de mages",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "style_archerie",
+      "name": "Archerie",
+      "category": "combat",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Archerie",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "style_armes_a_deux_mains",
+      "name": "Armes à deux mains",
+      "category": "combat",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Armes à deux mains",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "style_armes_de_lancer",
+      "name": "Armes de lancer",
+      "category": "combat",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur"
+      ]
+    },
+    {
+      "id": "style_combat_a_deux_armes",
+      "name": "Combat à deux armes",
+      "category": "combat",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Combat à deux armes",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "style_combat_a_mains_nues",
+      "name": "Combat à mains nues",
+      "category": "combat",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur",
+        "effets.1.valeur"
+      ]
+    },
+    {
+      "id": "style_combat_en_aveugle",
+      "name": "Combat en aveugle",
+      "category": "combat",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur"
+      ]
+    },
+    {
+      "id": "style_defense",
+      "name": "Défense",
+      "category": "combat",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Défense",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "style_duel",
+      "name": "Duel",
+      "category": "combat",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur"
+      ]
+    },
+    {
+      "id": "style_interception",
+      "name": "Interception",
+      "category": "combat",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur"
+      ]
+    },
+    {
+      "id": "style_protection",
+      "name": "Protection",
+      "category": "combat",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.0.valeur"
+      ]
+    },
+    {
+      "id": "faveur_d_attaque_irresistible",
+      "name": "Faveur d'attaque irrésistible",
+      "category": "epique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Faveur d’attaque irrésistible",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "faveur_de_competence",
+      "name": "Faveur de compétence",
+      "category": "epique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "faveur_de_deplacement_dimensionnel",
+      "name": "Faveur de déplacement dimensionnel",
+      "category": "epique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Faveur de déplacement dimensionnel",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "faveur_de_l_esprit_nocturne",
+      "name": "Faveur de l'esprit nocturne",
+      "category": "epique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Faveur de l’esprit nocturne",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "faveur_de_memoire_magique",
+      "name": "Faveur de mémoire magique",
+      "category": "epique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Faveur de mémoire magique",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "faveur_de_prowesse_martiale",
+      "name": "Faveur de prouesse martiale",
+      "category": "epique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Faveur de prouesse martiale",
+      "pdfPage": 93,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=93",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "faveur_de_recuperation",
+      "name": "Faveur de récupération",
+      "category": "epique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "faveur_de_resistance_aux_energies",
+      "name": "Faveur de résistance aux énergies",
+      "category": "epique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "faveur_de_vigueur",
+      "name": "Faveur de vigueur",
+      "category": "epique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "faveur_de_vision_lucide",
+      "name": "Faveur de vision lucide",
+      "category": "epique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Faveur de Vision lucide",
+      "pdfPage": 94,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=94",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "faveur_de_vitesse",
+      "name": "Faveur de vitesse",
+      "category": "epique",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "faveur_du_destin",
+      "name": "Faveur du destin",
+      "category": "epique",
+      "status": "included-in-srd-5.2.1",
+      "srdName": "Faveur du destin",
+      "pdfPage": 94,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf#page=94",
+      "permissionStatus": "srd-membership-confirmed-prose-origin-separate",
+      "wordingStatus": "srd-wording-preserved",
+      "edition": null,
+      "changedFields": []
+    },
+    {
+      "id": "keen_mind",
+      "name": "Keen Mind",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur",
+        "effets.2.valeur"
+      ]
+    },
+    {
+      "id": "weapon_master",
+      "name": "Weapon Master",
+      "category": "general",
+      "status": "not-included-in-srd-5.2.1",
+      "srdName": null,
+      "pdfPage": null,
+      "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+      "permissionStatus": "non-srd-rights-not-established",
+      "wordingStatus": "rewritten-in-editorial-edition",
+      "edition": "phb2024-2026-10-28-dons-20261031",
+      "changedFields": [
+        "description",
+        "effets.1.valeur"
+      ]
+    }
+  ]
+}

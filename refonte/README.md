@@ -1,6 +1,6 @@
 # La Table du Maître — état actuel
 
-Mise à jour : 30 octobre 2026.
+Mise à jour : 31 octobre 2026.
 
 La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le téléphone, le multiclasse, les nouveaux livres et la gestion du combat restent hors périmètre. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
 
@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261030T141809Z`, publiée le 30 octobre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261031T140222Z`, publiée le 31 octobre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261031T140222Z` applique 169 nouvelles rédactions aux 58 dons actifs hors SRD (58 descriptions et 111 effets). Les 17 dons du SRD, deux archives et 46 expressions de hausse de caractéristique sont conservés exactement. La campagne de 4 010 tests a signalé deux assertions liées aux anciens mots : elles sont corrigées et les 15 tests ciblés passent, sans changer les calculs. Les 52 comparaisons de fiches, huit parcours navigateur, deux contrôles du catalogue final et 58 fiches du Grimoire sont vérifiés. La sauvegarde contient 3 277 documents ; la comparaison MongoDB et les contrôles de persistance avant/après passent, personnages réels inchangés. Voir le [bilan des dons](audit/BILAN-REECRITURE-DONS-20261031.md) et le [classement des 77 entrées](audit/DONS-SRD.md). Les historiques, espèces et autres profils restent à examiner pour leur rédaction.
 
 La livraison `20261030T141809Z` applique une réécriture effective des textes hors SRD examinés : les 51 descriptions principales de sorts, huit profils convoqués et 179 descriptions d’aptitudes/options/traits des 36 sous-classes. Les deux notes RP déjà originales sont conservées. Les 238 nouveaux textes sont visibles dans les 87 fiches du Grimoire ; 4 006 tests unitaires, 108 comparaisons de fiches et huit parcours navigateur passent. Les règles et personnages restent inchangés. La comparaison avec le catalogue réellement stocké en base et les contrôles de persistance avant/après passent. Sauvegarde de 3 276 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261030T141809Z/`. Voir le [bilan des réécritures](audit/BILAN-REECRITURE-HORS-SRD-20261030.md). Les droits hors SRD restent distincts de ce travail de rédaction.
 

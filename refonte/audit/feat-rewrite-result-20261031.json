@@ -1,0 +1,62 @@
+{
+  "status": "deployed",
+  "release": "20261031T140222Z",
+  "previousRelease": "20261030T141809Z",
+  "rulesVersion": "phb2024-2026-10-28",
+  "catalogueId": "phb2024-2026-10-28-dons-20261031",
+  "catalogueSha256": "6b37cbdff5f0ba1c4c7822c620d66134545dde13eeb915be503037870fe25b9d",
+  "backup": "/root/backups/myrpgtable-persistence-20261031T140222Z",
+  "backupDocuments": 3277,
+  "actualMongoBaselineIdentical": true,
+  "immutableCatalogueImportVerified": true,
+  "persistenceBefore": {
+    "passed": 8,
+    "realCharactersUnchanged": true
+  },
+  "persistenceAfter": {
+    "passed": 8,
+    "realCharactersUnchanged": true
+  },
+  "httpChecks": 17,
+  "verification": {
+    "status": "passed",
+    "scope": "feat-rewrite-with-unchanged-mechanics-baseline",
+    "sourceHash": "6a6609e0aee265c1d9c876fd3781efaebcd08c2d2d31979fe7a10ef526ddb78c",
+    "completedAt": "2026-10-31T14:02:21.788Z",
+    "failed": 0,
+    "skipped": 0,
+    "baselineCommit": "82a7f76ba181aa2246e4786c1bb08cee7a27ca22",
+    "fullCampaign": {
+      "tests": 4010,
+      "initiallyPassed": 4008,
+      "initiallyFailed": 2,
+      "resolvedByTargetedRun": true
+    },
+    "targetedRepairRun": {
+      "tests": 15,
+      "passed": 15,
+      "repairedNames": [
+        "Un effet conditionnel de parade ou de charge ne gonfle pas la CA ou la vitesse permanente",
+        "Adepte élémentaire nécessite un type, applique la règle des 1 comptant comme 2 sans lancer de dés"
+      ]
+    },
+    "browserJourneys": 8,
+    "latestCatalogueChecks": 2,
+    "grimoireRoutes": 58,
+    "visibleRewrittenFields": 169,
+    "comparativeFeatSheets": 52,
+    "coverage": {
+      "activeFeats": 75,
+      "srdFeatsRetained": 17,
+      "nonSrdFeatsRewritten": 58,
+      "legacyArchivesRetained": 2,
+      "rewrittenFields": 169,
+      "retainedAbilityExpressions": 46
+    },
+    "rulesVersion": "phb2024-2026-10-28",
+    "catalogueId": "phb2024-2026-10-28-dons-20261031",
+    "previousCatalogueSha256": "7938ed5423f84d3301566923d55f8c8d69095adc715009f7fb27a3d38f4659a6",
+    "catalogueSha256": "6b37cbdff5f0ba1c4c7822c620d66134545dde13eeb915be503037870fe25b9d",
+    "qualification": "169 independently drafted technical text fields across 58 active non-SRD feats. Restoring these fields and the previous editorial metadata exactly recovers the actual baseline catalogue. SRD feats, archives, ability expressions, prerequisites and structured mechanics unchanged. Full campaign initially had two assertions tied to the previous wording; both repaired assertions and all 15 targeted tests pass on the final text. Eight broader browser journeys retained, two catalogue checks and all 58 changed Grimoire pages rechecked on the final edition. No redistribution-rights clearance or exhaustive original-book comparison claimed."
+  }
+}

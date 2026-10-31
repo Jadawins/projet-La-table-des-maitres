@@ -9,7 +9,7 @@ import {sheetModel} from '../maquette/sheet-model.mjs';
 import plan from '../data/non-srd-description-rewrite-20261030.json' with {type:'json'};
 import membership from '../audit/subclass-srd-membership-2024.json' with {type:'json'};
 const snapshot=JSON.parse(readFileSync(new URL('fixtures/rules-2024.json',import.meta.url)));
-const before=applyEditorialRevision(buildCatalogue(snapshot,{editorial:false})),after=buildCatalogue(snapshot);
+const before=applyEditorialRevision(buildCatalogue(snapshot,{editorial:false})),after=buildCatalogue(snapshot,{editorialUntil:plan.id});
 const hash=v=>createHash('sha256').update(v).digest('hex');
 const at=(c,change)=>change.path.reduce((v,k)=>v[k],c[change.collection].find(r=>r.id===change.id));
 

@@ -1,0 +1,2783 @@
+{
+  "id": "phb2024-2026-10-28-dons-20261031",
+  "rulesVersion": "phb2024-2026-10-28",
+  "date": "2026-10-31",
+  "status": "frozen",
+  "baseCatalogueSha256": "7938ed5423f84d3301566923d55f8c8d69095adc715009f7fb27a3d38f4659a6",
+  "previousEditorialRevision": {
+    "id": "phb2024-2026-10-28-resumes-20261030",
+    "status": "frozen",
+    "rulesVersion": "phb2024-2026-10-28",
+    "baseSha256": "60c30777c19fce5b10c5a2c47410f11a5ac98977a686a55859711ccd1a522826",
+    "scope": "Technical rewrites of all 51 non-SRD main spell descriptions, all eight associated summon descriptions, and 179 of the 181 inventoried ability/trait fields across 36 non-SRD subclasses. Two already original cosmetic notes retained. Numerical signatures and mechanical data preserved. Source books not exhaustively accessible for phrase-by-phrase comparison; no redistribution-rights clearance. Spell scaling, casting triggers and components remain as technical reference facts."
+  },
+  "scope": "Technical rewrites of the descriptions and non-ability-increase effect strings of all 58 active non-SRD feats. The 17 SRD feats, two legacy archives, numeric ability-increase expressions, prerequisites, IDs and effect types remain unchanged. No mechanics change or rights clearance.",
+  "coverage": {
+    "activeFeats": 75,
+    "srdFeatsRetained": 17,
+    "nonSrdFeatsRewritten": 58,
+    "legacyArchivesRetained": 2,
+    "rewrittenFields": 169,
+    "retainedAbilityExpressions": 46
+  },
+  "corrections": [
+    {
+      "collection": "feats",
+      "id": "bagarreur_de_tavernes",
+      "path": [
+        "description"
+      ],
+      "before": "Vos poings et objets improvisés deviennent des armes redoutables.",
+      "beforeSha256": "64de13a9caf8bb428e6677f2fade416b833969dfb0d50a4df52e952e69370e02",
+      "after": "Améliore les frappes à mains nues et accorde la maîtrise des armes improvisées.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "bagarreur_de_tavernes",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Mains nues : 1d4 + mod. FOR contondants peut remplacer les dégâts normaux.",
+      "beforeSha256": "272bc0443e20003d4b427918c7c2e920b59e38ec033c8aa3d74e44e7f1c6c905",
+      "after": "Pour les dégâts ordinaires de mains nues, vous pouvez employer à la place 1d4 + mod. FOR contondants.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "bagarreur_de_tavernes",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Dés de dégâts de mains nues : vous pouvez relancer un 1, nouveau résultat obligatoire.",
+      "beforeSha256": "bfc4c3c6081c0e8ab5969ac4e4c0ff4bcd21a93f4c358d60c32a7c5bd6221282",
+      "after": "Lors du jet de dégâts à mains nues, un résultat de 1 peut être relancé. Vous devez garder le second résultat.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "bagarreur_de_tavernes",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Maîtrise des armes improvisées.",
+      "beforeSha256": "7be9b62e4032ebb46fbf145dec92e37fad1bc5b1b9a4e031b4e7fef6c281f640",
+      "after": "Armes dont vous gagnez la maîtrise : les armes improvisées.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "bagarreur_de_tavernes",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Une fois par tour, à votre tour dans l’action Attaque : une touche de mains nues peut aussi repousser la cible de 1,50 m.",
+      "beforeSha256": "53317b7e36b020ae0b6279e248b1b9c4415c5d4ce8ddcdd9c136124adcaadaae",
+      "after": "Pendant l’action Attaque de votre tour, une touche à mains nues peut aussi repousser la cible de 1,50 m. Limite : une seule fois par tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chanceux",
+      "path": [
+        "description"
+      ],
+      "before": "Vous disposez d'une réserve de chance que vous pouvez dépenser pour influencer les jets de dés.",
+      "beforeSha256": "9489450d9815994914a132e63430d6933674673cbddfdca5f549c3a6e6602cd0",
+      "after": "Une réserve de points permet d’accorder l’Avantage à vos tests ou le Désavantage aux attaques dirigées contre vous.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chanceux",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Points de chance = bonus de maîtrise ; tous récupérés au Repos long.",
+      "beforeSha256": "7e8187491059a977a871f985eaf060b6ee760b189863d299d66b2d6a08c6597c",
+      "after": "Réserve de points de chance : bonus de maîtrise. Un Repos long rend tous les points dépensés.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chanceux",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Dépensez 1 point lorsque vous lancez le d20 d’un Test d20 : Avantage à ce jet.",
+      "beforeSha256": "15fc36eb14323a123a1664267011fee678c7fb560478087c06556bbbc2ceef08",
+      "after": "Au moment de lancer votre d20 pour un Test d20, vous pouvez payer 1 point de chance afin d’obtenir l’Avantage à ce jet.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chanceux",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Dépensez 1 point lorsqu’une créature lance le d20 d’une attaque contre vous : Désavantage à ce jet.",
+      "beforeSha256": "8675488a07cbec24ef3bf87a3e139cc355d230b9c83dce17bfe8135147f034d0",
+      "after": "Quand une créature lance le d20 d’une attaque vous visant, 1 point de chance permet de lui imposer le Désavantage à ce jet.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faconneur",
+      "path": [
+        "description"
+      ],
+      "before": "Vous maîtrisez trois outils d'artisan et pouvez fabriquer rapidement des objets courants.",
+      "beforeSha256": "f027b6e4785373bbb4be3a580a87edfc4fb3eea6c0ec2555b7e6f25f80e752b3",
+      "after": "Donne des maîtrises d’outils, une remise sur les achats non magiques et une fabrication temporaire au repos.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faconneur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Maîtrise de trois outils au choix parmi : charpentier, tanneur, maçon, potier, forgeron, bricoleur, tisserand, menuisier.",
+      "beforeSha256": "6845cece695ff84f55ca8bc34a833a8ca7ef0e62d3e37416061e86d011a967c2",
+      "after": "Choisissez trois maîtrises d’outils dans cette liste : bricoleur, charpentier, forgeron, maçon, menuisier, potier, tanneur et tisserand.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faconneur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Réduction de 20 % lors de l’achat d’un objet non magique.",
+      "beforeSha256": "86cf641d2feca0e83480f4c9dbbcf1664050cdbdb268a0ef5f4f9cb1f3b517ab",
+      "after": "Achats d’objets non magiques : leur prix est réduit de 20 %.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faconneur",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "À la fin d’un Repos long : fabriquez un objet de la table avec des outils possédés et maîtrisés. L’objet se désagrège à la fin de votre prochain Repos long.",
+      "beforeSha256": "48dd4b3805dd626ba1d8b471dbe6ddaf780eb9b47490b12ed7b61fb9f9851418",
+      "after": "Au terme d’un Repos long, des outils que vous possédez et maîtrisez permettent de produire un objet de la liste correspondante. Cet objet n’existe que jusqu’à la fin de votre prochain Repos long, où il se désagrège.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faconneur",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Charpentier : échelle, torche ; tanneur : étui à cartes, étui à parchemins, bourse ; maçon : palan ; potier : cruche, lampe ; forgeron : billes, seau, chausse-trappes, grappin, marmite en fer ; bricoleur : cloche, pelle, boîte à amadou ; tisserand : panier, corde, filet, tente ; menuisier : gourdin, massue, bâton de combat.",
+      "beforeSha256": "1ab02382dad2a52957f8fbfb68be10a12d94fe5f617c99e461f5d4f2a28ce629",
+      "after": "Objets par outils : bricoleur → cloche, pelle, boîte à amadou ; charpentier → échelle, torche ; forgeron → billes, seau, chausse-trappes, grappin, marmite en fer ; maçon → palan ; menuisier → gourdin, massue, bâton de combat ; potier → cruche, lampe ; tanneur → étui à cartes, étui à parchemins, bourse ; tisserand → panier, corde, filet, tente.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "guerisseur",
+      "path": [
+        "description"
+      ],
+      "before": "Vous maîtrisez les soins de campagne et pouvez utiliser une trousse de soins pour restaurer des points de vie.",
+      "beforeSha256": "f71646f821f5c4fbacec6beb4a5f973dec35e1a62654da13dbd637cd6dba40f6",
+      "after": "Permet de soigner avec une trousse et d’améliorer certains jets de soins.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "guerisseur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Action Utilisation : dépensez une utilisation de trousse de soins pour une créature à 1,50 m. Elle peut dépenser un de ses dés de vie ; vous lancez ce dé et elle récupère le résultat + votre bonus de maîtrise PV.",
+      "beforeSha256": "e364adaa6598281ba7cf7883673af91d7386a5f14e96f158bef1d22b9163c7ba",
+      "after": "Action Utilisation : consommez une utilisation de trousse de soins auprès d’une créature à 1,50 m. Si elle dépense un de ses dés de vie, vous le lancez. PV récupérés : résultat du dé + bonus de maîtrise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "guerisseur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Sur un dé de soins de votre sort ou de ce don : vous pouvez relancer un 1, nouveau résultat obligatoire.",
+      "beforeSha256": "a19521a7ed967b1b8ca7e30f0026d4e488cd38e00fd2b83e329b7e8f499a73b8",
+      "after": "Pour un dé de soins provenant de votre sort ou de ce don, vous pouvez relancer un 1. Le résultat de remplacement est obligatoire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "musicien",
+      "path": [
+        "description"
+      ],
+      "before": "Votre maîtrise musicale vous permet de soutenir vos alliés grâce à votre jeu.",
+      "beforeSha256": "c8b030eb17d48ff56e1018d132000977995d7efad6b1f09ef893521f06eddca5",
+      "after": "Accorde des maîtrises d’instruments et permet de transmettre l’Inspiration héroïque à la fin d’un repos.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "musicien",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Maîtrise de trois instruments de musique au choix.",
+      "beforeSha256": "ba6c4f192d0dbfbf6a828503a252e0dcf83b2fee1099c2e6b1ce878c51ce7c57",
+      "after": "Choisissez trois instruments de musique et recevez leur maîtrise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "musicien",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "À la fin d’un Repos court ou long : jouez d’un instrument maîtrisé pour accorder l’Inspiration héroïque à des alliés qui vous entendent, nombre maximal = bonus de maîtrise.",
+      "beforeSha256": "43bed55d55330409900438d8577c22b377741326b49533502de6248098e6b8b1",
+      "after": "Au terme d’un Repos court ou long, jouez avec un instrument dont vous avez la maîtrise. Des alliés qui vous entendent reçoivent l’Inspiration héroïque ; le nombre maximal de bénéficiaires est égal à bonus de maîtrise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "robuste",
+      "path": [
+        "description"
+      ],
+      "before": "Votre constitution physique exceptionnelle augmente votre réserve de points de vie.",
+      "beforeSha256": "0e9f69267d40bd30b1bb46e921fd4fea599493b3a8562aed030a7e20c64ec9f7",
+      "after": "Augmente les PV maximaux, avec une progression à chaque niveau.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "robuste",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Maximum de PV augmenté de deux fois votre niveau de personnage ; encore +2 PV à chaque gain de niveau.",
+      "beforeSha256": "0a27a3c826fef959ebebb352491afe518813b7dbd4813d3938dfee18ffb72d32",
+      "after": "À l’acquisition, ajoutez deux fois votre niveau de personnage à vos PV maximaux. Chaque niveau gagné ensuite augmente encore ce maximum de 2 PV.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "adepte_elementaire",
+      "path": [
+        "description"
+      ],
+      "before": "Votre maîtrise d'un type d'énergie élémentaire devient quasi parfaite.",
+      "beforeSha256": "9bac4777e2dbd4e77f57719d6441c36e8a6bd90831acbb436668a188c3e65e8a",
+      "after": "Spécialise vos sorts dans un type de dégâts élémentaires choisi.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "adepte_elementaire",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Choisissez acide, froid, feu, foudre ou tonnerre : vos sorts ignorent la Résistance à ce type ; pour un sort infligeant ce type, les 1 sur les dés de dégâts peuvent compter comme des 2.",
+      "beforeSha256": "f9007e0a07c43d35008e2ecb0d9f82c96fe6aa0b6ae54096a1182c405f55d97b",
+      "after": "Type choisi : acide, froid, feu, foudre ou tonnerre. Vos sorts passent la Résistance à ce type de dégâts. Quand un sort inflige ce type, ses dés de dégâts montrant 1 peuvent être traités comme des 2.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "adepte_elementaire",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Répétable : un type différent à chaque acquisition.",
+      "beforeSha256": "c09c17fe1b9bab77fcafcda7b00dd361bfec1d2306eeef7980bae30f3eb62e22",
+      "after": "Répétable : chaque nouvelle acquisition exige un type de dégâts différent des choix précédents.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "affinite_feerique",
+      "path": [
+        "description"
+      ],
+      "before": "Une exposition prolongée à la magie féerique vous a octroyé des capacités surnaturelles.",
+      "beforeSha256": "10defb03ddf5d250fcc26c0d462b539ce262e256008011bcc47ab6e6b9aee01b",
+      "after": "Ajoute Foulée brumeuse et un sort choisi de Divination ou d’Enchantement à votre magie.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "affinite_feerique",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Choisissez un sort de niveau 1 de Divination ou Enchantement. Ce sort et Foulée brumeuse sont toujours préparés ; chacun peut être lancé une fois sans emplacement par Repos long, et aussi avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée par ce don.",
+      "beforeSha256": "ef98728007885af7e5025271c5e958493864d8bce4d730a3b9c9781018f2efc6",
+      "after": "Sélectionnez un sort de Divination ou d’Enchantement de niveau 1. Il devient toujours préparé, comme Foulée brumeuse. Chacun dispose d’une incantation sans emplacement par Repos long et peut aussi utiliser vos emplacements. Pour ces sorts, employez la caractéristique augmentée par ce don.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "affinite_ombreuse",
+      "path": [
+        "description"
+      ],
+      "before": "Une exposition prolongée à la magie des Gloombres vous confère des pouvoirs liés à l'ombre.",
+      "beforeSha256": "3fedcb68762d48bc4827da1cd4ddc622c62c036eb86eb252b3ccbd2743921854",
+      "after": "Ajoute Invisibilité et un sort choisi d’Illusion ou de Nécromancie à votre magie.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "affinite_ombreuse",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Choisissez un sort de niveau 1 d’Illusion ou Nécromancie. Ce sort et Invisibilité sont toujours préparés ; chacun peut être lancé une fois sans emplacement par Repos long, et aussi avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée par ce don.",
+      "beforeSha256": "187f8d5fb6f38839393bd346ef015d7015c503cdf199d50d56bf84625781e260",
+      "after": "Sélectionnez un sort d’Illusion ou de Nécromancie de niveau 1. Il est préparé en permanence, ainsi qu’Invisibilité. Chaque sort se lance une fois sans emplacement par Repos long, ou au moyen de vos emplacements. Leur caractéristique d’incantation est celle que ce don a augmentée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "athlete",
+      "path": [
+        "description"
+      ],
+      "before": "Vos capacités physiques sont exceptionnelles, rendant vos mouvements plus fluides et efficaces.",
+      "beforeSha256": "203166e869f7209783e88a52a6eff4d13a3b0898457567112a1771838da9bdc1",
+      "after": "Améliore les déplacements en escalade, le relevé et la prise d’élan des sauts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "athlete",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vitesse d’escalade égale à votre Vitesse.",
+      "beforeSha256": "adac700f0d42760ca15fe74729554c81d8892494977654e05d43c8e201b0ece7",
+      "after": "Votre déplacement d’escalade utilise une vitesse égale à votre Vitesse.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "athlete",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Se relever de l’état À terre ne coûte que 1,50 m de déplacement.",
+      "beforeSha256": "48faf80059168dd0407cdbd6dc900be92d1819db1155f1f0e4ffc2efd2c72ff6",
+      "after": "Pour quitter À terre et vous relever, dépensez seulement 1,50 m de déplacement.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "athlete",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Élan de seulement 1,50 m nécessaire pour un saut en longueur ou en hauteur.",
+      "beforeSha256": "2ad9c115d2e60195c0c01e4e18ba69a504b2b9e46b410b5c9a04a7ed5bcd138b",
+      "after": "Saut en longueur ou en hauteur : un élan de 1,50 m suffit.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "broyeur",
+      "path": [
+        "description"
+      ],
+      "before": "Vos attaques contondantes brisent les défenses et écrasent les ennemis.",
+      "beforeSha256": "631b20920fd0770a60a4779ba7a6404af571ca1bfe99253ad93a7950b920ac63",
+      "after": "Ajoute un déplacement de cible et un bénéfice sur critique à vos dégâts contondants.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "broyeur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Une fois par tour sur une touche infligeant des dégâts contondants : déplacez la cible de 1,50 m vers un espace inoccupé si elle ne dépasse pas votre taille de plus d’un cran.",
+      "beforeSha256": "4269322557041dd85d6bb1df92a6a323a17741c46f07796b14b5398c7d1e93b7",
+      "after": "Après une touche infligeant des contondants, vous pouvez déplacer la cible de 1,50 m dans un espace inoccupé si sa taille dépasse la vôtre d’un cran au plus. Une seule utilisation par tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "broyeur",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Sur un critique infligeant des dégâts contondants à une créature : Avantage aux attaques contre elle jusqu’au début de votre prochain tour.",
+      "beforeSha256": "7d88690ecfbdc7f56cde2a9e1b2ecc61679243a0674673b6a3e893a0461b1b63",
+      "after": "Un critique infligeant des contondants à une créature donne l’Avantage aux attaques contre elle jusqu’au début de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chef_cuisinier",
+      "path": [
+        "description"
+      ],
+      "before": "Vos talents culinaires permettent de préparer des repas qui restaurent et revigorent.",
+      "beforeSha256": "4ca40cdfc537829debb3d084e39d711e5f8342281083f63b09e5ab3882e9e9cd",
+      "after": "Permet de préparer des repas de récupération et des provisions donnant des PV temporaires.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chef_cuisinier",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Maîtrise des ustensiles de cuisinier si vous ne l’avez pas.",
+      "beforeSha256": "b3d1c187d26714dbdea28d51fd4f3c1d4904aaeb6c16978383f42cb743c9ead7",
+      "after": "Vous gagnez la maîtrise des ustensiles de cuisinier si elle vous manque.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chef_cuisinier",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Au Repos court avec ingrédients et ustensiles : repas pour 4 + bonus de maîtrise créatures. Celles qui mangent et dépensent au moins un dé de vie récupèrent 1d8 PV supplémentaires.",
+      "beforeSha256": "4bac25da04277014a0999f3cf56a6a5bab585b3f4c3ab8eb4268506e9466da51",
+      "after": "Avec ingrédients et ustensiles pendant un Repos court, préparez un repas pour 4 + bonus de maîtrise créatures. Un convive qui mange et dépense au moins un dé de vie reçoit 1d8 PV de soin supplémentaires.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "chef_cuisinier",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "En une heure ou à la fin d’un Repos long, avec ingrédients et ustensiles : bonus de maîtrise friandises durant 8 heures. Action Bonus pour en manger une et gagner bonus de maîtrise PV temporaires.",
+      "beforeSha256": "d8c622c960a05fb6a53539ad5c7e9ed9d3e0d8e8bd88b28e58b2d445e35ed212",
+      "after": "Avec ingrédients et ustensiles, une heure de préparation ou la fin d’un Repos long donne bonus de maîtrise friandises, conservées 8 heures. En consommer une par action Bonus accorde bonus de maîtrise PV temporaires.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "cogneur_lourd",
+      "path": [
+        "description"
+      ],
+      "before": "Votre maîtrise des armes lourdes vous permet de décimer vos adversaires avec des coups dévastateurs.",
+      "beforeSha256": "b1b70ff02c113f079e0eb8a88b92a819838f25f326c5e08809e45e4b7c3f06de",
+      "after": "Renforce les touches d’armes Lourdes et permet une attaque après certains coups décisifs.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "cogneur_lourd",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "À votre tour dans l’action Attaque : une touche contre une créature avec une arme Lourde peut ajouter le bonus de maîtrise aux dégâts de cette arme.",
+      "beforeSha256": "531fe8be8137c759ff989f1b1df99062cda071846a4c7ea5ab39bdfe9ac088ab",
+      "after": "Lors de l’action Attaque de votre tour, une touche d’arme Lourde sur une créature peut recevoir un bonus aux dégâts égal à bonus de maîtrise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "cogneur_lourd",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Immédiatement après un critique avec une arme de corps à corps ou après avoir réduit une créature à 0 PV avec elle : une attaque de la même arme en action Bonus.",
+      "beforeSha256": "0f72826e4886dfe719252dd22395c917ffb051cc225f3622435d6f04455e3813",
+      "after": "Après un critique d’arme de corps à corps, ou après avoir amené une créature à 0 PV avec cette arme, vous pouvez immédiatement employer votre action Bonus pour une attaque de la même arme.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_a_deux_armes",
+      "path": [
+        "description"
+      ],
+      "before": "Vous excellez dans le combat avec une arme dans chaque main.",
+      "beforeSha256": "8f15794e8f39c5728ed5027b0628d860647238973ce46c17dbe95b09231fdea8",
+      "after": "Développe les options d’attaque et de manipulation avec deux armes.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_a_deux_armes",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Après une attaque avec une arme Légère dans l’action Attaque à votre tour : attaque supplémentaire en action Bonus plus tard ce tour avec une autre arme de corps à corps sans Deux mains. Modificateur de caractéristique non ajouté aux dégâts sauf s’il est négatif.",
+      "beforeSha256": "e16c4f173bcaaf7a105132790e3c97fb52a56fc83dd73109a8e1d65fa574116b",
+      "after": "À votre tour, après une attaque d’arme Légère dans l’action Attaque, vous pouvez faire plus tard dans ce tour une attaque supplémentaire par action Bonus. Utilisez une autre arme de corps à corps dépourvue de Deux mains. N’ajoutez pas votre modificateur de caractéristique à ses dégâts, sauf s’il est négatif.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_a_deux_armes",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Dégainer ou rengainer deux armes sans Deux mains lorsque vous pourriez normalement n’en manipuler qu’une.",
+      "beforeSha256": "c5a0adb72fc22bb6b8a68868360d89e7e8d04e439fe35a5aa04a957f7fb69ad4",
+      "after": "Quand une manipulation vous permet de dégainer ou rengainer une arme, vous pouvez en manipuler deux à la place, à condition qu’elles n’aient pas Deux mains.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_monte",
+      "path": [
+        "description"
+      ],
+      "before": "Vous tirez le meilleur parti du combat à cheval ou sur une monture.",
+      "beforeSha256": "6f83577d235b59ec0131f9218e0d610e24afe1825a13de826eb092a64aa524e1",
+      "after": "Accorde des avantages de combat en selle et des moyens de protéger la monture.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_monte",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "En selle : Avantage aux jets d’attaque contre une créature non montée à 1,50 m de votre monture, d’au moins une taille inférieure à celle-ci.",
+      "beforeSha256": "82cae99940e6c09ca683a63d70e2ecbb8cc74806ddf39ce9cd9d816195e8c63c",
+      "after": "En selle, vos jets d’attaque ont l’Avantage contre une créature non montée située à 1,50 m de la monture, si cette créature est au moins une catégorie de taille plus petite qu’elle.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_monte",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Si aucun de vous n’est Neutralisé, votre monture subit zéro dégât sur un JS DEX réussi normalement pour moitié, et la moitié sur un échec.",
+      "beforeSha256": "c622df1cde9954d1c9990de7f9814e79a23fc4c61721e9b2dab9051da6d53dab",
+      "after": "Si ni vous ni votre monture n’êtes Neutralisés, une sauvegarde DEX de la monture prévue pour moitié lui fait subir zéro dégât sur réussite et seulement la moitié sur échec.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_monte",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "En selle et non Neutralisé : une attaque touchant votre monture peut vous toucher à sa place.",
+      "beforeSha256": "d80e3a4387d8322fa05eb1a0e8cff1a25e640091585b9ca7f00e00dbc6ce7c0a",
+      "after": "En étant en selle et non Neutralisé, vous pouvez recevoir à la place de votre monture une attaque qui la touche.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "comedien",
+      "path": [
+        "description"
+      ],
+      "before": "Vous êtes un acteur accompli, capable de vous faire passer pour d'autres personnes.",
+      "beforeSha256": "233fd3c789224cdfeb6197ab62e90466815624ac0b98ccbef9f21ea5747e0d81",
+      "after": "Facilite l’usurpation d’identité et l’imitation de voix ou de sons.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "comedien",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Déguisé en une personne réelle ou fictive : Avantage à CHA (Tromperie ou Représentation) pour convaincre que vous êtes cette personne.",
+      "beforeSha256": "038da2f208564bd848c1f598bde38ad8c1462266fa04c1a6c62d3f9259a6942f",
+      "after": "Sous le déguisement d’une personne réelle ou inventée, vos tests CHA (Tromperie ou Représentation) ont l’Avantage pour faire accepter cette identité.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "comedien",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Vous imitez les sons d’autres créatures, y compris leur parole. Pour discerner l’imitation : test SAG (Perspicacité), DD 8 + mod. CHA + bonus de maîtrise.",
+      "beforeSha256": "663e7745fe9439fea4a72046647fa8c91cf148aef6382d2ad6a5989f92ce498b",
+      "after": "Vous pouvez reproduire les sons d’autres créatures, parole comprise. Déceler l’imitation demande un test SAG (Perspicacité), DD 8 + mod. CHA + bonus de maîtrise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "discret",
+      "path": [
+        "description"
+      ],
+      "before": "Vous êtes passé maître dans l'art de passer inaperçu.",
+      "beforeSha256": "512c353966d56a60caa68c83cd8b3682eb3fcf6a5402cfaa512c60b34b9958ee",
+      "after": "Améliore la détection rapprochée et vos actions pour rester caché au combat.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "discret",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vision aveugle sur 3 m.",
+      "beforeSha256": "f248489224ec4eabab00c3704b8bb03e93754aecf15e36deded4678905abd07d",
+      "after": "Sens accordé : vision aveugle à 3 m.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "discret",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Avantage aux tests DEX (Discrétion) de l’action Furtivité pendant le combat.",
+      "beforeSha256": "dc24e59e6c07589c1729b27ed20f80d042a3c97a41196f2e89fe49fe5b7b3aca",
+      "after": "Pendant un combat, les tests DEX (Discrétion) de votre action Furtivité bénéficient de l’Avantage.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "discret",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Une attaque ratée pendant que vous êtes caché ne révèle pas votre position.",
+      "beforeSha256": "2acd83c900f928ea2c3bab3b04861ea83dc0df56772da229186697b11e3054bb",
+      "after": "Si vous êtes caché, rater une attaque ne dévoile pas votre position.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "duelliste_defensif",
+      "path": [
+        "description"
+      ],
+      "before": "Votre technique de parade vous permet de dévier les coups en plein combat.",
+      "beforeSha256": "c745068eeb39587fc5cf37c0353029dfad1db962c4b1e8f1cdaf2886eb0c65b9",
+      "after": "Permet une défense en réaction avec une arme Finesse.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "duelliste_defensif",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Arme Finesse tenue, autre créature vous touchant au corps à corps : Réaction pour ajouter le bonus de maîtrise à votre CA, potentiellement contre cette touche, puis contre les attaques de corps à corps jusqu’au début de votre prochain tour.",
+      "beforeSha256": "1c6a6368e285eeafd1b7a34fd713e763a5a9402d74c2ee3dc33c97a1938e700f",
+      "after": "Condition : tenir une arme Finesse et être touché au corps à corps par une autre créature. En dépensant votre Réaction, modifiez votre CA : +bonus de maîtrise, ce qui peut faire rater cette touche. Ce bonus reste applicable aux attaques de corps à corps jusqu’au début de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "empoisonneur",
+      "path": [
+        "description"
+      ],
+      "before": "Vous préparez et appliquez des poisons avec expertise.",
+      "beforeSha256": "1e4f6a39ae655091269147a90043883b966ae3566be39defa47b40261f060481",
+      "after": "Améliore les dégâts de poison et permet la fabrication puis l’application de doses.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "empoisonneur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vos jets de dégâts de poison ignorent la Résistance au poison.",
+      "beforeSha256": "5ff0c0adf36b2614919cff17465bb14bc6a01b18053a77948e4876b28f1009a2",
+      "after": "La Résistance au poison ne réduit pas vos jets de dégâts de poison.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "empoisonneur",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Maîtrise du matériel d’empoisonneur. Une heure de travail avec ce matériel et 50 po de matériaux : bonus de maîtrise doses de poison.",
+      "beforeSha256": "4783c9a77720039e002e92eaf0f8e9c60fbc61d8b65846ce55ba4c252779a541",
+      "after": "Vous gagnez la maîtrise du matériel d’empoisonneur. Avec ce matériel, une heure de travail et 50 po de matériaux donnent bonus de maîtrise doses de poison.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "empoisonneur",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Action Bonus pour appliquer une dose sur une arme ou munition ; elle reste active 1 minute ou jusqu’à infliger des dégâts avec cet objet. La cible blessée doit réussir un JS CON, DD = 8 + bonus maîtrise + mod. caract., sous peine de subir 2d8 poison et Empoisonné jusqu’à la fin de votre prochain tour.",
+      "beforeSha256": "c514d3b59bc452eec3f004cae9a4c481e04d31dbf70997573a10ad0b7c84ba05",
+      "after": "Appliquer une dose sur une arme ou une munition coûte une action Bonus. Elle reste efficace 1 minute, ou jusqu’à des dégâts infligés avec l’objet si plus tôt. La créature blessée fait un JS CON, DD = 8 + bonus maîtrise + mod. caract. ; un échec inflige 2d8 poison et impose Empoisonné jusqu’à la fin de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "expert",
+      "path": [
+        "description"
+      ],
+      "before": "Votre expertise dans un domaine dépasse de loin celle de vos pairs.",
+      "beforeSha256": "c1e23bdf2353044aa272d6de898f9d039587699fa2424a5f0e44f55b72afbce8",
+      "after": "Ajoute une maîtrise de compétence puis une Expertise dans une compétence maîtrisée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "expert",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Maîtrise d’une compétence de votre choix.",
+      "beforeSha256": "d07cdc7c9e0aaf3fd5581d64265435ef42a035ee503be2be9ea86771914e7104",
+      "after": "Recevez la maîtrise d’une compétence que vous choisissez.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "expert",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Expertise dans une compétence maîtrisée sans Expertise, à choisir après cette nouvelle maîtrise.",
+      "beforeSha256": "f9c19d903fdf334867c1318176985a0d416613298138cf0c9b6247e56d35b782",
+      "after": "Après ce choix de maîtrise, sélectionnez une compétence maîtrisée qui n’a pas encore d’Expertise : elle reçoit l’Expertise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "expert_de_la_charge",
+      "path": [
+        "description"
+      ],
+      "before": "Votre charge au combat est une force dévastatrice.",
+      "beforeSha256": "2063c244afc6d4067ffd0b5035364dfb61a8feb8a3fe79aee87c2f21a78569b6",
+      "after": "Renforce l’action Pointe et certaines touches de corps à corps après un déplacement rectiligne.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "expert_de_la_charge",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Action Pointe : Vitesse augmentée de 3 m pour cette action.",
+      "beforeSha256": "20620dddb14ff4f0cd36fd4130b1c6fbd8fea20c9e4051bc48a645a4b74054d3",
+      "after": "Pendant votre action Pointe, votre Vitesse augmente de 3 m pour cette action.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "expert_de_la_charge",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Une fois à chacun de vos tours : après 3 m en ligne droite vers une cible immédiatement avant une touche de corps à corps dans l’action Attaque, +1d8 aux dégâts ou poussée jusqu’à 3 m si la cible ne dépasse pas votre taille de plus d’un cran.",
+      "beforeSha256": "a3cd7cd6f7784a7ac73c4e2ba3f7b7cbbc89fabbf547aad24d62ecac4ba0da58",
+      "after": "À votre tour, parcourir 3 m en ligne droite vers la cible juste avant de la toucher au corps à corps dans l’action Attaque permet un choix : ajouter 1d8 aux dégâts, ou la repousser jusqu’à 3 m si elle n’excède votre taille que d’un cran au plus. Limite : une application à chacun de vos tours.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "figure_de_proue",
+      "path": [
+        "description"
+      ],
+      "before": "Votre charisme naturel galvanise vos alliés et leur donne confiance.",
+      "beforeSha256": "8c18dc2e9133968ecd80ea07c37e4b1838c89ecda293be492c5916d31b2e90f6",
+      "after": "Une prestation à la fin d’un repos peut accorder des PV temporaires aux participants.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "figure_de_proue",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "À la fin d’un Repos court ou long : une prestation inspirante accorde des PV temporaires égaux à votre niveau + modificateur de la caractéristique augmentée par ce don, à six alliés au maximum, vous compris, à 9 m et témoins de la prestation.",
+      "beforeSha256": "c2aa36b2d0b487f9cb67ea902e1185e92d3f0ad5b1af7c1f86174354c28b1838",
+      "after": "À l’issue d’un Repos court ou long, faites une prestation inspirante. Choisissez au plus six alliés à 9 m qui en sont témoins, en pouvant vous compter. Chacun reçoit votre niveau + modificateur de la caractéristique augmentée par ce don en PV temporaires.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "formation_aux_armes_de_guerre",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez reçu une formation au maniement des armes de guerre.",
+      "beforeSha256": "80fc2556af7f68ae455757649322ef852e37b9c1c8d595e68f3bd27acc02cb5e",
+      "after": "Étend votre formation aux armes de guerre.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "formation_aux_armes_de_guerre",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Maîtrise des armes de guerre.",
+      "beforeSha256": "c5a4c7458a943835c9c9e6e38e460ef1bd6a3b836e5749fb297f8ae84767d445",
+      "after": "Vous obtenez la maîtrise de l’ensemble des armes de guerre.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "gaillard",
+      "path": [
+        "description"
+      ],
+      "before": "Votre robustesse physique vous permet de résister aux situations mortelles.",
+      "beforeSha256": "3642d841aca3676e0d1db1eecb681686cb50ff9c4e3e8d7883ff7d42cd2f37d0",
+      "after": "Facilite les sauvegardes contre la mort et l’emploi de Dés de vie pour se soigner.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "gaillard",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Avantage aux jets de sauvegarde contre la mort.",
+      "beforeSha256": "b7bb9d48888c47c62c8d8bb10b3d366b333282071b52286030cff7bbe3f28bbd",
+      "after": "Vos sauvegardes contre la mort bénéficient de l’Avantage.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "gaillard",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Action Bonus : dépensez un dé de vie, lancez-le et récupérez autant de PV que le résultat, sans ajout de CON.",
+      "beforeSha256": "c18a26bd5d6ce9293f61c2dff335103881189178e365c6fd9537c1016f0a7894",
+      "after": "Soin personnel par action Bonus : dépensez puis lancez un dé de vie pour récupérer son résultat en PV. CON ne s’ajoute pas à ce soin.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "incantateur_d_elite",
+      "path": [
+        "description"
+      ],
+      "before": "Votre maîtrise magique atteint un niveau permettant de contourner les défenses des adversaires.",
+      "beforeSha256": "c654500554acbe31c0a59d0d84d2d948856bc7dc8b9cd646f2eab175d59b15f0",
+      "after": "Améliore la portée et les conditions des attaques de sorts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "incantateur_d_elite",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vos jets d’attaque de sorts ignorent les Abris partiels et importants ; un ennemi à 1,50 m n’impose pas le Désavantage à ces jets.",
+      "beforeSha256": "bbff59bde6988c0a88765103267d6ce211b13c55584ead64b79dd455836d5358",
+      "after": "Pour vos jets d’attaque de sorts, ignorez les Abris partiels et importants. La présence d’un ennemi à 1,50 m ne leur impose pas le Désavantage.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "incantateur_d_elite",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "À l’incantation d’un sort nécessitant un jet d’attaque et de portée initiale d’au moins 3 m : vous pouvez augmenter sa portée de 18 m.",
+      "beforeSha256": "f5140ec4b41e6d35ed56675e8d2ce3c7bb06c0ff3274dec91b32a089b7ea6e76",
+      "after": "Au moment d’incanter un sort à jet d’attaque dont la portée initiale est d’au moins 3 m, vous pouvez ajouter 18 m à sa portée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mage_de_guerre",
+      "path": [
+        "description"
+      ],
+      "before": "Vous combinez arts martiaux et magie avec fluidité sur le champ de bataille.",
+      "beforeSha256": "585c1f41744a2064314066c5f9d1316d604a6a9d937712cd20725c05cb5fc59b",
+      "after": "Aide à maintenir la Concentration et à incanter en situation de combat.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mage_de_guerre",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Avantage aux JS CON pour maintenir votre Concentration.",
+      "beforeSha256": "9732b9a359b36600b10db5e37fb85429b5eb94888628446a96b5207111a0b800",
+      "after": "Les JS CON effectués pour maintenir votre Concentration ont l’Avantage.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mage_de_guerre",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Si une créature provoque votre attaque d’opportunité en quittant votre allonge : Réaction pour lancer à sa place un sort de temps d’incantation une action, ciblant cette seule créature.",
+      "beforeSha256": "f0e8f3f5d0000eb019aed2adf68bfe13ed17ca45578aa4cbe28c82d9dbc0cfe6",
+      "after": "Lorsqu’une créature quitte votre allonge et provoque votre attaque d’opportunité, vous pouvez employer votre Réaction pour lancer à sa place un sort prenant une action. Ce sort doit prendre cette créature pour seule cible.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mage_de_guerre",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Composantes somatiques possibles avec armes ou bouclier dans une ou deux mains.",
+      "beforeSha256": "dcd75df6a46dd7e4bd02c14a7475f9a816df7f60d85d48e92c46b2edc98a4d96",
+      "after": "Vous pouvez fournir des composantes somatiques même en tenant armes ou bouclier dans une ou deux mains.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "magie_rituelle",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez appris à lancer certains sorts sous forme de rituel prolongé.",
+      "beforeSha256": "1b141325493e57fce59b702b40e5456010c4317a71de14dee5adf1a99c099fce",
+      "after": "Accorde une sélection de sorts rituels et une utilisation rapide d’un rituel préparé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "magie_rituelle",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Choisissez bonus de maîtrise sorts de niveau 1 avec Rituel, de toute liste : toujours préparés, lançables aussi avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée. À chaque augmentation ultérieure du bonus de maîtrise, ajoutez un tel sort.",
+      "beforeSha256": "690a75998f0b81bd2d448f11375b60ae02fd5a9847fb3039297ddf42ef8e3cc7",
+      "after": "Préparation permanente : choisissez bonus de maîtrise sorts de niveau 1 portant Rituel, sans restriction de liste. Vous pouvez aussi les lancer avec vos emplacements. Leur caractéristique d’incantation est celle que ce don augmente. Chaque hausse ultérieure du bonus de maîtrise ajoute un autre sort répondant à ces critères.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "magie_rituelle",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Une fois par Repos long : un sort Rituel préparé peut être lancé sans emplacement avec son temps normal, sans les dix minutes supplémentaires du rituel.",
+      "beforeSha256": "7f298ce8f05630b93fcb5f05f44d1ada98c4fe0a83c42f844ade3a4dfcb0172d",
+      "after": "Une utilisation par Repos long : lancez un sort Rituel préparé sans emplacement, avec son temps d’incantation ordinaire. Les dix minutes habituelles supplémentaires du rituel ne s’ajoutent pas.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_arbaletrier",
+      "path": [
+        "description"
+      ],
+      "before": "Votre maîtrise de l'arbalète vous permet de tirer avec une précision et une vitesse redoutables.",
+      "beforeSha256": "fa8a63541c2047c555b00d12c217529f2b7f114bd27661368bbe27d588a00cc9",
+      "after": "Facilite le rechargement des arbalètes et leur emploi à courte distance ou en attaque supplémentaire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_arbaletrier",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Ignorez Chargement des arbalètes de poing, légères et lourdes ; une main libre n’est pas nécessaire pour les recharger si vous les tenez.",
+      "beforeSha256": "7b3dd6c03c6675001ea4d760b220bda1d607696b5a7a6b0586f32cb6818ac696",
+      "after": "Pour les arbalètes de poing, légères et lourdes que vous tenez, ignorez Chargement et la nécessité d’une main libre pour recharger.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_arbaletrier",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Un ennemi à 1,50 m n’impose pas le Désavantage aux attaques d’arbalète.",
+      "beforeSha256": "ca3a161cc5c572f9ac89d9c208732a47fe9bf0c50f2b4023af912d9317aa4d6a",
+      "after": "Les attaques d’arbalète ne reçoivent pas de Désavantage du seul fait d’un ennemi à 1,50 m.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_arbaletrier",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Attaque supplémentaire de Légère avec une arbalète Légère : ajoutez le modificateur de caractéristique aux dégâts si ce n’est pas déjà fait.",
+      "beforeSha256": "d57c3c38948fc1d45447af31da860d9523eba768b4af6fb10fdcd3a4cde9b6c4",
+      "after": "Si l’attaque supplémentaire de Légère utilise une arbalète Légère, ajoutez votre modificateur de caractéristique à ses dégâts lorsqu’il n’est pas déjà ajouté.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_d_hast",
+      "path": [
+        "description"
+      ],
+      "before": "Vous manœuvrez les armes d'hast avec fluidité, couvrant une grande zone de combat.",
+      "beforeSha256": "9a0c7990ee507f7e65363e7b3430a35f81fc5b919a59328f73cb2c633a029fd8",
+      "after": "Ajoute une frappe par l’autre extrémité de certaines armes et une réaction à l’approche d’un ennemi.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_d_hast",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Immédiatement après l’action Attaque avec un bâton de combat, une lance ou une arme Lourde et Allonge : action Bonus pour une attaque de corps à corps avec l’autre extrémité, dé d4 contondant.",
+      "beforeSha256": "2087ca286f481ad052e29451a24e83f6c8f22302f05abcd559e2d61759abeb6e",
+      "after": "Après l’action Attaque utilisant un bâton de combat, une lance ou une arme à la fois Lourde et Allonge, vous pouvez employer immédiatement une action Bonus pour frapper au corps à corps avec l’autre extrémité. Son dé de dégâts est d4, de type contondant.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_d_hast",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "En tenant une de ces armes : Réaction pour une attaque de corps à corps contre une créature entrant dans son allonge. Cette Réaction n’est pas présentée comme une attaque d’opportunité.",
+      "beforeSha256": "e2c5538c4d5ed6f7cf67c92d3cc5623883e197cf7f39f634f48ce96024b78378",
+      "after": "Si vous tenez une de ces armes, votre Réaction permet une attaque au corps à corps contre une créature qui entre dans son allonge. Cette réaction n’est pas une attaque d’opportunité.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_armures_intermediaires",
+      "path": [
+        "description"
+      ],
+      "before": "Vous portez les armures intermédiaires avec une agilité surprenante.",
+      "beforeSha256": "7ca2b606b6226692e4b3765e86354c3847b06cfa3c014ec99c74d38bb578a87b",
+      "after": "Relève le bonus de Dextérité applicable en armure intermédiaire sous condition.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_armures_intermediaires",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "En armure intermédiaire, si votre DEX est de 16 ou plus : vous pouvez ajouter 3 à la CA au lieu de 2. Aucun retrait du Désavantage de Discrétion accordé.",
+      "beforeSha256": "a0f1d3a582f8ee97225d7ae7baa29078bf6d0567db5ca50d6efbd49e66f2b7cb",
+      "after": "Condition : porter une armure intermédiaire et avoir DEX 16 ou plus. Vous pouvez compter 3 de bonus à la CA au lieu de 2. Ce don ne supprime pas le Désavantage de Discrétion.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_armures_lourdes",
+      "path": [
+        "description"
+      ],
+      "before": "Votre armure lourde devient un rempart quasi impénétrable.",
+      "beforeSha256": "79156b1f8f8988a1bed18c30476ecae928b5ccbfef17367dc3dfb7515ba04faa",
+      "after": "Réduit certains dégâts des attaques lorsque vous portez une armure lourde.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_armures_lourdes",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Si une attaque vous touche pendant que vous portez une armure lourde : réduisez ses dégâts contondants, perforants et tranchants du bonus de maîtrise, même s’ils sont magiques.",
+      "beforeSha256": "a8c1a1d0cacb37000abe214a0da04a5087436e3e0a21cf86e60c9b2041baa94b",
+      "after": "Avec une armure lourde, lorsqu’une attaque vous touche, retirez bonus de maîtrise de ses dégâts contondants, perforants et tranchants. Cette réduction s’applique également aux dégâts magiques de ces types.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_boucliers",
+      "path": [
+        "description"
+      ],
+      "before": "Votre bouclier est à la fois outil défensif et arme offensive.",
+      "beforeSha256": "bb4b1c578df2bd61a4316a992113a652d0de58870530845ae81ea5a21093e1bd",
+      "after": "Permet une poussée après une touche et une protection en réaction avec le bouclier.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_boucliers",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Une fois à chacun de vos tours, sur une touche d’arme de corps à corps contre une cible à 1,50 m dans l’action Attaque : si bouclier équipé, JS FOR DD 8 + mod. FOR + bonus de maîtrise ; échec : poussée de 1,50 m ou À terre, à votre choix.",
+      "beforeSha256": "71aa37384a1b5fe5046ed45731153d8954a9968701ce99dff235630f0023ffae",
+      "after": "Une fois à chacun de vos tours, si vous avez un bouclier et touchez à 1,50 m avec une arme de corps à corps dans l’action Attaque, vous pouvez imposer un JS FOR, DD 8 + mod. FOR + bonus de maîtrise. En cas d’échec, choisissez une poussée de 1,50 m ou l’état À terre.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_boucliers",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Bouclier tenu : si vous réussissez un JS DEX réduisant normalement les dégâts de moitié, Réaction pour ne subir aucun dégât.",
+      "beforeSha256": "8f13cc5149176d0cb7a55d8a2475d5dca348c10dfb5f7e5ccdc180003091d4ba",
+      "after": "En tenant un bouclier, après un JS DEX réussi qui devait réduire les dégâts de moitié, vous pouvez dépenser votre Réaction pour n’en subir aucun.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mobile",
+      "path": [
+        "description"
+      ],
+      "before": "Vous vous déplacez avec une rapidité et une fluidité déconcertantes.",
+      "beforeSha256": "ee0b4c9fcc728cb1d26ed90d0004a03a8724cefb7b3b7de0078d5eb0be3630d6",
+      "after": "Augmente la vitesse et facilite certains déplacements exposés.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mobile",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vitesse augmentée de 3 m.",
+      "beforeSha256": "34711f4167bed1167455901e890541331786f8ed774d60d07a29d5f90acfa347",
+      "after": "Ajoutez 3 m à votre Vitesse.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mobile",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "À votre tour après l’action Pointe : le Terrain difficile ne coûte aucun déplacement supplémentaire pour le reste du tour.",
+      "beforeSha256": "d51b8762ac00b20939483153148e3bd3c606167049d5b3ca624791dca3cbc802",
+      "after": "À votre tour, après votre action Pointe, vous ignorez le coût supplémentaire du Terrain difficile jusqu’à la fin de ce même tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "mobile",
+      "path": [
+        "effets",
+        3,
+        "valeur"
+      ],
+      "before": "Les attaques d’opportunité contre vous ont le Désavantage.",
+      "beforeSha256": "dca51125f6900a5920426ab3d6ff31544c0dcea8eb5847c77d9e52113c027ec1",
+      "after": "Une attaque d’opportunité qui vous vise se fait avec le Désavantage.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "observateur",
+      "path": [
+        "description"
+      ],
+      "before": "Vos sens aiguisés et votre attention aux détails vous rendent difficile à tromper.",
+      "beforeSha256": "f5c24e1ac2ad1abe3f094710acad832a0bfeb0fd1ecb56ccca35e7182686e750",
+      "after": "Renforce une compétence d’observation et permet une action Recherche plus rapide.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "observateur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Choisissez Perspicacité, Investigation ou Perception : maîtrise si absente, Expertise si déjà maîtrisée.",
+      "beforeSha256": "3a9a7609599ae72f90d43138dd0e43f36465cf8a22353a023ccd2d7ed1896f59",
+      "after": "Choisissez Perspicacité, Investigation ou Perception. Vous recevez la maîtrise si vous ne l’avez pas ; si vous la possédez déjà, recevez l’Expertise dans cette compétence.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "observateur",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Action Recherche possible en action Bonus.",
+      "beforeSha256": "9abfb4a6fb3b4317293d41e19df96ed85aae423320c82ebe88528bb13a31c74e",
+      "after": "Vous pouvez employer une action Bonus pour effectuer l’action Recherche.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "perforateur",
+      "path": [
+        "description"
+      ],
+      "before": "Vos attaques perforantes trouvent les failles dans les armures.",
+      "beforeSha256": "a5b4f190662d47f9f724c9213831cfc082d83f9252840150e27daf9d4fe9b5fb",
+      "after": "Améliore les dégâts perforants par une relance et un bénéfice sur critique.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "perforateur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Une fois par tour, sur une touche infligeant des dégâts perforants à une créature : relancez un dé de dégâts de cette attaque, nouveau résultat obligatoire.",
+      "beforeSha256": "d71dfd27a5ef17002786b452d0972ff02ff214b6bb0490a274e0d22b14c38da9",
+      "after": "Après une touche infligeant des perforants à une créature, vous pouvez relancer un dé de dégâts de cette attaque ; le nouveau résultat doit être gardé. Une utilisation par tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "perforateur",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Sur un critique infligeant des dégâts perforants à une créature : un dé de dégâts perforants supplémentaire.",
+      "beforeSha256": "1bd5b64e716ebed5ccc9c58a99ae306e163915acb99829958d4cb91d99ed7f19",
+      "after": "Un critique qui inflige des perforants à une créature ajoute un dé de dégâts perforants.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_intermediaire",
+      "path": [
+        "description"
+      ],
+      "before": "Votre entraînement s'étend aux armures intermédiaires.",
+      "beforeSha256": "54c7646ee378dd0e6059ee7acc523f132a01a310cd4e514ef5c303cb701dbe93",
+      "after": "Donne accès au port des armures intermédiaires.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_intermediaire",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Formation aux armures intermédiaires.",
+      "beforeSha256": "ea5bfba6cec2395bae71323eee12c2673297858da9e6bde6220b8c2fb56c6d6a",
+      "after": "Vous recevez la formation nécessaire aux armures intermédiaires.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_legere",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez appris à porter une armure légère et à manier un bouclier.",
+      "beforeSha256": "83aef6894db83881eaf770be5b2ec838b3eb02ec784417339affdaccc8e2b4ae",
+      "after": "Donne accès aux armures légères et aux boucliers.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_legere",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Formation aux armures légères et aux boucliers.",
+      "beforeSha256": "62542964edcd14306b2c9d467c86de8a610ef9c4b00d0e5d0cb74fcccfd92b64",
+      "after": "Vous recevez les formations aux boucliers et aux armures légères.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_lourde",
+      "path": [
+        "description"
+      ],
+      "before": "Votre entraînement s'étend aux armures lourdes.",
+      "beforeSha256": "1266c1a205f82b8b1e0bc3d51680dd561957052fd04c2ed2588aff77580a73fe",
+      "after": "Donne accès au port des armures lourdes.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_lourde",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Formation aux armures lourdes.",
+      "beforeSha256": "0a85761a32879393a258e4f6f904abce3345cbdbfe3c1de53fe9e749565d8799",
+      "after": "Vous recevez la formation nécessaire aux armures lourdes.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "resilient",
+      "path": [
+        "description"
+      ],
+      "before": "Vous développez une résistance exceptionnelle dans un type particulier de jet de sauvegarde.",
+      "beforeSha256": "c70890208e511a57433f31b190304c7aeccd6f9cc2cfb5b8044e3f858929cc3b",
+      "after": "Associe une hausse de caractéristique à une nouvelle maîtrise de sauvegarde.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "resilient",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "La caractéristique choisie doit ne pas avoir de maîtrise de jet de sauvegarde. Vous recevez cette maîtrise.",
+      "beforeSha256": "695485dce37982c540aed91f8ed33bb3c79c9ac6b483183b34353f780a6b51dc",
+      "after": "La caractéristique choisie ne doit pas déjà bénéficier de votre maîtrise de sauvegarde. Vous gagnez la maîtrise de la sauvegarde correspondant à cette caractéristique.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "sentinelle",
+      "path": [
+        "description"
+      ],
+      "before": "Vous protégez votre zone et punissez quiconque tente de l'ignorer.",
+      "beforeSha256": "2dfb763150371d3f6606ef166998264bf2a390dacb89f67045bfaa0edf93eb1d",
+      "after": "Étend les occasions d’attaque d’opportunité et permet d’arrêter le déplacement d’une cible touchée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "sentinelle",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Immédiatement après qu’une créature à 1,50 m de vous entreprend Désengagement ou touche une autre cible que vous avec une attaque : vous pouvez faire une attaque d’opportunité contre elle.",
+      "beforeSha256": "126a89e2cf586f0c3834f8e438f000b7264bbb09bf44dd4ed496dc79e1c42ad6",
+      "after": "Quand une créature à 1,50 m de vous utilise Désengagement ou touche par une attaque une cible autre que vous, vous pouvez immédiatement faire une attaque d’opportunité contre elle.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "sentinelle",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Si votre attaque d’opportunité touche une créature : Vitesse 0 pour le reste du tour en cours.",
+      "beforeSha256": "1961b8979329afc29c22502afa9e21f9e0e5b1e0c5b0c6076fadcad80d4b8444",
+      "after": "Votre attaque d’opportunité réussie fixe la Vitesse de la créature touchée à 0 pour le reste du tour en cours.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "telekinesiste",
+      "path": [
+        "description"
+      ],
+      "before": "Vous manipulez les objets et les créatures à distance par la seule force de votre esprit.",
+      "beforeSha256": "eda7658e0c60e01691d3c25f13bf2d555fa47bd7876fb0e467ae515da4be08bc",
+      "after": "Accorde une Main du mage modifiée et une poussée ou traction en action Bonus.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "telekinesiste",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vous apprenez Main du mage : sans composantes V/S, main Invisible au choix, portée et distance maximale d’éloignement augmentées de 9 m. Caractéristique d’incantation = caractéristique augmentée.",
+      "beforeSha256": "bb6ab6506ce1c3645467efe57d9936b7b4163d46a33a43484ea9892f8f9bf865",
+      "after": "Vous connaissez Main du mage et pouvez la lancer sans V ni S, en rendant la main Invisible si souhaité. Ajoutez 9 m à sa portée et à sa distance maximale d’éloignement. Pour l’incantation, utilisez la caractéristique augmentée par ce don.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "telekinesiste",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Action Bonus : une créature visible à 9 m effectue un JS FOR, DD = 8 + bonus maîtrise + mod. caract. ; échec : déplacement de 1,50 m vers vous ou à l’opposé.",
+      "beforeSha256": "785ffbe05beb9dd94e3df530d6aa0a4b684b066ba2938ac636f996cde4024cf2",
+      "after": "Action Bonus : choisissez une créature visible à 9 m. Elle fait un JS FOR, DD = 8 + bonus maîtrise + mod. caract. ; si elle échoue, déplacez-la de 1,50 m vers vous ou en sens opposé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "telepathe",
+      "path": [
+        "description"
+      ],
+      "before": "Vous pouvez lire et communiquer par la pensée avec les créatures qui vous entourent.",
+      "beforeSha256": "8be9b348f39c8927e4bcffceca01bcf2f908e4107a311be6dfeaf6bc8e2f891f",
+      "after": "Permet d’envoyer des messages mentaux et accorde Détection des pensées.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "telepathe",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Parole télépathique vers une créature visible à 18 m : une langue que vous connaissez et qu’elle doit comprendre ; aucune réponse télépathique accordée.",
+      "beforeSha256": "09e3284bc2e322e8fc0b185befd7a42af79cb30c3778a50105e495e3bfffbe7b",
+      "after": "Vous pouvez adresser une parole télépathique à une créature visible à 18 m, dans une langue que vous connaissez et qu’elle comprend. Ce moyen ne lui donne pas de réponse télépathique.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "telepathe",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Détection des pensées toujours préparé ; une incantation sans emplacement ni composantes par Repos long, aussi lançable avec vos emplacements. Caractéristique d’incantation = caractéristique augmentée.",
+      "beforeSha256": "af6329bc0a23efc9eb59fe6d5ad4d35e18c27c7aaa483934ba63cc4cdd033929",
+      "after": "Détection des pensées reste toujours préparé. Une fois par Repos long, lancez-le sans emplacement ni composantes ; vos emplacements peuvent également servir à le lancer. Sa caractéristique d’incantation est celle que ce don augmente.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "tireur_d_elite",
+      "path": [
+        "description"
+      ],
+      "before": "Votre précision au tir vous permet d'atteindre des cibles qui semblent hors de portée.",
+      "beforeSha256": "839616bc1c2e1aa05a9c7a3405664e2a860f940a41506140d784b9f470c54a11",
+      "after": "Réduit les obstacles aux attaques à distance avec des armes.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "tireur_d_elite",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vos attaques à distance avec des armes ignorent les Abris partiels et importants.",
+      "beforeSha256": "991c8f32819865aae6538b710a7d9c93e853b8247319015666ca1fe648d6f211",
+      "after": "Pour les attaques à distance utilisant une arme, ne tenez pas compte des Abris partiels et importants.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "tireur_d_elite",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Vos attaques avec des armes à distance n’ont pas le Désavantage dû à un ennemi à 1,50 m ou à la portée longue.",
+      "beforeSha256": "e2790f4b31142365edc7d1f23dc436be7898eade8dac46f40b52a3c66c09ce98",
+      "after": "Avec une arme à distance, ni un ennemi à 1,50 m ni la portée longue ne donnent de Désavantage à votre attaque.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "trancheur",
+      "path": [
+        "description"
+      ],
+      "before": "Vos coups tranchants infligent des blessures profondes qui ralentissent vos adversaires.",
+      "beforeSha256": "041330e612b9718bc3b224cc330ed11d1e580d383c7668daa387824c556019b4",
+      "after": "Ajoute un ralentissement et un effet sur critique à vos dégâts tranchants.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "trancheur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Une fois par tour sur une touche infligeant des dégâts tranchants : Vitesse de la créature réduite de 3 m jusqu’au début de votre prochain tour.",
+      "beforeSha256": "df0df2aa8847d44bd98ca4906fc4487625d9879ece2515c65baf8894cb6ab91c",
+      "after": "Sur une touche infligeant des tranchants, retirez 3 m à la Vitesse de la créature jusqu’au début de votre prochain tour. Ce ralentissement s’applique au plus une fois par tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "trancheur",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Critique infligeant des dégâts tranchants à une créature : Désavantage à ses jets d’attaque jusqu’au début de votre prochain tour.",
+      "beforeSha256": "c4d1f149ccc831c52cebd0e76947367b1ca3efbbb1600cec289a5c621ddee555",
+      "after": "Après votre critique infligeant des tranchants à une créature, ses jets d’attaque ont le Désavantage jusqu’au début de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "tueur_de_mages",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez développé des techniques spéciales pour neutraliser les lanceurs de sorts.",
+      "beforeSha256": "9c838726e014aba1eec252ab22a32dff03129af734739155a1f33bc8b0326ce3",
+      "after": "Gêne la Concentration adverse et offre une réussite de sauvegarde mentale.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "tueur_de_mages",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Une créature qui se concentre et subit vos dégâts a le Désavantage au JS de maintien de Concentration correspondant.",
+      "beforeSha256": "948977847604f00bde376746abbcf961487a5aa95f8eb9161ebbbd70c9beda4c",
+      "after": "Si vos dégâts frappent une créature en Concentration, la sauvegarde de maintien correspondante se fait avec le Désavantage.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "tueur_de_mages",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Si vous ratez un JS INT, SAG ou CHA : vous pouvez le réussir à la place, une fois par Repos court ou long.",
+      "beforeSha256": "82a793e456277994c67ceb209fdaa13b2d7865e26187fa8f3a4fcf47ca2e16e5",
+      "after": "Après l’échec d’un JS INT, SAG ou CHA, vous pouvez décider de le réussir. Ce bénéfice revient après un Repos court ou long.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_armes_de_lancer",
+      "path": [
+        "description"
+      ],
+      "before": "Votre maîtrise des armes de jet est redoutable.",
+      "beforeSha256": "b59e6aa90feb7d629c477d1abafe137e981dfd22d3aadebe8748d5de5d6d945f",
+      "after": "Augmente les dégâts des attaques à distance avec une arme Lancer.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_armes_de_lancer",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "+2 aux dégâts sur une touche avec un jet d’attaque à distance utilisant une arme dotée de Lancer.",
+      "beforeSha256": "961ae296d4dc95ba9e2bdbf42ca7bdeec7efb2f59168ccdfeab51255f51e5ee6",
+      "after": "Bonus de dégâts : +2 lorsque votre attaque à distance touche ; l’arme employée doit posséder Lancer.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_combat_a_mains_nues",
+      "path": [
+        "description"
+      ],
+      "before": "Vos poings et membres sont des armes redoutables.",
+      "beforeSha256": "81119bf6f51462f66b65f8c7ffa5e70001bd9f93f3faed77fee4875c01b71655",
+      "after": "Renforce vos dégâts à mains nues et permet de blesser une créature maintenue Agrippée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_combat_a_mains_nues",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Dégâts contondants de mains nues : 1d6 + mod. FOR ; 1d8 si vous ne tenez ni arme ni bouclier au jet d’attaque.",
+      "beforeSha256": "81cc9ba0c88186fa67dd830df86ce0c166aca5fd48a4aa378993239d6a0ad9c6",
+      "after": "Pour vos mains nues, les dégâts contondants deviennent 1d6 + mod. FOR. Le dé devient 1d8 si, au jet d’attaque, vous ne tenez ni arme ni bouclier.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_combat_a_mains_nues",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Au début de chacun de vos tours : vous pouvez infliger 1d4 contondants à une créature que vous maintenez Agrippée.",
+      "beforeSha256": "ebfefd3be575aef584bffab87d3ffc9ad939bec32dde7baf85d127384bf103e5",
+      "after": "Au début de chacun de vos tours, vous pouvez faire subir 1d4 contondants à une créature que vous maintenez Agrippée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_combat_en_aveugle",
+      "path": [
+        "description"
+      ],
+      "before": "Vos sens développés vous permettent de localiser les ennemis sans les voir.",
+      "beforeSha256": "8b172054d2d8d82f75cd7b71f88236af68ca067320d7c458a905ffac2c2008e7",
+      "after": "Accorde un sens de vision aveugle à courte portée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_combat_en_aveugle",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Vision aveugle sur 3 m ; les règles normales de ce sens s’appliquent, notamment l’Abri total.",
+      "beforeSha256": "31440d51dc53fa75da437ddfb7985d59c0672f755050f3de9f1188248932c5f5",
+      "after": "Vous avez la vision aveugle sur 3 m. Ses limites ordinaires restent applicables, notamment celles liées à l’Abri total.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_duel",
+      "path": [
+        "description"
+      ],
+      "before": "Votre technique de combat à une arme est parfaite.",
+      "beforeSha256": "42d68e152953122fd591a8c1c0c4a7bfbc5c5fe042564941a12e8e37c5588496",
+      "after": "Augmente les dégâts d’une arme de corps à corps employée seule dans une main.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_duel",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "+2 aux dégâts d’une arme de corps à corps tenue à une main, si vous ne tenez aucune autre arme. Un bouclier reste compatible.",
+      "beforeSha256": "c8c637ff374eafec9e76a893051112090eb448e5aba88399720537865668346b",
+      "after": "Une arme de corps à corps tenue dans une seule main reçoit +2 aux dégâts si vous n’avez pas d’autre arme en main. Tenir un bouclier n’empêche pas ce bénéfice.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_interception",
+      "path": [
+        "description"
+      ],
+      "before": "Vous interposez votre arme ou votre corps pour protéger vos alliés.",
+      "beforeSha256": "fa59461eece888360eed02ab8347cc90c1f43eca0577161dedafa2b0d1b166c9",
+      "after": "Permet de réduire en réaction les dégâts d’une attaque touchant autrui.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_interception",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Réaction lorsqu’une créature visible touche une autre créature à 1,50 m de vous par un jet d’attaque : dégâts réduits de 1d10 + bonus de maîtrise. Vous devez tenir un bouclier ou une arme courante ou de guerre.",
+      "beforeSha256": "ba1400c34399670ec892c00fafad7324f5ecf2d00e819cef285f6bdb526450a2",
+      "after": "Lorsqu’une créature visible touche par un jet d’attaque une autre créature à 1,50 m de vous, votre Réaction peut diminuer les dégâts de 1d10 + bonus de maîtrise. Condition : tenir un bouclier, une arme courante ou une arme de guerre.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_protection",
+      "path": [
+        "description"
+      ],
+      "before": "Vous utilisez votre bouclier pour dévier les attaques visant vos alliés.",
+      "beforeSha256": "7244c0aac91d9bb911af6fda70714bf3cc4bbdb59e7871b9408d6841d6be3413",
+      "after": "Permet de protéger avec votre bouclier une cible proche contre les attaques.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "style_protection",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "before": "Réaction, bouclier tenu : lorsqu’une créature visible attaque une cible autre que vous à 1,50 m de vous, imposez le Désavantage au jet déclencheur et aux autres attaques contre cette cible jusqu’au début de votre prochain tour, si vous restez à 1,50 m de la cible.",
+      "beforeSha256": "a7351ec556c8f5f01f9126f57b98b17c42ddd92225110bf0c7fd4af610047c90",
+      "after": "Bouclier en main, vous pouvez utiliser votre Réaction lorsqu’une créature visible attaque quelqu’un d’autre à 1,50 m de vous. Le jet déclencheur reçoit le Désavantage ; les autres attaques visant cette cible aussi, jusqu’au début de votre prochain tour, tant que vous restez à 1,50 m de la cible.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_competence",
+      "path": [
+        "description"
+      ],
+      "before": "Votre polyvalence atteint son apogée.",
+      "beforeSha256": "b5c20d4b012a9755886e6a9d939d0b4e8d6ca70904d7c9df91932066564f3dff",
+      "after": "Accorde toutes les maîtrises de compétences et une Expertise supplémentaire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_competence",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Maîtrise de toutes les compétences.",
+      "beforeSha256": "0afa0c211839a7539a70df38dc3a78dcd49ba27b9ade9a326dc9c09692c5a022",
+      "after": "Vous possédez la maîtrise de toutes les compétences.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_competence",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Expertise dans une compétence sans Expertise, à choisir.",
+      "beforeSha256": "5efcf690f54de0dad9e17ad6cc9ce1064c1e12fedb45e5f74e87bd700a34a28c",
+      "after": "Choisissez une compétence qui n’a pas encore d’Expertise ; elle reçoit l’Expertise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_recuperation",
+      "path": [
+        "description"
+      ],
+      "before": "Votre capacité à récupérer rapidement des blessures est extraordinaire.",
+      "beforeSha256": "fa882d5f64d5b7c7feb70264bd6d81a947ccc73161859aaecae40c66421e4dfb",
+      "after": "Accorde une réserve de soins personnels et une récupération lorsque vous devriez manquer de PV.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_recuperation",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Lorsque vous devriez tomber à 0 PV : vous pouvez passer à 1 PV puis regagner la moitié de votre maximum de PV. Une fois par Repos long, sans Réaction requise.",
+      "beforeSha256": "67d1fa8f19ac2fad2b2b217206965ff678f0c3bf762c21571b17c8d35a72ccd2",
+      "after": "Quand vous devriez atteindre 0 PV, vous pouvez rester à 1 PV puis récupérer la moitié de votre maximum de PV. Limite : une fois par Repos long, sans dépenser de Réaction.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_recuperation",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Réserve de 10d10 : action Bonus pour dépenser et lancer les dés choisis et récupérer autant de PV. Tous les dés reviennent au Repos long. Aucun lancer automatique.",
+      "beforeSha256": "b6970626fd32cb986f04e664f3aa0fd0371dc365d5dc798b9697880dfede1972",
+      "after": "Réserve de soin : 10d10, reconstituée au Repos long. Avec une action Bonus, choisissez les dés à dépenser, lancez-les vous-même et récupérez leur somme en PV. L’application ne lance aucun dé automatiquement.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_resistance_aux_energies",
+      "path": [
+        "description"
+      ],
+      "before": "Vous résistez naturellement à plusieurs types d'énergie destructrice.",
+      "beforeSha256": "3baf9292eb80c23e1eb5520c2bbfc0f92676974466fef98650e7e5ca17feb581",
+      "after": "Accorde deux résistances modifiables au repos et une réaction à des dégâts de ces types.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_resistance_aux_energies",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Résistance à deux types au choix : acide, feu, froid, foudre, nécrotique, poison, psychique, radiant ou tonnerre. Les deux choix peuvent changer après chaque Repos long.",
+      "beforeSha256": "401f8057c7494018f80aa5d0b46e7a854f465302ef9d724b142e6fa870c7159b",
+      "after": "Sélectionnez deux résistances parmi acide, feu, froid, foudre, nécrotique, poison, psychique, radiant et tonnerre. À chaque Repos long, vous pouvez remplacer les deux types choisis.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_resistance_aux_energies",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Si vous subissez des dégâts d’un type choisi : Réaction pour viser une autre créature visible à 18 m sans Abri total. JS DEX DD 8 + bonus de maîtrise + mod. CON ; échec : 2d12 + mod. CON du même type.",
+      "beforeSha256": "588b721bcb020f700aee93871f2a2d059bfa3045fd0e597470f812c8d7e33582",
+      "after": "Après des dégâts d’un type choisi, vous pouvez dépenser votre Réaction pour viser une autre créature visible à 18 m sans Abri total. Elle fait un JS DEX, DD 8 + bonus de maîtrise + mod. CON. Un échec lui inflige 2d12 + mod. CON du même type.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vigueur",
+      "path": [
+        "description"
+      ],
+      "before": "Votre vitalité est quasi surnaturelle.",
+      "beforeSha256": "945e2d74e30c08cea2d6fb897519c7505e1c27146c927ec8bbc16719505ff2e7",
+      "after": "Augmente fortement les PV maximaux et complète certains soins reçus.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vigueur",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Maximum de PV augmenté de 40.",
+      "beforeSha256": "6e84005b882dc9cfda86ea28c230cb06ab8c9fbbb8bf6f78dd9c3dc9dedc0342",
+      "after": "Ajoutez 40 à votre maximum de PV.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vigueur",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Lorsque vous regagnez des PV : récupération supplémentaire égale à mod. CON. Une fois ce supplément reçu, il faut attendre le début de votre prochain tour pour le recevoir à nouveau.",
+      "beforeSha256": "4f3a4669fa4e1047e4e1981ec6207d2a1ce6830a66a4efa0230e86033922d5ba",
+      "after": "Quand vous récupérez des PV, la récupération augmente de mod. CON. Après application de ce supplément, attendez le début de votre prochain tour pour en bénéficier à nouveau.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vitesse",
+      "path": [
+        "description"
+      ],
+      "before": "Vous vous déplacez à une vitesse surhumaine.",
+      "beforeSha256": "8ebf532acad487100957a4cba0c3b3f6868143a32fa43571c21957ccbd402c2d",
+      "after": "Augmente la Vitesse et permet de se désengager en rompant une prise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vitesse",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Vitesse augmentée de 9 m.",
+      "beforeSha256": "2ed3a957e9d303e8aea61d91632b939ba4962081fcad98511fba502172ff3fbe",
+      "after": "Ajoutez 9 m à votre Vitesse.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vitesse",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Action Bonus : Désengagement, qui met aussi fin à l’état Agrippé sur vous.",
+      "beforeSha256": "35de606fed9baad881060af1f9ad95a76bb79ea2761370bf675980a2766ee17b",
+      "after": "Votre action Bonus peut effectuer Désengagement ; elle termine également l’état Agrippé qui vous affecte.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "keen_mind",
+      "path": [
+        "description"
+      ],
+      "before": "Connaissance approfondie et Étude rapide. Nom anglais de la source conservé.",
+      "beforeSha256": "ed9d257425c36657b352688a3fef35a677b8b54ab81511fb3fc608079e9d70e9",
+      "after": "Renforce une compétence de connaissance et permet une action Étude plus rapide.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "keen_mind",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Choisissez Arcanes, Histoire, Investigation, Nature ou Religion : maîtrise si absente, Expertise si déjà maîtrisée.",
+      "beforeSha256": "905ad9db2ce3f7d2aec8ecd29e3a9ea4bba85c2b7d744ee83d36b2c3fd8782da",
+      "after": "Choisissez Arcanes, Histoire, Investigation, Nature ou Religion : recevez la maîtrise si elle vous manque, ou l’Expertise si vous avez déjà la maîtrise.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "keen_mind",
+      "path": [
+        "effets",
+        2,
+        "valeur"
+      ],
+      "before": "Action Étude possible en action Bonus.",
+      "beforeSha256": "21adc559b4835989a9632e7f589954632ff7eb4abccf2eb8531d896952a02870",
+      "after": "Vous pouvez utiliser une action Bonus pour effectuer l’action Étude.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "weapon_master",
+      "path": [
+        "description"
+      ],
+      "before": "Accès à la botte d’un type d’arme maîtrisé. Nom anglais de la source conservé.",
+      "beforeSha256": "99dd80ec72d1f811609014d13f97e4f60a68e83fec54fcc3a815e13af63ed8a7",
+      "after": "Permet d’utiliser la botte d’un type d’arme que vous maîtrisez.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    },
+    {
+      "collection": "feats",
+      "id": "weapon_master",
+      "path": [
+        "effets",
+        1,
+        "valeur"
+      ],
+      "before": "Choisissez un type d’arme courante ou de guerre dont vous avez la maîtrise : vous pouvez utiliser sa botte. Le choix peut être remplacé après chaque Repos long.",
+      "beforeSha256": "a62a7a042d34e146f4e85e29f061da9abc3e39413b176f36e1f9178d9da4b835",
+      "after": "Sélectionnez un type d’arme courante ou de guerre dont vous avez la maîtrise. Vous pouvez employer sa botte. Un Repos long permet de remplacer le type choisi.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording for a non-SRD active feat; preserve conditions, costs, timing, values and formula placeholders."
+    }
+  ],
+  "retained": [
+    {
+      "collection": "feats",
+      "id": "adepte_elementaire",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "affinite_feerique",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "affinite_ombreuse",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "athlete",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "broyeur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "07da0a78605f85a41829582724d557c92ef859769e6bb119703888e80422ec5c",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "chef_cuisinier",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "16c7f62ca74bdf54324e4c522cbb34456c2da216b5153a085d622b04ab081a65",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "cogneur_lourd",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a83a1ef074543a1596506cac4d6bf08398f3cfc14b2abfa06302dcdcacce8893",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_a_deux_armes",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "combattant_monte",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "bbe54a5143092c88dcce6e86710c26941b2dbcbd76a9437e5df67c2aaf6ddf4b",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "comedien",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "8994754a5d1e4eb0bc684e223dc1eff35b60b9ecb770c66e327a8e0c2b5567c6",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "discret",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "6afb51985cf657b06199f6a69213cc880bc563dfbf0678b4dc50e618982c41dc",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "duelliste_defensif",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "6afb51985cf657b06199f6a69213cc880bc563dfbf0678b4dc50e618982c41dc",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "empoisonneur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "5b7eed876e60ff22592107a4eaa309cb2d71b738fc9b1929e1b9ac0f0781087c",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "expert",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "64e6c80734b30632ad1c99d046b610bdaa3aeb15e600735508c37cf5f6c91bbf",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "expert_de_la_charge",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "figure_de_proue",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "84db9aa8a7100b4d46f865abbe489b0b24c3b925ea021d31033c5281bedf35c6",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "formation_aux_armes_de_guerre",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "gaillard",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "792e28247b3e2c0b639358ea993553cdc3af35c41e20e16117d4886833550552",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "incantateur_d_elite",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "mage_de_guerre",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "magie_rituelle",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_arbaletrier",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "6afb51985cf657b06199f6a69213cc880bc563dfbf0678b4dc50e618982c41dc",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_d_hast",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "0dff5d08e7434cf76ad2c1ab92d0c8e2a981c12b5d0b060d05377e9738a39842",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_armures_intermediaires",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_armures_lourdes",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "666cbf9eb9ee277d3e0c3c3c9edea7dbf9dfa93f54c48939bb6394e2a80a3095",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "maitre_des_boucliers",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a83a1ef074543a1596506cac4d6bf08398f3cfc14b2abfa06302dcdcacce8893",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "mobile",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "de08b2a4c30cbd633031d320237d75b7c9eed571c3bbdbc0f3cec6ffce99c85b",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "observateur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "4534458f1623ac3d4151ea8439c3b0cc9d8c54bd0632753f1dcbd698b595eb2b",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "perforateur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_intermediaire",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_legere",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "protection_lourde",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "666cbf9eb9ee277d3e0c3c3c9edea7dbf9dfa93f54c48939bb6394e2a80a3095",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "resilient",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "64e6c80734b30632ad1c99d046b610bdaa3aeb15e600735508c37cf5f6c91bbf",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "sentinelle",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "telekinesiste",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "telepathe",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "a1f53eb7e463bd5c291f71b2b3e96497a5b6fd4a2abca995915544f8967de6fd",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "tireur_d_elite",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "6afb51985cf657b06199f6a69213cc880bc563dfbf0678b4dc50e618982c41dc",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "trancheur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "tueur_de_mages",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_competence",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "07f4ea22dac91ad3ecdf1caeb85ea2a69e3856469080a5eaf0e5eb5228c17921",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_recuperation",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "07f4ea22dac91ad3ecdf1caeb85ea2a69e3856469080a5eaf0e5eb5228c17921",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_resistance_aux_energies",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "07f4ea22dac91ad3ecdf1caeb85ea2a69e3856469080a5eaf0e5eb5228c17921",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vigueur",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "07f4ea22dac91ad3ecdf1caeb85ea2a69e3856469080a5eaf0e5eb5228c17921",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "faveur_de_vitesse",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "07f4ea22dac91ad3ecdf1caeb85ea2a69e3856469080a5eaf0e5eb5228c17921",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "keen_mind",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "fcc1ed16d8ea229f04bfa2ee90829d52ef56fd9a8b13c3e977db583670aefde1",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    },
+    {
+      "collection": "feats",
+      "id": "weapon_master",
+      "path": [
+        "effets",
+        0,
+        "valeur"
+      ],
+      "beforeSha256": "3a1d9046c655c44b88bfdfb3c817f063516cfb64bf0adae06187c33fdfc08780",
+      "reason": "Structured ability-increase expression and cap retained exactly for engine parsing."
+    }
+  ]
+}

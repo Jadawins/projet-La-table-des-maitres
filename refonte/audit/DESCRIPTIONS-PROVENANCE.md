@@ -1,17 +1,17 @@
-# Provenance des descriptions — 30 octobre 2026
+# Provenance des descriptions — 31 octobre 2026
 
-Ce contrôle porte sur les textes et leur provenance. Le gel des **règles de jeu** ne vaut pas validation des droits de redistribution. Après le premier lot de six retouches et 29 espacements, une nouvelle édition réécrit 238 textes : 51 descriptions principales de sorts, huit profils convoqués et 179 textes d’aptitudes des 36 sous-classes hors SRD. Les deux descriptions RP déjà rédigées librement sont conservées. Les calculs et personnages restent inchangés.
+Ce contrôle porte sur les textes et leur provenance. Le gel des **règles de jeu** ne vaut pas validation des droits de redistribution. Après le premier lot de six retouches et 29 espacements, une nouvelle édition réécrit 238 textes : 51 descriptions principales de sorts, huit profils convoqués et 179 textes d’aptitudes des 36 sous-classes hors SRD. Les deux descriptions RP déjà rédigées librement sont conservées. Une troisième édition ajoute 169 textes pour les 58 dons actifs hors SRD : 58 descriptions et 111 effets. Les calculs et personnages restent inchangés.
 
 ## Résultats établis
 
-Le catalogue reconstruit pour l'audit a la même empreinte SHA-256 que la version MongoDB publiée : `7938ed5423f84d3301566923d55f8c8d69095adc715009f7fb27a3d38f4659a6`.
+Le catalogue reconstruit pour l'audit a la même empreinte SHA-256 que la version MongoDB publiée : `6b37cbdff5f0ba1c4c7822c620d66134545dde13eeb915be503037870fe25b9d`.
 
 - Le journal contient **738 corrections**, dont **566** référencent le SRD français 5.2.1 et **172** d'autres références. Les 16 ajouts sont comptés séparément. Une correction n'est pas un texte ni une entrée unique.
 - L'inventaire couvre les **637 entrées du Grimoire**, puis les compétences et profils complémentaires : **785 entrées au total**, dont 734 avec du texte détecté.
-- **2 001 champs textuels** sont relevés, plus **95 champs** des fichiers complémentaires. Noms seuls, identifiants, chiffres isolés et métadonnées ne sont pas comptés comme descriptions.
-- Pour 1 267 champs, une correction, un ajout ou une source explicite renvoie au SRD ; pour 472, à une autre référence. Au début de l’audit, pour **262 champs hérités**, seule la source de comparaison de l’entrée était connue. Elle ne prouve pas l'origine de leur rédaction.
+- **2 007 champs textuels** sont relevés, plus **95 champs** des fichiers complémentaires. Noms seuls, identifiants, chiffres isolés et métadonnées ne sont pas comptés comme descriptions.
+- Pour 1 267 champs, une correction, un ajout ou une source explicite renvoie au SRD ; pour 478, à une autre référence. Au début de l’audit, pour **262 champs hérités**, seule la source de comparaison de l’entrée était connue. Elle ne prouve pas l'origine de leur rédaction.
 - Le contrôle du chapitre complet et des alias confirme **339 sorts dans le SRD 5.2.1 et 51 hors SRD**. Les 110 champs textuels des 51 sont examinés ; les 51 descriptions principales et huit profils convoqués sont réécrits dans la nouvelle édition. Voir le [bilan des sorts](SORTS-SRD.md). L'appartenance au SRD et les droits sur la rédaction actuelle restent distincts.
-- Le rapprochement des sous-classes est terminé : **12 présentes dans le SRD 5.2.1 et 36 absentes**. Onze des douze présentes avaient été comparées à une autre publication ; le classement ne dépend donc pas de cette source de comparaison. Le [tableau des 48 sous-classes](SOUS-CLASSES-SRD.md) donne les noms du site, les correspondances et les pages du SRD. Le rapprochement reste à faire pour les dons et historiques.
+- Le rapprochement des sous-classes est terminé : **12 présentes dans le SRD 5.2.1 et 36 absentes**. Onze des douze présentes avaient été comparées à une autre publication ; le classement ne dépend donc pas de cette source de comparaison. Le [tableau des 48 sous-classes](SOUS-CLASSES-SRD.md) donne les noms du site, les correspondances et les pages du SRD. Le classement des dons est également terminé : **17 SRD, 58 actifs hors SRD et deux archives** ; les 169 textes des 58 sont réécrits. Voir [DONS-SRD.md](DONS-SRD.md). Le rapprochement reste à faire pour les historiques et autres profils.
 
 ## Attribution livrée
 
@@ -29,8 +29,8 @@ L'inventaire détaillé [description-provenance-2024.json](description-provenanc
 
 ## Reste à faire avant de déclarer les textes prêts pour une diffusion plus large
 
-1. Établir l'appartenance au SRD de chaque don, historique et profil référencé ailleurs. Les classements des 48 sous-classes et des 390 sorts sont terminés ; les droits de redistribution de leurs textes restent distincts. Une référence Roll20 peut aussi décrire un élément du SRD.
-2. Retrouver la provenance des 262 champs hérités et des 95 champs complémentaires. Les sources de vérification des mécaniques ne suffisent pas à attribuer leur prose.
+1. Établir l'appartenance au SRD de chaque historique, espèce et profil référencé ailleurs. Les classements des 48 sous-classes, des 390 sorts et des 77 entrées de dons sont terminés ; les droits de redistribution de leurs textes restent distincts. Une référence Roll20 peut aussi décrire un élément du SRD.
+2. Examiner les champs hérités encore non traités et les 95 champs complémentaires. Le total initial de 262 champs hérités est un repère historique, pas le nombre de réécritures restant à faire. Les sources de vérification des mécaniques ne suffisent pas à attribuer leur prose.
 3. Pour les descriptions effectivement hors SRD : examiner la rédaction, sa source et les conditions d'utilisation. Préparer des résumés indépendants centrés sur les informations nécessaires au jeu, puis contrôler la fidélité des mécaniques. Une paraphrase ou une traduction ne garantit pas à elle seule les droits de redistribution ; les cas non résolus doivent rester signalés et faire l'objet d'un choix explicite avant publication dans l'application.
 4. Revoir séparément les droits du PDF de fiche, des illustrations et les usages de marques : ce contrôle textuel ne les valide pas.
 
@@ -41,7 +41,10 @@ Références : [SRD officiel](https://www.dndbeyond.com/srd), [licence CC BY 4.0
 ## Classements terminés et propositions éditoriales
 
 - [48 sous-classes : 12 SRD et 36 hors SRD](SOUS-CLASSES-SRD.md).
+- [77 entrées de dons : 17 SRD, 58 actifs hors SRD et deux archives](DONS-SRD.md), avec 169 nouveaux textes appliqués.
 - [390 sorts : 339 SRD et 51 hors SRD](SORTS-SRD.md), avec lecture des 110 champs des 51 sorts.
 - [Six retouches appliquées](editorial-description-drafts-2024.json), avec valeurs avant/après et empreintes : deux passages RP de sous-classes et quatre descriptions de sorts. Elles sont appliquées avec leurs contrôles d’empreinte ; 29 corrections d’espacement les accompagnent. Elles ne changent pas le statut des droits.
 
 Les compteurs de références ci-dessus décrivent les sources documentaires de départ, pas l’auteur de chaque nouvelle phrase. Le journal [non-srd-description-rewrite-20261030.json](../data/non-srd-description-rewrite-20261030.json) trace séparément les 238 rédactions nouvelles, avec leurs valeurs sources. Les statistiques, composantes matérielles, textes de progression et tableaux complémentaires restent des données techniques distinctes.
+
+Le journal [non-srd-feat-rewrite-20261031.json](../data/non-srd-feat-rewrite-20261031.json) trace les 169 textes du troisième lot. Le total détecté augmente de six champs parce que certaines valeurs d’effets franchissent désormais le seuil de longueur de l’inventaire ; cela ne signifie pas six nouvelles règles. La source de comparaison historique « SRD » comptait 16 dons, alors que le chapitre complet en contient 17 présents au catalogue : le classement vérifié remplace cette inférence. Le bilan de publication et les résultats réels figurent dans [BILAN-REECRITURE-DONS-20261031.md](BILAN-REECRITURE-DONS-20261031.md).

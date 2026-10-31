@@ -31,3 +31,5 @@ Le manifeste peut porter un `catalogueId` distinct de son `id` de règles. Mongo
 L’édition `phb2024-2026-10-28-textes-20261030` contient six retouches de rédaction et 29 corrections d’espacement. Le journal dans `data/editorial-description-corrections-20261030.json` conserve chaque valeur avant/après. Le SRD, les références et les statuts de droits ne sont pas révisés par cette édition.
 
 L’édition suivante `phb2024-2026-10-28-resumes-20261030` conserve le même identifiant de règles et ajoute 238 réécritures de textes aux 35 corrections précédentes. Le journal de ce second lot garde la métadonnée de l’édition précédente pour contrôler la chaîne et retrouver exactement le catalogue antérieur au retour arrière.
+
+L’édition `phb2024-2026-10-28-dons-20261031` ajoute 169 rédactions de dons à la chaîne précédente. Ses 58 descriptions et 111 valeurs textuelles d’effets sont appliquées uniquement après contrôle de l’édition `resumes-20261030`. Les 17 dons SRD, deux archives et 46 expressions de hausse de caractéristique restent identiques. Les anciens documents MongoDB et la version des personnages sont conservés. Le lot est livré sous `20261031T140222Z`.

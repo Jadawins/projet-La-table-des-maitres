@@ -33,7 +33,7 @@ test('Le maître des armures intermédiaires relève le plafond DEX et conserve 
  const s=state('maitre_des_armures_intermediaires','DEX');s.scores.DEX=17;const normal=structuredClone(s);normal.advancements[4]={...advancementInitial(),mode:'ability',abilities:['INT','CHA']};assert.equal(sheetModel(s,c).ac,sheetModel(normal,c).ac+1);s.scores.DEX=3;assert.equal(sheetModel(s,c).ac,12);
 });
 test('Un effet conditionnel de parade ou de charge ne gonfle pas la CA ou la vitesse permanente',()=>{
- const s=state('duelliste_defensif','DEX',5);s.scores.DEX=15;const base=clericFixture(c,5,'clerc_domaine_vie');base.scores.DEX=15;assert.equal(sheetModel(s,c).ac,sheetModel(base,c).ac);assert.match(sheetModel(s,c).effects.summaries.find(f=>f.name==='Duelliste défensif').effects.join(' '),/ajouter le 3 à votre CA/);
+ const s=state('duelliste_defensif','DEX',5);s.scores.DEX=15;const base=clericFixture(c,5,'clerc_domaine_vie');base.scores.DEX=15;assert.equal(sheetModel(s,c).ac,sheetModel(base,c).ac);const summary=sheetModel(s,c).effects.summaries.find(f=>f.name==='Duelliste défensif').effects.join(' ');assert.match(summary,/Réaction/);assert.match(summary,/CA\s*:\s*\+3\b/);assert.doesNotMatch(summary,/bonus de maîtrise/);
  assert.equal(sheetModel(state('expert_de_la_charge','FOR'),c).speed,9);
 });
 test('Les rituels sont choisis au palier, distincts, toujours préparés hors quota et conservés à la sauvegarde',()=>{
@@ -43,7 +43,7 @@ test('Les rituels sont choisis au palier, distincts, toujours préparés hors qu
  s.advancements[4].choices.rituals[1]=s.advancements[4].choices.rituals[0];assert.ok(featChoiceErrors(s,c).length);
 });
 test('Adepte élémentaire nécessite un type, applique la règle des 1 comptant comme 2 sans lancer de dés',()=>{
- const s=state('adepte_elementaire');assert.ok(featChoiceErrors(s,c).length);s.advancements[4].choices.damageType='feu';s.cantrips[0]='flamme_sacree';assert.deepEqual(featChoiceErrors(s,c),[]);assert.match(renderSheet(s,c),/les 1 sur les dés/);s.advancements[8]={...advancementInitial(),mode:'feat',featId:'adepte_elementaire',featAbility:'INT',choices:{damageType:'feu'}};s.level=8;assert.ok(featChoiceErrors(s,c).length);
+ const s=state('adepte_elementaire');assert.ok(featChoiceErrors(s,c).length);s.advancements[4].choices.damageType='feu';s.cantrips[0]='flamme_sacree';assert.deepEqual(featChoiceErrors(s,c),[]);assert.match(renderSheet(s,c),/dés de dégâts montrant 1[^.]*\b2\b/);assert.equal(sheetModel(s,c).effects.elements.find(e=>e.type==='feu').rerollOnes,true);s.advancements[8]={...advancementInitial(),mode:'feat',featId:'adepte_elementaire',featAbility:'INT',choices:{damageType:'feu'}};s.level=8;assert.ok(featChoiceErrors(s,c).length);
 });
 test('Empoisonneur ignore la résistance sans l’accorder au personnage et calcule le DD selon la caractéristique choisie',()=>{
  const s=state('empoisonneur','INT',5),m=sheetModel(s,c);assert.ok(!m.resistances.includes('poison'));assert.ok(m.tools.some(x=>x.includes('empoisonneur')));assert.match(m.effects.summaries.map(x=>x.effects.join(' ')).join(' '),/JS CON, DD 13/);
