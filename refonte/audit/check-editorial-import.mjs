@@ -12,7 +12,7 @@ const oldRelease=await read(previous+'/rules-release.json');assert.equal(oldRele
 const {loadRulesCatalogue}=await import(pathToFileURL(previous+'/rules-store.mjs').href);
 const {validateCatalogue}=await import(pathToFileURL(target+'/rules-store.mjs').href);validateCatalogue(catalogue,release);
 const restored=structuredClone(catalogue);
-for(const c of plan.corrections){let row=restored[c.collection].find(r=>r.id===c.id);assert(row);for(const key of c.path.slice(0,-1))row=row[key];const key=c.path.at(-1);assert.equal(row[key],c.after);assert.equal(createHash('sha256').update(c.before).digest('hex'),c.beforeSha256);row[key]=c.before;}
+for(const c of plan.corrections){let row=c.collection==='fighterSupplements'&&c.id==='$root'?restored.fighterSupplements:restored[c.collection].find(r=>(r.id||r.slug)===c.id);assert(row);for(const key of c.path.slice(0,-1))row=row[key];const key=c.path.at(-1);assert.equal(row[key],c.after);assert.equal(createHash('sha256').update(c.before).digest('hex'),c.beforeSha256);row[key]=c.before;}
 if(plan.previousEditorialRevision)restored.provenance.editorialRevision=plan.previousEditorialRevision;
 else delete restored.provenance.editorialRevision;
 const {MongoClient}=createRequire('/var/www/myrpgtable/app/api/package.json')('mongodb');

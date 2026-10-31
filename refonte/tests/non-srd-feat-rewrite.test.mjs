@@ -11,7 +11,7 @@ import {sheetModel} from '../maquette/sheet-model.mjs';
 import plan from '../data/non-srd-feat-rewrite-20261031.json' with {type:'json'};
 import membership from '../audit/feat-srd-membership-2024.json' with {type:'json'};
 const snapshot=JSON.parse(readFileSync(new URL('fixtures/rules-2024.json',import.meta.url)));
-const before=buildCatalogue(snapshot,{editorialUntil:membership.baselineEdition}),after=buildCatalogue(snapshot);
+const before=buildCatalogue(snapshot,{editorialUntil:membership.baselineEdition}),after=buildCatalogue(snapshot,{editorialUntil:plan.id});
 const hash=v=>createHash('sha256').update(v).digest('hex');
 const numbers=t=>(String(t).match(/\d+(?:[.,]\d+)?(?:d\d+)?/g)||[]).sort();
 

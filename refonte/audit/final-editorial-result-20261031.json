@@ -1,0 +1,44 @@
+{
+  "status": "deployed",
+  "release": "20261031T142735Z",
+  "previousRelease": "20261031T140222Z",
+  "rulesVersion": "phb2024-2026-10-28",
+  "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+  "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+  "backup": "/root/backups/myrpgtable-persistence-20261031T142735Z",
+  "backupDocuments": 3278,
+  "actualMongoBaselineIdentical": true,
+  "immutableCatalogueImportVerified": true,
+  "persistenceBefore": {
+    "passed": 8,
+    "realCharactersUnchanged": true
+  },
+  "persistenceAfter": {
+    "passed": 8,
+    "realCharactersUnchanged": true
+  },
+  "httpChecks": 17,
+  "verification": {
+    "status": "passed",
+    "scope": "final-editorial-review-with-unchanged-mechanics-baseline",
+    "sourceHash": "94ae793a93f35e48e35042a3758fb4f9d397567bea237c10e24b17bd50aae05b",
+    "completedAt": "2026-10-31T14:33:21.152Z",
+    "failed": 0,
+    "skipped": 0,
+    "baselineCommit": "d696dab83957d0109858ab375507e23a103f5c1e",
+    "rulesVersion": "phb2024-2026-10-28",
+    "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+    "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+    "previousCatalogueSha256": "6b37cbdff5f0ba1c4c7822c620d66134545dde13eeb915be503037870fe25b9d",
+    "changedFields": 244,
+    "unitPassed": 4017,
+    "browserJourneys": 8,
+    "grimoireRoutes": 64,
+    "visibleRewrittenFields": 221,
+    "catalogueRewrittenFields": 244,
+    "comparativeSheets": 423,
+    "reviewedMainTextFields": 2021,
+    "reviewedSupplementTextFields": 95,
+    "qualification": "Editorial review completed across the detected catalogue text and all supplemental text fields. All 16 background introductions and 128 optional prompts, all ten species introductions, Aasimar traits, the non-SRD familiar, Battle Master maneuvers and remaining short non-SRD spell text rewritten. Technical expressions/SRD-derived summaries retained with explicit decisions. Five unavailable animal variants and two legacy feats remain excluded/archived. Full final unit run passes after correcting wording-dependent parsing; no player runtime or structured mechanical data changed. No legal clearance for PDF/artwork/trademarks or non-SRD redistribution claimed."
+  }
+}

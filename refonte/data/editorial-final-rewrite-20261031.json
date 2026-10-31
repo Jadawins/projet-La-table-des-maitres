@@ -1,0 +1,3282 @@
+{
+  "id": "phb2024-2026-10-28-textes-final-20261031",
+  "rulesVersion": "phb2024-2026-10-28",
+  "date": "2026-10-31",
+  "status": "frozen",
+  "baseCatalogueSha256": "6b37cbdff5f0ba1c4c7822c620d66134545dde13eeb915be503037870fe25b9d",
+  "previousEditorialRevision": {
+    "id": "phb2024-2026-10-28-dons-20261031",
+    "status": "frozen",
+    "rulesVersion": "phb2024-2026-10-28",
+    "baseSha256": "7938ed5423f84d3301566923d55f8c8d69095adc715009f7fb27a3d38f4659a6",
+    "scope": "Technical rewrites of the descriptions and non-ability-increase effect strings of all 58 active non-SRD feats. The 17 SRD feats, two legacy archives, numeric ability-increase expressions, prerequisites, IDs and effect types remain unchanged. No mechanics change or rights clearance."
+  },
+  "scope": "Final prose pass: all 16 background introductions and 128 original optional personality prompts, all ten species introductions, six Aasimar traits, two non-SRD familiar texts, all 20 Battle Master maneuver descriptions and their reference note, plus the remaining short non-SRD spell texts. Structured mechanics preserved; SRD-derived technical reference and archival metadata explicitly retained. No rights clearance.",
+  "corrections": [
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez servi dans un temple, accomplissant des rites et offices religieux. Cette expérience vous a initié à la puissance divine et aux hiérarchies religieuses.",
+      "beforeSha256": "3796d77998ea121514becd65229b7662225ed2b6a18a5523e79653ec281486d0",
+      "after": "Avant de partir à l’aventure, votre quotidien était lié à un lieu de culte. Choisissez vous-même ce que vous en avez retenu.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je cite les textes sacrés dans toutes les situations.",
+      "beforeSha256": "e688a12fedc95964e0d44cd53b5a6243d5739c94157789b22cb087a99ab39ae7",
+      "after": "Je demande leur nom aux personnes dont personne ne remarque la présence.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "La charité envers les nécessiteux est mon devoir premier.",
+      "beforeSha256": "72d101e765df5a32ccae743d0cfbba011548f8f6b2e125ee7937cc317bccf513",
+      "after": "Je note chaque soir une question restée sans réponse.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Foi : Je fais confiance à ma divinité pour me guider.",
+      "beforeSha256": "742bde636f54d5d94d21750d3b0cf5e24d1b06ae04a4e4817a5f21e32122b0a9",
+      "after": "Accueil : Une porte ouverte peut changer une vie.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Tradition : Les rites ancestraux fondent la société.",
+      "beforeSha256": "0bf70a50ce9e4d86f18c0a36bbc5ddffb51b4cdb7bec2d4afef89e7726c4e251",
+      "after": "Doute : Mes convictions doivent supporter les questions.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Mon temple est ma famille.",
+      "beforeSha256": "835de3327558d768db4bd693c8d93a4d4e5dab20f461c93fc09c989f808f275e",
+      "after": "Une communauté attend de mes nouvelles à chaque changement de saison.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Je dois rembourser ma dette envers mon mentor spirituel.",
+      "beforeSha256": "9a2f172531fbdc7ada1e70854f32d3c9e9ccac327121ff931dd38d58d00504dc",
+      "after": "Je transporte un objet sans valeur qui rappelle ma première cérémonie.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis inflexible sur les questions de morale.",
+      "beforeSha256": "14b4125c500391ea1cec694d9d6ddb6333787d10c4eaa76e749c280e7cce0a1e",
+      "after": "Je cherche une signification cachée même dans les coïncidences banales.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "acolyte",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je méprise ceux qui ne partagent pas ma foi.",
+      "beforeSha256": "6e68131f1cfc1c36f0c730a178a26049fd20281c56265a4f617c863c54ced297",
+      "after": "Je donne des conseils avant de savoir si on en souhaite.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez appris un métier dans l'atelier d'un maître artisan. Vous savez créer des objets de qualité et négocier avec une clientèle exigeante.",
+      "beforeSha256": "24bbebb69dde16a72b4903c7917e596af0cb025f2ec041e083ec44bf1e006036",
+      "after": "Votre parcours commence avec un métier manuel. Définissez votre spécialité, vos clients et ce qui vous a fait quitter l’atelier.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je suis fier du travail bien fait.",
+      "beforeSha256": "aae194685bec220884b77f3f58f093ff2861e14bcf171c5a04416b56915fc423",
+      "after": "Je reconnais les gens à la manière dont ils entretiennent leur matériel.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je trouve toujours un moyen d'améliorer ce que je vois.",
+      "beforeSha256": "68aba782e5fcf965e35dc449331d015bc4160206bbbbf0f67585cdfd67857e48",
+      "after": "Je garde les chutes de matière pour un ouvrage futur.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Communauté : Mon commerce fait vivre des familles.",
+      "beforeSha256": "793f55ec4d7107fed21d14106c68ee5e02f79e3c4601926f295828dbc55d89d1",
+      "after": "Réparation : Ce qui est abîmé mérite une autre chance.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Aspiration : Je veux créer quelque chose de durable.",
+      "beforeSha256": "5c2e1a19a3d3781f3cd413fa073f1d71bfaf6b2638e0ff118eaae4b9dbb44e1b",
+      "after": "Transmission : Une technique n’a de valeur que si elle circule.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "L'atelier familial est tout pour moi.",
+      "beforeSha256": "09242a28bbab4ea7e82d5946192378dfb440ab58875c03bc4fec37a1edb212f9",
+      "after": "Je veux retrouver un ouvrage portant une marque que je connais.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "J'ai une dette envers le maître qui m'a tout appris.",
+      "beforeSha256": "ed1765feafd5fb6ef15831ea90708a8fefee8dfa9b52e3e4473902f082fe4595",
+      "after": "Une commande inachevée m’attend quelque part.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis obsédé par la perfection.",
+      "beforeSha256": "8e3402fa0a4874aef6e15245814782fd1ba8898929736307d3cba6e2888c9047",
+      "after": "Je promets un délai que je sais trop court.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artisan",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je suis avare et déteste dépenser inutilement.",
+      "beforeSha256": "54ac29cdee0d3ac117a93705629648a4481d369156b91b7f6809754b0e0cf1f4",
+      "after": "Je démonte ce que je ne comprends pas, parfois sans demander.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez grandi parmi des artistes itinérants, apprenant à captiver un public et à vivre de votre talent de musicien ou acrobate.",
+      "beforeSha256": "571840bb5025c1c16b13698443c5a31324b2064035894f916e223bda7ab82225",
+      "after": "Vous avez fait du spectacle une activité quotidienne. Votre discipline et la raison de votre départ vous appartiennent.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je saisis toute occasion de me produire devant un public.",
+      "beforeSha256": "bab615bba5d2859fba11461ed49aee4aa8d44e2cafb3b0043ed75bf01bd3818e",
+      "after": "Je transforme les préparatifs du camp en répétition.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je connais des histoires adaptées à toutes les situations.",
+      "beforeSha256": "c79f6977a9f791b52f3b7e63374b70c168674ea87f67de31ebd36b292474a03f",
+      "after": "Je retiens les silences du public autant que ses applaudissements.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Beauté : L'art est le plus grand don que l'on puisse offrir.",
+      "beforeSha256": "4649ac2eed4399aac94a66b7ff9b913d8752283584fb2168c61c4401a6da9fcd",
+      "after": "Partage : Un moment heureux mérite d’être offert.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Liberté : Rien ne doit entraver l'expression artistique.",
+      "beforeSha256": "e92cf6504d6c7ad429fd0c733b15ac23732717ff1c15c8c3bc4662c557ff791e",
+      "after": "Audace : Je préfère tenter une idée imparfaite que rester immobile.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Ma troupe est ma famille.",
+      "beforeSha256": "3acedc647e85a5f09a3c06b6aa74e0c775029f26b6f9820b6682c06a2d860752",
+      "after": "Une personne conserve le premier accessoire avec lequel je suis monté en scène.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Je cherche à impressionner un mécène influent.",
+      "beforeSha256": "e356debfe39dc99d356d6de5195eac39d2825f18f2757852d9090f3f973f4f7e",
+      "after": "Je cherche un lieu où présenter une œuvre jamais achevée.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis jaloux des artistes plus talentueux.",
+      "beforeSha256": "a8696e2da75436216f319086957d947ec9c07b655a6bc080cc8fc94d51bf1c35",
+      "after": "Je transforme une conversation sérieuse en numéro.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "artiste",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je dépense sans compter dès que j'ai de l'argent.",
+      "beforeSha256": "20cd98312b1937b153a10329a461e04ce8a92fc41de8ed6752e3f73a67392a91",
+      "after": "J’accepte mal qu’un silence ne soit pas un signe de désapprobation.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez vécu en escroquant vos prochains grâce à de fausses identités, des produits miracles ou des titres fictifs soigneusement entretenus.",
+      "beforeSha256": "c85189414c49c4bf17098ca093890dec03e56e37055ffe9690c27a0d76a42874",
+      "after": "Votre expérience repose sur les apparences et les histoires que les autres veulent croire. Inventez les circonstances de ce passé.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je mens si facilement que même moi je n'y fais plus attention.",
+      "beforeSha256": "d3a8bbd41d85b9cc2262261afaf4a64869c551cbb25a6a7953862512c2f05ee6",
+      "after": "Je change légèrement le récit de mon enfance à chaque rencontre.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je flatte sans vergogne pour obtenir ce que je veux.",
+      "beforeSha256": "28c900e92bbc2aef7fee4debdfeaaf4623302bd6b9082530ec7a5cbf6530f618",
+      "after": "Je prépare une explication plausible pour les objets que je transporte.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Indépendance : Je ne dois rien à personne.",
+      "beforeSha256": "2cf7e39624023e6482d5185ca63a9d1697532ac0bc2a0d3d52695e66c707ed46",
+      "after": "Lucidité : Une belle promesse mérite toujours une question.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Créativité : Chaque escroquerie est une oeuvre d'art.",
+      "beforeSha256": "5647506de6a70f9d5761d9a44f97bd044ccf54605a19a7a33f33d83f7d382458",
+      "after": "Réinvention : Un passé embarrassant ne condamne pas une vie.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "J'ai escroqué quelqu'un qui ne le méritait pas et je dois réparer ça.",
+      "beforeSha256": "7c25cfba70543080f263731078816dedf7bd9652531d16571a1e83be06c68982",
+      "after": "Une ancienne cible m’a aidé sans rien demander en échange.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Mon partenaire est la seule personne en qui j'ai confiance.",
+      "beforeSha256": "0ec7f71b97c67fc4ebaf6df02cff13a8ca2cc0569c704a697989063acaf6df64",
+      "after": "Je conserve une identité inventée à laquelle je me suis attaché.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je ne peux pas m'empêcher d'arnaquer même quand c'est inutile.",
+      "beforeSha256": "dc82f409e987ab8bfaf9e8b9ecd86820a22e02f78daba943a0a44672e0a505d3",
+      "after": "Je mens même lorsqu’une réponse vraie serait plus simple.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "charlatan",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je fuis dès que les choses deviennent sérieuses.",
+      "beforeSha256": "0f94e061dbc2e93871c113d4a346d18cbdbed4c77ea73f8976505492c52351d8",
+      "after": "Je confonds trop facilement confiance et naïveté.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez gagné votre vie dans les ruelles sombres, coupant des bourses ou trafiquant des marchandises illicites, seul ou au sein d'un réseau criminel.",
+      "beforeSha256": "436e88049905bfe0e59cf33927d9b34258195b75e7e419b3c3d888f207f17d6f",
+      "after": "Vous avez fréquenté des activités clandestines avant l’aventure. À vous de décider de vos actes et de ce que vous en pensez aujourd’hui.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je surveille toujours les sorties d'une pièce.",
+      "beforeSha256": "4a0234862f4facd7e5eedd17b69d209683015fac231eb152e1dab33e79696023",
+      "after": "Je repère les sorties avant de m’asseoir.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je fais confiance à l'argent plus qu'aux personnes.",
+      "beforeSha256": "49c0df90d1c782e186c0722933ae3caf0676f802333006ad2243fa255c924f62",
+      "after": "Je préfère un signe discret à un long discours.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Honneur : Je respecte un code strict entre criminels.",
+      "beforeSha256": "05c47da10b6d81473b4af1f79cc66e02d10bcf0f80febb53f048af4b9df47c45",
+      "after": "Réparation : On peut répondre de ses actes sans s’y réduire.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Liberté : Les lois sont faites pour les faibles.",
+      "beforeSha256": "bb1fe7c71c3c49f25320c9854a6e3d541f0529181752576a7d530c20c07b4063",
+      "after": "Loyauté : Une parole donnée engage même dans l’ombre.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Je dois de l'argent à quelqu'un de très dangereux.",
+      "beforeSha256": "cd3ac876028d41f693f1832bc17a09776006575ba3e2285dd275b3dd61eef206",
+      "after": "Quelqu’un subit encore les conséquences d’un de mes choix.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Mon équipe m'a sauvé la mise, je leur suis redevable.",
+      "beforeSha256": "ec9ce766ead90d9d2703d93a5323494418b4a0951f5b1d6ea77bd0cfba5f236a",
+      "after": "Un contact m’envoie parfois un message sans signature.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Quand je vois quelque chose de précieux, mes mains agissent avant mon cerveau.",
+      "beforeSha256": "6f5614f3f4028db244e07ded83578ccac9fc1a47a4db413505f8982d666e9a6d",
+      "after": "Je vois des complices derrière chaque rencontre fortuite.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "criminel",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je fuis ma réputation en changeant souvent de ville.",
+      "beforeSha256": "bbaa53df27807d461a3acdea7e8ccb56e4b4729d99fda1b0b10cfab52bf501ce",
+      "after": "Je garde une part du butin avant de discuter du partage.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez vécu en reclus loin de la civilisation, méditant et étudiant dans la solitude. Cette retraite vous a apporté sagesse et sérénité.",
+      "beforeSha256": "0dc3f4ba4bc1a6f084fece28f17db2725543d155d20d1eb893c2ec3b867c9fb0",
+      "after": "Une période de retrait a marqué votre parcours. Choisissez le lieu de cette solitude et la raison de votre retour parmi les autres.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je me sens mal à l'aise dans les foules.",
+      "beforeSha256": "a41e2e4eea17240540eb1ab1a72d6a568d68d1d54d465cc09c5bccd2a32bb859",
+      "after": "Je prends le temps d’écouter avant de répondre.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je réfléchis longuement avant de parler.",
+      "beforeSha256": "f8486afa575278e7f0391b7edab526edf1df3617bcd5b9b823eed84b844a77fc",
+      "after": "Je collectionne des observations dont personne ne voit encore l’utilité.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Introspection : La connaissance de soi surpasse toute autre sagesse.",
+      "beforeSha256": "98ba59e083355550e599f86df4a50e30e1fa417d63e64c5c35f581bb0ac4eca7",
+      "after": "Attention : Le détail négligé peut éclairer l’ensemble.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Simplicité : Le nécessaire suffit.",
+      "beforeSha256": "a8f1425abc76097096bacf5b225de915dc25cb124346562e70a1448eefe95dc1",
+      "after": "Simplicité : Je veux savoir de quoi j’ai réellement besoin.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "J'ai fait une découverte en réclusion que je dois partager.",
+      "beforeSha256": "7d5b480101e64aac412c42efc192873b16d65a921829f23d9e3c39d141e4fd97",
+      "after": "Je reviens régulièrement vérifier un abri que j’ai construit.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Le lieu de ma retraite est sacré pour moi.",
+      "beforeSha256": "be8640045c0a088e8ca68e623a3b1d0a01705b55524622481be97649d75b6c90",
+      "after": "Je cherche quelqu’un capable de comprendre une découverte personnelle.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je néglige l'hygiène et les convenances sociales.",
+      "beforeSha256": "af7a54e16b6c2441daf4397845ead699c7768fbc852b0363c72700fe4c17246e",
+      "after": "J’oublie de prévenir les autres lorsque je pars réfléchir.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "ermite",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je suis certain de détenir une vérité que les autres refusent de voir.",
+      "beforeSha256": "5da39650e9214f2f2867c7e0a20db0e29d4d4e3c25349476427ccb40cfa3ed89",
+      "after": "Je prends mes habitudes pour des vérités universelles.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez grandi proche de la terre, cultivant les champs et soignant les animaux. Cette vie vous a forgé physiquement et vous a appris la patience.",
+      "beforeSha256": "8c333dcd5146a7e61d22a1d26d7436ef011def9ed31e553d94de934d01696067",
+      "after": "Le travail des terres ou l’élevage faisait partie de votre vie. Décrivez ce que vous avez laissé derrière vous en devenant aventurier.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "J'ai confiance dans le travail de mes mains.",
+      "beforeSha256": "55e098bae56bfc9da321a69d9392381805cc8148ec8fc1a51a945b2a52a64395",
+      "after": "Je vérifie la météo avant de parler de nos projets.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je me lève tôt et travaille dur toute la journée.",
+      "beforeSha256": "aba1531b83615648ced18dc54374bd2dbe74b6b2675e101edb440875bd5990c1",
+      "after": "Je juge un lieu à son eau, son sol et ses provisions.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Communauté : On se soutient entre voisins.",
+      "beforeSha256": "eb6026372e41afb329ae5b94c583275962fb5478ef054d7d92b17238d6d81195",
+      "after": "Prévoyance : Un surplus aujourd’hui protège demain.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Terre : La terre nourrit, elle doit être respectée.",
+      "beforeSha256": "b0131605c409f7e7e6956b3cc45d4cde1e2a2dd4be5bdec06f1038eccb44595c",
+      "after": "Entraide : Une récolte se prépare à plusieurs.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Ma ferme familiale est tout ce pour quoi j'ai travaillé.",
+      "beforeSha256": "8d9875be6901623a01901114fd9e872f34a9a1e70db2d034275bd179e8011465",
+      "after": "Je garde des semences qui me rappellent mon foyer.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Je dois subvenir aux besoins de ma famille restée au village.",
+      "beforeSha256": "adc2c71ab9319530e79a3ee093da352c171227336572f497c24f44694849df00",
+      "after": "Une famille compte sur l’argent que je pourrai lui envoyer.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis méfiant envers ceux qui ne travaillent pas de leurs mains.",
+      "beforeSha256": "c26226c01e9967db97ca892b1e0f1c29db1a7c1396f7163cf3518b74634a7224",
+      "after": "Je refuse de jeter une réserve même lorsqu’elle est inutilisable.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "fermier",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je me sens perdu loin de la campagne.",
+      "beforeSha256": "e03f918b762f1c872a1cab2fad1cc3d6d13447a913bdec806593ba4b9cb8ad11",
+      "after": "Je me méfie des solutions qui ne demandent aucun effort visible.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez assuré la sécurité d'une ville ou d'un bâtiment important. Vos années de faction vous ont appris à détecter les menaces et à maintenir l'ordre.",
+      "beforeSha256": "000c077c2b97beaa25a98e949fe457a8e52896f795579dcd1ec1203145c368d2",
+      "after": "Vous avez exercé une fonction de surveillance. Décidez de ce que vous protégiez et de la manière dont cette mission s’est terminée.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je reste calme dans les situations de crise.",
+      "beforeSha256": "a628402ea127a335c47469525e56da2cb966e682fb3af10e524ed64c081c23b4",
+      "after": "Je retiens les visages rencontrés plusieurs fois au même endroit.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "J'observe toujours les gens autour de moi.",
+      "beforeSha256": "631d72699bf9ea8c4845e4de3e76fec073a23f71bee9461ed9c627fdb19838f3",
+      "after": "Je vérifie un verrou même quand quelqu’un vient de le fermer.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Ordre : Les règles protègent tout le monde.",
+      "beforeSha256": "dfec8c4b4a02951a1022a4a58075280e8447865b2a9e807098c4f9d1cd1a1c95",
+      "after": "Mesure : La force doit rester proportionnée au danger.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Protection : Mon devoir est de défendre les innocents.",
+      "beforeSha256": "b04aa509252784d4e14a4590f286834310a33a3eb2bdbe4bcd7ef7a890dd562b",
+      "after": "Vigilance : La tranquillité des autres mérite de l’attention.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Je dois ma carrière à un supérieur qui a cru en moi.",
+      "beforeSha256": "3a6375aad5793a79f774d818fcf18f9d19c91604a9d93e7764914dc33ae8e9d7",
+      "after": "Je cherche des nouvelles de mon ancien partenaire de ronde.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Un criminel que j'ai laissé s'échapper a causé du tort.",
+      "beforeSha256": "358590c1427d531312e01e0256bc87db33a29f255b28a410b8d4707d850ca934",
+      "after": "Une porte que j’ai dû laisser ouverte me hante encore.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis trop prompt à appliquer les règles sans jugement.",
+      "beforeSha256": "b4c729acc83edf678d43bb4b03867ab8dbaad75be0fc0bca79475c854d670dad",
+      "after": "Je traite les imprévus comme des infractions.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "garde",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "J'ai accepté des pots-de-vin et je vis dans la crainte d'être découvert.",
+      "beforeSha256": "4dd1fd404014c8f6473e8ede0bf2b99ec0cfb17cf20a9507788eab668f21902f",
+      "after": "Je soupçonne les personnes qui répondent trop vite.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez grandi en plein air, loin des villes. Vous maîtrisez la navigation en terrain sauvage et savez tirer parti des ressources naturelles.",
+      "beforeSha256": "d15bddf84f97d6b4e6cfc44194470c14270e78a08c3b6f4bc499962d35578ce4",
+      "after": "Vous avez appris à accompagner d’autres personnes à travers des lieux difficiles. Choisissez vos terrains familiers et votre motivation.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je préfère la compagnie des arbres à celle des gens.",
+      "beforeSha256": "5c9c26cefd8c0fa27349f7f4b0d6449b9410ed2a1a01ab312a4d4ea438adebae",
+      "after": "Je laisse des repères que seul mon groupe saura reconnaître.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je connais les noms de toutes les plantes que je rencontre.",
+      "beforeSha256": "3e836ac1282192663a7ba7f8f7e1af9848e4a99ce6380fad64fb6f2612cca8b4",
+      "after": "Je compte les voyageurs à chaque changement de direction.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Nature : Le monde naturel est sacré et doit être protégé.",
+      "beforeSha256": "9da2df2283ab447939db2e3b5f05bce5bfee991dbcf0bbef3bc8560daf0a93eb",
+      "after": "Retour : Une expédition réussie ramène tout le monde.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Liberté : Personne ne devrait être enfermé loin du ciel ouvert.",
+      "beforeSha256": "c79d4d54d0a41b3621661922b47758131464d428bb0d894430453ea977f1cece",
+      "after": "Observation : Le terrain tranche les désaccords mieux que l’orgueil.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Une forêt en particulier est mon foyer et je la protège.",
+      "beforeSha256": "d3474239ca4bb58a945ee054fb0af02a758005840630c5259565c9fb592516a4",
+      "after": "Je veux reprendre une route que j’ai dû abandonner.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Un mentor druide m'a tout enseigné — je lui dois beaucoup.",
+      "beforeSha256": "f5eecd351a5696b3854ed456bb1ec6068e4500c8bf8ec9f33571f79814ccac49",
+      "after": "Une personne rencontrée en chemin m’a confié une destination.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis maladroit dans les interactions sociales en ville.",
+      "beforeSha256": "e132c9da0921127a05b0c0961b167ad2cc3d0ddc15816d67edc39ca9ecfe837a",
+      "after": "Je déteste suivre quelqu’un, même lorsqu’il connaît mieux le chemin.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "guide",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je sous-estime les dangers des environnements urbains.",
+      "beforeSha256": "ba6e0e831cc9d33867011451150a0127bf93f11fd16acd8cdb0d8c864d8a8968",
+      "after": "J’oublie que les autres n’avancent pas à mon rythme.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez appris le commerce auprès d'un négociant ou dans une caravane. Vous savez évaluer marchandises et clients et gérer des routes commerciales.",
+      "beforeSha256": "2e1456eca6e7d56f36ff497ef24cc1f2b3ef37ace166f6ca32faf4d77965e123",
+      "after": "Votre passé est lié aux échanges de marchandises ou de services. Définissez votre activité et ce qui vous a conduit sur les routes de l’aventure.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je peux trouver un prix pour n'importe quoi.",
+      "beforeSha256": "193dc71bfa150dddb6227359a22ab78a121e54c78b9a27cc69f0f29c003a2425",
+      "after": "Je demande toujours comment un objet est arrivé jusque-là.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je connais toujours quelqu'un dans chaque ville.",
+      "beforeSha256": "08b966478c86c1c2bfc6783ed24f5606b1661db2cd9d57b36d8bc5499466f50b",
+      "after": "Je retiens les préférences des personnes avec qui je traite.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Profit : Le commerce est le moteur du progrès.",
+      "beforeSha256": "fe03881869d526a72b938394af5366903138420d62bf5cbcda7341e63f8b109a",
+      "after": "Réciprocité : Un accord durable doit convenir aux deux parties.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Équité : Un bon accord profite aux deux parties.",
+      "beforeSha256": "042339716f5f8db621b50bee014cdf152da864b4728e3a0ccc9acfe9fd76a72a",
+      "after": "Circulation : Les idées voyagent avec les marchandises.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Ma famille compte sur les revenus de mon commerce.",
+      "beforeSha256": "bdb168bf6637bbccd087725a7b166b9bf22b5c00bf56e696502f020aceef2273",
+      "after": "Un registre contient une promesse que je tiens à honorer.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Je dois honorer un accord passé avec un partenaire.",
+      "beforeSha256": "9d12ca47428dcd13e96a81e7dcd493b1d11b409fdaf57adbdb95a8459770153b",
+      "after": "Je recherche l’origine d’un objet reçu en paiement.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je vois tout comme une opportunité commerciale.",
+      "beforeSha256": "b279c16419ad7d7860c044545665c15806867d37444e4bcdeddaacf40fabd6be",
+      "after": "Je transforme les faveurs entre amis en comptes à équilibrer.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marchand",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je mens parfois sur la qualité de mes marchandises.",
+      "beforeSha256": "9453cdc11d12e5a297a95c909e745ffd3df8861b1bd73f6b516424ee7ece7387",
+      "after": "Je poursuis une mauvaise affaire pour ne pas reconnaître ma perte.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez navigué sur les mers, affronté tempêtes et pirates, et fréquenté les ports du monde entier. La mer est votre foyer.",
+      "beforeSha256": "3d32e0f105381f4fcdc259c9607f155f3518f7102b1e148624f556d39aa78649",
+      "after": "Vous avez travaillé ou voyagé à bord d’un navire. Choisissez votre rôle et ce qui vous attire désormais loin de ce quotidien.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "J'ai une histoire pour chaque port que j'ai visité.",
+      "beforeSha256": "fc1a57b139af72b9d681d6a60d0d9eb679f2f74ee070babf3e81c6f2c4950e45",
+      "after": "Je vérifie les nœuds lorsque mes mains sont inoccupées.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je suis à l'aise dans les espaces confinés.",
+      "beforeSha256": "4a2ad4ca9314def1d8372b6aaeb99f33565b24e6e35eeef7ad892d1731fb8a94",
+      "after": "Je garde une chanson pour les tâches pénibles.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Liberté : La mer appartient à tout le monde.",
+      "beforeSha256": "2ee09bad4c40a62f6ccd81d1ba532db71a8a238bd751b287f40292e3665bac00",
+      "after": "Équipage : Chacun doit pouvoir compter sur les autres.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Solidarité : L'équipage passe avant tout.",
+      "beforeSha256": "e8e1395ceda3478b9b29ce4d6bd6b9609ed840a2db2201b65c494c234750cc4a",
+      "after": "Horizon : Je veux voir ce qui se trouve au-delà de la prochaine escale.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Mon bateau est ma maison, même s'il m'a quitté.",
+      "beforeSha256": "46466385c7ca9443d0d6865bcfc4d62a5196b6fa4fd7b2c516ca716fd3e3a501",
+      "after": "Je cherche un ancien compagnon disparu après un débarquement.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Je cherche à retrouver un camarade perdu en mer.",
+      "beforeSha256": "1a5b21c308e6684a1f542c5416f47fc7d9b019f73eaa39f4f9c65801bb032065",
+      "after": "Je possède un souvenir dont la destination reste un mystère.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je bois trop quand je suis à terre.",
+      "beforeSha256": "a98223276fbce554ab69c2f8aacf0e0da57d01c52e92d6385c58b4506a81af38",
+      "after": "Je transforme chaque récit de voyage en compétition.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "marin",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je ne sais pas gérer mon argent.",
+      "beforeSha256": "5ba6a1a501d218d6a78e238d5aa79e4bd2265a49aa07e81db4a281a98f17e609",
+      "after": "J’accepte un risque inutile pour ne pas paraître hésitant.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez grandi dans une famille aisée ou aristocratique, bénéficiant d'une éducation de qualité et d'une exposition aux intrigues politiques.",
+      "beforeSha256": "2dff80c0d139b0380ff69478f11b3d71f9fef368f08e1f36bd5b54e0f953af9a",
+      "after": "Vous avez évolué dans un milieu privilégié. Décidez de votre place dans cette famille et de ce que vous souhaitez en conserver.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Ma parole est mon honneur, je ne manque jamais à mes engagements.",
+      "beforeSha256": "cef41cb52ea3e62f78e6df315ccaaeac0b0144fae0038002e6724ebe776efac6",
+      "after": "Je remarque les règles d’accueil propres à chaque lieu.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je suis habitué à ce que les gens fassent ce que je dis.",
+      "beforeSha256": "f40d2ec266362673f1319c70c39256125bf35e0dc17eb1093e0469bc1fe6c162",
+      "after": "Je mémorise qui interrompt qui pendant les discussions.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Noblesse oblige : Mon rang implique des responsabilités.",
+      "beforeSha256": "0c9cedffdc9653ed2b2ee2eeeb8c4a8bf9be65956399d7ee40b6ee16bacc80c2",
+      "after": "Responsabilité : Un privilège devrait servir à quelque chose.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Pouvoir : La noblesse doit gouverner, c'est l'ordre naturel.",
+      "beforeSha256": "cc8fa678ecc15a05c5f13ae24c07764c4061b9bfa41ee76184cdae6145ee0a9f",
+      "after": "Émancipation : Un nom ne doit pas décider d’un destin.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Ma maison et mon titre passent avant ma vie.",
+      "beforeSha256": "32e76be4807212daab6b3e1719224ebdc2977f825845e8d09b890e18bf980791",
+      "after": "Je veux comprendre une décision que ma famille refuse d’expliquer.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Un rival cherche ma ruine — je dois le devancer.",
+      "beforeSha256": "f238d55bb977dceb9dcc7bd1bf3fc21de5c312f9df3d5b1a238fe06d4d068d5b",
+      "after": "Une personne qui travaillait chez nous m’a appris l’essentiel.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je méprise les gens du peuple.",
+      "beforeSha256": "656fa9df915041e876fa55757bc0ca41e89a61bdd1eedab90f843d00470dcb0a",
+      "after": "Je suppose que les services dont j’ai besoin seront disponibles.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "noble",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je fuis mes responsabilités dès qu'elles deviennent contraignantes.",
+      "beforeSha256": "d5c8e809dcf511a3853d163936c3562588ef982a8ce86c750f70fe2e0853e4ff",
+      "after": "Je dis oui pour éviter un embarras public, puis le regrette.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez passé des années à étudier dans une bibliothèque, un monastère ou une université, accumulant des connaissances en arcanes, histoire et sciences.",
+      "beforeSha256": "9bb59fca1ffa0842167694fe54453b54814b4393c6647ea39fdb203ed131debc",
+      "after": "Vous avez consacré du temps à l’étude. Choisissez votre sujet de prédilection et la question qui vous pousse à explorer le monde.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je cite des auteurs anciens pour soutenir chacun de mes arguments.",
+      "beforeSha256": "93ced23edb71ec1c297eaa5ffb884739450df1bbc51ceda698b37421aea8839b",
+      "after": "Je compare les versions contradictoires avant de choisir celle que je crois.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je suis fasciné par tout ce que je ne comprends pas encore.",
+      "beforeSha256": "7f8afb827dd2ceeda86971aac261e6fb1f54cbf9d692b9a30d8f7d8c9e3aa374",
+      "after": "Je note les mots inconnus pour en demander le sens plus tard.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Connaissance : Le savoir est une fin en soi.",
+      "beforeSha256": "3124c86c7effdabedd97bf87aae9a55a7bc3e81ba9f76b4aa32e3d89b5639093",
+      "after": "Vérification : Une réponse solide accepte d’être remise à l’épreuve.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Vérité : La vérité factuelle prime sur les croyances.",
+      "beforeSha256": "366b4ec8cab0d76c7382d8b898fa71481eb92537070778be1936b23490f9be5a",
+      "after": "Accès : Le savoir devrait pouvoir être consulté.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "J'ai accès à une bibliothèque rare que je dois protéger.",
+      "beforeSha256": "19df88338b9546359fb65a4560a2edd42d99ffb026aa2fc9a7ed2733d9fa2b3b",
+      "after": "Une annotation ancienne semble répondre à ma recherche.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Mon mentor m'a confié une recherche inachevée.",
+      "beforeSha256": "f26dcb75f4a69b40a62703e7d8f737203b89618684854abdcf0857aa9d2032ad",
+      "after": "Je veux rendre à quelqu’un un document emprunté depuis longtemps.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je méprise les gens incultes.",
+      "beforeSha256": "27d9b8fce89625d9eee8e4488becb5d6bcac9d42a5556a1d44d6c54b00c553c4",
+      "after": "Je poursuis une explication alors que les autres ont besoin d’agir.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "sage",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je m'arrête pour examiner des ruines même en danger.",
+      "beforeSha256": "4d4c7431fd40fb99bc23b0f8d9696ee1f2af6a5175ef993cdaa476be9d0ea51a",
+      "after": "J’accorde trop de poids à une source joliment présentée.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez travaillé dans un scriptorium ou une administration, copiant des documents officiels et apprenant à rédiger avec précision.",
+      "beforeSha256": "405e8655c1fd7768444f0bcdb5513fd91c7d75f98ae30870ed5e342171e372ab",
+      "after": "Vous avez exercé une activité de lecture, de copie ou de rédaction. Déterminez le cadre de ce travail et le document dont vous vous souvenez le mieux.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je prends des notes sur tout ce que j'observe.",
+      "beforeSha256": "28566ce6d670503c1796a62fc251a649db30f85f0ede0c65db618b7f5692bcaa",
+      "after": "Je relis les engagements à voix haute avant de les accepter.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je suis à l'aise avec les formulaires et la paperasse.",
+      "beforeSha256": "da89af49871e2a266d294c7a686758c9a626a6c16d559f982c305aa357acbd2d",
+      "after": "Je reconnais une main familière dans une écriture déguisée.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Précision : Les mots doivent être choisis avec soin.",
+      "beforeSha256": "b38109bd509599cb79da0f644a1cba1753f8472356fe6fee0ca0aad440e11732",
+      "after": "Mémoire : Ce qui est consigné peut être transmis.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Ordre : Une bonne administration est le fondement de la société.",
+      "beforeSha256": "ad8f7fef3123cd0bb2a32c77b5d2468ab5edda665f02c1d99ffbdff2be033130",
+      "after": "Clarté : Les mots doivent permettre de comprendre, pas de dissimuler.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "J'ai copié un document qui contient un secret dangereux.",
+      "beforeSha256": "a8e7a3b60ba6d090d51e5640a4de99b2b33a10387f3a168aca1c0d7d6550d046",
+      "after": "Je cherche le destinataire d’une lettre jamais remise.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Le scriptorium où j'ai travaillé m'a formé et je lui dois loyauté.",
+      "beforeSha256": "99d17a0315762f0b414995c3143f1d92346459d20db39c63e133b5c27d0a21cb",
+      "after": "Une erreur dans un document porte encore ma signature.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis paralysé sans documentation écrite.",
+      "beforeSha256": "7abbac5894e448e11858d9c6fbd13cc5e17b8d3bba2d79847d5de6e1606a24de",
+      "after": "Je corrige les mots des autres au mauvais moment.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "scribe",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je refuse de prendre position sans preuve formelle.",
+      "beforeSha256": "b0106ff61c8b02f41d3f8e362adbbb50ac062f1b325f8931f038bc7306f0ed06",
+      "after": "Je tarde à agir tant que les détails ne sont pas parfaitement établis.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez servi dans une armée régulière ou une milice. Vous connaissez la discipline militaire et les réalités brutales du champ de bataille.",
+      "beforeSha256": "1f7311358178a18c9cacc588a4fe7c2ca5bea837319c7e07bde03a0082ae3cfe",
+      "after": "Un service militaire a fait partie de votre vie. Décidez de votre affectation, de vos souvenirs et de ce que vous cherchez désormais.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je suis direct et dis ce que je pense.",
+      "beforeSha256": "a960a9437ec98c001aae90d6d6343dfc9628fcbf3c787427c35f7bf2f80ff535",
+      "after": "Je prépare mon équipement dans le même ordre chaque matin.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je respecte la chaîne de commandement.",
+      "beforeSha256": "d032be9eaec8cac8ac93d5cdf90308467f81f7f097c105500b706c59411ce399",
+      "after": "Je prends des nouvelles de la personne qui assure la dernière garde.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Honneur : Je vis et meurs par mon code militaire.",
+      "beforeSha256": "22b64af30d7ebc31255d37f9fced71cf7fef2ab171143c461ece18c749568237",
+      "after": "Solidarité : Personne ne devrait supporter seul une épreuve collective.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Devoir : Les ordres légitimes doivent être exécutés.",
+      "beforeSha256": "f829907775608e37a65610614d7877409fdce0e7f5f0a061d720283f7df0b22d",
+      "after": "Discernement : Un ordre ne dispense pas de réfléchir.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Je ferais n'importe quoi pour mes camarades d'armes.",
+      "beforeSha256": "c45d5ccef8156adecc38fe276f4d82e6e1a5d092facfc4c263c54e3bed711b4d",
+      "after": "Je porte un souvenir qui appartenait à un camarade.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Mon unité a été décimée — je cherche à comprendre pourquoi.",
+      "beforeSha256": "fcee440819451d517dee98f98235dcf105dfdd8d77ab6c03e80ce28ab479367a",
+      "after": "Je veux savoir ce qu’est devenue une personne croisée pendant mon service.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je suis incapable de questionner une autorité légitime.",
+      "beforeSha256": "0834606ea2898550639ad9abc26a1aa8dfe44ba9e4c8dae10f12b0c65a12a3d5",
+      "after": "Je cherche un responsable à qui obéir lorsque je doute.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "soldat",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "Je résous les problèmes par la force en priorité.",
+      "beforeSha256": "04d669c6e05937105600857129b0326d94b398668143495df4778e02d5ea060e",
+      "after": "J’ai du mal à croire qu’une alerte puisse être sans danger.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "description"
+      ],
+      "before": "Vous avez grandi dans la rue ou sur les routes, apprenant à vous débrouiller parmi toutes sortes de gens dans les situations les plus improbables.",
+      "beforeSha256": "17f3a5fedef9d35d22a45c461d5d6745e2e53fb4b39ccaa383239d78fa966bb3",
+      "after": "Vous avez appris à vous débrouiller dans des situations et des milieux variés. Choisissez les rencontres qui ont façonné cette expérience.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        0
+      ],
+      "before": "Je m'adapte à n'importe quelle situation.",
+      "beforeSha256": "e232e5847ff2f44d4b96485bbfb28715d6bf743073ed7959c7f09c12e2e5221c",
+      "after": "Je demande aux habitants leur endroit préféré plutôt que la route la plus courte.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "traits",
+        1
+      ],
+      "before": "Je ne fais confiance qu'à ce que je vois de mes propres yeux.",
+      "beforeSha256": "3662541bffc20cfd49957d90c4aa62c44266fd2e30a0ea572295a293af208b70",
+      "after": "Je garde une petite place dans mon sac pour un souvenir inattendu.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        0
+      ],
+      "before": "Liberté : Personne ne me possède, personne ne me contrôle.",
+      "beforeSha256": "b514eb259e122721820e6ad9d9dae82b2ae3a493748a85fe3d1e37e30d60b6f5",
+      "after": "Curiosité : Une rencontre peut déplacer mes certitudes.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "ideaux",
+        1
+      ],
+      "before": "Solidarité : On s'entraide dans la rue.",
+      "beforeSha256": "b40f249a1582130c08cd57fcd00b1a093b9c81a77d94f1bb0faf07650cce3c50",
+      "after": "Souplesse : Changer de plan peut être une manière d’avancer.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        0
+      ],
+      "before": "Quelqu'un m'a aidé quand j'en avais besoin — je dois lui rendre la pareille.",
+      "beforeSha256": "3be65284e2a30a7553cfd16a2fbaff82098ba599f7a21f29086ca84243f0d947",
+      "after": "Je veux remercier une personne dont je ne connais pas le nom.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "liens",
+        1
+      ],
+      "before": "Je protège mon quartier d'origine.",
+      "beforeSha256": "52abcfc1a1d474b625a318799149fcf00aeda5055e47d9fcf87c41bde62cd5ff",
+      "after": "Un lieu décrit dans une vieille histoire m’attire encore.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        0
+      ],
+      "before": "Je mens par réflexe même quand ce n'est pas nécessaire.",
+      "beforeSha256": "9f2d19f1af2e075a44a7c45ecb203826c4d00781e283a64f2de4880b7f1a02ef",
+      "after": "Je repars dès que je commence à m’attacher.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "backgrounds",
+      "id": "voyageur",
+      "path": [
+        "caracteristiques_suggerees",
+        "defauts",
+        1
+      ],
+      "before": "J'ai du mal à m'engager sur le long terme.",
+      "beforeSha256": "7c9bd437e98588e87bcd35706f55b3f6c8c43bc0dd8515b0276f7e44f38e0cc0",
+      "after": "Je compte sur une improvisation heureuse au lieu de préparer le nécessaire.",
+      "kind": "original-roleplay-example",
+      "reason": "New optional roleplay example, unrelated to a book passage; no mechanical effect."
+    },
+    {
+      "collection": "species",
+      "id": "aasimar",
+      "path": [
+        "description"
+      ],
+      "before": "Mortels portant une etincelle divine des Plans Superieurs. Leur nature celeste se manifeste progressivement, revelant leur heritage angelique au fil des niveaux.",
+      "beforeSha256": "4ef05f70dbfe6d694734d9178413f10df3d72c53c6f4738bb3d61eb7b8a27be2",
+      "after": "Une origine céleste accompagne ce personnage. Ses traits lui donnent des soins, de la lumière et une révélation temporaire dont la forme reste au choix du joueur.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "drakeide",
+      "path": [
+        "description"
+      ],
+      "before": "Descendants de dragons ou benis par des dieux draconiques. Leur apparence evoque les dragons : ecailles, yeux de reptile, epines. Leur type de Souffle et leur resistance dependent de leur lignee.",
+      "beforeSha256": "5245b38e560363a3f21d9b9a35d1eb3b56baf4789e4515b7914a4fd86fa24ae8",
+      "after": "Ce personnage associe une silhouette draconique à un souffle et à une résistance liés à son ascendance. Le choix de cette ascendance et son histoire personnelle vous appartiennent.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "elfe",
+      "path": [
+        "description"
+      ],
+      "before": "Creatures des Plans Feерiques descendant du dieu Corellon. Incapables de se metamorphoser, ils ont preserve une version fixe de leur forme. Longevite d'environ 750 ans. Ils n'ont pas besoin de dormir.",
+      "beforeSha256": "0a47fa5d9ebb10389d954ae90df1236e944410c129e003ae4cf3e9734cfe301b",
+      "after": "L’elfe dispose de sens et d’une magie de lignage, ainsi que d’une transe qui remplace le sommeil. Sa vie peut approcher 750 ans ; à vous de choisir comment ce temps façonne votre personnage.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "gnome",
+      "path": [
+        "description"
+      ],
+      "before": "Creatures magiques creees par les dieux de l'invention. Ils compensent leur petite taille par la magie et leur propension a resoudre les problemes par l'ingeniosite. Longevite d'environ 425 ans.",
+      "beforeSha256": "1378e136a3e431617900c679f96315265c9e02fa543f4e670d5c505817d60676",
+      "after": "Un petit personnage dont le lignage apporte des moyens magiques et des talents propres. Sa longévité peut atteindre environ 425 ans ; son métier et son caractère restent à inventer.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "goliath",
+      "path": [
+        "description"
+      ],
+      "before": "Descendants directs des geants. Chaque goliath possede en lui le sang de ses puissants ancetres geants. Inspires par leur heritage, ils valorisent la bravoure et la force au-dessus de tout.",
+      "beforeSha256": "78995700179e9e9437823ae379b66e9885921fcd4bddfc814ab7587fda6eb799",
+      "after": "Ce personnage possède une ascendance de géant dont découle une aptitude particulière. Sa stature et ses capacités ne déterminent ni son tempérament ni sa culture.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "halfelin",
+      "path": [
+        "description"
+      ],
+      "before": "Petites creatures guidees par des dieux accordant de l'importance a la vie paisible et au foyer. Naturallement attires vers la decouverte et l'aventure. Longevite d'environ 150 ans.",
+      "beforeSha256": "ee7920861221162029be3b8dedab55011f9a01bfeae83d977fa769633e628509",
+      "after": "Un personnage de petite taille, mobile et chanceux, dont la vie peut durer environ 150 ans. Vous décidez des lieux et des personnes qui lui donnent envie de partir à l’aventure.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "humain",
+      "path": [
+        "description"
+      ],
+      "before": "Espece versatile et ambitieuse, presente dans l'ensemble du multivers. Les humains s'efforcent d'accomplir le maximum au cours de leur vie relativement courte. Taille et apparence tres variees.",
+      "beforeSha256": "a04f579f7e7a72f68bf9be14641cae841aca2a2c2c9fee0f051267d330348f4b",
+      "after": "Les traits de l’humain offrent une compétence et un don d’origines au choix. Son apparence, son milieu et ses ambitions sont laissés à votre création.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "nain",
+      "path": [
+        "description"
+      ],
+      "before": "Faconnes par une divinite de la forge, les nains sont sortis de terre dans les temps anciens. Affection particuliere pour la pierre, le metal et les fortifications souterraines. Longevite d'environ 350 ans.",
+      "beforeSha256": "570bd9122d1c8eb4429dbee05cd7c0f6a7608b03ebfd340b8c8d223b091dca85",
+      "after": "Ce personnage bénéficie d’une solide endurance et d’un lien pratique avec la pierre. Sa longévité peut approcher 350 ans ; son histoire n’est pas imposée par ces aptitudes.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "orc",
+      "path": [
+        "description"
+      ],
+      "before": "Creation de Gruumsh, un dieu puissant qui sillonnait jadis les grands espaces du Plan Materiel. Les orcs conservent les dons de leur dieu ancestral : endurance, determination et capacite a voir dans les tenebres.",
+      "beforeSha256": "2d84898436c40d70c440ecb82e4202ffacd8a55eb5feb4b26ecf120839cfcc86",
+      "after": "Les traits de l’orc mettent en jeu l’endurance, un élan rapide et la vision dans le noir. Choisissez librement sa personnalité, ses convictions et le milieu où il a grandi.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "tieffelin",
+      "path": [
+        "description"
+      ],
+      "before": "Mortels lies aux Plans Inferieurs par un ancetre felon (diable, demon ou autre etre felon). Chaque tieffelin decide s'il venere ou deплore cet heritage. Trois heritages disponibles : Abyssal, Chtonien, Infernal.",
+      "beforeSha256": "d9a40293ac857bfcf5c113f16572eaf960a9e11eb6405a3cb241360ba4676dc7",
+      "after": "Ce personnage possède un héritage fiélon qui détermine une résistance et des sorts. Abyssal, Chtonien ou Infernal : ce choix mécanique ne fixe ni ses valeurs ni sa conduite.",
+      "kind": "original-character-introduction",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "aasimar",
+      "path": [
+        "traits",
+        0,
+        "description"
+      ],
+      "before": "Action Magie au contact : bonus de maîtrise d4 PV rendus ; une fois par Repos long.",
+      "beforeSha256": "da00aee2d9aaf65822848048f9fb35f839a65196f252b214667819fd49684812",
+      "after": "Au contact, utilisez une action Magie pour soigner : lancez autant de d4 que votre bonus de maîtrise et rendez le total en PV. Une utilisation par Repos long.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "aasimar",
+      "path": [
+        "traits",
+        1,
+        "description"
+      ],
+      "before": "Lumière connu, par CHA.",
+      "beforeSha256": "cffe625e9cfdcb009b8b285d86352816b4d2ab79748a98b5cd7ec6666c07ad54",
+      "after": "Vous connaissez Lumière. Ce sort utilise votre CHA.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "aasimar",
+      "path": [
+        "traits",
+        2,
+        "description"
+      ],
+      "before": "Résistance aux dégâts nécrotiques et radiants.",
+      "beforeSha256": "df929fd19fdc6b54cdea644979f3ff51deeac63070264ca84be778335c212faf",
+      "after": "Les dégâts nécrotiques et radiants subis sont réduits par votre Résistance à ces types.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "aasimar",
+      "path": [
+        "traits",
+        3,
+        "description"
+      ],
+      "before": "Vision dans le noir sur 18 m.",
+      "beforeSha256": "2a25d8b29feb69d0b34a0fc07c02022a6cba91b1cd806c40b514aeb188bf1651",
+      "after": "Vous bénéficiez de la Vision dans le noir sur 18 m.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "aasimar",
+      "path": [
+        "traits",
+        4,
+        "description"
+      ],
+      "before": "Action Bonus, une minute ou fin volontaire sans action ; une fois par Repos long. Option choisie à chaque transformation. Une fois à chacun de vos tours : dégâts supplémentaires égaux à la maîtrise, nécrotiques avec Linceul, radiants sinon.",
+      "beforeSha256": "b87858c1db1b35b9a1184dd6f066715094117ec2f226ddbc3778c8a299c5cacb",
+      "after": "Par une action Bonus, activez une révélation pendant une minute ; vous pouvez l’arrêter sans action. Une utilisation par Repos long, avec choix de la forme à chaque activation. Une touche peut recevoir, une fois à chacun de vos tours, des dégâts supplémentaires égaux à votre maîtrise : nécrotiques pour Linceul, radiants pour les autres formes.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "species",
+      "id": "aasimar",
+      "path": [
+        "traits",
+        5,
+        "description"
+      ],
+      "before": "Ailes : vol égal à la vitesse. Radiance : lumière vive 3 m, faible 3 m de plus ; fin de tour, maîtrise dégâts radiants à chaque créature à 3 m. Linceul : non-alliés à 3 m, JS CHA (8 + CHA + maîtrise) ou Effrayé jusqu’à la fin de votre prochain tour.",
+      "beforeSha256": "e8feb7627205d396f69d3f06b37fbf5e56c7ff10c0de31294c155403a89d8ef9",
+      "after": "Ailes donne une Vitesse de vol égale à votre Vitesse. Avec Radiance, vous éclairez vivement sur 3 m, puis faiblement sur 3 m supplémentaires ; chaque créature à 3 m subit des dégâts radiants égaux à votre maîtrise à la fin de votre tour. Avec Linceul, les non-alliés à 3 m font un JS CHA, DD 8 + CHA + maîtrise ; un échec les rend Effrayés jusqu’à la fin de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "familiars",
+      "id": "slaad-tadpole",
+      "path": [
+        "traits",
+        0,
+        "description"
+      ],
+      "before": "Avantage aux sauvegardes contre les sorts et autres effets magiques.",
+      "beforeSha256": "0fd4e928deac60632c0a282b80894d8737a278b0fc112c059ebb31fa99474d4b",
+      "after": "Pour les sauvegardes contre la magie, sorts compris, ce familier bénéficie de l’Avantage.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "familiars",
+      "id": "slaad-tadpole",
+      "path": [
+        "actions",
+        0,
+        "description"
+      ],
+      "before": "Corps à corps +4, allonge 1,50 m ; touche : 5 (1d6+2) perforants.",
+      "beforeSha256": "9fd1e0df38cbebde1c94568a7f13d5a1a60ab8af4e25d57d0ad66b57ad385f23",
+      "after": "Attaque au contact : bonus +4 et allonge 1,50 m. Une touche inflige 5 dégâts perforants (1d6+2).",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        0,
+        "description"
+      ],
+      "before": "Discrétion/initiative+dé, hors Neutralisé.",
+      "beforeSha256": "296a330d51f601a470363f27630e8f752fe99f5ed0398a1f3af4ae5e0545d741",
+      "after": "Ajoutez le dé à un test de Discrétion ou à l’initiative, si vous n’êtes pas Neutralisé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        1,
+        "description"
+      ],
+      "before": "À votre tour, créature consentante non Neutralisée à 1,50 m : échange de places sans attaque d’opportunité, coût 1,50 m de déplacement et un dé. Vous ou elle gagnez le dé en CA jusqu’au début de votre prochain tour.",
+      "beforeSha256": "45571d961dede3d4d3b051ebebb2dea602ec554bd2d9ef386ab606d8b21d1920",
+      "after": "Pendant votre tour, échangez votre position avec une créature consentante non Neutralisée à 1,50 m. Dépensez un dé et 1,50 m de déplacement ; ce mouvement n’expose pas aux attaques d’opportunité. Ajoutez le résultat du dé à votre CA ou à la sienne jusqu’au début de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        2,
+        "description"
+      ],
+      "before": "À votre tour, remplacez une attaque de l’action Attaquer, dépensez un dé : créature consentante vous voyant ou entendant, réaction immédiate d’arme ou mains nues, ajoute le dé aux dégâts si touche.",
+      "beforeSha256": "6d2ad75b39ea33dd95fb6ff24528998336d7deba85d51e3d78887e1112e2e259",
+      "after": "À votre tour, dépensez un dé et renoncez à une attaque de l’action Attaquer. Une créature consentante qui vous voit ou vous entend peut aussitôt faire, en réaction, une attaque avec une arme ou à mains nues. Si elle touche, elle ajoute le dé aux dégâts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        3,
+        "description"
+      ],
+      "before": "Intimidation/Représentation/Persuasion+dé.",
+      "beforeSha256": "39eafd3bc8723c259bd5e89ca8dae2f1c78fc79bbac9273e4de643e94f867954",
+      "after": "Le dé peut compléter un test d’Intimidation, de Représentation ou de Persuasion.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        4,
+        "description"
+      ],
+      "before": "Touche : dégâts+dé ; JS FOR, désarme.",
+      "beforeSha256": "db8262a8f920e18995870816523bd6e378bb81ac3c3f6dd6d3ed44115ee0c631",
+      "after": "Après une touche, augmentez les dégâts du dé. Un JS FOR raté désarme la cible.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        5,
+        "description"
+      ],
+      "before": "Sur touche, dégâts + dé ; prochaine attaque d’un autre que vous avant le début de votre prochain tour : Avantage.",
+      "beforeSha256": "76d67a8230ef4c465fac95fb4617635c8dc71aadf9d0fab9d1f320e4126908b3",
+      "after": "Ajoutez le dé aux dégâts d’une touche. Le prochain jet d’attaque contre cette cible effectué par quelqu’un d’autre que vous a l’Avantage, s’il a lieu avant le début de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        6,
+        "description"
+      ],
+      "before": "Bonus : Désengagement, CA+dé jusqu’au prochain tour.",
+      "beforeSha256": "a6a50f24cccbe6060d512c08d61f96312e908068d9de717f91ab44efca698249",
+      "after": "En action Bonus, effectuez Désengagement et ajoutez le dé à votre CA jusqu’au prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        7,
+        "description"
+      ],
+      "before": "Bonus, ≤1,5m : prochaine attaque avantagée ce tour, dégâts+dé.",
+      "beforeSha256": "7806597058b4f5a60e4db397810bb3d6d5c00283402c8dbded118a650abf2dd3",
+      "after": "Action Bonus : choisissez une créature à 1,5m ou moins ; votre prochaine attaque contre elle ce tour a l’Avantage et ajoute le dé aux dégâts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        8,
+        "description"
+      ],
+      "before": "Sur touche, dégâts + dé ; JS SAG ou Désavantage aux attaques contre autrui jusqu’à la fin de votre prochain tour.",
+      "beforeSha256": "49e136eb466840039b1ca917fbf6d74b9fd9d9bc04d629fd85a8b41c570aa6c8",
+      "after": "Une touche reçoit le dé aux dégâts. La cible fait un JS SAG ; sur un échec, ses attaques contre d’autres créatures que vous ont le Désavantage jusqu’à la fin de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        9,
+        "description"
+      ],
+      "before": "Bonus : un dé et Foncer. Après déplacement rectiligne immédiat d’au moins 1,50 m, touche de corps à corps de l’action Attaquer ce tour : dégâts + dé.",
+      "beforeSha256": "461c30bd1482eba7339223d89d68aba5a7f75f4ca36e359fff640cddc029c6b3",
+      "after": "Dépensez un dé pour Foncer en action Bonus. Si vous avancez aussitôt en ligne droite sur au moins 1,50 m, une touche de corps à corps de votre action Attaquer ce tour ajoute ce dé aux dégâts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        10,
+        "description"
+      ],
+      "before": "Touche : dégâts+dé ; allié voyant/entendant, réaction demi-vitesse, sans opportunité ciblée.",
+      "beforeSha256": "af61b354e1abe78fb065f0a12841f7d5480ce76a9201903cb7d812c130d5c5b7",
+      "after": "Le dé augmente les dégâts d’une touche. Un allié qui vous voit ou vous entend peut utiliser sa réaction pour avancer de sa demi-Vitesse, sans provoquer d’attaque d’opportunité de la cible touchée.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        11,
+        "description"
+      ],
+      "before": "Sur touche, dégâts + dé ; JS SAG ou Effrayé jusqu’à la fin de votre prochain tour.",
+      "beforeSha256": "95b0429a356a99f6ec7a801c14e0cd491c332a6ff362c88ad1533fdebd0ec44c",
+      "after": "Ajoutez le dé aux dégâts d’une touche, puis imposez un JS SAG. Un échec rend la cible Effrayée jusqu’à la fin de votre prochain tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        12,
+        "description"
+      ],
+      "before": "Réaction : dégâts mêlée réduits de dé+FOR/DEX.",
+      "beforeSha256": "2e1b4e398a4b1ec9570c79387b381eae1e1f26f222837396dabed92d0b2936b8",
+      "after": "Utilisez votre réaction pour réduire des dégâts de corps à corps du résultat du dé augmenté de FOR ou DEX.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        13,
+        "description"
+      ],
+      "before": "Attaque ratée : ajoute le dé.",
+      "beforeSha256": "dbb696598f5fed1062e592bf7fa89e94d6bd1387cd94077ac399b5b0cc147eef",
+      "after": "Vous pouvez ajouter le dé au résultat d’une attaque qui vient de rater.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        14,
+        "description"
+      ],
+      "before": "Touche : dégâts+dé ; taille≤G, JS FOR, recul≤4,5m.",
+      "beforeSha256": "c8ce10bb971db946df7371bd9424e2268075548aa7f8f62f1064e86b6d798827",
+      "after": "Après une touche, ajoutez le dé aux dégâts. Une cible de taille G au plus qui rate un JS FOR est repoussée sur 4,5m au maximum.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        15,
+        "description"
+      ],
+      "before": "Bonus : allié voyant/entendant≤9m, PVtemporaires=dé+demi-niveau inférieur.",
+      "beforeSha256": "0d69b484a071edd5b8848b1344cb4deca5e53a548dbdca293869f52a55545aa1",
+      "after": "Action Bonus : un allié qui vous voit ou vous entend à 9m maximum gagne des PV temporaires égaux au dé augmenté de la moitié de votre niveau, arrondie à l’inférieur.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        16,
+        "description"
+      ],
+      "before": "Mêlée adverse ratée : réaction attaque, dégâts+dé.",
+      "beforeSha256": "6bad1f1c3533f5a1508a70691e764d6dfb2cca7754163446c97b24cc4b44cad1",
+      "after": "Une attaque de corps à corps vous rate : votre réaction permet une attaque en retour ; si elle touche, le dé complète ses dégâts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        17,
+        "description"
+      ],
+      "before": "Touche d’arme ou mains nues au corps à corps : seconde créature à portée et à 1,50 m de la première ; si le jet initial la toucherait, dégâts égaux au dé du même type que l’attaque initiale.",
+      "beforeSha256": "0fd0d9bbff2d76987a7e0d153977dad2931b4f033716edf88f4203a23c92c38e",
+      "after": "Votre arme ou frappe à mains nues touche au corps à corps : choisissez une seconde créature à votre portée et à 1,50 m de la première. Si le jet d’attaque initial suffit contre elle, elle subit le résultat du dé en dégâts, du type de l’attaque initiale.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        18,
+        "description"
+      ],
+      "before": "Histoire/Investigation/Perspicacité+dé.",
+      "beforeSha256": "82e7430f7c8e77753509df4939c9a3bb0669c32ffbd64e7c953caa9dd6e679b2",
+      "after": "Ajoutez le dé à un test d’Histoire, d’Investigation ou de Perspicacité.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuvers",
+        19,
+        "description"
+      ],
+      "before": "Touche : dégâts+dé ; taille≤G, JS FOR, Àterre.",
+      "beforeSha256": "fc9219be6c564b83e4235768951a463ebe41c4ea702f43a71320b14214fe9e24",
+      "after": "Ajoutez le dé aux dégâts d’une touche. Si la cible, de taille G ou moins, rate un JS FOR, elle tombe À terre.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "fighterSupplements",
+      "id": "$root",
+      "path": [
+        "maneuverNote"
+      ],
+      "before": "Aide-mémoire : 1 dé par manœuvre, maximum une manœuvre par attaque. Trois connues au niveau 3, puis cinq au niveau 7, sept au niveau 10, neuf au niveau 15. Réserve : 4/5/6 dés aux niveaux 3/7/15, d8/d10/d12 aux niveaux 3/10/18.",
+      "beforeSha256": "3177383da4568506845e4a08a57114bc9e9d3cd6476d0d0a934fdd1ac90c2366",
+      "after": "Règle commune : dépense de 1 dé pour une manœuvre, avec une seule manœuvre sur la même attaque. Le nombre de manœuvres connues est de trois au niveau 3, cinq au niveau 7, sept au niveau 10 et neuf au niveau 15. Les niveaux 3/7/15 donnent une réserve de 4/5/6 dés ; leur taille est d8/d10/d12 aux niveaux 3/10/18.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "coup_de_tonnerre",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "2d6 au niveau 5, 3d6 au niveau 11, 4d6 au niveau 17.",
+      "beforeSha256": "c5a80eebd9abd8d8af2ee7251dd60118046fd44399039e2ced72cf1d2ad7c231",
+      "after": "Dégâts par palier : 2d6 au niveau 5 ; 3d6 au niveau 11 ; 4d6 au niveau 17.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "faux_amis",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un peu de maquillage",
+      "beforeSha256": "260990112597206774024f4835ecae8f9a0c5a704b874f7c8de70d4009c871ab",
+      "after": "maquillage en petite quantité",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "frappe_epineuse",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "2d6 au niveau 5, 3d6 au niveau 11, 4d6 au niveau 17.",
+      "beforeSha256": "c5a80eebd9abd8d8af2ee7251dd60118046fd44399039e2ced72cf1d2ad7c231",
+      "after": "Dégâts par palier : 2d6 au niveau 5 ; 3d6 au niveau 11 ; 4d6 au niveau 17.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "frappe_epineuse",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une épine de plante épineuse",
+      "beforeSha256": "1770162ffa379eec1237701369b845df13464c41041b88ea71cb59768f400fdb",
+      "after": "épine prélevée sur une plante",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "glas",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d8 (ou +1d12 si blessée) aux niveaux 5, 11 et 17.",
+      "beforeSha256": "ea09748647a289bba14dafaf4cdec18f0f6f6c7bf507d6ae42e518d9ad1bcfa6",
+      "after": "Les dégâts gagnent +1d8, ou +1d12 si la cible est blessée, aux niveaux 5, 11 et 17.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "mot_de_radiance",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "2d6 au niveau 5, 3d6 au niveau 11, 4d6 au niveau 17.",
+      "beforeSha256": "c5a80eebd9abd8d8af2ee7251dd60118046fd44399039e2ced72cf1d2ad7c231",
+      "after": "Dégâts par palier : 2d6 au niveau 5 ; 3d6 au niveau 11 ; 4d6 au niveau 17.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "mot_de_radiance",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un symbole en forme de soleil",
+      "beforeSha256": "a41d499fd1aa199d1672a52ede18586bb9f7aa1e7ffb41db0de4aeb5ff15110d",
+      "after": "symbole représentant le soleil",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "armure_d_agathys",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Les PV temporaires et les dégâts de froid augmentent chacun de 5 par niveau d’emplacement au-delà du 1er.",
+      "beforeSha256": "2640ba5f1c9686828505dc6137622e72679308e175fef36fc722f781e2d574e9",
+      "after": "Au-delà du 1er niveau d’emplacement, chaque niveau supplémentaire ajoute 5 aux PV temporaires et autant aux dégâts de froid.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "armure_d_agathys",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un éclat de verre bleu",
+      "beforeSha256": "1c9bebb07d658f063a2bef5b26a2b602a0f3675459126b1904571afcbcd1077f",
+      "after": "morceau de verre de couleur bleue",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_tonnerre",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d6 par niveau d’emplacement au-delà du 1er.",
+      "beforeSha256": "216afe51e8e5e91d6e822b42629071fc24998ce9c8ff8a796970b1dada59f16e",
+      "after": "Un emplacement supérieur au 1er ajoute +1d6 aux dégâts par niveau supplémentaire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_tonnerre",
+      "path": [
+        "temps_incantation"
+      ],
+      "before": "action Bonus, immédiatement après avoir touché avec une arme de corps à corps ou une frappe à mains nues",
+      "beforeSha256": "69515529e0a2d8d6d8ec9f5e4ea704db3042755798bb5c3c419b8e52dc6acc6d",
+      "after": "action Bonus : juste après une touche au corps à corps avec une arme ou à mains nues",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "grele_d_epines",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d10 par niveau d'emplacement au-delà du 1er.",
+      "beforeSha256": "3bdfe090905e6844eee2470905eb7e6584c3ee187ce9afd167249f90886bcddb",
+      "after": "Un emplacement au-delà du 1er ajoute +1d10 pour chaque niveau supplémentaire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "grele_d_epines",
+      "path": [
+        "temps_incantation"
+      ],
+      "before": "action Bonus, immédiatement après avoir touché une créature avec une arme à distance",
+      "beforeSha256": "ae70f04efe3b21ae0855d5378398279b150a34f1de0c481e262c79f4686ba13e",
+      "after": "action Bonus : juste après une touche sur une créature avec une arme à distance",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "tentacules_de_hadar",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d6 par niveau d’emplacement au-delà du 1er.",
+      "beforeSha256": "216afe51e8e5e91d6e822b42629071fc24998ce9c8ff8a796970b1dada59f16e",
+      "after": "Chaque niveau d’emplacement au-dessus du 1er augmente les dégâts de +1d6.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "trait_ensorcele",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Seuls les dégâts initiaux augmentent de 1d12 par niveau d’emplacement au-delà du 1er.",
+      "beforeSha256": "5b14398e6974128c5fec37c50085f50bdd35b19895d3f3b15745452d0da6af07",
+      "after": "Au-delà du 1er niveau d’emplacement, ajoutez 1d12 par niveau supplémentaire uniquement aux dégâts initiaux.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "trait_ensorcele",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une petite branche frappée par la foudre",
+      "beforeSha256": "0687e9a775dc1554a91fdbbeba51398f55ed9abdf443d2150aa71becf7a24db4",
+      "after": "branche de petite taille ayant reçu la foudre",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_bete",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_bete",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "plume, touffe de fourrure et queue de poisson dans un gland doré valant au moins 200 po",
+      "beforeSha256": "962f5d8d3d9e94961be6e94549cd2e21f1c59a7d5ea6901fa92f08a5e05611e9",
+      "after": "gland doré contenant une plume, de la fourrure et une queue de poisson ; valeur minimale : 200 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "cordon_de_fleches",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Deux munitions supplémentaires par niveau d’emplacement au-delà du 2e.",
+      "beforeSha256": "bc7ef0ee4ca5cce3a8315e0d73e6abd2c609a233104eafb0455335f5416214b7",
+      "after": "Au-delà du 2e niveau d’emplacement, ajoutez deux munitions pour chaque niveau supplémentaire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "cordon_de_fleches",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une tresse décorative",
+      "beforeSha256": "eda6a58c60d7c64e393c608e38bb4fe59928d31575cf15b562093b010b13f00f",
+      "after": "tresse servant de décoration",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "nuee_de_daggers",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+2d4 par niveau d'emplacement au-delà du 2e.",
+      "beforeSha256": "2ce7c573eb9da15bdc0d0cd28c69e6c156c62b82290c905c25d68802b00cd01b",
+      "after": "Chaque niveau d’emplacement supérieur au 2e ajoute +2d4 aux dégâts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "nuee_de_daggers",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un fragment de verre",
+      "beforeSha256": "1acfdef5420994a0249e6ab8456fde715dfbbba550a023e82ea3b531b5e10ae6",
+      "after": "verre, sous forme de fragment",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "presence_royale_de_yolane",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un diadème miniature",
+      "beforeSha256": "e2122ad92a48f7bc432600d2de998e777c931989c475f2023cf438e8b0a5fb40",
+      "after": "petit modèle de diadème",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "vigueur_arcanique",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Le nombre de Dés de vie que vous lancez augmente d'un par niveau d'emplacement au-delà du 2e.",
+      "beforeSha256": "7d8aa63f32d1062483851ffe954ea0b169dfef6b3a9ea50f52f10a9049119184",
+      "after": "Pour chaque niveau d’emplacement au-delà du 2e, vous pouvez lancer un Dé de vie de plus.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "arme_elementaire",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Emplacement 5–6 : +2 pour toucher et +2d4 dégâts ; emplacement 7 ou plus : +3 pour toucher et +3d4 dégâts.",
+      "beforeSha256": "3d3942817411a6765c90d213d7b149054f7c017dac982c22491c32fa16349793",
+      "after": "Avec un emplacement 5–6, les bonus sont +2 à la touche et +2d4 aux dégâts. Dès un emplacement 7, ils deviennent +3 et +3d4.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_cecite",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d8 dégâts supplémentaires par niveau d’emplacement au-delà du 3e.",
+      "beforeSha256": "c32168e849298ea4f2ab0220e0246fcd0776d0eba09af699e1ddc6c03167a119",
+      "after": "Au-delà du 3e niveau d’emplacement, les dégâts augmentent de +1d8 par niveau supplémentaire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_cecite",
+      "path": [
+        "temps_incantation"
+      ],
+      "before": "action Bonus, immédiatement après avoir touché une créature avec une arme de corps à corps ou une frappe à mains nues",
+      "beforeSha256": "171c5b0af3fed27557234294a935f848476eeb1570056e329e726a6e4c6a2bdc",
+      "after": "action Bonus : juste après avoir touché une créature, au corps à corps avec une arme ou à mains nues",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_courroux",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d6 par niveau d’emplacement au-delà du 1er.",
+      "beforeSha256": "216afe51e8e5e91d6e822b42629071fc24998ce9c8ff8a796970b1dada59f16e",
+      "after": "Pour chaque niveau d’emplacement supérieur au 1er, ajoutez +1d6 aux dégâts.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_de_courroux",
+      "path": [
+        "temps_incantation"
+      ],
+      "before": "action Bonus, immédiatement après avoir touché une créature avec une arme de corps à corps ou une frappe à mains nues",
+      "beforeSha256": "171c5b0af3fed27557234294a935f848476eeb1570056e329e726a6e4c6a2bdc",
+      "after": "action Bonus : juste après avoir touché une créature, au corps à corps avec une arme ou à mains nues",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fee",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fee",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une fleur dorée d'une valeur minimale de 300 po",
+      "beforeSha256": "7d873b4ef7e2a3033e73ac6c007d51d58bd67cb68df34133e35ae95c50248e0c",
+      "after": "fleur en or, valant au minimum 300 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "etat_cadaverique",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une pincée de terre provenant d'un cimetière",
+      "beforeSha256": "9ef78bbe28d79cfd7e8b61ea4520e4061d04d6ea76df3053b997bdca525625c6",
+      "after": "un peu de terre prélevée dans un cimetière",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "fleche_de_foudre",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d8 aux deux effets par niveau d'emplacement au-delà du 3e.",
+      "beforeSha256": "a11425d12f7ab11edce81e31b1b2f1d84c13342e1494bb22a2670bf63053e7bc",
+      "after": "Les deux effets gagnent +1d8 par niveau d’emplacement supplémentaire au-delà du 3e.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "fleche_de_foudre",
+      "path": [
+        "temps_incantation"
+      ],
+      "before": "action Bonus, immédiatement après avoir touché ou raté une cible avec une attaque à distance utilisant une arme",
+      "beforeSha256": "8f944370314f057d7b9eb37ee31dc1a2f9505d6a4e5a7fdd1c0a0d3d214c5a81",
+      "after": "action Bonus : juste après une attaque à distance avec une arme, que celle-ci touche ou rate sa cible",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "vie_carquois",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un carquois d'une valeur minimale de 1 po",
+      "beforeSha256": "a38b9ddd204707d3cff5f49549861311348bfd9abe0c9f6094644aa4baa71cdf",
+      "after": "carquois dont la valeur atteint au moins 1 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "voracite_de_hadar",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Les dégâts d'acide ou de froid (votre choix) augmentent de 1d6 par niveau au-delà du 3e.",
+      "beforeSha256": "4a41b659ff367aa03381b7dcdbf60308513496dafa834c85b89c5cfbef82501c",
+      "after": "À chaque niveau au-delà du 3e, augmentez de 1d6 les dégâts d’acide ou de froid, selon votre choix.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "voracite_de_hadar",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un tentacule de poulpe mariné",
+      "beforeSha256": "b66cb9e1ef41c94bffe64bf0906b41386437087ec0e877fa431f5e42d25fe2b3",
+      "after": "tentacule de poulpe conservé en marinade",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "voracite_de_hadar",
+      "path": [
+        "sauvegarde",
+        "condition"
+      ],
+      "before": "Seulement dégâts d’acide en fin de tour ; froid automatique au début du tour.",
+      "beforeSha256": "dfd60117ef8eae99f93a4b31d8e025d75dfbe80699c20bc9c4443203035eb249",
+      "after": "Le froid du début de tour est automatique. Le JS ne concerne que l’acide infligé en fin de tour.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_aberration",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_aberration",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un tentacule mariné et un globe oculaire dans un flacon incrusté de platine (valeur minimale 400 po)",
+      "beforeSha256": "8b91e625a7d40f901f68d91404b8aba40cda3efc8fe4853127396aa989a9fd73",
+      "after": "flacon orné de platine contenant un tentacule conservé et un œil ; valeur minimale : 400 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_aberration",
+      "path": [
+        "invocation",
+        "choix"
+      ],
+      "before": "tyrannœillié, flagelleur mental ou slaad",
+      "beforeSha256": "cb7834e2c02a10cf5924aba5d51f68562f9bf252eabbed9f1812405c3d30c92d",
+      "after": "Choix de forme : slaad, tyrannœillié ou flagelleur mental.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_artificiel",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_d_artificiel",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un coffre portatif d'une valeur minimale de 400 po",
+      "beforeSha256": "0161c2d20615b19d7ab367c5c55bd8c029284ecb792f383c58d50604b87c19fe",
+      "after": "coffre transportable d’une valeur d’au moins 400 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_elementaire",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_elementaire",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "de l'air, un caillou, des cendres et de l'eau dans un flacon incrusté d'or d'une valeur minimale de 400 po",
+      "beforeSha256": "6d8ad27f7add736deca151382e493fdcaa424701c1d5e78442d0ab0e9a1a5598",
+      "after": "flacon décoré d’or, avec air, pierre, cendres et eau ; valeur minimale : 400 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "lame_avide",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Une créature agrippée supplémentaire par niveau d’emplacement au-delà du 4e ; aucun supplément de dégâts.",
+      "beforeSha256": "3be8e31817f8b273c09d68cfe01a52ce9b45f72ed6623dec5c7ce65174b56f0e",
+      "after": "Chaque niveau d’emplacement au-delà du 4e permet d’agripper une créature de plus ; les dégâts ne changent pas.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chatiment_du_ban",
+      "path": [
+        "temps_incantation"
+      ],
+      "before": "action Bonus, immédiatement après avoir touché une créature avec une arme de corps à corps ou une frappe à mains nues",
+      "beforeSha256": "171c5b0af3fed27557234294a935f848476eeb1570056e329e726a6e4c6a2bdc",
+      "after": "action Bonus : juste après avoir touché une créature, au corps à corps avec une arme ou à mains nues",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_celeste",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_celeste",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un reliquaire d'une valeur minimale de 500 po",
+      "beforeSha256": "b94a640d22ff0c8a1a4c7408f93b720331dbfcff97d4db2c30098d361e6e8057",
+      "after": "reliquaire ; valeur minimale : 500 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_mort_vivant",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_mort_vivant",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "un crâne doré valant au moins 300 po",
+      "beforeSha256": "30df532c8ebdfc4b0304f93dabe5b32a4b88f938081159700f4a4077e2bb9701",
+      "after": "crâne en or ; valeur minimale : 300 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "frappe_du_vent_d_acier",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une arme de corps à corps valant au moins 1 pa",
+      "beforeSha256": "0a12485441b27a378a88a667a2a73eb918091e97b6627277f709db38da20747a",
+      "after": "arme de corps à corps ; valeur minimale : 1 pa",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "invocation_de_volee",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une arme de corps à corps ou à distance valant au moins 1 pc",
+      "beforeSha256": "c3533b28b5c86895357147b7d8a0c61434654d1adb45a249060d0b8306b51e39",
+      "after": "arme de corps à corps ou à distance ; valeur minimale : 1 pc",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "tempete_radieuse_de_jallarzi",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Chacun des deux types de dégâts augmente de 1d10 par niveau d’emplacement au-delà du 5e.",
+      "beforeSha256": "b2edcbf5be477d0936d7f35def74cc248c5518b43b5022986955175bef0f39a8",
+      "after": "Chaque niveau d’emplacement supérieur au 5e augmente les deux types de dégâts de 1d10 chacun.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "chaudron_bouillonnant_de_tasha",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "Une louche dorée d'une valeur minimale de 500 po",
+      "beforeSha256": "ae60a38a6c8669d6586d1e9d3a688554d7c1e7328d8cbb78a55d1de82360556a",
+      "after": "louche en or ; valeur minimale : 500 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fielon",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "Utilisez le niveau de l’emplacement comme rang dans toutes les formules du profil.",
+      "beforeSha256": "5caedc8edde8cdbb0c3baf5f795b148b236fc55baab0621b4e5adee979a2ecf3",
+      "after": "Dans les calculs du profil convoqué, le rang correspond au niveau de l’emplacement dépensé.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "convocation_de_fielon",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "une fiole ensanglantée valant au moins 600 po",
+      "beforeSha256": "6570060babf2f4157a8ea754e9fc33818730a3ef1a87fc11430c325396875de1",
+      "after": "fiole couverte de sang ; valeur minimale : 600 po",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "telepathie",
+      "path": [
+        "composantes",
+        "M"
+      ],
+      "before": "deux anneaux d’argent liés",
+      "beforeSha256": "e6296da30d142cbd91ace51ff6cbfe0a7841e9ec916f777f6a22f46a4351a098",
+      "after": "paire d’anneaux en argent attachés ensemble",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "mind_sliver",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d6 aux niveaux 5, 11 et 17.",
+      "beforeSha256": "9a8abeabfc8aaad057eb28a1db2273750e3bde8fc0883f80358a0a9c997930a0",
+      "after": "Augmentation des dégâts de +1d6 aux niveaux 5, 11 et 17.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "staggering_smite",
+      "path": [
+        "niveau_superieur"
+      ],
+      "before": "+1d6 par niveau d’emplacement au-delà du 4e.",
+      "beforeSha256": "17d0b9a9150c9dacd1524f7630dbe4ea01b54a224c138470ada01d0ed645474a",
+      "after": "Au-delà du 4e niveau d’emplacement, ajoutez +1d6 par niveau supplémentaire.",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    },
+    {
+      "collection": "spells",
+      "id": "staggering_smite",
+      "path": [
+        "temps_incantation"
+      ],
+      "before": "action Bonus, immédiatement après avoir touché une créature avec une arme de corps à corps ou une frappe à mains nues",
+      "beforeSha256": "171c5b0af3fed27557234294a935f848476eeb1570056e329e726a6e4c6a2bdc",
+      "after": "action Bonus : juste après avoir touché une créature, au corps à corps avec une arme ou à mains nues",
+      "kind": "independent-mechanics-summary",
+      "reason": "New technical wording; preserve every condition, numerical value, choice, cost and trigger."
+    }
+  ]
+}
