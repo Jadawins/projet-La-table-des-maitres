@@ -1,0 +1,17 @@
+import {playView} from './play-state.mjs';
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const amount=(id,label,value,min,max)=>`<label for="${id}">${label}</label><input id="${id}" name="amount" type="number" inputmode="numeric" min="${min}" max="${max}" step="1" value="${value}" required>`;
+export function renderPlay(state,model,{editable=true,busy=false}={}){
+  const view=playView(state,model);
+  if(!editable)return '<p>Le suivi en partie est disponible sur vos propres personnages.</p>';
+  if(view.maxHp===null)return '<p>Complétez les points de vie de votre fiche pour commencer le suivi.</p>';
+  if(!view.started)return `<div class="play-start"><h3>Commencer le suivi</h3><p>Indiquez vos PV actuels. Les ressources commenceront au maximum ; vous pourrez ajuster celles déjà dépensées. Aucun dé n’est lancé.</p><form data-play-action="start">${amount('play-start-hp','PV actuels',view.maxHp,0,view.maxHp)}<button class="button primary" ${busy?'disabled':''}>Commencer le suivi</button></form></div>`;
+  const form=(type,label,text,value=1,min=1,max=100000)=>`<form data-play-action="${type}">${amount('play-'+type,label,value,min,max)}<button class="button secondary" ${busy?'disabled':''}>${text}</button></form>`;
+  return `<div class="play-health" aria-label="Points de vie en partie"><div><span>PV actuels</span><strong data-play-current>${view.currentHp}</strong><small>sur ${view.maxHp}</small></div><div><span>PV temporaires</span><strong data-play-temp>${view.tempHp}</strong><small>Absorbés en premier</small></div></div>
+    ${view.currentHp===0?'<p class="notice">Vous êtes à 0 PV. Les conséquences et les éventuels jets de sauvegarde contre la mort restent à gérer à votre table.</p>':''}
+    <p>Pour les dégâts, saisissez le montant final après résistances, réductions ou autres effets. Les soins sont limités à vos PV maximum.</p>
+    <div class="play-actions">${form('damage','Dégâts reçus','Appliquer les dégâts')}${form('heal','Soins reçus','Appliquer les soins')}${form('set-temp','Nouveaux PV temporaires','Remplacer les PV temporaires',view.tempHp,0)}${form('set-current','Corriger les PV actuels','Corriger les PV',view.currentHp,0,view.maxHp)}</div>
+    <p class="hint">Les PV temporaires sont remplacés, jamais additionnés. Aucune résistance, guérison ou aptitude n’est déclenchée automatiquement.</p>
+    <h3>Ressources de classe</h3><div class="play-resources">${view.resources.map(r=>`<article class="play-resource" data-play-resource="${esc(r.id)}"><div><h4>${esc(r.label)}</h4><p><strong data-play-remaining>${r.remaining}</strong> / ${r.max} restant${r.max>1?'s':''}</p><p class="hint">${esc(r.details)}</p>${r.used>r.max?'<p class="hint">Le maximum a diminué ; les dépenses précédentes sont conservées.</p>':''}</div><form data-play-action="resource" data-resource="${esc(r.id)}">${amount('play-resource-'+r.id,'Quantité',1,1,100000)}<div class="play-resource-buttons"><button class="button secondary" name="operation" value="spend" ${busy||!r.remaining?'disabled':''}>Dépenser</button><button class="button quiet" name="operation" value="restore" ${busy||!r.used?'disabled':''}>Rendre</button></div></form></article>`).join('')||'<p>Aucune réserve suivie disponible à ce niveau. Les autres aptitudes restent consultables dans l’onglet Aptitudes.</p>'}</div>
+    <p class="hint">Rendre une ressource ne simule pas un repos et n’applique pas ses autres effets.</p>`;
+}

@@ -18,6 +18,15 @@ function setup(){
   };
   return {records,store:createCharacterStore({collection,validate:s=>validateSavedCharacter(s,c),catalogueFingerprint:'test-catalogue'})};
 }
+
+test('Un ancien client qui omet le suivi conserve les PV et ressources déjà enregistrés',async()=>{
+  const {store}=setup();const played={...state(),playState:{version:1,hpLost:5,tempHp:3,used:{'channel-divinity':1}}};
+  const first=await store.save('a',id,played,0);
+  const oldClient=structuredClone(first.character);delete oldClient.playState;oldClient.details.story='Ancien onglet';
+  const saved=await store.save('a',id,oldClient,1);assert.deepEqual(saved.character.playState,played.playState);
+  await assert.rejects(store.save('a',id,{...oldClient,name:'Ancienne révision'},1),e=>e.status===409);
+  await assert.rejects(store.save('a',id,{...oldClient,playState:null},2),e=>e.status===400);
+});
 test('Enregistrer puis relire toutes les sélections et les notes sans modifier le personnage',async()=>{
   const {store,records}=setup(),s=state(),before=JSON.stringify(s);const saved=await store.save('account-a',id,s,0);assert.equal(saved.revision,1);
   const read=await store.get('account-a',id);assert.deepEqual(read.character,saved.character);assert.equal(read.character.details.story,s.details.story);assert.equal(JSON.stringify(s),before);assert.equal(records[0].user_id,'account-a');assert.equal(records[0].catalogue_fingerprint,'test-catalogue');

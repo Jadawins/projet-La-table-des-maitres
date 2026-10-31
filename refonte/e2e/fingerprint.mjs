@@ -21,6 +21,7 @@ export async function sourceFingerprint(){
   files.push('refonte/audit/feat-srd-membership-2024.json');
   files.push('refonte/data/editorial-final-rewrite-20261031.json','refonte/audit/editorial-final-dispositions-20261031.json');
   files.push('refonte/audit/close-editorial-review.mjs','refonte/audit/check-editorial-import.mjs','refonte/audit/verify-final-editorial.mjs');
+  files.push('refonte/audit/check-play-persistence.mjs','refonte/audit/verify-play-state.mjs');
   const hash=createHash('sha256');
   for(const file of files.sort()){hash.update(file);hash.update(await readFile(path.join(root,file)));}
   return hash.digest('hex');

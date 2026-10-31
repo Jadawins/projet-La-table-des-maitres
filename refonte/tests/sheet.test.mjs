@@ -52,10 +52,10 @@ test('Les composantes matérielles restent lisibles et les profils utiles des so
 test('Construire et afficher une fiche ne modifie ni le personnage ni la BDD',()=>{
   const s=state(),before=JSON.stringify(s),data=JSON.stringify(c);renderSheet(s,c);assert.equal(JSON.stringify(s),before);assert.equal(JSON.stringify(c),data);
 });
-test('La navigation donne accès à six rubriques et conserve toutes les informations de la fiche',()=>{
+test('La navigation donne accès à sept rubriques et conserve toutes les informations de la fiche',()=>{
   const html=renderSheet(state(),c);
-  assert.equal((html.match(/role="tab" /g)||[]).length,6);
-  assert.equal((html.match(/role="tabpanel"/g)||[]).length,6);
+  assert.equal((html.match(/role="tab" /g)||[]).length,7);
+  assert.equal((html.match(/role="tabpanel"/g)||[]).length,7);
   assert.equal((html.match(/aria-selected="true"/g)||[]).length,1);
   assert.match(html,/id="sheet-tab-overview"[^>]*aria-selected="true"/);
   for(const text of ['Caractéristiques','Compétences','Attaques et armes','Disciple de la vie','Bénédiction','Équipement et monnaies','Personnalité et histoire'])assert.ok(html.includes(text));
@@ -71,7 +71,7 @@ test('Revenir sur Histoire conserve l’onglet et les champs saisis',()=>{
 test('Un onglet inconnu revient sur la vue d’ensemble sans supprimer de rubrique',()=>{
   const html=renderSheet(state(),c,{activeTab:'invalid'});
   assert.match(html,/id="sheet-tab-overview"[^>]*aria-selected="true"/);
-  assert.equal((html.match(/role="tabpanel"/g)||[]).length,6);
+  assert.equal((html.match(/role="tabpanel"/g)||[]).length,7);
 });
 test('Une fiche connectée propose l’enregistrement, puis distingue une version enregistrée de modifications locales',()=>{
   const s=state();let html=renderSheet(s,c,{savingEnabled:true});assert.match(html,/data-save-character >Enregistrer le personnage/);

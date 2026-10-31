@@ -25,3 +25,20 @@
 
 /* Character removal */
 .saved-character-row{display:flex;align-items:center;gap:14px}.saved-character-row>.saved-character{flex:1;min-width:0}.button.danger{color:#efb1b9;border:1px solid #98606d;background:#30202a;flex-shrink:0}.button.danger:hover{background:#482733}.confirm-dialog{max-width:480px;width:calc(100% - 40px);color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px;font-family:inherit}.confirm-dialog::backdrop{background:#000a}.confirm-dialog h2{font-family:var(--serif);font-size:27px;margin:0 0 16px}.confirm-dialog p{line-height:1.6}.confirm-dialog form{display:flex;justify-content:flex-end;gap:12px;margin-top:24px}@media(max-width:600px){.saved-character-row{flex-wrap:wrap}.saved-character-row>.saved-character{flex-basis:100%}.saved-character-row>.button{margin-left:auto}}
+/* Explicit session controls, separate from calculated character statistics. */
+.play-health { display:flex; gap:2rem; padding:1.5rem 0; flex-wrap:wrap; }
+.play-health>div { display:grid; gap:.35rem; min-width:10rem; }
+.play-health strong { font-size:2.8rem; color:var(--gold,#d5b466); }
+.play-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.5rem 0; }
+.play-actions form,.play-start form { display:grid; gap:.7rem; padding:1rem; background:#211b2a; border:1px solid #4c3c59; border-radius:.6rem; }
+.play-start form { max-width:28rem; }
+.play-actions input,.play-start input,.play-resource input { color:inherit; background:#121018; border:1px solid #685771; border-radius:.35rem; padding:.65rem; width:100%; box-sizing:border-box; font:inherit; }
+.play-resources { display:grid; gap:1rem; }
+.play-resource { display:grid; grid-template-columns:minmax(0,1fr) 16rem; gap:1.5rem; padding:1.25rem; border:1px solid #4c3c59; border-radius:.6rem; }
+.play-resource h4 { margin:0; font-size:1.15rem; }
+.play-resource strong { color:var(--gold,#d5b466); font-size:1.6rem; }
+.play-resource form { display:grid; gap:.5rem; align-content:center; }
+.play-resource-buttons { display:flex; flex-wrap:wrap; gap:.5rem; }
+@media(min-width:1000px) { .sheet-tabs { grid-template-columns:repeat(7,minmax(0,1fr)); } }
+@media(max-width:700px) { .play-actions,.play-resource { grid-template-columns:1fr; } }
+@media print { #sheet-panel-play { display:none!important; } }

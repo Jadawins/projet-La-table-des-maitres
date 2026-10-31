@@ -23,8 +23,11 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
     },
     async save(userId,id,input,revision){
       if(!validCharacterId(id)||!Number.isInteger(revision)||revision<0)throw fault(400,'Référence de sauvegarde invalide.');
-      const result=validate(input),contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');
+      let result=validate(input);
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
+      // An older open client may omit the optional session field. Preserve it.
+      if(input.playState===undefined&&previous?.character?.playState!==undefined)result=validate({...input,playState:previous.character.playState});
+      const contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');
       if(previous?.deleted_at)throw fault(409,'Ce personnage a été supprimé. Un ancien brouillon ne peut pas le remplacer.');
       if(previous&&(previous.character?.rulesVersion??null)!==(result.character.rulesVersion??null))throw fault(409,'La version des règles a changé. Enregistrez une copie pour préserver la fiche d’origine.');
       if(previous?.content_hash===contentHash&&previous.catalogue_fingerprint===catalogueFingerprint)return expose(previous);

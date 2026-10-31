@@ -1,3 +1,4 @@
+import {renderPlay} from './play-view.mjs';
 import {ABILITIES} from './character-rules.mjs';
 import {sheetModel,detailFields} from './sheet-model.mjs';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -29,7 +30,7 @@ function spellSupplement(spell){
 }
 const paperPanel=(title,body,wide=false)=>`<section class="paper-panel${wide?' paper-wide':''}"><h2>${title}</h2>${body}</section>`;
 const list=values=>esc(values?.map(words).join(' · ')||'—');
-export const SHEET_TABS=[['overview','Vue d’ensemble'],['combat','Combat'],['abilities','Aptitudes'],['spells','Sorts'],['equipment','Équipement'],['story','Histoire']];
+export const SHEET_TABS=[['overview','Vue d’ensemble'],['play','En partie'],['combat','Combat'],['abilities','Aptitudes'],['spells','Sorts'],['equipment','Équipement'],['story','Histoire']];
 export function renderSheet(state,c,{example=false,activeTab='overview',savingEnabled=false,saveState={}}={}) {
   const m=sheetModel(state,c),details=state.details||{};
   const traits=[...(m.species?.traits||[]),...(m.variant?.traits||[]),...(m.variant?.traits_speciaux||[])].filter(t=>(t.niveau_min||1)<=state.level);
@@ -40,6 +41,7 @@ export function renderSheet(state,c,{example=false,activeTab='overview',savingEn
   const panel=(title,body,wide=false)=>{groups[destinations[title]].push(paperPanel(title,body,wide||destinations[title]==='equipment'));return '';};
   const saveLabel=saveState.saving?'Enregistrement…':saveState.saved?'Enregistrer les modifications':'Enregistrer le personnage';
   const saveMessage=!savingEnabled?'Brouillon conservé sur cet appareil. Connectez-vous au site pour enregistrer dans votre compte.':saveState.saved?(saveState.dirty?'Modifications à enregistrer. La dernière version reste dans votre compte.':`Enregistré dans votre compte${saveState.updatedAt?' · '+new Date(saveState.updatedAt).toLocaleString('fr-FR',{dateStyle:'short',timeStyle:'short'}):''}.`):'Ce personnage est encore un brouillon sur cet appareil.';
+  groups.play.push(paperPanel('Suivi en partie',renderPlay(state,m,{editable:!example,busy:saveState.saving}),true));
   const html=`<div class="sheet paper-sheet"><div class="sheet-toolbar"><a class="back" href="${example?'#personnages':'#creation'}">← ${example?'Mes personnages':'Modifier mes choix'}</a><div class="sheet-toolbar-actions">${!example?`<button type="button" class="button primary" data-save-character ${!savingEnabled||saveState.saving?'disabled':''}>${saveLabel}</button>`:''}<button type="button" class="button secondary" id="print-sheet">Télécharger la fiche PDF</button></div></div>${!example?`<p class="sheet-save-status" role="status">${esc(saveMessage)}</p>${saveState.error?`<p class="notice" role="alert">${esc(saveState.error)} <a href="/connexion.html">Se reconnecter</a></p>`:''}`:''}
     <header class="sheet-hero"><div><div class="eyebrow">${example?'PERSONNAGE D’EXEMPLE':'FICHE DE PERSONNAGE · D&D 2024'}</div><h1>${esc(state.name||'Personnage sans nom')}</h1><p>${esc(m.species?.nom||'Espèce à choisir')}${m.variant?` · ${esc(m.variant.nom)}`:''} · ${esc(m.cls?.nom||'Classe à choisir')} · Niveau ${state.level}</p><p>${esc(m.subclass?.nom||state.divineOrder||'')} · ${esc(m.background?.nom||'Historique à choisir')}</p></div><div class="sheet-level"><strong>${state.level}</strong><span>NIVEAU</span></div></header>
     <div class="sheet-quickstats" aria-label="Repères essentiels"><span>PV max. <b>${show(m.hp)}</b></span><span>CA <b>${show(m.ac)}</b></span><span>Initiative <b>${signed(m.initiative)}</b></span></div>

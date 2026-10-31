@@ -1,0 +1,45 @@
+{
+  "status": "deployed",
+  "release": "20261031T151138Z",
+  "previousRelease": "20261031T142735Z",
+  "rulesVersion": "phb2024-2026-10-28",
+  "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+  "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+  "backup": "/root/backups/myrpgtable-persistence-20261031T151138Z",
+  "backupDocuments": 3279,
+  "persistenceBefore": {
+    "passed": 8,
+    "realCharactersUnchanged": true
+  },
+  "persistenceAfter": {
+    "passed": 8,
+    "realCharactersUnchanged": true
+  },
+  "httpChecks": 15,
+  "verification": {
+    "status": "passed",
+    "scope": "play-state-with-unchanged-rules-baseline",
+    "sourceHash": "6f72164f032840e946066bb3e9ac0d0838e76d30be9b6c3b25180c87aff963ef",
+    "completedAt": "2026-10-31T15:11:37.268Z",
+    "baselineCommit": "d4902b98e7b6ab7a95169251cce7a53c19ac2bf4",
+    "failed": 0,
+    "skipped": 0,
+    "rulesVersion": "phb2024-2026-10-28",
+    "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+    "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+    "unitCampaign": {
+      "passed": 4026,
+      "failed": 0,
+      "skipped": 0
+    },
+    "targetedAfterOldClientCompatibilityGuard": {
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0
+    },
+    "distinctUnitTestsCovered": 4027,
+    "browserJourneys": 10,
+    "finalLayoutRefresh": 3,
+    "qualification": "Optional HP/temporary HP and explicitly selected expendable class-reserve tracking. Nine new session tests plus one old-client preservation test. The broad unit campaign passed; after the final compatibility guard, all 35 storage/session/sheet tests were rerun, including the additional old-client test. Ten complete browser journeys passed with the final storage guard; three affected UI journeys refreshed after the desktop tab layout change. No rule catalogue, derived statistics, automatic dice, spell slots/rest/state automation or existing-character migration. Real MongoDB verification required before/after deployment."
+  }
+}

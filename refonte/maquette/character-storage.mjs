@@ -3,6 +3,7 @@ import {originErrors,grantInitial,backgroundEquipmentErrors,backgroundKitOptions
 import {detailFields} from './sheet-model.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial} from './cleric-progression.mjs';
 import {featChoicesInitial} from './feat-effects.mjs';
+import {validatePlayState} from './play-state.mjs';
 import {CURRENT_RULES_VERSION} from './character-version.mjs';
 const strings=['name','classId','speciesId','backgroundId','equipment','backgroundKit','backgroundEquipment','statsMethod','bonusMode','bonusTwo','bonusOne','divineOrder','subclassId','hpMode','variantId','speciesSize','speciesSkill','speciesAncestry','speciesCastingAbility','speciesCantrip','originFeatId','backgroundTool','sacredStrike'];
 export function characterSnapshot(state){
@@ -12,6 +13,7 @@ export function characterSnapshot(state){
   out.originGrants=Object.fromEntries(ORIGIN_SLOTS.map(slot=>[slot,{...grantInitial(),...state.originGrants?.[slot]}]));
   out.classChoices=state.classChoices||{};
   out.advancements=Object.fromEntries(Object.entries(out.advancements).map(([level,row])=>[level,{...advancementInitial(),...row,choices:{...featChoicesInitial(),...row.choices}}]));
+  if(state.playState!==undefined)out.playState=validatePlayState(state.playState);
   return JSON.parse(JSON.stringify(out));
 }
 export function validateSavedCharacter(input,catalogue){
@@ -62,5 +64,6 @@ export function validateSavedCharacter(input,catalogue){
     if(values.slice().sort((a,b)=>a-b).join(',')!==ABILITIES.map(key=>out.scores[key]).sort((a,b)=>a-b).join(','))issues.push('Répartition des résultats à vérifier.');
   }
   if(!classProfile(out,catalogue))issues.push('Parcours de classe encore en cours de construction.');
+  if(input.playState!==undefined)out.playState=validatePlayState(input.playState);
   return {character:out,status:issues.length?'draft':'ready',issues:[...new Set(issues)]};
 }

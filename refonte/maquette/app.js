@@ -4,7 +4,8 @@ import {mountAdmin} from './admin-view.mjs';
 import {CURRENT_RULES_VERSION,usesCurrentRules,upgradedCharacterCopy} from './character-version.mjs';
 import {backgroundAbilities,backgroundBonuses,finalScores,modifier,visibleSteps,classProfile,clericProfile,pruneSpellChoices,spellErrors,classSkills,hitPoints,aptitudeErrors} from './character-rules.mjs';
 import {renderSheet} from './sheet-view.mjs';
-import {detailFields} from './sheet-model.mjs';
+import {detailFields,sheetModel} from './sheet-model.mjs';
+import {applyPlayAction,validatePlayState} from './play-state.mjs';
 import {characterSnapshot,validateSavedCharacter} from './character-storage.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial,evaluateProgression,featAbilityOptions,sacredChoices} from './cleric-progression.mjs';
 import {grantInitial,backgroundFeat,humanFeats,originFeats,originSizeOptions,selectedVariant,speciesSkillOptions,originSkills,originTools,backgroundToolOptions,grantOptions,magicFeatLists,magicFeatProfile,grantedOriginSpells,originBonuses,reconcileOrigins,originErrors,speciesChoiceSpecs,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
@@ -68,6 +69,7 @@ try {
       draft.advancements[level]=choice;
     }
     draft.classChoices={};for(const [key,values]of Object.entries(saved.classChoices||{}))if(/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)&&Array.isArray(values))draft.classChoices[key]=values.filter(v=>typeof v==='string'&&v.trim()).map(v=>v.slice(0,150)).slice(0,200);
+    if(saved.playState!==undefined)draft.playState=validatePlayState(saved.playState);
     draft.details={};
     for(const key of Object.keys(detailFields)) if(typeof saved.details?.[key]==='string') draft.details[key]=saved.details[key].slice(0,6000);
     for(const slot of ORIGIN_SLOTS) {
@@ -505,6 +507,18 @@ function bind() {
   }));
   root.querySelectorAll('[data-advance-notes]').forEach(input=>input.addEventListener('input',()=>{draft.advancements[input.dataset.advanceNotes].notes=input.value;save(true);}));
   root.querySelectorAll('[data-save-character]').forEach(button=>button.addEventListener('click',saveCloudCharacter));
+  root.querySelectorAll('form[data-play-action]').forEach(form=>form.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(cloudBusy||!usesCurrentRules(draft)||!form.reportValidity())return;
+    const type=form.dataset.playAction==='resource'?event.submitter?.value:form.dataset.playAction;
+    const amount=Number(new FormData(form).get('amount'));
+    try{
+      draft.playState=applyPlayAction(draft,sheetModel(draft,catalogue),{type,amount,currentHp:amount,resource:form.dataset.resource});
+      cloudSaveError='';activeSheetTab='play';save(true);route();
+      const panel=document.getElementById('sheet-panel-play');panel?.focus({preventScroll:true});
+      toast(storageAvailable?'Suivi conservé sur cet appareil. Enregistrez la fiche pour le retrouver dans votre compte.':'Suivi modifié, mais le stockage local est indisponible. Enregistrez la fiche dans votre compte.');
+    }catch(error){toast(error.message);}
+  }));
   document.getElementById('refresh-characters')?.addEventListener('click',async()=>{await refreshCloudCharacters();route();});
   const sheetTabs=[...root.querySelectorAll('[data-sheet-tab]')];
   sheetTabs.forEach((button,index)=>{
