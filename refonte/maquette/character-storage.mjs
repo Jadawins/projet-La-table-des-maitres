@@ -6,6 +6,7 @@ import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial} from './cleric-progr
 import {featChoicesInitial} from './feat-effects.mjs';
 import {validatePlayState} from './play-state.mjs';
 import {CURRENT_RULES_VERSION} from './character-version.mjs';
+import {validateMulticlass} from './multiclass-rules.mjs';
 const strings=['name','classId','speciesId','backgroundId','equipment','backgroundKit','backgroundEquipment','statsMethod','bonusMode','bonusTwo','bonusOne','divineOrder','subclassId','hpMode','variantId','speciesSize','speciesSkill','speciesAncestry','speciesCastingAbility','speciesCantrip','originFeatId','backgroundTool','sacredStrike'];
 export function characterSnapshot(state){
   const out={schemaVersion:2,rulesVersion:state.rulesVersion??null};
@@ -15,9 +16,11 @@ export function characterSnapshot(state){
   out.classChoices=state.classChoices||{};
   out.advancements=Object.fromEntries(Object.entries(out.advancements).map(([level,row])=>[level,{...advancementInitial(),...row,choices:{...featChoicesInitial(),...row.choices}}]));
   if(state.playState!==undefined)out.playState=validatePlayState(state.playState);
+  if(state.multiclass!==undefined)out.multiclass=structuredClone(state.multiclass);
   return JSON.parse(JSON.stringify(out));
 }
-export function validateSavedCharacter(input,catalogue){
+export function validateSavedCharacter(input,catalogue){return input?.multiclass!==undefined?validateMulticlass(input,catalogue,validateSingleCharacter):validateSingleCharacter(input,catalogue);}
+function validateSingleCharacter(input,catalogue,context={}){
   const fail=message=>{const error=new Error(message);error.status=400;throw error;};
   if(!input||typeof input!=='object'||Array.isArray(input))fail('Personnage invalide.');
   const version=catalogue.provenance?.revision?.id||CURRENT_RULES_VERSION;
@@ -34,7 +37,7 @@ export function validateSavedCharacter(input,catalogue){
     const values=input[key]??[];if(!Array.isArray(values)||values.length>200||values.some(v=>typeof v!=='string'||v.length>150))fail('Une sélection est invalide.');out[key]=[...new Set(values)];
   }
   const rolls=input.rolls??[];if(!Array.isArray(rolls)||![0,6].includes(rolls.length)||rolls.some(r=>!Array.isArray(r)||r.length!==4||r.some(n=>!Number.isInteger(n)||n<1||n>6)))fail('Les jets de dés sont invalides.');out.rolls=rolls;
-  out.hpRolls={};for(const [level,value]of Object.entries(input.hpRolls??{})){if(!/^([2-9]|1\d|20)$/.test(level)||(value!==null&&(!Number.isInteger(value)||value<1||value>12)))fail('Un jet de points de vie est invalide.');out.hpRolls[level]=value;}
+  out.hpRolls={};for(const [level,value]of Object.entries(input.hpRolls??{})){if(!(context._secondaryClass?/^([1-9]|1\d|20)$/:/^([2-9]|1\d|20)$/).test(level)||(value!==null&&(!Number.isInteger(value)||value<1||value>12)))fail('Un jet de points de vie est invalide.');out.hpRolls[level]=value;}
   out.advancements={};for(const level of Object.keys(input.advancements||{}).filter(n=>/^(?:[1-9]|1\d|20)$/.test(n))){
     const raw=input.advancements?.[level];if(!raw)continue;
     if(typeof raw!=='object'||!['','ability','feat'].includes(raw.mode)||!Array.isArray(raw.abilities)||raw.abilities.length>2||raw.abilities.some(a=>a!==''&&!ABILITIES.includes(a)))fail('Un choix de progression est invalide.');
@@ -53,6 +56,7 @@ export function validateSavedCharacter(input,catalogue){
   out.classChoices={};for(const [key,values]of Object.entries(input.classChoices||{})){if(!/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)||!Array.isArray(values)||values.length>200||values.some(v=>typeof v!=='string'||!v.trim()||v.length>150))fail('Un choix de classe est invalide.');out.classChoices[key]=[...values];}
   out.details={};for(const key of Object.keys(detailFields)){const value=input.details?.[key];if(value===undefined)continue;if(typeof value!=='string'||value.length>6000)fail('Un texte du personnage est trop long.');out.details[key]=value;}
   for(const [key,list]of [['classId',catalogue.classes],['speciesId',catalogue.species],['backgroundId',catalogue.backgrounds],['subclassId',catalogue.subclasses],['originFeatId',catalogue.feats]])if(out[key]&&!list.some(v=>v.id===out[key]))fail('Un choix ne figure plus dans le catalogue.');
+  Object.assign(out,context);
   const issues=[...originErrors(out,catalogue),...aptitudeErrors(out,catalogue),...spellErrors(out,catalogue)];
   if(!out.classId)issues.push('Classe à choisir.');
   if(ABILITIES.some(key=>out.scores[key]===null))issues.push('Caractéristiques à compléter.');
@@ -66,5 +70,6 @@ export function validateSavedCharacter(input,catalogue){
   }
   if(!classProfile(out,catalogue))issues.push('Parcours de classe encore en cours de construction.');
   if(input.playState!==undefined){out.playState=validatePlayState(input.playState);if(out.playState.deathSaves||out.playState.zeroHpConscious)clearOnPositiveHp(out.playState,sheetModel(out,catalogue).hp);}
+  for(const key of Object.keys(context))delete out[key];
   return {character:out,status:issues.length?'draft':'ready',issues:[...new Set(issues)]};
 }

@@ -70,7 +70,7 @@ export function speciesSkillOptions(state,c) {
   return c.skills.map(s=>s.nom==='Intuition'?'Perspicacité':s.nom).filter(name=>!automatic.has(skillKey(name))&&(marker==='au_choix'||marker==='au_choix_intuition_perception_survie'&&['perspicacite','perception','survie'].includes(skillKey(name))));
 }
 export function originSkills(state,c) {
-  const result=[...fixedOriginSkills(state,c)];
+  const result=[...fixedOriginSkills(state,c),...(state._extraSkills||[])];
   if(speciesSkillOptions(state,c).includes(state.speciesSkill)) result.push(state.speciesSkill);
   for(const grant of originFeats(state,c)) {
     for(const id of state.originGrants?.[grant.slot]?.proficiencies||[]) {
@@ -124,7 +124,7 @@ export function magicFeatProfile(state,c,grant) {
 export function innateSpells(state,c) {
   const variant=selectedVariant(state,c),result=[];
   const find=name=>c.spells.find(s=>key(s.id)===key(name)||key(s.nom)===key(name)||s.id===c.originCorrections?.spells?.[key(name)]);
-  for(const entry of (variant?.sorts_raciaux||[]).filter(s=>(s.niveau_personnage_requis||1)<=state.level)){
+  for(const entry of (variant?.sorts_raciaux||[]).filter(s=>(s.niveau_personnage_requis||1)<=(state._characterLevel||state.level))){
     const replacement=state.variantId==='haut_elfe'&&entry.id==='prestidigitation'?c.spells.find(s=>s.id===state.speciesCantrip&&s.niveau===0&&s.classes?.includes('Magicien')):null;
     const full=replacement||find(entry.id)||find(entry.nom);
     const usage=entry.utilisation==='maitrise_repos_long'?`${originBonuses(state,c).proficiency} utilisations gratuites par Repos long ; emplacements possibles`:entry.utilisation==='1_repos_long'?'1 utilisation gratuite par Repos long ; emplacements possibles':entry.utilisation;
@@ -150,11 +150,12 @@ export function grantedOriginSpells(state,c) {
   return result;
 }
 export function originBonuses(state,c) {
-  const ids=originFeats(state,c).map(g=>g.feat?.id);
+  const ids=[...originFeats(state,c).map(g=>g.feat?.id),...(state._allLevelFeats||[]).map(row=>row.feat.id),...(state._extraOriginFeatIds||[])];
   const cls=c.classes.find(cls=>cls.id===state.classId);
   let proficiency=2;
   for(let n=1;n<=state.level;n++) if(cls?.niveaux?.[n]?.bonusMaitrise!==undefined) proficiency=cls.niveaux[n].bonusMaitrise;
-  return {hp:ids.includes('robuste')?2*state.level:0,initiative:ids.includes('vigilant')?proficiency:0,proficiency};
+  if(state._characterLevel)proficiency=2+Math.floor((state._characterLevel-1)/4);
+  return {hp:ids.includes('robuste')?2*(state._characterLevel||state.level):0,initiative:ids.includes('vigilant')?proficiency:0,proficiency};
 }
 export function reconcileOrigins(state,c) {
   if(!state.originGrants) state.originGrants={};

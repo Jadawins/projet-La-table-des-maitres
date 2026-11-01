@@ -1,4 +1,7 @@
 import {sheetModel} from '../maquette/sheet-model.mjs';
+import {beginAdvancement,finishAdvancement,advancementContext} from '../maquette/character-advancement.mjs';
+import {classChoiceSpecs} from '../maquette/class-profiles.mjs';
+import {classFixture} from '../audit/class-fixtures.mjs';
 import {CURRENT_RULES_VERSION} from '../maquette/character-version.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -8,6 +11,21 @@ import {validateSavedCharacter,characterSnapshot} from '../maquette/character-st
 import {createCharacterStore} from '../access/character-store.mjs';
 const c=buildCatalogue(JSON.parse(await readFile(new URL('../tests/fixtures/rules-2024.json',import.meta.url),'utf8')));
 const id='12345678-1234-1234-1234-123456789abc';
+test('Montée multiclassée : révision, ancien client, isolation et suivi par type de dé',async()=>{
+  const {store}=setup(),s=classFixture(c,'barbare',3,c.subclasses.find(row=>row.classe_parente==='barbare').id,{scores:{FOR:14,DEX:14,CON:14,INT:14,SAG:14,CHA:14}});
+  const first=await store.save('a',id,s,0),{base,candidate}=beginAdvancement(first.character,c,'guerrier');
+  const context=advancementContext(base,candidate,c),own=context.candidate;
+  own.classSkills=[];for(const spec of classChoiceSpecs(own,context.catalogue))own.classChoices[spec.key]=spec.options.slice(0,spec.count).map(row=>row.id);
+  const advanced=finishAdvancement(base,own,c),saved=await store.save('a',id,advanced,1);assert.equal(saved.revision,2);assert.equal(saved.character.level,4);
+  assert.deepEqual((await store.get('a',id)).character.multiclass,advanced.multiclass);
+  const old=structuredClone(saved.character);delete old.multiclass;await assert.rejects(store.save('a',id,old,2),e=>e.status===409);
+  await assert.rejects(store.save('a',id,{...advanced,details:{...advanced.details,story:'Écriture périmée'}},1),e=>e.status===409);
+  await assert.rejects(store.get('b',id),e=>e.status===404);
+  const played=structuredClone(saved.character);played.playState={version:1,hpLost:0,tempHp:0,used:{},hitDiceUsed:2,hitDiceUsedByType:{'1d12':1,'1d10':1}};
+  const withDice=await store.save('a',id,played,2),legacy=structuredClone(withDice.character);delete legacy.playState.hitDiceUsedByType;
+  legacy.details.story='Un texte changé';const preserved=await store.save('a',id,legacy,3);assert.deepEqual(preserved.character.playState.hitDiceUsedByType,played.playState.hitDiceUsedByType);
+  legacy.playState.hitDiceUsed=0;await assert.rejects(store.save('a',id,legacy,4),e=>e.status===409);
+});
 const state=()=>({schemaVersion:2,rulesVersion:CURRENT_RULES_VERSION,name:'Clerc test',classId:'clerc',speciesId:'humain',backgroundId:'charlatan',equipment:'A',backgroundEquipment:'A',level:3,scores:{FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9},statsMethod:'physical',bonusMode:'three',bonusTwo:'',bonusOne:'',divineOrder:'Thaumaturge',subclassId:'clerc_domaine_vie',classSkills:['Médecine','Religion'],speciesSkill:'Perception',speciesSize:'M',originFeatId:'robuste',hpMode:'fixed',hpRolls:{},variantId:'',backgroundTool:'',cantrips:[],prepared:[],rolls:[],step:7,details:{story:'Une histoire à conserver'}});
 function setup(){
   const records=[];const matches=(doc,filter)=>Object.entries(filter).every(([k,v])=>v&&typeof v==='object'&&'$exists' in v?Object.hasOwn(doc,k)===v.$exists:doc[k]===v);

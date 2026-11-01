@@ -2,7 +2,7 @@
 
 Mise à jour : 1er novembre 2026.
 
-La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le suivi en partie couvre les PV, les réserves prises en charge, les emplacements, les repos explicites, les états, l’Épuisement et les sauvegardes contre la mort. Le téléphone, le multiclasse, les nouveaux livres et un moteur de combat automatisé restent hors périmètre. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
+La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le suivi en partie couvre les PV, les réserves prises en charge, les emplacements, les repos explicites, les états, l’Épuisement et les sauvegardes contre la mort. Le téléphone, les nouveaux livres et un moteur de combat automatisé restent hors périmètre. La montée de niveau et le multiclassage sont disponibles depuis la fiche, avec un niveau total limité à 20. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
 
 ## Version locale stabilisée
 
@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261101T083829Z`, publiée le 1er novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261101T095447Z`, publiée le 1er novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261101T095447Z` ajoute le parcours **Passer au niveau**, le choix de la classe qui reçoit ce niveau, le bilan avant validation et le multiclassage des douze classes. Les prérequis, PV, améliorations par classe, maîtrise totale, préparations de sorts distinctes, emplacements communs/pacte, dés de vie par type, méthodes de CA et non-cumul des attaques sont pris en charge. La sauvegarde conserve le suivi en partie et ne convertit aucune fiche automatiquement. Les 4 308 contrôles unitaires distincts et 229 parcours navigateur sont validés, avec des reprises ciblées documentées. Vingt-deux contrôles MongoDB avant/après et quinze accès HTTP passent ; personnages réels inchangés. Sauvegarde de 3 280 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261101T095447Z/`. Voir [montée de niveau et multiclassage](access/EVOLUTION-PERSONNAGES.md).
 
 La livraison `20261101T083829Z` ajoute les états et leurs états induits, l’Épuisement avec sa réduction au repos, les sauvegardes contre la mort saisies avec vos dés, la stabilisation et les retours à la vie confirmés. La Vitesse en partie et le malus d’Épuisement sont rappelés sans réécrire les statistiques de base ; les exceptions restent décidées à la table. Les 4 053 tests unitaires, 15 parcours navigateur et dix contrôles MongoDB avant/après passent. Les personnages réels restent inchangés, dont Youpi matin au niveau 3. Sauvegarde de 3 280 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261101T083829Z/`. Voir [états et jets contre la mort](access/ETATS-ET-JETS-DE-MORT.md).
 

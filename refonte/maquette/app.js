@@ -1,3 +1,5 @@
+import {multiclassPrerequisites,classRecords} from './multiclass-rules.mjs';
+import {beginAdvancement,advancementErrors,advancementPreview,finishAdvancement,advancementClassBase,advancementContext} from './character-advancement.mjs';
 import {downloadCharacterPDF} from './character-pdf.mjs';
 import {renderHome,renderGrimoire,catalogueEntries,searchCatalogue,renderResults,renderCatalogueDetail} from './portal-view.mjs';
 import {mountAdmin} from './admin-view.mjs';
@@ -34,9 +36,12 @@ if(accountId){
 const initial = () => ({schemaVersion:2,rulesVersion:CURRENT_RULES_VERSION,name:'',level:1,classId:'',speciesId:'',backgroundId:'',statsMethod:'physical',scores:Object.fromEntries(stats.map(s=>[s,null])),rolls:[],equipment:'',backgroundEquipment:'',backgroundKit:'',step:0,bonusMode:'',bonusTwo:'',bonusOne:'',divineOrder:'',subclassId:'',classSkills:[],cantrips:[],prepared:[],hpMode:'fixed',hpRolls:{},variantId:'',speciesSize:'',speciesSkill:'',speciesAncestry:'',speciesCastingAbility:'',speciesCantrip:'',originFeatId:'',backgroundTool:'',sacredStrike:'',advancements:{},classChoices:{},originGrants:{background:grantInitial(),human:grantInitial()}});
 const icons = { barbare: '⚒', barde: '♫', clerc: '✥', druide: '❧', ensorceleur: '✴', guerrier: '⚔', magicien: '✧', moine: '☯', occultiste: '☾', paladin: '♜', rodeur: '➶', roublard: '◇' };
 const descriptions = { barbare: 'La force à l’état brut.', barde: 'Le pouvoir des mots et de la musique.', clerc: 'Une vocation guidée par la foi.', druide: 'Une alliance avec le monde naturel.', ensorceleur: 'Une magie qui vient de l’intérieur.', guerrier: 'Votre arme, votre discipline.', magicien: 'L’étude ouvre toutes les portes.', moine: 'Le corps et l’esprit à l’unisson.', occultiste: 'Un pacte, un pouvoir, un prix.', paladin: 'Un serment pour guider vos pas.', rodeur: 'À l’aise au-delà des sentiers.', roublard: 'Toujours un coup d’avance.' };
-let catalogue;
+let catalogue,catalogueMaster;
 let isAdmin=false,grimoireEntries=[],grimoireQuery='',grimoireCategory='',grimoireLimit=24;
 let draft = initial();
+const advancing=()=>Boolean(draft.advancementDraft);
+const creationSteps=()=>advancing()?[4,...(visibleSteps(draft,catalogue).includes(5)?[5]:[]),7]:visibleSteps(draft,catalogue);
+const pruneDraftSpells=()=>{if(!advancing())pruneSpellChoices(draft,catalogue);};
 let storageAvailable = true;
 let timer;
 let beforeSuggestion = null;
@@ -86,6 +91,8 @@ try {
     else draft.statsMethod = 'standard';
     if (stats.every(s => saved.scores?.[s] === null || (Number.isInteger(saved.scores?.[s]) && saved.scores[s] >= 3 && saved.scores[s] <= 18))) draft.scores = saved.scores;
     if (Array.isArray(saved.rolls) && saved.rolls.length === 6 && saved.rolls.every(r => Array.isArray(r) && r.length === 4 && r.every(n => Number.isInteger(n) && n >= 1 && n <= 6))) draft.rolls = saved.rolls;
+    if(saved.multiclass)draft.multiclass=structuredClone(saved.multiclass);
+    if(saved.advancementDraft?.base)draft.advancementDraft=structuredClone(saved.advancementDraft);
     if (Number.isInteger(saved.step)) draft.step = Math.max(0, Math.min(7,saved.schemaVersion===2?saved.step:({4:6,5:7}[saved.step]??saved.step)));
   }
 } catch { storageAvailable = false; }
@@ -110,8 +117,9 @@ function toast(message) {
 function save(silent = false) {
   try {
     draft.cloudId??=crypto.randomUUID();
-    localStorage.setItem(draftKey, JSON.stringify(draft));
-    if(draft.name||draft.classId){const records=localCharacters();if(usesCurrentRules(draft)||!records[draft.cloudId])records[draft.cloudId]=draft;localStorage.setItem(localCharactersKey,JSON.stringify(records));}
+    const localDraft=Object.fromEntries(Object.entries(draft).filter(([key])=>!key.startsWith('_')));
+    localStorage.setItem(draftKey, JSON.stringify(localDraft));
+    if(draft.name||draft.classId){const records=localCharacters();if(usesCurrentRules(draft)||!records[draft.cloudId])records[draft.cloudId]=localDraft;localStorage.setItem(localCharactersKey,JSON.stringify(records));}
     storageAvailable = true;
   }
   catch { storageAvailable = false; }
@@ -182,6 +190,7 @@ async function removeCharacter(id,local){
 }
 async function saveCloudCharacter(){
   if(!accountId||cloudBusy)return;
+  if(advancing()){toast('Terminez ou annulez la montée de niveau avant d’enregistrer.');return;}
   if(!usesCurrentRules(draft)){toast('Créez une copie à mettre à niveau avant de l’enregistrer.');return;}
   if(!draft.name.trim()){toast('Donnez un nom au personnage avant de l’enregistrer.');return;}
   save(true);const id=draft.cloudId,character=characterSnapshot(draft),stamp=snapshotStamp(draft);
@@ -226,7 +235,8 @@ function accountCharacters(){
   const formatDate=value=>new Date(value).toLocaleString('fr-FR',{dateStyle:'short',timeStyle:'short'});
   const card=(person,local=false)=>{
     const id=local?person.cloudId:person.id,cls=entry('classes',person.classId),species=entry('species',person.speciesId);
-    return `<div class="saved-character-row"><a class="saved-character" href="#${local?'brouillon':'ouvrir'}/${esc(id)}"><span class="saved-glyph" aria-hidden="true">${icons[person.classId]||'✧'}</span><div><span class="saved-kind">${local?'SUR CET APPAREIL · À ENREGISTRER':'DANS VOTRE COMPTE'}</span><h3>${esc(person.name||'Sans nom')}</h3><p>${esc(cls?.nom||'Classe à choisir')} · Niveau ${person.level} · ${esc(species?.nom||'Espèce à choisir')}</p>${!local?`<small>${person.status==='draft'?'Choix à compléter · ':''}Enregistré le ${esc(formatDate(person.updatedAt))}</small>`:'<small>Vos modifications locales sont conservées ici.</small>'}</div><span class="saved-open">${local?'Reprendre':'Ouvrir'} →</span></a><button class="button danger" type="button" data-delete-character="${esc(id)}" data-local="${local}" aria-label="${local?'Supprimer le brouillon de':'Supprimer'} ${esc(person.name||'Sans nom')}" ${cloudBusy?'disabled':''}>Supprimer</button></div>`;
+    const classLabel=person.multiclass?.classes?.map(row=>(entry('classes',row.classId)?.nom||row.classId)+' '+row.level).join(' / ')||cls?.nom||'Classe à choisir';
+    return `<div class="saved-character-row"> <a class="saved-character" href="#${local?'brouillon':'ouvrir'}/${esc(id)}"><span class="saved-glyph" aria-hidden="true">${icons[person.classId]||'✧'}</span><div><span class="saved-kind">${local?'SUR CET APPAREIL · À ENREGISTRER':'DANS VOTRE COMPTE'}</span><h3>${esc(person.name||'Sans nom')}</h3><p>${esc(classLabel)} · Niveau ${person.advancementDraft?person.advancementDraft.base.level+1:person.level} · ${esc(species?.nom||'Espèce à choisir')}</p>${!local?`<small>${person.status==='draft'?'Choix à compléter · ':''}Enregistré le ${esc(formatDate(person.updatedAt))}</small>`:'<small>Vos modifications locales sont conservées ici.</small>'}</div><span class="saved-open">${local?'Reprendre':'Ouvrir'} →</span></a><button class="button danger" type="button" data-delete-character="${esc(id)}" data-local="${local}" aria-label="${local?'Supprimer le brouillon de':'Supprimer'} ${esc(person.name||'Sans nom')}" ${cloudBusy?'disabled':''}>Supprimer</button></div>`;
   };
   return `<div class="heading-row"><div><div class="eyebrow">VOTRE GRIMOIRE</div><h1>Mes personnages</h1><p>Retrouvez vos personnages enregistrés et vos idées en cours.</p></div><a class="button primary" href="#nouveau">+ Créer un personnage</a></div>${draft.name&&isDirty(draft)?`<div class="draft-banner"><span>En cours : <strong>${esc(draft.name)}</strong></span><a class="button secondary" href="#fiche/brouillon">Revenir à ma fiche →</a></div>`:''}<div class="section-bar"><h2>Dans votre compte <span class="count">${cloudCharacters.length}</span></h2><button class="button quiet" id="refresh-characters" type="button">Actualiser</button></div>${cloudError?`<div class="notice" role="alert">${esc(cloudError)} <a href="/connexion.html">Se reconnecter</a></div>`:''}<div class="saved-character-list">${cloudLoading?'<p>Chargement de vos personnages…</p>':cloudCharacters.map(person=>card(person)).join('')||'<div class="empty"><h3>Votre premier personnage vous attend.</h3><p>Depuis sa fiche, cliquez sur « Enregistrer le personnage » pour le retrouver ici et sur vos autres appareils.</p></div>'}</div>${locals.length?`<div class="section-bar"><h2>Brouillons sur cet appareil</h2></div><div class="saved-character-list">${locals.map(([,person])=>card(person,true)).join('')}</div>`:''}`;
 }
@@ -353,7 +363,7 @@ function updateOriginChoices() {
   reconcileOrigins(draft,catalogue);
   const allowed=classSkills(draft,catalogue).options;
   draft.classSkills=draft.classSkills.filter(name=>allowed.includes(name));
-  pruneSpellChoices(draft,catalogue);
+  pruneDraftSpells();
   save(true);drawCreation();
 }
 
@@ -364,7 +374,7 @@ function bonusControls() {
   return `<section class="rules-section"><h3>Le bonus de votre historique</h3><p>${esc(currentBackground()?.nom)} : répartissez vos bonus parmi ${allowed.join(', ')}.</p><div class="choice-grid">${[['three','+1 / +1 / +1'],['split','+2 / +1']].map(([id,label])=>`<button type="button" class="choice${draft.bonusMode===id?' selected':''}" data-bonus-mode="${id}" aria-pressed="${draft.bonusMode===id}"><strong>${label}</strong></button>`).join('')}</div>${draft.bonusMode==='split'?`<div class="choice-grid">${[['bonusTwo','Bonus +2'],['bonusOne','Bonus +1']].map(([key,label])=>`<label class="field">${label}<select data-bonus-select="${key}"><option value="">Choisir</option>${allowed.map(stat=>`<option value="${stat}" ${draft[key]===stat?'selected':''}>${stat}</option>`).join('')}</select></label>`).join('')}</div>`:''}<div class="final-stats">${stats.map(stat=>`<span>${stat} <strong>${finals[stat]??'—'}</strong>${bonuses[stat]?`<small>+${bonuses[stat]}</small>`:''}</span>`).join('')}</div><span class="hint">Caractéristiques finales, bonus inclus. Les résultats de vos dés restent inchangés.</span></section>`;
 }
 
-function classControls(){return classChoiceSpecs(draft,catalogue).map(spec=>`<section class="rules-section"><h3>${esc(spec.nom)} <span class="count">${(draft.classChoices?.[spec.key]||[]).filter(Boolean).length}/${spec.count}</span></h3>${spec.description?`<p class="hint">${esc(spec.description)}</p>`:''}${['names','number'].includes(spec.kind)?Array.from({length:spec.count},(_,i)=>`<label class="field">${esc(spec.nom)} ${i+1}<input type="${spec.kind==='number'?'number':'text'}" data-class-free="${spec.key}" data-class-index="${i}" maxlength="150" value="${esc(draft.classChoices?.[spec.key]?.[i]||'')}"></label>`).join(''):`<div class="skill-grid">${spec.options.map(o=>`<label class="skill-choice"><input type="checkbox" data-class-select="${spec.key}" data-class-value="${esc(o.id)}" ${(draft.classChoices?.[spec.key]||[]).includes(o.id)?'checked':''} ${!(draft.classChoices?.[spec.key]||[]).includes(o.id)&&(draft.classChoices?.[spec.key]||[]).length>=spec.count?'disabled':''}><span>${esc(o.nom)}${o.description?`<small>${esc(o.description)}</small>`:''}</span></label>`).join('')}</div>`}</section>`).join('');}
+function classControls(){return classChoiceSpecs(draft,catalogue).map(spec=>{const options=[...spec.options,...(draft.classChoices?.[spec.key]||[]).filter(id=>!spec.options.some(o=>o.id===id)).map(id=>({id,nom:id+" · choix à retirer"}))];return `<section class="rules-section"><h3>${esc(spec.nom)} <span class="count">${(draft.classChoices?.[spec.key]||[]).filter(Boolean).length}/${spec.count}</span></h3>${spec.description?`<p class="hint">${esc(spec.description)}</p>`:''}${['names','number'].includes(spec.kind)?Array.from({length:spec.count},(_,i)=>`<label class="field">${esc(spec.nom)} ${i+1}<input type="${spec.kind==='number'?'number':'text'}" data-class-free="${spec.key}" data-class-index="${i}" maxlength="150" value="${esc(draft.classChoices?.[spec.key]?.[i]||'')}"></label>`).join(''):`<div class="skill-grid">${options.map(o=>`<label class="skill-choice"><input type="checkbox" data-class-select="${spec.key}" data-class-value="${esc(o.id)}" ${(draft.classChoices?.[spec.key]||[]).includes(o.id)?'checked':''} ${!(draft.classChoices?.[spec.key]||[]).includes(o.id)&&(draft.classChoices?.[spec.key]||[]).length>=spec.count?'disabled':''}><span>${esc(o.nom)}${o.description?`<small>${esc(o.description)}</small>`:''}</span></label>`).join('')}</div>`}</section>`;}).join('');}
 
 function aptitudes() {
   const profile = classProfile(draft,catalogue);
@@ -377,7 +387,7 @@ function aptitudes() {
   return `<h2>Un pouvoir, une vocation.</h2><p class="intro">Les choix de votre ${esc(currentClass().nom.toLocaleLowerCase('fr'))} de niveau ${draft.level}, réunis au même endroit.</p>${vocation?`<section class="rules-section first"><h3>Vocation divine</h3><p>Choisissez votre rôle sacré.</p>${choices(vocation.options.map(o=>({id:o.nom,nom:o.nom,detail:o.nom==='Protecteur'?'Armes de guerre et armures lourdes.':'Un sort mineur supplémentaire ; aide aux tests d’Arcanes et de Religion.'})),'divineOrder',o=>o.detail)}</section>`:''}
   ${draft.level>=3?`<section class="rules-section"><h3>${draft.classId==='clerc'?'Votre domaine':'Votre voie'}</h3><p>Choisissez une sous-classe parmi celles de votre bibliothèque actuelle.</p><div class="choice-grid">${catalogue.subclasses.filter(s=>s.classe_parente===draft.classId).map(s=>`<button class="choice${selected('subclassId',s.id)}" type="button" data-choice="subclassId" data-id="${esc(s.id)}" aria-pressed="${draft.subclassId===s.id}" ${s.available?'':'disabled'}><strong>${esc(s.nom)}</strong><small>Aptitudes de votre bibliothèque.</small></button>`).join('')}</div>${domain?`<div class="feature-list">${profile.domainFeatures.map(f=>`<details><summary>${esc(f.nom)}</summary><p>${esc(f.description)}</p></details>`).join('')}</div>`:''}</section>`:''}
   ${progressionControls()}${classControls()}${originFeats(draft,catalogue).filter(g=>g.slot.startsWith('invocation')).map(g=>featControls(g,false)).join('')}<section class="rules-section"><h3>Compétences de classe <span class="count">${draft.classSkills.length} / ${skillOptions.count}</span></h3><p>Vos origines accordent déjà : ${esc(originSkills(draft,catalogue).join(', '))}. Choisissez ${skillOptions.count} autres maîtrises.</p><div class="skill-grid">${skillOptions.options.map((name,index)=>`<label class="skill-choice"><input type="checkbox" data-class-skill="${esc(name)}" ${draft.classSkills.includes(name)?'checked':''} ${!draft.classSkills.includes(name)&&draft.classSkills.length>=skillOptions.count?'disabled':''}><span>${esc(name)}</span></label>`).join('')}</div></section>
-  <section class="rules-section"><h3>Vos points de vie</h3><p>Le premier niveau donne le maximum du dé de vie. Pour les suivants, choisissez votre méthode.</p><label class="field">Méthode<select id="hp-mode">${[['fixed','Valeur fixe'],['physical','Mes dés physiques'],['virtual','Les dés de l’application']].map(([id,name])=>`<option value="${id}" ${draft.hpMode===id?'selected':''}>${name}</option>`).join('')}</select></label><div class="hp-levels"><div><span>Niveau 1</span><strong>${die} + mod. CON</strong><small>Automatique</small></div>${Array.from({length:draft.level-1},(_,i)=>i+2).map(level=>`<div><span>Niveau ${level}</span>${draft.hpMode==='fixed'?`<strong>${Math.floor(die/2)+1} + mod. CON</strong>`:draft.hpMode==='physical'?`<label>Résultat du d${die}<input type="number" data-hp-level="${level}" min="1" max="${die}" step="1" inputmode="numeric" value="${draft.hpRolls[level]??''}" aria-label="Dé de vie niveau ${level}"></label>`:`<span><strong>${draft.hpRolls[level]??'—'}</strong> + mod. CON</span><button type="button" class="button secondary" data-roll-hp="${level}">Lancer le d${die}</button>`}</div>`).join('')}</div><div class="hp-total">Points de vie maximum <strong id="hp-total">${hp??'À compléter'}</strong></div><span class="hint">Le modificateur de Constitution final est appliqué à chaque niveau. Aucun lancer automatique.</span></section>
+  <section class="rules-section"><h3>Vos points de vie</h3><p>${advancing()?'Les PV des niveaux précédents sont conservés. Un premier niveau dans une classe secondaire utilise une valeur fixe ou un jet, sans maximiser le dé.':'Le premier niveau donne le maximum du dé de vie. Pour les suivants, choisissez votre méthode.'}</p><label class="field">Méthode<select id="hp-mode">${[['fixed','Valeur fixe'],['physical','Mes dés physiques'],['virtual','Les dés de l’application']].map(([id,name])=>`<option value="${id}" ${draft.hpMode===id?'selected':''}>${name}</option>`).join('')}</select></label><div class="hp-levels"><div><span>Niveau 1</span><strong>${die} + mod. CON</strong><small>Automatique</small></div>${Array.from({length:draft.level-1},(_,i)=>i+2).map(level=>`<div><span>Niveau ${level}</span>${draft.hpMode==='fixed'?`<strong>${Math.floor(die/2)+1} + mod. CON</strong>`:draft.hpMode==='physical'?`<label>Résultat du d${die}<input type="number" data-hp-level="${level}" min="1" max="${die}" step="1" inputmode="numeric" value="${draft.hpRolls[level]??''}" aria-label="Dé de vie niveau ${level}"></label>`:`<span><strong>${draft.hpRolls[level]??'—'}</strong> + mod. CON</span><button type="button" class="button secondary" data-roll-hp="${level}">Lancer le d${die}</button>`}</div>`).join('')}</div><div class="hp-total">Points de vie maximum <strong id="hp-total">${hp??'À compléter'}</strong></div><span class="hint">Le modificateur de Constitution final est appliqué à chaque niveau. Aucun lancer automatique.</span></section>
   <section class="rules-section"><h3>Vos autres aptitudes</h3><div class="feature-list">${Array.from({length:draft.level},(_,i)=>currentClass().niveaux[i+1]?.capacites||[]).flat().filter(c=>!['Sorts','Vocation divine'].includes(c.nom)).map(c=>`<details><summary>${esc(c.nom)}</summary><p>${esc(c.description)}</p></details>`).join('')}</div></section>`;
 }
 
@@ -390,7 +400,7 @@ function levelFeatChoice(row,spec){
   return `<label class="field">${esc(spec.label)}<select data-feat-choice="${spec.field}" data-feat-level="${row.level}"><option value="">Choisir</option>${spec.options.map(v=>`<option value="${esc(v)}" ${chosen[spec.field]===v?'selected':''}>${esc(v)}</option>`).join('')}</select></label>`;
 }
 function progressionControls(){
-  const progression=evaluateProgression(draft,catalogue,finalScores(draft,currentBackground()));
+  const progression=draft._multiclassProgression||evaluateProgression(draft,catalogue,finalScores(draft,currentBackground()));
   const statSelect=(level,index,selected,allowed=stats)=>`<label class="field">${index===null?'Caractéristique du don':`Point ${index+1}`}<select data-advance-level="${level}" ${index===null?'data-advance-field="featAbility"':`data-advance-point="${index}"`}><option value="">Choisir</option>${allowed.map(a=>`<option value="${a}" ${selected===a?'selected':''}>${a}</option>`).join('')}</select></label>`;
   const levels=progression.rows.map(row=>{
     const {level,choice,feat}=row,origin=originFeats(draft,catalogue).find(g=>g.slot===`level${level}`);
@@ -410,10 +420,47 @@ function magic() {
 
 function signed(value) {return value>=0?`+${value}`:String(value);}
 function spellSection(kind,title,pool,count) {
+  pool=[...pool,...draft[kind].filter(id=>!pool.some(s=>s.id===id)).map(id=>({...catalogue.spells.find(s=>s.id===id),id,nom:(catalogue.spells.find(s=>s.id===id)?.nom||id)+" · à retirer de cette sélection",ecole:"",temps_incantation:""}))];
   return `<section class="rules-section"><h3>${title} <span class="count">${draft[kind].length} / ${count}</span></h3><div class="spell-list">${pool.map(s=>`<article class="spell-card" data-spell-card="${esc(s.nom.toLocaleLowerCase('fr'))}" ${spellSearch&&!s.nom.toLocaleLowerCase('fr').includes(spellSearch.toLocaleLowerCase('fr'))?'hidden':''}><label><input type="checkbox" data-spell-kind="${kind}" data-spell-id="${esc(s.id)}" ${draft[kind].includes(s.id)?'checked':''} ${!draft[kind].includes(s.id)&&draft[kind].length>=count?'disabled':''}><span><strong>${esc(s.nom)}</strong><small>${s.niveau===0?'Sort mineur':`Niveau ${s.niveau}`} · ${esc(s.ecole)} · ${esc(s.temps_incantation)}</small></span></label><details><summary>Détails du sort</summary><p>${esc(s.description)}</p><p>Portée : ${esc(s.portee)} · Durée : ${esc(s.duree)}</p></details></article>`).join('')}</div></section>`;
 }
 
+function refreshAdvancementContext(){
+  if(!advancing()){catalogue=catalogueMaster;for(const key of Object.keys(draft))if(key.startsWith('_'))delete draft[key];return;}
+  const context=advancementContext(draft.advancementDraft.base,draft,catalogueMaster);Object.assign(draft,context.candidate);catalogue=context.catalogue;
+}
+function chooseAdvancementClass(){
+  return new Promise(resolve=>{
+    const dialog=document.createElement('dialog');dialog.className='confirm-dialog';dialog.setAttribute('aria-labelledby','advancement-class-title');
+    const existing=classRecords(draft),scores=finalScores(draft,currentBackground(),catalogueMaster);
+    dialog.innerHTML='<h2 id="advancement-class-title">Choisir la classe du prochain niveau</h2><p>Un seul niveau est ajouté. Les prérequis de toutes vos classes sont vérifiés pour un multiclassage.</p><form method="dialog"><label class="field">Classe<select name="classId" id="advancement-class">'+[...catalogueMaster.classes].sort((a,b)=>Number(existing.some(x=>x.classId===b.id))-Number(existing.some(x=>x.classId===a.id))).map(cls=>{const own=existing.find(row=>row.classId===cls.id),issues=!draft.multiclass&&cls.id===draft.classId?[]:multiclassPrerequisites(draft,catalogueMaster,cls.id);return '<option value="'+esc(cls.id)+'" '+(issues.length?'disabled':'')+'>'+esc(cls.nom)+' · '+(own?'niveau '+own.level+' → '+(own.level+1):'nouvelle classe, niveau 1')+(issues.length?' · '+esc(issues.join(' ')):'')+'</option>';}).join('')+'</select></label><p class="hint">Caractéristiques : '+stats.map(a=>a+' '+scores[a]).join(' · ')+'</p><div class="form-actions"><button class="button secondary" value="cancel">Annuler</button><button class="button primary" value="confirm">Préparer ce niveau</button></div></form>';
+    dialog.addEventListener('close',()=>{const id=dialog.returnValue==='confirm'?dialog.querySelector('select').value:null;dialog.remove();resolve(id);},{once:true});document.body.append(dialog);dialog.showModal();
+  });
+}
+function advancementPage(){
+  const base=draft.advancementDraft.base,p=advancementPreview(base,draft,catalogueMaster),errors=advancementErrors(base,draft,catalogueMaster),total=base.level+1;
+  const steps=creationSteps();if(!steps.includes(draft.step))draft.step=4;
+  const content=draft.step===7?'<h2>Vérifier la montée de niveau</h2><dl class="sheet-pairs"><div><dt>Niveau</dt><dd>'+base.level+' → '+total+'</dd></div><div><dt>PV maximum</dt><dd>'+p.before.hp+' → '+(p.after.hp??'À compléter')+'</dd></div><div><dt>Bonus de maîtrise</dt><dd>+'+p.before.proficiency+' → +'+p.after.proficiency+'</dd></div></dl><label class="field">PV actuels après la montée<select id="advancement-hp-policy"><option value="preserve">Conserver les PV actuels</option><option value="increase" '+(draft.advancementDraft.hpPolicy==='increase'?'selected':'')+'>Ajouter le gain de PV maximum aux PV actuels</option></select><span class="hint">Les dépenses et états sont conservés. La progression ne relève pas un personnage à zéro PV.</span></label>'+rulesReview(draft)+(errors.length?'<div class="notice"><ul>'+errors.map(e=>'<li>'+esc(e)+'</li>').join('')+'</ul></div>':'<p class="notice">Les choix sont complets. Valider conserve la progression sur cette fiche et l’enregistre dans votre compte si vous êtes connecté.</p>'):stepContent();
+  return '<a class="back" href="#personnages">← Mes personnages</a><div class="creation-header"><p class="eyebrow">VOTRE PERSONNAGE ÉVOLUE</p><h1>Passage au niveau '+total+'</h1><p>'+esc(draft.name)+' · '+esc(currentClass().nom)+' · niveau de classe '+draft.level+'</p></div><div class="wizard"><nav class="steps" aria-label="Étapes de progression">'+steps.map((n,i)=>'<button class="step" data-step="'+n+'" '+(n===draft.step?'aria-current="step"':'')+'>'+(i+1)+' · '+labels[n]+'</button>').join('')+'</nav><section class="form-panel">'+content+'<div class="form-actions"><button class="button quiet" id="previous">← Précédent</button><button class="button primary" id="next">'+(draft.step===7?'Valider la montée de niveau':'Continuer →')+'</button></div><button class="button quiet" data-cancel-advancement>Annuler la montée de niveau</button></section><aside class="resume"><h3>Nouvelles aptitudes</h3>'+p.newFeatures.map(f=>'<p><strong>'+esc(f.nom)+'</strong><br>'+esc(f.source)+'</p>').join('')+'<p>Sorts mineurs : '+p.cantrips.join(' → ')+'<br>Sorts préparés : '+p.prepared.join(' → ')+'</p><p class="hint">Origines, caractéristiques de base et choix des niveaux précédents sont conservés. Les remplacements d’options et de sorts restent soumis aux règles de vos aptitudes.</p></aside></div>';
+}
+function limitAdvancementForm(){
+  if(!advancing())return;
+  const base=advancementClassBase(draft.advancementDraft.base,draft);
+  for(const input of root.querySelectorAll('[data-advance-level]'))if(+input.dataset.advanceLevel<=base.level)input.closest('.rules-section')?.remove();
+  if(base.level)for(const input of root.querySelectorAll('[data-class-skill]'))input.closest('.rules-section')?.remove();
+  for(const kind of ['divineOrder','subclassId','sacredStrike'])if(base[kind])for(const input of root.querySelectorAll('[data-choice="'+kind+'"]'))input.closest('.rules-section')?.remove();
+  if(base.level)for(const row of root.querySelectorAll('.hp-levels > div'))if(row.querySelector('span')?.textContent!=='Niveau '+draft.level)row.remove();
+  const mode=root.querySelector('#hp-mode');if(mode)mode.disabled=Boolean(base.level);
+  for(const input of root.querySelectorAll('[data-hp-level],[data-roll-hp]'))if(+(input.dataset.hpLevel||input.dataset.rollHp)<=base.level)input.closest('.hp-levels > div')?.remove();
+  if(base.level===0){
+    const container=root.querySelector('.hp-levels'),die=Number(currentClass().niveaux[0].de_vie.type.match(/d(\d+)/)[1]);
+    if(container){const row=document.createElement('div');row.innerHTML='<span>Premier niveau de cette nouvelle classe</span>'+(draft.hpMode==='fixed'?'<strong>'+(Math.floor(die/2)+1)+' + mod. CON</strong>':draft.hpMode==='physical'?'<label>Résultat du d'+die+'<input type="number" data-hp-level="1" min="1" max="'+die+'" value="'+(draft.hpRolls[1]??'')+'" aria-label="Dé de vie niveau 1 de la nouvelle classe"></label>':'<strong>'+(draft.hpRolls[1]??'—')+'</strong><button type="button" class="button secondary" data-roll-hp="1">Lancer le d'+die+'</button>');container.replaceChildren(row);}
+  }
+  for(const button of root.querySelectorAll('[data-save-character]'))button.disabled=true;
+}
 function creation() {
+  refreshAdvancementContext();
+  if(advancing())return advancementPage();
+  if(draft.multiclass)return '<h1>Votre personnage multiclassé</h1><p>Ses niveaux et choix sont conservés par classe. Pour évoluer, utilisez Passer au niveau depuis sa fiche.</p><a class="button primary" href="#fiche/brouillon">Revenir à la fiche</a>';
   return `<a class="back" href="#personnages">← Mes personnages</a><div class="creation-header"><div class="eyebrow">CHAQUE HÉROS A UN COMMENCEMENT</div><h1>Créons votre personnage.</h1><p>Un choix à la fois. Vous pourrez revenir sur chacun d’eux.</p></div><div class="wizard"><nav class="steps" aria-label="Étapes de création">${visibleSteps(draft,catalogue).map((step,i) => `<button type="button" class="step ${step < draft.step ? 'done' : ''}" data-step="${step}" ${step === draft.step ? 'aria-current="step"' : ''} ${step > draft.step ? 'disabled' : ''}><b>${step < draft.step ? '✓' : i + 1}</b>${labels[step]}</button>`).join('')}</nav><section class="form-panel" aria-label="${labels[draft.step]}">${stepContent()}<div class="form-actions"><button type="button" class="button quiet" id="previous">${draft.step ? '← Précédent' : 'Quitter'}</button><button type="button" class="button primary" id="next">${draft.step === 7 ? 'Voir la fiche →' : 'Continuer →'}</button></div></section>${summary()}</div>`;
 }
 
@@ -442,6 +489,7 @@ function sheet(id) {
 }
 
 function validStep() {
+  if(advancing())refreshAdvancementContext();
   if (draft.step === 0 && !draft.name.trim()) { toast('Donnez un nom à votre personnage.'); document.getElementById('name').focus(); return false; }
   if (draft.step === 1 && !currentClass()) { toast('Choisissez une classe pour continuer.'); return false; }
   if (draft.step === 2 && (!currentSpecies() || !currentBackground())) { toast('Choisissez une espèce et un historique.'); return false; }
@@ -469,6 +517,7 @@ function validStep() {
 
 function drawCreation() { root.innerHTML = creation(); bind(); }
 function route() {
+  refreshAdvancementContext();
   let hash = location.hash.slice(1);
   document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+(hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
   if(!hash||hash==='accueil'||hash==='grimoire'||hash.startsWith('grimoire/')||hash==='admin'){
@@ -496,9 +545,10 @@ function route() {
   if(hash.startsWith('ouvrir/')){openCloudCharacter(hash.slice('ouvrir/'.length));return;}
   if(hash.startsWith('brouillon/')){
     const id=hash.slice('brouillon/'.length),record=localCharacters()[id];
-    if(record){try{const character=usesCurrentRules(record)?validateSavedCharacter(record,catalogue).character:{...record,rulesVersion:record.rulesVersion??null};save(true);draft={...initial(),...character,cloudId:id,cloudRevision:record.cloudRevision||0,cloudUpdatedAt:record.cloudUpdatedAt||'',cloudSnapshot:record.cloudSnapshot||''};cloudSaveError='';save(true);hash='creation';history.replaceState(null,'','#creation');}catch{toast('Ce brouillon ne peut pas être ouvert. Le brouillon actuel est conservé.');hash='personnages';}}
+    if(record){try{const character=usesCurrentRules(record)?validateSavedCharacter(record,catalogue).character:{...record,rulesVersion:record.rulesVersion??null};save(true);draft={...initial(),...character,cloudId:id,cloudRevision:record.cloudRevision||0,cloudUpdatedAt:record.cloudUpdatedAt||'',cloudSnapshot:record.cloudSnapshot||'',...(record.advancementDraft?{advancementDraft:record.advancementDraft}:{})};cloudSaveError='';save(true);hash='creation';history.replaceState(null,'','#creation');}catch{toast('Ce brouillon ne peut pas être ouvert. Le brouillon actuel est conservé.');hash='personnages';}}
     else hash='personnages';
   }
+  if(hash==='fiche/brouillon'&&advancing()){hash='creation';history.replaceState(null,'','#creation');}
   if((hash==='creation'||hash==='fiche/brouillon')&&!usesCurrentRules(draft)){root.innerHTML=legacyCharacter();bind();return;}
   const isCreation = hash === 'creation';
   document.getElementById('breadcrumb').textContent = isCreation ? 'Créer un personnage' : hash.startsWith('fiche/') ? 'Fiche personnage' : 'Mes personnages';
@@ -508,9 +558,15 @@ function route() {
 }
 
 function bind() {
+  limitAdvancementForm();
+  root.querySelector('[data-level-up]')?.addEventListener('click',async()=>{
+    if(cloudBusy)return;const stamp=snapshotStamp(draft),id=draft.cloudId;const target=await chooseAdvancementClass();if(!target||cloudBusy||draft.cloudId!==id||snapshotStamp(draft)!==stamp)return;try{const {base,candidate}=beginAdvancement(draft,catalogueMaster,target);draft={...draft,...candidate,advancementDraft:{base,hpPolicy:'preserve'}};save(true);location.hash='creation';route();}catch(error){toast(error.message);}
+  });
+  root.querySelector('[data-cancel-advancement]')?.addEventListener('click',()=>{const base=draft.advancementDraft.base;draft={...draft,...base};delete draft.advancementDraft;save(true);location.hash='fiche/brouillon';route();toast('Montée de niveau annulée. La fiche précédente est conservée.');});
+  root.querySelector('#advancement-hp-policy')?.addEventListener('change',event=>{draft.advancementDraft.hpPolicy=event.target.value;save(true);});
   root.querySelectorAll('[data-delete-character]').forEach(button=>button.addEventListener('click',()=>removeCharacter(button.dataset.deleteCharacter,button.dataset.local==='true')));
   root.querySelector('[data-upgrade-copy]')?.addEventListener('click',()=>{save(true);draft=upgradedCharacterCopy(draft,crypto.randomUUID());beforeSuggestion=null;save(true);history.replaceState(null,'','#creation');route();toast('Copie créée : vérifiez les choix avec les nouvelles règles. L’original est conservé.');});
-  root.querySelectorAll('[data-class-select]').forEach(input=>input.addEventListener('change',()=>{draft.classChoices??={};const key=input.dataset.classSelect,values=draft.classChoices[key]||[];draft.classChoices[key]=input.checked?[...values,input.dataset.classValue]:values.filter(v=>v!==input.dataset.classValue);if(key==='companion')reconcilePrimalDamage(draft,catalogue);pruneSpellChoices(draft,catalogue);save(true);drawCreation();}));
+  root.querySelectorAll('[data-class-select]').forEach(input=>input.addEventListener('change',()=>{draft.classChoices??={};const key=input.dataset.classSelect,values=draft.classChoices[key]||[];draft.classChoices[key]=input.checked?[...values,input.dataset.classValue]:values.filter(v=>v!==input.dataset.classValue);if(key==='companion')reconcilePrimalDamage(draft,catalogue);pruneDraftSpells();save(true);drawCreation();}));
   root.querySelectorAll('[data-class-free]').forEach(input=>input.addEventListener('input',()=>{draft.classChoices??={};draft.classChoices[input.dataset.classFree]??=[];draft.classChoices[input.dataset.classFree][+input.dataset.classIndex]=input.value;save(true);}));
   root.querySelectorAll('[data-advance-mode]').forEach(button=>button.addEventListener('click',()=>{
     const level=button.dataset.advanceLevel;draft.advancements[level]={...advancementInitial(),mode:button.dataset.advanceMode};draft.originGrants[`level${level}`]=grantInitial();reconcileOrigins(draft,catalogue);save(true);drawCreation();
@@ -527,7 +583,7 @@ function bind() {
     if(input.dataset.featChoice)choice.choices[input.dataset.featChoice]=input.value;
     else if(input.dataset.featResistance)choice.choices.resistances=input.checked?[...choice.choices.resistances,input.dataset.featResistance]:choice.choices.resistances.filter(v=>v!==input.dataset.featResistance);
     else choice.choices.rituals=input.checked?[...choice.choices.rituals,input.dataset.featRitual]:choice.choices.rituals.filter(id=>id!==input.dataset.featRitual);
-    reconcileOrigins(draft,catalogue);pruneSpellChoices(draft,catalogue);save(true);drawCreation();
+    reconcileOrigins(draft,catalogue);pruneDraftSpells();save(true);drawCreation();
   }));
   root.querySelectorAll('[data-advance-notes]').forEach(input=>input.addEventListener('input',()=>{draft.advancements[input.dataset.advanceNotes].notes=input.value;save(true);}));
   root.querySelectorAll('[data-save-character]').forEach(button=>button.addEventListener('click',saveCloudCharacter));
@@ -540,12 +596,14 @@ function bind() {
       const action={type,amount,currentHp:amount,resource:form.dataset.resource,slot:form.dataset.slot};
       if(['short-rest','long-rest'].includes(type)){
         action.hitDice=Number(data.get('hitDice'));action.healing=Number(data.get('healing'));
+        if([...data.keys()].some(key=>key.startsWith('hitDice:')))action.hitDiceByType=Object.fromEntries([...data].filter(([key])=>key.startsWith('hitDice:')).map(([key,value])=>[key.slice(8),Number(value)]));
         const stamp=snapshotStamp(draft),id=draft.cloudId;
         const lines=restPreview(draft,sheetModel(draft,catalogue),action);
         if(!await confirmRest(type,lines))return;
         if(cloudBusy||draft.cloudId!==id||snapshotStamp(draft)!==stamp){toast('La fiche a changé. Vérifiez de nouveau le repos.');return;}
         action.confirmed=true;
       }
+      if(data.has('die')&&type==='set-hit-dice-used')action.die=data.get('die');
       if(data.has('deathFailures'))action.deathFailures=Number(data.get('deathFailures'));
       if(type==='death-roll'){action.die=Number(data.get('die'));action.modifier=Number(data.get('modifier'));}
       if(type==='set-death-counts'){action.successes=Number(data.get('successes'));action.failures=Number(data.get('failures'));}
@@ -570,6 +628,7 @@ function bind() {
     if(cloudBusy||!usesCurrentRules(draft))return;
     try{commitPlayChange({type:'zero-hp-exception',active:event.target.checked},'[data-zero-hp-exception]');}catch(error){toast(error.message);}
   });
+  root.querySelector('[data-ac-source]')?.addEventListener('change',event=>{draft.multiclass.armorClassSource=event.target.value;save(true);route();});
   root.querySelectorAll('[data-open-play]').forEach(button=>button.addEventListener('click',()=>{activeSheetTab='play';route();document.getElementById('sheet-panel-play')?.focus();}));
   document.getElementById('refresh-characters')?.addEventListener('click',async()=>{await refreshCloudCharacters();route();});
   const sheetTabs=[...root.querySelectorAll('[data-sheet-tab]')];
@@ -597,7 +656,7 @@ function bind() {
     document.getElementById('summary-level').textContent = `Niveau ${draft.level} · D&D 2024`;
     if(draft.level<3) draft.subclassId='';
     reconcileOrigins(draft,catalogue);
-    pruneSpellChoices(draft,catalogue);
+    pruneDraftSpells();
     save(true);
   });
   document.getElementById('name')?.addEventListener('input', event => {
@@ -613,7 +672,7 @@ function bind() {
     if(button.dataset.choice==='backgroundEquipment'&&draft.backgroundEquipment!=='A')draft.backgroundKit='';
     reconcileOrigins(draft,catalogue);
     draft.classSkills=draft.classSkills.filter(name=>classSkills(draft,catalogue).options.includes(name));
-    pruneSpellChoices(draft,catalogue);
+    pruneDraftSpells();
     save(true);
     drawCreation();
     root.querySelector(`[data-choice="${button.dataset.choice}"][data-id="${button.dataset.id}"]`)?.focus({preventScroll:true});
@@ -658,17 +717,19 @@ function bind() {
   });
   root.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => { draft.step = Number(button.dataset.step); save(true); drawCreation(); }));
   document.getElementById('next')?.addEventListener('click', () => {
+    if(advancing()&&draft.step===7){try{const result=finishAdvancement(draft.advancementDraft.base,draft,catalogueMaster,draft.advancementDraft.hpPolicy);draft={...draft,...result};delete draft.advancementDraft;save(true);location.hash='fiche/brouillon';route();if(accountId)saveCloudCharacter();else toast('Montée de niveau conservée sur cet appareil.');}catch(error){toast(error.message);}return;}
     if (!validStep()) return;
     if (draft.step === 7) { location.hash = 'fiche/brouillon'; return; }
-    const steps=visibleSteps(draft,catalogue);
+    const steps=creationSteps();
     draft.step=steps[steps.indexOf(draft.step)+1];
     save(true);
     drawCreation();
     root.querySelector('.form-panel').scrollIntoView({block:'start'});
   });
   document.getElementById('previous')?.addEventListener('click', () => {
+    if(advancing()&&draft.step===4){root.querySelector('[data-cancel-advancement]').click();return;}
     if (!draft.step) { location.hash = 'personnages'; return; }
-    const steps=visibleSteps(draft,catalogue);
+    const steps=creationSteps();
     draft.step=steps[steps.indexOf(draft.step)-1];save(true);drawCreation();
   });
   document.getElementById('save')?.addEventListener('click', () => save());
@@ -685,7 +746,7 @@ function bind() {
     [...root.querySelectorAll('[data-class-skill]')].find(el=>el.dataset.classSkill===name)?.focus({preventScroll:true});
   }));
   document.getElementById('hp-mode')?.addEventListener('change',event=>{draft.hpMode=event.target.value;draft.hpRolls={};save(true);drawCreation();});
-  root.querySelectorAll('[data-hp-level]').forEach(input=>input.addEventListener('input',()=>{draft.hpRolls[input.dataset.hpLevel]=input.value===''?null:Number(input.value);save(true);document.getElementById('hp-total').textContent=hitPoints(draft,catalogue)??'À compléter';}));
+  root.querySelectorAll('[data-hp-level]').forEach(input=>input.addEventListener('input',()=>{draft.hpRolls[input.dataset.hpLevel]=input.value===''?null:Number(input.value);if(advancing())refreshAdvancementContext();save(true);document.getElementById('hp-total').textContent=hitPoints(draft,catalogue)??'À compléter';}));
   root.querySelectorAll('[data-roll-hp]').forEach(button=>button.addEventListener('click',()=>{
     const die=Number(currentClass().niveaux['0'].de_vie.type.match(/d(\d+)/)[1]);
     const value=new Uint8Array(1);do{crypto.getRandomValues(value);}while(value[0]>=256-256%die);
@@ -694,7 +755,7 @@ function bind() {
   root.querySelectorAll('[data-spell-kind]').forEach(input=>input.addEventListener('change',()=>{
     const kind=input.dataset.spellKind;const id=input.dataset.spellId;
     draft[kind]=input.checked?[...draft[kind],id]:draft[kind].filter(s=>s!==id);
-    pruneSpellChoices(draft,catalogue);save(true);drawCreation();
+    pruneDraftSpells();save(true);drawCreation();
     [...root.querySelectorAll('[data-spell-kind]')].find(el=>el.dataset.spellKind===kind&&el.dataset.spellId===id)?.focus({preventScroll:true});
   }));
   document.getElementById('spell-search')?.addEventListener('input',event=>{spellSearch=event.target.value;root.querySelectorAll('[data-spell-card]').forEach(card=>card.hidden=!card.dataset.spellCard.includes(spellSearch.toLocaleLowerCase('fr')));});
@@ -726,17 +787,17 @@ async function init() {
   try {
     const response = await fetch('./catalogue.json');
     if (!response.ok) throw new Error('catalogue');
-    catalogue = await response.json();
+    catalogue = await response.json();catalogueMaster=catalogue;
     grimoireEntries=catalogueEntries(catalogue);
     if(accountId){try{const response=await fetch('/auth/status');if(response.ok)isAdmin=Boolean((await response.json()).isAdmin);}catch{} }
     const adminLink=document.querySelector('[data-admin-link]');if(adminLink)adminLink.hidden=!isAdmin;
-    if(usesCurrentRules(draft)){
+    if(usesCurrentRules(draft)&&!advancing()&&!draft.multiclass){
     if (!currentClass()) { draft.classId = ''; draft.equipment = ''; draft.step = Math.min(draft.step, 1); }
     if (!currentSpecies() || !currentBackground()) draft.step = Math.min(draft.step, 2);
     if (!draft.name.trim()) draft.step = 0;
     reconcileOrigins(draft,catalogue);
     draft.classSkills=draft.classSkills.filter(name=>classSkills(draft,catalogue).options.includes(name));
-    pruneSpellChoices(draft,catalogue);
+    pruneDraftSpells();
     if(!visibleSteps(draft,catalogue).includes(draft.step)) draft.step=4;
     }
     save(true);

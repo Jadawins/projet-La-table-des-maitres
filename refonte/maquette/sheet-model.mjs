@@ -10,6 +10,7 @@ import {primalCompanionSheet} from './beast-companion.mjs';
 import {speciesResources} from './species-rules.mjs';
 import {wildShapeProfiles} from './wild-shape.mjs';
 
+import {mergeMulticlassModels} from './multiclass-rules.mjs';
 export function scaledCantripDamage(effect,text,level,explicit=null){
   if(explicit)return explicit;
   const base=String(effect.valeur).match(/^(\d+)d(\d+)$/),thresholdText=String(text||'').match(/aux niveaux ([\d, et]+)/)?.[1];
@@ -21,6 +22,7 @@ export function scaledCantripDamage(effect,text,level,explicit=null){
 }
 export const detailFields = {player:'Joueur ou joueuse',pronouns:'Pronoms',age:'Âge',height:'Taille et poids',appearance:'Apparence',alignment:'Alignement',faith:'Divinité / convictions',languages:'Langues supplémentaires',traits:'Traits de personnalité',ideals:'Idéaux',bonds:'Liens',flaws:'Défauts',story:'Histoire et notes'};
 export function sheetModel(state,c) {
+  if(state.multiclass)return mergeMulticlassModels(state,c,sheetModel);
   const cls=classData(state,c), base=cls?.niveaux?.['0']||{};
   const species=c.species.find(s=>s.id===state.speciesId), background=c.backgrounds.find(b=>b.id===state.backgroundId);
   const scores=finalScores(state,background,c), mods=Object.fromEntries(ABILITIES.map(k=>[k,modifier(scores[k])]));
@@ -36,7 +38,7 @@ export function sheetModel(state,c) {
     if(feature.nom==='Frappe consacrée'&&state.sacredStrike){const selected=sacredChoices(state,c).find(o=>o.nom===state.sacredStrike);if(selected){feature.options=[selected];feature.description=selected.description;}}
   }
   const subclassFeatures=Object.entries(subclass?.niveaux||{}).filter(([n])=>Number(n)<=state.level).flatMap(([n,row])=>(row.capacites||[]).map(f=>({...f,source:`${subclass.nom} · niveau ${n}`})));
-  const benefits=domainBenefits(state,c),levelFeats=selectedLevelFeats(state,c),progression=evaluateProgression(state,c,finalScores(state,background));
+  const benefits=domainBenefits(state,c),levelFeats=selectedLevelFeats(state,c),progression=state._multiclassProgression||evaluateProgression(state,c,finalScores(state,background));
   const effects=featEffects(state,c,mods,proficiency),classEffects=classChoiceEffects(state,c);
   for(const feature of classFeatures)if(feature.nom==='Rage'&&feature.utilisations)feature.utilisations.initial=profile?.rage;
   if(['guerrier','paladin'].includes(state.classId))for(const feature of classFeatures)if(feature.utilisations){const resource=profile.resources.find(r=>r.nom===feature.nom);if(resource)feature.utilisations.initial=resource.valeur;}
@@ -79,12 +81,13 @@ export function sheetModel(state,c) {
     if(existing){existing.quantity+=quantity;existing.source+=` / ${source}`;}
     else inventory.push({nom:name,quantity,source});
   }
-  const styles=(['rodeur','paladin'].includes(state.classId)&&state.level>=2||state.classId==='guerrier')?[...(state.classChoices?.combatStyle||[]),...(subclass?.id==='guerrier_champion'&&state.level>=7?state.classChoices?.combatStyle10||[]:[])]:[];
+  const ownStyles=(['rodeur','paladin'].includes(state.classId)&&state.level>=2||state.classId==='guerrier')?[...(state.classChoices?.combatStyle||[]),...(subclass?.id==='guerrier_champion'&&state.level>=7?state.classChoices?.combatStyle10||[]:[])]:[];
+  const styles=[...new Set([...ownStyles,...(state._allStyles||[])])];
   const style=styles[0];
   for(const id of styles){const styleFeat=c.feats.find(f=>f.id===id);if(styleFeat)classFeatures.push({...styleFeat,source:'Style de combat'});}
   if(subclass?.id==='guerrier_maitre_guerre')for(const id of state.classChoices?.maneuvers||[]){const m=c.fighterSupplements.maneuvers.find(x=>x.id===id);if(m)classFeatures.push({...m,source:'Manœuvre · complément ciblé'});}
   for(const mastery of classEffects.masteries){const weapon=c.weapons.find(w=>normalize(w.nom)===mastery),rule=c.masteries?.find(b=>normalize(b.nom)===normalize(weapon?.botte));if(weapon&&rule)classFeatures.push({...rule,nom:`Botte · ${weapon.nom} · ${weapon.botte}`,source:'Propriétés martiales'});}
-  const equipment=cls?.equipment?.find(e=>e.choix===state.equipment);
+  const equipment=(state._startingEquipment?c.classes.find(x=>x.id===state._startingEquipment.classId):cls)?.equipment?.find(e=>e.choix===(state._startingEquipment?.equipment||state.equipment));
   (equipment?.contenu||[]).forEach(name=>addItem(name==='Instrument de musique au choix'?(classEffects.equipmentInstrument||name):name==="Outils d'artisan ou instrument de musique (maîtrise choisie)"?(classEffects.tools.at(-1)||name):name==='Focaliseur druidique (bâton de combat)'||name==='Focaliseur arcanique (bâton de combat)'?'Bâton de combat':name,1,'Classe'));
   if(background&&state.backgroundEquipment==='A')(background.equipement||[]).forEach(item=>addItem(backgroundItemName(state,c,item.nom),item.quantite??1,'Historique'));
   if(background&&state.backgroundEquipment==='B')money.po+=50;
@@ -177,18 +180,18 @@ export function sheetModel(state,c) {
     const full=c.spells.find(x=>x.id===s.id||normalize(x.nom)===normalize(s.nom));
     const ability=mainAbility(s.caracteristique),mod=mods[ability];
     if(state.classId==='rodeur'&&state.level>=20&&s.id==='marque_du_chasseur')s={...s,degats:(s.degats||[]).map(d=>({...d,valeur:'1d10'}))};
-    const scaling=s.niveau===0?[...String(s.niveau_superieur||'').matchAll(/(\d+d\d+)\s+au niveau\s+(\d+)/g)].filter(([,dice,level])=>+level<=state.level).at(-1)?.[1]:null;
-    let damage=(s.degats||[]).map(d=>`${s.niveau===0?scaledCantripDamage(d,s.niveau_superieur,state.level,scaling):d.valeur} ${d.type}${d.note||d.condition?` (${[d.note,d.condition].filter(Boolean).join(' ; ')})`:''}`).join(' · ');
+    const scaling=s.niveau===0?[...String(s.niveau_superieur||'').matchAll(/(\d+d\d+)\s+au niveau\s+(\d+)/g)].filter(([,dice,level])=>+level<=(state._characterLevel||state.level)).at(-1)?.[1]:null;
+    let damage=(s.degats||[]).map(d=>`${s.niveau===0?scaledCantripDamage(d,s.niveau_superieur,(state._characterLevel||state.level),scaling):d.valeur} ${d.type}${d.note||d.condition?` (${[d.note,d.condition].filter(Boolean).join(' ; ')})`:''}`).join(' · ');
     const schoolBonus=effects.schools.includes(normalize(s.ecole))?1:0;
     const featRules=effects.elements.filter(e=>(s.degats||[]).some(d=>damageKey(d.type)===damageKey(e.type))).map(e=>`${e.source} : résistance aux dégâts ${e.type} ignorée${e.rerollOnes?' ; les 1 aux dégâts comptent comme des 2':''}.`);
     if(s.id==='coup_au_but'){
-      const dice=state.level>=17?3:state.level>=11?2:state.level>=5?1:0;
+      const dice=(state._characterLevel||state.level)>=17?3:(state._characterLevel||state.level)>=11?2:(state._characterLevel||state.level)>=5?1:0;
       damage='Dégâts de l’arme avec votre modificateur d’incantation ('+(mod??'à compléter')+'), type normal ou radiant'+(dice?' + '+dice+'d6 radiants':'');
       featRules.push('Attaque avec l’arme de la composante : caractéristique d’incantation ; bonus de maîtrise seulement si vous maîtrisez cette arme.');
     }
-    if(s.id==='crosse_des_druides')featRules.push('Dé du gourdin ou du bâton enchanté à ce niveau : '+(state.level>=17?'2d6':state.level>=11?'1d12':state.level>=5?'1d10':'1d8')+' ; caractéristique d’incantation et type Force au choix pour ses attaques de corps à corps.');
-    if(s.id==='decharge_occulte')featRules.push('À ce niveau : '+(state.level>=17?4:state.level>=11?3:state.level>=5?2:1)+' rayon(s), chacun avec son propre jet d’attaque et 1d10 de force.');
-    if(s.id==='stabilisation'&&state.level>=5)s={...s,portee:(state.level>=17?36:state.level>=11?18:9)+' m'};
+    if(s.id==='crosse_des_druides')featRules.push('Dé du gourdin ou du bâton enchanté à ce niveau : '+((state._characterLevel||state.level)>=17?'2d6':(state._characterLevel||state.level)>=11?'1d12':(state._characterLevel||state.level)>=5?'1d10':'1d8')+' ; caractéristique d’incantation et type Force au choix pour ses attaques de corps à corps.');
+    if(s.id==='decharge_occulte')featRules.push('À ce niveau : '+((state._characterLevel||state.level)>=17?4:(state._characterLevel||state.level)>=11?3:(state._characterLevel||state.level)>=5?2:1)+' rayon(s), chacun avec son propre jet d’attaque et 1d10 de force.');
+    if(s.id==='stabilisation'&&(state._characterLevel||state.level)>=5)s={...s,portee:((state._characterLevel||state.level)>=17?36:(state._characterLevel||state.level)>=11?18:9)+' m'};
     if(effects.has('incantateur_d_elite')&&s.attaque){
       const range=String(s.portee).match(/^(\d+(?:[.,]\d+)?)\s*m/);
       if(range&&Number(range[1].replace(',','.'))>=3){s={...s,portee:String(s.portee).replace(range[0],(Number(range[1].replace(',','.'))+18)+' m')};featRules.push('Incantateur d’élite : portée augmentée de 18 m, déjà incluse ci-dessus.');}
@@ -279,5 +282,5 @@ export function sheetModel(state,c) {
   if(effects.has('tueur_de_mages'))classResources.push({nom:'Esprit protégé',valeur:'1 utilisation',details:'Transforme un échec de JS INT/SAG/CHA en réussite ; récupérée au Repos court ou long.'});
   if(subclass?.id==='rodeur_vagabond_feerique')classResources.push({nom:'Charme d’outremonde',valeur:mods.SAG===null?'À compléter':'+'+Math.max(1,mods.SAG),details:'Bonus à tous les tests de Charisme ; déjà inclus dans les compétences de Charisme de la fiche.'});
   if(state.classId==='moine'&&subclass?.id==='moine_credo_elements'&&state.level>=11)classResources.push({nom:'Foulée des éléments',valeur:speed+' m',details:'Vol et nage pendant l’Harmonisation uniquement ; aucune vitesse permanente supplémentaire.'});
-  return {speciesResources:speciesResources(state,c,mods,proficiency,speed),ruleNotices:[...equipmentNotices,profile?.spellcastingNote,...grantedOriginSpells(state,c).filter(s=>s.unresolved).map(s=>`Espèce : fiche de sort à relier — ${s.nom}.`)].filter(Boolean).join(' '),swim,blindvision,immunities,classEffects,classResources,attacksPerAction:profile?.attacks||1,effects,speed,darkvision,climb:effects.climb||subclass?.id==='roublard_voleur'||subclass?.id==='barbare_voie_coeur_sauvage'&&state.level>=6&&state.classChoices?.wildAspect?.[0]==='Panthère'||state.classId==='rodeur'&&state.level>=6?speed:null,resistances:[...new Set(resistances.filter(r=>!r.startsWith('variable_')).map(r=>({necrotique:'nécrotique',radiance:'radiant'}[damageKey(r)]||damageKey(r))))],cls,species,background,subclass,variant:selectedVariant(state,c),scores,mods,proficiency,skills,saves,inventory,money,attacks,ac,acNote,magic,spells,slots:profile?.slots||{},hp:hitPoints(state,c),initiative:mods.DEX===null||subclass?.id==='rodeur_traqueur_tenebres'&&mods.SAG===null?null:mods.DEX+bonuses.initiative+(subclass?.id==='rodeur_traqueur_tenebres'?mods.SAG:0),passive:perception?.value===null||perception?.value===undefined?null:10+perception.value,classFeatures,subclassFeatures,feats:originFeats(state,c),tools:[...new Set([...originTools(state,c),...effects.tools,...classEffects.tools])],errors:[...new Set(errors)],base,weaponTraining,armorTraining,progression,levelFeats,channel:profile?.channel,sparkDice:profile?.sparkDice,sacredStrike:state.classId==='clerc'&&state.level>=7?state.sacredStrike:''};
+  return {speciesResources:speciesResources({...state,level:state._characterLevel||state.level},c,mods,proficiency,speed),ruleNotices:[...equipmentNotices,profile?.spellcastingNote,...grantedOriginSpells(state,c).filter(s=>s.unresolved).map(s=>`Espèce : fiche de sort à relier — ${s.nom}.`)].filter(Boolean).join(' '),swim,blindvision,immunities,classEffects,classResources,attacksPerAction:profile?.attacks||1,effects,speed,darkvision,climb:effects.climb||subclass?.id==='roublard_voleur'||subclass?.id==='barbare_voie_coeur_sauvage'&&state.level>=6&&state.classChoices?.wildAspect?.[0]==='Panthère'||state.classId==='rodeur'&&state.level>=6?speed:null,resistances:[...new Set(resistances.filter(r=>!r.startsWith('variable_')).map(r=>({necrotique:'nécrotique',radiance:'radiant'}[damageKey(r)]||damageKey(r))))],cls,species,background,subclass,variant:selectedVariant(state,c),scores,mods,proficiency,skills,saves,inventory,money,attacks,ac,acNote,magic,spells,slots:profile?.slots||{},hp:hitPoints(state,c),initiative:mods.DEX===null||subclass?.id==='rodeur_traqueur_tenebres'&&mods.SAG===null?null:mods.DEX+bonuses.initiative+(subclass?.id==='rodeur_traqueur_tenebres'?mods.SAG:0),passive:perception?.value===null||perception?.value===undefined?null:10+perception.value,classFeatures,subclassFeatures,feats:originFeats(state,c),tools:[...new Set([...originTools(state,c),...effects.tools,...classEffects.tools])],errors:[...new Set(errors)],base,weaponTraining,armorTraining,progression,levelFeats,channel:profile?.channel,sparkDice:profile?.sparkDice,sacredStrike:state.classId==='clerc'&&state.level>=7?state.sacredStrike:''};
 }

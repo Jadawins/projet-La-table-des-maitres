@@ -82,8 +82,8 @@ export function classChoiceSpecs(state,c){
     }
   }
   if(state.classId==='barde'){
-    add('instruments','Vos trois instruments maîtrisés',3,toolOptions(c).filter(t=>t.category==='instruments_de_musique').map(t=>({id:t.id,nom:t.name})));
-    if(state.equipment!=='B')add('equipmentInstrument','Instrument de votre équipement de départ · option A',1,toolOptions(c).filter(t=>picked(state,'instruments').includes(t.id)).map(t=>({id:t.id,nom:t.name})));
+    add('instruments',state._secondaryClass?'Votre instrument maîtrisé':'Vos trois instruments maîtrisés',state._secondaryClass?1:3,toolOptions(c).filter(t=>t.category==='instruments_de_musique').map(t=>({id:t.id,nom:t.name})));
+    if(!state._secondaryClass&&state.equipment!=='B')add('equipmentInstrument','Instrument de votre équipement de départ · option A',1,toolOptions(c).filter(t=>picked(state,'instruments').includes(t.id)).map(t=>({id:t.id,nom:t.name})));
     add('expertise2','Expertises · niveau 2',2,options(skillNames(state,c,2)),2);
     add('expertise9','Expertises supplémentaires · niveau 9',2,options(skillNames(state,c,9).filter(n=>!picked(state,'expertise2').includes(n))),9);
     if(sub?.id==='barde_college_savoir'){
@@ -99,7 +99,8 @@ export function classChoiceSpecs(state,c){
     if(state.level>=7){const feature=cls.niveaux[7]?.capacites?.find(f=>f.nom==='Élan élémentaire');add('elementalStrike','Votre Élan élémentaire',1,(feature?.options||[]).map(o=>({id:o.nom,nom:o.nom})),7);}
   }
   extraClassChoices(state,c,{add,options,weaponOptions,skillNames,sub,languages,lookupSpell});
-  return specs;
+  for(const spec of specs)if(['combatStyle','combatStyle10'].includes(spec.key))spec.options=spec.options.filter(option=>!(state._allStyles||[]).includes(option.id));
+  return state._secondaryClass?specs.filter(spec=>spec.key!=='monkTool'):specs;
 }
 export function classChoiceErrors(state,c){
   const errors=[];
@@ -298,7 +299,7 @@ export function classChoiceEffects(state,c){
   if(sub?.id==='guerrier_maitre_guerre')for(const id of picked(state,'artisanTool')){const tool=toolOptions(c).find(t=>t.id===id);if(tool)tools.push(tool.name);}
   if(state.classId==='roublard'){expertise.push(...picked(state,'expertise1'));if(state.level>=6)expertise.push(...picked(state,'expertise6'));languages.push('Jargon des voleurs');if(sub?.id==='roublard_assassin')for(const tool of c.tools.filter(t=>/deguisement|empoisonneur/.test(key(t.id))))tools.push(tool.nom);}
   if(state.classId==='magicien'&&state.level>=2)expertise.push(...picked(state,'scholar'));
-  if(state.classId==='moine')for(const id of picked(state,'monkTool')){const tool=toolOptions(c).find(t=>t.id===id);if(tool)tools.push(tool.name);}
+  if(state.classId==='moine'&&!state._secondaryClass)for(const id of picked(state,'monkTool')){const tool=toolOptions(c).find(t=>t.id===id);if(tool)tools.push(tool.name);}
   const cls=c.classes.find(x=>x.id===state.classId);
   if(Array.isArray(cls?.niveaux?.[0]?.maitrises_outils))for(const id of cls.niveaux[0].maitrises_outils)tools.push(c.tools.find(t=>key(t.id)===key(id)||key(id).includes('herboriste')&&key(t.nom).includes('herboriste'))?.nom||id.replaceAll('_',' '));
   for(const spec of specs.filter(s=>s.kind==='names'&&/Languages$/.test(s.key)))languages.push(...picked(state,spec.key));

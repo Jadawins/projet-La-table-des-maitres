@@ -23,6 +23,11 @@ export function validatePlayState(raw){
     }
   }
   if(raw.hitDiceUsed!==undefined){if(!integer(raw.hitDiceUsed))throw fault('Le suivi des dés de vie est invalide.');result.hitDiceUsed=raw.hitDiceUsed;}
+  if(raw.hitDiceUsedByType!==undefined){
+    if(!raw.hitDiceUsedByType||typeof raw.hitDiceUsedByType!=='object'||Array.isArray(raw.hitDiceUsedByType)||Object.keys(raw.hitDiceUsedByType).some(die=>!['1d6','1d8','1d10','1d12'].includes(die))||Object.values(raw.hitDiceUsedByType).some(n=>!integer(n)))throw fault('Le suivi des types de dés de vie est invalide.');
+    result.hitDiceUsedByType={...raw.hitDiceUsedByType};
+    if(Object.values(result.hitDiceUsedByType).reduce((a,b)=>a+b,0)!==result.hitDiceUsed)throw fault('Le total des dés de vie dépensés ne correspond pas aux types.');
+  }
   if(raw.lastRest!==undefined){
     if(!raw.lastRest||!['short','long'].includes(raw.lastRest.kind)||typeof raw.lastRest.at!=='string'||!Number.isFinite(Date.parse(raw.lastRest.at))||new Date(raw.lastRest.at).toISOString()!==raw.lastRest.at)throw fault('Le dernier repos est invalide.');
     result.lastRest={kind:raw.lastRest.kind,at:raw.lastRest.at};
@@ -55,6 +60,7 @@ export function resourceRecovery(id,state){
   return longOnly.has(id)?{short:0,long:'all'}:null;
 }
 export function playResources(state,model){
+  if(model.classModels)return model.classModels.flatMap(({state:own,model:part})=>playResources(own,part).map(row=>({...row,id:own.classId===state.classId?row.id:own.classId+'-'+row.id,label:part.cls.nom+' · '+row.label})));
   const result=[],seen=new Set();
   function add(id,label,max,details){
     if(!integer(max,1))return;
@@ -77,17 +83,20 @@ export function playView(state,model){
   const stored=state.playState===undefined?null:validatePlayState(state.playState);
   const maxHp=integer(model.hp,1)?model.hp:null;
   const hitDiceMax=integer(state.level,1,20)?state.level:0;
-  const slots=Object.entries(model.slots||{}).filter(([rank,max])=>/^[1-9]$/.test(rank)&&integer(max,1)).map(([rank,max])=>{
-    const pact=state.classId==='occultiste',id=pact?'pact':'spell-'+rank,used=stored?.slotUsed?.[id]||0;
+  const slotRows=[...Object.entries(model.slots||{}).map(([rank,max])=>[rank,max,model.pactSlots===undefined&&state.classId==='occultiste']),...Object.entries(model.pactSlots||{}).map(([rank,max])=>[rank,max,true])];
+  const slots=slotRows.filter(([rank,max])=>/^[1-9]$/.test(rank)&&integer(max,1)).map(([rank,max,pact])=>{
+    const id=pact?'pact':'spell-'+rank,used=stored?.slotUsed?.[id]||0;
     return {id,rank:Number(rank),max,used,remaining:Math.max(0,max-used),pact};
   });
   const rawHp=stored&&maxHp!==null?Math.max(0,maxHp-stored.hpLost):null;
   const effects=conditionView(stored,rawHp,model.speed);
+  const groups=(model.hitDiceGroups||[{die:model.base?.de_vie?.type||'—',max:hitDiceMax}]).map((g,index)=>{const used=stored?.hitDiceUsedByType?.[g.die]??(index===0?stored?.hitDiceUsed||0:0);return {...g,used,remaining:Math.max(0,g.max-used)};});
+  const hitDiceUsed=groups.reduce((sum,g)=>sum+g.used,0);
   return {
     started:Boolean(stored),maxHp,
     currentHp:effects.life==='dead'?0:rawHp,effects,
     tempHp:stored?.tempHp??0,
-    slots,hitDice:{max:hitDiceMax,used:stored?.hitDiceUsed||0,remaining:Math.max(0,hitDiceMax-(stored?.hitDiceUsed||0)),die:model.base?.de_vie?.type||'—'},
+    slots,hitDice:{max:hitDiceMax,used:hitDiceUsed,remaining:groups.reduce((sum,g)=>sum+g.remaining,0),die:groups.map(g=>g.max+g.die.slice(1)).join(' + '),groups},
     lastRest:stored?.lastRest||null,
     resources:playResources(state,model).map(r=>({...r,used:stored?.used[r.id]||0,remaining:Math.max(0,r.max-(stored?.used[r.id]||0))})),
   };
@@ -130,6 +139,11 @@ export function applyPlayAction(state,model,action){
     next.hpLost=view.maxHp-amount;
   }else if(action.type==='set-temp')next.tempHp=amount;
   else if(action.type==='set-hit-dice-used'){
+    if(view.hitDice.groups.length>1||next.hitDiceUsedByType){
+      const group=view.hitDice.groups.find(g=>g.die===action.die);if(!group||amount>group.max)throw fault('Choisissez un type de dé et une dépense valide.');
+      next.hitDiceUsedByType=Object.fromEntries(view.hitDice.groups.map(g=>[g.die,g.die===action.die?amount:g.used]));next.hitDiceUsed=Object.values(next.hitDiceUsedByType).reduce((a,b)=>a+b,0);
+      return validatePlayState(next);
+    }
     if(amount>view.hitDice.max)throw fault('La dépense ne peut pas dépasser le nombre de dés de vie de la fiche.');
     next.hitDiceUsed=amount;
   }else if(['spend-slot','restore-slot'].includes(action.type)){
@@ -200,18 +214,24 @@ function restOutcome(state,model,action){
   if(!short&&action.type!=='long-rest')throw fault('Repos inconnu.');
   const next=validatePlayState(state.playState);
   if(short){
-    const count=action.hitDice,healing=action.healing;
+    let count=action.hitDice;const healing=action.healing;
+    if(view.hitDice.groups.length>1||next.hitDiceUsedByType){
+      if(!action.hitDiceByType||typeof action.hitDiceByType!=='object'||Object.keys(action.hitDiceByType).some(d=>!view.hitDice.groups.some(g=>g.die===d)))throw fault('Indiquez les dés dépensés pour chaque type.');
+      next.hitDiceUsedByType={};count=0;
+      for(const group of view.hitDice.groups){const used=action.hitDiceByType[group.die]??0;if(!integer(used,0,group.remaining))throw fault('Il ne reste pas assez de dés de vie de ce type.');next.hitDiceUsedByType[group.die]=group.used+used;count+=used;}
+    }
     if(!integer(count,0,view.hitDice.remaining)||!integer(healing)||count===0&&healing!==0||count>0&&healing<count)throw fault('Indiquez les dés de vie disponibles dépensés et le total de leurs soins : au moins 1 PV par dé, ou zéro sans dé.');
     next.hitDiceUsed=(next.hitDiceUsed||0)+count;
     next.hpLost=view.maxHp-Math.min(view.maxHp,view.currentHp+healing);
-  }else{next.hpLost=0;next.tempHp=0;next.hitDiceUsed=0;}
+  }else{next.hpLost=0;next.tempHp=0;next.hitDiceUsed=0;if(next.hitDiceUsedByType)next.hitDiceUsedByType=Object.fromEntries(view.hitDice.groups.map(g=>[g.die,0]));}
   for(const resource of view.resources){
     const recovery=resource.recovery?.[short?'short':'long'];
     if(recovery==='all')next.used[resource.id]=0;
     else if(integer(recovery,1))next.used[resource.id]=Math.max(0,resource.used-recovery);
   }
   for(const slot of view.slots)if(!short||slot.pact){next.slotUsed||={};next.slotUsed[slot.id]=0;}
-  if(next.exhaustion!==undefined&&(!short||state.classId==='rodeur'&&state.level>=10))next.exhaustion=Math.max(0,next.exhaustion-1);
+  const rangerLevel=state.multiclass?.classes.find(row=>row.classId==='rodeur')?.level??(state.classId==='rodeur'?state.level:0);
+  if(next.exhaustion!==undefined&&(!short||rangerLevel>=10))next.exhaustion=Math.max(0,next.exhaustion-1);
   return clearOnPositiveHp(next,view.maxHp);
 }
 

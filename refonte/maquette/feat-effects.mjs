@@ -113,7 +113,7 @@ function numericText(text,mods,pb,ability){
   return text;
 }
 export function featEffects(state,c,mods,proficiency){
-  const rows=selectedLevelFeats(state,c),all=[...originFeats(state,c).filter(g=>g.feat).map(g=>({...g,label:g.label||(g.slot==='human'?'Don humain':'Don d’historique')})),...rows.filter(r=>r.feat.categorie!=='origine').map(r=>({...r,label:`Don du niveau ${r.level}`}))];
+  const rows=state._allLevelFeats||selectedLevelFeats(state,c),all=[...originFeats(state,c).filter(g=>g.feat).map(g=>({...g,label:g.label||(g.slot==='human'?'Don humain':'Don d’historique')})),...rows.filter(r=>r.feat.categorie!=='origine'||state._allLevelFeats&&r.classId!==state.classId).map(r=>({...r,label:`Don du niveau ${r.level}`}))];
   const ids=new Set(all.map(g=>g.feat.id)),has=id=>ids.has(id);
   const mastered=[],expertise=[],elements=[];
   for(const row of rows){

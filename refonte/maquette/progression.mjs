@@ -28,12 +28,12 @@ export function eligibleLevelFeats(state,c,level,scores,taken=[]){
   const training=classTraining({...state,level},c);
   return c.feats.filter(f=>{
     if(f.categorie==='archive')return false;
-    const p=f.prerequis||{};if((p.niveau||1)>level||p.classe)return false;
+    const p=f.prerequis||{};if((p.niveau||1)>(state._characterLevel||level)||p.classe)return false;
     if(taken.includes(f.id)&&!(f.effets||[]).some(e=>key(e.valeur).includes('repetable')))return false;
     if(f.id==='initie_a_la_magie'&&taken.filter(id=>id===f.id).length>=3)return false;
     const required=p.caracteristique;if(!required)return true;
-    if(required==='aptitude Sorts ou Magie de pacte')return classMagic(state,c,level).enabled;
-    if(required==='aptitude Sorts')return state.classId!=='occultiste'&&classMagic(state,c,level).enabled;
+    if(required==='aptitude Sorts ou Magie de pacte')return state._hasSpellcasting||state._hasPactMagic||classMagic(state,c,level).enabled;
+    if(required==='aptitude Sorts')return state._hasSpellcasting||state.classId!=='occultiste'&&classMagic(state,c,level).enabled;
     const thresholds=[...required.matchAll(/(FOR|DEX|CON|INT|SAG|CHA)\s+(\d+)/g)];
     if(thresholds.length)return thresholds.some(([,a,n])=>Number.isFinite(scores[a])&&scores[a]>=+n);
     if(key(required)==='foroudex')return true;
@@ -44,13 +44,13 @@ export function eligibleLevelFeats(state,c,level,scores,taken=[]){
     return false;
   });
 }
-export function evaluateProgression(state,c,baseScores,through=state.level){
-  const scores={...baseScores},rows=[],issues=[],taken=originFeatIds(state,c);
+export function evaluateProgression(state,c,baseScores,through=state.level,from=1){
+  const scores={...baseScores},rows=[],issues=[],taken=[...originFeatIds(state,c),...(state._priorFeatIds||[])];
   const cls=c.classes.find(x=>x.id===state.classId),limit=Math.min(through,state.level);
   const improvements=improvementLevels({...state,level:limit},c);
   const passiveLevels=Object.entries(cls?.niveaux||{}).filter(([n,row])=>+n>0&&+n<=limit&&(row.capacites||[]).some(f=>!f.conditions&&(f.effets||[]).some(e=>e.type==='augmentation_caracteristique'&&!e.conditions))).map(([n])=>+n);
   const passives=level=>{for(const f of cls?.niveaux?.[level]?.capacites||[])if(!f.conditions)for(const e of f.effets||[])if(e.type==='augmentation_caracteristique'&&!e.conditions)for(const a of e.cibles||[]){if(Number.isFinite(scores[a]))scores[a]=Math.max(scores[a],Math.min(e.maximum??30,scores[a]+e.valeur));}};
-  for(const level of [...new Set([...improvements,...passiveLevels])].sort((a,b)=>a-b)){
+  for(const level of [...new Set([...improvements,...passiveLevels])].sort((a,b)=>a-b).filter(n=>n>=from)){
     if(!improvements.includes(level)){passives(level);continue;}
     const choice={...advancementInitial(),...state.advancements?.[level]};
     const improvement=c.classes.find(x=>x.id===state.classId).niveaux[level].amelioration;
@@ -100,7 +100,7 @@ export function activeFeatures(state,c){
 }
 export function classTraining(state,c){
   const base=c.classes.find(x=>x.id===state.classId)?.niveaux?.[0]||{};
-  const armors=[...(base.maitrises_armures||[])],weapons=[...(base.maitrises_armes||[])];
+  const armors=[...(base.maitrises_armures||[]),...(state._otherTraining?.armors||[])],weapons=[...(base.maitrises_armes||[]),...(state._otherTraining?.weapons||[])];
   const variant=c.species.find(s=>s.id===state.speciesId)?.variantes?.find(v=>v.id===state.variantId);
   if(variant?.traits_speciaux?.some(t=>t.id==='maitrise_armures_naines'))armors.push('armures_legeres','armures_intermediaires');
   for(const feature of activeFeatures(state,c)){

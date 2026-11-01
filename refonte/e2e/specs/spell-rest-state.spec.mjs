@@ -26,6 +26,7 @@ test('Druide : emplacements, dés physiques, annulation, repos court/long et sau
  await restButton(page,'long').click();await expect(page.getByRole('dialog')).toContainText('PV temporaires : 4 → 0');await page.getByRole('dialog').screenshot({path:info.outputPath('confirmation-repos-long.png')});await confirm(page,'long').click();
  await expect(page.locator('[data-play-current]')).toHaveText(String(hp));await expect(slot.locator('[data-slot-remaining]')).toHaveText('4');await expect(page.locator('[data-hit-dice-remaining]')).toHaveText('3');await expect(page.locator('[data-last-rest]')).toContainText('long');
  await page.getByRole('button',{name:'Enregistrer les modifications',exact:true}).click();await expect(page.locator('.sheet-save-status')).toContainText('Enregistré dans votre compte');
+ await expect(page.getByRole('button',{name:'Enregistrer les modifications',exact:true})).toBeEnabled();
  await page.locator('[data-play-slot="spell-1"]').scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('emplacements-et-repos.png')});
  const context=await browser.newContext({storageState:auth,baseURL:origin});try{const other=await context.newPage();await other.goto('/atelier/#ouvrir/'+id);await other.getByRole('tab',{name:'En partie',exact:true}).click();await expect(other.locator('[data-play-slot="spell-1"] [data-slot-remaining]')).toHaveText('4');await expect(other.locator('[data-last-rest]')).toContainText('long');}finally{await context.close();}
 });

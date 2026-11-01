@@ -5,7 +5,7 @@ const expose=doc=>({id:doc.client_id,revision:doc.revision,updatedAt:doc.updated
 export function createCharacterStore({collection,validate,catalogueFingerprint}){
   return {
     async list(userId){
-      const docs=await collection.find({user_id:userId,deleted_at:{$exists:false}},{projection:{client_id:1,revision:1,updated_at:1,status:1,'character.name':1,'character.level':1,'character.classId':1,'character.speciesId':1,'character.backgroundId':1}}).sort({updated_at:-1}).limit(200).toArray();
+      const docs=await collection.find({user_id:userId,deleted_at:{$exists:false}},{projection:{client_id:1,revision:1,updated_at:1,status:1,'character.name':1,'character.level':1,'character.classId':1,'character.multiclass.classes.classId':1,'character.multiclass.classes.level':1,'character.speciesId':1,'character.backgroundId':1}}).sort({updated_at:-1}).limit(200).toArray();
       return docs.map(d=>({id:d.client_id,revision:d.revision,updatedAt:d.updated_at.toISOString(),status:d.status,...d.character}));
     },
     async get(userId,id){if(!validCharacterId(id))throw fault(404,'Personnage introuvable.');const doc=await collection.findOne({user_id:userId,client_id:id});if(!doc||doc.deleted_at)throw fault(404,'Personnage introuvable.');return expose(doc);},
@@ -26,11 +26,13 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       let result=validate(input);
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
       if((previous?.character?.playState?.deathSaves?.dead||previous?.character?.playState?.exhaustion===6)&&input.playState&&input.playState.deathSaves===undefined&&input.playState.hpLost!==previous.character.playState.hpLost)throw fault(409,'Le suivi vital a changé. Actualisez la fiche pour gérer un retour à la vie ; votre brouillon est conservé.');
+      if(previous?.character?.multiclass&&input.multiclass===undefined)throw fault(409,'Cette fiche est multiclassée. Actualisez le site avant de modifier ses niveaux.');
+      if(previous?.character?.playState?.hitDiceUsedByType&&input.playState?.hitDiceUsedByType===undefined&&input.playState?.hitDiceUsed!==undefined&&input.playState.hitDiceUsed!==previous.character.playState.hitDiceUsed)throw fault(409,'Les types de dés de vie ont changé. Actualisez le site avant de modifier leurs dépenses.');
       // An older open client may omit the optional session field. Preserve it.
       if(input.playState===undefined&&previous?.character?.playState!==undefined)result=validate({...input,playState:previous.character.playState});
       else if(input.playState&&previous?.character?.playState){
         const preserved={...input.playState};let missing=false;
-        for(const key of ['slotUsed','hitDiceUsed','lastRest','conditions','exhaustion','deathSaves','zeroHpConscious'])if(input.playState[key]===undefined&&previous.character.playState[key]!==undefined){preserved[key]=previous.character.playState[key];missing=true;}
+        for(const key of ['slotUsed','hitDiceUsed','hitDiceUsedByType','lastRest','conditions','exhaustion','deathSaves','zeroHpConscious'])if(input.playState[key]===undefined&&previous.character.playState[key]!==undefined){preserved[key]=previous.character.playState[key];missing=true;}
         if(missing)result=validate({...input,playState:preserved});
       }
       const contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');

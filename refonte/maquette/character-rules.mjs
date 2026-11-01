@@ -1,3 +1,4 @@
+import {multiclassProgression,multiclassHitPoints} from './multiclass-rules.mjs';
 export const ABILITIES = ['FOR','DEX','CON','INT','SAG','CHA'];
 export const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 export const skillKey = value => normalize(value) === 'intuition' ? 'perspicacite' : normalize(value);
@@ -16,6 +17,8 @@ export function backgroundBonuses(state, background) {
   return result;
 }
 export function finalScores(state, background, catalogue) {
+  if(catalogue&&state._multiclassScores)return {...state._multiclassScores};
+  if(catalogue&&state.multiclass)return multiclassProgression(state,catalogue).scores;
   const bonuses = backgroundBonuses(state, background);
   const base=Object.fromEntries(ABILITIES.map(key => [key, Number.isInteger(state.scores[key]) ? Math.min(20,state.scores[key] + bonuses[key]) : null]));
   return catalogue?evaluateProgression(state,catalogue,base).scores:base;
@@ -66,7 +69,7 @@ export function clericProfile(state, catalogue) {
     proficiency:inheritedCleric(state,catalogue,'bonusMaitrise'),channel:inheritedCleric(state,catalogue,'canal_divin'),sparkDice:inheritedCleric(state,catalogue,'etincelle_divine_des'),
   };
 }
-export function classProfile(state,c){const p=state.classId==='clerc'?clericProfile(state,c):buildClassProfile(state,c);return p&&state.classId==='clerc'?{...p,castingAbility:'SAG',hasMagic:true}:p;}
+export function classProfile(state,c){const p=state.classId==='clerc'?clericProfile(state,c):buildClassProfile(state,c);const result=p&&state.classId==='clerc'?{...p,castingAbility:'SAG',hasMagic:true}:p;return result&&state._characterLevel?{...result,proficiency:2+Math.floor((state._characterLevel-1)/4)}:result;}
 export function pruneSpellChoices(state, catalogue) {
   const profile = classProfile(state,catalogue);
   const allowedCantrips = new Set(profile?.cantrips.map(s => s.id) || []);
@@ -95,6 +98,8 @@ export function classSkills(state,catalogue) {
   return {count:data?.nombre||0,options:options.filter(name=>!automatic.has(skillKey(name))).map(name=>catalogue.skills.find(s=>skillKey(s.nom)===skillKey(name))?.nom||(name==='Intuition'?'Perspicacité':name))};
 }
 export function hitPoints(state,catalogue) {
+  if(state._multiclassHp!==undefined)return state._multiclassHp;
+  if(state.multiclass)return multiclassHitPoints(state,catalogue);
   const cls = classData(state,catalogue);
   const die = Number(cls?.niveaux?.['0']?.de_vie?.type?.match(/d(\d+)/)?.[1]);
   const background = catalogue.backgrounds.find(b => b.id === state.backgroundId);
@@ -116,7 +121,7 @@ export function aptitudeErrors(state,catalogue) {
   const skills = classSkills(state,catalogue);
   if ((state.classSkills || []).length !== skills.count || new Set((state.classSkills || []).map(skillKey)).size !== skills.count || (state.classSkills || []).some(name => !skills.options.some(allowed => skillKey(name) === skillKey(allowed)))) errors.push(`Choisissez ${skills.count} compétences de classe distinctes.`);
   if (hitPoints(state,catalogue) === null) errors.push('Renseignez les points de vie de chaque niveau.');
-  errors.push(...evaluateProgression(state,catalogue,finalScores(state,catalogue.backgrounds.find(b=>b.id===state.backgroundId))).issues);
+  errors.push(...(state._multiclassProgression||evaluateProgression(state,catalogue,finalScores(state,catalogue.backgrounds.find(b=>b.id===state.backgroundId)))).issues);
   errors.push(...originGrantErrors(state,catalogue,originFeats(state,catalogue).filter(g=>g.slot.startsWith('level')||g.slot.startsWith('invocation'))));
   errors.push(...featChoiceErrors(state,catalogue),...classChoiceErrors(state,catalogue));
   const sacred=sacredChoices(state,catalogue);

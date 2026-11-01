@@ -1,0 +1,48 @@
+{
+  "status": "deployed",
+  "release": "20261101T095447Z",
+  "previousRelease": "20261101T083829Z",
+  "rulesVersion": "phb2024-2026-10-28",
+  "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+  "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+  "backup": "/root/backups/myrpgtable-persistence-20261101T095447Z",
+  "backupDocuments": 3280,
+  "persistenceBefore": {
+    "passed": 22,
+    "realCharactersUnchanged": true
+  },
+  "persistenceAfter": {
+    "passed": 22,
+    "realCharactersUnchanged": true
+  },
+  "httpChecks": 15,
+  "verification": {
+    "status": "passed",
+    "scope": "advancement-and-multiclass-with-frozen-catalogue",
+    "completedAt": "2026-11-01T09:54:45.979Z",
+    "sourceHash": "05ae0c4252abb305bca878660047a3a4aa26245d67c3243cfb4180a2d5b4eee8",
+    "baselineCommit": "3f68e4d11f80b87e4d92871387a29f7ec02d80d3",
+    "failed": 0,
+    "skipped": 0,
+    "rulesVersion": "phb2024-2026-10-28",
+    "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+    "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+    "unitPassed": 4308,
+    "unitCampaigns": [
+      {
+        "name": "advancement-all-unit-tests.txt",
+        "passed": 4292
+      },
+      {
+        "name": "advancement-high-level-tests-final.txt",
+        "passed": 12
+      },
+      {
+        "name": "advancement-validation-tests.txt",
+        "passed": 4
+      }
+    ],
+    "browserJourneys": 229,
+    "qualification": "A 4292-test complete calculation campaign passed. Sixteen additional checks then validate multiclass ladders through total level 20, the empty Scholar eligibility case and invalid class identifiers after isolated validation hardenings, including preservation of Scholar eligibility at its acquisition time and composition of Expertise/Jack of All Trades with separate class skill bonuses. Browser scope covers all 48 subclasses at levels 1, 3 and 20; 17 advancement journeys include all 12 added classes, physical HP dice, cancellation/reload, another device, shared/Pact slots, mixed Hit Dice, PDF and Scholar with no qualifying skill. Intermediate progression is covered by 912 successive single-class transitions, 228 multiclass transitions and the 132 ordered class pairs in unit tests. The main 229-journey campaign passed 227 cases. One assertion incorrectly required an explicit empty optional field; another screenshot step raced the final save rerender. Both test issues were corrected and all 17 advancement plus three rest journeys passed again on the final runtime after the Scholar history and skill-composition fixes. An earlier exploratory broad browser campaign was stopped deliberately and is not counted as a completed campaign. No catalogue revision, automatic rolls, combat module, mobile implementation or migration of real characters."
+  }
+}

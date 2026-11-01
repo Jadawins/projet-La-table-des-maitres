@@ -32,3 +32,7 @@ Quand ces conditions sont remplies, la version est figée : plus de recherche co
 - [Errata du Manuel des joueurs](https://www.dndbeyond.com/sources/dnd/sae/players-handbook)
 - Journal des corrections : `data/rules-2024-corrections.json`.
 - Suivi de l'audit : `audit/rules-2024-status.json`.
+
+## Lots applicatifs après le gel
+
+Le 1er novembre 2026, l’utilisateur autorise un lot distinct de montée de niveau puis de multiclassage, en autonomie jusqu’à sa mise en place. Cette autorisation étend le périmètre applicatif initial ci-dessus ; elle ne rouvre pas le catalogue documentaire ni la veille des règles. Le niveau total reste limité à 20. Le téléphone, les nouveaux livres et les combats restent hors de ce lot ; la concentration est réservée au futur module MJ/combats. Bilan : `access/EVOLUTION-PERSONNAGES.md`.
