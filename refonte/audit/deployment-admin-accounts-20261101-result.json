@@ -1,0 +1,49 @@
+{
+  "status": "deployed",
+  "release": "20261101T141134Z",
+  "previous": "20261101T095447Z",
+  "completedAt": "2026-11-01T14:13:03.542Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261101T141134Z",
+  "backupDocuments": 3280,
+  "archiveSha256": "553ba63b9984f0f889d626cb1b7552bdd3c8e53d1d02eff2948327e03e728f08",
+  "databaseBackupSha256": "052881d976fa7b389708fca6e5b051fa93d54a07c57865daa74195d638c689de",
+  "verification": {
+    "status": "passed",
+    "scope": "admin-accounts-with-unchanged-characters-baseline",
+    "sourceHash": "0d4896e93072bc39e76e7c93320ce7937e4b4a8b15d4c181e0de5c6c287fe1dd",
+    "unitPassed": 22,
+    "browserJourneys": 8,
+    "failed": 0,
+    "skipped": 0
+  },
+  "persistence": {
+    "beforePassed": 22,
+    "afterPassed": 22,
+    "realCharactersUnchanged": true,
+    "realCharacterCount": 5
+  },
+  "accounts": {
+    "before": {
+      "status": "passed",
+      "completedAt": "2026-11-01T14:12:36.416Z",
+      "registeredAccounts": 2,
+      "directoryAccounts": 2,
+      "readOnly": true
+    },
+    "after": {
+      "status": "passed",
+      "completedAt": "2026-11-01T14:13:04.499Z",
+      "registeredAccounts": 2,
+      "directoryAccounts": 2,
+      "readOnly": true
+    },
+    "sameAuthProject": true,
+    "samePublicKey": true,
+    "administratorPresent": true,
+    "administratorEmailConfirmed": true
+  },
+  "httpChecksPassed": 15,
+  "productionService": "myrpgtable-refonte",
+  "interactiveProductionLogin": "Not performed; browser journeys use isolated accounts and the real Supabase directory was verified read-only.",
+  "credentials": "Kept exclusively in the private server environment; no credential values recorded."
+}

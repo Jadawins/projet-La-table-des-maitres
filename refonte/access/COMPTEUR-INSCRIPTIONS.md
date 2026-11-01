@@ -1,6 +1,6 @@
 # Compteur des inscriptions — correctif du 1er novembre 2026
 
-Correctif préparé et testé. Activation en production en attente de la clé serveur Supabase dans `/var/www/myrpgtable/shared/.env` : lors du contrôle, `SUPABASE_SERVICE_ROLE_KEY` est déclaré mais vide. La livraison active reste `20261101T095447Z` jusqu’à validation de l’accès réel aux comptes.
+Correctif publié le 1er novembre 2026, livraison `20261101T141134Z`. La clé serveur renseignée dans l’environnement privé du VPS est fonctionnelle ; aucune valeur de clé n’est enregistrée dans le dépôt.
 
 ## Correction
 
@@ -18,7 +18,9 @@ La connexion des joueurs utilise la clé publique et la validation des jetons pa
 
 - 22 tests ciblés réussis : source réelle des identités, pagination, inscription sans connexion, suppression, destinataire absent de MongoDB, privilèges et erreurs.
 - Huit parcours navigateur réussis : nouvelle inscription et mise à jour du compteur, actualisation automatique, conservation du formulaire, arrêt des requêtes après navigation, indisponibilité, administration, attribution et PDF.
-- Avant publication : contrôle réel en lecture seule de Supabase, sauvegarde, vérification de persistance, bascule et contrôle après déploiement. Les scripts refusent la publication si la clé serveur manque ou si le comptage réel échoue.
+- Publication : contrôle réel en lecture seule réussi avant et après bascule (deux comptes, administrateur présent et confirmé). Le projet Supabase et la clé publique de connexion sont identiques à ceux de la livraison précédente.
+- Sauvegarde de 3 280 documents ; 22 parcours de persistance sur des fiches de test avant puis après bascule et quinze accès HTTP réussis. Les personnages réels restent identiques, dont les deux fiches Youpi matin au niveau 3, révision 2.
+- Sauvegarde et retour arrière : `/root/backups/myrpgtable-persistence-20261101T141134Z/`. [Relevé de publication](../audit/deployment-admin-accounts-20261101-result.json). Aucune inscription réelle ni connexion interactive n’a été créée pour ces contrôles.
 
 Preuve locale : `audit/verify-admin-accounts.mjs`. Contrôle réel : `audit/check-admin-accounts.mjs`.
 

@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {sourceFingerprint} from '../e2e/fingerprint.mjs';
 const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),root=path.dirname(base);
 const baselineCommit='9ca784ab1e0ec3c9d80203a04ddcb6eabada2c47';
-const unchanged=spawnSync('git',['diff','--exit-code',baselineCommit,'--','refonte/data','refonte/catalogue.mjs','refonte/rules-revision.mjs','refonte/editorial-revision.mjs','refonte/tests/fixtures/rules-2024.json','refonte/access/rules-release.json','refonte/access/server.mjs','refonte/access/character-store.mjs','refonte/maquette',':(exclude)refonte/maquette/admin-view.mjs'],{cwd:root,encoding:'utf8'});
+const unchanged=spawnSync('git',['diff','--exit-code',baselineCommit,'--','refonte/data','refonte/catalogue.mjs','refonte/rules-revision.mjs','refonte/editorial-revision.mjs','refonte/tests/fixtures/rules-2024.json','refonte/access/rules-release.json','refonte/access/server.mjs','refonte/access/character-store.mjs','refonte/maquette',':(exclude)refonte/maquette/admin-view.mjs',':(exclude)refonte/data/current-release.txt'],{cwd:root,encoding:'utf8'});
 assert.equal(unchanged.status,0,'Only administration is in scope; authentication, characters and frozen rules must stay unchanged');
 const log=fs.readFileSync(path.join(base,'.local/admin-accounts-tests.txt'),'utf8');
 const count=key=>Number(log.match(new RegExp('(?:ℹ|#) '+key+' (\\d+)'))?.[1]??-1);
