@@ -1,0 +1,67 @@
+{
+  "status": "deployed",
+  "release": "20261101T143701Z",
+  "previous": "20261101T141134Z",
+  "completedAt": "2026-11-01T14:38:43.297Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261101T143701Z",
+  "backupDocuments": 3280,
+  "archiveSha256": "2f59e17658d1de9dbfe9471f6922387b39cc8eaa56a2e79d7384eea6a8f4e4fd",
+  "databaseBackupSha256": "5faf54cbd9c566e0710fa5a358d79beba4bb9dd60490d5647638b700cd901210",
+  "verification": {
+    "status": "passed",
+    "scope": "groups-with-frozen-characters-baseline",
+    "sourceHash": "ba415dff6d82e1642122689bd15bb801a39702b6371cec6dd72bf06a65b12b8c",
+    "unitPassed": 48,
+    "browserJourneys": 12,
+    "failed": 0,
+    "skipped": 0
+  },
+  "groups": {
+    "before": {
+      "status": "passed",
+      "completedAt": "2026-11-01T14:38:13.956Z",
+      "checks": 8,
+      "collection": "refonte_groupes_controles",
+      "coverage": [
+        "create-and-reopen",
+        "membership-privacy",
+        "idempotent-join",
+        "owned-character-reference",
+        "role-permissions",
+        "invitation-rotation",
+        "removal-and-departure",
+        "soft-archive"
+      ],
+      "realCharactersWritten": false
+    },
+    "after": {
+      "status": "passed",
+      "completedAt": "2026-11-01T14:38:43.297Z",
+      "checks": 8,
+      "collection": "refonte_groupes_controles",
+      "coverage": [
+        "create-and-reopen",
+        "membership-privacy",
+        "idempotent-join",
+        "owned-character-reference",
+        "role-permissions",
+        "invitation-rotation",
+        "removal-and-departure",
+        "soft-archive"
+      ],
+      "realCharactersWritten": false
+    },
+    "realCollection": "groupes_refonte"
+  },
+  "persistence": {
+    "beforePassed": 22,
+    "afterPassed": 22,
+    "realCharactersUnchanged": true,
+    "realCharacterCount": 5
+  },
+  "registeredAccounts": 2,
+  "httpChecksPassed": 17,
+  "productionService": "myrpgtable-refonte",
+  "interactiveProductionLogin": "Not performed; browser journeys use isolated accounts. MongoDB control groups and character checks pass before and after deployment.",
+  "scope": "Create and join private groups, invitations, owned-character references, membership removal/departure and soft archive. No dated sessions, preparation or combat module yet."
+}

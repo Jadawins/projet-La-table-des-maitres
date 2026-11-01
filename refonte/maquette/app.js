@@ -1,3 +1,4 @@
+import {mountGroups,disposeGroups} from './group-view.mjs';
 import {multiclassPrerequisites,classRecords} from './multiclass-rules.mjs';
 import {beginAdvancement,advancementErrors,advancementPreview,finishAdvancement,advancementClassBase,advancementContext} from './character-advancement.mjs';
 import {downloadCharacterPDF} from './character-pdf.mjs';
@@ -517,9 +518,11 @@ function validStep() {
 
 function drawCreation() { root.innerHTML = creation(); bind(); }
 function route() {
+  disposeGroups(root);
   refreshAdvancementContext();
   let hash = location.hash.slice(1);
-  document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+(hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+  document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+(hash.startsWith('groupes')?'groupes':hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+  if(hash==='groupes'||hash.startsWith('groupes/')){document.getElementById('breadcrumb').textContent='Mes groupes';mountGroups(root,{id:hash.split('/')[1]||'',catalogue,enabled:Boolean(accountId)});return;}
   if(!hash||hash==='accueil'||hash==='grimoire'||hash.startsWith('grimoire/')||hash==='admin'){
     document.getElementById('breadcrumb').textContent=hash.startsWith('grimoire')?'Grimoire':hash==='admin'?'Administration':'Accueil';
     if(hash==='admin'){if(isAdmin)mountAdmin(root);else root.innerHTML='<h1>Accès réservé</h1><p>Cette page est réservée à l’administration.</p>';}

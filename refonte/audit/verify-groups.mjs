@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import {sourceFingerprint} from '../e2e/fingerprint.mjs';
+const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),root=path.dirname(base);
+const baselineCommit='50d809be0';
+const unchanged=spawnSync('git',['diff','--exit-code',baselineCommit,'--','refonte/data','refonte/catalogue.mjs','refonte/rules-revision.mjs','refonte/editorial-revision.mjs','refonte/access/rules-release.json','refonte/access/character-store.mjs','refonte/access/admin-store.mjs','refonte/access/auth-accounts.mjs','refonte/maquette',':(exclude)refonte/data/current-release.txt',':(exclude)refonte/maquette/app.js',':(exclude)refonte/maquette/index.html',':(exclude)refonte/maquette/group-view.mjs',':(exclude)refonte/maquette/groups.css'],{cwd:root,encoding:'utf8'});
+assert.equal(unchanged.status,0,'Frozen rules, character handling and existing views must remain unchanged');
+const baselineServer=spawnSync('git',['show',baselineCommit+':refonte/access/server.mjs'],{cwd:root,encoding:'utf8'});
+assert.equal(baselineServer.status,0);
+const current=fs.readFileSync(path.join(base,'access/server.mjs'),'utf8');
+const authBlock=s=>s.slice(s.indexOf('  async function authFetch'),s.indexOf('  function rateAllowed'));
+assert.equal(authBlock(current),authBlock(baselineServer.stdout),'Authentication verification and sessions must remain unchanged');
+const log=fs.readFileSync(path.join(base,'.local/groups-tests.txt'),'utf8');
+const count=key=>Number(log.match(new RegExp('(?:ℹ|#) '+key+' (\\d+)'))?.[1]??-1);
+assert.deepEqual(['tests','pass','fail','skipped'].map(count),[48,48,0,0]);
+const report=JSON.parse(fs.readFileSync(path.join(base,'e2e/test-results/results.json'),'utf8'));
+assert.deepEqual([report.stats.expected,report.stats.unexpected,report.stats.skipped,report.stats.flaky],[12,0,0,0]);
+const proof={status:'passed',scope:'groups-with-frozen-characters-baseline',sourceHash:await sourceFingerprint(),completedAt:new Date().toISOString(),baselineCommit,failed:0,skipped:0,unitPassed:48,browserJourneys:12,
+  qualification:'Private groups, local group roles, invitations, membership and owned character references. Frozen rules and character store unchanged. Authentication verification unchanged. Existing portal, admin refresh and PDF journeys pass. Production requires backup, isolated Mongo group checks and unchanged real-character checks before and after publication.'};
+fs.writeFileSync(path.join(base,'.local/groups-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

@@ -1,0 +1,10 @@
+.group-forms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:28px 0 40px}
+.group-forms form,[data-group-form="character"]{display:grid;gap:18px;max-width:640px}
+.group-forms .field,[data-group-form="character"] .field{margin:0}
+.group-description{white-space:pre-wrap;max-width:850px;overflow-wrap:anywhere}
+.group-members{list-style:none;padding:0;margin:0}.group-members li{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid #51425e}
+.group-members li:last-child{border-bottom:0}.group-members strong{font-size:18px}.group-members span{font-size:12px;color:#d8b666;margin-left:12px}.group-members p{margin:8px 0 0}
+.group-invite{max-width:1000px}.group-invite input{font-family:monospace;letter-spacing:2px;max-width:320px}.group-invite .field{margin:20px 0}
+[data-group-feedback]{color:#e8ca88;white-space:pre-line;overflow-wrap:anywhere}[data-group-feedback]:empty{display:none}
+[data-group-form="character"]+.portal-card,.group-members+.portal-card{margin-top:24px}#content>.portal-card:has(.group-members),#content>.portal-card:has([data-group-form="character"]){margin:24px 0}
+@media(max-width:850px){.group-forms{grid-template-columns:1fr}.group-members li{flex-wrap:wrap}}

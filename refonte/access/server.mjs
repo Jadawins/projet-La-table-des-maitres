@@ -8,10 +8,10 @@ const hash=s=>createHash('sha256').update(s).digest('hex');
 const cookie=(name,value,age=28800)=>`${name}=${value}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${age}`;
 const getCookie=(req,name)=>(req.headers.cookie||'').split(';').map(s=>s.trim()).find(s=>s.startsWith(name+'='))?.slice(name.length+1)||'';
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null,adminEmails=[],catalogueText=null,origin='https://myrpgtable.fr',fetcher=fetch,now=Date.now}) {
+export function createGateway({supabaseUrl,anonKey,appRoot,characters,groups=null,admin=null,adminEmails=[],catalogueText=null,origin='https://myrpgtable.fr',fetcher=fetch,now=Date.now}) {
   if(!supabaseUrl||!anonKey)throw new Error('Configuration de connexion absente');
   const sessions=new Map(),pending=new Map(),attempts=new Map();
-  const files={'multiclass-rules.mjs':'text/javascript; charset=utf-8','character-advancement.mjs':'text/javascript; charset=utf-8','condition-rules.mjs':'text/javascript; charset=utf-8','condition-view.mjs':'text/javascript; charset=utf-8','play-state.mjs':'text/javascript; charset=utf-8','play-view.mjs':'text/javascript; charset=utf-8','portal-view.mjs':'text/javascript; charset=utf-8','admin-view.mjs':'text/javascript; charset=utf-8','character-pdf.mjs':'text/javascript; charset=utf-8','portal.css':'text/css; charset=utf-8','assets/fiche-personnage-2024.pdf':'application/pdf','assets/pdf-lib-1.17.1.mjs':'text/javascript; charset=utf-8','assets/pdf-lib-LICENSE.md':'text/plain; charset=utf-8','index.html':'text/html; charset=utf-8','app.js':'text/javascript; charset=utf-8','character-rules.mjs':'text/javascript; charset=utf-8','origin-rules.mjs':'text/javascript; charset=utf-8','character-version.mjs':'text/javascript; charset=utf-8','character-storage.mjs':'text/javascript; charset=utf-8','cleric-progression.mjs':'text/javascript; charset=utf-8','progression.mjs':'text/javascript; charset=utf-8','class-profiles.mjs':'text/javascript; charset=utf-8','beast-companion.mjs':'text/javascript; charset=utf-8','species-rules.mjs':'text/javascript; charset=utf-8','wild-shape.mjs':'text/javascript; charset=utf-8','class-magic.mjs':'text/javascript; charset=utf-8','extra-classes.mjs':'text/javascript; charset=utf-8','warlock-options.mjs':'text/javascript; charset=utf-8','feat-effects.mjs':'text/javascript; charset=utf-8','sheet-model.mjs':'text/javascript; charset=utf-8','sheet-view.mjs':'text/javascript; charset=utf-8','style.css':'text/css; charset=utf-8','assets/fond-bibliotheque-sombre.png':'image/png'};
+  const files={'group-view.mjs':'text/javascript; charset=utf-8','groups.css':'text/css; charset=utf-8','multiclass-rules.mjs':'text/javascript; charset=utf-8','character-advancement.mjs':'text/javascript; charset=utf-8','condition-rules.mjs':'text/javascript; charset=utf-8','condition-view.mjs':'text/javascript; charset=utf-8','play-state.mjs':'text/javascript; charset=utf-8','play-view.mjs':'text/javascript; charset=utf-8','portal-view.mjs':'text/javascript; charset=utf-8','admin-view.mjs':'text/javascript; charset=utf-8','character-pdf.mjs':'text/javascript; charset=utf-8','portal.css':'text/css; charset=utf-8','assets/fiche-personnage-2024.pdf':'application/pdf','assets/pdf-lib-1.17.1.mjs':'text/javascript; charset=utf-8','assets/pdf-lib-LICENSE.md':'text/plain; charset=utf-8','index.html':'text/html; charset=utf-8','app.js':'text/javascript; charset=utf-8','character-rules.mjs':'text/javascript; charset=utf-8','origin-rules.mjs':'text/javascript; charset=utf-8','character-version.mjs':'text/javascript; charset=utf-8','character-storage.mjs':'text/javascript; charset=utf-8','cleric-progression.mjs':'text/javascript; charset=utf-8','progression.mjs':'text/javascript; charset=utf-8','class-profiles.mjs':'text/javascript; charset=utf-8','beast-companion.mjs':'text/javascript; charset=utf-8','species-rules.mjs':'text/javascript; charset=utf-8','wild-shape.mjs':'text/javascript; charset=utf-8','class-magic.mjs':'text/javascript; charset=utf-8','extra-classes.mjs':'text/javascript; charset=utf-8','warlock-options.mjs':'text/javascript; charset=utf-8','feat-effects.mjs':'text/javascript; charset=utf-8','sheet-model.mjs':'text/javascript; charset=utf-8','sheet-view.mjs':'text/javascript; charset=utf-8','style.css':'text/css; charset=utf-8','assets/fond-bibliotheque-sombre.png':'image/png'};
   const json=(res,status,value,headers={})=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store',...headers});res.end(JSON.stringify(value));};
   const redirect=(res,to,headers={})=>{res.writeHead(302,{Location:to,'Cache-Control':'no-store',...headers});res.end();};
   async function body(req,max=32768){let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>max){const error=new Error('Le personnage est trop volumineux.');error.status=413;throw error;}}try{return JSON.parse(raw||'{}');}catch{const error=new Error('Le contenu envoyé est invalide.');error.status=400;throw error;}}
@@ -61,6 +61,24 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null
     try{
       const url=new URL(req.url,origin),route=url.pathname;
       if(['POST','PUT','PATCH','DELETE'].includes(req.method)&&req.headers.origin!==origin)return json(res,403,{error:'Rechargez la page de connexion.'});
+      if(route==='/atelier/api/groupes'||route.startsWith('/atelier/api/groupes/')){
+        const session=await sessionFor(req);if(!session)return json(res,401,{error:'Reconnectez-vous pour ouvrir vos groupes.'});
+        if(!groups)return json(res,503,{error:'Les groupes sont momentanément indisponibles.'});
+        const parts=route.slice('/atelier/api/groupes'.length).split('/').filter(Boolean);
+        if(req.method==='GET'&&!parts.length)return json(res,200,{groups:await groups.list(session)});
+        if(req.method==='GET'&&parts.length===1)return json(res,200,await groups.get(session,parts[0]));
+        if(req.method!=='POST')return json(res,405,{error:'Opération indisponible.'});
+        const input=await body(req,8192);
+        if(!input||typeof input!=='object'||Array.isArray(input))return json(res,400,{error:'Renseignez les informations du groupe.'});
+        if(!parts.length){if(!rateAllowed(req,'group-create:'+session.userId,20,3600000))return json(res,429,{error:'Trop de créations. Réessayez dans une heure.'});return json(res,201,await groups.create(session,input));}
+        if(parts.length===1&&parts[0]==='rejoindre'){
+          if(!rateAllowed(req,'group-join:'+session.userId,20))return json(res,429,{error:'Trop de tentatives. Réessayez dans quinze minutes.'});
+          return json(res,200,await groups.join(session,input));
+        }
+        const actions={invitation:'rotate',fermer:'closeInvitation',personnage:'attach',quitter:'leave',retirer:'removeMember',archiver:'archive'};
+        if(parts.length===2&&actions[parts[1]])return json(res,200,await groups[actions[parts[1]]](session,parts[0],input));
+        return json(res,405,{error:'Opération indisponible.'});
+      }
       if(route.startsWith('/atelier/api/admin/')){
         const session=await sessionFor(req);if(!session)return json(res,401,{error:'Reconnectez-vous.'});
         if(!session.isAdmin)return json(res,403,{error:'Accès réservé à l’administration.'});
@@ -152,7 +170,7 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,admin=null
       }
       return json(res,404,{error:'Page introuvable.'});
     }catch(error){
-      if([400,404,409,413].includes(error.status))return json(res,error.status,{error:error.message});
+      if([400,403,404,409,413].includes(error.status))return json(res,error.status,{error:error.message});
       return json(res,503,{error:'Le service est temporairement indisponible. Vos données locales sont conservées ; réessayez dans un instant.'});
     }
   });
