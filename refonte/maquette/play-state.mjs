@@ -1,4 +1,5 @@
 // Optional session state. Calculated character rules are never changed here.
+import {CONDITIONS,validateConditionFields,conditionView,freshDeathSaves,addDeathFailures,resolveDeathRoll,clearOnPositiveHp} from './condition-rules.mjs';
 const LIMIT=100000;
 const fault=message=>{const error=new Error(message);error.status=400;return error;};
 const integer=(value,min=0,max=LIMIT)=>Number.isInteger(value)&&value>=min&&value<=max;
@@ -26,7 +27,7 @@ export function validatePlayState(raw){
     if(!raw.lastRest||!['short','long'].includes(raw.lastRest.kind)||typeof raw.lastRest.at!=='string'||!Number.isFinite(Date.parse(raw.lastRest.at))||new Date(raw.lastRest.at).toISOString()!==raw.lastRest.at)throw fault('Le dernier repos est invalide.');
     result.lastRest={kind:raw.lastRest.kind,at:raw.lastRest.at};
   }
-  return result;
+  return {...result,...validateConditionFields(raw)};
 }
 
 // Only real expendable reserves are listed. A damage die, DC, range or bonus
@@ -80,9 +81,11 @@ export function playView(state,model){
     const pact=state.classId==='occultiste',id=pact?'pact':'spell-'+rank,used=stored?.slotUsed?.[id]||0;
     return {id,rank:Number(rank),max,used,remaining:Math.max(0,max-used),pact};
   });
+  const rawHp=stored&&maxHp!==null?Math.max(0,maxHp-stored.hpLost):null;
+  const effects=conditionView(stored,rawHp,model.speed);
   return {
     started:Boolean(stored),maxHp,
-    currentHp:stored&&maxHp!==null?Math.max(0,maxHp-stored.hpLost):null,
+    currentHp:effects.life==='dead'?0:rawHp,effects,
     tempHp:stored?.tempHp??0,
     slots,hitDice:{max:hitDiceMax,used:stored?.hitDiceUsed||0,remaining:Math.max(0,hitDiceMax-(stored?.hitDiceUsed||0)),die:model.base?.de_vie?.type||'—'},
     lastRest:stored?.lastRest||null,
@@ -99,21 +102,31 @@ export function applyPlayAction(state,model,action){
     return {version:1,hpLost:view.maxHp-action.currentHp,tempHp:0,used:{},slotUsed:{},hitDiceUsed:0};
   }
   if(!view.started)throw fault('Commencez le suivi avant de modifier les compteurs.');
+  if(['set-condition','set-exhaustion','zero-hp-exception','death-roll','stabilize','set-death-counts','declare-dead','revive'].includes(action.type))return applyLifeAction(state,model,action,view);
   if(['short-rest','long-rest'].includes(action.type)){
     if(action.confirmed!==true)throw fault('Confirmez le repos et les récupérations avant de les appliquer.');
     const next=restOutcome(state,model,action);
     next.lastRest={kind:action.type==='short-rest'?'short':'long',at:new Date().toISOString()};
-    return next;
+    return validatePlayState(next);
   }
   const next=validatePlayState(state.playState);
   const amount=action.amount;
   if(!integer(amount,['set-current','set-temp','set-hit-dice-used'].includes(action.type)?0:1))throw fault('Saisissez un nombre entier valide.');
   if(action.type==='damage'){
+    if(view.effects.life==='dead')throw fault('La mort est déclarée. Utilisez la correction du suivi vital si nécessaire.');
     const absorbed=Math.min(next.tempHp,amount);next.tempHp-=absorbed;
     next.hpLost=view.maxHp-Math.max(0,view.currentHp-(amount-absorbed));
-  }else if(action.type==='heal')next.hpLost=view.maxHp-Math.min(view.maxHp,view.currentHp+amount);
+    if(view.currentHp===0){
+      if(action.deathFailures!==undefined&&!integer(action.deathFailures,0,2))throw fault('Déclarez zéro, un ou deux échecs pour ces dégâts.');
+      next.deathSaves=addDeathFailures(view.effects.death,action.deathFailures??0);
+    }
+  }else if(action.type==='heal'){
+    if(view.effects.life==='dead')throw fault('Un soin ordinaire ne relève pas une créature morte. Utilisez la reprise après retour à la vie.');
+    next.hpLost=view.maxHp-Math.min(view.maxHp,view.currentHp+amount);
+  }
   else if(action.type==='set-current'){
     if(amount>view.maxHp)throw fault('Les PV actuels ne peuvent pas dépasser le maximum.');
+    if(view.effects.life==='dead'&&amount>0)throw fault('Confirmez explicitement le retour à la vie avant de rétablir des PV.');
     next.hpLost=view.maxHp-amount;
   }else if(action.type==='set-temp')next.tempHp=amount;
   else if(action.type==='set-hit-dice-used'){
@@ -133,12 +146,56 @@ export function applyPlayAction(state,model,action){
     if(action.type==='restore'&&amount>resource.used)throw fault('Vous ne pouvez pas rendre plus que ce qui a été dépensé.');
     next.used[resource.id]=resource.used+(action.type==='spend'?amount:-amount);
   }else throw fault('Action de suivi inconnue.');
-  return next;
+  const hpAfter=Math.max(0,view.maxHp-next.hpLost);
+  if(view.currentHp>0&&hpAfter===0&&!next.deathSaves?.dead){next.deathSaves=freshDeathSaves();next.zeroHpConscious=false;addProne(next);}
+  if(view.currentHp===0&&hpAfter>0&&view.effects.active.some(c=>c.id==='unconscious'))addProne(next);
+  return validatePlayState(clearOnPositiveHp(next,view.maxHp));
+}
+
+function addProne(play){play.conditions=[...new Set([...(play.conditions||[]),'prone'])];}
+function applyLifeAction(state,model,action,view){
+  const next=validatePlayState(state.playState),death=view.effects.death;
+  if(action.type==='set-condition'){
+    if(!CONDITIONS.some(c=>c.id===action.condition)||typeof action.active!=='boolean')throw fault('Choisissez un état connu.');
+    next.conditions=(next.conditions||[]).filter(id=>id!==action.condition);
+    if(action.active)next.conditions.push(action.condition);
+    else if(action.condition==='unconscious'&&view.effects.explicit.includes('unconscious'))addProne(next);
+  }else if(action.type==='set-exhaustion'){
+    if(!integer(action.amount,0,6))throw fault('Choisissez un niveau d’Épuisement de 0 à 6.');
+    if(action.amount===6&&action.confirmed!==true)throw fault('Le niveau 6 entraîne la mort. Confirmez ce changement.');
+    next.exhaustion=action.amount;
+    if(action.amount===6){next.deathSaves={...death,stable:false,dead:true};next.hpLost=view.maxHp;}
+  }else if(action.type==='zero-hp-exception'){
+    if(view.currentHp!==0||death.dead||typeof action.active!=='boolean')throw fault('Cette exception se déclare uniquement à zéro PV, hors mort déclarée.');
+    next.zeroHpConscious=action.active;
+  }else if(action.type==='declare-dead'){
+    if(action.confirmed!==true)throw fault('Confirmez la déclaration de mort.');
+    next.deathSaves={...death,stable:false,dead:true};next.hpLost=view.maxHp;
+  }else if(action.type==='revive'){
+    if(!death.dead||action.confirmed!==true||!integer(action.amount,1,view.maxHp)||view.effects.exhaustion===6)throw fault('Confirmez le retour à la vie, un total de PV valide et un Épuisement inférieur à 6.');
+    next.deathSaves=freshDeathSaves();next.zeroHpConscious=false;next.hpLost=view.maxHp-action.amount;
+  }else{
+    if(view.currentHp!==0)throw fault('Les jets de mort sont suivis uniquement à zéro PV.');
+    if(action.type==='death-roll'){
+      if(death.dead||death.stable)throw fault('Aucun jet de mort à effectuer dans cet état.');
+      const result=resolveDeathRoll(death,action.die,action.modifier??0,view.effects.exhaustion);next.deathSaves=result.death;
+      if(result.revived){next.hpLost=view.maxHp-1;next.zeroHpConscious=false;if(view.effects.active.some(c=>c.id==='unconscious'))addProne(next);}
+    }else if(action.type==='stabilize'){
+      if(death.dead)throw fault('Une créature morte ne peut pas être stabilisée.');
+      next.deathSaves={...freshDeathSaves(),stable:true};
+    }else if(action.type==='set-death-counts'){
+      if(action.confirmed!==true||!integer(action.successes,0,3)||!integer(action.failures,0,3)||action.successes===3&&action.failures===3)throw fault('Confirmez des compteurs valides, avec un seul seuil de trois à la fois.');
+      if(view.effects.exhaustion===6&&action.failures<3)throw fault('Corrigez d’abord le niveau 6 d’Épuisement avant de retirer la mort déclarée.');
+      next.hpLost=view.maxHp;
+      next.deathSaves=action.successes===3?{...freshDeathSaves(),stable:true}:{successes:action.successes,failures:action.failures,stable:false,dead:action.failures===3};
+    }
+  }
+  return validatePlayState(clearOnPositiveHp(next,view.maxHp));
 }
 
 function restOutcome(state,model,action){
   const view=playView(state,model);
-  if(!view.started||view.maxHp===null||view.currentHp<1)throw fault('Le suivi doit être commencé avec au moins 1 PV pour prendre ce repos.');
+  if(!view.started||view.maxHp===null||view.currentHp<1||view.effects.life==='dead')throw fault('Le suivi doit être commencé avec au moins 1 PV pour prendre ce repos.');
   const short=action.type==='short-rest';
   if(!short&&action.type!=='long-rest')throw fault('Repos inconnu.');
   const next=validatePlayState(state.playState);
@@ -154,12 +211,14 @@ function restOutcome(state,model,action){
     else if(integer(recovery,1))next.used[resource.id]=Math.max(0,resource.used-recovery);
   }
   for(const slot of view.slots)if(!short||slot.pact){next.slotUsed||={};next.slotUsed[slot.id]=0;}
-  return next;
+  if(next.exhaustion!==undefined&&(!short||state.classId==='rodeur'&&state.level>=10))next.exhaustion=Math.max(0,next.exhaustion-1);
+  return clearOnPositiveHp(next,view.maxHp);
 }
 
 export function restPreview(state,model,action){
   const before=playView(state,model),next=restOutcome(state,model,action),after=playView({...state,playState:next},model);
   const lines=[`PV : ${before.currentHp} → ${after.currentHp} / ${before.maxHp}`,`PV temporaires : ${before.tempHp} → ${after.tempHp}`,`Dés de vie disponibles : ${before.hitDice.remaining} → ${after.hitDice.remaining} / ${before.hitDice.max}`];
+  if(before.effects.exhaustion)lines.push(`Épuisement : ${before.effects.exhaustion} → ${after.effects.exhaustion}`);
   for(const slot of after.slots){const old=before.slots.find(s=>s.id===slot.id);lines.push(`${slot.pact?'Pacte':'Emplacements'} · niveau ${slot.rank} : ${old.remaining} → ${slot.remaining} / ${slot.max}`);}
   for(const resource of after.resources){const old=before.resources.find(r=>r.id===resource.id);if(old.remaining!==resource.remaining)lines.push(`${resource.label} : ${old.remaining} → ${resource.remaining} / ${resource.max}`);}
   const manual=after.resources.filter(r=>!r.recovery).map(r=>r.label);

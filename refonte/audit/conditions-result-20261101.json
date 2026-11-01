@@ -1,0 +1,35 @@
+{
+  "status": "deployed",
+  "release": "20261101T083829Z",
+  "previousRelease": "20261101T075917Z",
+  "rulesVersion": "phb2024-2026-10-28",
+  "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+  "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+  "backup": "/root/backups/myrpgtable-persistence-20261101T083829Z",
+  "backupDocuments": 3280,
+  "persistenceBefore": {
+    "passed": 10,
+    "realCharactersUnchanged": true
+  },
+  "persistenceAfter": {
+    "passed": 10,
+    "realCharactersUnchanged": true
+  },
+  "httpChecks": 15,
+  "verification": {
+    "status": "passed",
+    "scope": "conditions-with-unchanged-rules-baseline",
+    "sourceHash": "30ce453d4a70217048a6e52ec7b97a7014739858527e90456a9c2190e3e1e1b7",
+    "completedAt": "2026-11-01T08:38:28.661Z",
+    "baselineCommit": "dded859e531d5791445a57d2c75ea1591a1d788b",
+    "failed": 0,
+    "skipped": 0,
+    "rulesVersion": "phb2024-2026-10-28",
+    "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+    "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+    "unitPassed": 4053,
+    "browserJourneys": 15,
+    "visualChecks": 2,
+    "qualification": "Optional manual conditions and their induced states; contextual Speed and Exhaustion penalty displayed without rewriting base sheet statistics. Physical death-save dice and other modifiers are entered explicitly; natural 1/20, stabilization, remaining Prone, confirmed death/revival and Exhaustion 6 are covered. Damage at zero HP uses a player-declared failure count; instant death, special survival abilities, effect durations and other contextual combat effects remain table decisions. Long rests reduce tracked Exhaustion by one, as do short rests for Ranger level 10+. Old clients preserve optional fields and cannot silently heal a declared dead character. No catalogue revision, automatic rolls or existing-character migration."
+  }
+}

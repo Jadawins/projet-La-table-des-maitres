@@ -2,7 +2,7 @@
 
 Mise à jour : 1er novembre 2026.
 
-La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le suivi en partie couvre les PV, les réserves prises en charge, les emplacements et les repos explicites. Le téléphone, le multiclasse, les nouveaux livres et un moteur de combat automatisé restent hors périmètre. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
+La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le suivi en partie couvre les PV, les réserves prises en charge, les emplacements, les repos explicites, les états, l’Épuisement et les sauvegardes contre la mort. Le téléphone, le multiclasse, les nouveaux livres et un moteur de combat automatisé restent hors périmètre. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
 
 ## Version locale stabilisée
 
@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261101T075917Z`, publiée le 1er novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261101T083829Z`, publiée le 1er novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261101T083829Z` ajoute les états et leurs états induits, l’Épuisement avec sa réduction au repos, les sauvegardes contre la mort saisies avec vos dés, la stabilisation et les retours à la vie confirmés. La Vitesse en partie et le malus d’Épuisement sont rappelés sans réécrire les statistiques de base ; les exceptions restent décidées à la table. Les 4 053 tests unitaires, 15 parcours navigateur et dix contrôles MongoDB avant/après passent. Les personnages réels restent inchangés, dont Youpi matin au niveau 3. Sauvegarde de 3 280 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261101T083829Z/`. Voir [états et jets contre la mort](access/ETATS-ET-JETS-DE-MORT.md).
 
 La livraison `20261101T075917Z` complète En partie avec les emplacements ordinaires et de pacte, les dés de vie et les repos court/long. Les récupérations sont montrées avant confirmation ; les jets de soins sont saisis manuellement et les aptitudes nécessitant un choix restent manuelles. Les anciens clients préservent les nouveaux champs facultatifs. Astuce mystique suit une utilisation du rite, indépendamment du nombre d’emplacements récupérables. Les 4 039 tests unitaires, 13 parcours navigateur et dix contrôles MongoDB avant/après passent, sans modification des personnages réels. Sauvegarde de 3 280 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261101T075917Z/`. Voir [emplacements et repos](access/EMPLACEMENTS-ET-REPOS.md).
 

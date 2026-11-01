@@ -34,4 +34,4 @@ Un ancien onglet qui omet ce nouveau champ ne l’efface pas côté serveur. Une
 
 Preuve : `audit/verify-play-state.mjs`. Résultats de publication : `audit/play-state-result-20261031.json`. Sauvegarde et retour arrière : `/root/backups/myrpgtable-persistence-20261031T151138Z/`.
 
-La suite emplacements/repos est livrée le 1er novembre 2026, avec son propre bilan dans EMPLACEMENTS-ET-REPOS.md.
+La suite emplacements/repos est livrée le 1er novembre 2026, avec son propre bilan dans EMPLACEMENTS-ET-REPOS.md. Les [états, l’Épuisement et sauvegardes contre la mort](ETATS-ET-JETS-DE-MORT.md) complètent ensuite ce suivi, sans migration des personnages.

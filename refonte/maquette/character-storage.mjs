@@ -1,6 +1,7 @@
 import {ABILITIES,backgroundBonuses,clericProfile,aptitudeErrors,spellErrors,classProfile} from './character-rules.mjs';
 import {originErrors,grantInitial,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
-import {detailFields} from './sheet-model.mjs';
+import {detailFields,sheetModel} from './sheet-model.mjs';
+import {clearOnPositiveHp} from './condition-rules.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial} from './cleric-progression.mjs';
 import {featChoicesInitial} from './feat-effects.mjs';
 import {validatePlayState} from './play-state.mjs';
@@ -64,6 +65,6 @@ export function validateSavedCharacter(input,catalogue){
     if(values.slice().sort((a,b)=>a-b).join(',')!==ABILITIES.map(key=>out.scores[key]).sort((a,b)=>a-b).join(','))issues.push('Répartition des résultats à vérifier.');
   }
   if(!classProfile(out,catalogue))issues.push('Parcours de classe encore en cours de construction.');
-  if(input.playState!==undefined)out.playState=validatePlayState(input.playState);
+  if(input.playState!==undefined){out.playState=validatePlayState(input.playState);if(out.playState.deathSaves||out.playState.zeroHpConscious)clearOnPositiveHp(out.playState,sheetModel(out,catalogue).hp);}
   return {character:out,status:issues.length?'draft':'ready',issues:[...new Set(issues)]};
 }

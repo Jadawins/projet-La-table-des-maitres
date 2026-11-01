@@ -5,7 +5,7 @@ import {CURRENT_RULES_VERSION,usesCurrentRules,upgradedCharacterCopy} from './ch
 import {backgroundAbilities,backgroundBonuses,finalScores,modifier,visibleSteps,classProfile,clericProfile,pruneSpellChoices,spellErrors,classSkills,hitPoints,aptitudeErrors} from './character-rules.mjs';
 import {renderSheet} from './sheet-view.mjs';
 import {detailFields,sheetModel} from './sheet-model.mjs';
-import {applyPlayAction,validatePlayState,restPreview} from './play-state.mjs';
+import {applyPlayAction,validatePlayState,restPreview,playView} from './play-state.mjs';
 import {characterSnapshot,validateSavedCharacter} from './character-storage.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial,evaluateProgression,featAbilityOptions,sacredChoices} from './cleric-progression.mjs';
 import {grantInitial,backgroundFeat,humanFeats,originFeats,originSizeOptions,selectedVariant,speciesSkillOptions,originSkills,originTools,backgroundToolOptions,grantOptions,magicFeatLists,magicFeatProfile,grantedOriginSpells,originBonuses,reconcileOrigins,originErrors,speciesChoiceSpecs,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
@@ -137,6 +137,21 @@ function confirmCharacterRemoval(name,local){
     dialog.innerHTML=`<h2 id="delete-character-title">${local?'Supprimer ce brouillon ?':'Supprimer ce personnage ?'}</h2><p><strong>${esc(name||'Sans nom')}</strong></p><p>${local?'Ce brouillon sera retiré de cet appareil. Une éventuelle version enregistrée dans votre compte sera conservée.':'Ce personnage sera retiré de votre compte et de cet appareil.'}</p><form method="dialog"><button class="button secondary" value="cancel" autofocus>Annuler</button><button class="button danger" value="delete">${local?'Supprimer le brouillon':'Supprimer le personnage'}</button></form>`;
     dialog.addEventListener('close',()=>{const confirmed=dialog.returnValue==='delete';dialog.remove();resolve(confirmed);},{once:true});
     document.body.append(dialog);dialog.showModal();
+  });
+}
+function commitPlayChange(action,focusSelector){
+  const opened=['.condition-picker','.life-corrections','.play-dice-correction'].filter(selector=>root.querySelector(selector)?.open);
+  draft.playState=applyPlayAction(draft,sheetModel(draft,catalogue),action);
+  cloudSaveError='';activeSheetTab='play';save(true);route();
+  opened.forEach(selector=>{const details=root.querySelector(selector);if(details)details.open=true;});
+  (focusSelector?root.querySelector(focusSelector):document.getElementById('sheet-panel-play'))?.focus({preventScroll:true});
+  toast(storageAvailable?'Suivi conservé sur cet appareil. Enregistrez la fiche pour le retrouver dans votre compte.':'Suivi modifié, mais le stockage local est indisponible. Enregistrez la fiche dans votre compte.');
+}
+function confirmLifeChange(title,lines){
+  return new Promise(resolve=>{
+    const dialog=document.createElement('dialog');dialog.className='confirm-dialog';dialog.setAttribute('aria-labelledby','life-confirm-title');
+    dialog.innerHTML='<h2 id="life-confirm-title">'+esc(title)+'</h2><ul>'+lines.map(line=>'<li>'+esc(line)+'</li>').join('')+'</ul><p>Les états déclarés manuellement sont conservés. Validez les exceptions et les effets de retour à la vie à votre table.</p><form method="dialog"><button class="button secondary" value="cancel" autofocus>Annuler</button><button class="button primary" value="confirm">Confirmer la modification</button></form>';
+    dialog.addEventListener('close',()=>{const ok=dialog.returnValue==='confirm';dialog.remove();resolve(ok);},{once:true});document.body.append(dialog);dialog.showModal();
   });
 }
 function confirmRest(type,lines){
@@ -531,12 +546,31 @@ function bind() {
         if(cloudBusy||draft.cloudId!==id||snapshotStamp(draft)!==stamp){toast('La fiche a changé. Vérifiez de nouveau le repos.');return;}
         action.confirmed=true;
       }
-      draft.playState=applyPlayAction(draft,sheetModel(draft,catalogue),action);
-      cloudSaveError='';activeSheetTab='play';save(true);route();
-      const panel=document.getElementById('sheet-panel-play');panel?.focus({preventScroll:true});
-      toast(storageAvailable?'Suivi conservé sur cet appareil. Enregistrez la fiche pour le retrouver dans votre compte.':'Suivi modifié, mais le stockage local est indisponible. Enregistrez la fiche dans votre compte.');
+      if(data.has('deathFailures'))action.deathFailures=Number(data.get('deathFailures'));
+      if(type==='death-roll'){action.die=Number(data.get('die'));action.modifier=Number(data.get('modifier'));}
+      if(type==='set-death-counts'){action.successes=Number(data.get('successes'));action.failures=Number(data.get('failures'));}
+      if(['declare-dead','revive','set-death-counts'].includes(type)||type==='set-exhaustion'&&amount===6){
+        const stamp=snapshotStamp(draft),id=draft.cloudId,m=sheetModel(draft,catalogue);
+        action.confirmed=true;
+        const next=playView({...draft,playState:applyPlayAction(draft,m,action)},m),current=playView(draft,m);
+        const names={alive:'Vivant',dying:'À 0 PV',stable:'Stabilisé',dead:'Mort déclarée',unknown:'À compléter'};
+        const title=type==='revive'?'Confirmer le retour à la vie':type==='declare-dead'?'Confirmer la mort déclarée':type==='set-exhaustion'?'Confirmer le niveau 6 d’Épuisement':'Confirmer la correction des jets';
+        const lines=['État vital : '+names[current.effects.life]+' → '+names[next.effects.life],'PV : '+current.currentHp+' → '+next.currentHp,'Épuisement : '+current.effects.exhaustion+' → '+next.effects.exhaustion,'Réussites : '+current.effects.death.successes+' → '+next.effects.death.successes,'Échecs : '+current.effects.death.failures+' → '+next.effects.death.failures];
+        if(!await confirmLifeChange(title,lines)){if(type==='set-exhaustion')form.querySelector('[name=amount]').value=current.effects.exhaustion;return;}
+        if(cloudBusy||draft.cloudId!==id||snapshotStamp(draft)!==stamp){toast('La fiche a changé. Vérifiez de nouveau cette modification.');return;}
+      }
+      commitPlayChange(action);
     }catch(error){toast(error.message);}
   }));
+  root.querySelectorAll('[data-play-condition]').forEach(input=>input.addEventListener('change',()=>{
+    if(cloudBusy||!usesCurrentRules(draft))return;
+    try{commitPlayChange({type:'set-condition',condition:input.dataset.playCondition,active:input.checked},'[data-play-condition="'+input.dataset.playCondition+'"]');}catch(error){toast(error.message);}
+  }));
+  root.querySelector('[data-zero-hp-exception]')?.addEventListener('change',event=>{
+    if(cloudBusy||!usesCurrentRules(draft))return;
+    try{commitPlayChange({type:'zero-hp-exception',active:event.target.checked},'[data-zero-hp-exception]');}catch(error){toast(error.message);}
+  });
+  root.querySelectorAll('[data-open-play]').forEach(button=>button.addEventListener('click',()=>{activeSheetTab='play';route();document.getElementById('sheet-panel-play')?.focus();}));
   document.getElementById('refresh-characters')?.addEventListener('click',async()=>{await refreshCloudCharacters();route();});
   const sheetTabs=[...root.querySelectorAll('[data-sheet-tab]')];
   sheetTabs.forEach((button,index)=>{

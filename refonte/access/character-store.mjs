@@ -25,11 +25,12 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       if(!validCharacterId(id)||!Number.isInteger(revision)||revision<0)throw fault(400,'Référence de sauvegarde invalide.');
       let result=validate(input);
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
+      if((previous?.character?.playState?.deathSaves?.dead||previous?.character?.playState?.exhaustion===6)&&input.playState&&input.playState.deathSaves===undefined&&input.playState.hpLost!==previous.character.playState.hpLost)throw fault(409,'Le suivi vital a changé. Actualisez la fiche pour gérer un retour à la vie ; votre brouillon est conservé.');
       // An older open client may omit the optional session field. Preserve it.
       if(input.playState===undefined&&previous?.character?.playState!==undefined)result=validate({...input,playState:previous.character.playState});
       else if(input.playState&&previous?.character?.playState){
         const preserved={...input.playState};let missing=false;
-        for(const key of ['slotUsed','hitDiceUsed','lastRest'])if(input.playState[key]===undefined&&previous.character.playState[key]!==undefined){preserved[key]=previous.character.playState[key];missing=true;}
+        for(const key of ['slotUsed','hitDiceUsed','lastRest','conditions','exhaustion','deathSaves','zeroHpConscious'])if(input.playState[key]===undefined&&previous.character.playState[key]!==undefined){preserved[key]=previous.character.playState[key];missing=true;}
         if(missing)result=validate({...input,playState:preserved});
       }
       const contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');

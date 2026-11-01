@@ -49,4 +49,4 @@ Les champs `slotUsed`, `hitDiceUsed` et `lastRest` étendent facultativement le 
 
 Preuve : `audit/verify-spell-rest.mjs`. Résultats : `audit/spell-rest-result-20261101.json`. Sauvegarde complète et retour arrière : `/root/backups/myrpgtable-persistence-20261101T075917Z/`.
 
-Prochaine étape possible : états, Épuisement et sauvegardes contre la mort, avec leurs effets explicitement suivis. Ils ne sont pas annoncés comme automatisés par cette livraison.
+Les états, l’Épuisement et les sauvegardes contre la mort sont ajoutés dans une livraison suivante du même jour : voir [leur fonctionnement et leurs limites](ETATS-ET-JETS-DE-MORT.md). Le présent bilan décrit la livraison initiale des emplacements/repos.

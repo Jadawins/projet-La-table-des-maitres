@@ -1,3 +1,4 @@
+import {sheetModel} from '../maquette/sheet-model.mjs';
 import {CURRENT_RULES_VERSION} from '../maquette/character-version.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -80,4 +81,14 @@ test('Un ancien onglet ne peut pas recréer un personnage supprimé, et répéte
   await store.remove('a',id,1);assert.equal(records[0].revision,2);
   await assert.rejects(store.save('a',id,state(),1),e=>e.status===409);
   await assert.rejects(store.save('a',id,state(),0),e=>e.status===409);assert.equal(records.length,1);
+});
+
+test('Les états et jets sont conservés pour les anciens clients, et un mort ne se soigne pas depuis un ancien onglet',async()=>{
+  const {store}=setup(),s=state(),max=sheetModel(s,c).hp;
+  s.playState={version:1,hpLost:max,tempHp:0,used:{},conditions:['poisoned'],exhaustion:2,zeroHpConscious:false,deathSaves:{successes:1,failures:2,stable:false,dead:false}};
+  const first=await store.save('a',id,s,0),old=structuredClone(first.character);
+  for(const key of ['conditions','exhaustion','deathSaves','zeroHpConscious'])delete old.playState[key];old.playState.tempHp=1;
+  const kept=await store.save('a',id,old,1);for(const key of ['conditions','exhaustion','deathSaves','zeroHpConscious'])assert.deepEqual(kept.character.playState[key],first.character.playState[key]);
+  const dead=structuredClone(kept.character);dead.playState.deathSaves={successes:0,failures:3,stable:false,dead:true};await store.save('a',id,dead,2);
+  old.playState.hpLost=max-1;await assert.rejects(store.save('a',id,old,3),e=>e.status===409);
 });
