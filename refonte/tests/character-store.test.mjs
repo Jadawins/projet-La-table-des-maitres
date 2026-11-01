@@ -27,6 +27,12 @@ test('Un ancien client qui omet le suivi conserve les PV et ressources déjà en
   await assert.rejects(store.save('a',id,{...oldClient,name:'Ancienne révision'},1),e=>e.status===409);
   await assert.rejects(store.save('a',id,{...oldClient,playState:null},2),e=>e.status===400);
 });
+
+test('Un client limité aux PV conserve les emplacements, dés de vie et dernier repos suivis',async()=>{
+ const {store}=setup(),playState={version:1,hpLost:5,tempHp:0,used:{},slotUsed:{'spell-1':2},hitDiceUsed:1,lastRest:{kind:'short',at:'2026-11-01T10:00:00.000Z'}};
+ const saved=await store.save('a',id,{...state(),playState},0);const old=structuredClone(saved.character);delete old.playState.slotUsed;delete old.playState.hitDiceUsed;delete old.playState.lastRest;old.playState.hpLost=3;
+ const updated=await store.save('a',id,old,1);assert.equal(updated.character.playState.hpLost,3);for(const key of ['slotUsed','hitDiceUsed','lastRest'])assert.deepEqual(updated.character.playState[key],playState[key]);
+});
 test('Enregistrer puis relire toutes les sélections et les notes sans modifier le personnage',async()=>{
   const {store,records}=setup(),s=state(),before=JSON.stringify(s);const saved=await store.save('account-a',id,s,0);assert.equal(saved.revision,1);
   const read=await store.get('account-a',id);assert.deepEqual(read.character,saved.character);assert.equal(read.character.details.story,s.details.story);assert.equal(JSON.stringify(s),before);assert.equal(records[0].user_id,'account-a');assert.equal(records[0].catalogue_fingerprint,'test-catalogue');

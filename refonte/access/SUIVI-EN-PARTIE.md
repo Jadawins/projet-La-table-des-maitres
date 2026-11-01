@@ -14,7 +14,7 @@ Ouvrir sa fiche, puis **En partie**. Le suivi ne commence qu’après saisie des
 
 Les réserves comprennent notamment Rage, Inspiration bardique, Forme animale et utilisations gratuites de Marque du chasseur, ainsi que les réserves de base explicitement prises en charge pour les autres classes et les quotas de sous-classe structurés. Les aptitudes conditionnelles qui ne sont pas représentées comme réserves restent consultables dans Aptitudes. Dépenser une utilisation ne déclenche ni attaque, ni sort, ni transformation ou résistance.
 
-Cette étape ne gère pas les repos, les emplacements de sorts, les états, les sauvegardes contre la mort, les boucliers conditionnels ou toutes les ressources particulières de don/sous-classe. Aucun lancer de dés n’est automatique. Le formulaire PDF garde son fonctionnement actuel ; le suivi est dans l’onglet du site.
+Cette livraison initiale ne gérait pas les repos ni les emplacements de sorts : ils sont ajoutés par la [livraison du 1er novembre](EMPLACEMENTS-ET-REPOS.md). Les états, sauvegardes contre la mort, boucliers conditionnels et certaines ressources particulières restent hors de ce premier suivi. Aucun lancer de dés n’est automatique. Le formulaire PDF garde son fonctionnement actuel ; le suivi est dans l’onglet du site.
 
 ## Conservation et compatibilité
 
@@ -34,4 +34,4 @@ Un ancien onglet qui omet ce nouveau champ ne l’efface pas côté serveur. Une
 
 Preuve : `audit/verify-play-state.mjs`. Résultats de publication : `audit/play-state-result-20261031.json`. Sauvegarde et retour arrière : `/root/backups/myrpgtable-persistence-20261031T151138Z/`.
 
-Prochaine étape fonctionnelle : suivi des emplacements de sorts, puis repos explicitement demandés avec leurs récupérations propres ; elle ne fait pas partie de cette livraison.
+La suite emplacements/repos est livrée le 1er novembre 2026, avec son propre bilan dans EMPLACEMENTS-ET-REPOS.md.

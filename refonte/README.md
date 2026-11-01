@@ -1,8 +1,8 @@
 # La Table du Maître — état actuel
 
-Mise à jour : 31 octobre 2026.
+Mise à jour : 1er novembre 2026.
 
-La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le téléphone, le multiclasse, les nouveaux livres et la gestion du combat restent hors périmètre. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
+La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le suivi en partie couvre les PV, les réserves prises en charge, les emplacements et les repos explicites. Le téléphone, le multiclasse, les nouveaux livres et un moteur de combat automatisé restent hors périmètre. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
 
 ## Version locale stabilisée
 
@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261031T151138Z`, publiée le 31 octobre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261101T075917Z`, publiée le 1er novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261101T075917Z` complète En partie avec les emplacements ordinaires et de pacte, les dés de vie et les repos court/long. Les récupérations sont montrées avant confirmation ; les jets de soins sont saisis manuellement et les aptitudes nécessitant un choix restent manuelles. Les anciens clients préservent les nouveaux champs facultatifs. Astuce mystique suit une utilisation du rite, indépendamment du nombre d’emplacements récupérables. Les 4 039 tests unitaires, 13 parcours navigateur et dix contrôles MongoDB avant/après passent, sans modification des personnages réels. Sauvegarde de 3 280 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261101T075917Z/`. Voir [emplacements et repos](access/EMPLACEMENTS-ET-REPOS.md).
 
 La livraison `20261031T151138Z` ajoute l’onglet **En partie** : PV actuels/temporaires, dégâts et soins explicites, corrections et dépenses/récupérations manuelles des réserves de classe prises en charge. Sauvegarde dans le compte, réouverture sur un autre appareil et conflits de révision sont contrôlés ; les anciens clients ne peuvent pas effacer le suivi par omission. La campagne de 4 026 tests passe ; 35 contrôles ciblés sont repris après la dernière protection de compatibilité, pour 4 027 tests distincts couverts. Dix parcours navigateur passent, puis trois parcours sont repris après l’ajustement de présentation. Les huit contrôles MongoDB avant/après et les quinze accès HTTP passent ; personnages réels inchangés. Sauvegarde de 3 279 documents dans `/root/backups/myrpgtable-persistence-20261031T151138Z/`. Voir [le suivi en partie](access/SUIVI-EN-PARTIE.md). Aucun changement du catalogue ni lancer automatique ; emplacements de sorts, repos et états restent une étape distincte.
 

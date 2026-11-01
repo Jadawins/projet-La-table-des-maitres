@@ -5,7 +5,7 @@ import {CURRENT_RULES_VERSION,usesCurrentRules,upgradedCharacterCopy} from './ch
 import {backgroundAbilities,backgroundBonuses,finalScores,modifier,visibleSteps,classProfile,clericProfile,pruneSpellChoices,spellErrors,classSkills,hitPoints,aptitudeErrors} from './character-rules.mjs';
 import {renderSheet} from './sheet-view.mjs';
 import {detailFields,sheetModel} from './sheet-model.mjs';
-import {applyPlayAction,validatePlayState} from './play-state.mjs';
+import {applyPlayAction,validatePlayState,restPreview} from './play-state.mjs';
 import {characterSnapshot,validateSavedCharacter} from './character-storage.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial,evaluateProgression,featAbilityOptions,sacredChoices} from './cleric-progression.mjs';
 import {grantInitial,backgroundFeat,humanFeats,originFeats,originSizeOptions,selectedVariant,speciesSkillOptions,originSkills,originTools,backgroundToolOptions,grantOptions,magicFeatLists,magicFeatProfile,grantedOriginSpells,originBonuses,reconcileOrigins,originErrors,speciesChoiceSpecs,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
@@ -136,6 +136,15 @@ function confirmCharacterRemoval(name,local){
     const dialog=document.createElement('dialog');dialog.className='confirm-dialog';dialog.setAttribute('aria-labelledby','delete-character-title');
     dialog.innerHTML=`<h2 id="delete-character-title">${local?'Supprimer ce brouillon ?':'Supprimer ce personnage ?'}</h2><p><strong>${esc(name||'Sans nom')}</strong></p><p>${local?'Ce brouillon sera retiré de cet appareil. Une éventuelle version enregistrée dans votre compte sera conservée.':'Ce personnage sera retiré de votre compte et de cet appareil.'}</p><form method="dialog"><button class="button secondary" value="cancel" autofocus>Annuler</button><button class="button danger" value="delete">${local?'Supprimer le brouillon':'Supprimer le personnage'}</button></form>`;
     dialog.addEventListener('close',()=>{const confirmed=dialog.returnValue==='delete';dialog.remove();resolve(confirmed);},{once:true});
+    document.body.append(dialog);dialog.showModal();
+  });
+}
+function confirmRest(type,lines){
+  return new Promise(resolve=>{
+    const short=type==='short-rest',dialog=document.createElement('dialog');
+    dialog.className='confirm-dialog';dialog.setAttribute('aria-labelledby','rest-confirm-title');
+    dialog.innerHTML='<h2 id="rest-confirm-title">Confirmer le repos '+(short?'court':'long')+' ?</h2><p>Confirmez que ce repos est terminé et remplit les conditions à votre table.</p><ul>'+lines.map(line=>'<li>'+esc(line)+'</li>').join('')+'</ul><p>Les aptitudes demandant un choix, les états et les autres effets restent à vérifier à votre table.</p><form method="dialog"><button class="button secondary" value="cancel" autofocus>Annuler</button><button class="button primary" value="confirm">Terminer le repos '+(short?'court':'long')+'</button></form>';
+    dialog.addEventListener('close',()=>{const ok=dialog.returnValue==='confirm';dialog.remove();resolve(ok);},{once:true});
     document.body.append(dialog);dialog.showModal();
   });
 }
@@ -507,13 +516,22 @@ function bind() {
   }));
   root.querySelectorAll('[data-advance-notes]').forEach(input=>input.addEventListener('input',()=>{draft.advancements[input.dataset.advanceNotes].notes=input.value;save(true);}));
   root.querySelectorAll('[data-save-character]').forEach(button=>button.addEventListener('click',saveCloudCharacter));
-  root.querySelectorAll('form[data-play-action]').forEach(form=>form.addEventListener('submit',event=>{
+  root.querySelectorAll('form[data-play-action]').forEach(form=>form.addEventListener('submit',async event=>{
     event.preventDefault();
     if(cloudBusy||!usesCurrentRules(draft)||!form.reportValidity())return;
-    const type=form.dataset.playAction==='resource'?event.submitter?.value:form.dataset.playAction;
-    const amount=Number(new FormData(form).get('amount'));
+    const type=['resource','slot'].includes(form.dataset.playAction)?event.submitter?.value:form.dataset.playAction;
+    const data=new FormData(form),amount=Number(data.get('amount'));
     try{
-      draft.playState=applyPlayAction(draft,sheetModel(draft,catalogue),{type,amount,currentHp:amount,resource:form.dataset.resource});
+      const action={type,amount,currentHp:amount,resource:form.dataset.resource,slot:form.dataset.slot};
+      if(['short-rest','long-rest'].includes(type)){
+        action.hitDice=Number(data.get('hitDice'));action.healing=Number(data.get('healing'));
+        const stamp=snapshotStamp(draft),id=draft.cloudId;
+        const lines=restPreview(draft,sheetModel(draft,catalogue),action);
+        if(!await confirmRest(type,lines))return;
+        if(cloudBusy||draft.cloudId!==id||snapshotStamp(draft)!==stamp){toast('La fiche a changé. Vérifiez de nouveau le repos.');return;}
+        action.confirmed=true;
+      }
+      draft.playState=applyPlayAction(draft,sheetModel(draft,catalogue),action);
       cloudSaveError='';activeSheetTab='play';save(true);route();
       const panel=document.getElementById('sheet-panel-play');panel?.focus({preventScroll:true});
       toast(storageAvailable?'Suivi conservé sur cet appareil. Enregistrez la fiche pour le retrouver dans votre compte.':'Suivi modifié, mais le stockage local est indisponible. Enregistrez la fiche dans votre compte.');

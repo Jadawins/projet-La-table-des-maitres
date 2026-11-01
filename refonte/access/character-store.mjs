@@ -27,6 +27,11 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
       // An older open client may omit the optional session field. Preserve it.
       if(input.playState===undefined&&previous?.character?.playState!==undefined)result=validate({...input,playState:previous.character.playState});
+      else if(input.playState&&previous?.character?.playState){
+        const preserved={...input.playState};let missing=false;
+        for(const key of ['slotUsed','hitDiceUsed','lastRest'])if(input.playState[key]===undefined&&previous.character.playState[key]!==undefined){preserved[key]=previous.character.playState[key];missing=true;}
+        if(missing)result=validate({...input,playState:preserved});
+      }
       const contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');
       if(previous?.deleted_at)throw fault(409,'Ce personnage a été supprimé. Un ancien brouillon ne peut pas le remplacer.');
       if(previous&&(previous.character?.rulesVersion??null)!==(result.character.rulesVersion??null))throw fault(409,'La version des règles a changé. Enregistrez une copie pour préserver la fiche d’origine.');

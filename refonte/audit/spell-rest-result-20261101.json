@@ -1,0 +1,35 @@
+{
+  "status": "deployed",
+  "release": "20261101T075917Z",
+  "previousRelease": "20261031T151138Z",
+  "rulesVersion": "phb2024-2026-10-28",
+  "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+  "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+  "backup": "/root/backups/myrpgtable-persistence-20261101T075917Z",
+  "backupDocuments": 3280,
+  "persistenceBefore": {
+    "passed": 10,
+    "realCharactersUnchanged": true
+  },
+  "persistenceAfter": {
+    "passed": 10,
+    "realCharactersUnchanged": true
+  },
+  "httpChecks": 15,
+  "verification": {
+    "status": "passed",
+    "scope": "spell-rest-with-unchanged-rules-baseline",
+    "sourceHash": "70b4c6f91c73966a2231db26422ad8a8ccce8ea3e68e52e62255a04031872589",
+    "completedAt": "2026-11-01T08:00:42.521Z",
+    "baselineCommit": "3115022eefcc8c003fae5e8d1945a172534b5b12",
+    "failed": 0,
+    "skipped": 0,
+    "rulesVersion": "phb2024-2026-10-28",
+    "catalogueId": "phb2024-2026-10-28-textes-final-20261031",
+    "catalogueSha256": "0f591b9cfdb7b0cac2bc728b843b4b7f77a457c26669dba0c75c4922a33df709",
+    "unitPassed": 4039,
+    "browserJourneys": 13,
+    "dialogVisualCheck": 1,
+    "qualification": "Ordinary and Pact Magic slot counters, explicit short/long rests with preview and confirmation, manually entered Hit Die healing, full long-rest Hit Dice recovery and temporary HP expiry. Resource recharge uses an explicit reviewed policy rather than parsing descriptions. Optional choice-based recovery, states/exhaustion, time eligibility and special untracked abilities remain table decisions. Existing version-1 session records remain valid without adding fields on read; older HP-only clients preserve newer slot/Hit Dice/rest fields. Astuce mystique correctly counts one ritual use rather than the number of slots recoverable by that ritual. No catalogue revision or existing-character migration."
+  }
+}
