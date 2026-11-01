@@ -23,6 +23,10 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 - [Provenance des descriptions](audit/DESCRIPTIONS-PROVENANCE.md) et [classement SRD des 48 sous-classes](audit/SOUS-CLASSES-SRD.md) : 12 présentes dans le SRD 5.2.1, 36 absentes. Ce contrôle ne vaut pas validation des droits sur les textes hors SRD. Le [classement des sorts](audit/SORTS-SRD.md) confirme 339 sorts SRD et 51 hors SRD ; les 110 champs des 51 sont examinés. Les lots de rédaction sont terminés, avec leurs décisions et valeurs avant/après dans le bilan final des textes, sans changement des mécaniques.
 - [Manifeste du gel](audit/final-freeze-manifest.json)
 
+## Correctif préparé
+
+Le compteur d’inscriptions de l’administration et son actualisation automatique sont corrigés et testés (22 tests ciblés, huit parcours navigateur). Leur activation attend la clé serveur Supabase, actuellement vide sur le VPS. La production ci-dessous reste inchangée pendant cette attente. Voir [le compteur des inscriptions](access/COMPTEUR-INSCRIPTIONS.md).
+
 ## Production
 
 L’atelier en ligne utilise la livraison `20261101T095447Z`, publiée le 1er novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).

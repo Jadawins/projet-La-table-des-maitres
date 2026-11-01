@@ -1,3 +1,4 @@
+import {createAuthAccounts} from '../access/auth-accounts.mjs';
 import {createAdminStore} from '../access/admin-store.mjs';
 import {memoryCollection} from '../tests/admin-memory.mjs';
 // Local-only harness: production gateway, validator and character store; no VPS or real identity provider.
@@ -50,6 +51,8 @@ const tokens=new Map(),signupAccounts=new Map(),signupCodes=new Map();
 const identity=new Map([['e2e-account-a',{id:'e2e-account-a',email:'joueur-a@example.test',email_confirmed_at:'2026-10-30'}],['e2e-account-b',{id:'e2e-account-b',email:'joueur-b@example.test',email_confirmed_at:'2026-10-30'}]]);
 function issueToken(id){const token='e2e.'+Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+7200})).toString('base64url')+'.'+randomUUID();tokens.set(token,id);return Response.json({access_token:token});}
 async function fakeSupabase(url,options){
+  if(url.includes('/auth/v1/admin/users')){const parsed=new URL(url),id=parsed.pathname.split('/')[5];if(id){const user=identity.get(decodeURIComponent(id));return Response.json(user||{},{status:user?200:404});}return Response.json({users:[...identity.values()]});}
+
   if(url.includes('/signup?')){
     const input=JSON.parse(options.body);if(signupAccounts.has(input.email))return Response.json({id:'duplicate-obfuscated'});
     const id='signup-'+randomUUID(),code=randomUUID();signupAccounts.set(input.email,{id,password:input.password,code,confirmed:false});signupCodes.set(code,{id,email:input.email,challenge:input.code_challenge});identity.set(id,{id,email:input.email,user_metadata:input.data,email_confirmed_at:'2026-10-30'});return Response.json({id});
@@ -69,7 +72,8 @@ async function fakeSupabase(url,options){
   return Response.json(user||{},{status:user?200:401});
 }
 const adminUsers=memoryCollection([{supabase_id:'e2e-account-a',email:'joueur-a@example.test'},{supabase_id:'e2e-account-b',email:'joueur-b@example.test'}]);
-const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e'});
+const accounts=createAuthAccounts({url:'https://e2e.invalid',key:'server-test-only',fetcher:fakeSupabase});
+const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e',accounts});
 const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
 gateway.listen(0,'127.0.0.1');await once(gateway,'listening');
 const publicFiles={

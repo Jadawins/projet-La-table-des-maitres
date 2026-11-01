@@ -13,7 +13,7 @@ assertRulesReady(rulesStatus,rulesLedger,rulesRevision);
 const proofPath=process.argv[3];
 if(proofPath){
   const proof=JSON.parse(await readFile(proofPath,'utf8'));
-  if(proof.status!=='passed'||proof.sourceHash!==await sourceFingerprint()||!['full','mongodb-runtime-with-unchanged-rules-baseline','character-removal-with-unchanged-rules-baseline','portal-with-unchanged-rules-baseline','pdf-weapons-with-unchanged-rules-baseline','signup-with-unchanged-rules-baseline','library-background-with-unchanged-runtime-baseline','grimoire-reading-with-unchanged-rules-baseline','source-attribution-with-unchanged-rules-baseline','books-notice-with-unchanged-rules-baseline','editorial-texts-with-unchanged-mechanics-baseline','non-srd-rewrite-with-unchanged-mechanics-baseline','feat-rewrite-with-unchanged-mechanics-baseline','final-editorial-review-with-unchanged-mechanics-baseline','play-state-with-unchanged-rules-baseline','spell-rest-with-unchanged-rules-baseline','conditions-with-unchanged-rules-baseline','advancement-and-multiclass-with-frozen-catalogue'].includes(proof.scope)||proof.failed!==0||proof.skipped!==0)throw Error('Preuve de vérification absente, périmée ou incomplète.');
+  if(proof.status!=='passed'||proof.sourceHash!==await sourceFingerprint()||!['full','mongodb-runtime-with-unchanged-rules-baseline','character-removal-with-unchanged-rules-baseline','portal-with-unchanged-rules-baseline','pdf-weapons-with-unchanged-rules-baseline','signup-with-unchanged-rules-baseline','library-background-with-unchanged-runtime-baseline','grimoire-reading-with-unchanged-rules-baseline','source-attribution-with-unchanged-rules-baseline','books-notice-with-unchanged-rules-baseline','editorial-texts-with-unchanged-mechanics-baseline','non-srd-rewrite-with-unchanged-mechanics-baseline','feat-rewrite-with-unchanged-mechanics-baseline','final-editorial-review-with-unchanged-mechanics-baseline','play-state-with-unchanged-rules-baseline','spell-rest-with-unchanged-rules-baseline','conditions-with-unchanged-rules-baseline','advancement-and-multiclass-with-frozen-catalogue','admin-accounts-with-unchanged-characters-baseline'].includes(proof.scope)||proof.failed!==0||proof.skipped!==0)throw Error('Preuve de vérification absente, périmée ou incomplète.');
 }else{
 const {spawn}=await import('node:child_process');
 const verifier=spawn(process.execPath,[path.join(refonte,'e2e/verify.mjs')],{stdio:'inherit'});
@@ -29,7 +29,7 @@ await copyFile(path.join(refonte,'../assets/img/fond-bibliotheque-sombre.png'),p
 await copyFile(path.join(refonte,'../assets/icone/favicon-192.png'),path.join(target,'public/favicon.png'));
 await copyFile(path.join(refonte,'access/server.mjs'),path.join(target,'server.mjs'));
 await copyFile(path.join(refonte,'access/start.mjs'),path.join(target,'start.mjs'));
-for(const file of ['rules-store.mjs','rules-release.json','import-rules.mjs','admin-store.mjs'])await copyFile(path.join(refonte,'access',file),path.join(target,file));
+for(const file of ['rules-store.mjs','rules-release.json','import-rules.mjs','admin-store.mjs','auth-accounts.mjs'])await copyFile(path.join(refonte,'access',file),path.join(target,file));
 await copyFile(path.join(refonte,'access/character-store.mjs'),path.join(target,'character-store.mjs'));
 await copyFile(path.join(refonte,'access/backup-db.mjs'),path.join(target,'backup-db.mjs'));
 await writeFile(path.join(target,'background-fixture.mjs'),(await readFile(path.join(refonte,'audit/background-fixture.mjs'),'utf8')).replaceAll('../maquette/','./atelier/'));
