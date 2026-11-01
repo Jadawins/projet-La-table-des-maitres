@@ -71,7 +71,7 @@ export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
     const me = group.members.find(member => member.isMe);
     root.innerHTML = `<a class="back" href="#groupes">← Mes groupes</a><p class="eyebrow">${group.isMJ ? 'VOTRE TABLE · MAÎTRE DU JEU' : 'VOTRE TABLE · JOUEUR'}</p>
       <h1>${esc(group.name)}</h1><p class="group-description">${esc(group.description || 'Votre groupe est prêt à accueillir ses aventures.')}</p>
-      <div class="portal-actions"><button class="button secondary" data-group-action="refresh">Actualiser le groupe</button></div>${feedback()}
+      <div class="portal-actions"><a class="button primary" href="#combat/${esc(group.id)}">Ouvrir le combat</a><button class="button secondary" data-group-action="refresh">Actualiser le groupe</button></div>${feedback()}
       ${group.isMJ ? `<section class="portal-card group-invite"><h2>Inviter vos joueurs</h2>
         <p>Partagez le code vous-même. Les joueurs se connectent, ouvrent <strong>Mes groupes</strong>, puis choisissent <strong>Rejoindre un groupe</strong>.</p>
         ${invitationCode && group.invitationOpen ? `<label class="field">Code d’invitation<input id="group-invitation-code" readonly value="${esc(invitationCode)}"></label><button class="button secondary" data-group-action="copy">Copier le code</button>` : ''}

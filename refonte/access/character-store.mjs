@@ -21,10 +21,11 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       if(update.matchedCount!==1)throw fault(409,'Le personnage a changé ailleurs. Actualisez la liste avant de le supprimer.');
       return {id,deleted:true};
     },
-    async save(userId,id,input,revision){
+    async save(userId,id,input,revision,{strictRevision=false}={}){
       if(!validCharacterId(id)||!Number.isInteger(revision)||revision<0)throw fault(400,'Référence de sauvegarde invalide.');
       let result=validate(input);
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
+      if(strictRevision&&previous?.revision!==revision)throw fault(409,'Ce personnage a été modifié ailleurs. Actualisez avant de recommencer.');
       if((previous?.character?.playState?.deathSaves?.dead||previous?.character?.playState?.exhaustion===6)&&input.playState&&input.playState.deathSaves===undefined&&input.playState.hpLost!==previous.character.playState.hpLost)throw fault(409,'Le suivi vital a changé. Actualisez la fiche pour gérer un retour à la vie ; votre brouillon est conservé.');
       if(previous?.character?.multiclass&&input.multiclass===undefined)throw fault(409,'Cette fiche est multiclassée. Actualisez le site avant de modifier ses niveaux.');
       if(previous?.character?.playState?.hitDiceUsedByType&&input.playState?.hitDiceUsedByType===undefined&&input.playState?.hitDiceUsed!==undefined&&input.playState.hitDiceUsed!==previous.character.playState.hitDiceUsed)throw fault(409,'Les types de dés de vie ont changé. Actualisez le site avant de modifier leurs dépenses.');

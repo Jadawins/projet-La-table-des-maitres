@@ -1,0 +1,142 @@
+{
+  "status": "deployed",
+  "release": "20261101T154027Z",
+  "previous": "20261101T143701Z",
+  "completedAt": "2026-11-01T15:41:53.921Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261101T154027Z",
+  "backupDocuments": 3281,
+  "archiveSha256": "5860ca837433e7e0287d3434ac926adfc420114723b85e2a56e2d1880be39243",
+  "databaseBackupSha256": "ca465e6a639cda2bac65d79beb9f819b3c84993b0538b127ea252b00fa6a683f",
+  "verification": {
+    "status": "passed",
+    "scope": "combat-with-frozen-character-rules-baseline",
+    "sourceHash": "6e56e87f5485d8759d1cc35121f50fc228ba84a6b1add331cb9669db2898107a",
+    "unitPassed": 101,
+    "browserJourneys": 15,
+    "failed": 0,
+    "skipped": 0,
+    "browserEvidence": "12 unaffected group/portal/admin/PDF journeys, then three successful combat journeys after corrections and strict revision checks."
+  },
+  "combat": {
+    "before": {
+      "status": "passed",
+      "completedAt": "2026-11-01T15:41:20.899Z",
+      "checks": 11,
+      "collection": "refonte_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "realCharactersAndGroupsUnchanged": true,
+      "coverage": [
+        "group-roles",
+        "one-active-combat",
+        "hidden-participants",
+        "manual-initiative",
+        "character-health-persistence",
+        "stale-character-revision",
+        "identical-concurrent-damage",
+        "turns-and-rounds",
+        "pause-and-resume",
+        "conditions-and-visibility",
+        "finish-without-healing"
+      ]
+    },
+    "after": {
+      "status": "passed",
+      "completedAt": "2026-11-01T15:41:53.921Z",
+      "checks": 11,
+      "collection": "refonte_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "realCharactersAndGroupsUnchanged": true,
+      "coverage": [
+        "group-roles",
+        "one-active-combat",
+        "hidden-participants",
+        "manual-initiative",
+        "character-health-persistence",
+        "stale-character-revision",
+        "identical-concurrent-damage",
+        "turns-and-rounds",
+        "pause-and-resume",
+        "conditions-and-visibility",
+        "finish-without-healing"
+      ]
+    }
+  },
+  "groups": {
+    "beforePassed": 8,
+    "afterPassed": 8
+  },
+  "persistence": {
+    "beforePassed": 22,
+    "afterPassed": 22,
+    "realCharactersUnchanged": true
+  },
+  "httpChecksPassed": 19,
+  "productionService": "myrpgtable-refonte",
+  "serviceOnline": true,
+  "withdrawnCandidate": {
+    "release": "20261101T153518Z",
+    "reason": "Identical concurrent character damage could be coalesced by the original idempotent save. Restored group-only release before correcting and republishing.",
+    "realCharactersAndGroupsUnchanged": true
+  },
+  "limits": [
+    "Manual NPC entry; no bestiary integration yet.",
+    "No automated attacks, spell effects, damage rolls or concentration saves/durations.",
+    "Concentration is a manual combat marker, not a synchronized character resource.",
+    "Only latest combat is exposed; full history is a later module."
+  ],
+  "interactiveProductionLogin": "Not performed; browser journeys use isolated accounts, real MongoDB checks use disposable control records only."
+}

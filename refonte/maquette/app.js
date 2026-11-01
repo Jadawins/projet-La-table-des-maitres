@@ -1,3 +1,4 @@
+import {mountCombat,disposeCombat} from './combat-view.mjs';
 import {mountGroups,disposeGroups} from './group-view.mjs';
 import {multiclassPrerequisites,classRecords} from './multiclass-rules.mjs';
 import {beginAdvancement,advancementErrors,advancementPreview,finishAdvancement,advancementClassBase,advancementContext} from './character-advancement.mjs';
@@ -518,10 +519,11 @@ function validStep() {
 
 function drawCreation() { root.innerHTML = creation(); bind(); }
 function route() {
-  disposeGroups(root);
+  disposeGroups(root);disposeCombat(root);
   refreshAdvancementContext();
   let hash = location.hash.slice(1);
-  document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+(hash.startsWith('groupes')?'groupes':hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+  document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+((hash.startsWith('groupes')||hash.startsWith('combat/'))?'groupes':hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+  if(hash.startsWith('combat/')){document.getElementById('breadcrumb').textContent='Combat';mountCombat(root,{groupId:hash.split('/')[1]||''});return;}
   if(hash==='groupes'||hash.startsWith('groupes/')){document.getElementById('breadcrumb').textContent='Mes groupes';mountGroups(root,{id:hash.split('/')[1]||'',catalogue,enabled:Boolean(accountId)});return;}
   if(!hash||hash==='accueil'||hash==='grimoire'||hash.startsWith('grimoire/')||hash==='admin'){
     document.getElementById('breadcrumb').textContent=hash.startsWith('grimoire')?'Grimoire':hash==='admin'?'Administration':'Accueil';
