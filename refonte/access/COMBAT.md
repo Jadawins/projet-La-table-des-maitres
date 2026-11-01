@@ -4,7 +4,7 @@ Depuis **Mes groupes**, ouvrir un groupe puis **Ouvrir le combat**. Le MJ crée 
 
 ## Préparation et déroulement
 
-Les personnages actuellement rattachés sont importés par référence, sans copie ni changement de fiche. Les adversaires sont initialement cachés. Le MJ saisit leur nom, leurs PV maximum et leur CA, puis les révèle lorsqu’il le souhaite. Aucune fiche de bestiaire n’est importée automatiquement dans ce lot.
+Les personnages actuellement rattachés sont importés par référence, sans copie ni changement de fiche. Les adversaires sont initialement cachés. Le MJ saisit leur nom, leurs PV maximum et leur CA, puis les révèle lorsqu’il le souhaite. Le premier lot proposait uniquement cette saisie manuelle. Depuis la livraison `20261101T160457Z`, le panneau [Ajouter depuis le bestiaire](BESTIAIRE.md) permet également de choisir un profil et d’en ajouter plusieurs exemplaires, sans lancer de dés automatiquement.
 
 Chaque initiative est saisie explicitement : le joueur peut renseigner celle de son personnage, le MJ celles de tous les participants. Le bonus calculé de la fiche est indiqué. Les totaux sont triés par ordre décroissant ; les égalités restent dans un ordre stable et le MJ peut faire passer un participant avant l’autre à égalité. Aucun lancer n’est effectué et aucun échange d’initiative propre à une aptitude n’est décidé automatiquement.
 

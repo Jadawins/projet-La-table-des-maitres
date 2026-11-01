@@ -1,0 +1,153 @@
+{
+  "status": "deployed",
+  "release": "20261101T160457Z",
+  "previous": "20261101T154027Z",
+  "completedAt": "2026-11-01T16:08:45.277Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261101T160457Z",
+  "backupDocuments": 3281,
+  "archiveSha256": "e58b102fdb50cc5c7cbd1012d1b11dadd19f6dfc1db28ffaf2563d30ec11873c",
+  "databaseBackupSha256": "db0715deef207ff01c83ea24c0d64a8a984e516096b168fde3a7eb643afaa388",
+  "verification": {
+    "status": "passed",
+    "scope": "bestiary-with-frozen-character-rules-baseline",
+    "sourceHash": "426cf244fc8f47d9db251c045f99c26a31787be5d82ad3111a63349ae9676caf",
+    "unitPassed": 68,
+    "browserJourneys": 18,
+    "finalVisualJourneyPassed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "bestiary": {
+    "before": {
+      "status": "passed",
+      "completedAt": "2026-11-01T16:08:10.710Z",
+      "checks": 9,
+      "availableMonsters": 322,
+      "usableProfiles": 322,
+      "monstersWithAttacks": 311,
+      "collection": "refonte_bestiary_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realCharactersGroupsCombatsAndBestiaryUnchanged": true,
+      "coverage": [
+        "all-live-profiles-normalize",
+        "pagination-without-loss",
+        "french-and-english-search",
+        "server-side-stats-and-bulk-add",
+        "independent-hit-points",
+        "persisted-profile-snapshot",
+        "player-secrecy",
+        "group-role-and-pause-permissions",
+        "read-only-live-bestiary"
+      ]
+    },
+    "after": {
+      "status": "passed",
+      "completedAt": "2026-11-01T16:08:45.277Z",
+      "checks": 9,
+      "availableMonsters": 322,
+      "usableProfiles": 322,
+      "monstersWithAttacks": 311,
+      "collection": "refonte_bestiary_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realCharactersGroupsCombatsAndBestiaryUnchanged": true,
+      "coverage": [
+        "all-live-profiles-normalize",
+        "pagination-without-loss",
+        "french-and-english-search",
+        "server-side-stats-and-bulk-add",
+        "independent-hit-points",
+        "persisted-profile-snapshot",
+        "player-secrecy",
+        "group-role-and-pause-permissions",
+        "read-only-live-bestiary"
+      ]
+    }
+  },
+  "combatChecks": {
+    "before": 11,
+    "after": 11
+  },
+  "groupChecks": {
+    "before": 8,
+    "after": 8
+  },
+  "characterJourneys": {
+    "before": 22,
+    "after": 22
+  },
+  "httpChecksPassed": 21,
+  "serviceOnline": true,
+  "productionService": "myrpgtable-refonte",
+  "sourcePolicy": "The 322 inherited MongoDB monster profiles are integrated as they stand; their source label is not a new edition or documentary audit. No destructive legacy import ran.",
+  "interactiveProductionLogin": "Not performed; browser journeys use isolated accounts. Real bestiary reads and disposable control combat writes pass before and after publication."
+}

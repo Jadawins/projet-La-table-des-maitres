@@ -1,3 +1,5 @@
+import {createBestiaryStore} from '../access/bestiary-store.mjs';
+import {bestiaryMemory,bestiaryFixtures} from './bestiary-fixture.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {randomUUID} from 'node:crypto';
@@ -14,7 +16,7 @@ import {groupMemory} from './group-memory.mjs';
 import {memoryCollection} from './admin-memory.mjs';
 const catalogue=buildCatalogue(JSON.parse(await readFile(new URL('./fixtures/rules-2024.json',import.meta.url))));
 const mj={userId:'mj'},player={userId:'player'},outsider={userId:'outsider'};
-async function setup({attach=true}={}){
+async function setup({attach=true,bestiaryRows=null}={}){
   const chars=memoryCollection(),characters=createCharacterStore({collection:chars,validate:s=>validateSavedCharacter(s,catalogue),catalogueFingerprint:'combat-tests'});
   const groups=createGroupStore({collection:groupMemory(),characters});
   const {group,invitationCode}=await groups.create(mj,{name:'Table',alias:'Wiwi'});await groups.join(player,{code:invitationCode,alias:'Aline'});
@@ -22,7 +24,8 @@ async function setup({attach=true}={}){
   await characters.save(player.userId,id,state,0);if(attach)await groups.attach(player,group.id,{characterId:id});
   const collection=groupMemory(),rawInsert=collection.insertOne;
   collection.insertOne=async row=>{if(collection.rows.some(p=>p.groupId===row.groupId&&p.active&&row.active))throw Object.assign(Error('duplicate'),{code:11000});return rawInsert(row);};
-  const combats=createCombatStore({collection,groups,characters,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
+  const bestiary=bestiaryRows?createBestiaryStore({collection:bestiaryMemory(bestiaryRows)}):null;
+  const combats=createCombatStore({collection,groups,characters,bestiary,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
   let result;
   const create=async()=>result=await combats.create(mj,group.id,{name:'Le pont'});
   const get=async(actor=mj)=>result=await combats.get(actor,group.id);
@@ -123,4 +126,34 @@ test('Combat sans PJ, valeurs invalides et import de nouveaux personnages sans d
   await assert.rejects(s.act({type:'add-npc',name:'Faux',maxHp:0,ac:10}),e=>e.status===400);
   await s.groups.attach(player,s.group.id,{characterId:s.id});await s.act({type:'sync'});await s.act({type:'sync'});assert.equal(s.raw().combat.participants.length,1);
   await assert.rejects(s.initiative(s.raw().combat.participants[0],1000),e=>e.status===400);
+});
+test('Bestiaire : ajout multiple depuis la source serveur, PV indépendants et profils conservés',async()=>{
+  const rows=bestiaryFixtures(),s=await setup({bestiaryRows:rows});await s.create();
+  await s.act({type:'add-bestiary',monsterId:'goblin',quantity:2,maxHp:999,ac:99,bestiary:{name:'Faux'}});
+  let npcs=s.raw().combat.participants.filter(p=>p.kind==='npc');assert.equal(npcs.length,2);assert.equal(npcs[0].name,'Gobelin 1');assert.equal(npcs[1].name,'Gobelin 2');
+  assert(npcs.every(p=>p.maxHp===7&&p.ac===15&&p.visible===false&&p.initiative===null));assert.notEqual(npcs[0].id,npcs[1].id);
+  await s.act({type:'health',participantId:npcs[0].id,action:{type:'damage',amount:3}});
+  npcs=s.raw().combat.participants.filter(p=>p.kind==='npc');assert.deepEqual(npcs.map(p=>p.currentHp),[4,7]);
+  rows[0].pv=21;await s.act({type:'add-bestiary',monsterId:'goblin',quantity:1});npcs=s.raw().combat.participants.filter(p=>p.kind==='npc');
+  assert.deepEqual(npcs.map(p=>p.maxHp),[7,7,21]);assert.equal(npcs[2].name,'Gobelin 3');assert.equal(npcs[0].bestiary.maxHp,7);
+  await s.act({type:'visible',participantId:npcs[0].id,value:true});const visible=(await s.combats.get(player,s.group.id)).combat.participants.find(p=>p.id===npcs[0].id);
+  assert.equal(visible.bestiary,undefined);assert.equal(visible.maxHp,undefined);assert(!JSON.stringify(visible).includes('Cimeterre'));
+});
+test('Bestiaire : validation des quantités, autorisations et refus des profils incomplets sans ajout partiel',async()=>{
+  const rows=bestiaryFixtures(),s=await setup({bestiaryRows:rows});await s.create();
+  const add={type:'add-bestiary',monsterId:'goblin',quantity:1};
+  await assert.rejects(s.act(add,player),e=>e.status===403);
+  for(const quantity of [0,21,'2',1.5])await assert.rejects(s.act({...add,quantity}),e=>e.status===400);
+  await assert.rejects(s.act({...add,monsterId:'missing'}),e=>e.status===404);
+  rows[0].pv=null;await assert.rejects(s.act(add),e=>e.status===400);assert.equal(s.raw().combat.participants.length,1);
+  const absent=await setup();await absent.create();await assert.rejects(absent.act(add),e=>e.status===503);
+});
+test('Bestiaire : limite globale, pause obligatoire et révision périmée empêchent les doubles ajouts',async()=>{
+  const s=await setup({attach:false,bestiaryRows:bestiaryFixtures()});await s.create();const old={combatId:s.raw().combat.id,revision:s.raw().combat.revision,type:'add-bestiary',monsterId:'goblin',quantity:20};
+  await s.combats.act(mj,s.group.id,old);await assert.rejects(s.combats.act(mj,s.group.id,old),e=>e.status===409);await s.get();
+  for(let i=0;i<4;i++)await s.act({type:'add-bestiary',monsterId:'goblin',quantity:20});
+  assert.equal(s.raw().combat.participants.length,100);assert.equal(new Set(s.raw().combat.participants.map(p=>p.name)).size,100);
+  await assert.rejects(s.act({type:'add-bestiary',monsterId:'goblin',quantity:1}),e=>e.status===400);
+  const small=await setup({attach:false,bestiaryRows:bestiaryFixtures()});await small.create();await small.act({type:'add-bestiary',monsterId:'goblin',quantity:1});await small.initiative(small.raw().combat.participants[0],12);await small.act({type:'start'});
+  await assert.rejects(small.act({type:'add-bestiary',monsterId:'goblin',quantity:1}),e=>e.status===400);
 });

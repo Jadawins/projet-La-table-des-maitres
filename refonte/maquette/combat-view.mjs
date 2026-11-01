@@ -1,11 +1,12 @@
+import {mountBestiary,renderBestiaryProfile} from './bestiary-view.mjs';
 import {CONDITIONS} from './condition-rules.mjs';
 const mounts=new WeakMap();
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statuses={preparing:'Préparation',running:'En cours',paused:'En pause',finished:'Terminé'};
 export function disposeCombat(root){mounts.get(root)?.();mounts.delete(root);}
 export function mountCombat(root,{groupId}){
-  disposeCombat(root);const controller=new AbortController();let state,busy=false,notice='',timer;
-  const stop=()=>{controller.abort();clearInterval(timer);};mounts.set(root,stop);
+  disposeCombat(root);const controller=new AbortController();let state,busy=false,notice='',timer,disposeBestiary;const bestiaryState={};
+  const stop=()=>{controller.abort();clearInterval(timer);disposeBestiary?.();};mounts.set(root,stop);
   async function request(data){
     const response=await fetch('./api/groupes/'+encodeURIComponent(groupId)+'/combat',{method:data?'POST':'GET',credentials:'same-origin',cache:'no-store',signal:controller.signal,
       ...(data?{headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}:{})});
@@ -34,24 +35,27 @@ export function mountCombat(root,{groupId}){
       ${p.canEdit&&p.deathSaves&&p.currentHp===0?`<p>Jets contre la mort : ${p.deathSaves.successes} succès · ${p.deathSaves.failures} échecs${p.deathSaves.stable?' · Stabilisé':''}${p.deathSaves.dead?' · Mort déclarée':''}</p>`:''}
       ${p.canEdit?`<p>Épuisement : ${p.exhaustion}. ${p.concentration?'Concentration déclarée : '+esc(p.concentration):'Aucune concentration déclarée.'}</p>`:''}
       ${p.canEdit&&p.concentration&&p.conditions.some(c=>c.id==='incapacitated')?'<p class="combat-warning">Neutralisé : interrompez la concentration déclarée.</p>':''}
+      ${state.isMJ&&p.bestiary?`<details class="bestiary-snapshot"><summary>Profil du bestiaire utilisé</summary>${renderBestiaryProfile(p.bestiary)}</details>`:''}
       ${editable?`<details><summary>Gérer ce participant</summary>${state.combat.status!=='running'?`<form data-combat-form="initiative" data-person="${p.id}"><label>Total d’initiative ${p.initiativeBonus!==undefined?`(bonus de la fiche : ${p.initiativeBonus>=0?'+':''}${p.initiativeBonus??'—'})`:''}<input name="value" aria-label="Initiative de ${esc(p.name)}" type="number" min="-100" max="100" required value="${p.initiative??''}"></label><button class="button secondary">Enregistrer l’initiative</button></form>`:''}
       ${healthForm(p)}<form data-combat-form="concentration" data-person="${p.id}"><label>Concentration — suivi manuel<input name="value" maxlength="100" value="${esc(p.concentration)}" placeholder="Nom du sort, ou vide pour arrêter"></label><button class="button secondary">Enregistrer la concentration</button></form><p class="hint">Déclarez les interruptions et effectuez les jets nécessaires avec vos dés. Aucun jet ni effet de sort n’est automatisé.</p></details>`:''}`}
       ${state.isMJ&&state.combat.status!=='finished'?`<div class="portal-actions">${p.kind==='npc'?`<button class="button secondary" data-combat-action="visible" data-person="${p.id}">${p.visible?'Masquer aux joueurs':'Révéler aux joueurs'}</button>`:''}${state.combat.status!=='running'?`<button class="button secondary" data-combat-action="remove" data-person="${p.id}">Retirer du combat</button>${index>0&&p.initiative!==null&&rows[index-1].initiative===p.initiative?`<button class="button secondary" data-combat-action="tie" data-person="${p.id}">Passer avant à égalité</button>`:''}`:''}</div>`:''}</article>`;
   }
   function render(){
     if(controller.signal.aborted)return;
-    const expanded=new Set([...root.querySelectorAll('.combat-participant:has(details[open])')].map(node=>node.dataset.participant));
+    disposeBestiary?.();
+    const expanded=new Map([...root.querySelectorAll('.combat-participant')].map(node=>[node.dataset.participant,[...node.querySelectorAll(':scope > details')].map(detail=>detail.open)]));
     const combat=state.combat;
     root.innerHTML=`<a class="back" href="#groupes/${esc(groupId)}">← ${esc(state.groupName)}</a><p class="eyebrow">VOTRE TABLE · COMBAT</p><h1>${esc(combat?.name||'Préparer un combat')}</h1><p data-combat-feedback role="status">${esc(notice)}</p>
       <div class="portal-actions"><button class="button secondary" data-combat-action="refresh">Actualiser</button></div>
       ${!combat||combat.status==='finished'?`${combat?'<p>Combat terminé. Les PV et les états restent conservés dans les fiches.</p>':''}${state.isMJ?'<section class="portal-card"><h2>Nouveau combat</h2><form data-combat-form="create"><label class="field">Nom du combat<input name="name" maxlength="100" required></label><button class="button primary">Préparer le combat</button></form></section>':'<p>Le MJ prépare le prochain combat du groupe.</p>'}`:''}
       ${combat?`<section class="combat-status portal-card"><strong>${statuses[combat.status]} · Round ${combat.round}</strong><p>${combat.status==='running'?combat.currentId?'Tour de '+esc(combat.participants.find(p=>p.id===combat.currentId)?.name):'Tour géré par le MJ.':'Les résultats des dés sont saisis manuellement. Les égalités se règlent en préparation ou en pause.'}</p>
       ${state.isMJ?`<div class="portal-actions">${combat.status==='preparing'?'<button class="button primary" data-combat-action="start">Démarrer le combat</button>':''}${combat.status==='running'?'<button class="button secondary" data-combat-action="previous">Tour précédent</button><button class="button primary" data-combat-action="next">Tour suivant</button><button class="button secondary" data-combat-action="pause">Mettre en pause</button>':''}${combat.status==='paused'?'<button class="button primary" data-combat-action="resume">Reprendre le combat</button>':''}${combat.status!=='finished'?'<button class="button secondary" data-combat-action="finish">Terminer le combat</button>':''}</div>`:''}</section>
-      ${state.isMJ&&['preparing','paused'].includes(combat.status)?`<section class="portal-card combat-prep"><h2>Participants</h2><button class="button secondary" data-combat-action="sync">Ajouter les personnages rattachés</button><form data-combat-form="npc"><label>Nom de l’adversaire<input name="name" maxlength="100" required></label><label>PV maximum<input name="maxHp" type="number" min="1" max="100000" required></label><label>Classe d’armure<input name="ac" type="number" min="0" max="100" required></label><button class="button secondary">Ajouter l’adversaire</button></form><p>Les nouveaux adversaires sont cachés aux joueurs jusqu’à leur révélation.</p></section>`:''}
+      ${state.isMJ&&['preparing','paused'].includes(combat.status)?`<section class="portal-card combat-prep"><h2>Participants</h2><button class="button secondary" data-combat-action="sync">Ajouter les personnages rattachés</button><form data-combat-form="npc"><label>Nom de l’adversaire<input name="name" maxlength="100" required></label><label>PV maximum<input name="maxHp" type="number" min="1" max="100000" required></label><label>Classe d’armure<input name="ac" type="number" min="0" max="100" required></label><button class="button secondary">Ajouter l’adversaire</button></form><p>Les nouveaux adversaires sont cachés aux joueurs jusqu’à leur révélation.</p></section><section class="portal-card combat-prep" data-bestiary-panel></section>`:''}
       <div class="combat-participants">${combat.participants.map(participant).join('')||'<p>Aucun participant visible pour le moment.</p>'}</div>
       ${state.isMJ?`<details class="portal-card"><summary>Journal du MJ</summary><ul>${combat.journal.map(event=>`<li>${esc(new Date(event.at).toLocaleTimeString('fr-FR'))} · ${esc(event.message)}</li>`).join('')}</ul></details>`:''}`:''}`;
-    root.querySelectorAll('.combat-participant').forEach(node=>{if(expanded.has(node.dataset.participant)&&node.querySelector('details'))node.querySelector('details').open=true;});
+    root.querySelectorAll('.combat-participant').forEach(node=>node.querySelectorAll(':scope > details').forEach((detail,index)=>detail.open=expanded.get(node.dataset.participant)?.[index]||false));
     bind();
+    const panel=root.querySelector('[data-bestiary-panel]');if(panel)disposeBestiary=mountBestiary(panel,{groupId,state:bestiaryState,onAdd:data=>run(()=>act(data))});
   }
   function act(data){return request({...data,combatId:state.combat.id,revision:state.combat.revision});}
   function bind(){
@@ -80,9 +84,9 @@ export function mountCombat(root,{groupId}){
   root.innerHTML='<h1>Combat</h1><p data-combat-feedback role="status">Ouverture du combat…</p>';
   run(()=>request());
   timer=setInterval(async()=>{
-    if(busy||document.hidden||root.contains(document.activeElement)&&document.activeElement.closest('form,details[open]'))return;
+    if(busy||document.hidden||root.contains(document.activeElement)&&document.activeElement.closest('form,details[open],[data-bestiary-panel]'))return;
     busy=true;
-    try{const fresh=await request();if(!controller.signal.aborted&&!(root.contains(document.activeElement)&&document.activeElement.closest('form,details[open]'))&&JSON.stringify(fresh)!==JSON.stringify(state)){state=fresh;render();}}
+    try{const fresh=await request();if(!controller.signal.aborted&&!(root.contains(document.activeElement)&&document.activeElement.closest('form,details[open],[data-bestiary-panel]'))&&JSON.stringify(fresh)!==JSON.stringify(state)){state=fresh;render();}}
     catch(error){if(!controller.signal.aborted){if([401,404].includes(error.status)){stop();root.innerHTML='<h1>Combat inaccessible</h1><p>'+esc(error.message)+'</p><a href="#groupes">Mes groupes →</a>';}else feedback('Actualisation indisponible. Les dernières valeurs restent affichées.');}}
     finally{busy=false;}
   },5000);

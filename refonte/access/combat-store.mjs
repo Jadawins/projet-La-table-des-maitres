@@ -5,7 +5,7 @@ const text=(value,max=100)=>{if(typeof value!=='string'||!value.trim()||value.tr
 const healthActions=new Set(['start','damage','heal','set-current','set-temp','set-condition','set-exhaustion','death-roll','stabilize','zero-hp-exception','declare-dead','revive']);
 export const combatOrder=participants=>[...participants].sort((a,b)=>(b.initiative??-1000)-(a.initiative??-1000)||a.order-b.order);
 
-export function createCombatStore({collection,groups,characters,sheetModel,playView,applyPlayAction,now=()=>new Date()}) {
+export function createCombatStore({collection,groups,characters,bestiary=null,sheetModel,playView,applyPlayAction,now=()=>new Date()}) {
   async function context(actor,groupId) {return groups.get(actor,groupId);}
   function mj(group){if(!group.isMJ)throw fault(403,'Cette action est réservée au MJ du groupe.');}
   async function current(groupId) {
@@ -18,7 +18,7 @@ export function createCombatStore({collection,groups,characters,sheetModel,playV
     if(saved.status!=='ready')throw fault(409,'La fiche doit être terminée avant de participer au combat.');
     return saved;
   }
-  function npcModel(p){return {hp:p.maxHp,ac:p.ac,speed:9,slots:{},classResources:[],mods:{}};}
+  function npcModel(p){return {hp:p.maxHp,ac:p.ac,initiative:p.bestiary?.initiativeBonus??undefined,speed:p.bestiary?.speeds?.marche??9,slots:{},classResources:[],mods:{}};}
   async function view(actor,group,combat){
     if(!combat)return {combat:null,isMJ:group.isMJ,groupName:group.name};
     const participants=[];
@@ -37,6 +37,7 @@ export function createCombatStore({collection,groups,characters,sheetModel,playV
         ...(canEdit?{characterRevision:revision,started:live?.started,currentHp:live?.currentHp,maxHp:live?.maxHp,tempHp:live?.tempHp,
           ac:model?.ac,initiativeBonus:model?.initiative,explicitConditions:live?.effects.explicit||[],exhaustion:live?.effects.exhaustion||0,
           deathSaves:live?.effects.death,life:live?.effects.life,concentration:p.concentration||''}:{}),
+        ...(group.isMJ&&p.kind==='npc'&&p.bestiary?{bestiary:structuredClone(p.bestiary)}:{}),
         ...(group.isMJ&&p.kind==='pc'?{ownerId:p.ownerId,characterId:p.characterId}:{})});
     }
     return {isMJ:group.isMJ,groupName:group.name,combat:{id:combat.id,revision:combat.revision,name:combat.name,status:combat.status,
@@ -101,8 +102,23 @@ export function createCombatStore({collection,groups,characters,sheetModel,playV
       }
       mj(group);
       let fields={},message='Combat mis à jour.';
-      if(['add-npc','sync','remove','tie'].includes(input.type)&&combat.status==='running')throw fault(400,'Mettez le combat en pause avant de modifier les participants.');
-      if(input.type==='add-npc'){
+      if(['add-npc','add-bestiary','sync','remove','tie'].includes(input.type)&&combat.status==='running')throw fault(400,'Mettez le combat en pause avant de modifier les participants.');
+      if(input.type==='add-bestiary'){
+        if(!bestiary)throw fault(503,'Le bestiaire est momentanément indisponible.');
+        if(!integer(input.quantity,1,20))throw fault(400,'Choisissez entre 1 et 20 exemplaires.');
+        if(combat.participants.length+input.quantity>100)throw fault(400,'Le combat est limité à 100 participants.');
+        const profile=await bestiary.get(input.monsterId,{fresh:true});
+        if(!profile.usable)throw fault(400,'Les PV ou la CA de ce profil sont incomplets. Utilisez un adversaire personnalisé.');
+        const names=new Set(combat.participants.map(row=>row.name)),base=profile.name.slice(0,90),added=[];
+        let suffix=1,order=Math.max(-1,...combat.participants.map(p=>p.order))+1;
+        for(let i=0;i<input.quantity;i++){
+          while(names.has(base+' '+suffix))suffix++;
+          const name=base+' '+suffix++;names.add(name);
+          added.push({id:randomUUID(),kind:'npc',name,maxHp:profile.maxHp,ac:profile.ac,initiative:null,order:order++,visible:false,concentration:'',
+            bestiary:profile,bestiaryAddedAt:now().toISOString(),playState:{version:1,hpLost:0,tempHp:0,used:{}}});
+        }
+        fields.participants=[...combat.participants,...added];message=input.quantity+' exemplaire(s) ajouté(s) : '+profile.name;
+      }else if(input.type==='add-npc'){
         if(combat.participants.length>=100)throw fault(400,'Le combat est limité à 100 participants.');
         if(!integer(input.maxHp,1,100000)||!integer(input.ac,0,100))throw fault(400,'Renseignez des PV maximum et une CA valides.');
         const npc={id:randomUUID(),kind:'npc',name:text(input.name),maxHp:input.maxHp,ac:input.ac,initiative:null,
