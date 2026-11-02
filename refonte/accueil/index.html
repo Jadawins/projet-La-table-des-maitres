@@ -1,31 +1,66 @@
 <!doctype html>
 <html lang="fr">
-<head><link rel="icon" type="image/png" href="/favicon.png">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#131019">
-  <meta name="description" content="La Table du Maître : créez vos personnages D&D 2024 et consultez votre grimoire.">
+  <meta name="description" content="Créez vos personnages D&D 2024, rassemblez votre groupe et préparez vos combats. Découvrez les nouveautés et les prochains chapitres de La Table du Maître.">
   <title>Accueil · La Table du Maître</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/refonte.css">
+  <link rel="stylesheet" href="/home.css">
   <script src="/refonte.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#avenir">Aller aux prochaines étapes</a>
+  <a class="skip" href="#main">Aller au contenu</a>
   <div class="page">
-    <header><a class="brand" href="/" aria-label="La Table du Maître, accueil"><span class="brand-mark" aria-hidden="true">✧</span><span>La Table<br><b>du Maître</b></span></a><div class="header-actions"><span class="status"><i aria-hidden="true"></i> Votre table. Vos histoires.</span><a class="login-link" href="/inscription.html">Créer un compte</a><a class="login-link" href="/connexion.html">Se connecter <span aria-hidden="true">→</span></a></div></header>
-    <main>
-      <section class="hero" aria-labelledby="title">
-        <div class="hero-copy"><p class="eyebrow">VOTRE TABLE. VOS HISTOIRES.</p><h1>Les grandes aventures<br>méritent de <em>belles fondations.</em></h1><p class="lead">Bienvenue à ma table !</p><p class="intro">J’ai créé cet espace pour préparer vos aventures et garder vos personnages à portée de main. Le site évolue petit à petit : explorez le grimoire, créez votre héros et faites-moi vos retours. À bientôt autour des dés !</p><a class="button" href="#avenir">Découvrir la suite <span aria-hidden="true">↓</span></a></div>
-        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="seal">✧</div><span class="art-label">UNE NOUVELLE HISTOIRE<br>À ÉCRIRE ENSEMBLE</span></div>
-      </section>
-      <section class="future" aria-labelledby="books-title"><span class="future-glyph" aria-hidden="true">✧</span><div><h2 id="books-title">Un complément à vos livres</h2><p>Cette application accompagne vos parties et ne remplace pas les livres de règles. Pour profiter de l’ensemble des règles et de leurs explications, nous vous recommandons d’acheter les ouvrages officiels et de soutenir leurs créateurs.</p></div></section>
-      <section id="avenir" class="roadmap" aria-labelledby="roadmap-title"><div class="section-heading"><div><p class="eyebrow">PAS À PAS, MODULE PAR MODULE</p><h2>Les nouveautés du site</h2></div><p>On commence par votre personnage.<br>Le reste de l’aventure suivra.</p></div>
-        <div class="cards"><article class="card current"><div class="card-top"><span class="number">01</span><span class="tag">Disponible</span></div><h3>Donner vie<br>à votre personnage</h3><p>Un parcours de création D&D 2024, avec vos choix de classe, d’espèce, d’historique, d’aptitudes et de sorts.</p><p class="detail">Vos dés physiques ou les dés de l’application : vous garderez le choix.</p></article>
-        <article class="card"><div class="card-top"><span class="number">02</span><span class="tag">Disponible</span></div><h3>Tout retrouver<br>sur votre fiche</h3><p>Caractéristiques, compétences, équipement, aptitudes et sorts : les informations de votre héros réunies comme sur une fiche papier.</p><p class="detail">Une fiche organisée en rubriques et sauvegardée dans votre compte.</p></article>
-        <article class="card"><div class="card-top"><span class="number">03</span><span class="tag">Nouveau</span></div><h3>Explorer<br>le grimoire</h3><p>Retrouvez un sort, une classe, une sous-classe, un don ou votre équipement grâce à la recherche du catalogue.</p><p class="detail">Les mêmes règles que celles utilisées pour vos personnages.</p></article></div>
-      </section>
-      <section class="future"><span class="future-glyph" aria-hidden="true">✦</span><div><h2>Et après ? Retour autour de la table.</h2><p>Les campagnes et les outils de partie viendront dans un second temps. La priorité reste une création et une fiche complètes sur ordinateur.</p><p class="quiet">Pas de date annoncée pour le moment : chaque étape sera ouverte lorsqu’elle sera prête.</p></div></section>
-    </main>
+    <header><a class="brand" href="/" aria-label="La Table du Maître, accueil"><span class="brand-mark" aria-hidden="true">✧</span><span>La Table<br><b>du Maître</b></span></a><div class="header-actions"><a class="login-link" href="/inscription.html">Créer un compte</a><a class="login-link" href="/connexion.html">Se connecter <span aria-hidden="true">→</span></a></div></header>
+    <nav class="home-public-nav" aria-label="Découvrir le site"><a href="#nouveautes">Les nouveautés</a><a href="#disponible">Les outils disponibles</a><a href="#avenir">Les prochains chapitres</a></nav>
+    <main id="main"><div class="home-hub home-public">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-hero-copy">
+        <p class="home-kicker"><span aria-hidden="true">✦</span> VOTRE TABLE. VOS HISTOIRES.</p>
+        <h1 id="home-title">Vos aventures<br>commencent <em>ici.</em></h1>
+        <p class="home-lead">Des premiers dés aux grandes batailles, donnez une place à vos personnages et à votre table.</p>
+        <div class="home-actions"><a class="home-button home-button-gold" href="/inscription.html">Créer mon compte <span aria-hidden="true">↗</span></a><a class="home-button home-button-outline" href="/connexion.html">Ouvrir mon espace <span aria-hidden="true">→</span></a></div>
+        <p class="home-hero-note">Pensé pour vos parties sur ordinateur · D&D 2024</p>
+      </div>
+      <aside class="home-chapter" aria-label="Le carnet de votre table">
+        <div class="home-chapter-top"><span>LE CARNET DE VOTRE TABLE</span><span aria-hidden="true">✧</span></div>
+        <p class="home-chapter-number" aria-hidden="true">I</p>
+        <p class="home-chapter-title">Un personnage.<br>Une table.<br><em>Mille histoires.</em></p>
+        <div class="home-chapter-bottom"><span>CRÉER · RASSEMBLER · JOUER</span><span aria-hidden="true">✦</span></div>
+      </aside>
+    </section>
+    <div class="home-facts" aria-label="La création en quelques chiffres"><p><strong>12</strong><span>classes</span></p><p><strong>48</strong><span>sous-classes</span></p><p><strong>1–20</strong><span>niveaux de personnage</span></p><p class="home-fact-dice"><strong>Vos dés.</strong><span>Votre façon de jouer.</span></p></div>
+
+    <section class="home-section" id="nouveautes" aria-labelledby="home-news-title">
+      <div class="home-section-heading"><div><p class="home-kicker">LE JOURNAL DE LA TABLE</p><h2 id="home-news-title">Tout juste dans le grimoire.</h2></div><p>Mise à jour du 2 novembre 2026</p></div>
+      <div class="home-news-grid">
+        <article class="home-news home-news-featured"><p class="home-badge">NOUVEAU · GROUPES</p><h3>Joueur ou MJ,<br>choisissez votre place.</h3><p>Le rôle se choisit à la création et à l’adhésion, avec un code joueur et un code MJ distincts. La suppression du groupe est aussi disponible, sans supprimer les fiches des membres.</p><span class="home-news-foot">Une table, plusieurs façons de participer.</span></article>
+        <article class="home-news"><p class="home-badge">NOUVEAU · ATTAQUES</p><h3>Vos dés,<br>le dernier mot au MJ.</h3><p>Choisissez des dés physiques ou ceux de l’application pour toucher et pour les dégâts. Avantage, désavantage et critiques sont détaillés. Le MJ valide avant de modifier les PV.</p><span class="home-news-foot">Les alliés peuvent aussi être ciblés.</span></article>
+        <article class="home-news"><p class="home-badge">DÉJÀ DISPONIBLE · ÉVOLUTION</p><h3>Votre héros<br>ne s’arrête pas là.</h3><p>Montez de niveau depuis votre fiche et choisissez, si vous le souhaitez, une autre classe. Retrouvez aussi vos repos, états et ressources dans le suivi en partie.</p><span class="home-news-foot">Jusqu’au niveau total 20.</span></article>
+      </div>
+    </section>
+
+    <section class="home-section" id="disponible" aria-labelledby="home-features-title">
+      <div class="home-section-heading"><div><p class="home-kicker">DÈS MAINTENANT</p><h2 id="home-features-title">De quoi préparer votre prochaine partie.</h2></div><p>Les outils disponibles aujourd’hui.</p></div>
+      <div class="home-feature-grid"><article class="home-feature"><div class="home-feature-top"><span>01</span><p>Personnages</p></div><h3>Un héros qui vous ressemble</h3><p>Douze classes, 48 sous-classes, espèces, historiques, dons, équipement et choix de sorts. Créez votre personnage du niveau 1 au niveau 20.</p></article><article class="home-feature"><div class="home-feature-top"><span>02</span><p>Fiches & impression</p></div><h3>Du compte à la table</h3><p>Enregistrez et retrouvez vos personnages en ligne. Consultez leur fiche par rubriques et téléchargez la feuille de personnage PDF remplie.</p></article><article class="home-feature"><div class="home-feature-top"><span>03</span><p>Évolution</p></div><h3>Le prochain niveau vous attend</h3><p>Faites évoluer une fiche existante : points de vie, aptitudes, dons et sorts. Le multiclassage est disponible, jusqu’au niveau total 20.</p></article><article class="home-feature"><div class="home-feature-top"><span>04</span><p>Suivi en partie</p></div><h3>Gardez le fil de l’aventure</h3><p>Suivez les PV, les PV temporaires, les réserves prises en charge, les emplacements de sorts, les repos, les états et les sauvegardes contre la mort.</p></article><article class="home-feature"><div class="home-feature-top"><span>05</span><p>Groupes</p></div><h3>Une place pour chaque rôle</h3><p>Créez ou rejoignez une table comme joueur ou MJ, rattachez votre personnage et partagez les codes d’invitation adaptés. Le créateur gère les membres et peut supprimer le groupe.</p></article><article class="home-feature"><div class="home-feature-top"><span>06</span><p>Combat & bestiaire</p></div><h3>La rencontre prend vie</h3><p>Préparez les adversaires depuis le bestiaire, saisissez les initiatives et suivez les tours. Pour les attaques : dés physiques ou dés de l’application, critiques et dégâts confirmés par le MJ.</p></article><article class="home-feature"><div class="home-feature-top"><span>07</span><p>Grimoire</p></div><h3>La bonne information, au bon moment</h3><p>Recherchez un sort, une classe, une sous-classe, une espèce, un historique, un don ou une pièce d’équipement dans le catalogue utilisé par vos fiches.</p></article><article class="home-feature"><div class="home-feature-top"><span>08</span><p>Comptes & administration</p></div><h3>Vos personnages trouvent leur place</h3><p>Inscription et connexion, fiches rattachées à leur compte et espace d’administration : métriques, copie ou transfert d’une fiche vers un compte existant.</p></article></div>
+      <aside class="home-dice-note"><span aria-hidden="true">✧</span><div><h3>La main reste autour de la table.</h3><p>Aucun dé ne se lance automatiquement. Pour les attaques, vous pouvez changer de méthode à chaque jet, et les dégâts attendent toujours la confirmation du MJ. Les effets particuliers restent arbitrés à votre table.</p></div></aside>
+    </section>
+
+    <section class="home-section home-roadmap" id="avenir" aria-labelledby="home-roadmap-title">
+      <div class="home-section-heading"><div><p class="home-kicker">LES PROCHAINS CHAPITRES</p><h2 id="home-roadmap-title">L’aventure continue.</h2></div><p>Une direction, pas une date de livraison.<br>Ces outils ne sont pas encore disponibles.</p></div>
+      <ol class="home-roadmap-list">
+        <li><span class="home-roadmap-step" aria-hidden="true">01</span><div><p class="home-badge">PROCHAINE ÉTAPE</p><h3>La magie entre dans le combat.</h3><p>Résolution des sorts, sauvegardes, concentration, durées et zones d’effet. Les alliés dans la zone seront pris en compte, avec les exemptions prévues par les sorts et les aptitudes.</p></div></li>
+        <li><span class="home-roadmap-step" aria-hidden="true">02</span><div><p class="home-badge">ENSUITE</p><h3>Plus de place pour les maîtres du jeu.</h3><p>Enrichir les outils de campagne : préparation des aventures, organisation des séances et suivi de la table au fil des parties.</p></div></li>
+        <li><span class="home-roadmap-step" aria-hidden="true">03</span><div><p class="home-badge">PLUS TARD</p><h3>Votre table vous suivra aussi sur téléphone.</h3><p>Une application mobile reste envisagée après la consolidation de l’expérience sur ordinateur. Aucune date ni publication sur les boutiques n’est annoncée.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="home-creator portal-welcome" aria-labelledby="home-creator-title"><p class="home-kicker">LE MOT DU CRÉATEUR</p><h2 id="home-creator-title">Bienvenue à ma table.</h2><blockquote>Bienvenue à ma table ! J’ai créé cet espace pour préparer vos aventures et garder vos personnages à portée de main. Le site évolue petit à petit : explorez le grimoire, créez votre héros et faites-moi vos retours. À bientôt autour des dés !</blockquote><p class="home-signature">Wiwi <span>· Créateur de La Table du Maître</span></p></section>
+    <aside class="home-books" aria-labelledby="books-title"><span aria-hidden="true">✦</span><div><h2 id="books-title">Un complément à vos livres.</h2><p>Cette application accompagne vos parties et ne remplace pas les livres de règles. Pour profiter de l’ensemble des règles et de leurs explications, nous vous recommandons d’acheter les ouvrages officiels et de soutenir leurs créateurs.</p><a href="/sources.html">Consulter les sources et les licences <span aria-hidden="true">↗</span></a></div></aside>
+  </div></main>
     <footer><span>LA TABLE DU MAÎTRE</span><p>Votre table. Vos histoires.</p><a href="/sources.html">Sources et licences</a></footer>
   </div>
 </body>

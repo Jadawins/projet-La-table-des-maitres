@@ -1,0 +1,95 @@
+{
+  "status": "deployed",
+  "release": "20261102T084813Z",
+  "previous": "20261102T075800Z",
+  "completedAt": "2026-11-02T08:51:27.060Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261102T084813Z",
+  "backupDocuments": 3286,
+  "archiveSha256": "d16ceb1f2e1194e1cee1d4b4b00d05e1ee94725c2ba45c2a23422c4ce4370fe5",
+  "databaseBackupSha256": "feec7f752dad6f88be4e9bbf5409abb32e6c72f871f30a93692da944b5bb702a",
+  "realBefore": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    }
+  },
+  "realAfter": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    }
+  },
+  "existingControls": {
+    "characters": 22,
+    "groups": 8,
+    "combat": 11,
+    "bestiary": 9,
+    "attacks": 10,
+    "groupOptions": 12,
+    "registeredAccounts": 3
+  },
+  "httpChecks": 26,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261102T084813Z/start.mjs",
+    "restarts": 0
+  },
+  "realDataUnchanged": true,
+  "withdrawnCandidate": {
+    "release": "20261102T084451Z",
+    "status": "rolled-back",
+    "reason": "New public stylesheet availability check failed immediately after Nginx reload; previous release automatically restored. Added bounded asset-readiness wait before checking new routes."
+  },
+  "verification": {
+    "status": "passed",
+    "scope": "home-news-and-roadmap-with-unchanged-gameplay",
+    "sourceHash": "18a2bd7a7dae3301675c4fd73f63e056ce0b449d4e3803169b9f5542c2d89e6d",
+    "completedAt": "2026-11-02T08:50:04.219Z",
+    "baselineCommit": "f6f726fd2",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 16,
+    "browserJourneys": 22,
+    "qualification": "Shared public and signed-in welcome, eight available tool sections, three news cards and explicit future roadmap. Creator note, books notice, sources and library background retained. Twenty existing browser journeys pass; two home journeys pass after fixing test identity/selectors and narrow-screen wrapping. Frozen rules, character saves, group/combat/attack runtime, auth and grimoire reading unchanged."
+  },
+  "livePublicBrowser": {
+    "status": 200,
+    "features": 8,
+    "news": 3,
+    "stylesheetLoaded": true,
+    "title": "Accueil · La Table du Maître",
+    "errors": []
+  },
+  "qualification": [
+    "Même contenu pour l’accueil public statique et l’accueil connecté, généré depuis une seule source.",
+    "Trois nouveautés, huit rubriques disponibles, feuille de route et mot du créateur.",
+    "Fond bibliothèque, recommandation des livres et lien vers les sources conservés.",
+    "Vingt parcours existants réussis et deux nouveaux parcours d’accueil repris avec succès après corrections ciblées ; aucun test final ignoré ou instable.",
+    "Contrôle visuel de l’accueil public en production sans connexion ; parcours privés sur deux comptes isolés.",
+    "Règles, personnages, groupes, combats, bestiaire, authentification et logique de jeu inchangés."
+  ]
+}

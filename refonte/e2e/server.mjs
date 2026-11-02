@@ -27,7 +27,7 @@ const appRoot=path.join(runtime,'atelier');
 await mkdir(path.join(appRoot,'assets'),{recursive:true});
 // Static files served by the same allowlist and account injection as production.
 const {copyFile}=await import('node:fs/promises');
-for(const file of ['index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','multiclass-rules.mjs','character-advancement.mjs','condition-rules.mjs','condition-view.mjs','play-state.mjs','play-view.mjs','sheet-model.mjs','sheet-view.mjs','portal-view.mjs','group-view.mjs','groups.css','combat-view.mjs','attack-view.mjs','bestiary-view.mjs','combat.css','admin-view.mjs','character-pdf.mjs','portal.css','assets/fiche-personnage-2024.pdf','assets/pdf-lib-1.17.1.mjs','assets/pdf-lib-LICENSE.md']){
+for(const file of ['home-content.mjs','home.css','index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','multiclass-rules.mjs','character-advancement.mjs','condition-rules.mjs','condition-view.mjs','play-state.mjs','play-view.mjs','sheet-model.mjs','sheet-view.mjs','portal-view.mjs','group-view.mjs','groups.css','combat-view.mjs','attack-view.mjs','bestiary-view.mjs','combat.css','admin-view.mjs','character-pdf.mjs','portal.css','assets/fiche-personnage-2024.pdf','assets/pdf-lib-1.17.1.mjs','assets/pdf-lib-LICENSE.md']){
   await copyFile(path.join(here,'../maquette',file),path.join(appRoot,file));
 }
 
@@ -97,6 +97,7 @@ const server=createServer(async(req,res)=>{
   if(route==='/home.html'){const flow=signupCodes.get(new URL(req.url,origin).searchParams.get('code'));if(flow)signupAccounts.get(flow.email).confirmed=true;res.writeHead(302,{Location:'/connexion.html'+new URL(req.url,origin).search}).end();return;}
   if(route==='/_e2e/health'){res.writeHead(200,{'Content-Type':'application/json'}).end('{"ok":true,"isolated":true}');return;}
   if(route==='/assets/fond-bibliotheque-sombre.png'){res.writeHead(200,{'Content-Type':'image/png'}).end(await readFile(path.join(here,'../../assets/img/fond-bibliotheque-sombre.png')));return;}
+  if(route==='/home.css'){res.writeHead(200,{'Content-Type':'text/css; charset=utf-8'}).end(await readFile(path.join(here,'../maquette/home.css')));return;}
   if(route==='/favicon.ico'){res.writeHead(302,{Location:'/favicon.png'}).end();return;}
   if(route==='/favicon.png'){res.writeHead(200,{'Content-Type':'image/png'}).end(await readFile(path.join(here,'../../assets/icone/favicon-192.png')));return;}
   if(publicFiles[route]){
