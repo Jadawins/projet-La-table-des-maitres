@@ -8,6 +8,7 @@ const base = path.dirname(fileURLToPath(import.meta.url));
 const project = path.dirname(base);
 const port = Number(process.env.REFONTE_PREVIEW_PORT || 4178);
 const routes = {
+  '/attack-view.mjs': [path.join(base,'maquette/attack-view.mjs'),'text/javascript; charset=utf-8'],
   '/bestiary-view.mjs': [path.join(base,'maquette/bestiary-view.mjs'),'text/javascript; charset=utf-8'],
   '/combat-view.mjs': [path.join(base,'maquette/combat-view.mjs'),'text/javascript; charset=utf-8'],
   '/combat.css': [path.join(base,'maquette/combat.css'),'text/css; charset=utf-8'],

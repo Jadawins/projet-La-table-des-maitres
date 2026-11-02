@@ -18,7 +18,7 @@ Le bestiaire de préparation et les profils copiés sont réservés au MJ du gro
 
 Ce lot reprend les profils existants sans réécrire leurs mécaniques ou descriptions. Le libellé de source hérité `SRD-2024` est conservé dans les données ; il ne constitue pas une vérification de l’édition de chaque profil. L’import historique mentionne des données open5e et contient des descriptions anglaises. Ce raccordement ne vaut donc pas nouvel audit documentaire du bestiaire. Les attributions SRD 5.1 et 5.2.1 restent accessibles sur la page Sources et licences.
 
-Les attaques et aptitudes sont des repères de lecture : aucun lancer, effet, résistance ou dégât n’est appliqué automatiquement. La résolution automatisée des attaques reste un lot séparé.
+Les aptitudes restent des repères de lecture ; leurs effets sont arbitrés à la table. Le lot [Attaques et jets](ATTAQUES.md) permet désormais d’utiliser les attaques structurées avec des dés physiques ou serveur, puis une validation des dégâts par le MJ. Aucun lancer ni dégât ne se déclenche automatiquement.
 
 ## Vérification
 

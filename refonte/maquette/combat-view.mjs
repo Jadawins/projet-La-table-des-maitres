@@ -1,3 +1,4 @@
+import {mountAttacks} from './attack-view.mjs';
 import {mountBestiary,renderBestiaryProfile} from './bestiary-view.mjs';
 import {CONDITIONS} from './condition-rules.mjs';
 const mounts=new WeakMap();
@@ -5,8 +6,8 @@ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const statuses={preparing:'Préparation',running:'En cours',paused:'En pause',finished:'Terminé'};
 export function disposeCombat(root){mounts.get(root)?.();mounts.delete(root);}
 export function mountCombat(root,{groupId}){
-  disposeCombat(root);const controller=new AbortController();let state,busy=false,notice='',timer,disposeBestiary;const bestiaryState={};
-  const stop=()=>{controller.abort();clearInterval(timer);disposeBestiary?.();};mounts.set(root,stop);
+  disposeCombat(root);const controller=new AbortController();let state,busy=false,notice='',timer,disposeBestiary,disposeAttacks;const bestiaryState={},attackUI={};
+  const stop=()=>{controller.abort();clearInterval(timer);disposeBestiary?.();disposeAttacks?.();};mounts.set(root,stop);
   async function request(data){
     const response=await fetch('./api/groupes/'+encodeURIComponent(groupId)+'/combat',{method:data?'POST':'GET',credentials:'same-origin',cache:'no-store',signal:controller.signal,
       ...(data?{headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}:{})});
@@ -42,7 +43,7 @@ export function mountCombat(root,{groupId}){
   }
   function render(){
     if(controller.signal.aborted)return;
-    disposeBestiary?.();
+    disposeBestiary?.();disposeAttacks?.();
     const expanded=new Map([...root.querySelectorAll('.combat-participant')].map(node=>[node.dataset.participant,[...node.querySelectorAll(':scope > details')].map(detail=>detail.open)]));
     const combat=state.combat;
     root.innerHTML=`<a class="back" href="#groupes/${esc(groupId)}">← ${esc(state.groupName)}</a><p class="eyebrow">VOTRE TABLE · COMBAT</p><h1>${esc(combat?.name||'Préparer un combat')}</h1><p data-combat-feedback role="status">${esc(notice)}</p>
@@ -51,10 +52,11 @@ export function mountCombat(root,{groupId}){
       ${combat?`<section class="combat-status portal-card"><strong>${statuses[combat.status]} · Round ${combat.round}</strong><p>${combat.status==='running'?combat.currentId?'Tour de '+esc(combat.participants.find(p=>p.id===combat.currentId)?.name):'Tour géré par le MJ.':'Les résultats des dés sont saisis manuellement. Les égalités se règlent en préparation ou en pause.'}</p>
       ${state.isMJ?`<div class="portal-actions">${combat.status==='preparing'?'<button class="button primary" data-combat-action="start">Démarrer le combat</button>':''}${combat.status==='running'?'<button class="button secondary" data-combat-action="previous">Tour précédent</button><button class="button primary" data-combat-action="next">Tour suivant</button><button class="button secondary" data-combat-action="pause">Mettre en pause</button>':''}${combat.status==='paused'?'<button class="button primary" data-combat-action="resume">Reprendre le combat</button>':''}${combat.status!=='finished'?'<button class="button secondary" data-combat-action="finish">Terminer le combat</button>':''}</div>`:''}</section>
       ${state.isMJ&&['preparing','paused'].includes(combat.status)?`<section class="portal-card combat-prep"><h2>Participants</h2><button class="button secondary" data-combat-action="sync">Ajouter les personnages rattachés</button><form data-combat-form="npc"><label>Nom de l’adversaire<input name="name" maxlength="100" required></label><label>PV maximum<input name="maxHp" type="number" min="1" max="100000" required></label><label>Classe d’armure<input name="ac" type="number" min="0" max="100" required></label><button class="button secondary">Ajouter l’adversaire</button></form><p>Les nouveaux adversaires sont cachés aux joueurs jusqu’à leur révélation.</p></section><section class="portal-card combat-prep" data-bestiary-panel></section>`:''}
-      <div class="combat-participants">${combat.participants.map(participant).join('')||'<p>Aucun participant visible pour le moment.</p>'}</div>
+      <section class="portal-card combat-attacks" data-attack-panel></section><div class="combat-participants">${combat.participants.map(participant).join('')||'<p>Aucun participant visible pour le moment.</p>'}</div>
       ${state.isMJ?`<details class="portal-card"><summary>Journal du MJ</summary><ul>${combat.journal.map(event=>`<li>${esc(new Date(event.at).toLocaleTimeString('fr-FR'))} · ${esc(event.message)}</li>`).join('')}</ul></details>`:''}`:''}`;
     root.querySelectorAll('.combat-participant').forEach(node=>node.querySelectorAll(':scope > details').forEach((detail,index)=>detail.open=expanded.get(node.dataset.participant)?.[index]||false));
     bind();
+    const attackPanel=root.querySelector('[data-attack-panel]');if(attackPanel)disposeAttacks=mountAttacks(attackPanel,{groupId,combat:state.combat,isMJ:state.isMJ,ui:attackUI,onState:fresh=>{state=fresh;notice='Jet enregistré. Les dégâts sont appliqués uniquement après confirmation du MJ.';render();}});
     const panel=root.querySelector('[data-bestiary-panel]');if(panel)disposeBestiary=mountBestiary(panel,{groupId,state:bestiaryState,onAdd:data=>run(()=>act(data))});
   }
   function act(data){return request({...data,combatId:state.combat.id,revision:state.combat.revision});}
@@ -84,9 +86,9 @@ export function mountCombat(root,{groupId}){
   root.innerHTML='<h1>Combat</h1><p data-combat-feedback role="status">Ouverture du combat…</p>';
   run(()=>request());
   timer=setInterval(async()=>{
-    if(busy||document.hidden||root.contains(document.activeElement)&&document.activeElement.closest('form,details[open],[data-bestiary-panel]'))return;
+    if(busy||document.hidden||root.contains(document.activeElement)&&document.activeElement.closest('form,details[open],[data-bestiary-panel],[data-attack-panel]'))return;
     busy=true;
-    try{const fresh=await request();if(!controller.signal.aborted&&!(root.contains(document.activeElement)&&document.activeElement.closest('form,details[open],[data-bestiary-panel]'))&&JSON.stringify(fresh)!==JSON.stringify(state)){state=fresh;render();}}
+    try{const fresh=await request();if(!controller.signal.aborted&&!(root.contains(document.activeElement)&&document.activeElement.closest('form,details[open],[data-bestiary-panel],[data-attack-panel]'))&&JSON.stringify(fresh)!==JSON.stringify(state)){state=fresh;render();}}
     catch(error){if(!controller.signal.aborted){if([401,404].includes(error.status)){stop();root.innerHTML='<h1>Combat inaccessible</h1><p>'+esc(error.message)+'</p><a href="#groupes">Mes groupes →</a>';}else feedback('Actualisation indisponible. Les dernières valeurs restent affichées.');}}
     finally{busy=false;}
   },5000);

@@ -1,6 +1,6 @@
 # Connexion et atelier de refonte
 
-**État actuel :** sauvegarde active dans `personnages_refonte`, clerc PC 1–10 et quatre domaines intégrés. Livraison `/var/www/myrpgtable/refonte-access/20261027T150406Z`. Les sections plus anciennes décrivent les étapes précédentes.
+**État actuel — 2 novembre 2026 :** création et fiche PC 1–20, douze classes et 48 sous-classes, montée de niveau, multiclassage, groupes, combat, bestiaire et attaques avec dés au choix et validation MJ. Catalogue figé chargé depuis MongoDB. Livraison `20261102T072600Z`. Voir [l’état actuel](../README.md) et [les attaques](ATTAQUES.md). Les sections suivantes conservent l’historique des étapes précédentes.
 
 L’extension 1–10 ajoute `cleric-progression.mjs`, les choix `advancements` des niveaux 4/8 et `sacredStrike`, ainsi que les emplacements de dons `originGrants.level4/level8`. Le navigateur et le serveur utilisent les mêmes contrôles ; les champs absents des anciennes fiches sont normalisés sans écrire de migration en BDD. Les comparaisons de brouillon ignorent le simple changement d’étape et normalisent les anciens snapshots, pour éviter un faux bandeau « En cours ».
 

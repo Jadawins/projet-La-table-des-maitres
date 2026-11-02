@@ -1,3 +1,4 @@
+import {createCombatAttacks} from './combat-attacks.mjs';
 import {randomUUID} from 'node:crypto';
 const fault=(status,message)=>Object.assign(new Error(message),{status});
 const integer=(n,min,max)=>Number.isInteger(n)&&n>=min&&n<=max;
@@ -5,7 +6,8 @@ const text=(value,max=100)=>{if(typeof value!=='string'||!value.trim()||value.tr
 const healthActions=new Set(['start','damage','heal','set-current','set-temp','set-condition','set-exhaustion','death-roll','stabilize','zero-hp-exception','declare-dead','revive']);
 export const combatOrder=participants=>[...participants].sort((a,b)=>(b.initiative??-1000)-(a.initiative??-1000)||a.order-b.order);
 
-export function createCombatStore({collection,groups,characters,bestiary=null,sheetModel,playView,applyPlayAction,now=()=>new Date()}) {
+export function createCombatStore({collection,groups,characters,bestiary=null,sheetModel,playView,applyPlayAction,attackRandomFace,now=()=>new Date()}) {
+  let api;
   async function context(actor,groupId) {return groups.get(actor,groupId);}
   function mj(group){if(!group.isMJ)throw fault(403,'Cette action est réservée au MJ du groupe.');}
   async function current(groupId) {
@@ -42,7 +44,7 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
     }
     return {isMJ:group.isMJ,groupName:group.name,combat:{id:combat.id,revision:combat.revision,name:combat.name,status:combat.status,
       round:combat.round,currentId:participants.some(p=>p.id===combat.currentId)?combat.currentId:null,
-      participants,updatedAt:combat.updatedAt.toISOString(),...(group.isMJ?{journal:combat.journal}: {})}};
+      participants,attackTickets:attackService.list(actor,group,combat),updatedAt:combat.updatedAt.toISOString(),...(group.isMJ?{journal:combat.journal}: {})}};
   }
   async function write(combat,fields,message){
     const result=await collection.updateOne({id:combat.id,revision:combat.revision,active:true},{$set:{...fields,
@@ -55,7 +57,27 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
       initiative:null,order:Math.max(-1,...participants.map(p=>p.order))+1+i,visible:true,concentration:''}))];
   }
   function ready(combat){if(!combat.participants.length||combat.participants.some(p=>p.initiative===null))throw fault(400,'Ajoutez des participants et saisissez toutes les initiatives.');}
-  return {
+  const attackService=createCombatAttacks({
+    now:()=>now().getTime(),randomFace:attackRandomFace,
+    async load(actor,groupId){const group=await context(actor,groupId),combat=await current(groupId);if(!combat)throw fault(404,'Aucun combat pour ce groupe.');return {group,combat};},
+    async fighter(group,p){
+      if(p.kind==='pc'){const saved=await savedPC(group,p),state=saved.character,model=sheetModel(state);return {state,model,live:playView(state,model),revision:saved.revision};}
+      const state={classId:'npc',level:1,playState:p.playState},model=npcModel(p);return {state,model,live:playView(state,model)};
+    },
+    async saveDamage(ctx,target,f,action,ticket){
+      const playState=applyPlayAction(f.state,f.model,action);
+      if(target.kind==='pc')await characters.save(target.ownerId,target.characterId,{...f.state,playState},f.revision,{strictRevision:true});
+      else await write(ctx.combat,{participants:ctx.combat.participants.map(p=>p.id===target.id?{...p,playState}:p)},ticket.attackerName+' → '+ticket.targetName+' : '+action.amount+' dégâts confirmés par le MJ.');
+    },
+    getView:(actor,groupId)=>api.get(actor,groupId)
+  });
+  api={
+    attackOptions:attackService.options,
+    rollAttack:attackService.roll,
+    rollDamage:attackService.damage,
+    confirmAttack:attackService.confirm,
+    recheckAttack:attackService.recheck,
+    cancelAttack:attackService.cancel,
     async get(actor,groupId){const group=await context(actor,groupId);return view(actor,group,await current(groupId));},
     async create(actor,groupId,input={}){
       const group=await context(actor,groupId);mj(group);
@@ -158,4 +180,5 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
       await write(combat,fields,message);return this.get(actor,groupId);
     }
   };
+  return api;
 }

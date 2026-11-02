@@ -1,0 +1,155 @@
+{
+  "status": "deployed",
+  "release": "20261102T072600Z",
+  "previous": "20261101T160457Z",
+  "completedAt": "2026-11-02T07:27:39.775Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261102T072600Z",
+  "backupDocuments": 3282,
+  "archiveSha256": "c7fed536e426ce291b598bf9c9c04428e0576263727248f53b213de896e7dffa",
+  "databaseBackupSha256": "b3f961971d7933fd1997a68f413a50d2fa57be75571f456bb7aa483d48f9af65",
+  "attacks": {
+    "before": {
+      "status": "passed",
+      "completedAt": "2026-11-02T07:26:16.815Z",
+      "checks": 10,
+      "collection": "refonte_attack_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realCharactersAndGroupsUnchanged": true,
+      "coverage": [
+        "physical-player-attack",
+        "critical-plan-and-detail",
+        "hidden-defense",
+        "mj-only-confirmation",
+        "no-health-before-confirmation",
+        "concurrent-and-repeated-confirmation",
+        "server-app-damage",
+        "strict-character-health-persistence",
+        "server-app-advantage",
+        "mixed-modes-and-cancellation"
+      ]
+    },
+    "after": {
+      "status": "passed",
+      "completedAt": "2026-11-02T07:26:54.231Z",
+      "checks": 10,
+      "collection": "refonte_attack_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 5,
+          "sha256": "d218b5ebf7353527511136a54a6a09c1219b1386e101b10bc4f9ce8fa57dc959"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d3b423ce17fe033402d715fbc58cd069a14375095d4d44dbbd9bb2b5a210f25b"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realCharactersAndGroupsUnchanged": true,
+      "coverage": [
+        "physical-player-attack",
+        "critical-plan-and-detail",
+        "hidden-defense",
+        "mj-only-confirmation",
+        "no-health-before-confirmation",
+        "concurrent-and-repeated-confirmation",
+        "server-app-damage",
+        "strict-character-health-persistence",
+        "server-app-advantage",
+        "mixed-modes-and-cancellation"
+      ]
+    }
+  },
+  "existingControls": {
+    "characters": 22,
+    "groups": 8,
+    "combat": 11,
+    "bestiary": 9,
+    "registeredAccounts": 3
+  },
+  "httpChecks": 23,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261102T072600Z/start.mjs",
+    "restarts": 0
+  },
+  "realDataUnchanged": true,
+  "verification": {
+    "status": "passed",
+    "scope": "attacks-with-explicit-dice-and-mj-confirmation",
+    "sourceHash": "eb0c949a67497af84e4266d9db3a3576a79584c44e2e5fcdc6ac061963716c54",
+    "completedAt": "2026-11-02T07:25:34.274Z",
+    "baselineCommit": "1db70eb5c",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 85,
+    "browserJourneys": 21,
+    "qualification": "Explicit physical or secure server dice for weapon and NPC attacks; separate remembered preferences; MJ-only damage confirmation; concurrent/repeated confirmation and lost acknowledgement protection. No automatic roll on reading. Pending proposals expire after five minutes or restart. Frozen catalogue, character saves, auth and unrelated views unchanged. Spells, conditional exceptions and mixed damage adjudication remain manual."
+  },
+  "qualification": [
+    "Armes des PJ, attaques structurées du bestiaire et attaque personnalisée MJ.",
+    "Dés physiques ou serveur choisis séparément à chaque phase ; aucun lancer automatique.",
+    "Seul le MJ confirme les dégâts. Propositions en mémoire cinq minutes et invalidées au redémarrage.",
+    "Effets de sorts, exceptions conditionnelles et arbitrage par type de dégâts restent manuels.",
+    "Parcours navigateur sur deux comptes isolés ; connexion interactive en production non automatisée."
+  ]
+}
