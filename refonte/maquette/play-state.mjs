@@ -14,6 +14,23 @@ export function validatePlayState(raw){
     used[key]=value;
   }
   const result={version:1,hpLost:raw.hpLost,tempHp:raw.tempHp,used};
+  const uuid=value=>typeof value==='string'&&/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value);
+  if(raw.magicEffects!==undefined){
+    if(!Array.isArray(raw.magicEffects)||raw.magicEffects.length>100)throw fault('La liste des effets de sorts est invalide.');
+    result.magicEffects=raw.magicEffects.map(effect=>{
+      if(!effect||!uuid(effect.id)||typeof effect.name!=='string'||effect.name.length>150||!Array.isArray(effect.conditions)||effect.conditions.some(id=>!CONDITIONS.some(c=>c.id===id))||typeof effect.note!=='string'||effect.note.length>2000)throw fault('Un effet de sort est invalide.');
+      return {id:effect.id,name:effect.name,conditions:[...new Set(effect.conditions)],note:effect.note};
+    });
+    if(new Set(result.magicEffects.map(e=>e.id)).size!==result.magicEffects.length)throw fault('Un effet de sort figure deux fois.');
+  }
+  if(raw.concentration!==undefined){
+    const c=raw.concentration;
+    if(c===null)result.concentration=null;
+    else{
+      if(!c||!uuid(c.id)||typeof c.name!=='string'||c.name.length>150||!uuid(c.combatId)||(c.groupId!==undefined&&!uuid(c.groupId))||!Array.isArray(c.checks)||c.checks.length>100||c.checks.some(x=>!uuid(x.id)||!integer(x.dc,10,30)||!integer(x.damage,1)))throw fault('Le suivi de concentration est invalide.');
+      result.concentration={id:c.id,name:c.name,combatId:c.combatId,...(c.groupId?{groupId:c.groupId}:{}),checks:c.checks.map(x=>({id:x.id,dc:x.dc,damage:x.damage}))};
+    }
+  }
   if(raw.slotUsed!==undefined){
     if(!raw.slotUsed||typeof raw.slotUsed!=='object'||Array.isArray(raw.slotUsed)||Object.keys(raw.slotUsed).length>10)throw fault('Le suivi des emplacements est invalide.');
     result.slotUsed={};
@@ -103,6 +120,12 @@ export function playView(state,model){
 }
 
 export function applyPlayAction(state,model,action){
+  const next=applyPlayActionBase(state,model,action);
+  const e=conditionView(next,Math.max(0,model.hp-next.hpLost),model.speed);
+  if(next.concentration&&(e.life==='dead'||e.active.some(c=>c.id==='incapacitated')))next.concentration=null;
+  return next;
+}
+function applyPlayActionBase(state,model,action){
   const view=playView(state,model);
   if(view.maxHp===null)throw fault('Complétez les points de vie maximum avant de commencer le suivi.');
   if(action.type==='start'){
@@ -119,11 +142,17 @@ export function applyPlayAction(state,model,action){
     return validatePlayState(next);
   }
   const next=validatePlayState(state.playState);
+  if(action.type==='stop-concentration'){if(action.confirmed!==true)throw fault('Confirmez la fin de votre concentration.');next.concentration=null;return next;}
+  if(action.type==='clear-spell-effect'){
+    if(action.confirmed!==true||typeof action.effectId!=='string')throw fault('Confirmez la fin de cet effet.');
+    next.magicEffects=(next.magicEffects||[]).filter(e=>e.id!==action.effectId);return next;
+  }
   const amount=action.amount;
   if(!integer(amount,['set-current','set-temp','set-hit-dice-used'].includes(action.type)?0:1))throw fault('Saisissez un nombre entier valide.');
   if(action.type==='damage'){
     if(view.effects.life==='dead')throw fault('La mort est déclarée. Utilisez la correction du suivi vital si nécessaire.');
     const absorbed=Math.min(next.tempHp,amount);next.tempHp-=absorbed;
+    if(next.concentration)next.concentration.checks.push({id:crypto.randomUUID(),dc:Math.min(30,Math.max(10,Math.floor(amount/2))),damage:amount});
     next.hpLost=view.maxHp-Math.max(0,view.currentHp-(amount-absorbed));
     if(view.currentHp===0){
       if(action.deathFailures!==undefined&&!integer(action.deathFailures,0,2))throw fault('Déclarez zéro, un ou deux échecs pour ces dégâts.');

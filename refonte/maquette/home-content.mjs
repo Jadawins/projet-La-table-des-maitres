@@ -7,7 +7,7 @@ const features = [
   ['03', 'Évolution', 'Le prochain niveau vous attend', 'Faites évoluer une fiche existante : points de vie, aptitudes, dons et sorts. Le multiclassage est disponible, jusqu’au niveau total 20.'],
   ['04', 'Suivi en partie', 'Gardez le fil de l’aventure', 'Suivez les PV, les PV temporaires, les réserves prises en charge, les emplacements de sorts, les repos, les états et les sauvegardes contre la mort.'],
   ['05', 'Groupes', 'Une place pour chaque rôle', 'Créez ou rejoignez une table comme joueur ou MJ, rattachez votre personnage et partagez les codes d’invitation adaptés. Le créateur gère les membres et peut supprimer le groupe.'],
-  ['06', 'Combat & bestiaire', 'La rencontre prend vie', 'Préparez les adversaires depuis le bestiaire, saisissez les initiatives et suivez les tours. Pour les attaques : dés physiques ou dés de l’application, critiques et dégâts confirmés par le MJ.'],
+  ['06', 'Combat & bestiaire', 'La rencontre prend vie', 'Bestiaire, initiatives, tours, attaques et sorts : choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les cibles, dégâts, soins et états. Retrouvez aussi la concentration et les durées déclarées.'],
   ['07', 'Grimoire', 'La bonne information, au bon moment', 'Recherchez un sort, une classe, une sous-classe, une espèce, un historique, un don ou une pièce d’équipement dans le catalogue utilisé par vos fiches.'],
   ['08', 'Comptes & administration', 'Vos personnages trouvent leur place', 'Inscription et connexion, fiches rattachées à leur compte et espace d’administration : métriques, copie ou transfert d’une fiche vers un compte existant.']
 ];
@@ -37,7 +37,7 @@ export function renderHomeContent({publicPage = false} = {}) {
       <div class="home-section-heading"><div><p class="home-kicker">LE JOURNAL DE LA TABLE</p><h2 id="home-news-title">Tout juste dans le grimoire.</h2></div><p>Mise à jour du 2 novembre 2026</p></div>
       <div class="home-news-grid">
         <article class="home-news home-news-featured"><p class="home-badge">NOUVEAU · GROUPES</p><h3>Joueur ou MJ,<br>choisissez votre place.</h3><p>Le rôle se choisit à la création et à l’adhésion, avec un code joueur et un code MJ distincts. La suppression du groupe est aussi disponible, sans supprimer les fiches des membres.</p><span class="home-news-foot">Une table, plusieurs façons de participer.</span></article>
-        <article class="home-news"><p class="home-badge">NOUVEAU · ATTAQUES</p><h3>Vos dés,<br>le dernier mot au MJ.</h3><p>Choisissez des dés physiques ou ceux de l’application pour toucher et pour les dégâts. Avantage, désavantage et critiques sont détaillés. Le MJ valide avant de modifier les PV.</p><span class="home-news-foot">Les alliés peuvent aussi être ciblés.</span></article>
+        <article class="home-news"><p class="home-badge">NOUVEAU · SORTS EN COMBAT</p><h3>Vos sorts,<br>le dernier mot au MJ.</h3><p>Proposez un sort depuis votre fiche. Le MJ vérifie sa résolution, les cibles et la dépense. Dés au choix, soins, dégâts, états, concentration et durées : les effets attendent sa confirmation.</p><span class="home-news-foot">Zones et alliés : les cibles sont choisies par le MJ.</span></article>
         <article class="home-news"><p class="home-badge">DÉJÀ DISPONIBLE · ÉVOLUTION</p><h3>Votre héros<br>ne s’arrête pas là.</h3><p>Montez de niveau depuis votre fiche et choisissez, si vous le souhaitez, une autre classe. Retrouvez aussi vos repos, états et ressources dans le suivi en partie.</p><span class="home-news-foot">Jusqu’au niveau total 20.</span></article>
       </div>
     </section>
@@ -45,14 +45,14 @@ export function renderHomeContent({publicPage = false} = {}) {
     <section class="home-section" id="disponible" aria-labelledby="home-features-title">
       <div class="home-section-heading"><div><p class="home-kicker">DÈS MAINTENANT</p><h2 id="home-features-title">De quoi préparer votre prochaine partie.</h2></div><p>Les outils disponibles aujourd’hui.</p></div>
       <div class="home-feature-grid">${features.map(([number,category,title,text]) => `<article class="home-feature"><div class="home-feature-top"><span>${number}</span><p>${category}</p></div><h3>${title}</h3><p>${text}</p></article>`).join('')}</div>
-      <aside class="home-dice-note"><span aria-hidden="true">✧</span><div><h3>La main reste autour de la table.</h3><p>Aucun dé ne se lance automatiquement. Pour les attaques, vous pouvez changer de méthode à chaque jet, et les dégâts attendent toujours la confirmation du MJ. Les effets particuliers restent arbitrés à votre table.</p></div></aside>
+      <aside class="home-dice-note"><span aria-hidden="true">✧</span><div><h3>La main reste autour de la table.</h3><p>Aucun dé ne se lance automatiquement. Pour les attaques et les sorts, vous pouvez changer de méthode à chaque jet. Le MJ confirme les effets et vérifie les règles particulières, les zones et les exceptions.</p></div></aside>
     </section>
 
     <section class="home-section home-roadmap" id="avenir" aria-labelledby="home-roadmap-title">
       <div class="home-section-heading"><div><p class="home-kicker">LES PROCHAINS CHAPITRES</p><h2 id="home-roadmap-title">L’aventure continue.</h2></div><p>Une direction, pas une date de livraison.<br>Ces outils ne sont pas encore disponibles.</p></div>
       <ol class="home-roadmap-list">
-        <li><span class="home-roadmap-step" aria-hidden="true">01</span><div><p class="home-badge">PROCHAINE ÉTAPE</p><h3>La magie entre dans le combat.</h3><p>Résolution des sorts, sauvegardes, concentration, durées et zones d’effet. Les alliés dans la zone seront pris en compte, avec les exemptions prévues par les sorts et les aptitudes.</p></div></li>
-        <li><span class="home-roadmap-step" aria-hidden="true">02</span><div><p class="home-badge">ENSUITE</p><h3>Plus de place pour les maîtres du jeu.</h3><p>Enrichir les outils de campagne : préparation des aventures, organisation des séances et suivi de la table au fil des parties.</p></div></li>
+        <li><span class="home-roadmap-step" aria-hidden="true">01</span><div><p class="home-badge">PROCHAINE ÉTAPE</p><h3>Plus de place pour les maîtres du jeu.</h3><p>Enrichir les outils de campagne : préparation des aventures, organisation des séances et suivi de la table au fil des parties.</p></div></li>
+        <li><span class="home-roadmap-step" aria-hidden="true">02</span><div><p class="home-badge">À ÉTUDIER</p><h3>Une carte pour vos rencontres.</h3><p>Une carte illustrée et des pions pour vos personnages, alliés et adversaires restent une piste à concevoir ensemble. Le placement des zones est actuellement vérifié à la table.</p></div></li>
         <li><span class="home-roadmap-step" aria-hidden="true">03</span><div><p class="home-badge">PLUS TARD</p><h3>Votre table vous suivra aussi sur téléphone.</h3><p>Une application mobile reste envisagée après la consolidation de l’expérience sur ordinateur. Aucune date ni publication sur les boutiques n’est annoncée.</p></div></li>
       </ol>
     </section>

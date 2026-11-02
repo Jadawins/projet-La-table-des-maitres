@@ -9,6 +9,33 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       return docs.map(d=>({id:d.client_id,revision:d.revision,updatedAt:d.updated_at.toISOString(),status:d.status,...d.character}));
     },
     async get(userId,id){if(!validCharacterId(id))throw fault(404,'Personnage introuvable.');const doc=await collection.findOne({user_id:userId,client_id:id});if(!doc||doc.deleted_at)throw fault(404,'Personnage introuvable.');return expose(doc);},
+    // Internal combat commands only. The receipt and the new character are committed
+    // in the same document, so a lost acknowledgement can be recovered after restart.
+    async combatReceipt(userId,id,receiptId){
+      if(!validCharacterId(id)||!validCharacterId(receiptId))throw fault(400,'Référence de résolution invalide.');
+      const doc=await collection.findOne({user_id:userId,client_id:id,deleted_at:{$exists:false}});
+      if(!doc)throw fault(404,'Personnage introuvable.');
+      return doc.combat_receipts?.[receiptId]||null;
+    },
+    async applyCombatPatch(userId,id,{revision,receiptId,character}){
+      if(!validCharacterId(id)||!validCharacterId(receiptId)||!Number.isInteger(revision)||revision<1)throw fault(400,'Référence de résolution invalide.');
+      const filter={user_id:userId,client_id:id,deleted_at:{$exists:false}},previous=await collection.findOne(filter);
+      if(!previous)throw fault(404,'Personnage introuvable.');
+      const result=validate(character),contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');
+      const receipt=previous.combat_receipts?.[receiptId];
+      if(receipt){if(receipt.hash!==contentHash)throw fault(409,'Cette résolution a déjà été enregistrée avec un autre contenu.');return expose(previous);}
+      if(previous.revision!==revision)throw fault(409,'La fiche a changé. Actualisez la résolution avant de confirmer.');
+      if(previous.status!=='ready'||(previous.character.rulesVersion??null)!==(result.character.rulesVersion??null))throw fault(409,'La fiche ou sa version de règles a changé.');
+      const date=new Date(),doc={...result,revision:revision+1,updated_at:date,content_hash:contentHash,catalogue_fingerprint:catalogueFingerprint,
+        combat_receipts:{...(previous.combat_receipts||{}),[receiptId]:{hash:contentHash,at:date}}};
+      const updated=await collection.updateOne({...filter,revision},{$set:doc});
+      if(updated.matchedCount!==1){
+        const current=await collection.findOne(filter);
+        if(current?.combat_receipts?.[receiptId]?.hash===contentHash)return expose(current);
+        throw fault(409,'La fiche a changé pendant la résolution. Actualisez avant de confirmer.');
+      }
+      return expose({...previous,...doc});
+    },
     async remove(userId,id,revision){
       if(!validCharacterId(id))throw fault(404,'Personnage introuvable.');
       if(!Number.isInteger(revision)||revision<1)throw fault(400,'Référence de suppression invalide.');
@@ -33,7 +60,7 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       if(input.playState===undefined&&previous?.character?.playState!==undefined)result=validate({...input,playState:previous.character.playState});
       else if(input.playState&&previous?.character?.playState){
         const preserved={...input.playState};let missing=false;
-        for(const key of ['slotUsed','hitDiceUsed','hitDiceUsedByType','lastRest','conditions','exhaustion','deathSaves','zeroHpConscious'])if(input.playState[key]===undefined&&previous.character.playState[key]!==undefined){preserved[key]=previous.character.playState[key];missing=true;}
+        for(const key of ['slotUsed','hitDiceUsed','hitDiceUsedByType','lastRest','conditions','exhaustion','deathSaves','zeroHpConscious','magicEffects','concentration'])if(input.playState[key]===undefined&&previous.character.playState[key]!==undefined){preserved[key]=previous.character.playState[key];missing=true;}
         if(missing)result=validate({...input,playState:preserved});
       }
       const contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');

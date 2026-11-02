@@ -36,3 +36,5 @@ Quand ces conditions sont remplies, la version est figée : plus de recherche co
 ## Lots applicatifs après le gel
 
 Le 1er novembre 2026, l’utilisateur autorise un lot distinct de montée de niveau puis de multiclassage, en autonomie jusqu’à sa mise en place. Cette autorisation étend le périmètre applicatif initial ci-dessus ; elle ne rouvre pas le catalogue documentaire ni la veille des règles. Le niveau total reste limité à 20. Le téléphone, les nouveaux livres et les combats restent hors de ce lot ; la concentration est réservée au futur module MJ/combats. Bilan : `access/EVOLUTION-PERSONNAGES.md`.
+
+Le 2 novembre 2026, un lot distinct ajoute la résolution guidée des sorts dans les combats de groupe : dés au choix, plan et confirmation du MJ, zones avec alliés, concentration, états sourcés, durées et reprise persistante des écritures. Le catalogue documentaire et les calculs de création ne sont pas révisés. Les mécaniques complexes restent arbitrées à la table. Bilan et limites : `access/SORTS-EN-COMBAT.md` ; publication : `audit/spell-combat-publication-20261102.json`.

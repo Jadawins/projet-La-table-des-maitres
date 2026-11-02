@@ -1,3 +1,5 @@
+import {createCombatSpells} from './combat-spells.mjs';
+import {spellStamp,abilities} from './spell-rules.mjs';
 import {createCombatAttacks} from './combat-attacks.mjs';
 import {randomUUID} from 'node:crypto';
 const fault=(status,message)=>Object.assign(new Error(message),{status});
@@ -6,8 +8,8 @@ const text=(value,max=100)=>{if(typeof value!=='string'||!value.trim()||value.tr
 const healthActions=new Set(['start','damage','heal','set-current','set-temp','set-condition','set-exhaustion','death-roll','stabilize','zero-hp-exception','declare-dead','revive']);
 export const combatOrder=participants=>[...participants].sort((a,b)=>(b.initiative??-1000)-(a.initiative??-1000)||a.order-b.order);
 
-export function createCombatStore({collection,groups,characters,bestiary=null,sheetModel,playView,applyPlayAction,attackRandomFace,now=()=>new Date()}) {
-  let api;
+export function createCombatStore({collection,groups,characters,bestiary=null,spellCollection=null,spellCatalogue=[],sheetModel,playView,applyPlayAction,attackRandomFace,now=()=>new Date()}) {
+  let api,spellService;
   async function context(actor,groupId) {return groups.get(actor,groupId);}
   function mj(group){if(!group.isMJ)throw fault(403,'Cette action est réservée au MJ du groupe.');}
   async function current(groupId) {
@@ -20,9 +22,9 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
     if(saved.status!=='ready')throw fault(409,'La fiche doit être terminée avant de participer au combat.');
     return saved;
   }
-  function npcModel(p){return {hp:p.maxHp,ac:p.ac,initiative:p.bestiary?.initiativeBonus??undefined,speed:p.bestiary?.speeds?.marche??9,slots:{},classResources:[],mods:{}};}
+  function npcModel(p){const mods=Object.fromEntries(abilities.map(a=>[a,p.bestiary?.abilities?.[a]?.modifier??null]));const saves=abilities.map(a=>({ability:a,value:p.bestiary?.saves?.[a]??mods[a]}));return {saves,mods,hp:p.maxHp,ac:p.ac,initiative:p.bestiary?.initiativeBonus??undefined,speed:p.bestiary?.speeds?.marche??9,slots:{},classResources:[]};}
   async function view(actor,group,combat){
-    if(!combat)return {combat:null,isMJ:group.isMJ,groupName:group.name};
+    if(!combat)return {combat:null,isMJ:group.isMJ,groupName:group.name,spellsAvailable:Boolean(spellService)};
     const participants=[];
     for(const p of combatOrder(combat.participants)){
       if(p.kind==='npc'&&!p.visible&&!group.isMJ)continue;
@@ -38,16 +40,16 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
         conditions:live?.effects.active.map(c=>({id:c.id,name:c.name,implicit:c.implicit}))||[],
         ...(canEdit?{characterRevision:revision,started:live?.started,currentHp:live?.currentHp,maxHp:live?.maxHp,tempHp:live?.tempHp,
           ac:model?.ac,initiativeBonus:model?.initiative,explicitConditions:live?.effects.explicit||[],exhaustion:live?.effects.exhaustion||0,
-          deathSaves:live?.effects.death,life:live?.effects.life,concentration:p.concentration||''}:{}),
+          deathSaves:live?.effects.death,life:live?.effects.life,concentration:state?.playState?.concentration?.name||p.concentration||'',concentrationTracker:state?.playState?.concentration||null,magicEffects:state?.playState?.magicEffects||[]}:{}),
         ...(group.isMJ&&p.kind==='npc'&&p.bestiary?{bestiary:structuredClone(p.bestiary)}:{}),
         ...(group.isMJ&&p.kind==='pc'?{ownerId:p.ownerId,characterId:p.characterId}:{})});
     }
-    return {isMJ:group.isMJ,groupName:group.name,combat:{id:combat.id,revision:combat.revision,name:combat.name,status:combat.status,
+    return {isMJ:group.isMJ,groupName:group.name,spellsAvailable:Boolean(spellService),combat:{id:combat.id,revision:combat.revision,name:combat.name,status:combat.status,
       round:combat.round,currentId:participants.some(p=>p.id===combat.currentId)?combat.currentId:null,
-      participants,attackTickets:attackService.list(actor,group,combat),updatedAt:combat.updatedAt.toISOString(),...(group.isMJ?{journal:combat.journal}: {})}};
+      participants,spellCasts:spellService?await spellService.list(actor,group,combat):[],attackTickets:attackService.list(actor,group,combat),updatedAt:combat.updatedAt.toISOString(),...(group.isMJ?{journal:combat.journal}: {})}};
   }
-  async function write(combat,fields,message){
-    const result=await collection.updateOne({id:combat.id,revision:combat.revision,active:true},{$set:{...fields,
+  async function write(combat,fields,message,{allowInactive=false}={}){
+    const result=await collection.updateOne({id:combat.id,revision:combat.revision,...(allowInactive?{}:{active:true})},{$set:{...fields,
       revision:combat.revision+1,updatedAt:now(),journal:[...combat.journal,{at:now().toISOString(),message}].slice(-50)}});
     if(result.matchedCount!==1)throw fault(409,'Le combat a changé. Actualisez avant de recommencer.');
   }
@@ -71,11 +73,40 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
     },
     getView:(actor,groupId)=>api.get(actor,groupId)
   });
+  if(spellCollection)spellService=createCombatSpells({
+    collection:spellCollection,npcSpells:spellCatalogue,applyPlayAction,now,randomFace:attackRandomFace,
+    async load(actor,groupId,combatId){const group=await context(actor,groupId),combat=combatId?await collection.findOne({id:combatId,groupId}):await current(groupId);if(!combat)throw fault(404,'Aucun combat pour ce groupe.');return {actor,group,combat};},
+    async fighter(group,p){
+      if(p.kind==='pc'){const saved=await savedPC(group,p),state=saved.character,model=sheetModel(state);return {state,model,live:playView(state,model),revision:saved.revision};}
+      const state={classId:'npc',level:1,playState:p.playState},model=npcModel(p);return {state,model,live:playView(state,model)};
+    },
+    async hasReceipt(ctx,p,id){
+      if(p.kind==='pc')return Boolean(await characters.combatReceipt(p.ownerId,p.characterId,id));
+      const fresh=await collection.findOne({id:ctx.combat.id,groupId:ctx.combat.groupId});return Boolean(fresh?.participants.find(row=>row.id===p.id)?.spellReceipts?.[id]);
+    },
+    async writeSnapshot(ctx,p,op){
+      if(p.kind==='pc'){await savedPC(ctx.group,p);await characters.applyCombatPatch(p.ownerId,p.characterId,{revision:op.revision,receiptId:op.receiptId,character:op.character});return;}
+      const fresh=await collection.findOne({id:ctx.combat.id,groupId:ctx.combat.groupId}),target=fresh?.participants.find(row=>row.id===p.id);
+      if(!target)throw fault(409,'La cible a quitté le combat.');
+      if(target.spellReceipts?.[op.receiptId])return;
+      if(spellStamp(target.playState)!==op.beforeStamp)throw fault(409,'Les PV ou états de la cible ont changé. Reprenez la résolution.');
+      await write(fresh,{participants:fresh.participants.map(row=>row.id===p.id?{...row,playState:op.character.playState,spellReceipts:{...(row.spellReceipts||{}),[op.receiptId]:true}}:row)},'Effet de sort enregistré sur '+p.name+'.',{allowInactive:true});
+    },
+    getView:(actor,groupId)=>api.get(actor,groupId)
+  });
+  const spells=()=>{if(!spellService)throw fault(503,'Les sorts en combat sont momentanément indisponibles.');return spellService;};
+  async function afterMutation(actor,groupId){
+    let warning='';
+    try{if(spellService)await spellService.reconcile(actor,groupId);}
+    catch{warning='La commande est enregistrée. Des effets de sorts restent à vérifier : utilisez Vérifier les effets en cours.';}
+    const result=await api.get(actor,groupId);return {...result,...(warning?{spellWarning:warning}:{})};
+  }
   api={
+    spellOptions:(...args)=>spells().options(...args),spellPrepare:(...args)=>spells().prepare(...args),spellApprove:(...args)=>spells().approve(...args),spellRoll:(...args)=>spells().roll(...args),spellDamage:(...args)=>spells().damage(...args),spellConfirm:(...args)=>spells().confirm(...args),spellRetry:(...args)=>spells().retry(...args),spellEnd:(...args)=>spells().end(...args),spellConcentration:(...args)=>spells().concentration(...args),spellReconcile:(...args)=>spells().reconcile(...args),spellSync:(...args)=>spells().sync(...args),spellPulse:(...args)=>spells().pulse(...args),spellRecheck:(...args)=>spells().recheck(...args),spellTimer:(...args)=>spells().timer(...args),spellAdjudicate:(...args)=>spells().adjudicate(...args),
     attackOptions:attackService.options,
     rollAttack:attackService.roll,
     rollDamage:attackService.damage,
-    confirmAttack:attackService.confirm,
+    confirmAttack:async(actor,groupId,input)=>{const result=await attackService.confirm(actor,groupId,input);return {...result,state:await afterMutation(actor,groupId)};},
     recheckAttack:attackService.recheck,
     cancelAttack:attackService.cancel,
     async get(actor,groupId){const group=await context(actor,groupId);return view(actor,group,await current(groupId));},
@@ -105,7 +136,7 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
           const state={classId:'npc',level:1,playState:p.playState},playState=applyPlayAction(state,npcModel(p),input.action);
           await write(combat,{participants:combat.participants.map(row=>row.id===p.id?{...row,playState}:row)},'Suivi de '+p.name+' mis à jour.');
         }
-        return this.get(actor,groupId);
+        return afterMutation(actor,groupId);
       }
       if(input.type==='initiative'||input.type==='concentration'){
         if(!p||!group.isMJ&&(p.kind!=='pc'||p.ownerId!==actor.userId))throw fault(403,'Vous pouvez modifier uniquement votre participant.');
@@ -175,9 +206,11 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sh
         const next=(index+step+order.length)%order.length;fields.currentId=order[next].id;
         fields.round=combat.round+(step===1&&next===0?1:step===-1&&index===0?-1:0);message='Changement de tour.';
       }else if(input.type==='finish'){
+        if(spellService)await spellService.assertFinishable(actor,groupId);
         if(input.confirmed!==true)throw fault(400,'Confirmez la fin du combat.');fields.status='finished';fields.active=false;fields.currentId=null;message='Combat terminé. Les fiches restent conservées.';
       }else throw fault(400,'Action de combat inconnue.');
-      await write(combat,fields,message);return this.get(actor,groupId);
+      await write(combat,fields,message);
+      return afterMutation(actor,groupId);
     }
   };
   return api;

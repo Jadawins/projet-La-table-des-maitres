@@ -609,6 +609,7 @@ function bind() {
         action.confirmed=true;
       }
       if(data.has('die')&&type==='set-hit-dice-used')action.die=data.get('die');
+      if(['stop-concentration','clear-spell-effect'].includes(type)){if(!confirm('Terminer cet effet ? Vérifiez ensuite les autres cibles dans le combat.'))return;action.confirmed=true;action.effectId=data.get('effectId');}
       if(data.has('deathFailures'))action.deathFailures=Number(data.get('deathFailures'));
       if(type==='death-roll'){action.die=Number(data.get('die'));action.modifier=Number(data.get('modifier'));}
       if(type==='set-death-counts'){action.successes=Number(data.get('successes'));action.failures=Number(data.get('failures'));}

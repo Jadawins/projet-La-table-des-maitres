@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import {sourceFingerprint} from '../e2e/fingerprint.mjs';
+const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),root=path.dirname(base),baselineCommit='947ad4fe4';
+const frozen=['refonte/data','refonte/catalogue.mjs','refonte/rules-release.mjs','refonte/rules-revision.mjs','refonte/editorial-revision.mjs','refonte/access/rules-release.json','refonte/access/rules-store.mjs','refonte/access/admin-store.mjs','refonte/access/auth-accounts.mjs','refonte/access/group-store.mjs','refonte/access/combat-attacks.mjs','refonte/access/attack-rules.mjs','refonte/access/bestiary-store.mjs','refonte/tests/fixtures/rules-2024.json'];
+for(const name of ['character-rules','origin-rules','character-storage','character-version','cleric-progression','progression','class-profiles','beast-companion','species-rules','wild-shape','class-magic','extra-classes','warlock-options','feat-effects','multiclass-rules','character-advancement','sheet-model','sheet-view','portal-view','character-pdf'])frozen.push('refonte/maquette/'+name+'.mjs');
+const unchanged=spawnSync('git',['diff','--exit-code',baselineCommit,'--',...frozen,':(exclude)refonte/data/current-release.txt'],{cwd:root,encoding:'utf8'});
+assert.equal(unchanged.status,0,'Frozen catalogue, character calculations and unrelated stores must remain unchanged');
+const old=spawnSync('git',['show',baselineCommit+':refonte/access/server.mjs'],{cwd:root,encoding:'utf8'});assert.equal(old.status,0);
+const auth=s=>s.slice(s.indexOf('  async function authFetch'),s.indexOf('  function rateAllowed'));
+assert.equal(auth(fs.readFileSync(path.join(base,'access/server.mjs'),'utf8')),auth(old.stdout));
+for(const file of ['access/spell-rules.mjs','access/combat-spells.mjs','maquette/spell-combat-view.mjs','audit/check-spell-combat-persistence.mjs'])assert.equal(spawnSync(process.execPath,['--check',path.join(base,file)],{encoding:'utf8'}).status,0,file);
+const log=fs.readFileSync(path.join(base,'.local/spell-final-tests.txt'),'utf8'),count=key=>Number(log.match(new RegExp('(?:ℹ|#) '+key+' (\\d+)'))?.[1]??-1);
+assert.deepEqual(['tests','pass','fail','skipped'].map(count),[168,168,0,0]);
+const browser=JSON.parse(fs.readFileSync(path.join(base,'e2e/test-results/results.json'),'utf8'));
+assert.deepEqual([browser.stats.expected,browser.stats.unexpected,browser.stats.skipped,browser.stats.flaky],[29,0,0,0]);
+const {publicHome}=await import('../accueil/home-template.mjs');assert.equal(fs.readFileSync(path.join(base,'accueil/index.html'),'utf8').replaceAll('\r\n','\n'),publicHome());
+const proof={status:'passed',scope:'spell-combat-with-durable-confirmed-effects',sourceHash:await sourceFingerprint(),completedAt:new Date().toISOString(),baselineCommit,failed:0,skipped:0,unitPassed:168,browserJourneys:29,
+  qualification:'Prepared/granted spells, explicit physical or server dice, MJ-reviewed plans and confirmations, allies in zones, single slot payment, durable receipts and restart recovery, shared or independent impacts, sourced conditions, concentration and declared durations. Complex mechanics and NPC access/limits remain MJ-reviewed. Frozen catalogue and character calculations unchanged. Browser journeys use isolated accounts and data; no real private account was impersonated.'};
+fs.writeFileSync(path.join(base,'.local/spell-combat-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

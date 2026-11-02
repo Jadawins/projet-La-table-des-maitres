@@ -75,3 +75,7 @@ Les trois fichiers `atelier/app.js`, `atelier/sheet-view.mjs` et `atelier/style.
 Onze tests de fiche passent, dont le regroupement en six rubriques et la conservation de l’histoire et des informations sous les panneaux masqués. Navigation souris/clavier et format 390 px vérifiés dans l’aperçu local. Le contrôle d’accès sans session reste actif en production.
 
 `package.mjs` prépare un paquet explicite de fichiers publics et privés depuis les sources locales ; `deploy.sh` décrit l’installation initiale. Pour une mise à jour du service déjà présent, préparer une nouvelle livraison, sauvegarder la configuration active, mettre à jour le chemin PM2 puis vérifier avant bascule. Ne pas exécuter aveuglément le déploiement initial : il refuse volontairement d’écraser un service existant. Les sessions en mémoire sont perdues lors d’un redémarrage.
+
+## Sorts en combat — 2 novembre 2026
+
+La livraison `20261102T174141Z` ajoute les sorts préparés/accordés depuis la fiche au combat de groupe. Le MJ valide le plan, les cibles et la dépense, puis confirme les effets. Dés physiques ou application restent au choix, sans lancer automatique. Les résolutions durables et reçus atomiques permettent une reprise après coupure sans double écriture. Voir [SORTS-EN-COMBAT.md](SORTS-EN-COMBAT.md) pour le parcours et les limites, et [le rapport](../audit/spell-combat-publication-20261102.json) pour les preuves et la sauvegarde.

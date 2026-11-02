@@ -1,0 +1,122 @@
+{
+  "status": "deployed",
+  "release": "20261102T174141Z",
+  "previous": "20261102T084813Z",
+  "completedAt": "2026-11-02T17:44:28.380Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261102T174141Z",
+  "backupDocuments": 3286,
+  "archiveSha256": "6b06eb4a38b61547801559990891e0e25a482395756b7fc7a9c5a5703256ad92",
+  "databaseBackupSha256": "b70e899eb2565949a82ab8b6230b9cf7b354875c7aa6df5223336098793bd1af",
+  "realBefore": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realAfter": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realDataUnchanged": true,
+  "existingControls": {
+    "characters": 22,
+    "groups": 8,
+    "combat": 11,
+    "bestiary": 9,
+    "attacks": 10,
+    "groupOptions": 12,
+    "registeredAccounts": 3
+  },
+  "spellPersistenceChecks": 12,
+  "spellPersistenceCoverage": [
+    "canonical-prepared-spells",
+    "physical-save-and-damage",
+    "no-health-before-mj-confirmation",
+    "player-cannot-confirm",
+    "repeat-confirmation-idempotent",
+    "cancel-without-cost",
+    "lost-cost-ack-and-restart",
+    "server-dice-healing",
+    "lost-heal-ack-and-restart",
+    "persistent-trigger-idempotent",
+    "concentration-save",
+    "source-effects-cleanup"
+  ],
+  "httpChecks": 28,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261102T174141Z/start.mjs",
+    "restarts": 0
+  },
+  "verification": {
+    "status": "passed",
+    "scope": "spell-combat-with-durable-confirmed-effects",
+    "sourceHash": "ef971856864e25c05c827421d8e34312dba4747568774d860f8628a5af0e89d2",
+    "completedAt": "2026-11-02T17:41:39.594Z",
+    "baselineCommit": "947ad4fe4",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 168,
+    "browserJourneys": 29,
+    "qualification": "Prepared/granted spells, explicit physical or server dice, MJ-reviewed plans and confirmations, allies in zones, single slot payment, durable receipts and restart recovery, shared or independent impacts, sourced conditions, concentration and declared durations. Complex mechanics and NPC access/limits remain MJ-reviewed. Frozen catalogue and character calculations unchanged. Browser journeys use isolated accounts and data; no real private account was impersonated."
+  },
+  "livePublicBrowser": {
+    "status": 200,
+    "features": 8,
+    "news": 3,
+    "spellsNews": 1,
+    "stylesheetLoaded": true,
+    "errors": []
+  },
+  "qualification": [
+    "Catalogue figé et calculs de création inchangés ; lot applicatif distinct.",
+    "168 tests ciblés et 29 parcours navigateur réussis, sans test final ignoré ou instable. Une synchronisation du parcours zone a été corrigée pour attendre l’affichage du résultat avant de remplir le formulaire suivant.",
+    "Douze contrôles MongoDB spécifiques avant et après bascule, dans des collections isolées, dont perte d’accusé et reprise après reconstruction du service.",
+    "Sauvegarde complète de 3286 documents, ancienne livraison et configuration conservées avec script de retour arrière.",
+    "Empreintes des personnages, groupes, combats, résolutions, bestiaire et catalogues réels identiques avant/après.",
+    "Accueil public contrôlé en navigateur sur le domaine ; parcours privés avec comptes isolés et données de contrôle.",
+    "Les formules courantes sont des suggestions ; les mécaniques complexes, zones, exceptions, quotas PNJ et incantations longues restent vérifiés par le MJ."
+  ]
+}

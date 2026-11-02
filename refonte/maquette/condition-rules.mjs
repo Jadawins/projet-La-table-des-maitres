@@ -38,7 +38,7 @@ export function conditionView(play,currentHp,baseSpeed){
   const death={...freshDeathSaves(),...play?.deathSaves},exhaustion=play?.exhaustion||0;
   death.dead=death.dead||exhaustion===6;
   const life=death.dead?'dead':currentHp===null?'unknown':currentHp>0?'alive':death.stable?'stable':'dying';
-  const explicit=play?.conditions||[],effective=new Set(explicit);
+  const explicit=play?.conditions||[],effective=new Set([...explicit,...(play?.magicEffects||[]).flatMap(e=>e.conditions||[])]);
   const zeroUnconscious=currentHp===0&&!death.dead&&!play?.zeroHpConscious;
   if(zeroUnconscious)effective.add('unconscious');
   for(const condition of CONDITIONS)if(effective.has(condition.id))for(const implied of condition.implies||[])effective.add(implied);

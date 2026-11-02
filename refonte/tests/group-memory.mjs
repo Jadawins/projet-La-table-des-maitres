@@ -6,6 +6,7 @@ function values(doc, path) {
 function matches(doc, filter) {
   return Object.entries(filter).every(([key, expected]) => {
     const actual = values(doc, key.split('.'));
+    if (expected && typeof expected === 'object' && '$nin' in expected)return actual.every(value=>!expected.$nin.includes(value));
     if (expected && typeof expected === 'object' && '$exists' in expected)
       return actual.some(value => value !== undefined) === expected.$exists;
     return actual.some(value => value === expected);
