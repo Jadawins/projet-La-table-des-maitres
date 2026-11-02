@@ -6,6 +6,12 @@ Choisir l'attaquant et préparer sa liste ne lance rien. Choisir ensuite l'attaq
 
 Les dés physiques sont renseignés individuellement. Les dés de l'application sont générés sur le serveur avec node:crypto.randomInt, uniquement après un clic explicite. Aucun lancer, changement de PV ou consommation de ressource n'est déclenché par l'ouverture ou l'actualisation de la page.
 
+## Alliés et tirs alliés
+
+Le ciblage autorise aussi les personnages alliés : aucun filtre ne rend le groupe immunisé aux attaques. Un joueur peut donc viser un autre PJ, mais seul le MJ confirme les dégâts. La fiche de la cible est mise à jour une fois ; les statistiques privées de l’allié ne sont pas exposées au tireur. Un échec au toucher ne redirige pas automatiquement l’attaque sur un autre participant.
+
+Pour le futur module de sorts de zone, les alliés présents dans la zone devront être inclus parmi les cibles affectées. Les exemptions et effets dépendront du texte de chaque sort ou aptitude, avec validation du MJ. La sélection et la résolution des zones ne sont pas encore implémentées.
+
 ## Validation du MJ
 
 Les dégâts proposés n'affectent aucun PV avant **Confirmer et appliquer**, accessible uniquement au MJ du groupe. Le MJ peut corriger touche/échec/critique avec un motif, appliquer une résistance, vulnérabilité ou immunité, puis ajouter une correction finale motivée. La CA et les indications de défense restent réservées au MJ. Les échecs de sauvegarde contre la mort éventuels sont choisis explicitement.
@@ -25,3 +31,5 @@ Les joueurs ne voient que leurs propositions et les adversaires révélés. Ils 
 85 tests ciblés et 21 parcours navigateur passent, dont trois nouveaux parcours d'attaques à deux comptes. Les contrôles couvrent les droits, les dés, les critiques, l'absence de dégâts avant confirmation, les préférences séparées, les confirmations concurrentes, les conflits et l'accusé de sauvegarde perdu. Les contrôles MongoDB utilisent des collections temporaires et comparent les données réelles avant et après publication. Le catalogue et les personnages existants ne sont pas migrés.
 
 Références de calcul consultées : [glossaire officiel des règles gratuites 2024](https://www.dndbeyond.com/sources/dnd/br-2024/rules-glossary) et [règles de jeu officielles](https://www.dndbeyond.com/sources/dnd/br-2024/playing-the-game). Cette intégration ne rouvre pas la campagne de conformité du catalogue figé.
+
+Contrôle complémentaire du 2 novembre 2026 : un test dédié vérifie le ciblage PJ vers allié, la confidentialité, l’absence de dégâts avant validation, la confirmation MJ répétée sans double écriture et l’échec sans lancer automatique. Le comportement était déjà disponible dans la livraison en ligne ; ce complément ajoute un test et sa documentation, sans changer le serveur.

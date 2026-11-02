@@ -113,3 +113,26 @@ test('Groupe supprimé : combat et proposition en attente inaccessibles, aucune 
   await assert.rejects(s.combats.confirmAttack(mj,s.groupId,{ticketId:roll.ticket.id,confirmed:true}),e=>e.status===404);
   assert.deepEqual(await s.characters.get('player',s.id),before);
 });
+
+test('Friendly fire : un PJ peut viser un allié ; seuls les dégâts confirmés par le MJ modifient sa fiche',async()=>{
+  const s=await setup(),allyId=randomUUID(),state=originFixture(c,'barbare',1,{speciesId:'orc'},'marin');state.name='Allié';
+  await s.characters.save(mj.userId,allyId,state,0);await s.groups.attach(mj,s.groupId,{characterId:allyId});
+  await s.act({type:'pause'});await s.act({type:'sync'});
+  const ally=(await s.get()).combat.participants.find(p=>p.characterId===allyId);assert(ally);
+  await s.act({type:'health',participantId:ally.id,characterRevision:ally.characterRevision,action:{type:'start',currentHp:ally.maxHp}});
+  await s.act({type:'initiative',participantId:ally.id,value:12});await s.act({type:'resume'});
+  const attackerBefore=await s.characters.get(player.userId,s.id),allyBefore=await s.characters.get(mj.userId,allyId);
+  const options=await s.combats.attackOptions(player,s.groupId,s.pc.id);assert(options.targets.some(p=>p.id===ally.id));
+  const privateView=(await s.get(player)).combat.participants.find(p=>p.id===ally.id);assert.equal(privateView.currentHp,undefined);assert.equal(privateView.ac,undefined);
+  const roll=await s.roll(player,s.pc,ally,{dice:[20]});assert.equal(roll.ticket.targetAC,undefined);
+  const ready=await s.combats.rollDamage(player,s.groupId,{ticketId:roll.ticket.id,mode:'physical',dice:roll.ticket.plan.dice.flatMap(d=>Array(d.count).fill(1))});
+  assert.deepEqual(await s.characters.get(mj.userId,allyId),allyBefore);
+  await assert.rejects(s.combats.confirmAttack(player,s.groupId,{ticketId:roll.ticket.id,confirmed:true}),e=>e.status===403);
+  await s.combats.confirmAttack(mj,s.groupId,{ticketId:roll.ticket.id,confirmed:true});
+  await s.combats.confirmAttack(mj,s.groupId,{ticketId:roll.ticket.id,confirmed:true});
+  const allyAfter=await s.characters.get(mj.userId,allyId);assert.equal(allyAfter.character.playState.hpLost,ready.ticket.damage.total);
+  assert.equal(allyAfter.revision,allyBefore.revision+1);assert.deepEqual(await s.characters.get(player.userId,s.id),attackerBefore);
+  const miss=await s.roll(player,s.pc,ally,{dice:[1]});await s.combats.rollDamage(player,s.groupId,{ticketId:miss.ticket.id,mode:'app'});
+  await s.combats.confirmAttack(mj,s.groupId,{ticketId:miss.ticket.id,confirmed:true});assert.equal(s.calls(),0);
+  assert.deepEqual(await s.characters.get(mj.userId,allyId),allyAfter);
+});
