@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261102T174141Z`, publiée le 2 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261102T182451Z`, publiée le 2 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261102T182451Z` ajoute **Administration → Toutes les fiches** : recherche, consultation et correction via les formulaires existants, avec sauvegarde dans le compte du joueur, révision stricte, journal et brouillon administrateur isolé. 174 tests et 32 parcours navigateur passent ; dix contrôles MongoDB dédiés avant/après et 29 contrôles HTTP réussissent. Les quatre fiches actives s’ouvrent et se rendent en lecture seule ; les données réelles restent inchangées. Voir [le fonctionnement et les limites](access/ADMINISTRATION-FICHES.md) et [le relevé de publication](audit/admin-characters-publication-20261102.json).
 
 Le lot **sorts en combat** est publié dans `20261102T174141Z` : 168 tests, 29 parcours navigateur, 12 contrôles MongoDB spécifiques avant/après et 28 contrôles HTTP réussis. La sauvegarde contient 3 286 documents ; les empreintes des données réelles sont inchangées. La reprise après une écriture dont l’accusé est perdu est contrôlée sans double emplacement ni second effet. Voir [le fonctionnement et les limites](access/SORTS-EN-COMBAT.md) et [le relevé de publication](audit/spell-combat-publication-20261102.json).
 

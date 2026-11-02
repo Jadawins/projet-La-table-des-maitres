@@ -125,6 +125,13 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,groups=nul
         const session=await sessionFor(req);if(!session)return json(res,401,{error:'Reconnectez-vous.'});
         if(!session.isAdmin)return json(res,403,{error:'Accès réservé à l’administration.'});
         if(!admin)return json(res,503,{error:'Administration indisponible.'});
+        const characterRoute=route.match(/^\/atelier\/api\/admin\/personnages\/([^/]+)\/([^/]+)$/);
+        if(characterRoute){
+          const [,ownerId,id]=characterRoute;
+          if(req.method==='GET')return json(res,200,await admin.character(session,ownerId,id));
+          if(req.method==='POST')return json(res,200,await admin.editCharacter(session,ownerId,id,await body(req,131072)));
+          return json(res,405,{error:'Opération indisponible.'});
+        }
         if(req.method==='GET'&&route==='/atelier/api/admin/metrics')return json(res,200,await admin.overview(session));
         if(req.method==='GET'&&route==='/atelier/api/admin/directory')return json(res,200,await admin.directory(session));
         if(req.method==='POST'&&route==='/atelier/api/admin/assign')return json(res,200,await admin.assign(session,await body(req)));

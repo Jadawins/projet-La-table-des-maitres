@@ -1,0 +1,120 @@
+{
+  "status": "deployed",
+  "release": "20261102T182451Z",
+  "previous": "20261102T174141Z",
+  "completedAt": "2026-11-02T18:28:35.565Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261102T182451Z",
+  "backupDocuments": 3286,
+  "archiveSha256": "2ce61bacbba5aa84e177f30af003b7271b3e92184f593c8b2141c2d3bbff7826",
+  "databaseBackupSha256": "a5ad16ed1e9f1998bc0b312e9cbc6c74055afafec8344d059919fb0bb8727ec0",
+  "realBefore": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realAfter": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realDataUnchanged": true,
+  "existingControls": {
+    "characters": 22,
+    "groups": 8,
+    "combat": 11,
+    "bestiary": 9,
+    "attacks": 10,
+    "groupOptions": 12,
+    "spells": 12,
+    "registeredAccounts": 3
+  },
+  "adminCharacterPersistenceChecks": 10,
+  "coverage": [
+    "admin-full-read-without-internal-metadata",
+    "non-admin-read-and-write-refused",
+    "no-character-moved-to-admin",
+    "validated-edit-in-owner-account",
+    "atomic-admin-edit-journal",
+    "combat-receipts-preserved",
+    "concurrent-player-edit-protected",
+    "invalid-state-refused",
+    "missing-owner-never-created",
+    "deleted-character-never-restored"
+  ],
+  "httpChecks": 29,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261102T182451Z/start.mjs",
+    "restarts": 0
+  },
+  "verification": {
+    "status": "passed",
+    "scope": "admin-character-consultation-and-owner-preserving-edits",
+    "sourceHash": "d3b7e71c4050fe77f443248ee0e31db0c1a9232044c400a592b82d74aaa2266b",
+    "completedAt": "2026-11-02T18:24:49.909Z",
+    "baselineCommit": "251d43965",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 174,
+    "browserJourneys": 32,
+    "qualification": "Admin-only searchable directory, full sheet and existing creation editor, strict revision save in the owner account, atomic edit journal, separate in-memory admin workspace and restored personal draft, conflict preservation and unsaved-exit guard. Frozen catalogue, calculations, sheet rendering and combat runtime unchanged. Private browser tests use isolated accounts."
+  },
+  "readOnlyCharacterChecks": {
+    "status": "passed",
+    "readOnly": true,
+    "total": 4,
+    "rendered": 4,
+    "legacy": 0
+  },
+  "qualification": [
+    "Administration réservée au rôle configuré côté serveur, recherche et ouverture des fiches enregistrées en ligne.",
+    "Édition via les formulaires existants, sauvegarde dans le compte propriétaire avec contrôle strict de révision et journal atomique.",
+    "Espace administrateur en mémoire, séparé des brouillons personnels ; sortie non enregistrée confirmée et état personnel restauré.",
+    "174 tests et 32 parcours navigateur réussis. Les premiers parcours ont été ajustés pour ouvrir le panneau de détails et utiliser le lien réel de reprise du brouillon. Aucun test final ignoré ou instable.",
+    "Dix contrôles MongoDB spécifiques avant et après la bascule, sur des collections isolées ; empreintes des données réelles inchangées.",
+    "Ouverture et rendu des quatre fiches actives vérifiés en lecture seule, sans usurper une connexion réelle.",
+    "Les objets et capacités libres peuvent être notés dans Histoire et notes ; aucun objet structuré supplémentaire ni modificateur de règle automatique n’est ajouté."
+  ]
+}

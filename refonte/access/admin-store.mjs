@@ -2,9 +2,23 @@ import {validCharacterId} from './character-store.mjs';
 const fault=(status,message)=>Object.assign(new Error(message),{status});
 const active={deleted_at:{$exists:false}};
 const requireAdmin=actor=>{if(!actor?.isAdmin||typeof actor.userId!=='string')throw fault(403,'Accès réservé à l’administration.');};
-export function createAdminStore({db,rulesVersion,accounts:authAccounts=null,now=()=>new Date()}){
+export function createAdminStore({db,rulesVersion,characterStore=null,accounts:authAccounts=null,now=()=>new Date()}){
   const users=db.collection('users'),characters=db.collection('personnages_refonte');
   return {
+    async character(actor,ownerId,id){
+      requireAdmin(actor);
+      if(typeof ownerId!=='string'||!ownerId.trim()||ownerId.length>128||!validCharacterId(id))throw fault(400,'Référence de fiche invalide.');
+      if(!characterStore)throw fault(503,'La consultation des fiches est indisponible.');
+      const [record,owner]=await Promise.all([characterStore.get(ownerId,id),users.findOne({supabase_id:ownerId})]);
+      return {...record,owner:{id:ownerId,email:owner?.email||'',name:owner?.username||''}};
+    },
+    async editCharacter(actor,ownerId,id,input){
+      requireAdmin(actor);
+      if(typeof ownerId!=='string'||!ownerId.trim()||ownerId.length>128||!validCharacterId(id)||!Number.isInteger(input?.revision)||input.revision<1)throw fault(400,'Référence de modification invalide.');
+      if(!characterStore)throw fault(503,'La modification des fiches est indisponible.');
+      const result=await characterStore.save(ownerId,id,input.character,input.revision,{strictRevision:true,adminEdit:{by:actor.userId}});
+      return {...result,owner:{id:ownerId}};
+    },
     async recordAccount(user){
       if(typeof user?.id!=='string'||typeof user.email!=='string')return;
       const date=now();

@@ -80,7 +80,7 @@ async function fakeSupabase(url,options){
 }
 const adminUsers=memoryCollection([{supabase_id:'e2e-account-a',email:'joueur-a@example.test'},{supabase_id:'e2e-account-b',email:'joueur-b@example.test'}]);
 const accounts=createAuthAccounts({url:'https://e2e.invalid',key:'server-test-only',fetcher:fakeSupabase});
-const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e',accounts});
+const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e',accounts,characterStore:characters});
 const groups=createGroupStore({collection:groupMemory(),characters});
 const combatRows=groupMemory();
 const combatCollection={...combatRows,async insertOne(row){if(combatRows.rows.some(x=>x.groupId===row.groupId&&x.active&&row.active))throw Object.assign(Error('duplicate'),{code:11000});return combatRows.insertOne(row);}};

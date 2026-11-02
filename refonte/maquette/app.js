@@ -4,7 +4,7 @@ import {multiclassPrerequisites,classRecords} from './multiclass-rules.mjs';
 import {beginAdvancement,advancementErrors,advancementPreview,finishAdvancement,advancementClassBase,advancementContext} from './character-advancement.mjs';
 import {downloadCharacterPDF} from './character-pdf.mjs';
 import {renderHome,renderGrimoire,catalogueEntries,searchCatalogue,renderResults,renderCatalogueDetail} from './portal-view.mjs';
-import {mountAdmin} from './admin-view.mjs';
+import {mountAdmin,adminRequest} from './admin-view.mjs';
 import {CURRENT_RULES_VERSION,usesCurrentRules,upgradedCharacterCopy} from './character-version.mjs';
 import {backgroundAbilities,backgroundBonuses,finalScores,modifier,visibleSteps,classProfile,clericProfile,pruneSpellChoices,spellErrors,classSkills,hitPoints,aptitudeErrors} from './character-rules.mjs';
 import {renderSheet} from './sheet-view.mjs';
@@ -41,6 +41,7 @@ const descriptions = { barbare: 'La force à l’état brut.', barde: 'Le pouvoi
 let catalogue,catalogueMaster;
 let isAdmin=false,grimoireEntries=[],grimoireQuery='',grimoireCategory='',grimoireLimit=24;
 let draft = initial();
+let adminEditing=null,personalDraft=null,personalEditor=null,adminLastHash='';
 const advancing=()=>Boolean(draft.advancementDraft);
 const creationSteps=()=>advancing()?[4,...(visibleSteps(draft,catalogue).includes(5)?[5]:[]),7]:visibleSteps(draft,catalogue);
 const pruneDraftSpells=()=>{if(!advancing())pruneSpellChoices(draft,catalogue);};
@@ -117,7 +118,7 @@ function toast(message) {
 }
 
 function save(silent = false) {
-  try {
+  if(!adminEditing)try {
     draft.cloudId??=crypto.randomUUID();
     const localDraft=Object.fromEntries(Object.entries(draft).filter(([key])=>!key.startsWith('_')));
     localStorage.setItem(draftKey, JSON.stringify(localDraft));
@@ -126,11 +127,10 @@ function save(silent = false) {
   }
   catch { storageAvailable = false; }
   if(accountId){
-    const status=root.querySelector('.sheet-save-status');
-    if(status)status.textContent=draft.cloudRevision?(isDirty(draft)?'Modifications à enregistrer. La dernière version reste dans votre compte.':'Enregistré dans votre compte.'):'Ce personnage est encore un brouillon sur cet appareil.';
+    for(const status of root.querySelectorAll('.sheet-save-status'))status.textContent=adminEditing?(isDirty(draft)?'Modifications administrateur à enregistrer dans le compte du joueur.':'Fiche enregistrée dans le compte du joueur.'):draft.cloudRevision?(isDirty(draft)?'Modifications à enregistrer. La dernière version reste dans votre compte.':'Enregistré dans votre compte.'):'Ce personnage est encore un brouillon sur cet appareil.';
     root.querySelectorAll('[data-save-character]').forEach(button=>{button.disabled=cloudBusy;button.textContent=cloudBusy?'Enregistrement…':draft.cloudRevision?'Enregistrer les modifications':'Enregistrer le personnage';});
   }
-  if (!silent) toast(storageAvailable ? 'Brouillon conservé sur cet appareil.' : 'Le navigateur ne permet pas de conserver ce brouillon.');
+  if (!silent) toast(adminEditing?'Modifications en cours. Enregistrez dans le compte du joueur pour les conserver.':storageAvailable ? 'Brouillon conservé sur cet appareil.' : 'Le navigateur ne permet pas de conserver ce brouillon.');
 }
 
 async function cloudRequest(path,options={}){
@@ -195,18 +195,43 @@ async function saveCloudCharacter(){
   if(advancing()){toast('Terminez ou annulez la montée de niveau avant d’enregistrer.');return;}
   if(!usesCurrentRules(draft)){toast('Créez une copie à mettre à niveau avant de l’enregistrer.');return;}
   if(!draft.name.trim()){toast('Donnez un nom au personnage avant de l’enregistrer.');return;}
-  save(true);const id=draft.cloudId,character=characterSnapshot(draft),stamp=snapshotStamp(draft);
+  save(true);const id=draft.cloudId,character=characterSnapshot(draft),stamp=snapshotStamp(draft),adminContext=adminEditing;
   cloudBusy=true;cloudSaveError='';route();
   try{
-    const result=await cloudRequest('/'+encodeURIComponent(id),{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({character,revision:draft.cloudRevision||0})});
-    if(draft.cloudId===id){
+    const result=adminContext?await adminRequest('personnages/'+encodeURIComponent(adminContext.owner.id)+'/'+encodeURIComponent(id),{character,revision:draft.cloudRevision}):await cloudRequest('/'+encodeURIComponent(id),{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({character,revision:draft.cloudRevision||0})});
+    if(draft.cloudId===id&&adminEditing===adminContext){
       const unchanged=snapshotStamp(draft)===stamp;
       if(unchanged)Object.assign(draft,result.character);
       Object.assign(draft,{cloudId:result.id,cloudRevision:result.revision,cloudUpdatedAt:result.updatedAt,cloudSnapshot:snapshotStamp(result.character)});save(true);
     }
-    await refreshCloudCharacters();toast(result.status==='ready'?'Personnage enregistré dans votre compte.':'Personnage enregistré dans votre compte. Certains choix restent à compléter.');
+    if(!adminContext)await refreshCloudCharacters();toast(adminContext?'Fiche enregistrée dans le compte du joueur.':result.status==='ready'?'Personnage enregistré dans votre compte.':'Personnage enregistré dans votre compte. Certains choix restent à compléter.');
   }catch(error){cloudSaveError=error.message;toast(error.message);}finally{cloudBusy=false;route();}
 }
+async function openAdminCharacter(ownerId,id,requestedHash){
+  const sequence=++openingSequence;save(true);
+  root.innerHTML='<h1>Chargement de la fiche…</h1><p>Consultation administrateur.</p>';
+  try{
+    const result=await adminRequest('personnages/'+encodeURIComponent(ownerId)+'/'+encodeURIComponent(id));
+    if(sequence!==openingSequence||location.hash.slice(1)!==requestedHash)return;
+    personalDraft=structuredClone(draft);personalEditor={beforeSuggestion,suggestionFocus,spellSearch,activeSheetTab,cloudSaveError};adminEditing={owner:result.owner,id};
+    beforeSuggestion=null;suggestionFocus=null;spellSearch='';
+    draft={...initial(),...result.character,rulesVersion:result.character.rulesVersion??null,cloudId:result.id,cloudRevision:result.revision,cloudUpdatedAt:result.updatedAt,cloudSnapshot:snapshotStamp(result.character)};
+    activeSheetTab='overview';cloudSaveError='';adminLastHash='#admin/fiche/'+encodeURIComponent(ownerId)+'/'+id;
+    history.replaceState(null,'',adminLastHash);route();
+  }catch(error){if(sequence===openingSequence&&location.hash.slice(1)===requestedHash)root.innerHTML=`<a class="back" href="#admin">← Administration</a><h1>Fiche indisponible</h1><p role="alert">${esc(error.message)}</p>`;}
+}
+function decorateAdminEditor(){
+  if(!adminEditing)return;
+  const owner=adminEditing.owner;
+  root.insertAdjacentHTML('afterbegin',`<aside class="notice" data-admin-editor><p><strong>Édition administrateur</strong> · ${esc(owner.email||owner.name||'Compte du joueur')}</p><p>La fiche reste dans le compte du joueur. Les changements sont conservés en mémoire jusqu’à leur enregistrement.</p><div class="portal-actions"><a class="button secondary" href="#admin">← Toutes les fiches</a><button class="button primary" data-save-character ${cloudBusy?'disabled':''}>Enregistrer les modifications</button></div><p class="sheet-save-status" role="status"></p></aside>`);
+  root.querySelectorAll('a[href="#creation"]').forEach(link=>link.href='#admin/creation/'+encodeURIComponent(owner.id)+'/'+adminEditing.id);
+  root.querySelector('[data-upgrade-copy]')?.remove();
+  const localSave=root.querySelector('#save');if(localSave){localSave.nextElementSibling?.remove();localSave.remove();}
+  if(!usesCurrentRules(draft))root.querySelectorAll('[data-save-character]').forEach(button=>button.remove());
+  document.getElementById('breadcrumb').textContent='Administration · '+(draft.name||'Fiche du joueur');
+  save(true);
+}
+window.addEventListener('beforeunload',event=>{if(adminEditing&&(cloudBusy||isDirty(draft))){event.preventDefault();event.returnValue='';}});
 async function openCloudCharacter(id){
   const sequence=++openingSequence;save(true);
   root.innerHTML='<h1>Votre personnage arrive…</h1><p>Chargement de la fiche enregistrée.</p>';
@@ -266,7 +291,7 @@ function stepContent() {
 
 function cloudSaveControl(){
   if(!accountId)return '';
-  return `<div class="cloud-save-control"><button type="button" class="button primary" data-save-character ${cloudBusy?'disabled':''}>${cloudBusy?'Enregistrement…':draft.cloudRevision?'Enregistrer les modifications':'Enregistrer le personnage'}</button><p class="hint">${draft.cloudRevision?(isDirty(draft)?'Modifications à enregistrer.':'Enregistré dans votre compte.'):'Pour retrouver ce personnage depuis votre compte.'}</p>${cloudSaveError?`<p class="hint" role="alert">${esc(cloudSaveError)}</p>`:''}</div>`;
+  return `<div class="cloud-save-control"><button type="button" class="button primary" data-save-character ${cloudBusy?'disabled':''}>${cloudBusy?'Enregistrement…':draft.cloudRevision?'Enregistrer les modifications':'Enregistrer le personnage'}</button><p class="hint">${adminEditing?'Enregistrement dans le compte du joueur.':draft.cloudRevision?(isDirty(draft)?'Modifications à enregistrer.':'Enregistré dans votre compte.'):'Pour retrouver ce personnage depuis votre compte.'}</p>${cloudSaveError?`<p class="hint" role="alert">${esc(cloudSaveError)}</p>`:''}</div>`;
 }
 
 function summary() {
@@ -517,12 +542,30 @@ function validStep() {
   return true;
 }
 
-function drawCreation() { root.innerHTML = creation(); bind(); }
+function drawCreation() { root.innerHTML = creation(); decorateAdminEditor();bind(); }
 function route() {
   disposeGroups(root);disposeCombat(root);
-  refreshAdvancementContext();
   let hash = location.hash.slice(1);
-  document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+((hash.startsWith('groupes')||hash.startsWith('combat/'))?'groupes':hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+  const adminRoute=hash.match(/^admin\/(ouvrir|fiche|creation)\/([^/]+)\/([^/]+)$/);
+  if(adminEditing){
+    const keepsEditor=['creation','fiche/brouillon'].includes(hash)||adminRoute&&adminRoute[2]===encodeURIComponent(adminEditing.owner.id)&&adminRoute[3]===adminEditing.id;
+    if(!keepsEditor){
+      if(cloudBusy){history.replaceState(null,'',adminLastHash);toast('Attendez la fin de l’enregistrement de cette fiche.');return;}
+      if(isDirty(draft)&&!confirm('Quitter cette fiche sans enregistrer vos modifications administrateur ?')){history.replaceState(null,'',adminLastHash);return;}
+      draft=personalDraft||initial();beforeSuggestion=personalEditor?.beforeSuggestion||null;suggestionFocus=personalEditor?.suggestionFocus||null;spellSearch=personalEditor?.spellSearch||'';activeSheetTab=personalEditor?.activeSheetTab||'overview';cloudSaveError=personalEditor?.cloudSaveError||'';personalDraft=null;personalEditor=null;adminEditing=null;
+    }
+  }
+  if(adminRoute){
+    if(!isAdmin){root.innerHTML='<h1>Accès réservé</h1><p>Cette page est réservée à l’administration.</p>';return;}
+    if(!adminEditing){openAdminCharacter(adminRoute[2],adminRoute[3],hash);return;}
+    hash=adminRoute[1]==='creation'?'creation':'fiche/brouillon';
+  }
+  if(adminEditing&&['creation','fiche/brouillon'].includes(hash)){
+    adminLastHash='#admin/'+(hash==='creation'?'creation':'fiche')+'/'+encodeURIComponent(adminEditing.owner.id)+'/'+adminEditing.id;
+    if(location.hash!==adminLastHash)history.replaceState(null,'',adminLastHash);
+  }
+  refreshAdvancementContext();
+  document.querySelectorAll('.nav-link').forEach(link=>{const active=link.hash==='#'+(adminEditing?'admin':(hash.startsWith('groupes')||hash.startsWith('combat/'))?'groupes':hash.startsWith('grimoire')?'grimoire':hash||'accueil');link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
   if(hash.startsWith('combat/')){document.getElementById('breadcrumb').textContent='Combat';mountCombat(root,{groupId:hash.split('/')[1]||''});return;}
   if(hash==='groupes'||hash.startsWith('groupes/')){document.getElementById('breadcrumb').textContent='Mes groupes';mountGroups(root,{id:hash.split('/')[1]||'',catalogue,enabled:Boolean(accountId)});return;}
   if(!hash||hash==='accueil'||hash==='grimoire'||hash.startsWith('grimoire/')||hash==='admin'){
@@ -554,10 +597,11 @@ function route() {
     else hash='personnages';
   }
   if(hash==='fiche/brouillon'&&advancing()){hash='creation';history.replaceState(null,'','#creation');}
-  if((hash==='creation'||hash==='fiche/brouillon')&&!usesCurrentRules(draft)){root.innerHTML=legacyCharacter();bind();return;}
+  if((hash==='creation'||hash==='fiche/brouillon')&&!usesCurrentRules(draft)){root.innerHTML=legacyCharacter();decorateAdminEditor();bind();return;}
   const isCreation = hash === 'creation';
   document.getElementById('breadcrumb').textContent = isCreation ? 'Créer un personnage' : hash.startsWith('fiche/') ? 'Fiche personnage' : 'Mes personnages';
   root.innerHTML = isCreation ? creation() : hash.startsWith('fiche/') ? sheet(hash.split('/')[1]) : characters();
+  decorateAdminEditor();
   bind();
   window.scrollTo(0, 0);
 }
@@ -656,7 +700,7 @@ function bind() {
   root.querySelectorAll('[data-sheet-detail]').forEach(input=>input.addEventListener('input',()=>{
     draft.details??={};draft.details[input.dataset.sheetDetail]=input.value;save(true);
   }));
-  document.getElementById('save-sheet-details')?.addEventListener('click',()=>{save(true);route();toast('Les détails du personnage ont été enregistrés.');});
+  document.getElementById('save-sheet-details')?.addEventListener('click',()=>{if(adminEditing){saveCloudCharacter();return;}save(true);route();toast('Les détails du personnage ont été enregistrés.');});
   document.getElementById('level')?.addEventListener('change', event => {
     draft.level = Number(event.target.value);
     document.getElementById('summary-level').textContent = `Niveau ${draft.level} · D&D 2024`;

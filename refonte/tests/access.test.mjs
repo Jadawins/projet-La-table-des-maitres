@@ -17,6 +17,17 @@ test('Administration : identité vérifiée et adresse confirmée, jamais les ch
   }
 });
 const origin='https://myrpgtable.fr';
+test('Fiches administrateur : routes privées, origine contrôlée et méthodes limitées',async t=>{
+  const seen=[],admin={recordAccount:async()=>{},character:async(actor,owner,id)=>{seen.push(['read',actor.userId,owner,id]);return {character:{name:'Fiche privée'}};},editCharacter:async(actor,owner,id,input)=>{seen.push(['edit',actor.userId,owner,id,input.revision]);return {revision:2};}};
+  const {request,post}=await setup(t,{admin,adminEmails:['admin@example.test'],user:{id:'admin',email:'admin@example.test',email_confirmed_at:'2026-10-30'}});
+  const route='/atelier/api/admin/personnages/owner/aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa';
+  assert.equal((await request(route)).status,401);
+  const login=await post('/auth/login',{email:'admin@example.test',password:'test-only'}),cookie=login.headers.get('set-cookie').split(';')[0];
+  const result=await request(route,{headers:{Cookie:cookie}});assert.equal(result.status,200);assert.equal(result.headers.get('cache-control'),'no-store');
+  assert.equal((await request(route,{method:'POST',headers:{Cookie:cookie,Origin:'https://evil.invalid','Content-Type':'application/json'},body:'{}'})).status,403);
+  assert.equal((await request(route,{method:'DELETE',headers:{Cookie:cookie,Origin:origin}})).status,405);
+  assert.equal((await post(route,{revision:1},cookie)).status,200);assert.deepEqual(seen.map(x=>x[0]),['read','edit']);
+});
 const token=`x.${Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+3600})).toString('base64url')}.x`;
 async function setup(t,{rejectUser=false,unavailable=false,characters,catalogueText,admin,adminEmails=[],user}={}){
   const calls=[];

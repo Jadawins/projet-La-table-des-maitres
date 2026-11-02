@@ -26,7 +26,7 @@ const {text:catalogueText,catalogue}=loaded;
 const {validateSavedCharacter}=await import(pathToFileURL(path.join(appRoot,'character-storage.mjs')).href);
 const characters=createCharacterStore({collection,validate:input=>validateSavedCharacter(input,catalogue),catalogueFingerprint:createHash('sha256').update(catalogueText).digest('hex')});
 const accounts=createAuthAccounts({url:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,key:process.env.SUPABASE_SERVICE_ROLE_KEY||process.env.SUPABASE_SECRET_KEY});
-const admin=createAdminStore({db:mongo.db('myrpgtable'),rulesVersion:release.id,accounts});
+const admin=createAdminStore({db:mongo.db('myrpgtable'),rulesVersion:release.id,accounts,characterStore:characters});
 const groupCollection=mongo.db('myrpgtable').collection('groupes_refonte');
 await groupCollection.createIndex({id:1},{unique:true});
 await groupCollection.createIndex({'members.userId':1,updatedAt:-1});

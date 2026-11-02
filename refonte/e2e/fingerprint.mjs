@@ -33,6 +33,7 @@ export async function sourceFingerprint(){
   files.push('refonte/audit/check-group-options-persistence.mjs','refonte/audit/verify-group-options.mjs');
   files.push('refonte/audit/verify-home.mjs');
   files.push('refonte/audit/check-spell-combat-persistence.mjs','refonte/audit/verify-spell-combat.mjs');
+  files.push('refonte/audit/check-admin-character-persistence.mjs','refonte/audit/verify-admin-characters.mjs');
   const hash=createHash('sha256');
   for(const file of files.sort()){hash.update(file);hash.update(await readFile(path.join(root,file)));}
   return hash.digest('hex');

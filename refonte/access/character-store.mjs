@@ -48,7 +48,7 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       if(update.matchedCount!==1)throw fault(409,'Le personnage a changé ailleurs. Actualisez la liste avant de le supprimer.');
       return {id,deleted:true};
     },
-    async save(userId,id,input,revision,{strictRevision=false}={}){
+    async save(userId,id,input,revision,{strictRevision=false,adminEdit=null}={}){
       if(!validCharacterId(id)||!Number.isInteger(revision)||revision<0)throw fault(400,'Référence de sauvegarde invalide.');
       let result=validate(input);
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
@@ -70,6 +70,7 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       if(previous&&previous.revision!==revision)throw fault(409,'Ce personnage a été modifié ailleurs. Rouvrez la version enregistrée avant de continuer. Votre brouillon local est conservé.');
       if(!previous&&revision!==0)throw fault(409,'La version enregistrée est introuvable. Votre brouillon local est conservé.');
       const date=new Date(),doc={...filter,...result,revision:revision+1,created_at:previous?.created_at||date,updated_at:date,content_hash:contentHash,catalogue_fingerprint:catalogueFingerprint};
+      if(adminEdit)doc.admin_edits=[...(previous?.admin_edits||[]),{by:adminEdit.by,at:date,fromRevision:revision,toRevision:revision+1}].slice(-100);
       if(!previous){
         try{await collection.insertOne(doc);}catch(error){if(error.code!==11000)throw error;previous=await collection.findOne(filter);if(previous?.content_hash===contentHash)return expose(previous);throw fault(409,'Une autre sauvegarde est déjà en cours. Réessayez.');}
       }else{

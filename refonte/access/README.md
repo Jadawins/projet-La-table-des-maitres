@@ -79,3 +79,7 @@ Onze tests de fiche passent, dont le regroupement en six rubriques et la conserv
 ## Sorts en combat — 2 novembre 2026
 
 La livraison `20261102T174141Z` ajoute les sorts préparés/accordés depuis la fiche au combat de groupe. Le MJ valide le plan, les cibles et la dépense, puis confirme les effets. Dés physiques ou application restent au choix, sans lancer automatique. Les résolutions durables et reçus atomiques permettent une reprise après coupure sans double écriture. Voir [SORTS-EN-COMBAT.md](SORTS-EN-COMBAT.md) pour le parcours et les limites, et [le rapport](../audit/spell-combat-publication-20261102.json) pour les preuves et la sauvegarde.
+
+## Consultation et édition administrateur — 2 novembre 2026
+
+La livraison `20261102T182451Z` permet de rechercher et d’ouvrir les fiches des comptes depuis **Administration → Toutes les fiches**, puis de compléter leurs notes ou corriger leurs choix via les formulaires existants. La sauvegarde reste chez le joueur et refuse les conflits de révision. Les changements administrateur sont journalisés atomiquement ; les brouillons personnels restent séparés. Voir [ADMINISTRATION-FICHES.md](ADMINISTRATION-FICHES.md) et [le rapport de publication](../audit/admin-characters-publication-20261102.json).
