@@ -17,7 +17,7 @@ async function setup(t) {
   const post=(path,data,cookie='',site=origin)=>request(path,{method:'POST',headers:{Origin:site,Cookie:cookie,'Content-Type':'application/json'},body:JSON.stringify(data)});
   const login=await post('/auth/login',{email:'test@example.test',password:'test-only'});
   const cookie=login.headers.get('set-cookie').split(';')[0];
-  return {request,post,cookie};
+  return {request,post,cookie,groups};
 }
 test('API groupes : session vérifiée, origine contrôlée et rôle indépendant de l’administration',async t=>{
   const {request,post,cookie}=await setup(t),data={name:'Ma table',alias:'Wiwi',ownerId:'forged',members:[{userId:'forged'}]};
@@ -42,4 +42,21 @@ test('API groupes : limite sur les tentatives de code, aucun groupe découvert p
   const {post,cookie}=await setup(t);
   for(let i=0;i<20;i++)assert.equal((await post('/atelier/api/groupes/rejoindre',{code:'0000000000000000',alias:'Joueur'},cookie)).status,404);
   assert.equal((await post('/atelier/api/groupes/rejoindre',{code:'0000000000000000',alias:'Joueur'},cookie)).status,429);
+});
+
+test('Suppression HTTP : session, origine, confirmation, rôle et révision vérifiés',async t=>{
+  const {request,post,cookie,groups}=await setup(t);
+  const {group}=await (await post('/atelier/api/groupes',{name:'À supprimer',alias:'Wiwi'},cookie)).json();
+  const path='/atelier/api/groupes/'+group.id;
+  const remove=(data,auth=cookie,site=origin)=>request(path,{method:'DELETE',headers:{Origin:site,Cookie:auth,'Content-Type':'application/json'},body:JSON.stringify(data)});
+  assert.equal((await remove({confirmed:true,revision:1},'')).status,401);
+  assert.equal((await remove({confirmed:true,revision:1},cookie,'https://evil.invalid')).status,403);
+  for(const data of [null,[],{revision:1},{confirmed:true,revision:'1'}])assert.equal((await remove(data)).status,400);
+  assert.equal((await remove({confirmed:true,revision:2})).status,409);
+  const foreign=await groups.create({userId:'owner'},{name:'Autre table',alias:'Autre'});
+  await groups.join({userId:'verified-user'},{code:foreign.invitationCode,alias:'Joueur'});
+  const forbidden=await request('/atelier/api/groupes/'+foreign.group.id,{method:'DELETE',headers:{Origin:origin,Cookie:cookie,'Content-Type':'application/json'},body:JSON.stringify({confirmed:true,revision:2})});assert.equal(forbidden.status,403);
+  assert.equal((await remove({confirmed:true,revision:1})).status,200);
+  assert.equal((await request(path,{headers:{Cookie:cookie}})).status,404);
+  assert.equal((await remove({confirmed:true,revision:1})).status,404);
 });

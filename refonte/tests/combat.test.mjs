@@ -157,3 +157,13 @@ test('Bestiaire : limite globale, pause obligatoire et révision périmée empê
   const small=await setup({attach:false,bestiaryRows:bestiaryFixtures()});await small.create();await small.act({type:'add-bestiary',monsterId:'goblin',quantity:1});await small.initiative(small.raw().combat.participants[0],12);await small.act({type:'start'});
   await assert.rejects(small.act({type:'add-bestiary',monsterId:'goblin',quantity:1}),e=>e.status===400);
 });
+
+test('MJ invité : accès au combat ; créateur joueur sans privilèges MJ ni accès au bestiaire',async()=>{
+  const s=await setup(),table=await s.groups.create(player,{name:'Table créée par joueur',alias:'Aline',role:'player'});
+  await s.groups.join(mj,{code:table.mjInvitationCode,alias:'Wiwi',role:'mj'});
+  await assert.rejects(s.combats.create(player,table.group.id,{name:'Non'}),e=>e.status===403);
+  const result=await s.combats.create(mj,table.group.id,{name:'Combat du MJ invité'});assert(result.isMJ);
+  const add={combatId:result.combat.id,revision:result.combat.revision,type:'add-npc',name:'Adversaire secret',maxHp:10,ac:12};
+  await assert.rejects(s.combats.act(player,table.group.id,add),e=>e.status===403);
+  await s.combats.act(mj,table.group.id,add);assert(!JSON.stringify(await s.combats.get(player,table.group.id)).includes('Adversaire secret'));
+});

@@ -31,6 +31,7 @@ const groupCollection=mongo.db('myrpgtable').collection('groupes_refonte');
 await groupCollection.createIndex({id:1},{unique:true});
 await groupCollection.createIndex({'members.userId':1,updatedAt:-1});
 await groupCollection.createIndex({inviteHash:1},{unique:true,partialFilterExpression:{inviteHash:{$type:'string'}}});
+await groupCollection.createIndex({mjInviteHash:1},{unique:true,partialFilterExpression:{mjInviteHash:{$type:'string'}}});
 const groups=createGroupStore({collection:groupCollection,characters});
 const {sheetModel}=await import(pathToFileURL(path.join(appRoot,'sheet-model.mjs')).href);
 const {playView,applyPlayAction}=await import(pathToFileURL(path.join(appRoot,'play-state.mjs')).href);

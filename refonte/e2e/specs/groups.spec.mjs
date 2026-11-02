@@ -4,18 +4,20 @@ import {readFile} from 'node:fs/promises';
 import {buildCatalogue} from '../../catalogue.mjs';
 import {originFixture} from '../../audit/origin-fixtures.mjs';
 const c=buildCatalogue(JSON.parse(await readFile(new URL('../../tests/fixtures/rules-2024.json',import.meta.url))));
-async function create(page,name='Table '+randomUUID()) {
+async function create(page,name='Table '+randomUUID(),role='mj') {
   await page.goto('/atelier/');
   await page.locator('.sidebar a[href="#groupes"]').click();
   const form=page.locator('[data-group-form="create"]');
+  await form.getByLabel('Votre rôle').selectOption(role);
   await form.getByLabel('Nom du groupe').fill(name);await form.getByLabel('Votre nom à la table').fill('Wiwi');
   await form.getByLabel('Présentation').fill('Une aventure à partager.');
   await form.getByRole('button',{name:'Créer mon groupe'}).click();
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
   return {id:page.url().split('#groupes/')[1],code:await page.locator('#group-invitation-code').inputValue(),name};
 }
-async function join(page,code,alias='Aline') {
+async function join(page,code,alias='Aline',role='player') {
   await page.goto('/atelier/#groupes');const form=page.locator('[data-group-form="join"]');
+  await form.getByLabel('Votre rôle').selectOption(role);
   await form.getByLabel('Code d’invitation').fill(code);await form.getByLabel('Votre nom à la table').fill(alias);
   await form.getByRole('button',{name:'Rejoindre le groupe',exact:true}).click();
 }
@@ -45,7 +47,7 @@ test('Groupe : création MJ, inscription joueur, choix de fiche et réouverture'
 });
 test('Invitations : fermeture, nouveau code, départ et exclusion sans perte de fiche',async({page,browser})=>{
   const table=await create(page);const other=await second(browser);try{
-    await confirmAction(page,'Fermer les invitations');await expect(page.locator('.group-invite')).toContainText('fermées');
+    await confirmAction(page,'Fermer les invitations');await expect(page.locator('[data-invitation-role=player]')).toContainText('fermées');
     await join(other.page,table.code);await expect(other.page.locator('[data-group-feedback]')).toContainText('invalide ou expiré');
     await confirmAction(page,'Créer un nouveau code');const code=await page.locator('#group-invitation-code').inputValue();expect(code).not.toBe(table.code);
     await join(other.page,code);await expect(other.page.getByRole('heading',{name:table.name,exact:true})).toBeVisible();
@@ -53,7 +55,7 @@ test('Invitations : fermeture, nouveau code, départ et exclusion sans perte de 
     await confirmAction(other.page,'Quitter le groupe');await expect(other.page.getByRole('heading',{name:'Mes groupes',exact:true})).toBeVisible();
     await join(other.page,code);await expect(other.page.getByRole('heading',{name:table.name,exact:true})).toBeVisible();
     await page.getByRole('button',{name:'Actualiser le groupe'}).click();await confirmAction(page,'Retirer Aline');
-    await expect(page.locator('.group-members')).not.toContainText('Aline');await expect(page.locator('.group-invite')).toContainText('fermées');
+    await expect(page.locator('.group-members')).not.toContainText('Aline');await expect(page.locator('[data-invitation-role=player]')).toContainText('fermées');
     await other.page.reload();await expect(other.page.locator('[data-group-feedback]')).toContainText('introuvable');
     await join(other.page,code);await expect(other.page.locator('[data-group-feedback]')).toContainText('invalide ou expiré');
   }finally{await other.context.close();}
@@ -72,10 +74,53 @@ test('Groupe privé : autre compte refusé, texte affiché sans HTML et fiche é
 test('Archiver : confirmation, disparition pour les deux comptes et code désactivé',async({page,browser})=>{
   const table=await create(page),other=await second(browser);try{
     await join(other.page,table.code);await expect(other.page.getByRole('heading',{name:table.name,exact:true})).toBeVisible();
-    await confirmAction(page,'Archiver le groupe',false);await expect(page.getByRole('heading',{name:table.name,exact:true})).toBeVisible();
-    await confirmAction(page,'Archiver le groupe');await expect(page.getByRole('heading',{name:'Mes groupes',exact:true})).toBeVisible();
+    expect((await post(page,'/'+table.id+'/archiver',{})).status()).toBe(200);
+    await page.goto('/atelier/#groupes');await expect(page.getByRole('heading',{name:'Mes groupes',exact:true})).toBeVisible();
     await expect(page.getByRole('link',{name:table.name,exact:true})).toHaveCount(0);
     expect((await other.page.request.get('/atelier/api/groupes/'+table.id)).status()).toBe(404);
     await join(other.page,table.code);await expect(other.page.locator('[data-group-feedback]')).toContainText('invalide ou expiré');
+  }finally{await other.context.close();}
+});
+
+test('Supprimer le groupe : annulation puis confirmation, combats fermés et fiche du joueur conservée',async({page,browser},info)=>{
+  const table=await create(page),other=await second(browser);try{
+    await join(other.page,table.code);await expect(other.page.getByRole('heading',{name:table.name,exact:true})).toBeVisible();
+    const id=randomUUID(),state=originFixture(c,'barbare',1,{speciesId:'orc'},'marin');state.name='Fiche conservée '+id;
+    expect((await other.page.request.put('/atelier/api/personnages/'+id,{headers:{Origin:origin},data:{character:state,revision:0}})).status()).toBe(200);
+    expect((await post(other.page,'/'+table.id+'/personnage',{characterId:id})).status()).toBe(200);
+    const combat=await page.request.post('/atelier/api/groupes/'+table.id+'/combat',{headers:{Origin:origin},data:{type:'create',name:'Combat conservé'}});expect(combat.status()).toBe(201);
+    await page.getByRole('button',{name:'Actualiser le groupe'}).click();
+    await expect(other.page.getByRole('button',{name:'Supprimer le groupe',exact:true})).toHaveCount(0);
+    await confirmAction(page,'Supprimer le groupe',false);await expect(page.getByRole('heading',{name:table.name,exact:true})).toBeVisible();
+    await page.screenshot({path:info.outputPath('group-delete.png')});
+    page.once('dialog',async dialog=>{expect(dialog.message()).toContain(table.name);expect(dialog.message()).toContain('fiches de personnages');await dialog.accept();});
+    await page.getByRole('button',{name:'Supprimer le groupe',exact:true}).click();
+    await expect(page.getByRole('heading',{name:'Mes groupes',exact:true})).toBeVisible();await expect(page.getByRole('link',{name:table.name,exact:true})).toHaveCount(0);
+    for(const actorPage of [page,other.page]){
+      expect((await actorPage.request.get('/atelier/api/groupes/'+table.id)).status()).toBe(404);
+      expect((await actorPage.request.get('/atelier/api/groupes/'+table.id+'/combat')).status()).toBe(404);
+    }
+    const saved=await other.page.request.get('/atelier/api/personnages/'+id);expect(saved.status()).toBe(200);expect((await saved.json()).character.name).toBe(state.name);
+    await join(other.page,table.code);await expect(other.page.locator('[data-group-feedback]')).toContainText('invalide ou expiré');
+  }finally{await other.context.close();}
+});
+
+test('Rôle au choix : créateur joueur, invitation MJ dédiée et commandes de combat selon le rôle',async({page,browser},info)=>{
+  await page.goto('/atelier/#groupes');for(const form of ['create','join'])await expect(page.locator('[data-group-form="'+form+'"] select[name=role]')).toHaveValue('');
+  const table=await create(page,'Table avec MJ invité '+randomUUID(),'player');
+  await expect(page.locator('.eyebrow').filter({hasText:'VOTRE TABLE'})).toContainText('JOUEUR');
+  const mjCode=await page.locator('#group-mj-invitation-code').inputValue();
+  await page.screenshot({path:info.outputPath('group-role-player-owner.png')});
+  const other=await second(browser);try{
+    await join(other.page,table.code,'Wiwi','mj');await expect(other.page.locator('[data-group-feedback]')).toContainText('invalide ou expiré');
+    await join(other.page,mjCode,'Wiwi','mj');await expect(other.page.getByRole('heading',{name:table.name,exact:true})).toBeVisible();
+    await expect(other.page.getByRole('button',{name:'Supprimer le groupe',exact:true})).toHaveCount(0);
+    await other.page.getByRole('link',{name:'Ouvrir le combat',exact:true}).click();
+    await other.page.getByLabel('Nom du combat').fill('MJ invité');await other.page.getByRole('button',{name:'Préparer le combat',exact:true}).click();
+    await expect(other.page.getByRole('heading',{name:'MJ invité',exact:true})).toBeVisible();
+    await page.getByRole('link',{name:'Ouvrir le combat',exact:true}).click();await expect(page.getByRole('heading',{name:'MJ invité',exact:true})).toBeVisible();
+    await expect(page.getByRole('button',{name:'Démarrer le combat',exact:true})).toHaveCount(0);
+    expect((await page.request.get('/atelier/api/groupes/'+table.id+'/bestiaire')).status()).toBe(403);
+    expect((await other.page.request.get('/atelier/api/groupes/'+table.id+'/bestiaire')).status()).toBe(200);
   }finally{await other.context.close();}
 });

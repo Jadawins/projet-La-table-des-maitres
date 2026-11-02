@@ -1,0 +1,160 @@
+{
+  "status": "deployed",
+  "release": "20261102T075800Z",
+  "previous": "20261102T072600Z",
+  "completedAt": "2026-11-02T08:00:36.828Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261102T075800Z",
+  "backupDocuments": 3283,
+  "archiveSha256": "365a37bc71be98ed04e67384cb93d87b43d6473ba8ba3b713bd7a917d92fdfe5",
+  "databaseBackupSha256": "1fee32a7a85da4bfe6c0f45faa8915456afab9b59e93144dd66a1e54545f5895",
+  "groups": {
+    "before": {
+      "status": "passed",
+      "completedAt": "2026-11-02T07:59:24.541Z",
+      "checks": 12,
+      "collection": "refonte_group_options_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 6,
+          "sha256": "6a3ca7991fc8ad743a89be800e83e42c7ef21d5c2ae8952c1d4a3d0960a8d65c"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d740bbab19504d57578bf7002d578556eaa7b94daf5faddd8176378ba020c229"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 6,
+          "sha256": "6a3ca7991fc8ad743a89be800e83e42c7ef21d5c2ae8952c1d4a3d0960a8d65c"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d740bbab19504d57578bf7002d578556eaa7b94daf5faddd8176378ba020c229"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realCharactersAndGroupsUnchanged": true,
+      "coverage": [
+        "creator-as-player",
+        "distinct-mj-invitation",
+        "mj-joined-role",
+        "creator-not-combat-mj",
+        "hidden-combat-for-player",
+        "creator-only-removal",
+        "explicit-confirmation",
+        "stale-revision",
+        "concurrent-removal",
+        "closed-invitations-and-combat",
+        "pending-damage-blocked",
+        "character-unchanged"
+      ]
+    },
+    "after": {
+      "status": "passed",
+      "completedAt": "2026-11-02T08:00:03.721Z",
+      "checks": 12,
+      "collection": "refonte_group_options_combats_controles",
+      "realBefore": {
+        "personnages_refonte": {
+          "count": 6,
+          "sha256": "6a3ca7991fc8ad743a89be800e83e42c7ef21d5c2ae8952c1d4a3d0960a8d65c"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d740bbab19504d57578bf7002d578556eaa7b94daf5faddd8176378ba020c229"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realAfter": {
+        "personnages_refonte": {
+          "count": 6,
+          "sha256": "6a3ca7991fc8ad743a89be800e83e42c7ef21d5c2ae8952c1d4a3d0960a8d65c"
+        },
+        "groupes_refonte": {
+          "count": 1,
+          "sha256": "d740bbab19504d57578bf7002d578556eaa7b94daf5faddd8176378ba020c229"
+        },
+        "combats_refonte": {
+          "count": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "monstres": {
+          "count": 322,
+          "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+        }
+      },
+      "realCharactersAndGroupsUnchanged": true,
+      "coverage": [
+        "creator-as-player",
+        "distinct-mj-invitation",
+        "mj-joined-role",
+        "creator-not-combat-mj",
+        "hidden-combat-for-player",
+        "creator-only-removal",
+        "explicit-confirmation",
+        "stale-revision",
+        "concurrent-removal",
+        "closed-invitations-and-combat",
+        "pending-damage-blocked",
+        "character-unchanged"
+      ]
+    }
+  },
+  "existingControls": {
+    "characters": 22,
+    "groups": 8,
+    "combat": 11,
+    "bestiary": 9,
+    "attacks": 10,
+    "registeredAccounts": 3
+  },
+  "httpChecks": 23,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261102T075800Z/start.mjs",
+    "restarts": 0
+  },
+  "realDataUnchanged": true,
+  "verification": {
+    "status": "passed",
+    "scope": "groups-removal-and-role-choice",
+    "sourceHash": "c0d89388a5099d424c7e8ac46dfe42adeb750ba85c2056ce640b026205694557",
+    "completedAt": "2026-11-02T07:57:48.338Z",
+    "baselineCommit": "c7d7a2c8d",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 92,
+    "browserJourneys": 23,
+    "qualification": "Creator-only confirmed revision-checked group removal; group and combat access closed with characters preserved. Explicit MJ/player choices, role-specific invitation codes, creator management distinct from combat MJ, legacy roles read without migration. Character rules, saves, combat/attack runtime and authentication unchanged."
+  },
+  "qualification": [
+    "Choix explicite Maître du jeu ou Joueur dans les nouveaux formulaires.",
+    "Codes MJ et joueur distincts ; gestion et suppression réservées au créateur du groupe.",
+    "Suppression logique confirmée et protégée par révision ; ferme les invitations et l’accès aux combats sans changer les fiches.",
+    "Rôles des groupes existants conservés sans migration. Catalogue figé inchangé.",
+    "Parcours navigateur sur deux comptes isolés ; connexion interactive en production non automatisée."
+  ]
+}

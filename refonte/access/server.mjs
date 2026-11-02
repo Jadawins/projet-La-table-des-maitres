@@ -95,6 +95,11 @@ export function createGateway({supabaseUrl,anonKey,appRoot,characters,groups=nul
         }
         if(req.method==='GET'&&!parts.length)return json(res,200,{groups:await groups.list(session)});
         if(req.method==='GET'&&parts.length===1)return json(res,200,await groups.get(session,parts[0]));
+        if(req.method==='DELETE'&&parts.length===1){
+          const input=await body(req,8192);
+          if(!input||typeof input!=='object'||Array.isArray(input))return json(res,400,{error:'Confirmez la suppression du groupe.'});
+          return json(res,200,await groups.remove(session,parts[0],input));
+        }
         if(req.method!=='POST')return json(res,405,{error:'Opération indisponible.'});
         const input=await body(req,8192);
         if(!input||typeof input!=='object'||Array.isArray(input))return json(res,400,{error:'Renseignez les informations du groupe.'});

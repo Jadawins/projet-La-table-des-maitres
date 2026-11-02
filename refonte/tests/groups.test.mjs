@@ -98,3 +98,59 @@ test('Validation des formulaires, limites et absence de session',async()=>{
   await assert.rejects(store.get(mj,'bad'),e=>e.status===404);
   await assert.rejects(store.attach(mj,group.id,{characterId:'bad'}),e=>e.status===400);
 });
+
+test('Suppression : confirmation et révision requises, MJ seul, groupe fermé pour tous sans toucher aux fiches',async()=>{
+  const {create,store,collection,saved}=setup(),{group,invitationCode}=await create();
+  await store.join(player,{code:invitationCode,alias:'Aline'});
+  const id=randomUUID();saved.set('player:'+id,{id,status:'ready',character:{name:'Héroïne',classId:'barde',level:3}});
+  await store.attach(player,group.id,{characterId:id});const before=structuredClone([...saved]);
+  const current=await store.get(mj,group.id),input={confirmed:true,revision:current.revision};
+  await assert.rejects(store.remove(outsider,group.id,input),e=>e.status===404);
+  await assert.rejects(store.remove(player,group.id,input),e=>e.status===403);
+  for(const bad of [{},{...input,confirmed:false},{...input,revision:'3'}])await assert.rejects(store.remove(mj,group.id,bad),e=>e.status===400);
+  await assert.rejects(store.remove(mj,group.id,{...input,revision:group.revision}),e=>e.status===409);
+  assert.equal((await store.list(mj)).length,1);
+  assert.deepEqual(await store.remove(mj,group.id,input),{id:group.id,deleted:true});
+  assert(collection.rows[0].deletedAt);assert.equal(collection.rows[0].inviteHash,null);
+  for(const actor of [mj,player]){assert.deepEqual(await store.list(actor),[]);await assert.rejects(store.get(actor,group.id),e=>e.status===404);}
+  await assert.rejects(store.join(outsider,{code:invitationCode,alias:'Autre'}),e=>e.status===404);
+  await assert.rejects(store.attach(player,group.id,{characterId:id}),e=>e.status===404);
+  assert.deepEqual([...saved],before);
+});
+test('Suppression concurrente : une seule modification ; un groupe modifié après lecture est protégé',async()=>{
+  const {create,store,collection}=setup(),{group}=await create();
+  const results=await Promise.allSettled([store.remove(mj,group.id,{confirmed:true,revision:1}),store.remove(mj,group.id,{confirmed:true,revision:1})]);
+  assert.equal(results.filter(r=>r.status==='fulfilled').length,1);assert.equal(results.find(r=>r.status==='rejected').reason.status,409);
+  assert.equal(collection.rows[0].revision,2);
+});
+
+test('Rôles : créer comme joueur, inviter un MJ avec son code dédié et conserver la gestion au créateur',async()=>{
+  const {store,collection}=setup(),created=await store.create(player,{name:'Table du joueur',alias:'Aline',role:'player'}),id=created.group.id;
+  assert.equal(created.group.isMJ,false);assert.equal(created.group.isOwner,true);
+  assert.notEqual(created.invitationCode,created.mjInvitationCode);
+  await assert.rejects(store.join(mj,{code:created.invitationCode,alias:'Wiwi',role:'mj'}),e=>e.status===404);
+  await assert.rejects(store.join(mj,{code:created.mjInvitationCode,alias:'Wiwi',role:'player'}),e=>e.status===404);
+  const joined=await store.join(mj,{code:created.mjInvitationCode,alias:'Wiwi',role:'mj'});assert(joined.isMJ);assert(!joined.isOwner);
+  assert.equal(joined.inviteExpiresAt,undefined);assert(!JSON.stringify(joined).includes('InviteHash'));
+  await assert.rejects(store.remove(mj,id,{confirmed:true,revision:2}),e=>e.status===403);
+  await assert.rejects(store.rotate(mj,id,{role:'mj'}),e=>e.status===403);
+  await assert.rejects(store.join(player,{code:created.mjInvitationCode,alias:'Aline',role:'mj'}),e=>e.status===409);
+  assert.equal((await store.list(player))[0].isMJ,false);assert.equal((await store.list(mj))[0].isMJ,true);
+  const before=await store.get(player,id);assert(before.invitationOpen&&before.mjInvitationOpen);
+  await store.closeInvitation(player,id,{role:'mj'});assert((await store.get(player,id)).invitationOpen);
+  await assert.rejects(store.join(outsider,{code:created.mjInvitationCode,alias:'Autre',role:'mj'}),e=>e.status===404);
+  const fresh=await store.rotate(player,id,{role:'mj'});assert.equal(fresh.role,'mj');
+  await store.join(outsider,{code:fresh.invitationCode,alias:'Autre',role:'mj'});
+  await store.removeMember(player,id,{userId:'mj'});assert.equal(collection.rows[0].mjInviteHash,null);
+  await assert.rejects(store.join(mj,{code:fresh.invitationCode,alias:'Wiwi',role:'mj'}),e=>e.status===404);
+});
+test('Groupes hérités : rôles précédents conservés sans migration ; rôles inconnus refusés',async()=>{
+  const {store,create,collection}=setup(),{group,invitationCode}=await create();await store.join(player,{code:invitationCode,alias:'Aline'});
+  for(const m of collection.rows[0].members)delete m.role;
+  const before=structuredClone(collection.rows);assert((await store.get(mj,group.id)).isMJ);assert(!(await store.get(player,group.id)).isMJ);assert.deepEqual(collection.rows,before);
+  for(const role of ['',null,{},'admin']){
+    await assert.rejects(store.create(outsider,{name:'Bad',alias:'Autre',role}),e=>e.status===400);
+    await assert.rejects(store.join(outsider,{code:invitationCode,alias:'Autre',role}),e=>e.status===400);
+    await assert.rejects(store.rotate(mj,group.id,{role}),e=>e.status===400);
+  }
+});

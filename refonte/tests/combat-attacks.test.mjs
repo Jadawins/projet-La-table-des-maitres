@@ -104,3 +104,12 @@ test('Accusé de sauvegarde perdu : résultat signalé à vérifier, sans nouvel
   const current=await s.get();assert.equal(current.combat.attackTickets[0].stage,'uncertain');assert.equal((await s.characters.get('player',s.id)).character.playState.hpLost,3);
   await assert.rejects(s.combats.confirmAttack(mj,s.groupId,{ticketId:rolled.ticket.id,confirmed:true}),e=>e.status===400);assert.equal(writes,1);
 });
+
+test('Groupe supprimé : combat et proposition en attente inaccessibles, aucune modification des PV',async()=>{
+  const s=await setup(),before=await s.characters.get('player',s.id),roll=await s.roll();
+  await s.combats.rollDamage(player,s.groupId,{ticketId:roll.ticket.id,mode:'physical',dice:[1]});
+  const group=await s.groups.get(mj,s.groupId);await s.groups.remove(mj,s.groupId,{confirmed:true,revision:group.revision});
+  for(const actor of [mj,player])await assert.rejects(s.combats.get(actor,s.groupId),e=>e.status===404);
+  await assert.rejects(s.combats.confirmAttack(mj,s.groupId,{ticketId:roll.ticket.id,confirmed:true}),e=>e.status===404);
+  assert.deepEqual(await s.characters.get('player',s.id),before);
+});
