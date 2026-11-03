@@ -81,3 +81,12 @@
 .group-message-panel fieldset { border:1px solid var(--line,#44394f); border-radius:.6rem; padding:1rem; margin-top:1rem; }
 .message-alert { margin-left:1rem; white-space:normal; }
 @media print { .group-message-popup,.message-alert { display:none!important; } }
+
+.equipment-slots { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+.equipment-weapon { display:block; margin:.65rem 0; }
+[data-equipment-action] fieldset { margin:1rem 0; padding:1rem; border:1px solid var(--line,#50445f); border-radius:.5rem; }
+.item-use-dialog [data-use-physical] { display:flex; gap:.5rem; flex-wrap:wrap; }
+.item-use-dialog [data-use-physical][hidden] { display:none; }
+.item-use-dialog [name=die] { width:5rem; }
+.item-use-dialog [data-use-roll]>label { display:block; margin:.8rem 0; }
+@media print { [data-equipment-action], [data-use-inventory] { display:none !important; } }

@@ -1,0 +1,292 @@
+{
+  "status": "deployed",
+  "release": "20261103T084726Z",
+  "previous": "20261103T063025Z",
+  "completedAt": "2026-11-03T08:50:40.360Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261103T084726Z",
+  "archiveSha256": "8504dc97c39692320ab6d90b5c20b3c7e7e39a65f4deff03fe0705e083b82b21",
+  "databaseBackupSha256": "398970a952596a9dfb257665954f7a272ee3639ac9d6968bdfe5b2ec8fbaaa40",
+  "releaseTree": {
+    "files": 81,
+    "sha256": "abf5a909dace1f5082338f2bb20df9feb42fde6b7ea8e00bbf638f7268c26297"
+  },
+  "controls": {
+    "persistence": {
+      "before": "passed",
+      "after": "passed",
+      "checks": [
+        {
+          "classId": "barbare",
+          "subclassId": "barbare_berserker",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "barbare",
+          "subclassId": "barbare_berserker",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "rodeur",
+          "subclassId": "rodeur_belluaire",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "rodeur",
+          "subclassId": "rodeur_belluaire",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "barde",
+          "subclassId": "barde_college_danse",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "barde",
+          "subclassId": "barde_college_danse",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "druide",
+          "subclassId": "druide_cercle_astres",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "druide",
+          "subclassId": "druide_cercle_astres",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "occultiste",
+          "subclassId": "occultiste_protecteur_archifee",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "occultiste",
+          "subclassId": "occultiste_protecteur_archifee",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "barbare",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "barde",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "clerc",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "druide",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "ensorceleur",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "guerrier",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "magicien",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "moine",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "occultiste",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "paladin",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "rodeur",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "roublard",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        }
+      ]
+    },
+    "accounts": {
+      "before": "passed",
+      "after": "passed",
+      "checks": null
+    },
+    "groups": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 8
+    },
+    "combat": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 11
+    },
+    "bestiary": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 9
+    },
+    "attacks": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 10
+    },
+    "group-options": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 12
+    },
+    "spell-combat": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 12
+    },
+    "admin-characters": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 10
+    },
+    "items-messages": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 15
+    },
+    "equipment": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 11
+    }
+  },
+  "realBefore": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "4a91538e8a8012462fe8af504ad7288e6bd11fd827034f76f6da4e882409a416"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realAfter": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "4a91538e8a8012462fe8af504ad7288e6bd11fd827034f76f6da4e882409a416"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realDataUnchanged": true,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261103T084726Z/start.mjs",
+    "restarts": 0
+  },
+  "registeredAccounts": 3,
+  "backupDocuments": 3286,
+  "verification": {
+    "status": "passed",
+    "scope": "equipment-and-confirmed-consumables-with-frozen-catalogue",
+    "sourceHash": "30297bfce83fd3a132b87cee879fc0a1c607bfe5c097a851b67865c60078a177",
+    "completedAt": "2026-11-03T08:46:42.122Z",
+    "baselineCommit": "d407272b9",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 355,
+    "additionalFocusedChecks": 28,
+    "browserJourneys": 40,
+    "legacyScenarios": 96,
+    "qualification": "Explicit armor/shield/prepared weapons, canonical catalogue references, AC and weapon calculations, PDF and persistence; 96 legacy subclass sheets numerically unchanged at levels 3 and 20. Explicit physical/app potion dice, preview/cancel, atomic quantity-and-HP snapshot, final unit removal, lost save response replay and concurrent-write refusal. Existing access, admin, groups, combat, attacks, spells and private popups retain their tested behavior. Healing formulas sourced from SRD 5.2.1 FR p.254; frozen catalogue unchanged."
+  },
+  "limits": [
+    "Explicit opt-in loadout; legacy character calculations preserved.",
+    "Prepared weapons do not assign hands; conditional fighting-style bonuses remain conditional.",
+    "Healing potions apply to the open character; other consumable effects remain manual.",
+    "No automatic magic-item bonuses, attunement, rechargeable charges or coin transactions."
+  ],
+  "rollback": "/root/backups/myrpgtable-persistence-20261103T084726Z/rollback.sh"
+}

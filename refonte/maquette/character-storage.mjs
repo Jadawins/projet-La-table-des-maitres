@@ -1,3 +1,4 @@
+import {validateEquipmentState,validateSpent,validateLastUse,POTIONS,itemCatalogueId} from './equipment-state.mjs';
 import {ABILITIES,backgroundBonuses,clericProfile,aptitudeErrors,spellErrors,classProfile} from './character-rules.mjs';
 import {originErrors,grantInitial,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
 import {detailFields,sheetModel} from './sheet-model.mjs';
@@ -19,6 +20,9 @@ export function characterSnapshot(state){
   if(state.playState!==undefined)out.playState=validatePlayState(state.playState);
   if(state.multiclass!==undefined)out.multiclass=structuredClone(state.multiclass);
   if(state.inventoryItems!==undefined)out.inventoryItems=validateInventory(state.inventoryItems);
+  if(state.equipmentState!==undefined)out.equipmentState=validateEquipmentState(state.equipmentState);
+  if(state.inventorySpent!==undefined)out.inventorySpent=validateSpent(state.inventorySpent);
+  if(state.inventoryLastUse!==undefined)out.inventoryLastUse=validateLastUse(state.inventoryLastUse);
   return JSON.parse(JSON.stringify(out));
 }
 export function validateSavedCharacter(input,catalogue){return input?.multiclass!==undefined?validateMulticlass(input,catalogue,validateSingleCharacter):validateSingleCharacter(input,catalogue);}
@@ -29,6 +33,9 @@ function validateSingleCharacter(input,catalogue,context={}){
   if(input.rulesVersion!==version){const error=new Error('Cette fiche utilise une ancienne version des règles. Créez explicitement une copie à mettre à niveau.');error.status=409;throw error;}
   const out={schemaVersion:2,rulesVersion:version};
   if(input.inventoryItems!==undefined)out.inventoryItems=validateInventory(input.inventoryItems);
+  if(input.equipmentState!==undefined)out.equipmentState=validateEquipmentState(input.equipmentState);
+  if(input.inventorySpent!==undefined)out.inventorySpent=validateSpent(input.inventorySpent);
+  if(input.inventoryLastUse!==undefined)out.inventoryLastUse=validateLastUse(input.inventoryLastUse);
   for(const key of strings){const value=input[key]??'';if(typeof value!=='string'||value.length>150)fail('Un champ du personnage est invalide.');out[key]=key==='name'?value.trim():value;}
   if(!out.name||out.name.length>80)fail('Donnez un nom de 1 à 80 caractères au personnage.');
   if(!Number.isInteger(input.level)||input.level<1||input.level>20)fail('Le niveau doit être compris entre 1 et 20.');out.level=input.level;
@@ -59,7 +66,9 @@ function validateSingleCharacter(input,catalogue,context={}){
   out.classChoices={};for(const [key,values]of Object.entries(input.classChoices||{})){if(!/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)||!Array.isArray(values)||values.length>200||values.some(v=>typeof v!=='string'||!v.trim()||v.length>150))fail('Un choix de classe est invalide.');out.classChoices[key]=[...values];}
   out.details={};for(const key of Object.keys(detailFields)){const value=input.details?.[key];if(value===undefined)continue;if(typeof value!=='string'||value.length>6000)fail('Un texte du personnage est trop long.');out.details[key]=value;}
   for(const [key,list]of [['classId',catalogue.classes],['speciesId',catalogue.species],['backgroundId',catalogue.backgrounds],['subclassId',catalogue.subclasses],['originFeatId',catalogue.feats]])if(out[key]&&!list.some(v=>v.id===out[key]))fail('Un choix ne figure plus dans le catalogue.');
+  for(const item of out.inventoryItems||[]){if(!item.catalogueRef)continue;const [kind,id]=item.catalogueRef.split(':');const list=kind==='weapon'?catalogue.weapons:kind==='armor'?catalogue.armors:POTIONS;if(!list.some(i=>itemCatalogueId(i)===id))fail('Cet objet ne figure pas dans le catalogue.');}
   Object.assign(out,context);
+  if(out.equipmentState!==undefined||out.inventorySpent!==undefined){const model=sheetModel(out,catalogue);for(const [ref,count]of Object.entries(out.inventorySpent||{})){const item=model.inventory.find(i=>'start:'+i.nom.normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]/g,'')===ref);if(!item||count>item.quantity)fail('La quantité consommée dépasse le matériel de départ.');}}
   const issues=[...originErrors(out,catalogue),...aptitudeErrors(out,catalogue),...spellErrors(out,catalogue)];
   if(!out.classId)issues.push('Classe à choisir.');
   if(ABILITIES.some(key=>out.scores[key]===null))issues.push('Caractéristiques à compléter.');

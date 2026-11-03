@@ -4,7 +4,10 @@ export function validateInventory(raw){
   if(!Array.isArray(raw)||raw.length>100)throw fault('L’inventaire peut contenir jusqu’à 100 objets ajoutés.');
   const rows=raw.map(item=>{
     if(!item||!uuid(item.id)||typeof item.name!=='string'||!item.name.trim()||item.name.length>120||!Number.isInteger(item.quantity)||item.quantity<1||item.quantity>9999||typeof item.description!=='string'||item.description.length>2000)throw fault('Saisissez un nom (120 caractères maximum), une quantité entière de 1 à 9 999 et une description de 2 000 caractères maximum.');
-    return {id:item.id,name:item.name.trim(),quantity:item.quantity,description:item.description.trim()};
+    const out={id:item.id,name:item.name.trim(),quantity:item.quantity,description:item.description.trim()};
+    if(item.catalogueRef!==undefined){if(typeof item.catalogueRef!=='string'||! /^(weapon|armor|potion):[a-z0-9_-]{1,100}$/.test(item.catalogueRef))throw fault('La référence de cet objet est invalide.');out.catalogueRef=item.catalogueRef;}
+    if(item.consumable!==undefined){if(typeof item.consumable!=='boolean')throw fault('Le type de consommable est invalide.');out.consumable=item.consumable;}
+    return out;
   });
   if(new Set(rows.map(item=>item.id)).size!==rows.length)throw fault('Un objet figure deux fois dans l’inventaire.');
   if(new TextEncoder().encode(JSON.stringify(rows)).length>32768)throw fault('Les descriptions de votre inventaire sont trop longues. Abrégez-les avant d’enregistrer.');

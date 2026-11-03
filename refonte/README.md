@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261103T063025Z`, publiée le 3 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261103T084726Z`, publiée le 3 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+Le lot équipement permet de choisir l’armure, le bouclier et les armes prêtes, avec CA et attaques recalculées, puis d’utiliser les consommables avec aperçu et confirmation. Les potions conservent le choix de dés physiques ou de l’application. Les 355 tests de régression, 28 contrôles ciblés après ajustement, 40 parcours navigateur et 96 comparaisons d’anciennes fiches passent. Onze nouveaux contrôles MongoDB complètent les contrôles existants avant/après la publication ; les données réelles restent identiques. Sauvegarde de 3286 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261103T084726Z`. Voir [équipement et consommables](access/EQUIPEMENT-CONSOMMABLES.md) et [le rapport de publication](audit/equipment-publication-20261103.json).
 
 Après clarification, le correctif `20261103T072121Z` rétablit la présentation générale des comptes et de l’administration réservée. Seule la consultation et la modification des fiches reste écartée de la mise en avant ; les nouveautés joueurs/MJ sont conservées. [Relevé de précision](audit/home-news-publication-20261103-scope.json).
 

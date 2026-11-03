@@ -1,3 +1,5 @@
+import {validateEquipmentState,validateSpent,validateLastUse,reconcileEquipment,consumeItem} from './equipment-state.mjs';
+import {chooseItemUse} from './equipment-view.mjs';
 import {mountCombat,disposeCombat} from './combat-view.mjs';
 import {mountGroups,disposeGroups} from './group-view.mjs';
 import {startMessagePopups} from './group-messages.mjs';
@@ -81,6 +83,9 @@ try {
     draft.classChoices={};for(const [key,values]of Object.entries(saved.classChoices||{}))if(/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)&&Array.isArray(values))draft.classChoices[key]=values.filter(v=>typeof v==='string'&&v.trim()).map(v=>v.slice(0,150)).slice(0,200);
     if(saved.playState!==undefined)draft.playState=validatePlayState(saved.playState);
     if(saved.inventoryItems!==undefined)draft.inventoryItems=validateInventory(saved.inventoryItems);
+    if(saved.equipmentState!==undefined)draft.equipmentState=validateEquipmentState(saved.equipmentState);
+    if(saved.inventorySpent!==undefined)draft.inventorySpent=validateSpent(saved.inventorySpent);
+    if(saved.inventoryLastUse!==undefined)draft.inventoryLastUse=validateLastUse(saved.inventoryLastUse);
     draft.details={};
     for(const key of Object.keys(detailFields)) if(typeof saved.details?.[key]==='string') draft.details[key]=saved.details[key].slice(0,6000);
     for(const slot of ORIGIN_SLOTS) {
@@ -642,19 +647,38 @@ function bind() {
   async function updateInventory(action){
     if(cloudBusy||!usesCurrentRules(draft))return;
     try{
-      draft.inventoryItems=changeInventory(draft.inventoryItems,action);activeSheetTab='equipment';cloudSaveError='';save(true);route();
+      const candidate={...draft,inventoryItems:changeInventory(draft.inventoryItems,action)};reconcileEquipment(candidate, sheetModel({...candidate,equipmentState:undefined},catalogue).possessions);sheetModel(candidate,catalogue);draft=candidate;activeSheetTab='equipment';cloudSaveError='';save(true);route();
       if(accountId)await saveCloudCharacter();else toast('Inventaire conservé avec le brouillon sur cet appareil.');
     }catch(error){toast(error.message);}
   }
   root.querySelectorAll('form[data-inventory-action]').forEach(form=>form.addEventListener('submit',event=>{
     event.preventDefault();if(cloudBusy||!form.reportValidity())return;
     const data=new FormData(form),id=form.dataset.itemId||crypto.randomUUID();
-    updateInventory({type:form.dataset.inventoryAction,id,item:{id,name:data.get('itemName'),quantity:Number(data.get('quantity')),description:data.get('description')}});
+    updateInventory({type:form.dataset.inventoryAction,id,item:{id,name:data.get('itemName'),quantity:Number(data.get('quantity')),description:data.get('description'),...(data.get('catalogueRef')?{catalogueRef:data.get('catalogueRef')}:{}),consumable:data.has('consumable')}});
   }));
   root.querySelectorAll('[data-remove-inventory]').forEach(button=>button.addEventListener('click',()=>{
     if(cloudBusy)return;
     const item=draft.inventoryItems?.find(item=>item.id===button.dataset.removeInventory);
     if(item&&confirm('Retirer « '+item.name+' » de cette fiche ?'))updateInventory({type:'remove',id:item.id});
+  }));
+  root.querySelectorAll('[name=catalogueRef]').forEach(input=>input.addEventListener('change',()=>{const name=input.form.querySelector('[name=itemName]');if(input.value)name.value=input.selectedOptions[0].textContent;}));
+  root.querySelector('[data-equipment-action]')?.addEventListener('submit',async event=>{
+    event.preventDefault();if(cloudBusy||!usesCurrentRules(draft))return;
+    try{const data=new FormData(event.currentTarget),candidate={...draft,equipmentState:validateEquipmentState({version:1,armor:data.get('armor'),shield:data.get('shield'),weapons:data.getAll('weapon')})};sheetModel(candidate,catalogue);draft=candidate;activeSheetTab='equipment';cloudSaveError='';save(true);route();if(accountId)await saveCloudCharacter();}catch(error){toast(error.message);}
+  });
+  root.querySelectorAll('[data-use-inventory]').forEach(button=>button.addEventListener('click',async()=>{
+    if(cloudBusy||!usesCurrentRules(draft))return;
+    if(accountId&&isDirty(draft)){toast('Enregistrez d’abord les modifications de cette fiche, puis utilisez l’objet.');return;}
+    const stamp=snapshotStamp(draft),id=draft.cloudId,context=adminEditing,model=sheetModel(draft,catalogue),ref=button.dataset.useInventory,item=model.possessions.find(i=>i.ref===ref);
+    if(!item)return;
+    try{
+      if(item.potion&&!playView(draft,model).started){toast('Commencez le suivi des PV dans l’onglet En partie avant de boire une potion.');return;}
+      const result=await chooseItemUse(item);if(!result)return;
+      if(cloudBusy||draft.cloudId!==id||adminEditing!==context||snapshotStamp(draft)!==stamp){toast('La fiche a changé. Vérifiez de nouveau l’utilisation.');return;}
+      draft=consumeItem(draft,model.possessions,ref,result,{id:crypto.randomUUID(),at:new Date().toISOString(),heal:(state,amount)=>applyPlayAction(state,model,{type:'heal',amount})});
+      reconcileEquipment(draft,sheetModel({...draft,equipmentState:undefined},catalogue).possessions);
+      activeSheetTab='equipment';cloudSaveError='';save(true);route();if(accountId)await saveCloudCharacter();else toast('Objet utilisé ; fiche conservée sur cet appareil.');
+    }catch(error){toast(error.message);}
   }));
   root.querySelectorAll('form[data-play-action]').forEach(form=>form.addEventListener('submit',async event=>{
     event.preventDefault();
@@ -739,6 +763,10 @@ function bind() {
     if (button.dataset.choice === 'backgroundId' && draft.backgroundId !== button.dataset.id) {draft.bonusMode='';draft.bonusTwo='';draft.bonusOne='';draft.classSkills=[];draft.originGrants.background=grantInitial();draft.backgroundTool='';draft.backgroundEquipment='';draft.backgroundKit='';}
     if (button.dataset.choice === 'speciesId' && draft.speciesId !== button.dataset.id) {draft.variantId='';draft.speciesSize='';draft.speciesSkill='';draft.speciesAncestry='';draft.speciesCastingAbility='';draft.originFeatId='';draft.originGrants.human=grantInitial();}
     draft[button.dataset.choice] = button.dataset.id;
+    if(['classId','backgroundId','equipment','backgroundEquipment'].includes(button.dataset.choice)){
+      if(draft.inventorySpent!==undefined)draft.inventorySpent={};
+      reconcileEquipment(draft,sheetModel({...draft,equipmentState:undefined},catalogue).possessions);
+    }
     if(button.dataset.choice==='backgroundEquipment'&&draft.backgroundEquipment!=='A')draft.backgroundKit='';
     reconcileOrigins(draft,catalogue);
     draft.classSkills=draft.classSkills.filter(name=>classSkills(draft,catalogue).options.includes(name));

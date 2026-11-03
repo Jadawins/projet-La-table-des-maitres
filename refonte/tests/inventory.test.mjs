@@ -29,7 +29,7 @@ test('Ancien client : conserve objets et suivi de partie omis, retrait explicite
 });
 test('Les possessions ajoutées ne changent ni calculs, ni matériel initial, ni attaques de la fiche',async()=>{
   const s=await setup(),record=await s.characters.get(player.userId,s.id),original=sheetModel(record.character,catalogue);
-  const state={...record.character,inventoryItems:[{...item(),name:'Armure magique +3'}]};assert.deepEqual(JSON.parse(JSON.stringify(sheetModel(state,catalogue))),JSON.parse(JSON.stringify(original)));
+  const state={...record.character,inventoryItems:[{...item(),name:'Armure magique +3'}]};const model=sheetModel(state,catalogue);const {possessions:ignored,...rest}=model,{possessions:originalPossessions,...previous}=original;assert.deepEqual(JSON.parse(JSON.stringify(rest)),JSON.parse(JSON.stringify(previous)));
   const html=renderSheet(state,catalogue,{savingEnabled:true});assert.match(html,/Armure magique \+3/);assert.match(html,/data-inventory-action="add"/);
   assert.doesNotMatch(renderInventory([{...item(),name:'<script>Objet</script>',description:'<img src=x>'}]),/<script>|<img/);assert.doesNotMatch(renderInventory([item()]),/<form|<button/);
 });
