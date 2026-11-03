@@ -65,3 +65,19 @@
 @media(min-width:1000px) { .sheet-tabs { grid-template-columns:repeat(7,minmax(0,1fr)); } }
 @media(max-width:700px) { .play-actions,.play-resource { grid-template-columns:1fr; } }
 @media print { #sheet-panel-play { display:none!important; } }
+
+.extra-inventory-item { padding:1rem 0; border-bottom:1px solid var(--line,#44394f); }
+.extra-inventory-item h3 { display:flex; gap:1rem; justify-content:space-between; overflow-wrap:anywhere; }
+.extra-inventory-item form,.inventory-add form { display:grid; gap:1rem; margin:1rem 0; }
+.extra-inventory-item .button { margin-top:.75rem; }
+.inventory-add { margin-top:1.5rem; }
+@media print { [data-extra-inventory] form,[data-extra-inventory] button,[data-extra-inventory] details { display:none!important; } }
+
+.group-message-popup { max-width:44rem; width:calc(100% - 2rem); max-height:85vh; overflow:auto; }
+.message-body { white-space:pre-wrap; overflow-wrap:anywhere; max-height:50vh; overflow:auto; font-size:1.1rem; line-height:1.7; }
+.message-recipients { display:flex; flex-wrap:wrap; gap:1rem; margin:1rem 0; }
+.message-history-row { padding:1rem 0; border-bottom:1px solid var(--line,#44394f); overflow-wrap:anywhere; }
+.group-message-panel { margin:1.5rem 0; }
+.group-message-panel fieldset { border:1px solid var(--line,#44394f); border-radius:.6rem; padding:1rem; margin-top:1rem; }
+.message-alert { margin-left:1rem; white-space:normal; }
+@media print { .group-message-popup,.message-alert { display:none!important; } }

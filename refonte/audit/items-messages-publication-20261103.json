@@ -1,0 +1,126 @@
+{
+  "status": "deployed",
+  "release": "20261103T063025Z",
+  "previous": "20261102T182451Z",
+  "completedAt": "2026-11-03T06:36:29.153Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261103T063025Z",
+  "backupDocuments": 3286,
+  "archiveSha256": "916f859f0b9534026b8e0a7000766843af056a17e5302c5a99cea286ad4a04c1",
+  "databaseBackupSha256": "0ea1773ee1f19acd918d2ffd4fc78f86e650927731b28df36329d2927527eecb",
+  "realBefore": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realAfter": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "f4b2570f511f06fe53bad2a09414ef63341568732b2ed71924378f1984d40dcb"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realDataUnchanged": true,
+  "existingControls": {
+    "characters": 22,
+    "groups": 8,
+    "combat": 11,
+    "bestiary": 9,
+    "attacks": 10,
+    "groupOptions": 12,
+    "spells": 12,
+    "adminCharacters": 10,
+    "registeredAccounts": 3
+  },
+  "itemsMessagesPersistenceChecks": 15,
+  "coverage": [
+    "inventory-added-in-owner-account",
+    "legacy-client-preserves-items-and-play-state",
+    "concurrent-character-write-refused",
+    "inventory-in-pdf-values",
+    "no-automatic-armor-bonus",
+    "quantity-update-and-explicit-removal",
+    "private-multiple-recipients",
+    "unselected-identity-cannot-read",
+    "player-cannot-send",
+    "foreign-recipient-refused",
+    "repeated-send-and-restart-idempotent",
+    "concurrent-read-receipts",
+    "deferred-recipient-remains-unread",
+    "membership-revocation",
+    "deleted-group-inaccessible"
+  ],
+  "httpChecks": 34,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261103T063025Z/start.mjs",
+    "restarts": 0
+  },
+  "verification": {
+    "status": "passed",
+    "scope": "inventory-and-private-mj-message-popups",
+    "sourceHash": "0ae983679e6eae4f314a7afa561602f3f4672d96ebc3819c43de7846dd125443",
+    "completedAt": "2026-11-03T06:30:23.524Z",
+    "baselineCommit": "6087551bf",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 211,
+    "browserJourneys": 37,
+    "qualification": "Owner/admin inventory additions, quantities and removal, legacy-client preservation, PDF field, multiclass/advancement preservation and unchanged calculations. MJ-only private group messages, recipient-only global popups, deferred and offline delivery, individual explicit read receipts, idempotent send, group membership revocation and history pagination. Browser journeys use isolated identities and local-only client addresses; production limits remain enabled."
+  },
+  "qualification": [
+    "Inventaire facultatif dans la fiche : ajouts libres, quantités, retrait et noms/quantités exportés dans le PDF. Les effets restent vérifiés à la table.",
+    "Pop-ups privés envoyés par un MJ aux membres choisis, sur toutes les pages de l’atelier, retour des absents, lecture individuelle et historique. Aucun message de contrôle à un compte réel.",
+    "211 tests ciblés et 37 parcours navigateur réussis, sans test final ignoré ni instable. La comparaison des modèles a été normalisée pour ne pas comparer l’identité de fonctions recréées à chaque appel.",
+    "La première campagne navigateur élargie a atteint la protection de créations de groupes, car les cookies réutilisés n’emportaient pas l’adresse fictive initiale. Chaque parcours reçoit maintenant sa propre adresse dans le proxy local de test ; aucune limite de production n’a été relevée.",
+    "Quinze contrôles MongoDB dédiés avant/après sur des collections isolées, plus les contrôles existants et 34 contrôles HTTP. Empreintes des personnages, groupes, combats, sorts, messages, bestiaire et catalogues réels identiques avant/après.",
+    "Catalogue figé, calculs des classes, progression et moteur de combat inchangés. Sauvegarde complète et retour arrière conservés."
+  ]
+}

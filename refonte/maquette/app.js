@@ -1,5 +1,6 @@
 import {mountCombat,disposeCombat} from './combat-view.mjs';
 import {mountGroups,disposeGroups} from './group-view.mjs';
+import {startMessagePopups} from './group-messages.mjs';
 import {multiclassPrerequisites,classRecords} from './multiclass-rules.mjs';
 import {beginAdvancement,advancementErrors,advancementPreview,finishAdvancement,advancementClassBase,advancementContext} from './character-advancement.mjs';
 import {downloadCharacterPDF} from './character-pdf.mjs';
@@ -11,6 +12,7 @@ import {renderSheet} from './sheet-view.mjs';
 import {detailFields,sheetModel} from './sheet-model.mjs';
 import {applyPlayAction,validatePlayState,restPreview,playView} from './play-state.mjs';
 import {characterSnapshot,validateSavedCharacter} from './character-storage.mjs';
+import {validateInventory,changeInventory} from './inventory-state.mjs';
 import {ADVANCEMENT_LEVELS,ORIGIN_SLOTS,advancementInitial,evaluateProgression,featAbilityOptions,sacredChoices} from './cleric-progression.mjs';
 import {grantInitial,backgroundFeat,humanFeats,originFeats,originSizeOptions,selectedVariant,speciesSkillOptions,originSkills,originTools,backgroundToolOptions,grantOptions,magicFeatLists,magicFeatProfile,grantedOriginSpells,originBonuses,reconcileOrigins,originErrors,speciesChoiceSpecs,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
 
@@ -78,6 +80,7 @@ try {
     }
     draft.classChoices={};for(const [key,values]of Object.entries(saved.classChoices||{}))if(/^[a-zA-Z][a-zA-Z0-9_]{0,60}$/.test(key)&&Array.isArray(values))draft.classChoices[key]=values.filter(v=>typeof v==='string'&&v.trim()).map(v=>v.slice(0,150)).slice(0,200);
     if(saved.playState!==undefined)draft.playState=validatePlayState(saved.playState);
+    if(saved.inventoryItems!==undefined)draft.inventoryItems=validateInventory(saved.inventoryItems);
     draft.details={};
     for(const key of Object.keys(detailFields)) if(typeof saved.details?.[key]==='string') draft.details[key]=saved.details[key].slice(0,6000);
     for(const slot of ORIGIN_SLOTS) {
@@ -636,6 +639,23 @@ function bind() {
   }));
   root.querySelectorAll('[data-advance-notes]').forEach(input=>input.addEventListener('input',()=>{draft.advancements[input.dataset.advanceNotes].notes=input.value;save(true);}));
   root.querySelectorAll('[data-save-character]').forEach(button=>button.addEventListener('click',saveCloudCharacter));
+  async function updateInventory(action){
+    if(cloudBusy||!usesCurrentRules(draft))return;
+    try{
+      draft.inventoryItems=changeInventory(draft.inventoryItems,action);activeSheetTab='equipment';cloudSaveError='';save(true);route();
+      if(accountId)await saveCloudCharacter();else toast('Inventaire conservé avec le brouillon sur cet appareil.');
+    }catch(error){toast(error.message);}
+  }
+  root.querySelectorAll('form[data-inventory-action]').forEach(form=>form.addEventListener('submit',event=>{
+    event.preventDefault();if(cloudBusy||!form.reportValidity())return;
+    const data=new FormData(form),id=form.dataset.itemId||crypto.randomUUID();
+    updateInventory({type:form.dataset.inventoryAction,id,item:{id,name:data.get('itemName'),quantity:Number(data.get('quantity')),description:data.get('description')}});
+  }));
+  root.querySelectorAll('[data-remove-inventory]').forEach(button=>button.addEventListener('click',()=>{
+    if(cloudBusy)return;
+    const item=draft.inventoryItems?.find(item=>item.id===button.dataset.removeInventory);
+    if(item&&confirm('Retirer « '+item.name+' » de cette fiche ?'))updateInventory({type:'remove',id:item.id});
+  }));
   root.querySelectorAll('form[data-play-action]').forEach(form=>form.addEventListener('submit',async event=>{
     event.preventDefault();
     if(cloudBusy||!usesCurrentRules(draft)||!form.reportValidity())return;
@@ -854,6 +874,7 @@ async function init() {
     await refreshCloudCharacters();
     window.addEventListener('hashchange', route);
     route();
+    if(accountId)startMessagePopups();
   } catch {
     root.innerHTML = '<h1>Le grimoire ne s’ouvre pas.</h1><p>Le catalogue local est indisponible. Relancez le serveur de prévisualisation, puis rechargez cette page.</p>';
   }

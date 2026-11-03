@@ -1,6 +1,6 @@
 # La Table du Maître — état actuel
 
-Mise à jour : 2 novembre 2026.
+Mise à jour : 3 novembre 2026.
 
 La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le suivi en partie couvre les PV, les réserves prises en charge, les emplacements, les repos explicites, les états, l’Épuisement et les sauvegardes contre la mort. Le combat de groupe propose une préparation, des initiatives saisies, des tours/rounds et le suivi des PV et états. Le MJ peut rechercher dans les 322 profils du bestiaire MongoDB et ajouter plusieurs adversaires avec leur profil conservé. Les attaques avec armes ou profils du bestiaire disposent de jets explicites, physiques ou dans l’application, puis d’une confirmation des dégâts par le MJ. Les sorts disposent d’une résolution guidée : plan et dépense validés par le MJ, dés au choix, confirmations des effets, concentration, durées déclarées et déclenchements persistants. Les mécaniques complexes et les cibles de zone restent arbitrées à la table. Le téléphone et les nouveaux livres restent hors périmètre. La montée de niveau et le multiclassage sont disponibles depuis la fiche, avec un niveau total limité à 20. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
 
@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261102T182451Z`, publiée le 2 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261103T063025Z`, publiée le 3 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261103T063025Z` ajoute **les objets acquis sur la fiche** (nom, quantité, description, PDF) et **les pop-ups privés du MJ** (un ou plusieurs membres choisis, réception dans tout l’atelier, retour des absents, lecture explicite et historique). 211 tests et 37 parcours navigateur passent ; quinze contrôles MongoDB dédiés avant/après et 34 contrôles HTTP réussissent. Les données réelles sont inchangées. Voir [le fonctionnement et les limites](access/OBJETS-MESSAGES.md) et [le rapport de publication](audit/items-messages-publication-20261103.json).
 
 La livraison `20261102T182451Z` ajoute **Administration → Toutes les fiches** : recherche, consultation et correction via les formulaires existants, avec sauvegarde dans le compte du joueur, révision stricte, journal et brouillon administrateur isolé. 174 tests et 32 parcours navigateur passent ; dix contrôles MongoDB dédiés avant/après et 29 contrôles HTTP réussissent. Les quatre fiches actives s’ouvrent et se rendent en lecture seule ; les données réelles restent inchangées. Voir [le fonctionnement et les limites](access/ADMINISTRATION-FICHES.md) et [le relevé de publication](audit/admin-characters-publication-20261102.json).
 

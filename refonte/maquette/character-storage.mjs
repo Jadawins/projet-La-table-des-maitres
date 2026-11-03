@@ -7,6 +7,7 @@ import {featChoicesInitial} from './feat-effects.mjs';
 import {validatePlayState} from './play-state.mjs';
 import {CURRENT_RULES_VERSION} from './character-version.mjs';
 import {validateMulticlass} from './multiclass-rules.mjs';
+import {validateInventory} from './inventory-state.mjs';
 const strings=['name','classId','speciesId','backgroundId','equipment','backgroundKit','backgroundEquipment','statsMethod','bonusMode','bonusTwo','bonusOne','divineOrder','subclassId','hpMode','variantId','speciesSize','speciesSkill','speciesAncestry','speciesCastingAbility','speciesCantrip','originFeatId','backgroundTool','sacredStrike'];
 export function characterSnapshot(state){
   const out={schemaVersion:2,rulesVersion:state.rulesVersion??null};
@@ -17,6 +18,7 @@ export function characterSnapshot(state){
   out.advancements=Object.fromEntries(Object.entries(out.advancements).map(([level,row])=>[level,{...advancementInitial(),...row,choices:{...featChoicesInitial(),...row.choices}}]));
   if(state.playState!==undefined)out.playState=validatePlayState(state.playState);
   if(state.multiclass!==undefined)out.multiclass=structuredClone(state.multiclass);
+  if(state.inventoryItems!==undefined)out.inventoryItems=validateInventory(state.inventoryItems);
   return JSON.parse(JSON.stringify(out));
 }
 export function validateSavedCharacter(input,catalogue){return input?.multiclass!==undefined?validateMulticlass(input,catalogue,validateSingleCharacter):validateSingleCharacter(input,catalogue);}
@@ -26,6 +28,7 @@ function validateSingleCharacter(input,catalogue,context={}){
   const version=catalogue.provenance?.revision?.id||CURRENT_RULES_VERSION;
   if(input.rulesVersion!==version){const error=new Error('Cette fiche utilise une ancienne version des règles. Créez explicitement une copie à mettre à niveau.');error.status=409;throw error;}
   const out={schemaVersion:2,rulesVersion:version};
+  if(input.inventoryItems!==undefined)out.inventoryItems=validateInventory(input.inventoryItems);
   for(const key of strings){const value=input[key]??'';if(typeof value!=='string'||value.length>150)fail('Un champ du personnage est invalide.');out[key]=key==='name'?value.trim():value;}
   if(!out.name||out.name.length>80)fail('Donnez un nom de 1 à 80 caractères au personnage.');
   if(!Number.isInteger(input.level)||input.level<1||input.level>20)fail('Le niveau doit être compris entre 1 et 20.');out.level=input.level;

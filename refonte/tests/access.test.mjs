@@ -17,6 +17,19 @@ test('Administration : identité vérifiée et adresse confirmée, jamais les ch
   }
 });
 const origin='https://myrpgtable.fr';
+test('Messagerie : session, origine, limites de corps et identité serveur contrôlées',async t=>{
+  const calls=[],messages={pending:async(actor,offset)=>{calls.push(['pending',actor.userId,offset]);return {messages:[],unread:0};},get:async actor=>({by:actor.userId}),history:async actor=>({messages:[],by:actor.userId}),send:async actor=>({by:actor.userId}),read:async actor=>({by:actor.userId})};
+  const {request,post}=await setup(t,{groups:{},messages}),id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',groupRoute='/atelier/api/groupes/'+id+'/messages';
+  for(const route of ['/atelier/api/messages','/atelier/api/messages/'+id,groupRoute])assert.equal((await request(route)).status,401);
+  const login=await post('/auth/login',{email:'test@example.test',password:'test-only'}),cookie=login.headers.get('set-cookie').split(';')[0],headers={Cookie:cookie};
+  const feed=await request('/atelier/api/messages?offset=20',{headers});assert.equal(feed.status,200);assert.equal(feed.headers.get('cache-control'),'no-store');assert.deepEqual(calls,[['pending','test-user',20]]);
+  assert.equal((await request(groupRoute,{headers})).status,200);assert.equal((await request('/atelier/api/messages/'+id,{headers})).status,200);
+  assert.equal((await request(groupRoute,{method:'POST',headers:{...headers,Origin:'https://evil.invalid'},body:'{}'})).status,403);
+  const read=await post('/atelier/api/messages/'+id+'/lu',{userId:'forged'},cookie);assert.equal(read.status,200);assert.equal((await read.json()).by,'test-user');
+  assert.equal((await post('/atelier/api/messages/'+id+'/lu',{body:'a'.repeat(2000)},cookie)).status,413);
+  assert.equal((await request('/atelier/api/messages/'+id,{method:'DELETE',headers:{...headers,Origin:origin}})).status,405);
+  assert.equal((await request('/atelier/group-messages.mjs',{headers})).status,200);
+});
 test('Fiches administrateur : routes privées, origine contrôlée et méthodes limitées',async t=>{
   const seen=[],admin={recordAccount:async()=>{},character:async(actor,owner,id)=>{seen.push(['read',actor.userId,owner,id]);return {character:{name:'Fiche privée'}};},editCharacter:async(actor,owner,id,input)=>{seen.push(['edit',actor.userId,owner,id,input.revision]);return {revision:2};}};
   const {request,post}=await setup(t,{admin,adminEmails:['admin@example.test'],user:{id:'admin',email:'admin@example.test',email_confirmed_at:'2026-10-30'}});
@@ -29,14 +42,14 @@ test('Fiches administrateur : routes privées, origine contrôlée et méthodes 
   assert.equal((await post(route,{revision:1},cookie)).status,200);assert.deepEqual(seen.map(x=>x[0]),['read','edit']);
 });
 const token=`x.${Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+3600})).toString('base64url')}.x`;
-async function setup(t,{rejectUser=false,unavailable=false,characters,catalogueText,admin,adminEmails=[],user}={}){
+async function setup(t,{rejectUser=false,unavailable=false,characters,groups,messages,catalogueText,admin,adminEmails=[],user}={}){
   const calls=[];
   const fetcher=async(url,options)=>{
     calls.push({url,options});if(unavailable)throw new Error('offline');
     if(url.includes('/user'))return {ok:!rejectUser,json:async()=>rejectUser?{}:(user||{id:'test-user',is_anonymous:false})};
     return {ok:true,json:async()=>({access_token:token,refresh_token:'private-refresh'})};
   };
-  const server=createGateway({supabaseUrl:'https://auth.example.test',anonKey:'test-public-key',origin,appRoot:fileURLToPath(new URL('../maquette',import.meta.url)),fetcher,characters,catalogueText,admin,adminEmails});
+  const server=createGateway({supabaseUrl:'https://auth.example.test',anonKey:'test-public-key',origin,appRoot:fileURLToPath(new URL('../maquette',import.meta.url)),fetcher,characters,groups,messages,catalogueText,admin,adminEmails});
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
   t.after(()=>{server.closeAllConnections();return new Promise(resolve=>server.close(resolve));});
   const base=`http://127.0.0.1:${server.address().port}`;

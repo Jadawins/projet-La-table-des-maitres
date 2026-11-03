@@ -83,3 +83,7 @@ La livraison `20261102T174141Z` ajoute les sorts préparés/accordés depuis la 
 ## Consultation et édition administrateur — 2 novembre 2026
 
 La livraison `20261102T182451Z` permet de rechercher et d’ouvrir les fiches des comptes depuis **Administration → Toutes les fiches**, puis de compléter leurs notes ou corriger leurs choix via les formulaires existants. La sauvegarde reste chez le joueur et refuse les conflits de révision. Les changements administrateur sont journalisés atomiquement ; les brouillons personnels restent séparés. Voir [ADMINISTRATION-FICHES.md](ADMINISTRATION-FICHES.md) et [le rapport de publication](../audit/admin-characters-publication-20261102.json).
+
+## Inventaire et pop-ups du MJ — 3 novembre 2026
+
+La livraison `20261103T063025Z` ajoute les objets acquis sur une fiche et les messages privés avec pop-up du MJ pour un ou plusieurs membres choisis. Les lectures sont individuelles et explicites ; les absents retrouvent leurs messages à leur retour dans l’atelier. L’inventaire est conservé chez le propriétaire et dans le PDF sans appliquer de bonus automatiquement. Voir [OBJETS-MESSAGES.md](OBJETS-MESSAGES.md) et [le rapport](../audit/items-messages-publication-20261103.json).

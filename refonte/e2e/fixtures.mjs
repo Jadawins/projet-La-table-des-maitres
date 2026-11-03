@@ -29,6 +29,9 @@ export const test=base.extend({
   },{scope:'worker'}],
   storageState:async({auth},use)=>use(auth),
   page:async({page},use)=>{
+    // Cookie reuse does not preserve the login context's headers. Give each
+    // isolated browser journey its own address in the local-only test proxy.
+    await page.context().setExtraHTTPHeaders({'X-Real-IP':'e2e-'+randomUUID()});
     const errors=[];page.on('pageerror',error=>errors.push(error.message));
     await use(page);
     expect(errors,'Aucune exception JavaScript pendant le parcours').toEqual([]);

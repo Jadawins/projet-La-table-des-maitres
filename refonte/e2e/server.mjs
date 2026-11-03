@@ -1,3 +1,5 @@
+import {createGroupMessages} from '../access/group-messages.mjs';
+import {messageMemory} from '../tests/message-memory.mjs';
 import {createBestiaryStore} from '../access/bestiary-store.mjs';
 import {bestiaryMemory} from '../tests/bestiary-fixture.mjs';
 import {createCombatStore} from '../access/combat-store.mjs';
@@ -27,7 +29,7 @@ const appRoot=path.join(runtime,'atelier');
 await mkdir(path.join(appRoot,'assets'),{recursive:true});
 // Static files served by the same allowlist and account injection as production.
 const {copyFile}=await import('node:fs/promises');
-for(const file of ['home-content.mjs','home.css','index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','multiclass-rules.mjs','character-advancement.mjs','condition-rules.mjs','condition-view.mjs','play-state.mjs','play-view.mjs','sheet-model.mjs','sheet-view.mjs','portal-view.mjs','group-view.mjs','groups.css','combat-view.mjs','spell-combat-view.mjs','attack-view.mjs','bestiary-view.mjs','combat.css','admin-view.mjs','character-pdf.mjs','portal.css','assets/fiche-personnage-2024.pdf','assets/pdf-lib-1.17.1.mjs','assets/pdf-lib-LICENSE.md']){
+for(const file of ['home-content.mjs','home.css','index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','group-messages.mjs','inventory-state.mjs','inventory-view.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','multiclass-rules.mjs','character-advancement.mjs','condition-rules.mjs','condition-view.mjs','play-state.mjs','play-view.mjs','sheet-model.mjs','sheet-view.mjs','portal-view.mjs','group-view.mjs','groups.css','combat-view.mjs','spell-combat-view.mjs','attack-view.mjs','bestiary-view.mjs','combat.css','admin-view.mjs','character-pdf.mjs','portal.css','assets/fiche-personnage-2024.pdf','assets/pdf-lib-1.17.1.mjs','assets/pdf-lib-LICENSE.md']){
   await copyFile(path.join(here,'../maquette',file),path.join(appRoot,file));
 }
 
@@ -56,6 +58,7 @@ const collection={
 const characters=createCharacterStore({collection,validate:s=>validateSavedCharacter(s,catalogue),catalogueFingerprint:'e2e-isolated'});
 const tokens=new Map(),signupAccounts=new Map(),signupCodes=new Map();
 const identity=new Map([['e2e-account-a',{id:'e2e-account-a',email:'joueur-a@example.test',email_confirmed_at:'2026-10-30'}],['e2e-account-b',{id:'e2e-account-b',email:'joueur-b@example.test',email_confirmed_at:'2026-10-30'}]]);
+for(const tag of ['popup-b','popup-c','popup-d','offline-b','deferred-b'])identity.set('e2e-message-'+tag,{id:'e2e-message-'+tag,email:'message-'+tag+'@example.test',email_confirmed_at:'2026-11-03'});
 function issueToken(id){const token='e2e.'+Buffer.from(JSON.stringify({exp:Math.floor(Date.now()/1000)+7200})).toString('base64url')+'.'+randomUUID();tokens.set(token,id);return Response.json({access_token:token});}
 async function fakeSupabase(url,options){
   if(url.includes('/auth/v1/admin/users')){const parsed=new URL(url),id=parsed.pathname.split('/')[5];if(id){const user=identity.get(decodeURIComponent(id));return Response.json(user||{},{status:user?200:404});}return Response.json({users:[...identity.values()]});}
@@ -72,8 +75,8 @@ async function fakeSupabase(url,options){
   if(url.endsWith('/token?grant_type=password')){
     const data=JSON.parse(options.body),registered=signupAccounts.get(data.email);
     if(registered)return registered.confirmed&&registered.password===data.password?issueToken(registered.id):Response.json({},{status:401});
-    if(!['joueur-a@example.test','joueur-b@example.test'].includes(data.email)||data.password!=='test-only')return Response.json({}, {status:401});
-    return issueToken(data.email==='joueur-a@example.test'?'e2e-account-a':'e2e-account-b');
+    const known=[...identity.values()].find(user=>user.email===data.email);if(!known||data.password!=='test-only')return Response.json({}, {status:401});
+    return issueToken(known.id);
   }
   const user=identity.get(tokens.get(options.headers.Authorization?.replace(/^Bearer /,'')));
   return Response.json(user||{},{status:user?200:401});
@@ -82,11 +85,12 @@ const adminUsers=memoryCollection([{supabase_id:'e2e-account-a',email:'joueur-a@
 const accounts=createAuthAccounts({url:'https://e2e.invalid',key:'server-test-only',fetcher:fakeSupabase});
 const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e',accounts,characterStore:characters});
 const groups=createGroupStore({collection:groupMemory(),characters});
+const messages=createGroupMessages({collection:messageMemory(),groups});
 const combatRows=groupMemory();
 const combatCollection={...combatRows,async insertOne(row){if(combatRows.rows.some(x=>x.groupId===row.groupId&&x.active&&row.active))throw Object.assign(Error('duplicate'),{code:11000});return combatRows.insertOne(row);}};
 const bestiary=createBestiaryStore({collection:bestiaryMemory()});
 const combats=createCombatStore({spellCatalogue:catalogue.spells,spellCollection:groupMemory(),collection:combatCollection,groups,characters,bestiary,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
-const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,groups,combats,bestiary,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
+const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,groups,combats,bestiary,messages,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
 gateway.listen(0,'127.0.0.1');await once(gateway,'listening');
 const publicFiles={
  '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/inscription.html':'inscription.html','/inscription.js':'inscription.js','/sources.html':'sources.html','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',
