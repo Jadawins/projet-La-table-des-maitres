@@ -1,0 +1,53 @@
+{
+  "status": "published",
+  "patchId": "20261103T065156Z",
+  "baseRelease": "20261103T063025Z",
+  "completedAt": "2026-11-03T06:53:43.616Z",
+  "backup": "/root/backups/myrpgtable-persistence-home-news-20261103T065156Z",
+  "backupDocuments": 3286,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261103T063025Z/start.mjs",
+    "restarted": false
+  },
+  "verification": {
+    "status": "passed",
+    "scope": "home-news-text-only",
+    "sourceHash": "cb4b0dbebc5cff15a2cd5bdcc2384bf39eb0e7029902640b84ff4f648797d2e3",
+    "completedAt": "2026-11-03T06:51:54.967Z",
+    "baselineCommit": "20154957d",
+    "baseRelease": "20261103T063025Z",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 3,
+    "browserJourneys": 2,
+    "files": [
+      {
+        "source": "maquette/home-content.mjs",
+        "target": "atelier/home-content.mjs",
+        "sha256": "6b854e53e6f6772efb6ab20b06b770b04672ca9860ce8bd539508cb1a916ee02",
+        "baselineNormalizedSha256": "aa2890a9d6c1cbeb470e361b954933a0afa18cc7c325e9fbecd12ef404801ae8"
+      },
+      {
+        "source": "accueil/index.html",
+        "target": "public/index.html",
+        "sha256": "a2a693fa7da90633f8646969f4692b7d9a64db94f36dc6f002b3d9a9539ac32f",
+        "baselineNormalizedSha256": "05627152414ff381f566889396aaf0fbd941ff446f9cdf5255f7cbd5c3310a5f"
+      }
+    ],
+    "qualification": "Public and authenticated home share the same three current news cards. Inventory and private MJ popups retained; combat spells replace the administrator-only promotion. No administration mention in home content. Eight features, creator note, books notice, library image and future roadmap retained. Only two runtime text assets changed; authentication, rules, persistence and gameplay unchanged."
+  },
+  "livePublicBrowser": {
+    "status": 200,
+    "news": 3,
+    "features": 8,
+    "administrationPromoted": false,
+    "errors": []
+  },
+  "qualification": [
+    "Mise en avant réservée aux outils accessibles aux joueurs et MJ : messages privés, inventaire et sorts en combat.",
+    "Promotion de l’administration retirée des nouveautés et des huit rubriques de l’accueil public et connecté ; droits et page d’administration inchangés.",
+    "Trois tests et deux parcours navigateur réussis, avec absence de mention d’administration dans le contenu d’accueil. Contrôle supplémentaire de la page publique en ligne.",
+    "Deux fichiers de présentation actualisés, sauvegarde de 3 286 documents, retour arrière conservé et processus serveur maintenu."
+  ]
+}

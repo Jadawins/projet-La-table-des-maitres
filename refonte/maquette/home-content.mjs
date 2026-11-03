@@ -9,7 +9,7 @@ const features = [
   ['05', 'Groupes & messages', 'Une place pour chaque rôle', 'Créez ou rejoignez une table comme joueur ou MJ, avec les invitations adaptées. Le MJ peut envoyer un message privé à un ou plusieurs membres : un pop-up apparaît dans leur atelier et reste disponible à leur retour.'],
   ['06', 'Combat & bestiaire', 'La rencontre prend vie', 'Bestiaire, initiatives, tours, attaques et sorts : choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les cibles, dégâts, soins et états. Retrouvez aussi la concentration et les durées déclarées.'],
   ['07', 'Grimoire', 'La bonne information, au bon moment', 'Recherchez un sort, une classe, une sous-classe, une espèce, un historique, un don ou une pièce d’équipement dans le catalogue utilisé par vos fiches.'],
-  ['08', 'Comptes & administration', 'Vos personnages trouvent leur place', 'Inscription, connexion et fiches enregistrées dans votre compte. L’administrateur peut consulter et compléter les fiches, suivre les inscriptions et copier ou transférer un personnage vers un compte existant.']
+  ['08', 'Votre espace', 'Vos personnages trouvent leur place', 'Créez votre compte et retrouvez vos fiches enregistrées depuis vos ordinateurs. Préparez vos personnages à votre rythme et gardez leurs informations à portée de main pour votre prochaine partie.']
 ];
 
 export function renderHomeContent({publicPage = false} = {}) {
@@ -38,7 +38,7 @@ export function renderHomeContent({publicPage = false} = {}) {
       <div class="home-news-grid">
         <article class="home-news home-news-featured"><p class="home-badge">NOUVEAU · MESSAGES DU MJ</p><h3>Le MJ vous écrit,<br>en toute discrétion.</h3><p>Le MJ choisit un ou plusieurs membres du groupe et leur envoie un message privé. Un pop-up s’affiche dans l’atelier, avec « J’ai lu » ou « Relire plus tard ». Les joueurs absents le retrouvent à leur retour.</p><span class="home-news-foot">Le message reste privé entre les personnes choisies et le MJ.</span></article>
         <article class="home-news"><p class="home-badge">NOUVEAU · INVENTAIRE</p><h3>Vos trouvailles<br>ont leur place.</h3><p>Ajoutez les objets reçus, achetés ou trouvés : un nom, une quantité et une description. Modifiez-les ou retirez-les depuis la fiche ; leurs noms et quantités apparaissent aussi dans le PDF. Les effets particuliers se vérifient à la table.</p><span class="home-news-foot">Équipement → Objets ajoutés en partie.</span></article>
-        <article class="home-news"><p class="home-badge">NOUVEAU · ADMINISTRATION</p><h3>Un coup de main<br>sur vos fiches.</h3><p>L’administrateur peut ouvrir les fiches enregistrées, compléter leur histoire, ajouter un objet ou corriger leurs choix. Les changements s’enregistrent dans le compte du joueur : votre personnage reste à sa place.</p><span class="home-news-foot">Toutes les fiches réunies dans l’espace d’administration.</span></article>
+        <article class="home-news"><p class="home-badge">RÉCENT · SORTS EN COMBAT</p><h3>Vos sorts,<br>le dernier mot au MJ.</h3><p>Proposez un sort depuis votre fiche et choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les cibles, les dégâts et les soins. Retrouvez aussi le suivi de la concentration et des durées.</p><span class="home-news-foot">Les alliés dans une zone peuvent aussi être concernés.</span></article>
       </div>
     </section>
 

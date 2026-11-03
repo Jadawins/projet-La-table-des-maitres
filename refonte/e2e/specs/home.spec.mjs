@@ -11,7 +11,8 @@ test('Accueil public : nouveautés, outils disponibles, feuille de route et acc�
     await expect(page.locator('.home-feature')).toHaveCount(8);
     await expect(page.locator('.home-news')).toHaveCount(3);
     await expect(page.locator('#nouveautes')).toContainText('3 novembre 2026');
-    for(const text of ['MESSAGES DU MJ','INVENTAIRE','ADMINISTRATION','Relire plus tard','Objets ajoutés en partie'])await expect(page.locator('#nouveautes')).toContainText(text);
+    for(const text of ['MESSAGES DU MJ','INVENTAIRE','SORTS EN COMBAT','Relire plus tard','Objets ajoutés en partie'])await expect(page.locator('#nouveautes')).toContainText(text);
+    await expect(page.locator('.home-hub')).not.toContainText(/administrat/i);
     await expect(page.locator('.home-books')).toContainText('ne remplace pas les livres');
     await page.screenshot({path:info.outputPath('accueil-public.png')});
     await page.getByRole('link', {name:'Les prochains chapitres',exact:true}).click();
@@ -40,7 +41,8 @@ test('Accueil connecté : contenu commun et accès aux personnages et groupes sa
   await page.goto('/atelier/');
   await expect(page.getByRole('heading',{name:'Vos aventures commencent ici.'})).toBeVisible();
   await expect(page.locator('.home-feature')).toHaveCount(8);
-  for(const text of ['MESSAGES DU MJ','INVENTAIRE','ADMINISTRATION'])await expect(page.locator('#nouveautes')).toContainText(text);
+  for(const text of ['MESSAGES DU MJ','INVENTAIRE','SORTS EN COMBAT'])await expect(page.locator('#nouveautes')).toContainText(text);
+  await expect(page.locator('.home-hub')).not.toContainText(/administrat/i);
   await expect(page.locator('.portal-welcome')).toContainText('vos aventures');
   await page.screenshot({path:info.outputPath('accueil-connecte.png')});
   await page.getByRole('link',{name:'Retrouver mes groupes',exact:false}).click();
