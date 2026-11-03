@@ -45,8 +45,8 @@ code=$(curl --resolve myrpgtable.fr:443:127.0.0.1 -sS -o "$backup/public-after.h
 [[ "$code" == 200 ]]
 for text in 'MESSAGES DU MJ' 'INVENTAIRE' 'SORTS EN COMBAT' '3 novembre 2026'; do grep -Fq "$text" "$backup/public-after.html"; done
 [[ "$(curl --resolve myrpgtable.fr:443:127.0.0.1 -sS -o /dev/null -w '%{http_code}' https://myrpgtable.fr/atelier/home-content.mjs)" == 302 ]]
-if grep -Eiq 'administrat' "$backup/public-after.html"; then
-  echo 'Private administration must not be promoted on the public home.'
+if grep -Eiq 'ouvrir les fiches enregistrées|consulter et compléter les fiches' "$backup/public-after.html"; then
+  echo 'Private character consultation and editing must not be promoted on the public home.'
   false
 fi
 [[ "$(pm2 pid myrpgtable-refonte)" == "$before_pid" ]]

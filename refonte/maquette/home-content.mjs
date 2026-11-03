@@ -9,7 +9,7 @@ const features = [
   ['05', 'Groupes & messages', 'Une place pour chaque rôle', 'Créez ou rejoignez une table comme joueur ou MJ, avec les invitations adaptées. Le MJ peut envoyer un message privé à un ou plusieurs membres : un pop-up apparaît dans leur atelier et reste disponible à leur retour.'],
   ['06', 'Combat & bestiaire', 'La rencontre prend vie', 'Bestiaire, initiatives, tours, attaques et sorts : choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les cibles, dégâts, soins et états. Retrouvez aussi la concentration et les durées déclarées.'],
   ['07', 'Grimoire', 'La bonne information, au bon moment', 'Recherchez un sort, une classe, une sous-classe, une espèce, un historique, un don ou une pièce d’équipement dans le catalogue utilisé par vos fiches.'],
-  ['08', 'Votre espace', 'Vos personnages trouvent leur place', 'Créez votre compte et retrouvez vos fiches enregistrées depuis vos ordinateurs. Préparez vos personnages à votre rythme et gardez leurs informations à portée de main pour votre prochaine partie.']
+  ['08', 'Comptes & administration', 'Vos personnages trouvent leur place', 'Inscrivez-vous et retrouvez vos personnages dans votre compte. Un espace réservé à la gestion du site rassemble les métriques d’inscription et l’attribution des personnages aux comptes existants.']
 ];
 
 export function renderHomeContent({publicPage = false} = {}) {

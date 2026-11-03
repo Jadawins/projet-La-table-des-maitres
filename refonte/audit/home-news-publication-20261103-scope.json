@@ -1,0 +1,53 @@
+{
+  "status": "published",
+  "patchId": "20261103T072121Z",
+  "baseRelease": "20261103T063025Z",
+  "completedAt": "2026-11-03T07:22:37.072Z",
+  "backup": "/root/backups/myrpgtable-persistence-home-news-20261103T072121Z",
+  "backupDocuments": 3286,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261103T063025Z/start.mjs",
+    "restarted": false
+  },
+  "verification": {
+    "status": "passed",
+    "scope": "home-news-text-only",
+    "sourceHash": "c4313d04abacfaa6599354b8b62486315e91d50a6295ec9e54e4092ab236c4d6",
+    "completedAt": "2026-11-03T07:21:07.309Z",
+    "baselineCommit": "3d3af1c94",
+    "baseRelease": "20261103T063025Z",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 3,
+    "browserJourneys": 2,
+    "files": [
+      {
+        "source": "maquette/home-content.mjs",
+        "target": "atelier/home-content.mjs",
+        "sha256": "b079598ddfb7c9674a4d269f4d86526436f7ddc5b3a83500965b8bd8ea45418d",
+        "baselineNormalizedSha256": "6b854e53e6f6772efb6ab20b06b770b04672ca9860ce8bd539508cb1a916ee02"
+      },
+      {
+        "source": "accueil/index.html",
+        "target": "public/index.html",
+        "sha256": "80510150cca3fb11ef35de728f14593ce475bc251e688c03608e4d468407441d",
+        "baselineNormalizedSha256": "a2a693fa7da90633f8646969f4692b7d9a64db94f36dc6f002b3d9a9539ac32f"
+      }
+    ],
+    "qualification": "Public and authenticated home share the same three current news cards. Inventory and private MJ popups retained; combat spells replace the administrator-only promotion. General reserved administration overview retained; private character consultation and editing are not promoted. Eight features, creator note, books notice, library image and future roadmap retained. Only two runtime text assets changed; authentication, rules, persistence and gameplay unchanged."
+  },
+  "livePublicBrowser": {
+    "status": 200,
+    "generalAdministrationOverview": true,
+    "privateSheetEditingPromoted": false,
+    "news": 3,
+    "features": 8
+  },
+  "qualification": [
+    "Présentation générale des comptes et de l’espace réservé de gestion du site rétablie, conformément à la clarification de l’utilisateur.",
+    "La consultation et la modification des fiches par l’administration restent absentes des annonces d’accueil.",
+    "Les trois nouveautés restent les messages du MJ, l’inventaire et les sorts en combat.",
+    "Trois tests et deux parcours navigateur réussis ; page publique vérifiée sur le domaine. Sauvegarde conservée et processus serveur maintenu."
+  ]
+}

@@ -27,6 +27,8 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 L’atelier en ligne utilise la livraison `20261103T063025Z`, publiée le 3 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
 
+Après clarification, le correctif `20261103T072121Z` rétablit la présentation générale des comptes et de l’administration réservée. Seule la consultation et la modification des fiches reste écartée de la mise en avant ; les nouveautés joueurs/MJ sont conservées. [Relevé de précision](audit/home-news-publication-20261103-scope.json).
+
 Le correctif d’accueil `20261103T065156Z` présente les nouveautés accessibles aux joueurs et MJ : messages privés, inventaire et sorts en combat. La promotion de l’administration privée est retirée de l’accueil public et connecté. Trois tests et deux parcours navigateur passent, puis la page publique est vérifiée en ligne. [Relevé de correction](audit/home-news-publication-20261103-public.json).
 
 Le correctif d’accueil `20261103T064634Z` met à la une les pop-ups du MJ, l’inventaire et l’administration, sur l’accueil public et connecté. Les rubriques disponibles reflètent ces ajouts. Trois tests et deux parcours navigateur passent ; le journal public est vérifié visuellement après publication. Deux fichiers de présentation sont actualisés, avec sauvegarde et retour arrière, et le service conserve son processus. [Relevé de publication](audit/home-news-publication-20261103.json).
