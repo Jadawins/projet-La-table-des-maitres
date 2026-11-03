@@ -1,3 +1,4 @@
+import {mountGroupLoot} from './loot-view.mjs';
 import {mountGroupMessages} from './group-messages.mjs';
 const mounts = new WeakMap();
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
@@ -6,7 +7,7 @@ export function disposeGroups(root) { mounts.get(root)?.abort(); mounts.delete(r
 export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
   disposeGroups(root);
   const controller = new AbortController(); mounts.set(root, controller);
-  let disposeMessages=()=>{};controller.signal.addEventListener('abort',()=>disposeMessages(),{once:true});
+  let disposeMessages=()=>{},disposeLoot=()=>{};controller.signal.addEventListener('abort',()=>{disposeMessages();disposeLoot();},{once:true});
   let group, invitationCode = '', mjInvitationCode = '', ownCharacters = [], notice = '';
   const className = id => catalogue?.classes.find(row => row.id === id)?.nom || id;
   async function api(path = '', data, method = 'POST') {
@@ -83,7 +84,7 @@ export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
   }
   function detail() {
     if (controller.signal.aborted) return;
-    disposeMessages();
+    disposeMessages();disposeLoot();
     const me = group.members.find(member => member.isMe);
     root.innerHTML = `<a class="back" href="#groupes">← Mes groupes</a><p class="eyebrow">${group.isMJ ? 'VOTRE TABLE · MAÎTRE DU JEU' : 'VOTRE TABLE · JOUEUR'}${group.isOwner ? ' · CRÉATEUR' : ''}</p>
       <h1>${esc(group.name)}</h1><p class="group-description">${esc(group.description || 'Votre groupe est prêt à accueillir ses aventures.')}</p>
@@ -98,6 +99,7 @@ export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
       <div class="portal-actions"><button class="button secondary" data-group-action="${group.isOwner ? 'supprimer' : 'quitter'}">${group.isOwner ? 'Supprimer le groupe' : 'Quitter le groupe'}</button></div>`;
     const messageRoot=document.createElement('section');messageRoot.className='portal-card group-message-panel';root.querySelector('.group-description').after(messageRoot);
     disposeMessages=mountGroupMessages(messageRoot,{group,signal:controller.signal});
+    const lootRoot=document.createElement('section');lootRoot.className='portal-card group-loot-panel';messageRoot.after(lootRoot);disposeLoot=mountGroupLoot(lootRoot,{group,catalogue,signal:controller.signal});
     bind();
   }
   async function listing() {

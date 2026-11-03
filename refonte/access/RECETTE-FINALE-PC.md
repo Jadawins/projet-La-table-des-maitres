@@ -57,6 +57,10 @@ Prévoir deux comptes de test et des personnages identifiables comme tels. Un co
 - [ ] Créer un groupe comme MJ et un autre comme joueur → droits correspondant au rôle choisi.
 - [ ] Rejoindre avec un code joueur puis utiliser une invitation MJ distincte → rôles corrects ; un non-membre ne voit pas le groupe privé.
 - [ ] Associer une fiche au groupe → seule une fiche du compte est sélectionnable.
+- [ ] Préparer un butin pour deux personnages puis annuler → aucun gain, aucun destinataire présélectionné ; le récapitulatif explique les quantités reçues par chacun.
+- [ ] Confirmer un butin avec objet et pièces → bonnes quantités sur les seules fiches choisies, sans équipement automatique ni prélèvement au MJ.
+- [ ] Modifier une fiche dans un autre onglet entre préparation et confirmation du butin → attribution concernée en attente ; revue puis reprise sans écraser la modification ni doubler les gains déjà reçus.
+- [ ] Ouvrir le suivi du butin comme joueur → uniquement ses propres attributions, sans les autres destinataires ni les soldes privés ; accès refusé après exclusion.
 - [ ] Envoyer un message MJ à une personne, puis à plusieurs → seuls les destinataires reçoivent le pop-up ; leur liste reste privée.
 - [ ] Choisir « Relire plus tard », puis « J’ai lu » → premier choix sans accusé de lecture, second confirmé pour ce destinataire ; réception après retour sur le site.
 - [ ] Préparer un combat avec des adversaires du bestiaire → profils présents, adversaires cachés invisibles aux joueurs tant qu’ils ne sont pas révélés.

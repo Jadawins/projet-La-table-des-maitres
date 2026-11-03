@@ -1,3 +1,4 @@
+import {createGroupLoot} from './group-loot.mjs';
 import {createGateway} from './server.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -20,6 +21,7 @@ const mongo=new MongoClient(process.env.MONGO_URI,{serverSelectionTimeoutMS:1000
 await mongo.connect();
 const collection=mongo.db('myrpgtable').collection('personnages_refonte');
 await collection.createIndex({user_id:1,client_id:1},{unique:true});
+await collection.createIndex({client_id:1});
 const release=JSON.parse(await readFile(path.join(base,'rules-release.json'),'utf8'));
 let loaded;
 try{loaded=await loadRulesCatalogue(mongo.db('myrpgtable'),release);}catch(error){await mongo.close();throw error;}
@@ -40,6 +42,11 @@ await messageCollection.createIndex({groupId:1,createdAt:-1,id:-1});
 await messageCollection.createIndex({unreadIds:1,groupId:1,createdAt:1});
 const messages=createGroupMessages({collection:messageCollection,groups});
 const {sheetModel}=await import(pathToFileURL(path.join(appRoot,'sheet-model.mjs')).href);
+const lootCollection=mongo.db('myrpgtable').collection('butins_groupes_refonte');
+await lootCollection.createIndex({id:1},{unique:true});
+await lootCollection.createIndex({groupId:1,createdAt:-1,id:-1});
+await lootCollection.createIndex({'recipients.userId':1,groupId:1,createdAt:-1});
+const loot=createGroupLoot({collection:lootCollection,groups,characters,catalogue,sheetModel:s=>sheetModel(s,catalogue),validate:s=>validateSavedCharacter(s,catalogue)});
 const {playView,applyPlayAction}=await import(pathToFileURL(path.join(appRoot,'play-state.mjs')).href);
 const combatCollection=mongo.db('myrpgtable').collection('combats_refonte');
 await combatCollection.createIndex({id:1},{unique:true});
@@ -50,6 +57,6 @@ const spellCollection=mongo.db('myrpgtable').collection('sorts_combats_refonte')
 await spellCollection.createIndex({id:1},{unique:true});
 await spellCollection.createIndex({groupId:1,combatId:1,createdAt:-1});
 const combats=createCombatStore({spellCatalogue:catalogue.spells,collection:combatCollection,spellCollection,groups,characters,bestiary,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
-const server=createGateway({supabaseUrl:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,anonKey:process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_KEY,appRoot,characters,groups,combats,bestiary,messages,admin,adminEmails:(process.env.REFONTE_ADMIN_EMAILS||'').split(',').filter(Boolean),catalogueText});
+const server=createGateway({supabaseUrl:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,anonKey:process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_KEY,appRoot,characters,groups,combats,bestiary,messages,loot,admin,adminEmails:(process.env.REFONTE_ADMIN_EMAILS||'').split(',').filter(Boolean),catalogueText});
 server.on('close',()=>mongo.close());
 server.listen(Number(process.env.REFONTE_ACCESS_PORT||4181),'127.0.0.1',()=>console.log('Accès refonte prêt sur la boucle locale.'));

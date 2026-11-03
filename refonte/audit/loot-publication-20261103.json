@@ -1,0 +1,315 @@
+{
+  "status": "deployed",
+  "release": "20261103T102134Z",
+  "previous": "20261103T091857Z",
+  "completedAt": "2026-11-03T10:24:51.402Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261103T102134Z",
+  "archiveSha256": "9bfa89a999e1e69ce2fe8480c5afeee7a20533e50a924d243ca5e05662945375",
+  "databaseBackupSha256": "5e67ec19037d3f53fa026d127756418ad473798b2fbb0dea930c939c1293a7a1",
+  "releaseTree": {
+    "files": 86,
+    "sha256": "d2a9c42f13b6a0a6c12b902ac1d9bdfb09c57f444e10b806760a81372dc5ba9a"
+  },
+  "controls": {
+    "persistence": {
+      "before": "passed",
+      "after": "passed",
+      "checks": [
+        {
+          "classId": "barbare",
+          "subclassId": "barbare_berserker",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "barbare",
+          "subclassId": "barbare_berserker",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "rodeur",
+          "subclassId": "rodeur_belluaire",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "rodeur",
+          "subclassId": "rodeur_belluaire",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "barde",
+          "subclassId": "barde_college_danse",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "barde",
+          "subclassId": "barde_college_danse",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "druide",
+          "subclassId": "druide_cercle_astres",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "druide",
+          "subclassId": "druide_cercle_astres",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "occultiste",
+          "subclassId": "occultiste_protecteur_archifee",
+          "level": 3,
+          "status": "passed"
+        },
+        {
+          "classId": "occultiste",
+          "subclassId": "occultiste_protecteur_archifee",
+          "level": 20,
+          "status": "passed"
+        },
+        {
+          "classId": "barbare",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "barde",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "clerc",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "druide",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "ensorceleur",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "guerrier",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "magicien",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "moine",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "occultiste",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "paladin",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "rodeur",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        },
+        {
+          "classId": "roublard",
+          "level": 5,
+          "multiclass": true,
+          "status": "passed"
+        }
+      ]
+    },
+    "accounts": {
+      "before": "passed",
+      "after": "passed",
+      "checks": null
+    },
+    "groups": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 8
+    },
+    "combat": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 11
+    },
+    "bestiary": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 9
+    },
+    "attacks": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 10
+    },
+    "group-options": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 12
+    },
+    "spell-combat": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 12
+    },
+    "admin-characters": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 10
+    },
+    "items-messages": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 15
+    },
+    "equipment": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 11
+    },
+    "wallet": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 13
+    },
+    "loot": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 13
+    }
+  },
+  "realBefore": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "4a91538e8a8012462fe8af504ad7288e6bd11fd827034f76f6da4e882409a416"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "butins_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realAfter": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "4a91538e8a8012462fe8af504ad7288e6bd11fd827034f76f6da4e882409a416"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "butins_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realDataUnchanged": true,
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261103T102134Z/start.mjs",
+    "restarts": 0
+  },
+  "registeredAccounts": 3,
+  "backupDocuments": 3286,
+  "verification": {
+    "status": "passed",
+    "scope": "mj-loot-with-durable-per-character-receipts",
+    "sourceHash": "1db79dfbeca344458ee34e4e320ef6b55e78295a728a4b047c7a9e38319913a7",
+    "completedAt": "2026-11-03T10:20:21.880Z",
+    "baselineCommit": "720de7f97",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 268,
+    "browserJourneys": 50,
+    "rulesCalculationsUnchanged": true,
+    "qualification": "MJ-only loot preparation and explicit per-character recap. Fixed character references, no source-wallet debit, additive items and exact coin counts. Durable atomic character receipts and resumable group progress survive lost acknowledgements, process interruption, concurrent edits, transfer and soft deletion. Recipient-only player history, current-role checks, no full-sheet exposure. Frozen catalogue, sheet calculations, wallet/equipment/advancement and existing combat rules unchanged. Real MongoDB controls run separately with synthetic actors."
+  },
+  "manualAcceptance": {
+    "status": "deferred-until-final-campaign",
+    "checklist": "refonte/access/RECETTE-FINALE-PC.md",
+    "automatedResultsDoNotCheckManualBoxes": true
+  },
+  "limits": [
+    "Each selected character receives the same entered item quantity and coin counts; no automatic division or source-wallet debit.",
+    "One item type per prepared allocation; separate allocations support different rewards.",
+    "Atomic per character, not a global multi-character transaction; partial progress remains visible and resumable.",
+    "An interrupted in-flight lease can be resumed after one minute; changed sheets require explicit review.",
+    "No automatic private message, email, equipment activation or full character-sheet exposure to group members."
+  ],
+  "rollback": "/root/backups/myrpgtable-persistence-20261103T102134Z/rollback.sh"
+}
