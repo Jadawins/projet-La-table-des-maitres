@@ -3,13 +3,13 @@ export const booksNotice = 'Cette application accompagne vos parties et ne rempl
 
 const features = [
   ['01', 'Personnages', 'Un héros qui vous ressemble', 'Douze classes, 48 sous-classes, espèces, historiques, dons, équipement et choix de sorts. Créez votre personnage du niveau 1 au niveau 20.'],
-  ['02', 'Fiches & impression', 'Du compte à la table', 'Enregistrez et retrouvez vos personnages en ligne. Consultez leur fiche par rubriques et téléchargez la feuille de personnage PDF remplie.'],
+  ['02', 'Fiches & impression', 'Du compte à la table', 'Retrouvez vos personnages en ligne, complétez leur histoire et ajoutez vos objets avec leur quantité et leur description. Téléchargez la feuille PDF remplie, avec les objets de votre inventaire.'],
   ['03', 'Évolution', 'Le prochain niveau vous attend', 'Faites évoluer une fiche existante : points de vie, aptitudes, dons et sorts. Le multiclassage est disponible, jusqu’au niveau total 20.'],
   ['04', 'Suivi en partie', 'Gardez le fil de l’aventure', 'Suivez les PV, les PV temporaires, les réserves prises en charge, les emplacements de sorts, les repos, les états et les sauvegardes contre la mort.'],
-  ['05', 'Groupes', 'Une place pour chaque rôle', 'Créez ou rejoignez une table comme joueur ou MJ, rattachez votre personnage et partagez les codes d’invitation adaptés. Le créateur gère les membres et peut supprimer le groupe.'],
+  ['05', 'Groupes & messages', 'Une place pour chaque rôle', 'Créez ou rejoignez une table comme joueur ou MJ, avec les invitations adaptées. Le MJ peut envoyer un message privé à un ou plusieurs membres : un pop-up apparaît dans leur atelier et reste disponible à leur retour.'],
   ['06', 'Combat & bestiaire', 'La rencontre prend vie', 'Bestiaire, initiatives, tours, attaques et sorts : choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les cibles, dégâts, soins et états. Retrouvez aussi la concentration et les durées déclarées.'],
   ['07', 'Grimoire', 'La bonne information, au bon moment', 'Recherchez un sort, une classe, une sous-classe, une espèce, un historique, un don ou une pièce d’équipement dans le catalogue utilisé par vos fiches.'],
-  ['08', 'Comptes & administration', 'Vos personnages trouvent leur place', 'Inscription et connexion, fiches rattachées à leur compte et espace d’administration : métriques, copie ou transfert d’une fiche vers un compte existant.']
+  ['08', 'Comptes & administration', 'Vos personnages trouvent leur place', 'Inscription, connexion et fiches enregistrées dans votre compte. L’administrateur peut consulter et compléter les fiches, suivre les inscriptions et copier ou transférer un personnage vers un compte existant.']
 ];
 
 export function renderHomeContent({publicPage = false} = {}) {
@@ -34,11 +34,11 @@ export function renderHomeContent({publicPage = false} = {}) {
     <div class="home-facts" aria-label="La création en quelques chiffres"><p><strong>12</strong><span>classes</span></p><p><strong>48</strong><span>sous-classes</span></p><p><strong>1–20</strong><span>niveaux de personnage</span></p><p class="home-fact-dice"><strong>Vos dés.</strong><span>Votre façon de jouer.</span></p></div>
 
     <section class="home-section" id="nouveautes" aria-labelledby="home-news-title">
-      <div class="home-section-heading"><div><p class="home-kicker">LE JOURNAL DE LA TABLE</p><h2 id="home-news-title">Tout juste dans le grimoire.</h2></div><p>Mise à jour du 2 novembre 2026</p></div>
+      <div class="home-section-heading"><div><p class="home-kicker">LE JOURNAL DE LA TABLE</p><h2 id="home-news-title">Tout juste dans le grimoire.</h2></div><p>Mise à jour du 3 novembre 2026</p></div>
       <div class="home-news-grid">
-        <article class="home-news home-news-featured"><p class="home-badge">NOUVEAU · GROUPES</p><h3>Joueur ou MJ,<br>choisissez votre place.</h3><p>Le rôle se choisit à la création et à l’adhésion, avec un code joueur et un code MJ distincts. La suppression du groupe est aussi disponible, sans supprimer les fiches des membres.</p><span class="home-news-foot">Une table, plusieurs façons de participer.</span></article>
-        <article class="home-news"><p class="home-badge">NOUVEAU · SORTS EN COMBAT</p><h3>Vos sorts,<br>le dernier mot au MJ.</h3><p>Proposez un sort depuis votre fiche. Le MJ vérifie sa résolution, les cibles et la dépense. Dés au choix, soins, dégâts, états, concentration et durées : les effets attendent sa confirmation.</p><span class="home-news-foot">Zones et alliés : les cibles sont choisies par le MJ.</span></article>
-        <article class="home-news"><p class="home-badge">DÉJÀ DISPONIBLE · ÉVOLUTION</p><h3>Votre héros<br>ne s’arrête pas là.</h3><p>Montez de niveau depuis votre fiche et choisissez, si vous le souhaitez, une autre classe. Retrouvez aussi vos repos, états et ressources dans le suivi en partie.</p><span class="home-news-foot">Jusqu’au niveau total 20.</span></article>
+        <article class="home-news home-news-featured"><p class="home-badge">NOUVEAU · MESSAGES DU MJ</p><h3>Le MJ vous écrit,<br>en toute discrétion.</h3><p>Le MJ choisit un ou plusieurs membres du groupe et leur envoie un message privé. Un pop-up s’affiche dans l’atelier, avec « J’ai lu » ou « Relire plus tard ». Les joueurs absents le retrouvent à leur retour.</p><span class="home-news-foot">Le message reste privé entre les personnes choisies et le MJ.</span></article>
+        <article class="home-news"><p class="home-badge">NOUVEAU · INVENTAIRE</p><h3>Vos trouvailles<br>ont leur place.</h3><p>Ajoutez les objets reçus, achetés ou trouvés : un nom, une quantité et une description. Modifiez-les ou retirez-les depuis la fiche ; leurs noms et quantités apparaissent aussi dans le PDF. Les effets particuliers se vérifient à la table.</p><span class="home-news-foot">Équipement → Objets ajoutés en partie.</span></article>
+        <article class="home-news"><p class="home-badge">NOUVEAU · ADMINISTRATION</p><h3>Un coup de main<br>sur vos fiches.</h3><p>L’administrateur peut ouvrir les fiches enregistrées, compléter leur histoire, ajouter un objet ou corriger leurs choix. Les changements s’enregistrent dans le compte du joueur : votre personnage reste à sa place.</p><span class="home-news-foot">Toutes les fiches réunies dans l’espace d’administration.</span></article>
       </div>
     </section>
 

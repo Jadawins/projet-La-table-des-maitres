@@ -1,0 +1,70 @@
+{
+  "status": "published",
+  "patchId": "20261103T064634Z",
+  "baseRelease": "20261103T063025Z",
+  "completedAt": "2026-11-03T06:48:52.210Z",
+  "backup": "/root/backups/myrpgtable-persistence-home-news-20261103T064634Z",
+  "backupDocuments": 3286,
+  "databaseBackupSha256": "018b65688a5ffd3b165adc7281ff8b5a0d1ce46bc10e62aa25426abd4a63951d",
+  "changedFiles": [
+    {
+      "source": "maquette/home-content.mjs",
+      "target": "atelier/home-content.mjs",
+      "sha256": "aa2890a9d6c1cbeb470e361b954933a0afa18cc7c325e9fbecd12ef404801ae8",
+      "baselineNormalizedSha256": "40bfc40f1955c0e35d4a867133b9c07f501b1174c416f1c7d974fb6fd6ea942c"
+    },
+    {
+      "source": "accueil/index.html",
+      "target": "public/index.html",
+      "sha256": "05627152414ff381f566889396aaf0fbd941ff446f9cdf5255f7cbd5c3310a5f",
+      "baselineNormalizedSha256": "04984b31c54731738c8a29b982cac27d882f118bc0c33078f50aa2c14dd14c59"
+    }
+  ],
+  "service": {
+    "status": "online",
+    "script": "/var/www/myrpgtable/refonte-access/20261103T063025Z/start.mjs",
+    "pid": 11639,
+    "restarted": false
+  },
+  "httpChecks": 2,
+  "verification": {
+    "status": "passed",
+    "scope": "home-news-text-only",
+    "sourceHash": "95c98745eb26fec08d954b95b351592f435bada281b4ef6bc80005bde87efdeb",
+    "completedAt": "2026-11-03T06:46:33.365Z",
+    "baselineCommit": "307ac3750",
+    "baseRelease": "20261103T063025Z",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 3,
+    "browserJourneys": 2,
+    "files": [
+      {
+        "source": "maquette/home-content.mjs",
+        "target": "atelier/home-content.mjs",
+        "sha256": "aa2890a9d6c1cbeb470e361b954933a0afa18cc7c325e9fbecd12ef404801ae8",
+        "baselineNormalizedSha256": "40bfc40f1955c0e35d4a867133b9c07f501b1174c416f1c7d974fb6fd6ea942c"
+      },
+      {
+        "source": "accueil/index.html",
+        "target": "public/index.html",
+        "sha256": "05627152414ff381f566889396aaf0fbd941ff446f9cdf5255f7cbd5c3310a5f",
+        "baselineNormalizedSha256": "04984b31c54731738c8a29b982cac27d882f118bc0c33078f50aa2c14dd14c59"
+      }
+    ],
+    "qualification": "Public and authenticated home share the same three current news cards. Inventory, private MJ popups and administration descriptions updated. Eight features, creator note, books notice, library image and future roadmap retained. Only two runtime text assets changed; authentication, rules, persistence and gameplay unchanged."
+  },
+  "livePublicBrowser": {
+    "status": 200,
+    "news": 3,
+    "features": 8,
+    "errors": []
+  },
+  "qualification": [
+    "Trois nouveautés : pop-ups privés du MJ, objets acquis et consultation/édition administrateur.",
+    "Même contenu pour les accueils public et connecté, généré depuis une source unique.",
+    "Trois tests ciblés et deux parcours navigateur réussis ; vérification visuelle du journal public sur le domaine.",
+    "Publication ciblée de deux fichiers de présentation, sauvegarde de 3 286 documents et des fichiers précédents, retour arrière disponible.",
+    "Le service conserve son processus : aucune session n’est interrompue par cette publication. Authentification, règles, calculs, sauvegardes et modules de jeu inchangés."
+  ]
+}
