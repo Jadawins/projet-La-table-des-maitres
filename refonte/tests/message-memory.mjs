@@ -3,7 +3,7 @@ function matches(row,filter){return Object.entries(filter).every(([key,v])=>{
   if(key==='$or')return v.some(f=>matches(row,f));
   const found=values(row,key.split('.'));
   if(v&&typeof v==='object'&&!Array.isArray(v)&&!(v instanceof Date)){
-    if('$in'in v)return found.some(x=>v.$in.includes(x));if('$exists'in v)return found.some(x=>x!==undefined)===v.$exists;
+    if('$nin'in v)return found.every(x=>!v.$nin.includes(x));if('$in'in v)return found.some(x=>v.$in.includes(x));if('$exists'in v)return found.some(x=>x!==undefined)===v.$exists;
   }
   return found.some(x=>x===v);
 });}

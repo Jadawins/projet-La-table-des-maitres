@@ -35,6 +35,11 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
     async get(userId,id){if(!validCharacterId(id))throw fault(404,'Personnage introuvable.');const doc=await collection.findOne({user_id:userId,client_id:id});if(!doc||doc.deleted_at)throw fault(404,'Personnage introuvable.');return expose(doc);},
     // Internal combat commands only. The receipt and the new character are committed
     // in the same document, so a lost acknowledgement can be recovered after restart.
+    async combatReceiptAny(id,receiptId){
+      if(!validCharacterId(id)||!validCharacterId(receiptId))throw fault(400,'Référence de résolution invalide.');
+      const doc=await collection.findOne({client_id:id,[`combat_receipts.${receiptId}`]:{$exists:true}});
+      return doc?.combat_receipts?.[receiptId]||null;
+    },
     async combatReceipt(userId,id,receiptId){
       if(!validCharacterId(id)||!validCharacterId(receiptId))throw fault(400,'Référence de résolution invalide.');
       const doc=await collection.findOne({user_id:userId,client_id:id,deleted_at:{$exists:false}});

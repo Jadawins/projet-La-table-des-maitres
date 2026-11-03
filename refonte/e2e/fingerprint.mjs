@@ -38,6 +38,7 @@ export async function sourceFingerprint(){
   files.push('refonte/audit/check-equipment-persistence.mjs','refonte/audit/verify-equipment.mjs');
   files.push('refonte/audit/check-wallet-persistence.mjs','refonte/audit/verify-wallet.mjs');
   files.push('refonte/audit/check-loot-persistence.mjs','refonte/audit/verify-loot.mjs');
+  files.push('refonte/audit/check-potions-persistence.mjs','refonte/audit/verify-potions.mjs');
   const hash=createHash('sha256');
   for(const file of files.sort()){hash.update(file);hash.update(await readFile(path.join(root,file)));}
   return hash.digest('hex');

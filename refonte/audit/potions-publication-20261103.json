@@ -1,0 +1,542 @@
+{
+  "status": "deployed",
+  "release": "20261103T113115Z",
+  "previous": "20261103T102134Z",
+  "completedAt": "2026-11-03T11:34:23.954Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261103T113115Z",
+  "archiveSha256": "e6f7b30278287f8a27f7308ecca225a2bd08a925db9b4fb48a954fd629500cf6",
+  "databaseBackupSha256": "5e01905e023876bfb928b5ebde44bb13d0660c10ec358a33d60056ccc4c456ce",
+  "releaseTree": {
+    "files": 88,
+    "sha256": "0050a026b8141919b260abfabbed6c0dbed257ceda9d0c9c8edbcf77b0dede15"
+  },
+  "controls": {
+    "persistence": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 22
+    },
+    "accounts": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 1
+    },
+    "groups": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 8,
+      "coverage": [
+        "create-and-reopen",
+        "membership-privacy",
+        "idempotent-join",
+        "owned-character-reference",
+        "role-permissions",
+        "invitation-rotation",
+        "removal-and-departure",
+        "soft-archive"
+      ]
+    },
+    "combat": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 11,
+      "coverage": [
+        "group-roles",
+        "one-active-combat",
+        "hidden-participants",
+        "manual-initiative",
+        "character-health-persistence",
+        "stale-character-revision",
+        "identical-concurrent-damage",
+        "turns-and-rounds",
+        "pause-and-resume",
+        "conditions-and-visibility",
+        "finish-without-healing"
+      ]
+    },
+    "bestiary": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 9,
+      "coverage": [
+        "all-live-profiles-normalize",
+        "pagination-without-loss",
+        "french-and-english-search",
+        "server-side-stats-and-bulk-add",
+        "independent-hit-points",
+        "persisted-profile-snapshot",
+        "player-secrecy",
+        "group-role-and-pause-permissions",
+        "read-only-live-bestiary"
+      ]
+    },
+    "attacks": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 10,
+      "coverage": [
+        "physical-player-attack",
+        "critical-plan-and-detail",
+        "hidden-defense",
+        "mj-only-confirmation",
+        "no-health-before-confirmation",
+        "concurrent-and-repeated-confirmation",
+        "server-app-damage",
+        "strict-character-health-persistence",
+        "server-app-advantage",
+        "mixed-modes-and-cancellation"
+      ]
+    },
+    "group-options": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 12,
+      "coverage": [
+        "creator-as-player",
+        "distinct-mj-invitation",
+        "mj-joined-role",
+        "creator-not-combat-mj",
+        "hidden-combat-for-player",
+        "creator-only-removal",
+        "explicit-confirmation",
+        "stale-revision",
+        "concurrent-removal",
+        "closed-invitations-and-combat",
+        "pending-damage-blocked",
+        "character-unchanged"
+      ]
+    },
+    "spell-combat": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 12,
+      "coverage": [
+        "canonical-prepared-spells",
+        "physical-save-and-damage",
+        "no-health-before-mj-confirmation",
+        "player-cannot-confirm",
+        "repeat-confirmation-idempotent",
+        "cancel-without-cost",
+        "lost-cost-ack-and-restart",
+        "server-dice-healing",
+        "lost-heal-ack-and-restart",
+        "persistent-trigger-idempotent",
+        "concentration-save",
+        "source-effects-cleanup"
+      ],
+      "realDataUnchanged": true
+    },
+    "admin-characters": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 10,
+      "coverage": [
+        "admin-full-read-without-internal-metadata",
+        "non-admin-read-and-write-refused",
+        "no-character-moved-to-admin",
+        "validated-edit-in-owner-account",
+        "atomic-admin-edit-journal",
+        "combat-receipts-preserved",
+        "concurrent-player-edit-protected",
+        "invalid-state-refused",
+        "missing-owner-never-created",
+        "deleted-character-never-restored"
+      ],
+      "realDataUnchanged": true
+    },
+    "items-messages": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 15,
+      "coverage": [
+        "inventory-added-in-owner-account",
+        "legacy-client-preserves-items-and-play-state",
+        "concurrent-character-write-refused",
+        "inventory-in-pdf-values",
+        "no-automatic-armor-bonus",
+        "quantity-update-and-explicit-removal",
+        "private-multiple-recipients",
+        "unselected-identity-cannot-read",
+        "player-cannot-send",
+        "foreign-recipient-refused",
+        "repeated-send-and-restart-idempotent",
+        "concurrent-read-receipts",
+        "deferred-recipient-remains-unread",
+        "membership-revocation",
+        "deleted-group-inaccessible"
+      ],
+      "realDataUnchanged": true
+    },
+    "equipment": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 11,
+      "coverage": [
+        "armor-ca-from-catalogue",
+        "weapon-attacks-from-catalogue",
+        "pdf-equipment-values",
+        "reopen-after-store-restart",
+        "owner-isolation",
+        "legacy-client-preserves-loadout-and-items",
+        "potion-quantity-and-hp-atomic",
+        "lost-response-replay-idempotent-after-restart",
+        "concurrent-save-refused",
+        "unavailable-equipment-refused",
+        "last-potion-removed"
+      ],
+      "realDataUnchanged": true
+    },
+    "wallet": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 13,
+      "coverage": [
+        "legacy-character-untouched-until-first-movement",
+        "initial-money-added-once",
+        "atomic-purchase-stock-and-debit",
+        "lost-response-replay-after-store-restart",
+        "old-client-preserves-wallet-and-stock",
+        "concurrent-write-refused",
+        "insufficient-funds-no-write",
+        "partial-sale-stock-and-credit",
+        "last-sale-unequips",
+        "explicit-correction-and-making-change",
+        "five-currencies-in-pdf",
+        "starting-equipment-sale-persists",
+        "owner-isolation-and-reopen"
+      ],
+      "realDataUnchanged": true
+    },
+    "loot": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 13,
+      "coverage": [
+        "prepare-without-character-write",
+        "mj-only-and-private-access",
+        "concurrent-sheet-edit-refused",
+        "partial-allocation-visible",
+        "review-and-resume-preserves-story",
+        "no-second-grant-on-replay",
+        "recipient-only-history",
+        "lost-character-acknowledgement-recovered",
+        "restart-between-character-and-progress",
+        "membership-reference-change-blocks-grant",
+        "soft-deleted-sheet-receipt-recovers-without-resurrection",
+        "cancelled-preparation-no-grant",
+        "real-characters-groups-loot-and-catalogue-unchanged"
+      ],
+      "realDataUnchanged": true
+    },
+    "potions": {
+      "before": "passed",
+      "after": "passed",
+      "checks": 13,
+      "coverage": [
+        "proposal-and-dice-without-cost",
+        "mj-only-consumption-and-healing",
+        "one-cost-one-target-heal",
+        "complete-replay-after-restart",
+        "lost-cost-acknowledgement-recovered",
+        "target-conflict-and-explicit-recheck",
+        "story-and-inventory-preserved",
+        "npc-healing-cap",
+        "app-roll-idempotence",
+        "restart-between-character-and-resolution",
+        "cancel-before-use-without-cost",
+        "transferred-source-receipt-recovered",
+        "private-snapshots-and-real-data-unchanged"
+      ],
+      "realDataUnchanged": true
+    }
+  },
+  "realBefore": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "4a91538e8a8012462fe8af504ad7288e6bd11fd827034f76f6da4e882409a416"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "butins_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "potions_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "realAfter": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "4a91538e8a8012462fe8af504ad7288e6bd11fd827034f76f6da4e882409a416"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sorts_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "messages_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "butins_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "potions_combats_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "monstres": {
+      "count": 322,
+      "sha256": "e37ab1e5d266e5067a2b1a31f4514d9d3a4fa3e88227a5396ee36b41ef08102b"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "service": {
+    "status": "online",
+    "path": "/var/www/myrpgtable/refonte-access/20261103T113115Z/start.mjs",
+    "restarts": 0
+  },
+  "backupDocuments": 3286,
+  "http": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/home.css",
+      "status": 200
+    },
+    {
+      "path": "/atelier/home-content.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/home.css",
+      "status": 302
+    },
+    {
+      "path": "/favicon.png",
+      "status": 200
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 302
+    },
+    {
+      "path": "/assets/fond-bibliotheque-sombre.png",
+      "status": 200
+    },
+    {
+      "path": "/connexion.html",
+      "status": 200
+    },
+    {
+      "path": "/inscription.html",
+      "status": 200
+    },
+    {
+      "path": "/inscription.js",
+      "status": 200
+    },
+    {
+      "path": "/signup.html",
+      "status": 302
+    },
+    {
+      "path": "/atelier/",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/personnages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat",
+      "status": 401
+    },
+    {
+      "path": "/atelier/combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/bestiaire",
+      "status": 401
+    },
+    {
+      "path": "/atelier/bestiary-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat/sorts",
+      "status": 401
+    },
+    {
+      "path": "/atelier/spell-combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat/attaques",
+      "status": 401
+    },
+    {
+      "path": "/atelier/attack-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/group-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/auth/status",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/metrics",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/messages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes/missing/messages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/group-messages.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/inventory-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/inventory-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/equipment-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/equipment-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/wallet-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/wallet-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/potion-combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/missing/combat/potions",
+      "status": 401
+    },
+    {
+      "path": "/atelier/loot-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/loot-rules.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/missing/butin",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/directory",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/personnages/missing/missing",
+      "status": 401
+    },
+    {
+      "path": "/api/GetSupabaseKey",
+      "status": 503
+    },
+    {
+      "path": "/creer-personnage.html",
+      "status": 503
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "scope": "combat-potions-with-durable-consumption-and-healing",
+    "sourceHash": "771d36db23a28bea00e90d66204112f23cdb1640752e212653d377ac7e740340",
+    "completedAt": "2026-11-03T11:30:58.361Z",
+    "baselineCommit": "7105b760b",
+    "failed": 0,
+    "skipped": 0,
+    "unitPassed": 293,
+    "browserJourneys": 54,
+    "rulesCalculationsUnchanged": true,
+    "qualification": "Healing potion from a PC inventory to another visible combat participant, physical or explicit app dice, MJ confirmation. Durable atomic character receipts and resumable cost/heal progress survive lost acknowledgements, interruption, conflicts, ownership transfer and soft deletion. No global MongoDB transaction. Private participant/MJ views, stable dice replay, explicit review before changed sheets. Catalogue, character calculations, wallet/equipment/loot and previous attack/spell rules unchanged. Real MongoDB checks run separately with synthetic actors."
+  },
+  "limits": [
+    "No multi-document transaction: one atomic receipt per character and explicit resumption of remaining writes.",
+    "MJ checks range, bonus action and target conditions. No map position or action-economy inference.",
+    "Recognized healing potions only; self-use remains on own sheet.",
+    "Unresolved operations cannot be auto-refunded, redirected or used to revive a dead creature.",
+    "Manual user checks deferred to final PC checklist and left unchecked."
+  ],
+  "rejectedCandidates": [
+    {
+      "release": "20261103T111910Z",
+      "stage": "pre-publication MongoDB check",
+      "reason": "Absent NPC owner/character references serialized as null: strict identity comparison rejected the target.",
+      "correction": "Normalize absent identity references; add regression case and repeat affected campaign.",
+      "productionChanged": false
+    }
+  ],
+  "browserHarnessCorrection": "Wait for the spell options response and completed render before selecting the next spell after cancellation; final campaign repeated without failures or retries.",
+  "rollback": "/root/backups/myrpgtable-persistence-20261103T113115Z/rollback.sh",
+  "rulesCatalogueUnchanged": true,
+  "realDataUnchanged": true
+}

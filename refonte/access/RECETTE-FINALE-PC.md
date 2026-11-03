@@ -66,6 +66,9 @@ Prévoir deux comptes de test et des personnages identifiables comme tels. Un co
 - [ ] Préparer un combat avec des adversaires du bestiaire → profils présents, adversaires cachés invisibles aux joueurs tant qu’ils ne sont pas révélés.
 - [ ] Saisir les initiatives, gérer une égalité, avancer les tours/rounds, mettre en pause puis reprendre → ordre et état conservés.
 - [ ] Préparer une attaque avec dés physiques puis avec les dés de l’application → jets explicites ; dégâts appliqués uniquement après validation du MJ.
+- [ ] Proposer une potion sur un allié, saisir les dés physiques puis attendre le MJ → ni consommation ni soin avant la confirmation ; une seule unité retirée et soins sur la cible uniquement.
+- [ ] Refaire le parcours avec les dés de l’application, puis annuler une autre proposition → lancer explicite, résultat conservé et annulation sans coût avant utilisation.
+- [ ] Modifier une fiche pendant la préparation d’une potion → refus de l’ancien récapitulatif, puis actualisation sans perdre le texte ; aucune seconde consommation lors d’une reprise.
 - [ ] Résoudre un sort ciblé et un soin → bonne caractéristique d’incantation, dés au choix et dépense d’emplacement unique au moment prévu.
 - [ ] Résoudre une zone contenant des alliés → MJ choisissant les cibles affectées, sauvegardes et effets séparés, friendly fire possible selon le sort.
 - [ ] Subir des dégâts sous concentration → demande de sauvegarde sans lancer automatique ; échec terminant les effets concernés.

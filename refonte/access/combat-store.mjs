@@ -1,3 +1,4 @@
+import {createCombatPotions} from './combat-potions.mjs';
 import {createCombatSpells} from './combat-spells.mjs';
 import {spellStamp,abilities} from './spell-rules.mjs';
 import {createCombatAttacks} from './combat-attacks.mjs';
@@ -8,8 +9,8 @@ const text=(value,max=100)=>{if(typeof value!=='string'||!value.trim()||value.tr
 const healthActions=new Set(['start','damage','heal','set-current','set-temp','set-condition','set-exhaustion','death-roll','stabilize','zero-hp-exception','declare-dead','revive']);
 export const combatOrder=participants=>[...participants].sort((a,b)=>(b.initiative??-1000)-(a.initiative??-1000)||a.order-b.order);
 
-export function createCombatStore({collection,groups,characters,bestiary=null,spellCollection=null,spellCatalogue=[],sheetModel,playView,applyPlayAction,attackRandomFace,now=()=>new Date()}) {
-  let api,spellService;
+export function createCombatStore({collection,groups,characters,bestiary=null,spellCollection=null,potionCollection=null,spellCatalogue=[],sheetModel,playView,applyPlayAction,attackRandomFace,now=()=>new Date()}) {
+  let api,spellService,potionService;
   async function context(actor,groupId) {return groups.get(actor,groupId);}
   function mj(group){if(!group.isMJ)throw fault(403,'Cette action est réservée au MJ du groupe.');}
   async function current(groupId) {
@@ -24,7 +25,7 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sp
   }
   function npcModel(p){const mods=Object.fromEntries(abilities.map(a=>[a,p.bestiary?.abilities?.[a]?.modifier??null]));const saves=abilities.map(a=>({ability:a,value:p.bestiary?.saves?.[a]??mods[a]}));return {saves,mods,hp:p.maxHp,ac:p.ac,initiative:p.bestiary?.initiativeBonus??undefined,speed:p.bestiary?.speeds?.marche??9,slots:{},classResources:[]};}
   async function view(actor,group,combat){
-    if(!combat)return {combat:null,isMJ:group.isMJ,groupName:group.name,spellsAvailable:Boolean(spellService)};
+    if(!combat)return {combat:null,isMJ:group.isMJ,groupName:group.name,spellsAvailable:Boolean(spellService),potionsAvailable:Boolean(potionService)};
     const participants=[];
     for(const p of combatOrder(combat.participants)){
       if(p.kind==='npc'&&!p.visible&&!group.isMJ)continue;
@@ -44,9 +45,9 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sp
         ...(group.isMJ&&p.kind==='npc'&&p.bestiary?{bestiary:structuredClone(p.bestiary)}:{}),
         ...(group.isMJ&&p.kind==='pc'?{ownerId:p.ownerId,characterId:p.characterId}:{})});
     }
-    return {isMJ:group.isMJ,groupName:group.name,spellsAvailable:Boolean(spellService),combat:{id:combat.id,revision:combat.revision,name:combat.name,status:combat.status,
+    return {isMJ:group.isMJ,groupName:group.name,spellsAvailable:Boolean(spellService),potionsAvailable:Boolean(potionService),combat:{id:combat.id,revision:combat.revision,name:combat.name,status:combat.status,
       round:combat.round,currentId:participants.some(p=>p.id===combat.currentId)?combat.currentId:null,
-      participants,spellCasts:spellService?await spellService.list(actor,group,combat):[],attackTickets:attackService.list(actor,group,combat),updatedAt:combat.updatedAt.toISOString(),...(group.isMJ?{journal:combat.journal}: {})}};
+      participants,spellCasts:spellService?await spellService.list(actor,group,combat):[],attackTickets:attackService.list(actor,group,combat),potionUses:potionService?await potionService.list(actor,group,combat):[],updatedAt:combat.updatedAt.toISOString(),...(group.isMJ?{journal:combat.journal}: {})}};
   }
   async function write(combat,fields,message,{allowInactive=false}={}){
     const result=await collection.updateOne({id:combat.id,revision:combat.revision,...(allowInactive?{}:{active:true})},{$set:{...fields,
@@ -73,8 +74,7 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sp
     },
     getView:(actor,groupId)=>api.get(actor,groupId)
   });
-  if(spellCollection)spellService=createCombatSpells({
-    collection:spellCollection,npcSpells:spellCatalogue,applyPlayAction,now,randomFace:attackRandomFace,
+  const resolutionHooks={
     async load(actor,groupId,combatId){const group=await context(actor,groupId),combat=combatId?await collection.findOne({id:combatId,groupId}):await current(groupId);if(!combat)throw fault(404,'Aucun combat pour ce groupe.');return {actor,group,combat};},
     async fighter(group,p){
       if(p.kind==='pc'){const saved=await savedPC(group,p),state=saved.character,model=sheetModel(state);return {state,model,live:playView(state,model),revision:saved.revision};}
@@ -90,9 +90,13 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sp
       if(!target)throw fault(409,'La cible a quitté le combat.');
       if(target.spellReceipts?.[op.receiptId])return;
       if(spellStamp(target.playState)!==op.beforeStamp)throw fault(409,'Les PV ou états de la cible ont changé. Reprenez la résolution.');
-      await write(fresh,{participants:fresh.participants.map(row=>row.id===p.id?{...row,playState:op.character.playState,spellReceipts:{...(row.spellReceipts||{}),[op.receiptId]:true}}:row)},'Effet de sort enregistré sur '+p.name+'.',{allowInactive:true});
+      await write(fresh,{participants:fresh.participants.map(row=>row.id===p.id?{...row,playState:op.character.playState,spellReceipts:{...(row.spellReceipts||{}),[op.receiptId]:true}}:row)},(op.kind==='potion-heal'?'Soin de potion':'Effet de sort')+' enregistré sur '+p.name+'.',{allowInactive:true});
     },
     getView:(actor,groupId)=>api.get(actor,groupId)
+  };
+  if(spellCollection)spellService=createCombatSpells({...resolutionHooks,collection:spellCollection,npcSpells:spellCatalogue,applyPlayAction,now,randomFace:attackRandomFace});
+  if(potionCollection)potionService=createCombatPotions({...resolutionHooks,collection:potionCollection,applyPlayAction,now,randomFace:attackRandomFace,
+    hasReceipt:async(ctx,p,id)=>p.kind==='pc'?Boolean(await characters.combatReceiptAny(p.characterId,id)):resolutionHooks.hasReceipt(ctx,p,id)
   });
   const spells=()=>{if(!spellService)throw fault(503,'Les sorts en combat sont momentanément indisponibles.');return spellService;};
   async function afterMutation(actor,groupId){
@@ -101,7 +105,9 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sp
     catch{warning='La commande est enregistrée. Des effets de sorts restent à vérifier : utilisez Vérifier les effets en cours.';}
     const result=await api.get(actor,groupId);return {...result,...(warning?{spellWarning:warning}:{})};
   }
+  const potions=()=>{if(!potionService)throw fault(503,'Les potions en combat sont momentanément indisponibles.');return potionService;};
   api={
+    potionOptions:(...args)=>potions().options(...args),potionPrepare:(...args)=>potions().prepare(...args),potionRoll:(...args)=>potions().roll(...args),potionConfirm:(...args)=>potions().confirm(...args),potionRetry:(...args)=>potions().retry(...args),potionRecheck:(...args)=>potions().recheck(...args),potionCancel:(...args)=>potions().cancel(...args),
     spellOptions:(...args)=>spells().options(...args),spellPrepare:(...args)=>spells().prepare(...args),spellApprove:(...args)=>spells().approve(...args),spellRoll:(...args)=>spells().roll(...args),spellDamage:(...args)=>spells().damage(...args),spellConfirm:(...args)=>spells().confirm(...args),spellRetry:(...args)=>spells().retry(...args),spellEnd:(...args)=>spells().end(...args),spellConcentration:(...args)=>spells().concentration(...args),spellReconcile:(...args)=>spells().reconcile(...args),spellSync:(...args)=>spells().sync(...args),spellPulse:(...args)=>spells().pulse(...args),spellRecheck:(...args)=>spells().recheck(...args),spellTimer:(...args)=>spells().timer(...args),spellAdjudicate:(...args)=>spells().adjudicate(...args),
     attackOptions:attackService.options,
     rollAttack:attackService.roll,
@@ -182,6 +188,7 @@ export function createCombatStore({collection,groups,characters,bestiary=null,sp
         fields.participants=imported(group,combat.participants);if(fields.participants.length>100)throw fault(400,'Le combat est limité à 100 participants.');
         message='Personnages du groupe ajoutés.';
       }else if(input.type==='remove'){
+        if(potionService)await potionService.beforeRemove(combat.id,input.participantId);
         if(!p)throw fault(404,'Participant introuvable.');
         fields.participants=combat.participants.filter(row=>row.id!==p.id);
         if(combat.currentId===p.id){const order=combatOrder(combat.participants),index=order.findIndex(row=>row.id===p.id);fields.currentId=order[(index+1)%order.length]?.id||null;if(fields.currentId===p.id)fields.currentId=null;}

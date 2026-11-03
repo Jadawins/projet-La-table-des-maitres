@@ -56,7 +56,10 @@ const bestiary=createBestiaryStore({collection:mongo.db('myrpgtable').collection
 const spellCollection=mongo.db('myrpgtable').collection('sorts_combats_refonte');
 await spellCollection.createIndex({id:1},{unique:true});
 await spellCollection.createIndex({groupId:1,combatId:1,createdAt:-1});
-const combats=createCombatStore({spellCatalogue:catalogue.spells,collection:combatCollection,spellCollection,groups,characters,bestiary,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
+const potionCollection=mongo.db('myrpgtable').collection('potions_combats_refonte');
+await potionCollection.createIndex({id:1},{unique:true});
+await potionCollection.createIndex({groupId:1,combatId:1,createdAt:-1});
+const combats=createCombatStore({potionCollection,spellCatalogue:catalogue.spells,collection:combatCollection,spellCollection,groups,characters,bestiary,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
 const server=createGateway({supabaseUrl:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,anonKey:process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_KEY,appRoot,characters,groups,combats,bestiary,messages,loot,admin,adminEmails:(process.env.REFONTE_ADMIN_EMAILS||'').split(',').filter(Boolean),catalogueText});
 server.on('close',()=>mongo.close());
 server.listen(Number(process.env.REFONTE_ACCESS_PORT||4181),'127.0.0.1',()=>console.log('Accès refonte prêt sur la boucle locale.'));

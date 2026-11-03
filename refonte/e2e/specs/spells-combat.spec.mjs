@@ -24,7 +24,7 @@ async function setup(page,browser,{classId='clerc',spellId=null}={}){
 }
 const panel=page=>page.locator('[data-spell-panel]');
 async function propose(t,name){
-  const root=panel(t.player);await root.getByLabel('Lanceur de sorts').selectOption(t.pc.id);await root.getByRole('button',{name:'Afficher les sorts sans lancer'}).click();
+  const root=panel(t.player);await root.getByLabel('Lanceur de sorts').selectOption(t.pc.id);const load=root.getByRole('button',{name:'Afficher les sorts sans lancer'});await Promise.all([t.player.waitForResponse(r=>r.request().method()==='GET'&&r.url().includes('/combat/sorts?caster=')),load.click()]);await expect(load).toBeEnabled();await expect(root.getByLabel('Sort de la fiche')).toHaveValue('');
   const option=root.locator('select[name=spellKey] option').filter({hasText:name}).first();await root.getByLabel('Sort de la fiche').selectOption(await option.getAttribute('value'));
   const form=root.locator('[data-casting-form=prepare]');if(name==='Soins')await form.getByLabel('Ressource utilisée').selectOption('spell-1');if(name==='Boule de feu')await form.getByLabel('Ressource utilisée').selectOption('spell-3');
   await form.getByLabel('Adversaire',{exact:true}).check();await form.getByRole('button',{name:'Proposer le sort au MJ'}).click();
