@@ -1,3 +1,4 @@
+import {walletCoins} from './wallet-state.mjs';
 import {equipmentItems,wornEquipment} from './equipment-state.mjs';
 import {ABILITIES,normalize,skillKey,mainAbility,modifier,finalScores,classData,classProfile,clericProfile,hitPoints,spellErrors,aptitudeErrors,backgroundBonuses} from './character-rules.mjs';
 import {originSkills,originTools,originFeats,originBonuses,selectedVariant,grantedOriginSpells,originErrors,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
@@ -94,7 +95,7 @@ export function sheetModel(state,c) {
   if(background&&state.backgroundEquipment==='B')money.po+=50;
   if(subclass?.id==='roublard_assassin')for(const id of ['accessoires_de_deguisement','materiel_d_empoisonneur']){const tool=c.tools.find(t=>t.id===id);if(tool)addItem(tool.nom,1,'Outils d’assassin');}
   const possessions=equipmentItems(state,inventory,c),worn=wornEquipment(state,possessions);
-  const activeInventory=worn===null?inventory:worn.map(i=>({nom:i.weapon?.nom||i.armor?.nom||i.nom,quantity:i.quantity}));
+  const activeInventory=worn===null?possessions.filter(i=>i.ref.startsWith('start:')).map(i=>({nom:i.nom,quantity:i.quantity})):worn.map(i=>({nom:i.weapon?.nom||i.armor?.nom||i.nom,quantity:i.quantity}));
   const armor=activeInventory.map(i=>c.armors.find(a=>normalize(a.nom)===normalize(i.nom))).filter(Boolean);
   const suits=armor.filter(a=>a.classe_armure?.base), shields=armor.filter(a=>a.categorie==='bouclier');
   const armorTraining=[...classTraining(state,c).armors,...(benefits.heavy?['armures_lourdes']:[]),...effects.armors];
@@ -285,5 +286,6 @@ export function sheetModel(state,c) {
   if(effects.has('tueur_de_mages'))classResources.push({nom:'Esprit protégé',valeur:'1 utilisation',details:'Transforme un échec de JS INT/SAG/CHA en réussite ; récupérée au Repos court ou long.'});
   if(subclass?.id==='rodeur_vagabond_feerique')classResources.push({nom:'Charme d’outremonde',valeur:mods.SAG===null?'À compléter':'+'+Math.max(1,mods.SAG),details:'Bonus à tous les tests de Charisme ; déjà inclus dans les compétences de Charisme de la fiche.'});
   if(state.classId==='moine'&&subclass?.id==='moine_credo_elements'&&state.level>=11)classResources.push({nom:'Foulée des éléments',valeur:speed+' m',details:'Vol et nage pendant l’Harmonisation uniquement ; aucune vitesse permanente supplémentaire.'});
+  if(state.wallet!==undefined)Object.assign(money,walletCoins(state,money));
   return {speciesResources:speciesResources({...state,level:state._characterLevel||state.level},c,mods,proficiency,speed),ruleNotices:[...equipmentNotices,profile?.spellcastingNote,...grantedOriginSpells(state,c).filter(s=>s.unresolved).map(s=>`Espèce : fiche de sort à relier — ${s.nom}.`)].filter(Boolean).join(' '),swim,blindvision,immunities,classEffects,classResources,attacksPerAction:profile?.attacks||1,effects,speed,darkvision,climb:effects.climb||subclass?.id==='roublard_voleur'||subclass?.id==='barbare_voie_coeur_sauvage'&&state.level>=6&&state.classChoices?.wildAspect?.[0]==='Panthère'||state.classId==='rodeur'&&state.level>=6?speed:null,resistances:[...new Set(resistances.filter(r=>!r.startsWith('variable_')).map(r=>({necrotique:'nécrotique',radiance:'radiant'}[damageKey(r)]||damageKey(r))))],cls,species,background,subclass,variant:selectedVariant(state,c),scores,mods,proficiency,skills,saves,inventory,possessions,equippedShield:shields.length>0,money,attacks,ac,acNote,magic,spells,slots:profile?.slots||{},hp:hitPoints(state,c),initiative:mods.DEX===null||subclass?.id==='rodeur_traqueur_tenebres'&&mods.SAG===null?null:mods.DEX+bonuses.initiative+(subclass?.id==='rodeur_traqueur_tenebres'?mods.SAG:0),passive:perception?.value===null||perception?.value===undefined?null:10+perception.value,classFeatures,subclassFeatures,feats:originFeats(state,c),tools:[...new Set([...originTools(state,c),...effects.tools,...classEffects.tools])],errors:[...new Set(errors)],base,weaponTraining,armorTraining,progression,levelFeats,channel:profile?.channel,sparkDice:profile?.sparkDice,sacredStrike:state.classId==='clerc'&&state.level>=7?state.sacredStrike:''};
 }

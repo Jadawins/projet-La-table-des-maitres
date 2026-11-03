@@ -1,3 +1,4 @@
+import {validateWallet} from './wallet-state.mjs';
 import {validateEquipmentState,validateSpent,validateLastUse,POTIONS,itemCatalogueId} from './equipment-state.mjs';
 import {ABILITIES,backgroundBonuses,clericProfile,aptitudeErrors,spellErrors,classProfile} from './character-rules.mjs';
 import {originErrors,grantInitial,backgroundEquipmentErrors,backgroundKitOptions,backgroundItemName} from './origin-rules.mjs';
@@ -19,6 +20,7 @@ export function characterSnapshot(state){
   out.advancements=Object.fromEntries(Object.entries(out.advancements).map(([level,row])=>[level,{...advancementInitial(),...row,choices:{...featChoicesInitial(),...row.choices}}]));
   if(state.playState!==undefined)out.playState=validatePlayState(state.playState);
   if(state.multiclass!==undefined)out.multiclass=structuredClone(state.multiclass);
+  if(state.wallet!==undefined)out.wallet=validateWallet(state.wallet);
   if(state.inventoryItems!==undefined)out.inventoryItems=validateInventory(state.inventoryItems);
   if(state.equipmentState!==undefined)out.equipmentState=validateEquipmentState(state.equipmentState);
   if(state.inventorySpent!==undefined)out.inventorySpent=validateSpent(state.inventorySpent);
@@ -32,6 +34,7 @@ function validateSingleCharacter(input,catalogue,context={}){
   const version=catalogue.provenance?.revision?.id||CURRENT_RULES_VERSION;
   if(input.rulesVersion!==version){const error=new Error('Cette fiche utilise une ancienne version des règles. Créez explicitement une copie à mettre à niveau.');error.status=409;throw error;}
   const out={schemaVersion:2,rulesVersion:version};
+  if(input.wallet!==undefined)out.wallet=validateWallet(input.wallet);
   if(input.inventoryItems!==undefined)out.inventoryItems=validateInventory(input.inventoryItems);
   if(input.equipmentState!==undefined)out.equipmentState=validateEquipmentState(input.equipmentState);
   if(input.inventorySpent!==undefined)out.inventorySpent=validateSpent(input.inventorySpent);

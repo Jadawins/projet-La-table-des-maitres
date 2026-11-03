@@ -28,3 +28,5 @@ Les formules des potions proviennent du [SRD 5.2.1 français, page 254](https://
 Tests du lot : `tests/equipment.test.mjs` et `e2e/specs/equipment.spec.mjs`, avec les régressions de fiches, de dons, de combat, de sauvegarde et de permissions. La preuve `audit/verify-equipment.mjs` compare aussi les 48 sous-classes aux niveaux 3 et 20 avec le modèle précédemment publié, sans nouvel équipement explicite. Elle ne prétend pas revalider les règles documentaires gelées.
 
 `audit/check-equipment-persistence.mjs` écrit uniquement dans une collection de contrôle et compare les empreintes des collections réelles avant/après. `audit/deploy-equipment.sh` exige sauvegarde complète, contrôles avant bascule, retour arrière et contrôles après bascule. Le rapport de publication est conservé dans l’audit.
+
+Ce lot est complété le 3 novembre 2026 par [la bourse, les achats et les ventes](BOURSE-ACHATS-VENTES.md). Les limites d’argent courant citées ci-dessus décrivent le périmètre de la livraison initiale, avant ce complément.

@@ -90,3 +90,8 @@
 .item-use-dialog [name=die] { width:5rem; }
 .item-use-dialog [data-use-roll]>label { display:block; margin:.8rem 0; }
 @media print { [data-equipment-action], [data-use-inventory] { display:none !important; } }
+
+.wallet-balances { display:grid; grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); gap:.75rem; }
+[data-wallet] details { margin:1rem 0; }
+.wallet-history li { margin:1rem 0; }
+@media print { [data-wallet-action] { display:none !important; } }
