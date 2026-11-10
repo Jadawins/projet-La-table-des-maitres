@@ -2,12 +2,12 @@ export const welcomeText = 'Bienvenue à ma table ! J’ai créé cet espace pou
 export const booksNotice = 'Cette application accompagne vos parties et ne remplace pas les livres de règles. Pour profiter de l’ensemble des règles et de leurs explications, nous vous recommandons d’acheter les ouvrages officiels et de soutenir leurs créateurs.';
 
 const features = [
-  ['01', 'Personnages', 'Un héros qui vous ressemble', 'Douze classes, 48 sous-classes, espèces, historiques, dons, équipement et choix de sorts. Créez votre personnage du niveau 1 au niveau 20.'],
-  ['02', 'Fiches & impression', 'Du compte à la table', 'Retrouvez vos personnages en ligne, complétez leur histoire et ajoutez vos objets avec leur quantité et leur description. Téléchargez la feuille PDF remplie, avec les objets de votre inventaire.'],
+  ['01', 'Personnages', 'Un héros qui vous ressemble', 'Créez votre personnage du niveau 1 au niveau 20. Choisissez parmi douze classes et 48 sous-classes, puis personnalisez son espèce, son historique, ses langues et ses aptitudes.'],
+  ['02', 'Fiches & impression', 'Du compte à la table', 'Complétez l’histoire et les langues sur vos fiches en ligne. Gérez votre équipement, votre inventaire et votre bourse, puis téléchargez la fiche PDF remplie.'],
   ['03', 'Évolution', 'Le prochain niveau vous attend', 'Faites évoluer une fiche existante : points de vie, aptitudes, dons et sorts. Le multiclassage est disponible, jusqu’au niveau total 20.'],
   ['04', 'Suivi en partie', 'Gardez le fil de l’aventure', 'Suivez les PV, les PV temporaires, les réserves prises en charge, les emplacements de sorts, les repos, les états et les sauvegardes contre la mort.'],
-  ['05', 'Groupes & messages', 'Une place pour chaque rôle', 'Créez ou rejoignez une table comme joueur ou MJ, avec les invitations adaptées. Le MJ peut envoyer un message privé à un ou plusieurs membres : un pop-up apparaît dans leur atelier et reste disponible à leur retour.'],
-  ['06', 'Combat & bestiaire', 'La rencontre prend vie', 'Bestiaire, initiatives, tours, attaques et sorts : choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les cibles, dégâts, soins et états. Retrouvez aussi la concentration et les durées déclarées.'],
+  ['05', 'Groupes & messages', 'Une place pour chaque rôle', 'Créez ou rejoignez une table comme joueur ou MJ. Le MJ peut répartir le butin et envoyer des messages privés aux membres choisis. Les messages s’affichent dans l’atelier et restent disponibles au retour des joueurs.'],
+  ['06', 'Combat & bestiaire', 'La rencontre prend vie', 'Bestiaire, initiatives, tours, attaques et sorts : choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les effets, y compris les soins par potion. Le combat suit aussi la concentration et les durées déclarées.'],
   ['07', 'Grimoire', 'La bonne information, au bon moment', 'Recherchez un sort, une classe, une sous-classe, une espèce, un historique, un don ou une pièce d’équipement dans le catalogue utilisé par vos fiches.'],
   ['08', 'Comptes & administration', 'Vos personnages trouvent leur place', 'Inscrivez-vous et retrouvez vos personnages dans votre compte. Un espace réservé à la gestion du site rassemble les métriques d’inscription et l’attribution des personnages aux comptes existants.']
 ];
@@ -34,11 +34,26 @@ export function renderHomeContent({publicPage = false} = {}) {
     <div class="home-facts" aria-label="La création en quelques chiffres"><p><strong>12</strong><span>classes</span></p><p><strong>48</strong><span>sous-classes</span></p><p><strong>1–20</strong><span>niveaux de personnage</span></p><p class="home-fact-dice"><strong>Vos dés.</strong><span>Votre façon de jouer.</span></p></div>
 
     <section class="home-section" id="nouveautes" aria-labelledby="home-news-title">
-      <div class="home-section-heading"><div><p class="home-kicker">LE JOURNAL DE LA TABLE</p><h2 id="home-news-title">Tout juste dans le grimoire.</h2></div><p>Mise à jour du 3 novembre 2026</p></div>
+      <div class="home-section-heading"><div><p class="home-kicker">LE JOURNAL DE LA TABLE</p><h2 id="home-news-title">Tout juste dans le grimoire.</h2></div><p>Mise à jour du 10 novembre 2026</p></div>
       <div class="home-news-grid">
-        <article class="home-news home-news-featured"><p class="home-badge">NOUVEAU · MESSAGES DU MJ</p><h3>Le MJ vous écrit,<br>en toute discrétion.</h3><p>Le MJ choisit un ou plusieurs membres du groupe et leur envoie un message privé. Un pop-up s’affiche dans l’atelier, avec « J’ai lu » ou « Relire plus tard ». Les joueurs absents le retrouvent à leur retour.</p><span class="home-news-foot">Le message reste privé entre les personnes choisies et le MJ.</span></article>
-        <article class="home-news"><p class="home-badge">NOUVEAU · INVENTAIRE</p><h3>Vos trouvailles<br>ont leur place.</h3><p>Ajoutez les objets reçus, achetés ou trouvés : un nom, une quantité et une description. Modifiez-les ou retirez-les depuis la fiche ; leurs noms et quantités apparaissent aussi dans le PDF. Les effets particuliers se vérifient à la table.</p><span class="home-news-foot">Équipement → Objets ajoutés en partie.</span></article>
-        <article class="home-news"><p class="home-badge">RÉCENT · SORTS EN COMBAT</p><h3>Vos sorts,<br>le dernier mot au MJ.</h3><p>Proposez un sort depuis votre fiche et choisissez vos dés physiques ou ceux de l’application. Le MJ confirme les cibles, les dégâts et les soins. Retrouvez aussi le suivi de la concentration et des durées.</p><span class="home-news-foot">Les alliés dans une zone peuvent aussi être concernés.</span></article>
+        <article class="home-news home-news-featured">
+          <p class="home-badge">NOUVEAU · LANGUES DE DÉPART</p>
+          <h3>Quelles langues parle<br>votre personnage ?</h3>
+          <p>Votre personnage connaît le commun et choisit deux langues courantes à la création. Vous pouvez compléter les fiches existantes depuis l’onglet Histoire. Les langues figurent sur la fiche et dans le PDF.</p>
+          <span class="home-news-foot">Origines à la création · Histoire sur une fiche existante.</span>
+        </article>
+        <article class="home-news">
+          <p class="home-badge">RÉCENT · POTIONS EN COMBAT</p>
+          <h3>Un allié blessé ?<br>Tendez-lui une potion.</h3>
+          <p>Choisissez une potion de votre inventaire, la créature à soigner et vos dés. Le MJ valide l’utilisation pour consommer la potion et appliquer les soins.</p>
+          <span class="home-news-foot">Combat → Potions sur une autre créature.</span>
+        </article>
+        <article class="home-news">
+          <p class="home-badge">RÉCENT · BOURSE ET BUTIN</p>
+          <h3>De la trouvaille<br>à la bourse.</h3>
+          <p>Suivez vos pièces, achetez et vendez depuis votre fiche. Le MJ peut répartir les objets et l’argent du butin entre les personnages du groupe.</p>
+          <span class="home-news-foot">Équipement → Bourse et achats · Mes groupes → Butin.</span>
+        </article>
       </div>
     </section>
 

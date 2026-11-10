@@ -1,0 +1,27 @@
+{
+  "status": "published",
+  "patchId": "20261110T074137Z",
+  "baseRelease": "20261110T072710Z",
+  "completedAt": "2026-11-10T07:41:42.261Z",
+  "backup": "/root/backups/myrpgtable-home-news-20261110T074137Z",
+  "serviceRestarted": false,
+  "publicStatus": 200,
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "643e32b2f6a8482a0e80e2d95abf7ebdc04131d8c2013615f8bc1cb1a1717bf7",
+      "baseline": "80510150cca3fb11ef35de728f14593ce475bc251e688c03608e4d468407441d"
+    },
+    {
+      "file": "home-content.mjs",
+      "sha256": "61be06f703b73b39b4275fbcef74fa6bfcc0ff40b4fc2843f07ed2559242e111",
+      "baseline": "b079598ddfb7c9674a4d269f4d86526436f7ddc5b3a83500965b8bd8ea45418d"
+    }
+  ],
+  "verification": {
+    "unitPassed": 3,
+    "browserJourneys": 2,
+    "baselineCommit": "88c740f84"
+  },
+  "publicVerified": true
+}
