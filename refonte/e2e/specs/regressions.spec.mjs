@@ -1,5 +1,5 @@
 import {test,expect,origin,signIn} from '../fixtures.mjs';
-import {domains,createThroughUI,saveAndLocate} from '../journey.mjs';
+import {domains,createThroughUI,saveAndLocate,chooseStartingLanguages} from '../journey.mjs';
 const domain=domains.find(d=>d._source==='clerc_domaine_vie');
 test('Choix vides et validation sans lancer de dés @quick',async({page})=>{
   await page.goto('/atelier/#nouveau');
@@ -13,6 +13,14 @@ test('Choix vides et validation sans lancer de dés @quick',async({page})=>{
   await page.locator('[data-choice="speciesId"][data-id="orc"]').click();await page.locator('[data-choice="backgroundId"][data-id="charlatan"]').click();await page.locator('#next').click();
   await expect(page.locator('[data-step="2"]')).toHaveAttribute('aria-current','step');
   for(let i=0;i<3;i++)await page.locator('[data-grant-slot="background"][data-grant-choice]').nth(i).check();
+  await expect(page.locator('[data-starting-language]:checked')).toHaveCount(0);
+  await page.locator('#next').click();
+  await expect(page.locator('#toast')).toContainText('Choisissez deux langues de départ');
+  await chooseStartingLanguages(page);
+  await expect(page.getByRole('checkbox',{name:'Draconique',exact:true})).toBeDisabled();
+  await page.reload();
+  await expect(page.getByRole('checkbox',{name:'Elfique',exact:true})).toBeChecked();
+  await expect(page.getByRole('checkbox',{name:'Nain',exact:true})).toBeChecked();
   await page.locator('#next').click();
   await expect(page.locator('[data-step="3"]')).toHaveAttribute('aria-current','step');
   await expect(page.locator('input[data-stat]')).toHaveCount(6);
@@ -28,6 +36,8 @@ test('Faveur, modification et réouverture sans doublon @quick',async({page,brow
   const href=await saveAndLocate(page,name),id=href.replace('#ouvrir/','');
   await page.locator('[data-sheet-tab="story"]').click();
   await page.locator('.sheet-editor > summary').click();
+  await page.getByRole('checkbox',{name:'Nain',exact:true}).uncheck();
+  await page.getByRole('checkbox',{name:'Draconique',exact:true}).check();
   await page.locator('input[data-sheet-detail="player"]').fill('Joueur E2E');
   await page.locator('textarea[data-sheet-detail="story"]').fill('Une histoire modifiée depuis la fiche.');
   await page.locator('#save-sheet-details').click();
@@ -40,7 +50,8 @@ test('Faveur, modification et réouverture sans doublon @quick',async({page,brow
   try{
     const reopened=await fresh.newPage();await reopened.goto('/atelier/'+href);await expect(reopened.locator('.sheet-hero h1')).toHaveText(name);
     await reopened.locator('[data-sheet-tab="story"]').click();await expect(reopened.locator('textarea[data-sheet-detail="story"]')).toHaveValue('Une histoire modifiée depuis la fiche.');
-    await reopened.locator('[data-sheet-tab="combat"]').click();await expect(reopened.locator('#sheet-panel-combat')).toContainText('feu · froid');
+    await reopened.locator('[data-sheet-tab="combat"]').click();
+    await expect(reopened.locator('[data-known-languages]')).toHaveText('Commun · Draconique · Elfique');await expect(reopened.locator('#sheet-panel-combat')).toContainText('feu · froid');
     await reopened.screenshot({path:info.outputPath('faveur-enregistree.png'),fullPage:false});
   }finally{await fresh.close();}
 });

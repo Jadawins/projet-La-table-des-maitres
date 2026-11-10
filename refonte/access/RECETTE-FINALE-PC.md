@@ -23,6 +23,7 @@ Prévoir deux comptes de test et des personnages identifiables comme tels. Un co
 - [ ] Essayer les classes de la table (barbare, rôdeur, barde, druide et clerc) → choix compréhensibles, rubriques et ressources utiles présentes.
 - [ ] Enregistrer puis actualiser et rouvrir depuis Mes personnages → même fiche et mêmes choix, sans doublon de brouillon « en cours ».
 - [ ] Modifier l’histoire et les langues → texte conservé après enregistrement et réouverture.
+- [ ] Choisir les deux langues de départ dans Origines, puis compléter une fiche existante depuis Histoire en édition administrateur → commun, deux choix et langue libre visibles après réouverture et dans le PDF.
 - [ ] Monter de niveau sur une fiche de test → nouveaux choix disponibles, choix précédents et suivi de partie conservés selon l’aperçu.
 - [ ] Faire une montée multiclassée valide puis tenter une classe sans prérequis → première acceptée, seconde expliquée et refusée.
 - [ ] Modifier la même fiche dans deux onglets → l’ancienne version n’écrase pas la plus récente ; le conflit est compréhensible.

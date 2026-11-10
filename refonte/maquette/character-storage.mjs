@@ -1,3 +1,4 @@
+import {STARTING_LANGUAGE_COUNT, STARTING_LANGUAGE_PROMPT, validateStartingLanguages} from './language-rules.mjs';
 import {validateWallet} from './wallet-state.mjs';
 import {validateEquipmentState,validateSpent,validateLastUse,POTIONS,itemCatalogueId} from './equipment-state.mjs';
 import {ABILITIES,backgroundBonuses,clericProfile,aptitudeErrors,spellErrors,classProfile} from './character-rules.mjs';
@@ -16,6 +17,7 @@ export function characterSnapshot(state){
   for(const key of strings)out[key]=state[key]??'';
   for(const key of ['level','scores','rolls','step','classSkills','cantrips','prepared','hpRolls','originGrants','details','advancements'])out[key]=state[key]??({details:{},advancements:{},hpRolls:{},rolls:[],step:0,originGrants:{background:grantInitial(),human:grantInitial()}}[key]);
   out.originGrants=Object.fromEntries(ORIGIN_SLOTS.map(slot=>[slot,{...grantInitial(),...state.originGrants?.[slot]}]));
+  if(state.startingLanguages!==undefined)out.startingLanguages=validateStartingLanguages(state.startingLanguages);
   out.classChoices=state.classChoices||{};
   out.advancements=Object.fromEntries(Object.entries(out.advancements).map(([level,row])=>[level,{...advancementInitial(),...row,choices:{...featChoicesInitial(),...row.choices}}]));
   if(state.playState!==undefined)out.playState=validatePlayState(state.playState);
@@ -34,6 +36,7 @@ function validateSingleCharacter(input,catalogue,context={}){
   const version=catalogue.provenance?.revision?.id||CURRENT_RULES_VERSION;
   if(input.rulesVersion!==version){const error=new Error('Cette fiche utilise une ancienne version des règles. Créez explicitement une copie à mettre à niveau.');error.status=409;throw error;}
   const out={schemaVersion:2,rulesVersion:version};
+  if(input.startingLanguages!==undefined)out.startingLanguages=validateStartingLanguages(input.startingLanguages);
   if(input.wallet!==undefined)out.wallet=validateWallet(input.wallet);
   if(input.inventoryItems!==undefined)out.inventoryItems=validateInventory(input.inventoryItems);
   if(input.equipmentState!==undefined)out.equipmentState=validateEquipmentState(input.equipmentState);
@@ -73,6 +76,7 @@ function validateSingleCharacter(input,catalogue,context={}){
   Object.assign(out,context);
   if(out.equipmentState!==undefined||out.inventorySpent!==undefined){const model=sheetModel(out,catalogue);for(const [ref,count]of Object.entries(out.inventorySpent||{})){const item=model.inventory.find(i=>'start:'+i.nom.normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]/g,'')===ref);if(!item||count>item.quantity)fail('La quantité consommée dépasse le matériel de départ.');}}
   const issues=[...originErrors(out,catalogue),...aptitudeErrors(out,catalogue),...spellErrors(out,catalogue)];
+  if(out.startingLanguages && out.startingLanguages.length!==STARTING_LANGUAGE_COUNT && !context._secondaryClass)issues.push(STARTING_LANGUAGE_PROMPT);
   if(!out.classId)issues.push('Classe à choisir.');
   if(ABILITIES.some(key=>out.scores[key]===null))issues.push('Caractéristiques à compléter.');
   const bg=catalogue.backgrounds.find(b=>b.id===out.backgroundId),cls=catalogue.classes.find(c=>c.id===out.classId);

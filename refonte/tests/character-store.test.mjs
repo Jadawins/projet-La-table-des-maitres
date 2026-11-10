@@ -1,3 +1,4 @@
+import {pdfValues} from '../maquette/character-pdf.mjs';
 import {sheetModel} from '../maquette/sheet-model.mjs';
 import {beginAdvancement,finishAdvancement,advancementContext} from '../maquette/character-advancement.mjs';
 import {classChoiceSpecs} from '../maquette/class-profiles.mjs';
@@ -109,4 +110,29 @@ test('Les états et jets sont conservés pour les anciens clients, et un mort ne
   const kept=await store.save('a',id,old,1);for(const key of ['conditions','exhaustion','deathSaves','zeroHpConscious'])assert.deepEqual(kept.character.playState[key],first.character.playState[key]);
   const dead=structuredClone(kept.character);dead.playState.deathSaves={successes:0,failures:3,stable:false,dead:true};await store.save('a',id,dead,2);
   old.playState.hpLost=max-1;await assert.rejects(store.save('a',id,old,3),e=>e.status===409);
+});
+
+test("Langues de départ ajoutées à une fiche existante, conservées dans la sauvegarde et le PDF",async()=>{
+  const {store}=setup();
+  const original=classFixture(c,'clerc',3,'clerc_domaine_vie',{divineOrder:'Protecteur'});
+  original.details={languages:'Sylvestre'};
+  const first=await store.save('a',id,original,0);
+  assert.equal(first.status,'ready');
+  assert.equal(first.character.startingLanguages,undefined);
+  const pending=validateSavedCharacter({...first.character,startingLanguages:['elfique']},c);
+  assert.equal(pending.status,'draft');
+  assert.match(pending.issues.join(' '),/deux langues de départ/);
+  for(const invalid of [['commun','elfique'],['elfique','elfique'],['nain','sylvestre'],['orc','nain','elfique']]){
+    await assert.rejects(store.save('a',id,{...first.character,startingLanguages:invalid},1),e=>e.status===400);
+  }
+  const updated=characterSnapshot({...first.character,startingLanguages:['elfique','nain']});
+  const second=await store.save('a',id,updated,1);
+  assert.equal(second.status,'ready');
+  assert.equal(pdfValues(second.character,c).text.languages,'Commun, Elfique, Nain, Sylvestre');
+  const previousClient=structuredClone(second.character);
+  delete previousClient.startingLanguages;
+  previousClient.details.story='Note ajoutée depuis un ancien onglet';
+  const third=await store.save('a',id,previousClient,2);
+  assert.deepEqual(third.character.startingLanguages,['elfique','nain']);
+  assert.equal(third.character.details.languages,'Sylvestre');
 });

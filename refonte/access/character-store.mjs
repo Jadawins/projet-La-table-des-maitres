@@ -81,7 +81,7 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       if(!validCharacterId(id)||!Number.isInteger(revision)||revision<0)throw fault(400,'Référence de sauvegarde invalide.');
       const filter={user_id:userId,client_id:id};let previous=await collection.findOne(filter);
       if(strictRevision&&previous?.revision!==revision)throw fault(409,'Ce personnage a été modifié ailleurs. Actualisez avant de recommencer.');
-      for(const key of ['inventoryItems','equipmentState','inventorySpent','inventoryLastUse','wallet'])if(input?.[key]===undefined&&previous?.character?.[key]!==undefined)input={...input,[key]:previous.character[key]};
+      for(const key of ['inventoryItems','equipmentState','inventorySpent','inventoryLastUse','wallet','startingLanguages'])if(input?.[key]===undefined&&previous?.character?.[key]!==undefined)input={...input,[key]:previous.character[key]};
       let result=validate(input);
       if((previous?.character?.playState?.deathSaves?.dead||previous?.character?.playState?.exhaustion===6)&&input.playState&&input.playState.deathSaves===undefined&&input.playState.hpLost!==previous.character.playState.hpLost)throw fault(409,'Le suivi vital a changé. Actualisez la fiche pour gérer un retour à la vie ; votre brouillon est conservé.');
       if(previous?.character?.multiclass&&input.multiclass===undefined)throw fault(409,'Cette fiche est multiclassée. Actualisez le site avant de modifier ses niveaux.');

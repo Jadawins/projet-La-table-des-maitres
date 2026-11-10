@@ -1,6 +1,6 @@
 import {readFile} from 'node:fs/promises';
 import {test,expect,origin} from '../fixtures.mjs';
-import {saveAndLocate} from '../journey.mjs';
+import {chooseStartingLanguages,saveAndLocate} from '../journey.mjs';
 import {buildCatalogue} from '../../catalogue.mjs';
 import {classFixture} from '../../audit/class-fixtures.mjs';
 import {classChoiceSpecs} from '../../maquette/class-profiles.mjs';
@@ -17,6 +17,7 @@ async function build(page,s){
   await page.locator(`[data-choice="classId"][data-id="${s.classId}"]`).click();await next(page);
   await page.locator('[data-choice="speciesId"][data-id="orc"]').click();
   await page.locator('[data-choice="backgroundId"][data-id="charlatan"]').click();
+  await chooseStartingLanguages(page);
   for(const id of s.originGrants.background.proficiencies)await page.locator(`[data-grant-slot="background"][data-grant-choice="${id}"]`).check();
   await next(page);
   for(const [id,value]of Object.entries(s.scores))await page.locator(`[data-stat="${id}"]`).fill(String(value));

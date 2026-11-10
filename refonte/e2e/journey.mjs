@@ -6,6 +6,10 @@ export const domains=source.collections.sous_classes.filter(s=>s.classe_parente=
 export const abilities=['FOR','DEX','CON','INT','SAG','CHA'];
 export const baseScores={FOR:12,DEX:11,CON:14,INT:14,SAG:18,CHA:9};
 const next=async page=>page.locator('#next').click();
+export async function chooseStartingLanguages(page) {
+  await page.getByRole("checkbox",{name:"Elfique",exact:true}).check();
+  await page.getByRole("checkbox",{name:"Nain",exact:true}).check();
+}
 export async function createThroughUI(page,{name,level,domain,vocation,boon='faveur_de_memoire_magique',method='physical'}){
   await page.goto('/atelier/#nouveau');
   await expect(page.locator('#name')).toHaveValue('');
@@ -21,6 +25,7 @@ export async function createThroughUI(page,{name,level,domain,vocation,boon='fav
     const id=await page.locator('[data-grant-slot="background"][data-grant-choice^="tool:"]:not(:checked):not(:disabled)').first().getAttribute('data-grant-choice');
     await page.locator(`[data-grant-slot="background"][data-grant-choice="${id}"]`).check();
   }
+  await chooseStartingLanguages(page);
   await next(page);
   if(method==='standard')await page.locator('[data-method="standard"]').click();
   else for(const ability of abilities)await page.locator(`[data-stat="${ability}"]`).fill(String(baseScores[ability]));

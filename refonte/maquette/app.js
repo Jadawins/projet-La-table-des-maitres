@@ -12,7 +12,8 @@ import {renderHome,renderGrimoire,catalogueEntries,searchCatalogue,renderResults
 import {mountAdmin,adminRequest} from './admin-view.mjs';
 import {CURRENT_RULES_VERSION,usesCurrentRules,upgradedCharacterCopy} from './character-version.mjs';
 import {backgroundAbilities,backgroundBonuses,finalScores,modifier,visibleSteps,classProfile,clericProfile,pruneSpellChoices,spellErrors,classSkills,hitPoints,aptitudeErrors} from './character-rules.mjs';
-import {renderSheet} from './sheet-view.mjs';
+import {renderSheet,startingLanguageFields} from './sheet-view.mjs';
+import {STARTING_LANGUAGE_COUNT, STARTING_LANGUAGE_PROMPT, knownLanguages, startingLanguageNames, validateStartingLanguages} from './language-rules.mjs';
 import {detailFields,sheetModel} from './sheet-model.mjs';
 import {applyPlayAction,validatePlayState,restPreview,playView} from './play-state.mjs';
 import {characterSnapshot,validateSavedCharacter} from './character-storage.mjs';
@@ -46,7 +47,7 @@ const icons = { barbare: '⚒', barde: '♫', clerc: '✥', druide: '❧', ensor
 const descriptions = { barbare: 'La force à l’état brut.', barde: 'Le pouvoir des mots et de la musique.', clerc: 'Une vocation guidée par la foi.', druide: 'Une alliance avec le monde naturel.', ensorceleur: 'Une magie qui vient de l’intérieur.', guerrier: 'Votre arme, votre discipline.', magicien: 'L’étude ouvre toutes les portes.', moine: 'Le corps et l’esprit à l’unisson.', occultiste: 'Un pacte, un pouvoir, un prix.', paladin: 'Un serment pour guider vos pas.', rodeur: 'À l’aise au-delà des sentiers.', roublard: 'Toujours un coup d’avance.' };
 let catalogue,catalogueMaster;
 let isAdmin=false,grimoireEntries=[],grimoireQuery='',grimoireCategory='',grimoireLimit=24;
-let draft = initial();
+let draft = {...initial(),startingLanguages:[]};
 let adminEditing=null,personalDraft=null,personalEditor=null,adminLastHash='';
 const advancing=()=>Boolean(draft.advancementDraft);
 const creationSteps=()=>advancing()?[4,...(visibleSteps(draft,catalogue).includes(5)?[5]:[]),7]:visibleSteps(draft,catalogue);
@@ -70,6 +71,10 @@ try {
   const saved = JSON.parse(localStorage.getItem(draftKey) || 'null');
   if (saved && typeof saved === 'object') {
     draft.rulesVersion=typeof saved.rulesVersion==='string'?saved.rulesVersion:null;
+    delete draft.startingLanguages;
+    if(saved.startingLanguages!==undefined){
+      try{draft.startingLanguages=validateStartingLanguages(saved.startingLanguages);}catch{/* Keep the rest of the local draft. */}
+    }
     for (const key of ['name','classId','speciesId','backgroundId','equipment','backgroundKit','backgroundEquipment','bonusMode','bonusTwo','bonusOne','divineOrder','subclassId','hpMode','variantId','speciesSize','speciesSkill','speciesAncestry','speciesCastingAbility','speciesCantrip','originFeatId','backgroundTool','sacredStrike']) if (typeof saved[key] === 'string') draft[key] = saved[key].slice(0, 100);
     if(typeof saved.cloudId==='string'&&/^[0-9a-f-]{36}$/i.test(saved.cloudId))draft.cloudId=saved.cloudId;
     if(Number.isInteger(saved.cloudRevision)&&saved.cloudRevision>=0)draft.cloudRevision=saved.cloudRevision;
@@ -373,6 +378,7 @@ function origins() {
   ${bg?`<section class="rules-section first"><p>${esc(bg.description)}</p><div class="origin-grants"><span>Compétences : ${esc((bg.competences||[]).join(' · '))}</span><span>Outils : ${esc((bg.outils||[]).join(' · ')||'—')}</span></div>${tools.length?`<label class="field">Outil de votre historique<select data-origin-field="backgroundTool"><option value="">Choisir</option>${tools.map(tool=>`<option value="${esc(tool.id)}" ${draft.backgroundTool===tool.id?'selected':''}>${esc(tool.name)}</option>`).join('')}</select></label>`:''}</section>`:''}
   ${feats.find(g=>g.slot==='background')?featControls(feats.find(g=>g.slot==='background')):''}
   ${species?.id==='humain'?`<section class="rules-section"><h3>Le don de votre humain</h3><p>Polyvalent vous accorde un don d’origine supplémentaire. Choisissez celui qui correspond à votre personnage.</p><label class="field">Don d’origine<select data-origin-field="originFeatId"><option value="">Choisir un don</option>${humanFeats(draft,catalogue).map(feat=>`<option value="${esc(feat.id)}" ${draft.originFeatId===feat.id?'selected':''}>${esc(feat.nom)}</option>`).join('')}</select></label>${feats.find(g=>g.slot==='human')?featControls(feats.find(g=>g.slot==='human'),false):''}</section>`:''}
+  ${startingLanguageFields(draft)}
   ${originSpellSummary(draft)}`;
 }
 
@@ -392,7 +398,7 @@ function originSpellSummary(person) {
 function originReview(person) {
   const species=entry('species',person.speciesId);const variant=selectedVariant(person,catalogue);const size=person.speciesSize||originSizeOptions(person,catalogue)[0];
   const feats=originFeats(person,catalogue);const skills=originSkills(person,catalogue);const tools=originTools(person,catalogue);const bonuses=originBonuses(person,catalogue);
-  return `<div class="review"><div class="review-box full"><h3>Vos origines</h3><p>${esc(species?.nom||'À choisir')}${variant?` · ${esc(variant.nom)}`:''} · Taille ${esc(size||'à choisir')}</p><p>Maîtrises d’origine : ${esc(skills.join(' · ')||'—')}</p><p>Outils : ${esc(tools.join(' · ')||'—')}</p></div>${feats.map(grant=>`<div class="review-box full"><h3>${grant.label||(grant.slot==='human'?'Don humain':'Don d’historique')} · ${esc(grant.name)}</h3><p>${esc(grant.feat?.description||'Fiche à relier')}</p><ul>${(grant.feat?.effets||[]).map(effect=>`<li>${esc(effect.valeur)}</li>`).join('')}</ul></div>`).join('')}${bonuses.hp||bonuses.initiative?`<div class="review-box full"><h3>Bonus de vos dons</h3><p>${bonuses.hp?`PV maximum : +${bonuses.hp}. `:''}${bonuses.initiative?`Initiative : +${bonuses.initiative}.`:''}</p></div>`:''}</div>${originSpellSummary(person)}`;
+  return `<div class="review"><div class="review-box full"><h3>Vos origines</h3><p>${esc(species?.nom||'À choisir')}${variant?` · ${esc(variant.nom)}`:''} · Taille ${esc(size||'à choisir')}</p><p>Maîtrises d’origine : ${esc(skills.join(' · ')||'—')}</p><p>Outils : ${esc(tools.join(' · ')||'—')}</p><p>Langues de départ : ${esc(startingLanguageNames(person).join(' · '))}</p></div>${feats.map(grant=>`<div class="review-box full"><h3>${grant.label||(grant.slot==='human'?'Don humain':'Don d’historique')} · ${esc(grant.name)}</h3><p>${esc(grant.feat?.description||'Fiche à relier')}</p><ul>${(grant.feat?.effets||[]).map(effect=>`<li>${esc(effect.valeur)}</li>`).join('')}</ul></div>`).join('')}${bonuses.hp||bonuses.initiative?`<div class="review-box full"><h3>Bonus de vos dons</h3><p>${bonuses.hp?`PV maximum : +${bonuses.hp}. `:''}${bonuses.initiative?`Initiative : +${bonuses.initiative}.`:''}</p></div>`:''}</div>${originSpellSummary(person)}`;
 }
 
 function initiative(person) {const dex=modifier(finalScores(person,entry('backgrounds',person.backgroundId),catalogue).DEX);return dex===null?'—':signed(dex+originBonuses(person,catalogue).initiative);}
@@ -532,6 +538,7 @@ function validStep() {
   if (draft.step === 1 && !currentClass()) { toast('Choisissez une classe pour continuer.'); return false; }
   if (draft.step === 2 && (!currentSpecies() || !currentBackground())) { toast('Choisissez une espèce et un historique.'); return false; }
   if (draft.step === 2) {const errors=originErrors(draft,catalogue,{levelGrants:false});if(errors.length){toast(errors[0]);return false;}}
+  if (draft.step === 2 && draft.startingLanguages && draft.startingLanguages.length!==STARTING_LANGUAGE_COUNT) {toast(STARTING_LANGUAGE_PROMPT);return false;}
   if (draft.step === 3) {
     if (draft.statsMethod === 'physical') {
       if (!stats.every(s => Number.isInteger(draft.scores[s]) && draft.scores[s] >= 3 && draft.scores[s] <= 18)) { toast('Saisissez six résultats entiers entre 3 et 18.'); return false; }
@@ -545,6 +552,7 @@ function validStep() {
   if (draft.step === 5) {const errors=spellErrors(draft,catalogue);if(errors.length){toast(errors[0]);return false;}}
   if (draft.step === 6 && (!option() || backgroundEquipmentErrors(draft,catalogue).length)) { toast('Choisissez l’équipement de votre classe et de votre historique.'); return false; }
   if (draft.step === 7) {
+    if(draft.startingLanguages && draft.startingLanguages.length!==STARTING_LANGUAGE_COUNT){draft.step=2;save(true);drawCreation();toast(STARTING_LANGUAGE_PROMPT);return false;}
     const origins=originErrors(draft,catalogue,{levelGrants:false});if(origins.length){draft.step=2;save(true);drawCreation();toast(origins[0]);return false;}
     if(Object.values(backgroundBonuses(draft,currentBackground())).reduce((sum,n)=>sum+n,0)!==3){draft.step=3;save(true);drawCreation();toast('Répartissez les bonus de votre historique.');return false;}
     const aptitude=aptitudeErrors(draft,catalogue);const spells=spellErrors(draft,catalogue);
@@ -594,7 +602,7 @@ function route() {
   if (hash === 'nouveau') {
     save(true);
     activeSheetTab='overview';cloudSaveError='';
-    draft = initial();
+    draft = {...initial(),startingLanguages:[]};
     beforeSuggestion = null;
     suggestionFocus = null;
     save(true);
@@ -765,6 +773,17 @@ function bind() {
     });
   });
   document.getElementById('print-sheet')?.addEventListener('click',async event=>{const button=event.currentTarget,person=structuredClone(printedCharacter);button.disabled=true;button.textContent='Préparation du PDF…';try{const result=await downloadCharacterPDF(person,catalogue);toast(result.warnings.length?'Fiche PDF téléchargée. Certains textes longs sont abrégés ; le détail reste sur le site.':'Votre fiche PDF est prête : ouvrez-la pour l’imprimer.');}catch(error){toast(error.message||'Impossible de préparer la fiche PDF. Réessayez.');}finally{button.disabled=false;button.textContent='Télécharger la fiche PDF';}});
+  root.querySelector('[data-starting-languages]')?.addEventListener('change',event=>{
+    if(!event.target.matches('[data-starting-language]'))return;
+    const fields=event.currentTarget;
+    const inputs=[...fields.querySelectorAll('[data-starting-language]')];
+    draft.startingLanguages=inputs.filter(input=>input.checked).map(input=>input.value);
+    for(const input of inputs)input.disabled=!input.checked&&draft.startingLanguages.length>=STARTING_LANGUAGE_COUNT;
+    fields.querySelector('[data-language-count]').textContent=draft.startingLanguages.length+' / '+STARTING_LANGUAGE_COUNT;
+    const languages=root.querySelector('[data-known-languages]');
+    if(languages)languages.textContent=knownLanguages(draft,sheetModel(draft,catalogue)).join(' · ');
+    save(true);
+  });
   root.querySelectorAll('[data-sheet-detail]').forEach(input=>input.addEventListener('input',()=>{
     draft.details??={};draft.details[input.dataset.sheetDetail]=input.value;save(true);
   }));

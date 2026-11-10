@@ -1,3 +1,4 @@
+import {knownLanguages} from './language-rules.mjs';
 // New optional character format. Rules: frozen FR SRD 5.2.1 pp. 26–27,
 // multiclass entries of each class, plus the frozen third-caster supplements.
 import {ABILITIES,backgroundBonuses,modifier,finalScores,classProfile,normalize} from './character-rules.mjs';
@@ -182,6 +183,8 @@ export function mergeMulticlassModels(state,c,modelFor){
   result.ruleNotices=unique(models.map(m=>m.ruleNotices)).join(' ');
   result.classEffects={...first.classEffects};
   for(const key of ['skills','expertise','tools','languages','masteries','forms','summaries'])result.classEffects[key]=models.flatMap(m=>m.classEffects[key]||[]);
+  const languages=knownLanguages(state,result);
+  result.classEffects.forms=result.classEffects.forms.map(form=>({...form,langues:languages}));
   for(const key of ['companion','familiar','dragonForm'])result.classEffects[key]=models.find(m=>m.classEffects[key])?.classEffects[key];
   const baselineSpeed=(first.species?.vitesse||0)+first.effects.speedBonus;
   result.speed=baselineSpeed+models.reduce((sum,m)=>sum+Math.max(0,(m.speed||0)-baselineSpeed),0);

@@ -1,0 +1,250 @@
+{
+  "status": "deployed",
+  "release": "20261110T072710Z",
+  "previous": "20261103T113115Z",
+  "completedAt": "2026-11-10T07:29:12.818Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261110T072710Z",
+  "rollback": "/root/backups/myrpgtable-persistence-20261110T072710Z/rollback.sh",
+  "archiveSha256": "e0a08b89b0f10db38fe1507b31cd079938d4f6ca722a115a7cc8577e4e0c7206",
+  "backupSha256": "504091c523e5536fc0c7e608e095cc3a75ae48d06aad450769ff9ec7edc76b97",
+  "releaseTree": {
+    "files": 89,
+    "sha256": "ef37f4ec7a549792a09a024af60625a38f9b33ac9ff611a1076eaa0de715c353"
+  },
+  "checks": {
+    "persistence": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "accounts": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "admin-characters": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "languages": {
+      "before": "passed",
+      "after": "passed"
+    }
+  },
+  "languagesChecks": 7,
+  "coverage": [
+    "existing-sheet-ready",
+    "admin-addition-in-owner-account",
+    "saved-round-trip-and-pdf",
+    "old-client-preservation",
+    "duplicate-rejection",
+    "revision-conflict",
+    "real-documents-unchanged"
+  ],
+  "realDataUnchanged": true,
+  "realFingerprints": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "4ecfd0500a218357b7d2e392f9cdef7cfb3c9e5b572079090827942ffe10faa5"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "service": {
+    "status": "online",
+    "restarts": 0
+  },
+  "backupDocuments": 3287,
+  "http": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/home.css",
+      "status": 200
+    },
+    {
+      "path": "/atelier/language-rules.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/home-content.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/home.css",
+      "status": 302
+    },
+    {
+      "path": "/favicon.png",
+      "status": 200
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 302
+    },
+    {
+      "path": "/assets/fond-bibliotheque-sombre.png",
+      "status": 200
+    },
+    {
+      "path": "/connexion.html",
+      "status": 200
+    },
+    {
+      "path": "/inscription.html",
+      "status": 200
+    },
+    {
+      "path": "/inscription.js",
+      "status": 200
+    },
+    {
+      "path": "/signup.html",
+      "status": 302
+    },
+    {
+      "path": "/atelier/",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/personnages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat",
+      "status": 401
+    },
+    {
+      "path": "/atelier/combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/bestiaire",
+      "status": 401
+    },
+    {
+      "path": "/atelier/bestiary-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat/sorts",
+      "status": 401
+    },
+    {
+      "path": "/atelier/spell-combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat/attaques",
+      "status": 401
+    },
+    {
+      "path": "/atelier/attack-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/group-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/auth/status",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/metrics",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/messages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes/missing/messages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/group-messages.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/inventory-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/inventory-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/equipment-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/equipment-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/wallet-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/wallet-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/potion-combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/missing/combat/potions",
+      "status": 401
+    },
+    {
+      "path": "/atelier/loot-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/loot-rules.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/missing/butin",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/directory",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/personnages/missing/missing",
+      "status": 401
+    },
+    {
+      "path": "/api/GetSupabaseKey",
+      "status": 503
+    },
+    {
+      "path": "/creer-personnage.html",
+      "status": 503
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "scope": "starting-languages-with-frozen-catalogue",
+    "sourceHash": "d00c8df235e32f4d7aca0df286498dde3a50ecd1ef26d083df2588d01596ecc7",
+    "baselineCommit": "01d0bd3eb",
+    "unitPassed": 281,
+    "browserJourneys": 30,
+    "failed": 0,
+    "skipped": 0,
+    "completedAt": "2026-11-10T07:26:58.674Z"
+  },
+  "reference": "https://media.dndbeyond.com/compendium-images/srd/5.2/FR_SRD_CC_v5.2.1.pdf",
+  "priorSheets": "Les choix sont complétés sur demande. Les champs libres et les langues de classe sont conservés.",
+  "manualChecklist": "recette PC à réaliser par l’utilisateur"
+}

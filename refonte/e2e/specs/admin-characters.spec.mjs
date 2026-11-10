@@ -7,6 +7,7 @@ const catalogue=buildCatalogue(JSON.parse(await readFile(new URL('../../tests/fi
 async function setup(browser){
   const context=await browser.newContext({baseURL:origin,storageState:{cookies:[],origins:[]}}),player=await context.newPage();await signIn(player,'b');
   const id=randomUUID(),state=classFixture(catalogue,'clerc',3,'clerc_domaine_vie');state.divineOrder='Protecteur';state.name='Fiche partagée '+id.slice(0,8);
+  state.details={languages:'Sylvestre'};
   expect((await player.request.put('/atelier/api/personnages/'+id,{headers:{Origin:origin},data:{character:state,revision:0}})).status()).toBe(200);
   return {context,player,id,state,route:'/atelier/api/admin/personnages/e2e-account-b/'+id};
 }
@@ -20,9 +21,16 @@ test('Toutes les fiches : consultation, notes et correction chez le joueur sans 
     await page.goto('/atelier/#nouveau');await page.locator('#name').fill('Mon brouillon personnel');
     const own=await page.evaluate(()=>localStorage.getItem('table-maitre-refonte-maquette-v1:e2e-account-a'));
     await open(page,t);await page.getByRole('tab',{name:'Histoire',exact:true}).click();await page.getByText('Compléter l’identité, les langues et l’histoire',{exact:true}).click();
+    await expect(page.locator('[data-starting-language]:checked')).toHaveCount(0);
+    await page.getByRole('checkbox',{name:'Elfique',exact:true}).check();
+    await page.getByRole('checkbox',{name:'Nain',exact:true}).check();
+    await expect(page.locator('[data-sheet-detail=languages]')).toHaveValue('Sylvestre');
     await page.locator('[data-sheet-detail=story]').fill('Ajout du MJ : une dette envers la guilde.');
     await page.locator('[data-admin-editor] [data-save-character]').click();await expect(page.locator('[data-admin-editor]')).toContainText('Fiche enregistrée dans le compte du joueur.');
-    expect((await(await t.player.request.get('/atelier/api/personnages/'+t.id)).json()).character.details.story).toBe('Ajout du MJ : une dette envers la guilde.');
+    const updated=(await(await t.player.request.get('/atelier/api/personnages/'+t.id)).json()).character;
+    expect(updated.details.story).toBe('Ajout du MJ : une dette envers la guilde.');
+    expect(updated.details.languages).toBe('Sylvestre');
+    expect(updated.startingLanguages).toEqual(['elfique','nain']);
     expect((await page.request.get('/atelier/api/personnages/'+t.id)).status()).toBe(404);
     expect(await page.evaluate(()=>localStorage.getItem('table-maitre-refonte-maquette-v1:e2e-account-a'))).toBe(own);
     await page.reload();await expect(page.locator('[data-admin-editor]')).toContainText('joueur-b@example.test');

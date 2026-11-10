@@ -1,3 +1,4 @@
+import {chooseStartingLanguages} from './journey.mjs';
 import {expect} from '@playwright/test';
 import {classChoiceSpecs} from '../maquette/class-profiles.mjs';
 import {classProfile} from '../maquette/character-rules.mjs';
@@ -27,6 +28,7 @@ export async function createOriginThroughUI(page,s,c){
   }
   if(s.speciesId==='humain')await page.locator('[data-origin-field="originFeatId"]').selectOption(s.originFeatId);
   for(const grant of originFeats(s,c).filter(g=>['background','human'].includes(g.slot)))await fillGrant(page,s,c,grant);
+  await chooseStartingLanguages(page);
   await next(page);
   for(const [id,value]of Object.entries(s.scores))await page.locator(`[data-stat="${id}"]`).fill(String(value));
   await page.locator('[data-bonus-mode="three"]').click();await next(page);

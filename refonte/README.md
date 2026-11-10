@@ -1,6 +1,6 @@
 # La Table du Maître — état actuel
 
-Mise à jour : 3 novembre 2026.
+Mise à jour : 10 novembre 2026.
 
 La refonte couvre la création et la fiche sur ordinateur : douze classes, 48 sous-classes, niveaux1–20, espèces, historiques, dons, sorts et équipement. Le suivi en partie couvre les PV, les réserves prises en charge, les emplacements, les repos explicites, les états, l’Épuisement et les sauvegardes contre la mort. Le combat de groupe propose une préparation, des initiatives saisies, des tours/rounds et le suivi des PV et états. Le MJ peut rechercher dans les 322 profils du bestiaire MongoDB et ajouter plusieurs adversaires avec leur profil conservé. Les attaques avec armes ou profils du bestiaire disposent de jets explicites, physiques ou dans l’application, puis d’une confirmation des dégâts par le MJ. Les sorts disposent d’une résolution guidée : plan et dépense validés par le MJ, dés au choix, confirmations des effets, concentration, durées déclarées et déclenchements persistants. Les mécaniques complexes et les cibles de zone restent arbitrées à la table. Le téléphone et les nouveaux livres restent hors périmètre. La montée de niveau et le multiclassage sont disponibles depuis la fiche, avec un niveau total limité à 20. Les dés physiques sont conservés et aucun lancer ne se déclenche automatiquement.
 
@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261103T113115Z`, publiée le 3 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261110T072710Z`, publiée le 10 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261110T072710Z` ajoute le commun et deux langues courantes à choisir dans **Origines**. Le même formulaire permet de compléter une fiche depuis **Histoire**, en édition joueur ou administrateur. Les langues de classe et les saisies libres figurent avec les nouveaux choix sur la fiche et le PDF. Les 281 tests et 30 parcours navigateur passent. Les sept contrôles MongoDB dédiés passent avant et après publication. La sauvegarde contient 3287 documents. [Rapport de publication](audit/languages-publication-20261110.json).
 
 La livraison `20261103T113115Z` ajoute les **potions administrées à une autre créature en combat** : inventaire source choisi, cible visible, dés physiques ou de l’application déclenchés explicitement, confirmation du MJ puis consommation et soins plafonnés. Des reçus persistants séparés permettent la reprise sans double consommation ni nouveau soin. Les 293 tests et 54 parcours navigateur passent ; treize contrôles MongoDB dédiés et les contrôles existants réussissent avant/après publication, sans modification des données réelles. Une candidate a été arrêtée avant publication pour corriger la sauvegarde des identités PNJ. Sauvegarde de 3286 documents et retour arrière dans `/root/backups/myrpgtable-persistence-20261103T113115Z`. Voir [le fonctionnement et les limites](access/POTIONS-SUR-ALLIE.md), [le rapport de publication](audit/potions-publication-20261103.json) et [la recette manuelle finale](access/RECETTE-FINALE-PC.md).
 

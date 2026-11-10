@@ -95,3 +95,17 @@
 [data-wallet] details { margin:1rem 0; }
 .wallet-history li { margin:1rem 0; }
 @media print { [data-wallet-action] { display:none !important; } }
+
+fieldset[data-starting-languages] {
+  min-inline-size: 0;
+  padding: 12px 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+fieldset[data-starting-languages] legend {
+  padding-inline: 6px;
+  color: var(--gold);
+  font-weight: 600;
+}
+fieldset[data-starting-languages] label:has(input:disabled) { opacity: 0.55; }
+fieldset[data-starting-languages] label:has(input:checked) { border-color: var(--gold); }
