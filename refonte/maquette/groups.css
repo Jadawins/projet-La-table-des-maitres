@@ -9,7 +9,7 @@
 [data-group-form="character"]+.portal-card,.group-members+.portal-card{margin-top:24px}#content>.portal-card:has(.group-members),#content>.portal-card:has([data-group-form="character"]){margin:24px 0}
 @media(max-width:850px){.group-forms{grid-template-columns:1fr}.group-members li{flex-wrap:wrap}}
 
-.group-loot-panel fieldset { border:1px solid var(--line,#50445f); margin:1rem 0; padding:1rem; border-radius:.5rem; }
+:is(.group-loot-panel,.group-gift-panel) fieldset { border:1px solid var(--line,#50445f); margin:1rem 0; padding:1rem; border-radius:.5rem; }
 .loot-recipient { display:block; margin:.6rem 0; }
 .loot-entry { border-top:1px solid var(--line,#50445f); margin-top:1rem; padding-top:1rem; }
 .loot-preview ul { max-height:40vh; overflow:auto; }

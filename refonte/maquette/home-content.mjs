@@ -49,10 +49,10 @@ export function renderHomeContent({publicPage = false} = {}) {
           <span class="home-news-foot">Combat → Potions sur une autre créature.</span>
         </article>
         <article class="home-news">
-          <p class="home-badge">RÉCENT · BOURSE ET BUTIN</p>
-          <h3>De la trouvaille<br>à la bourse.</h3>
-          <p>Suivez vos pièces, achetez et vendez depuis votre fiche. Le MJ peut répartir les objets et l’argent du butin entre les personnages du groupe.</p>
-          <span class="home-news-foot">Équipement → Bourse et achats · Mes groupes → Butin.</span>
+          <p class="home-badge">NOUVEAU · DONS ENTRE PERSONNAGES</p>
+          <h3>Un objet ou quelques pièces<br>pour un compagnon.</h3>
+          <p>Proposez un don depuis votre inventaire et votre bourse. Le destinataire choisit de l’accepter ou de le refuser. Les deux fiches sont mises à jour à la remise.</p>
+          <span class="home-news-foot">Mes groupes → Dons entre personnages.</span>
         </article>
       </div>
     </section>

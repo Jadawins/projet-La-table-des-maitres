@@ -12,10 +12,11 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
   }
   return {
     lootReceipt,
-    async applyLoot(userId,id,{receiptId,stamp,revision,build,authorize}){
+    async applyLoot(userId,id,{receiptId,stamp,revision,build,authorize,expectedCreatedAt}){
       const receipt=await lootReceipt(id,receiptId,stamp);if(receipt)return receipt;
       const filter={user_id:userId,client_id:id,deleted_at:{$exists:false}},previous=await collection.findOne(filter);
       if(!previous)throw fault(404,'Le personnage n’est plus disponible dans ce compte.');
+      if(expectedCreatedAt && previous.created_at.toISOString()!==expectedCreatedAt)throw fault(409,'La fiche d’origine a changé.');
       if(previous.loot_receipts?.[receiptId])throw fault(409,'Cette référence de butin est déjà utilisée pour une autre attribution.');
       if(previous.revision!==revision)throw fault(409,'La fiche a changé. Revoyez l’attribution restante avant de confirmer.');
       if(Object.keys(previous.loot_receipts||{}).length>=5000)throw fault(409,'Le suivi des attributions de cette fiche est plein.');
@@ -24,7 +25,7 @@ export function createCharacterStore({collection,validate,catalogueFingerprint})
       await authorize();
       const date=new Date(),receiptValue={stamp,at:date,revision:revision+1},contentHash=createHash('sha256').update(JSON.stringify(result.character)).digest('hex');
       const doc={...result,revision:revision+1,updated_at:date,content_hash:contentHash,catalogue_fingerprint:catalogueFingerprint,loot_receipts:{...(previous.loot_receipts||{}),[receiptId]:receiptValue}};
-      const written=await collection.updateOne({...filter,revision},{$set:doc});
+      const written=await collection.updateOne({...filter,revision,...(previous._id!==undefined?{_id:previous._id}:{})},{$set:doc});
       if(written.matchedCount!==1){const committed=await lootReceipt(id,receiptId,stamp);if(committed)return committed;throw fault(409,'La fiche a changé pendant l’attribution. Revoyez les fiches restantes.');}
       return receiptValue;
     },

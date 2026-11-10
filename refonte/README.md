@@ -25,7 +25,9 @@ Les preuves finales couvrent 3 948 tests unitaires distincts et 1 298 parcours n
 
 ## Production
 
-L’atelier en ligne utilise la livraison `20261110T072710Z`, publiée le 10 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+L’atelier en ligne utilise la livraison `20261110T085852Z`, publiée le 10 novembre 2026. Les règles corrigées sont dans MongoDB, collection `regles_catalogues`, version `phb2024-2026-10-28`. Le serveur les charge et vérifie leur empreinte au démarrage ; aucun catalogue JSON n'est livré sur disque. Les comptes et personnages existants sont conservés. Voir [le fonctionnement MongoDB](access/REGLES-MONGODB.md).
+
+La livraison `20261110T085852Z` ajoute les **dons entre personnages d’un même groupe**. Une offre peut contenir un objet et des pièces. Le destinataire accepte ou refuse. Les reçus permettent de reprendre une remise interrompue et de préserver les deux fiches. Les 146 tests et 27 parcours navigateur passent. Les neuf contrôles MongoDB dédiés passent avant et après publication. La sauvegarde contient 3287 documents. L’accueil annonce les dons. Voir [le fonctionnement](access/DONS-ENTRE-PERSONNAGES.md) et [la publication](audit/gifts-publication-20261110.json).
 
 L’accueil du 10 novembre présente les langues de départ, les potions en combat, la bourse et le butin. Les trois tests ciblés et les deux parcours navigateur passent. [Relevé de publication](audit/home-news-publication-20261110.json).
 

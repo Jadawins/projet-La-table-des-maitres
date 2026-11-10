@@ -1,3 +1,4 @@
+import {mountGroupGifts} from './gift-view.mjs';
 import {mountGroupLoot} from './loot-view.mjs';
 import {mountGroupMessages} from './group-messages.mjs';
 const mounts = new WeakMap();
@@ -7,7 +8,8 @@ export function disposeGroups(root) { mounts.get(root)?.abort(); mounts.delete(r
 export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
   disposeGroups(root);
   const controller = new AbortController(); mounts.set(root, controller);
-  let disposeMessages=()=>{},disposeLoot=()=>{};controller.signal.addEventListener('abort',()=>{disposeMessages();disposeLoot();},{once:true});
+  let disposeMessages=()=>{},disposeLoot=()=>{},disposeGifts=()=>{};
+  controller.signal.addEventListener('abort',()=>{disposeMessages();disposeLoot();disposeGifts();},{once:true});
   let group, invitationCode = '', mjInvitationCode = '', ownCharacters = [], notice = '';
   const className = id => catalogue?.classes.find(row => row.id === id)?.nom || id;
   async function api(path = '', data, method = 'POST') {
@@ -84,7 +86,7 @@ export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
   }
   function detail() {
     if (controller.signal.aborted) return;
-    disposeMessages();disposeLoot();
+    disposeMessages();disposeLoot();disposeGifts();
     const me = group.members.find(member => member.isMe);
     root.innerHTML = `<a class="back" href="#groupes">← Mes groupes</a><p class="eyebrow">${group.isMJ ? 'VOTRE TABLE · MAÎTRE DU JEU' : 'VOTRE TABLE · JOUEUR'}${group.isOwner ? ' · CRÉATEUR' : ''}</p>
       <h1>${esc(group.name)}</h1><p class="group-description">${esc(group.description || 'Votre groupe est prêt à accueillir ses aventures.')}</p>
@@ -100,10 +102,15 @@ export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
     const messageRoot=document.createElement('section');messageRoot.className='portal-card group-message-panel';root.querySelector('.group-description').after(messageRoot);
     disposeMessages=mountGroupMessages(messageRoot,{group,signal:controller.signal});
     const lootRoot=document.createElement('section');lootRoot.className='portal-card group-loot-panel';messageRoot.after(lootRoot);disposeLoot=mountGroupLoot(lootRoot,{group,catalogue,signal:controller.signal});
+    const giftRoot=document.createElement('section');
+    giftRoot.className='portal-card group-gift-panel';
+    lootRoot.after(giftRoot);
+    disposeGifts=mountGroupGifts(giftRoot,{group,signal:controller.signal});
     bind();
   }
   async function listing() {
     const {groups} = await api(); if (controller.signal.aborted) return;
+    disposeGifts();
     root.innerHTML = `<p class="eyebrow">VOS TABLES DE JEU</p><h1>Mes groupes</h1><p>Créez ou rejoignez une table en choisissant votre rôle : Maître du jeu ou Joueur. Vous pouvez être MJ dans un groupe et joueur dans un autre.</p>${feedback()}
       <div class="group-forms"><section class="portal-card"><h2>Créer un groupe</h2><form data-group-form="create">
         <label class="field">Votre rôle<select name="role" required><option value="">Choisir votre rôle</option><option value="mj">Maître du jeu</option><option value="player">Joueur</option></select></label>
@@ -116,7 +123,8 @@ export function mountGroups(root, {id = '', catalogue, enabled = true} = {}) {
         <label class="field">Code d’invitation<input name="code" required maxlength="16" autocomplete="off" spellcheck="false"></label>
         <label class="field">Votre nom à la table<input name="alias" required minlength="2" maxlength="40" autocomplete="nickname"></label>
         <button class="button primary">Rejoindre le groupe</button></form><p>Demandez le code correspondant à votre rôle au créateur du groupe. Aucun message ni e-mail n’est envoyé automatiquement.</p></section></div>
-      <h2>Vos groupes</h2><div class="portal-grid">${groups.length ? groups.map(row => `<article class="portal-card"><p class="eyebrow">${row.isMJ ? 'MAÎTRE DU JEU' : 'JOUEUR'}${row.isOwner ? ' · CRÉATEUR' : ''}</p><h3><a href="#groupes/${esc(row.id)}">${esc(row.name)}</a></h3><p>${esc(row.description)}</p><p>${row.memberCount} membre${row.memberCount > 1 ? 's' : ''}</p><a href="#groupes/${esc(row.id)}">Ouvrir le groupe →</a></article>`).join('') : '<p>Vous ne faites encore partie d’aucun groupe.</p>'}</div>`;
+      <section class="portal-card" data-pending-gifts hidden></section><h2>Vos groupes</h2><div class="portal-grid">${groups.length ? groups.map(row => `<article class="portal-card"><p class="eyebrow">${row.isMJ ? 'MAÎTRE DU JEU' : 'JOUEUR'}${row.isOwner ? ' · CRÉATEUR' : ''}</p><h3><a href="#groupes/${esc(row.id)}">${esc(row.name)}</a></h3><p>${esc(row.description)}</p><p>${row.memberCount} membre${row.memberCount > 1 ? 's' : ''}</p><a href="#groupes/${esc(row.id)}">Ouvrir le groupe →</a></article>`).join('') : '<p>Vous ne faites encore partie d’aucun groupe.</p>'}</div>`;
+    disposeGifts=mountGroupGifts(root.querySelector('[data-pending-gifts]'),{signal:controller.signal});
     bind();
   }
   root.innerHTML = '<h1>Mes groupes</h1><p role="status">Ouverture des groupes…</p>';

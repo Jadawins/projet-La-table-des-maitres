@@ -84,6 +84,12 @@ Prévoir deux comptes de test et des personnages identifiables comme tels. Un co
 - [ ] Consulter une fiche de test et compléter son histoire ou son inventaire depuis la gestion → modification dans le compte du propriétaire, sans copie personnelle indésirable.
 - [ ] Copier puis transférer une fiche de test entre comptes en suivant les confirmations → appartenance et visibilité conformes au choix.
 
+## Dons entre personnages
+
+- [ ] Avec deux comptes du même groupe, proposer une partie d’un objet et des pièces. Vérifier les deux fiches avant l’acceptation, puis le stock, le solde et la description après réouverture.
+- [ ] Refuser un don puis retirer une autre offre. Vérifier les deux fiches et la confidentialité du suivi auprès d’un troisième membre.
+- [ ] Proposer un objet, le dépenser entre-temps, puis tenter d’accepter. Vérifier que l’offre reste à revoir et que le destinataire n’a rien reçu.
+
 ## Bilan de recette
 
 - [ ] Tous les défauts bloquant une partie ont un correctif vérifié.

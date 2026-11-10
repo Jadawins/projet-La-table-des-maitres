@@ -1,3 +1,4 @@
+import {createGroupGifts} from '../access/group-gifts.mjs';
 import {createGroupLoot} from '../access/group-loot.mjs';
 import {createGroupMessages} from '../access/group-messages.mjs';
 import {messageMemory} from '../tests/message-memory.mjs';
@@ -30,7 +31,7 @@ const appRoot=path.join(runtime,'atelier');
 await mkdir(path.join(appRoot,'assets'),{recursive:true});
 // Static files served by the same allowlist and account injection as production.
 const {copyFile}=await import('node:fs/promises');
-for(const file of ['home-content.mjs','home.css','index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','group-messages.mjs','inventory-state.mjs','inventory-view.mjs','equipment-state.mjs','equipment-view.mjs','wallet-state.mjs','wallet-view.mjs','loot-rules.mjs','loot-view.mjs','language-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','multiclass-rules.mjs','character-advancement.mjs','condition-rules.mjs','condition-view.mjs','play-state.mjs','play-view.mjs','sheet-model.mjs','sheet-view.mjs','portal-view.mjs','group-view.mjs','groups.css','combat-view.mjs','spell-combat-view.mjs','potion-combat-view.mjs','attack-view.mjs','bestiary-view.mjs','combat.css','admin-view.mjs','character-pdf.mjs','portal.css','assets/fiche-personnage-2024.pdf','assets/pdf-lib-1.17.1.mjs','assets/pdf-lib-LICENSE.md']){
+for(const file of ['home-content.mjs','home.css','index.html','app.js','style.css','character-rules.mjs','origin-rules.mjs','group-messages.mjs','inventory-state.mjs','inventory-view.mjs','equipment-state.mjs','equipment-view.mjs','wallet-state.mjs','wallet-view.mjs','loot-rules.mjs','loot-view.mjs','gift-rules.mjs','gift-view.mjs','language-rules.mjs','character-storage.mjs','character-version.mjs','cleric-progression.mjs','progression.mjs','class-profiles.mjs','beast-companion.mjs','species-rules.mjs','wild-shape.mjs','class-magic.mjs','extra-classes.mjs','warlock-options.mjs','feat-effects.mjs','multiclass-rules.mjs','character-advancement.mjs','condition-rules.mjs','condition-view.mjs','play-state.mjs','play-view.mjs','sheet-model.mjs','sheet-view.mjs','portal-view.mjs','group-view.mjs','groups.css','combat-view.mjs','spell-combat-view.mjs','potion-combat-view.mjs','attack-view.mjs','bestiary-view.mjs','combat.css','admin-view.mjs','character-pdf.mjs','portal.css','assets/fiche-personnage-2024.pdf','assets/pdf-lib-1.17.1.mjs','assets/pdf-lib-LICENSE.md']){
   await copyFile(path.join(here,'../maquette',file),path.join(appRoot,file));
 }
 
@@ -88,12 +89,13 @@ const accounts=createAuthAccounts({url:'https://e2e.invalid',key:'server-test-on
 const admin=createAdminStore({db:{collection:name=>name==='users'?adminUsers:memoryCollection(records)},rulesVersion:'e2e',accounts,characterStore:characters});
 const groups=createGroupStore({collection:groupMemory(),characters});
 const messages=createGroupMessages({collection:messageMemory(),groups});
+const gifts=createGroupGifts({collection:messageMemory(),groups,characters,catalogue,sheetModel:s=>sheetModel(s,catalogue),validate:s=>validateSavedCharacter(s,catalogue)});
 const loot=createGroupLoot({collection:messageMemory(),groups,characters,catalogue,sheetModel:s=>sheetModel(s,catalogue),validate:s=>validateSavedCharacter(s,catalogue)});
 const combatRows=groupMemory();
 const combatCollection={...combatRows,async insertOne(row){if(combatRows.rows.some(x=>x.groupId===row.groupId&&x.active&&row.active))throw Object.assign(Error('duplicate'),{code:11000});return combatRows.insertOne(row);}};
 const bestiary=createBestiaryStore({collection:bestiaryMemory()});
 const combats=createCombatStore({potionCollection:messageMemory(),spellCatalogue:catalogue.spells,spellCollection:groupMemory(),collection:combatCollection,groups,characters,bestiary,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
-const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,groups,combats,bestiary,messages,loot,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
+const gateway=createGateway({supabaseUrl:'https://e2e.invalid',anonKey:'local-test-only',appRoot,characters,groups,combats,bestiary,messages,loot,gifts,origin,catalogueText:JSON.stringify(catalogue),fetcher:fakeSupabase,admin,adminEmails:['joueur-a@example.test']});
 gateway.listen(0,'127.0.0.1');await once(gateway,'listening');
 const publicFiles={
  '/':'index.html','/connexion.html':'connexion.html','/connexion.js':'connexion.js','/inscription.html':'inscription.html','/inscription.js':'inscription.js','/sources.html':'sources.html','/refonte.css':'refonte.css','/refonte.js':'refonte.js','/service-worker.js':'service-worker.js',

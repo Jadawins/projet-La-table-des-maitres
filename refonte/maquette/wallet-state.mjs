@@ -75,6 +75,22 @@ export function suggestedPrice(item,c,selling=false){
   if(selling){if(copper%2!==0)return null;copper/=2;}
   return {copper,amount:String(copper/100),coin:'po'};
 }
+export function removeInventoryQuantity(next, model, catalogue, ref, quantity) {
+  const item = model.possessions.find(row => row.ref === ref);
+  if (!item || !Number.isInteger(quantity) || quantity < 1 || item.quantity < quantity) throw fault('Vous ne possédez pas cette quantité de cet objet.');
+  if (ref.startsWith('item:')) {
+    const id = ref.slice(5);
+    next.inventoryItems = validateInventory((next.inventoryItems ?? []).flatMap(row => {
+      if (row.id !== id) return [row];
+      return row.quantity > quantity ? [{...row, quantity:row.quantity - quantity}] : [];
+    }));
+  } else {
+    next.inventorySpent = {...next.inventorySpent, [ref]:(next.inventorySpent?.[ref] ?? 0) + quantity};
+  }
+  reconcileEquipment(next, equipmentItems(next, model.inventory, catalogue));
+  return item;
+}
+
 export function walletAction(state,model,c,action,{id,at}){
   if(!action||!uuid(id)||typeof at!=='string')throw fault('La référence de mouvement est invalide.');
   const before=walletCoins(state,model.money),next=structuredClone(state),history=state.wallet?.history||[];
@@ -97,12 +113,8 @@ export function walletAction(state,model,c,action,{id,at}){
       next.inventoryItems=changeInventory(state.inventoryItems,{type:'add',item});
       after=spend(before,total,action.coin,action.allowChange);label='Achat : '+quantity+' × '+next.inventoryItems.at(-1).name;
     }else if(action.kind==='sell'){
-      const item=model.possessions.find(i=>i.ref===action.ref);
-      if(!item||item.quantity<quantity)throw fault('Vous ne possédez pas cette quantité de cet objet.');
-      if(action.ref.startsWith('item:'))next.inventoryItems=validateInventory((next.inventoryItems||[]).flatMap(i=>i.id!==action.ref.slice(5)?[i]:i.quantity>quantity?[{...i,quantity:i.quantity-quantity}]:[]));
-      else next.inventorySpent={...next.inventorySpent,[action.ref]:(next.inventorySpent?.[action.ref]||0)+quantity};
+      const item=removeInventoryQuantity(next,model,c,action.ref,quantity);
       after=receive(before,total,action.coin);label='Vente : '+quantity+' × '+item.nom;
-      reconcileEquipment(next,equipmentItems(next,model.inventory,c));
     }else throw fault('Choisissez un mouvement de bourse valide.');
     label||=action.kind==='receive'?'Argent reçu':'Dépense';
   }

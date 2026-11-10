@@ -11,7 +11,7 @@ test('Accueil public : nouveautés, outils disponibles, feuille de route et acc�
     await expect(page.locator('.home-feature')).toHaveCount(8);
     await expect(page.locator('.home-news')).toHaveCount(3);
     await expect(page.locator('#nouveautes')).toContainText('10 novembre 2026');
-    for(const text of ['LANGUES DE DÉPART','POTIONS EN COMBAT','BOURSE ET BUTIN','fiches existantes'])await expect(page.locator('#nouveautes')).toContainText(text);
+    for(const text of ['LANGUES DE DÉPART','POTIONS EN COMBAT','DONS ENTRE PERSONNAGES','fiches existantes'])await expect(page.locator('#nouveautes')).toContainText(text);
     await expect(page.locator('#nouveautes')).not.toContainText(/administrat/i);
     await expect(page.locator('.home-feature').last()).toContainText('espace réservé');
     await expect(page.locator('.home-feature').last()).not.toContainText(/consulter|modifier|corriger|compléter/i);
@@ -43,7 +43,7 @@ test('Accueil connecté : contenu commun et accès aux personnages et groupes sa
   await page.goto('/atelier/');
   await expect(page.getByRole('heading',{name:'Vos aventures commencent ici.'})).toBeVisible();
   await expect(page.locator('.home-feature')).toHaveCount(8);
-  for(const text of ['LANGUES DE DÉPART','POTIONS EN COMBAT','BOURSE ET BUTIN'])await expect(page.locator('#nouveautes')).toContainText(text);
+  for(const text of ['LANGUES DE DÉPART','POTIONS EN COMBAT','DONS ENTRE PERSONNAGES'])await expect(page.locator('#nouveautes')).toContainText(text);
   await expect(page.locator('#nouveautes')).not.toContainText(/administrat/i);
     await expect(page.locator('.home-feature').last()).toContainText('espace réservé');
     await expect(page.locator('.home-feature').last()).not.toContainText(/consulter|modifier|corriger|compléter/i);

@@ -1,0 +1,287 @@
+{
+  "status": "deployed",
+  "release": "20261110T085852Z",
+  "previous": "20261110T072710Z",
+  "completedAt": "2026-11-10T09:01:06.744Z",
+  "backup": "/root/backups/myrpgtable-persistence-20261110T085852Z",
+  "rollback": "/root/backups/myrpgtable-persistence-20261110T085852Z/rollback.sh",
+  "archiveSha256": "5651c4fc18572fb963a97e3facf80af6aa41af67a398c2c3c6050039e68d6a10",
+  "backupSha256": "8660f921f3009c0f9265ede0b6bee697fb8163ffba9c3cc019bb4f8b64ea8697",
+  "releaseTree": {
+    "files": 92,
+    "sha256": "884eef84d85d2d6c3a83ef635c7a34d19d4a5cb4d06a59e2398b1898e8372389"
+  },
+  "checks": {
+    "persistence": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "accounts": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "equipment": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "wallet": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "loot": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "potions": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "languages": {
+      "before": "passed",
+      "after": "passed"
+    },
+    "gifts": {
+      "before": "passed",
+      "after": "passed"
+    }
+  },
+  "giftChecks": 9,
+  "coverage": [
+    "offer-without-debit",
+    "idempotent-proposal",
+    "private-recipient-and-confirmation",
+    "refusal-without-change",
+    "exact-items-and-coins",
+    "other-sheet-fields-preserved",
+    "lost-debit-acknowledgement",
+    "resume-after-group-removal",
+    "real-data-unchanged"
+  ],
+  "realDataUnchanged": true,
+  "realFingerprints": {
+    "personnages_refonte": {
+      "count": 9,
+      "sha256": "2574b2b3ed15c7e014899331fc117db94eff8bdb4139353a4d3a31f9aea21010"
+    },
+    "groupes_refonte": {
+      "count": 1,
+      "sha256": "2689fd0d856aa64e69d15f9044b674d72156075f92b24a2e94271c6ae3a1109f"
+    },
+    "butins_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "dons_groupes_refonte": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "regles_catalogues": {
+      "count": 5,
+      "sha256": "7d38453652b34f5cbd3bf5481d8842cfc6be9dda203f45eb20bd75ee2f5bff39"
+    }
+  },
+  "service": {
+    "status": "online",
+    "restarts": 0
+  },
+  "backupDocuments": 3287,
+  "http": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/home.css",
+      "status": 200
+    },
+    {
+      "path": "/atelier/home-content.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/home.css",
+      "status": 302
+    },
+    {
+      "path": "/favicon.png",
+      "status": 200
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 302
+    },
+    {
+      "path": "/assets/fond-bibliotheque-sombre.png",
+      "status": 200
+    },
+    {
+      "path": "/connexion.html",
+      "status": 200
+    },
+    {
+      "path": "/inscription.html",
+      "status": 200
+    },
+    {
+      "path": "/inscription.js",
+      "status": 200
+    },
+    {
+      "path": "/signup.html",
+      "status": 302
+    },
+    {
+      "path": "/atelier/",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/personnages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat",
+      "status": 401
+    },
+    {
+      "path": "/atelier/combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/bestiaire",
+      "status": 401
+    },
+    {
+      "path": "/atelier/bestiary-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat/sorts",
+      "status": 401
+    },
+    {
+      "path": "/atelier/spell-combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/not-a-group/combat/attaques",
+      "status": 401
+    },
+    {
+      "path": "/atelier/attack-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/group-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/gift-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/dons",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes/missing/dons",
+      "status": 401
+    },
+    {
+      "path": "/auth/status",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/metrics",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/messages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/groupes/missing/messages",
+      "status": 401
+    },
+    {
+      "path": "/atelier/group-messages.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/inventory-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/inventory-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/equipment-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/equipment-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/wallet-state.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/wallet-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/potion-combat-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/missing/combat/potions",
+      "status": 401
+    },
+    {
+      "path": "/atelier/loot-view.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/loot-rules.mjs",
+      "status": 302
+    },
+    {
+      "path": "/atelier/api/groupes/missing/butin",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/directory",
+      "status": 401
+    },
+    {
+      "path": "/atelier/api/admin/personnages/missing/missing",
+      "status": 401
+    },
+    {
+      "path": "/api/GetSupabaseKey",
+      "status": 503
+    },
+    {
+      "path": "/creer-personnage.html",
+      "status": 503
+    }
+  ],
+  "publicHomeVerified": true,
+  "verification": {
+    "status": "passed",
+    "scope": "group-gifts-with-durable-debit-and-credit",
+    "sourceHash": "46f1d4c7c132c73ed67319a66b5741215e826d1f1857e7727244c0c48e3028bd",
+    "baselineCommit": "7ce79c416",
+    "unitPassed": 146,
+    "browserJourneys": 27,
+    "failed": 0,
+    "skipped": 0,
+    "completedAt": "2026-11-10T08:58:22.792Z"
+  },
+  "manualChecklist": "Recette PC à réaliser par l’utilisateur."
+}

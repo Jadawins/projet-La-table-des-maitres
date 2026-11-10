@@ -1,3 +1,4 @@
+import {createGroupGifts} from './group-gifts.mjs';
 import {createGroupLoot} from './group-loot.mjs';
 import {createGateway} from './server.mjs';
 import path from 'node:path';
@@ -47,6 +48,10 @@ await lootCollection.createIndex({id:1},{unique:true});
 await lootCollection.createIndex({groupId:1,createdAt:-1,id:-1});
 await lootCollection.createIndex({'recipients.userId':1,groupId:1,createdAt:-1});
 const loot=createGroupLoot({collection:lootCollection,groups,characters,catalogue,sheetModel:s=>sheetModel(s,catalogue),validate:s=>validateSavedCharacter(s,catalogue)});
+const giftCollection=mongo.db('myrpgtable').collection('dons_groupes_refonte');
+await giftCollection.createIndex({id:1},{unique:true});
+for(const side of ['from','to'])await giftCollection.createIndex({[side+'.userId']:1,updatedAt:-1,id:-1});
+const gifts=createGroupGifts({collection:giftCollection,groups,characters,catalogue,sheetModel:s=>sheetModel(s,catalogue),validate:s=>validateSavedCharacter(s,catalogue)});
 const {playView,applyPlayAction}=await import(pathToFileURL(path.join(appRoot,'play-state.mjs')).href);
 const combatCollection=mongo.db('myrpgtable').collection('combats_refonte');
 await combatCollection.createIndex({id:1},{unique:true});
@@ -60,6 +65,6 @@ const potionCollection=mongo.db('myrpgtable').collection('potions_combats_refont
 await potionCollection.createIndex({id:1},{unique:true});
 await potionCollection.createIndex({groupId:1,combatId:1,createdAt:-1});
 const combats=createCombatStore({potionCollection,spellCatalogue:catalogue.spells,collection:combatCollection,spellCollection,groups,characters,bestiary,sheetModel:s=>sheetModel(s,catalogue),playView,applyPlayAction});
-const server=createGateway({supabaseUrl:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,anonKey:process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_KEY,appRoot,characters,groups,combats,bestiary,messages,loot,admin,adminEmails:(process.env.REFONTE_ADMIN_EMAILS||'').split(',').filter(Boolean),catalogueText});
+const server=createGateway({supabaseUrl:process.env.SUPABASE_URL||process.env.VITE_SUPABASE_URL,anonKey:process.env.SUPABASE_ANON_KEY||process.env.VITE_SUPABASE_KEY,appRoot,characters,groups,combats,bestiary,messages,loot,gifts,admin,adminEmails:(process.env.REFONTE_ADMIN_EMAILS||'').split(',').filter(Boolean),catalogueText});
 server.on('close',()=>mongo.close());
 server.listen(Number(process.env.REFONTE_ACCESS_PORT||4181),'127.0.0.1',()=>console.log('Accès refonte prêt sur la boucle locale.'));
